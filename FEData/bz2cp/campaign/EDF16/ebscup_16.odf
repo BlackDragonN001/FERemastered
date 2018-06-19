@@ -1,0 +1,32 @@
+[GameObjectClass]
+mrmFactor = 0
+geometryName = "ebscav00.xsi"
+animCount = 1
+//animName1 = "deploy"
+//animFile1 = "ebscup00.xsi"
+animName1 = "loop"
+animFile1 = "ebscav01.xsi"
+
+classLabel = "extractor"
+scrapCost = 60
+scrapValue = 2
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Refinery"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0
+isAssault = 1
+canInteract=1 // for missile lock
+
+armorClass = H
+
+[BuildingClass]
+// an ambient sound would be nice
+
+[ExtractorClass]
+initDelay = 12.0
+scrapDelay = 2
+scrapHold = 120
+detectRange = 100

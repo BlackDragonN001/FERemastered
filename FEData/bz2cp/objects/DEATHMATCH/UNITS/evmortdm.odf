@@ -1,0 +1,119 @@
+//(c)BZ2CP
+// Created by Slaor and Pastell
+
+[GameObjectClass]
+baseName = "evmort"
+geometryName = "evmort00.xsi"
+cockpitName = "ivmbike_cockpit.xsi"
+classLabel = "wingman"
+animCount = 3
+animName1 = "forward"
+animFile1 = "evmortsf.xsi"
+animName2 = "neutral"
+animFile2 = "evmortsn.xsi"
+animName3 = "reverse"
+animFile3 = "evmortsr.xsi"
+
+scrapValue = 15
+scrapCost = 45
+customCost = 60
+buildTime = 15.0
+customTime = 15.0
+maxHealth = 1200
+maxAmmo = 1200
+addAmmo = 3
+unitName = "Locust"
+aiName = "AttachWingman"
+aiName2 = "AttachWingman"
+
+heatSignature = 3.0
+imageSignature = 1.0
+radarSignature = 0.1
+
+isAssault = 0
+
+armorClass = N
+
+requireCount = 1
+requireName1 = "ebfact"
+requireText1 = "Build Xenomator"
+requireName2 = "ebcbun"
+requireText2 = "Build Eyes of Xyr"
+
+/////// weapons ///////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_MORTAR_1"
+weaponName1 = "gtagcr_a"
+weaponAssault1 = 1
+weaponHard2 = "HP_SPECIAL_1"
+weaponName2 = "gproxmin"
+weaponAssault2 = 0
+
+//////////////////////////////////
+
+[CraftClass]
+rangeScan = 325.0f
+periodScan = 5.0f
+velocJam = 15.0f
+engageRange = 170
+
+braccelFactor = 0.05f;
+strafeFactor = 0.1f;
+steerFactor = 1.0f;
+omegaFactor = 0.2f;
+velFactor = 0.2f;
+
+avoidSpeed = 25;
+topSpeed = 40;
+
+attackTask = "MortarBikeAttack"
+subAttackTask = "MortarBikeSubAttack"
+
+selectWaitMsg = "evmort01.wav"
+selectAttackMsg = "evmort02.wav"
+selectFollowMsg = "evmort03.wav"
+selectGoMsg = "evmort04.wav"
+selectOtherMsg = "evmort04.wav"
+
+goMsg = "evmort05.wav"
+attackMsg = "evmort06.wav"
+followMeMsg = "evmort08.wav"
+followMsg = "evmort07.wav"
+repairMsg = "evmort09.wav"
+reloadMsg = "evmort09.wav"
+rescueMsg = "evmort10.wav"
+recycleMsg = "evmort11.wav"
+otherMsg = "evmort01.wav" 
+holdMsg = "evmort12.wav"
+
+user1Msg = ""  
+killedMsg = "evmort07.wav"
+diedMsg = ""
+
+[HoverCraftClass]
+velocForward = 35.0 
+velocReverse = 20.0
+velocStrafe = 20.0
+accelThrust = 50.0 //acceleration
+accelBrake = 75.0 //braking
+accelDragStop = 28.0 //how fast it stops once hands are off controls
+accelJump = 20.0
+
+setAltitude = 1.5 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself [5]
+alphaDamp = 8.3 //shocks [5]
+
+pitchPitch = 0.25 //nose up [.25]
+pitchThrust = 0.2 //nose down [.25]
+
+rollStrafe = 0.15 //rolls while strafing [.25]
+omegaSpin = 5.0 //spinning in place speed [4.]
+omegaTurn = 1.5 //turning while moving speed [2.0]
+alphaSteer = 4.8 //how fast it speeds up and slows down to steering [5.5]
+rollSteer = 0.16 //rolls while steering [.4]
+
+
+soundThrust = "evmorten.wav"
+

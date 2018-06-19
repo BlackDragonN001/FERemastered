@@ -1,0 +1,108 @@
+// (c) BZ2CP unit "Hedoux"
+// Created by Slaor and Pastell
+// Vehicle V/O's - Zeeder  
+// Voice effects, vehicle sounds - Chipotle
+
+[GameObjectClass]
+baseName = "evatank"
+geometryName = "evatank00.xsi"
+classLabel = "assaulttank"
+scrapValue = 40
+scrapCost = 70
+customCost = 80
+buildTime = 20.0
+customTime = 20.0
+maxHealth = 3500
+addhealth = 9.0
+maxAmmo = 3000
+addAmmo = 8
+unitName = "Hedoux"
+aiName = "AssaultTankProcess"
+aiName2 = "AssaultTankProcess"
+heatSignature = 0.5
+imageSignature = 5.0
+radarSignature = 5.0
+isAssault = 1
+
+armorClass = H
+	
+requireCount = 3
+requireName1 = "ebfact2"
+requireText1 = "Build Mega Xenomator"
+requireName2 = "ebcbun"
+requireText2 = "Build Eyes of Xyr"
+requireName3 = "ebsbay"
+requireText3 = "Build Repair Vat"
+
+/////// weapons ///////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gdragb_a"
+weaponAssault1 = 1
+weaponHard2 = "HP_GUN_1"
+weaponName2 = "gshellgun_c"
+weaponAssault2 = 0
+weaponHard3 = "HP_GUN_2"
+weaponName3 = "gshellgun_c"
+weaponAssault3 = 0
+
+////////////////////////////////////
+
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 4.0f
+velocJam = 0.0f
+engageRange = 200
+
+braccelFactor = 0.01
+velFactor = 0.4
+steerFactor = 1.2
+omegaFactor = 0.2
+strafeFactor = 0.1
+
+selectWaitMsg = "evatank01.wav"
+selectAttackMsg = "evatank04.wav"
+selectFollowMsg = "evatank02.wav"
+selectGoMsg = "evatank09.wav"
+selectOtherMsg = "evatank01.wav"
+
+goMsg = "evatank06.wav"
+attackMsg = "evatank05.wav"
+followMeMsg = "evatank09.wav"
+followMsg = "evatank09.wav"
+repairMsg = "evatank05.wav"
+reloadMsg = "evatank05.wav"
+rescueMsg = "evatank06.wav"
+recycleMsg = "evatank08.wav"
+otherMsg = "evatank05.wav" 
+holdMsg = "evatank03.wav"
+
+user1Msg = ""  
+killedMsg = "evatank07.wav"
+diedMsg = ""
+
+[TrackedVehicleClass]
+omegaSpin = 2.0		//4.0
+omegaTurn = 1.0
+velocForward = 18.0
+velocReverse = 10.0
+accelThrust = 12.0
+
+TREAD_STATIC_FRICTION = 1.5
+
+engineSound	= "evatanken.wav"
+treadSound = "evatanktr.wav"
+
+
+[AssaultTankClass]
+yawRate = 4.0
+pitchMin = -0.3
+pitchMax = 0.7
+
+recoilName1 = "recoil_1"
+laserName1 = "recoil_1"

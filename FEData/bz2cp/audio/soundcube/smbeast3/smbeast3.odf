@@ -1,0 +1,11 @@
+// SOUNDMINE //
+
+[GameObjectClass]
+classLabel = "FEsoundmine" // ODF Inheritence to make editing easier. -GBD
+
+weaponName1 = "mbeast3" // <<<<<<<<<<<<<<<<<
+
+[MineClass]
+
+[WeaponMineClass]
+searchRadius = 150.0 // <<<<<<<<<<<<<<

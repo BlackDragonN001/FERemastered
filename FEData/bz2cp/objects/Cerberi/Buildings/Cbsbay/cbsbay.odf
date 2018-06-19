@@ -1,0 +1,45 @@
+[GameObjectClass]
+geometryName = "Cbsbay00a.xsi"
+classLabel = "supplydepot"
+collisionRadius = 1.0
+scrapCost = 50
+scrapValue = 3
+maxHealth = 7000
+maxAmmo = 0
+unitName = "Regenerator"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+
+
+armorClass = H
+
+lightHard1 = "hp_light_1"
+lightName1 = "cerbpurple"
+lightHard2 = "hp_light_2"
+lightName2 = "cerbpurple"
+lightHard3 = "hp_light_3"
+lightName3 = "cerbpurple"
+lightHard4 = "hp_light_4"
+lightName4 = "cerbpurple"
+
+
+requireCount = 1
+requireName1 = "cbfact02"
+requireText1 = "Build Crucible"
+
+provideCount = 1
+provideName1 = "cbsbay"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[BuildingClass]
+
+[SupplyDepotClass]
+supplyRange = 32.0
+supplyRate = 150.0
+supplySound = "mnu_empt.wav"
+
+

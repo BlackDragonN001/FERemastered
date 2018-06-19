@@ -1,0 +1,24 @@
+[WeaponClass]
+classLabel = "torpedolauncher"
+altName = "gtaggun_c"
+wpnName = "Comet Cruise"
+fireSound = "gcome00.wav"
+wpnReticle = "gcomet.0"
+wpnCategory = "ROCK"
+aiRange = 300
+isAssault = 1
+
+[LauncherClass]
+lockRange = 350.0
+shotDelay = 5.0
+lockDelay = 1.0
+coneAngle = 0.075
+lockingReticle = "gcomet.A"
+lockingSound = "lock01.wav"
+lockedReticle = "gcomet.B"
+lockedSound = "lock02.wav"
+targetCount = 3
+targetReticle = "gcomet.1"
+
+[TorpedoLauncherClass]
+objectClass = "comet"

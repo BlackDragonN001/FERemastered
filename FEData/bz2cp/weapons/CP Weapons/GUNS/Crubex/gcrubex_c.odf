@@ -1,0 +1,26 @@
+[WeaponClass]
+classLabel = "machinegun"
+altName = "gcrubex_a"
+ordName = "crubex_c"
+wpnName = "Crubex Gun"
+fireSound = "gcrubex_c00.wav"
+wpnReticle = "gpummel"
+wpnCategory = "GUN"
+isAssault = 0
+flashName = "gcrubex_c.flash"
+aiRange = 100
+
+[CannonClass]
+shotDelay = 0.15
+shotVariance = 0.025
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "0 62 249 255"
+finishColor = "46 249 0 255"
+startRadius = 16.12
+finishRadius = 1.54
+animateTime = 0.1
+geomName = "g_sflash.xsi"

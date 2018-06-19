@@ -1,0 +1,32 @@
+///////////////////////////////////////////////////
+//  FLAK MINE ALTITUDE LIMITER - by USMC SilverB1rd
+///////////////////////////////////////////////////
+
+[GameObjectClass]
+geometryName = Null // "igflar00.xsi"
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0 // 5000
+maxAmmo = 10 // 5000
+unitName = "Flak Mine"
+addAmmo = 10 // works good since 1e6 maxammo didn't
+
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+canCollide = 0
+
+
+[MineClass]
+lifeSpan = 99999 // 9999
+
+[FlareMineClass]
+payloadName = "flakhawk"
+triggerDelay = 0.0 // 2.0
+shotDelay = 3
+shotVariance = 0.02
+

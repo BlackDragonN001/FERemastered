@@ -1,0 +1,29 @@
+[GameObjectClass]
+geometryName = "gravanchor.xsi"
+geometryScale = .8
+classLabel = "weaponmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 10000 // amount mine holds for weapon
+unitName = "Flux Anchor"
+isAssault = 0
+heatSignature = 0.5
+imageSignature = 0.5
+radarSignature = 0.5
+isAssault = 1
+armorClass = N
+canCollide = 1
+canDetect = 1 
+canInteract = 1
+
+weaponHard1 = "hp_weapon_1"
+weaponName1 = "fluxnet"
+
+[MineClass]
+lifeSpan = 30 
+
+[WeaponMineClass]
+searchRadius = 90.0
+heightScale = 2.0 // 2.0
+

@@ -1,0 +1,24 @@
+[GameObjectClass]
+geometryName = NULL //"defboltmin.x"
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 9999
+maxAmmo = 9999
+unitName = "Fountain"
+heatSignature = 0.0
+explosionName = "xbmbxpl"
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+
+[MineClass]
+lifeSpan = 9999
+
+[FlareMineClass]
+payloadName = "water"
+fireSound = ""
+triggerDelay = 19.0
+shotDelay = 0.15
+shotVariance = 3.0
+

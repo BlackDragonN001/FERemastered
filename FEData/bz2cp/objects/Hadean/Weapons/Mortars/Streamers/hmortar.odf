@@ -1,0 +1,65 @@
+[OrdnanceClass]
+classLabel = "grenade"
+
+shotGeometry = NULL //"ioartl00.xsi"
+shotSound = "gquil01.wav"
+
+xplGround = "xhmortgn"
+xplVehicle = "xhmortxp"
+xplBuilding = "xhmortxp"
+
+renderName = "hmortar.render"
+
+ammoCost = 20
+lifeSpan = 70
+shotSpeed = 65.0
+
+damageValue(N) = 80 // none
+damageValue(L) = 70 // light
+damageValue(H) = 50 // heavy
+
+damageValue(S) = 70 // standard
+damageValue(D) = 50 // deflection
+damageValue(A) = 80 // absorbtion
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "hmortar.e2"
+renderName2 = "hmortar.trail"
+renderName3 = "hmortar.trail2"
+
+
+[e2]
+simulateBase = "sim_null"
+lifeTime = 1.2
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"//lightflare.tga
+textureBlend = "one one modulate"
+startColor = "255 130 0 255"
+finishColor = "255 130 0 255"
+startRadius = 0.4
+finishRadius = 0.4
+
+[trail]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.21
+startColor = "255 255 255 40"
+finishColor = "255 255 255 0"
+startRadius = 0.1
+finishRadius = 1.0
+segmentTime = 1.0//3.0
+animateTime = 0.9
+
+[trail2]
+renderBase = "draw_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "200 200 50 150"
+finishColor = "200 200 50 150"
+startRadius = 0.13
+finishRadius = 0.13
+segmentTime = 0.2
+animateTime = 0.2

@@ -1,0 +1,266 @@
+Changes by Scott "Centerline" Valler
+------------------------------------
+
+===================
+Outstanding issues:
+===================
+1. Figure out why avpufwalk2 isn't being removed from the map when the portals are initialized.
+
+2. Look into having the Rampage units attack the Overseer Array and the Xyr Tower.
+
+
+Running list of changed/added path points and variables:
+--------------------------------------------------------
+Killer#:1-3
+RandomPool_X_Y_ODF: {X:1-9} {Y:1-9} {ODF:NONE or specify Pool ODF without extension}
+Increased maximum portal count to 24.
+turretEnemy1#:1-10
+
+"C:\Program Files\Battlezone II\FEaddon\Missions\Multiplayer\FEMPI Special Units"
+MPITalon1.odf  // For Normal level
+MPITalon2.odf  // For Hard level
+
+"C:\Program Files\Battlezone II\FEaddon\Shell\bzshell_multi_mpidiff.cfg" has the newly modified control panel to allow setting Rampage Attack settings from the shell.
+
+<<dead>> svar30 = "cvtalonx1"  // For NORMAL level
+<<dead>> svar31 = "cvtalonx2"  // For HARD level
+
+<<Optional>> ivar35 = 2 // 2 = On, 1 = Off, 0 = Random. If set this will define the default setting for the map, but the user can over-ride by choosing a different setting in the shell MPI control panel.
+
+
+
+===========
+2003-08-30:
+===========
+1. Added more debug statements.
+
+2. Modified Killer routine to spawn units in a spiral pattern around the pathpoint and to drop a NAV beacon where each unit spawned.
+
+3. Modified Killer routine to calculate spawn location and then spawn rather than spawn and relocate.
+
+4. Rampage units now spawn on computer team.
+
+===========
+2003-08-29:
+===========
+1. Added back in the debug statement that shows whick Killer point they spawned from.
+
+2. Modified Killer routine so that the spawned Rampage units are now spread out 25 meters in both the "X" and "Z" directions and then TerrainFindFloor is called. Tested this and it works great no matter how the terrain is shaped at the spawn points.
+
+===========
+2003-08-24:
+===========
+1. Modified the Killer routine so that the spawned Rampage units are now spread out in the "X" direction 10 meters apart and then TerrainFindFloor is called to make sure the units aren't spawned in/below the terrain floor.  This should provide the safest seperation and allow for ground based ODF substitution during testing.
+
+2. Removed all debug statements. The console statements now state only: scrap boost, skill level and rampage mode.
+
+===========
+2003-08-20:
+===========
+1. Modified the Killer routine so that the spawned Rampage units now are spread
+out and don't spawn on top of them selves. This will definitely reduce the amount of collisions at spawn time and should help with the lag in multi-player games.  Also, set random headings on them so they will spread out quicker.
+
+===========
+2003-07-30:
+===========
+1. Modified the ivar35 values and changed the shell file to set ivar35 -- 2 = on, 1 = off, and 0 = random. If you don't set ivar35 then it defaults to "random" now.
+
+2. Changed the random frequency from 1 in 3 to 3 in 5 chances of the rampage attacks being ON. The console will tell you what Rampage mode is chosen and when in Random mode whether rampage attacks got turned ON or OFF. I'll be removing the ON/OFF notification for when Random is chosen before final release. I'm going to leave in the notification as to the rampage mode, scrap boost and difficulty level.
+
+3. Console messages will look like this and if Random then after the Random comment you will see the ON or OFF line so you know what to expect for testing:
+	Rampage Attacks are set to RANDOM!
+	Rampage Attacks are ON!
+	Rampage Attacks are OFF!
+
+===========
+2003-07-17:
+===========
+1. Setup the Rampage Random section so that it has a 1 in 3 chance of turning on. Check the console after startup to see whether Rampage attacks are on. You will get one of the following four messages depending on your settings:
+
+Rampage Attacks are RANDOM = ON!
+Rampage Attacks are RANDOM = OFF!
+Rampage Attacks are ON!
+Rampage Attacks are OFF!
+
+2. Updated the MPIPathPoints.txt file to include the new path points and the turretEnemy# path points and noted the new total number of portals available for the map.
+
+
+===========
+2003-07-15:
+===========
+1. I commented out the SVAR section of the killer routine. Added "ivar35 = 1" which will turn on the hard coded killer units. You can leave SVAR30 and SVAR31 in your INF files until everything is set as they will be ignored. If ivar35 is set to anything besides 1 or not set at all then the killer routine will be disabled.
+
+
+2. Renamed the Killer ODF files to: MPITalon1.odf and MPITalon2.odf and put them in a new folder.  Put the new folder in "C:\Program Files\Battlezone II\FEaddon\Missions\Multiplayer\FEMPI Special Units" and you can leave it and forget it.  There will be no more changes to these units after this unless you guys think they are way out of balance.
+
+3. Modified the the shell file for the MPI settings. Added a "Rampage Attacks" section to control the Killer routine. The "Random" option doesn't work, but is meant to choose randomly whether or not they should occur. I'm debating this part and it isn't implemented yet. Meaning if you choose "Random" you won't get anything.
+
+4. Put the "Shell" folder in "C:\Program Files\Battlezone II\FEaddon\Shell"
+
+
+===========
+2003-07-13a:
+===========
+1. I added hard coded Killer units.  Just make sure that SVAR30 and SVAR31 are commented out or don't exist in your maps INF file and the DLL will then use the hard coded ODF names.  If this solves the A/V issues and the Killer units still spawn nicely and all then we can be sure where to concentrate efforts. There are no other changes since the last build.
+
+
+
+===========
+2003-07-13:
+===========
+1. Verified that the turretEnemy1#:1-10 path points work correctly.  I don't plan on increasing this any more unless requested.
+
+2. The A/Vs were not due to svar10 & 11, but I'm sticking with svar30 and svar31 anyway. I made some major changes to the Killer routine. Now it always posts the skill level and scrap boost in numbers from 1-3 with 3 being hard/high respectively. It also posts that the SVAR# was loaded. If you leave off one or both SVARs from the map INF it will be easy to tell by checking the console right after the map is fully loaded. I noticed that in certain combinations the Killer routine would not spawn units. That is resolved. I still have not tracked down the A/V problem, but during testing if I go in as a sabre or other "tank" equivelant unit it doesn't A/V. Still working on this.
+
+The final svars are:
+svar30 = "cvtalonx1"  // For NORMAL level
+svar31 = "cvtalonx2"  // For HARD level
+
+3. I turned off the NAV beacons for the RandomPool routine and have decided to leave it off for good now.
+
+===========
+2003-07-12:
+===========
+1. Increased the number of computer team startup turrets from 6 to 10.  You can now use turretEnemy1#:1-10.  The turretEnemy# units respawn at certain intervals so these are sometimes better options than using the MPIC# path points to place startup turrets.
+
+2. Because of continued A/Vs I changed SVAR10 & SVAR11 to SVAR30 & SVAR31 respectively.  The hickups disappeared in the last build and maybe this will stop the A/Vs.
+
+svar30 = "cvtalonx1"  // For NORMAL level
+svar31 = "cvtalonx2"  // For HARD level
+
+Check the console right after everything spawns.  I added a few lines that tell you the killODF section has hit and the contents that have been read in from the svars.  If there are no ODF names in there then I'll need to mess with it some more.
+
+
+===========
+2003-07-10:
+===========
+1. Removed the default ODF files from the DLL. You must now specify in the maps INF file what ODFs to spawn. If you don't specify the ODF then it won't spawn anything.
+
+2. I looked into the A/Vs and Techies comments about it stuttering sometimes. I made two variables static - these are the only things that had changed that could have caused it. Please let me know if it still seems choppy.
+
+
+===========
+2003-07-08:
+===========
+1. For now the version "B" killer spawn routine will be the default.  I made one modification -- you can now set "svar10" and "svar11" equal to the ODFs you want spawned when the Killer routine is triggered. This way you can make the Killer map specific.  Just put something like this in the maps INF file:
+
+svar10 = "cvtalonx1"  // For NORMAL level
+svar11 = "cvtalonx2"  // For HARD level
+
+If you don't specify the ODF files it defaults to what is listed above.  You can specify just one ODF if you want such as:
+
+svar11 = "cvgorg"  // For HARD level
+
+In which case it will use CVGORG for hard and CVTALONX1 for normal because you didn't specify an ODF for normal.
+
+******In future builds I plan to change it so that if you don't specify an ODF then it doesn't spawn anything at all for that level.  So, beware that you should add both SVARs into your map INF now if you plan to use the Killer1-3 path points.
+
+
+===========
+2003-07-07b:  See if you like version A or B better
+===========
+1. Modified the killer routine to spawn the indicated number of vehicles based on level and scrapboost:
+
+Normal: (cvtalonx1)
+ScrapBoost3 = 4
+ScrapBoost2 = 3
+ScrapBoost1 = 2
+
+Hard: (cvtalonx2)
+ScrapBoost3 = 6
+ScrapBoost2 = 4
+ScrapBoost1 = 2
+
+
+===========
+2003-07-07a:  See if you like version A or B better
+===========
+1. Modified the Killer routine so the following units spawn and I set their skill level to 3:
+Normal:
+ScrapBoost3 = cvputank
+ScrapBoost2 = cvwra00
+ScrapBoost1 = cvpuscout
+
+Hard:
+ScrapBoost3 = cvatank2
+ScrapBoost2 = cvpurbomb
+ScrapBoost1 = cvpuwalk
+
+
+===========
+2003-07-06:
+===========
+1. Modified the Killer routine so the following spawns:
+Hard:
+ScrapBoost3 = CVPURBOMB
+ScrapBoost2 = CVPUWALK
+ScrapBoost1 = CVPUTANK
+
+
+===========
+2003-07-06:
+===========
+1. Modified the Killer routine. The location within the DLL that I had placed it made it unstable in certain situations.  I also changed the HARD level units to:
+
+Hard:
+ScrapBoost3 = CVPUWALK
+ScrapBoost2 = CVPUTANK
+ScrapBoost1 = CVPURBOMB
+
+
+===========
+2003-07-04:
+===========
+1. Happy 4th!
+
+2. Added in Killer1 - 3 path points.  Right now when the human team builds the bomber bay (not the bomber unit) then DLL evaluates what to attack the bomber bay with.  Based on Hard/Medium and then scrap boost level.
+
+Normal:
+ScrapBoost3 = FVSAV
+ScrapBoost2 = IVPURBOMB
+ScrapBoost1 = IVPUATNK2
+
+Hard:
+ScrapBoost3 = CVPUWALK
+ScrapBoost2 = CVPUTANK
+ScrapBoost1 = FVPUWALK
+
+I'm not 100% sure that ScrapBoost3 is equal to HIGH, but that is the assumption I made so far and set it accordingly.  The more I think about it, for right now we might just make all of these units Cerbi.
+
+
+===========
+2003-07-03:
+===========
+1. Fixed the Random Pool routine.  This one drove me crazy, finally found my error.  Made some changes to it as well.  The limits are {X:1..9} and {Y:1..9} and that is all she wrote.  I'd have to do some major work to expand that into double digits.  Right now it will build one pool randomly from each group as long as the ODF tag isn't equal to "NONE".
+
+2. For debugging purposes I have it creating a NAV at every RandomPool path point and it names the nav equal to the path point label.
+
+
+===========
+2003-06-30:
+===========
+1. Increased maximum portal count to 24.
+
+2. Added check to see if a destination portal exists for third race. If not, don't build new units. This should stop the over-build, but won't take care of any previously built units that haven't been dispatched yet.
+
+3. Completed random pool location routine. It will now cycle through all the pool groups and randomly place a pool at one location within each group. If the randomly selected location has an ODF value of "NONE" then no pool is built for that group in that instance of the game. As below the format is "RandomPool_X_Y_ODF" where X designates the group, Y designates the locations within the group, and ODF designates the ODF for that location.
+
+
+===========
+2003-06-29:
+===========
+1. Fixed all occurance of CVPUWALK so that the computer will now build these units and attack with them.
+
+2. Modified the addObject routine to associate the portalD turrets to that portal group.
+
+3. Started the random pool location routine.  Currently it will look for mpipath points in the form "RandomPool_X_Y_ODF".  Where X is the pool group, Y is the individual build location in that group, and ODF is the ODF of the pool object to be built (without the extension.)  ODF can equal "NONE" so that no pool is built.  {X:1..3} and {Y:1..3} for right now.  Right now it will build at every single path point.  In the future I plan to get it to randomly select one (1) location within each group to build.  That means that eventually you could drop say three pool groups with one location in each group labeled "NONE".  That could result in from 0 - 3 pools being built.  Caveat:  Don't know if this will work in multi-player environment correctly when the pools are random.  I have it randomly deciding whether it should build the pool right now.
+
+For Example:  RandomPool_1_1_ODF; RandomPool_1_2_ODF;  RandomPool_1_3_NONE;  RandomPool_2_1_ODF; RandomPool_2_2_ODF;  RandomPool_3_1_ODF;  etc. You can have just one pool location in a group if desired.
+
+
+===========
+2003-06-28:
+===========
+1. The human team recycler is now built at the "Recycler" mpipathpoint instead of the player spawn point.
+
+2. When the human team selects hadean and the map has uses mpipathpoints in the form of "mpih#_fvturr_ivturr_evturr" for fixed startup units - the DLL now spawns the Hadean units as Hadean instead of ISDF.

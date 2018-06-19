@@ -1,0 +1,27 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gelect_c"
+ordName = "elect_a"
+wpnName = "Electron Burst"
+fireSound = "bltm01.wav"
+wpnReticle = "gplasma"
+wpnCategory = "CANN"
+isAssault = 1
+flashName = "gelect_a.flash"
+aiRange = 220
+
+[CannonClass]
+shotDelay = 0.9 // 1.6/sec
+shotAlternate = 0
+
+[Flash]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "120 80 255 127"
+finishColor = "255 0 80 0"
+startRadius = 1.0
+finishRadius = 0.5
+animateTime = 0.3
+latitudeBands = 8
+longitudeSegments = 16

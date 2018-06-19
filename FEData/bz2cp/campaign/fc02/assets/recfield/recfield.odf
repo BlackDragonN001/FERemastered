@@ -1,0 +1,38 @@
+[GameObjectClass]
+geometryName = NULL //"defflarmin.xsi" // "igmcur00.xsi"
+classLabel = "magnet"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 10000
+maxAmmo = 5000
+unitName = "recfield"
+effectHard1 = "recfield"
+effectName1 = "recfield.field"
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+
+[MineClass]
+lifeSpan = 9999.0
+
+[MagnetMineClass]
+triggerDelay = 0.1
+fieldRadius = 15.0
+objPushCenter = -200.0
+objPushEdge = - 200.0
+objDrag = 0.5
+ordPushCenter = -3300.0
+ordPushEdge = - 3900.0
+ordDrag = 10.0
+
+[Field]
+renderBase = "draw_sphere"
+textureName = "recfield.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha" // "one one modulate"
+startColor = "0 255 0 255"
+finishColor = "255 0 0 255"
+startRadius = 1.0
+finishRadius = 15.0
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16

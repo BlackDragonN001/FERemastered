@@ -1,0 +1,640 @@
+//////////////////////////////
+// WALKERS
+//////////////////////////////
+[Start]
+scrapCount = 40
+consClass = "evcons"
+scavClass = "evscav"
+
+[Cheat]
+moneyAmount = 30
+moneyDelay = 10
+
+[Match]
+targetType1 = "evscout"
+attackType1_1 = "evscout"
+attackType1_2 = "evscout"
+targetType2 = "evscout"
+attackType2_1 = "evtanku"
+targetType3 = "evscout"
+attackType3_1 = "evmislu"
+targetType4 = "evscout"
+attackType4_1 = "evmort"
+attackType4_2 = "evmort"
+
+targetType5 = "evmort"
+attackType5_1 = "evscout"
+attackType5_2 = "evscout"
+targetType6 = "evmort"
+attackType6_1 = "evmort"
+attackType6_2 = "evmort"
+targetType7 = "evmort"
+attackType7_1 = "evtanku"
+targetType8 = "evmort"
+attackType8_1 = "evmislu"
+
+targetType9 = "evmisl"
+attackType9_1 = "evscout"
+attackType9_2 = "evscout"
+attackType9_3 = "evscout"
+targetType10 = "evmisl"
+attackType10_1 = "evtanku"
+attackType10_2 = "evtanku"
+targetType11 = "evmisl"
+attackType11_1 = "evmislu"
+attackType11_2 = "evmislu"
+
+targetType12 = "evtank"
+attackType12_1 = "evscout"
+attackType12_2 = "evscout"
+targetType13 = "evtank"
+attackType13_1 = "evtanku"
+attackType13_2 = "evtanku"
+targetType14 = "evtank"
+attackType14_1 = "evmislu"
+attackType14_2 = "evmislu"
+targetType15 = "evtank"
+attackType15_1 = "evmort"
+attackType15_2 = "evmort"
+attackType15_3 = "evmort"
+
+targetType16 = "evartl"
+attackType16_1 = "evtanku"
+attackType16_2 = "evtanku"
+targetType17 = "evartl"
+attackType17_1 = "evmislu"
+attackType17_2 = "evmislu"
+targetType18 = "evartl"
+attackType18_1 = "evatanku"
+
+targetType19 = "evatank"
+attackType19_1 = "evtanku"
+attackType19_2 = "evtanku"
+attackType19_3 = "evtanku"
+targetType20 = "evatank"
+attackType20_1 = "evmislu"
+attackType20_2 = "evmislu"
+targetType21 = "evatank"
+attackType21_1 = "evatanku"
+attackType21_2 = "evatanku"
+targetType22 = "evatank"
+attackType22_1 = "ivewalk"
+attackType22_2 = "ivewalk"
+
+targetType23 = "ivewalk"
+attackType23_1 = "evmislu"
+attackType23_2 = "evmislu"
+targetType24 = "ivewalk"
+attackType24_1 = "evtanku"
+attackType24_2 = "evtanku"
+targetType25 = "ivewalk"
+attackType25_1 = "ivewalk"
+attackType25_2 = "ivewalk"
+
+targetType26 = "ebgt2g"
+attackType26_1 = "evatanku"
+attackType26_2 = "evatanku"
+targetType27 = "ebgt2g"
+attackType27_1 = "evmislu"
+attackType27_2 = "evmislu"
+targetType28 = "ebgt2g"
+attackType28_1 = "evtanku"
+attackType28_2 = "evtanku"
+attackType28_3 = "evtanku"
+targetType29 = "ebgt2g"
+attackType29_1 = "evmort"
+attackType29_2 = "evmort"
+attackType29_3 = "evmort"
+
+targetType30 = "evturr"
+attackType30_1 = "evmort"
+attackType30_2 = "evmort"
+attackType30_3 = "evmort"
+targetType31 = "evturr"
+attackType31_1 = "evtanku"
+attackType31_2 = "evtanku"
+targetType32 = "evturr"
+attackType32_1 = "evmislu"
+targetType33 = "evturr"
+attackType33_1 = "evscout"
+attackType33_2 = "evscout"
+
+targetType34 = "evscav"
+attackType34_1 = "evmort"
+targetType35 = "evscav"
+attackType35_1 = "evscout"
+targetType36 = "evscav"
+attackType36_1 = "evtanku"
+targetType37 = "evscav"
+attackType37_1 = "evmislu"
+
+targetType38 = "ebscav"
+attackType38_1 = "evmislu"
+targetType39 = "ebscav"
+attackType39_1 = "evtanku"
+targetType40 = "ebscav"
+attackType40_1 = "evmort"
+targetType41 = "ebscav"
+attackType41_1 = "evscout"
+
+targetType42 = "ebscup"
+attackType42_1 = "evmislu"
+targetType43 = "ebscup"
+attackType43_1 = "evtanku"
+targetType44 = "ebscup"
+attackType44_1 = "evmort"
+targetType45 = "ebscup"
+attackType45_1 = "evscout"
+
+targetType46 = "evcons"
+attackType46_1 = "evmislu"
+targetType47 = "evcons"
+attackType47_1 = "evtanku"
+targetType48 = "evcons"
+attackType48_1 = "evmort"
+targetType49 = "evcons"
+attackType49_1 = "evscout"
+
+targetType50 = "ebgt4g"
+attackType50_1 = "evatanku"
+attackType50_2 = "evatanku"
+targetType51 = "ebgt4g"
+attackType51_1 = "evmislu"
+attackType51_2 = "evmislu"
+targetType52 = "ebgt4g"
+attackType52_1 = "evtanku"
+attackType52_2 = "evtanku"
+attackType52_3 = "evtanku"
+
+[Plan1]
+planType = "Attacker"
+planPriority = 490
+planCondition = "NotExists"
+planConditionClass = "ebarmo"
+planConditionCount = 1
+targetType = "evscout"
+attackType1 = "evscout"
+attackType2 = "evscout"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan2]
+planType = "CollectPool"
+planPriority = 485
+planCondition = "NotExists"
+planConditionClass = "ebarmo"
+planConditionCount = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan3]
+planType = "CollectField"
+planPriority = 480
+planCondition = "NotExists"
+planConditionClass = "ebarmo"
+planConditionCount = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan4]
+planType = "Attacker"
+planPriority = 470
+targetType = "evscav"
+attackType1 = "evscout"
+attackType2 = "evscout"
+attackType3 = "evscout"
+maxAttacks=3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan5]
+planType = "CollectField"
+planPriority = 465
+planCondition = "NotExists"
+planConditionClass = "ebfact2"
+planConditionCount = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan6]
+planType = "CollectPool"
+planPriority = 460
+planCondition = "NotExists"
+planConditionClass = "ebfact2"
+planConditionCount = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan7]
+planType = "BuildMinimums"
+planPriority = 450
+buildType1 = "evcons"
+buildCount1 = 1
+
+[Plan8]
+planType = "BaseBuildMinimums"
+planPriority = 440
+buildType1 = "ebpgen"
+buildLoc1 = "pgen1"
+buildCount1 = 1
+buildType2 = "ebgt2g"
+buildLoc2 = "spike1"
+buildCount2 = 1
+doNextOnFail = 1
+
+[Plan9]
+planType = "Attacker"
+planPriority = 430
+planCondition = "NotHisExists"
+planConditionClass = "ebsbay"
+planConditionCount = 1
+targetType = "evcons"
+attackType1 = "evtank"
+attackType2 = "evtank"
+attackType3 = "evtank"
+maxAttacks=3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan10]
+// Sent to portal by DLL (patrol)
+planType = "BuildMinimums"
+planPriority = 420
+planCondition = "NotExists"
+planConditionClass = "ebfact2"
+planConditionCount = 1
+buildType1 = "evpuscout"
+buildCount1 = 3
+doNextOnFail = 1
+
+[Plan11]
+planType = "BaseBuildMinimums"
+planPriority = 410
+buildType1 = "ebpgen"
+buildLoc1 = "epgen1"
+buildCount1 = 1
+buildType2 = "ebfact"
+buildLoc2 = "fact"
+buildCount2 = 1
+buildType3 = "ebcbun"
+buildLoc3 = "cbun"
+buildCount3 = 1
+
+[Plan12]
+planType = "Attacker"
+planPriority = 400
+planCondition = "HisExists"
+planConditionClass = "evturr"
+planConditionCount = 1
+targetType = "evturr"
+attackType1 = "evmort"
+attackType2 = "evmort"
+attackType3 = "evmort"
+maxAttacks=4
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan13]
+planType = "BaseBuildMinimums"
+planPriority = 390
+planCondition = "NotExists"
+planConditionClass = "ebfact2"
+planConditionCount = 1
+buildType1 = "ebpgen"
+buildLoc1 = "pgen2"
+buildCount1 = 1
+buildType2 = "ebgt2g"
+buildLoc2 = "spike2"
+buildCount2 = 1
+doNextOnFail = 1
+
+[Plan14]
+planType = "Attacker"
+planPriority = 380
+targetType = "ebpgen"
+attackType1 = "evmisl"
+attackType2 = "evmisl"
+attackType3 = "evmisl"
+maxAttacks=3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan15]
+planType = "BaseBuildMinimums"
+planPriority = 370
+buildType1 = "ebarmo"
+buildLoc1 = "armo"
+buildCount1 = 1
+buildType2 = "ebsbay"
+buildLoc2 = "sbay"
+buildCount2 = 1
+
+[Plan16]
+planType = "Attacker"
+planPriority = 360
+planCondition = "HisExists"
+planConditionClass = "ebgt2g"
+planConditionCount = 1
+targetType = "ebgt2g"
+attackType1 = "evatank"
+attackType2 = "evatank"
+attackType3 = "evscoutu"
+attackType4 = "evscoutu"
+attackType5 = "evscoutu"
+maxAttacks=3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan17]
+// Sent to portal by DLL (hold/attack)
+planType = "BuildMinimums"
+planPriority = 355
+planCondition = "NotExists"
+planConditionClass = "ebfact2"
+planConditionCount = 1
+buildType1 = "evputurr"
+buildCount1 = 1
+buildType2 = "evpuatank"
+buildCount2 = 3
+doNextOnFail = 1
+
+[Plan18]
+planType = "Attacker"
+planPriority = 350
+planCondition = "NotExists"
+planConditionClass = "ebfact2"
+planConditionCount = 1
+targetType = "ebpgen"
+attackType1 = "evtanks"
+attackType2 = "evtanks"
+attackType3 = "evtanks"
+maxAttacks=3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan19]
+planType = "CollectField"
+planPriority = 345
+planCondition = "NotExists"
+planConditionClass = "ebtrain"
+planConditionCount = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan20]
+planType = "CollectPool"
+planPriority = 340
+planCondition = "NotExists"
+planConditionClass = "ebtrain"
+planConditionCount = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan21]
+planType = "BaseBuildMinimums"
+planPriority = 330
+planCondition = "NotExists"
+planConditionClass = "ebfact2"
+planConditionCount = 1
+buildType1 = "ebpgen"
+buildLoc1 = "epgen2"
+buildCount1 = 1
+buildType2 = "ebpgen"
+buildLoc2 = "pgen3"
+buildCount2 = 1
+buildType3 = "ebgt2g"
+buildLoc3 = "spike3"
+buildCount3 = 1
+doNextOnFail = 1
+
+[Plan22]
+planType = "Upgrade"
+planPriority = 320
+planCondition = "NotExists"
+planConditionClass = "ebfact2"
+planConditionCount = 1
+unitType = "ebfact"
+
+[Plan23]
+planType = "Attacker"
+planPriority = 300
+planCondition = "NotExists"
+planConditionClass = "ebtrain"
+planConditionCount = 1
+targetType = "ebpgen"
+attackType1 = "evtanku"
+attackType2 = "evtanku"
+attackType3 = "evmislu"
+attackType4 = "evmislu"
+attackType5 = "evscout"
+attackType6 = "evscout"
+maxAttacks=3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan24]
+// Sent to portal by DLL (patrol)
+planType = "BuildMinimums"
+planPriority = 295
+buildType1 = "evputank"
+buildCount1 = 2
+doNextOnFail = 1
+
+[Plan25]
+planType = "BaseBuildMinimums"
+planPriority = 290
+buildType1 = "ebtcen"
+buildLoc1 = "tcen"
+buildCount1 = 1
+
+[Plan26]
+planType = "Attacker"
+planPriority = 280
+planCondition = "HisExists"
+planConditionClass = "ebgt4g"
+planConditionCount = 1
+targetType = "ebgt4g"
+attackType1 = "ivewalk"
+attackType2 = "ivewalk"
+attackType3 = "evmorts"
+attackType4 = "evmorts"
+attackType5 = "evmislw"
+attackType6 = "evmislw"
+maxAttacks=3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan27]
+// Sent to portal by DLL (hold/attack)
+planType = "BuildMinimums"
+planPriority = 270
+buildType1 = "evputurr"
+buildCount1 = 2
+buildType2 = "ivpuewalk"
+buildCount2 = 2
+buildType3 = "evpuatanku"
+buildCount3 = 2
+doNextOnFail = 1
+
+[Plan28]
+planType = "CollectField"
+planPriority = 265
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan29]
+planType = "CollectPool"
+planPriority = 260
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan30]
+planType = "BuildMinimums"
+planPriority = 250
+buildType1 = "evcons"
+buildCount1 = 2
+doNextOnFail = 1
+
+[Plan31]
+planType = "BaseBuildMinimums"
+planPriority = 240
+buildType1 = "ebgt4g"
+buildLoc1 = "def1"
+buildCount1 = 1
+buildType2 = "ebgt4g"
+buildLoc2 = "def2"
+buildCount2 = 1
+buildType3 = "ebgt4g"
+buildLoc3 = "def3"
+buildCount3 = 1
+doNextOnFail = 1
+
+[Plan32]
+planType = "BaseBuildMinimums"
+planPriority = 230
+buildType1 = "ebtrain"
+buildLoc1 = "train"
+buildCount1 = 1
+
+[Plan33]
+planType = "Attacker"
+planPriority = 220
+targetType = "ebpgen"
+attackType1 = "evartl2"
+attackType2 = "evartl2"
+attackType3 = "evartl2"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan34]
+planType = "Attacker"
+planPriority = 210
+targetType = "ebcbun"
+attackType1 = "evkami"
+attackType2 = "evkami"
+attackType3 = "evkami"
+attackType4 = "evkami"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan35]
+planType = "BaseBuildMinimums"
+planPriority = 200
+buildType1 = "ebpgen"
+buildLoc1 = "pgen4"
+buildCount1 = 1
+buildType2 = "ebgt4g"
+buildLoc2 = "gt4"
+buildCount2 = 1
+buildType3 = "ebgt4g"
+buildLoc3 = "gt4a"
+buildCount3 = 1
+doNextOnFail = 1
+
+[Plan36]
+planType = "Attacker"
+planPriority = 190
+planCondition = "HisExists"
+planConditionClass = "ebfact"
+planConditionCount = 1
+targetType = "ebfact"
+attackType1 = "ivewalk"
+attackType2 = "ivewalk"
+attackType3 = "evmislw"
+attackType4 = "evmislw"
+attackType5 = "evmislw"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan37]
+planType = "Attacker"
+planPriority = 180
+targetType = "ebpgen"
+attackType1 = "evtanku"
+attackType2 = "evtanku"
+attackType3 = "evtanku"
+attackType4 = "evmislu"
+attackType5 = "evmislu"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan38]
+planType = "BaseBuildMinimums"
+planPriority = 170
+buildType1 = "ebpgen"
+buildLoc1 = "pgen5"
+buildCount1 = 1
+buildType2 = "ebgt4g"
+buildLoc2 = "gt5"
+buildCount2 = 1
+doNextOnFail = 1
+
+[Plan39]
+planType = "BaseBuildMinimums"
+planPriority = 160
+buildType1 = "ebpgen"
+buildLoc1 = "pgen6"
+buildCount1 = 1
+buildType2 = "ebgt4g"
+buildLoc2 = "gt6"
+buildCount2 = 1
+doNextOnFail = 1
+
+[Plan40]
+planType = "BaseBuildMinimums"
+planPriority = 155
+buildType1 = "ebpgen"
+buildLoc1 = "pgen2"
+buildCount1 = 1
+buildType2 = "ebgt2g"
+buildLoc2 = "spike2"
+buildCount2 = 1
+buildType3 = "ebpgen"
+buildLoc3 = "pgen3"
+buildCount3 = 1
+buildType4 = "ebgt2g"
+buildLoc4 = "spike3"
+buildCount4 = 1
+doNextOnFail = 1
+
+[Plan41]
+planType = "Attacker"
+planPriority = 150
+targetType = "ebpgen"
+attackType1 = "evtankf"
+attackType2 = "evtankf"
+attackType3 = "evmislu"
+attackType4 = "evmislu"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan42]
+planType = "BaseBuildMinimums"
+planPriority = 145
+buildType1 = "ebpgen"
+buildLoc1 = "pgen7"
+buildCount1 = 1
+buildType2 = "ebgt4g"
+buildLoc2 = "gt7"
+buildCount2 = 1
+doNextOnFail = 1

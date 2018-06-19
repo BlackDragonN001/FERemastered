@@ -1,0 +1,30 @@
+[GameObjectClass]
+geometryName = "igflar00.xsi"
+geometryScale = .5
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 250
+maxAmmo = 200
+unitName = "Blackler"
+addAmmo = 1
+addHealth = .5
+
+fireSound = "gmasg00.wav"
+
+heatSignature = 0.1
+imageSignature = 0.001
+radarSignature = 0.0001
+canDetect = 0
+canInteract = 1
+canCollide = 1
+armorClass = L 
+
+[MineClass]
+lifeSpan = 30
+
+[FlareMineClass]
+payloadName = "blackness"
+triggerDelay = 0.5
+shotDelay = 1
+shotVariance = .6//0.5

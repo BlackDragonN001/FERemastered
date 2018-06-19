@@ -1,0 +1,25 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = NULL
+xplVehicle = NULL
+xplBuilding = NULL
+xplExpire = "xpldark2"
+
+shotSound = NULL
+
+renderName = NULL
+
+ammoCost = .0001
+lifeSpan = .04
+shotSpeed = 100
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+
+
+

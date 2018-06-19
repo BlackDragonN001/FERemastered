@@ -1,0 +1,29 @@
+[GameObjectClass]
+geometryName = "gravanchor.xsi"
+classLabel = "weaponmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 99999
+maxAmmo = 9999
+unitName = "sparks 2"
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+canCollide = 0
+armorClass = N
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+
+xplExpire = NULL
+
+weaponHard1 = "hp_weapon_1" 
+weaponName1 = "sparks2a"
+
+[MineClass]
+lifeSpan = 1E6
+
+[WeaponMineClass]
+searchRadius = 200.0 // 500
+heightScale = 2.0
+

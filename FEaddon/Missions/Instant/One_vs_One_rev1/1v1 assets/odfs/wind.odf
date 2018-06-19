@@ -1,0 +1,81 @@
+[OrdnanceClass]
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = NULL //"defflarxpl"
+xplVehicle = NULL //"defflarxpl"
+xplBuilding = NULL //"defflarxpl"
+shotSound = "sserv02.wav" // "stap01.wav"
+renderName = "wind.render"
+
+ammoCost = 0
+lifeSpan = .05 // 100m
+shotSpeed = 1000
+
+damageValue(N) = 250 // none //350
+damageValue(L) = 225 // light //250
+damageValue(H) = 200 // heavy //150
+
+damageValue(S) = 50 // standard //250
+damageValue(D) = 85 // deflection //350
+damageValue(A) = 30 // absorbtion //80
+
+
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 1
+renderName1 = "wind.flare"
+renderName2 = "wind.swirl2"
+renderName3 = "wind.particle"
+renderName4 = "wind.flare"
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "153 153 153 63"
+finishColor = "31 31 31 0"
+startRadius = 0.05
+finishRadius = 5.0
+animateTime = 1.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 3.0"
+emitLife = 1.0
+
+[Swirl2]
+simulateBase = "sim_null"
+lifeTime = 30.0
+renderBase = "draw_planar"
+textureName = "bhole2.tga"
+textureBlend = "one one modulate"
+startColor = "100 100 55 20"
+finishColor = "100 100 55 1"
+startRadius = 5.0
+finishRadius = 20.0
+animateTime = 30.0
+
+[Particle]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga" // flame
+textureblend = "one one modulate"
+startColor = "150 100 155 2"
+finishColor = "55 10 10 2"
+startRadius = 0.6
+finishRadius = 0.2
+animateTime = 3.0
+emitDelay = 0.01
+emitVariance = "15.0 15.0 15.0"
+emitLife = 3.0
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "wasplat.tga"
+lifeTime = 1.5
+textureBlend = "one one modulate"
+startColor = "155 155 155 175" 
+finishColor = "62 55 55 75" 
+startRadius = 1.1
+finishRadius = 20.5
+animateTime = 1.5

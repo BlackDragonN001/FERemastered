@@ -1,0 +1,25 @@
+[GameObjectClass]
+geometryName = "HBBSTR01.xsi"
+classLabel = "i76building"
+collisionRadius = 1.0
+scrapCost = 8
+scrapValue = 3
+maxHealth = 10000
+maxAmmo = 0
+unitName = "Wall Strut"
+heatSignature = 1.0
+imageSignature = 0.5
+radarSignature = 1.0
+isAssault = 1
+
+armorClass = H
+
+[BuildingClass]
+tunnelCount = 1
+bldEdge = "wwww"
+
+tunnel01X0 = 1
+tunnel01Z0 = 0
+tunnel01DX = 6
+tunnel01DZ = 8
+tunnel01Edge = "twfw"

@@ -1,0 +1,31 @@
+[GameObjectClass]
+geometryName = "sgwasp00.xsi"
+geometryScale = 7.5
+classLabel = "torpedo"
+baseName = "grccmi" // "hvrckt"
+scrapValue = 0
+scrapCost = 0
+maxHealth = 600 // 500FE 100R
+maxAmmo = 100
+unitName = "WASP Rckt"
+aiName = "TorpedoProcess"
+aiName2 = "TorpedoProcess"
+//explosionName = "xwaspxpl"    /Makes the wasp explode with a full detonation when it is destroyed - DarkFox
+
+[CraftClass]
+rangeScan = 0.0f
+periodScan = 0.0f
+velocJam = 0.0f
+
+[TorpedoClass]
+setAltitude = 1.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+velocForward = 35 // 30FE 30R
+accelThrust = 50.0
+omegaTurn = 2.0
+alphaSteer = 5.0
+lifeSpan = 18 // 20.0 FE 
+xplBlast = "xwaspxpl"
+
+soundThrust = "waspmsl.wav"

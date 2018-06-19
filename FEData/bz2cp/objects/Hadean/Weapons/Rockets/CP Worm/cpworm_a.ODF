@@ -1,0 +1,95 @@
+[OrdnanceClass]
+classLabel = "thermalmissile"
+
+shotGeometry = "forckt01.xsi"
+shotSound = "wormord.wav"
+
+renderName = "cpworm_a.render"
+
+xplGround = "xwormagnd"
+xplVehicle = "xwormacar_a"
+xplBuilding = "xwormacar_a"
+
+ammoCost = 100
+lifeSpan = 5.0
+shotSpeed = 65.0
+
+damageValue(N) = 800// none
+damageValue(L) = 700 // light
+damageValue(H) = 600 // heavy
+
+damageValue(S) = 750 // standard
+damageValue(D) = 800 // deflection
+damageValue(A) = 600 // absorbtion
+
+[MissileClass]
+omegaTurn = 1.3
+
+[ThermalMissileClass]
+coneAngle = 0.2
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "cpworm_a.smoke"
+renderName2 = "cpworm_a.flame"
+renderName3 = "cpworm_a.trailer"
+renderName4 = "cpworm_a.light"
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.01
+emitDelayVar = 0.02
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+//emitInherit = "1.5 1.5 1.0"
+emitLife = 1.2
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 50 128"
+finishColor = "0 0 10 5"
+startRadius = 1.5
+finishRadius = 0.2
+animateTime = 1.2
+rotationRate = 1.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.01
+emitDelayVar = 0.05
+emitVelocity = "0.5 0.0 0.5"
+emitVariance = "1.2 1.2 1.2"
+emitLife = 0.6
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 255 128"
+finishColor = "255 0 180 0"
+startRadius = 2.3
+finishRadius = 0.2
+animateTime = 0.6
+rotationRate = 1.0
+
+[trailer]
+simulateBase = "sim_dust"//dust
+lifeTime = 1.3 //2.5
+renderBase = "draw_trail"
+textureName = "heat2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.1
+startColor = "255 200 255 150"
+finishColor = "200 100 200 0"
+startRadius = 1.2
+finishRadius = 0.1
+segmentTime = 1.3
+animateTime = 1.3
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 150 255 800"
+finishColor = "199 100 150 800"
+startRadius = 35.0
+finishRadius = 35.0
+animateTime = 0.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

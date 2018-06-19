@@ -1,0 +1,22 @@
+[GameObjectClass]
+geometryName = NULL //"defboltmin.x"
+classLabel = "weaponmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 2000
+maxAmmo = 3000
+unitName = "Spike"
+canDetect = 1
+canInteract = 1
+canSnipe = 0
+
+weaponHard1 = "Spike"
+weaponName1 = "spikea"
+
+[MineClass]
+lifeSpan = 90000
+
+[WeaponMineClass]
+searchRadius = 400.0
+heightScale = 2.0
+

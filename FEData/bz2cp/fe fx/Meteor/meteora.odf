@@ -1,0 +1,12 @@
+[WeaponClass]
+classLabel = "dispenser"
+wpnName = ""
+fireSound = ""
+wpnReticle = "gflare"
+wpnPriority = 1
+wpnCategory = "SPEC"
+aiRange = 10000
+
+[DispenserClass]
+shotDelay = 30.0
+objectClass = "meteorb"

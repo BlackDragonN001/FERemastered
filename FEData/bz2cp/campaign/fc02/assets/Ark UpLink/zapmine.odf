@@ -1,0 +1,41 @@
+//Created by Black Manatee, based on BZ2CP satlink weapon.
+
+[GameObjectClass]
+geometryName = "zappod2.xsi"		
+geometryScale = 0.2
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 9000
+maxAmmo = 100
+unitName = "Ark II ComLink"
+//explosionName = "" //"defflarxpl"
+explosionName = "xsonichit"
+heatSignature = 0.1
+imageSignature = 1.0
+radarSignature = 0.2
+canCollide = 1
+canDetect = 1
+canInteract = 1
+canSnipe = 0
+
+[MineClass]
+lifeSpan = 17.9	//was 12.0*****		(this is how long the zappod2 will stick around)
+
+[FlareMineClass]
+payloadName = "arkzap"
+fireSound = "sonic03c.wav" // Other ideas: "ipgen01.wav", sonic03c.wav, stap01.wav, "glock02b.wav"
+ (uplink sound for mine to make while "communicating" with Ark II)
+triggerDelay = 0.0
+shotDelay = 0.3 //.1 **  (don't change this!!)
+shotVariance = 0.0
+damageRadius = 0.0
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+kickRadius = 0.1	//
+kickVeloc = 0.0	//new
+kickOmega = 0.0	//new

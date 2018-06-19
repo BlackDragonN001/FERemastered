@@ -1,0 +1,27 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gcrplas_a"
+ordName = "crplas_c"
+wpnName = "Rapido"
+fireSound = "igtow03.wav"
+wpnReticle = "gplasma"
+wpnCategory = "CANN"
+isAssault = 1
+flashName = "gcrplas_c.flash"
+aiRange = 280
+
+[CannonClass]
+shotDelay = 0.5 // 1/2sec
+shotAlternate = 0
+
+[Flash]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 50 255 127"
+finishColor = "0 0 255 0"
+startRadius = 3.0
+finishRadius = 1.0
+animateTime = 0.1
+latitudeBands = 8
+longitudeSegments = 16

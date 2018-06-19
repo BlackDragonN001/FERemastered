@@ -1,0 +1,38 @@
+[OrdnanceClass]
+classLabel =  "bullet" //"beam"
+
+shotGeometry = NULL
+xplGround = NULL //"defflarxpl"
+xplVehicle = "estormxpl"
+xplBuilding = "estormxpl"
+
+renderName = "estorm2b.render"
+
+ammoCost = 0
+lifeSpan = 350e-6 // 200m
+shotSpeed = 1e6
+
+damageValue(N) = 5 // none
+damageValue(L) = 5 // light
+damageValue(H) = 5 // heavy
+
+damageValue(S) = 5 // standard
+damageValue(D) = 5 // deflection
+damageValue(A) = 5 // absorbtion
+
+[Render]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.3
+finishRadius = 0.02
+segmentLength = 5.0 
+segmentVariance = "3.5 3.5 1.9"
+animateTime = 0.7 // 0.2
+textureRate = 0.01
+
+
+
+

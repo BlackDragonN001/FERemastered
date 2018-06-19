@@ -1,0 +1,23 @@
+[GameObjectClass]
+geometryName = "FErock_03.xsi"
+geometryScale = 2.0
+classLabel = "turret"
+collisionRadius = 0.1
+scrapCost = 50
+scrapValue = 3
+maxHealth = 10000
+maxAmmo = 10
+unitName = "Big Rock"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 0.1
+imageSignature = 0.0
+radarSignature = 0.2
+canDetect = 1
+canInteract = 1
+canSnipe = 0
+ownsTerrain = 1
+canCollide = 1
+
+[BuildingClass]
+bldEdge = "wwww"

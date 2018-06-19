@@ -1,0 +1,104 @@
+[GameObjectClass]
+geometryName = "fvnexus00.xsi"
+geometryScale = 7.0
+classLabel = "sav"
+//needPilot = 1
+scrapValue = 50
+scrapCost = 100
+maxHealth = 50000
+addHealth = 10
+maxAmmo = 3000
+addAmmo = 10
+armorClass = L
+unitName = "Nexus"
+aiName = ""
+aiName2 = ""
+heatSignature = 0.5
+imageSignature = 0.8
+radarSignature = 1.0
+explosionName = "xbldxpl"
+
+// lightHard1 = "HP_LIGHT"
+// lightName1 = "spotblue"
+
+// weaponHard1 = "HP_CANNON_1"
+// weaponAssault1 = 0
+// weaponName1 = "garc_c"
+// weaponHard2 = "HP_CANNON_2"
+// weaponAssault2 = 0
+// weaponName2 = "garc_c"
+// weaponHard3 = "HP_ROCKET_1"
+// weaponAssault3 = 1
+// weaponName3 = "gsavrkt"
+weaponHard1 = "HP_SHIELD_1"
+weaponAssault1 = 0
+weaponName1 = "gshield"
+// weaponMask = 00111
+
+effectHard1 = "hp_emmit_1"
+effectName1 = "evnexus01.effect"
+effectHard2 = "hp_emmit_2"
+effectName2 = "evnexus01.effect"
+effectHard3 = "hp_emmit_3"
+effectName3 = "evnexus01.effect"
+effectHard4 = "hp_emmit_4"
+effectName4 = "evnexus01.effect"
+
+[CraftClass]
+rangeScan = 400.0
+periodScan = 2.0
+velocJam = 5.0
+
+[HoverCraftClass]
+setAltitude = 15.0
+accelDragStop = 5.0
+alphaTrack = 20.0
+alphaDamp = 10.0
+pitchPitch = .25
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+
+velocForward = 0.0
+velocReverse = 0.0
+velocStrafe = 0.0
+accelThrust = 0.0
+omegaSpin = 0.2
+omegaTurn = 0.1
+alphaSteer = 0.5
+accelJump = 0.0
+soundThrust = "nexus1.wav"
+
+[effect]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "evnexus01.emmit"
+renderName2 = "evnexus01.light"
+
+[light]
+renderBase = "draw_light"
+startColor = "250 80 0 1500"
+finishColor = "250 80 0 1500"
+startRadius = 120.0
+finishRadius = 120.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+
+[emmit]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.01
+emitDelayVar = 0.0
+emitVelocity = "0.0 0.0 10.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 0.1
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 0 255"
+finishColor = "255 0 0 0"
+startRadius = 10.0
+finishRadius = 0.2
+animateTime = 0.1
+rotationRate = 1.0

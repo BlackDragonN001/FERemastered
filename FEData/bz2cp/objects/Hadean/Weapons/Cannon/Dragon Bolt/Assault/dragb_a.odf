@@ -1,0 +1,67 @@
+[OrdnanceClass]
+classLabel =  "bullet" //"beam"
+
+shotGeometry = NULL
+xplGround = "xdragbgnd_a"
+xplVehicle = "xdragbcar_a"
+xplBuilding = "xdragbbld_a" // "xdragbcar_a"
+
+renderName = "dragb_a.render"
+
+ammoCost = 250 // 150FE ***Since the hedoux holds more ammo than the assault tank, and since the Dblast does
+lifeSpan = 250e-3 // 250m //more damage vs armour, I saw fit to give it a higher ammo requirement, 300 rather than 150
+shotSpeed = 1e3		  
+
+damageValue(N) = 400 // none
+damageValue(L) = 500 // light
+damageValue(H) = 650 // //550 //600+150FE // Note that the 600 in Fe also had a 150-damage building explosion, whereas this version has a 0-damage building explosion - DarkFox
+
+damageValue(S) = 500 // standard
+damageValue(D) = 700 // deflection
+damageValue(A) = 400 // absorbtion
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "dragb_a.beam"
+renderName2 = "dragb_a.fringe"
+renderName3 = "dragb_a.flare"
+
+[Beam]
+renderBase = "draw_bolt"
+textureName = "flametrail.tga"
+textureBlend = "one one modulate"
+startColor = "255 250 0 255"
+finishColor = "255 220 0 160"
+startRadius = 0.25
+finishRadius = 0.15
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.65
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "flametrail.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 0 255"
+finishColor = "255 180 0 0"
+startRadius = 0.5
+finishRadius = 1.0
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.5
+textureRate = 0.01
+
+[Flare]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureblend = "one one modulate"
+startColor = "255 220 0 255"
+finishColor = "255 180 0 20"
+startRadius = 1.2
+finishRadius = 0.7
+animateTime = 0.8
+emitDelay = 0.002
+emitVariance = "2.0 2.0 2.0"
+emitLife = 0.8

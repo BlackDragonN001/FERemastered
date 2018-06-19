@@ -1,0 +1,129 @@
+[GameObjectClass]
+classLabel = "fv_walker"
+geometryName = "cvtyrant_skel.xsi"
+cockpitName = "fvwalk_cockpit.xsi"
+
+animCount = 10
+animName1 = "idle"
+animFile1 = "cvtyrant_idle.xsi"
+
+animName2 = "idle2"
+animFile2 = "cvtyrant_idle.xsi"
+
+animName3 = "idle3"
+animFile3 = "cvtyrant_idle.xsi"
+
+animName4 = "sitdown"
+animFile4 = "cvtyrant_idle.xsi"
+
+animName5 = "walk"
+animFile5 = "cvtyrant_walk.xsi"
+
+animName6 = "turn"
+animFile6 = "cvtyrant_turn.xsi"
+
+animName7 = "death"
+animFile7 = "cvtyrant_death01.xsi"
+
+animName8 = "death2"
+animFile8 = "cvtyrant_death01.xsi"
+
+animName9 = "death3"
+animFile9 = "cvtyrant_death01.xsi"
+
+animName10 = "run"
+animFile10 = "cvtyrant_walk.xsi"
+
+scrapValue = 25
+scrapCost = 70
+customCost = 80
+buildTime = 20.0
+customTime = 20.0
+maxHealth = 4500
+maxAmmo = 5000
+addAmmo = 30
+unitName = "Tyrant"
+aiName = "GechProcess"
+aiName2 = "GechProcess"
+heatSignature = 1.0
+imageSignature = 5.0
+radarSignature = 5.0
+collisionRadius = 4.0
+isAssault = 1
+
+armorClass = H
+
+
+/////// weapons ///////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gfirestorm_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_CANNON_2"
+weaponName2 = "gfirestorm_c"
+weaponAssault2 = 0
+
+//////////////////////////////////  
+
+[CraftClass]
+weightInTons = 200
+rangeScan = 250.0
+periodScan = 5.0
+velocJam = 0.0
+engageRange = 150
+
+selectWaitMsg = ""
+selectAttackMsg = ""
+selectFollowMsg = ""
+selectGoMsg = ""
+selectOtherMsg = ""
+holdMsg = ""
+goMsg = ""
+attackMsg = ""
+followMeMsg = ""
+followMsg = ""
+repairMsg = ""
+reloadMsg = ""
+rescueMsg = ""
+recycleMsg = ""
+otherMsg = "" 
+
+user1Msg = ""  
+killedMsg = ""
+diedMsg = ""
+
+topSpeed = 25
+avoidSpeed = 15
+
+[WalkerClass]
+headYawRate	= 100.0 
+minHeadYaw = -120.0
+maxHeadYaw =  120.0
+minHeadPitch = -30.0
+maxHeadPitch = 30.0
+
+alphaDamp = 10.0
+omegaTurn = 30.0
+omegaTurnAttenuation = 0.5f
+
+velocJump = 25
+alphaTrack = 30.0
+pitchPitch = 0.0
+pitchThrust = 0.0
+accelThrust = 10.0
+velocForward = 50.0
+velocReverse = 10.0
+velocWalkFactor = 0.41
+
+
+
+headpiece = "head"
+rightfootpiece = "hp_rfoot";
+leftfootpiece = "hp_lfoot";
+
+stepSound  = "fwstep01.wav"
+engineSound	= "srecy01.wav"
+jumpSound  = "avwalke2.wav"
+attackSpeed = 50
+

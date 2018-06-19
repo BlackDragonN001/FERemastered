@@ -1,0 +1,201 @@
+// ===============
+// FIREBALL CAR HIT
+// ===============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xfbseekcar.wav"
+damageRadius = 25.0
+
+damageValue(N) = 120 // none
+damageValue(L) = 80 // light
+damageValue(H) = 50 // heavy
+
+damageValue(S) = 80 // standard
+damageValue(D) = 120 // deflection
+damageValue(A) = 50 // absorbtion
+kickRadius = 25.0
+kickOmega = 5.0
+kickVeloc = 5.0
+
+particleTypes = 9
+
+particleClass1 = "xfbcar_a.fire"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xfbcar_a.chunks"
+particleCount2 = 35
+particleVeloc2 = "10.0 10.0 30.0"
+particleBias2 = "0.0 10.0 0.0"
+
+particleClass3 = "xfbcar_a.flame"
+particleCount3 = 1
+particleVeloc3 = "0.0 2.0 0.0"
+particleBias3 = "0.0 0.0 0.0"
+
+particleClass4 = "xfbcar_a.thrust"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "xfbcar_a.light"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+particleClass6 = "xfbcar_a.shock"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0"
+
+particleClass7 = "xfbcar_a.core"
+particleCount7 = 1
+particleVeloc7 = "0.0 0.0 0.0"
+
+particleClass8 = "xfbcar_a.char2"
+particleCount8 = 1
+particleVeloc8 = "0.0 0.0 0.0"
+
+particleClass9 = "xfbcar_a.trail"
+particleCount9 = 20
+particleVeloc9 = "30.0 30.0 30.0"
+
+particleClass10 = "axfbcar_a.ring"
+particleCount10 = 1
+particleVeloc10 = "0.0 0.0 0.0"
+
+
+[fire]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl_trail"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 130 0 128"
+finishColor = "200 0 0 0"
+startRadius = 6.0
+finishRadius = 1.0
+animateTime = 2
+rotationRate = 10.0
+emitDelay = 0.05
+emitVelocity = "5.0 5.0 5.0"
+emitVariance = "5.0 5.0 5.0"
+emitLife = 1.0
+
+[Chunks]
+simulateBase = "sim_ember"
+lifeTime = 3.0
+renderBase = "draw_twirl" //sprite
+textureName = "dirt.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 200 100 255"
+finishColor = "255 50 10 200"
+startRadius = 0.5
+finishRadius = 0.4
+animateTime = 3.0
+
+[Ring]
+simulateBase = "sim_null"
+lifeTime = 10.0
+renderBase = "draw_planar"
+textureName = "crater3b.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "20 20 20 255"
+finishColor = "0 0 0 0"
+startRadius = 8.0
+finishRadius = 8.0
+animateTime = 10.0
+
+[Flame]
+simulateBase = "sim_smoke"
+lifeTime = 1.2
+renderBase = "draw_twirl_trail"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 170 100 200"
+finishColor = "255 80 0 0"
+startRadius = 2.5
+finishRadius = 0.2
+animateTime = 1.0
+rotationRate = 10.0
+emitDelay = 0.03
+emitVelocity = "2.0 3.0 2.0"
+emitVariance = "2.0 3.0 2.0"
+emitLife = 0.9
+
+[Thrust]
+simulateBase = "sim_null"
+lifeTime = 1.2
+renderBase = "draw_sprite"
+spriteCenter.x = 0.0
+spriteCenter.y = 1.0
+textureName = "ground.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 150 100 200"
+finishColor = "255 100 0 0"
+startRadius = 2.0
+finishRadius = 8.0
+animateTime = 1.2
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 2.5
+renderBase = "draw_light"
+startColor = "255 100 50 2500"
+finishColor = "255 50 0 200"
+startRadius = 90
+finishRadius = 90
+animateTime = 2.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_sphere"
+textureName = "ring2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 190" 
+finishColor = "255 200 200 0" 
+startRadius = 2.0
+finishRadius = 25.0
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16
+
+[Core]
+simulateBase = "sim_smoke" //null
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "smoke.tga" // flame
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 220 220 170"
+finishColor = "220 100 0 0"
+startRadius = 6.0
+finishRadius = 25.0
+animateTime = 1.5
+
+[char2] // Was named achar2, never worked in FE. -GBD
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_planar"
+textureName = "fbchar.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 200 150"
+finishColor = "200 100 100 0"
+startRadius = 2.0
+finishRadius = 20.0
+animateTime = 1.0
+
+[trail]
+simulateBase = "sim_ember"
+lifeTime = 3.0
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+startColor = "255 127 0 200"
+finishColor = "255 0 0 0"
+startRadius = 0.05
+finishRadius = 0.0
+trailTime = 2.0
+segmentTime = 0.5
+animateTime = 3.0

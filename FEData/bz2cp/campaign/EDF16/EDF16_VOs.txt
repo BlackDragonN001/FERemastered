@@ -1,0 +1,81 @@
+LOEDF16.WAV: CORBER: 
+	"I never figured it would come to this.
+	"When I recited the oath at my commissioning ceremony, I swore to defend Earth against alien aggressors, even unto death. Today, that oath will be put to the test like never before. Bruised and battered, our little task force is like a rusty old pocketknife jabbing at a heavily armored foe. The Imperials whittled us down in the tunnels and beefed up their defenses around the Wormhole Controller. Our task force is a motley group of tired veterans and green pilots who've never seen a Xares tank outside of a sim. Even the PEACEMAKER has her share of problems--she's the first in a new line of Recyclers and has all the bugs you'd expect in any Mark I prototype. This morning I saw Eisenstein mending a hydraulic line with duct tape because the pinheads at EDF Headquarters forgot to send along a set of spare parts.
+	"But when I delivered our final briefing, I never saw a more determined group of pilots. We've all taken the same oath, sworn the same vow to protect Earth with our lives. And I realized that, in skilled hands, even a rusty pocketknife can stab deep into the heart. We just need to find that gap in the Emperor's armor--and score a killing blow."
+
+
+EDF16__00a.wav--Eisenstein:
+   "Colonel Corber, this is Major Eisenstein.  I've finished work on that project you suggested last week: the "Hacker Scout" is now ready for duty. It's got the same kind of cable tap that we have aboard the Tech Support Vehicle but it's far more portable, so you can use it to access the computer network at the Wormhole Control Center. The scout carries a another crucial piece of hardware--a special Hadean decryption chip sent by General Thanatos. The chip will get us past the Hadean military encryption which was installed after our attack on the Defense Nerve the other day. If the chip works, I'll be able to reprogram the Wormhole to send the Hadean fleet to a very hungry black hole on the other side of the galaxy.
+   "There's only one drawback to the plan: we have no way of copying the Hadean decryption circuitry, so the Hacker Scout is truly one-of-a-kind. If it's destroyed, we'll have no way to stop the Hadean fleet. So you may want to hold the Hacker Scout in reserve until you've secured the Controller and silenced its defenses."
+
+EDF16__00b.wav--Hardin:
+   "Congratulations on making it through the tunnel system, Colonel. I'm sorry about the two scouts you lost, but the rest of the convoy owes you their lives for spotting that bomb in time.
+   "I've transferred my flag to the INTREPID; we've taken cover behind a large asteroid circling Facility. I'll be directing this mission from here, but our elliptical orbit will sometimes drag us outside secure comm range. It doesn't matter, though; I couldn't imagine leaving this mission in better hands.  [pause, deep sigh]
+   "This is it, Joe. We've got to stop the Imperials before they activate the controller and enter the wormhole. I've seen the Imperial fleet with my own eyes, and it's beyond anything I ever imagined. Together, those five destroyers probably have more firepower than all the weapons on Earth. Eisenstein's plan is our only hope for defeating such a formidable force. 
+   "It's all up to you.  Good luck."
+
+
+Edf16_01.wav--Eisenstein: 
+	"Colonel Corber, our forward scouts have located the Wormhole Control Center; I've highlighted it on your display. The structure is heavily defended, so you'll need a large assault force. More importantly, the Imperials have erected some kind of electromagnetic interference field that blocks our access to the Wormhole Controller's terminal. If you try to use the Hacker Scout's cable tap before shutting down that field, all its electrical circuitry could be fried. The field originates from the nearby Procreator, so you'll need to destroy all the Procreators in the area before we try to hack into the Controller."
+
+
+
+
+Edf16_02.wav--Hardin, Corber:
+HARDIN: "Colonel Corber, we estimate that the main body of the Hadean fleet is just fifteen minutes from the wormhole jump point. You'd better hurry up and access that Controller!"
+CORBER: "General, I'm sorry to report that we may be too late. We've just deployed the Recycler and we're already meeting heavy resistance. . ."
+HARDIN (pause, then grumpily resigned): "Do the best you can, then. Major Eisenstein and my team are working on a back-up plan."
+[Fishy, I altered that VO because the first time I played the mission I kept quitting when I saw that I wasn't going to make it in time. A lot of players might never stick it out long enough to hear EDF16_04b, but instead will keep loading the mission and trying from the beginning. This VO could save them a lot of frustration.  --Manatee]
+
+Edf16_03.wav--SkyEye Officer:
+	"The Hadean fleet has assembled at the jump point and the Wormhole Generator is powering up. We estimate two minutes until activation."
+
+Edf16_04.wav--SkyEye Officer, Hardin:
+SKYEYE OFFICER: "The Wormhole has been activated.  Advance formations have crossed the jump point...and have disappeared...All five Hadean Star-Destroyers are crossing the jump point...the Destroyers just vanished from our screens. The Hadean fleet is away...Repeat, the Hadean fleet is away."
+HARDIN (disgusted): "Damn! [sigh] Colonel Corber, stand down and await further orders."
+
+Edf16_04b.wav--Hardin:
+	"Okay, Joe, it's time for us to try Plan B. The only way we can help now is to follow the fleet through that Wormhole and stage a diversion, to gain time for Earth to mount a defense. Unfortunately, the Imperials have altered their encryption algorithm to require a passcode to be entered manually. General Thanatos has analyzed the problem, and his technicians are on their way with a software patch for the Hacker Scout's decryption chip. The patch will force the Controller's computer to accept your passcode as correct. Before the rebel technicians arrive, I want you to destroy all Imperial defenses around the Wormhole Controller...but be SURE to leave the Controller itself intact, or we'll be stranded here forever."
+
+Edf16_05.wav--Hadean Rebel Technician (female):
+	"Colonel Corber, our scanners are still showing Imperial factories or recyclers in your area. We cannot safely land until all Imperial construction facilities are destroyed."
+
+Edf16_06.wav--Hadean Rebel Technician (female):
+	"Our dropship is beginning its descent, but we're still showing scattered Imperial forces. Be ready to clear the area near the landing site so that we may upload the decryption program without interruption."
+
+Edf16_07.wav--Hadean Rebel Technician (female), Corber:
+HADEAN REBEL TECHNICIAN:  "The new decryption algorithm has been installed. Your chief engineer has done a remarkable job of integrating our carbon-based hardware into your silicon waferboards. Very interesting."
+CORBER: "I'll pass your comments on to Major Eisenstein."
+HADEAN REBEL TECHNICIAN: "I have read the Major's biography--he does impressive work. Perhaps we could meet someday, when this is all over. The exchange of data could be quite...hmm [suggestive voice] ...*productive*."
+CORBER [slightly nonplussed]: "Uhhm.  O-kay."
+
+Edf16_08.wav--Hardin:
+	“Corber, you'd better build plenty of automated defenses around the Wormhole Controller before you activate the system. As soon as the countdown begins, we'll start evacuating pilots for the trip to Earth, so there won't be anyone on the surface to defend against Imperial attacks.”
+
+Edf16_09.wav--computer voice, Hadean, female (if possible)--but DIFFERENT from Hadean Rebel Technician:
+	"Wormhole activation sequence initiated. Power-up phase in progress; estimate ten minutes until antimatter cells are fully charged. Wormhole to human star system and Tartarus IV will activate in ten minutes and counting."
+
+Edf16_10.wav--Hardin:
+	"Joe, I've sent the Condor down to pick you up. She has to take off in 90 seconds in order to reach the INTREPID before it enters the Wormhole. I've highlighted the rendezvous point on your display; make SURE you reach the Condor in time or you'll be stranded here forever."
+
+edf16_11.wav--Condor (SkyEye voice):
+	"Starship INTREPID, this is Condor, lifting off now. We should reach the docking point in ten seconds."
+
+Edf16_12.wav--Hardin:
+	"Well done, Joe. Let's go home."
+
+Edf16_13.wav--Lose Voiceover 1 - Miles Hardin (despair, anger):
+	"Colonel Corber, I can't BELIEVE you lost the Hacker Scout. Without access to the Wormhole Controller, we have no hope of halting the Hadean fleet or even slowing it down. I put my trust in you, and you've failed me, the EDF, and the entire human race."
+
+Edf16_14.wav--Lose Voiceover 2 - Miles Hardin (angry, shocked):
+	"Mister Corber, your briefing was VERY CLEAR about the need to protect that Wormhole Controller. Without it, we have no chance of diverting the Hadean fleet--or ever going home again."
+
+edf16_15.wav--Lose Voiceover 3 - Miles Hardin:
+	"The PEACEMAKER has been destroyed, and the Imperials are marching on your position in overwhelming force. Without a Recycler, you have no hope of survival...[big sigh of resignation and defeat]...All units, stand down and prepare to surrender."
+
+Edf16_16.wav--Lose/Stranded Voiceover - Miles Hardin:
+	"Excellent work, Joseph. I was very sorry to hear that you missed the Condor, but they waited as long as they could. We're entering the Wormhole right now. Perhaps you can--[voice cut off by burst of static as they enter wormhole]"
+	[Fishy--I'm going to change this to a "lose" message so that players who win this way can't proceed on to the next mission. It wouldn't really make sense to resume the action at Tunguska on Earth after the player was supposedly stranded, though I like your idea about suggesting he join the Fifth Column. It would be neat if we could get it to work--funnel any players left behind into the FC branch of the sequence--but I think the split point at EDF15 precludes players from joining the other branch at a different point.  Too bad. ;) --Manatee]
+
+Closing16.wav--Win/Wormhole Voiceover - Corber:
+	"We've fought the Imperials to a draw: they succeeded in getting their fleet away, but we're still alive and hot on their trail. Only trouble is, it would be suicide for the little INTREPID to take on a SINGLE star-carrier, let alone five. But General Thanatos and his rebels are going through the wormhole along with us. If we can get the EDF's star-carriers into action too, we just might have a chance. At the very least, it's going to be one hell of a fight..."

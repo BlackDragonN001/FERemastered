@@ -1,0 +1,549 @@
+[Start]
+scrapCount = 40
+consClass = "ivcons"
+scavClass = "ivscav"
+
+[Cheat]
+moneyAmount = 50
+moneyDelay = 10
+
+[Match]
+targetType1 = "ivscout"
+attackType1_1 = "ivscout"
+attackType1_2 = "ivscout"
+targetType2 = "ivscout"
+attackType2_1 = "ivtank"
+targetType3 = "ivscout"
+attackType3_1 = "ivmisl"
+attackType3_2 = "ivmisl"
+targetType4 = "ivscout"
+attackType4_1 = "ivmbike"
+attackType4_2 = "ivmbike"
+
+targetType5 = "ivmbike"
+attackType5_1 = "ivscout"
+attackType5_2 = "ivscout"
+targetType6 = "ivmbike"
+attackType6_1 = "ivmbike"
+attackType6_2 = "ivmbike"
+targetType7 = "ivmbike"
+attackType7_1 = "ivtank"
+targetType8 = "ivmbike"
+attackType8_1 = "ivmisl"
+
+targetType9 = "ivmisl"
+attackType9_1 = "ivtank"
+targetType10 = "ivmisl"
+attackType10_1 = "ivscout"
+attackType10_2 = "ivscout"
+targetType11 = "ivmisl"
+attackType11_1 = "ivrckt"
+
+targetType12 = "ivtank"
+attackType12_1 = "ivscout"
+attackType12_2 = "ivscout"
+targetType13 = "ivtank"
+attackType13_1 = "ivtank"
+attackType13_2 = "ivtank"
+targetType14 = "ivtank"
+attackType14_1 = "ivmisl"
+attackType14_2 = "ivmisl"
+targetType15 = "ivtank"
+attackType15_1 = "ivmbike"
+attackType15_2 = "ivmbike"
+attackType15_3 = "ivmbike"
+
+targetType16 = "ivrckt"
+attackType16_1 = "ivtank"
+attackType16_2 = "ivtank"
+targetType17 = "ivrckt"
+attackType17_1 = "ivrckt"
+attackType17_2 = "ivrckt"
+targetType18 = "ivrckt"
+attackType18_1 = "ivatank"
+
+targetType19 = "ivatank"
+attackType19_1 = "ivtank"
+attackType19_2 = "ivtank"
+attackType19_3 = "ivtank"
+targetType20 = "ivatank"
+attackType20_1 = "ivrckt"
+attackType20_2 = "ivrckt"
+targetType21 = "ivatank"
+attackType21_1 = "ivatank"
+attackType21_2 = "ivatank"
+targetType22 = "ivatank"
+attackType22_1 = "ivwalk"
+attackType22_2 = "ivwalk"
+
+targetType23 = "ivwalk"
+attackType23_1 = "ivrckt"
+attackType23_2 = "ivrckt"
+targetType24 = "ivwalk"
+attackType24_1 = "ivtank"
+attackType24_2 = "ivtank"
+targetType25 = "ivwalk"
+attackType25_1 = "ivwalk"
+attackType25_2 = "ivwalk"
+
+targetType26 = "ibgtow"
+attackType26_1 = "ivatank"
+attackType26_2 = "ivatank"
+targetType27 = "ibgtow"
+attackType27_1 = "ivrckt"
+attackType27_2 = "ivrckt"
+targetType28 = "ibgtow"
+attackType28_1 = "ivtank"
+attackType28_2 = "ivtank"
+attackType28_3 = "ivtank"
+targetType29 = "ibgtow"
+attackType29_1 = "ivmbike"
+attackType29_2 = "ivmbike"
+attackType29_3 = "ivmbike"
+
+targetType30 = "ivturr"
+attackType30_1 = "ivmbike"
+attackType30_2 = "ivmbike"
+targetType31 = "ivturr"
+attackType31_1 = "ivtank"
+attackType31_2 = "ivtank"
+targetType32 = "ivturr"
+attackType32_1 = "ivmisl"
+attackType32_2 = "ivmisl"
+targetType33 = "ivturr"
+attackType33_1 = "ivscout"
+attackType33_2 = "ivscout"
+
+targetType34 = "ivscav"
+attackType34_1 = "ivmisl"
+attackType34_2 = "ivmisl"
+targetType35 = "ivscav"
+attackType35_1 = "ivscout"
+attackType35_2 = "ivscout"
+targetType36 = "ivscav"
+attackType36_1 = "ivtank"
+targetType37 = "ivscav"
+attackType37_1 = "ivrckt"
+
+targetType38 = "ibscav"
+attackType38_1 = "ivrckt"
+targetType39 = "ibscav"
+attackType39_1 = "ivtank"
+targetType40 = "ibscav"
+attackType40_1 = "ivmbike"
+attackType40_2 = "ivmbike"
+targetType41 = "ibscav"
+attackType41_1 = "ivscout"
+attackType41_2 = "ivscout"
+
+targetType42 = "ibscup"
+attackType42_1 = "ivrckt"
+targetType43 = "ibscup"
+attackType43_1 = "ivtank"
+targetType44 = "ibscup"
+attackType44_1 = "ivmbike"
+attackType44_2 = "ivmbike"
+targetType45 = "ibscup"
+attackType45_1 = "ivscout"
+attackType45_2 = "ivscout"
+
+targetType46 = "ivcons"
+attackType46_1 = "ivmisl"
+attackType46_2 = "ivmisl"
+targetType47 = "ivcons"
+attackType47_1 = "ivtank"
+targetType48 = "ivcons"
+attackType48_1 = "ivmbike"
+attackType48_2 = "ivmbike"
+targetType49 = "ivcons"
+attackType49_1 = "ivscout"
+attackType49_2 = "ivscout"
+
+[Plan1]
+planType = "CollectPool"
+planPriority = 495
+planCondition = "NotExists"
+planConditionClass = "ibsbay"
+planConditionCount = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan2]
+planType = "CollectField"
+planPriority = 490
+planCondition = "NotExists"
+planConditionClass = "ibsbay"
+planConditionCount = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan3]
+planType = "BuildMinimums"
+planPriority = 485
+buildType1 = "ivcons"
+buildCount1 = 1
+
+[Plan4]
+planType = "BaseBuildMinimums"
+planPriority = 480
+buildType1 = "ibpgen"
+buildLoc1 = "ipgen2"
+buildCount1 = 1
+buildType2 = "ibfact"
+buildLoc2 = "fact"
+buildCount2 = 1
+buildType3 = "ibcbun"
+buildLoc3 = "cbun"
+buildCount3 = 1
+buildType4 = "ibarmo"
+buildLoc4 = "armo"
+buildCount4 = 1
+
+[Plan5]
+planType = "Attacker"
+planPriority = 470
+planCondition = "HisExists"
+planConditionClass = "ivwalk"
+planConditionCount = 1
+targetType = "ivwalk"
+attackType1 = "ivrckt"
+attackType2 = "ivrckt"
+attackType3 = "ivtank"
+attackType4 = "ivtank"
+maxAttacks=2
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan6]
+planType = "Attacker"
+planPriority = 465
+planCondition = "HisExists"
+planConditionClass = "ivatank"
+planConditionCount = 1
+targetType = "ivatank"
+attackType1 = "ivrckt"
+attackType2 = "ivmisl"
+attackType3 = "ivmisl"
+attackType4 = "ivmisl"
+maxAttacks=2
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan7]
+planType = "Attacker"
+planPriority = 460
+planCondition = "HisExists"
+planConditionClass = "ivwalk"
+planConditionCount = 1
+targetType = "ivwalk"
+attackType1 = "ivrckt"
+attackType2 = "ivrckt"
+attackType3 = "ivtank"
+attackType4 = "ivtank"
+maxAttacks=2
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan8]
+planType = "Attacker"
+planPriority = 455
+planCondition = "HisExists"
+planConditionClass = "ivatank"
+planConditionCount = 1
+targetType = "ivatank"
+attackType1 = "ivrckt"
+attackType2 = "ivtank"
+attackType3 = "ivtank"
+attackType4 = "ivscout"
+attackType5 = "ivscout"
+maxAttacks=2
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan9]
+planType = "BaseBuildMinimums"
+planPriority = 450
+planCondition = "NotExists"
+planConditionClass = "ibsbay"
+planConditionCount = 1
+buildType1 = "ibpgen"
+buildLoc1 = "ipgen1"
+buildCount1 = 1
+buildType2 = "ibcbun"
+buildLoc2 = "pgen1"
+buildCount2 = 1
+buildType3 = "ibgtow"
+buildLoc3 = "spike1"
+buildCount3 = 1
+doNextOnFail = 1
+
+[Plan10]
+planType = "BaseBuildMinimums"
+planPriority = 445
+planCondition = "NotExists"
+planConditionClass = "ibsbay"
+planConditionCount = 1
+buildType1 = "ibpgen"
+buildLoc1 = "ipgen3"
+buildCount1 = 1
+buildType2 = "ibcbun"
+buildLoc2 = "pgen2"
+buildCount2 = 1
+buildType3 = "ibgtow"
+buildLoc3 = "spike2"
+buildCount3 = 1
+doNextOnFail = 1
+
+[Plan11]
+planType = "BaseBuildMinimums"
+planPriority = 440
+buildType1 = "ibpgen"
+buildLoc1 = "ipgen5"
+buildCount1 = 1
+buildType2 = "ibsbay"
+buildLoc2 = "sbay"
+buildCount2 = 1
+
+[Plan12]
+planType = "Attacker"
+planPriority = 430
+planCondition = "HisExists"
+planConditionClass = "ivwalk"
+planConditionCount = 1
+targetType = "ivwalk"
+attackType1 = "ivatank"
+attackType2 = "ivatank"
+attackType3 = "ivtank"
+attackType4 = "ivtank"
+attackType5 = "ivtank"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan13]
+planType = "Attacker"
+planPriority = 425
+planCondition = "HisExists"
+planConditionClass = "ivatank"
+planConditionCount = 1
+targetType = "ivatank"
+attackType1 = "ivatank"
+attackType2 = "ivtank"
+attackType3 = "ivtank"
+attackType4 = "ivtank"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan14]
+planType = "Attacker"
+planPriority = 420
+planCondition = "HisExists"
+planConditionClass = "ivwalk"
+planConditionCount = 1
+targetType = "ivwalk"
+attackType1 = "ivrckt"
+attackType2 = "ivrckt"
+attackType3 = "ivmisl"
+attackType4 = "ivmisl"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan15]
+planType = "Attacker"
+planPriority = 415
+planCondition = "HisExists"
+planConditionClass = "ivatank"
+planConditionCount = 1
+targetType = "ivatank"
+attackType1 = "ivrckt"
+attackType2 = "ivtank"
+attackType3 = "ivmisl"
+attackType4 = "ivmisl"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan16]
+planType = "BuildMinimums"
+planPriority = 405
+buildType1 = "ivserv"
+buildCount1 = 3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan17]
+planType = "Service"
+planPriority = 400
+serviceUnit = "ivserv"
+unitType1 = "ibrecy"
+unitType2 = "ibfact"
+unitType3 = "ibgtow"
+unitType4 = "ibarmo"
+unitType5 = "ibsbay"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan18]
+planType = "BuildMinimums"
+planPriority = 395
+buildType1 = "ivcons"
+buildCount1 = 2
+doNextOnFail = 1
+
+[Plan19]
+planType = "BaseBuildMinimums"
+planPriority = 390
+buildType1 = "ibpgen"
+buildLoc1 = "ipgen4"
+buildCount1 = 1
+buildType2 = "ibcbun"
+buildLoc2 = "pgen3"
+buildCount2 = 1
+buildType3 = "ibgtow"
+buildLoc3 = "spike3"
+buildCount3 = 1
+doNextOnFail = 1
+
+[Plan20]
+planType = "BaseBuildMinimums"
+planPriority = 385
+buildType1 = "ibpgen"
+buildLoc1 = "ipgen6"
+buildCount1 = 1
+buildType2 = "ibgtow"
+buildLoc2 = "def1"
+buildCount2 = 1
+buildType3 = "ibgtow"
+buildLoc3 = "def2"
+buildCount3 = 1
+buildType4 = "ibgtow"
+buildLoc4 = "def3"
+buildCount4 = 1
+doNextOnFail = 1
+
+[Plan21]
+planType = "Attacker"
+planPriority = 380
+planCondition = "HisExists"
+planConditionClass = "ibscav"
+planConditionCount = 1
+targetType = "ibscav"
+attackType1 = "ivmbike"
+attackType2 = "ivmbike"
+attackType3 = "ivmbike"
+maxAttacks=3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan22]
+// Sent to portal by DLL (hold/attack)
+planType = "BuildMinimums"
+planPriority = 370
+buildType1 = "ivputurr"
+buildCount1 = 1
+buildType2 = "ivpuatank"
+buildCount2 = 2
+doNextOnFail = 1
+
+[Plan23]
+planType = "CollectPool"
+planPriority = 365
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan24]
+planType = "CollectField"
+planPriority = 360
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan25]
+planType = "BaseBuildMinimums"
+planPriority = 350
+buildType1 = "ibpgen"
+buildLoc1 = "ipgen7"
+buildCount1 = 1
+buildType2 = "ibtcen"
+buildLoc2 = "tcen"
+buildCount2 = 1
+
+[Plan26]
+planType = "Attacker"
+planPriority = 345
+planCondition = "HisExists"
+planConditionClass = "ibgtow"
+planConditionCount = 1
+targetType = "ibgtow"
+attackType1 = "ivwalk"
+attackType2 = "ivwalk"
+attackType3 = "ivrbomb"
+attackType4 = "ivrbomb"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan27]
+planType = "BaseBuildMinimums"
+planPriority = 340
+buildType1 = "ibtrain"
+buildLoc1 = "train"
+buildCount1 = 1
+
+//[Plan28]
+//planType = "Attacker"
+//planPriority = 335
+//targetType = "ibfact"
+//attackType1 = "ivapc"
+//attackType2 = "ivapc"
+//attackType3 = "ivapc"
+//buildIfNoIdle = 1
+//doNextOnFail = 1
+
+[Plan29]
+planType = "Attacker"
+planPriority = 325
+planCondition = "HisExists"
+planConditionClass = "ibfact"
+planConditionCount = 1
+targetType = "ibfact"
+attackType1 = "ivrckt"
+attackType2 = "ivrckt"
+attackType3 = "ivmbike"
+attackType4 = "ivmbike"
+attackType5 = "ivmbike"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan30]
+// Sent to portal by DLL (attack)
+planType = "BuildMinimums"
+planPriority = 320
+buildType1 = "ivputurr"
+buildCount1 = 2
+buildType2 = "ivpuwalk"
+buildCount2 = 2
+buildType3 = "ivpurckt"
+buildCount3 = 3
+doNextOnFail = 1
+
+[Plan31]
+planType = "BaseBuildMinimums"
+planPriority = 310
+buildType1 = "ibcbun"
+buildLoc1 = "pgen4"
+buildCount1 = 1
+buildType2 = "ibgtow"
+buildLoc2 = "gt4"
+buildCount2 = 1
+buildType3 = "ibgtow"
+buildLoc3 = "gt4a"
+buildCount3 = 1
+doNextOnFail = 1
+
+[Plan32]
+planType = "BaseBuildMinimums"
+planPriority = 305
+buildType1 = "ibcbun"
+buildLoc1 = "pgen5"
+buildCount1 = 1
+buildType2 = "ibgtow"
+buildLoc2 = "gt5"
+buildCount2 = 1
+doNextOnFail = 1

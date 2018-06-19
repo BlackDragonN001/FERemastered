@@ -1,0 +1,21 @@
+[Start]
+
+[Plan1]
+planType = "BuildMinimums"
+planPriority = 480
+buildType1 = "cvtank"
+buildCount1 = 1
+buildType2 = "cvrbomb"
+buildCount2 = 1
+doNextOnFail = 1
+
+[Plan2]
+planType = "Attacker"
+planPriority = 470
+planCondition = "HisExists"
+planConditionClass = "ebrecy"
+planConditionCount = 1
+targetType = "ebrecy"
+attackType1 = "cvtank"
+attackType2 = "cvrbomb"
+doNextOnFail = 1

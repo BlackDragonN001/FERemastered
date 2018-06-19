@@ -1,0 +1,159 @@
+[Start]
+consClass = "cvcons02"
+scavClass = "cvscav02"
+
+[Cheat]
+moneyAmount = 20
+moneyDelay = 5
+
+
+[Plan1]
+planType = "buildminimums"
+planpriority = 200
+buildtype1 = "cvscav02"
+buildcount1 = 2
+
+[plan2]
+plantype = "buildminimums"
+planpriority = 195
+buildtype1 = "cvcons02"
+buildcount1 = 1
+
+[plan3]
+plantype = "basebuildminimums"
+planpriority = 190
+buildtype1 = "cbpgen"
+buildloc1 = "cpower1"
+buildtype2 = "cbfact02"
+buildloc2 = "cfactory"
+buildtype3 = "cbcbun"
+buildloc3 = "cbunker"
+
+[plan4]
+plantype = "basebuildminimums"
+planpriority = 186
+buildtype1 = "cbpgen"
+buildloc1 = "cpower2"
+buildtype2 = "cbarmo"
+buildloc2 = "carmory"
+
+[plan5]
+plantype = "basebuildminimums"
+planpriority = 170
+buildtype1 = "cbsbay"
+buildloc1 = "cservicebay"
+buildtype2 = "cbgtow"
+buildloc2 = "cgtow"
+
+[plan6]
+plantype = "collectpool"
+planpriority = 199
+donextonfail = 1
+
+[plan7]
+plantype = "buildminimums"
+planpriority = 165
+buildtype1 = "cvscout"
+buildcount1 = 1
+
+[plan8]
+plancondition = "Hisexists"
+planconditionclass = "ibscav"
+planconditioncount = 1
+plantype = "attacker"
+planpriority = 160
+targettype = "ibscav"
+attacktype1 = "cvscout"
+donextonfail = 1
+
+[plan9]
+plantype = "basebuildminimums"
+planpriority = 150
+buildtype1 = "cbpgen"
+buildloc1 = "cpower3"
+buildtype2 = "cbgtow"
+buildloc2 = "cgtow2"
+buildtype3 = "cbtcen"
+buildloc3 = "ctechcenter"
+
+[plan10]
+plantype = "collectpool"
+planpriority = 197
+donextonfail = 1
+
+[plan11]
+plantype = "collectpool"
+planpriority = 155
+donextonfail = 1
+
+[plan12]
+plantype = "buildminimums"
+planpriority = 145
+buildtype1 = "cvrbomb"
+buildcount1 = 1
+buildtype2 = "cvmlay02"
+buildcount2 = 1
+
+[plan13]
+plancondition = "Hisexists"
+planconditioncount = 1
+planconditionclass = "ivcons"
+plantype = "attacker"
+planpriority = 140
+targettype = "ivcons"
+attacktype1 = "cvrbomb"
+
+[plan14]
+plantype = "collectpool"
+planpriority = 141
+donextonfail = 1
+
+[plan15]
+plantype = "basebuildminimums"
+planpriority = 135
+buildtype1 = "cbgtow"
+buildloc1 = "cgtow3"
+
+[plan16]
+plantype = "buildminimums"
+planpriority = 130
+buildtype1 = "cvtalon02"
+buildcount1 = 2
+buildtype2 = "cvdcar"
+buildcount2 = 1
+
+[plan17]
+plancondition = "HisExists"
+planconditionclass = "ibgtow"
+planconditioncount = 1
+plantype = "attacker"
+planpriority = 125
+targettype = "ibgtow"
+attacktype1 = "cvtalon02"
+attacktype2 = "cvtalon02"
+
+
+[plan18]
+plancondition = "HisExists"
+planconditionclass = "ivscav"
+planconditioncount = 1
+plantype = "attacker"
+planpriority = 120
+targettype = "ivscav"
+attacktype1 = "cvdcar"
+donextonfail = 1
+
+[plan19]
+plantype = "Hold"
+planpriority = 151
+holdtype1 = "cvturr4w"
+holdcount1 = 1
+holdpoint = "hold7"
+buildifnoidle = 1
+donextonfail = 1
+
+[plan20]
+plantype = "buildminimums"
+planpriority = 124
+buildtype1 = "cvgorg4w"
+buildcount1 = 1

@@ -1,0 +1,119 @@
+[GameObjectClass]
+baseName = "cvwalk"
+classLabel = "fv_walker"
+geometryName = "fvcerb_skel.xsi"
+cockpitName = "fvwalk_cockpit.xsi"
+
+animCount = 10
+animName1 = "idle"
+animFile1 = "fvcerb_idle1.xsi"
+
+animName2 = "idle2"
+animFile2 = "fvcerb_idle2.xsi"
+
+animName3 = "idle3"
+animFile3 = "fvcerb_idle3.xsi"
+
+animName4 = "sitdown"
+animFile4 = "fvcerb_kneel.xsi"
+
+animName5 = "walk"
+animFile5 = "fvcerb_walk.xsi"
+
+animName6 = "turn"
+animFile6 = "fvcerb_walk.xsi"
+
+animName7 = "death"
+animFile7 = "fvcerb_death1.xsi"
+
+animName8 = "death2"
+animFile8 = "fvcerb_death2.xsi"
+
+animName9 = "death3"
+animFile9 = "fvcerb_death3.xsi"
+
+animName10 = "run"
+animFile10 = "fvcerb_walk.xsi"
+
+scrapValue = 15
+scrapCost = 90
+customCost = 100
+buildTime = 20.0
+customTime = 20.0
+maxHealth = 4000
+maxAmmo = 8000
+addAmmo = 20
+unitName = "Drath"
+aiName = "GechProcess"
+aiName2 = "GechProcess"
+heatSignature = 1.0
+imageSignature = 5.0
+radarSignature = 5.0
+collisionRadius = 4.0
+isAssault = 1
+
+needPilot = 1
+
+armorClass = H
+
+
+requireCount = 2
+requireName1 = "cbtcen"
+requireText1 = "Build Tech Center"
+requireName2 = "cbsbay"
+requireText2 = "Build Regenerator"
+
+/////// weapons ///////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_CANNON_01"
+weaponName1 = "gcflame_a"
+weaponAssault1 = 1
+weaponHard2 = "HP_CANNON_02"
+weaponName2 = "gcflame_a"
+weaponAssault2 = 1
+weaponHard3 = "HP_SHIELD"
+weaponName3 = "gshield"
+weaponAssault3 = 1
+//////////////////////////////////  
+
+[CraftClass]
+rangeScan = 200.0
+periodScan = 5.0
+velocJam = 20.0
+engageRange = 100
+
+topSpeed = 30
+avoidSpeed = 15
+
+[WalkerClass]
+weightInTons = 120
+headYawRate	= 100.0 
+minHeadYaw = -180.0
+maxHeadYaw =  180.0
+minHeadPitch = -40.0
+maxHeadPitch = 40.0
+
+is13Walker = false // Set to false for a 1.2 style walker hierarchy. -GBD
+Walker12Type = 1 // -1 = auto, 0 = isdf style, 1 = fury style. -GBD
+
+alphaDamp = 5.0
+omegaTurn = 60.0
+omegaTurnAttenuation = 0.5f
+
+velocJump = 0;
+alphaTrack = 20.0
+pitchPitch = 0.0
+pitchThrust = 0.0
+accelThrust = 20.0
+velocForward = 20.0
+velocReverse = 10.0
+velocWalkFactor = 0.90
+
+headpiece = "midbody"
+rightfootpiece = "hp_rfoot";
+leftfootpiece = "hp_lfoot";
+engineSound	= "srecy01.wav"
+stepSound  = "fwstep01.wav"
+
+attackSpeed = 20

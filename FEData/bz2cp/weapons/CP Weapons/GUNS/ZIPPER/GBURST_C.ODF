@@ -1,0 +1,26 @@
+[WeaponClass]
+classLabel = "machinegun"
+altName = "gburst_a"
+ordName = "burst_c"
+wpnName = "Zipper Gun"
+fireSound = "zipper.wav"
+wpnReticle = "gchain"
+wpnCategory = "GUN"
+isAssault = 0
+flashName = "gchain_a.flash"
+aiRange = 120
+
+[CannonClass]
+shotDelay = 0.025
+shotVariance = 0.03
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 50 0 70"
+finishColor = "255 127 0 0"
+startRadius = 2.0
+finishRadius = 1.0
+animateTime = 0.1
+geomName = "g_sflash.xsi"

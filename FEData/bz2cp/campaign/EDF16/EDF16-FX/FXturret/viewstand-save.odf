@@ -1,0 +1,310 @@
+[GameObjectClass]
+geometryName = "viewstand.xsi"
+geometryScale = 1.0
+classLabel = "turret"
+collisionRadius = 10.0
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 10000
+unitName = "View Station"
+aiName = "GunTowerFriend" // need to enter viewer
+aiName2 = "GunTowerEnemy"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+isAssault = 0
+powerCost = 0
+ownsTerrain = 1
+armorClass = H
+requireCount = 0
+provideCount = 0
+
+effectHard1 = "hp_emit_1"
+effectName1 = "viewstand.stars1"
+effectHard2 = "hp_emit_2"
+effectName2 = "viewstand.stars2"
+effectHard3 = "hp_emit_3"
+effectName3 = "viewstand.planets1"
+effectHard4 = "hp_emit_4"
+effectName4 = "viewstand.planets2"
+effectHard5 = "hp_emit_5"
+effectName5 = "viewstand.warpfx"
+effectHard6 = "hp_emit_6"
+effectName6 = "viewstand.galaxy1"
+effectHard7 = "hp_emit_7"
+effectName7 = "viewstand.nebula1"
+effectHard8 = "hp_emit_8"
+effectName8 = "viewstand.nebula2"
+effectHard9 = "hp_emit_9"
+effectName9 = "viewstand.stars3"
+effectHard10 = "hp_emit_10"
+effectName10 = "viewstand.stars4"
+
+//weaponMask = 00001
+//weaponHard1 = "HP_GUN_1"
+//weaponName1 = "gfadeout" // These weapons don't seem to exist. -GBD
+//weaponAssault1 = 0
+//weaponHard2 = "HP_GUN_2"
+//weaponName2 =  "gfadein" // These weapons don't seem to exist. -GBD
+//weaponAssault2 = 1
+//weaponHard3 = "HP_ROCKET_1"
+//weaponName3 =  "gflashin" // These weapons don't seem to exist. -GBD
+//weaponAssault2 = 0
+//weaponHard4 = "HP_ROCKET_2"
+//weaponName4 =  "gcolorflash" // These weapons don't seem to exist. -GBD
+//weaponAssault4 = 1
+
+[CraftClass]
+rangeScan = 1.0
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 0
+steerFactor = 0.5
+engageRange = 200
+
+[TurretCraftClass]
+omegaTurret = 0.0
+detectRange = 1
+
+[BuildingClass]
+soundAmbient = "itank01e.wav"
+
+[Stars1]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.04
+emitDelayVar = .1  // 0.03
+emitVelocity = "0.0 0.0 3.0"
+emitVariance = "3.0 3.0 3.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 6.0
+textureName = "spark.tga" //"particle.tga"
+textureBlend = "one one modulate"
+startColor = "100 100 120 128"
+finishColor = "255 255 255 255"
+startRadius = .025
+finishRadius = .040
+animateTime = 4.0
+rotationRate = 0.0
+
+[Stars2]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.08
+emitDelayVar = .1  // 0.03
+emitVelocity = "0.0 0.0 2.0"
+emitVariance = "3.0 3.0 3.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 7.0
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "100 100 120 128"
+finishColor = "255 255 255 255"
+startRadius = .025
+finishRadius = .040
+animateTime = 5.0
+rotationRate = 0.0
+
+[Stars3]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.2
+emitDelayVar = .1  // 0.03
+emitVelocity = "0.0 0.0 2.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 7.0
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "100 100 120 128"
+finishColor = "255 255 255 255"
+startRadius = .025
+finishRadius = .040
+animateTime = 5.0
+rotationRate = 0.0
+
+[Stars4]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.04
+emitDelayVar = .02  // 0.03
+emitVelocity = "0.0 0.0 4.0"
+emitVariance = "1.0 1.0 1.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 7.0
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "100 100 120 128"
+finishColor = "255 255 255 255"
+startRadius = .025
+finishRadius = .040
+animateTime = 3.0
+rotationRate = 0.0
+
+[Planets1]
+renderBase = "draw_twirl_trail"
+emitDelay = 7.0 // 0.04
+emitDelayVar = .1  // 0.03
+emitVelocity = "0.0 0.0 2.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.0 0.0 0.0"
+emitLife = 8.5
+textureName = "pscharon.tga"
+textureBlend = "one one modulate"
+startColor = "100 100 120 0"
+finishColor = "255 255 255 80"
+startRadius = .01
+finishRadius = .15
+animateTime = 5.0
+rotationRate = 0.0
+
+[Planets2]
+renderBase = "draw_twirl_trail"
+emitDelay = 9.0 // 0.04
+emitDelayVar = .1  // 0.03
+emitVelocity = "0.0 0.0 2.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.0 0.0 0.0"
+emitLife = 8.5
+textureName = "saturn.tga"
+textureBlend = "one one modulate"
+startColor = "100 100 120 0"
+finishColor = "255 255 255 80"
+startRadius = .01
+finishRadius = .15
+animateTime = 5.0
+rotationRate = 0.0
+
+[WarpFX]
+renderBase = "draw_emit"
+emitName = "viewstand.warper"
+emitDelay = 0.25 
+emitVelocity = "0.0 1.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[Warper]
+simulateBase = "sim_smoke"
+lifeTime = 0.6
+renderBase = "draw_multi"
+renderCount = 6
+renderName1 = "viewstand.in"
+renderName2 = "viewstand.in2"
+renderName3 = "viewstand.in3"
+renderName4 = "viewstand.in4"
+renderName5 = "viewstand.in5"
+renderName6 = "viewstand.in6"
+
+[In]
+renderBase = "draw_sprite"
+textureName = "wasplat.tga"
+lifeTime = 0.5 // 0.5
+textureBlend = "one one modulate"
+startColor = "60 40 255 100" 
+finishColor = "20 180 255 20" 
+startRadius = .1 // 0.1
+finishRadius =  1.5 //1.5
+animateTime = 0.5 // 0.5
+rotationRate = -2.0
+[In2]
+renderBase = "draw_sprite"
+textureName = "wasplat.tga"
+lifeTime = 0.5 // 0.5
+textureBlend = "one one modulate"
+startColor = "60 40 255 100" 
+finishColor = "20 180 255 20" 
+startRadius = .1 // 0.1
+finishRadius =  3.0 //1.5
+animateTime = 0.5 // 0.5
+rotationRate = -1.0
+[In3]
+renderBase = "draw_sprite"
+textureName = "wasplat.tga"
+lifeTime = 0.5 // 0.5
+textureBlend = "one one modulate"
+startColor = "60 40 255 100" 
+finishColor = "20 180 255 20" 
+startRadius = .1 // 0.1
+finishRadius =  5 //1.5
+animateTime = 0.5 // 0.5
+rotationRate = 0.0
+[In4]
+renderBase = "draw_sprite"
+textureName = "wasplat.tga"
+lifeTime = 0.5 // 0.5
+textureBlend = "one one modulate"
+startColor = "60 40 255 100" 
+finishColor = "20 180 255 20" 
+startRadius = .1 // 0.1
+finishRadius =  8.0 //1.5
+animateTime = 0.5 // 0.5
+rotationRate = 1.0
+[In5]
+renderBase = "draw_sprite"
+textureName = "wasplat.tga"
+lifeTime = 0.5 // 0.5
+textureBlend = "one one modulate"
+startColor = "60 40 255 100" 
+finishColor = "20 180 255 20"
+startRadius = .1 // 0.1
+finishRadius =  12 //1.5
+animateTime = 0.5 // 0.5
+rotationRate = 2.0
+[In6]
+renderBase = "draw_sprite"
+textureName = "wasplat.tga"
+lifeTime = 0.5 // 0.5
+textureBlend = "one one modulate"
+startColor = "60 40 255 100" 
+finishColor = "20 180 255 20"
+startRadius = .1 // 0.1
+finishRadius =  17 //1.5
+animateTime = 0.5 // 0.5
+rotationRate = 3.0
+
+[Galaxy1]
+renderBase = "draw_twirl_trail"
+emitDelay = 9.0 // 0.04
+emitDelayVar = .1  // 0.03
+emitVelocity = "0.0 0.0 1.0"
+emitVariance = "1.0 1.0 1.0"
+emitInherit = "0.0 0.0 0.0"
+emitLife = 8.5
+textureName = "psgalax1.tga"
+textureBlend = "one one modulate"
+startColor = "100 100 120 0"
+finishColor = "255 255 255 80"
+startRadius = .05
+finishRadius = .9
+animateTime = 5.0
+rotationRate = 0.0
+
+[Nebula1]
+renderBase = "draw_twirl_trail"
+emitDelay = 11.0 // 0.04
+emitDelayVar = .1  // 0.03
+emitVelocity = "0.0 0.0 1.0"
+emitVariance = "1.0 1.0 1.0"
+emitInherit = "0.0 0.0 0.0"
+emitLife = 15.5
+textureName = "psnebu01.tga"
+textureBlend = "one one modulate"
+startColor = "100 100 120 0"
+finishColor = "255 255 255 80"
+startRadius = .05
+finishRadius = 1.5
+animateTime = 7.0
+rotationRate = 0.0
+
+[Nebula2]
+renderBase = "draw_twirl_trail"
+emitDelay = 11.0 // 0.04
+emitDelayVar = .1  // 0.03
+emitVelocity = "0.0 0.0 1.0"
+emitVariance = "1.0 1.0 1.0"
+emitInherit = "0.0 0.0 0.0"
+emitLife = 15.5
+textureName = "psnebu02.tga"
+textureBlend = "one one modulate"
+startColor = "100 100 120 08"
+finishColor = "255 255 255 80"
+startRadius = .05
+finishRadius = .5
+animateTime = 8.0
+rotationRate = 0.0

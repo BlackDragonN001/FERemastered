@@ -1,0 +1,12 @@
+[WeaponClass]
+classLabel = "dispenser"
+wpnName = "Force Field"
+fireSound = "mmine01.wav"
+wpnReticle = "gmcurmin"
+wpnCategory = "CANN"
+aiRange = 275
+
+[DispenserClass]
+shotDelay = 60.0
+objectClass = "shldgen"
+ammoCost = 3000

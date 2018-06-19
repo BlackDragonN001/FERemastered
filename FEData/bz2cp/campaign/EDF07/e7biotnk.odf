@@ -1,0 +1,47 @@
+[GameObjectClass]
+geometryName = "e7biotnk.xsi"
+geometryScale = 2
+classLabel = "turret"
+scrapCost = 80
+scrapValue = 200		//had been 100 first (too little), then 1000 (frame rate complaints) 
+maxHealth = 10000			//7500
+maxAmmo = 0
+unitName = "Refined Biometal"
+aiName = ""
+aiName2 = ""
+heatSignature = 5.0		//1
+imageSignature = 5.0		//1
+radarSignature = 5.0		//1
+collisionRadius = .8		//1
+isAssault = 1
+armorClass = H
+
+requireCount = 0
+//buildSupport = B
+//buildRequire = F
+
+//provideCount = 2
+//provideName1 = "ebpgen"
+canInteract = 1
+canDetect = 1
+canSnipe = 1
+
+lightHard1 = "hp_light_1"
+lightName1 = "light_spin"
+
+[BuildingClass]
+soundAmbient = "toxic1.wav"
+
+[CraftClass]
+rangeScan = 200
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 1.5
+steerFactor = 0.5
+engageRange = 200
+
+[TurretCraftClass]
+omegaTurret = 1.0
+detectRange = 200
+
+

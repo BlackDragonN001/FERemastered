@@ -1,0 +1,111 @@
+[GameObjectClass]
+//baseName="ivturr"
+geometryName="electurr.xsi"
+geometryScale=0.14
+//cockpitName="ivturr_cockpit.xsi"
+animCount=0
+classLabel="turrettank"
+scrapCost=0
+customCost=0
+scrapValue=0
+buildTime=10.0
+customTime=10.0
+maxHealth=2500
+maxAmmo=3000
+addAmmo=100
+addHealth=5
+unitName="Arc Worm"
+aiName="TurretTankFriend"
+aiName2="TurretTankEnemy"
+heatSignature=0.2
+imageSignature=0.5
+radarSignature=0.1
+
+ownsTerrain = 0
+canDetect = 0
+canInteract = 1
+canCollide = 1
+armorClass = L
+needPilot = 0 // 0 makes it unpilotable, and no ejecting pilot
+isAssault = 1
+canSnipe = 0
+powerCost = 0 
+aiRange = 110
+weightInTons = 1E6
+requireCount=0
+
+/////// weapons ///////////////////
+
+weaponMask = 00011
+weaponHard1 = "HP_GUN_1"
+weaponName1 =  "igelecw"
+weaponAssault1 = 1
+weaponHard2 = "HP_GUN_2"
+weaponName2 = "igelecw"
+weaponAssault2 = 1
+weaponHard3 = "HP_GUN_3"
+weaponName3 = "gelemp_c"
+weaponAssault3 = 0
+
+//////////////////////////////////
+
+turretCount=2
+turretName1="turret_y"
+turretName2="turret_x"
+
+[CraftClass]
+rangeScan = 200.0 
+periodScan = 2.0f 
+velocJam = 5.0f 
+engageRange=110
+
+weaponPitch = 0.18 // .08 can't shoot much above eyelevel
+
+selectGoMsg="rhin02.wav"
+selectAttackMsg="rhin06.wav"
+selectDeployMsg="rhinocry.wav"
+selectOtherMsg="rhin02.wav"
+holdMsg="rhin06.wav"
+goMsg="rhin06.wav"
+followMeMsg="rhin06.wav"
+reloadMsg="rhin02.wav"
+repairMsg="rhin02.wav"
+rescueMsg="rhin07.wav"
+recycleMsg="rhin02.wav"
+otherMsg="rhin02.wav"
+attackMsg="rhin02.wav"
+deployedMsg="rhin06.wav"
+killedMsg="rhinocry.wav"
+
+[HoverCraftClass]
+setAltitude=0.5
+accelDragStop=20.0
+accelDragFull=1.0
+alphaTrack=10.0
+alphaDamp=10 // 3.0
+pitchPitch=0.0
+pitchThrust=0.01
+rollStrafe=0.001
+rollSteer=0.001
+
+velocForward=6.0
+velocReverse=3.0
+velocStrafe=0.0
+accelThrust=12.0
+accelBrake=50.0
+omegaSpin=2.0
+omegaTurn=2.0
+alphaSteer=1.5
+accelJump=0.0
+
+soundThrust="rmort01.wav"
+soundSteer=NULL //"avturre8.wav"
+soundDeploy="rhin06.wav"
+soundUndeploy="rhin06.wav"
+
+[TurretTankClass]
+omegaTurret= 0.25
+alphaTurret= 0.5
+timeDeploy=.5 
+timeUndeploy=.5
+

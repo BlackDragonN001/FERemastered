@@ -1,0 +1,39 @@
+[OrdnanceClass]
+classLabel =  "bullet" //"beam"
+
+shotGeometry = NULL
+xplGround = "xbolter"
+xplVehicle = "xbolter"
+xplBuilding = "xbolter"
+
+renderName = "bolter_c.render"
+
+ammoCost = 10
+lifeSpan = 175e-6 // 175m
+shotSpeed = 1e6
+
+damageValue(N) = 50 // none // 500 // 250
+damageValue(L) = 50 // light // 500 // 250
+damageValue(H) = 35 // heavy // 375 // 187.5
+
+damageValue(S) = 50 // standard // 375 // 187.5
+damageValue(D) = 50 // deflection // 500 // 250
+damageValue(A) = 35 // absorbtion // 500 // 125
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 1
+renderName1 = "bolter_c.bolt1"
+
+[Bolt1]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "188 24 203 255"
+finishColor = "142 35 177 0"
+startRadius = 0.3
+finishRadius = 0.01
+segmentLength = 7.0 
+segmentVariance = "3.2 2.34 0.54"
+animateTime = 0.8 // 0.2
+textureRate = 0.01

@@ -1,0 +1,71 @@
+// =============
+// ROCKET WORM CAR EXPLOSION
+// =============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 3
+particleClass1 = "xwormacar.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleClass2 = "xwormacar.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleClass3 = "xwormacar.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+explSound = "xmv1.wav"
+damageRadius = 10.0
+
+damageValue(N) = 70 // none
+damageValue(L) = 60 // light
+damageValue(H) = 50 // heavy
+
+damageValue(S) = 60 // standard
+damageValue(D) = 70 // deflection
+damageValue(A) = 50 // absorbtion
+
+kickRadius = 10.0
+kickOmega = 2.0
+kickVeloc = 2.5
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "155 55 255 220"
+finishColor = "50 0 100 0"
+startRadius = 3.0
+finishRadius = 10.0
+animateTime = 1.5
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_sphere"
+textureName = "swarm01.tga"
+textureBlend = "one one modulate"
+startColor = "155 155 155 250"
+finishColor = "100 100 100 0"
+startRadius = 1.0
+finishRadius = 5.0
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_light"
+startColor = "155 150 255 1050"
+finishColor = "10 0 250 0"
+startRadius = 20.0
+finishRadius = 0.0
+animateTime = 1.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

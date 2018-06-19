@@ -1,0 +1,33 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gperc_a"
+ordName = "perc_c"
+wpnName = "Percussion Blst"
+fireSound = "arc02.wav"
+wpnReticle = "gplasma"
+wpnCategory = "CANN"
+isAssault = 0
+aiRange = 150
+flashName = "gperc_c.flash"
+
+
+[CannonClass]
+shotDelay = 1.48776 // .5/sec
+//salvoCount = 5
+//salvoDelay = 0.001
+//shotVariance = 0.0
+shotAlternate = 0
+
+
+[Flash]
+simulateBase = "sim_null"
+lifeTime = 3.5
+renderBase = "draw_light"
+startColor = "102 10 97 4900"
+finishColor = "102 10 97 4900"
+startRadius = 20.0
+finishRadius = 20.0
+animateTime = 3.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

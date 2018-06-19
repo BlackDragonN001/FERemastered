@@ -1,0 +1,54 @@
+[Cheat]
+moneyAmount = 5
+moneyDelay = 1
+
+[Start]
+scrapCount = 40
+scavClass = "ivscav"
+consClass = "ivconsE6"
+
+[Match]
+targetType1= "ivscout"
+attackType1_1 = "evscout"
+targetType2= "ivtank"
+attackType2_1 = "evtank"
+
+[Plan1]
+planType = "CollectPool"
+planPriority = 500
+buildIfNoIdle = 1
+
+[Plan2]
+PlanType = "CollectPool"
+planPriority = 499
+buildIfNoIdle = 1
+
+[Plan3]
+planType = "CollectPool"
+planPriority = 498
+buildIfNoIdle = 0
+
+[Plan4]
+planType = "BuildMinimums"
+planPriority = 450
+buildType1 = "ivconsE6"
+buildCount1 = 1
+
+[Plan5]
+//planCondition = "NotExists"
+//planConditionClass = "ebpgen"
+//planConditionCount = 3
+planType = "BaseBuildMinimums"
+planPriority = 425
+buildType1 = "ibpgen"
+buildCount1 = 3
+
+[Plan6]
+planCondition = "NotExists"
+planConditionClass = "ibfactE6"
+planConditionCount = 1
+planType = "BaseBuildMinimums"
+planPriority = 400
+buildType1 = "ibfactE6"
+buildCount1 = 1
+

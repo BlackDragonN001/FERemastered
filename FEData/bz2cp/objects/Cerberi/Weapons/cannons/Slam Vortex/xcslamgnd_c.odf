@@ -1,0 +1,94 @@
+// ===============
+// SONIC CANNON GROUND HIT
+// ===============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "sonic02.wav"
+damageRadius = 10.0
+
+damageValue(N) = 150 // none
+damageValue(L) = 100 // light
+damageValue(H) = 50 // heavy
+
+damageValue(S) = 100 // standard
+damageValue(D) = 150 // deflection
+damageValue(A) = 50 // absorbtion
+
+kickRadius = 20.0
+kickOmega = 2.0
+kickVeloc = 5.0
+
+particleTypes = 4
+
+particleClass1 = "xcslamgnd_c.thrust"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xcslamgnd_c.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xcslamgnd_c.puff"
+particleCount3 = 3
+particleVeloc3 = "10.0 10.0 10.0"
+
+particleClass4 = "xcslamgnd_c.dust"
+particleCount4 = 5
+particleVeloc4 = "7.5 0.0 7.5"
+
+
+[Thrust]
+simulateBase = "sim_null"
+lifeTime = 1.2
+renderBase = "draw_sprite"
+spriteCenter.x = 0.0
+spriteCenter.y = 1.0
+textureName = "ground.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "100 100 100 255"
+finishColor = "20 20 20 0"
+startRadius = 0.5
+finishRadius = 4.5
+animateTime = 1.2
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.4
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255" 
+finishColor = "150 155 0 0" 
+startRadius = 0.2
+finishRadius = 2.8
+animateTime = 0.4
+latitudeBands = 8
+longitudeSegments = 16
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 0.3
+renderBase = "draw_twirl"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 200"
+finishColor = "255 230 230 0"
+startRadius = 0.01
+finishRadius = 5.0
+animateTime = 0.3
+rotationrate = 20
+
+[Dust]
+simulateBase = "sim_smoke"
+lifeTime = 1.9
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "100 100 100 255"
+finishColor = "120 120 120 0"
+startRadius = 0.05
+finishRadius = 4.0
+animateTime = 1.9
+rotationrate = 2

@@ -1,0 +1,26 @@
+[WeaponClass]
+classLabel = "multilauncher"
+ordName = "torp_a"
+altName = "gtorp_c"
+wpnName = "Quantum Torp"
+fireSound = "torp2.wav"
+wpnReticle = "gsonic_c"
+wpnCategory = "CANN"
+aiRange = 150
+isAssault = 1
+
+[LauncherClass]
+lockRange = 200.0
+shotDelay = .33
+lockDelay = 1.0
+coneAngle = 0.05
+lockingReticle = "gshadow.A"
+lockingSound = "lock01.wav"
+lockedReticle = "gshadow.B"
+lockedSound = "lock02.wav"
+targetCount = 4
+targetReticle = "gmlock_c.1"
+
+[MultiLauncherClass]
+targetCount = 4
+loseAngle = 0.2

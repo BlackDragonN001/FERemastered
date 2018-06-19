@@ -1,0 +1,45 @@
+[OrdnanceClass]
+classLabel = "bouncebomb"
+
+shotGeometry = "ioartl00.xsi"
+xplGround = "xgasxpl"
+xplVehicle = "xgasxpl"
+xplBuilding = "xgasxpl"
+xplExpire = "xmdmxpl"
+
+shotSound = "crckt02.wav"
+
+renderName = "mdmgun.render"
+
+ammoCost = 35 // 30FE 30R
+lifeSpan = 1e30
+shotSpeed = 55.0  // 50.0	//60FE, 60R
+
+//**translates as a range (including bouncer) of about 230m. Still enough to easily
+//defenses, but not enough to fire shots accross huge gaps (plaza springs to mind)
+// damage also reduced by 20%, probably un-noticeable to the majoroty - DF
+
+damageValue(N) = 375 // 400 //500FE, 500R
+damageValue(L) = 375 // 400 //500FE, 500R
+damageValue(H) = 375 // 400 //500FE, 500R
+damageValue(S) = 375 // 400 //500FE, 500R
+damageValue(D) = 375 // 400 //500FE, 500R
+damageValue(A) = 375 // 400 //500FE, 500R
+
+[BounceBombClass]
+soundBounce = "mdmort03.wav"
+
+[Render]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 255 32"
+finishColor = "255 255 255 0"
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 2.0
+rotationRate = 2.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 2.0

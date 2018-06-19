@@ -1,0 +1,14 @@
+[WeaponClass]
+classLabel = "blink"
+ordName = NULL
+wpnName = "Blink"
+fireSound = "blink01.wav"
+wpnReticle = "gblink.0"
+wpnCategory = "SPEC"
+
+[BlinkDeviceClass]
+ammoBase = 300.0	// was 100
+ammoDist = 2.0	// was 1
+groundSprite = "splash.0"
+xplEnter = "xblinkin"
+xplExit = "xblinkout"

@@ -1,0 +1,73 @@
+[OrdnanceClass]
+classLabel = "radarpopper"
+
+//shotGeometry = "ioartl00.xsi"
+shotGeometry = NULL
+shotSound = "glock01.wav"  //"Ordin_c.wav"
+
+
+xplGround = "xmslgnd"
+xplVehicle = "xmslcar"
+xplBuilding = "xmslbld"
+
+renderName = "arkzap.render"
+
+ammoCost = 100
+//lifeSpan = 1e30
+//shotSpeed = 100
+//shotSpeed = 130.0****
+
+//from popper
+lifeSpan = 6 //1e30		//6.0***** 6 and 30??   5 and 60
+shotSpeed = 70			//70*****
+//shotDelay = 0.1 //.1 **
+
+
+
+damageValue(N) = 0 // none		//70,60,50**
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+
+damageValue(S) = 0 // standard	//60,50,70**
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+
+[RadarPopperClass]
+launchXpl = NULL //"defflarxpl"
+//launchXpl = ""
+launchOrd = "arkzaper"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "arkzap.core"
+renderName2 = "arkzap.fringe"
+
+[Core]
+renderBase = "draw_bolt"
+//renderBase = "draw_twirl"
+textureName = NULL
+textureBlend = "one one modulate"
+startColor = "0 10 40 80"
+finishColor = "0 5 20 10"
+startRadius = 0.1
+finishRadius = 0.05
+segmentLength = 5.0 //5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 2.0 //0.5
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "30 5 60 100"
+finishColor = "0 0 30 20"
+startRadius = 0.3
+finishRadius = 0.1
+segmentLength = 5.0 //5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 2.0 //1.0*****
+textureRate = 0.02
+textureSpeed = 0.2  //0.2*****
+

@@ -1,0 +1,34 @@
+[GameObjectClass]
+geometryName = "w2antib2.xsi"
+//geometryScale = 7.5
+classLabel = "torpedo"
+//baseName = "grccmi" // "hvrckt" // use antibody2.inf. -GBD
+scrapValue = 0
+scrapCost = 0
+maxHealth = 100
+maxAmmo = 100
+unitName = "Antibody"
+aiName = "TorpedoProcess"
+aiName2 = "TorpedoProcess"
+canCollide = 1 
+canDetect = 1 
+canInteract = 1 
+explosionName = "antiexpir"
+
+[CraftClass]
+rangeScan = 0.0f
+periodScan = 0.0f
+velocJam = 0.0f
+
+[TorpedoClass]
+setAltitude = 2.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+velocForward = 20.0
+accelThrust = 50.0
+omegaTurn = 2.0
+alphaSteer = 5.0
+lifeSpan = 20.0
+xplBlast = "antixpl"
+
+soundThrust = ""

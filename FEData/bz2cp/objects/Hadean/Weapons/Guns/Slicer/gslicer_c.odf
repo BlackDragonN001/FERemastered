@@ -1,0 +1,27 @@
+[WeaponClass]
+classLabel = "machinegun"
+altName = "gslicer_a"
+ordName = "slicer_c"
+wpnName = "Slicer"
+fireSound = "sonic03c.wav"
+wpnReticle = "gblast"
+wpnCategory = "GUN"
+isAssault = 0
+aiRange = 120 // 115FE
+flashName = "gslicer_c.flash"
+
+[CannonClass]
+shotDelay = 0.15
+
+[Flash]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_light"
+startColor = "0 17 150 500"
+finishColor = "150 23 156 500"
+startRadius = 0.50
+finishRadius = 0.50
+animateTime = 0.1
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

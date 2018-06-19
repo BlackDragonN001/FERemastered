@@ -1,0 +1,114 @@
+// =======
+// BARNEY!
+// =======
+
+[ExplosionClass]
+classLabel = "explosion"
+explSound = "annoying.wav"
+
+damageRadius = 0.0
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+
+
+particleTypes = 5
+
+particleClass1 = "xsupercar.shock"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xsupercar.flame"
+particleCount2 = 2
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xsupercar.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xsupercar.puff"
+particleCount4 = 5
+particleVeloc4 = "6.0 6.0 6.0"
+
+particleClass5 = "xsupercar.spark"
+particleCount5 = 20
+particleVeloc5 = "15.0 15.0 15.0"
+
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 155 0 255"
+finishColor = "255 0 0 0"
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 0.2
+latitudeBands = 8
+longitudeSegments = 16
+
+[flame]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "xsupercar.flameemit"
+emitDelay = 0.1
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[flameemit]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_twirl"
+textureName = "bulhit.tga" // flame2
+textureBlend = "one one modulate"
+startColor = " 255 155 0 255"
+finishColor = "255 0 0 0" //
+startRadius = 0.5
+finishRadius = 4.0
+animateTime = 0.5
+rotationRate = 0.5
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_light"
+startColor = "255 160 65 600"
+finishColor = "255 0 0 0"
+startRadius = 60.0
+finishRadius = 60.0
+animateTime = 0.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "30 10 10 150"
+finishColor = "50 20 20 0"
+startRadius = 0.3
+finishRadius = 2.5
+animateTime = 1.0
+
+[spark]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_twirl"
+textureName = "particle.tga" // flame
+textureBlend = "one one modulate"
+startColor = "255 255 200 255"
+finishColor = "255 255 0 0"
+startRadius = 0.5
+finishRadius = 0.05
+animateTime = 0.5

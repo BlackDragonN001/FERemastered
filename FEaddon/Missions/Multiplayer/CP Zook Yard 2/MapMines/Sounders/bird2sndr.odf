@@ -1,0 +1,29 @@
+[GameObjectClass]
+geometryName = NULL //"igflar00.xsi"
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0 // 150
+maxAmmo = 1E6 // 100
+unitName = "Bird2 Sounder"
+
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+canCollide = 0
+
+[MineClass]
+lifeSpan = 1e6 //10.0
+
+[FlareMineClass]
+
+payloadName = "bird2snd" // this one is timed by shot delay
+fireSound = "mire1.wav" // this one just loops
+triggerDelay = 0.001 
+shotDelay = 15.0 
+
+shotVariance = 0
+damageRadius = 2.0 

@@ -1,0 +1,31 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+
+xplGround = "xgungnd"
+xplVehicle = "xguncar"
+xplBuilding = "xguncar"
+
+//renderName = "magun_a.render" // was "/magun_a.render"...Okay who the hell...that does not work. -GBD
+
+ammoCost = 3.0
+lifeSpan = 0.35 // 105m  135 GEC
+shotSpeed = 430.0
+
+damageValue(N) = 20 // none // 120
+damageValue(L) = 20 // light // 120
+damageValue(H) = 15 // heavy // 40
+
+damageValue(S) = 20 // standard // 100
+damageValue(D) = 12 // deflection // 60
+damageValue(A) = 20 // absorbtion // 120
+
+[Render]
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+textureName = "trail.tga"
+startColor = "255 100 0 250"
+finishColor = "255 0 0 100"
+startRadius = 0.03
+finishRadius = 0.15
+segmentTime = 0.05

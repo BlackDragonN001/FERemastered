@@ -1,0 +1,19 @@
+[WeaponClass]
+classLabel = "dispenser"
+geometryName = "sgsatc00.xsi"
+geometryScale = 0.12
+wpnName = "Rover"
+ordName = NULL
+wpnIcon = NULL
+fireSound = "hrckt01.wav"
+wpnReticle = "gproxmin"
+wpnLadder = "gmortar.L0"
+wpnPriority = 3
+wpnCategory = "SPEC" 
+isAssault = 0 
+
+localAmmo = 9
+
+[DispenserClass]
+shotDelay = 10.0
+objectClass = "rover"

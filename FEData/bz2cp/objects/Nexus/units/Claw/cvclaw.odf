@@ -1,0 +1,134 @@
+[GameObjectClass]
+baseName = "fvwalk"
+classLabel = "fv_walker"
+geometryName = "claws01_skel.xsi"
+cockpitName = "fvwalk_cockpit.xsi"
+
+animCount = 10
+animName1 = "idle"
+animFile1 = "claws01_idle.xsi"
+
+animName2 = "idle2"
+animFile2 = "claws01_idle.xsi"
+
+animName3 = "idle3"
+animFile3 = "claws01_idle.xsi"
+
+animName4 = "sitdown"
+animFile4 = "claws01_idle.xsi"
+
+animName5 = "walk"
+animFile5 = "claws01_walk.xsi"
+
+animName6 = "turn"
+animFile6 = "claws01_walk.xsi"
+
+animName7 = "death"
+animFile7 = "claws01_idle.xsi"
+
+animName8 = "death2"
+animFile8 = "claws01_idle.xsi"
+
+animName9 = "death3"
+animFile9 = "claws01_idle.xsi"
+
+animName10 = "run"
+animFile10 = "claws01_walk.xsi"
+
+scrapValue = 25
+scrapCost = 70
+customCost = 80
+buildTime = 20.0
+customTime = 20.0
+maxHealth = 3500
+maxAmmo = 5000
+addAmmo = 12
+unitName = "Claw"
+aiName = "GechProcess"
+aiName2 = "GechProcess"
+heatSignature = 1.0
+imageSignature = 5.0
+radarSignature = 5.0
+collisionRadius = 4.0
+isAssault = 1
+
+armorClass = H
+
+/////// weapons ///////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_ROCKET_1"
+weaponName1 = "gplight"
+weaponAssault1 = 1
+weaponHard2 = "HP_ROCKET_2"
+weaponName2 = "gplight"
+weaponAssault2 = 1
+
+//////////////////////////////////  
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+lightHard2 = "hp_light_2"
+lightName2 = "spotblue2"
+
+[CraftClass]
+weightInTons = 200
+rangeScan = 200.0
+periodScan = 5.0
+velocJam = 0.0
+engageRange = 250
+
+selectWaitMsg = ""
+selectAttackMsg = ""
+selectFollowMsg = ""
+selectGoMsg = ""
+selectOtherMsg = ""
+holdMsg = ""
+goMsg = ""
+attackMsg = ""
+followMeMsg = ""
+followMsg = ""
+repairMsg = ""
+reloadMsg = ""
+rescueMsg = ""
+recycleMsg = ""
+otherMsg = "" 
+
+user1Msg = ""  
+killedMsg = ""
+diedMsg = ""
+
+topSpeed = 20
+avoidSpeed = 15
+
+[WalkerClass]
+headYawRate	= 60.0 
+minHeadYaw = -90.0
+maxHeadYaw =  90.0
+minHeadPitch = -20.0
+maxHeadPitch = 50.0
+
+Walker12Type = 0 // -1 = auto, 0 = isdf style, 1 = fury style
+
+alphaDamp = 5.0
+omegaTurn = 60.0
+omegaTurnAttenuation = 0.5f
+
+velocJump = 0;
+alphaTrack = 20.0
+pitchPitch = 0.0
+pitchThrust = 0.0
+accelThrust = 10.0
+velocForward = 20.0
+velocReverse = 7.0
+velocWalkFactor = 0.9
+
+headpiece = "head"
+rightfootpiece = "hp_rfoot";
+leftfootpiece = "hp_lfoot";
+
+stepSound  = "fwstep01.wav"
+engineSound	= "srecy01.wav"
+jumpSound  = "avwalke2.wav"
+attackSpeed = 50
+

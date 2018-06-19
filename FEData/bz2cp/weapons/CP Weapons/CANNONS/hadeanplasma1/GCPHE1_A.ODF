@@ -1,0 +1,25 @@
+[WeaponClass]
+classLabel="cannon"
+altName="gcphe1_c"
+ordName="cphe1_a"
+wpnName="Hadean EC1"
+fireSound="ec.wav"
+wpnReticle="gplasma"
+wpnCategory="CANN"
+isAssault=1
+flashName="gcphe2_a.flash"
+aiRange=260
+
+[CannonClass]
+shotDelay=2.5
+
+[Flash]
+renderBase="draw_geom"
+textureName="sflash.tga"
+textureBlend="one one modulate"
+startColor="30 33 180 255"
+finishColor="25 27 155 150"
+startRadius=3.0
+finishRadius=6.0
+animateTime=0.1
+geomName="g_sflash.xsi"

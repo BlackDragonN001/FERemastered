@@ -1,0 +1,53 @@
+[OrdnanceClass]
+classLabel = "spraybomb"
+shotGeometry = NULL // "ioartl00.xsi"
+shotSound = "srecy01.wav" //"benv03.wav"//"baz03.wav"
+rendername = "goofball.render"
+heatSignature = 10.01
+imageSignature = 10.01
+radarSignature = 10.0
+isAssault = 1 // 0
+armorClass = N
+canCollide = 0
+canDetect = 1 
+canInteract = 1
+ 
+maxHealth = 400
+
+ammoCost = 1 // 50
+lifeSpan = 1e30
+shotSpeed = 25 // 45 
+
+[SprayBombClass]
+payloadName = "goober"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "goofball.gob"
+renderName2 = "goofball.tail"
+
+[Gob]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"// "lighthalo.tga" //"vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "80 80 20 220"
+finishColor = "80 80 20 220"
+startRadius = 0.15
+finishRadius = 0.15
+animateTime = 1.0 
+latitudeBands = 4
+longitudeSegments = 8
+
+[Tail]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "50 120 0 90"
+finishColor = "100 80 10 0"
+startRadius = 0.7
+finishRadius = 0.5 
+segmentTime = 2.5  // time each segment animates
+segmentVariance = "0.1 0.1 0.1"
+animateTime = 0.3
+textureRate = 0.05

@@ -1,0 +1,15 @@
+[WeaponClass]
+classLabel = "satchelpack"
+geometryName = "igsatc00.xsi"
+geometryScale = 0.12
+wpnName = "Cerberi Bomb"
+wpnIcon = "wire_igsatc%d.tga"
+fireSound = "satcfire.wav"
+wpnReticle = "gmortar"
+wpnLadder = "gmortar.L0"
+wpnCategory = "SPEC"
+localAmmo = 1
+
+[SatchelPackClass]
+objectClass = "cbomb"
+shotDelay = 15.0

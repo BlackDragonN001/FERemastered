@@ -1,0 +1,21 @@
+This only applies to Non Rev.C users. Rev.C launcher handles all of this.
+
+
+This is a test version of the DLL and will cause problems if anyone joins your game that doesn't have this version installed!
+
+The DLL goes in "C:\Program Files\Battlezone II\missions"
+The ODF's go in "C:\Program Files\Battlezone II\FEaddon\Missions\Multiplayer\FEMPI Special Units"
+The "Shell" folder goes in "C:\Program Files\Battlezone II\FEaddon\"
+
+0. Read the change log.
+1. Backup your existing FE_MPI_01.DLL dated 2001-10-21.
+2. Copy this new test DLL into the above folder.
+3. Copy the ODF folder into the above location.
+4. Copy the SHELL folder into the above location.
+5. Modify the maps INF file per the change log.
+6. Fire up FE and go to town.
+7. Restore your original DLL to get back to normal.
+
+Please send feedback to scott@valler.com.
+
+Scott "Centerline" Valler

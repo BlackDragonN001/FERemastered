@@ -1,0 +1,28 @@
+[WeaponClass]
+classlabel = "cannon"
+altName = "glasercan_a"
+ordName = "lasercan"
+wpnName = "Laser Cannon"
+fireSound = "lasercan.wav"
+wpnReticle = "gion"
+wpnCategory = "GUN"
+isAssault = 0
+aiRange = 100
+flashName = "glasercan.flash"
+
+[CannonClass]
+shotDelay = 0.15
+shotVariance = 0.02
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "200 100 0 255"
+finishColor = "200 50 0 0"
+startRadius = 2.0
+finishRadius = .1
+animateTime = 0.01
+geomName = "g_sflash.xsi"
+
+

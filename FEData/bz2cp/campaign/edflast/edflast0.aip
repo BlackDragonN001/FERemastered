@@ -1,0 +1,254 @@
+[Start]
+IdleAllCraft = false
+consClass = "evcons"
+scavClass = "evscav"
+
+[Plan1]
+planType = "Attacker"
+planPriority = 280
+planCondition = "Exists"
+planConditionClass = "fvfurytk"
+planConditionCount = 1
+targetType = "ibgtow"
+attackType1 = "fvfurytk"
+doNextOnFail = 1
+
+[Plan2]
+planType = "Attacker"
+planPriority = 270
+planCondition = "Exists"
+planConditionClass = "cvclaw"
+planConditionCount = 1
+targetType = "ibgtow"
+attackType1 = "cvclaw"
+doNextOnFail = 1
+
+[Plan3]
+planType = "Attacker"
+planPriority = 260
+planCondition = "Exists"
+planConditionClass = "cvtyrant"
+planConditionCount = 1
+targetType = "ibgtow"
+attackType1 = "cvtyrant"
+doNextOnFail = 1
+
+[Plan4]
+planType = "BuildMinimums"
+planPriority = 250
+buildType1 = "evcons"
+buildCount1 = 1
+doNextOnFail = 1
+
+[Plan5]
+planType = "BaseBuildMinimums"
+planPriority = 240
+buildType1 = "ebpgen"
+buildCount1 = 4
+buildType2 = "ebcbun"
+buildCount2 = 1
+buildType3 = "ebarmo"
+buildCount3 = 1
+doNextOnFail = 1
+
+[Plan6]
+planType = "BaseBuildMinimums"
+planPriority = 230
+planCondition = "NotExists"
+planConditionClass = "ebfact2"
+planConditionCount = 1
+buildType1 = "ebfact"
+buildCount1 = 1
+doNextOnFail = 1
+
+[Plan7]
+planType = "Upgrade"
+planPriority = 220
+planCondition = "NotExists"
+planConditionClass = "ebfact2"
+planConditionCount = 1
+unitType = "ebfact"
+doNextOnFail = 1
+
+[Plan8]
+planType = "BaseBuildMinimums"
+planPriority = 210
+buildType1 = "ebgt4g"
+buildCount1 = 1
+buildLoc1 = "GT0"
+buildType2 = "ebgt4g"
+buildCount2 = 1
+buildLoc2 = "GT1"
+buildType3 = "ebgt4g"
+buildCount3 = 1
+buildLoc3 = "GT2"
+buildType4 = "ebgt4g"
+buildCount4 = 1
+buildLoc4 = "GT3"
+buildType5 = "ebgt4g"
+buildCount5 = 1
+buildLoc5 = "GT4"
+doNextOnFail = 1
+
+[Plan9]
+planType = "BuildMinimums"
+planPriority = 200
+buildType1 = "evturr"
+buildCount1 = 2
+doNextOnFail = 1
+
+[Plan10]
+planType = "Hold"
+planPriority = 190
+holdType1 = "evturr"
+holdCount1 = 1
+holdPoint = "hold1"
+
+[Plan11]
+planType = "Hold"
+planPriority = 180
+holdType1 = "evturr"
+holdCount1 = 1
+holdPoint = "hold2"
+
+[Plan12]
+planType = "BuildMinimums"
+planPriority = 170
+buildType1 = "evtanku"
+buildCount1 = 2
+doNextOnFail = 1
+
+[Plan13]
+planType = "BuildMinimums"
+planPriority = 160
+buildType1 = "evmislu"
+buildCount1 = 2
+doNextOnFail = 1
+
+[Plan14]
+planType = "Attacker"
+planPriority = 150
+planCondition = "HisExists"
+planConditionClass = "ivturr"
+planConditionCount = 1
+targetType = "ivturr"
+attackType1 = "evmislu"
+doNextOnFail = 1
+
+[Plan15]
+planType = "Attacker"
+planPriority = 140
+targetType = "ibscav"
+attackType1 = "evtanku"
+attackType2 = "evtanku"
+doNextOnFail = 1
+
+[Plan16]
+planType = "Attacker"
+planPriority = 130
+planCondition = "NotHisExists"
+planConditionClass = "ibscav"
+planConditionCount = 1
+targetType = "ibscup"
+attackType1 = "evtanku"
+attackType2 = "evtanku"
+doNextOnFail = 1
+
+[Plan17]
+planType = "BuildMinimums"
+planPriority = 120
+buildType1 = "evserv"
+buildCount1 = 1
+doNextOnFail = 1
+
+[Plan18]
+planType = "BuildMinimums"
+planPriority = 110
+buildType1 = "evturr"
+buildCount1 = 3
+doNextOnFail = 1
+
+[Plan19]
+planType = "Hold"
+planPriority = 100
+holdType1 = "evturr"
+holdCount1 = 1
+holdPoint = "hold3"
+
+[Plan20]
+planType = "BuildMinimums"
+planPriority = 90
+planCondition = "HisExists"
+planConditionClass = "ibbomb"
+planConditionCount = 1
+buildType1 = "evkami"
+buildCount1 = 2
+doNextOnFail = 1
+
+[Plan21]
+planType = "Attacker"
+planPriority = 80
+planCondition = "HisExists"
+planConditionClass = "ibbomb"
+planConditionCount = 1
+targetType = "ibbomb"
+attackType1 = "evkami"
+attackType2 = "evkami"
+doNextOnFail = 1
+
+[Plan22]
+planType = "BuildMinimums"
+planPriority = 70
+buildType1 = "evscout"
+buildCount1 = 2
+doNextOnFail = 1
+
+[Plan23]
+planType = "Attacker"
+planPriority = 60
+planCondition = "HisExists"
+planConditionClass = "ivscav"
+planConditionCount = 1
+targetType = "ivscav"
+attackType1 = "evscout"
+attackType2 = "evmislu"
+doNextOnFail = 1
+
+[Plan24]
+planType = "Attacker"
+planPriority = 50
+planCondition = "NotHisExists"
+planConditionClass = "ivscav"
+planConditionCount = 1
+targetType = "ibscav"
+attackType1 = "evscout"
+attackType2 = "evmislu"
+doNextOnFail = 1
+
+[Plan25]
+planType = "Recover"
+planPriority = 40
+serviceUnit = "ebsbay"
+unitType1 = "evtanku"
+unitType2 = "evscout"
+
+[Plan26]
+planType = "BuildMinimums"
+planPriority = 30
+buildType1 = "evserv"
+buildCount1 = 3
+doNextOnFail = 1
+
+[Plan27]
+planType = "Attacker"
+planPriority = 20
+targetType = "ibpgen"
+attackType1 = "evmislu"
+doNextOnFail = 1
+
+[Plan28]
+planType = "Attacker"
+planPriority = 10
+targetType = "ibrecy"
+attackType1 = "evkami"
+

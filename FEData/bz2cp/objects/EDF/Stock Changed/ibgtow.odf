@@ -1,0 +1,62 @@
+[GameObjectClass]
+geometryName = "ibgtow00.xsi"
+classLabel = "turret"
+collisionRadius = 10.0
+scrapCost = 50
+scrapValue = 10
+maxHealth = 5000
+maxAmmo = 10000 // 0 is *not* treated as infinite ammo!
+unitName = "Gun Tower"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+
+armorClass = H
+
+requireCount = 1
+requireName1 = "ibcbun"
+requireText1 = "Build Relay Bunk"
+
+provideCount = 1
+provideName1 = "ibgtow"
+
+
+weaponMask = 00011
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "gtower"
+weaponAssault1 = 0
+weaponHard2 = "hp_cannon_2"
+weaponName2 = "gtower"
+weaponAssault2 = 0
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotwhite"
+
+turretCount = 4
+turretName1 = "turret_y_1"
+turretName2 = "turret_x_1"
+turretName3 = "hp_light_1"
+turretName4 = "hp_eyepoint"
+
+[BuildingClass]
+soundAmbient = "igtow01.wav"
+
+[CraftClass]
+rangeScan = 250
+periodScan = 1.0
+velocJam = 0.0
+weaponPitch = 1.5
+steerFactor = 0.5
+engageRange = 200
+
+[TurretCraftClass]
+omegaTurret = 3.0
+detectRange = 210
+
+[Lod1]
+geometryName = "ibgtowL1.xsi" ;geometry for lod1
+distance = 150                   ;bsphere under 200 pixel => switch to lod1
+dontShiftLOD = 1

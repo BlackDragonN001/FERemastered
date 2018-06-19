@@ -1,0 +1,19 @@
+[GameObjectClass]
+geometryName = "gmbolt00.x"
+classLabel = "weaponmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 1000
+maxAmmo = 500
+unitName = "chain Mine"
+
+weaponHard1 = "Chain Mine"
+weaponName1 = "gmchainmin"
+
+[MineClass]
+lifeSpan = 20
+
+[WeaponMineClass]
+searchRadius = 150.0
+heightScale = 2.0
+

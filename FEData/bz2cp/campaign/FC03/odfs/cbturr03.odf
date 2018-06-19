@@ -1,0 +1,54 @@
+[GameObjectClass]
+mrmFactor = 0
+geometryName = "cbturr03z.xsi"
+geometryScale = 0.09
+animCount = 1
+animName1 = "deploy"
+animFile1 = "cbturr03z.xsi"
+classLabel = "turret"
+collisionRadius = 1.0
+scrapCost = 75
+scrapValue = 40
+powerCost = 0
+maxHealth = 2000
+maxAmmo = 10000
+unitName = "Gun Spire"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 0
+ownsTerrain = 1
+
+armorClass = N
+
+
+requireCount = 0
+
+provideCount = 1
+provideName1 = "Turret"
+
+///// WEAPON ////////////////////
+
+weaponHard1 = "hp_gun_1"
+weaponName1 = "glaser_03"
+weaponAssault1 = 0
+
+/////////////////////////////////
+
+turretCount = 0
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+[BuildingClass]
+soundAmbient = "sgtow01.wav"
+
+[CraftClass]
+rangeScan = 200.0
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 1.5
+steerFactor = 1.0
+engageRange = 200
+

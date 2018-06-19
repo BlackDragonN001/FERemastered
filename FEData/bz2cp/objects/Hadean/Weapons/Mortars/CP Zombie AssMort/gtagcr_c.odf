@@ -1,0 +1,19 @@
+[WeaponClass]
+classLabel = "targeting"
+ordName = "cpcruise_c"
+wpnName = "Zombie Jr."
+fireSound = "" // "tcmort01.wav"
+wpnReticle = "gtaggun.0"
+wpnCategory = "MORT"
+isAssault = 1
+aiRange = 160
+
+[TargetingGunClass]
+leaderName = "leadcr_c"
+leaderSound = "tcmort01.wav" // "tmiss01.wav"
+shotDelay = 0.5
+firstDelay = 1.0
+salvoDelay = 1.0
+salvoCount = 4.0
+lockingReticle = "gtaggun.1"
+lockedReticle = "gtaggun.2"

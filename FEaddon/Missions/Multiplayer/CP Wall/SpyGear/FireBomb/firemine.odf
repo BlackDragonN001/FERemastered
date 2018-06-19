@@ -1,0 +1,29 @@
+[GameObjectClass]
+geometryName = "igflar00.xsi"
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 300
+maxAmmo = 1
+unitName = "Fire Bomb"
+heatSignature = 0.01
+imageSignature = 0.01
+radarSignature = 0.0
+//isAssault = 0
+armorClass = N
+canCollide = 1
+canDetect = 1 
+canInteract = 1 
+ownsTerrain = 0
+
+
+[MineClass]
+lifeSpan = .16
+
+
+[FlareMineClass]
+payloadName = "firechaff"
+fireSound = "flame01.wav"
+triggerDelay = .01
+shotDelay = .01
+shotVariance = 2.5 

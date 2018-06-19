@@ -1,0 +1,47 @@
+[GameObjectClass]
+geometryName = NULL // "igflar00.xsi"
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 9999
+maxAmmo = 100
+unitName = "Lightmine"
+heatSignature = 100.0
+effectHard1 = "Lightmine"
+effectName1 = "dclightmine.light"
+lensflare = 0
+
+[MineClass]
+lifeSpan = 99990.0
+
+[FlareMineClass]
+payloadName = "blightmine2"
+fireSound = ""
+triggerDelay = 0.0
+shotDelay = 0.1
+shotVariance = 0.0
+damageRadius = 0.0
+damageValue(N) = 100 // none
+damageValue(L) = 50 // light
+damageValue(H) = 5 // heavy
+damageValue(S) = 50 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 5 // absorbtion
+kickRadius = 0.0
+kickVeloc = 0.2
+kickOmega = 0.5
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 60.0
+renderBase = "draw_light"
+startColor = "50 70 250 3000"
+finishColor = "50 70 250 3000"
+startRadius = 100
+finishRadius = 100
+animateTime = 60.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+lensFlare = 0
+lensflare = 0

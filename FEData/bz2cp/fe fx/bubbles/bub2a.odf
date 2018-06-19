@@ -1,0 +1,33 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = ""
+xplVehicle = ""
+xplBuilding = ""
+renderName = "bub2a.bubble"
+xplExpire = "bubxpl2"
+
+ammoCost = 0
+lifeSpan = 1.0 // 105m
+shotSpeed = 0.01
+
+damageValue(N) = 0 // none // 200
+damageValue(L) = 0 // light // 160
+damageValue(H) = 0 // heavy // 100
+
+damageValue(S) = 0 // standard // 160
+damageValue(D) = 0 // deflection // 100
+damageValue(A) = 0 // absorbtion // 200
+
+[bubble]
+lifeTime = 1.0
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "0 200 0 200"
+finishColor = "0 200 0 150"
+startRadius = 0.2
+finishRadius = 1.0
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16

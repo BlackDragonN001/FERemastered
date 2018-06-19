@@ -1,0 +1,22 @@
+[GameObjectClass]
+geometryName = NULL //"defboltmin.x"
+classLabel = "weaponmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 1000
+maxAmmo = 3000
+unitName = "Aurora"
+//canDetect = 0
+//canInteract = 0
+//canSnipe = 0
+explosionName = "xgasxpl"
+weaponHard1 = "Aurora"
+weaponName1 = "aurorablta"
+
+[MineClass]
+lifeSpan = 90000
+
+[WeaponMineClass]
+searchRadius = 100.0
+heightScale = 0.0
+

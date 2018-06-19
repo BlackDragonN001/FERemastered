@@ -1,0 +1,294 @@
+// =================
+// VEHICLE EXPLOSION
+// =================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 13
+
+particleClass1 = "xscavxpl.light"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xscavxpl.ring"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xscavxpl.sparks"
+particleCount3 = 40
+particleVeloc3 = "150.0 150.0 150.0"
+
+particleClass4 = "xscavxpl.flame"
+particleCount4 = 4
+particleVeloc4 = "0.0 10.0 0.0"
+
+particleClass5 = "xscavxpl.trail"
+particleCount5 = 20
+particleVeloc5 = "50.0 80.0 50.0"
+particleBias5 = "0.0 0.0 0.0"
+
+particleClass6 = "xscavxpl.bangemit"
+particleCount6 = 10
+particleVeloc6 = "10.0 20.0 10.0"
+
+particleClass7 = "xscavxpl.puff"
+particleCount7 = 40
+particleVeloc7 = "80.0 80.0 80.0"
+
+particleClass8 = "xscavxpl.ring2"
+particleCount8 = 1
+particleVeloc8 = "0.0 1.0 0.0"
+
+particleClass9 = "xscavxpl.cloud"
+particleCount9 = 1
+particleVeloc9 = "0.0 5.0 0.0"
+
+particleClass10 = "xscavxpl.flame2"
+particleCount10 = 1
+particleVeloc10 = "0.0 5.0 0.0"
+
+particleClass11 = "xscavxpl.posroll"
+particleCount11 = 1
+particleVeloc11 = "0.0 0.1 0.0"
+
+particleClass12 = "xscavxpl.puff2"
+particleCount12 = 40
+particleVeloc12 = "80.0 80.0 80.0"
+
+particleClass13 = "xscavxpl.cloud2"
+particleCount13 = 5
+particleVeloc13 = "10.0 10.0 10.0"
+
+//particleClass14 = "xscavxpl.shock" // Never existed in FE. -GBD
+//particleCount14 = 1
+//particleVeloc14 = "0.0 0.0 0.0"
+
+explSound = "scavxpl.wav"
+damageRadius = 20.0
+damageValue(N) = 0
+damageValue(L) = 50
+damageValue(H) = 50
+damageValue(S) = 50
+damageValue(D) = 50
+damageValue(A) = 50
+kickRadius = 50.0
+kickOmega = 7.0
+kickVeloc = 7.0
+
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 2.0
+renderBase = "draw_light"
+startColor = "255 150 0 7055"
+finishColor = "255 0 0 0"
+startRadius = 120.0
+finishRadius = 120.0
+animateTime = 2.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[ring]
+simulateBase = "sim_null"
+lifeTime = 2.0
+renderBase = "draw_planar"
+textureName = "fbchar.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 160"
+finishColor = "250 250 250 0"
+startRadius = 15.0
+finishRadius = 70.0
+animateTime = 2.0
+
+[sparks]
+simulateBase = "sim_ember"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "spark.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 100 100 0"
+startRadius = 1.5
+finishRadius = 1.5
+animateTime = 3.0
+rotationRate = 40.0
+
+[flame]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "xscavxpl.flameemit"
+emitDelay = 0.1
+emitVelocity = "7.0 7.0 7.0"
+emitVariance = "0.0 0.0 0.0"
+
+[flameemit]
+simulateBase = "sim_smoke"
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "fire.tga" // flame2
+textureBlend = "one one modulate"
+startColor = " 255 180 0 200"
+finishColor = "255 0 0 0"
+startRadius = 7.0
+finishRadius = 11.0
+animateTime = 1.5
+rotationRate = 5.0
+
+[trail]
+simulateBase = "sim_ember"
+lifeTime = 4.0
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+startColor = "255 1200 200 200"
+finishColor = "150 150 150 0"
+startRadius = 0.3
+finishRadius = 0.0
+trailTime = 2.0
+segmentTime = 1.5
+animateTime = 4.0
+[bang]
+simulateBase = "sim_smoke"
+lifeTime = 1000
+renderBase = "draw_emit"
+emitName = "xscavxpl.bangemit"
+emitDelay = 1000
+//emitDelayVar = 0.2
+emitVelocity = "20.0 20.0 20.0"
+emitVariance = "19.0 19.0 19.0"
+
+[bangemit]
+simulateBase = "sim_ember"
+lifeTime = 1.5
+renderBase = "draw_twirl_trail"
+emitDelay = 0.1
+//emitDelayVar = 0.02
+emitVelocity = "2.0 3.0 2.0"
+emitVariance = "15.0 15.0 15.0"
+emitInherit = "0.0 0.0 0.0"
+emitLife = 0.6
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 200 128"
+finishColor = "255 0 0 0"
+startRadius = 0.1
+finishRadius = 0.02
+animateTime = 1.5
+rotationRate = 10.0
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 4.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "200 200 200 0"
+startRadius = 0.3
+finishRadius = 0.1
+animateTime = 4.0
+
+[ring2]
+simulateBase = "sim_null"
+lifeTime = 0.7
+renderBase = "draw_sphere"
+textureName = "ring2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 160"
+finishColor = "255 255 255 0"
+startRadius = 3.0
+finishRadius = 30.0
+animateTime = 0.7
+latitudeBands = 8
+longitudeSegments = 16
+
+[cloud]
+simulateBase = "sim_dust"
+lifeTime = 2.0
+renderBase = "draw_emit"
+emitName = "xscavxpl.cloudemit"
+emitDelay = 0.5
+emitVelocity = "0.0 1.0 0.0"
+emitVariance = "0.0 1.0 0.0"
+
+[cloudemit]
+simulateBase = "sim_smoke"
+lifeTime = 2.5
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "200 120 50 255"
+finishColor = "50 50 50 0"
+startRadius = 6.0
+finishRadius = 12.0 //
+animateTime = 2.5
+
+[flame2]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "xscavxpl.flame2emit"
+emitDelay = 0.03
+emitVelocity = "0.0 2.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+
+[flame2emit]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = " 255 130 0 220"
+finishColor = "200 0 0 0" //
+startRadius = 6.0
+finishRadius = 18.0
+animateTime = 3.0
+rotationRate = 10.0
+
+[posroll]
+simulateBase = "sim_dust"
+lifeTime = 4.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "32 32 32 255"
+finishColor = "127 127 127 0"
+startRadius = 12.0
+finishRadius = 4.5
+animateTime = 4.0
+rotationRate = 2.0
+
+[Puff2]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 0 255"
+finishColor = "200 0 0 0"
+startRadius = 1.0
+finishRadius = 0.5
+animateTime = 3.0
+
+[cloud2]
+simulateBase = "sim_dust"
+lifeTime = 2.0
+renderBase = "draw_emit"
+emitName = "xscavxpl.cloud2emit"
+emitDelay = 0.3
+emitVelocity = "0.0 2.0 0.0"
+emitVariance = "0.0 2.0 0.0"
+
+[cloud2emit]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "250 250 250 255"
+finishColor = "200 200 200 0"
+startRadius = 6.0
+finishRadius = 12.0 //
+animateTime = 3.0

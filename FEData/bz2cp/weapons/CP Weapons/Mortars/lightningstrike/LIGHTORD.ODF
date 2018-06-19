@@ -1,0 +1,34 @@
+[OrdnanceClass]
+classLabel =  "bullet" //"beam"
+
+shotGeometry = NULL
+xplGround = "xarcgnd_a"
+xplVehicle = "xarccar_a"
+xplBuilding = "xarccar_a"
+
+renderName = "lightord.render"
+
+ammoCost = 20
+lifeSpan = 175e-6 // 175m
+shotSpeed = 1e6
+
+damageValue(N) = 130 // none // 500 // 250
+damageValue(L) = 130 // light // 500 // 250
+damageValue(H) = 85 // heavy // 375 // 187.5
+
+damageValue(S) = 100 // standard // 375 // 187.5
+damageValue(D) = 120 // deflection // 500 // 250
+damageValue(A) = 60 // absorbtion // 500 // 125
+
+[Render]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.3
+finishRadius = 0.01
+segmentLength = 7.0 
+segmentVariance = "2.0 2.0 0.5"
+animateTime = 0.8 // 0.2
+textureRate = 0.01

@@ -1,0 +1,14 @@
+[WeaponClass]
+classLabel = "dispenser"
+altName = "gmlock_c"
+ordName = NULL		// <-- this is important!
+wpnName = "Wasp"
+fireSound = ""
+wpnReticle = "gmlock_a"
+wpnCategory = "ROCK"
+aiRange = 200
+isAssault = 1
+
+[DispenserClass]
+shotDelay = 1.0
+objectClass = "antibody2"

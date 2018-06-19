@@ -1,0 +1,80 @@
+Voicemail 1:
+EDF10__00a.wav:*
+SCHULTZ (hoarse, nervous whisper, plus heavy static):  "This message is for Captain Joseph Corber. If you can hear me, Joe, then you're in serious danger. The Hadeans know you're here and they're planning a lightning attack in just a few hours. Their base is heavily guarded with their new plasma-beam weapons, so you'll have to watch your step. I'll meet you at an inlet north of their base, at standard coordinates Eight-[static]...Zero-Four--[more static]. My ship is damaged, and I'll need some help to get out of...[static, increasing until message is cut off]."
+
+Voicemail 2:
+EDF10__00b.wav:
+EISENSTEIN: "Sorry about the static, sir. We tried to triangulate Mr. Schultz's position with RDF, but he seemed to be on the move. Our best guess is somewhere to the southwest, but we can't be sure. By the way, there was something *strange* about the voiceprint. It's definitely Lieutenant Schultz, but there are some unusual voice patterns. It's probably nothing, just a result of the static or electromagnetic anomalies here on Tranquility..."
+
+LOedf10.wav (Corber):*
+	"Coming out of the Portal from Miasma, the planet Tranquility was Paradise itself: we felt like shipwrecked sailors washing up on the shore of a lush tropical island. Clean air and pure water, pale yellow sands and tropical plants that felt like a touch of home.  And best of all, hardly any Hadeans or Cerberi nearby.
+	And so we let our guard down...I let MY guard down. To give the guys a break, I sent a few men out on routine perimeter patrol instead of ordering a full area recon. 
+	Van Dyke and Ricketti stumbled onto a well-disguised Hadean base; they'd hardly turned around before that damned 'Finger of God' fried their tanks.  Van Dyke was lucky--he died instantly.  Ricketti auto-ejected and his other wingman somehow got him back to base.  I visited him in the BioWard that afternoon, just before he died.  I'll never forget his face, not as long as I live.
+	And I'll never let my guard down again."
+
+
+player has just got here and destroyed the portal from whence they came. A hadean dropship takes off.
+
+
+EDF10A.WAV: (about a 40-second exchange)*
+HARDIN: "We appreciate your help, Crown Prince Thanatos."
+CROWN PRINCE THANATOS:  "It's merely 'General Thanatos,' now that I have abdicated my royal titles.  I must take my leave, now; the Emperor's spies will come soon to investigate the WorldPortal we destroyed. But several of my men will remain behind, to maintain communications between us."
+HARDIN: "Their assistance will be most welcome, General.  Farewell."
+GENERAL THANATOS:  "And 'good hunting,' as your human expression goes."
+
+EDF10B.WAV:
+SGT. WONG:  "Sir, our scanners show several Cerberi units incoming from the southwest."
+HARDIN:  "Major Corber, how about giving those fellas a nice, warm welcome!"
+CORBER:  "Will do, sir."
+
+EDF10C.WAV:*
+HARDIN:  "Major Corber, our scanners identify the approaching Hadean units as part of the rebel force. I've coded the targeting radar to recognize our new allies' IFF signals and display them in blue--that should help us avoid hitting them with friendly-fire."
+
+EDF10C2.WAV: (need a VO to make sure player follows Hadean commander)
+HARDIN: "Follow that Hadean commander and see if he has any news for us."
+
+EDF10D.WAV:	(about 60 seconds)
+HADEAN COMMANDER (even more robotic than Thanatos):  "I am Marshal Pantelas, of General Thanatos's Imperial Guard. The Prince--er, General--has advised us to render all possible assistance to our new allies."
+CORBER (a little awkwardly, confronted with the stiff robotic manner of Pantelas): "Thank you, Marshall."
+PANTELAS:  "The General asked me to advise you of an important discovery. Tranquility has few natural resources, but a nearby island holds a promising scrap field and two pools rich in biometal. I am marking it on your radar.  The distance is great, but we have secretly re-coded the Portals so that you may use them."
+CORBER: "That will be a big help, sir."
+PANTELAS: "We have also heard of your missing comrade, the human named Schultz. We will make discrete inquiries of the Hadean Loyalists, in an effort to localize him for you."
+CORBER: "Thank you very much. I appreciate that.  Schultz was--*is*--a good friend of mine."
+PANTELAS: "Yes, sir.  My people have a saying: 'A brother-in-arms is forever a brother in the heart.' [suddenly recalling his situation and becoming rushed]  We must take our leave, before we are discovered!"
+
+EDF10E.WAV:
+HARDIN:  "I monitored that transmission, Major--that's excellent news. Once you've secured our new base, I'll need you to take control of that island's scrap pools. The StormPetrel has taken heavy damage during our trip here, and we'll need enough biometal for a complete overhaul."
+
+EDF10F.WAV
+SGT. WONG: "General Hardin, we just received an encrypted message from our new allies. They've found Lieutenant Schultz!  He's pinned down inside a heavily-guarded cove several kilometers directly west of our base."
+HARDIN:  "Outstanding!  Major Corber, did you catch that?  I want you to get a rescue team over there immediately, and bring him straight back to base.  No stopping for drinks on the way!"
+CORBER:  "Yes, sir--er, no, sir (flustered and excited)!  We'll have him back here in time for dinner."
+HARDIN:  "I'm sure you will.  Every last man and woman in this unit has volunteered for the rescue--take along anyone you need."
+
+EDF10Z.WAV:*
+SCHULTZ (fatigued/worn down, but elated):  "Is that you, Corber?"
+CORBER:  "You got it.  Any other enemy forces nearby?"
+SCHULTZ: "Not hardly--just one look at your ugly face was enough to scare them all away!"
+CORBER (laughing):  "I drive thirty light-years to save your butt, and all I get is insults!  I bet you didn't escape at all--the Hadeans probably THREW you out!"
+SCHULTZ (mockingly):  "You're hurting my feelings, Joe. Actually, there was this kinda hot Hadean warrior-princess that couldn't keep her eyes off of me...'Course, she was my guard..."
+CORBER:  "Let's get out of here, you crazy fool."
+
+EDF10G1.WAV:*
+HARDIN:  "Welcome home, Mr. Schultz.  I imagine you've got quite a story to tell us."
+SCHULTZ:  "You bet your a--uhh--[suddenly sheepish, remembering who he's talking to and changing his word-choice]--You bet your *life*, sir.  But first I've got some bad news: the Hadeans just finished building another big portal."
+HARDIN:  "*Besides* the WorldPortal we just destroyed?"
+SCHULTZ (suddenly sober):  "Yes, sir.  It's at the entrance of a canyon, just west of their main base.  I think it leads to another planet in this system--one we've never been to before.  I overheard radio chatter about a place called "Facility" or something--at least that's what my translator computer called it.
+HARDIN (whispers something in background with his assistant, then resumes): "That may be a *very* important discovery...*Captain* Schultz."
+SCHULTZ:  "Uhh--*Captain?*"
+HARDIN:  "That's right--by escaping with this important news, you just earned yourself a promotion.  Get some rest and then we'll finish your debriefing."
+SCHULTZ: "Yes, SIR!"
+
+EDG10G2.WAV:*
+HARDIN:  "Major Corber?  You heard Captain Schultz's news--I think this pushes our timetable up a bit.  You've GOT to destroy that base, as quickly as you can.  It's vital that we get control of that WorldPortal.  The Hadeans are building a huge fleet on Facility, and we need to find out where it's headed."
+CORBER:  "Understood, sir."
+HARDIN:  "Be careful.  That base is surrounded by numerous Fingers of God, but there MUST be a way through."
+
+Once the hadean recy has been destroyed. the mission is over.
+
+
+*means VO has been changed since previous version.

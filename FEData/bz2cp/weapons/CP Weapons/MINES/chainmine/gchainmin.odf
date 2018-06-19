@@ -1,0 +1,12 @@
+[WeaponClass]
+classLabel = "dispenser"
+wpnName = "Chain Mine"
+fireSound = "mmine01.wav"
+wpnReticle = "gbolt"
+wpnPriority = 5
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 2.0
+objectClass = "chainmin"
+

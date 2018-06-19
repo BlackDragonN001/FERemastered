@@ -1,0 +1,44 @@
+[WeaponClass]
+classLabel = "cannon"
+ordName = "skipfire"
+wpnName = "Skip Jack"
+fireSound = "igun01l.wav"
+wpnReticle = "ghornet.0"
+aiRange = 100
+altName = "igfluxnet"
+isAssault = 0
+isFlying = 0
+wpnCategory = "HAND"
+
+// external geometry
+geometryName = "igsnip_skel.xsi"
+geometryScale = 0.12
+animCount = 4
+animName1 = "stand"
+animFile1 = "igsnip_stand.xsi"
+animName2 = "walk"
+animFile2 = "igsnip_stand.xsi"
+animName3 = "crouch"
+animFile3 = "igsnip_deploy.xsi"
+animName4 = "jump"
+animFile4 = "igsnip_stand.xsi"
+
+// cockpit geometry
+cockpitName = "iwrifl_cockpit_stand.xsi"
+cockpitScale = 0.12
+animCountCockpit = 4
+animNameCockpit1 = "stand"
+animFileCockpit1 = "iwrifl_cockpit_stand.xsi"
+animNameCockpit2 = "walk"
+animFileCockpit2 = "iwrifl_cockpit_run.xsi"
+animNameCockpit3 = "crouch"
+animFileCockpit3 = "iwrifl_cockpit_sniper.xsi"
+animNameCockpit4 = "jump"
+animFileCockpit4 = "iwrifl_cockpit_stand.xsi"
+
+
+[CannonClass]
+shotDelay = 1.0
+salvoCount = 1 
+salvoDelay = .05 
+shotVariance = 0.0 // 0.1 

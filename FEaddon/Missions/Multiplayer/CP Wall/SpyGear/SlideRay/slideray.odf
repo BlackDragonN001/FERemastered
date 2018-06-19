@@ -1,0 +1,30 @@
+[OrdnanceClass]
+classLabel = "anchor"
+
+shotGeometry = "NULL"
+shotSound = NULL// "sonic03c.wav"
+
+xplGround = "xslidegnd_c"
+xplVehicle = NULL//"xslidecar_c"
+xplBuilding = NULL//"xslidecar_c"
+xplExpire = "xslidexpr"
+
+ammoCost = 1.20
+lifeSpan = 15E-6 
+shotSpeed = 1E6
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+
+[LeaderRoundClass]
+stickTime = 0.5 //2.0
+
+[AnchorRocketClass]
+accelDrag = 5.0 // 8.0
+alphaDrag = 0.7 // 0.5
+

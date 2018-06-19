@@ -1,0 +1,34 @@
+[GameObjectClass]
+geometryName = "ibradar01.xsi"
+classLabel = "powerplant"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ibradar01.xsi"
+scrapCost = 30
+scrapValue = 3
+maxHealth = 5000
+maxAmmo = 0
+addHealth=100
+unitName = "Uplink Center"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0
+isAssault = 1
+
+armorClass = H
+
+requireCount = 0
+
+lightHard1 = "hp_light_1"
+lightName1 = "o_lblue_nf"
+
+[BuildingClass]
+soundAmbient = "ipgen01.wav"
+
+[PoweredBuildingClass]
+detectRange = 50
+
+//[Lod1]
+//geometryName = "ibpgenL1.xsi" ;geometry for lod1
+//distance = 64                    ;bsphere under 200 pixel => switch to lod1

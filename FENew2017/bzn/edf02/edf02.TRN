@@ -1,0 +1,117 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX=-1024
+MinZ=-1024
+Width=3072
+Depth=3072
+Height=100
+Tile = 1
+
+[NormalView]
+
+FogColor="80 80 80 255"
+FogStart=150
+FogEnd=250
+VisibilityRange=275
+
+[World]
+MusicTrack1=5
+MusicTrack2=8
+MusicTrack3=10
+
+[Light]
+SunPeriod = 24.0
+SunAngle = 9.0
+SunColor = "200 200 200 255"
+AmbientColor = "180 180 180 255"
+
+[Sky]
+SkyType= 0
+SkyHeight = 100
+SkyTexture = darksky.tga
+SkyColor = "133 139 108 255"
+SunTexture = sun.0
+SunColor = "0 0 0 0"
+
+[Water]
+WaterTexture1 = "water256.tga"
+WaterDiffuse1 = "57 64 69 127"
+WaterBlend1 = "srcalpha invsrcalpha modulatealpha"
+BumpTexture1 = "water256.tga"
+BumpDiffuse1 = "57 64 69 127"
+BumpBlend1 = "srcalpha invsrcalpha modulatealpha"
+
+[Texture]
+TileTexture1 = "titan.tga"
+TileTexture2 = "dune2.tga"
+TileTexture3 = "titan3.tga"
+TileTexture4 = "dune5.tga"
+TileTexture5 = "dune8.tga"
+TileTexture6 = "dune9.tga"
+TileTexture7 = "dune6.tga"
+TileTexture8 = "wasteland2.tga"
+TileTexture9 = "wasteland4.tga"
+TileTexture10 = "toxic_1.tga"
+TileTexture11 = "crackmud.tga"
+TileTexture12 = "spstones.tga"
+TileTexture13 = "spstones3.tga"
+
+[Clouds]
+Count    = 0
+Type     = 1
+TileSize = 200
+
+Texture0 = acloud2.tga
+Size0    = 100
+Height0  = 30
+
+Texture1 = acloud.tga
+Size1    = 100
+Height1  = 40
+
+Texture2 = acloud2.tga
+Size2    = 100
+Height2  = 50
+
+[Dome]
+DomeGeom    = miredome.xsi
+DomeRadius  = 275
+DomeHeight  = 50
+DomeType    = 0
+DomeUVSpeed = "0.002 0.002 0.002"
+
+Count       = 0
+Type        = 1
+TileSize    = 375
+
+Geom0       = mirecloud.xsi
+Height0     = 100
+Fade0       = "0.25 0.75 1.00"
+UVSpeed0    = "0.00 0.01 0.00"
+Scale0      = "1.00 1.00 1.00"
+
+[LightningBolt]
+minDelay=10.0
+maxDelay=20.0
+Bolts=1
+Duration=.200
+Distance=120
+Width=0.3
+Sound=thunder.wav
+Sound2=thunder2.wav
+texture=bolt.tga
+
+[Rain]
+OnPeriod = 300.000
+OffPeriod = 1.000
+TranPeriod = 10.000
+ScaleFactor= 1.0
+
+[Mirror]
+Enabled    = 1
+UseTexture = 1
+Offset     = -.01
+
+[Shadows]
+Stencil = 1

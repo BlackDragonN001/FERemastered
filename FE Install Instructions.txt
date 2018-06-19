@@ -1,0 +1,18 @@
+Step 1: Download and Install Dropbox: https://www.dropbox.com/downloading
+
+Step 2: Download and Install LinkShell Extention: 64 bit OS version: http://schinagl.priv.at/nt/hardlinkshellext/HardLinkShellExt_X64.exe or 32 bit OS version: http://schinagl.priv.at/nt/hardlinkshellext/HardLinkShellExt_win32.exe
+
+Step 3: After being added to the shared folder by GBD, Go to your dropbox folder (Users\youruser\Dropbox), right click on the FE13Dev folder, select "Pick Link Source". 
+
+Step 4: Go to your Battlezone II folder, right click inside it (not on a file or folder), select "Drop As" then choose "Symbolic Link".
+
+Step 5: Go into the FE13Dev folder in BZ2, copy the FE13bzone.cfg and paste it into the BZ2 folder.
+
+Step 6: Right click on bzone.exe and select "create shortcut", then in the target line, after the " add: /config FE13bzone.cfg /tps 30. For Example: "C:\Program Files\Battlezone II\bzone.exe" /config BZC_bzone.cfg /tps 30 /win
+
+Step 7: Have fun!
+
+
+If Link Shell complains about VS2005 pre requisits:
+http://download.microsoft.com/download/8/B/4/8B42259F-5D70-43F4-AC2E-4B208FD8D66A/vcredist_x64.EXE
+http://download.microsoft.com/download/8/B/4/8B42259F-5D70-43F4-AC2E-4B208FD8D66A/vcredist_x86.EXE

@@ -1,0 +1,38 @@
+********************************************************
+*                                                      *
+*  FE_MPI_01.DLL changes by Scott "Centerline" Valler  *
+*  Summary of changes from Rev.B to Rev.C              *
+*                                                      *
+********************************************************
+
+
+Running list of changed/added path points and variables:
+--------------------------------------------------------
+turretEnemy1#:1-10
+RandomPool_X_Y_ODF: {X:1-9} {Y:1-9} {ODF:NONE or specify Pool ODF without extension}
+	For Example:  RandomPool_1_1_ODF; RandomPool_1_2_ODF; RandomPool_1_3_NONE;
+	RandomPool_2_1_ODF; RandomPool_2_2_ODF; RandomPool_3_1_ODF; etc. You can
+	have just one pool location in a group if desired. If there is only one
+	pool in the group then that pool will always be built.
+
+
+Summary of changes/fixes/additions:
+-----------------------------------
+1. The human team recycler is now built at the "Recycler" mpipathpoint instead of the player spawn point.
+
+2. When the human team selects hadean and the map has uses mpipathpoints in the form of "mpih#_fvturr_ivturr_evturr" for fixed startup units - the DLL now spawns the Hadean units as Hadean instead of ISDF.
+
+3. Fixed all occurance of CVPUWALK so that the computer will now build these units and attack with them.
+
+4. Increased maximum portal count to 24.
+
+5. Added check to see if a destination portal exists for third race. If not, don't build new units. Solves the huge lag fest that usually ensues mid to late game after there are no destination portals available for the computer team allies.
+
+6. Increased the number of computer team startup turrets from 6 to 10.  You can now use turretEnemy1#:1-10.  The turretEnemy# units respawn at certain intervals so these are sometimes better options than using the MPIC# path points to place startup turrets for the computer team. This is a much better choice than using the gtow or
+mpic# type path points if you are looking for something that regenerates.
+
+7. Updated the MPIPathPoints.txt file to include the new path points and the turretEnemy# path points and noted the new total number of portals available for the map.
+
+8. Added console statements at map launch that state scrap boost, difficulty level.
+
+9. Added RandomPool routine to place random scrap pools on the map. The path points are laid down in groups and one point in the group is randomly chosen to build a pool. If the ODF is set equal to "NONE" at the path point that was randomly chosen then no pool is created for that group. That allows for an even higher level of randomness.

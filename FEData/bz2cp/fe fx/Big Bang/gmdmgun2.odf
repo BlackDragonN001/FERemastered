@@ -1,0 +1,16 @@
+[WeaponClass]
+classLabel = "detonator"
+ordName = "mdmgun2"
+wpnName = "Da Bang !"
+fireSound = "mdmort01.wav"
+wpnReticle = "gmdmgun.0"
+wpnLadder = "gmdmgun.L0"
+wpnPriority = 1
+wpnCategory = "MORT"
+aiRange = 175
+
+[CannonClass]
+shotDelay = 2.0
+
+[RemoteDetonatorClass]
+armedReticle = "gmdmgun.1"

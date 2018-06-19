@@ -1,0 +1,37 @@
+[GameObjectClass]
+geometryName = "pbtunn01.xsi"
+classLabel = "i76building"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "crossroads"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+collisionRadius = 5.0
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+ownsTerrain = 1
+
+[BuildingClass]
+tunnelCount = 3
+
+tunnel01X0 = 1
+tunnel01Z0 = 0
+tunnel01DX = 2
+tunnel01DZ = 4
+tunnel01Edge = "ffff"
+
+tunnel02X0 = 0
+tunnel02Z0 = 1
+tunnel02DX = 1
+tunnel02DZ = 2
+tunnel02Edge = "wfwf"
+
+tunnel03X0 = 3
+tunnel03Z0 = 1
+tunnel03DX = 1
+tunnel03DZ = 2
+tunnel03Edge = "wfwf"

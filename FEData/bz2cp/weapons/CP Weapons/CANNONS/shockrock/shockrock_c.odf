@@ -1,0 +1,44 @@
+[OrdnanceClass]
+classLabel = "anchor"
+
+shotGeometry = "iorckt00.xsi"
+shotSound = "Ordin_b.wav"
+
+renderName = "shockrock_c.render"
+
+xplGround = "xshockrock_c"
+xplVehicle = "xshockrock_c"
+xplBuilding = "xshockrock_c"
+
+ammoCost = 18.0
+lifeSpan = 1.5 // 120m
+shotSpeed = 70.0
+
+damageValue(N) = 220 // none // 366
+damageValue(L) = 200 // light // 333
+damageValue(H) = 180 // heavy // 300
+
+damageValue(S) = 200 // standard // 333
+damageValue(D) = 150 // deflection // 250
+damageValue(A) = 220 // absorbtion // 366
+
+[LeaderRoundClass]
+stickTime = 5.0
+
+[AnchorRocketClass]
+accelDrag = 4.0
+alphaDrag = 0.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 1
+renderName1 = "shockrock_c.light"
+
+[Light]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 3.0
+finishRadius = 0.5

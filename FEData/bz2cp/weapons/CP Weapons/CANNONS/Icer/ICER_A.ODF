@@ -1,0 +1,31 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotRadius = 1.0
+xplGround = "xicehit"
+xplVehicle = "xicehit"
+xplBuilding = "xicehit"
+
+renderName = "icer_a.puff"
+ammoCost = 3
+lifeSpan = 0.5
+shotSpeed = 50.0
+
+damageValue(N) = 20 // none
+damageValue(L) = 10 // light
+damageValue(H) = 8 // heavy
+
+damageValue(S) = 11 // standard
+damageValue(D) = 13.4 // deflection
+damageValue(A) = 7.2 // assault
+
+[Puff]
+renderBase = "draw_twirl"
+textureName = "icerpuff.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 128"
+finishColor = "255 255 255 0"
+startRadius = 1.0
+finishRadius = 7.0
+animateTime = 1.0

@@ -1,0 +1,20 @@
+[WeaponClass]
+classLabel = "targeting"
+altName = NULL // "gtaggun_a"
+ordName = "skipfper"
+wpnName = "Fire Jack"
+fireSound = "flame01.wav"//NULL //"tmiss03b.wav"
+wpnReticle = "gtaggun.0"
+wpnCategory = "ROCK"
+isAssault = 0
+aiRange = 150
+
+[TargetingGunClass]
+leaderName = "skipflead"
+leaderSound = "flame01.wav"//"igun01l.wav" //"tmiss01.wav"
+shotDelay = 0.0
+firstDelay = 0.00001
+salvoDelay = 0.1
+salvoCount = 1
+lockingReticle = "gtaggun.1"
+lockedReticle = "gtaggun.2"

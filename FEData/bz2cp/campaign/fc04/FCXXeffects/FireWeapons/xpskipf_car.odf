@@ -1,0 +1,107 @@
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 5
+particleClass1 = "xpskipf_car.light"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xpskipf_car.chunks"
+particleCount2 = 4
+particleVeloc2 = "2.0 1.0 2.0"
+particleBias2 = "-2.0 5.0 -2.0"
+particleVariance = "5.0 5.0 5.0"
+
+particleClass3 = "xpskipf_car.chunks2"
+particleCount3 = 4
+particleVeloc3 = "2.0 1.0 2.0"
+particleBias3 = "2.0 5.0 2.0"
+particleVariance = "5.0 5.0 5.0"
+
+particleClass4 = "xpskipf_car.chunks3"
+particleCount4 = 4
+particleVeloc4 = "2.0 1.0 2.0"
+particleBias4 = "2.0 5.0 -2.0"
+particleVariance = "5.0 5.0 5.0"
+
+particleClass5 = "xpskipf_car.chunks4"
+particleCount5 = 4
+particleVeloc5 = "1.0 2.0 1.0"
+particleBias5 = "0.0 3.0 0.0"
+particleVariance = "15.0 10.0 15.0"
+explSound = "fmiss03.wav" //"xmag05.wav"
+
+damageRadius = 8
+
+damageValue(N) = 150 
+damageValue(L) = 100
+damageValue(H) = 100
+
+damageValue(S) = 100
+damageValue(D) = 100
+damageValue(A) = 100
+
+kickRadius = 4.0
+kickOmega = 0.1
+kickVeloc = 0.2
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = .8
+renderBase = "draw_light"
+startColor = "255 255 0 850"
+finishColor = "255 0 0 255"
+startRadius = 60.0
+finishRadius = 1.0
+animateTime = .8
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Chunks]
+simulateBase = "sim_ember"
+lifeTime = 1.5
+renderBase = "draw_sprite"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 140 0 255" 
+finishColor = "255 70 0 0"
+startRadius = 1
+finishRadius = 3.5
+animateTime = 1.5
+
+[Chunks2]
+simulateBase = "sim_ember"
+lifeTime = 1.5
+renderBase = "draw_sprite"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 0 255" 
+finishColor = "255 100 0 0"
+startRadius = 1
+finishRadius = 3.8
+animateTime = 1.5
+
+[Chunks3]
+simulateBase = "sim_ember"
+lifeTime = 1.5
+renderBase = "draw_sprite"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 120 0 255" 
+finishColor = "255 90 0 0"
+startRadius = 1
+finishRadius = 4.0
+animateTime = 1.5
+
+[Chunks4]
+simulateBase = "sim_ember"
+lifeTime = 1.5
+renderBase = "draw_sprite"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 130 0 255" 
+finishColor = "255 130 0 0"
+startRadius = 1
+finishRadius = 3.0
+animateTime = 1.5

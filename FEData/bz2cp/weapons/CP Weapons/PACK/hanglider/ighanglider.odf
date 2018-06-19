@@ -1,0 +1,68 @@
+[WeaponClass]
+classLabel = "jetpack"
+geometryName = "igjetp00.xsi"
+geometryScale = 0.12
+animCount = 1
+animName1 = "launch"
+animFile1 = "igjetp00.xsi"
+ordName = NULL
+wpnName = "Hang Glider"
+wpnIcon = "wire_igjetp%d.tga"
+fireSound = "whcan.wav"
+flashName = "ighanglider.render"
+wpnReticle = "gphantom.0"
+wpnPriority = 0
+wpnCategory = "PACK"
+
+[JetPackClass]
+ammoCost = 100
+burnTime = 60.0
+accelThrust = 10.0
+activeSound = "hanglider01.wav"
+expireSound = "hanglider01.wav"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "ighanglider.flare"
+renderName2 = "ighanglider.smoke"
+renderName3 = "ighanglider.flame"
+
+[Flare]
+renderBase = "draw_light"
+startColor = "0 0 0 0" //"255 150 80 500"
+finishColor = "0 0 0 0" //"255 80 0 500"
+startRadius = 20.0
+finishRadius = 15.0
+animateTime = 0.0 // 3.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+ttenuateQuadratic = 0.0
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 0" //"153 153 153 63"
+finishColor = "0 0 0 0" //"31 31 31 0"
+startRadius = 0.5
+finishRadius = 5.0
+animateTime = 0.0 //3.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 3.0"
+emitLife = 0.0 //3.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 0 0" //"255 255 63 255"
+finishColor = "0 0 0 0" //"255 0 0 0"
+startRadius = 0.3
+finishRadius = 0.03
+animateTime = 0.0 //0.1
+emitDelay = 0.002
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 3.0"
+emitLife = 0.0 //0.1

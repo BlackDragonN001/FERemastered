@@ -1,0 +1,21 @@
+[GameObjectClass]
+geometryName = "log01.xsi"
+classLabel = "i76building"
+geometryScale = 3.0
+scrapCost = 8
+scrapValue = 3
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Log"
+heatSignature = 0.0
+imageSignature = 0.5
+radarSignature = 1.0
+collisionRadius = 5.0
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+ownsTerrain=1
+
+[BuildingClass]
+loadAsDummy=1
+dummyVersion=1103

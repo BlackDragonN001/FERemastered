@@ -1,0 +1,212 @@
+[sparker]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "sparker.e3" // trails
+renderName2 = "sparker.e5" // light
+renderName3 = "sparker.e8" // wave
+renderName4 = "sparker.e9" // static
+// Below ones didn't work in FE. "xsparker" -GBD
+renderName5 = "sparker.e1" // bolt
+renderName6 = "sparker.e2" // ember
+renderName7 = "sparker.e4" // bolt
+renderName8 = "sparker.e6" // flame
+renderName9 = "sparker.e7" // ember trail no
+////////////////////////////////////////
+[e1]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_emit"
+emitName = "sparker.e1emit"
+emitDelay = 0.05
+emitVelocity = "1.0 1.0 1.0"//.4 0 0
+emitVariance = "50.0 50.0 50.0"// .5 .5 .5
+
+[e1emit]
+simulateBase = "sim_ember"//dust
+lifeTime = 0.5 //2.5
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "200 150 0 255"
+finishColor = "0 0 255 200"
+startRadius = 0.2
+finishRadius = 0.05
+segmentLength = 1.0
+segmentVariance = "2.0 2.0 1.0"
+animateTime = 0.5 // 0.2
+textureRate = 0.01
+
+[e2]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_emit"
+emitName = "sparker.e2emit"
+emitDelay = 0.1
+emitVelocity = "20.0 20.0 20.0"//.4 0 0
+emitVariance = "20.0 20.0 10.0"// .5 .5 .5
+
+[e2emit]
+simulateBase = "sim_ember"//dust
+lifeTime = 0.5 //2.5
+renderBase = "draw_bolt" //"draw_spark" // draw_spark doesn't exist in BZ2. -GBD
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.05
+startColor = "255 200 0 255"
+finishColor = "0 0 255 0"
+startRadius = 0.1
+finishRadius = 0.4
+segmentTime = 3.0
+animateTime = 0.5
+
+[e3]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_emit"
+emitName = "sparker.e3emit"
+emitDelay = 0.2 //.1
+emitVelocity = "1.0 1.0 1.0"//.4 0 0
+emitVariance = 19.0 19.0 19.0"// .5 .5 .5
+
+[e3emit]
+simulateBase = "sim_dust"//dust
+lifeTime = 2.5 //2.5
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.05
+startColor = "10 10 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.1
+finishRadius = 2.5
+segmentTime = 2.0
+animateTime = 2.5
+
+[e4]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_emit"
+emitName = "sparker.e4emit"
+emitDelay = 0.05
+emitVelocity = "1.0 -20.0 1.0"//.4 0 0
+emitVariance = "50.0 -50.0 50.0"// .5 .5 .5
+
+[e4emit]
+simulateBase = "sim_ember"//dust
+lifeTime = 0.5 //2.5
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "200 50 0 255"
+finishColor = "0 0 255 0"
+startRadius = 0.15
+finishRadius = 0.05
+segmentLength = 1.5
+segmentVariance = "2.0 2.0 1.0"
+animateTime = 1.0 // 0.2
+textureRate = 0.05 //.1
+
+[e5]
+simulateBase = "sim_null"
+lifeTime = 11.0
+renderBase = "draw_light"
+startColor = "255 0 255 3050"
+finishColor = "255 0 0 0"
+startRadius = 60.0
+finishRadius = 60.0
+animateTime = 11.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[e6]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_emit"
+emitName = "sparker.e6emit"
+emitDelay = 0.03
+emitVelocity = "1.0 1.0 1.0"//.4 0 0
+emitVariance = "45.0 45.0 45.0"// .5 .5 .5
+
+[e6emit]
+simulateBase = "sim_smoke"
+lifeTime = 1.5
+renderBase = "draw_light"
+startColor = "255 0 0 550"
+finishColor = "0 0 255 0"
+startRadius = 80.0
+finishRadius = 80.0
+animateTime = 12.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[e7]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "sparker.e7emit"
+emitDelay = 0.1
+emitVelocity = "0.0 0.0 0.0"//.4 0 0
+emitVariance = "30.0 30.0 30.0"// .5 .5 .5
+
+[e7emit]
+simulateBase = "sim_ember"
+lifeTime = 2.5
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+startColor = "255 155 0 255"
+finishColor = "0 0 200 100"
+startRadius = 0.05
+finishRadius = 0.0
+trailTime = 2.0
+segmentTime = 0.5
+
+[e8]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "sparker.e8emit"
+emitDelay = 0.1
+emitVelocity = "0.0 -0.1 0.0"//.4 0 0
+emitVariance = "0.0 0.0 0.0"// .5 .5 .5
+
+[e8emit]
+simulateBase = "sim_smoke"
+lifeTime = 3 //4
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "20 20 200 240" 
+finishColor = "0 0 255 0" 
+startRadius = 5.0
+finishRadius = 5.2
+animateTime = 3.0
+waveAngle = 3.5
+waveDepth = 0.5 //.5
+waveSegments = 16 //32
+
+[e9]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "sparker.e9emit"
+emitDelay = 0.1
+emitVelocity = "0.0 0.0 0.0"//.4 0 0
+emitVariance = "2.5 2.5 2.5"// .5 .5 .5
+
+[e9emit]
+simulateBase = "sim_dust"
+lifeTime = 0.3
+renderBase = "draw_static"
+textureName = "static.tga"
+textureBlend = "one one modulate"
+startColor = "70 40 250 200"
+finishColor = "0 0 255 0"
+startRadius = 0.05
+finishRadius = 0.3
+emitDelay = 0.05 //.01
+emitDelayVar = 0.0
+innerRadius = 2.0
+outerRadius = 5.0
+segmentTime = 0.4

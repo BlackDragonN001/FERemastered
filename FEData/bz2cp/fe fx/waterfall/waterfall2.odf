@@ -1,0 +1,57 @@
+[OrdnanceClass]
+classLabel = "bouncebomb"
+shotGeometry = NULL //NULL
+
+//xplGround = "xplmhit"
+//xplVehicle = "xflmhit"
+//xplBuilding = "xflmhit"
+//xplExpire = "xgasxpl"
+
+renderName = "waterfall2.render"
+
+ammoCost = 1
+lifeSpan = 3.0 // LENGTH OF WATERFALL
+shotSpeed = 5.0 // TRAJECTORY OF WATERFALL
+
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+[BounceBombClass]
+bounceRatio = 1.1 // HOW HIGH THE WATER 'BOUNCES' OFF THE GROUND/SLOPE
+bounceSound = ""
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 1
+renderName1 = "waterfall2.trail"
+
+[trail]
+renderBase = "draw_trail"
+textureName = "waterfall.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha" // "one one modulate" // 
+startColor = "60 140 100 100" // SHOULD BE SAME AS THE WATER'S IN THE EDITOR
+finishColor = "60 140 100 0"
+startRadius = 3.0  // WATER SIZE (START AND FINISH SHOULD BE THE SAME)
+finishRadius = 3.0 // WATER SIZE (START AND FINISH SHOULD BE THE SAME)
+segmentLength = 3.0 
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.6
+//---------------------------------------------------- 
+textureSpeed = -1.0 // FLOW SPEED
+//----------------------------------------------------
+textureRate = 0.03 // 'STRETCHES OUT' OR 'COMPRESSES' THE TEXTURE,
+// TO COMPENSATE FOR THE STRETCHING OUT EFFECT CAUSED BY CHANGING
+// THE FLOW SPEED (SMALLER = MORE STRETCHED)
+//----------------------------------------------------
+//segmentTime = 3.0 // THE '//' BEFORE 'segmentTime' MAKES THE
+// TRAIL LAST FOREVER. LEAVE AS IS !
+
+
+
+
+
+

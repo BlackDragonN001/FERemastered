@@ -1,0 +1,41 @@
+[WeaponClass]
+classLabel = "cannon"
+
+// external geometry
+geometryName = "igbzka_skel.xsi"
+geometryScale = 0.12
+animCount = 4
+animName1 = "stand"
+animFile1 = "igbzka_skel.xsi"
+animName2 = "walk"
+animFile2 = "igbzka_skel.xsi"
+animName3 = "crouch"
+animFile3 = "igbzka_skel.xsi"
+animName4 = "jump"
+animFile4 = "igbzka_skel.xsi"
+
+// cockpit geometry
+cockpitName = "iwbazo_cockpit_skel.xsi"
+cockpitScale = 0.12
+animCountCockpit = 4
+animNameCockpit1 = "stand"
+animFileCockpit1 = "iwbazo_cockpit_skel.xsi"
+animNameCockpit2 = "walk"
+animFileCockpit2 = "iwbazo_cockpit_run.xsi"
+animNameCockpit3 = "crouch"
+animFileCockpit3 = "iwbazo_cockpit_skel.xsi"
+animNameCockpit4 = "jump"
+animFileCockpit4 = "iwbazo_cockpit_skel.xsi"
+
+altName = "igsam_a"
+ordName = "sam_c"
+wpnName = "SAM Launcher"
+fireSound = "crckt01.wav"
+wpnReticle = "gfafmsl"
+wpnCategory = "HAND"
+isAssault = 0
+aiRange = 120
+
+[CannonClass]
+shotDelay = 1.0 // 1/sec
+shotAlternate = 1

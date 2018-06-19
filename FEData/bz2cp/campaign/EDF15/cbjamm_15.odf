@@ -1,0 +1,34 @@
+[GameObjectClass]
+geometryName = "feshroom01.xsi"
+classLabel = "jammer"
+collisionRadius = 5.0
+scrapCost = 50
+scrapValue = 3
+maxHealth = 999999999
+maxAmmo = 0
+powerCost = 0
+unitName = "Inhibitor"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+canCollide = 0
+isAssault = 0
+
+armorClass = H
+
+buildSupport = "A"
+buildRequire = "F"
+
+requireCount = 0
+provideCount = 1
+provideName1 = "cbjamm"
+
+[PoweredBuildingClass]
+powerCost = 0
+detectRange = 10
+
+[BuildingClass]
+soundAmbient = "sjam01.wav"
+
+[JammerTowerClass]
+jammerRange = 400.0

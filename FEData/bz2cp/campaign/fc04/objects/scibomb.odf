@@ -1,0 +1,91 @@
+[GameObjectClass]
+baseName="ivbomb"
+geometryName="fvbomber_xx.xsi" //"fvdrop_takeoff.xsi"
+classLabel="bomber"
+scrapValue=0
+scrapCost=75
+buildTime=10.0
+maxHealth=7000
+maxAmmo=8000
+weaponMask=00000
+unitName="Drop Ship"
+aiName="BomberProcess"
+aiName2="BomberProcess"
+heatSignature=10.0
+imageSignature=0.5
+radarSignature=5.0
+isAssault=0
+canCollide = 1 // 0 doesnt affect bomber class
+collisionRadius = 0.1 
+armorClass=L
+
+requireCount=2
+requireName1="ibfact"
+requireText1="Fabrik prod."
+requireName2="ibbomb"
+requireText2="Bomb.-Hangar prod."
+
+[CraftClass]
+rangeScan=400.0f
+periodScan=5.0f
+velocJam=5.0f
+
+braccelFactor=0.05f;
+strafeFactor=0.1f;
+steerFactor=1.0f;
+omegaFactor=0.2f;
+velFactor=0.2f;
+
+selectWaitMsg="fvsent08.wav"//"bombgen07.wav" // roger
+selectAttackMsg="fvsent06.wav"//"bombgen05.wav" // i have the target
+selectFollowMsg=""
+selectGoMsg=""
+selectOtherMsg="fvsent06.wav"//"bombgen07.wav"
+
+goMsg="fvsent08.wav"//"bombgen06.wav"  // roger that sir
+attackMsg="scibomber.wav"//"bombgen01.wav" // target is painted, engaging
+followMeMsg="fvsent08.wav"//"bombgen03.wav" // roger that sir, keeping it real
+followMsg="fvsent08.wav"//"bombgen03.wav"
+repairMsg="fvsent08.wav"//"bombgen03.wav"
+reloadMsg="fvsent08.wav"//"bombgen03.wav"
+rescueMsg="fvsent08.wav"//"bombgen03.wav"
+recycleMsg="fvsent08.wav"//"bombgen03.wav"
+otherMsg=""
+
+user1Msg=""
+killedMsg="fvsent07.wav"//"bombgen02.wav" //bombs are away
+//"fvscout01.wav" on target
+//"fvsent06.wav" engagaing target
+//"fvsent07.wav" target down
+//"fvsent08.wav" lead the way
+//"fvtank06.wav" target aquirred
+//"fvwalk01.wav" on target
+//"fvwalk02.wav" im on the move
+// "scibomber.wav" engagaing target, lead the way
+[HoverCraftClass]
+setAltitude=4.0
+accelDragStop=0.0
+accelDragFull=0.0
+alphaTrack=20.0
+alphaDamp=5.0
+pitchPitch=0.25
+pitchThrust=0.1
+rollStrafe=0.1
+rollSteer=0.1
+
+velocForward=15.0 //30
+velocReverse=2.0
+velocStrafe=15.0
+accelThrust=20.0
+accelBrake=2.0
+omegaSpin=1.0
+omegaTurn=1.0
+alphaSteer=15.0
+accelJump=300.0
+
+soundThrust="ibomb.wav"
+soundTurbo="avtanke3.wav"
+
+[BomberClass]
+flightAltitude= 75.0 // 35 // 75
+reloadTime=10

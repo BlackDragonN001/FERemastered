@@ -1,0 +1,83 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotSound = "igtow04.wav"
+xplGround = "xelectgnd_c"
+xplVehicle = "xelectcar_c"
+xplBuilding = "xelectcar_c"
+
+renderName = "elect_c.render"
+
+ammoCost = 20
+lifeSpan = 2.0 // 180 meters
+shotSpeed = 90.0
+
+damageValue(N) = 80 // none  // 300 
+damageValue(L) = 70 // light // 240 
+damageValue(H) = 50 // heavy  // 100 
+
+damageValue(S) = 70 // standard   // 240 
+damageValue(D) = 80 // deflection // 300 
+damageValue(A) = 60 // absorbtion // 200 
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "elect_c.light"
+renderName2 = "elect_c.flame"
+renderName3 = "elect_c.smoke"
+renderName4 = "elect_c.trail"
+
+[Light]
+renderBase = "draw_light"
+startColor = "150 30 0 180"
+finishColor = "150 30 0 180"
+startRadius = 20.0
+finishRadius = 20.0
+animateTime = 0.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "200 100 100 127"
+finishColor = "200 100 100 0"
+startRadius = 0.2
+finishRadius = 0.1
+animateTime = 0.12
+rotationRate = 10.0
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 0.12
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "150 150 150 31"
+finishColor = "150 150 150 0"
+startRadius = 0.3
+finishRadius = 1.0
+animateTime = 0.12
+rotationRate = 10.0
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 0.12
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "smoke2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.01
+startColor = "150 150 150 127"
+finishColor = "150 150 150 0"
+startRadius = 0.1
+finishRadius = 0.0
+segmentTime = 0.15
+

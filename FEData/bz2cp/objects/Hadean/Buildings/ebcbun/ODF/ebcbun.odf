@@ -1,0 +1,42 @@
+[GameObjectClass]
+geometryName = "ebcbun00.xsi"
+classLabel = "commtower"
+collisionRadius = 1.0
+scrapCost = 60
+scrapValue = 30
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Eyes of Xyr"
+aiName = "CommTowerProcess"
+aiName2 = "CommTowerProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+
+armorClass = H
+
+buildSupport = B
+buildRequire = B
+
+requireCount = 1
+requireName1 = "ebpgen"
+requireText1 = "Build Power Tray"
+
+provideCount = 1
+provideName1 = "ebcbun"
+
+[BuildingClass]
+soundAmbient = "icomm01.wav"
+
+[CommTowerClass]
+rangeScan = 1000 
+periodScan = 3.0
+
+[PoweredBuildingClass]
+detectRange = 300
+
+//[Lod1]
+//geometryName = "ebcbunL1.xsi" ;geometry for lod1
+//distance = 100                   ;bsphere under 200 pixel => switch to lod1
+//dontShiftLOD = 1

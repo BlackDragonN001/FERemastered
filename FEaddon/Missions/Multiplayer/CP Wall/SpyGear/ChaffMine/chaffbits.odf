@@ -1,0 +1,34 @@
+[GameObjectClass]
+geometryName = "npscr100.xsi' //"ioartl00.xsi"
+classLabel = "magnet" //  magnet attracts ai better than "flare"
+// "apc" = makes a large vehicle explsion
+//"artillery" floats like a vehicle
+// "turret" costs a power unless offset, large expl
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 1
+unitName = "ECM Chaff"
+heatSignature = 10.00
+imageSignature = 1.0
+radarSignature = 100.0
+isAssault = 1
+armorClass = N
+canCollide = 1
+canDetect = 1 
+canInteract = 1 
+ownsTerrain = 0
+powercost = 0
+
+[MineClass]
+lifeSpan = 60.0
+
+[MagnetMineClass]
+//triggerDelay = 0.0 
+fieldRadius = 6 
+objPushCenter = -125 //-15.0 
+objPushEdge = -1 
+objDrag = 0.35
+ordPushCenter = -500
+ordPushEdge = -200
+ordDrag = 3.0

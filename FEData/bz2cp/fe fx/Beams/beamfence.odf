@@ -1,0 +1,25 @@
+[GameObjectClass]
+geometryName = NULL //"defboltmin.xsi"
+classLabel = "weaponmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 90000
+maxAmmo = 90000
+unitName = "Arc Mine"
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+fireSound = ""
+
+weaponHard1 = "Arc Mine"
+weaponName1 = "gtrigbeam"
+
+[MineClass]
+lifeSpan = 90000
+fireSound = ""
+
+[WeaponMineClass]
+searchRadius = 50.0
+heightScale = 2.0
+fireSound = ""
+

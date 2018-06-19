@@ -1,0 +1,98 @@
+// =================
+// DA BOMB EXPLOSION
+// =================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 4
+particleClass1 = "xdabomb7.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleClass2 = "xdabomb7.smoke"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleClass3 = "xdabomb7.flame"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+particleClass4 = "xdabomb7.shock"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+
+explSound = "bridbomb.wav"
+
+damageRadius = 50
+damageValue(N) = 5000
+damageValue(L) = 5000
+damageValue(H) = 5000
+
+damageValue(S) = 5000
+damageValue(D) = 5000
+damageValue(A) = 5000
+
+kickRadius = 200
+kickOmega = 3.0
+kickVeloc = 30.0
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 255 50"
+finishColor = "255 0 0 255"
+startRadius = 25.0
+finishRadius = 250.0
+animateTime = 2.0
+latitudeBands = 16
+longitudeSegments = 32
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 3
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "100 100 0 128"
+finishColor = "0 0 0 0"
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 1.5
+rotationRate = 2.0
+emitDelay = 0.05
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitLife = 2
+
+[Flame]
+simulateBase = "sim_smoke"
+lifeTime = 1
+renderBase = "draw_twirl_trail"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 100 128"
+finishColor = "100 0 255 255"
+startRadius = 2
+finishRadius = .5
+animateTime = .5
+rotationRate = 10.0
+emitDelay = 0.03
+emitVelocity = "0.0 10.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitLife = 2
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_sphere"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "63 255 255 127"
+finishColor = "0 0 255 0"
+startRadius = 3.0
+finishRaius = 60.0
+animateTime = 0.3
+
+

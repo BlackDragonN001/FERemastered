@@ -1,0 +1,25 @@
+[GameObjectClass]
+geometryName = NULL// "gravanchor.xsi"
+geometryScale = 1
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0 
+maxAmmo = 1E6 
+unitName = "Arcon2"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canDetect = 0
+canInteract = 0
+canCollide = 0
+
+[MineClass]
+lifeSpan = 1E6 
+
+[FlareMineClass]
+payloadName = "arcs2b"
+fireSound = "bltm01.wav"
+triggerDelay = 0.0
+shotDelay = 8 
+shotVariance = 8.0 

@@ -1,0 +1,85 @@
+[GameObjectClass]
+classLabel = "i76building"
+geometryName = "ivstorm00_launch.xsi"
+animCount = 1
+animName1 = "launch"
+animFile1 = "ivstorm00_launch.xsi"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 10000
+maxAmmo = 0
+unitName = "Storm Petrell"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+ownsTerrain = 1
+canDetect = 0
+canInteract = 1
+canCollide = 1
+
+armorClass = H
+collisionRadius = 1
+alwaysClip = 1
+
+effectHard1 = "hp_trail_1"
+effectName1 = "ivcarrs.render"
+effectHard2 = "hp_trail_2"
+effectName2 = "ivcarrs.render"
+effectHard3 = "hp_trail_3"
+effectName3 = "ivcarrs.render"
+
+lightHard1 = "hp_light_1"
+lightName1 = "enginelight"
+lightHard2 = "hp_light_2"
+lightName2 = "enginelight"
+lightHard3 = "hp_light_3"
+lightName3 = "enginelight"
+
+[BuildingClass]
+justFlat = 1
+
+
+[render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ivcarrs.smokeemitter"
+renderName2 = "ivcarrs.trail"
+
+[SmokeEmitter]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.03
+emitVelocity = "-10.0 10.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 4.0
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 50 150 200"
+finishColor = "255 255 255 255"
+startRadius = 4.0
+finishRadius = 25.0
+animateTime = 5.0
+rotationRate = 3.0
+maxDist	= 2000.0f
+maxRadii = 2000.0f
+
+[trail]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.05
+emitVelocity = "0.0 0.0 10.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 1.5
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "0 50 255 127"
+finishColor = "0 50 255 255"
+startRadius = 15
+finishRadius = 1
+animateTime = 0.7
+rotationRate = 2.0
+maxDist	= 2000.0f
+maxRadii = 2000.0f
+

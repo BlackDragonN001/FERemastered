@@ -1,0 +1,10 @@
+[WeaponClass]
+classLabel = "dispenser"
+wpnName = "AA Mine"
+fireSound = "mmine01.wav"
+wpnReticle = "gseek"
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 1.0
+objectClass = "aaseek"

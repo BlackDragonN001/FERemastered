@@ -1,0 +1,57 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX = -2048.0
+MinZ = -2048.0
+Width = 4096.0
+Depth = 4096.0
+Height = 5.0
+Tile = 1
+Color = "170 150 120 255"
+
+[NormalView]
+FogColor="165 143 156 255"
+FogStart=300
+FogEnd=400
+VisibilityRange=400
+
+[World]
+MusicTrack1=2
+Musictrack2=3
+MusicTrack3=6
+MusicTrack4=7
+MusicTrack5=9
+MusicTrack6=10
+
+[Light]
+SunPeriod = 24.0
+SunAngle = 9.0
+SunColor = "255 255 255 255" //"128 128 128 128" "32 48 64 48"
+AmbientColor = "102 102 102"
+
+[Sky]
+SkyType= 0
+SkyHeight = 100
+SkyTexture = darksky.tga
+SkyColor = "148 81 103" //"32 48 64 255"
+SunTexture = sun.0
+SunColor = "255 255 255"
+
+[Water]
+WaterTexture1 = "water256.tga"
+WaterDiffuse1 = "96 128 64 64"
+WaterBlend1 = "srcalpha invsrcalpha modulatealpha"
+BumpTexture1 = "water256.tga"
+BumpDiffuse1 = "96 128 64 64"
+BumpBlend1 = "srcalpha invsrcalpha modulatealpha"
+
+[Texture]
+TileTexture1 = "moon1.tga"
+TileTexture2 = "moon2.tga"
+TileTexture3 = "moon3.tga"
+TileTexture4 = "moon4.tga"
+TileTexture5 = "moon5.tga"
+TileTexture6 = "moon6.tga"
+TileTexture7 = "moon7.tga"
+TileTexture8 = "moon8.tga"
+TileTexture9 = "moon9.tga"

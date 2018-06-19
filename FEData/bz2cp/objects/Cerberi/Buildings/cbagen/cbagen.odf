@@ -1,0 +1,90 @@
+[GameObjectClass]
+geometryName = "cbagen00.xsi"
+classLabel = "powerplant"
+animCount = 1
+animName1 = "loop"
+animFile1 = "cbagen00.xsi"
+powerCost = -20
+scrapCost = 120
+scrapValue = 3
+maxHealth = 10000
+maxAmmo = 0
+unitName = "Anti-Matter Generator"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0
+isAssault = 1
+
+armorClass = H
+
+requireCount = 2
+requireName1 = "Cbarmo"
+requireText1 = "Build Dispenser Node"
+requireName2 = "Cbsbay"
+requireText2 = "Build Regenerator"
+
+buildSupport = B
+buildRequire = F
+
+provideCount = 1
+provideName1 = "cbagen"
+
+lightHard1 = "hp_light_1"
+lightName1 = "cpower_light2"
+lightHard2 = "hp_light_2"
+lightName2 = "cpower_light2"
+lightHard3 = "hp_light_3"
+lightName3 = "cpower_light2"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "cbagen.render"
+effectHard2 = "hp_emit_2"
+effectName2 = "cbagen.render"
+
+
+[LightClass]
+classLabel="spotlight"
+lightColor.r=15.2
+lightColor.g=0.7
+lightColor.b=0.5
+lightColor.a=1.0
+lightRange=0.10
+attenuateConstant=0.0
+attenuateLinear=1.0
+attenuateQuadratic=0.0
+coneFalloff=1.0
+coneAngInner=0.5
+coneAngOuter=20.0
+
+
+[BuildingClass]
+
+[render]
+renderBase = "draw_multi"
+renderCount = 1
+renderName1 = "cbagen.sparkle"
+
+
+[Sparkle]
+renderBase = "draw_twirl_trail"
+textureName = "flare.tga"
+textureblend = "one one modulate"
+startColor = "0 133 159 255"
+finishColor = "154 217 227 234"
+startRadius = 0.45
+finishRadius = 0.01
+animateTime = 1.0
+emitDelay = 0.007
+emitVariance = "2.0 2.0 2.0"
+emitLife = 2.3
+
+
+
+
+soundAmbient = "ipgen01.wav"
+
+[PoweredBuildingClass]
+detectRange = 50
+
+

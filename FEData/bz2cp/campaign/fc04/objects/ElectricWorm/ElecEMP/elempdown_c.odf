@@ -1,0 +1,72 @@
+[OrdnanceClass]
+classLabel = "anchor"
+
+shotGeometry = "NULL"
+shotSound = "rhin02.wav" //"sonic03c.wav"
+
+xplGround = "xelempgnd_c"
+xplVehicle = "xelempcar_c"
+xplBuilding = "xelempgnd_c"
+
+renderName = "elempdown_c.render"
+
+ammoCost = 10
+lifeSpan = .75 // 150m
+shotSpeed = 200.0
+
+damageValue(N) = 2 // none
+damageValue(L) = 1 // light
+damageValue(H) = 1 // heavy
+
+damageValue(S) = 1 // standard
+damageValue(D) = 1 // deflection
+damageValue(A) = 1 // absorbtion
+
+[LeaderRoundClass]
+stickTime = 4.6 //4.8
+
+[AnchorRocketClass]
+accelDrag = 13.0 // 13.0
+alphaDrag = 4 // 5.0
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "elempdown_c.flare"
+renderName2 = "elempdown_c.trail"
+renderName3 = "elempdown_c.trail2"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "plasma.tga" //"wasplat.tga"
+textureBlend = "one one modulate"
+startColor = "60 100 255 255" 
+finishColor = "0 120 255 0" 
+startRadius = 2.0 // .6 // 1.5
+finishRadius = .2 // 1.0
+
+[Trail]
+renderBase = "draw_twirl_trail"
+textureName = "lightflare.tga" // "wasplat.tga"
+textureBlend = "one one modulate"
+startColor = "60 80 255 255" 
+finishColor = "50 0 255 0" 
+startRadius = 3.0 // .6 // 1.0
+finishRadius = 0.001
+animateTime = .9 //0.7
+emitDelay = 0.006 //0.01 // 0.02
+emitLife = .9 //0.7
+rotationrate = 5
+
+[Trail2]
+renderBase = "draw_twirl_trail"
+textureName = "lightflare.tga" // "wasplat.tga"
+textureBlend = "one one modulate"
+startColor = "150 50 255 255" 
+finishColor = "120 0 255 0" 
+startRadius = 3.0 // .6 // 1.0
+finishRadius = 0.001
+animateTime = .8 //0.7
+emitDelay = 0.005 // 0.012 // 0.02
+emitLife = .8 //0.7
+rotationrate = 7

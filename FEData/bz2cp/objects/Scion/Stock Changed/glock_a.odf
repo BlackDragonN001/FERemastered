@@ -1,0 +1,15 @@
+[WeaponClass]
+classLabel = "machinegun"
+altName = "glock_c"
+ordName = "lockdown_a"
+wpnName = "EMP Stream"
+fireSound = "mag01.wav"
+wpnReticle = "glock"
+wpnCategory = "GUN"
+isAssault = 1
+aiRange = 110 // 120		//80FE, 40R
+
+[CannonClass]
+shotDelay = 0.1	//0.1FE, 0.1R
+shotVariance = 0.075
+

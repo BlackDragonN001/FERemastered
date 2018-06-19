@@ -1,0 +1,97 @@
+[GameObjectClass]
+baseName = "svhrazdm"
+geometryName = "svhraz00.xsi"
+cockpitName = "ivintc_cockpit.xsi"
+classLabel = "wingman"
+animCount = 3
+animName1 = "forward"
+animFile1 = "svhrazSF.xsi"
+animName2 = "neutral"
+animFile2 = "svhrazSN.xsi"
+animName3 = "reverse"
+animFile3 = "svhrazSR.xsi"
+scrapValue = 35
+scrapCost = 45
+buildTime = 15.0
+maxHealth = 3500
+maxAmmo = 1200
+unitName = "Grendal"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+heatSignature = 0.9
+imageSignature = 1.1
+radarSignature = 0.3
+
+armorClass = H
+
+weaponMask = 00011
+
+weaponHard1 = "HP_ROCKET_1"
+weaponName1 = "grktbomb_a"
+weaponAssault1 = 1
+weaponHard2 = "HP_ROCKET_2"
+weaponName2 = "grktbomb_a"
+weaponAssault2 = 1
+weaponHard3 = "HP_CANNON_1"
+weaponName3 = ""
+weaponAssault3 = 0
+
+
+	
+[CraftClass]
+rangeScan = 400.0
+periodScan = 5.0
+velocJam = 5.0
+
+braccelFactor = 0.05
+strafeFactor = 0.1
+steerFactor = 1.0
+omegaFactor = 0.2
+velFactor = 0.2
+
+avoidSpeed = 20
+topSpeed = 45
+
+selectAttackMsg = "svhrazvd.wav"
+selectWaitMsg = "svhrazvf.wav"
+selectFollofMsg = "svhrazvh.wav"
+selectGoMsg = "svhrazvg.wav"
+selectOtherMsg = "svhrazvj.wav"
+
+ggoMsg = "svhrazv0.wav"
+goObjectMsg = "svhrazvb.wav"
+attackMsg = "svhrazv2.wav"
+followMsg = "svhrazv7.wav"
+followMeMsg = "svhrazv3.wav"
+repairMsg = "svhrazv4.wav"
+reloadMsg = "svhrazv5.wav"
+rescueMsg = "svhrazv8.wav"
+recycleMsg = "svhrazv9.wav"
+otherMsg = "svhrazvi.wav"
+
+user1Msg = "svhrazv6.wav"
+killedMsg = "svhrazvk.wav"
+diedMsg = "sbetty3.wav"
+
+[HoverCraftClass]
+setAltitude = 1.5
+accelDragStop = 4.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.25
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+
+velocForward = 25.0
+velocReverse = 20.0
+velocStrafe = 20.0
+accelThrust = 20.0
+accelBrake = 50.0
+omegaSpin = 1.0
+omegaTurn = 0.4
+alphaSteer = 2.0
+accelJump = 10.0
+
+soundThrust = "svhraze1.wav"
+soundTurbo = "svhraze3.wav"

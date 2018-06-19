@@ -1,0 +1,203 @@
+// ===============
+// FIREBALL CAR HIT
+// ===============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xfbseekcar.wav"
+damageRadius = 5.0
+
+damageValue(N) = 150 // 75 // none
+damageValue(L) = 60  // 30 // light
+damageValue(H) = 0   // 0  // heavy
+
+damageValue(S) = 60  // 30 // standard
+damageValue(D) = 150 // 75 // deflection
+damageValue(A) = 0   // 0  // absorbtion
+
+kickRadius = 40.0
+kickOmega = 10.0
+kickVeloc = 10.0
+
+particleTypes = 7
+
+particleClass1 = "xfbbld_c.chunks"
+particleCount1 = 35
+particleVeloc1 = "10.0 10.0 30.0"
+particleBias1 = "0.0 10.0 0.0"
+
+particleClass2 = "xfbbld_c.ring"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xfbbld_c.thrust"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xfbbld_c.light"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "xfbbld_c.shock"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+particleClass6 = "xfbbld_c.core"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0"
+
+particleClass7 = "xfbbld_c.trail"
+particleCount7 = 20
+particleVeloc7 = "30.0 30.0 30.0"
+
+// Never worked, was "achar2". -GBD
+particleClass8 = "xfbbld_c.char2"
+particleCount8 = 1
+particleVeloc8 = "0.0 0.0 0.0"
+
+// Never worked, "axfbbld_c". -GBD
+particleClass9 = "xfbbld_c.fire"
+particleCount9 = 1
+particleVeloc9 = "0.0 0.0 0.0"
+
+particleClass10 = "xfbbld_c.flame"
+particleCount10 = 1
+particleVeloc10 = "0.0 2.0 0.0"
+particleBias4 = "0.0 0.0 0.0"
+
+[fire]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl_trail"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 130 0 128"
+finishColor = "200 0 0 0"
+startRadius = 6.0
+finishRadius = 1.0
+animateTime = 2
+rotationRate = 10.0
+emitDelay = 0.05
+emitVelocity = "5.0 5.0 5.0"
+emitVariance = "5.0 5.0 5.0"
+emitLife = 1.0
+
+[Chunks]
+simulateBase = "sim_ember"
+lifeTime = 3.0
+renderBase = "draw_twirl" //sprite
+textureName = "dirt.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 200 100 255"
+finishColor = "255 50 10 200"
+startRadius = 0.5
+finishRadius = 0.4
+animateTime = 3.0
+
+[Ring]
+simulateBase = "sim_null"
+lifeTime = 10.0
+renderBase = "draw_planar"
+textureName = "crater3b.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "20 20 20 255"
+finishColor = "0 0 0 0"
+startRadius = 8.0
+finishRadius = 8.0
+animateTime = 10.0
+
+[Flame]
+simulateBase = "sim_smoke"
+lifeTime = 1.2
+renderBase = "draw_twirl_trail"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 170 100 200"
+finishColor = "255 80 0 0"
+startRadius = 2.5
+finishRadius = 0.2
+animateTime = 1.0
+rotationRate = 10.0
+emitDelay = 0.03
+emitVelocity = "2.0 3.0 2.0"
+emitVariance = "2.0 3.0 2.0"
+emitLife = 0.9
+
+[Thrust]
+simulateBase = "sim_null"
+lifeTime = 1.2
+renderBase = "draw_sprite"
+spriteCenter.x = 0.0
+spriteCenter.y = 1.0
+textureName = "ground.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 150 100 200"
+finishColor = "255 100 0 0"
+startRadius = 2.0
+finishRadius = 5.0
+animateTime = 1.2
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 2.5
+renderBase = "draw_light"
+startColor = "255 100 50 2500"
+finishColor = "255 50 0 200"
+startRadius = 40
+finishRadius = 40
+animateTime = 1.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_sphere"
+textureName = "ring2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 190" 
+finishColor = "255 200 200 0" 
+startRadius = 2.0
+finishRadius = 15.0
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16
+
+[Core]
+simulateBase = "sim_smoke" //null
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "smoke.tga" // flame
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 220 220 170"
+finishColor = "220 100 0 0"
+startRadius = 6.0
+finishRadius = 15.0
+animateTime = 1.5
+
+[char2] // Was achar2, never worked in FE. -GBD
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_planar"
+textureName = "fbchar.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 200 150"
+finishColor = "200 100 100 0"
+startRadius = 2.0
+finishRadius = 20.0
+animateTime = 1.0
+
+[trail]
+simulateBase = "sim_ember"
+lifeTime = 3.0
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+startColor = "255 127 0 200"
+finishColor = "255 0 0 0"
+startRadius = 0.05
+finishRadius = 0.0
+trailTime = 2.0
+segmentTime = 0.5
+animateTime = 3.0

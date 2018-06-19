@@ -1,0 +1,68 @@
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "flame01.wav"
+
+damageRadius = 16.0
+
+damageValue(N) = 40 // none
+damageValue(L) = 25 // light
+damageValue(H) = 10 // heavy
+
+damageValue(S) = 40 // standard
+damageValue(D) = 60 // deflection
+damageValue(A) = 30 // absorbtion
+
+particleTypes = 3
+particleClass1 = "xplfthrow_car.core"
+particleCount1 = 2
+particleVeloc1 = "20.0 5.0 20.0"
+particleBias1 = "5.0 0.0 5.0"
+particleVariance = "10.0 10.0 10.0"
+
+particleClass2 = "xplfthrow_car.chunks"
+particleCount2 = 3
+particleVeloc2 = "5.0 0.0 5.0"
+particleBias2 = "0.0 0.0 0.0"
+
+particleClass3 = "xplfthrow_car.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "150 90 0 255" 
+finishColor = "255 90 0 0"
+startRadius = 2.0
+finishRadius = 8.0
+animateTime = 1.0
+rotationRate = 6
+
+[Chunks]
+simulateBase = "sim_ember"
+lifeTime = 1.0
+renderBase = "draw_sprite"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 90 0 255"
+finishColor = "255 90 0 0"
+startRadius = 1
+finishRadius = 4.0
+animateTime = 1.0
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = .3
+renderBase = "draw_light"
+startColor = "255 255 63 255"
+finishColor = "255 255 63 255"
+startRadius = 30.0
+finishRadius = 30.0
+animateTime = .3
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

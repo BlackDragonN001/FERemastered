@@ -1,0 +1,76 @@
+[WeaponClass]
+classLabel = "chargegun"
+altName = "gsting_c"
+ordName = NULL;
+wpnName = "Swarm Launcher"
+fireSound = "mag01.wav"
+wpnReticle = "gsting_a"
+wpnCategory = "ROCK"
+isAssault = 1
+aiRange = 100
+
+[ChargeGunClass]
+startRate = 11025.0
+deltaRate = 4000.0
+startVolume = 40.0
+deltaVolume = 20.0
+
+ordnanceCount = 7
+
+shotDelay1 = 0.0
+salvoCount1 = 0
+salvoDelay1 = 0.0
+shotVariance1 = 0.0
+fireSound1 = "gmagg01.wav"
+ordName1 = "volly5"
+wpnReticle1 = "gmaggun.0"
+
+shotDelay2 = 0.5
+salvoCount2 = 1
+salvoDelay2 = 0.0
+shotVariance2 = 0.0
+fireSound2 = "gmagg01.wav"
+ordName2 = "volly5"
+wpnReticle2 = "gmaggun.1"
+
+shotDelay3 = 1.0
+salvoCount3 = 2
+salvoDelay3 = 0.1
+shotVariance3 = 0.1
+fireSound3 = "gmagg02.wav"
+ordName3 = "volly5"
+wpnReticle3 = "gmaggun.2"
+
+shotDelay4 = 2.0
+salvoCount4 = 3
+salvoDelay4 = 0.1
+shotVariance4 = 0.1
+fireSound4 = "gmagg03.wav"
+ordName4 = "volly5"
+wpnReticle4 = "gmaggun.3"
+
+shotDelay5 = 3.
+salvoCount5 = 4
+salvoDelay5 = 0.1
+shotVariance5 = 0.15
+fireSound5 = "gmagg04.wav"
+ordName5 = "volly5"
+wpnReticle5 = "gmaggun.4"
+
+shotDelay6 = 4.0
+salvoCount6 = 5
+salvoDelay6 = 0.1
+shotVariance6 = 0.15
+fireSound6 = "gmagg05.wav"
+ordName6 = "volly5"
+wpnReticle6 = "gmaggun.5"
+
+shotDelay7 = 5.0
+salvoCount7 = 7
+salvoDelay7 = 0.1
+shotVariance7 = 0.2
+fireSound7 = "gmagg06.wav"
+ordName7 = "volly5"
+wpnReticle7 = "gmaggun.6"
+
+// ** Old swarm launcher introduced. Range increased to 150m (from 100m), and damage upped slightly (~20%) - DF

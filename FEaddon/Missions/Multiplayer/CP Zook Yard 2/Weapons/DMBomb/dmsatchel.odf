@@ -1,0 +1,22 @@
+[GameObjectClass]
+classLabel = "satchel"
+geometryName = "igsatc00.xsi"
+geometryScale = 0.12
+scrapCost = 0
+scrapValue = 0
+maxHealth = 100
+maxAmmo = 99 // 1
+unitName = "Time Bomb"
+
+heatSignature = 100.0
+imageSignature = 0.001
+radarSignature = 0.001
+canDetect = 0
+canInteract = 0
+
+[BuildingClass]
+soundAmbient = "switch01.wav"
+
+[MineClass]
+lifeSpan = 10.0 // 10 is just right to set and run like hell
+xplBlast = "xdmsatxpl"

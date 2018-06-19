@@ -1,0 +1,23 @@
+// SOUNDMINE //
+// Created core FESoundmine to use ODF inheritence to make editing easier. -GBD
+[GameObjectClass]
+geometryName = NULL //"igbolt00.xsi"
+classLabel = "weaponmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 10000
+maxAmmo = 10000
+unitName = "Soundmine"
+canCollide = 0 
+canDetect = 0 
+canInteract = 0 
+scanTeamLimit = 3
+weaponHard1 = "Soundmine"
+weaponName1 = "mbeast1" // <<<<<<<<<<<<<<<<<
+
+[MineClass]
+lifeSpan = 90000
+
+[WeaponMineClass]
+searchRadius = 150.0 // <<<<<<<<<<<<<<
+heightScale = 0.0

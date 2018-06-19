@@ -1,0 +1,13 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gfirestorm_c"
+ordName = "firestorm_a"
+wpnName = "Rocket"
+fireSound = "gpopp00.wav"
+wpnReticle = "grktbomb"
+wpnCategory = "ROCK"
+isAssault = 1
+
+[CannonClass]
+shotDelay = 3.0
+

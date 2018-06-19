@@ -1,0 +1,159 @@
+[GameObjectClass]
+baseName = "ivatank"
+geometryName = "ivatnk01.xsi"
+classLabel = "assaulttank"
+scrapValue = 40
+scrapCost = 70
+customCost = 85
+buildTime = 15.0
+customTime = 20.0
+maxHealth = 4500
+maxAmmo = 3000
+addAmmo = 4
+unitName = "Assault Tank"
+aiName = "AssaultTankProcess"
+aiName2 = "AssaultTankProcess"
+heatSignature = 0.5
+imageSignature = 5.0
+radarSignature = 5.0
+isAssault = 1
+armorClass = H
+
+effectHard1 = "hp_emit_1"
+effectName1 = "ivatankt.render"
+effectHard2 = "hp_emit_2"
+effectName2 = "ivatankt.render"
+
+
+requireCount = 3
+requireName1 = "ibfact"
+requireText1 = "Build Factory"
+requireName2 = "ibcbun"
+requireText2 = "Build Relay Bunk"
+requireName3 = "ibsbay"
+requireText3 = "Build Service Bay"
+
+/////// weapons ///////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gplasma_a"
+weaponAssault1 = 1
+weaponHard2 = "HP_MORTAR_1"
+weaponName2 = ""
+weaponAssault2 = 0
+weaponHard3 = "HP_MORTAR_2"
+weaponName3 = ""
+weaponAssault3 = 0
+
+////////////////////////////////////
+
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 4.0f
+velocJam = 0.0f
+engageRange = 175
+
+braccelFactor = 0.01
+velFactor = 0.4
+steerFactor = 1.2
+omegaFactor = 0.2
+strafeFactor = 0.1
+
+selectWaitMsg = "ivatank04.wav"
+selectAttackMsg = "ivatank01.wav"
+selectFollowMsg = "ivatank08.wav"
+selectGoMsg = "ivatank02.wav"
+selectOtherMsg = "ivatank04.wav"
+
+goMsg = "ivatank05.wav"
+attackMsg = "ivatank06.wav"
+followMeMsg = "ivatank08.wav"
+followMsg = "ivatank08.wav"
+repairMsg = "ivatank09.wav"
+reloadMsg = "ivatank09.wav"
+rescueMsg = "ivatank10.wav"
+recycleMsg = "ivatank11.wav"
+otherMsg = "ivatank04.wav" 
+holdMsg = "ivatank12.wav"
+
+user1Msg = ""  
+killedMsg = "ivatank07.wav"
+diedMsg = ""
+
+[TrackedVehicleClass]
+omegaSpin = 2.0		//4.0
+omegaTurn = 1.0
+velocForward = 15.0
+velocReverse = 5.0
+accelThrust = 10.0
+
+TREAD_STATIC_FRICTION = 1.5
+
+engineSound	= "iatank01.wav"
+treadSound = "iatank02.wav"
+
+
+[AssaultTankClass]
+yawRate = 4.0
+pitchMin = -0.1
+pitchMax = 0.5
+
+recoilName1 = "recoil_1"
+laserName1 = "recoil_1"
+
+/////////////////////////////////////////////
+
+[render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ivatankt.tracks"
+renderName2 = "ivatankt.dust"
+
+[tracks]
+simulateBase = "sim_dust"
+lifeTime = 0.1 // .9
+renderBase = "draw_emit"
+emitName = "ivatankt.tracksemit"
+emitDelay = 0.1 //.1
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[tracksemit]
+simulateBase = "sim_null"
+lifeTime = 4.0
+renderBase = "draw_planar"
+textureName = "tracks.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "10 10 10 250"
+finishColor = "10 10 10 0"
+startRadius = 2.0
+finishRadius = 2.0
+animateTime = 4.0
+
+[dust]
+simulateBase = "sim_dust"
+lifeTime = 0.9
+renderBase = "draw_emit"
+emitName = "ivatankt.dustemit"
+emitDelay = 0.1
+emitVelocity = "0.0 1.0 0.0"
+emitVariance = "0.5 1.5 0.3"
+
+[dustemit]
+simulateBase = "sim_smoke"
+lifeTime = 1.6
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "110 100 100 170"
+finishColor = "50 50 50 0"
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 1.6
+
+

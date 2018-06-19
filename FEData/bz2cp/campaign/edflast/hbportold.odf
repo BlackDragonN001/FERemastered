@@ -1,0 +1,25 @@
+[GameObjectClass]
+geometryName = "hbport.xsi"
+classLabel = "powerplant"
+unitName = "Portal"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0
+isAssault = 1
+
+armorClass = M
+
+requireCount = 0
+
+provideCount = 1
+provideName1 = "hbport"
+
+canDetect = 0
+canInteract = 1
+
+
+[BuildingClass]
+soundAmbient = "ipgen01.wav"
+
+

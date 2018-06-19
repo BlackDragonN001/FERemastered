@@ -1,0 +1,31 @@
+[GameObjectClass]
+mrmFactor = 0
+geometryName = "cbscup00.xsi"
+animCount = 1
+animName1 = "deploy"
+animFile1 = "cbscup00.xsi"
+
+
+classLabel = "extractor"
+scrapCost = 60
+scrapValue = 2
+maxHealth = 6000
+maxAmmo = 0
+unitName = "Drainer"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0
+isAssault = 1
+canInteract=1 // for missile lock
+
+armorClass = H
+
+[BuildingClass]
+// an ambient sound would be nice
+
+[ExtractorClass]
+initDelay = 12.0
+scrapDelay = 0.5
+scrapHold = 20
+detectRange = 100

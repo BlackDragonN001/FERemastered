@@ -1,0 +1,58 @@
+[OrdnanceClass]
+classLabel = "anchor"
+
+shotGeometry = "NULL"
+shotSound = "sonic03c.wav"
+
+xplGround = "xglockgnd_c"
+xplVehicle = "xglockcar_c"
+xplBuilding = "xglockcar_c"
+
+renderName = "sonicblast.render"
+
+ammoCost = 5
+lifeSpan = 0.25 // 100m
+shotSpeed = 400.0
+
+damageValue(N) = 30 // none
+damageValue(L) = 20 // light
+damageValue(H) = 10 // heavy
+
+damageValue(S) = 10 // standard
+damageValue(D) = 10 // deflection
+damageValue(A) = 10 // absorbtion
+
+[LeaderRoundClass]
+stickTime = 5.0
+
+[AnchorRocketClass]
+accelDrag = 300.0
+alphaDrag = 300.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 1
+//renderName1 = "sonicblast.flare"
+renderName1 = "sonicblast.trail"
+
+[Flare]
+renderBase = "draw_twirl_trail"
+textureName = "raindrop.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 0 255" 
+finishColor = "255 0 0 255" 
+startRadius = 3.5
+finishRadius = 1.0
+
+[Trail]
+renderBase = "draw_twirl_trail"
+textureName = "wasplat.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 0 255" 
+finishColor = "255 0 150 255" 
+startRadius = 3.0
+finishRadius = 1.0
+animateTime = 1.7
+emitDelay = 0.02
+emitLife = 0.7
+rotationrate = 20

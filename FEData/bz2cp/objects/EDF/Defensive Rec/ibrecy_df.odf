@@ -1,0 +1,61 @@
+[GameObjectClass]
+geometryName = "iburecy00.xsi"
+classLabel = "recycler"
+powerCost = -2
+scrapCost = 0
+scrapValue = 10
+maxHealth = 15000
+maxAmmo = 0
+addHealth = 0
+unitName = "Recycler"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+
+collisionRadius = 4.0
+
+armorClass = H
+
+lightHard1 = "hp_light_1"
+lightName1 = "o_white_nf"
+
+[PoweredBuildingClass]
+powerTap1 = "HP_tap_1"
+powerTap2 = "HP_tap_2"
+powerName = "ibrecturr"
+detectRange = 100
+
+[BuildingClass]
+tunnelCount = 1
+
+tunnel01X0 = 3
+tunnel01Z0 = 3
+tunnel01DX = 2
+tunnel01DZ = 4
+tunnel01Edge = "wwtw"
+
+soundAmbient = "ibrecy01.wav"
+
+
+[FactoryClass]
+soundBuild = "ibrecy02.wav"
+soundFinish = "iapc04.wav"
+buildItem1 = "ivscav"
+buildItem2 = "ivscout"
+buildItem3 = "ivturr"
+buildItem4 = "ivtug"
+buildItem5 = "ivcons"
+buildItem6 = "ivserv"
+buildItem7 = "apserv"
+buildItem8 = "ivscout_m"
+buildEmptyItem = 8
+
+reloadMsg = "ivrecy12.wav"
+rescueMsg = "ivrecy13.wav"
+
+[RecyclerClass]
+scrapHold = 40
+scrapDelay = 3.0 // # of seconds before +1 scrap

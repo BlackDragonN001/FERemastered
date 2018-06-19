@@ -1,0 +1,17 @@
+[WeaponClass]
+classLabel = "machinegun"
+altName = "gionc_c"
+ordName = "ionc_a"
+wpnName = "Ion Cannon"
+fireSound = "ION CANNON.wav"
+wpnReticle = "glock"
+wpnCategory = "CANN"
+isAssault = 1
+aiRange = 250
+
+[CannonClass]
+shotDelay = 2.0
+salvoCount = 2
+salvoDelay = 0.25
+shotVariance = 0.075
+

@@ -1,0 +1,27 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gproton_c"
+ordName = "proton_a"
+wpnName = "Proton Blast"
+fireSound = "gbolt00.wav"
+wpnReticle = "gplasma"
+wpnCategory = "CANN"
+isAssault = 1
+flashName = "gproton_a.flash"
+aiRange = 260
+
+[CannonClass]
+shotDelay = 5.0
+shotAlternate = 0
+
+[Flash]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "150 190 230 250"
+finishColor = "150 190 230 250"
+startRadius = 7.0
+finishRadius = 1.0
+animateTime = 2.1
+latitudeBands = 8
+longitudeSegments = 16

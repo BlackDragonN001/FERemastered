@@ -1,0 +1,31 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotSound = "laserord.wav"
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+
+ammoCost = 2
+lifeSpan = 0.5 
+shotSpeed = 300.0
+
+damageValue(N) = 20 // none
+damageValue(L) = 10 // light
+damageValue(H) = 5 // heavy
+
+damageValue(S) = 10 // standard
+damageValue(D) = 20 // deflection
+damageValue(A) = 5  // absorbtion
+
+renderName = "lasercan_c.render"
+
+[Render]
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+startColor = "255 70 0 255"
+finishColor = "100 30 0 0"
+startRadius = 0.05
+finishRadius = 0.05
+segmentTime = 0.1

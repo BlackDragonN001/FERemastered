@@ -1,0 +1,131 @@
+[Start]
+consClass = "evcons"
+scavClass = "evscav"
+
+[Cheat]
+moneyAmount = 20
+moneyDelay = 5
+
+
+[Plan1]
+planType = "buildminimums"
+planPriority = 200
+buildtype1 = "evscav"
+buildcount1 = 2
+
+[plan2]
+plantype = "buildminimums"
+planpriority = 195
+buildtype1 = "evcons"
+buildcount1 = 1
+
+[plan3]
+plantype = "basebuildminimums"
+planpriority = 190
+buildtype1 = "ebpgen"
+buildloc1 = "hpower1"
+buildtype2 = "ebfact"
+buildloc2 = "hfactory"
+buildtype3 = "ebgt2g"
+buildloc3 = "spike1"
+
+[plan4]
+plantype = "basebuildminimums"
+planpriority = 186
+buildtype1 = "ebpgen"
+buildloc1 = "hpower2"
+buildtype2 = "ebcbun"
+buildloc2 = "hbunker"
+
+[plan5]
+plantype = "basebuildminimums"
+planpriority = 170
+buildtype1 = "ebarmo"
+buildloc1 = "harmory"
+buildtype2 = "ebsbay"
+buildloc2 = "hservicebay"
+buildtype3 = "ebpgen"
+buildloc3 = "hpower3"
+
+[plan6]
+plantype = "collectpool"
+planpriority = 115
+donextonfail = 1
+
+[plan7]
+plancondition = "NotExists"
+planconditionclass = "ebfact2"
+planconditioncount = 1
+plantype = "upgrade"
+planpriority = 160
+Unittype = "ebfact"
+
+[plan8]
+plantype = "Hold"
+planpriority = 155
+holdtype1 = "evartl2"
+holdcount1 = 1
+holdpoint = "hold3"
+donextonfail = 1
+
+[plan9]
+plantype = "basebuildminimums"
+planpriority = 159
+buildtype1 = "ebgt4g"
+buildloc1 = "hgtow1"
+buildtype2 = "ebtrain"
+buildloc2 = "htraining"
+
+[plan10]
+plantype = "buildminimums"
+planpriority = 156
+buildtype1 = "evartl2"
+buildcount1 = 1
+buildtype2 = "evturrs"
+buildcount2 = 1
+
+
+[plan11]
+plantype = "Collectpool"
+planpriority = 197
+donextonfail = 1
+
+[plan12]
+plantype = "collectpool"
+planpriority = 198
+donextonfail = 1
+
+[plan13]
+plantype = "Hold"
+planpriority = 154
+holdtype1 = "evturrs"
+holdcount1 = 1
+holdpoint = "hold4"
+donextonfail = 1
+
+[plan14]
+plantype = "buildminimums"
+planpriority = 131
+buildtype1 = "evtanku"
+buildcount1 = 2
+
+[plan15]
+plantype = "attacker"
+planpriority = 130
+targettype = "fbrecy_m"
+attacktype1 = "evtanku"
+attacktype2 = "evtanku"
+
+[plan16]
+plancondition = "HisExists"
+planconditionclass = "fbscav"
+planconditioncount = 1
+plantype = "attacker"
+planpriority = 145
+targettype = "fbscav"
+attacktype1 = "maniacs"
+attacktype2 = "maniacs"
+attacktype3 = "evturr"
+buildifnoidle = 1
+donextonfail = 1
+donextonfail = 1

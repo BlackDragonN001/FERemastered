@@ -1,0 +1,22 @@
+[GameObjectClass]
+geometryName = NULL //"defboltmin.x"
+classLabel = "weaponmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 1000
+maxAmmo = 3000
+unitName = "Arc Mine"
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+
+weaponHard1 = "Arc Mine"
+weaponName1 = "estorm3a"
+
+[MineClass]
+lifeSpan = 90000
+
+[WeaponMineClass]
+searchRadius = 500.0
+heightScale = 2.0
+

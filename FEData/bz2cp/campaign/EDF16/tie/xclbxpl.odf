@@ -1,0 +1,68 @@
+// =============
+// BOMB HIT
+// =============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 3
+particleClass1 = "xclbxpl.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleClass2 = "xclbxpl.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleClass3 = "xclbxpl.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+explSound = "xmv1.wav"
+damageRadius = 40.0
+
+damageValue(N) = 250 // none
+damageValue(L) = 200 // light
+damageValue(H) = 180 // heavy
+
+damageValue(S) = 100 // standard
+damageValue(D) = 50 // deflection
+damageValue(A) = 55 // absorbtion
+
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.7
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 3.0
+finishRadius = 40.0
+animateTime = 1.7
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 110 0 157"
+finishColor = "255 0 0 0"
+startRadius = 3.0
+finishRadius = 50.0
+animateTime = 0.2
+latitudeBands = 8
+longitudeSegments = 16
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.7
+renderBase = "draw_light"
+startColor = "255 255 63 2550"
+finishColor = "255 0 0 0"
+startRadius = 60.0
+finishRadius = 60.0
+animateTime = 1.7
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

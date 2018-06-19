@@ -1,0 +1,182 @@
+[Start]
+IdleAllCraft = false
+consClass = "evcons"
+scavClass = "evscav"
+
+[Cheat]
+moneyAmount = 60
+moneyDelay = 30
+
+[Plan1]
+planType = "Attacker"
+planPriority = 200
+planCondition = "Exists"
+planConditionClass = "fvfurytk"
+planConditionCount = 1
+targetType = "ibgtow"
+attackType1 = "fvfurytk"
+doNextOnFail = 1
+
+[Plan2]
+planType = "Attacker"
+planPriority = 190
+planCondition = "Exists"
+planConditionClass = "cvclaw"
+planConditionCount = 1
+targetType = "ibgtow"
+attackType1 = "cvclaw"
+doNextOnFail = 1
+
+[Plan3]
+planType = "Attacker"
+planPriority = 180
+planCondition = "Exists"
+planConditionClass = "cvtyrant"
+planConditionCount = 1
+targetType = "ibgtow"
+attackType1 = "cvtyrant"
+doNextOnFail = 1
+
+[Plan4]
+planType = "BuildMinimums"
+planPriority = 170
+buildType1 = "evcons"
+buildCount1 = 1
+doNextOnFail = 1
+
+[Plan5]
+planType = "BaseBuildMinimums"
+planPriority = 160
+buildType1 = "ebpgen"
+buildCount1 = 4
+buildType2 = "ebcbun"
+buildCount2 = 1
+buildType3 = "ebarmo"
+buildCount3 = 1
+doNextOnFail = 1
+
+[Plan6]
+planType = "BaseBuildMinimums"
+planPriority = 150
+planCondition = "NotExists"
+planConditionClass = "ebfact2"
+planConditionCount = 1
+buildType1 = "ebfact"
+buildCount1 = 1
+doNextOnFail = 1
+
+[Plan7]
+planType = "BaseBuildMinimums"
+planPriority = 140
+buildType1 = "ebgt4g"
+buildCount1 = 1
+buildLoc1 = "GT0"
+buildType2 = "ebgt4g"
+buildCount2 = 1
+buildLoc2 = "GT1"
+buildType3 = "ebgt4g"
+buildCount3 = 1
+buildLoc3 = "GT2"
+buildType4 = "ebgt4g"
+buildCount4 = 1
+buildLoc4 = "GT3"
+buildType5 = "ebgt4g"
+buildCount5 = 1
+buildLoc5 = "GT4"
+doNextOnFail = 1
+
+[Plan8]
+planType = "Upgrade"
+planPriority = 130
+planCondition = "NotExists"
+planConditionClass = "ebfact2"
+planConditionCount = 1
+unitType = "ebfact"
+doNextOnFail = 1
+
+[Plan9]
+planType = "BuildMinimums"
+planPriority = 120
+buildType1 = "evtanku"
+buildCount1 = 2
+doNextOnFail = 1
+
+[Plan10]
+planType = "BuildMinimums"
+planPriority = 110
+buildType1 = "evscout"
+buildCount1 = 2
+doNextOnFail = 1
+
+[Plan11]
+planType = "BuildMinimums"
+planPriority = 100
+buildType1 = "evmislu"
+buildCount1 = 2
+doNextOnFail = 1
+
+[Plan12]
+planType = "BuildMinimums"
+planPriority = 90
+buildType1 = "evatanku"
+buildCount1 = 2
+doNextOnFail = 1
+
+[Plan13]
+planType = "BuildMinimums"
+planPriority = 80
+buildType1 = "evturr"
+buildCount1 = 3
+doNextOnFail = 1
+
+[Plan14]
+planType = "Hold"
+planPriority = 70
+holdType1 = "evturr"
+holdCount1 = 1
+holdPoint = "hold1"
+
+[Plan15]
+planType = "Hold"
+planPriority = 60
+holdType1 = "evturr"
+holdCount1 = 1
+holdPoint = "hold2"
+
+[Plan16]
+planType = "Hold"
+planPriority = 50
+holdType1 = "evturr"
+holdCount1 = 1
+holdPoint = "hold3"
+
+[Plan17]
+planType = "Recover"
+planPriority = 40
+serviceUnit = "ebsbay"
+unitType1 = "evtanku"
+unitType2 = "evscout"
+
+[Plan18]
+planType = "BuildMinimums"
+planPriority = 30
+buildType1 = "evkami"
+buildCount1 = 2
+doNextOnFail = 1
+
+[Plan19]
+planType = "Attacker"
+planPriority = 20
+targetType = "ibscav"
+attackType1 = "evkami"
+attackType2 = "evkami"
+doNextOnFail = 1
+
+[Plan20]
+planType = "Attacker"
+planPriority = 10
+targetType = "ibrecy"
+attackType1 = "evkami"
+attackType2 = "evkami"
+doNextOnFail = 1
+

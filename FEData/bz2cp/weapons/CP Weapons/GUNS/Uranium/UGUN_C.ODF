@@ -1,0 +1,28 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = "xbazgnd_c"
+xplVehicle = "xbazxpl_c"
+xplBuilding = "xbazxpl_c"
+renderName = "ugun_c.render"
+
+ammoCost = 1.5
+lifeSpan = 0.40 // 120m
+shotSpeed = 300.0
+
+damageValue(N) = 9 // none
+damageValue(L) = 6.75 // light
+damageValue(H) = 4.5 // heavy
+
+damageValue(S) = 4.5 // standard
+damageValue(D) = 6.75 // deflection
+damageValue(A) = 6.75 // absorbtion
+
+[Render]
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+startColor = "0 255 0 255"
+finishColor = "255 0 0 255"
+startRadius = 0.03
+finishRadius = 0.01
+segmentTime = 0.1

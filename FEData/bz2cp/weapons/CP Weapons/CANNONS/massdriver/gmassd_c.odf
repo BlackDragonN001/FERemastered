@@ -1,0 +1,13 @@
+[WeaponClass]
+classLabel = "cannon"
+ordName = "massdriver"
+altName = "gmassd_a"
+wpnName = "Massdriver"
+fireSound = "sonic01.wav"
+wpnReticle = "gsonic_c"
+wpnCategory = "CANN"
+aiRange = 250
+
+[CannonClass]
+shotDelay = 5.0 // 1/sec
+shotAlternate = 1

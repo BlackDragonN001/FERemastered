@@ -1,0 +1,14 @@
+[WeaponClass]
+classLabel = "cannon"
+//altName = "gatstab_a"
+ordName = "def"
+wpnName = "fire"
+fireSound = "machine1.wav"
+wpnReticle = "gatstab"
+wpnCategory = "CANN"
+isAssault = 0
+//flashName = "xgatstab_c.flash"
+aiRange = 200
+
+[CannonClass]
+shotDelay = 8.2 // 2/sec

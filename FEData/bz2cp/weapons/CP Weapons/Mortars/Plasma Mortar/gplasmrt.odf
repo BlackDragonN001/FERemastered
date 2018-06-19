@@ -1,0 +1,16 @@
+[WeaponClass]
+classLabel = "detonator"
+ordName = "plasmort"
+wpnName = "Plasma Mortar"
+fireSound = "plasfire.wav"
+wpnReticle = "gresin"		//was "gmdmgun.0"
+wpnLadder = "gmdmgun.L0"	
+wpnPriority = 1
+wpnCategory = "MORT"
+aiRange = 225
+
+[CannonClass]
+shotDelay = 3	//Was 4, but too long for this mission; need more firepower.  Normal is around 2.5 for mortar, but this is a mega weapon for long-range use!
+
+[RemoteDetonatorClass]
+armedReticle = "gmdmgun.1"

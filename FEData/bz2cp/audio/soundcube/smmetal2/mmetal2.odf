@@ -1,0 +1,15 @@
+// SOUNDMINE SOUND //
+
+[WeaponClass]
+classLabel = "cannon"
+ordName = "def"
+wpnName = "Sound"
+fireSound = "metal2.wav" // <<<<<<<<<<<<<<<<<
+wpnReticle = "gatstab"
+wpnCategory = "CANN"
+isAssault = 0
+
+aiRange = 200
+
+[CannonClass]
+shotDelay = 14.0 /sec // <<<<<<<<<<<<<<

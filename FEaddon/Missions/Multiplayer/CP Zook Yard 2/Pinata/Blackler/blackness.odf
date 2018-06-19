@@ -1,0 +1,37 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = NULL
+xplVehicle = "xplblack"
+xplBuilding = NULL
+xplExpire = "xplblack"
+
+shotSound = "gmdmg00.wav"
+
+renderName = "blackness.render"
+
+ammoCost = .1
+lifeSpan = 11
+shotSpeed = 20
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+
+
+[Render]
+simulateBase = "sim_null"
+lifeTime = 11
+renderBase = "draw_sphere"
+textureName = NULL //"vsmoke.tga"
+textureBlend = "invsrc invsrc modulate"//"one one modulate"
+startColor = "0 0 0 255"
+finishColor = "0 0 0 0" 
+startRadius = 4.0
+finishRadius = 50.0 //20
+animateTime = 11.0
+latitudeBands = 12
+longitudeSegments = 18

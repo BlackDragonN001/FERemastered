@@ -1,0 +1,36 @@
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 1
+particleClass1 = "xplelecw.shock"
+particleCount1 = 5
+particleVeloc1 = "10.0 10.0 5.0"
+particleBias1 = "0.0 0.0 15.0"
+
+explSound = "gbolt00.wav" // "xmag05.wav"
+
+damageRadius = 1.0
+
+damageValue(N) = 9 
+damageValue(L) = 5
+damageValue(H) = 40
+
+damageValue(S) = 20
+damageValue(D) = 30
+damageValue(A) = 5
+
+kickRadius = 3.0
+kickOmega = 3.0
+kickVeloc = -5.0
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "70 150 255 255" 
+finishColor = "0 150 255 0"
+startRadius = 0.8
+finishRadius = 3.0
+animateTime = 0.6

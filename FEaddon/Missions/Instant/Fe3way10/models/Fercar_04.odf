@@ -1,0 +1,46 @@
+[GameObjectClass]
+geometryName = "FeRcar_04.xsi"
+classLabel = "i76building"
+geometryScale = 1.2
+scrapCost = 8
+scrapValue = 3
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Car wreck"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+collisionRadius = 5.0
+canDetect = 1
+canInteract = 0
+canSnipe = 0
+canCollide = 1
+
+effectHard1 = "hp_emit_1"
+effectName1 = "pescav.render"
+
+[BuildingClass]
+
+[render]
+renderBase = "draw_multi"
+renderCount = 1
+renderName1 = "pescav.smokeemitter"
+
+
+[SmokeEmitter]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.03
+emitVelocity = "-5.0 5.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 2.0
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 128"
+finishColor = "0 0 0 0"
+startRadius = 2
+finishRadius = 5
+animateTime = 2.0
+rotationRate = 2.0
+

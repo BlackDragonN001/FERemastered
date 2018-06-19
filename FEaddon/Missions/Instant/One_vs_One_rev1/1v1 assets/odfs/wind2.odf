@@ -1,0 +1,58 @@
+[OrdnanceClass]
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = NULL //"defflarxpl"
+xplVehicle = NULL //"defflarxpl"
+xplBuilding = NULL //"defflarxpl"
+shotSound = "sserv02.wav" // "stap01.wav"
+renderName = "wind2.render"
+
+ammoCost = 0
+lifeSpan = 1.5 // 100m
+shotSpeed = 100
+
+damageValue(N) = 250 // none //350
+damageValue(L) = 225 // light //250
+damageValue(H) = 200 // heavy //150
+
+damageValue(S) = 50 // standard //250
+damageValue(D) = 85 // deflection //350
+damageValue(A) = 30 // absorbtion //80
+
+
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "wind2.Core"
+renderName2 = "wind2.Flare"
+
+[Core]
+renderBase = "draw_twirl_trail"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "200 255 30 255" 
+finishColor = "255 255 0 255" 
+startRadius = 0.4
+finishRadius = 0.4
+rotationRate = 10.0
+animateTime = 0.02
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.005
+
+[Flare]
+renderBase = "draw_twirl_trail"
+textureName = "raindrop.tga"
+textureBlend = "one one modulate"
+startColor = "200 255 30 65" 
+finishColor = "255 255 255 0" 
+startRadius = 0.5
+finishRadius = 3.5
+animateTime = 0.7
+emitDelay = 0.01
+emitLife = 0.7
+rotationrate = 20
+

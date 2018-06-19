@@ -1,0 +1,33 @@
+///--- Fade to Black mine --- place at cameras location to begin fade
+///--- works on any team including 0
+ 
+[GameObjectClass]
+geometryName = "gravanchor.xsi" // NULL //
+geometryScale = .5
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 100
+unitName = "Fade to Black"
+addAmmo = 1
+addHealth = .5
+
+fireSound = NULL
+
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canDetect = 0
+canInteract = 1
+canCollide = 1
+armorClass = N 
+
+[MineClass]
+lifeSpan = 120
+
+[FlareMineClass]
+payloadName = "f2b"
+triggerDelay = 0.0001
+shotDelay = 120
+shotVariance = 0

@@ -1,0 +1,16 @@
+[GameObjectClass]
+geometryName = "ioartl00.xsi"
+classLabel = "spraymine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxHeat = 0
+maxAmmo = 5
+unitName = "Trident"
+
+[SprayBuildingClass]
+payloadName = "omirv2"
+fireSound = "smort02.wav"
+triggerDelay = 1.0
+setAltitude = 300.0
+anglePitch = 1

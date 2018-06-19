@@ -1,0 +1,64 @@
+[GameObjectClass]
+geometryName = "cbfact03.xsi"
+classLabel = "factory"
+scrapCost = 55
+scrapValue = 10
+maxHealth = 12000
+maxAmmo = 0
+unitName = "Crucible"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+
+armorClass = H
+
+requireCount = 1
+requireName1 = "cbpgen"
+requireText1 = "Build Power"
+
+provideCount = 1
+provideName1 = "cbfact02"
+
+collisionRadius = 4.0
+
+
+lightHard1 = "hp_light_1"
+lightName1 = "cerbpurple"
+lightHard2 = "hp_light_2"
+lightName2 = "cerbpurple"
+lightHard3 = "hp_light_3"
+lightName3 = "cerb_blue"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[BuildingClass]
+
+soundAmbient = "ibfact00.wav"
+
+// play ambient sound
+
+[FactoryClass]
+soundBuild = "ibrecy02.wav"
+soundFinish = "iapc04.wav"
+reloadMsg = "ivrecy12.wav"
+rescueMsg = "ivrecy13.wav"
+
+buildItem1 = "cvtankP"
+buildItem2 = "cvmlay"
+buildItem3 = "cvrbombP"
+buildItem4 = "cvatank2P"
+buildItem5 = "cvhatankP"
+buildItem6 = "cvtalon02P"
+buildItem7 = "cvdcar"
+buildItem8 = "cvwalkP"
+buildItem9 = "cvgorg"
+builditem10 = "cvwra00"
+
+
+
+
+

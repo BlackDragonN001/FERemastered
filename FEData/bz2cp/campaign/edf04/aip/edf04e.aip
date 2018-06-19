@@ -1,0 +1,230 @@
+//////////////////////////////////////////
+// ESCALATE ATTACK
+// Run after recycler is undeployed.
+// Concentrate attack on the recycler.
+//////////////////////////////////////////
+
+[Start]
+scrapCount = 255
+consClass = "evcons"
+scavClass = "evscav"
+
+[Cheat]
+moneyAmount = 190
+moneyDelay = 10
+
+[Match]
+targetType1 = "ivtank"
+attackType1_1 = "evtank"
+attackType1_2 = "evscout"
+
+targetType2 = "ivscout"
+attackType2_1 = "evscout"
+attackType2_2 = "evscout"
+
+targetType3 = "ivmisl"
+attackType3_1 = "evscout"
+attackType3_2 = "evscout"
+
+
+[Plan1]
+planType = "BuildMinimums"
+planPriority = 460
+buildType1 = "evtanku"
+buildCount1 = 3
+doNextOnFail = 1
+
+[Plan2]
+planType = "BuildMinimums"
+planPriority = 455
+buildType1 = "evmort"
+buildCount1 = 3
+buildType2 = "evmislu"
+buildCount2 = 2
+doNextOnFail = 1
+
+//Attack his recycler:
+[Plan3]
+planType = "Attacker"
+planPriority = 450
+targetType = "ivrecy"
+attackType1 = "evtanku"
+attackType2 = "evtanku"
+attackType3 = "evtanku"
+attackType4 = "evmort"
+attackType5 = "evmort"
+attackType6 = "evmort"
+attackType7 = "evmislu"
+attackType8 = "evmislu"
+doNextOnFail = 1
+
+
+[Plan4]
+planType = "BuildMinimums"
+planPriority = 420
+buildType1 = "evtank"
+buildCount1 = 3
+doNextOnFail = 1
+
+[Plan5]
+planType = "BuildMinimums"
+planPriority = 415
+buildType1 = "evscout4"
+buildCount1 = 3
+doNextOnFail = 1
+
+//Attack his tanks:
+[Plan6]
+planType = "Attacker"
+planPriority = 410
+targetType = "ivtank"
+attackType1 = "evtank"
+attackType2 = "evtank"
+attackType3 = "evtank"
+doNextOnFail = 1
+
+//Attack his scouts:
+[Plan7]
+planType = "Attacker"
+planPriority = 400
+targetType = "ivscout"
+attackType1 = "evscout4"
+attackType2 = "evscout4"
+attackType3 = "evscout4"
+doNextOnFail = 1
+
+
+//Build a constructor:
+[Plan8]
+planCondition = "NotExists"
+planConditionClass = "evcons"
+planConditionCount = 1
+planType = "BuildMinimums"
+planPriority = 380
+buildType1 = "evcons"
+buildCount1 = 1
+doNextOnFail = 1
+
+//Make sure Xenomator is upgraded:
+[Plan9]
+planCondition = "NotExists"
+planConditionClass = "ebfact2"
+planConditionCount = 1
+planType = "Upgrade"
+planPriority = 370
+unitType = "ebfact"
+doNextOnFail = 1
+
+//Make sure Believers Vat is constructed:
+[Plan10]
+planCondition = "NotExists"
+planConditionClass = "ebtrain"
+planConditionCount = 1
+planType = "BaseBuildMinimums"
+planPriority = 360
+buildType1 = "ebtrain"
+buildCount1 = 1
+doNextOnFail = 1
+
+
+[Plan11]
+planType = "BuildMinimums"
+planPriority = 345
+buildType1 = "evkami"
+buildCount1 = 3
+buildType2 = "evtank4"
+buildCount2 = 2
+doNextOnFail = 1
+
+//Attack his rocket tanks:
+[Plan12]
+planType = "Attacker"
+planPriority = 340
+targetType = "ivrckt"
+attackType1 = "evkami"
+attackType2 = "evkami"
+attackType3 = "evkami"
+attackType4 = "evtank4"
+attackType5 = "evtank4"
+doNextOnFail = 1
+
+
+[Plan13]
+planType = "BuildMinimums"
+planPriority = 330
+buildType1 = "evscout"
+buildCount1 = 4
+doNextOnFail = 1
+
+[Plan14]
+planType = "BuildMinimums"
+planPriority = 325
+buildType1 = "evmort4"
+buildCount1 = 2
+doNextOnFail = 1
+
+//Attack his recycler:
+[Plan15]
+planType = "Attacker"
+planPriority = 320
+targetType = "ivrecy"
+attackType1 = "evscout"
+attackType2 = "evscout"
+attackType3 = "evscout"
+attackType4 = "evscout"
+attackType5 = "evmort4"
+attackType6 = "evmort4"
+doNextOnFail = 1
+
+
+//Maintain the central Spikes:
+[Plan16]
+planType = "BaseBuildMinimums"
+planPriority = 310
+buildType1 = "ebpgen"
+buildCount1 = 1
+buildLoc1 = "cppgen1"
+doNextOnFail = 1
+
+[Plan17]
+planType = "BaseBuildMinimums"
+planPriority = 300
+buildType1 = "ebgt2g"
+buildCount1 = 1
+buildLoc1 = "cpspike2"
+buildType2 = "ebgt2g"
+buildCount2 = 1
+buildLoc2 = "cpspike1"
+doNextOnFail = 1
+
+[Plan18]
+planType = "BaseBuildMinimums"
+planPriority = 290
+buildType1 = "ebpgen"
+buildCount1 = 1
+buildLoc1 = "cppgen2"
+doNextOnFail = 1
+
+[Plan19]
+planType = "BaseBuildMinimums"
+planPriority = 280
+buildType1 = "ebgt2g"
+buildCount1 = 1
+buildLoc1 = "cpspike3"
+doNextOnFail = 1
+
+
+//Send scavs to deploy on pools:
+[Plan20]
+planType = "CollectPool"
+planPriority = 110
+maxTries = 2
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+//Send scavs to collect scrap:
+[Plan21]
+planType = "CollectField"
+planPriority = 100
+buildIfNoIdle = 1
+doNextOnFail = 1

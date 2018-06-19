@@ -1,0 +1,76 @@
+[OrdnanceClass]
+classLabel = "missile"
+
+shotGeometry = "iorckt00.xsi"
+xplGround = "xtaggnd_c"
+xplVehicle = "xtagcar_c"
+xplBuilding = "xtagbld_c"
+
+renderName = "swarmer_c.render"
+
+ammoCost = 8
+lifeSpan = 8.34 // 500.4m
+shotSpeed = 60.0
+
+damageValue(N) = 50 // none
+damageValue(L) = 45 // light
+damageValue(H) = 30 // heavy
+
+damageValue(S) = 45 // standard
+damageValue(D) = 30 // deflection
+damageValue(A) = 60 // absorbtion
+
+[MissileClass]
+omegaTurn = 2.2
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "swarmer_c.flame"
+renderName2 = "swarmer_c.halo"
+renderName3 = "swarmer_c.trail"
+//renderName3 = "swarmer_c.fire"
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "particle.tga"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "190 190 100 255"
+finishColor = "255 0 0 0"
+startRadius = 0.07
+finishRadius = 0.01
+animateTime = 0.26
+rotationRate = 10.0
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.5 0.0"
+emitLife = 0.26
+
+[Halo]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 70 60" //64
+finishColor = "255 100 70 0"
+startRadius = 0.4
+finishRadius = 0.4
+rotationRate = 10.0
+animateTime = 10.0
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 10.0
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "smoke.tga" // trail2
+textureBlend = "srcalpha invsrcalpha modulatealpha" // "one one modulate"
+textureRate = 0.004
+startColor =  "250 200 200 90"// "100 0 0 100" 
+finishColor =  "10 10 10 0" // "100 100 100 0"
+startRadius = 0.008
+finishRadius = 1.0
+segmentTime = 1.4
+animateTime = 0.5
+

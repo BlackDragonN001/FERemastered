@@ -1,0 +1,28 @@
+[WeaponClass]
+classLabel = "machinegun"
+altName = "gminigun_c"
+ordName = "minigun_a"
+wpnName = "Minigun"
+fireSound = "gmini01.wav"
+wpnReticle = "gminigun"
+wpnCategory = "GUN"
+isAssault = 1
+flashName = "gminigun_a.flash"
+aiRange = 150
+
+[CannonClass]
+shotDelay = 0.10
+shotVariance = 0.01
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflashed.tga"
+textureBlend = "one one modulate"
+startColor = "100 127 255 255"
+finishColor = "0 0 255 255"
+startRadius = 8.5
+finishRadius = 2.5
+animateTime = 0.1
+geomName = "g_sflash.xsi"
+
+

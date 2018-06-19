@@ -1,0 +1,195 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotRadius = 1.0
+xplGround = "xflmhit"
+xplVehicle = "xflmhit"
+xplBuilding = "xflmhit"
+//xplExpire = "xbhxpl"
+
+renderName = "bhflare2.render"
+ammoCost = 1
+lifeSpan = 0.01
+shotSpeed = 0.1
+
+damageValue(N) = 25
+damageValue(L) = 10
+damageValue(H) = 2
+damageValue(S) = 10
+damageValue(D) = 15
+damageValue(A) = 5
+
+[render]
+renderBase = "draw_multi"
+renderCount = 6
+renderName1 = "bhflare2.sphere"
+renderName2 = "bhflare2.light"
+renderName3 = "bhflare2.light2"
+renderName4 = "bhflare2.ring"
+renderName5 = "bhflare2.ring2"
+renderName6 = "bhflare2.ground"
+//renderName7 = "bhflare2.dome"
+
+[sphere]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_emit"
+emitName = "bhflare2.sphereemit"
+emitDelay = 3.0
+emitVelocity = "0.0 0.1 0.0"
+emitVariance = "0.0 0.0 0.0"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "220 180 250 50"
+finishColor = "0 0 55 255"
+startRadius = 35.0
+finishRadius = 5.0
+animateTime = 4.0
+latitudeBands = 8
+longitudeSegments = 16
+
+[sphereemit]
+simulateBase = "sim_smoke"
+lifeTime = 4.2
+renderBase = "draw_sphere"
+textureName = "bhsphere.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha" // "one one modulate"
+startColor = "240 200 250 0"
+finishColor = "0 0 40 230"
+startRadius = 65.0
+finishRadius = 1.0
+animateTime = 4.2
+latitudeBands = 8
+longitudeSegments = 16
+
+[light]
+simulateBase = "sim_smoke"
+lifeTime = 4.0
+renderBase = "draw_emit"
+emitName = "bhflare2.lightemit"
+emitDelay = 0.01
+emitVelocity = "0.0 150.0 0.0"
+emitVariance = "875.0 875.0 875.0"
+
+[Lightemit]
+simulateBase = "sim_null"
+lifeTime = 4.0
+renderBase = "draw_light"
+startColor = "220 200 255 3050"
+finishColor = "0 0 255 800"
+startRadius = 120.0
+finishRadius = 70.0
+animateTime = 4.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[light2]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_emit"
+emitName = "bhflare2.lightemit2"
+emitDelay = 1.0
+emitVelocity = "0.0 150.0 0.0"
+emitVariance = "875.0 875.0 875.0"
+
+[Lightemit2]
+simulateBase = "sim_null"
+lifeTime = 7.0
+renderBase = "draw_light"
+startColor = "250 100 255 2050"
+finishColor = "200 100 255 100"
+startRadius = 100.0
+finishRadius = 100.0
+animateTime = 7.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[ring]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_emit"
+emitName = "bhflare2.ringemit"
+emitDelay = 0.5
+emitVelocity = "0.0 150.0 0.0"
+emitVariance = "875.0 875.0 875.0"
+
+[Ringemit]
+simulateBase = "sim_null"
+lifeTime = 4.0
+renderBase = "draw_planar"
+textureName = "xbhchar3.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 255 0"
+finishColor = "255 255 255 25"
+startRadius = 255.0
+finishRadius = 10.0
+animateTime = 4.0
+
+[ring2]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_emit"
+emitName = "bhflare2.ring2emit"
+emitDelay = 0.5
+emitVelocity = "0.0 150.0 0.0"
+emitVariance = "875.0 875.0 875.0"
+
+[Ring2emit]
+simulateBase = "sim_null"
+lifeTime = 4.0
+renderBase = "draw_planar"
+textureName = "xbhchar2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 255 25"
+finishColor = "255 255 255 0"
+startRadius = 255.0
+finishRadius = 20.0
+animateTime = 4.0
+
+[ground]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_emit"
+emitName = "bhflare2.groundemit"
+emitDelay = 0.5
+emitVelocity = "0.0 150.0 0.0"
+emitVariance = "875.0 875.0 875.0"
+
+[groundemit]
+simulateBase = "sim_null"
+lifeTime = 4.0
+renderBase = "draw_planar"
+textureName = "dome.pic" //"ano2.pic"
+textureBlend =  "srcalpha invsrcalpha modulatealpha" // "one one modulate" //
+startColor = "0 0 0 50"
+finishColor = "0 0 0 180"
+startRadius = 225.0
+finishRadius = 240.0
+animateTime = 4.0
+
+[dome]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_emit"
+emitName = "bhflare2.domeemit"
+emitDelay = 3.0
+emitVelocity = "0.0 0.1 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[domeemit]
+simulateBase = "sim_smoke"
+lifeTime = 4.0
+renderBase = "draw_sphere"
+textureName = "dome.pic"
+textureBlend = "srcalpha invsrcalpha modulatealpha" // "one one modulate"
+startColor = "0 0 0 50"
+finishColor = "0 0 0 150"
+startRadius = 240.0
+finishRadius = 240.0
+animateTime = 4.0
+latitudeBands = 8
+longitudeSegments = 16
+

@@ -1,0 +1,13 @@
+[WeaponClass]
+classLabel = "cannon"
+ordName = "cprktbomb"
+wpnName = "Heavy Rocket"
+fireSound = "gpopp00.wav"
+wpnReticle = "grktbomb"
+wpnCategory = "ROCK"
+isAssault = 1
+aiRange = 210
+
+[CannonClass]
+shotDelay = 3.0
+

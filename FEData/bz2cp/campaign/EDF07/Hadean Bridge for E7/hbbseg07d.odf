@@ -1,0 +1,16 @@
+[GameObjectClass]
+geometryName = "HBBSEG07d.xsi"
+classLabel = "hbbseg01" // Inherit off hbbseg01. -GBD
+maxHealth = 500000
+unitName = "Damaged Segment"
+
+[BuildingClass]
+tunnelCount = 1 
+bldEdge = "wwww"
+
+// single passage pathing. -GBD
+tunnel01X0 = 1
+tunnel01Z0 = 0
+tunnel01DX = 6
+tunnel01DZ = 8
+tunnel01Edge = "fwfw"

@@ -1,0 +1,191 @@
+Forgotten Enemies 1.2 -> 1.3 upgrade changelog by General BlackDragon
+
+
+
+- Imported all assets from FE Rev C. (FEP1, Patch1.1, RevB, FEP2, RevC) Cleaned 
+up all Duplicate files. Consolidated all files into original FEData.pak folder 
+structure. -GBD
+
+-Updated UI to 1.3 spec. -GBD
+-- TODO: Convert Editor object lists from FE to 1.3 spec.
+
+-Fixed all Render errors.
+- Kept assets behavior as it was in 1.2, if something didn't work, commented it out.
+  Will test out fixing renders and seeing how they look, on a case by case basis. -GBD
+- 
+
+-Removed duplicate textures. -GBD
+
+-Made Cerberi Minelayer use minelayer classlabel/AI. -GBD
+
+-Removed instances of dummy "defflaremin" / "defflarexpl" / "defboltmin" empty models 
+and explosions, replaced with NULL. -GBD
+
+-Fixed Tunnel Pathing on hbbseg07. -GBD
+
+-Made SoundCubes that were weaponmines inherit from a new root ODF "FEsoundcube", 
+also removed the igbolt00 model and added ScanTeamLimit = 3. -GBD
+
+
+Campaign Changelog:
+-- re-wrote all mission scripts in Lua.
+
+MercEDF1:
+
+EDF1:
+
+EDF2:
+
+EDF3:
+
+EDF4:
+-- Increase visibilityrange to 400, as fogrange was 300 > 400, but vis range was only 300. Fixes sky clipping. -GBD
+
+
+TODO: 
+
+- Lots....
+-- Implement ODF Inheritence.
+-- Reorganize assets by race/grouping similar derrived files.
+-- Implement ODF changes to make things behave like they did in 1.2.
+---- [CraftClass]::OffensiveProcessIsTenacious = true // 1.0-1.3pb3 used a default of false
+---- [CraftClass]::OffensiveProcessIsDistractable = false // 1.0-1.3pb3 used false.
+---- [GameObjectClass]::SmartIsAirUnitCheck = true // 1.0-1.3pb3 used false.
+---- [TrackedVehicleClass]::TREAD_STATIC_FRICTION = 1.5 // Make tread friction work correctly so units don't drift everywhere.
+---- draw_twirl BottomInteractsWithTerrain = true // 1.0-1.3pb4a used false.
+-- Implement AIP changes to make things behave like they did in 1.2
+---- Attacker/ClearArea/DefendArea plans: pickTargetType = 1 // 0 = first match (usually oldest?), 1 = closest, 2 = random 1.0-1.3pb3 (maybe -1.3pb4) tended to use a value of 0
+---- [Start]::IdleAllCraft = true // 1.0-1.3pb3 used false.
+-- Code missions in Lua.
+-- Re-create MPI/ST DLLs based on current 1.3 code.
+---- Redo Portal code based on GBD's code.
+---- Implement advanced AI features from GBD's code / re-create existing FE MPI AI features.
+---- Add other useful features? New features maybe.
+-- Make a0 textures for glow maps.
+-- Add LightingType = 1 to ODFs.
+-- Improve collisions on buildings?
+-- Bug fixes/improvements.
+
+
+
+-Missing Textures:
+
+ERR |              bitmap:1355 |22:05:29|30457  |Can't load texture trail3.tga.
+DIAG|         ParameterDB:209  |22:05:29|30457  |Last few opened ODFs:
+DIAG|         ParameterDB:214  |22:05:29|30457  | 1 : locker.odf
+
+ERR |              bitmap:1355 |21:37:07|168376 |Can't load texture dome.pic.
+DIAG|         ParameterDB:209  |21:37:07|168376 |Last few opened ODFs:
+DIAG|         ParameterDB:214  |21:37:07|168376 | 1 : bhflare2.odf
+
+ERR |              bitmap:1355 |21:38:21|242649 |Can't load texture iceshockflame2.tga.
+DIAG|         ParameterDB:209  |21:38:21|242649 |Last few opened ODFs:
+DIAG|         ParameterDB:214  |21:38:21|242649 | 1 : baton_a.odf
+
+ERR |              bitmap:1355 |11:38:41|63331  |Can't load texture hbridge03.bmp.
+DIAG|         ParameterDB:209  |11:38:41|63331  |Last few opened ODFs:
+DIAG|         ParameterDB:214  |11:38:41|63331  | 1 : hbbseg07d.odf
+
+ERR |              bitmap:1355 |11:38:48|69978  |Can't load texture copper02.tga.
+DIAG|         ParameterDB:209  |11:38:48|69978  |Last few opened ODFs:
+DIAG|         ParameterDB:214  |11:38:48|69978  | 1 : stargeom01.odf
+
+ERR |              bitmap:1355 |11:38:48|70157  |Can't load texture fedark.pic.
+DIAG|         ParameterDB:209  |11:38:48|70157  |Last few opened ODFs:
+DIAG|         ParameterDB:214  |11:38:48|70157  | 1 : fedeworm01.odf
+
+ERR |              bitmap:1355 |11:38:48|70235  |Can't load texture fevsmoke2.pic.
+DIAG|         ParameterDB:209  |11:38:48|70235  |Last few opened ODFs:
+DIAG|         ParameterDB:214  |11:38:48|70235  | 1 : fedeworm01.odf
+
+ERR |              bitmap:1355 |11:38:48|70247  |Can't load texture fecbextw10.pic.
+DIAG|         ParameterDB:209  |11:38:48|70247  |Last few opened ODFs:
+DIAG|         ParameterDB:214  |11:38:48|70247  | 1 : fedeworm01.odf
+
+ERR |              bitmap:1355 |11:38:48|70330  |Can't load texture vecbextw10.pic.
+DIAG|         ParameterDB:209  |11:38:48|70330  |Last few opened ODFs:
+DIAG|         ParameterDB:214  |11:38:48|70330  | 1 : fedeworm01.odf
+
+ERR |              bitmap:1355 |11:38:48|70341  |Can't load texture vedark.pic.
+DIAG|         ParameterDB:209  |11:38:48|70341  |Last few opened ODFs:
+DIAG|         ParameterDB:214  |11:38:48|70341  | 1 : fedeworm01.odf
+
+ERR |              bitmap:1355 |11:38:58|80282  |Can't load texture xgunpod.pic.
+DIAG|         ParameterDB:209  |11:38:58|80282  |Last few opened ODFs:
+DIAG|         ParameterDB:214  |11:38:58|80282  | 1 : firefly.odf
+
+ERR |              bitmap:1355 |11:38:58|80284  |Can't load texture xw2plnt2.pic.
+DIAG|         ParameterDB:209  |11:38:58|80284  |Last few opened ODFs:
+DIAG|         ParameterDB:214  |11:38:58|80284  | 1 : firefly.odf
+
+ERR |              bitmap:1355 |11:39:02|83617  |Can't load texture avtank00.bmp.
+DIAG|         ParameterDB:209  |11:39:02|83617  |Last few opened ODFs:
+DIAG|         ParameterDB:214  |11:39:02|83617  | 1 : cvhrazdm.odf
+
+ERR |              bitmap:1355 |11:39:35|116549 |Can't load texture IRONPLATE1.BMP.
+DIAG|         ParameterDB:209  |11:39:35|116549 |Last few opened ODFs:
+DIAG|         ParameterDB:214  |11:39:35|116549 | 1 : megagun.odf
+
+
+-- Missing Models:
+
+ERR |       ConsoleHelper:29   |21:36:28|129457 |Missing geometry "turretprobe.xsi" in file "turretprobe.odf"
+
+ERR |       ConsoleHelper:29   |21:37:22|183760 |Missing geometry "Rustpipe2a.xsi" in file "facpipebig.odf"
+
+ERR |       ConsoleHelper:29   |21:37:25|186507 |Missing geometry "evdrop00_land.xsi" in file "evdrop_15b.odf"
+
+ERR |       ConsoleHelper:29   |21:37:26|187663 |Missing geometry "Wormgen6.xsi" in file "wormgen.odf"
+
+ERR |       ConsoleHelper:29   |21:38:11|232153 |Missing geometry "evdrone00.xsi" in file "evdrone.odf"
+
+ERR |       ConsoleHelper:29   |21:38:38|259650 |Missing geometry "fespb002.xsi" in file "fe01bg02.odf"
+
+
+-- Missing ODFs:
+effectName1 = "trackw.render"
+
+ERR |       ConsoleHelper:29   |16:17:20|228129 |ERROR: ODF "dspilo.odf" does not exist
+
+
+ERR |       ConsoleHelper:29   |16:22:33|540323 |ERROR: ODF "lspilo.odf" does not exist
+
+
+ERR |       ConsoleHelper:29   |16:25:29|716324 |ERROR: ODF "xspilo.odf" does not exist
+
+
+ERR |       ConsoleHelper:29   |16:22:21|528825 |ERROR: ODF "ivshul.odf" does not exist
+
+
+
+-- Missing Sounds:
+
+DIAG|          AudioCache:338  |16:18:53|320527 |AudioCache: file 'ufo1.wav' not found. Fix ODFs!. // ebufo01.odf / evufo01.odf
+
+
+--- Things to try out/investigate:
+
+ERR |       ConsoleHelper:29   |18:44:01|155265 |Missing geometry "defflarmin.xsi" in file "lavamin.odf"
+-- Commented out all instances of "defflarmin.xsi" with NULL instead. -GBD
+
+WARN|         ParameterDB:1695 |11:38:37|59417  |WARNING: ODF cvtalon02.odf, [GameObjectClass]::explosionName tries to point to ExplosionClass shipxpl2, but couldn't find it. Might want to check ODFs
+-- Retrieved shipxpl2 from EPIC mod, possibly original from FE? unsure... -GBD
+---- Removed explosion, since it didn't work in original. EPIC's is too different/custom textures. -GBD
+
+ERR |       ConsoleHelper:29   |11:39:11|93303  |ERROR: ODF "xtytech.odf" does not exist
+
+-- Retrieved from an old thing I had, not sure where i got it or if I made it. -GBD
+
+ERR |       ConsoleHelper:29   |11:39:15|96599  |ERROR: ODF "xzipcar.odf" does not exist
+
+-- Changed to xbzipcar to match burst_c.odf, test BURST_A (Zipper Gun assault) -GBD
+
+ERR |       ConsoleHelper:29   |11:39:15|96632  |ERROR: ODF "xbchainbld.odf" does not exist
+
+-- Changed to "xbchaincar" to match BCHAIN_C.odf. -GBD
+
+-Fixed Neutron Mortar Explosion, was possibly using wrong odf? do test. -GBD
+
+
+DIAG|          AudioCache:338  |16:18:44|311527 |AudioCache: file 'engine.wav' not found. Fix ODFs!.
+---- Copied ENGINE1.wav from EPIC, changed evsky.odf to use that instead. -GBD

@@ -1,0 +1,59 @@
+// ========================
+// SHOCKROCKET EMIT
+// ========================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 2
+
+particleClass1 = "xshockrockemit.shock"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleBias1 = "0.0 0.0 0.0"
+
+particleClass2 = "xshockrockemit.ring"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+explSound = "xshockrock.wav"
+
+damageRadius = 20.0
+
+damageValue(N) = 400
+damageValue(L) = 350
+damageValue(H) = 300
+
+damageValue(S) = 350
+damageValue(D) = 300
+damageValue(A) = 350
+
+kickRadius = 20.0
+kickOmega = 15.0
+kickVeloc = 5.0
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 63"
+finishColor = "255 255 255 0"
+startRadius = 10.0
+finishRadius = 0.1
+animateTime = 0.3
+latitudeBands = 8
+longitudeSegments = 16
+
+[ring]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_planar"
+textureName = "shockrock.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 63"
+startRadius = 5.0
+finishRadius = 5.0
+animateTime = 0.3

@@ -1,0 +1,15 @@
+[WeaponClass]
+classLabel = "cannon"
+
+ordName = "spbk_c"
+wpnName = "Rocket"
+fireSound = "fmiss01.wav"
+wpnReticle = "gbazooka"
+
+wpnCategory = "ROCK"
+isAssault = 0
+aiRange = 150
+
+[CannonClass]
+shotDelay = 1.5
+

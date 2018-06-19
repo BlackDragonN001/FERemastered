@@ -1,0 +1,15 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gblast_a"
+ordName = "cerblast"
+wpnName = "Blast"
+fireSound = "gblas00.wav"
+wpnReticle = "gblast"
+wpnCategory = "CANN"
+isAssault = 0
+aiRange = 240
+
+[CannonClass]
+shotDelay = 2.0 // .5/sec
+shotAlternate = 0
+

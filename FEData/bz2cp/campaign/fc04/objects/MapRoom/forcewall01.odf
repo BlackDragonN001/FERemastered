@@ -1,0 +1,20 @@
+[GameObjectClass]
+geometryName = "forcewall01.xsi"
+geometryScale = .5
+classLabel = "i76building"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "Force Wall"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+collisionRadius = 5.0
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+
+[BuildingClass]
+SoundAmbient = "igtow01.wav"
+SoundAmbientDist = .6

@@ -1,0 +1,38 @@
+[WeaponClass]
+classLabel = "magnetgun"
+ordName = NULL
+altName = "gsonic_c"
+wpnName = "Sonic Wave"
+fireSound = ""
+wpnReticle = "gsonic_a"
+wpnCategory = "CANN"
+flashName = "gsonic_a.flash"
+flashTime = 0.2
+isAssault = 1
+
+aiRange = 100
+
+[MagnetGunClass]
+ammoCost = 10.0
+activeSound = "mag01.wav"
+coneAngle = 1.0
+fieldRadius = 20.0
+objPushCenter = 100.0
+objPushEdge = 40.0
+objDrag = 0.2
+ordPushCenter = 1200 // 1000 // 700.0
+ordPushEdge = 400 // 350 // 200.0
+ordDrag = 3.0 // 2.7 //2.0
+
+[Flash]
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "200 255 30 255" 
+finishColor = "255 255 255 0" 
+startRadius = 1.0
+finishRadius = 20.0
+animateTime = 0.2
+waveAngle = 1.0
+waveDepth = 0.3
+waveSegments = 8

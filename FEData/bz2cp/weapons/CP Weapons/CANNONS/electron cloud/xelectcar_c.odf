@@ -1,0 +1,90 @@
+// ===============
+// ELECTRON CLOUD VEHICLE HIT
+// ===============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xfire1.wav"
+damageRadius = 10.0
+
+damageValue(N) = 50 // none // 200
+damageValue(L) = 25 // light // 140
+damageValue(H) = 5 // heavy // 50
+
+damageValue(S) = 25 // standard    // 100
+damageValue(D) = 40 // deflection // 200
+damageValue(A) = 10 // absorbtion  // 0
+
+kickRadius = 5.0
+kickOmega = 2.0
+kickVeloc = 2.0
+
+particleTypes = 5
+particleClass1 = "xelectcar_c.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xelectcar_c.puff"
+particleCount2 = 4
+particleVeloc2 = "7.0 7.0 7.0"
+
+particleClass3 = "xelectcar_c.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xelectcar_c.shock"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "80 170 255 255"
+finishColor = "100 100 100 0"
+startRadius = 1.0
+finishRadius = 0.1
+animateTime = 1.0
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 0.7
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "80 170 255 200" 
+finishColor = "40 85 130 0" 
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 0.7
+rotationRate = 0.3
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 0.7
+renderBase = "draw_light"
+startColor = "80 170 255 555"
+finishColor = "40 85 130 0"
+startRadius = 0.2
+finishRadius = 0.1
+animateTime = 0.7
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "80 170 255 190" 
+finishColor = "40 85 130 0" 
+startRadius = 0.5
+finishRadius = 3.0
+animateTime = 0.2
+latitudeBands = 8
+longitudeSegments = 16

@@ -1,0 +1,182 @@
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 7
+
+particleClass1 = "xplrover.smoke1"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xplrover.smoke2"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xplrover.smoke3"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xplrover.smoke4"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "xplrover.explode"
+particleCount5 = 1
+particleVeloc5 = "1.0 1.0 1.0"
+
+particleClass6 = "xplrover.smokecenter"
+particleCount6 = 1
+particleVeloc6 = "1.0 0.0 0.0"
+
+particleClass7 = "xplrover.embercore"
+particleCount7 = 2
+particleVeloc7 = "1.0 0.0 0.0"
+
+explSound = "rhin08.wav"
+
+damageRadius = 20.0
+damageValue(N) = 500
+damageValue(L) = 300
+damageValue(H) = 150
+damageValue(S) = 200
+damageValue(D) = 250
+damageValue(A) = 150
+
+kickRadius = 20.0
+kickOmega = -15.0
+kickVeloc = -30.0  
+
+[smoke1]
+simulateBase = "sim_dust"
+lifeTime = 2
+renderBase = "draw_emit"
+emitName = "xplrover.smokeemit1"
+emitDelay = 0.05
+emitVelocity = "5.0 0.0 5.0"
+emitVariance = "10.0 1.0 5.0"
+
+[smokeemit1]
+simulateBase = "sim_smoke"
+lifeTime = 3
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = " 200 200 200 255"
+finishColor = "255 255 255 0"
+startRadius = 8
+finishRadius = 2
+animateTime = 3
+rotateTime = 20
+
+[smoke2]
+simulateBase = "sim_dust"
+lifeTime = 2
+renderBase = "draw_emit"
+emitName = "xplrover.smokeemit2"
+emitDelay = 0.05
+emitVelocity = "-5.0 0.0 6.0"
+emitVariance = "5.0 1.0 10.0"
+
+[smokeemit2]
+simulateBase = "sim_smoke"
+lifeTime = 3
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = " 200 200 200 255"
+finishColor = "255 255 255 0"
+startRadius = 8
+finishRadius = 2
+animateTime = 3
+rotateTime = 20
+
+[smoke3]
+simulateBase = "sim_dust"
+lifeTime = 2
+renderBase = "draw_emit"
+emitName = "xplrover.smokeemit3"
+emitDelay = 0.05
+emitVelocity = "6.0 0.0 -5.0"
+emitVariance = "8.0 1.0 6.0"
+
+[smokeemit3]
+simulateBase = "sim_smoke"
+lifeTime = 3
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = " 200 200 200 255"
+finishColor = "200 200 200 0"
+startRadius = 8
+finishRadius = 2
+animateTime = 3
+rotateTime = 20
+
+[smoke4]
+simulateBase = "sim_dust"
+lifeTime = 2
+renderBase = "draw_emit"
+emitName = "xplrover.smokeemit4"
+emitDelay = 0.05
+emitVelocity = "-5.0 0.0 -5.0"
+emitVariance = "12.0 1.0 8.0"
+
+[smokeemit4]
+simulateBase = "sim_smoke"
+lifeTime = 3
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = " 200 200 200 255"
+finishColor = "200 200 200 0"
+startRadius = 8
+finishRadius = 2
+animateTime = 3
+rotateTime = 20
+
+[explode]
+simulateBase = "sim_smoke"
+lifeTime = .3
+renderBase = "draw_emit"
+emitName = "xplrover.explodepuffs"
+emitDelay = .3
+emitVelocity = "2.0 2.0 2.0"
+emitVariance = "5.0 5.0 5.0"
+
+[explodepuffs]
+simulateBase = "sim_smoke"
+lifeTime = 1
+renderBase = "draw_twirl"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = " 255 255 255 255"
+finishColor = "255 255 255 0"
+startRadius = 10
+finishRadius = 5
+animateTime = 1
+rotateTime = 20
+
+[smokecenter]
+simulateBase = "sim_null"
+lifeTime = 2
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = " 255 255 255 255"
+finishColor = "255 255 255 0"
+startRadius = 15
+finishRadius = 15
+animateTime = 2
+rotateTime = 10
+
+[embercore]
+simulateBase = "sim_smoke"
+lifeTime = 2
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = " 200 200 200 255"
+finishColor = "200 200 200 0"
+startRadius = 2
+finishRadius = 3
+animateTime = 2
+rotateTime = 20

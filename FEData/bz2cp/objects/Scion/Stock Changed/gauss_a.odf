@@ -1,0 +1,54 @@
+[OrdnanceClass]
+classLabel = "beam"
+shotGeometry = NULL
+xplGround = "xgaussgnd"
+xplVehicle = "xgausscar"
+xplBuilding = "xgaussbld"
+
+renderName = "gauss_a.render"
+
+ammoCost = 60
+lifeSpan = 180e-3 // 180m
+shotSpeed = 1e3
+
+damageValue(N) = 200 // none // 200
+damageValue(L) = 190 // light // 190
+damageValue(H) = 160 // heavy // 160
+
+damageValue(S) = 180 // standard // 180
+damageValue(D) = 140 // deflection // 140
+damageValue(A) = 200 // absorbtion // 200
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "gauss_a.beam"
+renderName2 = "gauss_a.ring"
+
+[Beam]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 127"
+finishColor = "0 127 255 0"
+startRadius = 0.2
+finishRadius = 0.1
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.5
+textureRate = 0.01
+textureSpeed = -0.1
+
+[Ring]
+renderBase = "draw_twirl_trail"
+textureName = "raindrop.tga"
+textureblend = "one one modulate"
+startColor = "0 127 255 31"
+finishColor = "0 0 255 0"
+startRadius = 0.4
+finishRadius = 1.6
+animateTime = 2.0
+emitDelay = 0.005
+emitVariance = "0.3 0.3 0.3"
+emitLife = 2.0
+rotationRate = 4.0

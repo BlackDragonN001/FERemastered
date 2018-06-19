@@ -1,0 +1,20 @@
+[GameObjectClass]
+geometryName = "pusmine.xsi"
+classLabel = "proximity"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 500
+maxAmmo = 200
+unitName = "Prox Mine"
+canCollide = 0 
+canDetect = 0 
+canInteract = 0 
+explosionName = "pusxpl"
+
+[MineClass]
+lifeSpan = 90000
+xplBlast = "pusxpl"
+
+[ProximityMineClass]
+triggerRadius = 8.0
+suppressRadius = 8.0 // 40

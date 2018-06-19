@@ -1,0 +1,33 @@
+[GameObjectClass]
+geometryName = "rustbrseg.xsi"
+classLabel = "i76building"
+collisionRadius = 1.0
+scrapCost = 8
+scrapValue = 0
+maxHealth = 10000
+maxAmmo = 0
+unitName = "Bridge"
+heatSignature = 1.0
+imageSignature = 0.5
+radarSignature = 1.0
+isAssault = 1
+
+armorClass = H
+
+[BuildingClass]
+tunnelCount = 2
+bldEdge = "wwww"
+
+tunnel01X0 = 1
+tunnel01Z0 = 0
+tunnel01DX = 2
+tunnel01DZ = 4
+tunnel01Edge = "fwfw"
+
+tunnel02X0 = 0
+tunnel02Z0 = 1
+tunnel02DX = 4
+tunnel02DZ = 2
+tunnel02Edge = "wtwt"
+
+

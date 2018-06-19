@@ -1,0 +1,12 @@
+[WeaponClass]
+classLabel = "machinegun"
+ordName = "tytech"
+wpnName = "Guard Cannon"
+fireSound = "tytech00.wav"
+wpnReticle = "gproxmin"
+wpnPriority = 0
+wpnCategory = "CANN"
+aiRange = 175
+
+[CannonClass]
+shotDelay = 0.40

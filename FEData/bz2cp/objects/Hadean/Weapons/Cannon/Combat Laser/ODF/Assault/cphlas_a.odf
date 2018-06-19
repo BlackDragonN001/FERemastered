@@ -1,0 +1,57 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotSound = NULL
+
+xplGround = "cplasgnd"
+xplVehicle = "cplascar"
+xplBuilding = "cplascar"
+
+renderName = "cphlas_a.render"
+
+ammoCost = 45
+lifeSpan = 1.34 //201m
+shotSpeed = 150
+
+damageValue(N) = 200 // none 
+damageValue(L) = 175 // light 
+damageValue(H) = 150 // heavy
+
+damageValue(S) = 160.5 // standard 
+damageValue(D) = 170 // deflection
+damageValue(A) = 135 // absorbtion 
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "cphlas_a.light"
+renderName2 = "cphlas_a.flame"
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 50 0 1400"
+finishColor = "255 50 0 1400"
+startRadius = 32.0
+finishRadius = 32.0
+animateTime = 0.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+//textureName = "particle.tga"
+textureName = "cplaser01.tga"
+textureBlend = "one one modulate"
+startColor = "255 100 0 255"
+finishColor = "140 20 0 0"
+startRadius = 1.1
+finishRadius = 0.1
+animateTime = 0.3
+rotationRate = 1.0
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.3
+

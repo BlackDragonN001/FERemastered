@@ -1,0 +1,35 @@
+[OrdnanceClass]
+classLabel = "anchor" 
+shotGeometry = NULL
+xplGround = NULL
+xplVehicle = "xplstas_car"
+xplBuilding = NULL
+xplExpire = "xplstas_xpr" 
+
+shotSound = NULL
+
+renderName = "stasflak.render"
+
+ammoCost = 0
+lifeSpan = .1
+shotSpeed = 330 // 33 m
+
+[LeaderRoundClass]
+stickTime = 4.0 //2.0
+
+[AnchorRocketClass]
+accelDrag = 50.0 // 10.0
+alphaDrag = 0.2 // 0.5
+
+[Render]
+renderBase = "draw_bolt"
+textureName = "boltline.tga"
+textureBlend = "one one modulate"//"invsrc invsrc modulate"//"one one modulate"
+startColor = "0 0 255 50"
+finishColor = "0 0 255 0"
+startRadius = 0.1
+finishRadius = 0.1 
+segmentLength = .2 
+segmentVariance = "0.1 0.1 0.1"
+animateTime = 0.2 // 0.3
+textureRate = 0.1 //0.05

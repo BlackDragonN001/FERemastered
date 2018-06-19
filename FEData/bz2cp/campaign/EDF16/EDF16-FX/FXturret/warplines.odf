@@ -1,0 +1,89 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotSound = NULL
+
+xplGround = NULL
+xplVehicle = NULL
+xplBuilding = NULL
+
+renderName = "warplines.render"
+
+ammoCost = 0
+lifeSpan = 10 //
+shotSpeed = 20.0
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+
+[LeaderRoundClass]
+stickTime = 2.0
+
+[AnchorRocketClass]
+accelDrag = 8.0
+alphaDrag = 0.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 1
+//renderName1 = "warplines.flare"
+//renderName2 = "warplines.trail"
+renderName1 = "warplines.contrail"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "particle.tga"
+lifeTime = 0.5
+textureBlend = "one one modulate"
+startColor = "0 0 255 175" 
+finishColor = "0 0 255 75" 
+startRadius = 0.05
+finishRadius = 0.1
+animateTime = 0.5
+
+[Trail]
+renderBase = "draw_twirl_trail"
+textureName = "spark.tga" 
+//textureBlend = "srcalpha invsrcalpha modulatealpha"
+textureBlend = "one one modulate"
+startColor = "100 100 255 120"
+finishColor = "100 100 255 0"
+startRadius = 0.2
+finishRadius = 0.4
+animateTime = 1.0
+emitDelay = 0.01 // 0.02 // 0.005
+emitDelayVar = 0.05 // testing
+emitVelocity = "0.0 0.0 40.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.75
+
+//[Contrail]
+renderBase = "draw_trail"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "100 110 250 200"
+finishColor = "100 110 250 0"
+startRadius = 0.5
+finishRadius = 0.5 
+segmentTime = .03 // 3.0  // time each segment animates
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.5
+textureRate = 1 
+
+[Contrail]
+renderBase = "draw_geom"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 100"
+finishColor = "255 255 255 255"
+startRadius = .01
+finishRadius = .05
+animateTime = 0.5
+geomName = "g_fflash.xsi"
+

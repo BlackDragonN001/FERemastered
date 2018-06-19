@@ -1,0 +1,15 @@
+[WeaponClass]
+classLabel = "machinegun"
+altName =  NULL
+ordName = "warplines"
+wpnName = "warplines"
+fireSound = NULL 
+wpnReticle = "glock"
+wpnCategory = "GUN"
+isAssault = 0
+aiRange = 300
+
+
+[CannonClass]
+shotDelay = 0.02
+shotVariance = 0.4

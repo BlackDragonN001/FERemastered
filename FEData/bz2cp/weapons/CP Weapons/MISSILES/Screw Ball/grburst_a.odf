@@ -1,0 +1,27 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = ""
+ordName = "rburst_a"
+wpnName = "Screw Ball"
+fireSound = "apmort.wav"
+wpnReticle = "gatstab"
+wpnCategory = "CANN"
+isAssault = 1
+flashName = "grburst_a.flash"
+aiRange = 195
+
+[CannonClass]
+shotDelay = 1.5 // 2/sec
+shotAlternate = 0
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "110 155 255 255"
+finishColor = "155 155 255 255"
+startRadius = 5.0
+finishRadius = 2
+animateTime = 0.1
+geomName = "g_sflash.xsi"
+

@@ -1,0 +1,94 @@
+[OrdnanceClass]
+classLabel = "beam"
+shotGeometry = NULL
+xplGround = "xperchit"
+xplVehicle = "xperchit"
+xplBuilding = "xperchit"
+
+renderName = "perc_c.render"
+
+ammoCost = 1040
+lifeSpan = 540e-3 // 150m
+shotSpeed = 1e3
+
+damageValue(N) = 600 // none // 300
+damageValue(L) = 500 // light // 250
+damageValue(H) = 300 // heavy // 150
+
+damageValue(S) = 500 // standard // 250
+damageValue(D) = 600 // deflection // 300
+damageValue(A) = 300 // absorbtion // 150
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "perc_c.sparkle"
+renderName2 = "perc_c.bolt"
+renderName3 = "perc_c.bolt2"
+renderName4 = "perc_c.bolt3"
+renderName5 = "perc_c.bolt4"
+
+[Sparkle]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureblend = "one one modulate"
+startColor = "255 255 0 255"
+finishColor = "0 100 255 255"
+startRadius = 0.15
+finishRadius = 0.01
+animateTime = 1.0
+emitDelay = 0.002
+emitVariance = "6.0 6.0 6.0"
+emitLife = 1.3
+
+[Bolt]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "21 32 185 255"
+finishColor = "11 18 111 35"
+startRadius = 0.6
+finishRadius = 0.03
+segmentLength = 7.0 
+segmentVariance = "0.5 0.5 0.5"
+animateTime = 0.8 // 0.2
+textureRate = 0.01
+
+[Bolt2]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "192 9 12 255"
+finishColor = "103 8 9 35"
+startRadius = 0.7
+finishRadius = 0.04
+segmentLength = 8.0 
+segmentVariance = "8.5 8.5 8.5"
+animateTime = 0.8 // 0.2
+textureRate = 0.01
+
+[Bolt3]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "21 32 185 255"
+finishColor = "11 18 111 35"
+startRadius = 0.9
+finishRadius = 0.06
+segmentLength = 10.0 
+segmentVariance = "8.5 8.5 8.5"
+animateTime = 0.8 // 0.2
+textureRate = 0.01
+
+[Bolt4]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "192 9 12 255"
+finishColor = "103 8 9 35"
+startRadius = 0.9
+finishRadius = 0.06
+segmentLength = 10.0 
+segmentVariance = "8.5 8.5 8.5"
+animateTime = 0.8 // 0.2
+textureRate = 0.01

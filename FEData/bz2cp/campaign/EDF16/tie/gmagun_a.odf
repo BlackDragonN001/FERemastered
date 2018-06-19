@@ -1,0 +1,29 @@
+[WeaponClass]
+classLabel = "machinegun"
+altName = "ggntfaf_c"
+ordName = "magun_a"
+wpnName = "Gatling Gun"
+fireSound = "magun.wav"
+wpnReticle = "gchain"
+wpnCategory = "GUN"
+isAssault = 1
+//flashName = "gmagun_c.flash" // was "/gmaggun_c.flash", didn't work. -GBD
+aiRange = 180
+
+[CannonClass]
+shotDelay = 0.06
+shotVariance = 0.033
+shotAlternate = 1
+
+[Flash]
+simulateBase = "sim_null"
+lifeTime = 0.1
+renderBase = "draw_light"
+startColor = "255 255 0 300"
+finishColor = "255 0 0 300"
+startRadius = 2.0
+finishRadius = 6.0
+animateTime = 0.1
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

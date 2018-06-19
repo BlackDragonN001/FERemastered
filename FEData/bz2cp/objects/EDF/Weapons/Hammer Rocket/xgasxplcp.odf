@@ -1,0 +1,68 @@
+// =============
+// GAS EXPLOSION2 for rktbomb
+// =============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 3
+particleClass1 = "xgasxplcp.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleClass2 = "xgasxplcp.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleClass3 = "xgasxplcp.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+explSound = "xmv1.wav"
+damageRadius = 25.0
+
+damageValue(N) = 100 // none
+damageValue(L) = 75 // light
+damageValue(H) = 50 // heavy
+
+damageValue(S) = 75 // standard
+damageValue(D) = 50 // deflection
+damageValue(A) = 30 // absorbtion
+
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 3.0
+finishRadius = 30.0
+animateTime = 1.5
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 127"
+finishColor = "255 0 0 0"
+startRadius = 3.0
+finishRadius = 30.0
+animateTime = 0.5
+latitudeBands = 8
+longitudeSegments = 16
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_light"
+startColor = "255 255 63 2550"
+finishColor = "255 0 0 0"
+startRadius = 25.0
+finishRadius = 25.0
+animateTime = 1.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

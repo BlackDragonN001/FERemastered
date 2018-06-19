@@ -1,0 +1,569 @@
+[Start]
+scrapCount = 40
+consClass = "fvcons"
+scavClass = "fvscav"
+
+[Cheat]
+moneyAmount = 40
+moneyDelay = 10
+
+[Match]
+targetType1 = "evscout"
+attackType1_1 = "fvscout"
+attackType1_2 = "fvscout"
+attackType1_3 = "fvscout"
+targetType2 = "evscout"
+attackType2_1 = "fvtank"
+attackType2_2 = "fvtank"
+targetType3 = "evscout"
+attackType3_1 = "fvarch"
+attackType3_2 = "fvarch"
+
+targetType4 = "evtank"
+attackType4_1 = "fvscout"
+attackType4_2 = "fvscout"
+attackType4_3 = "fvscout"
+targetType5 = "evtank"
+attackType5_1 = "fvtank"
+attackType5_2 = "fvtank"
+targetType6 = "evtank"
+attackType6_1 = "fvarch"
+attackType6_2 = "fvarch"
+
+targetType7 = "evmisl"
+attackType7_1 = "fvscout"
+attackType7_2 = "fvscout"
+attackType7_3 = "fvscout"
+targetType8 = "evmisl"
+attackType8_1 = "fvtank"
+attackType8_2 = "fvtank"
+targetType9 = "evmisl"
+attackType9_1 = "fvarch"
+attackType9_2 = "fvarch"
+
+targetType10 = "evatank"
+attackType10_1 = "fvarch"
+attackType10_2 = "fvarch"
+attackType10_3 = "fvarch"
+targetType11 = "evatank"
+attackType11_1 = "fvtank"
+attackType11_2 = "fvtank"
+attackType11_3 = "fvtank"
+targetType12 = "evatank"
+attackType12_1 = "fvwalk"
+attackType12_2 = "fvwalk"
+targetType13 = "evatank"
+attackType13_1 = "fvatank"
+attackType13_2 = "fvatank"
+
+targetType14 = "ivewalk"
+attackType14_1 = "fvtank"
+attackType14_2 = "fvtank"
+attackType14_3 = "fvtank"
+targetType15 = "ivewalk"
+attackType15_1 = "fvwalk"
+attackType15_2 = "fvwalk"
+targetType16 = "ivewalk"
+attackType16_1 = "fvatank"
+attackType16_2 = "fvatank"
+targetType17 = "ivewalk"
+attackType17_1 = "fvarch"
+attackType17_2 = "fvarch"
+attackType17_3 = "fvarch"
+
+targetType18 = "evmort"
+attackType18_1 = "fvscout"
+attackType18_2 = "fvscout"
+targetType19 = "evmort"
+attackType19_1 = "fvarch"
+attackType19_2 = "fvarch"
+targetType20 = "evmort"
+attackType20_1 = "fvtank"
+
+targetType21 = "ebgt2g"
+attackType21_1 = "fvatank"
+attackType21_2 = "fvatank"
+targetType22 = "ebgt2g"
+attackType22_1 = "fvwalk"
+attackType22_2 = "fvwalk"
+targetType23 = "ebgt2g"
+attackType23_1 = "fvtank"
+attackType23_2 = "fvtank"
+attackType23_3 = "fvtank"
+targetType24 = "ebgt2g"
+attackType24_1 = "fvarch"
+attackType24_2 = "fvarch"
+attackType24_3 = "fvarch"
+
+targetType25 = "evturr"
+attackType25_1 = "fvarch"
+attackType25_2 = "fvarch"
+targetType26 = "evturr"
+attackType26_1 = "fvtank"
+attackType26_2 = "fvtank"
+targetType27 = "evturr"
+attackType27_1 = "fvscout"
+attackType27_2 = "fvscout"
+attackType27_3 = "fvscout"
+
+targetType28 = "evscav"
+attackType28_1 = "fvscout"
+attackType28_2 = "fvscout"
+targetType29 = "evscav"
+attackType29_1 = "fvtank"
+attackType29_2 = "fvtank"
+targetType30 = "evscav"
+attackType30_1 = "fvarch"
+attackType30_2 = "fvarch"
+
+targetType31 = "ebscav"
+attackType31_1 = "fvarch"
+attackType31_2 = "fvarch"
+targetType32 = "ebscav"
+attackType32_1 = "fvtank"
+attackType32_2 = "fvtank"
+targetType33 = "ebscav"
+attackType33_1 = "fvscout"
+attackType33_2 = "fvscout"
+targetType34 = "ebscav"
+attackType34_1 = "fvartl"
+attackType34_2 = "fvartl"
+targetType35 = "ebscav"
+attackType35_1 = "fvwalk"
+attackType35_2 = "fvwalk"
+
+targetType36 = "ebscup"
+attackType36_1 = "fvarch"
+attackType36_2 = "fvarch"
+targetType37 = "ebscup"
+attackType37_1 = "fvtank"
+attackType37_2 = "fvtank"
+targetType38 = "ebscup"
+attackType38_1 = "fvscout"
+attackType38_2 = "fvscout"
+targetType39 = "ebscup"
+attackType39_1 = "fvartl"
+attackType39_2 = "fvartl"
+targetType40 = "ebscup"
+attackType40_1 = "fvwalk"
+attackType40_2 = "fvwalk"
+
+targetType41 = "evcons"
+attackType41_1 = "fvtank"
+targetType42 = "evcons"
+attackType42_1 = "fvscout"
+attackType42_2 = "fvscout"
+targetType43 = "evcons"
+attackType43_1 = "fvarch"
+
+targetType44 = "evapc"
+attackType44_1 = "fvarch"
+attackType44_2 = "fvarch"
+targetType46 = "evapc"
+attackType46_1 = "fvartl"
+attackType46_2 = "fvartl"
+targetType47 = "evapc"
+attackType47_1 = "fvtank"
+
+targetType48 = "evartl"
+attackType48_1 = "fvarch"
+attackType48_2 = "fvarch"
+attackType48_3 = "fvarch"
+targetType49 = "evartl"
+attackType49_1 = "fvtank"
+attackType49_2 = "fvtank"
+attackType49_3 = "fvtank"
+targetType50= "evartl"
+attackType50_1 = "fvwalk"
+attackType50_2 = "fvwalk"
+targetType51 = "evartl"
+attackType51_1 = "fvatank"
+attackType51_2 = "fvatank"
+
+targetType52 = "ebgt4g"
+attackType52_1 = "fvatank"
+attackType52_2 = "fvatank"
+targetType53 = "ebgt4g"
+attackType53_1 = "fvwalk"
+attackType53_2 = "fvwalk"
+targetType54 = "ebgt4g"
+attackType54_1 = "fvtank"
+attackType54_2 = "fvtank"
+attackType54_3 = "fvtank"
+
+[Plan1]
+planType = "CollectPool"
+planPriority = 485
+planCondition = "NotExists"
+planConditionClass = "fbdowe"
+planConditionCount = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan2]
+planType = "CollectField"
+planPriority = 480
+planCondition = "NotExists"
+planConditionClass = "fbdowe"
+planConditionCount = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan3]
+planType = "BuildMinimums"
+planPriority = 470
+buildType1 = "fvcons"
+buildCount1 = 1
+
+[Plan4]
+planType = "BaseBuildMinimums"
+planPriority = 460
+buildType1 = "fbkiln"
+buildLoc1 = "fact"
+buildCount1 = 1
+buildType2 = "fbantm"
+buildLoc2 = "antm"
+buildCount2 = 1
+
+[Plan5]
+planType = "CollectField"
+planPriority = 455
+planCondition = "NotExists"
+planConditionClass = "fbstro"
+planConditionCount = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan6]
+planType = "CollectPool"
+planPriority = 450
+planCondition = "NotExists"
+planConditionClass = "fbstro"
+planConditionCount = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan7]
+planType = "Upgrade"
+planPriority = 440
+planCondition = "NotExists"
+planConditionClass = "fbforg"
+planConditionCount = 1
+unitType = "fbkiln"
+
+[Plan8]
+planType = "BaseBuildMinimums"
+planPriority = 430
+buildType1 = "fbdowe"
+buildLoc1 = "sbay"
+buildCount1 = 1
+buildType2 = "fbstro"
+buildLoc2 = "stro"
+buildCount2 = 1
+
+[Plan9]
+planType = "BaseBuildMinimums"
+planPriority = 410
+buildType1 = "fbspir"
+buildLoc1 = "spike1"
+buildCount1 = 1
+buildType2 = "fbspir"
+buildLoc2 = "spike2"
+buildCount2 = 1
+doNextOnFail = 1
+
+[Plan10]
+planType = "Attacker"
+planPriority = 405
+planCondition = "HisExists"
+planConditionClass = "ebfact"
+planConditionCount = 1
+targetType = "ebfact"
+attackType1 = "fvtank"
+attackType2 = "fvtank"
+attackType3 = "fvtank"
+attackType4 = "fvscout"
+attackType5 = "fvscout"
+maxAttacks=3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan11]
+// Sent to portal by DLL (patrol)
+planType = "BuildMinimums"
+planPriority = 395
+planCondition = "NotExists"
+planConditionClass = "fbover"
+planConditionCount = 1
+buildType1 = "fvpusent"
+buildCount1 = 3
+buildType2 = "fvputank"
+buildCount2 = 2
+doNextOnFail = 1
+
+[Plan12]
+planType = "CollectField"
+planPriority = 390
+planCondition = "NotExists"
+planConditionClass = "fbover"
+planConditionCount = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan13]
+planType = "CollectPool"
+planPriority = 385
+planCondition = "NotExists"
+planConditionClass = "fbover"
+planConditionCount = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan14]
+planType = "Attacker"
+planPriority = 380
+planCondition = "HisExists"
+planConditionClass = "ebfact"
+planConditionCount = 1
+targetType = "ebfact"
+attackType1 = "fvwalk"
+attackType2 = "fvwalk"
+attackType3 = "fvtank"
+attackType4 = "fvtank"
+attackType5 = "fvtank"
+maxAttacks=3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan15]
+planType = "Attacker"
+planPriority = 370
+planCondition = "HisExists"
+planConditionClass = "ebgt2g"
+planConditionCount = 1
+targetType = "ebgt2g"
+attackType3 = "fvarch"
+attackType4 = "fvarch"
+attackType5 = "fvarch"
+maxAttacks=3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan16]
+// Sent to portal by DLL (hold/attack)
+planType = "BuildMinimums"
+planPriority = 360
+planCondition = "NotExists"
+planConditionClass = "fbover"
+planConditionCount = 1
+buildType1 = "fvputurr"
+buildCount1 = 1
+buildType2 = "fvpuwalk"
+buildCount2 = 3
+doNextOnFail = 1
+
+[Plan17]
+planType = "BaseBuildMinimums"
+planPriority = 350
+buildType1 = "fbspir"
+buildLoc1 = "spike3"
+buildCount1 = 1
+doNextOnFail = 1
+
+[Plan18]
+planType = "Upgrade"
+planPriority = 340
+planCondition = "NotExists"
+planConditionClass = "fbover"
+planConditionCount = 1
+unitType = "fbantm"
+
+[Plan19]
+planType = "Attacker"
+planPriority = 335
+planCondition = "HisExists"
+planConditionClass = "ebfact"
+planConditionCount = 1
+targetType = "ebfact"
+attackType1 = "fvatank"
+attackType2 = "fvwalk"
+attackType3 = "fvwalk"
+attackType4 = "fvtank"
+attackType5 = "fvtank"
+attackType6 = "fvtank"
+maxAttacks=3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan20]
+planType = "Attacker"
+planPriority = 320
+planCondition = "HisExists"
+planConditionClass = "ebgt4g"
+planConditionCount = 1
+targetType = "ebgt4g"
+attackType1 = "fvatank"
+attackType2 = "fvatank"
+attackType3 = "fvrbomb"
+attackType4 = "fvrbomb"
+attackType5 = "fvsent"
+attackType6 = "fvsent"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan21]
+planType = "Attacker"
+planPriority = 315
+targetType = "ebpgen"
+attackType1 = "fvartl"
+attackType2 = "fvartl"
+attackType3 = "fvartl"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan22]
+planType = "Attacker"
+planPriority = 310
+planCondition = "HisExists"
+planConditionClass = "ebarmo"
+planConditionCount = 1
+targetType = "ebarmo"
+attackType1 = "fvscout"
+attackType2 = "fvscout"
+attackType3 = "fvscout"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan23]
+planType = "CollectField"
+planPriority = 305
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan24]
+planType = "CollectPool"
+planPriority = 300
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan25]
+planType = "BuildMinimums"
+planPriority = 295
+buildType1 = "fvcons"
+buildCount1 = 2
+doNextOnFail = 1
+
+[Plan26]
+planType = "BaseBuildMinimums"
+planPriority = 290
+buildType1 = "fbspir"
+buildLoc1 = "def1"
+buildCount1 = 1
+buildType2 = "fbspir"
+buildLoc2 = "def2"
+buildCount2 = 1
+buildType3 = "fbspir"
+buildLoc3 = "def3"
+buildCount3 = 1
+doNextOnFail = 1
+
+[Plan27]
+// Sent to portal by DLL (hold/attack)
+planType = "BuildMinimums"
+planPriority = 280
+buildType1 = "fvputurr"
+buildCount1 = 2
+buildType2 = "fvpuatank"
+buildCount2 = 2
+buildType3 = "fvpurbomb"
+buildCount3 = 3
+doNextOnFail = 1
+
+[Plan28]
+planType = "BaseBuildMinimums"
+planPriority = 270
+buildType1 = "fbspir"
+buildLoc1 = "gt4"
+buildCount1 = 1
+buildType2 = "fbspir"
+buildLoc2 = "gt4a"
+buildCount2 = 1
+doNextOnFail = 1
+
+[Plan29]
+planType = "Attacker"
+planPriority = 260
+planCondition = "HisExists"
+planConditionClass = "ebtcen"
+planConditionCount = 1
+targetType = "ebtcen"
+attackType1 = "fvsent"
+attackType2 = "fvsent"
+attackType3 = "fvarch"
+attackType4 = "fvarch"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan30]
+planType = "Attacker"
+planPriority = 250
+planCondition = "HisExists"
+planConditionClass = "ebtrain"
+planConditionCount = 1
+targetType = "ebtrain"
+attackType1 = "fvrbomb"
+attackType2 = "fvrbomb"
+attackType3 = "fvrbomb"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan31]
+planType = "Attacker"
+planPriority = 240
+planCondition = "HisExists"
+planConditionClass = "ebfact"
+planConditionCount = 1
+targetType = "ebfact"
+attackType1 = "fvwalk"
+attackType2 = "fvwalk"
+attackType3 = "fvtank"
+attackType4 = "fvtank"
+attackType5 = "fvtank"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan32]
+planType = "Attacker"
+planPriority = 225
+targetType = "ebpgen"
+attackType1 = "fvatank"
+attackType2 = "fvatank"
+attackType3 = "fvarch"
+attackType4 = "fvtank"
+attackType5 = "fvtank"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan33]
+planType = "BaseBuildMinimums"
+planPriority = 220
+buildType1 = "fbspir"
+buildLoc1 = "gt5"
+buildCount1 = 1
+doNextOnFail = 1
+
+[Plan34]
+planType = "BaseBuildMinimums"
+planPriority = 215
+buildType1 = "fbspir"
+buildLoc1 = "gt6"
+buildCount1 = 1
+doNextOnFail = 1
+
+[Plan35]
+planType = "BaseBuildMinimums"
+planPriority = 200
+buildType1 = "fbspir"
+buildLoc1 = "gt7"
+buildCount1 = 1
+doNextOnFail = 1

@@ -1,0 +1,36 @@
+// ====================
+// LOCK DOWN GROUND HIT
+// ====================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "sonic02.wav"
+
+damageRadius = 0.0
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+
+particleTypes = 1
+
+particleClass1 = "xzempgnd_a.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_planar"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 220 155" 
+finishColor = "255 225 55 10"
+startRadius = 0.3
+finishRadius = 4.0
+animateTime = 0.2

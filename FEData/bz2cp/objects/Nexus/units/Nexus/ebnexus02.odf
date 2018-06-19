@@ -1,0 +1,26 @@
+[GameObjectClass]
+geometryName = "fvnexus00.xsi"
+geometryScale = 7.0
+classLabel = "i76building"
+scrapCost = 8
+scrapValue = 3
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Unknown"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0
+buildSupport = B
+canDetect = 1
+canInteract = 1
+canSnipe = 0
+ownsTerrain = 1
+canCollide = 1
+armorClass = H
+
+[BuildingClass]
+soundAmbient = "nexus1.wav"
+
+
+

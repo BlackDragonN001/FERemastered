@@ -1,0 +1,77 @@
+[WeaponClass]
+classLabel = "chargegun"
+altName = "ggau8_a"
+ordName = NULL
+wpnName = "GAU-8 Avenger"
+fireSound = "gatspin.wav"
+wpnReticle = "gmaggun.0"
+wpnCategory = "GUN"
+isAssault = 0
+
+aiRange = 100
+
+[ChargeGunClass]
+startRate = 11025.0
+deltaRate = 4000.0
+startVolume = 40.0
+deltaVolume = 20.0
+
+ordnanceCount = 7
+
+shotDelay1 = 0.0
+salvoCount1 = 0
+salvoDelay1 = 0
+shotVariance1 = 0.0
+fireSound1 = "gatspin.wav"
+ordName1 = "gau8_c"
+wpnReticle1 = "gmaggun.0"
+
+shotDelay2 = 2.0
+salvoCount2 = 25
+salvoDelay2 = 0.01
+shotVariance2 = 0.01
+fireSound2 = "vulcan3.wav"
+ordName2 = "gau8_c"
+wpnReticle2 = "gchain"
+
+shotDelay3 = 3.0
+salvoCount3 = 35
+salvoDelay3 = .01
+shotVariance3 = 0.2
+fireSound3 = "vulcan4.wav"
+ordName3 = "gau8_c"
+wpnReticle3 = "gchain"
+
+shotDelay4 = 4.0
+salvoCount4 = 45
+salvoDelay4 = 0.01
+shotVariance4 = 0.2
+fireSound4 = "vulcan4.wav"
+ordName4 = "gau8_c"
+wpnReticle4 = "gchain"
+
+shotDelay5 = 5.0
+salvoCount5 = 60
+salvoDelay5 = .01
+shotVariance5 = 0.3
+fireSound5 = "vulcan4.wav"
+ordName5 = "gau8_c"
+wpnReticle5 = "gchain"
+
+shotDelay6 = 6.0
+salvoCount6 = 70
+salvoDelay6 = .01
+shotVariance6 = 0.025
+fireSound6 = "vulcan4.wav"
+ordName6 = "gau8_c"
+wpnReticle6 = "gchain"
+
+shotDelay7 = 7.0
+salvoCount7 = 80
+salvoDelay7 = .005
+shotVariance7 = 0.05
+fireSound7 = "vulcan4.wav"
+ordName7 = "gau8_c"
+wpnReticle7 = "gchain"
+
+holdRate = 100.0
