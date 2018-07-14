@@ -1,89 +1,99 @@
 [GameObjectClass]
-baseName = "fvserv"
-geometryName = "fvserv_skel.xsi"
-glowTexture = "fvserva0.pic"
-cockpitName = "fvserv_cockpit.xsi"
+baseName = "cvserv"
+geometryName = "cvserv_skel.xsi"
+cockpitName = "ivserv_cockpit.xsi"
+geometryScale = 0.3
 classLabel = "service"
-
 scrapValue = 10
 scrapCost = 50
 buildTime = 10.0
-maxHealth = 3000
+maxHealth = 2500
 maxAmmo = 1200
-unitName = "Healer"
+unitName = "Surgeon"
 aiName = "ServiceProcess"
 aiName2 = "ServiceProcess"
 heatSignature = 0.1
 imageSignature = 1.0
 radarSignature = 0.0
 isAssault = 0
-
 armorClass = L
+
+/////// Requirements ///////////////////
 
 requireCount = 1
 requireName1 = "cbsbay"
 requireText1 = "Build Regenerator"
 
+/////// Provides ///////////////////
+
+provideCount = 2
+provideName1 = "cvserv"
+provideName2 = "VIRTUAL_CLASS_SERVICETRUCK"
 
 [CraftClass]
 rangeScan = 300.0f
 periodScan = 5.0f
 velocJam = 5.0f
 
-TeamTransferrable = true
+braccelFactor = 0.09
+velFactor = 0.3
+steerFactor = 1.4
+omegaFactor = 0.2
+strafeFactor = 0.1
 
-selectAttackMsg = "fvserv04.wav"
-selectGoMsg = "fvserv02.wav"
-selectFollowMsg = "fvserv03.wav"
-selectOtherMsg = "fvserv04.wav"
+TeamTransferrable = false
 
-goMsg = "fvserv05.wav"
-goObjectMsg = "fvserv11.wav"
-attackMsg = ""
-followMeMsg = "fvserv08.wav"
-followMsg = "fvserv03.wav"
-repairMsg = "fvserv09.wav"
-reloadMsg = "fvserv09.wav"
-rescueMsg = "fvserv11.wav"
-recycleMsg = "fvserv11.wav"
-holdMsg = "fvserv12.wav"
-user1Msg = "fvserv01.wav"
+selectAttackMsg = "ivserv04.wav"
+selectGoMsg = "ivserv02.wav"
+selectFollowMsg = "ivserv03.wav"
+selectOtherMsg = "ivserv04.wav"
+
+goMsg = "ivserv02.wav"
+goObjectMsg = "ivserv11.wav"
+attackMsg = "ivserv01.wav"
+followMeMsg = "ivserv08.wav"
+followMsg = "ivserv03.wav"
+repairMsg = "ivserv09.wav"
+reloadMsg = "ivserv09.wav"
+rescueMsg = "ivserv11.wav"
+recycleMsg = "ivserv11.wav"
+holdMsg = "ivserv12.wav"
+user1Msg = "ivserv01.wav"
 killedMsg = ""
 diedMsg = ""
 
 [TrackedVehicleClass]
 omegaSpin = 1.0		//2.0
 omegaTurn = 0.5
-velocForward = 25.0
+velocForward = 20.0
 velocReverse = 15.0
-accelThrust = 20.0
+accelThrust = 10.0
 
 TREAD_STATIC_FRICTION = 1.5
 
-engineSound = "sserv01.wav"
-treadSound = "sserv01.wav"
-
+engineSound	= "iserv01.wav"
+treadSound = "iserv02.wav"
 
 [ServiceTruck]
 supplyRange = 20.0
 supplyRadius = 15.0
-supplyRate = 45.0
-supplySound = "sserv02.wav"
-supplyEffect = "fvserv.supply"
-supplyHard = "hp_emit_1"
+supplyRate = 40.0
+supplySound = "mnu_empt.wav"
+supplyEffect = "cvserv.supply"
+supplyHard = "hp_special_1"
 
 [Supply]
 renderBase = "draw_multi"
 renderCount = 2
-renderName1 = "fvserv.halo"
-renderName2 = "fvserv.bolt"
+renderName1 = "cvserv.halo"
+renderName2 = "cvserv.bolt"
 
 [Halo]
 renderBase = "draw_twirl"
 textureName = "particle.tga"
 textureBlend = "one one modulate"
-startColor = "0 127 255 127"
-finishColor = "0 0 255 0"
+startColor = "255 0 150 127"
+finishColor = "255 0 0 0"
 startRadius = 5.0
 finishRadius = 1.0
 animateTime = 0.3
@@ -92,8 +102,8 @@ animateTime = 0.3
 renderBase = "draw_bolt"
 textureName = "trail2.tga"
 textureBlend = "one one modulate"
-startColor = "0 127 255 63"
-finishColor = "0 0 255 0"
+startColor = "255 0 150 63"
+finishColor = "255 0 0 0"
 startRadius = 1.0
 finishRadius = 0.3
 segmentLength = 2.0
