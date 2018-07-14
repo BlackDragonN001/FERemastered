@@ -15,37 +15,27 @@ unitName = "Talon"
 aiName = "AttachWingman"
 aiName2 = "AttachWingman"
 //explosionName = "shipxpl2" // Doesn't exist. -GBD
-
 heatSignature = 3.0
 imageSignature = 40.0
 radarSignature = 10.0
 isAssault = 0
 armorClass = N
+needPilot = 0
+
+/////// Requirements ///////////////////
 
 requireCount = 1
 requireName1 = "cbfact02"
 requireText1 = "Build Tech Center"
 
-needPilot = 0
+/////// Provides ///////////////////
 
-cockpitName = "ivtank_cockpit.xsi"
+provideCount = 3
+provideName1 = "cvserv"
+provideName2 = "VIRTUAL_CLASS_TANK"
+provideName3 = "flier"
 
-effectHard1 = "hp_emit_1"
-effectName1 = "cvtalon02.trail"
-effectHard2 = "hp_emit_2"
-effectName2 = "cvtalon02.trail"
-effectHard3 = "hp_emit_3"
-effectName3 = "cvtalon02.trail"
-effectHard4 = "hp_trail_1"
-effectName4 = "cvtalon02.flame"
-
-effectHard5 = "hp_light_1"
-effectName5 = "cvtalon02.light"
-effectHard6 = "hp_light_2"
-effectName6 = "cvtalon02.light"
-effectHard7 = "hp_light_3"
-effectName7 = "cvtalon02.light"
-/////// weapons ///////////////////
+/////// Weapons ///////////////////
 
 weaponMask = 11111
 
@@ -65,12 +55,30 @@ weaponHard5 = "HP_SPECIAL"
 weaponName5 = ""
 weaponAssault5 = 0
 
-////////////////////////////////////
+/////// Lights and Effects ///////////////////
+
+effectHard1 = "hp_emit_1"
+effectName1 = "cvtalon02.trail"
+effectHard2 = "hp_emit_2"
+effectName2 = "cvtalon02.trail"
+effectHard3 = "hp_emit_3"
+effectName3 = "cvtalon02.trail"
+effectHard4 = "hp_trail_1"
+effectName4 = "cvtalon02.flame"
+
+effectHard5 = "hp_light_1"
+effectName5 = "cvtalon02.light"
+effectHard6 = "hp_light_2"
+effectName6 = "cvtalon02.light"
+effectHard7 = "hp_light_3"
+effectName7 = "cvtalon02.light"
 
 //lightHard1 = "hp_light_1"
 //lightName1 = "spotblue2"
 //lightHard2 = "hp_light_2"
 //lightName2 = "spotblue2"
+
+////////////////////////////////////
 
 [CraftClass]
 rangeScan = 400.0f
