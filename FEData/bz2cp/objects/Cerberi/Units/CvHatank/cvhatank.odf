@@ -1,5 +1,5 @@
 [GameObjectClass]
-baseName = "Cvhatank"
+baseName = "cvhatank"
 geometryName = "cvhatank00.xsi"
 geometryScale = 1.8
 classLabel = "assaulttank"
@@ -18,16 +18,24 @@ heatSignature = 0.5
 imageSignature = 5.0
 radarSignature = 5.0
 isAssault = 1
-
 armorClass = H
-
 needPilot = 0
 	
+/////// Requirements ///////////////////
+
 requireCount = 1
 requireName1 = "cbfact02"
 requireText1 = "Build Crucible"
 
-/////// weapons ///////////////////
+/////// Provides ///////////////////
+
+provideCount = 4
+provideName1 = "cvhatank"
+provideName2 = "VIRTUAL_CLASS_ASSAULTTANK"
+provideName3 = "assault"
+provideName4 = "DefendUnit"
+
+/////// Weapons ///////////////////
 
 weaponMask = 00001
 weaponHard1 = "HP_CANNON_1"
@@ -86,8 +94,8 @@ killedMsg = "ivatank07.wav"
 diedMsg = ""
 
 [TrackedVehicleClass]
-omegaSpin = 2.0		//4.0
-omegaTurn = 1.0
+omegaSpin = 1.0		//4.0
+omegaTurn = 0.5
 velocForward = 15.0
 velocReverse = 5.0
 accelThrust = 10.0
