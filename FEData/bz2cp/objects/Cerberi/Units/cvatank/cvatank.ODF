@@ -1,61 +1,79 @@
-// (c) BZ2CP Unit: Siren
+// (c) BZ2CP Unit: Dread
 // Created by Slaor and Pastell
 
 [GameObjectClass]
-
-baseName = "fvrbomb"
-geometryName = "fvrbomb00.xsi"
-
+baseName = "cvatank"
+geometryName = "cvatank00.xsi"
+geometryScale = 1.4
 classLabel = "wingman"
+animCount = 3
+animName1 = "forward"
+animFile1 = "cvatanksf.xsi"
+animName2 = "neutral"
+animFile2 = "cvatanksn.xsi"
+animName3 = "reverse"
+animFile3 = "cvatanksr.xsi"
 scrapValue = 30
 scrapCost = 65
 customCost = 70
 buildTime = 15.0
 customTime = 15.0
-maxHealth = 3500	
-maxAmmo = 3500
+maxHealth = 6000	
+maxAmmo = 5000
 addAmmo = 20
-unitName = "Assault tank"
-aiName = "TankFriend"
-aiName2 = "TankEnemy"
-
+unitName = "Dread"
+aiName = "AssaultTankProcess"
+aiName2 = "AssaultTankProcess"
 heatSignature = 1.5
 imageSignature = 1.5
 radarSignature = 0.3
-
 canSnipe = 0
-
 needPilot = 0
-
 isAssault = 1
-
 armorClass = H
 
+/////// Requirements ///////////////////
 
-/////// weapons ///////////////////
+requireCount = 1
+requireName1 = "cbfact02"
+requireText1 = "Build Crucible"
 
-weaponMask = 00001
-weaponHard1 = "HP_ROCKET_1"
-weaponName1 = "gshadow_c"
+/////// Provides ///////////////////
+
+provideCount = 4
+provideName1 = "cvatank"
+provideName2 = "VIRTUAL_CLASS_ASSAULTTANK"
+provideName3 = "assault"
+provideName4 = "DefendUnit"
+
+/////// Weapons ///////////////////
+
+weaponMask = 1100
+weaponHard1 = "HP_CANNON_2"
+weaponName1 = "gcplasma_c"
 weaponAssault1 = 0
-weaponHard2 = "HP_ROCKET_2"
-weaponName2 = "gshadow_c"
+
+weaponHard2 = "HP_CANNON_3"
+weaponName2 = "gcplasma_c"
 weaponAssault2 = 0
-weaponHard3 = "HP_ROCKET_4"
-weaponName3 = "gshadow_a"
+
+weaponHard3 = "HP_CANNON_1"
+weaponName3 = "gcslam_a"
 weaponAssault3 = 1
-weaponHard4 = "HP_MORTAR_1"
-weaponName4 = "gmortar"
+
+weaponHard4 = "HP_SHIELD_1"
+weaponName4 = "gshield"
 weaponAssault4 = 0
 
 ////////////////////////////////////
+
 lightHard1 = "hp_light_1"
 lightName1 = "spotblue2" 
 lightHard2 = "hp_light_2"
 lightName2 = "spotblue2"
 
 [CraftClass]
-rangeScan = 400.0f
+rangeScan = 450.0f
 periodScan = 5.0f
 velocJam = 5.0f
 engageRange = 250
@@ -91,19 +109,19 @@ killedMsg = "ivtank07.wav"
 diedMsg = ""
 
 [HoverCraftClass]
-velocForward = 25.5 // []
+velocForward = 20.5 // []
 velocReverse = 15.0 // []
-velocStrafe = 20.0 // []
-accelThrust = 20.0 //acceleration []
+velocStrafe = 15.0 // []
+accelThrust = 15.0 //acceleration []
 accelDragStop = 6.0 //how fast it stops once hands are off controls []
 accelJump = 15.0 // []
 
-setAltitude = 2.5 // how high off the ground
+setAltitude = 2.0 // how high off the ground
 
 alphaTrack = 21.0 //springs speed it rights itself []
 alphaDamp = 8.0 //shocks []
 
-pitchPitch = 0.25 //nose up []
+pitchPitch = 0.40 //nose up []
 pitchThrust = 0.1 //nose down []
 
 rollStrafe = 0.08 //rolls while strafing []
@@ -112,8 +130,8 @@ omegaTurn = 2.3 //turning while moving speed []
 alphaSteer = 7.0 //how fast it responds to steering []
 rollSteer = 0.08 //rolls while steering []
 
-soundThrust = "ssent01j.wav"
-soundTurbo = "smort03.wav"
+soundThrust = "cvbomb.wav"
+soundTurbo = "cvbomb1.wav"
 
 
  
