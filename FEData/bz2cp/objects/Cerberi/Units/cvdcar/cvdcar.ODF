@@ -2,6 +2,7 @@
 // Model by Slaor and Pastell
 
 [GameObjectClass]
+baseName = "cvdcar"
 geometryName = "cvdcar00.xsi"
 classLabel = "wingman"
 scrapValue = 50
@@ -12,28 +13,30 @@ addHealth = 10
 maxAmmo = 14000
 addAmmo = 50
 explosionName = "kamixpl"
-
 unitName = "Demon"
-
 aiName = "TankFriend"
 aiName2 = "TankEnemy"
-
 heatSignature = 0.8
 imageSignature = 0.8
 radarSignature = 0.0
-
 isAssault = 1
-
 needPilot = 0
-
 armorClass = H
+
+/////// Requirements ///////////////////
 
 requireCount = 1
 requireName1 = "cbfact02"
 requireText1 = "Build Crucible"
 
+/////// Provides ///////////////////
 
+provideCount = 3
+provideName1 = "cvdcar"
+provideName2 = "VIRTUAL_CLASS_APC"
+provideName3 = "flier"
 
+/////// Weapons ///////////////////
 
 weaponMask = 00111
 weaponHard1 = "HP_ROCKET_1"
