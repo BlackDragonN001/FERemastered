@@ -1,4 +1,5 @@
 [GameObjectClass]
+baseName = "cbtcen"
 geometryName = "Cbtcen00.xsi"
 classLabel = "powered"
 scrapCost = 80
@@ -11,8 +12,9 @@ imageSignature = 1.0
 radarSignature = 1.0
 collisionRadius = 4.0
 isAssault = 1
-
 armorClass = H
+
+/////// Requirements ///////////////////
 
 requireCount = 2
 requireName1 = "Cbarmo"
@@ -20,14 +22,21 @@ requireText1 = "Build Dispenser Node"
 requireName2 = "Cbsbay"
 requireText2 = "Build Regenerator"
 
-provideCount = 1
+/////// Provides ///////////////////
+
+provideCount = 3
 provideName1 = "Cbtcen"
+provideName2 = "VIRTUAL_CLASS_TECHCENTER"
+provideName3 = "base"
+
+/////// Lights and Effects ///////////////////
 
 effectHard1 = "hp_emit_1"
 effectName1 = "cbtcen.render"
 
 [BuildingClass]
 soundAmbient = "iabomb01.wav"
+
 [PoweredBuildingClass]
 detectRange = 100
 
