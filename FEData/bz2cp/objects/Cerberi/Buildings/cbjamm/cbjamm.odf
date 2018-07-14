@@ -1,4 +1,5 @@
 [GameObjectClass]
+baseName = "cbjamm"
 geometryName = "cbjam01.xsi"
 classLabel = "jammer"
 collisionRadius = 5.0
@@ -13,11 +14,12 @@ imageSignature = 1.0
 radarSignature = 1.0
 canCollide = 1
 isAssault = 1
-
 armorClass = H
 
 buildSupport = "A"
 buildRequire = "F"
+
+/////// Requirements ///////////////////
 
 requireCount = 2
 requireName1 = "cbsbay"
@@ -25,6 +27,7 @@ requireText1 = "Build Regenerator"
 requireName2 = "cbcbun"
 requireText2 = "Build Uplink Array"
 
+/////// Provides ///////////////////
 
 provideCount = 1
 provideName1 = "cbjamm"
