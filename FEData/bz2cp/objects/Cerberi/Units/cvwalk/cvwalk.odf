@@ -51,17 +51,24 @@ imageSignature = 5.0
 radarSignature = 5.0
 collisionRadius = 4.0
 isAssault = 1
-
 needPilot = 0
-
 armorClass = H
 
+/////// Requirements ///////////////////
 
 requireCount = 1
 requireName1 = "cbfact02"
 requireText1 = "Build Crucible"
 
-/////// weapons ///////////////////
+/////// Provides ///////////////////
+
+provideCount = 4
+provideName1 = "cvwalk"
+provideName2 = "VIRTUAL_CLASS_WALKER"
+provideName3 = "assault"
+provideName4 = "DefendUnit"
+
+/////// Weapons ///////////////////
 
 weaponMask = 00001
 weaponHard1 = "HP_CANNON_01"
@@ -73,6 +80,7 @@ weaponAssault2 = 1
 weaponHard3 = "HP_SHIELD"
 weaponName3 = "gshield"
 weaponAssault3 = 1
+
 //////////////////////////////////  
 
 [CraftClass]

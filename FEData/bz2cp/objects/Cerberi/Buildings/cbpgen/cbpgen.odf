@@ -1,4 +1,5 @@
 [GameObjectClass]
+baseName = "cbpgen"
 geometryName = "Cbpgen00.xsi"
 classLabel = "powerplant"
 animCount = 1
@@ -14,16 +15,23 @@ imageSignature = 1.0
 radarSignature = 1.0
 collisionRadius = 1.0
 isAssault = 1
-
 armorClass = H
-
-requireCount = 0
 
 buildSupport = B
 buildRequire = F
 
-provideCount = 1
+/////// Requirements ///////////////////
+
+requireCount = 0
+
+/////// Provides ///////////////////
+
+provideCount = 3
 provideName1 = "cbpgen"
+provideName2 = "VIRTUAL_CLASS_POWERPLANT"
+provideName3 = "base"
+
+/////// Lights and Effects ///////////////////
 
 lightHard1 = "hp_light_1"
 lightName1 = "cpower_light"
@@ -34,22 +42,23 @@ lightName3 = "cpower_light"
 
 [LightClass]
 classLabel="spotlight"
-lightColor.r=15.2
-lightColor.g=0.7
-lightColor.b=0.5
-lightColor.a=1.0
-lightRange=0.10
-attenuateConstant=0.0
-attenuateLinear=1.0
-attenuateQuadratic=0.0
-coneFalloff=1.0
-coneAngInner=0.5
-coneAngOuter=20.0
+
+lightColor.r = 15.2
+lightColor.g = 0.7
+lightColor.b = 0.5
+lightColor.a = 1.0
+lightRange = 0.10
+
+attenuateConstant = 0.0
+attenuateLinear = 1.0 
+attenuateQuadratic = 0.0
+
+coneFalloff = 1.0
+coneAngInner = 0.5
+coneAngOuter =20.0
 
 [BuildingClass]
 soundAmbient = "ipgen01.wav"
 
 [PoweredBuildingClass]
 detectRange = 50
-
-[

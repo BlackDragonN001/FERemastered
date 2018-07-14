@@ -2,10 +2,8 @@
 // Model by Slaor and Pastell
 
 [GameObjectClass]
-
 baseName = "cvmlay"
 geometryName = "cvmlay00.xsi"
-
 //animCount = 3
 //animName1 = "forward"
 //animFile1 = "evmislsf.xsi"
@@ -14,7 +12,6 @@ geometryName = "cvmlay00.xsi"
 //animName3 = "reverse"
 //animFile3 = "evmislsr.xsi"
 classLabel = "minelayer" //"wingman" // Use proper minelayer class. -GBD
-
 scrapValue = 30
 scrapCost = 55
 customCost = 65
@@ -24,27 +21,27 @@ maxHealth = 2200
 maxAmmo = 3000
 addAmmo = 5
 unitName = "Harpie"
-
 aiName = "MineLayerFriend" //"TankFriend"
 aiName2 = "MineLayerEnemy" //"TankEnemy"
-
 heatSignature = 1.5
 imageSignature = 1.5
 radarSignature = 0.3
-
 needPilot = 0 // No pilots. -GBD
-
 isAssault = 0
-
 armorClass = L
+
+/////// Requirements ///////////////////
 
 requireCount = 0
 
+/////// Provides ///////////////////
 
+provideCount = 3
+provideName1 = "cvmlay"
+provideName2 = "VIRTUAL_CLASS_TANK"
+provideName3 = "DefendUnit"
 
-
-
-/////// weapons ///////////////////
+/////// Weapons ///////////////////
 
 weaponMask = 00001
 weaponHard1 = "HP_SPECIAL_1"
@@ -52,6 +49,7 @@ weaponName1 = "gproxmin"
 weaponAssault1 = 0
 
 ////////////////////////////////////
+
 [CraftClass]
 rangeScan = 450.0f
 periodScan = 5.0f

@@ -1,6 +1,6 @@
 [GameObjectClass]
-baseName = "ivscav"
-geometryName = "cvscav00.xsi"
+baseName = "cvscav"
+geometryName = "cvscav02.xsi"
 cockpitName = "ivscav_cockpit.xsi"
 animCount = 1
 animName1 = "deploy"
@@ -12,17 +12,26 @@ scrapCost = 20
 buildTime = 10.0
 maxHealth = 3000
 maxAmmo = 0
-unitName = "Scavenger"
+unitName = "Reaper"
 aiName = "ScavProcess"
 aiName2 = "ScavProcess"
 heatSignature = 5.0
 imageSignature = 3.0
 radarSignature = 2.0
-isAssault = 0
-
+isAssault = 1
 armorClass = H
 
+/////// Requirements ///////////////////
+
 requireCount = 0
+
+/////// Provides ///////////////////
+
+provideCount = 2
+provideName1 = "cvscav"
+provideName2 = "VIRTUAL_CLASS_SCAVENGER"
+
+///////// Lights and Effects //////////////////
 
 lightHard1 = "hp_light_1"
 lightName1 = "spotblue2"
@@ -56,14 +65,13 @@ repairMsg = "ivscav08.wav"
 recycleMsg = "ivscav10.wav"
 otherMsg = "ivscav13.wav"
 
-
-
 [TrackedVehicleClass]
 velocForward = 15.0
 velocReverse = 10.0
-accelThrust = 50.0
+accelThrust = 5.0
 omegaSpin = 1.0		//2.0
 omegaTurn = 0.5
+alphaSteer = 2.0
 
 TREAD_STATIC_FRICTION = 1.5
 
@@ -79,6 +87,6 @@ soundUndeploy = "trundepl.wav"
 [ScavengerClass]
 soundPickup = "suck.wav"
 scrapHold = 20
-deployClass = "ibscav"
+deployClass = "cbscav"
 
 

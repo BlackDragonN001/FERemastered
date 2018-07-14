@@ -1,11 +1,10 @@
 [GameObjectClass]
+baseName = "cbscup"
 mrmFactor = 0
 geometryName = "cbscup00.xsi"
 animCount = 1
 animName1 = "deploy"
 animFile1 = "cbscup00.xsi"
-
-
 classLabel = "extractor"
 scrapCost = 60
 scrapValue = 2
@@ -17,12 +16,24 @@ imageSignature = 1.0
 radarSignature = 1.0
 collisionRadius = 1.0
 isAssault = 1
-canInteract=1 // for missile lock
-
+canInteract = 1 // for missile lock
 armorClass = H
 
+/////// Requirements ///////////////////
+
+requireCount = 0
+
+/////// Provides ///////////////////
+
+provideCount = 5
+provideName1 = "cbscup"
+provideName2 = "VIRTUAL_CLASS_EXTRACTOR_Group"
+provideName3 = "VIRTUAL_CLASS_EXTRACTOR_Upgraded"
+provideName4 = "VIRTUAL_CLASS_STORAGE"
+provideName5 = "extract"
+
 [BuildingClass]
-// an ambient sound would be nice
+soundAmbient = "iext01.wav"
 
 [ExtractorClass]
 initDelay = 12.0

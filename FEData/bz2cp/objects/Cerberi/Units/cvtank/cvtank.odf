@@ -2,12 +2,9 @@
 // Model by Slaor and Pastell
 
 [GameObjectClass]
-
 baseName = "cvtank"
 geometryName = "cvspider00.xsi"
 classLabel = "wingman"
-
-
 scrapValue = 40
 scrapCost = 50		
 customCost = 55
@@ -17,34 +14,35 @@ maxHealth = 3000
 maxAmmo = 3000
 addAmmo = 5
 unitName = "Krul"
-
 aiName = "TankFriend"
 aiName2 = "TankEnemy"
-
 heatSignature = 1.5
 imageSignature = 1.5
 radarSignature = 0.3
-
 isAssault = 0
-
 armorClass = L
-
 needPilot = 0
+
+/////// Requirements ///////////////////
 
 requireCount = 0
 
-/////// weapons ///////////////////
+/////// Provides ///////////////////
+
+provideCount = 3
+provideName1 = "cvtank"
+provideName2 = "VIRTUAL_CLASS_TANK"
+provideName3 = "DefendUnit"
+
+/////// Weapons ///////////////////
 
 weaponMask = 00001
-
 weaponHard1 = "HP_CANNON_1"
 weaponName1 = "gparbst_c"
 weaponAssault1 = 0
-
 weaponHard2 = "HP_ROCKET_1"
 weaponName2 = "gparbst_a"
 weaponAssault2 = 1
-
 weaponHard3 = "HP_SHIELD_1"
 weaponName3 = "gabsorb"
 weaponAssault3 = 0
@@ -66,26 +64,25 @@ strafeFactor = 0.2
 avoidSpeed = 30;
 topSpeed = 40;
 
-selectWaitMsg = "xar_wait.wav"
-selectAttackMsg = "xares22.wav"
-selectFollowMsg = "xares7.wav"
-selectGoMsg = "xar_go.wav"
-selectOtherMsg = "xares5.wav"
-holdMsg = "xar_hold.wav"
+selectWaitMsg = "ivtank05.wav"
+selectAttackMsg = "ivtank02.wav"
+selectFollowMsg = "ivtank04.wav"
+selectGoMsg = "ivtank04.wav"
+selectOtherMsg = "ivtank05.wav"
+holdMsg = "ivtank12.wav"
 
-goMsg = "xar_go.wav"
-attackMsg = "xares2.wav"
-followMeMsg = "xares7.wav"
-followMsg = "xares13.wav"
-repairMsg = "xares9.wav"
-reloadMsg = "xares9.wav"
-rescueMsg = "xares12.wav"
-recycleMsg = "xar_recy.wav"
-otherMsg = "xares6.wav" 
-holdMsg = "xar_hold.wav"
+goMsg = "ivtank04.wav"
+attackMsg = "ivtank06.wav"
+followMeMsg = "ivtank08.wav"
+followMsg = "ivtank03.wav"
+repairMsg = "ivtank09.wav"
+reloadMsg = "ivtank09.wav"
+rescueMsg = "ivtank10.wav"
+recycleMsg = "ivtank11.wav"
+otherMsg = "ivtank05.wav" 
 user1Msg = ""  
-killedMsg = "xar_kill.wav"
-diedMsg = "xar_dead.wav"
+killedMsg = "ivtank01.wav"
+diedMsg = ""
 
 [HoverCraftClass]
 velocForward = 30.5 // []

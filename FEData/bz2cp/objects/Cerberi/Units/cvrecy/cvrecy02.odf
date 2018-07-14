@@ -18,8 +18,25 @@ heatSignature = 2.0
 imageSignature = 5.0
 radarSignature = 5.0
 isAssault = 1
-
 armorClass = H
+mass = 500000
+
+/////// Requirements ///////////////////
+
+requireCount = 0
+
+/////// Provides ///////////////////
+
+provideCount = 4
+provideName1 = "cvrecy"
+provideName2 = "cvrecycpu"
+provideName3 = "VIRTUAL_CLASS_RECYCLER"
+provideName4 = "VIRTUAL_CLASS_RECYCLERVEHICLE"
+
+/////// Lights and Effects ///////////////////
+
+lightHard1 = "hp_light_1"
+lightName1 = "cpower_light2"
 
 [CraftClass]
 rangeScan = 400.0f
@@ -27,7 +44,7 @@ periodScan = 5.0f
 velocJam = 0.0f
 TeamTransferrable = false
 
-selectUser1Msg = "ivrecy02.wav"  // building
+selectUser1Msg = "ivrecydeploy.wav"  // building
 selectUser2Msg = "ivrecy10.wav"  // can't do
 selectWaitMsg = "ivrecy04.wav"  // yes sir
 selectGoMsg = "ivrecy01.wav"  // in transit
@@ -41,13 +58,13 @@ user2Msg = "ivrecy13.wav"
 followMsg = "ivrecy03.wav"
 otherMsg = "ivrecy04.wav"
 
-
 [TrackedVehicleClass]
 velocForward = 10.0
-velocReverse = 10.0
-accelThrust = 50.0
-omegaSpin = 1.0
+velocReverse = 5.0
+accelThrust = 3.0
+omegaSpin = 0.5
 omegaTurn = 0.5
+alphaSteer = 0.5
 
 TREAD_STATIC_FRICTION = 1.5
 
@@ -59,9 +76,8 @@ timeDeploy = 10.0
 timeUndeploy = 10.0
 soundDeploy = "irecy03.wav"
 
-
 [DeployBuildingClass]
-deployName = "cbrecy03"
+deployName = "cbrecy02"
 
 [RecyclerVehicleClass]
 scrapHold = 40

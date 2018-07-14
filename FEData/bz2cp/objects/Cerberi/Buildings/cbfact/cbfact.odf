@@ -1,6 +1,8 @@
 [GameObjectClass]
+baseName = "cbfact"
 geometryName = "cbfac01b.xsi"
 classLabel = "factory"
+collisionRadius = 4.0
 scrapCost = 55
 scrapValue = 10
 maxHealth = 12000
@@ -12,18 +14,21 @@ heatSignature = 2.0
 imageSignature = 1.0
 radarSignature = 1.0
 isAssault = 1
-
 armorClass = H
+
+/////// Requirements ///////////////////
 
 requireCount = 1
 requireName1 = "cbpgen"
 requireText1 = "Build Power"
 
-provideCount = 1
+/////// Provides ///////////////////
+
+provideCount = 2
 provideName1 = "cbfact"
+provideName2 = "base"
 
-collisionRadius = 4.0
-
+/////// Lights and Effects ///////////////////
 
 lightHard1 = "hp_light_1"
 lightName1 = "o_white_nf"

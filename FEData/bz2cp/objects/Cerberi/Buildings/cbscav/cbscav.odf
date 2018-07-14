@@ -1,11 +1,10 @@
 [GameObjectClass]
+baseName = "cbscav"
 mrmFactor = 0
 geometryName = "cbscav00.xsi"
 animCount = 1
 animName1 = "deploy"
 animFile1 = "cbscav00.xsi"
-
-
 classLabel = "extractor"
 scrapCost = 20
 scrapValue = 1
@@ -17,11 +16,23 @@ imageSignature = 1.0
 radarSignature = 1.0
 collisionRadius = 1.0
 isAssault = 1
-canInteract=1 // for missile lock
-
+canInteract = 1 // for missile lock
 armorClass = H
 
 upgradeName = "cbscup"
+
+/////// Requirements ///////////////////
+
+requireCount = 0
+
+/////// Provides ///////////////////
+
+provideCount = 5
+provideName1 = "cbscav"
+provideName2 = "VIRTUAL_CLASS_EXTRACTOR"
+provideName3 = "VIRTUAL_CLASS_EXTRACTOR_Group"
+provideName4 = "VIRTUAL_CLASS_STORAGE"
+provideName5 = "extract"
 
 [BuildingClass]
 soundAmbient = "iext01.wav"

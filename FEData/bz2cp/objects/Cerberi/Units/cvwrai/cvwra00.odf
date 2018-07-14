@@ -15,14 +15,13 @@ addAmmo = 2
 unitName = "Wraith"
 aiName = "ScoutFriend"
 aiName2 = "ScoutEnemy"
-
 heatSignature = 0.08
 imageSignature = 0.1
 radarSignature = 0.09
-
 isAssault = 0
-
 armorClass = N
+
+/////// Requirements ///////////////////
 
 requireCount = 2
 requireName1 = "cbagen"
@@ -30,8 +29,14 @@ requireText1 = "Build Anti-matter Generator"
 requireName2 = "cbtcen"
 requireText2 = "Build Tech Center"
 
+/////// Provides ///////////////////
 
-/////// weapons ///////////////////
+provideCount = 3
+provideName1 = "cvwraith"
+provideName2 = "VIRTUAL_CLASS_SCOUT"
+provideName3 = "DefendUnit"
+
+/////// Weapons ///////////////////
 
 weaponMask = 00001
 weaponHard1 = "HP_CANNON_1"
@@ -39,7 +44,6 @@ weaponName1 = "gELC_c"
 weaponAssault1 = 0
 
 //////////////////////////////////
-
 
 [CraftClass]
 rangeScan = 400.0f

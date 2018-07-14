@@ -1,4 +1,5 @@
 [GameObjectClass]
+baseName = "cbgtow"
 geometryName = "Cbgtow01.xsi"
 classLabel = "turret"
 collisionRadius = 10.0
@@ -13,20 +14,25 @@ heatSignature = 2.0
 imageSignature = 1.0
 radarSignature = 1.0
 isAssault = 1
-
 armorClass = H
 
 buildSupport = "A"
 buildRequire = "F"
 
+/////// Requirements ///////////////////
+
 requireCount = 1
 requireName1 = "cbarmo"
 requireText1 = "Build Dispenser Node"
 
+/////// Provides ///////////////////
 
-provideCount = 1
+provideCount = 3
 provideName1 = "cbgtow"
+provideName2 = "VIRTUAL_CLASS_GUNTOWER"
+provideName3 = "defender"
 
+/////// Weapons ///////////////////
 
 weaponMask = 00011
 weaponHard1 = "hp_cannon_1"
@@ -36,12 +42,12 @@ weaponHard2 = "hp_cannon_2"
 weaponName2 = "gcblast_c"
 weaponAssault2 = 0
 
+/////// Lights and Effects ///////////////////
+
 lightHard1 = "hp_light_1"
 lightName1 = "spotblue2"
 lightHard2 = "hp_light_2"
 lightName2 = "spotblue2" 
-
-
 
 turretCount = 3
 turretName1 = "turret_y_1"
