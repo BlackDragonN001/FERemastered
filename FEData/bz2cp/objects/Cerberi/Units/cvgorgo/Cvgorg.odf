@@ -19,14 +19,23 @@ heatSignature = 0.5
 imageSignature = 2.5
 radarSignature = 0.1
 isAssault = 0
-
 armorClass = H
-	
+
+/////// Requirements ///////////////////
+
 requireCount = 1
 requireName1 = "cbagen"
 requireText1 = "Build Anti-matter Generator"
 
-/////// weapons ///////////////////
+/////// Provides ///////////////////
+
+provideCount = 4
+provideName1 = "cvgorg"
+provideName2 = "VIRTUAL_CLASS_ASSAULTTANK"
+provideName3 = "assault"
+provideName4 = "DefendUnit"
+
+/////// Weapons ///////////////////
 
 weaponMask = 00001
 weaponHard1 = "HP_cannon_1"
@@ -104,7 +113,6 @@ treadSound = "iatank02.wav"
 yawMax = 2.0
 pitchMin = -0.15
 pitchMax = 1.6
-
 
 laserName1 = "hp_rocket_1"
 laserName2 = "hp_rocket_2"
