@@ -1,9 +1,10 @@
 [GameObjectClass]
+baseName = "cbcbun"
 geometryName = "cbcom00.xsi"
 classLabel = "commtower"
 collisionRadius = 1.0
 scrapCost = 50
-scrapValue = 3
+scrapValue = 8
 maxHealth = 5000
 maxAmmo = 0
 unitName = "Uplink Array"
@@ -13,8 +14,25 @@ heatSignature = 2.0
 imageSignature = 1.0
 radarSignature = 1.0
 isAssault = 1
-
 armorClass = H
+
+buildSupport = B
+buildRequire = B
+
+/////// Requirements ///////////////////
+
+requireCount = 1
+requireName1 = "cbpgen"
+requireText1 = "Build Energy Node"
+
+/////// Provides ///////////////////
+
+provideCount = 3
+provideName1 = "cbcbun"
+provideName2 = "VIRTUAL_CLASS_COMMBUNKER"
+provideName3 = "base"
+
+///////// Lights and Effects //////////////////
 
 lightHard1 = "hp_light_1"
 lightName1 = "cerbpurple"
@@ -25,25 +43,13 @@ lightName3 = "cerbpurple"
 lightHard4 = "hp_light_4"
 lightName4 = "cerbpurple"
 
-buildSupport = B
-buildRequire = B
-
-requireCount = 1
-requireName1 = "cbpgen"
-requireText1 = "Build Energy Node"
-
-provideCount = 1
-provideName1 = "cbcbun"
-
-
-
 [BuildingClass]
 soundAmbient = "icomm01.wav"
 
 [CommBunkerClass]
-rangeScan = 2500
-periodScan = 1.0
+rangeScan = 400
+periodScan = 0.0
 
 [PoweredBuildingClass]
-detectRange = 900
+detectRange = 300
 
