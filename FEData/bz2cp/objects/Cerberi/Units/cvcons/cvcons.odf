@@ -1,5 +1,5 @@
 [GameObjectClass]
-baseName = "fvcons"
+baseName = "cvcons"
 geometryName = "Cvconst_skel.xsi"
 glowTexture = "fvconsa0.pic"
 classLabel = "constructionrig"
@@ -59,7 +59,6 @@ heatSignature = 1.0
 imageSignature = 2.0
 radarSignature = 2.0
 isAssault = 1
-
 armorClass = H
 
 requireCount = 0
@@ -113,7 +112,6 @@ rollSteer = 0.0 //rolls while steering
 
 accelDragFull = 0.0 //nothing
 
-
 soundThrust = "scons01.wav"
 soundSteer = "avcnste1.wav"
 soundDeploy = "avartle0.wav"
@@ -129,7 +127,8 @@ soundUndeploy = "avartle4.wav"
 buildLabel = "Structures"
 buildItem1 = "cbpgen"
 buildItem2 = "cbfact"
-buildItem3 = "cbjamm"
+buildItem3 = "cbcbun"
+buildItem4 = "cbarmo"
 buildItem5 = "cbsbay"
 buildItem6 = "cbgtow"
 

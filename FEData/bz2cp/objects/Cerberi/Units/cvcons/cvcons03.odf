@@ -1,7 +1,7 @@
 [GameObjectClass]
 geometryName = "Cvconst02_skel.xsi"
 geometryScale = 0.70
-classLabel = "constructionrig"
+classLabel = "cvcons"
 
 animCount = 12
 
@@ -41,97 +41,15 @@ animFile11 = "Cvconst02_deploy.xsi"
 animName12 = "cons3"
 animFile12 = "Cvconst02_deploy.xsi"
 
-
-//collisionRadius = 7.0
-geometryScale = 2.0
-scrapValue = 20
-scrapCost = 40
-buildTime = 10.0
-maxHealth = 2000
-maxAmmo = 0
-collisionRadius = 5.0
-unitName = "Fabricator"
-aiName = "RigFriend"
-aiName2 = "RigEnemy"
-unitIcon = "icon_Cvconst.tga"
-heatSignature = 1.0
-imageSignature = 2.0
-radarSignature = 2.0
-isAssault = 1
-
-armorClass = H
-
-requireCount = 0
-
 [CraftClass]
-rangeScan = 400.0f
-periodScan = 5.0f
-velocJam = 5.0f
-TeamTransferrable = false
-
-selectUser1Msg = "fvcons01.wav"
-selectUser2Msg = "fvcons11.wav"
-selectWaitMsg = "fvcons04.wav"
-selectGoMsg = "fvcons03.wav"
-selectFollowMsg = "fvcons03.wav"
-selectOtherMsg = "fvcons02.wav"
-recycleMsg = "fvcons09.wav"
-attackMsg = "fvcons04.wav"
-goMsg = "fvcons05.wav"
-goObjectMsg = "fvcons05.wav"
-user1Msg = "fvcons12.wav"
-user2Msg = "fvcons13.wav"
-followMsg = "fvcons02.wav"
-otherMsg = "fvcons05.wav"
-diedMsg = ""
-holdMsg = "fvcons10.wav"
 
 [HoverCraftClass]
-velocForward = 6.5
-velocReverse = 4.0
-velocStrafe = 0.0
-accelThrust = 20.0
-accelBrake = 70.0
-
-accelDragStop = 2.0
-accelJump = 0.0
-
-setAltitude = 0.0 // how high off the ground
-
-alphaTrack = 20.0
-alphaDamp = 5.0
-
-pitchPitch = 0.0 //nose up
-pitchThrust = 0.0 //nose down
-
-rollStrafe = 0.0 //rolls while strafing
-omegaSpin = 3.0 //spinning in place speed
-omegaTurn = 2.0 //turning while moving speed
-alphaSteer = 2.0 //how fast it responds to steering
-rollSteer = 0.0 //rolls while steering
-
-accelDragFull = 0.0 //nothing
-
-
-soundThrust = "scons01.wav"
-soundSteer = "avcnste1.wav"
-soundDeploy = "avartle0.wav"
-soundUndeploy = "avartle4.wav"
 
 [DeployableClass]
-timeDeploy = 2.0
-timeUndeploy = 2.0
-soundDeploy = "avartle0.wav"
-soundUndeploy = "avartle4.wav"
 
 [ConstructionRigClass]
 buildLabel = "Structures"
-buildItem1 = "cbpgen"
 buildItem2 = "cbfact03"
-buildItem3 = "cbcbun"
-buildItem4 = "cbarmo"
-buildItem5 = "cbsbay"
-buildItem6 = "cbgtow"
 buildItem7 = "cbtcen"
 buildItem8 = "cbjamm"
 buildItem9 = "cbagen"
