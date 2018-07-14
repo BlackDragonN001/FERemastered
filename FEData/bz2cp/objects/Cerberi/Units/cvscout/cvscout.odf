@@ -2,10 +2,8 @@
 // Model by Slaor and Pastell
 
 [GameObjectClass]
-
 baseName = "cvscout"
 geometryName = "cvscout00.xsi"
-
 //animCount = 3
 //animName1 = "forward"
 //animFile1 = "evmislsf.xsi"
@@ -14,7 +12,6 @@ geometryName = "cvscout00.xsi"
 //animName3 = "reverse"
 //animFile3 = "evmislsr.xsi"
 classLabel = "wingman"
-
 scrapValue = 30
 scrapCost = 55
 customCost = 65
@@ -24,24 +21,27 @@ maxHealth = 2200
 maxAmmo = 3000
 addAmmo = 5
 unitName = "Triton"
-
 aiName = "TankFriend"
 aiName2 = "TankEnemy"
-
 heatSignature = 1.5
 imageSignature = 1.5
 radarSignature = 0.3
-
 needPilot = 0
-
 isAssault = 0
-
 armorClass = L
+
+/////// Requirements ///////////////////
 
 requireCount = 0
 
+/////// Provides ///////////////////
 
-/////// weapons ///////////////////
+provideCount = 3
+provideName1 = "cvscout"
+provideName2 = "VIRTUAL_CLASS_SCOUT"
+provideName3 = "DefendUnit"
+
+/////// Weapons ///////////////////
 
 weaponMask = 00001
 weaponHard1 = "HP_ROCKET_1"
@@ -57,6 +57,7 @@ weaponName3 = "gdeflect"
 weaponAssault3 = 0
 
 ////////////////////////////////////
+
 [CraftClass]
 rangeScan = 450.0f
 periodScan = 5.0f
