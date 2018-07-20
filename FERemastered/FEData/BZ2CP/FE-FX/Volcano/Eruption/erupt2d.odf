@@ -1,0 +1,31 @@
+[OrdnanceClass]
+classLabel = "beam"
+shotGeometry = NULL
+xplGround = "xflagnd"
+xplVehicle = "xflacar"
+xplBuilding = "xflabld"
+
+renderName = "erupt2d.render"
+
+ammoCost = 0
+lifeSpan = 300e-6
+shotSpeed = 1e6
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+[Render]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 255"
+finishColor = "255 0 0 0"
+startRadius = 0.5
+finishRadius = 0.1
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.2
+textureRate = 0.01

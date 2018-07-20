@@ -1,0 +1,39 @@
+[GameObjectClass]
+geometryName = NULL //"defflarmin.xsi"
+classLabel = "magnet"
+scrapCost = 5
+scrapValue = 1
+maxHealth = 1000
+maxAmmo = 5
+unitName = "Field"
+effectHard1 = "Field"
+effectName1 = "pgfield.field"
+explosionName = "globexpl"
+canDetect = 1
+canInteract = 1
+canSnipe = 0
+
+[MineClass]
+lifeSpan = 90000
+
+[MagnetMineClass]
+triggerDelay = 0.0
+fieldRadius = 30.0
+objPushCenter = 0.0 //0
+objPushEdge = -350.0 // -350
+objDrag = 0.1 //0.0
+ordPushCenter = 0.0 //0
+ordPushEdge = -400.0 //-400
+ordDrag = 0.1 //0.0
+
+[Field]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 0 0"
+finishColor = "255 150 0 30"
+startRadius = 1.0
+finishRadius = 19.0 // 30
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16

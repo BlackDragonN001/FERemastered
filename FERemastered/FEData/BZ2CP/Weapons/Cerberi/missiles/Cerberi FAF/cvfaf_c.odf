@@ -1,0 +1,69 @@
+[OrdnanceClass]
+classLabel = "thermalmissile"
+
+shotGeometry = "iorckt00.xsi"
+shotSound = "cerbfaf.wav"
+
+renderName = "cvfaf_c.render"
+
+xplGround = "xcvfafgnd"
+xplVehicle = "xcvfafcar"
+xplBuilding = "xcvfafcar"
+
+ammoCost = 20
+lifeSpan = 1.2 // 120m
+shotSpeed = 100.0
+
+damageValue(N) = 50 // none
+damageValue(L) = 45 // light
+damageValue(H) = 40 // heavy
+
+damageValue(S) = 40 // standard
+damageValue(D) = 35 // deflection
+damageValue(A) = 50 // absorbtion
+
+[MissileClass]
+omegaTurn = 1.0
+
+[ThermalMissileClass]
+coneAngle = 0.4
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "cvfaf_c.flare"
+renderName2 = "cvfaf_c.light"
+renderName3 = "cvfaf_c.flame"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "252 254 6 255"
+finishColor = "252 254 6 255"
+startRadius = 1.0
+finishRadius = 0.5
+
+[Light]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "254 254 150 355"
+finishColor = "252 254 50 0"
+startRadius = 2.0
+finishRadius = 2.0 
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "154 78 1 255"
+finishColor = "254 158 6 0"
+startRadius = 0.3
+finishRadius = 0.02
+animateTime = 0.15
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitLife = 0.15
+

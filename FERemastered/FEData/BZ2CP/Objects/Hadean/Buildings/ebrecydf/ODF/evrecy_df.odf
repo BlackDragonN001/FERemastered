@@ -1,0 +1,69 @@
+[GameObjectClass]
+baseName = "evrecy"
+geometryName = "evrecydf00.xsi"
+
+animCount = 1
+animName1 = "deploy"
+animFile1 = "evrecydf01.xsi"
+
+classLabel = "recyclervehicle"
+
+collisionRadius = 7.0
+scrapCost = 0
+scrapValue = 100
+maxHealth = 6000
+maxAmmo = 0
+unitName = "Procreator Vehicle"
+aiName = "DeployBuildingFriend"
+aiName2 = "DeployBuildingEnemy"
+heatSignature = 2.0
+imageSignature = 5.0
+radarSignature = 5.0
+isAssault = 1
+
+armorClass = H
+
+[CraftClass]
+rangeScan = 400.0f
+periodScan = 5.0f
+velocJam = 0.0f
+TeamTransferrable = false
+
+selectUser1Msg = "evrecy12.wav"  // building
+selectUser2Msg = "ivrecy10.wav"  // can't do
+selectWaitMsg = "evrecy04.wav"  // yes sir
+selectGoMsg = "evrecy01.wav"  // in transit
+selectOtherMsg = "evrecy04.wav"  // yes sir
+holdMsg = "ivrecy09.wav"
+attackMsg = "evrecy05.wav"
+goMsg = "evrecy05.wav"
+goObjectMsg = "evrecy04.wav"
+user1Msg = "evrecy08.wav"
+user2Msg = "evrecy13.wav"
+followMsg = "evrecy03.wav"
+otherMsg = "evrecy04.wav"
+
+deployedMsg = "evrecy08.wav"
+
+[TrackedVehicleClass]
+velocForward = 10.0
+velocReverse = 10.0
+accelThrust = 50.0
+omegaSpin = 1.0		//2.0
+omegaTurn = 0.5
+
+TREAD_STATIC_FRICTION = 1.5
+
+engineSound = "irecy01.wav"
+treadSound = "irecy01b.wav"
+
+[TrackedDeployableClass]
+timeDeploy = 10.0
+timeUndeploy = 10.0
+soundDeploy = "irecy03.wav"
+
+[DeployBuildingClass]
+deployName = "ebrecy_df"
+
+[RecyclerVehicleClass]
+scrapHold = 40

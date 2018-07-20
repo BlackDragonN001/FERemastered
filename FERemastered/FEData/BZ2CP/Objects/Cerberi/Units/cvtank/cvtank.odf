@@ -1,0 +1,117 @@
+// (c) BZ2CP unit "Krul"
+// Model by Slaor and Pastell
+
+[GameObjectClass]
+baseName = "cvtank"
+geometryName = "cvspider00.xsi"
+classLabel = "wingman"
+scrapValue = 40
+scrapCost = 50		
+customCost = 55
+buildTime = 10.0
+customTime = 15.0
+maxHealth = 3000
+maxAmmo = 3000
+addAmmo = 5
+unitName = "Krul"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+heatSignature = 1.5
+imageSignature = 1.5
+radarSignature = 0.3
+isAssault = 0
+armorClass = L
+needPilot = 0
+
+/////// Requirements ///////////////////
+
+requireCount = 0
+
+/////// Provides ///////////////////
+
+provideCount = 3
+provideName1 = "cvtank"
+provideName2 = "VIRTUAL_CLASS_TANK"
+provideName3 = "DefendUnit"
+
+/////// Weapons ///////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gparbst_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_ROCKET_1"
+weaponName2 = "gparbst_a"
+weaponAssault2 = 1
+weaponHard3 = "HP_SHIELD_1"
+weaponName3 = "gabsorb"
+weaponAssault3 = 0
+
+////////////////////////////////////
+
+effectHard1 = "hp_com_1"
+effectName1 = "dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0  
+effectFlags1 = 2147483135
+
+[CraftClass]
+rangeScan = 350.0f
+periodScan = 3.0f
+velocJam = 5.0f
+engageRange = 275
+
+braccelFactor = 0.03
+velFactor = 0.2
+steerFactor = 1.5
+omegaFactor = 0.2
+strafeFactor = 0.2
+
+avoidSpeed = 30;
+topSpeed = 40;
+
+selectWaitMsg = "ivtank05.wav"
+selectAttackMsg = "ivtank02.wav"
+selectFollowMsg = "ivtank04.wav"
+selectGoMsg = "ivtank04.wav"
+selectOtherMsg = "ivtank05.wav"
+holdMsg = "ivtank12.wav"
+
+goMsg = "ivtank04.wav"
+attackMsg = "ivtank06.wav"
+followMeMsg = "ivtank08.wav"
+followMsg = "ivtank03.wav"
+repairMsg = "ivtank09.wav"
+reloadMsg = "ivtank09.wav"
+rescueMsg = "ivtank10.wav"
+recycleMsg = "ivtank11.wav"
+otherMsg = "ivtank05.wav" 
+user1Msg = ""  
+killedMsg = "ivtank01.wav"
+diedMsg = ""
+
+[HoverCraftClass]
+velocForward = 30.5 // []
+velocReverse = 20.0 // []
+velocStrafe = 25.0 // []
+accelThrust = 25.0 //acceleration []
+accelDragStop = 6.0 //how fast it stops once hands are off controls []
+accelJump = 25.0 // []
+
+setAltitude = 1.5 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself []
+alphaDamp = 8.0 //shocks []
+
+pitchPitch = 0.35 //nose up []
+pitchThrust = 0.1 //nose down []
+
+rollStrafe = 0.08 //rolls while strafing []
+omegaSpin = 6.0 //spinning in place speed []
+omegaTurn = 4.3 //turning while moving speed []
+alphaSteer = 7.0 //how fast it responds to steering []
+rollSteer = 0.08 //rolls while steering []
+
+soundThrust = "spider.wav"
+soundTurbo = "spider1.wav"
+

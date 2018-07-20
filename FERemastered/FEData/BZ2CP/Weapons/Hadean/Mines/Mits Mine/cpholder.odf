@@ -1,0 +1,12 @@
+[WeaponClass]
+baseName = "gmitsmin"
+classLabel = "dispenser"
+wpnName = "MITS Mine"
+fireSound = ""
+wpnReticle = "gmitsmin"
+wpnPriority = 4
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 2.0
+objectClass = "holdpull"

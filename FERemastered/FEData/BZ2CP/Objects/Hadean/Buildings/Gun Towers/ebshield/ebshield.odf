@@ -1,0 +1,60 @@
+[GameObjectClass]
+geometryName = "ebgt4g.xsi"
+classLabel = "turret"
+collisionRadius = 6.0
+powerCost = 1
+scrapCost = 70
+scrapValue = 35
+maxHealth = 3000
+maxAmmo = 4000  // 0 is *not* treated as infinite ammo!
+unitName = "Shield Generator"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+
+armorClass = L
+
+buildSupport = B
+buildRequire = B
+
+requireCount = 1
+requireName1 = "ebcbun"
+requireText1 = "Build Eyes of Xyr"
+
+provideCount = 1
+provideName1 = "ebshield"
+
+
+weaponMask = 00011
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "gforcefield"
+weaponAssault1 = 0
+
+lightHard1 = "hp_light_1"
+lightName1 = "spothadean"
+
+turretCount = 4
+turretName1 = "turret_y_1"
+turretName2 = "turret_x_1"
+turretName3 = "hp_light_1"
+turretName4 = "hp_eyepoint"
+
+[BuildingClass]
+soundAmbient = "igtow01.wav"
+
+[CraftClass]
+rangeScan = 300
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 0.9
+steerFactor = 0.5
+engageRange = 250
+
+[TurretCraftClass]
+omegaTurret = 2.0
+detectRange = 250
+
+

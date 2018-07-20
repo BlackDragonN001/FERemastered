@@ -1,0 +1,19 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gslagstab_a"
+ordName = "testslag_L"
+wpnName = "MegaSlag"
+fireSound = "testslag.wav"
+wpnReticle = "gatstab"
+wpnCategory = "CANN"
+isAssault = 0
+
+aiRange = 200
+
+[CannonClass]
+shotDelay = 0.3
+shotAlternate = 0
+
+
+
+

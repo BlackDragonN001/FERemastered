@@ -1,0 +1,27 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gdragb_a"
+ordName = "dragb_c"
+wpnName = "Dragon Blast"
+fireSound = "dblast.wav" //"baz02.wav"
+wpnReticle = "gplasma"
+wpnCategory = "CANN"
+isAssault = 0
+flashName = "gdragb_c.flash"
+aiRange = 125
+
+[CannonClass]
+shotDelay = 0.3 // 4/sec
+shotAlternate = 0
+
+[Flash]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 80 127"
+finishColor = "255 0 0 0"
+startRadius = 1.0
+finishRadius = 0.5
+animateTime = 0.1
+latitudeBands = 8
+longitudeSegments = 16

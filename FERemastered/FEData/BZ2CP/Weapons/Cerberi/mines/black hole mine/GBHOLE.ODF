@@ -1,0 +1,10 @@
+[WeaponClass]
+classLabel = "dispenser"
+wpnName = "Black Hole"
+fireSound = "mmine01.wav"
+wpnReticle = "gmcurmin"
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 5.0
+objectClass = "bhole"

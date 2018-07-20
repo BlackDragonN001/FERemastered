@@ -1,0 +1,118 @@
+// (c) BZ2CP unit "Spider"
+// Mesh - Slaor, 
+// Skin - Slaor
+// Skin map, odf, model adaptation, animations - Pastell
+
+[GameObjectClass]
+geometryName = "cvspider00.xsi"
+classLabel = "wingman"
+geometryScale = 1.0
+
+//animCount = 3
+//animName1 = "forward"
+//animFile1 = "evtanksf.xsi"
+//animName2 = "neutral"
+//animFile2 = "evtanksn.xsi"
+//animName3 = "reverse"
+//animFile3 = "evtanksr.xsi"
+
+scrapValue = 40
+scrapCost = 45		
+customCost = 45
+buildTime = 10.0
+customTime = 15.0
+maxHealth = 3000
+maxAmmo = 3000
+addAmmo = 5
+unitName = "Krul"
+aiName = "SentryProcess"
+aiName2 = "SentryProcess"
+
+heatSignature = 1.5
+imageSignature = 1.5
+radarSignature = 0.3
+
+isAssault = 0
+
+armorClass = L
+
+requireCount = 0
+
+/////// weapons ///////////////////
+
+weaponMask = 00001
+
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gatstab_c"
+weaponAssault1 = 0
+
+weaponHard2 = "HP_ROCKET_1"
+weaponName2 = "gshadow_a"
+weaponAssault2 = 1
+
+weaponHard3 = "HP_SPECIAL_1"
+weaponName3 = "gflare"
+weaponAssault3 = 0
+
+////////////////////////////////////
+
+[CraftClass]
+rangeScan = 450.0f
+periodScan = 5.0f
+velocJam = 10.0f
+engageRange = 130
+
+braccelFactor = 0.05
+velFactor = 0.2
+steerFactor = 1.0
+omegaFactor = 0.5
+strafeFactor = 0.2
+
+topSpeed = 30
+
+selectWaitMsg = "ivscout04.wav"
+selectAttackMsg = "ivscout01.wav"
+selectFollowMsg = "ivscout03.wav"
+selectGoMsg = "ivscout02.wav"
+selectOtherMsg = "ivscout04.wav"
+
+goMsg = "ivscout05.wav"
+attackMsg = "ivscout06.wav"
+followMeMsg = "ivscout03.wav"
+followMsg = "ivscout08.wav"
+repairMsg = "ivscout09.wav"
+reloadMsg = "ivscout09.wav"
+rescueMsg = "ivscout10.wav"
+recycleMsg = "ivscout11.wav"
+otherMsg = "ivscout10.wav" 
+holdMsg = "ivscout12.wav"
+user1Msg = ""  
+killedMsg = "ivscout07.wav"
+diedMsg = ""
+
+[HoverCraftClass]
+velocForward = 40.0 // [40]
+velocReverse = 10.0 // [10]
+velocStrafe = 20.0 // [20]
+accelThrust = 25.0 // acceleration [25.]
+accelDragStop = 5.0 // how fast it stops once hands are off controls [5.9]
+accelJump = 18.0
+aiAccelDrag = 10
+
+setAltitude = 1.0 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself [5.]
+alphaDamp = 8.0 //shocks [5.]
+
+pitchPitch = 0.25 // nose up [.1]
+pitchThrust = 0.05 // nose down [.1]
+
+rollStrafe = 0.1 // rolls while strafing [1.7]
+omegaSpin = 3.5 // spinning in place speed [3.5]
+omegaTurn = 3.5 // turning while moving speed [3.45]
+alphaSteer = 5.5 // how fast it responds to steering [3.]
+rollSteer = 0.1 // rolls while steering [.35]
+
+soundThrust = "ieng01b.wav"
+soundTurbo = "avtanke3.wav"
+

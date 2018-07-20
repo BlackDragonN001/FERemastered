@@ -1,0 +1,18 @@
+// (c) BZ2CP Unit: Dread
+// Created by Slaor and Pastell
+
+[GameObjectClass]
+classLabel = "cvatank"
+needPilot = 1
+
+/////// Requirements ///////////////////
+
+requireCount = 1
+requireName1 = "cbsbay"
+requireText1 = "Build Regenerator"
+
+[CraftClass]
+
+[HoverCraftClass]
+
+ 

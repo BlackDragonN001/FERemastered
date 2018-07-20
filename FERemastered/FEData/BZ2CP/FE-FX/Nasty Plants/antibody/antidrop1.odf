@@ -1,0 +1,14 @@
+[WeaponClass]
+classLabel = "mortar"
+ordName = "antidrop2"
+wpnName = "Mortar"
+fireSound = "antishot.wav"
+wpnReticle = "gmortar"
+wpnLadder = "gmortar.L0"
+wpnPriority = 2
+wpnCategory = "MORT"
+
+aiRange = 150.0
+
+[CannonClass]
+shotDelay = 1.0

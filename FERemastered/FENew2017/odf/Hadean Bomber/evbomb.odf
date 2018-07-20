@@ -1,0 +1,89 @@
+[GameObjectClass]
+baseName = "evbomb"
+geometryName = "evbomb00.xsi"
+classLabel = "bomber"
+scrapValue = 0
+scrapCost = 90
+buildTime = 120.0
+maxHealth = 2500
+maxAmmo = 5000
+weaponMask = 00000
+unitName = "Xaketh"
+aiName = "BomberProcess"
+aiName2 = "BomberProcess"
+heatSignature = 10.0
+imageSignature = 0.5
+radarSignature = 0.0
+isAssault = 1
+
+armorClass = N
+
+requireCount = 1
+requireName1 = "ebbomb"
+requireText1 = "Build Bomber Vat"
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+lightHard2 = "hp_light_2"
+lightName2 = "spotblue2"
+
+[CraftClass]
+rangeScan = 400.0f
+periodScan = 5.0f
+velocJam = 5.0f
+
+braccelFactor = 0.05f;
+strafeFactor = 0.1f;
+steerFactor = 1.0f;
+omegaFactor = 0.2f;
+velFactor = 0.2f;
+
+selectWaitMsg = "evatank01.wav"
+selectAttackMsg = "evatank04.wav"
+selectFollowMsg = "evatank02.wav"
+selectGoMsg = "evatank11.wav"
+selectOtherMsg = "evatank01.wav"
+
+goMsg = "evatank10.wav"
+attackMsg = "evatank05.wav"
+followMeMsg = "evatank09.wav"
+followMsg = "evatank02.wav"
+repairMsg = "evatank05.wav"
+reloadMsg = "evatank05.wav"
+rescueMsg = "evatank06.wav"
+recycleMsg = "evatank08.wav"
+otherMsg = "evatank10.wav" 
+holdMsg = "evatank03.wav"
+user1Msg = ""    
+killedMsg = "evatank07.wav"
+diedMsg = ""
+
+
+[HoverCraftClass]
+setAltitude = 4.0
+accelDragStop = 0.0
+accelDragFull = 0.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.25
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+
+velocForward = 15.0
+velocReverse = 2.0
+velocStrafe = 15.0
+accelThrust = 20.0
+accelBrake = 2.0
+omegaSpin = 1.0
+omegaTurn = 1.0
+alphaSteer = 15.0
+accelJump = 300.0
+
+soundThrust = "ibomb.wav"
+soundTurbo = "avtanke3.wav"
+
+[BomberClass]
+bayConfig = "ebbomb"
+flightAltitude = 75.0
+reloadTime = 10

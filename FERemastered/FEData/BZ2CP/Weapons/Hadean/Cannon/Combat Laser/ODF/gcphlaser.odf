@@ -1,0 +1,26 @@
+[WeaponClass]
+classLabel = "cannon"
+ordName = "heavylaser"
+wpnName = "Heavy Laser"
+fireSound = "wlas.wav"
+wpnReticle = "gplasma"
+wpnCategory = "CANN"
+isAssault = 0
+flashName = "gcphlaser.flash"
+aiRange = 210
+
+[CannonClass]
+shotDelay = 0.6
+shotAlternate = 0
+
+[Flash]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "245 120 0 160"
+finishColor = "255 150 0 0"
+startRadius = 1.3
+finishRadius = 0.6
+animateTime = 0.1
+latitudeBands = 8
+longitudeSegments = 16

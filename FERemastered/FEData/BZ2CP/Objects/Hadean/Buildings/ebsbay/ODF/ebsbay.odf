@@ -1,0 +1,48 @@
+[GameObjectClass]
+baseName = "ebsbay"
+geometryName = "ebsbay00.xsi"
+classLabel = "supplydepot"
+collisionRadius = 1.0
+scrapCost = 50
+scrapValue = 3
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Repair Vat"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+armorClass = H
+
+/////// Requirements ///////////////////
+
+requireCount = 1
+requireName1 = "ebfact"
+requireText1 = "Build Xenomator"
+
+/////// Provides ///////////////////
+
+provideCount = 3
+provideName1 = "ebsbay"
+provideName2 = "VIRTUAL_CLASS_SUPPLYDEPOT"
+provideName3 = "base"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[BuildingClass]
+tunnelCount = 1
+
+tunnel01X0 = 1
+tunnel01Z0 = 1
+tunnel01Dx = 4
+tunnel01Dz = 4
+tunnel01Edge = "twwt"
+
+[SupplyDepotClass]
+supplyRange = 40.0
+supplyRate = 150.0
+supplySound = "mnu_empt.wav"
+
+
+

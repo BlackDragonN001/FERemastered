@@ -1,0 +1,34 @@
+[GameObjectClass]
+geometryName = NULL //"defflarmin.xsi"
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 99000
+maxAmmo = 9999
+unitName = "Solar Flare"
+heatSignature = 0.0
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+explosionName = "" //"defflarxpl"
+
+[MineClass]
+lifeSpan = 9000.0 
+
+[FlareMineClass]
+payloadName = "bub1a_16"
+fireSound = ""
+triggerDelay = 0.0
+shotDelay = 3.0 
+shotVariance = 2.0
+damageRadius = 20.0
+damageValue(N) = 5 // none
+damageValue(L) = 5 // light
+damageValue(H) = 5 // heavy
+damageValue(S) = 5 // standard
+damageValue(D) = 5 // deflection
+damageValue(A) = 5 // absorbtion
+kickRadius = 0.0
+kickVeloc = 0.0
+kickOmega = 0.0
+

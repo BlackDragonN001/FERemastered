@@ -1,0 +1,45 @@
+[WeaponClass]
+classLabel = "arccannon"
+ordName = NULL
+wpnName = "Spark Arc"
+fireSound = "igtow01.wav"
+wpnReticle = "gbolt" / "octagon"
+wpnCategory = "CANN"
+flashName = "sparks1a.flash"
+
+[ArcCannonClass]
+startDist = 6.0
+
+finishDist = 75.0
+
+travelVeloc = 60//25.0
+
+coneAngle = 60 // 30 //10.0
+
+ammoCost = 0.0001
+
+damageValue(N) = 2.0 // none
+damageValue(L) = 1.5 // light
+damageValue(H) = 1.0 // heavy
+damageValue(S) = 1.5 // standard
+damageValue(D) = 2.5 // deflection
+damageValue(A) = 0.5 // absorbtion
+
+activeSound = "igtow01.wav"
+
+xplGround = NULL
+xplVehicle = "xplsparknet"
+xplBuilding = NULL// "xplsparknet"
+
+[Flash]
+renderBase = "draw_bolt"
+textureName =  "trail2.tga"
+textureBlend = "one one modulate" 
+startColor = "80 180 255 255"
+finishColor = "0 0 80 0"
+startRadius = .1 // 0.15
+finishRadius = .3 // 0.4
+segmentLength = 1.0
+segmentVariance = "1.0 1.0 2.0" // "2.5 2.5 2.5"
+animateTime = .8 // 0.8
+textureRate = 0.01

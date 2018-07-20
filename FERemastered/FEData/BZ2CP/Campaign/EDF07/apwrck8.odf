@@ -1,0 +1,14 @@
+[GameObjectClass]
+//geometryName = "ibcrat02.xsi"
+geometryName = "apspec00.xsi"
+classLabel = "daywrecker"
+scrapCost = 20
+scrapValue = 0
+maxHealth = 300
+maxAmmo = 0
+unitName = "Repair Module"
+aiName = "PowerUpProcess"
+
+[DayWreckerClass]
+xplBlast = "xdabomb8"   //"xbmbxpl"
+

@@ -1,0 +1,88 @@
+[GameObjectClass]
+baseName = "cvmdron"
+geometryName = "cvmdron00.xsi"
+classLabel = "wingman"
+scrapValue = 0
+scrapCost = 0
+maxHealth = 900
+maxAmmo = 2000
+addAmmo = 30
+unitName = "Stinger"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+explosionName = "xmagcar5_a"
+heatSignature = 1.5
+imageSignature = 1.5
+radarSignature = 0.1
+isAssault = 0
+needPilot=0
+armorClass = L
+
+/////// weapons ///////////////////
+weaponMask = 00001
+weaponHard1 = "HP_ROCKET_1"
+weaponName1 = "gcvfaf_c"
+weaponAssault1 = 0
+////////////////////////////////////
+ 
+[CraftClass]
+rangeScan = 800.0f
+periodScan = 2.0f
+velocJam = 2.0f
+engageRange = 750
+
+braccelFactor = 0.03
+velFactor = 0.2
+steerFactor = 1.5
+omegaFactor = 0.2
+strafeFactor = 0.2
+
+avoidSpeed = 40;
+topSpeed = 50;
+
+selectWaitMsg = "ivtank05.wav"
+selectAttackMsg = "ivtank02.wav"
+selectFollowMsg = "ivtank04.wav"
+selectGoMsg = "ivtank04.wav"
+selectOtherMsg = "ivtank05.wav"
+holdMsg = "ivtank12.wav"
+
+goMsg = "ivtank04.wav"
+attackMsg = "ivtank06.wav"
+followMeMsg = "ivtank08.wav"
+followMsg = "ivtank03.wav"
+repairMsg = "ivtank09.wav"
+reloadMsg = "ivtank09.wav"
+rescueMsg = "ivtank10.wav"
+recycleMsg = "ivtank11.wav"
+otherMsg = "ivtank05.wav" 
+holdMsg = "ivtank12.wav"
+user1Msg = ""  
+killedMsg = "ivtank07.wav"
+diedMsg = ""
+
+[HoverCraftClass]
+velocForward = 48.5 // []
+velocReverse = 35.0 // []
+velocStrafe = 30.0 // []
+accelThrust = 30.0 //acceleration []
+accelDragStop = 5.0 //how fast it stops once hands are off controls []
+accelJump = 25.0 // []
+
+setAltitude = 2.0 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself []
+alphaDamp = 8.0 //shocks []
+
+pitchPitch = 0.20 //nose up []
+pitchThrust = 0.1 //nose down []
+
+rollStrafe = 0.08 //rolls while strafing []
+omegaSpin = 6.0 //spinning in place speed []
+omegaTurn = 3.3 //turning while moving speed []
+alphaSteer = 7.0 //how fast it responds to steering []
+rollSteer = 0.00 //rolls while steering []
+
+soundThrust = "mdron.wav"
+soundTurbo = "mdronth.wav"
+

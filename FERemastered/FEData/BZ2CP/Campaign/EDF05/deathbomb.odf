@@ -1,0 +1,16 @@
+[GameObjectClass]
+geometryName = "igprox00.xsi"
+classLabel = "proximity"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 200
+unitName = "Prox Mine"
+
+[MineClass]
+lifeSpan = 30
+xplBlast = "xdeathbmb"
+
+[ProximityMineClass]
+triggerRadius = 200.0
+suppressRadius = 400.0

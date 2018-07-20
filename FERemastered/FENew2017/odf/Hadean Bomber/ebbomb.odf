@@ -1,0 +1,40 @@
+[GameObjectClass]
+baseName = "ebbomb"
+geometryName = "ebbomb00.xsi"
+classLabel = "BomberBay"
+scrapCost = 190
+scrapValue = 50
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Bomber Vat"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+isSingle = 1
+
+armorClass = H
+
+buildSupport = "A"
+buildRequire = "F"
+
+requireCount = 2
+requireName1 = "ebtrain"
+requireText1 = "Build Believers Vat"
+requireName2 = "ebtcen"
+requireText2 = "Build Xyr Tower"
+
+provideCount = 1
+provideName1 = "ybbomb"
+
+
+[BuildingClass]
+soundAmbient = "iabomb01.wav"
+
+[BomberBayClass]
+bomberType = "evbomb"
+downTime = 30
+
+[PoweredBuildingClass]
+detectRange = 100
+

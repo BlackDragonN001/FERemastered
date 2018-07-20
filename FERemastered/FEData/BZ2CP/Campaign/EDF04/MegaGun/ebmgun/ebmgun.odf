@@ -1,0 +1,28 @@
+[GameObjectClass]
+geometryName = "ebmgun00.xsi"
+classLabel = "powered"
+scrapCost = 80
+scrapValue = 3
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Mega Gun"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 4.0
+isAssault = 1
+
+armorClass = H
+
+requireCount = 0
+
+provideCount = 1
+provideName1 = "ebmgun"
+
+
+[BuildingClass]
+soundAmbient = "iabomb01.wav"
+
+[PoweredBuildingClass]
+detectRange = 100
+

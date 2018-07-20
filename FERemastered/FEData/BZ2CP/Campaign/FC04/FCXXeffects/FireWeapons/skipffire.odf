@@ -1,0 +1,100 @@
+[OrdnanceClass]
+classLabel = "spraybomb"
+shotGeometry = "skipfire00.xsi" //"gravanchor.xsi" //"ioartl00.xsi"
+shotSound = "flame01.wav"//NULL //"fmiss02.wav"
+xplGround = NULL
+xplVehicle = NULL
+xplBuilding = NULL
+rendername = "skipffire.render"
+
+ammoCost = 35 
+lifeSpan =  5.0 //5
+shotSpeed = 35 // 150 //40 
+
+damageValue(N) = 30
+damageValue(L) = 50
+damageValue(H) = 40
+damageValue(S) = 50
+damageValue(D) = 30
+damageValue(A) = 20
+
+[SprayBombClass]
+payloadName = "skipfanchor"
+bounceRatio = .02 // 0.9
+//bounceRatio =  .6 gives about 3 very shallow bounces to spray class
+//               .01 makes very fast react  
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "skipffire.main"
+renderName2 = "skipffire.halo"
+renderName3 = "skipffire.sparks"
+renderName4 = "skipffire.light"
+
+[Main]
+renderBase = "draw_sprite"
+textureName = "flame2.tga" // "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 20 255"
+finishColor = "255 100 20 180"
+startRadius = 1.2
+finishRadius = 0.6
+animateTime = 2.0
+
+[Halo]
+renderBase = "draw_sprite"
+textureName =  "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "200 90 0 130"
+finishColor = "180 70 0 100"
+startRadius = 2.5
+finishRadius = 1.5
+animateTime = 2.0
+
+[Sparks]
+renderBase = "draw_emit"
+emitName = "skipffire.sparker"
+emitDelay = 0.02 // 0.03 // 0.5
+emitVelocity = "0.0 0.0 2.0"
+emitVariance = "10.0 10.0 10.0"
+
+[Sparker]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "skipffire.sparkflare"
+renderName2 = "skipffire.sparkhalo"
+
+[SparkFlare]
+renderBase = "draw_sprite"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 0 255"
+finishColor = "155 80 0 0"
+startRadius = 1.2
+finishRadius = 0.4
+animateTime = 0.5
+
+[SparkHalo]
+renderBase = "draw_sprite"
+textureName = "flame2.tga" // "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "150 70 0 150"
+finishColor = "150 70 0 0"
+startRadius = 3.0
+finishRadius = 1.0
+animateTime = 0.5
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1E6
+renderBase = "draw_light"
+startColor = "255 100 0 250"
+finishColor = "255 100 0 250"
+startRadius = 45.0
+finishRadius = 45.0
+animateTime = 1E6
+attenuateConstant = 0.0
+attenuateLinear = .5 // 1.0
+attenuateQuadratic = 0.0

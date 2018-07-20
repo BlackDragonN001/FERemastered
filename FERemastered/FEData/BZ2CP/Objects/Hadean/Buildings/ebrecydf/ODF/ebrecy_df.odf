@@ -1,0 +1,60 @@
+[GameObjectClass]
+baseName = "ebrecy"
+geometryName = "ebrecydf00.xsi"
+classLabel = "recycler"
+powerCost = -2
+scrapCost = 0
+scrapValue = 10
+maxHealth = 15000
+maxAmmo = 0
+addHealth = 0
+unitName = "Procreator"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+
+collisionRadius = 4.0
+
+armorClass = H
+
+[PoweredBuildingClass]
+powerTap1 = "HP_TAP_1"
+powerTap2 = "HP_TAP_2"
+powerName = "ebrectur"
+detectRange = 300
+
+[BuildingClass]
+tunnelCount = 1
+
+tunnel01X0 = 3
+tunnel01Z0 = 3
+tunnel01DX = 2
+tunnel01DZ = 4
+tunnel01Edge = "wwtw"
+soundAmbient = "ibrecy01.wav"
+
+
+[FactoryClass]
+soundBuild = "ibrecy02.wav"
+soundFinish = "iapc04.wav"
+buildItem1 = "evscav"
+buildItem2 = "evscout"
+buildItem3 = "evturr"
+buildItem4 = "evturrs"
+buildItem5 = "evcons"
+buildItem6 = "evserv"
+buildItem7 = "apserv"
+buildItem8 = "evscout_m"
+buildItem9 = "evscoutu"
+buildEmptyItem = 8
+
+reloadMsg = "evrecy12.wav"
+rescueMsg = "evrecy13.wav"
+
+[RecyclerClass]
+scrapHold = 40
+scrapDelay = 3.0 // # of seconds before +1 scrap
+

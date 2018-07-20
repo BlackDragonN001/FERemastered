@@ -1,0 +1,11 @@
+[WeaponClass]
+classLabel = "dispenser"
+wpnName = "Solar Flare"
+fireSound = "xcar.wav"
+wpnReticle = "gflare"
+wpnPriority = 1
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 9.0
+objectClass = "erupt2b"

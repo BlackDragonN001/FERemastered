@@ -1,0 +1,34 @@
+[WeaponClass]
+classLabel = "forcefield"
+ordName = NULL
+wpnName = "Force"
+fireSound = "phan01.wav"
+wpnReticle = "gforce.0"
+wpnPriority = 0
+wpnCategory = "SPEC"
+
+[SpecialItemClass]
+activeSound = ""
+expireSound = ""
+ammoCost = 0
+
+[ForceFieldClass]
+renderName = "field2a.render"
+soundAbsorb = "lhit.wav"
+ammoScale = 0.2 //.2
+
+[aRender]
+renderBase = "draw_multi"
+renderCount = 1
+renderName1 = "field2a.sphere"
+[render]
+renderBase = "draw_sphere"
+textureName = "cracks.tga"//vsmoke
+textureBlend = "one one modulate"
+startColor = "255 50 00 255"
+finishColor = "0 0 0 0"
+startRadius = 19.0
+finishRadius = 19.0
+animateTime = 5.0
+latitudeBands = 8
+longitudeSegments = 16

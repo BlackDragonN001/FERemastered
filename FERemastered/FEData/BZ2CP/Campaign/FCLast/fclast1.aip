@@ -1,0 +1,37 @@
+[Start]
+
+[Cheat]
+moneyAmount = 15
+moneyDelay = 20
+
+[Plan1]
+planType = "BaseBuildMinimums"
+planPriority = 40
+buildType1 = "cbpgen"
+buildCount1 = 1
+buildLoc1 = "PowerEnemy0"
+doNextOnFail = 1
+
+[Plan2]
+planType = "BaseBuildMinimums"
+planPriority = 30
+buildType1 = "cbgtow"
+buildCount1 = 1
+buildLoc1 = "TowerEnemy0"
+doNextOnFail = 1
+
+[Plan3]
+planType = "BaseBuildMinimums"
+planPriority = 20
+buildType1 = "cbpgen"
+buildCount1 = 1
+buildLoc1 = "PowerEnemy1"
+doNextOnFail = 1
+
+[Plan4]
+planType = "BaseBuildMinimums"
+planPriority = 10
+buildType1 = "cbgtow"
+buildCount1 = 1
+buildLoc1 = "TowerEnemy1"
+doNextOnFail = 1

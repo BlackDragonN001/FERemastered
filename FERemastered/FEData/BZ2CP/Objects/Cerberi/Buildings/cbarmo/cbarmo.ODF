@@ -1,0 +1,76 @@
+[GameObjectClass]
+baseName = "cbarmo"
+geometryName = "Cbarmo00.xsi"
+classLabel = "armory"
+collisionRadius = 1.0
+scrapCost = 60
+scrapValue = 5
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Dispenser Node"
+aiName = "ArmoryProcess"
+aiName2 = "ArmoryProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+armorClass = H
+
+/////// Requirements ///////////////////
+
+requireCount = 2
+requireName1 = "cbfact02"
+requireText1 = "Build Crucible"
+requireName2 = "cbcbun"
+requireText2 = "Build Uplink Array"
+
+/////// Provides ///////////////////
+
+provideCount = 2
+provideName1 = "cbarmo"
+provideName2 = "base"
+
+[BuildingClass]
+soundAmbient = "iarm01.wav"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[FactoryClass]
+soundBuild = "ibrecy02.wav"
+soundFinish = "iapc04.wav"
+
+reloadMsg = "ivrecy12.wav"
+rescueMsg = "ivrecy13.wav"
+
+[ArmoryGroup1]
+buildLabel = "Guns"
+buildItem1 = "apclaser"
+buildItem2 = "apcrapier"
+buildItem3 = "apcpen"
+
+[ArmoryGroup2]
+buildLabel = "Cannons"
+buildItem1 = "apcblast"
+buildItem2 = "apcplasma"
+buildItem3 = "apparbst"
+buildItem4 = "apcslam"
+buildItem5 = "apcrplas"
+
+[ArmoryGroup3]
+buildLabel = "Rockets"
+buildItem1 = "apcvfafm"
+buildItem2 = "apcvcmet"
+buildItem3 = "apchavoc"
+
+[ArmoryGroup4]
+buildLabel = "Mortars"
+buildItem1 = "apsing"
+
+[ArmoryGroup5]
+buildLabel = "Mines"
+buildItem1 = "apbhole"
+buildItem2 = "apmcspormin"
+buildItem3 = "apmcag"
+
+

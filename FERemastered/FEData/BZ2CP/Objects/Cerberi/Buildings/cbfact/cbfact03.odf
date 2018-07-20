@@ -1,0 +1,38 @@
+[GameObjectClass]
+geometryName = "cbfact03.xsi"
+classLabel = "cbfact"
+
+/////// Provides ///////////////////
+
+provideCount = 1
+provideName1 = "cbfact03"
+
+/////// Lights and Effects ///////////////////
+
+lightHard1 = "hp_light_1"
+lightName1 = "cerbpurple"
+lightHard2 = "hp_light_2"
+lightName2 = "cerbpurple"
+lightHard3 = "hp_light_3"
+lightName3 = "cerb_blue"
+
+[PoweredBuildingClass]
+
+[BuildingClass]
+
+[FactoryClass]
+buildItem1 = "cvtankP"
+buildItem2 = "cvmlay"
+buildItem3 = "cvrbombP"
+buildItem4 = "cvatank2P"
+buildItem5 = "cvhatankP"
+buildItem6 = "cvtalon02P"
+buildItem7 = "cvdcar"
+buildItem8 = "cvwalkP"
+buildItem9 = "cvgorg"
+builditem10 = "cvwra00"
+
+
+
+
+

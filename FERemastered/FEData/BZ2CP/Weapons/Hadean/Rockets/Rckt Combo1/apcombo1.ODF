@@ -1,0 +1,25 @@
+[GameObjectClass]
+geometryName = "apmisl00.xsi"
+classLabel = "wpnpower"
+scrapCost = 10
+scrapValue = 0
+maxHealth = 250
+maxAmmo = 0
+unitName = NULL
+aiName = "PowerUpProcess"
+
+lightHard1 = "hp_light_1"
+lightName1 = "omniorange"
+
+requireCount = 2
+requireName1 = "ebfact"
+requireText1 = "Build Xenomator"
+requireName2 = "ebtrain"
+requireText2 = "Build Believers Vat"
+
+[PowerUpClass]
+soundPickup = "pickup01.wav"
+soundReject = "reject.wav"
+
+[WeaponPowerupClass]
+weaponName = "gcombo1_c"

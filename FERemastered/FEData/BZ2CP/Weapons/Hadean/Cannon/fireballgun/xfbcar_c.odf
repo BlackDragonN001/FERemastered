@@ -1,0 +1,185 @@
+// ===============
+// FIREBALL CAR HIT
+// ===============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xfbseekcar.wav"
+damageRadius = 15.0
+
+damageValue(N) = 100 // 80 // none  // 200
+damageValue(L) = 100 // 50 // light // 140
+damageValue(H) = 100  // 30 // heavy // 50
+
+damageValue(S) = 100 // 50 // standard    // 100
+damageValue(D) = 60 // 80 // deflection  // 200
+damageValue(A) = 160  // 30 // absorbtion  // 0
+
+kickRadius = 20.0 // 15
+kickOmega = 1.0   // 1
+kickVeloc = 2.0   // 1
+
+particleTypes = 9
+
+particleClass1 = "xfbcar_c.fire"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xfbcar_c.chunks"
+particleCount2 = 16
+particleVeloc2 = "30.0 30.0 30.0"
+particleBias2 = "0.0 10.0 0.0"
+
+particleClass3 = "xfbcar_c.ring"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xfbcar_c.flame"
+particleCount4 = 1
+particleVeloc4 = "0.0 2.0 0.0"
+particleBias4 = "0.0 0.0 0.0"
+
+particleClass5 = "xfbcar_c.thrust"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+particleClass6 = "xfbcar_c.light"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0"
+
+particleClass7 = "xfbcar_c.shock"
+particleCount7 = 1
+particleVeloc7 = "0.0 0.0 0.0"
+
+particleClass8 = "xfbcar_c.core"
+particleCount8 = 1
+particleVeloc8 = "0.0 0.0 0.0"
+
+particleClass9 = "xfbcar_c.char2"
+particleCount9 = 1
+particleVeloc9 = "0.0 0.0 0.0"
+
+
+[fire]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl_trail"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 130 0 128"
+finishColor = "200 0 0 0"
+startRadius = 6.0
+finishRadius = 1.0
+animateTime = 2
+rotationRate = 10.0
+emitDelay = 0.05
+emitVelocity = "5.0 5.0 5.0"
+emitVariance = "5.0 5.0 5.0"
+emitLife = 1.0
+
+[Chunks]
+simulateBase = "sim_ember"
+lifeTime = .7
+renderBase = "draw_sprite"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 70 255" 
+finishColor = "155 80 0 0"
+startRadius = 1.5
+finishRadius = 6 //4.5
+animateTime = .7
+
+[Ring]
+simulateBase = "sim_null"
+lifeTime = 10.0
+renderBase = "draw_planar"
+textureName = "crater3b.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "20 20 20 255"
+finishColor = "0 0 0 0"
+startRadius = 8.0
+finishRadius = 8.0
+animateTime = 10.0
+
+[Flame]
+simulateBase = "sim_smoke"
+lifeTime = 1.2
+renderBase = "draw_twirl_trail"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 170 100 200"
+finishColor = "255 80 0 0"
+startRadius = 2.5
+finishRadius = 0.2
+animateTime = 1.0
+rotationRate = 10.0
+emitDelay = 0.03
+emitVelocity = "2.0 3.0 2.0"
+emitVariance = "2.0 3.0 2.0"
+emitLife = 0.9
+
+[Thrust]
+simulateBase = "sim_null"
+lifeTime = 1.2
+renderBase = "draw_sprite"
+spriteCenter.x = 0.0
+spriteCenter.y = 1.0
+textureName = "ground.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 150 100 200"
+finishColor = "255 100 0 0"
+startRadius = 2.0
+finishRadius = 8.0
+animateTime = 1.2
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 2.5
+renderBase = "draw_light"
+startColor = "255 100 50 2500"
+finishColor = "255 50 0 200"
+startRadius = 25
+finishRadius = 25
+animateTime = 1.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_sphere"
+textureName = "ring2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 190" 
+finishColor = "255 200 200 0" 
+startRadius = 2.0
+finishRadius = 20.0 // 5
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16
+
+[Core]
+simulateBase = "sim_smoke" //null
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "smoke.tga" // flame
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 220 220 170"
+finishColor = "220 100 0 0"
+startRadius = 1.0
+finishRadius = 5.0
+animateTime = 1.0
+
+[char2]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_planar"
+textureName = "fbchar.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 200 150"
+finishColor = "200 100 100 0"
+startRadius = 1.0
+finishRadius = 4.0
+animateTime = 1.0

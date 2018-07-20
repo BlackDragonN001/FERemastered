@@ -1,0 +1,12 @@
+[WeaponClass]
+classLabel = "dispenser"
+wpnName = "Spore mine"
+fireSound = "mmine01.wav"
+wpnReticle = "gmcurmin"
+wpnCategory = "SPEC"
+
+
+
+[DispenserClass]
+shotDelay = 3.0
+objectClass = "mcspormina"

@@ -1,0 +1,17 @@
+[GameObjectClass]
+classLabel = "satchel"
+//geometryName = "igsatc00.xsi"
+geometryName = "dorelc07.xsi"
+geometryScale = 0.5
+scrapCost = 0
+scrapValue = 0
+maxHealth = 1000
+maxAmmo = 1
+unitName = "Nuclear Excavator"
+
+[BuildingClass]
+soundAmbient = "switch01.wav"
+
+[MineClass]
+lifeSpan = 30.0
+xplBlast = "xpe7bomb"

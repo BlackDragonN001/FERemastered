@@ -1,0 +1,54 @@
+[OrdnanceClass]
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = NULL //"xppoinxpl" // Never worked, intentional? typo? ??? -GBD
+xplVehicle = "xpointxpl"
+xplBuilding = "xpointxpl"
+
+renderName = "pointer.render"
+
+ammoCost = 0
+lifeSpan = 350e-6 // 100m
+shotSpeed = 1e6
+
+damageValue(N) = 0 // none //350
+damageValue(L) = 0 // light //250
+damageValue(H) = 0 // heavy //150
+
+damageValue(S) = 0 // standard //250
+damageValue(D) = 0 // deflection //350
+damageValue(A) = 0 // absorbtion //80
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "pointer.core"
+renderName2 = "pointer.fringe"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = NULL
+textureBlend = "one one modulate"
+startColor = "255 0 0 500"
+finishColor = "255 0 0 255"
+startRadius = 0.08
+finishRadius = 0.08
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.2
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 0 500"
+finishColor = "255 0 0 255"
+startRadius = 0.03
+finishRadius = 0.3
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.3
+textureRate = 0.02
+textureSpeed = -5.0

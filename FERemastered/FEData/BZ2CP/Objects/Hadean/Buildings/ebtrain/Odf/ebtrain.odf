@@ -1,0 +1,41 @@
+[GameObjectClass]
+baseName = "ebtrain"
+geometryName = "ebtrain00.xsi"
+classLabel = "barracks"
+scrapCost = 60
+scrapValue = 30
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Believers Vat"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0
+isAssault = 1
+armorClass = H
+
+/////// Requirements ///////////////
+
+requireCount = 2
+requireName1 = "ebcbun"
+requireText1 = "Build Eyes of Xyr"
+requireName2 = "ebfact2"
+requireText2 = "Build Mega Xenomator"
+
+/////// Provides ///////////////////
+
+provideCount = 3
+provideName1 = "ebtrain"
+provideName2 = "VIRTUAL_CLASS_BARRACKS"
+provideName3 = "base"
+
+[BuildingClass]
+soundAmbient = "abbarre0.wav"
+
+[PoweredBuildingClass]
+detectRange = 200
+
+[BarracksClass]
+pilotHold = 500
+
+

@@ -1,0 +1,152 @@
+// (c) BZ2CP Unit "Scion Fighter"
+// Model by Slaor
+// Animation by Fishbone
+[GameObjectClass]
+baseName="output"
+//glowTexture="fvtanka0.pic"
+geometryName="fvsky_m.xsi"
+//cockpitName="fvtank_cockpit.xsi"
+classLabel="morphtank"
+animCount=1
+animName1="deploy"
+animFile1="fvsky_m.xsi"
+scrapValue=15
+scrapCost=55
+customCost=65
+buildTime = 15.0
+customTime = 15.0
+maxHealth = 3500
+maxAmmo = 4000 // 3000
+addAmmo = 10.0  // 5
+addhealth = 0.1
+unitName = "Bee"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+
+heatSignature= 2.0
+imageSignature= 2.5
+radarSignature= 0.5
+isAssault=0
+armorClass=N
+
+ProvideCount=1
+ProvideName1 = "patank"
+
+requireCount = 0
+
+/////// weapons ///////////////////
+weaponMask = 00001
+
+weaponHard1="HP_GUN_1"
+weaponName1="ggauss_c"//"giongn_c"
+weaponAssault1=0
+weaponHard2="HP_GUN_2"
+weaponName2="ggauss_c"//
+weaponAssault2=0
+weaponHard3="HP_ROCKET_1"
+weaponName3="gmlock_c"//"gsting_c"
+weaponAssault3=0
+weaponHard4="HP_ROCKET_2"
+weaponName4="gmlock_c"//
+weaponAssault4=0
+weaponHard5 = "HP_SHIELD"
+weaponName5 = "gshield"
+weaponAssault5=0
+
+//////////////////////////////////
+
+[CraftClass]
+rangeScan= 450.0f
+periodScan= 3.0f
+velocJam= 5.0f
+engageRange=120
+
+selectWaitMsg="fvtank04.wav"
+selectAttackMsg="fvtank01.wav"
+selectFollowMsg="fvtank03.wav"
+selectGoMsg="fvtank02.wav"
+selectOtherMsg="fvtank04.wav"
+holdMsg="fvtank12.wav"
+goMsg="fvtank05.wav"
+attackMsg="fvtank06.wav"
+followMeMsg="fvtank08.wav"
+followMsg="fvtank03.wav"
+repairMsg="fvtank09.wav"
+reloadMsg="fvtank09.wav"
+rescueMsg="fvtank10.wav"
+recycleMsg="fvtank11.wav"
+otherMsg="fvtank05.wav" 
+
+user1Msg=""  
+killedMsg="fvtank07.wav"
+diedMsg=""
+
+// COMBAT MODE /////////////////////
+
+[HoverCraftClass]
+velocForward = 50.0 // [40]
+velocReverse = 40.0 // [10]
+velocStrafe = 25.0 // [20]
+accelThrust = 30.0 // acceleration [25.]
+accelDragStop = 8.0 // 5.0 // how fast it stops once hands are off controls [5.9]
+accelJump = 70  // -70.0
+
+setAltitude = 12 // 18.0 // how high off the ground
+
+alphaTrack = 17.0 //springs speed it rights itself [5.]
+alphaDamp = 8.0 //shocks [5.]
+
+pitchPitch = 0.29 // nose up [.1]
+pitchThrust = 0.27 // nose down [.1]
+
+rollStrafe = 0.20 // rolls while strafing [1.7]
+omegaSpin = 4.0 // spinning in place speed [3.5]
+omegaTurn = 2.5 // turning while moving speed [3.45]
+alphaSteer = 5.0 // how fast it responds to steering [3.]
+rollSteer = 0.30 // rolls while steering [.35]
+
+soundThrust="ssent01j.wav"
+
+// ASSAULT MODE /////////////////////
+
+[MorphTankClass]
+maxHealth=2500
+maxAmmo = 4000 // 3000
+addAmmo = 0.0
+addhealth = 15.0
+engageRange = 100
+isAssault = 0
+
+rangeScan=350.0f
+periodScan=4.0f
+velocJam=5.0f
+
+velocForward=40.0 // [30]
+velocReverse=28.0 // [20]
+velocStrafe=20.0 // [20]
+accelThrust=34.0 //acceleration [25]
+accelBrake=75.0 //braking []
+accelDragStop=10 // 5.8 //how fast it stops once hands are off controls [18]
+accelJump= 50 // -50.0
+
+setAltitude= 7.0 //18.0 // how high off the ground
+
+alphaTrack= 22.0 //springs speed it rights itself [21.]
+alphaDamp=8.0 //shocks [8.]
+
+pitchPitch=0.29 //nose up [.25]
+pitchThrust=0.27 //nose down [.09]
+
+rollStrafe=0.2 //rolls while strafing [.01]
+omegaSpin=4.0 //spinning in place speed [1.5]
+omegaTurn=2.0 //turning while moving speed [2.0]
+alphaSteer=3.5 // 4.5 //how fast it responds to steering [3.1]
+rollSteer=0.3 //rolls while steering [.09]
+
+soundThrust="ssent01j.wav"
+
+[DeployableClass]
+soundDeploy="morph01.wav"
+soundUndeploy="morph01b.wav"
+deployTime = 3  // 6
+undeployTime = 3  // 6

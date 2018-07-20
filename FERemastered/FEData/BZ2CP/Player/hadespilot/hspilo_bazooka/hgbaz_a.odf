@@ -1,0 +1,19 @@
+[WeaponClass]
+classLabel = "cannon"
+
+// don't need any geometry
+// (igsnip_c already has it)
+
+
+ordName = "bazooka_a"
+wpnName = "Bazooka"
+fireSound = "baz01.wav"
+wpnReticle = "gbazooka"
+wpnCategory = "HAND"
+isAssault = 1
+isFlying = 1
+altName = "hgbaz_c"
+
+[CannonClass]
+shotDelay = 5.0
+

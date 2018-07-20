@@ -1,0 +1,21 @@
+//(c)BZ2CP
+// Created by Pastell
+
+[GameObjectClass]
+classLabel = "ebfact"
+scrapCost = 10
+scrapValue = 30
+
+/////// Provides ///////////////////
+
+provideCount = 4
+provideName3 = "ebfact2"
+provideName4 = "ebfact3"
+
+upgradeName = "ebfact4"
+
+[PoweredBuildingClass]
+
+[BuildingClass]
+
+[FactoryClass]

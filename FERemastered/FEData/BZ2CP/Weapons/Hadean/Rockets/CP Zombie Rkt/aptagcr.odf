@@ -1,0 +1,27 @@
+// ZOMBIE MISSILE
+// Created by Pastell
+// 2001 Community Project
+
+[GameObjectClass]
+geometryName = "apmisl00.xsi"
+classLabel = "wpnpower"
+scrapCost = 10
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 0
+unitName = NULL
+aiName = "PowerUpProcess"
+
+lightHard1 = "hp_light_1"
+lightName1 = "omniorange"
+
+requireCount = 1
+requireName1 = "ebtcen"
+requireText1 = "Build Xyr Tower"
+
+[PowerUpClass]
+soundPickup = "pickup01.wav"
+soundReject = "reject.wav"
+
+[WeaponPowerupClass]
+weaponName = "gtagcr"

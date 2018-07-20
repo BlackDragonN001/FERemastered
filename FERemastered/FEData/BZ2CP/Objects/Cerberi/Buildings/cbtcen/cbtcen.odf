@@ -1,0 +1,101 @@
+[GameObjectClass]
+baseName = "cbtcen"
+geometryName = "Cbtcen00.xsi"
+classLabel = "powered"
+scrapCost = 80
+scrapValue = 3
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Research Node"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 4.0
+isAssault = 1
+armorClass = H
+
+/////// Requirements ///////////////////
+
+requireCount = 2
+requireName1 = "Cbarmo"
+requireText1 = "Build Dispenser Node"
+requireName2 = "Cbsbay"
+requireText2 = "Build Regenerator"
+
+/////// Provides ///////////////////
+
+provideCount = 3
+provideName1 = "cbtcen"
+provideName2 = "VIRTUAL_CLASS_TECHCENTER"
+provideName3 = "base"
+
+/////// Lights and Effects ///////////////////
+
+effectHard1 = "hp_emit_1"
+effectName1 = "cbtcen.render"
+
+[BuildingClass]
+soundAmbient = "iabomb01.wav"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "cbtcen.eff1"
+renderName2 = "cbtcen.eff2"
+renderName3 = "cbtcen.eff3"
+renderName4 = "cbtcen.eff4"
+
+[Eff1]
+renderBase = "draw_static"
+textureName = "static.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255"
+finishColor = " 0 0 255 0"
+startRadius = 0.1
+finishRadius = 0.15
+emitDelay = 0.01 // 0.005
+emitDelayVar = 0.0
+innerRadius = 2.0
+outerRadius = 15.0
+segmentTime = 0.8
+
+[Eff2]
+renderBase = "draw_static"
+textureName = "static.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.1
+finishRadius = 0.02
+emitDelay = 0.07
+emitDelayVar = 0.0
+innerRadius = 2.0
+outerRadius = 18.0
+segmentTime = 0.4
+
+[Eff3]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha" //"one one modulate"
+startColor = "0 255 255 100"
+finishColor = "0 0 255 180"
+startRadius = 0.5
+finishRadius = 2.5
+animateTime = 0.2
+latitudeBands = 8
+longitudeSegments = 16
+
+[Eff4]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha" //"one one modulate"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.5
+finishRadius = 18.5
+animateTime = 0.2
+latitudeBands = 8
+longitudeSegments = 16

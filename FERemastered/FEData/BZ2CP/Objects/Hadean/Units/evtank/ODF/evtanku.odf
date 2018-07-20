@@ -1,0 +1,24 @@
+// (c) BZ2CP unit "Xares"
+// Mesh - Slaor, Pastell
+// Skin - Slaor
+// Skin map, odf, model adaptation, animations - Pastell
+
+[GameObjectClass]
+baseName = "evtanku"
+classLabel = "evtanks"
+
+/////// Requirements ///////////////////
+
+requireCount = 2
+requireName1 = "ebfact2"
+requireText1 = "Upgrade Mega Xenomator"
+requireName2 = "ebcbun"
+requireText2 = "Build Eyes of Xyr"
+
+[CraftClass]
+
+[HoverCraftClass]
+
+[Lod1]
+
+[Lod2]

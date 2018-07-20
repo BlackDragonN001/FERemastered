@@ -1,0 +1,17 @@
+[WeaponClass]
+classLabel = "detonator"
+ordName = "packbomb2"
+wpnName = "Fire Detonator"
+wpnIcon = "wire_iggren3.tga"
+fireSound = "igun01l.wav"//"mdmort03.wav"//"mdmort01.wav"
+wpnReticle = "gmdmgun.0"
+wpnLadder = "gmdmgun.L0"
+wpnPriority = 1
+wpnCategory = "PACK"
+aiRange = 100
+
+[CannonClass]
+shotDelay = 4.0
+
+[RemoteDetonatorClass]
+armedReticle = "gmdmgun.1"

@@ -1,0 +1,176 @@
+[Start]
+scrapCount = 100
+consClass = "cvcons02"
+scavClass = "cvscav02"
+
+[Cheat]
+moneyAmount = 10
+moneyDelay = 5
+
+[Match]
+targetType1 = "ivmbike"
+attackType1_1 = "cvtank"
+targetType2 = "ivmbike"
+attackType2_1 = "cvrbomb"
+targetType3 = "ivtank"
+attackType3_1 = "cvscout"
+attackType3_2 = "cvscout"
+targetType4 = "ivtank"
+attackType4_1 = "cvrbomb"
+targetType5 = "ivtank"
+attackType5_1 = "cvtank"
+targetType6 = "ibgtow"
+attackType6_1 = "cvatank2"
+attackType6_2 = "cvatank2"
+targetType7 = "ibgtow"
+attackType7_1 = "cvtank"
+attackType7_2 = "cvtank"
+targetType8 = "ibgtow"
+attackType8_1 = "cvrbomb"
+attackType8_2 = "cvrbomb"
+targetType9 = "ivturr"
+attackType9_1 = "cvscout"
+attackType9_2 = "cvscout"
+targetType10 = "ivwalk"
+attackType10_1 = "cvtank"
+attackType10_2 = "cvtank"
+targetType11 = "ivturr"
+attackType11_1 = "cvrbomb"
+targetType12 = "ivscav"
+attackType12_1 = "cvscout"
+targetType13 = "ibscav"
+attackType13_1 = "cvrbomb"
+targetType14 = "ibscav"
+attackType14_1 = "cvscout"
+attackType14_2 = "cvscout"
+targetType15 = "ibscup"
+attackType15_1 = "cvscout"
+attackType15_2 = "cvscout"
+targetType16 = "ivcons"
+attackType16_1 = "cvscout"
+targetType17 = "ivcons"
+attackType17_1 = "cvtank"
+targetType18 = "ivcons"
+attackType18_1 = "cvatank"
+targetType19 = "ivscout"
+attackType19_1 = "cvscout"
+attackType19_2 = "cvscout"
+targetType20 = "ivwalk"
+attackType20_1 = "cvrbomb"
+attackType20_2 = "cvrbomb"
+targetType21 = "ivwalk"
+attackType21_1 = "cvatank2"
+attackType21_2 = "cvatank2"
+targetType22 = "ivturr"
+attackType22_1 = "cvtank"
+attackType22_2 = "cvtank"
+targetType23 = "ivscout"
+attackType23_1 = "cvtank"
+targetType24 = "ivatank"
+attackType24_1 = "cvatank2"
+attackType24_2 = "cvatank2"
+targetType25 = "ivatank"
+attackType25_1 = "cvrbomb"
+attackType25_2 = "cvrbomb"
+targetType26 = "ibscup"
+attackType26_1 = "cvrbomb"
+targetType27 = "ivscav"
+attackType27_1 = "cvtank"
+
+[Plan1]
+planType = "Recover"
+planPriority = 160
+serviceUnit = "Cbsbay"
+
+[Plan2]
+planType = "Attacker"
+planPriority = 130
+planCondition = "HisExists"
+planConditionClass = "ibscav"
+planConditionCount = 1
+targetType = "ibscav"
+attackType1 = "cvscout"
+attackType2 = "cvscout"
+maxAttacks = 10
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan3]
+planType = "Attacker"
+planPriority = 110
+planCondition = "HisExists"
+planConditionClass = "ibgtow"
+planConditionCount = 1
+targetType = "ibgtow"
+attackType1 = "cvrbomb"
+attackType2 = "cvrbomb"
+maxAttacks = 10
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan4]
+planType = "Attacker"
+planPriority = 80
+planCondition = "HisExists"
+planConditionClass = "ibfact"
+planConditionCount = 1
+targetType = "ibfact"
+attackType1 = "cvatank2"
+attackType2 = "cvtank"
+attackType3 = "cvtank"
+maxTries = 4
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan5]
+planType = "Attacker"
+planPriority = 60
+planCondition = "HisExists"
+planConditionClass = "ibsbay"
+planConditionCount = 1
+targetType = "ibsbay"
+attackType1 = "cvtalon02"
+attackType2 = "cvtalon02"
+maxAttacks = 10
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan6]
+planType = "Attacker"
+planPriority = 40
+planCondition = "HisExists"
+planConditionClass = "ibpgen"
+planConditionCount = 3
+targetType = "ibrecy"
+attackType1 = "cvdcar"
+attackType2 = "cvdcar"
+maxAttacks = 12
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan7]
+planType = "Attacker"
+planPriority = 30
+planCondition = "HisExists"
+planConditionClass = "ibcbun"
+planConditionCount = 1
+targetType = "ibcbun"
+attackType1 = "cvhatank"
+attackType2 = "cvhatank"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan8]
+planType = "Attacker"
+planPriority = 1
+planCondition = "HisExists"
+planConditionClass = "ivcorbin"
+planConditionCount = 1
+targetType = "ivcorbin"
+attackType1 = "cvtank"
+attackType2 = "cvdcar"
+attackType3 = "cvtank"
+maxAttacks = 10
+buildIfNoIdle = 1
+doNextOnFail = 1
+

@@ -1,0 +1,36 @@
+[Start]
+consClass = "evcons"
+scavClass = "evscav"
+
+[Plan1]
+planType = "Attacker"
+planPriority = 50
+targetType = "ivturr"
+attackType1 = "cvtank"
+
+[Plan2]
+planType = "Attacker"
+planPriority = 40
+targetType = "ibscav"
+attackType1 = "cvtank"
+
+[Plan3]
+planType = "Attacker"
+planPriority = 30
+targetType = "ibgtow"
+attackType1 = "cvtank"
+attackType2 = "cvtank"
+
+[Plan4]
+planType = "Attacker"
+planPriority = 20
+targetType = "ibpgen"
+attackType1 = "cvtank"
+
+[Plan5]
+planType = "Attacker"
+planPriority = 10
+targetType = "ibrecy"
+attackType1 = "cvtank"
+attackType2 = "cvtank"
+

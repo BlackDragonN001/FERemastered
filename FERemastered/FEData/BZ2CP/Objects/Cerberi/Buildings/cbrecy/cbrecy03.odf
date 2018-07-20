@@ -1,0 +1,28 @@
+[GameObjectClass]
+geometryName = "Cbrecy02.xsi"
+classLabel = "cbrecy"
+
+/////// Lights and Effects ///////////////////
+
+lightHard1 = "hp_light_1"
+lightName1 = "o_white_nf"
+lightHard2 = "hp_light_2"
+lightName2 = "cerbpurple"
+lightHard3 = "hp_light_3"
+lightName3 = "cerbpurple"
+lightHard4 = "hp_light_4"
+lightName4 = "cerbpurple"
+
+[PoweredBuildingClass]
+
+[BuildingClass]
+
+[FactoryClass]
+buildItem1 = "cvscav02"
+buildItem2 = "cvscoutP"
+buildItem3 = "cvturr02P"
+buildItem4 = "cvcons03"
+buildItem6 = "cvserv02"
+buildItem7 = "apserv"
+
+[RecyclerClass]

@@ -1,0 +1,54 @@
+[OrdnanceClass]
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = "xbeamxpl"
+xplVehicle = "xbeamxpl"
+xplBuilding = "xbeamxpl"
+
+renderName = "satbeam.render"
+
+ammoCost = 0
+lifeSpan = 1500e-6 // 100m
+shotSpeed = 1e6
+
+damageValue(N) = 50 // none //350
+damageValue(L) = 50 // light //250
+damageValue(H) = 50 // heavy //150
+
+damageValue(S) = 50 // standard //250
+damageValue(D) = 50 // deflection //350
+damageValue(A) = 50 // absorbtion //80
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "satbeam.core"
+renderName2 = "satbeam.fringe"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = NULL
+textureBlend = "one one modulate"
+startColor = "255 105 0 255"
+finishColor = "255 10 0 10"
+startRadius = 0.2
+finishRadius = 1.0
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.2
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 10 50 255"
+finishColor = "255 0 0 30"
+startRadius = 4.5
+finishRadius = 10.0
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.3
+textureRate = 0.02
+textureSpeed = -5.0

@@ -1,0 +1,46 @@
+[Start]
+consClass = "cvcons02"
+scavClass = "cvscav02"
+
+[Cheat]
+moneyAmount = 5
+moneyDelay = 15
+
+[Plan1]
+planType = "BuildMinimums"
+planPriority = 80
+buildType1 = "cvtank"
+buildCount1 = 2
+doNextOnFail = 1
+
+[Plan2]
+planType = "Attacker"
+planPriority = 60
+targetType = "evatank"
+attackType1 = "cvtank"
+doNextOnFail = 1
+
+[Plan3]
+planType = "Attacker"
+planPriority = 50
+targetType = "evatank"
+attackType1 = "cvtank"
+doNextOnFail = 1
+
+[Plan4]
+planType = "BuildMinimums"
+planPriority = 40
+buildType1 = "cvscout"
+buildCount1 = 1
+buildType2 = "cvtank"
+buildCount2 = 3
+doNextOnFail = 1
+
+[Plan5]
+planType = "Attacker"
+planPriority = 20
+targetType = "evatank"
+attackType1 = "cvtank"
+attackType2 = "cvscout"
+doNextOnFail = 1
+

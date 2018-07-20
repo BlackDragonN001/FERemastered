@@ -1,0 +1,54 @@
+[OrdnanceClass]
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = "xflagnd"
+xplVehicle = "xflacar"
+xplBuilding = "xflabld"
+
+renderName = "ELC_c.render"
+
+ammoCost = 5
+lifeSpan = 100e-6 // 100m
+shotSpeed = 1e6
+
+damageValue(N) = 35 // none //350
+damageValue(L) = 45 // light //450
+damageValue(H) = 65 // heavy //650
+
+damageValue(S) = 35 // standard //250
+damageValue(D) = 45 // deflection //350
+damageValue(A) = 18 // absorbtion //80
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ELC_c.core"
+renderName2 = "ELC_c.fringe"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = NULL
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 0 255 0"
+startRadius = 0.09
+finishRadius = 0.03
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.2
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.09
+finishRadius = 0.8
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.3
+textureRate = 0.02
+textureSpeed = -5.0

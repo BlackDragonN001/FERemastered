@@ -1,0 +1,12 @@
+[WeaponClass]
+classLabel = "dispenser"
+wpnName = "Laser Pointer"
+fireSound = ""
+wpnReticle = "gflare"
+wpnPriority = 1
+wpnCategory = "SPEC"
+aiRange = 220
+
+[DispenserClass]
+shotDelay = 21.0
+objectClass = "satmine"

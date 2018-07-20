@@ -1,0 +1,133 @@
+[GameObjectClass]
+baseName = "ivtank"
+geometryName = "ivcorbin.xsi"
+cockpitName= "ivtank_cockpit.xsi"
+classLabel = "wingman"
+scrapValue = 20
+scrapCost = 55
+customCost = 65
+buildTime = 15.0
+customTime = 15.0
+maxHealth = 7500			//normal is 3500 - 5000, but need endurance for this mission. Had used 15,000, but that's too much
+maxAmmo = 5000
+addAmmo = 5
+addHealth = 5
+unitName = "X-47 Prototype"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+
+heatSignature = 2.0
+imageSignature = 2.5
+radarSignature = 0.5
+
+isAssault = 0
+
+armorClass = L
+
+requireCount = 2
+requireName1 = "ibfact"
+requireText1 = "Build Factory"
+requireName2 = "ibcbun"
+requireText2 = "Build Relay Bunk"
+
+cockpitName = "ivtank_cockpit.xsi"
+
+/////// weapons ///////////////////
+
+//needPilot = 0  //added to make Schultz unsnipable/unpilotable
+
+weaponMask = 00011
+
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gslagstab_l"
+weaponAssault1 = 0
+weaponHard2 = "HP_GUN_1"
+weaponName2 = "gbchain_c"
+weaponAssault2 = 0
+weaponHard3 = "HP_GUN_2"
+weaponName3 = "gbchain_c"
+weaponAssault3 = 0
+weaponHard4 = "HP_MORTAR_1"
+weaponName4 = "gplasmrt"
+weaponAssault4 = 0
+weaponHard5 = "HP_SPECIAL_1"
+weaponName5 = "gredfld"
+weaponAssault5 = 0
+
+////////////////////////////////////
+
+lightHard1 = "hp_light_1"
+lightName1 = "blueglow"      //changed from spotblue2
+lightHard2 = "hp_light_2"
+lightName2 =  "omnilite"     //changed from nothing
+
+[CraftClass]
+rangeScan = 350.0f
+periodScan = 5.0f
+velocJam = 5.0f
+engageRange = 120
+
+braccelFactor = 0.03
+velFactor = 0.2
+steerFactor = 1.5
+omegaFactor = 0.2
+strafeFactor = 0.2
+
+avoidSpeed = 20;
+topSpeed = 30;
+
+selectWaitMsg = "ivtank05.wav"		
+selectAttackMsg = "ivtank02.wav"
+selectFollowMsg = "ivtank04.wav"
+selectGoMsg = "ivtank04.wav"
+selectOtherMsg = "ivtank05.wav"
+holdMsg = "ivtank12.wav"
+
+goMsg = "ivtank04.wav"
+attackMsg = "ivtank06.wav"
+followMeMsg = "ivtank08.wav"
+followMsg = "ivtank03.wav"
+repairMsg = "ivtank09.wav"
+reloadMsg = "ivtank09.wav"
+rescueMsg = "ivtank10.wav"
+recycleMsg = "ivtank11.wav"
+otherMsg = "ivtank05.wav" 
+holdMsg = "ivtank12.wav"
+user1Msg = ""  
+killedMsg = "ivtank07.wav"
+diedMsg = ""
+
+[HoverCraftClass]
+velocForward = 40.0 // [28.5]
+velocReverse = 30.0 // [20]
+velocStrafe = 20.0 // [16]
+accelThrust = 30.0 //acceleration [24]
+accelDragStop = 8.0 //how fast it stops once hands are off controls [6]
+accelJump = 20.0 // [15]
+w
+setAltitude = 1.0 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself []
+alphaDamp = 8.0 //shocks []
+
+pitchPitch = 0.25 //nose up []
+pitchThrust = 0.1 //nose down []
+
+rollStrafe = 0.08 //rolls while strafing []
+omegaSpin = 8.0 //spinning in place speed [6]
+omegaTurn = 3.0 //turning while moving speed [2.3]
+alphaSteer = 9.0 //how fast it responds to steering [7]
+rollSteer = 0.10 //rolls while steering [0.08]
+
+soundThrust = "itank01e.wav"
+soundTurbo = "avtanke3.wav"
+
+[Lod1]
+geometryName = "ivtankL1.xsi" ;geometry for lod1
+distance = 50                 ;...distance over this many meters => switch to lod2
+
+[Lod2]
+geometryName = "ivtankL2.xsi" ;geometry for lod2
+distance = 100                 ;...distance over this many meters => switch to lod2
+
+

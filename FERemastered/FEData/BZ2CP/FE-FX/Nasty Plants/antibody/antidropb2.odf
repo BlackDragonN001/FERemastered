@@ -1,0 +1,38 @@
+[OrdnanceClass]
+classLabel = "grenade"
+
+shotGeometry = NULL //"defflarmin.xsi"
+shotSound = ""
+
+xplGround = NULL //"defflarxpl"
+xplVehicle = NULL //"defflarxpl"
+xplBuilding = NULL //"defflarxpl"
+//explosionName = "antiexpir"
+xplExpire = "dropb2expir"
+
+//renderName = "antidropb2.render" // header was commented out, debug render? -GBD
+
+ammoCost = 0
+lifeSpan = 0.1 //1e30
+shotSpeed = 0.5
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+
+[Render]
+simulateBase = "sim_ember"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "spark.tga"
+textureBlend = "one one modulate"
+startColor = "255 10 0 255"
+finishColor = "255 0 0 0"
+startRadius = 0.4
+finishRadius = 0.3
+animateTime = 1.0
+rotationRate = 20.0

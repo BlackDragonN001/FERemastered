@@ -1,0 +1,95 @@
+[OrdnanceClass]
+classLabel = "pulse"
+
+shotGeometry = NULL // "gatstab.xsi"
+shotSound = "flame01.wav"
+
+renderName = "fbgun_a.render"
+
+xplGround = "xfbgnd_a"
+xplVehicle = "xfbcar_a" // "xsupercar"
+xplBuilding = "xfbcar_a"
+
+ammoCost = 120
+lifeSpan = 3.0 // 240 meters
+shotSpeed = 80.0
+
+damageValue(N) = 650 // none // 350
+damageValue(L) = 550 // light // 250
+damageValue(H) = 500 // heavy // 150
+
+damageValue(S) = 550 // standard // 250
+damageValue(D) = 500 // deflection // 350
+damageValue(A) = 650 // absorbtion // 100
+
+[PulseShellClass]
+pulseDelay = 0.3
+pulsePeriod = 0.19
+xplPulse = "xfbemit_a"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "fbgun_a.smoke"
+renderName2 = "fbgun_a.flame"
+renderName3 = "fbgun_a.light"
+renderName4 = "fbgun_a.twirl" // Never existed? supposed to be trailer? -GBD
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.01
+emitDelayVar = 0.02
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+//emitInherit = "1.5 1.5 1.0"
+emitLife = 1.2
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 128"
+finishColor = "0 0 0 0"
+startRadius = 0.5
+finishRadius = 1.0
+animateTime = 0.7
+rotationRate = 1.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.02
+emitDelayVar = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+//emitInherit = "1.5 1.5 1.5"
+emitLife = 0.6
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 200 128"
+finishColor = "255 0 0 0"
+startRadius = 0.8
+finishRadius = 0.2
+animateTime = 0.7
+rotationRate = 8.0
+
+[trailer]
+simulateBase = "sim_dust"//dust
+lifeTime = 1.4 //2.5
+renderBase = "draw_trail"
+textureName = "heat.tga"
+textureBlend = "one one modulate"
+textureRate = 0.08
+startColor = "255 255 255 150"
+finishColor = "200 100 100 0"
+startRadius = 0.4
+finishRadius = 2.0
+segmentTime = 1.1
+animateTime = 1.4
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 150 0 800"
+finishColor = "199 0 0 800"
+startRadius = 40.0
+finishRadius = 40.0
+animateTime = 0.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

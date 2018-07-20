@@ -1,0 +1,19 @@
+[WeaponClass]
+classLabel = "mortar"
+ordName = "poptag"
+wpnName = "Medusa Mortar"
+fireSound = "gpopp00.wav"
+wpnReticle = "glockm"
+wpnLadder = "gpopgun.L0"
+wpnCategory = "SPEC"
+aiRange = 350
+isAssault = 1
+wpnPriority = 1
+
+[CannonClass]
+shotDelay = 5.0
+shotPitch = .7 // 1.0 FEAB
+shotLead = 1.0
+salvoCount = 6
+salvoDelay = 0.05
+shotVariance = .4 // 0.5 FEAB

@@ -1,0 +1,26 @@
+[GameObjectClass]
+geometryName = "pbatun05blk.xsi"
+classLabel = "i76building"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "Black Tunnel"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+collisionRadius = 0.0
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+
+ownsTerrain = 1
+
+[BuildingClass]
+tunnelCount = 1
+
+tunnel01X0 = 1
+tunnel01Z0 = 0
+tunnel01DX = 2
+tunnel01DZ = 4
+tunnel01Edge = "fwfw"

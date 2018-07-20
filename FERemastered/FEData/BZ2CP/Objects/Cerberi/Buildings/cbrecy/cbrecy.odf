@@ -1,0 +1,52 @@
+[GameObjectClass]
+baseName = "cbrecy"
+geometryName = "Cbrecy00.xsi"
+classLabel = "recycler"
+collisionRadius = 4.0
+scrapCost = 55
+scrapValue = 10
+maxHealth = 14000
+maxAmmo = 0
+unitName = "Foundry"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+armorClass = H
+
+/////// Requirements ///////////////////
+
+requireCount = 0
+
+/////// Provides ///////////////////
+
+provideCount = 4
+provideName1 = "cbrecy"
+provideName2 = "cbrecycpu"
+provideName3 = "VIRTUAL_CLASS_RECYCLER"
+provideName4 = "VIRTUAL_CLASS_RECYCLERBUILDING"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[BuildingClass]
+soundAmbient = "ibrecy01.wav"
+
+[FactoryClass]
+soundBuild = "ibrecy02.wav"
+soundFinish = "iapc04.wav"
+reloadMsg = "ivrecy12.wav"
+rescueMsg = "ivrecy13.wav"
+
+buildItem1 = "cvscav"
+buildItem2 = "cvscout"
+buildItem3 = "cvturr"
+buildItem4 = "cvcons"
+buildItem6 = "cvserv"
+buildItem7 = "apserv"
+
+[RecyclerClass]
+scrapHold = 60
+scrapDelay = 1.0

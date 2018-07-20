@@ -1,0 +1,17 @@
+[GameObjectClass]
+baseName = "fvrecy"
+geometryName = "fvrecy_skel.xsi"
+classLabel = "i76building"
+collisionRadius = 10.0
+scrapCost = 0
+scrapValue = 10
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Matriarch"
+aiName = ""
+aiName2 = ""
+heatSignature = 2.0
+imageSignature = 5.0
+radarSignature = 1.0
+
+[buildingclass]

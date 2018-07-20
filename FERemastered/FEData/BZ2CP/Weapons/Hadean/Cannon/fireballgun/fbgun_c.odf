@@ -1,0 +1,83 @@
+[OrdnanceClass]
+classLabel = "pulse"
+shotGeometry = NULL // "gatstab.xsi"
+shotSound = "flame01.wav"
+shotRadius = 1.5 // 3 was noticeably too wide
+
+renderName = "fbgun_c.render"
+
+xplGround = "xfbgnd_c"
+xplVehicle = "xfbcar_c" 
+xplBuilding = "xfbbld_c"
+xplExpire = "xfbemit_c"
+
+ammoCost = 50 // 30 FEA-B
+lifeSpan =  2.48 // 1.81 // 199m | FEA-B=195
+shotSpeed = 80 // 110.0 // FEA-B=100
+
+// all damages doubled for halved speed reload --TV revc
+// no changes made in FEB, FEC reload increased to 2 secs from 1 sec.
+// the last explosion value "E" (emit)is variable between 25% to the full value indicated
+
+damageValue(N) = 460 // 350C12 // 550C11 // 560 FEA-B | +100 XPL | = < 300E var.
+damageValue(L) = 550 // 450C12 // 500C11 // 500 FEA-B | +100 XPL | = < 200E var.
+damageValue(H) = 330 // 300C12 // 400C11 // 400 FEA-B | +100 XPL | = < 30E var.
+
+damageValue(S) = 500 // 400C12 // 500C11 // 500 FEA-B | +100 XPL | = < 250E var.
+damageValue(D) = 350 // 300C12 // 400C11 // 400 FEA-B | +160 XPL | = < 300E var.
+damageValue(A) = 600 // 500C12 // 600C11 // 560 FEA-B | +60 XPL  | = < 200E var.
+
+[PulseShellClass]
+pulseDelay = 0.4  // .3
+pulsePeriod = 0.112 // 0.14
+xplPulse = "xfbemit_c"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "fbgun_c.smoke"
+renderName2 = "fbgun_c.flame"
+renderName3 = "fbgun_c.light"
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+emitDelay = .02
+emitDelayVar = .01 
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = .7 
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 128"
+finishColor = "0 0 0 0"
+startRadius = 1.0
+finishRadius = 0.10
+animateTime = 0.7
+rotationRate = 1.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.025 
+emitDelayVar = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = .6 
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 200 128"
+finishColor = "255 0 0 0"
+startRadius = 1.0 
+finishRadius = 0.1
+animateTime = .6 
+rotationRate = 8.0
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 150 0 800"
+finishColor = "199 0 0 800"
+startRadius = 20.0
+finishRadius = 20.0
+animateTime = 0.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

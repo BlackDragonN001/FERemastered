@@ -1,0 +1,59 @@
+// (c) BZ2CP unit "Xares"
+// Mesh - Slaor, Pastell
+// Skin - Slaor
+// Skin map, odf, model adaptation, animations - Pastell
+
+[GameObjectClass]
+baseName = "evtanku"
+classLabel = "evtank"
+geometryScale = 1.0
+scrapValue = 30
+scrapCost = 65
+buildTime = 10.0
+unitName = "Xares FS"
+
+/////// Requirements ///////////////////
+
+requireCount = 2
+requireName1 = "ebfact2"
+requireText1 = "Upgrade Mega Xenomator"
+requireName2 = "ebtrain"
+requireText2 = "Build Believers Vat"
+
+/////// weapons ///////////////////
+
+weaponMask = 00011
+
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gfbgun_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_GUN_1"
+weaponName2 = "gslicer_c"
+weaponAssault2 = 0
+weaponHard3 = "HP_GUN_2"
+weaponName3 = "gslicer_c"
+weaponAssault3 = 0
+weaponHard4 = "HP_SPECIAL_1"
+weaponName4 = "gcpmitsmin"
+weaponAssault4 = 0
+
+////////////////////////////////////
+
+[CraftClass]
+rangeScan = 250.0f
+engageRange = 140
+
+avoidSpeed = 30;
+topSpeed = 50;
+
+[HoverCraftClass]
+accelDragStop = 6.0 //how fast it stops once hands are off controls []
+accelJump = 18.0 // []
+
+alphaDamp = 9.0 //shocks []
+
+rollStrafe = 0.08 //rolls while strafing []
+
+[Lod1]
+
+[Lod2]

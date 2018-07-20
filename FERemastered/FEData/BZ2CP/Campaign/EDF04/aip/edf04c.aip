@@ -1,0 +1,298 @@
+//////////////////////////////////////////
+// ATTACK RECYCLER AND BUILD BASE
+// Run after megagun is captured.
+// Concentrate attacks on the extractors.
+//////////////////////////////////////////
+
+[Start]
+scrapCount = 200
+consClass = "evcons"
+scavClass = "evscav"
+
+[Cheat]
+moneyAmount = 200
+moneyDelay = 120
+
+[Match]
+targetType1 = "ivtank"
+attackType1_1 = "evtank"
+
+targetType2 = "ivtank"
+attackType2_1 = "evscout"
+attackType2_2 = "evscout"
+
+targetType3 = "ivmisl"
+attackType3_1 = "evmisl"
+attackType3_2 = "evmisl"
+
+targetType4 = "ivscout"
+attackType4_1 = "evscout"
+
+
+//Send scavs to deploy on pools:
+[Plan1]
+planType = "CollectPool"
+planPriority = 490
+maxTries = 3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+//Send eight scavs to collect scrap:
+[Plan2]
+planType = "CollectField"
+planPriority = 480
+maxTries = 8
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+
+[Plan3]
+planType = "BuildMinimums"
+planPriority = 460
+buildType1 = "evtank"
+buildCount1 = 3
+buildType2 = "evmort"
+buildCount2 = 2
+doNextOnFail = 1
+
+[Plan4]
+planType = "BuildMinimums"
+planPriority = 455
+buildType1 = "evmisl"
+buildCount1 = 3
+buildType2 = "evscout4"
+buildCount2 = 2
+doNextOnFail = 1
+
+//Attack his extractors:
+[Plan5]
+planType = "Attacker"
+planPriority = 450
+targetType = "ibscav"
+attackType1 = "evtank"
+attackType2 = "evtank"
+attackType3 = "evtank"
+attackType4 = "evmort"
+attackType5 = "evmort"
+doNextOnFail = 1
+
+//Attack his constructor:
+[Plan6]
+planType = "Attacker"
+planPriority = 440
+targetType = "ivcons_s"
+attackType1 = "evmisl"
+attackType2 = "evmisl"
+attackType3 = "evmisl"
+attackType4 = "evscout4"
+attackType5 = "evscout4"
+doNextOnFail = 1
+
+
+//Build a constructor:
+[Plan7]
+planCondition = "NotExists"
+planConditionClass = "evcons"
+planConditionCount = 1
+planType = "BuildMinimums"
+planPriority = 420
+buildType1 = "evcons"
+buildCount1 = 1
+doNextOnFail = 1
+
+//Make sure Xenomator is upgraded:
+[Plan8]
+planCondition = "NotExists"
+planConditionClass = "ebfact2"
+planConditionCount = 1
+planType = "Upgrade"
+planPriority = 410
+unitType = "ebfact"
+doNextOnFail = 1
+
+//Make sure Believers Vat is constructed:
+[Plan9]
+planCondition = "NotExists"
+planConditionClass = "ebtrain"
+planConditionCount = 1
+planType = "BaseBuildMinimums"
+planPriority = 400
+buildType1 = "ebtrain"
+buildCount1 = 1
+doNextOnFail = 1
+
+
+[Plan10]
+planType = "BuildMinimums"
+planPriority = 395
+buildType1 = "evmislu"
+buildCount1 = 3
+doNextOnFail = 1
+
+//Attack his turrets:
+[Plan11]
+planType = "Attacker"
+planPriority = 390
+targetType = "ibscup"
+attackType1 = "evmislu"
+attackType2 = "evmislu"
+attackType3 = "evmislu"
+doNextOnFail = 1
+
+[Plan12]
+planType = "BuildMinimums"
+planPriority = 385
+buildType1 = "evkami"
+buildCount1 = 3
+doNextOnFail = 1
+
+//Attack his power generators:
+[Plan13]
+planType = "Attacker"
+planPriority = 380
+targetType = "ibpgen"
+attackType1 = "evkami"
+attackType2 = "evkami"
+attackType3 = "evkami"
+doNextOnFail = 1
+
+
+[Plan14]
+planType = "BuildMinimums"
+planPriority = 360
+buildType1 = "evtanku"
+buildCount1 = 4
+doNextOnFail = 1
+
+[Plan15]
+planType = "BuildMinimums"
+planPriority = 355
+buildType1 = "evmort4"
+buildCount1 = 3
+doNextOnFail = 1
+
+//Attack his factory:
+[Plan16]
+planType = "Attacker"
+planPriority = 350
+targetType = "ibfact_s"
+attackType1 = "evtanku"
+attackType2 = "evtanku"
+attackType3 = "evtanku"
+attackType4 = "evtanku"
+doNextOnFail = 1
+
+//Attack his extractors:
+[Plan17]
+planType = "Attacker"
+planPriority = 340
+targetType = "ibscav"
+attackType1 = "evmort4"
+attackType2 = "evmort4"
+attackType3 = "evmort4"
+doNextOnFail = 1
+
+
+//Maintain the central Spikes:
+[Plan18]
+planType = "BaseBuildMinimums"
+planPriority = 330
+buildType1 = "ebpgen"
+buildCount1 = 1
+buildLoc1 = "cppgen1"
+doNextOnFail = 1
+
+[Plan19]
+planType = "BaseBuildMinimums"
+planPriority = 320
+buildType1 = "ebgt2g"
+buildCount1 = 1
+buildLoc1 = "cpspike2"
+buildType2 = "ebgt2g"
+buildCount2 = 1
+buildLoc2 = "cpspike1"
+doNextOnFail = 1
+
+[Plan20]
+planType = "BaseBuildMinimums"
+planPriority = 310
+buildType1 = "ebpgen"
+buildCount1 = 1
+buildLoc1 = "cppgen2"
+doNextOnFail = 1
+
+[Plan21]
+planType = "BaseBuildMinimums"
+planPriority = 300
+buildType1 = "ebgt2g"
+buildCount1 = 1
+buildLoc1 = "cpspike3"
+doNextOnFail = 1
+
+
+//Build a battery tray:
+[Plan22]
+planType = "BaseBuildMinimums"
+planPriority = 290
+buildType1 = "ebpgen"
+buildCount1 = 1
+buildLoc1 = "SGP1"
+doNextOnFail = 1
+
+//Build spikes:
+[Plan23]
+planType = "BaseBuildMinimums"
+planPriority = 280
+buildType1 = "ebgt2g"
+buildCount1 = 1
+buildLoc1 = "SGT1"
+buildType2 = "ebgt2g"
+buildCount2 = 1
+buildLoc2 = "SGT2"
+doNextOnFail = 1
+
+
+//Upgrade an extractor:
+[Plan24]
+planType = "Upgrade"
+planPriority = 270
+unitType = "ebscav"
+doNextOnFail = 1
+
+
+[Plan25]
+planType = "BuildMinimums"
+planPriority = 245
+buildType1 = "evscout"
+buildCount1 = 3
+buildType2 = "evtank4"
+buildCount2 = 2
+doNextOnFail = 1
+
+//Attack his upgraded extractors:
+[Plan26]
+planType = "Attacker"
+planPriority = 240
+targetType = "ibscup"
+attackType1 = "evscout"
+attackType3 = "evscout"
+attackType2 = "evscout"
+attackType4 = "evtank4"
+attackType5 = "evtank4"
+doNextOnFail = 1
+
+
+//Send scavs to deploy on pools:
+[Plan27]
+planType = "CollectPool"
+planPriority = 110
+maxTries = 3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+//Send scavs to collect scrap:
+[Plan28]
+planType = "CollectField"
+planPriority = 100
+buildIfNoIdle = 1
+doNextOnFail = 1

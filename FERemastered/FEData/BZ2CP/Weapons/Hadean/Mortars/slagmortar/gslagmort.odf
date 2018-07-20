@@ -1,0 +1,19 @@
+[WeaponClass]
+classLabel = "mortar"
+ordName = "slagbm"
+wpnName = "Slag Mortar"
+fireSound = "slagshot.wav"
+wpnReticle = "gmortar"
+wpnLadder = "gmortar.L0"
+wpnPriority = 1
+wpnCategory = "MORT"
+aiRange = 350
+
+
+
+[CannonClass]
+shotDelay = 4.0
+
+
+
+

@@ -1,0 +1,56 @@
+[OrdnanceClass]
+classLabel = "anchor"
+canCollide = 0 
+canDetect = 0 
+canInteract = 0 
+
+shotGeometry = NULL //"snaremort.xsi" // empty model... -GBD
+shotSound = ""
+
+xplGround = NULL //"defflarxpl"
+xplVehicle = NULL //"defflarxpl"
+xplBuilding = NULL //"defflarxpl"
+
+//renderName = "stick2.render" // was "xstick2", debug render? -GBD
+
+ammoCost = 0
+lifeSpan = 4.0
+shotSpeed = 250.0
+
+damageValue(N) = 10
+damageValue(L) = 10
+damageValue(H) = 10
+damageValue(S) = 10
+damageValue(D) = 10
+damageValue(A) = 10
+
+[LeaderRoundClass]
+stickTime = 3.5
+
+[AnchorRocketClass]
+accelDrag = 65.0
+alphaDrag = 1.3
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "stick2.flare"
+renderName2 = "stick2.trail"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "flare.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 0 100"
+finishColor = "150 0 0 100"
+startRadius = 0.5
+finishRadius = 1.5
+
+[Trail]
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+startColor = "255 10 23 127"
+finishColor = "255 0 0 0"
+startRadius = 0.1
+finishRadius = 1.0
+segmentTime = 0.5

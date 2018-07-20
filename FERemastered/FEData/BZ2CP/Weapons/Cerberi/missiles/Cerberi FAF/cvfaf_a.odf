@@ -1,0 +1,73 @@
+[OrdnanceClass]
+classLabel = "thermalmissile"
+
+shotGeometry = "iorckt00.xsi"
+shotSound = "cerbfaf.wav"
+
+renderName = "fafmsl_a.render"
+
+xplGround = "xheatgnd"
+xplVehicle = "xheatcar"
+xplBuilding = "xheatbld"
+
+ammoCost = 125
+lifeSpan = 6.67 // 400.2m
+shotSpeed = 60.0
+
+damageValue(N) = 900 // none
+damageValue(L) = 800 // light
+damageValue(H) = 700 // heavy
+
+damageValue(S) = 800 // standard
+damageValue(D) = 700 // deflection
+damageValue(A) = 900 // absorbtion
+
+[MissileClass]
+omegaTurn = 1.0
+
+[ThermalMissileClass]
+coneAngle = 0.2
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "fafmsl_a.flare"
+renderName2 = "fafmsl_a.smoke"
+renderName3 = "fafmsl_a.flame"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 5.0
+finishRadius = 5.0
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "153 153 153 128"
+finishColor = "153 153 153 0"
+startRadius = 1.0
+finishRadius = 5.0
+animateTime = 2.0
+emitDelay = 0.02
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 2.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 0.5
+finishRadius = 0.2
+animateTime = 0.2
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 0.2

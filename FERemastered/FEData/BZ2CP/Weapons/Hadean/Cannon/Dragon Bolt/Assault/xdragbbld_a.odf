@@ -1,0 +1,81 @@
+// =====================
+// DRAGON BOLT BUILDING HIT
+// =====================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 3
+particleClass1 = "xdragbbld_a.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xdragbbld_a.cloud"
+particleCount2 = 1
+particleVeloc2 = "0.0 10.0 0.0"
+
+particleClass3 = "xdragbbld_a.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+explSound = "lhit.wav"
+
+damageRadius = 16.0
+
+damageValue(N) = 200 // none
+damageValue(L) = 150 // light
+damageValue(H) = 0 // 150FE // heavy
+
+damageValue(S) = 100 // standard
+damageValue(D) = 150 // deflection
+damageValue(A) = 100 // absorbtion
+
+kickRadius = 15
+kickOmega = 2.0
+kickVeloc = 3.0
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_twirl"
+textureName = "firering.tga"
+textureBlend = "one one modulate"
+startColor = "255 220 0 255"
+finishColor = "255 200 0 0"
+startRadius = 2.0
+finishRadius = 10.0
+animateTime = 0.5
+
+[cloud]
+simulateBase = "sim_dust"
+lifeTime = 2.5
+renderBase = "draw_emit"
+emitName = "xdragbbld_a.cloudemit"
+emitDelay = 0.25
+emitVelocity = "0.0 1.5 0.0"
+emitVariance = "2.0 2.0 2.0"
+
+[cloudemit]
+simulateBase = "sim_smoke"
+lifeTime = 2.5
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "20 20 20 155"
+finishColor = "50 50 50 0"
+startRadius = 2.0
+finishRadius = 10.0
+animateTime = 2.5
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_light"
+startColor = "255 100 20 555"
+finishColor = "255 0 0 50"
+startRadius = 70.0
+finishRadius = 70.0
+animateTime = 1.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

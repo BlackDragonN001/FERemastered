@@ -1,0 +1,69 @@
+[OrdnanceClass]
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = "xslicergnd_c"
+xplVehicle = "xslicercar_c"
+xplBuilding = "xslicerbld_c"
+
+renderName = "slicer_c.render"
+
+ammoCost = 2.6
+lifeSpan = .000145 // 150mFE
+shotSpeed = 1e6
+
+damageValue(N) = 18.0 // none //350
+damageValue(L) = 13  // 16.0FE // light //250
+damageValue(H) = 7.5 // heavy //150
+
+damageValue(S) = 12.0 // standard //250
+damageValue(D) = 18.0 // deflection //350
+damageValue(A) = 8.0 // absorbtion //80
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "slicer_c.core"
+renderName2 = "slicer_c.fringe"
+renderName3 = "slicer_c.fringeA"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = NULL
+textureBlend = "one one modulate"
+startColor = "149 156 255 255"
+finishColor = "0 17 255 0"
+startRadius = 0.1
+finishRadius = 0.05
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.2
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "slicer.tga"
+textureBlend = "one one modulate"
+startColor = "0 17 255 255"
+finishColor = "190 23 196 0"
+startRadius = 0.1
+finishRadius = 0.05
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.3
+textureRate = 0.02
+textureSpeed = -5.0
+
+[FringeA]
+renderBase = "draw_bolt"
+textureName = "slicerA.tga"
+textureBlend = "one one modulate"
+startColor = "0 17 255 255"
+finishColor = "190 23 196 0"
+startRadius = 0.1
+finishRadius = 0.1
+segmentLength = 7.5
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.3
+textureRate = 0.02
+textureSpeed = -5.0

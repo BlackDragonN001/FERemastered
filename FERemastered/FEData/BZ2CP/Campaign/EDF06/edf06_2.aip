@@ -1,0 +1,67 @@
+[Cheat]
+MoneyAmount = 20
+MoneyDelay = 10
+
+[Start]
+scrapCount = 40
+scavClass = "evscav"
+consClass = "evcons"
+
+[Match]
+targetType1 = "ivturr"
+attackType1_1 = "evscout"
+attackType1_2 = "evtank"
+
+targetType2 = "ivscout"
+attackType2_1 = "evscout"
+
+targetType3 = "ivmisl"
+attackType3_1 = "evscout"
+
+targetType4 = "ivmbike"
+attackType4_1 = "evscout"
+attackType4_2 = "evscout"
+
+targetType5 = "ivtank"
+attackType5_1 = "evtank"
+
+targetType6 = "ivtank"
+attackType6_1 = "evscout"
+attackType6_2 = "evscout"
+
+targetType7 = "ivatank"
+attackType7_1 = "evatank"
+
+[Plan1]
+planType = "BuildMinimums"
+planPriority = 500
+buildType1 = "evscout"
+buildCount1 = 2
+
+
+[Plan2]
+planType = "BuildMinimums"
+planPriority = 400
+buildType1 = "evtank"
+buildCount1 = 5
+
+[Plan3]
+planType = "Attacker"
+planPriority = 395
+targetType = "ibfact"
+attackType1 = "evtank"
+attackType2 = "evscout"
+attackType3 = "evscout"
+maxAttacks = 4
+
+[Plan4]
+planCondition = "HisExists"
+planConditionClass = "ibgtow"
+planConditionCount = 1
+planType = "Attacker"
+planPriority = 390
+targetType = "ibpgen"
+attackType1 = "evtank"
+attackType2 = "evtank"
+attackType3 = "evtank"
+maxAttacks = 3

@@ -1,0 +1,31 @@
+[GameObjectClass]
+geometryName = "igflar00.xsi"
+geometryScale = 0.1
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 100
+unitName = "Kamikazi Mine"
+heatSignature = 100.0
+explosionName = "collapse" 
+
+[MineClass]
+lifeSpan = 0.01
+
+[FlareMineClass]
+payloadName = "kamiord"
+fireSound = "smine01.wav"
+triggerDelay = 0.0
+shotDelay = 2.0
+shotVariance = 0.0
+damageRadius = 0.0
+damageValue(N) = 1000 // none
+damageValue(L) = 1000 // light
+damageValue(H) = 1000 // heavy
+damageValue(S) = 1000 // standard
+damageValue(D) = 1000 // deflection
+damageValue(A) = 1000 // absorbtion
+kickRadius = 0.0
+kickVeloc = 0.0
+kickOmega = 0.0

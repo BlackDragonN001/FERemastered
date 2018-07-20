@@ -1,0 +1,26 @@
+[Start]
+consClass = "evcons"
+scavClass = "evscav"
+
+[Plan1]
+planType = "Attacker"
+planPriority = 30
+targetType = "ivturr"
+attackType1 = "evtanku"
+doNextOnFail = 1
+
+[Plan2]
+planType = "Attacker"
+planPriority = 20
+targetType = "ivhack"
+attackType1 = "evtanku"
+doNextOnFail = 1
+
+[Plan3]
+planType = "Attacker"
+planPriority = 10
+targetType = "ibgtow"
+attackType1 = "evtanku"
+attackType2 = "evtanku"
+doNextOnFail = 1
+

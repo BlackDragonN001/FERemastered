@@ -1,0 +1,116 @@
+[GameObjectClass]
+baseName = "cvhatank"
+geometryName = "cvhatank00.xsi"
+//geometryScale = 1.8 <- Not needed in BZCC (AI_Unit)
+classLabel = "assaulttank"
+scrapValue = 40
+scrapCost = 70
+customCost = 85
+buildTime = 15.0
+customTime = 20.0
+maxHealth = 8500
+maxAmmo = 13000
+addAmmo = 4
+unitName = "Dominator"
+aiName = "AssaultTankProcess"
+aiName2 = "AssaultTankProcess"
+heatSignature = 0.5
+imageSignature = 5.0
+radarSignature = 5.0
+isAssault = 1
+armorClass = H
+
+needPilot = 0
+	
+/////// Requirements ///////////////////
+
+requireCount = 1
+requireName1 = "cbfact02"
+requireText1 = "Build Crucible"
+
+/////// Provides ///////////////////
+
+provideCount = 4
+provideName1 = "cvhatank"
+provideName2 = "VIRTUAL_CLASS_ASSAULTTANK"
+provideName3 = "assault"
+provideName4 = "DefendUnit"
+
+/////// Weapons ///////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gcblast_a"
+weaponAssault1 = 1
+weaponHard2 = "HP_GUN_1"
+weaponName2 = "gcrapier_c"
+weaponAssault2 = 0
+weaponHard3 = "HP_GUN_3"
+weaponName3 = "gcrapier_c"
+weaponAssault3 = 0
+//weaponHard4 = "HP_GUN_2"
+//weaponName4 = "gcrapier_a"
+//weaponAssault4 = 1
+//weaponHard5 = "HP_GUN_4"
+//weaponName5 = "gcrapier_a"
+//weaponAssault5 = 1
+
+////////////////////////////////////
+
+turretCount = 2
+turretName1 = "turret_y_1"
+turretName2 = "turret_x_1"
+
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 4.0f
+velocJam = 0.0f
+engageRange = 175
+
+braccelFactor = 0.01
+velFactor = 0.4
+steerFactor = 1.2
+omegaFactor = 0.2
+strafeFactor = 0.1
+
+selectWaitMsg = "ivatank04.wav"
+selectAttackMsg = "ivatank01.wav"
+selectFollowMsg = "ivatank08.wav"
+selectGoMsg = "ivatank02.wav"
+selectOtherMsg = "ivatank04.wav"
+
+goMsg = "ivatank05.wav"
+attackMsg = "ivatank06.wav"
+followMeMsg = "ivatank08.wav"
+followMsg = "ivatank08.wav"
+repairMsg = "ivatank09.wav"
+reloadMsg = "ivatank09.wav"
+rescueMsg = "ivatank10.wav"
+recycleMsg = "ivatank11.wav"
+otherMsg = "ivatank04.wav" 
+holdMsg = "ivatank12.wav"
+
+user1Msg = ""  
+killedMsg = "ivatank07.wav"
+diedMsg = ""
+
+[TrackedVehicleClass]
+omegaSpin = 1.0		//4.0
+omegaTurn = 0.5
+velocForward = 15.0
+velocReverse = 5.0
+accelThrust = 10.0
+
+TREAD_STATIC_FRICTION = 1.5
+
+engineSound	= "iatank01.wav"
+treadSound = "iatank02.wav"
+
+[AssaultTankClass]
+yawRate = 1.25 // 4.0
+pitchMin = -0.7
+pitchMax = 1.2
+
+
+
+

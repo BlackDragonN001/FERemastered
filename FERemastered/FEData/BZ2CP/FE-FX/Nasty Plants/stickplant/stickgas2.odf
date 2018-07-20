@@ -1,0 +1,42 @@
+[OrdnanceClass]
+classLabel = "spraybomb"
+shotGeometry = NULL //"snaremort.xsi" // Empty XSI....-GBD
+shotSound = ""
+xplGround = "xgasmxpl"
+xplVehicle = "xgasmxpl"
+xplBuilding = "xgasmxpl"
+canCollide = 0 
+canDetect = 0 
+canInteract = 0 
+rendername = "stickgas2.render"
+explosionName = "" //"defflarxpl"
+
+ammoCost = 0
+lifeSpan = 1e30
+shotSpeed = 0.0
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+
+[SprayBombClass]
+payloadName = "stickgas3"
+
+[Render]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "230 20 2 200"
+finishColor = "210 5 1 0"
+startRadius = 1.5
+finishRadius = 3.0
+animateTime = 3.0
+rotationRate = 8.0
+emitDelay = 0.03
+emitVelocity = "1.0 1.0 1.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 5.0

@@ -1,0 +1,84 @@
+// ==============
+// ANTIBODY EXPIR
+// ==============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 4
+particleClass1 = "antixpl.core"
+particleClass2 = "antixpl.spark"
+particleClass3 = "antixpl.trail"
+particleCount1 = 1
+particleCount2 = 20
+particleCount3 = 20
+particleVeloc1 = "0.0 0.0 0.0"
+particleVeloc2 = "25.0 25.0 25.0"
+particleVeloc3 = "22.0 23.0 24.0"
+particleBias1 = "0.0 0.0 0.0"
+particleBias2 = "1.5 1.5 1.5"
+particleBias3 = "1.5 1.5 1.5"
+particleClass4 = "antixpl.puddle"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+
+
+explSound = "antisquish.wav"
+damageRadius = 5.0
+damageValue(N) = 50
+damageValue(L) = 50
+damageValue(H) = 50
+damageValue(S) = 40
+damageValue(D) = 40
+damageValue(A) = 40
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_twirl"
+textureName = "bulhit.tga"
+textureBlend = "one one modulate"
+startColor = "255 10 10 255"
+finishColor = "255 0 0 0"
+startRadius = 0.09
+finishRadius = .8
+animateTime = 0.3
+
+[Spark]
+simulateBase = "sim_ember"
+lifeTime = 5.5 //1.5
+renderBase = "draw_twirl"
+textureName = "spark.tga"
+textureBlend = "one one modulate"
+startColor = "255 10 0 255"
+finishColor = "255 0 0 0"
+startRadius = 0.6
+finishRadius = 0.4
+animateTime = 5.5
+rotationRate = 23.0
+
+[Trail]
+simulateBase = "sim_ember"
+lifeTime = 1.4
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+startColor = "200 5 5 255"
+finishColor = "255 0 0 0"
+startRadius = 0.09
+finishRadius = 0.06
+trailTime = 1.4
+segmentTime = 0.15
+
+[puddle]
+simulateBase = "sim_null"
+lifeTime = 8.0
+renderBase = "draw_planar"
+textureName = "antisplat2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 0 0 255"
+finishColor = "255 0 0 0"
+startRadius = 7.0
+finishRadius = 7.0
+animateTime = 8.0
+

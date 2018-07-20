@@ -1,0 +1,42 @@
+// BZ2CP Hadean Turret "Xyr Guard"
+// Mesh - Slaor, Pastell
+// Skin - Slaor
+// Game adaptation, animations - Pastell
+
+[GameObjectClass]
+baseName = "evturrs"
+classLabel = "evturr"
+scrapCost = 45
+customCost = 50
+scrapValue = 25
+buildTime = 12.0
+customTime = 12.0
+addAmmo = 5
+unitName = "Xyr Guard SR"
+
+/////// Requirements ///////////////////
+
+requireCount = 1
+requireName1 = "ebarmo"
+requireText1 = "Build Arsenal" // Weaponsvat Reference removed - HM
+
+/////// Weapons ///////////////////
+
+weaponMask = 00011
+weaponHard1 = "HP_GUN_1"
+weaponName1 = "gslicer_a"
+weaponAssault1 = 1
+weaponHard2 = "HP_GUN_2"
+weaponName2 = "gslicer_a"
+weaponAssault2 = 1
+
+//////////////////////////////////
+
+[CraftClass]
+
+[HoverCraftClass]
+
+[DeployableClass]
+
+[TurretTankClass]
+

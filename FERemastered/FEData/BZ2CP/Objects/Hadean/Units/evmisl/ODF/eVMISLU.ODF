@@ -1,0 +1,58 @@
+// (c) BZ2CP Unit "Zeus"
+// Mesh, skin - Slaor
+// Skin Map, odf, model adaptation, animations - Pastell
+
+[GameObjectClass]
+baseName = "evmislu"
+classLabel = "evmisl"
+scrapValue = 35
+scrapCost = 70
+maxHealth = 3500
+maxAmmo = 3500
+unitName = "Zeus SKS"
+canSnipe = 0
+armorClass = H
+
+/////// Requirements ///////////////////
+
+requireCount = 2
+requireName1 = "ebfact2"
+requireText1 = "Build Mega Xenomator"
+requireName2 = "ebarmo"
+requireText2 = "Build Arsenal"
+
+/////// Weapons ///////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_ROCKET_1"
+weaponName1 = "gsprink_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_ROCKET_2"
+weaponName2 = "gsprink_c"
+weaponAssault2 = 0
+weaponHard3 = "HP_ROCKET_3"
+weaponName3 = "gsprink_a"
+weaponAssault3 = 1
+weaponHard4 = "HP_SPECIAL_1"
+weaponName4 = "gsnare"
+weaponAssault4 = 0
+
+////////////////////////////////////
+
+[CraftClass]
+
+[HoverCraftClass]
+velocForward = 29.5 // []
+velocStrafe = 12.0 // []
+accelJump = 8.0 // []
+
+pitchPitch = 0.40 //nose up []
+
+rollStrafe = 0.10 //rolls while strafing []
+omegaSpin = 2.0 //spinning in place speed []
+omegaTurn = 1.0 //turning while moving speed []
+alphaSteer = 1.5 //how fast it responds to steering []
+
+[Lod1]
+
+[Lod2]

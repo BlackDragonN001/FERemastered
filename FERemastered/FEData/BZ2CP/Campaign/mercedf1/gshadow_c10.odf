@@ -1,0 +1,22 @@
+[WeaponClass]
+classLabel="imagelauncher"
+altName="gshadow_a"
+ordName="shadow_c"
+wpnName="ADV shadow"
+fireSound="gsand00.wav"
+wpnReticle="gshadow.0"
+wpnCategory="ROCK"
+isAssault=0
+aiRange=200
+
+[LauncherClass]
+lockRange=210.0  // was 170 GEC
+shotDelay=1.0
+lockDelay=1.5
+coneAngle=0.05
+lockingReticle="gshadow.A"
+lockingSound="lock01.wav"
+lockedReticle="gshadow.B"
+lockedSound="lock02.wav"
+targetCount=3
+targetReticle="gshadow.1"

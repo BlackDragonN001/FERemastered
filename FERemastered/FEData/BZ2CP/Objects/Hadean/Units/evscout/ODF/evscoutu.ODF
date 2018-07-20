@@ -1,0 +1,42 @@
+// (c) BZ2CP unit "Xypos"
+// Created by Slaor and Pastell
+
+[GameObjectClass]
+baseName = "evscoutu"
+classLabel = "evscout"
+scrapValue = 25
+scrapCost = 50
+customCost = 50
+maxHealth = 1800
+unitName = "Xypos SX"
+
+/////// Requirements ///////////////////
+
+requireCount = 1
+requireName1 = "ebarmo"
+requireText1 = "Build Arsenal" // weapons vat Reference removed - HM
+
+/////// weapons ///////////////////
+
+weaponMask = 00011
+
+weaponHard1 = "HP_GUN_1"
+weaponName1 = "gslicer_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_GUN_2"
+weaponName2 = "gslicer_c"
+weaponAssault2 = 0
+weaponHard3 = "HP_SPECIAL_1"
+weaponName3 = "gmflamemin"
+weaponAssault3 = 0
+
+////////////////////////////////////
+ 
+[CraftClass]
+periodScan = 3.0f
+
+[HoverCraftClass]
+
+[Lod1]
+
+[Lod2]

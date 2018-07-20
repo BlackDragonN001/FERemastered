@@ -1,0 +1,31 @@
+[GameObjectClass]
+geometryName = "fedeworm01.xsi"
+geometryScale = 2
+classLabel = "i76building"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 10000
+maxAmmo = 0
+unitName = ""
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+
+lightHard1 = "hp_light_1"
+lightName1 = "ibspot"
+
+[BuildingClass]
+
+[LightClass]
+classLabel = "spotlight"
+lightColor.r = 1.0
+lightColor.g = 1.0
+lightColor.b = 1.0
+lightColor.a = 10.0
+lightRange = 200.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+coneFalloff = 1.0
+coneAngInner = 0.5
+coneAngOuter = 1.0

@@ -1,0 +1,68 @@
+[OrdnanceClass]
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = "xrapiergnd_a"
+xplVehicle = "xrapiercar_a"
+xplBuilding = "xrapierbld_a"
+
+renderName = "crapier_a.render"
+
+ammoCost = 100
+lifeSpan = 200e-3 // 200m
+shotSpeed = 1e3
+
+damageValue(N) = 300 // none //150
+damageValue(L) = 250 // light //125
+damageValue(H) = 150 // heavy //75
+
+damageValue(S) = 250 // standard //125
+damageValue(D) = 300 // deflection //150
+damageValue(A) = 150 // absorbtion //75
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "crapier_a.core"
+renderName2 = "crapier_a.fringe"
+renderName3 = "crapier_a.sparkle"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = NULL
+textureBlend = "one one modulate"
+startColor = "149 156 255 255"
+finishColor = "0 17 255 0"
+startRadius = 0.3
+finishRadius = 0.15
+segmentLength = 6.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.2
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "batonfringe.tga"
+textureBlend = "one one modulate"
+startColor = "0 17 255 255"
+finishColor = "190 23 196 0"
+startRadius = 0.8
+finishRadius = 3.0
+segmentLength = 6.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.3
+textureRate = 0.02
+textureSpeed = -5.0
+
+[Sparkle]
+renderBase = "draw_twirl_trail"
+textureName = "flare.tga"
+textureblend = "one one modulate"
+startColor = "0 133 159 255"
+finishColor = "154 217 227 234"
+startRadius = 0.45
+finishRadius = 0.01
+animateTime = 1.0
+emitDelay = 0.007
+emitVariance = "2.0 2.0 2.0"
+emitLife = 2.3

@@ -1,0 +1,38 @@
+[GameObjectClass]
+geometryName = "ebtcen07.xsi"
+classLabel = "powered"
+scrapCost = 80
+scrapValue = 3
+maxHealth = 50000
+maxAmmo = 0
+unitName = "Damaged Xyr Tower"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 4.0
+isAssault = 1
+
+armorClass = H
+
+requireCount = 2
+requireName1 = "ebcbun"
+requireText1 = "Build Eyes of Xyr"
+requireName2 = "ebsbay"
+requireText2 = "Build Repair Vat"
+
+provideCount = 1
+provideName1 = "ebtcen"
+
+lightHard1 = "hp_light_1"
+lightName1 = "o_orange_nf"
+
+[BuildingClass]
+soundAmbient = "iabomb01.wav"
+[PoweredBuildingClass]
+detectRange = 100
+
+[Lod1]
+geometryName = "ebtcenl1.xsi" ;geometry for lod1
+distance = 100                   ;bsphere under 200 pixel => switch to lod1
+dontShiftLOD = 1
+

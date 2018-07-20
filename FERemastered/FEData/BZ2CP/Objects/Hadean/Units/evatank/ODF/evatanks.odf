@@ -1,0 +1,53 @@
+// (c) BZ2CP unit "Hedoux"
+// Created by Slaor and Pastell
+// Vehicle V/O's - Zeeder  
+// Voice effects, vehicle sounds - Chipotle
+
+[GameObjectClass]
+baseName = "evatanku"
+classLabel = "evatank"
+scrapValue = 40
+scrapCost = 85
+customCost = 85
+buildTime = 25.0
+customTime = 25.0
+maxHealth = 5500
+maxAmmo = 4000
+addAmmo = 8
+unitName = "Hedoux FBS"
+	
+/////// Requirements ///////////////
+
+requireCount = 2
+requireName1 = "ebtcen"
+requireText1 = "Build Xyr Tower"
+requireName2 = "ebsbay"
+requireText2 = "Build Repair Vat"
+
+/////// Weapons ///////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gfbgun_a"
+weaponAssault1 = 1
+weaponHard2 = "HP_GUN_1"
+weaponName2 = "gslicer"
+weaponAssault2 = 0
+weaponHard3 = "HP_GUN_2"
+weaponName3 = "gslicer"
+weaponAssault3 = 0
+
+////////////////////////////////////
+
+[CraftClass]
+
+[TrackedVehicleClass]
+velocForward = 18.0
+velocReverse = 10.0
+accelThrust = 8.0
+
+[AssaultTankClass]
+
+[Lod1]
+
+[Lod2]

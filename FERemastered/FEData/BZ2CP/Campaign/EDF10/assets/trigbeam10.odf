@@ -1,0 +1,59 @@
+[OrdnanceClass]
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = NULL //"defflarxpl"
+xplVehicle = NULL //"defflarxpl"
+xplBuilding = NULL //"defflarxpl"
+shotSound = "sserv02.wav" // "stap01.wav"
+renderName = "trigbeam10.render"
+
+ammoCost = 0
+lifeSpan = 500e-6 // 100m
+shotSpeed = 1e6
+
+damageValue(N) = 350 // none //350
+damageValue(L) = 600 // light //250
+damageValue(H) = 200 // heavy //150
+
+damageValue(S) = 50 // standard //250
+damageValue(D) = 85 // deflection //350
+damageValue(A) = 30 // absorbtion //80
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2 //3
+renderName1 = "trigbeam10.beam"
+renderName2 = "trigbeam10.fringe"
+renderName3 = "trigbeam10.sparkle" // Doesn't exist? -GBD
+
+[Beam]
+renderBase = "draw_bolt"
+textureName = NULL //"trail2.tga"
+textureBlend = "one one modulate"
+startColor = "200 255 200 255"
+finishColor = "0 200 0 200"
+startRadius = 0.55
+finishRadius = 0.25
+segmentLength = 5.0
+segmentVariance = "0.1 0.1 0.1"
+animateTime = 0.2
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = NULL //"trail2.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 255 245"
+finishColor = "50 180 50 0"
+startRadius = 1.5
+finishRadius = 4.5
+segmentLength = 5.0
+segmentVariance = "0.9 0.9 0.9"
+animateTime = 0.3
+textureRate = 0.01
+textureSpeed = 3.0
+
+
+
+

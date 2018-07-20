@@ -1,0 +1,27 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gfbgun_a"
+ordName = "fbgun_c"
+wpnName = "Fireball Gun"
+fireSound = "fbshot.wav"
+wpnReticle = "gplasma"
+wpnCategory = "CANN"
+isAssault = 0
+//flashName = "gfbgun_c.flash" // was "xgfbgun_c", never worked. -GBD
+aiRange = 195 // 185
+
+[CannonClass]
+shotDelay = 2.0 // 1.0 Rev.B
+shotAlternate = 0
+
+[Flash]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 205 80 127"
+finishColor = "255 100 0 0"
+startRadius = 1.0
+finishRadius = 0.5
+animateTime = 0.1
+latitudeBands = 8
+longitudeSegments = 16

@@ -1,0 +1,21 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = "xshellgnd"
+xplVehicle = "xshellcar"
+xplBuilding = "xshellcar"
+
+ammoCost = 3.0  // 4.5 // 5FE
+lifeSpan = .30 // 0.35FE // 105m
+shotSpeed = 300.0
+
+damageValue(N) = 18 // 15FE // none
+damageValue(L) = 16 // 15FE // light
+damageValue(H) = 15 // 20FE // heavy
+
+damageValue(S) = 13 // standard
+damageValue(D) = 9 // 5FE // deflection
+damageValue(A) = 25 // absorbtion
+
+
+//burst fires 10 shots once per second, pummel fires 10 per half second

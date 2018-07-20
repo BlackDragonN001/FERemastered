@@ -1,0 +1,39 @@
+[GameObjectClass]
+geometryName = "gravanchor.xsi"
+geometryScale = .8
+classLabel = "i76building" //"weaponmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 1E6 // amount mine holds for weapon
+unitName = "Smoker 1"
+isAssault = 0
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+isAssault = 1
+armorClass = N
+canCollide = 0
+canDetect = 0 
+canInteract = 0
+ownsTerrain = 0
+
+effectHard1 = "hp_weapon_1" //"hp_emit_1"
+effectName1 = "smoker1.render"
+
+[render]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.03
+emitVelocity = "1.0 3.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 10.0
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 64"
+finishColor = "0 0 0 0"
+startRadius = 2
+finishRadius = 5.0
+animateTime = 10.0
+rotationRate = 2.0

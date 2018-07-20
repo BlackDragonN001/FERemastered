@@ -1,0 +1,17 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = NULL //"gelemp_a"
+ordName = "elempdown_c"
+wpnName = "Paralyzer"
+fireSound = "rhin04b.wav" // "glock01.wav"
+wpnReticle = "glock"
+wpnCategory = "GUN"
+isAssault = 0
+aiRange = 150
+engageRange = 150
+
+[CannonClass]
+shotDelay =  5.5  //2.0
+shotVariance = 0.0
+salvoCount = 3
+salvoDelay = 0.3 

@@ -1,0 +1,99 @@
+[WeaponClass]
+classLabel = "mortar"
+ordName = "bhmort"
+wpnName = "Singularity"
+fireSound = "smort01.wav"
+wpnReticle = "gsplint"
+wpnLadder = "gsplint.L0"
+wpnPriority = 4
+wpnCategory = "MORT"
+aiRange = 175
+//flashName = "gbhmort.render" // Never worked... -GBD
+
+[CannonClass]
+shotDelay = 3.0
+
+[render]
+renderBase = "draw_multi"
+renderCount = 10
+renderName1 = "gbhmort.sphere"
+renderName2 = "gbhmort.bolt"
+renderName3 = "gbhmort.light"
+
+[sphere]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_emit"
+emitName = "gbhmort.sphereemit"
+emitDelay = 1.0
+emitVelocity = "0.0 0.1 0.0"
+emitVariance = "0.0 0.0 0.0"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 150 0"
+finishColor = "0 0 255 255"
+startRadius = 35.0
+finishRadius = 10.0
+animateTime = 2
+latitudeBands = 8
+longitudeSegments = 16
+
+[sphereemit]
+simulateBase = "sim_smoke"
+lifeTime = 2.2
+renderBase = "draw_sphere"
+textureName = "bhsphere.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha" // "one one modulate"
+startColor = "180 150 250 0"
+finishColor = "0 0 120 255"
+startRadius = 55.0
+finishRadius = 5.0
+animateTime = 2
+latitudeBands = 8
+longitudeSegments = 16
+
+[bolt]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_emit"
+emitName = "gbhmort.boltemit"
+emitDelay = 0.005
+emitVelocity = "0.0 150.0 0.0"
+emitVariance = "875.0 875.0 875.0"
+
+[boltemit]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_bolt"
+textureName = "bhbolt.tga"
+textureBlend = "one one modulate"
+startColor = "150 0 100 150"
+finishColor = "0 0 255 0"
+startRadius = 0.2
+finishRadius = 0.05
+segmentLength = 1.0
+segmentVariance = "1.5 1.5 0.0"
+animateTime = 2.0
+textureRate = 0.1 //.01
+
+[light]
+simulateBase = "sim_smoke"
+lifeTime = 2.4
+renderBase = "draw_emit"
+emitName = "gbhmort.lightemit"
+emitDelay = 0.01
+emitVelocity = "0.0 150.0 0.0"
+emitVariance = "875.0 875.0 875.0"
+
+[Lightemit]
+simulateBase = "sim_null"
+lifeTime = 2.4
+renderBase = "draw_light"
+startColor = "200 180 255 2550"
+finishColor = "0 0 255 0"
+startRadius = 150.0
+finishRadius = 150.0
+animateTime = 3.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

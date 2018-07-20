@@ -1,0 +1,16 @@
+[GameObjectClass]
+//geometryName = "apwrck00.x"
+//geometryName = "fishy.xsi"  //actually found a FISH model in the program!!
+geometryName = "dorelc01.xsi"   //this is the power crystal thingy: dorelc01/02 in DP&Core objects
+//geometryName = "sgwasp00.xsi"     //this is the waspmsl in Mines&Torpedoes
+classLabel = "daywrecker"
+scrapCost = 20
+scrapValue = 0
+maxHealth = 300
+maxAmmo = 0
+unitName = "Pulverizer"
+aiName = "PowerUpProcess"
+//there had been a "require count=1, and requireunit=armory" part here...
+[DayWreckerClass]
+xplBlast = "xdabomb7"   //"xbmbxpl"
+

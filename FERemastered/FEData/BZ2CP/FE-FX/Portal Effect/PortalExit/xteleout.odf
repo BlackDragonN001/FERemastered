@@ -1,0 +1,76 @@
+// =================
+// TELEPORT OUT EFFECT
+// =================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 9
+
+particleClass1 = "xteleout.light"
+particleCount1 = 1
+particleVeloc1 = "0.0 1.0 0.0"
+
+particleClass2 = "xteleout.streamer"
+particleCount2 = 25
+particleVeloc2 = "30.0 30.0 30.0"
+
+particleClass3 = "xteleout.shock"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+explSound = "teleport.wav"
+damageRadius = 0.0
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+kickRadius = 0.0
+kickOmega = 0.0
+kickVeloc = 0.0
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_light"
+startColor = "0 100 255 2500"
+finishColor = "0 100 255 0"
+startRadius = 60.0
+finishRadius = 60.0
+animateTime = 1.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+spriteCenter.x = 0.0
+spriteCenter.y = 1.5
+
+[streamer]
+simulateBase = "sim_ember"
+lifeTime = 1.0
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+startColor = "0 100 255 255"
+finishColor = "0 100 255 50"
+startRadius = 0.05
+finishRadius = 0.15
+trailTime = 1.2
+segmentTime = 0.5
+emitVariance = "10.0 10.0 10.0"
+
+[shock]
+simulateBase = "sim_null"
+lifeTime = 1.8
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "0 100 255 255"
+finishColor = "0 100 255 0"
+startRadius = 2.0
+finishRadius = 14.0
+animateTime = 1.8
+latitudeBands = 8
+longitudeSegments = 16
+spriteCenter.x = 0.0
+spriteCenter.y = 1.5

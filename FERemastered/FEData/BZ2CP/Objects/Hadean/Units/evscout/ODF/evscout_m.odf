@@ -1,0 +1,29 @@
+// (c) BZ2CP unit "Xypos"
+// Created by Slaor and Pastell
+
+[GameObjectClass]
+classLabel = "evscout"
+scrapValue = 10 // 20
+scrapCost = 20
+buildTime = 15.0
+unitName = "Xypos Empty"
+
+/////// Weapons ///////////////////
+
+weaponMask = 00011
+weaponHard1 = "HP_GUN_1"
+weaponName1 = "gcphcg_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_GUN_2"
+weaponName2 = "gcphcg_c"
+weaponAssault2 = 0
+
+////////////////////////////////////
+ 
+[CraftClass]
+
+[HoverCraftClass]
+
+[Lod1]
+
+[Lod2]

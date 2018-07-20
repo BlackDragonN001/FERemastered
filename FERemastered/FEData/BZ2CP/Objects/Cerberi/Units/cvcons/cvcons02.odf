@@ -1,0 +1,43 @@
+[GameObjectClass]
+geometryName = "Cvconst02_skel.xsi"
+//geometryScale = 0.70 <- Not needed for BZCC. (AI_Unit)
+classLabel = "cvcons"
+
+animCount = 12
+animName1 = "idle"
+animFile1 = "Cvconst02_idle.xsi"
+animName2 = "idle2"
+animFile2 = "Cvconst02_idle.xsi"
+animName3 = "idle3"
+animFile3 = "Cvconst02_idle.xsi"
+animName4 = "sitdown"
+animFile4 = "Cvconst02_idle.xsi"
+animName5 = "walk"
+animFile5 = "Cvconst02_walk.xsi"
+animName6 = "turn"
+animFile6 = "Cvconst02_turn.xsi"
+animName7 = "death"
+animFile7 = "Cvconst02_death01.xsi"
+animName8 = "death2"
+animFile8 = "Cvconst02_death01.xsi"
+animName9 = "death3"
+animFile9 = "Cvconst02_death01.xsi"
+animName10 = "cons"
+animFile10 = "Cvconst02_deploy.xsi"
+animName11 = "cons2"
+animFile11 = "Cvconst02_deploy.xsi"
+animName12 = "cons3"
+animFile12 = "Cvconst02_deploy.xsi"
+
+[CraftClass]
+
+[HoverCraftClass]
+
+[DeployableClass]
+
+[ConstructionRigClass]
+buildLabel = "Structures"
+buildItem2 = "cbfact02"
+buildItem7 = "cbtcen"
+buildItem8 = "cbjamm"
+buildItem9 = "cbagen"

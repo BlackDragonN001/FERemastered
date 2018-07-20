@@ -1,0 +1,30 @@
+[WeaponClass]
+classLabel = "cannon" // "machinegun"
+ordName = "aurora3b"
+wpnName = "Arc Blast"
+fireSound = "bltm01.wav"
+wpnReticle = "gbolt" // "octagon"
+wpnCategory = "CANN"
+//flashName = "estorm1a.flash" // header was commented out. -GBD
+aiRange = 150
+
+[CannonClass]
+//shotDelay = 0.1
+shotDelay = 0
+salvoCount = 50
+salvoDelay = 0.1
+shotVariance = 1.0
+
+[Flash]
+simulateBase = "sim_null"
+lifeTime = 5.0
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 12 0 255"
+finishColor = "220 0 44 0"
+startRadius = 0.9
+finishRadius = 65.0
+animateTime = 6.0
+latitudeBands = 8
+longitudeSegments = 16

@@ -1,0 +1,36 @@
+[Start]
+consClass = "evcons"
+scavClass = "evscav"
+
+[Cheat]
+moneyAmount = 5
+moneyDelay = 20
+
+[Plan1]
+planType = "BuildMinimums"
+planPriority = 50
+buildType1 = "apserv"
+buildCount1 = 1
+planCondition = "NotExists"
+planConditionClass = "apserv"
+planConditionCount = 3
+doNextOnFail = 1
+
+[Plan2]
+planType = "BuildMinimums"
+planPriority = 40
+buildType1 = "evscav"
+buildCount1 = 1
+doNextOnFail = 1
+
+[Plan3]
+planType = "BuildMinimums"
+planPriority = 30
+buildType1 = "evserv"
+buildCount1 = 12
+doNextOnFail = 1
+
+[Plan4]
+planType = "CollectPool"
+planPriority = 10
+

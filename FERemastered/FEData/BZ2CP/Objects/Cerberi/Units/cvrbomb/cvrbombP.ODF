@@ -1,0 +1,17 @@
+[GameObjectClass]
+classLabel = "cvrbomb"
+needPilot = 1
+
+/////// Requirements ///////////////////
+
+requireCount = 1
+requireName1 = "cbarmo"
+requireText1 = "Build Dispenser Node"
+
+[CraftClass]
+engageRange = 210
+
+[HoverCraftClass]
+
+
+ 

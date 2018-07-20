@@ -1,0 +1,39 @@
+[Start]
+scrapCount = 40
+consClass = "evcons"
+scavClass = "evscav"
+
+[Cheat]
+moneyAmount = 200
+moneyDelay = 20
+
+
+[Plan3]
+planType = "BuildMinimums"
+planPriority = 130
+buildType1 = "evcons"
+buildCount1 = 1
+buildtype2 = "evscav"
+buildcount2 = 1
+
+
+[Plan8]
+planType = "BaseBuildMinimums"
+planPriority = 80
+buildType1 = "ebpgen"
+
+[plan10]
+plancondition = "hisexists"
+planconditionclass = "ivrecy09"
+planconditioncount = 1
+planpriority = 70
+plantype = "attacker"
+targettype = "ivrecy09"
+attacktype1 = "evscout"
+buildifnoidle = 1
+maxtries = 1
+
+[plan11]
+plantype = "collectpool"
+planpriority = 81
+donextonfail = 1

@@ -1,0 +1,58 @@
+[GameObjectClass]
+geometryName = "fxcannon.xsi"
+geometryScale = 1.0
+classLabel = "turret"
+collisionRadius = 10.0
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 10000
+unitName = "FX Cannon"
+aiName = "GunTowerFriend" // need to enter viewer
+aiName2 = "GunTowerEnemy"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+isAssault = 0
+powerCost = 0
+ownsTerrain = 1
+armorClass = H
+requireCount = 0
+provideCount = 0
+
+weaponMask = 00001
+weaponHard1 = "HP_GUN_1"
+weaponName1 = "gwarplines" //"gfxgun1_c"
+weaponAssault1 = 0
+//weaponHard2 = "HP_GUN_2"
+//weaponName2 =  "igfthrow"
+//weaponAssault2 = 0
+//weaponHard3 = "HP_CANNON_1"
+//weaponName3 =  "gflamer"
+//weaponAssault3 = 0
+//weaponHard4 = "HP_ROCKET_1"
+//weaponName4 =  "gfafmsl_c"
+//weaponAssault4 = 0
+//weaponHard5 = "HP_SPECIAL_1"
+//weaponName5 =  "gphantom"
+//weaponAssault5 = 0
+
+turretCount = 3
+turretName1 = "turret_y_1"
+turretName2 = "turret_x_1"
+turretName3 = "hp_eyepoint"
+
+[CraftClass]
+rangeScan = 450.0
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 1.7
+steerFactor = 0.5
+engageRange = 200
+
+[TurretCraftClass]
+omegaTurret = 1.0
+detectRange = 200
+
+[BuildingClass]
+soundAmbient = "itank01e.wav"

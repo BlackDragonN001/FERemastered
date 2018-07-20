@@ -1,0 +1,159 @@
+[Start]
+scrapCount = 100
+consClass = "evcons"
+scavClass = "evscav"
+
+[Plan1]
+planType = "BuildMinimums"
+planPriority = 190
+buildType1 = "evcons"
+buildCount1 = 2
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan2]
+planType = "BaseBuildMinimums"
+planPriority = 180
+planCondition = "NotExists"
+planConditionClass = "ebcbun"
+planConditionCount = 1
+buildType1 = "ebcbun"
+buildLoc1 = "relay"
+doNextOnFail = 1
+
+[Plan3]
+planType = "BaseBuildMinimums"
+planPriority = 170
+buildType1 = "ebgt4g"
+buildLoc1 = "spire1"
+doNextOnFail = 1
+
+[Plan4]
+planType = "BaseBuildMinimums"
+planPriority = 160
+buildType1 = "ebpgen"
+buildLoc1 = "ebpgen1"
+buildType2 = "ebpgen"
+buildLoc2 = "ebpgen2"
+buildType3 = "ebpgen"
+buildLoc3 = "ebpgen3"
+buildType4 = "ebpgen"
+buildLoc4 = "ebpgen4"
+doNextOnFail = 1
+
+[Plan5]
+planType = "BaseBuildMinimums"
+planPriority = 150
+buildLoc1 = "ebfact2"
+buildType1 = "ebfact"
+doNextOnFail = 1
+
+[Plan6]
+planCondition = "NotExists"
+planConditionClass = "ebfact2"
+planConditionCount = 1
+planType = "Upgrade"
+planPriority = 140
+unitType = "ebfact"
+//targetType = "ebfact2"
+doNextOnFail = 1
+
+[Plan7]
+planType = "BaseBuildMinimums"
+planPriority = 130
+buildType1 = "ebgt4g"
+buildLoc1 = "spire2"
+doNextOnFail = 1
+
+[Plan8]
+planType = "BaseBuildMinimums"
+planPriority = 120
+planCondition = "NotExists"
+planConditionClass = "ebsbay"
+planConditionCount = 1
+buildType1 = "ebsbay"
+buildLoc1 = "ebsbay"
+doNextOnFail = 1
+
+[Plan9]
+planType = "BaseBuildMinimums"
+planPriority = 110
+buildType1 = "ebgt4g"
+buildLoc1 = "spire3"
+doNextOnFail = 1
+
+[Plan10]
+planType = "BaseBuildMinimums"
+planPriority = 100
+buildType1 = "ebpgen"
+buildType2 = "ebpgen"
+buildLoc1 = "power1"
+buildLoc2 = "power2"
+doNextOnFail = 1
+
+[Plan11]
+planType = "BaseBuildMinimums"
+planPriority = 90
+buildType1 = "ebgt4g"
+buildLoc1 = "spire4"
+doNextOnFail = 1
+
+[Plan12]
+planType = "Attacker"
+planPriority = 80
+targetType = "ivatank"
+attackType1 = "evatanku"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan13]
+planType = "Attacker"
+planPriority = 70
+targetType = "ibrecy"
+attackType1 = "evwalk"	//changed from "ivewalk" in 1.2
+attackType2 = "evtanku"
+attackType3 = "evtanku"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan14]
+planType = "Attacker"
+planPriority = 50
+targetType = "ibscup"
+attackType1 = "evmislu"
+attackType2 = "evmislu"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan15]
+planType = "Attacker"
+planPriority = 40
+targetType = "ibpgen"
+attackType1 = "evatanku"
+attackType2 = "evatanku"
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan16]
+planType = "BuildMinimums"
+planPriority = 30
+buildType1 = "evserv"
+buildCount1 = 3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan17]
+planType = "Service"
+planPriority = 20
+serviceUnit = "evserv"
+unitType1 = "ebrecy"
+unitType2 = "ebgt4g"
+unitType3 = "evcons"
+buildIfNoIdle = 1
+
+[Plan18]
+planType = "CollectField"
+planPriority = 10
+buildIfNoIdle = 1
+doNextOnFail = 1
+

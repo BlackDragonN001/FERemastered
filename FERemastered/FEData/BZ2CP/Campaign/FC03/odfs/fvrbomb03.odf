@@ -1,0 +1,121 @@
+//(c)BZ2CP unit "Brawler"
+// Created by Slaor and Pastell
+
+[GameObjectClass]
+baseName = "fvrbomb"
+geometryName = "fvrbomb00.xsi"
+
+animCount = 0
+
+classLabel = "wingman"
+scrapValue = 30
+scrapCost = 70
+customCost = 85
+buildTime = 15.0
+customTime = 20.0
+maxHealth = 4000
+maxAmmo = 3000
+addAmmo = 3
+unitName = "Brawler"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+
+heatSignature = 1.5
+imageSignature = 1.5
+radarSignature = 0.3
+
+canSnipe = 0
+
+isAssault = 1
+
+armorClass = H
+
+requireCount = 2
+requireName1 = "fbforg"
+requireText1 = "Upgrade Kiln"
+requireName2 = "fbover"
+requireText2 = "Upgrade Antenna"
+
+/////// weapons ///////////////////
+
+weaponMask = 00011
+weaponHard1 = "HP_ROCKET_1"
+weaponName1 = "gmlock_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_ROCKET_3"
+weaponName2 = "gmlock_c"
+weaponAssault2 = 0
+weaponHard3 = "HP_GUN_1"
+weaponName3 = "ggauss_c"
+weaponAssault3 = 0
+weaponHard4 = "HP_GUN_2"
+weaponName4 = "ggauss_c"
+weaponAssault4 = 0
+weaponHard5 = "HP_ROCKET_2"
+weaponName5 = "gfrbomb_a"
+weaponAssault5 = 1
+
+////////////////////////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2" 
+
+[CraftClass]
+rangeScan = 250.0f
+periodScan = 5.0f
+velocJam = 5.0f
+engageRange = 470
+
+braccelFactor = 0.03
+velFactor = 0.2
+steerFactor = 1.0
+omegaFactor = 0.2
+strafeFactor = 0.2
+
+avoidSpeed = 20;
+topSpeed = 30;
+
+selectAttackMsg = "svhrazvd.wav"
+selectWaitMsg = "svhrazvf.wav"
+selectFollowMsg = "svhrazvh.wav"
+selectGoMsg = "svhrazvg.wav"
+selectOtherMsg = "svhrazvj.wav"
+
+goMsg = "svhrazv0.wav"
+goObjectMsg = "svhrazvb.wav"
+attackMsg = "svhrazv2.wav"
+followMsg = "svhrazv7.wav"
+followMeMsg = "svhrazv3.wav"
+repairMsg = "svhrazv4.wav"
+reloadMsg = "svhrazv5.wav"
+rescueMsg = "svhrazv8.wav"
+recycleMsg = "svhrazv9.wav"
+otherMsg = "svhrazvi.wav"
+
+user1Msg = "svhrazv6.wav"
+killedMsg = "svhrazvk.wav"
+diedMsg = "sbetty3.wav"
+
+[HoverCraftClass]
+velocForward = 23.5 // []
+velocReverse = 15.0 // []
+velocStrafe = 15.0 // []
+accelThrust = 25.0 //acceleration []
+accelDragStop = 6.0 //how fast it stops once hands are off controls []
+accelJump = 15.0 // []
+
+setAltitude = 1.7 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself []
+alphaDamp = 8.0 //shocks []
+
+pitchPitch = 0.25 //nose up []
+pitchThrust = 0.1 //nose down []
+
+rollStrafe = 0.06 //rolls while strafing []
+omegaSpin = 1.5 //spinning in place speed []
+omegaTurn = 0.7 //turning while moving speed []
+alphaSteer = 2.0 //how fast it responds to steering []
+rollSteer = 0.06 //rolls while steering []
+
+soundThrust = "svhraze1.wav"
+soundTurbo = "svhraze3.wav"

@@ -1,0 +1,129 @@
+[GameObjectClass]
+baseName = "cvcons"
+classLabel = "constructionrig"
+geometryName = "Cvconst_skel.msh"
+glowTexture = "fvconsa0.pic"
+
+animCount = 12
+animName1 = "idle"
+animFile1 = "Cvconst_idle.msh"
+animName2 = "idle2"
+animFile2 = "Cvconst_idle.msh"
+animName3 = "idle3"
+animFile3 = "Cvconst_idle.msh"
+animName4 = "sitdown"
+animFile4 = "Cvconst_idle.msh"
+animName5 = "walk"
+animFile5 = "Cvconst_walk.msh"
+animName6 = "turn"
+animFile6 = "Cvconst_turn.msh"
+animName7 = "death"
+animFile7 = "Cvconst_death01.msh"
+animName8 = "death2"
+animFile8 = "Cvconst_death02.msh"
+animName9 = "death3"
+animFile9 = "Cvconst_death02.msh"
+animName10 = "cons"
+animFile10 = "Cvconst_DEPLOY.msh"
+animName11 = "cons2"
+animFile11 = "Cvconst_DEPLOY.msh"
+animName12 = "cons3"
+animFile12 = "Cvconst_DEPLOY.msh"
+
+//collisionRadius = 7.0
+//geometryScale = 2.0 <- Not needed for BZCC (AI_Unit)
+
+scrapValue = 20
+scrapCost = 40
+buildTime = 10.0
+maxHealth = 2000
+maxAmmo = 0
+collisionRadius = 5.0
+unitName = "Fabricator"
+aiName = "RigFriend"
+aiName2 = "RigEnemy"
+unitIcon = "icon_fvconst.tga"
+heatSignature = 1.0
+imageSignature = 2.0
+radarSignature = 2.0
+isAssault = 1
+armorClass = H
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "cvcons"
+provideName2 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+
+[CraftClass]
+rangeScan = 400.0f
+periodScan = 5.0f
+velocJam = 5.0f
+TeamTransferrable = false
+braccelFactor = 0.2
+velFactor = 0.4
+steerFactor = 1.4
+omegaFactor = 0.3
+strafeFactor = 0.1
+avoidSpeed = 5
+
+selectUser1Msg = "fvcons01.wav"
+selectUser2Msg = "fvcons11.wav"
+selectWaitMsg = "fvcons04.wav"
+selectGoMsg = "fvcons03.wav"
+selectFollowMsg = "fvcons03.wav"
+selectOtherMsg = "fvcons02.wav"
+recycleMsg = "fvcons09.wav"
+attackMsg = "fvcons04.wav"
+goMsg = "fvcons05.wav"
+goObjectMsg = "fvcons05.wav"
+user1Msg = "fvcons12.wav"
+user2Msg = "fvcons13.wav"
+followMsg = "fvcons02.wav"
+otherMsg = "fvcons05.wav"
+diedMsg = ""
+holdMsg = "fvcons10.wav"
+
+[HoverCraftClass]
+velocForward = 6.5
+velocReverse = 4.0
+velocStrafe = 0.0
+accelThrust = 20.0
+accelBrake = 70.0
+accelDragStop = 2.0
+accelJump = 0.0
+setAltitude = 0.0 // how high off the ground
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.0 //nose up
+pitchThrust = 0.0 //nose down
+rollStrafe = 0.0 //rolls while strafing
+omegaSpin = 3.0 //spinning in place speed
+omegaTurn = 2.0 //turning while moving speed
+alphaSteer = 2.0 //how fast it responds to steering
+rollSteer = 0.0 //rolls while steering
+accelDragFull = 0.0 //nothing
+
+soundThrust = "scons01.wav"
+soundSteer = "avcnste1.wav"
+
+[DeployableClass]
+timeDeploy = 2.0
+timeUndeploy = 2.0
+soundDeploy = "avartle0.wav"
+soundUndeploy = "avartle4.wav"
+
+[ConstructionRigClass]
+buildLabel = "Structures"
+buildItem1 = "cbpgen"
+buildItem2 = "cbfact"
+buildItem3 = "cbcbun"
+buildItem4 = "cbarmo"
+buildItem5 = "cbsbay"
+buildItem6 = "cbgtow"
+
+soundBuild = "ivrecye3.wav"
+soundFinish = "ivrecye5.wav"
+stepSound  = "conswalk.wav"

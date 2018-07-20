@@ -1,0 +1,15 @@
+[GameObjectClass]
+classLabel = "cvwalk"
+needPilot = 1
+
+/////// Requirements ///////////////////
+
+requireCount = 2
+requireName1 = "cbtcen"
+requireText1 = "Build Tech Center"
+requireName2 = "cbsbay"
+requireText2 = "Build Regenerator"
+
+[CraftClass]
+
+[WalkerClass]
