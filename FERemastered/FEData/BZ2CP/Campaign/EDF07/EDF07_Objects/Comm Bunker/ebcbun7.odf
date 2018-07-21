@@ -1,0 +1,12 @@
+[GameObjectClass]
+classLabel = "ebcbun"
+maxHealth = 1000000
+armorClass = H
+
+[BuildingClass]
+
+[CommTowerClass]
+rangeScan = 1000 
+periodScan = 3.0
+
+[PoweredBuildingClass]

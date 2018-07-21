@@ -1,0 +1,41 @@
+// (c) BZ2CP Unit: Siren
+// Created by Slaor and Pastell
+
+[GameObjectClass]
+classLabel = "cvrbomb"
+scrapCost = 55
+customCost = 55
+unitName = "Siren"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+
+canSnipe = 1
+needPilot = 1
+
+/////// weapons ///////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_ROCKET_1"
+weaponName1 = "gshadow_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_ROCKET_2"
+weaponName2 = "gshadow_c"
+weaponAssault2 = 0
+weaponHard3 = "HP_ROCKET_4"
+weaponName3 = "gshadow_a"
+weaponAssault3 = 1
+weaponHard4 = "HP_MORTAR_1"
+weaponName4 = "gmortar"
+weaponAssault4 = 0
+
+////////////////////////////////////
+
+[CraftClass]
+rangeScan = 400.0f
+
+[HoverCraftClass]
+soundThrust = "ssent01j.wav"
+soundTurbo = "smort03.wav"
+
+
+ 

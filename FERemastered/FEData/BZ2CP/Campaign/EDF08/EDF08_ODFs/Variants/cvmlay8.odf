@@ -1,0 +1,11 @@
+// (c) BZ2CP Unit "Harpie"
+// Model by Slaor and Pastell
+
+[GameObjectClass]
+baseName = "cvmlay"
+
+[CraftClass]
+engageRange = 1
+
+[HoverCraftClass]
+velocForward = 25.5 // []

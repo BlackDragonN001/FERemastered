@@ -1,0 +1,22 @@
+[GameObjectClass]
+classLabel = "ivmisl"
+
+/////// weapons ///////////////////
+
+weaponMask = 00011
+weaponHard1 = "HP_ROCKET_1"
+weaponName1 = "grktbomb_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_ROCKET_2"
+weaponName2 = "grktbomb_c"
+weaponAssault2 = 0
+weaponHard3 = "HP_SPECIAL_1"
+weaponName3 = "gproxmin"
+weaponAssault3 = 0
+
+//////////////////////////////////
+	
+[CraftClass]
+engageRange = 1
+
+[HoverCraftClass]

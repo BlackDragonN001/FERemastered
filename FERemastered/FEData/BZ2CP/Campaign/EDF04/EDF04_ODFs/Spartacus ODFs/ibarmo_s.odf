@@ -1,8 +1,5 @@
 [GameObjectClass]
-geometryName = "ebarmo07.xsi"
-classLabel = "ebarmo"
-maxHealth = 50000
-unitName = "Damaged Weapon Vat"
+classLabel = "ibarmo"
 
 [BuildingClass]
 
@@ -11,6 +8,7 @@ unitName = "Damaged Weapon Vat"
 [FactoryClass]
 
 [ArmoryGroup1]
+buildItem5 = "apbchain"
 
 [ArmoryGroup2]
 
@@ -23,5 +21,3 @@ unitName = "Damaged Weapon Vat"
 [ArmoryGroup6]
 
 [ArmoryGroup7]
-
-
