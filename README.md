@@ -1,5 +1,10 @@
 # FERemastered Change Log
 
+## BZCC Version Changes 0.2
+
+* Arranged EDF01 - EDF14 Folder Structures.
+* Added ODF Inheritance to each unique campaign vehicle.
+
 ## BZCC Version Changes 0.1
 
 * Added provides, and ODF inheritance to Hadean + Cerberi Units.
