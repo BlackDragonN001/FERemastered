@@ -1,15 +1,15 @@
 [GameObjectClass]
-baseName = "apdragb"
+baseName = "apcphlas"
 classLabel = "apcannon"
 scrapCost = 10
 
 lightName1 = "omnipurp-ap"
 
 requireCount = 1
-requireName1 = "ebfact2"
-requireText1 = "Upgrade Xenomator"
+requireName1 = "ebcbun"
+requireText1 = "Build Eyes of Xyr"
 
 [PowerUpClass]
 
 [WeaponPowerupClass]
-weaponName = "gdragb_c"
+weaponName = "gcphlas_c"

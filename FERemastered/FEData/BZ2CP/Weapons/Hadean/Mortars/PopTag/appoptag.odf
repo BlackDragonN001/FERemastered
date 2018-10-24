@@ -1,23 +1,15 @@
 [GameObjectClass]
-geometryName = "apmort00.xsi"
-classLabel = "wpnpower"
+baseName = "appoptag"
+classLabel = "apmortar"
 scrapCost = 40
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
 
 requireCount = 1
 requireName1 = "ebtcen"
 requireText1 = "Build Xyr Tower"
 
-lightHard1 = "hp_light_1"
-lightName1 = "omnibrown"
+lightName1 = "omnibrwn-ap"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "gpoptag"

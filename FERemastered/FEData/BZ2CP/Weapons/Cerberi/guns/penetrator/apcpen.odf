@@ -1,17 +1,9 @@
 [GameObjectClass]
-geometryName = "apgun00.xsi"
-classLabel = "wpnpower"
+baseName = "apcpen"
+classLabel = "apgun"
 scrapCost = 5
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
-
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "gcpen_c"

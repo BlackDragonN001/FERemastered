@@ -3,25 +3,17 @@
 // 2001 Community Project
 
 [GameObjectClass]
-geometryName = "apmort00.xsi"
-classLabel = "wpnpower"
+baseName = "aptagcr_c"
+classLabel = "apmortar"
 scrapCost = 10
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
 
-lightHard1 = "hp_light_1"
-lightName1 = "omnibrown"
+lightName1 = "omnibrwn-ap"
 
 requireCount = 1
 requireName1 = "ebarmo"
 requireText1 = "Build Weapon Vat"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "gtagcr_c"
