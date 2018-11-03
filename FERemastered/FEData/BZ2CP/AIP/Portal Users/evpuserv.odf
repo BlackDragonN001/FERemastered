@@ -1,0 +1,113 @@
+[GameObjectClass]
+baseName = "evserv"
+geometryName = "evserv_skel.xsi"
+//cockpitName = "ivserv_cockpit.xsi"
+classLabel = "service"
+
+animCount = 1
+animName1 = "deploy"
+animFile1 = "evserv_repair.xsi"
+
+scrapValue = 5
+scrapCost = 50
+buildTime = 10.0
+maxHealth = 2400
+maxAmmo = 1200
+unitName = "Repair Drone"
+aiName = "ServiceProcess"
+aiName2 = "ServiceProcess"
+heatSignature = 0.1
+imageSignature = 1.0
+radarSignature = 0.0
+isAssault = 0
+
+armorClass = L
+
+requireCount = 1
+requireName1 = "ebsbay"
+requireText1 = "Build Repair Vat"
+
+
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 5.0f
+velocJam = 5.0f
+
+braccelFactor = 0.09
+velFactor = 0.3
+steerFactor = 1.4
+omegaFactor = 0.2
+strafeFactor = 0.1
+
+TeamTransferrable = true
+
+selectAttackMsg = "ivserv04.wav"
+selectGoMsg = "ivserv02.wav"
+selectFollowMsg = "ivserv03.wav"
+selectOtherMsg = "ivserv04.wav"
+
+goMsg = "ivserv02.wav"
+goObjectMsg = "ivserv11.wav"
+attackMsg = "ivserv01.wav"
+followMeMsg = "ivserv08.wav"
+followMsg = "ivserv03.wav"
+repairMsg = "ivserv09.wav"
+reloadMsg = "ivserv09.wav"
+rescueMsg = "ivserv11.wav"
+recycleMsg = "ivserv11.wav"
+holdMsg = "ivserv12.wav"
+user1Msg = "ivserv01.wav"
+killedMsg = ""
+diedMsg = ""
+
+[TrackedVehicleClass]
+omegaSpin = 1.0		//2.0
+omegaTurn = 0.5
+velocForward = 20.0
+velocReverse = 15.0
+accelThrust = 20.0
+
+TREAD_STATIC_FRICTION = 1.5
+
+engineSound	= "iserv01.wav"
+treadSound = "iserv02.wav"
+
+[ServiceTruck]
+supplyRange = 20.0
+supplyRadius = 15.0
+supplyRate = 50.0
+supplySound = "mnu_empt.wav"
+supplyEffect = "evserv.supply"
+supplyHard = "hp_special_1"
+
+[Supply]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "evserv.halo"
+renderName2 = "evserv.bolt"
+
+[Halo]
+renderBase = "draw_twirl"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "255 50 0 127"
+finishColor = "255 0 0 0"
+startRadius = 5.0
+finishRadius = 1.0
+animateTime = 0.3
+
+[Bolt]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 0 63"
+finishColor = "255 20 0 0"
+startRadius = 1.0
+finishRadius = 0.3
+segmentLength = 2.0
+segmentVariance = "0.5 0.5 0.5"
+animateTime = 0.3
+textureRate = 0.05
+textureSpeed = -0.5
+
+

@@ -1,0 +1,173 @@
+[GameObjectClass]
+baseName = "fvarch"
+geometryName = "fvlancer_skel.xsi"
+cockpitName = "fvlancer_cockpit.xsi"
+geometryScale = 1.5
+classLabel = "morphtank"
+animCount = 7
+animName1 = "forward"
+animFile1 = "fvlancer_ASF.xsi"
+animName2 = "neutral"
+animFile2 = "fvlancer_ASN.xsi"
+animName3 = "reverse"
+animFile3 = "fvlancer_ASR.xsi"
+animName4 = "deploy"
+animFile4 = "fvlancer_MORPH.xsi"
+animName5 = "forward2"
+animFile5 = "fvlancer_MSF.xsi"
+animName6 = "neutral2"
+animFile6 = "fvlancer_MSN.xsi"
+animName7 = "reverse2"
+animFile7 = "fvlancer_MSR.xsi"
+scrapValue = 15
+scrapCost = 55
+customCost = 65
+buildTime = 15.0
+customTime = 15.0
+maxHealth = 2000
+maxAmmo = 3000
+addAmmo = 5.0
+addHealth = 0.0
+
+unitName = "Lancer"
+aiName = "AttachWingman"
+aiName2 = "AttachWingman"
+
+heatSignature = 2.0
+imageSignature = 0.75
+radarSignature = 0.5
+
+isAssault = 0
+
+armorClass = L
+
+requireCount = 2
+requireName1 = "fbkiln"
+requireText1 = "Build Kiln"
+requireName2 = "fbantm"
+requireText2 = "Build Antenna"
+
+/////// weapons ///////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_ROCKET_1"
+weaponName1 = "gsting_c"
+weaponAssault1 = 0
+
+weaponHard2 = "HP_SPECIAL_1"
+weaponName2 = ""
+weaponAssault2 = 0
+
+weaponHard3 = "HP_SHIELD_1"
+weaponName3 = ""
+weaponAssault3 = 0
+
+////////////////////////////////// 
+
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 5.0f
+velocJam = 5.0f
+engageRange = 200
+
+braccelFactor = 0.05f;
+strafeFactor = 0.1f;
+steerFactor = 1.0f;
+omegaFactor = 0.3f;
+velFactor = 0.2f;
+
+attackTask = "ArcherAttack"
+subAttackTask = "ArcherSubAttack"
+
+selectWaitMsg = "fvarch04.wav"
+selectAttackMsg = "fvarch01.wav"
+selectFollowMsg = "fvarch03.wav"
+selectGoMsg = "fvarch02.wav"
+selectOtherMsg = "fvarch04.wav"
+holdMsg = "fvarch12.wav"
+goMsg = "fvarch05.wav"
+attackMsg = "fvarch06.wav"
+followMeMsg = "fvarch08.wav"
+followMsg = "fvarch03.wav"
+repairMsg = "fvarch09.wav"
+reloadMsg = "fvarch09.wav"
+rescueMsg = "fvarch10.wav"
+recycleMsg = "fvarch11.wav"
+otherMsg = "fvarch05.wav"
+
+user1Msg = ""  
+killedMsg = "fvarch07.wav"
+diedMsg = ""
+
+// COMBAT MODE /////////////////////
+
+[HoverCraftClass]
+velocForward = 28.5 // []
+velocReverse = 15.0 // []
+velocStrafe = 20.0 // []
+accelThrust = 22.5 //acceleration []
+accelDragStop = 12.0 //how fast it stops once hands are off controls []
+accelJump = 15.0 // []
+
+setAltitude = 1.0 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself []
+alphaDamp = 8.0 //shocks []
+
+pitchPitch = 0.25 //nose up []
+pitchThrust = 0.1 //nose down []
+
+rollStrafe = 0.08 //rolls while strafing []
+omegaSpin = 3.5 //spinning in place speed []
+omegaTurn = 3.0 //turning while moving speed [1.5]
+alphaSteer = 3.5 //how fast it responds to steering []
+rollSteer = 0.08 //rolls while steering []
+
+soundThrust = "ssent01k.wav"
+
+
+
+// ASSAULT MODE /////////////////////
+
+[MorphTankClass]
+maxHealth = 2000
+maxAmmo = 3000
+addAmmo = 0.0
+addHealth = 9.0
+engageRange = 150
+isAssault = 0
+
+unitName = "Lancer"
+
+rangeScan = 250.0f
+periodScan = 5.0f
+velocJam = 5.0f
+
+velocForward = 28.0 // []
+velocReverse = 10.0 // []
+velocStrafe = 16.0 // []
+accelThrust = 25.0 //acceleration []
+accelDragStop = 8.0 //how fast it stops once hands are off controls []
+accelJump = 8.0 // []
+
+setAltitude = 1.0 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself []
+alphaDamp = 8.0 //shocks []
+
+pitchPitch = 0.25 //nose up []
+pitchThrust = 0.1 //nose down []
+
+rollStrafe = 0.08 //rolls while strafing []
+omegaSpin = 4.0 //spinning in place speed []
+omegaTurn = 0.5 //turning while moving speed []
+alphaSteer = 1.5 //how fast it responds to steering []
+rollSteer = 0.08 //rolls while steering []
+
+soundThrust = "ssent01k.wav"
+
+
+
+[DeployableClass]
+soundDeploy = "morph01.wav"
+soundUndeploy = "morph01b.wav"
