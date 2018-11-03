@@ -34,7 +34,7 @@ planCompare = ">="
 planConditionClassProvided = true
 CheckProvides = true
 buildIfNoIdle = 1
-doNextOnFail = 1
+ContinueEvenIfFail = 1
 
 [Plan2]
 planType = "CollectPool"
@@ -46,13 +46,13 @@ planCompare = ">="
 planConditionClassProvided = true
 CheckProvides = true
 buildIfNoIdle = 1
-doNextOnFail = 1
+ContinueEvenIfFail = 1
 
 [Plan3]
 planType = "CollectField"
 planPriority = 470
 buildIfNoIdle = 1
-doNextOnFail = 1
+ContinueEvenIfFail = 1
 
 [Plan4]
 planType = "Attacker"
@@ -61,19 +61,19 @@ targetType = "VIRTUAL_CLASS_SCOUT"
 attackType1 = "ivscout"
 attackType2 = "ivscout"
 buildIfNoIdle = 1
-doNextOnFail = 1
+ContinueEvenIfFail = 1
 
 [Plan5]
 planType = "CollectField"
 planPriority = 450
 buildIfNoIdle = 1
-doNextOnFail = 1
+ContinueEvenIfFail = 1
 
 [Plan6]
 planType = "BuildMinimums"
 planPriority = 440
 buildType1 = "ivcons"
 buildCount1 = 1
-doNextOnFail = 1
+ContinueEvenIfFail = 1
 
 
