@@ -1,0 +1,68 @@
+[GameObjectClass]
+geometryName = "fvfurytk00.xsi"
+geometryScale = 0.3
+classLabel = "sav"
+scrapValue = 50
+scrapCost = 100
+maxHealth = 5000
+addHealth = 5
+maxAmmo = 8000
+addAmmo = 30
+armorClass = H
+unitName = "Typhon"
+aiName = "SAVFriend"
+aiName2 = "SAVEnemy"
+heatSignature = 0.5
+imageSignature = 0.8
+radarSignature = 1.0
+
+isAssault = 1
+
+explosionName = "xbldxpl"
+
+//lightHard1 = "HP_LIGHT"
+//lightName1 = "spotblue"
+
+weaponHard1 = "HP_CANNON_1"
+weaponAssault1 = 0
+weaponName1 = "gtytech"
+weaponHard2 = "HP_CANNON_2"
+weaponAssault2 = 0
+weaponName2 = ""
+weaponHard3 = "HP_ROCKET_1"
+weaponAssault3 = 1
+weaponName3 = "gsavrkt"
+weaponHard4 = ""
+weaponAssault4 = 0
+weaponName4 = "gshield"
+weaponMask = 00111
+
+[CraftClass]
+rangeScan = 500.0
+periodScan = 2.0
+velocJam = 5.0
+
+[HoverCraftClass]
+setAltitude = 15.0
+accelDragStop = 5.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.25
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+
+velocForward = 80.0
+velocReverse = 20.0
+velocStrafe = 20.0
+accelThrust = 50.0
+omegaSpin = 2.0
+omegaTurn = 1.0
+alphaSteer = 5.0
+accelJump = 400.0
+soundThrust = "fvfurytk.wav"
+
+[SavClass]
+flightAltitude = 150.0
+soundDeploy = "avsave6.wav"
+soundUndeploy = "avsave5.wav"

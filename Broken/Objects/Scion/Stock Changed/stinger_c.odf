@@ -1,0 +1,79 @@
+[OrdnanceClass]
+classLabel = "thermalmissile"
+
+shotGeometry = "sgstng00.xsi"
+shotSound = "crckt02.wav"
+
+renderName = "stinger_c.render"
+
+xplGround = "xmslgnd"
+xplVehicle = "xstingcar_c"
+xplBuilding = "xstingcar_c"
+
+ammoCost = 9
+lifeSpan = 4.1 // 205m
+shotSpeed = 50.0
+
+damageValue(N) = 90 // none // 390
+damageValue(L) = 60 // light // 210
+damageValue(H) = 30 // heavy // 45
+
+damageValue(S) = 60 // standard // 210
+damageValue(D) = 30 // deflection // 180
+damageValue(A) = 90 // absorbtion // 255
+
+[MissileClass]
+omegaTurn = 2.0
+omegaWaver = 0.5
+rateWaver = 6.0
+
+[ThermalMissileClass]
+coneAngle = 0.4
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "stinger_c.flare"
+renderName2 = "stinger_c.halo"
+renderName3 = "stinger_c.flame"
+renderName4 = "stinger_c.trail"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.75
+finishRadius = 0.75
+
+[Halo]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 0 164"
+finishColor = "255 200 0 164"
+startRadius = 0.5
+finishRadius = 0.5
+
+[Flame]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.004
+startColor = "255 255 100 255"
+finishColor = "255 200 0 0"
+startRadius = 0.1
+finishRadius = 0.02
+segmentTime = 0.1
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.004
+startColor =  "255 255 100 28"// "100 0 0 100" 
+finishColor =  "100 100 60 0" // "100 100 100 0"
+startRadius = 0.1
+finishRadius = 0.3
+segmentTime = 1.0

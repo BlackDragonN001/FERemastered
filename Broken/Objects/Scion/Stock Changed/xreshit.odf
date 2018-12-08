@@ -1,0 +1,49 @@
+// ===================
+// RESIN VEHICLE HIT
+// ===================
+
+[ExplosionClass]
+classLabel = "explosion"
+explSound = "rmort02.wav"
+particleTypes = 1
+particleClass1 = "xreshit.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+//particleClass2 = "xreshit.puff"
+//particleCount2 = 1
+//particleVeloc2 = "10.0 10.0 10.0"
+//particleBias2 = "0.0 3.0 0.0"
+
+damageRadius = 8.0
+
+damageValue(N) = 10 // 5FE // none
+damageValue(L) = 10 // 5FE // light
+damageValue(H) = 10 // 5FE // heavy
+
+damageValue(S) = 10 // 5FE // standard
+damageValue(D) = 10 // 5FE // deflection
+damageValue(A) = 10 // 5FE // absorbtion
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_twirl"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "95 225 0 127"
+finishColor = "50 225 0 0"
+startRadius = 1.0
+finishRadius = 6.0 // 3.0
+animateTime = 0.5
+
+//[Puff]
+//simulateBase = "sim_ember"
+//lifeTime = 1.0
+//renderBase = "draw_twirl"
+//textureName = "plasma.tga"
+//textureBlend = "one one modulate"
+//startColor = "95 127 0 255"
+//finishColor = "95 127 0 0"
+//startRadius = 0.1
+//finishRadius = 0.1
+//animateTime = 1.0

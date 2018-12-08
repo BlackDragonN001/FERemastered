@@ -1,0 +1,104 @@
+[GameObjectClass]
+baseName = "fvserv"
+geometryName = "fvserv_skel.xsi"
+glowTexture = "fvserva0.pic"
+cockpitName = "fvserv_cockpit.xsi"
+classLabel = "service"
+
+scrapValue = 20  // 10R
+scrapCost = 50
+buildTime = 10.0
+maxHealth = 3000
+maxAmmo = 1200
+unitName = "Healer"
+aiName = "ServiceProcess"
+aiName2 = "ServiceProcess"
+heatSignature = 0.1
+imageSignature = 1.0
+radarSignature = 0.0
+isAssault = 0
+
+armorClass = L
+
+requireCount = 2
+requireName1 = "fbkiln"
+requireText1 = "Build Kiln"
+requireName2 = "fbdowe"
+requireText2 = "Build Dower"
+
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 5.0f
+velocJam = 5.0f
+
+TeamTransferrable = true
+
+selectAttackMsg = "fvserv04.wav"
+selectGoMsg = "fvserv02.wav"
+selectFollowMsg = "fvserv03.wav"
+selectOtherMsg = "fvserv04.wav"
+
+goMsg = "fvserv05.wav"
+goObjectMsg = "fvserv11.wav"
+attackMsg = ""
+followMeMsg = "fvserv08.wav"
+followMsg = "fvserv03.wav"
+repairMsg = "fvserv09.wav"
+reloadMsg = "fvserv09.wav"
+rescueMsg = "fvserv11.wav"
+recycleMsg = "fvserv11.wav"
+holdMsg = "fvserv12.wav"
+user1Msg = "fvserv01.wav"
+killedMsg = ""
+diedMsg = ""
+
+[TrackedVehicleClass]
+omegaSpin = 1.0		//2.0
+omegaTurn = 0.5
+velocForward = 25.0
+velocReverse = 15.0
+accelThrust = 20.0
+
+TREAD_STATIC_FRICTION = 1.5
+
+engineSound = "sserv01.wav"
+treadSound = "sserv01.wav"
+
+
+[ServiceTruck]
+supplyRange = 20.0
+supplyRadius = 15.0
+supplyRate = 45.0
+supplySound = "sserv02.wav"
+supplyEffect = "fvserv.supply"
+supplyHard = "hp_emit_1"
+
+[Supply]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "fvserv.halo"
+renderName2 = "fvserv.bolt"
+
+[Halo]
+renderBase = "draw_twirl"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "0 127 255 127"
+finishColor = "0 0 255 0"
+startRadius = 5.0
+finishRadius = 1.0
+animateTime = 0.3
+
+[Bolt]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "0 127 255 63"
+finishColor = "0 0 255 0"
+startRadius = 1.0
+finishRadius = 0.3
+segmentLength = 2.0
+segmentVariance = "0.5 0.5 0.5"
+animateTime = 0.3
+textureRate = 0.05
+textureSpeed = -0.5

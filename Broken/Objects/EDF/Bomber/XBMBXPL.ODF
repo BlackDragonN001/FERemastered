@@ -1,0 +1,83 @@
+// =====================
+// DAY WRECKER EXPLOSION
+// =====================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 4
+particleClass1 = "xbmbxpl.shock"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleClass2 = "xbmbxpl.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleClass3 = "xbmbxpl.flame"
+particleCount3 = 30
+particleVeloc3 = "30.0 10.0 30.0"
+particleClass4 = "xbmbxpl.smoke"
+particleCount4 = 30
+particleVeloc4 = "15.0 5.0 15.0"
+
+explSound = "xemt1.wav"
+
+damageRadius = 50.0
+
+damageValue(N) = 8000
+damageValue(L) = 8000
+damageValue(H) = 8000
+
+damageValue(S) = 8000
+damageValue(D) = 8000
+damageValue(A) = 8000
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 10.0
+finishRadius = 100.0
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_light"
+startColor = "255 255 63 2550"
+finishColor = "255 0 0 0"
+startRadius = 60.0
+finishRadius = 60.0
+animateTime = 1.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Flame]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 10.0
+finishRadius = 3.0
+animateTime = 3.0
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 5.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 31 31 63"
+finishColor = "63 63 63 0"
+startRadius = 10.0
+finishRadius = 30.0
+animateTime = 5.0

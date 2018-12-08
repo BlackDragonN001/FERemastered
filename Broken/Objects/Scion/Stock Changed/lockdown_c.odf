@@ -1,0 +1,58 @@
+[OrdnanceClass]
+classLabel = "anchor"
+
+shotGeometry = "NULL"
+shotSound = "sonic03c.wav"
+
+xplGround = "xglockgnd_c"
+xplVehicle = "xglockcar_c"
+xplBuilding = "xglockcar_c"
+
+renderName = "lockdown_c.render"
+
+ammoCost = 10
+lifeSpan = 1.0 // 100m
+shotSpeed = 100.0
+
+damageValue(N) = 10 // none
+damageValue(L) = 10 // light
+damageValue(H) = 10 // heavy
+
+damageValue(S) = 10 // standard
+damageValue(D) = 10 // deflection
+damageValue(A) = 10 // absorbtion
+
+[LeaderRoundClass]
+stickTime = 2.25 // 2.0 FE R
+
+[AnchorRocketClass]
+accelDrag = 8.0
+alphaDrag = 0.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 1
+//renderName1 = "lockdown_c.flare"
+renderName1 = "lockdown_c.trail"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "wasplat.tga"
+textureBlend = "one one modulate"
+startColor = "62 255 255 127" 
+finishColor = "255 255 255 0" 
+startRadius = 1.5
+finishRadius = 1.0
+
+[Trail]
+renderBase = "draw_twirl_trail"
+textureName = "wasplat.tga"
+textureBlend = "one one modulate"
+startColor = "62 255 255 127" 
+finishColor = "255 255 255 0" 
+startRadius = 1.0
+finishRadius = 0.001
+animateTime = 0.7
+emitDelay = 0.02
+emitLife = 0.7
+rotationrate = 20

@@ -1,0 +1,73 @@
+[GameObjectClass]
+mrmFactor = 0
+geometryName = "fvrecy_deploy.xsi"
+animCount = 1
+animName1 = "deploy"
+animFile1 = "fvrecy_deploy.xsi"
+collisionRadius = 10.0
+classLabel = "recycler"
+powerCost=0
+scrapCost=0
+scrapValue = 10
+scrapCost = 0
+maxHealth = 14000
+maxAmmo = 0
+addHealth = 0 // 30FE , 0R
+unitName = "Recycler"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+
+armorClass = H
+
+[BuildingClass]
+tunnelCount = 1
+
+tunnel01X0 = 3
+tunnel01Z0 = 1
+tunnel01DX = 2
+tunnel01DZ = 6
+tunnel01Edge = "twtw"
+soundAmbient = "sbrecy01.wav"
+
+[FactoryClass]
+soundBuild = "sbrecy02.wav"
+soundFinish = "iapc04.wav"
+buildItem1 = "fvscav"
+buildItem2 = "fvscout"
+buildItem3 = "fvturr"
+buildItem4 = "fvtug"
+buildItem5 = "fvcons"
+buildItem6 = "fvserv"
+buildItem7 = "apserv"
+buildItem8 = "fvscout_m"
+buildEmptyItem = 8
+
+selectWaitMsg = "fvrecy04.wav"
+selectUser1Msg = "fvrecy01.wav"
+selectGoMsg = "fvrecy02.wav"
+selectReadyMsg = "fvrecy04.wav"
+selectUser2Msg = "fvrecy04.wav"
+
+goMsg = "fvrecy05.wav"
+repairMsg = ""
+attackMsg = ""
+followMsg = "fvrecy03.wav"
+reloadMsg = "fvrecy11.wav"
+rescueMsg = "fvrecy12.wav"
+
+deployedMsg = "fvrecy10.wav"
+packedMsg = ""
+diedMsg = ""
+
+[RecyclerClass]
+scrapHold = 40
+recycleX = 3
+recycleZ = 2
+
+[PoweredBuildingClass]
+powerCost = 0
+detectRange = 100

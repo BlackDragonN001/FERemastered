@@ -1,0 +1,77 @@
+[GameObjectClass]
+geometryName = "igflar00.xsi"
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 1500
+maxAmmo = 0
+unitName = "Acid Cloud"
+effectHard1 = "Acid Cloud"
+effectName1 = "gasbomb2.render"
+
+//*** now does enough damage for 1 archer full of ammo to destroy turrets/trucks
+//in a defended position. Should go some way to eliminate the 'too long'
+//games of FE without introducing a super-base-killer - DF
+
+[MineClass]
+lifeSpan = 20.0
+
+[FlareMineClass]
+payloadName = NULL
+fireSound = "smine01.wav"
+
+triggerDelay = 5.0
+
+shotDelay = 1e30
+
+shotVariance = 0.0
+
+damageRadius = 70.0
+
+damageValue(N) = 90 // 130 // 30 R, 30 FE
+damageValue(L) = 90 // 100 // 30 R, 30 FE
+damageValue(H) = 30 // 30 R, 30 FE
+
+damageValue(S) = 30 // 30 R, 30 FE
+damageValue(D) = 90 // 30 R, 30 FE
+damageValue(A) = 90 // 30 R, 30 FE
+
+kickRadius = 0.0
+kickVeloc = 0.0
+kickOmega = 0.0
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "gasbomb2.core"
+renderName2 = "gasbomb2.cloudemit"
+
+[Core]
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "63 127 0 127"
+finishColor = "31 63 0 63"
+startRadius = 2.0
+finishRadius = 20.0
+animateTime = 5.0
+rotationRate = 2.0
+
+[CloudEmit]
+renderBase = "draw_emit"
+emitName = "gasbomb2.cloudpuff"
+emitDelay = 0.2
+emitVariance = "12.0 0.0 12.0"
+
+[CloudPuff]
+simulateBase = "sim_dust"
+lifeTime = 5.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "63 127 0 127"
+finishColor = "31 63 0 0"
+startRadius = 5.0
+finishRadius = 10.0
+animateTime = 5.0
+rotationRate = 3.0

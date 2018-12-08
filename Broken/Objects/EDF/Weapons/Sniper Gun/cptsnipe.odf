@@ -1,0 +1,55 @@
+[OrdnanceClass]
+classLabel = "beam" // "snipershell"
+shotGeometry = NULL
+
+xplGround = "xlasegnd"
+xplVehicle = "xlasecar"
+xplBuilding = "xlasebld"
+
+renderName = "cptsnipe.render"
+
+ammoCost = 1
+lifeSpan = 125e-5 // 125m
+shotSpeed = 1e5
+
+// 5 shots per sec.
+damageValue(N) = 35 
+damageValue(L) = 2  
+damageValue(H) = 1 
+
+damageValue(S) = 2  
+damageValue(D) = 3  
+damageValue(A) = 1 
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "cptsnipe.core"
+renderName2 = "cptsnipe.tail"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = NULL //"trail2.tga"
+textureBlend = "one one modulate"
+startColor = "200 200 255 255"
+finishColor = "0 100 255 255"
+startRadius = 0.05
+finishRadius = 0.0
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.15
+textureRate = 0.01
+
+[Tail]
+renderBase = "draw_bolt"
+textureName = NULL // "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 255 255"
+finishColor = "80 80 100 0"
+startRadius = 0.005
+finishRadius = 0.2
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.2
+textureRate = 0.01
+

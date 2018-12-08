@@ -1,0 +1,124 @@
+[GameObjectClass]
+baseName = "ivmisl"
+geometryName = "ivmisl00.xsi"
+cockpitName = "ivmisl_cockpit.xsi"
+classLabel = "wingman"
+animCount = 3
+animName1 = "forward"
+animFile1 = "ivmislsf.xsi"
+animName2 = "neutral"
+animFile2 = "ivmislsn.xsi"
+animName3 = "reverse"
+animFile3 = "ivmislsr.xsi"
+scrapValue = 10
+scrapCost = 45
+customCost = 45
+buildTime = 15.0
+customTime = 15.0
+maxHealth = 2300
+maxAmmo = 2500
+addAmmo = 1
+unitName = "Msl Scout"
+aiName = "RocketTankFriend"
+aiName2 = "RocketTankEnemy"
+
+heatSignature = 1.0
+imageSignature = 2.5
+radarSignature = 0.5
+
+isAssault = 0
+
+armorClass = L
+
+requireCount = 1
+requireName1 = "ibfact"
+requireText1 = "Build Factory"
+
+/////// weapons ///////////////////
+
+weaponMask = 00011
+weaponHard1 = "HP_ROCKET_1"
+weaponName1 = "gtaggun_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_ROCKET_2"
+weaponName2 = "gtaggun_c"
+weaponAssault2 = 0
+weaponHard3 = "HP_SPECIAL_1"
+weaponName3 = "gproxmin"
+weaponAssault3 = 0
+
+//////////////////////////////////
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+lightHard2 = "hp_light_2"
+lightName2 =  
+	
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 5.0f
+velocJam = 5.0f
+engageRange = 160
+
+braccelFactor = 0.05f;
+strafeFactor = 0.1f;
+steerFactor = 1.0f;
+omegaFactor = 0.4f;
+velFactor = 0.2f;
+
+avoidSpeed = 20;
+topSpeed = 30;
+
+selectWaitMsg = "ivmisl04.wav"
+selectAttackMsg = "ivmisl01.wav"
+selectFollowMsg = "ivmisl03.wav"
+selectGoMsg = "ivmisl02.wav"
+selectOtherMsg = "ivmisl04.wav"
+
+goMsg = "ivmisl05.wav"
+attackMsg = "ivmisl06.wav"
+followMeMsg = "ivmisl08.wav"
+followMsg = "ivmisl03.wav"
+repairMsg = "ivmisl09.wav"
+reloadMsg = "ivmisl09.wav"
+rescueMsg = "ivmisl10.wav"
+recycleMsg = "ivmisl11.wav"
+otherMsg = "ivmisl11.wav" 
+holdMsg = "ivmisl12.wav"
+user1Msg = ""  
+killedMsg = "ivmisl07.wav"
+diedMsg = ""
+
+[HoverCraftClass]
+velocForward = 36.5 // [35]
+velocReverse = 12.0 // [10]
+velocStrafe = 18.5 // [20.5]
+accelThrust = 19.0 // acceleration [20.]
+accelBrake = 75.0 // braking
+accelDragStop = 6.0 // how fast it stops once hands are off controls [5.9]
+accelJump = 15.0
+
+setAltitude = 1.0 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself [5.]
+alphaDamp = 8.0 //shocks [5.]
+
+pitchPitch = 0.25 // nose up [.1]
+pitchThrust = 0.1 // nose down [.14]
+
+rollStrafe = 0.09 // rolls while strafing [2.]
+omegaSpin = 3.0 // spinning in place speed [2.2]
+omegaTurn = 3.0 // turning while moving speed [3.0]
+alphaSteer = 5.5 // how fast it responds to steering [4.9]
+rollSteer = 0.12 // rolls while steering [2.0]
+
+soundThrust = "itank01h.wav"
+soundTurbo = "avrckte1.wav"
+
+[Lod1]
+geometryName = "ivmislL1.xsi" ;geometry for lod1
+distance = 50
+
+[Lod2]
+geometryName = "ivmislL2.xsi" ;geometry for lod2
+distance = 100                ;...distance over this many meters => switch to lod2

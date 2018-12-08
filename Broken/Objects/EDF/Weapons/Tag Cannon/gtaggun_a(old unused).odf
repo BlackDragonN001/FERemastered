@@ -1,0 +1,15 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gtaggun_c"
+ordName = "tmk1_a"
+wpnName = "Fireflys"
+fireSound = "gcome00.wav"
+wpnReticle = "gcomet.0"
+wpnCategory = "ROCK"
+aiRange = 220
+isAssault = 1
+
+[CannonClass]
+shotDelay = 0.2
+shotVariance = 0.1
+shotAlternate = 1

@@ -1,0 +1,51 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = "ioartl00.xsi"
+shotSound = "Ordin_c.wav"
+
+xplGround = "xpopgnd"
+xplVehicle = "xpopcar"
+xplBuilding = "xpopcar"
+
+renderName = "poproc.render"
+
+ammoCost = 30
+lifeSpan = 4.0 // 320m
+shotSpeed = 80.0
+
+damageValue(N) = 250 // none // 350 = 250
+damageValue(L) = 220 // light // 300 = 200
+damageValue(H) = 100 // heavy // 220 = 150
+
+damageValue(S) = 220 // standard // 300 = 200
+damageValue(D) = 180 // deflection // 305 = 203.3
+damageValue(A) = 250 // absortion // 275 = 183.3
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "poproc.flare"
+renderName2 = "poproc.trail"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "flare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 127"
+finishColor = "255 255 255 127"
+startRadius = 2.0
+finishRadius = 2.0
+
+[Trail]
+renderBase = "draw_twirl_trail"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 127"
+finishColor = "255 0 0 0"
+startRadius = 0.3
+finishRadius = 1.0
+animateTime = 0.5
+emitDelay = 0.005
+emitVariance = "3.0 3.0 3.0"
+emitLife = 0.5

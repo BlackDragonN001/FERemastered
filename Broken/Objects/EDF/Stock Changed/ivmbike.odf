@@ -1,0 +1,123 @@
+[GameObjectClass]
+baseName = "ivmbike"
+geometryName = "ivmbik00.xsi"
+cockpitName = "ivmbike_cockpit.xsi"
+classLabel = "wingman"
+animCount = 3
+animName1 = "forward"
+animFile1 = "ivmbiksf.xsi"
+animName2 = "neutral"
+animFile2 = "ivmbiksn.xsi"
+animName3 = "reverse"
+animFile3 = "ivmbiksr.xsi"
+scrapValue = 15
+scrapCost = 45
+customCost = 60
+buildTime = 15.0
+customTime = 15.0
+maxHealth = 1200
+maxAmmo = 1000
+addAmmo = 3
+unitName = "Mtr Bike"
+aiName = "AttachWingman"
+aiName2 = "AttachWingman"
+
+heatSignature = 3.0
+imageSignature = 1.0
+radarSignature = 0.1
+
+isAssault = 0
+
+armorClass = N
+
+requireCount = 2
+requireName1 = "ibfact"
+requireText1 = "Build Factory"
+requireName2 = "ibarmo"
+requireText2 = "Build Armory"
+
+/////// weapons ///////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_MORTAR_1"
+weaponName1 = "gmortar"
+weaponAssault1 = 0
+
+//////////////////////////////////
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+
+[CraftClass]
+rangeScan = 250.0f
+periodScan = 5.0f
+velocJam = 15.0f
+engageRange = 100
+
+braccelFactor = 0.05f;
+strafeFactor = 0.1f;
+steerFactor = 1.0f;
+omegaFactor = 0.2f;
+velFactor = 0.2f;
+
+avoidSpeed = 20;
+topSpeed = 30;
+
+attackTask = "MortarBikeAttack"
+subAttackTask = "MortarBikeSubAttack"
+
+selectWaitMsg = "ivmbike04.wav"
+selectAttackMsg = "ivmbike01.wav"
+selectFollowMsg = "ivmbike03.wav"
+selectGoMsg = "ivmbike02.wav"
+selectOtherMsg = "ivmbike04.wav"
+
+goMsg = "ivmbike05.wav"
+attackMsg = "ivmbike06.wav"
+followMeMsg = "ivmbike08.wav"
+followMsg = "ivmbike10.wav"
+repairMsg = "ivmbike09.wav"
+reloadMsg = "ivmbike09.wav"
+rescueMsg = "ivmbike10.wav"
+recycleMsg = "ivmbike11.wav"
+otherMsg = "ivmbike02.wav" 
+holdMsg = "ivmbike12.wav"
+
+user1Msg = ""  
+killedMsg = "ivmbike07.wav"
+diedMsg = ""
+
+[HoverCraftClass]
+velocForward = 35.0 
+velocReverse = 20.0
+velocStrafe = 20.0
+accelThrust = 20.0 //acceleration
+accelBrake = 75.0 //braking
+accelDragStop = 28.0 //how fast it stops once hands are off controls
+accelJump = 20.0
+
+setAltitude = 1.5 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself [5]
+alphaDamp = 8.3 //shocks [5]
+
+pitchPitch = 0.25 //nose up [.25]
+pitchThrust = 0.2 //nose down [.25]
+
+rollStrafe = 0.15 //rolls while strafing [.25]
+omegaSpin = 5.0 //spinning in place speed [4.]
+omegaTurn = 1.5 //turning while moving speed [2.0]
+alphaSteer = 4.8 //how fast it speeds up and slows down to steering [5.5]
+rollSteer = 0.16 //rolls while steering [.4]
+
+
+soundThrust = "ibike01.wav"
+
+
+[Lod1]
+geometryName = "ivmbikL1.xsi" ;geometry for lod1
+distance = 50                 ;...distance over this many meters => switch to lod2
+
+[Lod2]
+geometryName = "ivmbikL2.xsi" ;geometry for lod2
+distance = 100                 ;...distance over this many meters => switch to lod2

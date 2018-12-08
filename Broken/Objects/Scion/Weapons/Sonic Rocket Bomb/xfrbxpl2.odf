@@ -1,0 +1,32 @@
+// =============
+// Explosion for Scion rbomb
+// =============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 3
+particleClass1 = "xfrbxpl.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleClass2 = "xfrbxpl.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleClass3 = "xfrbxpl.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+explSound = "xmv1.wav"
+damageRadius = 50.0
+
+damageValue(N) = 100 // none
+damageValue(L) = 150 // light
+damageValue(H) = 220 // heavy
+
+damageValue(S) = 130 // standard
+damageValue(D) = 220 // deflection
+damageValue(A) = 100 // absorbtion
+
+kickRadius = 20.0
+kickOmega = 12.0
+kickVeloc = 2.0

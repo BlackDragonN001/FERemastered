@@ -1,0 +1,20 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+
+ammoCost = 1.75	// 2.5FE, 3R
+lifeSpan = 0.265 // 80m // 0.33R  99m
+shotSpeed = 300.0
+
+damageValue(N) = 14 // none	//15R   
+damageValue(L) = 12 // light	//13R
+damageValue(H) = 9 // heavy	//10R
+
+damageValue(S) = 13 // standard
+damageValue(D) = 10 // deflection
+damageValue(A) = 15 // absorbtion
+
+// the pummel gun delivers 10 shots every .5 secs

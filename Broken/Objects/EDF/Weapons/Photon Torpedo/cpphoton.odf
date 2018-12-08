@@ -1,0 +1,69 @@
+[OrdnanceClass]
+classLabel = "imagemissile"
+
+shotGeometry = NULL
+shotSound = "stap01.wav"
+xplGround = "xcpphotocar"
+xplVehicle = "xcpphotocar"
+xplBuilding = "xcpphotocar"
+
+renderName = "cpphoton.render"
+
+ammoCost = 40
+lifeSpan = 5.5 // 275 meters
+shotSpeed = 50.0
+
+damageValue(N) = 400 // none // 300 + 100
+damageValue(L) = 300 // light // 240 + 70
+damageValue(H) = 200 // heavy // 200 + 50
+
+damageValue(S) = 300 // standard // 240 + 50
+damageValue(D) = 400 // deflection // 300 + 100
+damageValue(A) = 200 // absorbtion // 200 + 50
+
+[MissileClass]
+omegaTurn = 1.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "cpphoton.core"
+renderName2 = "cpphoton.burst"
+renderName3 = "cpphoton.light"
+
+[core]
+renderBase = "draw_twirl_trail"
+textureName = "cpphotona.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 100 255" 
+finishColor = "100 100 100 255" 
+startRadius = 1.0
+finishRadius = 0.2
+animateTime = 0.1
+emitDelay = 0.05
+emitLife = 0.1
+rotationrate = 1
+
+[burst]
+renderBase = "draw_twirl_trail"
+textureName = "cpphotonb.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255" 
+finishColor = "0 0 0 255" 
+startRadius = 2.5
+finishRadius = 0.5
+animateTime = 0.1
+emitDelay = 0.2
+emitLife = 0.1
+rotationrate = 1
+
+[light]
+renderBase = "draw_light"
+startColor = "255 200 0 600"
+finishColor = "100 80 0 600"
+startRadius = 12.0
+finishRadius = 1.0
+animateTime = 1.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

@@ -1,0 +1,142 @@
+[GameObjectClass]
+baseName = "ivbomb"
+geometryName = "ivbomb01.xsi"
+classLabel = "bomber"
+scrapValue = 0
+scrapCost = 75
+buildTime = 10.0
+maxHealth = 2000
+maxAmmo = 5000
+weaponMask = 00000
+unitName = "Bomber"
+aiName = "BomberProcess"
+aiName2 = "BomberProcess"
+heatSignature = 10.0
+imageSignature = 0.5
+radarSignature = 0.0
+isAssault = 1
+
+armorClass = L
+
+requireCount = 2
+requireName1 = "ibfact"
+requireText1 = "Build Factory
+requireName2 = "ibbomb"
+requireText2 = "Build Bomb Bay"
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+lightHard2 = "hp_light_2"
+lightName2 = "spotblue2"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "ivbomb.trailer"
+effectHard2 = "hp_emit_2"
+effectName2 = "ivbomb.trailer"
+effectHard3 = "hp_emit_3"
+effectName3 = "ivbomb.flame"
+//effectHard4 = "hp_emit_4"
+//effectName4 = "ivbomb.light"
+
+[CraftClass]
+rangeScan = 400.0f
+periodScan = 5.0f
+velocJam = 5.0f
+
+braccelFactor = 0.05f;
+strafeFactor = 0.1f;
+steerFactor = 1.0f;
+omegaFactor = 0.2f;
+velFactor = 0.2f;
+
+selectWaitMsg = "bombgen07.wav"
+selectAttackMsg = "bombgen05.wav"
+selectFollowMsg = ""
+selectGoMsg = ""
+selectOtherMsg = "bombgen07.wav"
+
+goMsg = "bombgen06.wav"
+attackMsg = "bombgen01.wav"
+followMeMsg = "bombgen03.wav"
+followMsg = "bombgen03.wav"
+repairMsg = "bombgen03.wav"
+reloadMsg = "bombgen03.wav"
+rescueMsg = "bombgen03.wav"
+recycleMsg = "bombgen03.wav"
+otherMsg = ""
+
+user1Msg = ""
+killedMsg = "bombgen02.wav"
+
+
+[HoverCraftClass]
+setAltitude = 4.0
+accelDragStop = 0.0
+accelDragFull = 0.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.25
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+
+velocForward = 30.0
+velocReverse = 2.0
+velocStrafe = 15.0
+accelThrust = 20.0
+accelBrake = 2.0
+omegaSpin = 1.0
+omegaTurn = 1.0
+alphaSteer = 15.0
+accelJump = 300.0
+
+soundThrust = "ibomb.wav"
+soundTurbo = "avtanke3.wav"
+
+[trail]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ivbomb.trailer"
+renderName2 = "ivbomb.flame"
+
+[trailer]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.05
+startColor = "100 200 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.4
+finishRadius = 0.8
+segmentTime = 7.0
+animateTime = 0.3
+
+[flame]
+renderBase = "draw_trail"
+textureName = "tflame.tga"
+textureBlend = "one one modulate"
+textureRate = 0.05 //.05
+startColor = "255 255 255 255"
+finishColor = "255 255 255 0"
+startRadius = 3.0
+finishRadius = 3.0
+segmentTime = 0.3 //.05
+animateTime = 0.05 //.05
+
+[light]
+simulateBase = "sim_null"
+lifeTime = 1e30
+renderBase = "draw_light"
+startColor = "20 20 255 850"
+finishColor = "20 20 255 850"
+startRadius = 45.0
+finishRadius = 45.0
+animateTime = 1e30
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[BomberClass]
+flightAltitude = 75.0
+reloadTime = 10
+

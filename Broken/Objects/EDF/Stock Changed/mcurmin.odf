@@ -1,0 +1,35 @@
+[GameObjectClass]
+geometryName = "igmcur00.xsi"
+classLabel = "magnet"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 50
+unitName = "M-Curtain"
+effectHard1 = "M-Curtain"
+effectName1 = "mcurmin.field"
+
+[MineClass]
+lifeSpan = 30.0
+
+[MagnetMineClass]
+triggerDelay = 1.0
+fieldRadius = 20.0
+objPushCenter = 0.0
+objPushEdge = 20.0
+objDrag = 0.5
+ordPushCenter = 200.0
+ordPushEdge = 500.0
+ordDrag = 1.5
+
+[Field]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 0 0"
+finishColor = "0 255 0 15"
+startRadius = 1.0
+finishRadius = 20.0
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16

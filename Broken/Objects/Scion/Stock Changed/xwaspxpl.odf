@@ -1,0 +1,37 @@
+// ==============
+// MINE EXPLOSION
+// ==============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 1
+particleClass1 = "xwaspxpl.shock"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+//particleClass2 = "xminxpl.puff"
+//particleCount2 = 70
+//particleVeloc2 = "90.0 90.0 90.0"
+
+explSound = "xmv1.wav"
+damageRadius = 40.0
+damageValue(N) = 800
+damageValue(L) = 600
+damageValue(H) = 500
+damageValue(S) = 650
+damageValue(D) = 900
+damageValue(A) = 500
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.8
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 100 255"
+finishColor = "0 0 0 0"
+startRadius = 1.0
+finishRadius = 40.0
+animateTime = 0.8
+latitudeBands = 8
+longitudeSegments = 16
