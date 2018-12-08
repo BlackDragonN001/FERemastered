@@ -1,0 +1,29 @@
+[WeaponClass]
+classLabel="cannon"
+
+// Modified by *GFA*Morpheus
+// don't need any geometry
+// (igsnip_c already has it)
+
+ordName="snipe2"
+wpnName="Sniper"
+fireSound="snip01.wav"
+wpnReticle="grifle"
+wpnCategory="HAND"
+isAssault=1
+isFlying=0
+//altName="igsnip_c2" // doesn't exist. -GBD
+
+[CannonClass]
+shotDelay=3.0
+
+[Flash]
+renderBase="draw_geom"
+textureName="sflash.tga"
+textureBlend="one one modulate"
+startColor="255 255 255 255"
+finishColor="255 255 255 255"
+startRadius=3.0
+finishRadius=1
+animateTime=0.1
+geomName="g_sflash.xsi"

@@ -1,0 +1,24 @@
+[OrdnanceClass]
+classLabel = "snipershell"
+
+shotGeometry = NULL
+
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+
+ammoCost = 50
+lifeSpan = 300e-6 // 300m
+shotSpeed = 1e6
+
+damageValue(N) = 100
+damageValue(L) = 50
+damageValue(H) = 0
+
+damageValue(S) = 50
+damageValue(D) = 0
+damageValue(A) = 100
+
+[SniperShellClass]
+killRadius = 0.5
+killLength = 15.0
