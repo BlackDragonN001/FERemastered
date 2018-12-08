@@ -1,0 +1,26 @@
+[WeaponClass]
+classLabel="machinegun"
+altName="gcphcg_c"
+ordName="cphcg_a"
+wpnName="Particle Blaster"
+fireSound="hadchaina.wav"
+wpnReticle="gminigun"
+wpnCategory="GUN"
+isAssault=1
+flashName="gcphcg_a.flash"
+aiRange=120
+
+[CannonClass]
+shotDelay=0.1
+shotvariance =0.05
+
+[Flash]
+renderBase="draw_geom"
+textureName="sflash.tga"
+textureBlend="one one modulate"
+startColor="30 33 180 255"
+finishColor="25 27 155 150"
+startRadius=1.0
+finishRadius=2.0
+animateTime=0.1
+geomName="g_sflash.xsi"

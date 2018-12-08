@@ -1,0 +1,68 @@
+[OrdnanceClass]
+classLabel = "imagemissile"
+shotGeometry = "iorckt00.xsi"
+shotSound = "smort03.wav"
+
+xplGround = "xshdwgnd"
+xplVehicle = "xshdwcar"
+xplBuilding = "xshdwbld"
+renderName = "havoc_c.render"
+
+ammoCost = 25
+lifeSpan = 9.0 // 800m
+shotSpeed = 150.0
+
+damageValue(N) = 210 // none
+damageValue(L) = 190 // light
+damageValue(H) = 150 // heavy
+
+damageValue(S) = 190 // standard
+damageValue(D) = 150 // deflection
+damageValue(A) = 210 // absorbtion
+
+[MissileClass]
+omegaTurn = 1.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "havoc_c.flare"
+renderName2 = "havoc_c.smoke"
+renderName3 = "havoc_c.flame"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "200 200 255 255"
+finishColor = "255 200 255 255"
+startRadius = 2.0
+finishRadius = 3.0
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "153 153 200 128"
+finishColor = "200 153 200 0"
+startRadius = 0.3
+finishRadius = 2.5
+animateTime = 1.0
+emitDelay = 0.02
+emitVelocity = "0.1 0.1 0.1"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 1.3
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 60 255 255"
+finishColor = "255 0 100 0"
+startRadius = 0.5
+finishRadius = 0.01
+animateTime = 0.1
+emitDelay = 0.002
+emitVelocity = "0.1 0.1 0.1"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 0.2

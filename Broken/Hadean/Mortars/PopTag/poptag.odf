@@ -1,0 +1,40 @@
+[OrdnanceClass]
+classLabel = "radarpopper"
+
+shotGeometry = "ioartl00.xsi"
+shotSound = "Ordin_c.wav"
+
+xplGround = "xmslgnd"
+xplVehicle = "xmslcar"
+xplBuilding = "xmslbld"
+
+renderName = "poptag.render"
+
+ammoCost = 20
+lifeSpan = 1e30
+shotSpeed = 70.0
+
+damageValue(N) = 90 // none
+damageValue(L) = 80 // light
+damageValue(H) = 70 // heavy
+
+damageValue(S) = 80 // standard
+damageValue(D) = 70 // deflection
+damageValue(A) = 90 // absorbtion
+
+[RadarPopperClass]
+launchXpl = "xpoptagfir"
+launchOrd = "poptagrock"
+
+[Render]
+renderBase = "draw_twirl_trail"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "255 155 10 63"
+finishColor = "200 50 0 0"
+startRadius = 0.1
+finishRadius = 0.5
+animateTime = 0.2
+emitDelay = 0.005
+emitVariance = "3.0 3.0 3.0"
+emitLife = 0.2

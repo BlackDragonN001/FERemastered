@@ -1,0 +1,22 @@
+[WeaponClass]
+classLabel = "imagelauncher"
+altName = "chavoc_a"
+ordName = "havoc_c"
+wpnName = "Havoc Msl"
+fireSound = "gsand00.wav"
+wpnReticle = "gshadow.0"
+wpnCategory = "ROCK"
+isAssault = 0
+aiRange = 210
+
+[LauncherClass]
+lockRange = 210.0  // was 170 GEC
+shotDelay = 0.6
+lockDelay = 1.5
+coneAngle = 0.05
+lockingReticle = "gshadow.A"
+lockingSound = "lock01.wav"
+lockedReticle = "gshadow.B"
+lockedSound = "lock02.wav"
+targetCount = 3
+targetReticle = "gshadow.1"

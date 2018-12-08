@@ -1,0 +1,67 @@
+[OrdnanceClass]
+classLabel = "beam"
+shotGeometry = NULL
+xplGround = "xblastgnd"
+xplVehicle = "xblastcar"
+xplBuilding = "xblastbld"
+
+renderName = "cerblast.render"
+
+ammoCost = 300
+lifeSpan = 250e-3 // 250m
+shotSpeed = 1e3
+
+damageValue(N) = 600 // none // 300
+damageValue(L) = 500 // light // 250
+damageValue(H) = 300 // heavy // 150
+
+damageValue(S) = 500 // standard // 250
+damageValue(D) = 600 // deflection // 300
+damageValue(A) = 300 // absorbtion // 150
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "cerblast.beam"
+renderName2 = "cerblast.fringe"
+renderName3 = "cerblast.sparkle"
+
+[Beam]
+renderBase = "draw_bolt"
+textureName = NULL //"trail2.tga"
+textureBlend = "one one modulate"
+startColor = "200 255 200 255"
+finishColor = "0 255 0 255"
+startRadius = 0.15
+finishRadius = 0.05
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 1.0
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = NULL //"trail2.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 255 255"
+finishColor = "50 180 50 0"
+startRadius = 0.05
+finishRadius = 0.5
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 1.0
+textureRate = 0.01
+
+[Sparkle]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureblend = "one one modulate"
+startColor = "255 255 0 255"
+finishColor = "0 100 255 255"
+startRadius = 0.15
+finishRadius = 0.01
+animateTime = 1.0
+emitDelay = 0.002
+emitVariance = "2.0 2.0 2.0"
+emitLife = 1.3
+

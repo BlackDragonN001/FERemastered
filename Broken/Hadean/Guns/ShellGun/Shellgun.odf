@@ -1,0 +1,96 @@
+[OrdnanceClass]
+classLabel = "thermalmissile"
+shotGeometry = NULL
+
+xplGround = "xshellgnd"
+xplVehicle = "xshellcar"
+xplBuilding = "xshellcar"
+
+renderName = "shellgun.render"
+
+ammoCost = 1.5
+lifeSpan = 0.74 // 170.2    0.66=150  .80=184FE
+shotSpeed = 230.0
+
+damageValue(N) = 25 // none // 320
+damageValue(L) = 20 // light // 320
+damageValue(H) = 12 // heavy // 240
+
+damageValue(S) = 20 // standard // 300
+damageValue(D) = 15 // deflection // 160
+damageValue(A) = 25 // absorbtion // 320
+
+[MissileClass]
+omegaTurn = 0.0
+
+[ThermalMissileClass]
+coneAngle = 0.0
+
+[render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "shellgun.e1"
+renderName2 = "shellgun.e2"
+renderName3 = "shellgun.e4"
+renderName4 = "shellgun.e3" // was "xshellgun", never worked. -GBD
+
+[e1]
+simulateBase = "sim_null"
+lifeTime = 0.1 //.1
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+textureName = "trail.tga"
+startColor = "255 90 0 250"
+finishColor = "200 0 0 80"
+startRadius = 0.05 //.05
+finishRadius = 0.04 // .05
+segmentTime = 0.05 //.1
+animateTime = 0.1 //.1
+
+[e2]
+simulateBase = "sim_null"
+lifeTime = 0.6
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"//lightflare.tga
+textureBlend = "one one modulate"
+startColor = "255 130 0 255"
+finishColor = "255 130 0 255"
+startRadius = 0.1
+finishRadius = 0.1
+
+[e3]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_emit"
+emitName = "shellgun.trail2"
+emitDelay = 0.005
+emitVelocity = "1.0 1.0 1.0"//.4 0 0
+emitVariance = "0.0 0.0 0.0"// .5 .5 .5
+
+[trail2]
+simulateBase = "sim_null"//dust
+lifeTime = 1.5 //2.5
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.5
+startColor = "255 100 0 255"
+finishColor = "255 0 0 0"
+startRadius = 0.05
+finishRadius = 0.5
+segmentTime = 1.0
+animateTime = 1.5
+
+[e4]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.1
+startColor = "255 100 0 30"
+finishColor = "255 255 255 0"
+startRadius = 0.1
+finishRadius = 0.6
+segmentTime = 0.6//3.0
+animateTime = 0.01
+
+//** Range reduced to 150m, damage vs heavy armour slightly reduced (20%).

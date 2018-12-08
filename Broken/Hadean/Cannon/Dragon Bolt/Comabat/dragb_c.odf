@@ -1,0 +1,58 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+// shotSound = "baz03.wav"
+xplGround = "xdragbgnd_c"
+xplVehicle = "xdragbcar_c"
+xplBuilding = "xdragbcar_c"
+
+renderName = "dragb_c.render"
+
+ammoCost = 10
+//.3 second fire rate
+
+lifeSpan = 0.72 // 138m  132mC | 126mB | 135m FE
+shotSpeed = 200 // 150.0 FEA-B
+
+damageValue(N) = 165 // 150 c18 //// 145C10 |  130 FEB | 150FE
+damageValue(L) = 150 // 135 c18 //// 125 FEB | 135FE
+damageValue(H) = 50 // 50 c18 //// 70 FEB  | 110FE  +25 on H vehicles FEC
+
+damageValue(S) = 110 // 130 c18 // 120C10 | 100 FEB | 100FE
+damageValue(D) = 180 // 165 c18 // 160C10 | 130 FEB | 140FE
+damageValue(A) = 115 // 100 c18 // 70 FEB  | 100FE
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "dragb_c.light"
+renderName2 = "dragb_c.flame"
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 200 80 500"
+finishColor = "255 80 80 500"
+startRadius = 25.0
+finishRadius = 25.0
+animateTime = 0.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 230 80 255"
+finishColor = "255 80 0 0"
+startRadius = 0.8
+finishRadius = 0.4
+animateTime = 0.1
+rotationRate = 10.0
+emitDelay = 0.003 // 0.004
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitInherit = "0.5 0.5 0.5"
+emitLife = 0.1
+

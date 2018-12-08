@@ -1,0 +1,83 @@
+[GameObjectClass]
+geometryName = NULL //"defboltmin.x"
+classLabel = "weaponmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 300
+maxAmmo = 300
+unitName = "Spore Mine"
+canDetect = 1
+canInteract = 1
+canSnipe = 0
+explosionName = "xsporlaunch"
+weaponHard1 = "spore Mine"
+weaponName1 = "mcsporminb"
+
+effectHard1 = "Spore Mine"
+effectName1 = "mcspormina.render"
+[MineClass]
+lifeSpan = 280
+
+[WeaponMineClass]
+searchRadius = 250.0
+heightScale = 2.0
+
+[render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "mcspormina.eff1"
+renderName2 = "mcspormina.eff2"
+renderName3 = "mcspormina.eff3"
+renderName4 = "mcspormina.eff4"
+
+[Eff1]
+renderBase = "draw_static"
+textureName = "static.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255"
+finishColor = " 0 0 255 0"
+startRadius = 0.1
+finishRadius = 0.15
+emitDelay = 0.01 // 0.005
+emitDelayVar = 0.0
+innerRadius = 2.0
+outerRadius = 15.0
+segmentTime = 0.8
+
+[Eff2]
+renderBase = "draw_static"
+textureName = "static.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.1
+finishRadius = 0.02
+emitDelay = 0.07
+emitDelayVar = 0.0
+innerRadius = 2.0
+outerRadius = 18.0
+segmentTime = 0.4
+
+[Eff3]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha" //"one one modulate"
+startColor = "0 255 255 100"
+finishColor = "0 0 255 180"
+startRadius = 0.5
+finishRadius = 2.5
+animateTime = 0.2
+latitudeBands = 8
+longitudeSegments = 16
+
+[Eff4]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha" //"one one modulate"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.5
+finishRadius = 18.5
+animateTime = 0.2
+latitudeBands = 8
+longitudeSegments = 16

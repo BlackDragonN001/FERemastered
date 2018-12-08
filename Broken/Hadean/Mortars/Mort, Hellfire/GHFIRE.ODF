@@ -1,0 +1,14 @@
+[WeaponClass]
+classLabel = "mortar"
+ordName = "hfire"
+wpnName = "Hellfire"
+fireSound = "mort01.wav"
+wpnReticle = "ghartil"
+wpnLadder = "gmortar.L0"
+wpnPriority = 2
+wpnCategory = "MORT"
+aiRange = 325
+isAssault = 0
+
+[CannonClass]
+shotDelay = 4.0

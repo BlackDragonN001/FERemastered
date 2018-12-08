@@ -1,0 +1,70 @@
+[OrdnanceClass]
+classLabel = "beam"
+
+shotGeometry = NULL
+
+xplGround = "xfocusgnd"
+xplVehicle = "xfocuscar"
+xplBuilding = "xfocusbld"
+
+renderName = "cptsniph.render"
+
+ammoCost = 1
+lifeSpan = 125e-5 // 125m
+shotSpeed = 1e5 // 
+
+// 5 shots per sec.
+damageValue(N) = 35 
+damageValue(L) = 2  
+damageValue(H) = 1 
+
+damageValue(S) = 2  
+damageValue(D) = 3  
+damageValue(A) = 1
+
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "cptsniph.beam"
+renderName2 = "cptsniph.fringe"
+renderName3 = "cptsniph.flare"
+
+[Beam]
+renderBase = "draw_bolt"
+textureName = "flametrail.tga"
+textureBlend = "one one modulate"
+startColor = "255 250 0 255"
+finishColor = "255 220 0 160"
+startRadius = .10 // 0.25
+finishRadius = .07 // 0.15
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.4
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "flametrail.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 0 255"
+finishColor = "255 180 0 0"
+startRadius = .2 // 0.5
+finishRadius = .5 // 1.0
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.4
+textureRate = 0.01
+
+[Flare]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureblend = "one one modulate"
+startColor = "255 220 0 255"
+finishColor = "255 180 0 20"
+startRadius = .3 // 1.2
+finishRadius = .1 //0.7
+animateTime = 0.4
+emitDelay = 0.001
+emitVariance = "2.0 2.0 2.0"
+emitLife = 0.4

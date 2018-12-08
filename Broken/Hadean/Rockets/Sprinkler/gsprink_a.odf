@@ -1,0 +1,16 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gsprink_c"
+ordName = "sprink_a"
+wpnName = "Sprinkler Launcher"
+fireSound = "gmagg06.wav"
+wpnReticle = "gsalvo"
+wpnCategory = "ROCK"
+isAssault = 1
+aiRange = 125
+
+[CannonClass]
+shotDelay = 2.0
+salvoCount = 9
+salvoDelay = 0.1
+shotVariance = 0.08

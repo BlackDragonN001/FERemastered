@@ -1,0 +1,40 @@
+[GameObjectClass]
+geometryName = "cerbspore.xsi"
+geometryScale = 0.2
+classLabel = "torpedo"
+baseName = "grccmi" // "hvrckt"
+scrapValue = 0
+scrapCost = 0
+maxHealth = 400
+maxAmmo = 100
+unitName = "Spore"
+aiName = "TorpedoProcess"
+aiName2 = "TorpedoProcess"
+ 
+explosionName = "sporexpir"
+
+heatSignature = 20.0
+imageSignature = 2.5
+radarSignature = 2.5
+isAssault = 0
+
+[CraftClass]
+rangeScan = 120.0f
+periodScan = 0.0f
+velocJam = 0.0f
+canCollide = 1 
+canDetect = 1 
+canInteract = 1
+
+[TorpedoClass]
+setAltitude = 2.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+velocForward = 20.0
+accelThrust = 50.0
+omegaTurn = 2.0
+alphaSteer = 5.0
+lifeSpan = 20.0
+xplBlast = "sporexpl"
+
+soundThrust = ""

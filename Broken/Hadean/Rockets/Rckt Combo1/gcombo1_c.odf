@@ -1,0 +1,14 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gsprink_a"
+ordName = "cpworm_c"
+wpnName = "Worm/Sprink"
+fireSound = "satshot.wav"
+wpnReticle = "gfafmsl"
+wpnCategory = "ROCK"
+isAssault = 0
+aiRange = 120
+
+[CannonClass]
+shotDelay = .8
+shotAlternate = 1

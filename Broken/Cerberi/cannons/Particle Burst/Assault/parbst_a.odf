@@ -1,0 +1,78 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = "gspstab.xsi"
+shotSound = "misord2.wav"
+
+xplGround = "xparbstgnd_a"
+xplVehicle = "xparbstcar_a"
+xplBuilding = "xparbstcar_a"
+
+renderName = "parbst_a.render"
+
+ammoCost = 7
+lifeSpan = 0.40 // 80m
+shotSpeed = 200.0
+
+damageValue(N) = 40 // none // 300
+damageValue(L) = 35 // light // 260
+damageValue(H) = 30 // heavy // 200
+
+damageValue(S) = 35 // standard // 260
+damageValue(D) = 30 // deflection // 150
+damageValue(A) = 40 // absorbtion // 300
+
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "parbst_a.trail"
+renderName2 = "parbst_a.sparkle"
+renderName3 = "parbst_a.light"
+renderName4 = "parbst_c.smoke" // was "xxpartbst_c", never worked. -GBD
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "bulhit.tga"
+textureBlend = "one one modulate"
+startColor = "48 255 0 255"
+finishColor = "252 255 0 0"
+textureRate = 0.004
+startRadius = 0.19
+finishRadius = 0.005
+segmentTime = 0.3
+ 
+[Sparkle]
+renderBase = "draw_twirl_trail"
+textureName = "cplaser01.tga"
+textureBlend = "one one modulate"
+startColor = "48 255 0 255"
+finishColor = "252 255 0 0"
+startRadius = 0.2
+finishRadius = 0.02
+animateTime = 0.9
+emitDelay = 0.002
+emitVariance = "0.5 0.5 0.5"
+emitLife = 0.9
+
+[Light]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "48 255 0 255"
+finishColor = "252 255 0 0"
+startRadius = 1.5 
+finishRadius = 1.5 
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor =   "255 255 255 20" //"153 153 153 128"
+finishColor = "153 153 153 0"
+startRadius = 0.2
+finishRadius = 1.0
+animateTime = 2.0
+emitDelay = 0.07
+emitVelocity = "0.2 0.2 0.2"
+emitVariance = "0.6 0.6 0.6"
+emitLife = 3.0

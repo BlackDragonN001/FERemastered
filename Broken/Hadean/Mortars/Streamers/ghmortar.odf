@@ -1,0 +1,149 @@
+[WeaponClass]
+classLabel = "mortar"
+ordName = "hmortar"
+wpnName = "Steamers"
+fireSound = NULL //"mort01.wav"
+wpnReticle = "gmortar"
+wpnLadder = "gmortar.L0"
+//wpnPriority = 2
+wpnCategory = "MORT"
+flashName = "ghmortar.flash"
+isAssault = 0
+
+aiRange = 350.0
+
+[CannonClass]
+shotDelay = 5.0
+salvoCount = 5
+salvoDelay = 0.12
+shotVariance = 0.05
+shotAlternate = 0
+
+[flash]
+renderBase = "draw_multi"
+renderCount = 6
+renderName1 = "ghmortar.e1"
+renderName2 = "ghmortar.e2"
+renderName3 = "ghmortar.e5"
+renderName4 = "ghmortar.e6"
+renderName5 = "ghmortar.e7"
+renderName6 = "ghmortar.e8"
+//renderName3 = "ghmortar.e3"
+//renderName4 = "ghmortar.e4"
+
+[e1]
+renderBase = "draw_geom"
+textureName = "muz2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 120 0 100"
+startRadius = 1.2
+finishRadius = 0.7
+animateTime = 0.1
+geomName = "g_fflash.xsi"//sflash
+
+[e2]
+renderBase = "draw_geom"
+textureName = "muz2.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 100 255"
+finishColor = "255 150 0 255"
+startRadius = 1.3
+finishRadius = 0.5
+animateTime = 0.13
+geomName = "g_fflash.xsi"//sflash
+
+[e3]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "gshellgun_c.shell"
+emitDelay = 0.1
+emitVelocity = "2.0 3.0 0.0"//.4 0 0
+emitVariance = "1.0 1.0 0.0"// .5 .5 .5
+[shell]
+simulateBase = "sim_ember"
+lifeTime = 2.5
+renderBase = "draw_twirl"
+textureName = "shell.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.11
+finishRadius = 0.11
+animateTime = 2.5
+rotationRate = 0.1
+
+[e4]
+simulateBase = "sim_dust"
+lifeTime = 0.5
+renderBase = "draw_emit"
+emitName = "gshellgun_c.smoke"
+emitDelay = 0.5
+emitVelocity = "0.0 1.0 0.0"
+emitVariance = "0.1 1.0 0.1"
+[smoke]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "50 50 50 250"
+finishColor = "60 60 60 0"
+startRadius = 0.1
+finishRadius = 0.3 //
+animateTime = 2.0
+
+[e5]
+simulateBase = "sim_dust"
+lifeTime = 0.5
+renderBase = "draw_emit"
+emitName = "gshellgun_c.spark"
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "10.0 10.0 2.0"
+[spark]
+simulateBase = "sim_smoke"
+lifeTime = 0.4
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 50"
+startRadius = 0.05
+finishRadius = 0.005
+animateTime = 0.4
+
+[e6]
+renderBase = "draw_geom"
+textureName = "muzfir.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 150 0 100"
+startRadius = 1.6
+finishRadius = 1.1
+animateTime = 0.1
+geomName = "g_sflash.xsi"//sflash
+
+[e7]
+renderBase = "draw_geom"
+textureName = "muzfir.tga"
+textureBlend = "one one modulate"
+startColor = "255 155 155 255"
+finishColor = "255 0 0 100"
+startRadius = 1.4
+finishRadius = 0.8
+animateTime = 0.11
+geomName = "g_sflash.xsi"//sflash
+
+[e8]
+simulateBase = "sim_null"
+lifeTime = 0.9
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"//lightflare.tga
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 150 0 100"
+startRadius = 0.05
+finishRadius = 0.01
+animateTime = 0.9

@@ -1,0 +1,22 @@
+[GameObjectClass]
+baseName = "magpull"
+geometryName = "igmits00.xsi"
+classLabel = "magnet"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 1000
+maxAmmo = 50
+unitName = ""
+
+[MineClass]
+lifeSpan = 300.0
+
+[MagnetMineClass]
+triggerDelay = 2.0
+fieldRadius = 20.0
+objPushCenter = -30.0
+objPushEdge = -30.0
+objDrag = 2.0
+ordPushCenter = -50.0
+ordPushEdge = -50.0
+ordDrag = 50.0

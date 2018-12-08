@@ -1,0 +1,30 @@
+[WeaponClass]
+classLabel = "cannon" // "machinegun"
+altName = "gELC_c"
+ordName = "ELC_a"
+wpnName = "Energy Burst"
+fireSound = "flash01.wav"
+wpnReticle = "gflashgn"
+wpnCategory = "CANN"
+isAssault = 1
+aiRange = 130
+flashName = "gELC_c.flash"
+
+[CannonClass]
+shotDelay =  2.5 // 0.1
+salvoCount = 19
+salvoDelay = 0.1
+shotVariance = 0.05
+
+[Flash]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_light"
+startColor = "255 0 255 500"
+finishColor = "0 0 255 500"
+startRadius = 10.0
+finishRadius = 10.0
+animateTime = 0.2
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

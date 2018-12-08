@@ -1,0 +1,71 @@
+// ==============
+// PARTICLE SHREDDER CAR HIT
+// ==============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "wmgr1.wav"
+
+damageRadius = 0.0
+
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+
+particleTypes = 3 //4
+particleClass1 = "xparbstcar_a.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleClass2 = "xparbstcar_a.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleClass3 = "xparbstcar_a.spark"
+particleCount3 = 10
+particleVeloc3 = "25.0 25.0 25.0"
+particleBias3 = "0.0 1.0 0.0"
+particleClass4 = "parbstcar_a.shock" // was "xxpartbstcar_a", never worked. -GBD
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 255"
+finishColor = "135 155 0 0"
+startRadius = 0.0
+finishRadius = 1.5
+animateTime = 1.0
+
+[Spark]
+simulateBase = "sim_ember"
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "spark.tga"
+textureBlend = "one one modulate"
+startColor = "235 255 0 255"
+finishColor = "0 255 0 0"
+startRadius = 0.25
+finishRadius = 0.08
+animateTime = 1.5
+rotationRate = 20.0
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 0.7
+renderBase = "draw_light"
+startColor = "235 255 0 255"
+finishColor = "235 255 0 0"
+startRadius = 0.5
+finishRadius = 0.05
+animateTime = 0.7
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

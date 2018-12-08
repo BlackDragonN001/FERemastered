@@ -1,0 +1,19 @@
+[WeaponClass]
+classLabel = "targeting"
+ordName = "cpcruise"
+wpnName = "Zombie Rkt"
+fireSound = "tmiss03b.wav"
+wpnReticle = "gtaggun.0"
+wpnCategory = "ROCK"
+isAssault = 1
+aiRange = 240
+
+[TargetingGunClass]
+leaderName = "leadcr"
+leaderSound = "tcmort01.wav" // "tmiss01.wav"
+shotDelay = 2.0
+firstDelay = 1.0
+salvoDelay = 2.0
+salvoCount = 1.0
+lockingReticle = "gtaggun.1"
+lockedReticle = "gtaggun.2"

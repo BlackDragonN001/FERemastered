@@ -1,0 +1,22 @@
+[GameObjectClass]
+geometryName = "apmisl00.xsi"
+classLabel = "wpnpower"
+scrapCost = 20
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 0
+unitName = NULL
+aiName = "PowerUpProcess"
+
+requireCount = 1
+requireName1 = "cbarmo"
+
+lightHard1 = "hp_light_1"
+lightName1 = "omniorange"
+
+[PowerUpClass]
+soundPickup = "pickup01.wav"
+soundReject = "reject.wav"
+
+[WeaponPowerupClass]
+weaponName = "chavoc_c"

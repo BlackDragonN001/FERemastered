@@ -1,0 +1,27 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gcplasma_c"
+ordName = "cplasma_c"
+wpnName = "Cerberi Plasma"
+fireSound = "igtow03.wav"
+wpnReticle = "gplasma"
+wpnCategory = "CANN"
+isAssault = 0
+flashName = "gcplasma_a.flash"
+aiRange = 200
+
+[CannonClass]
+shotDelay = 0.5 // 2/sec
+shotAlternate = 0
+
+[Flash]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "200 255 255 127"
+finishColor = "0 0 255 0"
+startRadius = 1.0
+finishRadius = 0.5
+animateTime = 0.1
+latitudeBands = 8
+longitudeSegments = 16
