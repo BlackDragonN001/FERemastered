@@ -1,0 +1,196 @@
+// Original Hadean 3Way AIP from FE 1.2
+// Re-written by AI_Unit (JJ)
+
+[Start]
+scrapCount = 40
+consClass = "fvcons"
+scavClass = "fvscav"
+CheckProvides = true
+sendAllUnitsOnStartup = 0
+
+[IdleDispatcher]
+IdleAllCraft = true
+ScavIdleSeconds = 1
+UnitIdleSeconds = 80
+MinAttackForce = 3
+MaxAttackForce = 5
+
+[Cheat]
+moneyAmount = 20
+moneyDelay = 5
+
+[Plan1]
+planType = "CollectPool"
+planPriority = 200
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan2]
+planType = "CollectPool"
+planPriority = 195
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan3]
+planType = "BuildMinimums"
+planPriority = 190
+buildType1 = "fvcons"
+buildCount1 = 1
+buildType2 = "fvscav"
+buildCount2 = 1
+
+[Plan4]
+planType = "BaseBuildMinimums"
+planPriority = 185
+buildType1 = "fbkiln"
+//buildloc1 = "kiln"
+buildType2 = "fbdowe"
+//buildloc2 = "dower"
+
+[Plan5]
+planType = "BuildMinimums"
+planPriority = 135
+buildType1 = "fvartl"
+buildCount1 = 1
+
+[Plan6]
+planType = "Upgrade"
+planPriority = 175
+planCondition = "NotExists"
+planConditionClass = "fbforg"
+planConditionCount = 1
+UnitType = "fbkiln"
+
+[Plan7]
+planType = "BuildMinimums"
+planPriority = 170
+buildType1 = "fvtank"
+buildCount1 = 2
+
+[Plan8]
+planType = "BaseBuildMinimums"
+planPriority = 166
+buildType1 = "fbstro"
+//buildloc1 = "stronghold"
+buildType2 = "fbantm"
+//buildloc2 = "antenna"
+
+[Plan9]
+planType = "Attacker"
+planPriority = 164
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_FACTORY"
+planConditionCount = 1
+targetType = "VIRTUAL_CLASS_FACTORY"
+attackType1 = "fvwalk"
+attackType2 = "fvwalk"
+buildIfNoIdle = 1
+
+[Plan10]
+planType = "Upgrade"
+planPriority = 160
+planCondition = "NotExists"
+planConditionClass = "fbover"
+planConditionCount = 1
+UnitType = "fbantm"
+
+[Plan11]
+planType = "BuildMinimums"
+planPriority = 155
+buildType1 = "fvwalk"
+buildCount1 = 2
+buildType2 = "fvwalk3t"
+buildCount2 = 1
+buildType3 = "fvarch"
+buildCount3 = 1
+
+[Plan12]
+planType = "BaseBuildMinimums"
+planPriority = 165
+buildType1 = "fbspir"
+//buildloc1 = "spire1"
+buildType2 = "fbspir"
+//buildloc2 = "spire2"
+
+[Plan13]
+planType = "Attacker"
+planPriority = 160
+planCondition = "NotHisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+targetType = "ibpgen"
+attackType1 = "fvarch"
+attackType2 = "fvarch"
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan14]
+planType = "Attacker"
+planPriority = 155
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_ARMORY"
+planConditionCount = 1
+targetType = "VIRTUAL_CLASS_ARMORY"
+attackType1 = "fvarch"
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan15]
+planType = "Attacker"
+planPriority = 150
+planCondition = "NotHisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
+attackType1 = "fvrbomb"
+attackType2 = "fvrbomb"
+attackType3 = "fvrbomb"
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan16]
+planType = "Hold"
+planPriority = 134
+holdType1 = "fvartl"
+holdCount1 = 1
+holdPoint = "hold1"
+
+[Plan17]
+planType = "BaseBuildMinimums"
+planPriority = 189
+buildType1 = "fbspir"
+//buildLoc1 = "spire3"
+ContinueEvenIfFail = 1
+
+[Plan18]
+planType = "BuildMinimums"
+planPriority = 145
+planCondition = "NotHisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+buildType1 = "fvtank"
+buildCount1 = 2
+buildType2 = "fvtank"
+buildCount2 = 1
+
+[plan19]
+planType = "Attacker"
+planPriority = 144
+planCondition = "NotHisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+targettype = "VIRTUAL_CLASS_EXTRACTOR"
+attacktype1 = "fvtank"
+attacktype2 = "fvtank"
+attacktype3 = "fvtank"
+buildIfNoIdle = 1
+
+[Plan20]
+planType = "BuildMinimums"
+planPriority = 151
+planCondition = "NotHisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+buildType1 = "fvrbomb"
+buildCount1 = 3
+ContinueEvenIfFail = 1

@@ -1,0 +1,225 @@
+// Original Hadean 3Way AIP from FE 1.2
+// Re-written by AI_Unit (JJ)
+
+[Start]
+scrapCount = 40
+scavClass = "evscav"
+consClass = "evcons"
+CheckProvides = true
+sendAllUnitsOnStartup = 0
+
+[IdleDispatcher]
+IdleAllCraft = true
+ScavIdleSeconds = 1
+UnitIdleSeconds = 80
+MinAttackForce = 3
+MaxAttackForce = 5
+
+[Cheat]
+moneyAmount = 20
+moneyDelay = 5
+
+[Plan1]
+planType = "CollectPool"
+planPriority = 200
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan2]
+planType = "BuildMinimums"
+planPriority = 195
+buildType1 = "evcons"
+buildCount1 = 1
+buildType2 = "evscav"
+buildCount2 = 1
+
+[Plan3]
+planType = "BaseBuildMinimums"
+planPriority = 190
+buildType1 = "ebpgen"
+buildCount1 = 3
+//buildloc1 = "hpower1"
+buildType2 = "ebfact"
+//buildloc2 = "hfactory"
+buildType3 = "ebgt2g"
+//buildloc3 = "spike1"
+
+[Plan4]
+planType = "Attacker"
+planPriority = 185
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_GUNTOWER"
+planConditionCount = 1
+targetType = "VIRTUAL_CLASS_GUNTOWER"
+attackType1 = "evmort"
+attackType2 = "evmort"
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan5]
+planType = "BaseBuildMinimums"
+planPriority = 180
+buildType1 = "ebpgen"
+//buildloc1 = "hpower2"
+buildType2 = "ebcbun"
+//buildloc2 = "hbunker"
+
+[Plan6]
+planType = "Attacker"
+planPriority = 175
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_ASSAULTTANK"
+planConditionCount = 1
+targetType = "ivatank"
+attackType1 = "evmort"
+attackType2 = "evmort"
+buildIfNoIdle = 1
+maxTries = 1
+
+[Plan7]
+planType = "BaseBuildMinimums"
+planPriority = 170
+buildType1 = "ebarmo"
+//buildloc1 = "harmory"
+buildType2 = "ebsbay"
+//buildloc2 = "hservicebay"
+buildType3 = "ebpgen"
+//buildloc3 = "hpower3"
+
+[Plan8]
+planType = "CollectPool"
+planPriority = 205
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan9]
+planType = "Attacker"
+planPriority = 165
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_WALKER"
+planConditionCount = 1
+targettype = "VIRTUAL_CLASS_WALKER"
+attacktype1 = "evmisl"
+attacktype2 = "evtank"
+buildIfNoIdle = 1
+maxTries = 1
+
+[Plan10]
+planType = "Upgrade"
+planPriority = 160
+planCondition = "NotExists"
+planConditionClass = "ebfact2"
+planConditionCount = 1
+UnitType = "ebfact"
+
+[Plan11]
+planType = "Attacker"
+planPriority = 155
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
+attackType1 = "evtanku"
+attackType2 = "evtanku"
+attackType3 = "evtanku"
+buildIfNoIdle = 1
+maxTries = 1
+
+[Plan12]
+planType = "Hold"
+planPriority = 155
+holdType1 = "evturr"
+holdCount1 = 1
+holdPoint = "hold3"
+buildIfNoIdle = 1
+maxtries = 1
+
+[Plan13]
+planType = "BaseBuildMinimums"
+planPriority = 150
+buildType1 = "ebgt4g"
+//buildloc1 = "hgtow1"
+buildType2 = "ebtrain"
+//buildloc2 = "htraining"
+
+[Plan14]
+planType = "BuildMinimums"
+planPriority = 145
+buildType1 = "evturr"
+buildCount1 = 2
+
+[Plan15]
+planType = "Attacker"
+planPriority = 140
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_ARTILLERY"
+planConditionCount = 1
+targetType = "VIRTUAL_CLASS_ARTILLERY"
+attackType1 = "evtank"
+buildIfNoIdle = 1
+maxTries = 1
+
+[Plan16]
+planType = "Attacker"
+planPriority = 135
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_GUNTOWER"
+planConditionCount = 2
+targetType = "VIRTUAL_CLASS_GUNTOWER"
+attackType1 = "evartl2"
+buildIfNoIdle = 1
+maxTries = 1
+
+[Plan17]
+planType = "CollectPool"
+planPriority = 204
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan18]
+planType = "CollectPool"
+planPriority = 146
+ContinueEvenIfFail = 1
+
+[Plan19]
+planType = "Attacker"
+planPriority = 130
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_FACTORY"
+planConditionCount = 1
+targetType = "VIRTUAL_CLASS_FACTORY"
+attackType1 = "evatank"
+attackType2 = "evatank"
+buildIfNoIdle = 1
+maxTries = 1
+
+[Plan20]
+planType = "attacker"
+planPriority = 134
+planCondition = "NotHisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+targetType = "VIRTUAL_CLASS_POWERPLANT"
+attackType1 = "evkami"
+attackType2 = "evkami"
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[plan21]
+planType = "Hold"
+planPriority = 133
+holdType1 = "evturr"
+holdCount1 = 1
+holdPoint = "hold4"
+
+[Plan22]
+planType = "Attacker"
+planPriority = 125
+planCondition = "NotHisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+targetType = "VIRTUAL_CLASS_EXTRACTOR"
+attackType1 = "evmislu"
+attackType2 = "evmislu"
+buildIfNoIdle = 1
+maxTries = 1
