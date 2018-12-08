@@ -1,0 +1,115 @@
+[GameObjectClass]
+baseName = "fvnspeed"
+geometryName = "fvnadir00.xsi"
+animCount = 3
+animName1 = "forward"
+animFile1 = "fvnadirsf.xsi"
+animName2 = "neutral"
+animFile2 = "fvnadirsn.xsi"
+animName3 = "reverse"
+animFile3 = "fvnadirsr.xsi"
+
+classLabel = "wingman"
+scrapValue = 30
+scrapCost = 65
+customCost = 70
+buildTime = 15.0
+customTime = 15.0
+maxHealth = 1200
+maxAmmo = 2000
+addAmmo = 5
+unitName = "Nadir Speed"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+
+heatSignature = 1.5
+imageSignature = 1.5
+radarSignature = 0.3
+
+canSnipe = 1
+
+isAssault = 0
+
+armorClass = N
+
+
+/////// weapons ///////////////////
+
+weaponMask = 00111
+//weaponHard1 = "HP_GUN_1"
+//weaponName1 = "giongn_a"
+//weaponAssault1 = 0
+//weaponHard2 = "HP_GUN_2"
+//weaponName2 = "giongn_a"
+//weaponAssault2 = 0
+weaponHard3 = "HP_ROCKET_1"
+weaponName3 = "gcpfol"
+weaponAssault3 = 0
+weaponHard4 = "HP_ROCKET_2"
+weaponName4 = "gcpfol"
+weaponAssault4 = 0
+
+////////////////////////////////////
+
+[CraftClass]
+rangeScan = 450.0f
+periodScan = 5.0f
+velocJam = 5.0f
+engageRange = 400
+
+braccelFactor = 0.03
+velFactor = 0.2
+steerFactor = 1.5
+omegaFactor = 0.2
+strafeFactor = 0.2
+
+avoidSpeed = 65;
+topSpeed = 65;
+
+selectWaitMsg = "ivtank05.wav"
+selectAttackMsg = "fvnadir02.wav"
+selectFollowMsg = "fvnadir04.wav"
+selectGoMsg = "fvnadir04.wav"
+selectOtherMsg = "ivtank05.wav"
+holdMsg = "ivtank12.wav"
+
+goMsg = "fvnadir04.wav"
+attackMsg = "fvnadir01.wav"
+followMeMsg = "ivtank08.wav"
+followMsg = "fvnadir03.wav"
+repairMsg = "ivtank09.wav"
+reloadMsg = "ivtank09.wav"
+rescueMsg = "ivtank10.wav"
+recycleMsg = "ivtank11.wav"
+otherMsg = "ivtank05.wav" 
+holdMsg = "ivtank12.wav"
+user1Msg = ""  
+killedMsg = "ivtank07.wav"
+diedMsg = ""
+
+[HoverCraftClass]
+velocForward = 65.0 // []
+velocReverse = 25.0 // []
+velocStrafe = 20.0 // []
+accelThrust = 45.0 //acceleration []
+accelDragStop = 5.0 //how fast it stops once hands are off controls []
+accelJump = 25.0 // []
+
+setAltitude = 1.1 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself []
+alphaDamp = 8.0 //shocks []
+
+pitchPitch = 0.15 //nose up []
+pitchThrust = 0.05 //nose down []
+
+rollStrafe = 0.10 //rolls while strafing []
+omegaSpin = 5.0 //spinning in place speed []
+omegaTurn = 7.3 //turning while moving speed []
+alphaSteer = 7.0 //how fast it responds to steering []
+rollSteer = 0.08 //rolls while steering []
+
+soundThrust = "xypos_idle.wav"
+soundTurbo = "xypos_acc.wav"
+
+animSteer = "steer"
