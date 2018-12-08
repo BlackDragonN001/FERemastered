@@ -1,0 +1,635 @@
+[MissionInfo]
+countISDF = 17
+countScion = 21
+
+[ISDF 1]
+// Mission Author - Fishbone
+missionTitle = "Mercury Rising"
+missionInfo = "mercedf1.des"
+missionFile = "mercedf1.bzn"
+planetName = "Mercury"
+planetInfo = "mercury.des"
+planetGeom = "mercury.xsi"
+
+techCount = 1
+techName1 = "Unmanned Drone"
+techInfo1 = "fvnadir.inf"
+techGeom1 = "fvnadir00.xsi"
+
+mailCount = 2
+mailName1 = "Ship-to-ship communique:"
+mailInfo1 = "hardinmerc.des"
+mailGeom1 = ""
+mailWave1 = "mercury_00a.WAV"
+
+mailName2 = "Incoming Message:"
+mailInfo2 = "padasha.des"
+mailGeom2 = ""
+mailWave2 = "padasha.WAV"
+
+briefInfo = "mercedf1.brf"
+
+launchMessage = "merc01.wav"
+launchBackground = "mercury_load.tga"
+
+[ISDF 2]
+// Mission Author - BS-er
+missionTitle = "Arrival"
+missionInfo = "edf01.des"
+missionFile = "edf01.bzn"
+planetName = "Spartacus"
+planetInfo = "Spartacus.des"
+planetGeom = "Spartacus.xsi"
+
+techCount = 1
+techName1 = "Hadean Scout"
+techInfo1 = "evscout.inf"
+techGeom1 = "evscout00.xsi"
+
+mailCount = 1
+mailName1 = "Ship-to-ship communique:"
+mailInfo1 = "scihard01.des"
+mailGeom1 = ""
+mailWave1 = "edf01_00a.WAV"
+
+briefInfo = "edf01.brf"
+
+launchMessage = "LOedf01.wav"
+launchBackground = "Spartacus_load.tga"
+
+[ISDF 3]
+// Mission Author - BS-er
+missionTitle = "A Surprise"
+missionInfo = "edf02.des"
+missionFile = "edf2.bzn"
+planetName = "Spartacus"
+planetInfo = "Spartacus.des"
+planetGeom = "Spartacus.xsi"
+
+techCount = 1
+techName1 = "Hadean Xares"
+techInfo1 = "evtank.inf"
+techGeom1 = "evtank00.xsi"
+
+mailCount = 2
+mailName1 = "Lt. Jay Schultz"
+mailInfo1 = "shuledf2.des"
+mailGeom1 = ""
+mailWave1 = "edf02_00a.wav"
+mailName2 = "Origin Unspecified"
+mailInfo2 = "windexedf2.des"
+mailGeom2 = ""
+mailWave2 = "edf02_00b.wav"
+
+briefInfo = "edf02.brf"
+
+launchMessage = "LOedf02.wav"
+launchBackground = "Spartacus_load.tga"
+
+[ISDF 4]
+// Mission Author - Chipotle
+missionTitle = "Power Struggle"
+missionInfo = "edf03.des"
+missionFile = "edf3.bzn"
+planetName = "Spartacus"
+planetInfo = "Spartacus.des"
+planetGeom = "Spartacus.xsi"
+
+techCount = 1
+techName1 = "Hadean Locust"
+techInfo1 = "evmort.inf"
+techGeom1 = "evmort00.xsi"
+
+mailCount = 1
+mailName1 = "Lt. Jay Schultz"
+mailInfo1 = "shuledf3.des"
+mailGeom1 = ""
+mailWave1 = "edf03_00a.wav"
+
+briefInfo = "edf03.brf"
+
+launchMessage = "LOedf03.wav"
+launchBackground = "Spartacus_load.tga"
+
+[ISDF 5]
+// Mission Author - Dadel
+missionTitle = "Firing Back"
+missionInfo = "edf04.des"
+missionFile = "edf04.bzn"
+planetName = "Spartacus"
+planetInfo = "Spartacus.des"
+planetGeom = "Spartacus.xsi"
+
+techCount = 2
+techName1 = "Unknown"
+techInfo1 = "cvhscout.inf"
+techGeom1 = "cvdscout00.xsi"
+techName2 = "Unknown"
+techInfo2 = "cvhtank.inf"
+techGeom2 = "cvdtank00.xsi"
+
+mailCount = 1
+mailName1 = "Radio Intercept"
+mailInfo1 = "hadean4.des"
+mailGeom1 = ""
+mailWave1 = "edf04_00a.wav"
+
+
+briefInfo = "edf04.brf"
+
+launchMessage = "LOedf04.wav"
+launchBackground = "Spartacus_load.tga"
+
+[ISDF 6]
+// Mission Author - Chipotle
+missionTitle = "Sheep's Clothing"
+missionInfo = "edf05.des"
+missionFile = "edf5.bzn"
+planetName = "Spartacus"
+planetInfo = "Spartacus.des"
+planetGeom = "Spartacus.xsi"
+
+techCount = 1
+techName1 = "Hadean Zeus"
+techInfo1 = "evmisl.inf"
+techGeom1 = "evmisl00.xsi"
+
+mailCount = 0
+
+briefInfo = "edf05.brf"
+
+launchMessage = "LOedf05.wav"
+launchBackground = "Spartacus_load.tga"
+
+[ISDF 7]
+// Mission Author - Predator
+missionTitle = "One-Way Ticket"
+missionInfo = "edf06.des"
+missionFile = "edf06.bzn"
+planetName = "Miasma"
+planetInfo = "Miasma.des"
+planetGeom = "Miasma.xsi"
+
+techCount = 1
+techName1 = "Unknown"
+techInfo1 = "cvhscout.inf"
+techGeom1 = "cvscout00.xsi"
+
+mailCount = 0
+
+briefInfo = "edf06.brf"
+
+launchMessage = "LOedf06.wav"
+launchBackground = "Miasma_load.tga"
+
+[ISDF 8]
+// Mission Author - Black Manatee
+missionTitle = "Into the Fire"
+missionInfo = "edf07.des"
+missionFile = "edf07.bzn"
+planetName = "Miasma"
+planetInfo = "Miasma.des"
+planetGeom = "Miasma.xsi"
+
+techCount = 1
+techName1 = "Cerberi Siren"
+techInfo1 = "cvrbomb.inf"
+techGeom1 = "cvrbomb00.xsi"
+
+mailCount = 0
+
+briefInfo = "edf07.brf"
+
+launchMessage = "LOedf07.wav"
+launchBackground = "Miasma_load.tga"
+
+[ISDF 9]
+// Mission Author - Dadel
+missionTitle = "Hidden Threats"
+missionInfo = "edf08.des"
+missionFile = "edf08.bzn"
+planetName = "Miasma"
+planetInfo = "Miasma.des"
+planetGeom = "Miasma.xsi"
+
+techCount = 1
+techName1 = "Cerberi Demon"
+techInfo1 = "cvdcar.inf"
+techGeom1 = "cvdcar00.xsi"
+
+mailCount = 2
+mailName1 = "Origin Unspecified"
+mailInfo1 = "windexedf08.des"
+mailGeom1 = ""
+mailWave1 = "edf08_00a.wav"	
+mailName2 = "Broad-BandCast Intercept"
+mailInfo2 = "thanedf08.des"
+mailGeom2 = ""
+mailWave2 = "edf08_00b.wav"	
+briefInfo = "edf08.brf"
+
+launchMessage = "LOedf08.wav"
+launchBackground = "Miasma_load.tga"
+
+[ISDF 10]
+// Mission Author - Zeeder
+missionTitle = "Escape Path"
+missionInfo = "edf09.des"
+missionFile = "edf09.bzn"
+planetName = "Miasma"
+planetInfo = "Miasma.des"
+planetGeom = "Miasma.xsi"
+
+techCount = 1
+techName1 = "Hadean Assault Tank"
+techInfo1 = "evatank.inf"
+techGeom1 = "evatank00.xsi"
+
+mailCount = 2
+mailName1 = "HyperWave Intercept"
+mailInfo1 = "SchultzEDF09.des"
+mailGeom1 = ""
+mailWave1 = "SchulEDF09.wav"	
+mailName2 = "Captain Eisenstein"
+mailInfo2 = "EisenEDF09.des"
+mailGeom2 = ""
+mailWave2 = "EisenEDF09.wav"	
+briefInfo = "edf09.brf"
+
+launchMessage = "LOedf09.wav"
+launchBackground = "Miasma_load.tga"
+
+[ISDF 11]
+// Mission Author - Zeeder
+missionTitle = "A Short Break"
+missionInfo = "edf10.des"
+missionFile = "edf10.bzn"
+planetName = "Tranquility"
+planetInfo = "Tranquility.inf"
+planetGeom = "Tranquility.xsi"
+
+techCount = 1
+techName1 = "Hadean Atlas"
+techInfo1 = "evartl.inf"
+techGeom1 = "evartl00.xsi"
+
+mailCount = 2
+mailName1 = "NarrowCast Intercept"
+mailInfo1 = "schuledf10.des"
+mailGeom1 = ""
+mailWave1 = "EDF10__00a.wav"	
+mailName2 = "Captain Eisenstein"
+mailInfo2 = "EisenEDF10.des"
+mailGeom2 = ""
+mailWave2 = "EDF10__00b.wav"	
+
+briefInfo = "edf10.brf"
+
+launchMessage = "LOedf10.wav"
+launchBackground = "Tranquility_load.tga"
+
+[ISDF 12]
+// Mission Author - BS-er
+missionTitle = "Heart of Darkness"
+missionInfo = "edf13.des"
+missionFile = "edf13.bzn"
+planetName = "Facility"
+planetInfo = "Facility.inf"
+planetGeom = "Facility.xsi"
+
+techCount = 1
+techName1 = "Dominator"
+techInfo1 = "cvhscout.inf"
+techGeom1 = "cvhatank00.xsi"
+
+mailCount = 1
+mailName1 = "URGENT: Private Code"
+mailInfo1 = "Hardin13.des"
+mailGeom1 = ""
+mailWave1 = "EDF13__00a.wav"	
+
+briefInfo = "edf13.brf"
+
+launchMessage = "LOedf13.wav"
+launchBackground = "Facility_load.tga"
+
+[ISDF 13]
+// Mission Author - BS-er
+missionTitle = "Cloak of Deception"
+missionInfo = "edf14.des"
+missionFile = "edf14.bzn"
+planetName = "Facility"
+planetInfo = "Facility.inf"
+planetGeom = "Facility.xsi"
+
+techCount = 1
+techName1 = "Mockup Spider Tank"
+techInfo1 = "ivspider.inf"
+techGeom1 = "cvspider00.xsi"
+
+mailCount = 2
+mailName1 = "Personal and Confidential"
+mailInfo1 = "Stewart14.des"
+mailGeom1 = ""
+mailWave1 = "EDF14__00a.wav"	
+mailName2 = "Urgent: Eyes-Only"
+mailInfo2 = "EisenEDF14.des"
+mailGeom2 = ""
+mailWave2 = "EDF14__00b.wav"	
+
+briefInfo = "edf14.brf"
+
+launchMessage = "LOedf14.wav"
+launchBackground = "Facility_load.tga"
+
+[ISDF 14]
+// Mission Author - SFP Sonic
+missionTitle = "Betrayed"
+missionInfo = "edf15.des"
+missionFile = "edf15.bzn"
+planetName = "Facility"
+planetInfo = "Facility.inf"
+planetGeom = "Facility.xsi"
+
+techCount = 1
+techName1 = "Hadean Krahanos"
+techInfo1 = "ivewalk.inf"
+techGeom1 = "ivewalk_skel.xsi"
+
+mailCount = 3
+mailName1 = "ACCESS RESTRICTED"
+mailInfo1 = "EDF15Hardin.des"
+mailGeom1 = ""
+mailWave1 = "EDF15__00a.wav"	
+mailName2 = "ULTRA-SECRET"
+mailInfo2 = "EDF15Hardin.des"
+mailGeom2 = ""
+mailWave2 = "EDF15__00B.wav"	
+mailName3 = "Priority: Alpha-1"
+mailInfo3 = "EDF15Eisen.des"
+mailGeom3 = ""
+mailWave3 = "EDF15__00c.wav"	
+
+briefInfo = "edf15.brf"
+
+launchMessage = "LOedf15.wav"
+launchBackground = "Facility_load.tga"
+successMovie = "Condor.bik"
+// Condor.bik made by Fishbone
+
+
+[ISDF 15]
+// Mission Author - Fishbone
+missionTitle = "Two-Minute Warning"
+missionInfo = "edf16.des"
+missionFile = "edf16.bzn"
+planetName = "Facility"
+planetInfo = "Facility.inf"
+planetGeom = "Facility.xsi"
+
+techCount = 1
+techName1 = "EDF Hacker Scout"
+techInfo1 = "ivhack.inf"
+techGeom1 = "ivhack00.xsi"
+
+mailCount = 2
+mailName1 = " FINAL BRIEFING: "
+mailInfo1 = "EDF16Eisen.des"
+mailGeom1 = ""
+mailWave1 = "EDF16__00a.wav"	
+mailName2 = "     PERSONAL    "
+mailInfo2 = "EDF16Hardin.des"
+mailGeom2 = ""
+mailWave2 = "EDF16__00b.wav"	
+
+briefInfo = "edf16.brf"
+
+launchMessage = "LOEDF16.WAV"
+launchBackground = "Facility_load.tga"
+
+[ISDF 16]
+// Mission Author - BS-er
+missionTitle = "The Emperor's New Claws"
+missionInfo = "edflast.des"
+missionFile = "edflast.bzn"
+planetName = "Earth"
+planetInfo = "Earth.inf"
+planetGeom = "Earth.xsi"
+
+techCount = 1
+techName1 = "??"
+techInfo1 = "cvhscout.inf"
+techGeom1 = "cvtyrant_skel.xsi"
+
+mailCount = 1
+mailName1 = "Captain Ian McAlister"
+mailInfo1 = "EDFLastVMB.des"
+mailGeom1 = ""
+mailWave1 = "EDFLastVMB.wav"	
+
+briefInfo = "edflast.brf"
+
+launchMessage = "LOedflast.wav"
+launchBackground = "Earth_load.tga"
+
+[ISDF 17]
+missionTitle = "Congratulations!"
+missionInfo = "EDFEnding.des"
+planetName = "Ruined Core"
+planetInfo = "RuinCore.des"
+planetGeom = "RuinCore.xsi"
+
+techCount = 0
+
+mailCount = 0
+
+briefInfo = "credits.brf"
+
+[SCION 15]
+//Mission Author - BS-er
+missionTitle = "The Other Side"
+missionInfo = "fc01.des"
+missionFile = "fc01.bzn"
+planetName = "Ruined Core"
+planetInfo = "RuinCore.des"
+planetGeom = "RuinCore.xsi"
+
+techCount = 1
+techName1 = "Hadean Procreator"
+techInfo1 = "cvrecy.inf"
+techGeom1 = "evrecy00.xsi"
+
+mailCount = 3
+mailName1 = "sECRECY lEVEL: bLACK"
+mailInfo1 = "FC01Than.des"
+mailGeom1 = ""
+mailWave1 = "FC01_00a.wav"	
+mailName2 = "sECRECY lEVEL: bLUE"
+mailInfo2 = "FC01Kran.des"
+mailGeom2 = ""
+mailWave2 = "FC01_00b.wav"	
+mailName3 = "sECRECY lEVEL: bLACK"
+mailInfo3 = "FC01Cerb.des"
+mailGeom3 = ""
+mailWave3 = "FC01_00c.wav"	
+
+briefInfo = "fc01.brf"
+
+launchMessage = "LOfc01.wav"
+launchBackground = "RuinCore_load.tga"
+
+[SCION 16]
+//Mission Author - Zeeder
+missionTitle = "A New Alliance"
+missionInfo = "fc02.des"
+missionFile = "fc02new.bzn"
+planetName = "Ruined Core"
+planetInfo = "RuinCore.des"
+planetGeom = "RuinCore.xsi"
+
+techCount = 1
+techName1 = "Cerberi turret"
+techInfo1 = "cvhscout.inf"
+techGeom1 = "cvturr01_skel.xsi"
+
+mailCount = 3
+mailName1 = "sECRECY lEVEL: rED"
+mailInfo1 = "FC02Cerb.des"
+mailGeom1 = ""
+mailWave1 = "FC02_00a.wav"	
+mailName2 = "sECRECY lEVEL: bLACK"
+mailInfo2 = "FC02Than.des"
+mailGeom2 = ""
+mailWave2 = "FC02_00b.wav"	
+mailName3 = "sECRECY lEVEL: rED"
+mailInfo3 = "FC02bLNC.des"
+mailGeom3 = ""
+mailWave3 = "FC02_00c.wav"	
+
+briefInfo = "fc02.brf"
+
+launchMessage = "LOfc02.wav"
+launchBackground = "RuinCore_load.tga"
+
+[SCION 17]
+//Mission Author - Zeeder
+missionTitle = "Rebuilding The Ark"
+missionInfo = "fc03.des"
+missionFile = "fc03.bzn"
+planetName = "Ruined Core"
+planetInfo = "RuinCore.des"
+planetGeom = "RuinCore.xsi"
+
+techCount = 1
+techName1 = "Cerberi Harpie"
+techInfo1 = "cvhscout.inf"
+techGeom1 = "cvmlay00.xsi"
+
+mailCount = 1
+mailName1 = "sECRECY lEVEL: rED"
+mailInfo1 = "FC03Than.des"
+mailGeom1 = ""
+mailWave1 = "FC03_00a.wav"	
+
+briefInfo = "fc03.brf"
+
+launchMessage = "LOFC03.wav"
+launchBackground = "RuinCore_load.tga"
+
+[SCION 18]
+//Mission Author - Fishbone
+missionTitle = "Biometal Meltdown"
+missionInfo = "fcxx.des"
+missionFile = "fcxx.bzn"
+planetName = "Ruined Core"
+planetInfo = "RuinCore.des"
+planetGeom = "RuinCore.xsi"
+
+techCount = 1
+techName1 = "Scion Brawler"
+techInfo1 = "fvrbomb.inf"
+techGeom1 = "fvrbomb00.xsi"
+
+
+mailCount = 2
+mailName1 = "sECRECY lEVEL: bLACK"
+mailInfo1 = "FCxxThan.des"
+mailGeom1 = ""
+mailWave1 = "FCXX_00a.wav"	
+mailName2 = "#&)eRROR%$>#"
+mailInfo2 = "FCxxShul.des"
+mailGeom2 = ""
+mailWave2 = "FCXX_00b.wav"	
+
+briefInfo = "fcxx.brf"
+
+launchMessage = "LOFCxx.wav"
+launchBackground = "RuinCore_load.tga"
+
+[SCION 19]
+//Mission Author - BS-er
+missionTitle = "Crash on Memory Lane"
+missionInfo = "fclast.des"
+missionFile = "fclast.bzn"
+planetName = "Ruined Core"
+planetInfo = "RuinCore.des"
+planetGeom = "RuinCore.xsi"
+
+techCount = 1
+techName1 = "Cerberi Walker"
+techInfo1 = "cvhscout.inf"
+techGeom1 = "fvcerb_skel.xsi"
+
+mailCount = 2
+mailName1 = "sECRECY lEVEL: rED"
+mailInfo1 = "FC05Cerb.des"
+mailGeom1 = ""
+mailWave1 = "FCLast_00a.wav"	
+mailName2 = "sECRECY lEVEL: rED"
+mailInfo2 = "FC05bLNC.des"
+mailGeom2 = ""
+mailWave2 = "FCLast_00b.wav"	
+
+briefInfo = "fclast.brf"
+
+launchMessage = "LOfclast.wav"
+launchBackground = "RuinCore_load.tga"
+
+[SCION 20]
+missionTitle = "Congratulations"
+missionInfo = "5cend.des"
+planetName = "Earth"
+planetInfo = "Earth.inf"
+planetGeom = "Earth.xsi"
+
+techCount = 0
+
+mailCount = 0
+
+briefInfo = "credits.brf"
+
+[SCION 21]
+missionTitle = "Congratulations"
+missionInfo = "scion08.des"
+planetName = "Rend"
+planetInfo = "rend.des"
+planetGeom = "rend.xsi"
+
+techCount = 0
+
+mailCount = 0
+
+briefInfo = "credits.brf"
+
+[SCION 22]
+missionTitle = "Congratulations"
+missionInfo = "scion08.des"
+planetName = "Rend"
+planetInfo = "rend.des"
+planetGeom = "rend.xsi"
+
+techCount = 0
+
+mailCount = 0
+
+briefInfo = "credits.brf"
