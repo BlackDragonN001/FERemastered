@@ -1,0 +1,61 @@
+[GameObjectClass]
+geometryName = "ufo00.xsi"
+geometryScale = 9.0
+classLabel = "turrettank"
+scrapValue = 50
+scrapCost = 100
+maxHealth = 50000
+addHealth = 10
+maxAmmo = 3000
+addAmmo = 10
+armorClass = L
+unitName = "Unknown"
+aiName = "TurretTankFriend"
+aiName2 = "TurretTankEnemy"
+heatSignature = 0.5
+imageSignature = 0.8
+radarSignature = 1.0
+explosionName = "xbldxpl"
+
+lightHard1 = "HP_LIGHT"
+lightName1 = "spotblue"
+
+weaponHard1 = "HP_CANNON_1"
+weaponAssault1 = 0
+weaponName1 = "garc_c"
+weaponHard2 = "HP_CANNON_2"
+weaponAssault2 = 0
+weaponName2 = "garc_c"
+weaponHard3 = "HP_ROCKET_1"
+weaponAssault3 = 1
+weaponName3 = "gsavrkt"
+weaponHard4 = "HP_SHIELD_1"
+weaponAssault4 = 0
+weaponName4 = "gshield"
+weaponMask = 00111
+
+[CraftClass]
+rangeScan = 400.0
+periodScan = 2.0
+velocJam = 5.0
+
+[HoverCraftClass]
+setAltitude = 15.0
+accelDragStop = 5.0
+alphaTrack = 20.0
+alphaDamp = 10.0
+pitchPitch = .25
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+
+velocForward = 0.0
+velocReverse = 0.0
+velocStrafe = 0.0
+accelThrust = 0.0
+omegaSpin = 0.2
+omegaTurn = 0.1
+alphaSteer = 0.5
+accelJump = 0.0
+soundThrust = "" //"ufo1.wav" // Sound doesn't exist. Was this supposed to be fvsav's annoying engine sound from BZ1? -GBD
+

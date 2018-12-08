@@ -1,0 +1,13 @@
+[GameObjectClass]
+geometryName = "hbport.xsi"
+classLabel = "terrain"
+scrapCost = 8
+scrapValue = 3
+maxAmmo = 0
+unitName = "Portal"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+collisionRadius = 5.0
+
+[BuildingClass]

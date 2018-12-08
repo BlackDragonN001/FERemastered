@@ -1,0 +1,68 @@
+[GameObjectClass]
+classLabel = "person"
+geometryName = "ufo00.xsi"
+
+scrapCost = 0
+scrapValue = 5
+pilotCost = 1
+maxHealth = 50000
+maxAmmo = 10000
+addAmmo = 5
+unitName = "Pilot"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+heatSignature = 0.2
+imageSignature = 0.2
+radarSignature = 0.1
+engageRange = 250
+
+weaponMask = 00001
+weaponHard1 = "HP_CANNON_1"
+
+[PersonClass]
+
+// crawling mode
+alphaDampCrawl    = 5.0
+alphaTrackCrawl   = 10.0
+pitchPitchCrawl   = 0.0
+pitchThrustCrawl  = 0.0
+rollStrafeCrawl   = 0.0
+velocForwardCrawl = 0.0
+velocReverseCrawl = 0.0
+velocStrafeCrawl  = 0.0
+accelThrustCrawl  = 20.0
+omegaSpinCrawl    = 0.5
+omegaTurnCrawl    = 0.5
+alphaSteerCrawl   = 5.0
+velocJumpCrawl    = 0.0
+
+// running mode
+alphaDampRun     = 8.0
+alphaTrackRun    = 15.0
+pitchPitchRun    = 0.0
+pitchThrustRun   = 0.0
+rollStrafeRun    = 0.0
+velocForwardRun  = 5.0
+velocReverseRun  = 3.0
+velocStrafeRun   = 2.0
+accelThrustRun   = 20.0
+omegaSpinRun     = 3.0
+omegaTurnRun     = 2.0
+alphaSteerRun    = 15.0
+velocJumpRun     = 5.0
+
+// flying mode
+alphaDampFly      = 2.0
+alphaTrackFly     = 5.0
+pitchPitchFly     = 0.35
+pitchThrustFly    = 0.15
+rollStrafeFly     = 0.15
+velocForwardFly   = 15.0
+velocReverseFly   = 10.0
+velocStrafeFly    = 10.0
+accelThrustFly    = 5.0
+omegaSpinFly      = 2.0
+omegaTurnFly      = 1.5
+alphaSteerFly     = 2.0
+velocJumpFly      = 0.0
+

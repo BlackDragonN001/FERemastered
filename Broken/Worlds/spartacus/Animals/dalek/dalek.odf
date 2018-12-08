@@ -1,0 +1,110 @@
+[GameObjectClass]
+baseName = "dalek"
+geometryName = "Dalek01.xsi"
+cockpitName= "ivtank_cockpit.xsi"
+geometryScale = 0.5
+classLabel = "wingman"
+scrapValue = 20
+scrapCost = 55
+customCost = 65
+buildTime = 15.0
+customTime = 15.0
+maxHealth = 3900
+maxAmmo = 4000
+addAmmo = 5
+unitName = "Dalek"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+
+heatSignature = 2.0
+imageSignature = 2.5
+radarSignature = 0.5
+
+isAssault = 0
+
+armorClass = L
+
+requireCount = 2
+requireName1 = "ibfact"
+requireText1 = "Build Factory"
+requireName2 = "ibcbun"
+requireText2 = "Build Relay Bunk"
+
+cockpitName = "ivtank_cockpit.xsi"
+
+/////// weapons ///////////////////
+
+weaponMask = 00011
+
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gblast_c"
+weaponAssault1 = 0
+
+
+////////////////////////////////////
+
+
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 5.0f
+velocJam = 5.0f
+engageRange = 120
+
+braccelFactor = 0.03
+velFactor = 0.2
+steerFactor = 1.5
+omegaFactor = 0.2
+strafeFactor = 0.2
+
+avoidSpeed = 20;
+topSpeed = 30;
+
+selectWaitMsg = "Iobey.wav"
+selectAttackMsg = "dalek.wav"
+selectFollowMsg = "Iobey.wav"
+selectGoMsg = "Iobey.wav"
+selectOtherMsg = "Iobey.wav"
+holdMsg = "Iobey.wav"
+
+goMsg = "Iobey.wav"
+attackMsg = "dalek.wav"
+followMeMsg = "Iobey.wav"
+followMsg = "Iobey.wav"
+repairMsg = "Iobey.wav"
+reloadMsg = "Iobey.wav"
+rescueMsg = "Iobeyi.wav"
+recycleMsg = ""
+otherMsg = "Iobey.wav" 
+holdMsg = "Iobey.wav"
+user1Msg = ""  
+killedMsg = ""
+diedMsg = ""
+
+[HoverCraftClass]
+velocForward = 20.5 // []
+velocReverse = 15.0 // []
+velocStrafe = 13.0 // []
+accelThrust = 20.0 //acceleration []
+accelDragStop = 8.0 //how fast it stops once hands are off controls []
+accelJump = 0.01 // []
+w
+setAltitude = 0.5 // how high off the ground
+
+alphaTrack = 1.0 //springs speed it rights itself []
+alphaDamp = 1.0 //shocks []
+
+pitchPitch = 0.0001 //nose up []
+pitchThrust = 0.001 //nose down []
+
+rollStrafe = 0.08 //rolls while strafing []
+omegaSpin = 6.0 //spinning in place speed []
+omegaTurn = 2.3 //turning while moving speed []
+alphaSteer = 7.0 //how fast it responds to steering []
+rollSteer = 0.08 //rolls while steering []
+
+soundThrust = ""
+soundTurbo = ""
+
+
+
+

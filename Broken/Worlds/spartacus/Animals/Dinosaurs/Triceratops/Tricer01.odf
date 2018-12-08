@@ -1,0 +1,82 @@
+[GameObjectClass]
+classLabel = "animal"
+geometryName = "Tricer01_skel.xsi"
+
+animCount = 5
+animName1 = "idle"
+animFile1 = "Tricer01_idle.xsi"
+
+animName2 = "walk"
+animFile2 = "Tricer01_walk.xsi"
+
+animName3 = "run"
+animFile3 = "Tricer01_run.xsi"
+
+animName4 = "eat1"
+animFile4 = "Tricer01_eat01.xsi"
+
+animName5 = "death"
+animFile5 = "Tricer01_death.xsi
+
+animName6 = "curious"
+animFile6 = "Tricer01_eat01.xsi"
+
+animName7 = "eat2"
+animFile7 = "Tricer01_eat01.xsi"
+
+
+geometryScale = 0.75
+scrapCost = 0
+scrapValue = 0
+pilotCost = 1
+maxHealth = 7000
+maxAmmo = 5000
+unitName = "Triceratops"
+aiName = "LandAnimalProcess"
+heatSignature = 0.0
+imageSignature = 10.3
+radarSignature = 10.0
+
+armorClass = H
+
+[CraftClass]
+weightInTons = 6
+braccelFactor = 0.08
+velFactor = 0.4
+steerFactor = 1
+omegaFactor = 0.4
+strafeFactor = 0.1
+
+[PersonClass]
+painSound1 = "pain1.wav";
+painSound2 = "pain2.wav";
+painSound3 = "pain3.wav";
+painSound4 = "pain4.wav";
+painSound5 = "pain5.wav";
+painSound6 = "pain6.wav";
+burnSound1 = "lburn1.wav";
+burnSound2 = "lburn2.wav";
+dieSound1  = "death1.wav";
+dieSound2  = "death2.wav";
+dieSound3  = "death3.wav";
+dieSound4  = "death4.wav";
+dieSound5  = "death5.wav";
+crushSound = "squish.wav";
+jumpSound  = "jump.wav";
+landSound  = "land.wav";
+stepSound  = "running.wav"
+
+[LandCreature]
+animRate = 6.0
+velocJump = 2
+velocForward = 6.0
+//Asscelaration in Gravities
+accelThrust = 2.0
+
+// in degrees/sec
+alphaSteer = 20.0
+omegaSpin =  60.0
+omegaTurn = 150.0
+
+leftfootpiece = "hp_lfoot";
+rightfootpiece = "hp_rfoot";

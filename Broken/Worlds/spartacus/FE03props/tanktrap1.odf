@@ -1,0 +1,19 @@
+[GameObjectClass]
+geometryName = "tanktrap1.xsi"
+geometryScale = 2
+classLabel = "i76building"
+scrapCost = 8
+scrapValue = 3
+maxHealth = 4000
+maxAmmo = 0
+unitName = "Tanktrap"
+heatSignature = 0.1
+imageSignature = 2.0
+radarSignature = 0.3
+collisionRadius = 4.0
+canDetect = 0
+canInteract = 1
+canSnipe = 0
+ownsTerrain = 1
+
+[BuildingClass]

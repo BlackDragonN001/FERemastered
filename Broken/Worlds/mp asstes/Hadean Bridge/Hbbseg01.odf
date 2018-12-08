@@ -1,0 +1,67 @@
+[GameObjectClass]
+geometryName = "HBBSEG01.xsi"
+classLabel = "i76building"
+collisionRadius = 1.0
+scrapCost = 8
+scrapValue = 3
+maxHealth = 10000
+maxAmmo = 0
+unitName = "Bridge"
+heatSignature = 1.0
+imageSignature = 0.5
+radarSignature = 1.0
+isAssault = 1
+
+armorClass = H
+
+[BuildingClass]
+tunnelCount = 5 //2
+bldEdge = "wwww"
+
+//tunnel01X0 = 1
+//tunnel01Z0 = 0
+//tunnel01DX = 6
+//tunnel01DZ = 8
+//tunnel01Edge = "fwfw"
+
+//tunnel02X0 = 0
+//tunnel02Z0 = 2
+//tunnel02DX = 8
+//tunnel02DZ = 4
+//tunnel02Edge = "wtwt"
+
+// Redid Pathing to make a proper + Cross junction, units can now pass over and under. -GBD
+// 4-way junction
+tunnel01X0 = 1
+tunnel01Z0 = 1
+tunnel01DX = 6
+tunnel01DZ = 6
+tunnel01Edge = "ffff"
+
+//  North Passage
+tunnel02X0 = 1
+tunnel02Z0 = 0
+tunnel02DX = 6
+tunnel02DZ = 1
+tunnel02Edge = "fwfw"
+
+ // East Passage
+tunnel03X0 = 7
+tunnel03Z0 = 1
+tunnel03DX = 1
+tunnel03DZ = 6
+tunnel03Edge = "wtwf"
+
+//  South Passage
+tunnel04X0 = 1
+tunnel04Z0 = 7
+tunnel04DX = 6
+tunnel04DZ = 1
+tunnel04Edge = "fwfw"
+
+//  West Passage
+tunnel05X0 = 0
+tunnel05Z0 = 1
+tunnel05DX = 1
+tunnel05DZ = 6
+tunnel05Edge = "wfwt"

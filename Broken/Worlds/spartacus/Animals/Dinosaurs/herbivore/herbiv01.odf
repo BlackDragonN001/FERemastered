@@ -1,0 +1,69 @@
+[GameObjectClass]
+classLabel = "animal"
+geometryName = "herbiv01_skel.xsi"
+
+animCount = 2
+animName1 = "walk"
+animFile1 = "herbiv01_walk.xsi"
+
+animName2 = "run"
+animFile2 = "herbiv01_walk.xsi"
+
+
+
+geometryScale =2.0
+scrapCost = 0
+scrapValue = 0
+pilotCost = 1
+maxHealth = 250
+maxAmmo = 3
+unitName = "Herbivore"
+aiName = "LandAnimalProcess"
+heatSignature = 0.2
+imageSignature = 0.3
+radarSignature = 0.2
+
+[CraftClass]
+braccelFactor = 0.08
+velFactor = 0.4
+steerFactor = 1
+omegaFactor = 0.4
+strafeFactor = 0.0
+
+[PersonClass]
+painSound1 = "pain1.wav";
+painSound2 = "pain2.wav";
+painSound3 = "pain3.wav";
+painSound4 = "pain4.wav";
+painSound5 = "pain5.wav";
+painSound6 = "pain6.wav";
+burnSound1 = "lburn1.wav";
+burnSound2 = "lburn2.wav";
+dieSound1  = "death1.wav";
+dieSound2  = "death2.wav";
+dieSound3  = "death3.wav";
+dieSound4  = "death4.wav";
+dieSound5  = "death5.wav";
+crushSound = "squish.wav";
+jumpSound  = "jump.wav";
+landSound  = "land.wav";
+stepSound  = "running.wav"
+
+
+[LandCreature]
+animRate = 10
+velocJump = 2
+velocForward = 10
+//Asscelaration in Gravities
+accelThrust = 0.7
+
+// in degrees/sec
+alphaSteer =20.0
+omegaSpin =  60.0
+omegaTurn = 150.0
+
+leftfootpiece = "hp_lfoot";
+rightfootpiece = "hp_rfoot";
+
+
+
