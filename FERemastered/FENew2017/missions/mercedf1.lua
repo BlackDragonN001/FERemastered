@@ -1,5 +1,3 @@
-require ("FE13Dev.FEAddon.lua.GlobalHandler");
-
 _Text1 = "Protect your assigned transport,\nhighlighted with a blue beacon.\nIt's carrying biometal-refining\nmodules for our Recycler, so\ndon't lose it!";
 _Text2 = "Follow Major Wyndt-Essex. Stay\nin loose formation, and cover\nher as necessary.";
 _Text3 = "Take out the gun tower near\nthe bridge. Major Wyndt-Essex\nwill stay out of range and watch\nfor enemy patrols.";
@@ -75,7 +73,7 @@ local M = {
 
 	SCOUTODF = "ivscout11",
 	SERVODF = "ivserv",
-	CARGOODF = "ivcargo",
+	CARGOODF = "ivstas1",
 	DRONEODF = "nadir",
 
 -- Ints
@@ -162,8 +160,6 @@ function Start()
 
 	M.Object_Radar1 = GetHandle("Radar1");
 	M.Object_Radar2 = GetHandle("Radar2");
-
-	GLOBAL_lock(_G);
 end
 
 function AddObject(h)
