@@ -1,5 +1,3 @@
-require "FE13Dev.FEAddon.lua.GlobalHandler";
-
 -- Variables Not saved. Constants that never change.
 local NUM_DEFENDERS = 10	--Player's starting forces
 local NUM_PILOTS = 8	--number of pilots that get out of Transport to crew empty Hadean ships by supply depot
@@ -235,7 +233,6 @@ function Start()
 			Patrol(BuildObject(birdOdfs[(i-1)*3 + j], 0, path), path, 1);
 		end
 	end
-	GLOBAL_lock(_G);	--prevents script from accidentally creating new global variables.
 end
 
 

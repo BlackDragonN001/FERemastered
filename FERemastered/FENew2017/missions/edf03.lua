@@ -1,5 +1,3 @@
-require "FE13Dev.FEAddon.lua.GlobalHandler";
-
 -- Variables Not saved. Constants that never change.
 local NUM_MEGATURRETS = 4;
 local NUM_BLOCKAGES = 7;
@@ -182,7 +180,6 @@ function Start()
 	for i = 1, NUM_BLOCKAGES do
 		M.Rocks[i] = GetHandleOrDie(string.format("blockage%d", i));
 	end
-	GLOBAL_lock(_G);	--prevents script from accidentally creating new global variables.
 end
 
 

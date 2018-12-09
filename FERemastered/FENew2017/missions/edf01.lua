@@ -1,5 +1,3 @@
-require "FE13Dev.FEAddon.lua.GlobalHandler";
-
 -- Variables Not saved. Constants that never change.
 local NUM_TANKS = 6
 local NUM_SURVIVORS = 10
@@ -164,7 +162,6 @@ end
 
 function Start()
 	M.Dropship = GetHandleOrDie("DropShip");
-	GLOBAL_lock(_G);	--prevents script from accidentally creating new global variables.
 end
 
 
