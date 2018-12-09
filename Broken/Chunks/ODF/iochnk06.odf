@@ -1,0 +1,23 @@
+[GameObjectClass]
+geometryName = "iochnk06.xsi"
+classLabel = "plant"
+geometryScale = 4.0
+collisionRadius = 1.0
+scrapCost = 0
+scrapValue = 0
+maxHealth = 1000
+maxAmmo = 0
+unitName = "chunk"
+heatSignature = 0.1
+imageSignature = 1.0
+radarSignature = 0.2
+explosionName = "xplnxpl"
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+
+[BuildingClass]
+soundAmbient =
+
+[PlantClass]
+standUp = 0
