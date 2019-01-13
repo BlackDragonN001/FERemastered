@@ -1,20 +1,9 @@
 // =============
-// MDM EXPIRE EXPLOSION
+// MORTAR HITTING BUILDING OR VEHICLE EXPLOSION
 // =============
 
 [ExplosionClass]
 classLabel = "explosion"
-
-particleTypes = 3
-particleClass1 = "xmdmxpl.core"
-particleCount1 = 1
-particleVeloc1 = "0.0 0.0 0.0"
-particleClass2 = "xmdmxpl.shock"
-particleCount2 = 1
-particleVeloc2 = "0.0 0.0 0.0"
-particleClass3 = "xmdmxpl.light"
-particleCount3 = 1
-particleVeloc3 = "0.0 0.0 0.0"
 
 explSound = "xmv1.wav"
 damageRadius = 40.00 // 50.0
@@ -28,41 +17,153 @@ damageValue(D) = 150 // 100 // deflection
 damageValue(A) = 60 // 5 // absorbtion
 
 
-[Core]
-simulateBase = "sim_null"
-lifeTime = 1.5
+particleTypes = 9
+
+particleClass1 = "xmortgnd.Shock"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleInherit1 = "0.5 0.5 0.5"
+
+particleClass2 = "xmortgnd.SmokePlume"
+particleCount2 = 5 //10
+particleVeloc2 = "10.0 35.0 10.0"
+particlePosVar2 = "3.0 3.0 3.0"
+particleInherit2 = "0.5 0.5 0.5"
+
+particleClass3 = "xmortgnd.Light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+particleInherit3 = "0.5 0.5 0.5"
+
+particleClass4 = "xmortgnd.FlameHeat"
+particleCount4 = 4 //6
+particleVeloc4 = "5.0 10.0 5.0" //"10.0 10.0 10.0"
+particleBias4 = "0.0 6.0 0.0"
+particlePosVar4 = "3.0 3.0 3.0"
+particleInherit4 = "0.5 0.5 0.5"
+
+particleClass5 = "xmortgnd.Flames"
+particleCount5 = 10 //15
+particleVeloc5 = "6.0 19.0 6.0" //"19.0 19.0 19.0"
+particlePosVar5 = "3.0 3.0 3.0"
+particleInherit5 = "0.5 0.5 0.5"
+
+particleClass6 = "xmdmxpl.HullAsh"
+particleCount6 = 6 //10
+particleVeloc6 = "110.0 90.0 110.0"
+particleBias6 = "0.0 12.0 0.0"
+particlePosVar6 = "3.0 3.0 3.0"
+particleInherit6 = "0.5 0.5 0.5"
+
+particleClass7 = "xmdmxpl.Secondary"
+particleCount7 = 2
+particleVeloc7 = "50.0 50.0 50.0"
+particleInherit7 = "0.5 0.5 0.5"
+
+particleClass8 = "xmdmxpl.lightflare"
+particleCount8 = 1
+particleVeloc8 = "0.0 0.0 0.0"
+particleInherit8 = "0.5 0.5 0.5"
+
+particleClass9 = "xmdmxpl.trails"
+particleCount9 = 6 //12
+particleVeloc9 = "110.0 90.0 110.0"
+particleBias9 = "0.0 1.0 0.0"
+particlePosVar9 = "3.0 3.0 3.0"
+particleInherit9 = "0.5 0.5 0.5"
+
+particleClass10 = "xmdmxpl.sootemit"
+particleCount10 = 1
+particleVeloc10 = "0.0 0.0 0.0"
+particleInherit10 = "0.5 0.5 0.5"
+
+
+[Secondary]
+simulateBase = "sim_smoke"
+lifeTime = 0.6
+startDelay = 0.25
+renderBase = "draw_emit"
+emitDelay = 0.2
+emitDelayVar = 0.05
+emitName = "xmdmxpl.SecondaryRender"
+emitVariance = "3.0 3.0 3.0"
+emitVelocity = "0.0 0.0 0.0"
+
+	[SecondaryRender]
+	simulateBase = "sim_smoke"
+	lifeTime = 1.9
+	renderBase = "draw_multi"
+	renderCount = 6
+	renderName1 = "xmortxpl.LightFlare"
+	renderName2 = "xmortgnd.FlameHeat"
+	renderName3 = "xmortgnd.Flames"
+	renderName4 = "xmortgnd.Flames"
+	renderName5 = "xmortgnd.smokeplume"
+	renderName6 = "xmortxpl.trails"
+	//renderName7 = "xmortgnd.Shock"
+	
+
+[LightFlare]
+simulateBase = "sim_smoke"
+lifeTime = 0.2
 renderBase = "draw_twirl"
-textureName = "flame.tga"
+textureName = "particle.tga"
 textureBlend = "one one modulate"
-startColor = "155 255 63 255"
-finishColor = "255 100 0 0"
-startRadius = 3.0
-finishRadius = 25.0 // 30.0
-animateTime = 1.5
+startColor = "255 156 40 200"
+finishColor = "255 156 40 0"
+startRadius = 10.0
+finishRadius = 2.0
+animateTime = 0.2
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
 
-[Shock]
-simulateBase = "sim_null"
-lifeTime = 0.3
-renderBase = "draw_sphere"
-textureName = "vsmoke.tga"
+
+[HullAsh]
+simulateBase = "sim_ember"
+lifeTime = 6.0
+renderBase = "draw_twirl"
+textureName = "spark.tga"
 textureBlend = "one one modulate"
-startColor = "155 255 63 127"
-finishColor = "255 0 0 0"
-startRadius = 3.0
-finishRadius = 40.0 // 60.0
-animateTime = 0.3
-latitudeBands = 8
-longitudeSegments = 16
+startColor = "255 140 20 255"
+finishColor = "255 90 20 0"
+startRadius = 0.2
+finishRadius = 0.2
+animateTime = 6.0
+BottomInteractsWithTerrain = false
 
-[Light]
-simulateBase = "sim_null"
-lifeTime = 1.5
-renderBase = "draw_light"
-startColor = "255 255 63 2550"
-finishColor = "255 0 0 0"
-startRadius = 40.0 // 60.0
-finishRadius = 40.0 // 60.0
-animateTime = 1.5
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+[Trails]
+simulateBase = "sim_ember"
+lifeTime = 2
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+startColor = "255 83 16 255"
+finishColor = "255 83 16 0"
+startRadius = 0.04
+finishRadius = 0.0
+trailTime = 0.8
+segmentTime = 0.5
+
+[sootemit]
+simulateBase = "sim_dust"
+lifeTime = 0.5
+renderBase = "draw_emit"
+emitName = "xmdmxpl.sootrail"
+emitDelay = 0.2
+emitVelocity = "15 15 15"
+emitVariance = "100.0 20.0 100.0"
+
+[sootrail]
+simulateBase = "sim_ember"
+renderBase = "draw_twirl_trail"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = " 50 50 50 255"
+finishColor = "30 15 5 0"
+startRadius = 0.2
+finishRadius = 0.4
+rotationRate = 15.0
+emitDelay = 0.02
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.6 0.6 0.6"
+emitLife = 0.4
+animateTime = 0.4

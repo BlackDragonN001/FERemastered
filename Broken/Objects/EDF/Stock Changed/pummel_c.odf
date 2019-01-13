@@ -1,15 +1,17 @@
 [OrdnanceClass]
 classLabel = "bullet"
 shotGeometry = NULL
-xplGround = "xbulgnd"
-xplVehicle = "xbulcar"
-xplBuilding = "xbulbld"
+xplGround = "xchaingnd_c"
+xplVehicle = "xchaincar_c"
+xplBuilding = "xchainbld_c"
+
+renderName = "pummel_c.render"
 
 ammoCost = 1.75	// 2.5FE, 3R
 lifeSpan = 0.265 // 80m // 0.33R  99m
 shotSpeed = 300.0
 
-damageValue(N) = 14 // none	//15R   
+damageValue(N) = 14 // none	//15R
 damageValue(L) = 12 // light	//13R
 damageValue(H) = 9 // heavy	//10R
 
@@ -18,3 +20,13 @@ damageValue(D) = 10 // deflection
 damageValue(A) = 15 // absorbtion
 
 // the pummel gun delivers 10 shots every .5 secs
+
+[Render]
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "spark2.tga"
+startColor = "232 155 64 250"
+finishColor = "232 155 64 0"
+startRadius = 0.35
+finishRadius = 0.30
+tracerLength = 5.6

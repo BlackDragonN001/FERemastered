@@ -1,16 +1,17 @@
 [GameObjectClass]
-geometryName = "igprox00.xsi"
+geometryName = "igprox00.fbx"
 classLabel = "proximity"
 scrapCost = 0
 scrapValue = 0
 maxHealth = 150
-maxAmmo = 300 // 200 FEA-B
+maxAmmo = 300 //200
 unitName = "Prox Mine"
 
 [MineClass]
-lifeSpan = 45 // 30 FEA-B
+lifeSpan = 45 //30
 xplBlast = "xminxpl"
 
 [ProximityMineClass]
 triggerRadius = 20.0
 suppressRadius = 40.0
+

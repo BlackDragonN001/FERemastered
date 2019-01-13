@@ -1,28 +1,70 @@
 [GameObjectClass]
+baseName = "ibscav"
 mrmFactor = 0
-geometryName = "ibscup00.xsi"
+geometryName = "ibscup01.fbx"
 animCount = 2
 animName1 = "deploy"
-animFile1 = "ibscup00.xsi"
+animFile1 = "ibscup01.fbx"
 animName2 = "loop"
-animFile2 = "ibscup01.xsi"
+animFile2 = "ibscup00.fbx"
 classLabel = "extractor"
 scrapCost = 60
-scrapValue = 30
-maxHealth = 6000
+scrapValue = 40
+maxHealth = 5000
 maxAmmo = 0
 unitName = "Extractor"
 heatSignature = 2.0
 imageSignature = 1.0
 radarSignature = 1.0
-collisionRadius = 1.0
+collisionRadius = 8.0 //12.0
 isAssault = 1
-canInteract=1 // for missile lock
-explosionName = "xscavxpl"
+canInteract = 1 // for missile lock
 armorClass = H
+AllowUndergroundSpawn = 1
 
+explosionName = "xscavxpl"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName1 = "ibscup"
+provideName2 = "VIRTUAL_CLASS_EXTRACTOR_Group"
+provideName3 = "VIRTUAL_CLASS_EXTRACTOR_Upgraded"
+provideName4 = "VIRTUAL_CLASS_STORAGE"
+provideName5 = "extract"
+
+/////////LIGHTS AND EFFECTS/////////
+effectHard1 = "hp_light_2"
+effectName1 = "emit_yellowstay"
+effectHard2 = "hp_emit_1"
+effectName2 = "ibscup.steam"
+effectHard3 = "hp_light_3"
+effectName3 = "emit_redblink"
+effectHard4 = "hp_light_4"
+effectName4 = "emit_redblink"
+effectHard5 = "hp_light_5"
+effectName5 = "emit_redblink"
+effectHard6 = "hp_light_6"
+effectName6 = "emit_redblink"
+
+[steam]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "50 100 200 100"  //300"
+finishColor = "50 50 100 10"  //20"
+startRadius = 5.5
+finishRadius = 8.0
+animateTime = 1.0
+emitDelay = 0.1  //try 0.03  //
+emitVelocity = "0.5 5.0 0.5 "
+emitVariance = "10.0 1.0 10.0"
+emitLife = 1.0
+
+
+////////////////////////////////////
 [BuildingClass]
-// an ambient sound would be nice
+bldEdge = "wwww"
+soundAmbient = "iext01-up.wav"
 
 [ExtractorClass]
 initDelay = 12.0

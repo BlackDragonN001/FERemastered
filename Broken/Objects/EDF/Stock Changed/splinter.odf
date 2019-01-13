@@ -1,23 +1,52 @@
 [OrdnanceClass]
 classLabel = "bullet"
 shotGeometry = NULL
-xplGround = "xbulgnd"
-xplVehicle = "xbulcar"
-xplBuilding = "xbulbld"
+xplGround = "xchaingnd_c"
+xplVehicle = "xchaincar_c"
+xplBuilding = "xchainbld_c"
+
+renderName = "splinter.render"
 
 ammoCost = 1
 lifeSpan = 0.5
 shotSpeed = 200.0
 
-damageValue(N) = 40
-damageValue(L) = 30
-damageValue(H) = 1
+damageValue(N) = 40 //15
+damageValue(L) = 30 //9
+damageValue(H) = 1 //3
 
-damageValue(S) = 20
-damageValue(D) = 40
-damageValue(A) = 10
+damageValue(S) = 20 //9
+damageValue(D) = 40 //1
+damageValue(A) = 10 //15
 
 // ** is now a rather effective turret/truck killer. A tank will only get 4 shots, which are enough to kill about 
 // 5 medium armour units, like trucks and turrets. Should go some way to reduce turtling in that FE has been
 // plagued by, much like the acid cloud mortar. Note the range (~170m) being insufficient to outrange base D.
 // Player has to get his hands dirty to use this, and it won't scratch armour - DF
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "splinter.BulletTrail"
+renderName2 = "splinter.SmokeyTrail"
+
+[BulletTrail]
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "spark2.tga"
+startColor = "232 155 64 250"
+finishColor = "232 155 64 0"
+startRadius = 0.25
+finishRadius = 0.15
+tracerLength = 3.6
+
+[SmokeyTrail]
+renderBase = "draw_trail"
+textureName = "strail.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+textureRate = 0.3
+startColor = "255 128 64 40"
+finishColor = "105 105 107 0"
+startRadius = 0.2
+finishRadius = 0.03
+segmentTime = 0.3

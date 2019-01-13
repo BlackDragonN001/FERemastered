@@ -1,5 +1,5 @@
 [GameObjectClass]
-geometryName = "igmcur00.xsi"
+geometryName = "igmcur00.fbx"
 classLabel = "magnet"
 scrapCost = 0
 scrapValue = 0
@@ -15,12 +15,14 @@ lifeSpan = 30.0
 [MagnetMineClass]
 triggerDelay = 1.0
 fieldRadius = 20.0
-objPushCenter = 0.0
-objPushEdge = 20.0
-objDrag = 0.5
-ordPushCenter = 200.0
-ordPushEdge = 500.0
-ordDrag = 1.5
+objPushCenter = 0.0 //-10.0
+objPushEdge = 20.0 //25.0
+objDragCenter = 0.5 //0.2
+objDragEdge = 0.5
+ordPushCenter = 200.0 //100.0
+ordPushEdge = 500.0 //250.0
+ordDragCenter = 1.5 //2.0
+ordDragEdge = 1.5 //5.0
 
 [Field]
 renderBase = "draw_sphere"

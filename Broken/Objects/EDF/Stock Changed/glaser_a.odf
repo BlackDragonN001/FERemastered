@@ -7,7 +7,7 @@ fireSound = "cgun01.wav"
 wpnReticle = "glaser"
 wpnCategory = "GUN"
 isAssault = 1
-aiRange = 145
+aiRange = 145 //100
 flashName = "glaser_a.flash"
 
 [CannonClass]
@@ -23,6 +23,6 @@ finishColor = "0 0 255 700"
 startRadius = 20.0
 finishRadius = 20.0
 animateTime = 3.5
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0

@@ -1,11 +1,12 @@
 [GameObjectClass]
+baseName = "ibscav"
 mrmFactor = 0
-geometryName = "ibscav00.xsi"
+geometryName = "ibscav01.fbx"
 animCount = 2
 animName1 = "deploy"
-animFile1 = "ibscav00.xsi"
+animFile1 = "ibscav01.fbx"
 animName2 = "loop"
-animFile2 = "ibscav01.xsi"
+animFile2 = "ibscav00.fbx"
 classLabel = "extractor"
 scrapCost = 20
 scrapValue = 20
@@ -15,15 +16,47 @@ unitName = "Extractor"
 heatSignature = 2.0
 imageSignature = 1.0
 radarSignature = 1.0
-collisionRadius = 1.0
+collisionRadius = 8.0 //12.0
 isAssault = 1
-canInteract=1 // for missile lock
-explosionName = "xscavxpl"
+canInteract = 1 // for missile lock
 armorClass = H
-
 upgradeName = "ibscup"
+AllowUndergroundSpawn = 1
+UseCollisionMeshForPathing = 0
 
+explosionName = "xscavxpl"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName1 = "ibscav"
+provideName2 = "VIRTUAL_CLASS_EXTRACTOR"
+provideName3 = "VIRTUAL_CLASS_EXTRACTOR_Group"
+provideName4 = "VIRTUAL_CLASS_STORAGE"
+provideName5 = "extract"
+
+///////// LIGHTS AND EFFECTS /////////
+effectHard1 = "hp_light_2"
+effectName1 = "emit_yellowstay"
+effectHard2 = "hp_emit_1"
+effectName2 = "ibscav.steam"
+
+[steam]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "50 100 200 100"  //300"
+finishColor = "50 50 100 10"  //20"
+startRadius = 5.5
+finishRadius = 8.0
+animateTime = 1.0
+emitDelay = 0.1  //try 0.03  //
+emitVelocity = "0.5 5.0 0.5 "
+emitVariance = "10.0 1.0 10.0"
+emitLife = 1.0
+
+////////////////////////////////////
 [BuildingClass]
+bldEdge = "wwww"
 soundAmbient = "iext01.wav"
 
 [ExtractorClass]

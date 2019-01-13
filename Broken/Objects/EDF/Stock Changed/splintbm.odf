@@ -1,13 +1,13 @@
 [OrdnanceClass]
 classLabel = "spraybomb"
-shotGeometry = "ioartl00.xsi"
+shotGeometry = "ioartl00.fbx"
 shotSound = "baz03.wav"
 xplGround = NULL
 xplVehicle = NULL
 xplBuilding = NULL
 rendername = "splintbm.render"
 
-ammoCost = 500
+ammoCost = 500 //200
 lifeSpan = 15
 shotSpeed = 45.0
 

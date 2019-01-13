@@ -1,45 +1,88 @@
 [OrdnanceClass]
 classLabel = "bouncebomb"
 
-shotGeometry = "ioartl00.xsi"
-xplGround = "xgasxpl"
-xplVehicle = "xgasxpl"
-xplBuilding = "xgasxpl"
-xplExpire = "xmdmxpl"
-
+shotGeometry = "ioartl00.fbx"
 shotSound = "crckt02.wav"
+
+xplGround = "xmortgnd"
+xplVehicle = "xmdmxpl"
+xplBuilding = "xmdmxpl"
+xplExpire = "xmdmxpl"
 
 renderName = "mdmgun.render"
 
-ammoCost = 35 // 30FE 30R
-lifeSpan = 1e30
+ammoCost = 35 // 30FE 30R //60.0
+lifeSpan = 1e30 //300.0
 shotSpeed = 55.0  // 50.0	//60FE, 60R
 
 //**translates as a range (including bouncer) of about 230m. Still enough to easily
 //defenses, but not enough to fire shots accross huge gaps (plaza springs to mind)
 // damage also reduced by 20%, probably un-noticeable to the majoroty - DF
 
-damageValue(N) = 375 // 400 //500FE, 500R
-damageValue(L) = 375 // 400 //500FE, 500R
-damageValue(H) = 375 // 400 //500FE, 500R
-damageValue(S) = 375 // 400 //500FE, 500R
-damageValue(D) = 375 // 400 //500FE, 500R
-damageValue(A) = 375 // 400 //500FE, 500R
+damageValue(N) = 375 // 400 //500FE, 500R //600
+damageValue(L) = 375 // 400 //500FE, 500R //500
+damageValue(H) = 375 // 400 //500FE, 500R //400
+damageValue(S) = 375 // 400 //500FE, 500R //500
+damageValue(D) = 375 // 400 //500FE, 500R //400
+damageValue(A) = 375 // 400 //500FE, 500R //600
 
 [BounceBombClass]
-soundBounce = "mdmort03.wav"
+bounceRatio = 0.5
+bounceSound = "mdmort03.wav"
+bounceBuilding = 1
 
 [Render]
-renderBase = "draw_twirl_trail"
-textureName = "smoke.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "255 255 255 32"
-finishColor = "255 255 255 0"
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "mdmgun.flare"
+renderName2 = "mdmgun.smoketrail"
+renderName3 = "mdmgun.hottrail"
+renderName4 = "mdmgun.glow"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
 startRadius = 0.5
-finishRadius = 2.0
-animateTime = 2.0
-rotationRate = 2.0
-emitDelay = 0.01
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "1.0 1.0 1.0"
-emitLife = 2.0
+finishRadius = 0.5
+
+[glow]
+renderBase = "draw_sprite"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "255 144 40 255"
+finishColor = "255 144 40 255"
+startRadius = 1.0
+finishRadius = 1.0
+
+[HotTrail]
+renderBase = "draw_trail"
+textureName = "firetrail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.25 //0.2
+startColor = "255 255 255 255"
+finishColor = "220 255 255 0"
+startRadius = 0.30
+finishRadius = 0.05
+segmentLength = 2.4 //3.0
+segmentTime = 0.1
+animateTime = 0.1
+segmentVariance = "3.0 3.0 3.0"
+
+[SmokeTrail]
+renderBase = "draw_twirl_trail"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "56 54 52 60"
+finishColor = "66 64 62 0"
+startRadius = 0.4
+finishRadius = 2.7
+rotationRate = 6.0
+animateTime = 2.5
+emitDelay = 0.02
+emitVariance = "3.7 3.7 3.7"
+emitInherit = "0.3 0.3 0.3"
+emitLife = 2.5
+BottomInteractsWithTerrain = false

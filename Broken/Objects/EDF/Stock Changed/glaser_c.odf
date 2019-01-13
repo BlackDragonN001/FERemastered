@@ -12,7 +12,7 @@ flashName = "glaser_c.flash"
 
 
 [CannonClass]
-shotDelay = 1.5 // .5/sec
+shotDelay = 1.5 //2.0 // .5/sec
 salvoCount = 1
 salvoDelay = 0.001
 shotVariance = 0.0
@@ -27,6 +27,6 @@ finishColor = "0 0 255 700"
 startRadius = 20.0
 finishRadius = 20.0
 animateTime = 3.5
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0

@@ -1,55 +1,72 @@
 [OrdnanceClass]
 classLabel = "bullet"
 
-shotGeometry = "iorckt00.xsi"
+shotGeometry = "iomhrn00.fbx"
 shotSound = "crckt02.wav"
 
 renderName = "rktbomb_c.render"
 
-xplGround = "xgasxpl2"
-xplVehicle = "xgasxpl2"
-xplBuilding = "xgasxpl2"
+xplGround = "xrktbgnd_c"
+xplVehicle = "xrktbxpl_c"
+xplBuilding = "xrktbxpl_c"
 
-ammoCost = 30
-lifeSpan = 2.5
-shotSpeed = 60.0
+ammoCost = 30 //25.0
+lifeSpan = 2.5 //3.0
+shotSpeed = 60.0 //100.0
 
-damageValue(N) = 185
-damageValue(L) = 150
-damageValue(H) = 90
-damageValue(S) = 170
-damageValue(D) = 200
-damageValue(A) = 125
+damageValue(N) = 185 //500
+damageValue(L) = 150 //350
+damageValue(H) = 90  //200
+damageValue(S) = 170 //350
+damageValue(D) = 200 //500
+damageValue(A) = 125 //200
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
-renderName1 = "rktbomb_c.flare"
-renderName2 = "rktbomb_c.smoke"
-renderName3 = "rktbomb_c.flame"
+renderCount = 6
+renderName1 = "rktbomb_c.light"
+renderName2 = "rktbomb_c.flare"
+renderName3 = "rktbomb_c.smoke"
+renderName4 = "rktbomb_c.flame"
+renderName5 = "rktbomb_c.sparks"
+renderName6 = "rktbomb_c.flametrail"
+
+[Light]
+renderBase = "draw_light"
+startColor = "167 64 0 380"
+finishColor = "167 64 0 380"
+startRadius = 60.0
+finishRadius = 60.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
 
 [Flare]
-renderBase = "draw_sprite"
-textureName = "lightflare.tga"
+renderBase = "draw_twirl"
+textureName = "particle.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 255 255 255"
-startRadius = 5.0
-finishRadius = 5.0
+startColor = "240 184 79 80"
+finishColor = "240 184 79 80"
+startRadius = 5.3
+finishRadius = 5.3
+rotationRate = 1.5
+BottomInteractsWithTerrain = false
 
 [Smoke]
 renderBase = "draw_twirl_trail"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "153 153 153 128"
+startColor = "153 153 153 81"
 finishColor = "153 153 153 0"
 startRadius = 0.5
-finishRadius = 2.5
-animateTime = 1.0
-emitDelay = 0.05
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "2.0 2.0 1.5"
-emitLife = 1.0
+finishRadius = 1.5
+rotationRate = 2.0
+animateTime = 2.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 -10.0"
+emitVariance = "3.0 3.0 2.5"
+emitLife = 2.0
+BottomInteractsWithTerrain = false
 
 [Flame]
 renderBase = "draw_twirl_trail"
@@ -59,8 +76,42 @@ startColor = "255 255 63 255"
 finishColor = "255 0 0 0"
 startRadius = 0.3
 finishRadius = 0.1
+rotationRate = 2.0
 animateTime = 0.1
-emitDelay = 0.002
-emitVelocity = "0.0 0.0 0.0"
+emitDelay = 0.002 //0.001
+emitVelocity = "0.5 0.5 -10.0"
 emitVariance = "3.0 3.0 2.0"
 emitLife = 0.1
+emitInherit = "1.0 1.0 1.0"
+BottomInteractsWithTerrain = false
+
+[Sparks]
+renderBase = "draw_twirl_trail"
+textureName = "spark2.tga"
+textureBlend = "one one modulate"
+startColor = "242 147 77 255"
+finishColor = "237 233 82 0"
+startRadius = 0.18
+finishRadius = 0.13
+animateTime = 0.1
+emitDelay = 0.005 //0.003
+emitVelocity = "0.0 0.0 -5.0"
+emitVariance = "18.9 18.9 18.9"
+emitLife = 0.1
+BottomInteractsWithTerrain = false
+	
+[FlameTrail]
+renderBase = "draw_trail"
+textureName = "firetrail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.1
+startColor = "255 255 255 255"
+finishColor = "216 180 103 0"
+startRadius = 0.6
+finishRadius = 0.2
+animateTime = 0.3
+segmentTime = 0.3
+segmentLength = 0.7
+TextureSpeed = 8.0
+
+

@@ -11,17 +11,134 @@ flashName = "gplasma_a.flash"
 aiRange = 260
 
 [CannonClass]
-shotDelay = 1.6 // 1/2sec
+shotDelay = 1.6 //2.0 // 1/2sec
 shotAlternate = 0
 
 [Flash]
+renderBase = "draw_multi"
+renderCount = 6
+renderName1 = "GPlasma_a.LightFlash"
+renderName2 = "GPlasma_a.ForeFlash"
+renderName3 = "GPlasma_a.SmokePuff"
+renderName4 = "GPlasma_a.SparkPuff"
+renderName5 = "GPlasma_a.EnergyPuff"
+renderName6 = "GPlasma_a.Core"
+
+[LightFlash]
+renderBase = "draw_light"
+startColor = "172 255 27 255"
+finishColor = "172 255 27 0"
+startRadius = 85.0
+finishRadius = 45.0
+animateTime = 0.25
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[ForeFlash]
+renderBase = "draw_geom"
+textureName = "ionflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 0"
+startRadius = 10.0
+finishRadius = 1.0
+animateTime = 0.4
+geomName = "g_sflash.xsi"
+
+
+[SmokePuff]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "GPlasma_a.Smoke"
+emitDelay = 0.015
+emitVariance = "15.0 15.0 15.0"
+emitVelocity = "0.0 0.0 8.0"
+emitInherit = "0.3 0.3 0.0"
+
+	[Smoke]
+	simulateBase = "sim_smoke"
+	lifeTime = 0.4
+	renderBase = "draw_twirl"
+	textureName = "smoke2.tga"
+	textureBlend = "srcalpha invsrcalpha modulatealpha"
+	startColor = "47 69 59 127"
+	finishColor = "110 110 110 0"
+	startRadius = 0.4
+	finishRadius = 2.6
+	animateTime = 0.4
+	rotationRate = 8.0
+
+[SparkPuff]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "GPlasma_a.Spark"
+emitDelay = 0.01
+emitVariance = "12.0 12.0 12.0"
+emitVelocity = "0.0 0.0 8.0"
+emitInherit = "0.3 0.3 0.3"
+emitLife = 0.15
+
+	[Spark]
+	simulateBase = "sim_smoke"
+	lifeTime = 0.15
+	renderBase = "draw_twirl"
+	textureName = "crackle.tga"
+	textureBlend = "one one modulate"
+	startColor = "172 255 75 255"
+	finishColor = "120 255 0 0"
+	startRadius = 0.2 //0.3
+	finishRadius = 1.4 //0.2
+	animateTime = 0.15
+	rotationRate = 15.0
+
+[EnergyPuff]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "GPlasma_a.EnergyPuffB"
+emitVariance = "0.0 0.0 0.0"
+emitDelay = 0.1
+emitInherit = "1.0 1.0 1.0"
+
+	[EnergyPuffB]
+	simulateBase = "sim_smoke"
+	lifeTime = 0.1
+	renderBase = "draw_emit"
+	emitName = "GPlasma_a.EnergyPuffC"
+	emitVariance = "15.0 15.0 5.0"
+	emitVelocity = "0.0 0.0 10.0"
+	emitDelay = 0.02
+	//emitInherit = "1.0 1.0 1.0"
+
+		[EnergyPuffC]
+		simulateBase = "sim_smoke"
+		lifeTime = 0.15
+		renderBase = "draw_bolt"
+		textureName = "trail2.tga"
+		textureBlend = "one one modulate"
+		textureRate = 0.8
+		texturespeed = -8.0
+		startColor = "172 255 60 255"
+		finishColor = "130 255 20 0"
+		startRadius = 0.07
+		finishRadius = 0.008
+		segmentLength = 0.25
+		segmentVariance = "0.4 0.4 0.5"
+		animateTime = 0.15
+
+[Core]
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 80 127"
 finishColor = "0 255 0 0"
-startRadius = 3.0
-finishRadius = 1.0
+startRadius = 2.0
+finishRadius = 0.5
 animateTime = 0.1
 latitudeBands = 8
 longitudeSegments = 16
+

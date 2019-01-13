@@ -1,24 +1,16 @@
 [GameObjectClass]
-[GameObjectClass]
-geometryName = "apspec00.xsi"
-classLabel = "wpnpower"
-scrapCost = 10 // 20FEB // 30FE R
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+baseName = "apsnip"
+classLabel = "aphand"
+
+scrapCost = 10 //30
+
+unitName = "ISDF Pulse Rifle"
 
 requireCount = 1
 requireName1 = "ibtcen"
-requireText1 = "Build Tech Cen"
-
-lightHard1 = "hp_light_1"
-lightName1 = "omnired"
+requireText1 = "Build Tech Center"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "igsnip_c"

@@ -1,8 +1,14 @@
 [GameObjectClass]
-geometryName = "ibfact00.xsi"
+baseName = "ibfact"
+geometryName = "ibfact00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ibfact00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
 classLabel = "factory"
 scrapCost = 55
-scrapValue = 10
+scrapValue = 15
 maxHealth = 6000
 maxAmmo = 0
 unitName = "Factory"
@@ -12,28 +18,37 @@ heatSignature = 2.0
 imageSignature = 1.0
 radarSignature = 1.0
 isAssault = 1
-
 armorClass = H
+AllowUndergroundSpawn = 1
 
+/////// REQUIREMENTS ///////////////
 requireCount = 1
 requireName1 = "ibpgen"
 requireText1 = "Build Power"
 
-provideCount = 1
+/////// PROVIDES ///////////////////
+provideCount = 2
 provideName1 = "ibfact"
+provideName2 = "VIRTUAL_CLASS_FACTORY"
 
+////////////////////////////////////
 collisionRadius = 4.0
 
+///////// LIGHTS & EFFECTS /////////
+lightHard1 = "hp_light_3"
+lightName1 = "o_red_nf"
+lightHard2 = "hp_light_4"
+lightName2 = "o_lblue_nf" 
 
-lightHard1 = "hp_light_1"
-lightName1 = "o_white_nf"
+effectHard1 = "hp_emit_0"
+effectName1 = "emit_blueblink"
+effectFlags1 = "447" //447 powered  479 unpowered
 
 [PoweredBuildingClass]
 detectRange = 100
 
 [BuildingClass]
 tunnelCount = 1
-
 tunnel01X0 = 3
 tunnel01Z0 = 3
 tunnel01DX = 2
@@ -41,8 +56,6 @@ tunnel01DZ = 4
 tunnel01Edge = "wwtw"
 
 soundAmbient = "ibfact00.wav"
-
-// play ambient sound
 
 [FactoryClass]
 soundBuild = "ibrecy02.wav"
@@ -61,6 +74,6 @@ buildItem8 = "ivbomb"
 buildItem9 = "ivrbomb"
 
 [Lod1]
-geometryName = "ibfactL1.xsi" ;geometry for lod1
-distance = 80
-dontShiftLOD = 1
+//geometryName = "ibfactL1.fbx" ;geometry for lod1
+//distance = 80
+//dontShiftLOD = 1

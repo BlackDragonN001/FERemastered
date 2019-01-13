@@ -1,12 +1,10 @@
 [GameObjectClass]
-geometryName = "apmisl00.xsi"
-classLabel = "wpnpower"
-scrapCost = 20
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+baseName = "aprktb"
+classLabel = "aprocket"
+
+scrapCost = 20 //3
+
+unitName = "Rocket Bomb"
 
 requireCount = 2
 requireName1 = "ibarmo"
@@ -14,12 +12,7 @@ requireText1 = "Build Armory"
 requireName2 = "ibtcen"
 requireText2 = "Build Tech Cen"
 
-lightHard1 = "hp_light_1"
-lightName1 = "omniorange"
-
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "grktbomb_c"
