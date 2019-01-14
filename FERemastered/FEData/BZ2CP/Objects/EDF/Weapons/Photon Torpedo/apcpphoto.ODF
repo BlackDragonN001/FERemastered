@@ -1,0 +1,16 @@
+[GameObjectClass]
+baseName = "apcprktbomb"
+classLabel = "aprocket"
+
+scrapCost = 20
+
+unitName = "Photon Torpedo"
+
+requireCount = 1
+requireName1 = "ibarmo"
+requireText1 = "Build Armory"
+
+[PowerUpClass]
+
+[WeaponPowerupClass]
+weaponName = "gcpphoton"

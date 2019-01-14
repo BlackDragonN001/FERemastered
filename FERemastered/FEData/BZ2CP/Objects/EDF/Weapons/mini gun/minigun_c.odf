@@ -1,0 +1,46 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+renderName = "minigun_c.render"
+
+ammoCost = 1.25
+lifeSpan = .35 // 105m
+shotSpeed = 300.0
+
+damageValue(N) = 11 // none // 200
+damageValue(L) = 8 // light // 160
+damageValue(H) = 5 // heavy // 100
+
+damageValue(S) = 8 // standard // 160
+damageValue(D) = 5 // deflection // 100
+damageValue(A) = 10 // absorbtion // 200
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "minigun_c.BulletTrail"
+renderName2 = "minigun_c.SmokeyTrail"
+
+[BulletTrail]
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "spark2.tga"
+startColor = "120 127 230 250"
+finishColor = "0 0 255 100" //0"
+startRadius = 0.1
+finishRadius = 0.1
+tracerLength = 5.6
+
+[SmokeyTrail]
+renderBase = "draw_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+textureRate = 0.3
+startColor = "120 127 230 7"
+finishColor = "0 0 255 0"
+startRadius = 0.15
+finishRadius = 0.025
+segmentTime = 0.3

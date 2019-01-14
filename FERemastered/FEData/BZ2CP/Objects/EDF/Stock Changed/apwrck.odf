@@ -1,0 +1,21 @@
+[GameObjectClass]
+geometryName = "daywrecker00.fbx"
+classLabel = "daywrecker"
+scrapCost = 20
+scrapValue = 0
+maxHealth = 300 //500
+maxAmmo = 0
+unitName = "Day Wrecker"
+aiName = "PowerUpProcess"
+
+requireCount = 1
+requireName1 = "ibarmo"
+
+ClearBuildZone = 0
+
+[PowerUpClass]
+SlowFall = false
+FallSpeed = 12
+
+[DayWreckerClass]
+xplBlast = "xbmbxpl"

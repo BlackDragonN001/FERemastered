@@ -1,0 +1,180 @@
+[GameObjectClass]
+baseName = "ivapc"
+classLabel = "apc"
+geometryName = "ivapc00.fbx"
+cockpitName= "ivapc_cockpit.fbx"
+animCount = 4  //Anims don't work. Maybe one day...
+animName1 = "forward"
+animFile1 = "ivapcsf.fbx"
+animName2 = "neutral"
+animFile2 = "ivapcsn.fbx"
+animName3 = "reverse"
+animFile3 = "ivapcsr.fbx"
+animName4 = "deploy"
+animFile4 = "ivapc00.fbx"
+collisionRadius = 7.0
+scrapValue = 20
+scrapCost = 50
+customCost = 80
+buildTime = 20.0
+customTime = 20.0
+maxHealth = 3000
+maxAmmo = 1 // Can't be 0 for InternalSoldiersAreAmmo to work
+unitName = "APC"
+aiName = "APCProcess"
+heatSignature = 10.0
+imageSignature = 0.5
+radarSignature = 0.0
+isAssault = 1
+canSnipe = 0
+armorClass = L
+boxCollide = 1
+
+/////// REQUIREMENTS ///////////////
+requireCount = 2
+requireName1 = "ibfact"
+requireText1 = "Build Factory"
+requireName2 = "ibtrain"
+requireText2 = "Build Training"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "ivapc"
+provideName2 = "VIRTUAL_CLASS_APC"
+provideName3 = "flier"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "" //"spotblue2"
+lightHard2 = "hp_light_2"
+lightName2 = "spotblue2"  
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "emit_contrail2"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 1e6
+//effectMinVelocity1 = 0.1
+//effectMaxVelocity1 = 1e6
+effectFlags1 = 2147483639
+effectHard2 = "hp_dust_2" 
+effectName2 = "emit_contrail2"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 1e6
+//effectMinVelocity2 = 0.1
+//effectMaxVelocity2 = 1e6
+effectFlags2 = 2147483639
+
+
+//effectHard3 = "hp_dust_1"
+//effectName3 = "emit_aircraft1"
+//effectMinAltitude3 = 0.0
+//effectMaxAltitude3 = 200.0
+//effectMinVelocity3 = 2.0
+//effectMaxVelocity3 = 500.0
+//effectHard4 = "hp_dust_2" 
+//effectName4 = "emit_aircraft1"
+//effectMinAltitude4 = 0.0
+//effectMaxAltitude4 = 200.0
+//effectMinVelocity4 = 2.0
+//effectMaxVelocity4 = 500.0
+//effectHard5 = "hp_dust_1"
+//effectName5 = "emit_aircraft2"
+//effectMinAltitude5 = 25.0
+//effectMaxAltitude5 = 200.0
+//effectMinVelocity5 = 2.0
+//effectMaxVelocity5 = 500.0
+//effectHard6 = "hp_dust_2" 
+//effectName6 = "emit_aircraft2"
+//effectMinAltitude6 = 25.0
+//effectMaxAltitude6 = 200.0
+//effectMinVelocity6 = 2.0
+//effectMaxVelocity6 = 500.0 
+
+[CraftClass]
+rangeScan = 200.0
+periodScan = 0.0
+velocJam = 0.0
+braccelFactor = 0.05f;
+strafeFactor = 0.1f;
+steerFactor = 1.0f;
+omegaFactor = 0.2f;
+velFactor = 0.2f;
+avoidSpeed = 20;
+topSpeed = 30;
+
+selectWaitMsg = "avapcva.wav"
+selectDropoffMsg = "avapcvf.wav"
+selectPickupMsg = "avapcvg.wav"
+selectOtherMsg = "avapcvj.wav"
+goMsg = "avapcv0.wav"
+attackMsg = "avapcv9.wav"
+followMsg = "avapcvh.wav"
+followMeMsg = "avapcv3.wav"
+repairMsg = "avapcv4.wav"
+recycleMsg = "avapcv6.wav"
+rescueMsg = "avapcv5.wav"
+otherMsg = "avapcvh.wav"
+deployedMsg = "avapcv2.wav"
+diedMsg = "abetty3.wav"
+
+[HoverCraftClass]
+setAltitude = 1.5
+accelDragStop = 4.0
+accelDragFull = 1.0
+alphaTrack = 10.0
+alphaDamp = 3.0
+pitchPitch = 0.5
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+velocForward = 15.0
+velocReverse = 15.0
+velocStrafe = 15.0
+accelThrust = 50.0
+accelBrake = 50.0
+omegaSpin = 2.0
+omegaTurn = 1.0
+alphaSteer = 5.0
+accelJump = 150.0
+soundThrust = "iapc02.wav"
+soundSteer = "avapce5.wav"
+soundDeploy = "iapc04.wav"
+soundUndeploy = "avapc30.wav"
+
+[APCClass]
+soldierType = "ivspbk"
+soldierCount = 3
+soldierDelay = 0.1
+timeDeploy = 0.5
+flightAltitude = 75.0
+SoldierAltitude = 50.0 // Altitude at which it starts spitting soldiers out.
+InternalSoldiersAreAmmo = true // if true, ammo meter shows the % of soldiers in the APC. (updated occasionally)
+
+[Lod1]
+//geometryName = "ivapcL1.xsi" ;geometry for lod1
+//distance = 100
+
+[trailer]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.05
+startColor = "100 200 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.4
+finishRadius = 0.8
+segmentTime = 9.0
+animateTime = 0.3
+
+[flame]
+renderBase = "draw_trail"
+textureName = "tflame.tga"
+textureBlend = "one one modulate"
+textureRate = 0.05 //.05
+startColor = "255 255 255 255"
+finishColor = "255 255 255 0"
+startRadius = 1.0
+finishRadius = 1.0
+segmentTime = 0.2 //.05
+animateTime = 0.05 //.05

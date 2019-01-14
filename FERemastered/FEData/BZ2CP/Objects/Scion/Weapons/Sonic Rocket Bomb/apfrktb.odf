@@ -1,0 +1,20 @@
+[GameObjectClass]
+baseName = "aprktb"
+classLabel = "aprocket"
+
+scrapCost = 20
+
+unitName = "Rocket Bomb"
+
+requireCount = 3
+requireName1 = "fbarmo"
+requireText1 = "Build Stronghold"
+requireName2 = "fbantm"
+requireText2 = "Build Antenna"
+requireName3 = "fbover"
+requireText3 = "Upgrade Antenna"
+
+[PowerUpClass]
+
+[WeaponPowerupClass]
+weaponName = "gfrbomb_c"

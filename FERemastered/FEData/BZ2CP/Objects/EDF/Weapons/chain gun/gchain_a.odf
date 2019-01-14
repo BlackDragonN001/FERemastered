@@ -1,0 +1,26 @@
+[WeaponClass]
+classLabel = "machinegun"
+altName = "gchain_c"
+ordName = "chain_a"
+wpnName = "Chain Gun"
+fireSound = "gchain_a.wav"
+wpnReticle = "gchain"
+wpnCategory = "GUN"
+isAssault = 1
+flashName = "gchain_a.flash"
+aiRange = 120
+
+[CannonClass]
+shotDelay = 0.1
+shotVariance = 0.05
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflashed.tga" //"sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 0 255"
+finishColor = "255 127 0 0"
+startRadius = 7.5
+finishRadius = 2.0
+animateTime = 0.1
+geomName = "g_sflash.xsi"
