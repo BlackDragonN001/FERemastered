@@ -2,30 +2,30 @@
 classLabel = "machinegun"
 
 // external geometry
-geometryName = "sgsnip__stand.xsi"
+geometryName = "fgsnip__stand.xsi"
 geometryScale = 0.12
 animCount = 4
 animName1 = "stand"
-animFile1 = "sgsnip__stand.xsi"
+animFile1 = "fgsnip__stand.xsi"
 animName2 = "walk"
-animFile2 = "sgsnip__stand.xsi"
+animFile2 = "fgsnip__stand.xsi"
 animName3 = "crouch"
-animFile3 = "sgsnip__stand.xsi"
+animFile3 = "fgsnip__stand.xsi"
 animName4 = "jump"
-animFile4 = "sgsnip__stand.xsi"
+animFile4 = "fgsnip__stand.xsi"
 
 // cockpit geometry
-cockpitName = "swrifl_cockpit_stand.xsi"
+cockpitName = "fwrifl_cockpit_stand.xsi"
 cockpitScale = 0.12
 animCountCockpit = 4
 animNameCockpit1 = "stand"
-animFileCockpit1 = "swrifl_cockpit_stand.xsi"
+animFileCockpit1 = "fwrifl_cockpit_stand.xsi"
 animNameCockpit2 = "walk"
-animFileCockpit2 = "swrifl_cockpit_run.xsi"
+animFileCockpit2 = "fwrifl_cockpit_run.xsi"
 animNameCockpit3 = "crouch"
-animFileCockpit3 = "swrifl_cockpit_snipe.xsi"
+animFileCockpit3 = "fwrifl_cockpit_snipe.xsi"
 animNameCockpit4 = "jump"
-animFileCockpit4 = "swrifl_cockpit_stand.xsi"
+animFileCockpit4 = "fwrifl_cockpit_stand.xsi"
 
 ordName = "hpulse_c"
 wpnName = "pulser"

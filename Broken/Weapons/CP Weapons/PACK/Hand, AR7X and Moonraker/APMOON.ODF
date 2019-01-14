@@ -1,24 +1,18 @@
 [GameObjectClass]
-[GameObjectClass]
-geometryName = "apspec00.xsi"
-classLabel = "wpnpower"
-scrapCost = 35
-scrapValue = 0
-maxHealth = 100
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+baseName = "fpsnip"
+classLabel = "aphand"
 
-requireCount = 1
-requireName1 = "fbover"
-requireText1 = "Build Overseer"
+scrapCost = 30
 
-lightHard1 = "hp_light_1"
-lightName1 = "omnired"
+unitName = "Scion Pulse Rifle"
+
+requireCount = 2
+requireName1 = "fbantm"
+requireText1 = "Build Antenna Mound"
+requireName2 = "fbover"
+requireText2 = "Upgrade Antenna Mound"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "gmoon_c"

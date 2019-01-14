@@ -1,22 +1,16 @@
 [GameObjectClass]
-geometryName = "apspec00.xsi"
-classLabel = "wpnpower"
-scrapCost = 20
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+baseName = "apgren"
+classLabel = "appack"
+
+scrapCost = 30
+
+unitName = "Mine Layer"
 
 requireCount = 1
-requireName1 = "ibarmo"
-
-lightHard1 = "hp_light_1"
-lightName1 = "omnired"
+requireName1 = "ibtcen"
+requireText1 = "Build Tech Center"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "igfootmine"

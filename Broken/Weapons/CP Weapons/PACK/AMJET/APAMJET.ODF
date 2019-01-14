@@ -1,23 +1,16 @@
 [GameObjectClass]
-geometryName = "apspec00.xsi"
-classLabel = "wpnpower"
+baseName = "apgren"
+classLabel = "appack"
+
 scrapCost = 30
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+
+unitName = "Booster"
 
 requireCount = 1
-requireName1 = "ebtcen"
-requireText1 = "Build xyr tower"
-
-lightHard1 = "hp_light_1"
-lightName1 = "omnired"
+requireName1 = "ibtcen"
+requireText1 = "Build Tech Center"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "igamjet"
