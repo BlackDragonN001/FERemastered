@@ -1,0 +1,10 @@
+[WeaponClass]
+classLabel = "dispenser"
+wpnName = "Cseeker"
+fireSound = "mmine01.wav"
+wpnReticle = "gseek"
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 2.0
+objectClass = "xseeker"

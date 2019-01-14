@@ -1,0 +1,27 @@
+[WeaponClass]
+classLabel = "machinegun"
+altName = "gbchain_a"
+ordName = "bchain_c"
+wpnName = "Heavy Chain"
+fireSound = "bchain.wav"
+wpnReticle = "gchain"
+wpnCategory = "GUN"
+isAssault = 0
+flashName = "gbchain_c.flash"
+aiRange = 120
+
+[CannonClass]
+shotDelay = 0.1
+shotvariance = .03
+
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 0 255"
+finishColor = "255 127 0 0"
+startRadius = .5
+finishRadius = 0.25
+animateTime = 0.1
+geomName = "g_sflash.xsi"

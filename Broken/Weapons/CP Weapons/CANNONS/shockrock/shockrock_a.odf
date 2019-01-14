@@ -1,0 +1,47 @@
+[OrdnanceClass]
+classLabel = "pulse"
+shotGeometry = "iorckt00.xsi"
+shotScale = 0.8
+shotSound = "Ordin_a.wav"
+renderName = "shockrock_a.render"
+xplGround = "xshockrock_a"
+xplVehicle = "xshockrock_a"
+xplBuilding = "xshockrock_a"
+
+ammoCost = 150
+lifeSpan = 3.0 // 210m
+shotSpeed = 70.0
+
+damageValue(N) = 210 // none
+damageValue(L) = 200 // light
+damageValue(H) = 190 // heavy
+
+damageValue(S) = 200 // standard
+damageValue(D) = 190 // deflection
+damageValue(A) = 210 // absorbtion
+
+[PulseShellClass]
+pulseDelay = 0.3
+pulsePeriod = 0.3
+xplPulse = "xshockrockemit"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 1
+renderName1 = "shockrock_a.flame"
+
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "100 100 100 100"
+startRadius = 0.2
+finishRadius = 0.05
+animateTime = 0.12
+rotationRate = 10.0
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 2.0"
+emitLife = 0.12

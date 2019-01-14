@@ -1,0 +1,27 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gelect_a"
+ordName = "elect_c"
+wpnName = "Electron Cloud"
+fireSound = "arc02.wav"
+wpnReticle = "gplasma"
+wpnCategory = "CANN"
+isAssault = 0
+flashName = "gelect_c.flash"
+aiRange = 170
+
+[CannonClass]
+shotDelay = 0.6 // 2.2/sec
+shotAlternate = 0
+
+[Flash]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 80 120 127"
+finishColor = "0 0 255 0"
+startRadius = 1.0
+finishRadius = 0.5
+animateTime = 0.3
+latitudeBands = 8
+longitudeSegments = 16

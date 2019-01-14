@@ -1,0 +1,16 @@
+[GameObjectClass]
+classLabel = "satchel"
+geometryName = "igsatc00.xsi"
+geometryScale = 0.12
+scrapCost = 0
+scrapValue = 0
+maxHealth = 250
+maxAmmo = 1
+unitName = "Cerberi Bomb"
+
+[BuildingClass]
+soundAmbient = "switch01.wav"
+
+[MineClass]
+lifeSpan = 20.0
+xplBlast = "xperchit2"

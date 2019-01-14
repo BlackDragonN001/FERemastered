@@ -1,0 +1,28 @@
+[WeaponClass]
+classLabel = "cannon"
+
+// don't need any geometry
+// (cgsnip_c already has it)
+
+ordName = "csnipe"
+wpnName = "Sniper"
+fireSound = "gsnipe00.wav"
+wpnReticle = "grifle_s"
+wpnCategory = "HAND"
+isAssault = 1
+isFlying = 0
+altName = "cgsnip_c"
+
+[CannonClass]
+shotDelay = 1.0
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "200 255 0 255"
+finishColor = "0 255 100 0"
+startRadius = 3.0
+finishRadius = 1.0
+animateTime = 0.1
+geomName = "g_sflash.xsi"

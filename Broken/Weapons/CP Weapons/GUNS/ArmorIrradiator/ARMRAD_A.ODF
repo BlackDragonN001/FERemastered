@@ -1,0 +1,29 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = "xarmrad_cgnd"
+xplVehicle = "xarmrad_ccar"
+xplBuilding = "xarmrad_ccar"
+renderName = "armrad_c.render"
+
+ammoCost = 2.0
+lifeSpan = 0.4 // 80m
+shotSpeed = 200.0
+
+damageValue(N) = 10 // none
+damageValue(L) = 15 // light
+damageValue(H) = 25 // heavy
+
+damageValue(S) = 8 // standard
+damageValue(D) = 6 // deflection
+damageValue(A) = 10 // absorbtion
+
+[Render]
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+textureName = "trail.tga"
+startColor = "255 0 0 255"
+finishColor = "0 255 50 0"
+startRadius = 0.03
+finishRadius = 0.08
+segmentTime = 0.05

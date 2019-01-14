@@ -1,0 +1,22 @@
+[WeaponClass]
+classLabel = "thermallauncher"
+altName = "gsaturn_c"
+ordName = "saturn_a"
+wpnName = "Saturn Rkt"
+fireSound = "crckt01.wav"
+wpnReticle = "ghornet.0"
+wpnCategory = "ROCK"
+isAssault = 1
+aiRange = 250
+
+[LauncherClass]
+lockRange = 250.0
+shotDelay = 1.0
+lockDelay = 1.5
+coneAngle = 0.075
+lockingReticle = "ghornet.A"
+lockingSound = "lock01.wav"
+lockedReticle = "ghornet.B"
+lockedSound = "lock02.wav"
+targetCount = 3
+targetReticle = "ghornet.1"

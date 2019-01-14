@@ -1,0 +1,14 @@
+[WeaponClass]
+classLabel = "mortar"
+ordName = "neutronbm"
+wpnName = "Neutron Bomb"
+fireSound = "mort01.wav"
+wpnReticle = "gmortar"
+wpnLadder = "gmortar.L0"
+wpnPriority = 2
+wpnCategory = "MORT"
+
+aiRange = 300.0
+
+[CannonClass]
+shotDelay = 3.0

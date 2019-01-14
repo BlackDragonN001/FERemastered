@@ -1,0 +1,15 @@
+[WeaponClass]
+classLabel = "mortar"
+ordName = "minfielddmbm"
+wpnName = "Mine Layer"
+fireSound = "smort01.wav"
+wpnReticle = "gsplint"
+wpnLadder = "gsplint.L0"
+wpnPriority = 4
+wpnCategory = "MORT"
+aiRange = 175
+
+[CannonClass]
+shotDelay = 3.0
+salvoCount = 20
+shotVariance = 0.5

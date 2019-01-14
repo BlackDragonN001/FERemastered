@@ -1,0 +1,52 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+xplGround = "xlgtgnd"
+xplVehicle = "xlgtcar"
+xplBuilding = "xlgtbld"
+renderName = "claser.render"
+
+ammoCost = 6
+lifeSpan = 200e-6 // 200.1m
+shotSpeed = 1e6
+
+damageValue(N) = 15
+damageValue(L) = 10
+damageValue(H) = 3
+
+damageValue(S) = 9
+damageValue(D) = 15
+damageValue(A) = 6
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "claser.core"
+renderName2 = "claser.tail"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = NULL //"trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "0 0 255 255"
+startRadius = 0.01
+finishRadius = 0.01
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.25
+textureRate = 0.01
+
+[Tail]
+renderBase = "draw_bolt"
+textureName = NULL // "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 255 255"
+finishColor = "40 80 120 0"
+startRadius = 0.005
+finishRadius = 0.1
+segmentLength = 5.0
+segmentVariance = "0.2 0.2 0.2"
+animateTime = 0.2
+textureRate = 0.01

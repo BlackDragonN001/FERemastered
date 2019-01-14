@@ -1,0 +1,37 @@
+[OrdnanceClass]
+classLabel = "spraybomb"
+shotGeometry = "ioartl00.xsi"
+shotSound = "baz03.wav"
+xplGround = NULL
+xplVehicle = NULL
+xplBuilding = NULL
+xplExpire = "smirv"
+rendername = "omirv1.render"
+
+ammoCost = 150
+lifeSpan = 20
+shotSpeed = 75
+
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+[SprayBombClass]
+payloadName = "smirv"
+
+[Render]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "10 10 150 64"
+finishColor = "0 0 50 0"
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 3.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 3.0

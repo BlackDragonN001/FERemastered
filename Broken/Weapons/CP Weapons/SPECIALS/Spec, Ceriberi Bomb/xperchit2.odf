@@ -1,0 +1,145 @@
+// =======================
+// CERIBERI BOMB EXPLOSION
+// =======================
+// THIS IS A COPY OF GRIZ'S AWE INSPIRING BLAST
+
+[ExplosionClass]
+classLabel = "explosion"
+
+///////////////////////////////
+
+particleTypes = 6
+
+particleClass1 = "xperchit2.shock"
+particleCount1 = 4
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xperchit2.cloud"
+particleCount2 = 1
+particleVeloc2 = "0.0 10.0 0.0"
+
+particleClass3 = "xperchit2.flame"
+particleCount3 = 2
+particleVeloc3 = "0.0 10.0 0.0"
+
+particleClass4 = "xperchit2.light"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "xperchit2.ring"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+particleClass6 = "xperchit2.posroll"
+particleCount6 = 8
+particleVeloc6 = "5.0 0.0 5.0"
+
+///////////////////////////////
+
+explSound = "mort02.wav"
+damageRadius = 220.0
+
+damageValue(N) = 5800 // none
+damageValue(L) = 4550 // light
+damageValue(H) = 3215 // heavy
+
+damageValue(S) = 4550 // standard
+damageValue(D) = 9800 // deflection
+damageValue(A) = 1215 // absorbtion
+
+///////////////////////////////
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 8.0
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "198 203 44 230"
+finishColor = "222 253 22 149"
+startRadius = 3.0
+finishRadius = 235.0
+animateTime = 8.0
+latitudeBands = 8
+longitudeSegments = 16
+
+[cloud]
+simulateBase = "sim_dust"
+lifeTime = 7
+renderBase = "draw_emit"
+emitName = "xperchit.cloudemit"
+emitDelay = 0.01
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "0.0 1.0 0.0"
+
+[cloudemit]
+simulateBase = "sim_smoke"
+lifeTime = 7
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 255"
+finishColor = "0 0 0 0"
+startRadius = 3
+finishRadius = 187
+animateTime = 7
+
+[flame]
+simulateBase = "sim_smoke"
+lifeTime = 5.0
+renderBase = "draw_emit"
+emitName = "xperchit.flameemit"
+emitDelay = 0.01
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[flameemit]
+simulateBase = "sim_smoke"
+lifeTime = 6.5
+renderBase = "draw_twirl"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = " 255 255 200 255"
+finishColor = "255 0 0 0"
+startRadius = 1
+finishRadius = 132
+animateTime = 6.5
+rotationRate = 3.21
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 4.5
+renderBase = "draw_light"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 19.0
+finishRadius = 87.0
+animateTime = 3.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[ring]
+simulateBase = "sim_null"
+lifeTime = 10
+renderBase = "draw_planar"
+textureName = "grndchar.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "10 10 10 255"
+finishColor = "10 10 10 0"
+startRadius = 1.0
+finishRadius = 230.0
+animateTime = 8
+
+[posroll]
+simulateBase = "sim_dust"
+lifeTime = 3
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "32 32 32 255"
+finishColor = "127 127 127 0"
+startRadius = 2
+finishRadius = 1
+animateTime = 3
+rotationRate = 2

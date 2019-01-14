@@ -1,0 +1,56 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotRadius = 1.0
+xplGround = "xflmhit"
+xplVehicle = "xflmhit"
+xplBuilding = "xflmhit"
+
+renderName = "flare.render"
+ammoCost = 0.5
+lifeSpan = 1.0
+shotSpeed = 50.0
+
+damageValue(N) = 90
+damageValue(L) = 90
+damageValue(H) = 90
+damageValue(S) = 90
+damageValue(D) = 90
+damageValue(A) = 90
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "flarebombmin.core"
+renderName2 = "flarebombmin.cloudemit"
+
+[Core]
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 155 155 195"
+finishColor = "255 200 0 134"
+startRadius = 0.5
+finishRadius = 10.0
+animateTime = 0.5
+rotationRate = 2.0
+
+[CloudEmit]
+renderBase = "draw_emit"
+emitName = "flarebombmin.cloudpuff"
+emitDelay = 0.25
+emitVariance = "15.0 -5.0 15.0"
+
+[CloudPuff]
+simulateBase = "sim_dust"
+lifeTime = 20.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 155 155 242"
+finishColor = "255 200 0 141"
+startRadius = 10.0
+finishRadius = 40.0
+animateTime = 20.0
+rotationRate = 4.0

@@ -1,0 +1,66 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = "iorckt00.xsi"
+shotSound = "firesord.wav"
+
+renderName = "rktbomb_a.render"
+
+xplGround = "xrktbgnd_c"
+xplVehicle = "xrktbxpl_c"
+xplBuilding = "xrktbxpl_c"
+
+ammoCost = 50
+lifeSpan = 5.0
+shotSpeed = 50.0
+
+damageValue(N) = 500
+damageValue(L) = 500
+damageValue(H) = 500
+damageValue(S) = 500
+damageValue(D) = 500
+damageValue(A) = 500
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "rktbomb_a.flare"
+renderName2 = "rktbomb_a.smoke"
+renderName3 = "rktbomb_a.flame"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 5.0
+finishRadius = 5.0
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "153 153 153 128"
+finishColor = "153 153 153 0"
+startRadius = 1.0
+finishRadius = 5.0
+animateTime = 2.0
+emitDelay = 0.02
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 2.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 0.5
+finishRadius = 0.2
+animateTime = 0.2
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 0.2

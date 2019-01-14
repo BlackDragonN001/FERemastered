@@ -1,0 +1,14 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gadder_a"
+ordName = "adder_c"
+wpnName = "Adder Msl"
+fireSound = "gsand00.wav"
+wpnReticle = "gsting_c"
+wpnCategory = "ROCK"
+aiRange = 200
+isAssault = 0
+
+[CannonClass]
+shotDelay = 0.45 // 3.3/sec
+shotAlternate = 3
