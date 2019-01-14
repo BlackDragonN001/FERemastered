@@ -1,19 +1,17 @@
 [GameObjectClass]
 baseName = "fvturrxx"
-geometryName = "fvturrxx_skel.xsi"
-geometryScale = 1.5
-glowTexture = "fvscava0.pic"
+geometryName = "fvturrxx_skel.fbx"
 cockpitName = "fvturr_cockpit.xsi"
 classLabel = "turrettank"
 animCount = 4
 animName1 = "forward"
-animFile1 = "fvturxxr_ASF.xsi"
+animFile1 = "fvturr_ASF.fbx"
 animName2 = "neutral"
-animFile2 = "fvturrxx_ASN.xsi"
+animFile2 = "fvturr_ASN.fbx"
 animName3 = "reverse"
-animFile3 = "fvturrxx_ASR.xsi"
+animFile3 = "fvturr_ASR.fbx"
 animName4 = "deploy"
-animFile4 = "fvturrxx_skel.xsi"
+animFile4 = "fvturr_skel.fbx"
 scrapCost = 60
 customCost = 60
 scrapValue = 10

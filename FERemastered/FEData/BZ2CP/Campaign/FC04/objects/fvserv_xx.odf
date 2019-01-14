@@ -1,10 +1,11 @@
 [GameObjectClass]
 baseName = "fvserv"
-geometryName = "fvserv_skel.xsi"
-glowTexture = "fvserva0.pic"
+geometryName = "fvserv00.fbx"
 cockpitName = "fvserv_cockpit.xsi"
 classLabel = "service"
-
+animCount = 1
+animName1 = "deploy"
+animFile1 = "fvserv00.fbx"
 scrapValue = 10
 scrapCost = 50
 buildTime = 10.0
