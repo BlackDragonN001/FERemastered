@@ -2,7 +2,6 @@
 geometryName = "cvcomet00.xsi"
 geometryScale = 1.0
 classLabel = "torpedo"
-baseName = "grccmi"
 scrapValue = 0
 scrapCost = 0
 maxHealth = 600
@@ -52,7 +51,6 @@ attenuateQuadratic = 0.0
 
 [Flame]
 renderBase = "draw_twirl_trail"
-textureName = "particle.tga"
 textureName = "blast.tga"
 textureBlend = "one one modulate"
 startColor = "0 3 202 255"

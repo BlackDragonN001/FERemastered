@@ -1,0 +1,18 @@
+[GameObjectClass]
+baseName = "evwalk"
+classLabel = "evwalk"
+
+maxHealth = 4000	
+maxAmmo = 4000
+addAmmo = 20
+addHealth = 20
+
+weaponAssault3 = 0
+
+[CraftClass]
+engageRange = 225
+
+[WalkerClass]
+headYawRate = 95.0 
+
+omegaTurn = 40.0

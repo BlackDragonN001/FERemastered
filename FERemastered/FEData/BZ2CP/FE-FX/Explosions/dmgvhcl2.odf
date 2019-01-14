@@ -38,7 +38,6 @@ emitVelocity = "0.0 2.5 0.0"
 emitVariance = "2.0 2.0 2.0"
 emitInherit = "0.5 0.5 0.5"
 emitLife = 0.7
-renderBase = "draw_twirl"
 textureName = "fire.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 200 128"
@@ -154,13 +153,13 @@ attenuateQuadratic = 0.0
 simulateBase = "sim_smoke"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "dmgvhcl2.lightemit"
+emitName = "dmgvhcl2.lightemit2"
 emitDelay = 0.1
 emitVelocity = "0.1 0.1 0.1"
 emitVariance = "0.1 0.1 0.1"
 emitDelayVar = 0.02
 
-[lightemit]
+[lightemit2]
 simulateBase = "sim_smoke"
 lifeTime = 0.1
 renderBase = "draw_light"

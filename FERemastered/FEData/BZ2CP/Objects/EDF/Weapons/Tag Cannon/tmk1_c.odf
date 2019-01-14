@@ -7,7 +7,7 @@ xplGround = "xtaggnd_c"
 xplVehicle = "xtagcar_c"
 xplBuilding = "xtagbld_c"
 
-renderName = "otmk1_c.render"
+renderName = "tmk1_c.render"
 
 ammoCost = 10
 lifeSpan = 6.2 // 500m
@@ -29,13 +29,12 @@ rateWaver = 2.0
 [Render]
 renderBase = "draw_multi"
 renderCount = 3
-renderName1 = "otmk1_c.flame"
-renderName2 = "otmk1_c.halo"
-renderName3 = "otmk1_c.trail"
+renderName1 = "tmk1_c.flame"
+renderName2 = "tmk1_c.halo"
+renderName3 = "tmk1_c.trail"
 
 [Flame]
 renderBase = "draw_twirl_trail"
-textureName = "particle.tga"
 textureName = "blast.tga"
 textureBlend = "one one modulate"
 startColor = "200 200 0 255"

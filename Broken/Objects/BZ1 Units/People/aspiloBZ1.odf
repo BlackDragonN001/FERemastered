@@ -1,48 +1,6 @@
 [GameObjectClass]
 baseName = "ispilo"
-classLabel = "person"
-geometryName = "ispilo_rifle_skel.xsi"
-geometryScale = 0.1
-
-animCount = 14
-
-// empty-handed animations
-animName1 = "stand"
-animFile1 = "ispilo_rifle_skel.xsi"
-animName2 = "walk"
-animFile2 = "ispilo_rifle_run.xsi"
-animName3 = "crouch"
-animFile3 = "ispilo_rifle_crouch.xsi"
-animName4 = "jump"
-animFile4 = "ispilo_rifle_jump.xsi"
-
-// combat mode animations
-animName5 = "standC"
-animFile5 = "ispilo_rifle_skel.xsi"
-animName6 = "walkC"
-animFile6 = "ispilo_rifle_run.xsi"
-animName7 = "crouchC"
-animFile7 = "ispilo_rifle_crouch.xsi"
-animName8 = "jumpC"
-animFile8 = "ispilo_rifle_jump.xsi"
-
-// assault mode animations
-animName9 = "standA"
-animFile9 = "ispilo_bazooka_skel.xsi"
-animName10 = "walkA"
-animFile10 = "ispilo_bazooka_run.xsi"
-animName11 = "crouchA"
-animFile11 = "ispilo_bazooka_crouch.xsi"
-animName12 = "jumpA"
-animFile12 = "ispilo_bazooka_jump.xsi"
-
-
-// Death animations
-animName13 = "DeathA"
-animFile13 = "ispilo_rifle_death01.xsi"
-animName14 = "DeathC"
-animFile14 = "ispilo_bazooka_death01.xsi"
-
+classLabel = "ispilo"
 
 scrapCost = 0
 scrapValue = 5
