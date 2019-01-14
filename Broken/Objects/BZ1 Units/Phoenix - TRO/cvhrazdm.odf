@@ -1,16 +1,23 @@
 [GameObjectClass]
 baseName = "cvhrazdm"
 geometryName = "cvhraz00.xsi"
-geometryScale = .38
-cockpitName = "ivstas_cockpit.fbx"
-classLabel = "wingman"
-animCount = 3
+cockpitName= "cvhraz_cpit00.xsi"
+animCount = 7
 animName1 = "forward"
-animFile1 = "cvhrazsF.xsi"
+animFile1 = "cvhraz00_sf.XSI"
 animName2 = "neutral"
-animFile2 = "cvhrazsN.xsi"
+animFile2 = "cvhraz00_sn.XSI"
 animName3 = "reverse"
-animFile3 = "cvhrazsR.xsi"
+animFile3 = "cvhraz00_sr.XSI"
+animName4 = "deploy"
+animFile4 = "cvhraz00.xsi"
+animName5 = "forward2"
+animFile5 = "cvhraz00_sf.xsi"
+animName6 = "neutral2"
+animFile6 = "cvhraz00_sn.xsi"
+animName7 = "reverse2"
+animFile7 = "cvhraz00_sr.xsi"
+classLabel = "wingman"
 scrapValue = 35
 scrapCost = 45
 buildTime = 15.0
@@ -27,13 +34,13 @@ pilotConfig = "cspiloBZ1"
 
 armorClass = H
 
-weaponHard1 = "HP_ROCKET_01"
+weaponHard1 = "HP_ROCKET_1"
 weaponName1 = "grktbomb_a"
 weaponAssault1 = 1
-weaponHard2 = "HP_ROCKET_02"
+weaponHard2 = "HP_ROCKET_2"
 weaponName2 = "grktbomb_a"
 weaponAssault2 = 1
-weaponHard3 = "HP_CANNON_01"
+weaponHard3 = "HP_CANNON_1"
 weaponName3 = ""
 weaponAssault3 = 0
 
@@ -58,6 +65,7 @@ selectWaitMsg = "cvhrazvf.wav"
 selectFollowMsg = "cvhrazvh.wav"
 selectGoMsg = "cvhrazvg.wav"
 selectOtherMsg = "cvhrazvj.wav"
+holdMsg = "cvhrazvi.wav"
 
 goMsg = "cvhrazv0.wav"
 goObjectMsg = "cvhrazvb.wav"
@@ -73,6 +81,19 @@ otherMsg = "cvhrazvi.wav"
 user1Msg = "cvhrazv6.wav"
 killedMsg = "cvhrazvk.wav"
 diedMsg = "abetty3.wav"
+
+crashName = "cvhraz_chk0.xsi"
+chunkEffect1 = "cvhraz_chk1.xsi"
+chunkEffect2 = "cvhraz_chk2.xsi"
+chunkEffect3 = "cvhraz_chk3.xsi"
+chunkEffect4 = "cvhraz_chk4.xsi"
+chunkEffect5 = "cvhraz_chk5.xsi"
+HasSeparateChunks = true
+NumChunks1 = 1
+NumChunks2 = 1
+NumChunks3 = 1
+NumChunks4 = 1
+NumChunks5 = 4 // # of chunks per chunk type. max = 10
 
 [HoverCraftClass]
 setAltitude = 1.5

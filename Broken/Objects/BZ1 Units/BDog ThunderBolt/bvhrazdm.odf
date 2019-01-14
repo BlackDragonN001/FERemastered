@@ -1,15 +1,15 @@
 [GameObjectClass]
 baseName = "bvhrazdm"
 geometryName = "bvhraz00.xsi"
-cockpitName = "ivstas_cockpit.fbx"
+cockpitName = "bvhraz_cpit00.xsi"
 classLabel = "wingman"
 animCount = 3
 animName1 = "forward"
-animFile1 = "bvhrazsF.xsi"
+animFile1 = "avhrazsF.xsi"
 animName2 = "neutral"
-animFile2 = "bvhrazsN.xsi"
+animFile2 = "avhrazsN.xsi"
 animName3 = "reverse"
-animFile3 = "bvhrazsR.xsi"
+animFile3 = "avhrazsR.xsi"
 scrapValue = 25
 scrapCost = 60
 buildTime = 15.0
@@ -29,7 +29,7 @@ armorClass = H
 weaponHard1 = "HP_CANNON_1"
 weaponName1 = "gtmk1_c"
 weaponAssault1 = 0
-weaponHard2 = "HP_MORTOR_1"
+weaponHard2 = "HP_MORTAR_1"
 weaponName2 = "gsandbag"
 weaponAssault2 = 0
 weaponHard3 = "HP_ROCKET_1"
@@ -82,6 +82,18 @@ user1Msg = "avhrazv6.wav"
 killedMsg = "avhrazvk.wav"
 diedMsg = "abetty3.wav"
 
+crashName = "bvhraz_chk0.xsi"
+chunkEffect1 = "bvhraz_chk1.xsi"
+chunkEffect2 = "bvhraz_chk2.xsi"
+chunkEffect3 = "bvhraz_chk3.xsi"
+chunkEffect4 = "bvhraz_chk4.xsi"
+chunkEffect5 = "bvhraz_chk5.xsi"
+HasSeparateChunks = true
+NumChunks1 = 1
+NumChunks2 = 1
+NumChunks3 = 1
+NumChunks4 = 1
+NumChunks5 = 2
 
 [HoverCraftClass]
 setAltitude = 1.5

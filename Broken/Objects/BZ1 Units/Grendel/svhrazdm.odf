@@ -1,7 +1,7 @@
 [GameObjectClass]
 baseName = "svhrazdm"
 geometryName = "svhraz00.xsi"
-cockpitName = "ivstas_cockpit.fbx"
+cockpitName = "svhraz00_cpit.xsi"
 classLabel = "wingman"
 animCount = 3
 animName1 = "forward"
@@ -74,6 +74,19 @@ otherMsg = "svhrazvi.wav"
 user1Msg = "svhrazv6.wav"
 killedMsg = "svhrazvk.wav"
 diedMsg = "sbetty3.wav"
+
+crashName = "svhraz_chk0.xsi"
+chunkEffect1 = "svhraz_chk1.xsi"  
+chunkEffect2 = "svhraz_chk2.xsi"
+chunkEffect3 = "svhraz_chk3.xsi"
+chunkEffect4 = "svhraz_chk4.xsi"
+chunkEffect5 = "svhraz_chk5.xsi"
+HasSeparateChunks = true
+NumChunks1 = 1
+NumChunks2 = 1
+NumChunks3 = 1
+NumChunks4 = 1
+NumChunks5 = 1
 
 [HoverCraftClass]
 setAltitude = 1.5
