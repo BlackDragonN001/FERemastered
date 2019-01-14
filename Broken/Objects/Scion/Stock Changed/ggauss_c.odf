@@ -11,7 +11,4 @@ aiRange = 120
 
 [CannonClass]
 shotDelay = 0.5
-shotAlternate = 0 //changed to zero to prevent a *major* bug that allows potentially unlimited firing rate with
-		  //alternate-shot weapons on vehicles. Alternating fire is *not* working properly in 1.2, and must be avoided.
-		  //The gauss gun is the only *really* abusable instance of this bug, but it can be used on SP walkers and
-		  //Sonic/plasma titans as well.
+shotAlternate = 1

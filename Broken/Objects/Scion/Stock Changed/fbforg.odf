@@ -1,9 +1,10 @@
 [GameObjectClass]
-geometryName = "fbforg00.xsi"
+baseName = "fbforg"
+geometryName = "fbforg00.fbx"
 classLabel = "factory"
 collisionRadius = 1.0
 scrapCost = 60
-scrapValue = 3
+scrapValue = 20
 powerCost = 0
 maxHealth = 8000
 maxAmmo = 0
@@ -14,19 +15,32 @@ heatSignature = 2.0
 imageSignature = 1.0
 radarSignature = 1.0
 isAssault = 1
+AllowUndergroundSpawn = true
 
 armorClass = H
 
 buildSupport = "A"
 buildRequire = "F"
 
+/////// REQUIREMENTS ///////////////
+
 requireCount = 1
 requireName1 = "fbkiln"
 requireText1 = "Build Kiln"
 
-provideCount = 2
+////////////////////////////////////
+
+
+/////// PROVIDES ///////////////////
+
+provideCount = 5
 provideName1 = "fbkiln"
 provideName2 = "fbforg"
+provideName3 = "VIRTUAL_CLASS_FACTORY"
+provideName4 = "VIRTUAL_CLASS_FACTORY_U"
+provideName5 = "VIRTUAL_CLASS_FORGE"
+
+////////////////////////////////////
 
 lightHard1 = "hp_light_1"
 lightName1 = "spotyellow"
@@ -66,7 +80,6 @@ rescueMsg = "fvrecy12.wav"
 
 
 [Lod1]
-geometryName = "fbforgL1.xsi" ;geometry for lod1
-distance = 100
-dontShiftLOD = 1
-
+//geometryName = "fbforgL1.fbx" ;geometry for lod1
+//distance = 100
+//dontShiftLOD = 1

@@ -6,8 +6,8 @@ wpnName = "Sonic Blast"
 fireSound = "sonic01.wav"
 wpnReticle = "gsonic_c"
 wpnCategory = "CANN"
-aiRange = 150
+aiRange = 150 //160
 
 [CannonClass]
 shotDelay = 1.0 // 1/sec
-shotAlternate = 0
+shotAlternate = 1

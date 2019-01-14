@@ -2,7 +2,7 @@
 classLabel = "grenade"
 
 shotGeometry = NULL
-shotRadius = 2.0
+shotRadius = 1.0
 xplGround = "xresgnd"   // 16 meter, 15 splash damage
 xplVehicle = "xreshit"  // 8 meter, 10 splash damage
 xplBuilding = "xreshit"
@@ -15,21 +15,20 @@ lifeSpan = 10.0	//2 R, 5 FE
 
 shotSpeed = 33 // 30.0
 
-damageValue(N) = 32 // 48 // 8 R, 18 FE
-damageValue(L) = 32 // 48 // 8 R, 18 FE
-damageValue(H) = 32 // 48 // 8 R, 18 FE
-damageValue(S) = 32 // 48 // 8 R, 18 FE
-damageValue(D) = 32 // 48 // 8 R, 18 FE
-damageValue(A) = 32 // 48 // 8 R, 18 FE
-
+damageValue(N) = 32 // 48 // 8 R, 18 FE //10
+damageValue(L) = 32 // 48 // 8 R, 18 FE //8
+damageValue(H) = 32 // 48 // 8 R, 18 FE //5
+damageValue(S) = 32 // 48 // 8 R, 18 FE //8
+damageValue(D) = 32 // 48 // 8 R, 18 FE //5
+damageValue(A) = 32 // 48 // 8 R, 18 FE //10
 
 [Render]
 renderBase = "draw_twirl"
-textureName = "lighthalo.tga"
-textureBlend = "one one modulate"
-startColor = "90 170 0 255"
-finishColor = "90 170 0 180"
-startRadius = 0.75 // 0.5
-finishRadius = 1.5 // 1.5
-animateTime = 7 // 5.0
+textureName = "gunk.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "95 127 0 255"
+finishColor = "95 127 0 0"
+startRadius = 0.5
+finishRadius = 1.0
+animateTime = 10.0
 rotationRate = 1.0

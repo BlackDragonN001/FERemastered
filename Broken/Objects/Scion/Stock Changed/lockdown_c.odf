@@ -1,14 +1,16 @@
 [OrdnanceClass]
 classLabel = "anchor"
 
-shotGeometry = "NULL"
+shotGeometry = NULL
 shotSound = "sonic03c.wav"
 
 xplGround = "xglockgnd_c"
 xplVehicle = "xglockcar_c"
 xplBuilding = "xglockcar_c"
+xplExpire = "xglockdone_c"
 
 renderName = "lockdown_c.render"
+restoreFXLockstep = true
 
 ammoCost = 10
 lifeSpan = 1.0 // 100m
@@ -24,6 +26,7 @@ damageValue(A) = 10 // absorbtion
 
 [LeaderRoundClass]
 stickTime = 2.25 // 2.0 FE R
+xplDone = "xglockdone_c"
 
 [AnchorRocketClass]
 accelDrag = 8.0
@@ -31,28 +34,80 @@ alphaDrag = 0.5
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 1
-//renderName1 = "lockdown_c.flare"
-renderName1 = "lockdown_c.trail"
+renderCount = 4
+renderName1 = "lockdown_c.Core"
+renderName2 = "lockdown_c.tail"
+renderName3 = "lockdown_c.trail"
+renderName4 = "lockdown_c.burst"
+//renderName5 = "lockdown_c.Flare"
+
+[Core]
+renderBase = "draw_sprite"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "80 255 255 130"
+finishColor = "80 255 255 130"
+startRadius = 4.0
+finishRadius = 4.0
+
+[tail]
+renderBase = "draw_twirl_trail"
+textureName = "sonicboom.tga"
+textureBlend = "one one modulate"
+startColor = "80 255 255 120"
+finishColor = "80 255 255 0"
+startRadius = 2.5
+finishRadius = 4.8
+animateTime = 0.005
+rotationRate = -8.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.005
+emitinherit = "1.0 1.0 1.0"
+BottomInteractsWithTerrain = false
 
 [Flare]
-renderBase = "draw_sprite"
-textureName = "wasplat.tga"
+renderBase = "draw_twirl_trail"
+textureName = "elec.tga"
 textureBlend = "one one modulate"
-startColor = "62 255 255 127" 
-finishColor = "255 255 255 0" 
+startColor = "80 255 255 255" 
+finishColor = "80 255 255 0"  
 startRadius = 1.5
-finishRadius = 1.0
+finishRadius = 1.0 //0.5
+rotationRate = 20.0
+animateTime = 0.3 //0.7
+emitDelay = 0.1 //0.01
+emitLife = 0.3 //0.7
+emitVariance = "5.0 5.0 5.0"
+emitinherit = "1.0 1.0 1.0"
+BottomInteractsWithTerrain = false
 
 [Trail]
+renderBase = "draw_trail"
+textureName = "sonictrail.tga" // trail2
+textureBlend = "one one modulate" // "one one modulate"
+textureRate = 0.05
+startColor = "80 255 255 120" 
+finishColor = "80 255 255 0" 
+startRadius = 1.5
+finishRadius = 0.0
+segmentTime = 0.3
+animateTime = 0.3
+textureSpeed = 1.5
+
+[burst]
 renderBase = "draw_twirl_trail"
-textureName = "wasplat.tga"
+textureName = "elec.tga"
 textureBlend = "one one modulate"
-startColor = "62 255 255 127" 
-finishColor = "255 255 255 0" 
-startRadius = 1.0
-finishRadius = 0.001
-animateTime = 0.7
-emitDelay = 0.02
-emitLife = 0.7
-rotationrate = 20
+startColor = "80 255 255 255" 
+finishColor = "80 255 255 0"  
+startRadius = 6.5
+finishRadius = 0.5
+rotationRate = 10.0
+animateTime = 0.1
+emitDelay = 0.1
+emitLife = 0.1
+emitVariance = "5.0 5.0 5.0"
+emitinherit = "1.0 1.0 1.0"
+BottomInteractsWithTerrain = false

@@ -1,5 +1,6 @@
 [GameObjectClass]
-geometryName = "fbjamm00.xsi"
+baseName = "fbjamm"
+geometryName = "fbjamm00.fbx"
 classLabel = "jammer"
 collisionRadius = 5.0
 scrapCost = 50
@@ -11,7 +12,7 @@ unitName = "Jammer"
 heatSignature = 2.0
 imageSignature = 1.0
 radarSignature = 1.0
-canCollide = 1
+ownsTerrain = 1
 isAssault = 1
 
 armorClass = H
@@ -19,14 +20,30 @@ armorClass = H
 buildSupport = "A"
 buildRequire = "F"
 
+/////// REQUIREMENTS ///////////////
+
 requireCount = 1
 requireName1 = "fbover"
 requireText1 = "Build Overseer"
 
-provideCount = 1
+////////////////////////////////////
+
+
+/////// PROVIDES ///////////////////
+
+provideCount = 3
 provideName1 = "fbjamm"
+provideName2 = "VIRTUAL_CLASS_JAMMER"
+provideName3 = "base"
+
+////////////////////////////////////
+
+lightHard1 = "hp_light_1"
+lightName1 = "omniteal2"
 
 [PoweredBuildingClass]
+//powerTap1 = "hp_tap_1"
+//powerName = "fblung"
 powerCost = 0
 detectRange = 10
 
@@ -34,5 +51,4 @@ detectRange = 10
 soundAmbient = "sjam01.wav"
 
 [JammerTowerClass]
-jammerRange = 300.0
-
+jammerRange = 300.0 //200.0

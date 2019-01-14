@@ -1,26 +1,18 @@
 [GameObjectClass]
-geometryName = "apgun00.xsi"
-classLabel = "wpnpower"
-scrapCost = 20 // 30R 30FE
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+baseName = "apgaus"
+classLabel = "apgun"
 
-lightHard1 = "hp_light_1"
-lightName1 = "omnicyan"
+scrapCost = 20 //30
 
-requireCount = 2
-requireName1 = "fbdowe"
-requireText1 = "Build Dower"
+requireCount = 3
+requireName1 = "fbkiln"
+requireText1 = "Build Kiln"
 requireName2 = "fbforg"
-requireText2 = "Build Forge"
-
+requireText2 = "Upgrade Kiln"
+requireName3 = "fbdowe"
+requireText3 = "Build Dower"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "ggauss_c"

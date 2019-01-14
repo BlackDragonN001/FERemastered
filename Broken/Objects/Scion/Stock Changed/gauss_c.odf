@@ -8,11 +8,11 @@ xplBuilding = "xgaussbld"
 renderName = "gauss_c.render"
 
 ammoCost = 18
-lifeSpan = 150e-3 // 150m
+lifeSpan = 150e-3 // 150m //139e-3
 shotSpeed = 1e3
 
 damageValue(N) = 75 // none, REV.B=100, 1.2=75, //Value reduced back to ~1.2 level. 
-damageValue(L) = 60 // light, REV.B=75, 1.2=55, //Blink is enough for dogfight domination, without silly 
+damageValue(L) = 60 // light, REV.B=75, 1.2=55, //Blink is enough for dogfight domination, without silly
 damageValue(H) = 45 // heavy, REV.B=45, 1.2=35, //weapons to boot. This is *4* shots per second ~Darkfox
 
 damageValue(S) = 55 // standard, REV.B=75, 1.2=55, //Identical to 1.2 values. Scion ships drop too fast in rev.B

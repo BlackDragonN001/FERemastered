@@ -1,19 +1,19 @@
 [GameObjectClass]
 baseName = "fvturr"
-geometryName = "fvturr_skel.xsi"
+geometryName = "fvturr_skel.fbx"
 glowTexture = "fvscava0.pic"
-cockpitName = "fvturr_cockpit.xsi"
+cockpitName = "fvturr_cockpit.fbx"
 classLabel = "turrettank"
 animCount = 4
 animName1 = "forward"
-animFile1 = "fvturr_ASF.xsi"
+animFile1 = "fvturr_ASF.fbx"
 animName2 = "neutral"
-animFile2 = "fvturr_ASN.xsi"
+animFile2 = "fvturr_ASN.fbx"
 animName3 = "reverse"
-animFile3 = "fvturr_ASR.xsi"
+animFile3 = "fvturr_ASR.fbx"
 animName4 = "deploy"
-animFile4 = "fvturr_deploy.xsi"
-scrapCost = 45
+animFile4 = "fvturr_skel.fbx"
+scrapCost = 45 //40
 customCost = 45
 scrapValue = 10
 buildTime = 10.0
@@ -31,22 +31,44 @@ isAssault = 0
 
 armorClass = L
 
+/////// REQUIREMENTS ///////////////
+
 requireCount = 0
 
-/////// weapons ///////////////////
+////////////////////////////////////
+
+
+/////// PROVIDES ///////////////////
+
+provideCount = 2
+provideName1 = "fvturr"
+provideName2 = "VIRTUAL_CLASS_TURRET"
+
+////////////////////////////////////
+
+
+/////// weapons ////////////////////
 
 weaponMask = 00001
 weaponHard1 = "HP_GUN_1"
 weaponName1 = "giongn_a"
+recoilName1 = "recoil_2"
 weaponAssault1 = 1
 weaponHard2 = "HP_GUN_2"
 weaponName2 = "giongn_a"
+recoilName2 = "recoil_1"
 weaponAssault2 = 1
 
-//////////////////////////////////  
+////////////////////////////////////
+
+effectHard1 = "hp_com_1"
+effectName1 = "dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0  
+effectFlags1 = 2147483127
 
 turretCount = 4
-turretName1 = "turret_y_1"
+turretName1 = "turret_y"
 turretName2 = "turret_x_1"
 turretName3 = "turret_x_2"
 turretName4 = "HP_eyepoint"
@@ -57,9 +79,19 @@ periodScan = 3.0
 velocJam = 1.0
 engageRange = 150
 weaponPitch = 1.0
+//MinWeaponPitch = 0.25
+//MaxWeaponPitch = 1.25
+
+attackTask = "TurretAttack"
+subAttackTask = "TurretDefendTask"
+subAttackClass = "ADS"
+
+// subAttackClass uses 3 letters.
+// 1st letter is either A or N.     A is include Air targets.         N is attack ground only.
+// 2nd letter is either D or N.     D is to deploy before attacking.  N for regular attack.
+// 3rd letter is either S or N.     S is to use Weapon Range.         N is use the Engage Range to attack. 
 
 selectGoMsg = "fvturr06.wav"
-
 selectDeployMsg = "fvturr01.wav"
 selectOtherMsg = "fvturr08.wav"
 selectWaitMsg = "fvturr08.wav"
@@ -70,9 +102,7 @@ followMeMsg = "fvturr04.wav"
 rescueMsg = "fvturr13.wav"
 attackMsg = "fvturr10.wav"
 otherMsg = "fvturr13.wav"
-
 deployedMsg = "fvturr01.wav"
-
 
 [HoverCraftClass]
 setAltitude = 1.0
@@ -96,12 +126,14 @@ accelJump = 10.0
 
 soundThrust = "ssent01d.wav"
 soundSteer = "avturre8.wav"
+
+[DeployableClass]
+timeDeploy = 8.0
+timeUndeploy = 3.0
+heightDeploy = -0.40
 soundDeploy = "avturre4.wav"
 soundUndeploy = "avturre5.wav"
 
-
 [TurretTankClass]
-omegaTurret = 1.0
-alphaTurret = 2.25 // 2.0FE R
-timeDeploy = 8.0
-timeUndeploy = 0.7
+omegaTurret = 1.0 //1.25
+alphaTurret = 2.25 // 2.0FE 5.0R

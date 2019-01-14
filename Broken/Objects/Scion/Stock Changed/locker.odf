@@ -1,15 +1,15 @@
 [OrdnanceClass]
 classLabel = "imagemissile"
-shotGeometry = "sgmloc00.xsi"
+shotGeometry = "sgmloc00.fbx"
 shotSound = "smort03.wav"
 
-xplGround = "xmslgnd"
-xplVehicle = "xmslcar"
-xplBuilding = "xmslbld"
+xplGround = "xlockgnd"
+xplVehicle = "xlockcar"
+xplBuilding = "xlockcar"
 
 renderName = "locker.render"
 
-ammoCost = 10		//25 FE,25 R   **Summary-damage/tank-ammo= 21000(old was 16800 per tank, shadower is 20600)
+ammoCost = 10		//25 FE, 25 R   **Summary-damage/tank-ammo= 21000(old was 16800 per tank, shadower is 20600)
 lifeSpan = 8.0 		// 800m - 170m lock range though
 shotSpeed = 100.0
 
@@ -21,17 +21,27 @@ damageValue(S) = 50 // 40//160 FE,180 R
 damageValue(D) = 25 // 25//15 // 100 FE,140 R
 damageValue(A) = 70 // 70//200 FE,200 R
 
+// damage greatly reduced, fire rate greatly increased.  The single multilock missile 
+// now penetrates armour a little better than the dual-shadower, but has less range, less normal damage,
+// and slightly(very slightly) less ammo-efficiency. I thought the weapon should be at least near the 
+// dual-shadower, since it can only be fitted on a slow-moving vehicle.
+// The multilock here is basically a scion armour-busting missile, to go hand-in-hand with their (anti 
+// scout) stinger.
+
 [MissileClass]
 omegaTurn = 2.0		//1.5 FE
-omegaWaver = .5 // 0.8	//new setting
+omegaWaver = 0.5 // 0.8	//new setting
 rateWaver = 5.0		//new setting
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
+renderCount = 6
 renderName1 = "locker.flare"
 renderName2 = "locker.halo"
-renderName3 = "locker.trail"
+renderName3 = "locker.jettrail"
+renderName4 = "locker.trail"
+renderName5 = "locker.sparks"
+renderName6 = "locker.smoke"
 
 [Flare]
 renderBase = "draw_sprite"
@@ -44,26 +54,64 @@ finishRadius = 1.0
 
 [Halo]
 renderBase = "draw_sprite"
-textureName = "lighthalo.tga"
+textureName = "particle.tga"
 textureBlend = "one one modulate"
-startColor = "0 127 255 63"
-finishColor = "255 127 0 63"
-startRadius = 1.0
-finishRadius = 1.0
+startColor = "0 127 255 163"
+finishColor = "0 127 255 163"
+startRadius = 1.5
+finishRadius = 1.5
+
+[JetTrail]
+renderBase = "draw_trail"
+textureName = "firetrail1.tga"
+textureBlend = "one one modulate"
+startColor = "40 150 255 255"
+finishColor = "40 150 255 0"
+textureRate = 0.5
+textureSpeed = 15.0
+startRadius = 0.35
+finishRadius = 0.5
+segmentTime = 0.06
 
 [Trail]
 renderBase = "draw_trail"
-textureName = "trail2.tga" //"trail3.tga" // Missing texture? -GBD
+textureName = "trail2.tga"  //"trail3.tga" // Missing texture? -GBD
 textureBlend = "one one modulate"
 startColor = "0 127 255 255"
-finishColor = "255 0 0 150 "
+finishColor = "0 0 255 0"
+textureRate = 0.3
+textureSpeed = 8.0
+startRadius = 0.3
+finishRadius = 0.0
+segmentTime = 1.0
+
+[Sparks]
+renderBase = "draw_twirl_trail"
+textureName = "spark2.tga"
+textureBlend = "one one modulate"
+startColor = "60 150 255 255"
+finishColor = "60 150 255 100"
 startRadius = 0.12
 finishRadius = 0.0
-segmentTime = 1.5
+animateTime = 0.05
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "18.9 18.9 18.9"
+emitLife = 0.05
+BottomInteractsWithTerrain = false
 
-// damage greatly reduced, fire rate greatly increased.  The single multilock missile 
-// now penetrates armour a little better than the dual-shadower, but has less range, less normal damage,
-// and slightly(very slightly) less ammo-efficiency. I thought the weapon should be at least near the 
-// dual-shadower, since it can only be fitted on a slow-moving vehicle.
-// The multilock here is basically a scion armour-busting missile, to go hand-in-hand with their (anti 
-// scout) stinger.
+[Smoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.02
+emitVariance = "5.5 5.8 5.5"
+emitInherit = "0.03 0.03 0.03"
+emitLife = 1.0
+textureName = "smoke.tga" // 
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "40 67 100 35"
+finishColor = "5 5 5 0"
+startRadius = 0.4
+finishRadius = 1.9
+animateTime = 1.0
+rotationRate = 2.3
+BottomInteractsWithTerrain = false

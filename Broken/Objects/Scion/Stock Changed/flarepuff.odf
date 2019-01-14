@@ -3,11 +3,11 @@ classLabel = "bullet"
 
 shotGeometry = NULL
 shotRadius = 1.0
-xplGround = "xflmhit"
-xplVehicle = "xflmhit"
-xplBuilding = "xflmhit"
+xplGround = "xflarehit"
+xplVehicle = "xflarehit"
+xplBuilding = "xflarehit"
 
-renderName = "flarepuff.puff"
+//renderName = "flarepuff.render"
 ammoCost = 25
 lifeSpan = 1.0
 shotSpeed = 50.0
@@ -19,13 +19,15 @@ damageValue(S) = 10 //10FE 10R
 damageValue(D) = 30 //30FE 25R
 damageValue(A) = 2 // 2FE 2R
 
-[Puff]
+[render]
+simulateBase = "sim_smoke"
 renderBase = "draw_twirl"
-textureName = "flame2.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 255 128"
-finishColor = "255 255 255 0"
-startRadius = 1.0
-finishRadius = 5.0
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "60 60 60 0"
+finishColor = "70 70 70 0"
+startRadius = 1.1
+finishRadius = 3.3
 animateTime = 1.0
-
+emitVariance = "3.0 3.0 3.0"
+rotationRate = 8.0

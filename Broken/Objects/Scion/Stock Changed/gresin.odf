@@ -11,8 +11,10 @@ aiRange = 100 //40 R, 80 FE
 
 [CannonClass]
 shotDelay = 0.0
-salvoCount = 5.0
+salvoCount = 5
 salvoDelay = 0.1 // 0.12 // 0.06 FE, 0.02 R
-shotVariance = 0.05
+shotVariance = 0.05 //0.1
+
+SoundPerShot = 0
 
 // ** Doesn't cause as much lag, and actually hits targets within it's 100m range - DF

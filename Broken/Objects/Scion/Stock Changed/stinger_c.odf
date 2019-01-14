@@ -1,6 +1,123 @@
 [OrdnanceClass]
 classLabel = "thermalmissile"
 
+shotGeometry = "sgstng00.fbx"
+shotSound = "crckt02.wav"
+
+renderName = "stinger_c.render"
+
+xplGround = "xstinggnd_c"
+xplVehicle = "xstingcar_c"
+xplBuilding = "xstingcar_c"
+
+ammoCost = 9
+lifeSpan = 4.1 // 205m //4.0
+shotSpeed = 50.0
+
+damageValue(N) = 90 // none // 390 //80
+damageValue(L) = 60 // light // 210 //50
+damageValue(H) = 30 // heavy // 45 //10
+
+damageValue(S) = 60 // standard // 210 //50
+damageValue(D) = 30 // deflection // 180 //10
+damageValue(A) = 90 // absorbtion // 255 //80
+
+[MissileClass]
+omegaTurn = 2.0 //1.5
+omegaWaver = 0.5
+rateWaver = 6.0
+
+[ThermalMissileClass]
+coneAngle = 0.4 //0.3
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 6
+renderName1 = "stinger_c.flare"
+renderName2 = "stinger_c.halo"
+renderName3 = "stinger_c.flame"
+renderName4 = "stinger_c.trail"
+renderName5 = "stinger_c.sparks"
+renderName6 = "stinger_c.smoke"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 230 100 255"
+finishColor = "255 230 100 255"
+startRadius = 0.75
+finishRadius = 0.75
+
+[Halo]
+renderBase = "draw_sprite"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 0 164"
+finishColor = "255 200 0 164"
+startRadius = 0.8
+finishRadius = 0.8
+
+[Flame]
+renderBase = "draw_trail"
+textureName = "firetrail1.tga"
+textureBlend = "one one modulate"
+textureRate = 0.5
+startColor = "255 230 70 255"
+finishColor = "255 200 0 0"
+startRadius = 0.1
+finishRadius = 0.02
+segmentTime = 0.1
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.3
+startColor =  "255 255 80 30"// "100 0 0 100" 
+finishColor =  "100 100 40 0" // "100 100 100 0"
+startRadius = 0.1
+finishRadius = 0.3
+segmentTime = 1.0
+textureSpeed = 2.0
+
+[Sparks]
+renderBase = "draw_twirl_trail"
+textureName = "spark2.tga"
+textureBlend = "one one modulate"
+startColor = "242 147 77 255"
+finishColor = "237 233 82 0"
+startRadius = 0.11
+finishRadius = 0.04
+animateTime = 0.15
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "18.9 18.9 18.9"
+emitLife = 0.15
+BottomInteractsWithTerrain = false
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.04
+emitVariance = "5.5 5.8 5.5"
+emitInherit = "0.03 0.03 0.03"
+emitLife = 1.0
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "100 67 40 30"
+finishColor = "5 5 5 0"
+startRadius = 0.4
+finishRadius = 1.9
+animateTime = 1.0
+rotationRate = 2.3
+BottomInteractsWithTerrain = false
+
+
+
+
+[OrdnanceClass]
+classLabel = "thermalmissile"
+
 shotGeometry = "sgstng00.xsi"
 shotSound = "crckt02.wav"
 

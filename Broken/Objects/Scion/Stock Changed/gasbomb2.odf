@@ -1,5 +1,5 @@
 [GameObjectClass]
-geometryName = "igflar00.xsi"
+geometryName = "igflar00.fbx"
 classLabel = "flare"
 scrapCost = 0
 scrapValue = 0
@@ -26,15 +26,15 @@ shotDelay = 1e30
 
 shotVariance = 0.0
 
-damageRadius = 70.0
+damageRadius = 70.0 //75.0
 
-damageValue(N) = 90 // 130 // 30 R, 30 FE
-damageValue(L) = 90 // 100 // 30 R, 30 FE
-damageValue(H) = 30 // 30 R, 30 FE
+damageValue(N) = 90 // 130 // 30 R, 30 FE //500
+damageValue(L) = 90 // 100 // 30 R, 30 FE //300
+damageValue(H) = 30 // 30 R, 30 FE //50
 
-damageValue(S) = 30 // 30 R, 30 FE
-damageValue(D) = 90 // 30 R, 30 FE
-damageValue(A) = 90 // 30 R, 30 FE
+damageValue(S) = 30 // 30 R, 30 FE //50
+damageValue(D) = 90 // 30 R, 30 FE //500
+damageValue(A) = 90 // 30 R, 30 FE //500
 
 kickRadius = 0.0
 kickVeloc = 0.0
@@ -42,36 +42,73 @@ kickOmega = 0.0
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 4
 renderName1 = "gasbomb2.core"
 renderName2 = "gasbomb2.cloudemit"
+renderName3 = "gasbomb2.glowy"
+renderName4 = "gasbomb2.cloudemit2"
 
 [Core]
 renderBase = "draw_twirl"
-textureName = "smoke.tga"
+textureName = "acidcloud.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "63 127 0 127"
-finishColor = "31 63 0 63"
+startColor = "127 127 127 200"
+finishColor = "127 127 127 0"
 startRadius = 2.0
 finishRadius = 20.0
 animateTime = 5.0
 rotationRate = 2.0
+BottomInteractsWithTerrain = false
+
+[glowy]
+renderBase = "draw_twirl"
+textureName = "acidcloud.tga"
+textureBlend = "one one modulate"
+startColor = "127 127 127 200"
+finishColor = "127 127 127 0"
+startRadius = 8.0
+finishRadius = 3.0
+animateTime = 2.0
+rotationRate = -5.0
 
 [CloudEmit]
 renderBase = "draw_emit"
 emitName = "gasbomb2.cloudpuff"
-emitDelay = 0.2
-emitVariance = "12.0 0.0 12.0"
+emitDelay = 0.1 //0.2
+emitVariance = "20.0 0.0 20.0" //"40.0 0.0 40.0"
+emitPosVariance = "30.0 0.0 30.0"
 
 [CloudPuff]
 simulateBase = "sim_dust"
-lifeTime = 5.0
+lifeTime = 6.0
+renderBase = "draw_twirl"
+textureName = "acidcloud.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 255 200" //"63 127 0 127"
+finishColor = "255 255 255 0" //"31 63 0 0"
+startRadius = 5.0
+finishRadius = 12.0
+animateTime = 6.0
+rotationRate = 3.0
+BottomInteractsWithTerrain = false
+
+[CloudEmit2]
+renderBase = "draw_emit"
+emitName = "gasbomb2.cloudpuff2"
+emitDelay = 0.1 //0.05
+emitVariance = "40.0 0.0 40.0"
+emitPosVariance = "15.0 0.0 15.0"
+
+[CloudPuff2]
+simulateBase = "sim_dust"
+lifeTime = 6.0
 renderBase = "draw_twirl"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "63 127 0 127"
-finishColor = "31 63 0 0"
+startColor = "63 100 0 127" //"63 127 0 127"
+finishColor = "31 63 0 0" //"31 63 0 0"
 startRadius = 5.0
-finishRadius = 10.0
-animateTime = 5.0
+finishRadius = 14.0
+animateTime = 6.0
 rotationRate = 3.0
+BottomInteractsWithTerrain = false

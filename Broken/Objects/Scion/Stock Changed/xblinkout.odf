@@ -15,9 +15,9 @@ damageValue(N) = 100 // none
 damageValue(L) = 70 // light
 damageValue(H) = 40 // heavy
 
-damageValue(S) = 200 // standard
-damageValue(D) = 200 // deflection
-damageValue(A) = 200 // absorbtion
+damageValue(S) = 200 // standard //70
+damageValue(D) = 200 // deflection //100
+damageValue(A) = 200 // absorbtion //40
 
 kickRadius = 15.0
 kickOmega = 1.0
@@ -30,22 +30,26 @@ particleTypes = 4
 particleClass1 = "xblinkout.ring"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+particleInherit1 = "0.5 0.5 0.5"
 
 particleClass2 = "xblinkout.light"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
+particleInherit2 = "0.5 0.5 0.5"
 
 particleClass3 = "xblinkout.shock"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
+particleInherit3 = "0.5 0.5 0.5"
 
 particleClass4 = "xblinkout.core"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
+particleInherit4 = "0.5 0.5 0.5"
 
 
 [Ring]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.4
 renderBase = "draw_planar"
 textureName = "ring.tga"
@@ -57,18 +61,21 @@ finishRadius = 1.0
 animateTime = 0.4
 
 [Light]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 1.5
 renderBase = "draw_light"
 startColor = "0 255 0 555"
 finishColor = "0 255 0 0"
+startRadius = 20.0
+finishRadius = 20.0
 animateTime = 1.5
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 [Shock]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.2
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
@@ -82,7 +89,7 @@ latitudeBands = 8
 longitudeSegments = 16
 
 [Core]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.8
 renderBase = "draw_twirl"
 textureName = "flame.tga" // flame

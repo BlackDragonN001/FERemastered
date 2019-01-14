@@ -6,10 +6,8 @@ fireSound = "gpopp00.wav"
 wpnReticle = "glockm"
 wpnLadder = "gpopgun.L0"
 wpnCategory = "MORT"
-aiRange = 300
+aiRange = 300 //200
 
 [CannonClass]
-shotDelay = 1.5
+shotDelay = 1.5 //1.0
 shotPitch = 1.0
-shotLead = 0
-

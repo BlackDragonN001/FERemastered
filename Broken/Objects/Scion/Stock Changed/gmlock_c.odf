@@ -11,9 +11,9 @@ aiRange = 170
 
 [LauncherClass]
 lockRange = 170.0
-shotDelay = .08 // 0.01  //0.8 FE, 1 R
+shotDelay = 0.08 // 0.01  //0.8 FE, 1 R
 lockDelay = 0.3  //0.8 FE, 2 R          ** (just over 5 shots per second, due to the nature of launcherclass) - DF
-coneAngle = 0.08
+coneAngle = 0.08 //0.05
 lockingReticle = "gshadow.A"
 lockingSound = "lock01.wav"
 lockedReticle = "gshadow.B"
@@ -24,7 +24,7 @@ targetReticle = "gmlock_c.1"
 [MultiLauncherClass]
 shotVariance = 1.0 // 1.6 //no such value in FE and R
 targetCount = 5
-loseAngle = 1	//0.4 FE, 0.4 R
+loseAngle = 1	//0.4 FE, 0.4 R //0.2
 
 // ** damage greatly reduced, fire rate greatly increased.  The single multilock missile 
 // now penetrates armour a little better than the dual-shadower, but has less range,

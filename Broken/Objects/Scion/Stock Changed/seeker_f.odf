@@ -1,6 +1,6 @@
 [GameObjectClass]
 classLabel = "seeker"
-geometryName = "sgseekfix.xsi" //"sgseek00.xsi"
+geometryName = "sgseek00.fbx"
 geometryScale = 1.2
 scrapCost = 0
 scrapValue = 0
@@ -11,17 +11,17 @@ heatSignature = 10.0
 imageSignature = 10.0
 radarSignature = 10.0
 effectHard1 = "Seeker"
-effectName1 = "seeker.render"
-canCollide = 1
+effectName1 = "seeker_f.render"
+canCollide = true
 //collisionRadius = 1.0
 
 [MineClass]
-lifeSpan = 35
+lifeSpan = 35.0 //20
 xplBlast = "xseekxpl"
 
 [SeekerClass]
-searchRange = 100.0
-floatVeloc = 20.0
+searchRange = 100.0 //50.0
+floatVeloc = 20.0 //10.0
 setAltitude = 2.0
 
 [Render]
@@ -29,9 +29,10 @@ renderBase = "draw_light"
 lightType = "point"
 startColor = "127 255 0 0"
 finishColor = "127 255 0 255"
-startRadius = 0.0
+startRadius = 5.0
 finishRadius = 20.0
 animateTime = 0.2
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

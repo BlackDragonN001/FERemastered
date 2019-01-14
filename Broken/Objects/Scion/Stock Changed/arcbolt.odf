@@ -15,7 +15,7 @@ shotSpeed = 1e6
 // 5 bolts per shot
 damageValue(N) = 100 // none // 500 // 250
 damageValue(L) = 100 // light // 500 // 250
-damageValue(H) = 50 // 75 FEB 75 Stock // 25 added to car expl, so this only affects buildings
+damageValue(H) = 50 // heavy // 375 // 187.5 //75 // 25 added to car expl, so this only affects buildings
 
 damageValue(S) = 75 // standard // 375 // 187.5
 damageValue(D) = 100 // deflection // 500 // 250
@@ -23,13 +23,14 @@ damageValue(A) = 50 // absorbtion // 500 // 125
 
 [Render]
 renderBase = "draw_bolt"
-textureName = "trail2.tga"
+textureName = "arctrail.tga"
 textureBlend = "one one modulate"
-startColor = "0 255 255 255"
-finishColor = "0 0 255 0"
-startRadius = 0.3
-finishRadius = 0.01
+startColor = "255 255 255 255"
+finishColor = "0 255 220 0"
+startRadius = 0.7
+finishRadius = 0.0
 segmentLength = 7.0 
 segmentVariance = "2.0 2.0 0.5"
 animateTime = 0.8 // 0.2
-textureRate = 0.01
+textureRate = 0.3
+textureSpeed = -8.0

@@ -5,10 +5,26 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 1
-particleClass1 = "xarccar_a.core"
+particleTypes = 4
+particleClass1 = "xarccar_a.light"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xarccar_a.core"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xarccar_a.sparktrails"
+particleCount3 = 2 //3
+particleVeloc3 = "24.0 28.0 24.0"
+particleBias3 = "0.0 9.0 0.0"
+particlePosVar3 = "2.0 2.0 2.0"
+particleInherit3 = "0.8 0.8 0.8"
+
+particleClass4 = "xarccar_a.sparkcore"
+particleCount4 = 1 //2
+particleVeloc4 = "0.3 0.3 0.3"
+particleBias4 = "0.0 0.0 0.0"
 
 explSound = "lhit.wav"
 
@@ -25,15 +41,3 @@ damageValue(A) = 0 // absorbtion
 kickRadius = 10
 kickOmega = 2.0
 kickVeloc = 0.0
-
-[Core]
-simulateBase = "sim_null"
-lifeTime = 0.5
-renderBase = "draw_twirl"
-textureName = "ring.tga"
-textureBlend = "one one modulate"
-startColor = "63 255 255 255"
-finishColor = "0 0 255 0"
-startRadius = 0.3
-finishRadius = 4.0
-animateTime = 0.5

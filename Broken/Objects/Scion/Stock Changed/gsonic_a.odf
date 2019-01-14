@@ -15,14 +15,16 @@ aiRange = 100
 [MagnetGunClass]
 ammoCost = 10.0
 activeSound = "mag01.wav"
-coneAngle = 1.0
-fieldRadius = 20.0
+coneAngle = 1.0 //0.75
+fieldRadius = 20.0 //30.0
 objPushCenter = 100.0
 objPushEdge = 40.0
-objDrag = 0.2
-ordPushCenter = 1200 // 1000 // 700.0
-ordPushEdge = 400 // 350 // 200.0
-ordDrag = 3.0 // 2.7 //2.0
+objDragCenter = 0.2 //2.0
+objDragEdge = 0.2 //0.4
+ordPushCenter = 1200.0 //1000.0
+ordPushEdge = 400.0 //200.0
+ordDragCenter = 3.0 //20.0
+ordDragEdge = 3.0 //4.0
 
 [Flash]
 renderBase = "draw_wave"
@@ -31,8 +33,8 @@ textureBlend = "one one modulate"
 startColor = "200 255 30 255" 
 finishColor = "255 255 255 0" 
 startRadius = 1.0
-finishRadius = 20.0
+finishRadius = 20.0 //30.0
 animateTime = 0.2
-waveAngle = 1.0
+waveAngle = 1.0 //0.75
 waveDepth = 0.3
-waveSegments = 8
+waveSegments = 16

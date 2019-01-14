@@ -7,8 +7,8 @@ wpnReticle = "gblink.0"
 wpnCategory = "SPEC"
 
 [BlinkDeviceClass]
-ammoBase = 300.0	// was 100
-ammoDist = 2.0	// was 1
-groundSprite = "splash.0"
+ammoBase = 300.0 //200.0	// was 100
+ammoDist = 2.0 //1.0	// was 1
+groundSprite = "blnkspot.0"
 xplEnter = "xblinkin"
 xplExit = "xblinkout"

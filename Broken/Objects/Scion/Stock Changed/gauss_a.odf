@@ -7,8 +7,8 @@ xplBuilding = "xgaussbld"
 
 renderName = "gauss_a.render"
 
-ammoCost = 60
-lifeSpan = 180e-3 // 180m
+ammoCost = 60 //75
+lifeSpan = 180e-3 // 180m //179e-3
 shotSpeed = 1e3
 
 damageValue(N) = 200 // none // 200

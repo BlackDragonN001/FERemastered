@@ -1,13 +1,10 @@
 [GameObjectClass]
 baseName = "fbscup"
-geometryName = "fbscav_upgrd.xsi"
-animCount = 1
-animName1 = "deploy"
-animFile1 = "fbscav_upgrd.xsi"
+geometryName = "fbscup00.fbx"
 classLabel = "extractor"
 scrapCost = 60
-scrapValue = 30
-maxHealth = 6000
+scrapValue = 40
+maxHealth = 5000
 maxAmmo = 0
 unitName = "Extractor"
 heatSignature = 2.0
@@ -15,12 +12,25 @@ imageSignature = 1.0
 radarSignature = 1.0
 collisionRadius = 1.0
 isAssault = 1
-canSelect =1 // for missile lock
-explosionName = "xscavxpl"
+canInteract = 1 // for missile lock
+AllowUnderGroundSpawn = 1
 armorClass = H
+explosionName = "xscavxpl"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 5
+provideName1 = "fbscup"
+provideName2 = "VIRTUAL_CLASS_EXTRACTOR_GROUP"
+provideName3 = "VIRTUAL_CLASS_EXTRACTOR_UPGRADED"
+provideName4 = "VIRTUAL_CLASS_STORAGE"
+provideName5 = "extract"
+
+////////////////////////////////////
 
 [BuildingClass]
-// an ambient sound would be nice
+bldEdge = "wwww"
+soundAmbient = "iext01-up.wav"
 
 [ExtractorClass]
 initDelay = 12.0

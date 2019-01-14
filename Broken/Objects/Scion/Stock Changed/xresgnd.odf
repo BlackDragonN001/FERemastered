@@ -6,14 +6,20 @@
 classLabel = "explosion"
 explSound = "rmort02.wav"
 
-particleTypes = 1
+particleTypes = 3
+
 particleClass1 = "xresgnd.ground"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
-//particleClass2 = "xresgnd.chunks"
-//particleCount2 = 1
-//particleVeloc2 = "5.0 5.0 5.0"
-//particleBias2 = "0.0 5.0 0.0"
+
+particleClass2 = "xresgnd.chunks"
+particleCount2 = 1 //3
+particleVeloc2 = "5.0 20.0 5.0"
+particleBias2 = "0.0 5.0 0.0"
+
+particleClass3 = "xresgnd.shock"
+particleCount3 = 1
+particleVeloc3 = "0.0 -2.0 0.0"
 
 damageRadius = 16.0
 
@@ -27,24 +33,41 @@ damageValue(A) = 15 // 10FE  // absorbtion
 
 [Ground]
 simulateBase = "sim_null"
-lifeTime = 2.0
+lifeTime = 2.0 //4.0
 renderBase = "draw_planar"
-textureName = "grndchar.tga"
+textureName = "gunks.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "95 127 0 255"
+finishColor = "95 127 0 0"
+startRadius = 3.0
+finishRadius = 6.0
+animateTime = 2.0 //4.0
+maxCount = 256
+
+
+[Chunks]
+simulateBase = "sim_ember"
+lifeTime = 2.0
+renderBase = "draw_sprite"
+textureName = "gunk.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "95 127 0 255"
+finishColor = "95 127 0 0"
+startRadius = 0.3
+finishRadius = 0.2
+animateTime = 2.0
+
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.4
+renderBase = "draw_sphere"
+textureName = "gunkring.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "95 127 0 255"
 finishColor = "95 127 0 0"
 startRadius = 1.0
-finishRadius = 15.0 // 10.0
-animateTime = 2.0
-
-//[Chunks]
-//simulateBase = "sim_ember"
-//lifeTime = 2.0
-//renderBase = "draw_sprite"
-//textureName = "plasma.tga"
-//textureBlend = "one one modulate"
-//startColor = "95 127 0 255"
-//finishColor = "95 127 0 0"
-//startRadius = 0.1
-//finishRadius = 0.1
-//animateTime = 2.0
+finishRadius = 3.0
+animateTime = 0.4
+latitudeBands = 8
+longitudeSegments = 16

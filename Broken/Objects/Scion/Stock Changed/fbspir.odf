@@ -1,59 +1,80 @@
 [GameObjectClass]
 mrmFactor = 0
-geometryName = "fbspir00.xsi"
+baseName = "fbspir"
+geometryName = "fbspir00.fbx"
 animCount = 1
 animName1 = "deploy"
-animFile1 = "fbspir00.xsi"
+animFile1 = "fbspir00.fbx"
 classLabel = "turret"
 collisionRadius = 1.0
 scrapCost = 75
-scrapValue = 30
+scrapValue = 30 //40
 powerCost = 0
-maxHealth = 6500
+maxHealth = 6500 //6000
 maxAmmo = 10000
 unitName = "Gun Spire"
 aiName = "GunTowerFriend"
 aiName2 = "GunTowerEnemy"
-heatSignature = .1 // 1.0 // .1R
+heatSignature = 0.1 //2.0
 imageSignature = 1.0
 radarSignature = 1.0
 isAssault = 1
+AllowUnderGroundSpawn = 1
+
+//collisionRadius = 11.0
 
 armorClass = H
 
 buildSupport = "A"
 buildRequire = "F"
 
+/////// REQUIREMENTS ///////////////
+
 requireCount = 0
 
-provideCount = 1
-provideName1 = "fbspir"
+////////////////////////////////////
 
-///// WEAPON ////////////////////
+
+/////// PROVIDES ///////////////////
+
+provideCount = 3
+provideName1 = "fbspir"
+provideName2 = "VIRTUAL_CLASS_GUNTOWER"
+provideName3 = "defender"
+
+////////////////////////////////////
+
+
+///// WEAPON ///////////////////////
 
 weaponMask = 00001
 weaponHard1 = "hp_cannon_1"
 weaponName1 = "gmbolt"
 
-/////////////////////////////////
+////////////////////////////////////
 
 turretCount = 2
 turretName1 = "turret_y"
 turretName2 = "turret_x"
 
+[EntityClass]
+AllowHQShadows = true
+
 [BuildingClass]
 soundAmbient = "sgtow01.wav"
 
 [CraftClass]
-rangeScan = 300.0
-periodScan = 1.0
+rangeScan = 300.0 //210.0
+periodScan = 1.0 //0.0
 velocJam = 0.0
 weaponPitch = 1.5
 steerFactor = 1.0
-engageRange = 210 // 230
+engageRange = 210
+
+CanBailout = false
 
 [TurretCraftClass]
-powerTap1 = "HP_TAP_1"
+powerTap1 = "hp_tap_1"
 powerName = "fblung"
 omegaTurret = 2.0
 detectRange = 210

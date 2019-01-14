@@ -1,7 +1,7 @@
 [OrdnanceClass]
 classLabel = "bullet"
 
-shotGeometry = "ioartl00.xsi"
+shotGeometry = "ioartl00.fbx"
 shotSound = "Ordin_c.wav"
 
 xplGround = "xpopgnd"
@@ -12,7 +12,7 @@ renderName = "poproc.render"
 
 ammoCost = 30
 lifeSpan = 4.0 // 320m
-shotSpeed = 80.0
+shotSpeed = 80.0 //50.0
 
 damageValue(N) = 250 // none // 350 = 250
 damageValue(L) = 220 // light // 300 = 200
@@ -24,28 +24,108 @@ damageValue(A) = 250 // absortion // 275 = 183.3
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
-renderName1 = "poproc.flare"
-renderName2 = "poproc.trail"
+renderCount = 7
+renderName1 = "poproc.light"
+renderName2 = "poproc.sparkle"
+renderName3 = "poproc.smoketrail"
+renderName4 = "poproc.hottrail"
+renderName5 = "poproc.glow"
+renderName6 = "poproc.core"
+renderName7 = "poproc.burst"
 
-[Flare]
+[Light]
+renderBase = "draw_light"
+startColor = "227 43 69 400" 
+finishColor = "227 43 69 400" 
+startRadius = 40.0
+finishRadius = 40.0
+
+[glow]
 renderBase = "draw_sprite"
-textureName = "flare.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 255 127"
-finishColor = "255 255 255 127"
-startRadius = 2.0
-finishRadius = 2.0
-
-[Trail]
-renderBase = "draw_twirl_trail"
 textureName = "particle.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 0 127"
-finishColor = "255 0 0 0"
-startRadius = 0.3
+startColor = "227 43 69 255" 
+finishColor = "227 43 69 255" 
+startRadius = 1.0
 finishRadius = 1.0
-animateTime = 0.5
-emitDelay = 0.005
+
+[Sparkle]
+renderBase = "draw_twirl_trail"
+textureName = "plasma.tga" // flame
+textureblend = "one one modulate"
+startColor = "227 43 69 255" 
+finishColor = "227 43 109 0" 
+startRadius = 0.2
+finishRadius = 0.05
+rotationRate = 2.0
+animateTime = 0.3
+emitDelay = 0.01 //0.005
 emitVariance = "3.0 3.0 3.0"
-emitLife = 0.5
+emitLife = 1.0
+BottomInteractsWithTerrain = false
+
+[HotTrail]
+renderBase = "draw_trail"
+textureName = "firetrail1.tga"
+textureBlend = "one one modulate"
+textureRate = 0.25 //0.2
+startColor = "227 43 69 255" 
+finishColor = "227 43 109 0" 
+startRadius = 0.30
+finishRadius = 0.05
+segmentLength = 2.4 //3.0
+segmentTime = 0.3
+animateTime = 0.3
+segmentVariance = "3.0 3.0 3.0"
+
+[SmokeTrail]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "227 43 109 15" 
+finishColor = "227 43 109 0"
+startRadius = 0.4
+finishRadius = 2.7
+rotationRate = 6.0
+animateTime = 1.8
+emitDelay = 0.03 //0.02
+emitVariance = "3.7 3.7 3.7"
+emitInherit = "0.3 0.3 0.3"
+emitLife = 1.8
+
+[wispyTrail]
+renderBase = "draw_trail"
+textureName = "sonictrail.tga"
+textureBlend = "one one modulate"
+startColor = "227 43 109 100" 
+finishColor = "227 43 129 0"
+textureRate = 0.3 //0.2
+startRadius = 0.5
+finishRadius = 2.0
+segmentLength = 2.4 //3.0
+segmentTime = 3.0
+animateTime = 3.0
+segmentVariance = "3.0 3.0 3.0"
+
+[Core]
+renderBase = "draw_sprite"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "227 43 69 255" 
+finishColor = "227 43 69 255" 
+startRadius = 1.0
+finishRadius = 1.0
+
+[burst]
+renderBase = "draw_twirl_trail"
+textureName = "sonicboom.tga"
+textureBlend = "one one modulate"
+startColor = "255 35 82 255"
+finishColor = "184 48 96 0" 
+startRadius = 3.0
+finishRadius = 0.0
+rotationRate = 10.0
+animateTime = 0.1
+emitDelay = 0.1
+emitLife = 0.1
+emitinherit = "1.0 1.0 1.0"
