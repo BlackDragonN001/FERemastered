@@ -1,40 +1,6 @@
 [GameObjectClass]
 baseName = "ivturr"
-geometryName = "ivturr00.xsi"
-geometryScale = 1.5
-cockpitName = "ivturr_cockpit.xsi"
-animCount = 4
-animName1 = "deploy"
-animFile1 = "ivturr00.xsi"
-animName2 = "forward"
-animFile2 = "ivturrsf.xsi"
-animName3 = "neutral"
-animFile3 = "ivturrsn.xsi"
-animName4 = "reverse"
-animFile4 = "ivturrsr.xsi"
-
-classLabel = "turrettank"
-scrapCost = 40
-customCost = 45
-scrapValue = 20
-buildTime = 10.0
-customTime = 10.0
-maxHealth = 1500
-maxAmmo = 5000
-addAmmo = 5
-unitName = "Anti-Pilot"
-aiName = "TurretTankFriend"
-aiName2 = "TurretTankEnemy"
-heatSignature = 0.1
-imageSignature = 1.0
-radarSignature = 0.1
-isAssault = 0
-
-armorClass = L
-
-requireCount = 0
-
-/////// weapons ///////////////////
+classLabel = "ivturr"
 
 weaponMask = 00011
 weaponHard1 = "HP_GUN_1"
@@ -44,68 +10,8 @@ weaponHard2 = "HP_GUN_2"
 weaponName2 = "gmoon_c"
 weaponAssault2 = 1
 
-//////////////////////////////////
-
-turretCount = 4
-turretName1 = "turret_y"
-turretName2 = "turret_x_1"
-turretName3 = "turret_x_2"
-turretName4 = "HP_eyepoint"
-
 [CraftClass]
-rangeScan = 300.0
-periodScan = 3.0
-velocJam = 1.0
-engageRange = 150
-
-selectGoMsg = "ivturr01.wav"
-selectAttackMsg = "ivturr03.wav"
-selectDeployMsg = "ivturr04.wav"
-selectOtherMsg = "ivturr03.wav"
-holdMsg = "ivturr12.wav"
-goMsg = "ivturr05.wav"
-followMeMsg = "ivturr08.wav"
-reloadMsg = "ivturr09.wav"
-repairMsg = "ivturr09.wav"
-rescueMsg = "ivturr10.wav"
-recycleMsg = "ivturr11.wav"
-otherMsg = "ivturr11.wav"
-attackMsg = "ivturr06.wav"
-
-deployedMsg = "ivturr14.wav"
-killedMsg = "ivturr07.wav"
-
 
 [HoverCraftClass]
-setAltitude = 0.5
-accelDragStop = 20.0
-accelDragFull = 1.0
-alphaTrack = 10.0
-alphaDamp = 3.0
-pitchPitch = 0.5
-pitchThrust = 0.1
-rollStrafe = 0.1
-rollSteer = 0.1
-
-velocForward = 20.0
-velocReverse = 15.0
-velocStrafe = 15.0
-accelThrust = 50.0
-accelBrake = 50.0
-omegaSpin = 4.0
-omegaTurn = 1.5
-alphaSteer = 10.0
-accelJump = 15.0
-
-soundThrust = "ienge.wav"
-soundSteer = "avturre8.wav"
-soundDeploy = "avturre4.wav"
-soundUndeploy = "avturre5.wav"
-
 
 [TurretTankClass]
-omegaTurret = 1.0
-alphaTurret = 2.0
-timeDeploy = 8.0
-timeUndeploy = 0.7
-

@@ -1,17 +1,14 @@
 [GameObjectClass]
-geometryName = "apspec00.xsi"
-classLabel = "wpnpower"
-scrapCost = 20
-scrapValue = 0
-maxHealth = 200
-maxAmmo = 0
-unitName = "Guardian Mines"
-aiName = "PowerUpProcess"
+baseName = "APSEEKX"
+classLabel = "apspecial"
 
+scrapCost = 20
+maxHealth = 200
+
+unitName = "Cseeker"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "gxseeker"
+

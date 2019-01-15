@@ -40,23 +40,6 @@ lightName2 = "cpower_light"
 lightHard3 = "hp_light_3"
 lightName3 = "cpower_light"
 
-[LightClass]
-classLabel="spotlight"
-
-lightColor.r = 15.2
-lightColor.g = 0.7
-lightColor.b = 0.5
-lightColor.a = 1.0
-lightRange = 0.10
-
-attenuateConstant = 0.0
-attenuateLinear = 1.0 
-attenuateQuadratic = 0.0
-
-coneFalloff = 1.0
-coneAngInner = 0.5
-coneAngOuter =20.0
-
 [BuildingClass]
 soundAmbient = "ipgen01.wav"
 

@@ -1,46 +1,46 @@
 [GameObjectClass]
 baseName = "fspilo"
 classLabel = "person"
-geometryName = "sspilo_rifle_skel.xsi"
-geometryScale = 0.1
+geometryName = "fspilo_rifle_skel.fbx"
+//geometryScale = 0.1 // May need an invisible model? -GBD
 
 animCount = 14
 
 // empty-handed animations
 animName1 = "stand"
-animFile1 = "sspilo_rifle_skel.xsi"
+animFile1 = "fspilo_rifle_skel.fbx"
 animName2 = "walk"
-animFile2 = "sspilo_rifle_run.xsi"
+animFile2 = "fspilo_rifle_run.fbx"
 animName3 = "crouch"
-animFile3 = "sspilo_rifle_crouch.xsi"
+animFile3 = "fspilo_rifle_crouch.fbx"
 animName4 = "jump"
-animFile4 = "sspilo_rifle_jump.xsi"
+animFile4 = "fspilo_rifle_jump.fbx"
 
 // combat mode animations
 animName5 = "standC"
-animFile5 = "sspilo_rifle_skel.xsi"
+animFile5 = "fspilo_rifle_skel.fbx"
 animName6 = "walkC"
-animFile6 = "sspilo_rifle_run.xsi"
+animFile6 = "fspilo_rifle_run.fbx"
 animName7 = "crouchC"
-animFile7 = "sspilo_rifle_crouch.xsi"
+animFile7 = "fspilo_rifle_crouch.fbx"
 animName8 = "jumpC"
-animFile8 = "sspilo_rifle_jump.xsi"
+animFile8 = "fspilo_rifle_jump.fbx"
 
 // assault mode animations
 animName9 = "standA"
-animFile9 = "sspilo_bazooka_skel.xsi"
+animFile9 = "fspilo_rifle_skel.fbx"
 animName10 = "walkA"
-animFile10 = "sspilo_bazooka_run.xsi"
+animFile10 = "fspilo_rifle_run.fbx"
 animName11 = "crouchA"
-animFile11 = "sspilo_bazooka_crouch.xsi"
+animFile11 = "fspilo_rifle_crouch.fbx"
 animName12 = "jumpA"
-animFile12 = "sspilo_bazooka_jump.xsi"
+animFile12 = "fspilo_rifle_jump.fbx"
 
 // Death animations
-animName13 = "DeathA"
-animFile13 = "sspilo_rifle_death01.xsi"
-animName14 = "DeathC"
-animFile14 = "sspilo_bazooka_death01.xsi"
+animName13 = "DeathC"
+animFile13 = "fspilo_rifle_death01.fbx
+animName14 = "DeathA"
+animFile14 = "fspilo_rifle_death01.fbx"
 
 
 scrapCost = 5
@@ -60,7 +60,7 @@ radarSignature = 0.1
 weaponHard1 = "HP_HAND_1"
 visualHard1 = "HP_DOCK_H"
 weaponAssault1 = 0
-weaponName1 = "sgbzka_c"
+weaponName1 = "fgbzka_c"
 
 weaponHard2 = "HP_HAND_1"
 visualHard2 = "HP_DOCK_H"

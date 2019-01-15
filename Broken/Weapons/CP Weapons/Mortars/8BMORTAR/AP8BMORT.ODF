@@ -1,15 +1,10 @@
 [GameObjectClass]
-geometryName = "apmort00.xsi"
-classLabel = "wpnpower"
-scrapCost = 20
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+baseName = "AP8BMORT"
+classLabel = "apmortar"
 
-lightHard1 = "hp_light_1"
-lightName1 = "omnipurple"
+scrapCost = 20
+
+unitName = "8Ball Mortar"
 
 requireCount = 3
 requireName1 = "ibarmo"
@@ -20,8 +15,6 @@ requireName3 = "ibtcen"
 requireText3 = "Build Tech Center"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "g8bmort"

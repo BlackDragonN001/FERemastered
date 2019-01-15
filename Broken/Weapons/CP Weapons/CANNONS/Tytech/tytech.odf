@@ -3,9 +3,9 @@ classLabel = "BULLET"
 
 shotGeometry = NULL
 shotRadius = 2.0
-xplGround = "xtytech"
-xplVehicle = "xtytech"
-xplBuilding = "xtytech"
+xplGround = "null" //"xtytech" // Missing since forever? :( -GBD
+xplVehicle = "null" //"xtytech"
+xplBuilding = "null" //"xtytech"
 
 renderName = "tytech.render"
 ammoCost = 10

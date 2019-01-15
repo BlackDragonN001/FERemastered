@@ -1,12 +1,12 @@
 [GameObjectClass]
 geometryName = "ioartl00.xsi"
-classLabel = "spraybomb"
+classLabel = "spraymine"
 scrapCost = 0
 scrapValue = 0
 maxHealth = 150
 maxHeat = 0
 maxAmmo = 100
-unitName = "FlareBomb"
+unitName = "Flare Bomb"
 
 [SprayBuildingClass]
 payloadName = "flarebomb_o"

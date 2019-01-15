@@ -1,7 +1,7 @@
 [GameObjectClass]
 baseName = "cvserv"
 geometryName = "cvserv_skel.xsi"
-cockpitName = "ivserv_cockpit.xsi"
+cockpitName = "ivcons_cockpit.fbx"   //"ivserv_cockpit.xsi"
 // geometryScale = 0.3 <- Not needed in BZCC (AI_Unit)
 classLabel = "service"
 scrapValue = 10

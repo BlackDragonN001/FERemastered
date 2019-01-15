@@ -64,17 +64,17 @@ emitVariance = "0.0 0.0 0.0"
 emitLife = 0.75
 
 //[Contrail]
-renderBase = "draw_trail"
-textureName = "plasma.tga"
-textureBlend = "one one modulate"
-startColor = "100 110 250 200"
-finishColor = "100 110 250 0"
-startRadius = 0.5
-finishRadius = 0.5 
-segmentTime = .03 // 3.0  // time each segment animates
-segmentVariance = "0.0 0.0 0.0"
-animateTime = 0.5
-textureRate = 1 
+//renderBase = "draw_trail"
+//textureName = "plasma.tga"
+//textureBlend = "one one modulate"
+//startColor = "100 110 250 200"
+//finishColor = "100 110 250 0"
+//startRadius = 0.5
+//finishRadius = 0.5 
+//segmentTime = .03 // 3.0  // time each segment animates
+//segmentVariance = "0.0 0.0 0.0"
+//animateTime = 0.5
+//textureRate = 1 
 
 [Contrail]
 renderBase = "draw_geom"

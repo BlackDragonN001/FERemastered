@@ -1,0 +1,19 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gslagstab_a"
+ordName = "slagstab_L"
+wpnName = "HyperSlag"
+fireSound = "slagLR.wav"
+wpnReticle = "gatstab"
+wpnCategory = "CANN"
+isAssault = 0
+
+aiRange = 200
+
+[CannonClass]
+shotDelay = 0.35
+shotAlternate = 0
+
+
+
+

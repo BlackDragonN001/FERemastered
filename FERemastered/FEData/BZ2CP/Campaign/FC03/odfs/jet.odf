@@ -1,15 +1,15 @@
 [WeaponClass]
 classLabel = "jetpack"
-geometryName = "sgjetp00.xsi"
+geometryName = "fgjetp00.xsi"
 geometryScale = 0.12
 animCount = 1
 animName1 = "launch"
-animFile1 = "sgjetp00.xsi"
+animFile1 = "fgjetp00.xsi"
 ordName = NULL
 wpnName = "Booster"
 wpnIcon = "wire_igjetp%d.tga"
 fireSound = "whcan.wav"
-flashName = "sgjetp.render"
+flashName = "fgjetp.render"
 wpnReticle = "gphantom.0"
 wpnPriority = 0
 wpnCategory = "PACK"
@@ -22,46 +22,3 @@ accelThrust = 14.0
 activeSound = "jpack01.wav"
 expireSound = "jpack02.wav"
 
-[Render]
-renderBase = "draw_multi"
-renderCount = 3
-renderName1 = "sgjetp.flare"
-renderName2 = "sgjetp.smoke"
-renderName3 = "sgjetp.flame"
-
-[Flare]
-renderBase = "draw_sprite"
-textureName = "lightflare.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 255 255 255"
-startRadius = 2.0
-finishRadius = 2.0
-
-[Smoke]
-renderBase = "draw_twirl_trail"
-textureName = "smoke.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "153 153 153 63"
-finishColor = "31 31 31 0"
-startRadius = 0.5
-finishRadius = 5.0
-animateTime = 3.0
-emitDelay = 0.01
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "3.0 3.0 3.0"
-emitLife = 3.0
-
-[Flame]
-renderBase = "draw_twirl_trail"
-textureName = "flame.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 63 255"
-finishColor = "255 0 0 0"
-startRadius = 0.3
-finishRadius = 0.03
-animateTime = 0.1
-emitDelay = 0.002
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "3.0 3.0 3.0"
-emitLife = 0.1

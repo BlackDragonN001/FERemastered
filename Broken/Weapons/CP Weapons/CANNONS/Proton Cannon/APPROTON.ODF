@@ -1,19 +1,12 @@
 [GameObjectClass]
-geometryName = "apcann00.xsi"
-classLabel = "wpnpower"
-scrapCost = 20
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+baseName = "APPROTON"
+classLabel = "apcannon"
 
-lightHard1 = "hp_light_1"
-lightName1 = "omnipurple"
+scrapCost = 20
+
+unitName = "Proton Burst"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "gproton_c"

@@ -50,20 +50,6 @@ effectName1 = "cbagen.render"
 effectHard2 = "hp_emit_2"
 effectName2 = "cbagen.render"
 
-[LightClass]
-classLabel="spotlight"
-lightColor.r=15.2
-lightColor.g=0.7
-lightColor.b=0.5
-lightColor.a=1.0
-lightRange=0.10
-attenuateConstant=0.0
-attenuateLinear=1.0
-attenuateQuadratic=0.0
-coneFalloff=1.0
-coneAngInner=0.5
-coneAngOuter=20.0
-
 [BuildingClass]
 
 [render]

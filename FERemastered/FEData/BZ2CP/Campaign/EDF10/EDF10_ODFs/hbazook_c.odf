@@ -15,17 +15,17 @@ animName4 = "jump"
 animFile4 = "igbzka_skel.xsi"
 
 // cockpit geometry
-cockpitName = "iwbazo_cockpit_skel.xsi"
-cockpitScale = 0.12
+cockpitName = "iwbazo_cockpit_skel.fbx"
+//cockpitScale = 0.12
 animCountCockpit = 4
 animNameCockpit1 = "stand"
-animFileCockpit1 = "iwbazo_cockpit_skel.xsi"
+animFileCockpit1 = "iwbazo_cockpit_skel.fbx"
 animNameCockpit2 = "walk"
-animFileCockpit2 = "iwbazo_cockpit_run.xsi"
+animFileCockpit2 = "iwbazo_cockpit_run.fbx"
 animNameCockpit3 = "crouch"
-animFileCockpit3 = "iwbazo_cockpit_skel.xsi"
+animFileCockpit3 = "iwbazo_cockpit_skel.fbx"
 animNameCockpit4 = "jump"
-animFileCockpit4 = "iwbazo_cockpit_skel.xsi"
+animFileCockpit4 = "iwbazo_cockpit_skel.fbx"
 
 ordName = "zook"
 wpnName = "Rocket"

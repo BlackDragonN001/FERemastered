@@ -6,10 +6,10 @@
 classLabel = "explosion"
 
 particleTypes = 2
-particleClass1 = "xminxpl.core"
+particleClass1 = "xminfield.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
-particleClass2 = "xminxpl.puff"
+particleClass2 = "xminfield.puff"
 particleCount2 = 70
 particleVeloc2 = "90.0 90.0 90.0"
 

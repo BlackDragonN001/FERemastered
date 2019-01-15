@@ -11,6 +11,9 @@ wpnCategory = "MORT"
 
 aiRange = 200
 
+[CannonClass]
+shotPitch = 1.0
+
 [ChargeGunClass]
 startRate = 8000.0
 deltaRate = 0.0
@@ -20,7 +23,6 @@ deltaVolume = 0.0
 ordnanceCount = 7
 
 shotDelay1 = 0.0
-shotPitch = 1.0
 salvoCount1 = 1
 salvoDelay1 = 0
 shotVariance1 = 0.01
@@ -29,7 +31,6 @@ ordName1 = "8bmort"
 wpnReticle1 = "gmaggun.0"
 
 shotDelay2 = 0.5
-shotPitch = 1.0
 salvoCount2 = 2
 salvoDelay2 = 0.25
 shotVariance2 = 0.01
@@ -38,7 +39,6 @@ ordName2 = "8bmort"
 wpnReticle2 = "gmaggun.1"
 
 shotDelay3 = 1.0
-shotPitch = 1.0
 salvoCount3 = 3
 salvoDelay3 = 0.25
 shotVariance3 = 0.01
@@ -47,7 +47,6 @@ ordName3 = "8bmort"
 wpnReticle3 = "gmaggun.2"
 
 shotDelay4 = 1.5
-shotPitch = 1.0
 salvoCount4 = 4
 salvoDelay4 = 0.25
 shotVariance4 = 0.01
@@ -56,7 +55,6 @@ ordName4 = "8bmort"
 wpnReticle4 = "gmaggun.3"
 
 shotDelay5 = 2.0
-shotPitch = 1.0
 salvoCount5 = 5
 salvoDelay5 = 0.25
 shotVariance5 = 0.01
@@ -65,7 +63,6 @@ ordName5 = "8bmort"
 wpnReticle5 = "gmaggun.4"
 
 shotDelay6 = 2.5
-shotPitch = 1.0
 salvoCount6 = 6
 salvoDelay6 = 0.25
 shotVariance6 = 0.01
@@ -74,7 +71,6 @@ ordName6 = "8bmort"
 wpnReticle6 = "gmaggun.5"
 
 shotDelay7 = 3.0
-shotPitch = 1.0
 salvoCount7 = 8
 salvoDelay7 = 0.25
 shotVariance7 = 0.01

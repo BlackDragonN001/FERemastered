@@ -1,20 +1,12 @@
 [GameObjectClass]
-geometryName = "apgun00.xsi"
-classLabel = "wpnpower"
-scrapCost = 20
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+baseName = "aplasercan"
+classLabel = "apgun"
 
+scrapCost = 10
 
-lightHard1 = "hp_light_1"
-lightName1 = "omnicyan"
+unitName = "Laser Cannon"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "glasercan_c"

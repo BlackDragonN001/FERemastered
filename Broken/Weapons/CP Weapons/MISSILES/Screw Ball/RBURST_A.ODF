@@ -61,7 +61,7 @@ emitLife = 0.02
 
 [Light]
 renderBase = "draw_sprite"
-textureName = "lightlare.tga"
+textureName = "lightflare.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "150 55 200 255"
 finishColor = "255 255 255 255"

@@ -1,7 +1,7 @@
 [GameObjectClass]
 baseName = "ivtank"
 geometryName = "ivshul00.xsi"
-cockpitName= "ivtank_cockpit.xsi"
+cockpitName= "ivtank_cockpit.fbx"
 classLabel = "wingman"
 scrapValue = 20
 scrapCost = 55
@@ -29,8 +29,6 @@ requireName1 = "ibfact"
 requireText1 = "Build Factory"
 requireName2 = "ibcbun"
 requireText2 = "Build Relay Bunk"
-
-cockpitName = "ivtank_cockpit.xsi"
 
 /////// weapons ///////////////////
 
@@ -81,7 +79,6 @@ selectAttackMsg = "ivtank02.wav"
 selectFollowMsg = "ivtank04.wav"
 selectGoMsg = "ivtank04.wav"
 selectOtherMsg = "ivtank05.wav"
-holdMsg = "ivtank12.wav"
 
 goMsg = "ivtank04.wav"
 attackMsg = "ivtank06.wav"
@@ -123,11 +120,11 @@ soundThrust = "itank01e.wav"
 soundTurbo = "avtanke3.wav"
 
 [Lod1]
-geometryName = "ivtankL1.xsi" ;geometry for lod1
-distance = 50                 ;...distance over this many meters => switch to lod2
+//geometryName = "ivtankL1.xsi" ;geometry for lod1
+//distance = 50                 ;...distance over this many meters => switch to lod2
 
 [Lod2]
-geometryName = "ivtankL2.xsi" ;geometry for lod2
-distance = 100                 ;...distance over this many meters => switch to lod2
+//geometryName = "ivtankL2.xsi" ;geometry for lod2
+//distance = 100                 ;...distance over this many meters => switch to lod2
 
 

@@ -1,0 +1,86 @@
+[WeaponClass]
+classLabel = "chargegun"
+altName = "g8bcann_a"
+ordName = NULL
+wpnName = "8Ball Cannon"
+fireSound = "8bcann.wav"
+wpnReticle = "gmaggun.0"
+wpnCategory = "CANN"
+isAssault = 0
+
+aiRange = 100
+
+[ChargeGunClass]
+startRate = 8000.0
+deltaRate = 0.0
+startVolume = 40.0
+deltaVolume = 0.0
+
+ordnanceCount = 8
+
+shotDelay1 = 0.0
+salvoCount1 = 1
+salvoDelay1 = 0
+shotVariance1 = 0.25
+fireSound1 = "8bcannshote.wav"
+ordName1 = "8bcann"
+wpnReticle1 = "gmaggun.0"
+
+shotDelay2 = 0.5
+salvoCount2 = 2
+salvoDelay2 = 0.25
+shotVariance2 = 0.1
+fireSound2 = "8bcannshot2.wav"
+ordName2 = "8bcann"
+wpnReticle2 = "gmaggun.1"
+
+shotDelay3 = 1.0
+salvoCount3 = 3
+salvoDelay3 = 0.25
+shotVariance3 = 0.1
+fireSound3 = "8bcannshot3.wav"
+ordName3 = "8bcann"
+wpnReticle3 = "gmaggun.2"
+
+shotDelay4 = 1.5
+salvoCount4 = 4
+salvoDelay4 = 0.25
+shotVariance4 = 0.1
+fireSound4 = "8bcannshot4.wav"
+ordName4 = "8bcann"
+wpnReticle4 = "gmaggun.3"
+
+shotDelay5 = 2.0
+salvoCount5 = 5
+salvoDelay5 = 0.25
+shotVariance5 = 0.1
+fireSound5 = "8bcannshot5.wav"
+ordName5 = "8bcann"
+wpnReticle5 = "gmaggun.4"
+
+shotDelay6 = 2.5
+salvoCount6 = 6
+salvoDelay6 = 0.25
+shotVariance6 = 0.1
+fireSound6 = "8bcannshot6.wav"
+ordName6 = "8bcann"
+wpnReticle6 = "gmaggun.5"
+
+shotDelay7 = 3.0
+salvoCount7 = 7
+salvoDelay7 = 0.25
+shotVariance7 = 0.1
+fireSound7 = "8bcannshot7.wav"
+ordName7 = "8bcann"
+wpnReticle7 = "gmaggun.6"
+
+shotDelay8 = 3.5
+salvoCount8 = 8
+salvoDelay8 = 0.25
+shotVariance8 = 0.1
+fireSound8 = "8bcannshot8.wav" //no sound for some reason
+ordName8 = "8bcann"
+wpnReticle8 = "gmaggun.6"
+
+
+holdRate = 100.0

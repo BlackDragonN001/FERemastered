@@ -30,8 +30,6 @@ requireText1 = "Build Factory"
 requireName2 = "ibcbun"
 requireText2 = "Build Relay Bunk"
 
-cockpitName = "ivtank_cockpit.xsi"
-
 /////// weapons ///////////////////
 
 weaponMask = 00011
@@ -65,7 +63,6 @@ selectAttackMsg = "ivtank02.wav"
 selectFollowMsg = "ivtank04.wav"
 selectGoMsg = "ivtank04.wav"
 selectOtherMsg = "ivtank05.wav"
-holdMsg = "ivtank12.wav"
 
 goMsg = "ivtank04.wav"
 attackMsg = "ivtank06.wav"
@@ -88,7 +85,7 @@ velocStrafe = 16.0 // []
 accelThrust = 24.0 //acceleration []
 accelDragStop = 6.0 //how fast it stops once hands are off controls []
 accelJump = 35.0 // []
-w
+
 setAltitude = 18.0 // how high off the ground
 
 alphaTrack = 21.0 //springs speed it rights itself []

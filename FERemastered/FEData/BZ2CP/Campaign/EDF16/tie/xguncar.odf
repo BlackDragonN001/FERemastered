@@ -36,7 +36,7 @@ particleClass4 = "xguncar.flame"
 particleCount4 = 2
 particleVeloc4 = "0.0 0.0 0.0"
 
-particleClass5 = "xsupercar.puff"
+particleClass5 = "xguncar.puff"
 particleCount5 = 5
 particleVeloc5 = "6.0 6.0 6.0"
 
@@ -55,7 +55,7 @@ particleVeloc8 = "0.0 0.0 0.0"
 
 
 ////////////
-//[Core]
+[Core]
 simulateBase = "sim_null"
 lifeTime = 0.2
 renderBase = "draw_twirl"
@@ -112,16 +112,23 @@ longitudeSegments = 16
 simulateBase = "sim_smoke"
 lifeTime = 0.2
 renderBase = "draw_emit"
-emitName = "xsupercar.flameemit"
+emitName = "xguncar.flameemit"
 emitDelay = 0.1
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "0.0 0.0 0.0"
 
 [flameemit]
 simulateBase = "sim_smoke"
-lifeTime = 1.0
+lifeTime = 0.5
 renderBase = "draw_twirl"
-textureName = "bulhit.tga" // fla
+textureName = "bulhit.tga" // flame2
+textureBlend = "one one modulate"
+startColor = " 255 155 0 255"
+finishColor = "255 0 0 0" //
+startRadius = 0.5
+finishRadius = 4.0
+animateTime = 0.5
+rotationRate = 0.5
 
 [Light]
 simulateBase = "sim_null"

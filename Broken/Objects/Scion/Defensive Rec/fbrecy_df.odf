@@ -7,7 +7,6 @@ animFile1 = "fvdfrecy_deploy.xsi"
 collisionRadius = 10.0
 classLabel = "recycler"
 powerCost = -2
-scrapCost=0
 scrapValue = 10
 scrapCost = 0
 maxHealth = 15000
@@ -74,7 +73,3 @@ diedMsg = ""
 scrapHold = 40
 recycleX = 3
 recycleZ = 2
-
-[PoweredBuildingClass]
-powerCost = 0
-detectRange = 100

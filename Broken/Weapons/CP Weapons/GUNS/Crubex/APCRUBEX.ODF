@@ -1,21 +1,12 @@
 [GameObjectClass]
-geometryName = "apgun00.xsi"
-classLabel = "wpnpower"
-scrapCost = 50
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+baseName = "APCRUBEX"
+classLabel = "apgun"
 
-lightHard1 = "hp_light_1"
-lightName1 = "omnicyan"
+scrapCost = 10
 
-requireCount = 0
+unitName = "Crubex Gun"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "gcrubex_c"

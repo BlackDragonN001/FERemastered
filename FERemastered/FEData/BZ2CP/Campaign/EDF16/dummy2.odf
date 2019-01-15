@@ -1,15 +1,9 @@
+// !! TODO: Need a dummy small invisible ship with hard points for this unit. -GBD
 [GameObjectClass]
 baseName="ivscout"
-geometryName="ivscout00.xsi"
-geometryScale=0.01
-cockpitName="ivscout_cockpit.xsi"
-animCount=3
-animName1="forward"
-animFile1="ivscoutsf.xsi"
-animName2="neutral"
-animFile2="ivscoutsn.xsi"
-animName3="reverse"
-animFile3="ivscoutsr.xsi"
+geometryName = NULL //"ivscout00.xsi"
+//geometryScale=0.01 // This is important! It was meant to be invisible. -GBD
+
 classLabel="wingman"
 scrapValue=15
 scrapCost=50

@@ -1,6 +1,6 @@
 [GameObjectClass]
 classLabel = "seeker"
-geometryName = "sgseek00.xsi"
+geometryName = "sgseek00.fbx"
 geometryScale = 1.2
 scrapCost = 0
 scrapValue = 0
@@ -11,7 +11,7 @@ heatSignature = 10.0
 imageSignature = 10.0
 radarSignature = 10.0
 effectHard1 = "Seeker"
-effectName1 = "seeker2.render"
+effectName1 = "Xseeker.render"
 canCollide = 1
 //collisionRadius = 1.0
 

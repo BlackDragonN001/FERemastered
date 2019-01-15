@@ -1,19 +1,12 @@
 [GameObjectClass]
-geometryName = "apcann00.xsi"
-classLabel = "wpnpower"
-scrapCost = 20
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+baseName = "APXVSTAB"
+classLabel = "apcannon"
 
-lightHard1 = "hp_light_1"
-lightName1 = "omnibrown"
+scrapCost = 20
+
+unitName = "XV-Stab"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "gxvstab_c"

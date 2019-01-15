@@ -19,23 +19,23 @@ damageValue(A) = 0 // absorbtion
 
 particleTypes = 5
 
-particleClass1 = "xsupercar.shock"
+particleClass1 = "xannoycar.shock"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
-particleClass2 = "xsupercar.flame"
+particleClass2 = "xannoycar.flame"
 particleCount2 = 2
 particleVeloc2 = "0.0 0.0 0.0"
 
-particleClass3 = "xsupercar.light"
+particleClass3 = "xannoycar.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
-particleClass4 = "xsupercar.puff"
+particleClass4 = "xannoycar.puff"
 particleCount4 = 5
 particleVeloc4 = "6.0 6.0 6.0"
 
-particleClass5 = "xsupercar.spark"
+particleClass5 = "xannoycar.spark"
 particleCount5 = 20
 particleVeloc5 = "15.0 15.0 15.0"
 
@@ -58,7 +58,7 @@ longitudeSegments = 16
 simulateBase = "sim_smoke"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "xsupercar.flameemit"
+emitName = "xannoycar.flameemit"
 emitDelay = 0.1
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "0.0 0.0 0.0"

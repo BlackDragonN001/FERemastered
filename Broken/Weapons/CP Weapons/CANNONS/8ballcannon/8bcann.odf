@@ -1,0 +1,61 @@
+[OrdnanceClass]
+classLabel = "grenade"
+
+shotGeometry = "ioartl00.xsi"
+shotSound = "8bcannord"
+
+xplGround = "xslaggnd"
+xplVehicle = "xsupercar" //"xslagcar" // Doesn't exist? -GBD
+xplBuilding = "xsupercar" //"xslagbld" // Doesn't exist? -GBD
+
+renderName = "8bcann.render"
+
+ammoCost = 30
+lifeSpan = 4
+
+shotSpeed = 150.0
+
+damageValue(N) = 150 // none
+damageValue(L) = 140 // light
+damageValue(H) = 130 // heavy
+
+damageValue(S) = 150 // standard
+damageValue(D) = 130 // deflection
+damageValue(A) = 160 // absorbtion
+
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "8bcann.flames"
+renderName2 = "8bcann.smoke""
+
+
+[flames]
+renderBase = "draw_twirl_trail"
+//textureName = "particle.tga"
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+//startcolor = "0 0 255 200"
+startColor = "200 200 200 150"
+finishColor = "200 200 200 0"
+startRadius = 0.3
+finishRadius = 0.8
+animateTime = 0.4
+emitDelay = 0.01
+emitVariance = "1.0 1.0 1.0"
+emitLife = 0.3
+
+[smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 200"
+finishColor = "100 100 100 100"
+startRadius = 0.1
+finishRadius = 1.0
+animateTime = 1.0
+emitDelay = 0.005
+emitVelocity = "1.5 1.5 1.5"
+emitVariance = "3.0 3.0 3.0"
+emitLife = .5

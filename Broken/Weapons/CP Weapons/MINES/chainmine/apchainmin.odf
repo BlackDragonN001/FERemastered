@@ -1,22 +1,17 @@
 [GameObjectClass]
-geometryName = "apspec00.xsi"
-classLabel = "wpnpower"
-scrapCost = 1
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+baseName = "apchainmin"
+classLabel = "apspecial"
+
+scrapCost = 20
+
+unitName = "Chain Mine"
 
 requireCount = 1
 requireName1 = "fbstro"
-
-lightHard1 = "hp_light_1"
-lightName1 = "omnired"
+requireText1 = "Build Stronghold"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "gchainmin"
+

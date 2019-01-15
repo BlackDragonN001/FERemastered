@@ -30,8 +30,6 @@ requireText1 = "Build Factory"
 requireName2 = "ibcbun"
 requireText2 = "Build Relay Bunk"
 
-cockpitName = "ivtank_cockpit.xsi"
-
 /////// weapons ///////////////////
 
 weaponMask = 00011
@@ -64,7 +62,6 @@ selectAttackMsg = "dalek.wav"
 selectFollowMsg = "Iobey.wav"
 selectGoMsg = "Iobey.wav"
 selectOtherMsg = "Iobey.wav"
-holdMsg = "Iobey.wav"
 
 goMsg = "Iobey.wav"
 attackMsg = "dalek.wav"
@@ -87,7 +84,7 @@ velocStrafe = 13.0 // []
 accelThrust = 20.0 //acceleration []
 accelDragStop = 8.0 //how fast it stops once hands are off controls []
 accelJump = 0.01 // []
-w
+
 setAltitude = 0.5 // how high off the ground
 
 alphaTrack = 1.0 //springs speed it rights itself []

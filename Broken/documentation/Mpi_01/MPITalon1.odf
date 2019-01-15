@@ -30,8 +30,6 @@ requireCount = 1
 needPilot = 0
 canSnipe = 0  //added by {VnB}Aegeis
 
-cockpitName = "ivtank_cockpit.xsi"
-
 effectHard1 = "hp_emit_1"
 effectName1 = "cvtalon02.trailer"
 effectHard2 = "hp_emit_2"
@@ -95,7 +93,6 @@ selectAttackMsg = "ivtank02.wav"
 selectFollowMsg = "ivtank04.wav"
 selectGoMsg = "ivtank04.wav"
 selectOtherMsg = "ivtank05.wav"
-holdMsg = "ivtank12.wav"
 
 goMsg = "ivtank04.wav"
 attackMsg = "ivtank06.wav"

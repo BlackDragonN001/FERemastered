@@ -1,11 +1,11 @@
 [GameObjectClass]
 baseName = "ivtug"
-geometryName = "ivtug00.xsi"
-geometryScale = 0.5
-cockpitName = "ivwalk_cockpit.xsi"
+geometryName = "ivtug00.fbx"
+//geometryScale = 0.5
+cockpitName = "ivwalk_cockpit.fbx"
 animCount = 1
 animName1 = "deploy"
-animFile1 = "ivtug00.xsi"
+animFile1 = "ivtug00.fbx"
 classLabel = "tug"
 scrapValue = 30
 scrapCost = 45
@@ -100,5 +100,5 @@ soundDeploy = "trdeploy.wav"
 soundUndeploy = "trundepl.wav"
 
 [Lod1]
-geometryName = "ivtugL1.xsi" ;geometry for lod1
-distance = 50
+//geometryName = "ivtugL1.xsi" ;geometry for lod1
+//distance = 50

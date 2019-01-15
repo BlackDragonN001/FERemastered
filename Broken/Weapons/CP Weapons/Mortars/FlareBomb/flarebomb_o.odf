@@ -7,7 +7,7 @@ xplGround = "xflmhit"
 xplVehicle = "xflmhit"
 xplBuilding = "xflmhit"
 
-renderName = "flare.render"
+renderName = "flarebomb_o.render"
 ammoCost = 0.5
 lifeSpan = 1.0
 shotSpeed = 50.0
@@ -22,8 +22,8 @@ damageValue(A) = 90
 [Render]
 renderBase = "draw_multi"
 renderCount = 2
-renderName1 = "flarebombmin.core"
-renderName2 = "flarebombmin.cloudemit"
+renderName1 = "flarebomb_o.core"
+renderName2 = "flarebomb_o.cloudemit"
 
 [Core]
 renderBase = "draw_twirl"
@@ -38,7 +38,7 @@ rotationRate = 2.0
 
 [CloudEmit]
 renderBase = "draw_emit"
-emitName = "flarebombmin.cloudpuff"
+emitName = "flarebomb_o.cloudpuff"
 emitDelay = 0.25
 emitVariance = "15.0 -5.0 15.0"
 

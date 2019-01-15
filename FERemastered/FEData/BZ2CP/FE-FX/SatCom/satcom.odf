@@ -1,15 +1,7 @@
 [GameObjectClass]
 baseName = "ivapc"
 geometryName = "satcomf.xsi"
-cockpitName = "ivmisl_cockpit.xsi"
 classLabel = "wingman"
-animCount = 3
-animName1 = "forward"
-animFile1 = "ivmislsf.xsi"
-animName2 = "neutral"
-animFile2 = "ivmislsn.xsi"
-animName3 = "reverse"
-animFile3 = "ivmislsr.xsi"
 scrapValue = 10
 scrapCost = 45
 customCost = 45
@@ -117,9 +109,5 @@ soundThrust = "ibomb.wav"
 soundTurbo = "ibomb.wav"
 
 [Lod1]
-geometryName = "ivmislL1.xsi" ;geometry for lod1
-distance = 50
 
 [Lod2]
-geometryName = "ivmislL2.xsi" ;geometry for lod2
-distance = 100                ;...distance over this many meters => switch to lod2

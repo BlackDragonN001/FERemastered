@@ -1,46 +1,50 @@
 [GameObjectClass]
 baseName = "essold"
 classLabel = "person"
-geometryName = "ispilo_rifle_skel.xsi"
-geometryScale = 0.1
+geometryName = "ispilo_rifle_skel.fbx"
+//geometryScale = 0.1
 
-animCount = 14
+animCount = 15
 
 // empty-handed animations
 animName1 = "stand"
-animFile1 = "ispilo_rifle_skel.xsi"
+animFile1 = "ispilo_rifle_skel.fbx"
 animName2 = "walk"
-animFile2 = "ispilo_rifle_run.xsi"
+animFile2 = "ispilo_rifle_run.fbx"
 animName3 = "crouch"
-animFile3 = "ispilo_rifle_crouch.xsi"
+animFile3 = "ispilo_rifle_crouch.fbx"
 animName4 = "jump"
-animFile4 = "ispilo_rifle_jump.xsi"
+animFile4 = "ispilo_rifle_jump.fbx"
 
 // combat mode animations
 animName5 = "standC"
-animFile5 = "ispilo_rifle_skel.xsi"
+animFile5 = "ispilo_rifle_skel.fbx"
 animName6 = "walkC"
-animFile6 = "ispilo_rifle_run.xsi"
+animFile6 = "ispilo_rifle_run.fbx"
 animName7 = "crouchC"
-animFile7 = "ispilo_rifle_crouch.xsi"
+animFile7 = "ispilo_rifle_crouch.fbx"
 animName8 = "jumpC"
-animFile8 = "ispilo_rifle_jump.xsi"
+animFile8 = "ispilo_rifle_jump.fbx"
 
 // assault mode animations
 animName9 = "standA"
-animFile9 = "ispilo_bazooka_skel.xsi"
+animFile9 = "ispilo_bazooka_skel.fbx"
 animName10 = "walkA"
-animFile10 = "ispilo_bazooka_run.xsi"
+animFile10 = "ispilo_bazooka_run.fbx"
 animName11 = "crouchA"
-animFile11 = "ispilo_bazooka_crouch.xsi"
+animFile11 = "ispilo_bazooka_crouch.fbx"
 animName12 = "jumpA"
-animFile12 = "ispilo_bazooka_jump.xsi"
+animFile12 = "ispilo_bazooka_jump.fbx"
 
 // Death animations
 animName13 = "DeathA"
-animFile13 = "ispilo_rifle_death01.xsi"
+animFile13 = "ispilo_bazooka_death01.fbx"
 animName14 = "DeathC"
-animFile14 = "ispilo_bazooka_death01.xsi"
+animFile14 = "ispilo_rifle_death01.fbx"
+
+//Speaking
+animName15 = "speak"
+animFile15 = "ispilo_rifle_talkloop.fbx"
 
 scrapCost = 0
 scrapValue = 0

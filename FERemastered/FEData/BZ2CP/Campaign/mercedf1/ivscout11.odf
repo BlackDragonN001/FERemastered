@@ -1,129 +1,20 @@
 [GameObjectClass]
-baseName="ivscout"
-geometryName="ivscout00.xsi"
-cockpitName="ivscout_cockpit.xsi"
-animCount=3
-animName1="forward"
-animFile1="ivscoutsf.xsi"
-animName2="neutral"
-animFile2="ivscoutsn.xsi"
-animName3="reverse"
-animFile3="ivscoutsr.xsi"
-classLabel="wingman"
-scrapValue=15
-scrapCost=50
-customCost=50
-buildTime=15.0
-customTime=15.0
-maxHealth=1800
-maxAmmo=1500
-addAmmo=2
-addHealth=5
-unitName="Scout"
-aiName="ScoutFriend"
-aiName2="ScoutEnemy"
+baseName = "ivscout"
+classLabel = "ivscout"
 
-heatSignature=0.5
-imageSignature=3.0
-radarSignature=0.3
-
-isAssault=0
+addAmmo = 2
+addHealth = 5
 
 canSnipe = 0
 
-armorClass=H
+armorClass = H
 
-requireCount=0
-
-/////// weapons ///////////////////
-
-weaponMask=00001
-weaponHard1="HP_GUN_1"
-weaponName1="gminigun_c"
-weaponAssault1=0
-weaponHard2="HP_GUN_2"
-weaponName2="gminigun_c"
-weaponAssault2=0
-weaponHard3="HP_ROCKET_1"
 weaponName3="gshadow_c10"
-weaponAssault3=0
-weaponHard4="HP_SPECIAL_1"
-weaponName4=""
-weaponAssault4=0
-
-//////////////////////////////////
-
-lightHard1="hp_light_1"
-lightName1="spotblue2"
-lightHard2="hp_light_2"
-lightName2=
 
 [CraftClass]
-rangeScan=450.0f
-periodScan=5.0f
-velocJam=10.0f
-engageRange=130
-
-braccelFactor=0.05
-velFactor=0.2
-steerFactor=1.0
-omegaFactor=0.5
-strafeFactor=0.2
-
-topSpeed=30
-
-selectWaitMsg="ivscout04.wav"
-selectAttackMsg="ivscout01.wav"
-selectFollowMsg="ivscout03.wav"
-selectGoMsg="ivscout02.wav"
-selectOtherMsg="ivscout04.wav"
-
-goMsg="ivscout05.wav"
-attackMsg="ivscout06.wav"
-followMeMsg="ivscout03.wav"
-followMsg="ivscout08.wav"
-repairMsg="ivscout09.wav"
-reloadMsg="ivscout09.wav"
-rescueMsg="ivscout10.wav"
-recycleMsg="ivscout11.wav"
-otherMsg="ivscout10.wav" 
-holdMsg="ivscout12.wav"
-user1Msg=""  
-killedMsg="ivscout07.wav"
-diedMsg=""
 
 [HoverCraftClass]
-velocForward=40.0 // [40]
-velocReverse=10.0 // [10]
-velocStrafe=20.0 // [20]
-accelThrust=25.0 // acceleration [25.]
-accelDragStop=5.0 // how fast it stops once hands are off controls [5.9]
-accelJump=18.0
-aiAccelDrag=10
-
-setAltitude=1.0 // how high off the ground
-
-alphaTrack=21.0 //springs speed it rights itself [5.]
-alphaDamp=8.0 //shocks [5.]
-
-pitchPitch=0.25 // nose up [.1]
-pitchThrust=0.05 // nose down [.1]
-
-rollStrafe=0.1 // rolls while strafing [1.7]
-omegaSpin=3.5 // spinning in place speed [3.5]
-omegaTurn=3.5 // turning while moving speed [3.45]
-alphaSteer=5.5 // how fast it responds to steering [3.]
-rollSteer=0.1 // rolls while steering [.35]
-
-soundThrust="ieng01b.wav"
-soundTurbo="avtanke3.wav"
-
-animSteer="steer"
 
 [Lod1]
-geometryName="ivscoutL1.xsi" ;geometry for lod1
-distance=30
 
 [Lod2]
-geometryName="ivscoutL2.xsi" ;geometry for lod2
-distance=60                 ;...distance over this many meters => switch to lod2

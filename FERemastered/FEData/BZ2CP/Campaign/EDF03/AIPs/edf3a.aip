@@ -222,9 +222,9 @@ planPriority = 60
 buildType1 = "ebtrain"
 buildLoc1 = "train"
 buildCount1 = 1
-buildType1 = "ebtech"
-buildLoc1 = "tech"
-buildCount1 = 1
+buildType2 = "ebtech"
+buildLoc2 = "tech"
+buildCount2 = 1
 
 [Plan11]
 planType = "BaseBuildMinimums"

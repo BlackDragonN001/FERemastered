@@ -1,10 +1,7 @@
 [GameObjectClass]
-geometryName = "baylight.xsi"
+geometryName = NULL //"baylight.xsi"
 classLabel = "boid" // "camerapod"
-geometryScale = .1
-animCount = 1
-animName1 = "fly"
-animFile1 = "mcwing_fly.xsi"
+//geometryScale = .1
 scrapCost = 1
 scrapValue = 0
 maxHealth = 90000
