@@ -5,15 +5,15 @@
 
 [GameObjectClass]
 baseName = "evscout"
-geometryName = "evscout00.xsi"
+geometryName = "evscout00.fbx"
 cockpitName= "hvscout_cockpit.xsi" // cockpit – Tempest storm
 animCount = 3
 animName1 = "forward"
-animFile1 = "evscoutsf.xsi"
+animFile1 = "evscoutsf.fbx"
 animName2 = "neutral"
-animFile2 = "evscoutsn.xsi"
+animFile2 = "evscoutsn.fbx"
 animName3 = "reverse"
-animFile3 = "evscoutsr.xsi"
+animFile3 = "evscoutsr.fbx"
 classLabel = "wingman"
 scrapValue = 20
 scrapCost = 40
@@ -121,9 +121,9 @@ soundTurbo = "xypos_acc.wav"
 animSteer = "steer"
 
 [Lod1]
-geometryName = "evscoutL1.xsi" ;geometry for lod1
-distance = 50
+//geometryName = "evscoutL1.xsi" ;geometry for lod1
+//distance = 50
 
 [Lod2]
-geometryName = "evscoutL2.xsi" ;geometry for lod2
-distance = 130                ;...distance over this many meters => switch to lod2
+//geometryName = "evscoutL2.xsi" ;geometry for lod2
+//distance = 130                ;...distance over this many meters => switch to lod2

@@ -5,18 +5,18 @@
 
 [GameObjectClass]
 baseName = "evturr"
-geometryName = "evturr00.xsi"
+geometryName = "evturr00.fbx"
 geometryScale = 1.0 //0.7
 cockpitName = "hvturr_cockpit.xsi" // cockpit – Tempest storm
-animCount = 1
+animCount = 4
 animName1 = "deploy"
-animFile1 = "evturr00.xsi"
-//animName2 = "forward"
-//animFile2 = "ivturrsf.xsi"
-//animName3 = "neutral"
-//animFile3 = "ivturrsn.xsi"
-//animName4 = "reverse"
-//animFile4 = "ivturrsr.xsi"
+animFile1 = "evturr00.fbx"
+animName2 = "forward"
+animFile2 = "evturrsf.fbx"
+animName3 = "neutral"
+animFile3 = "evturrsn.fbx"
+animName4 = "reverse"
+animFile4 = "evturrsr.fbx"
 classLabel = "turrettank"
 scrapCost = 40
 customCost = 45

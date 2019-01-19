@@ -3,11 +3,11 @@
 
 [GameObjectClass]
 baseName = "evscav"
-geometryName = "evscav00.xsi"
+geometryName = "evscav00.fbx"
 cockpitName = "hvscav_cockpit.xsi" // cockpit – Tempest storm
 animCount = 1
 animName1 = "deploy"
-animFile1 = "evscav00.xsi"
+animFile1 = "evscav00.fbx"
 classLabel = "scavenger"
 geometryScale = 1.0
 scrapValue = 10
@@ -92,9 +92,9 @@ scrapHold = 20
 deployClass = "ebscav"
 
 [Lod1]
-geometryName = "evscavl1.xsi" ;geometry for lod1
-distance = 50                 ;...distance over this many meters => switch to lod2
+//geometryName = "evscavl1.xsi" ;geometry for lod1
+//distance = 50                 ;...distance over this many meters => switch to lod2
 
 [Lod2]
-geometryName = "evscavl2.xsi" ;geometry for lod2
-distance = 135                 ;...distance over this many meters => switch to lod2
+//geometryName = "evscavl2.xsi" ;geometry for lod2
+//distance = 135                 ;...distance over this many meters => switch to lod2
