@@ -1,30 +1,15 @@
 [GameObjectClass]
-geometryName = NULL //"snaremine.xsi" // Model only had hp_dummyroot_1. -GBD
-classLabel = "flare"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 90000
-maxAmmo = 0
+classLabel = "FXMine"
+
 unitName = "Acid Cloud"
 effectHard1 = "Acid Cloud"
 effectName1 = "stickgas3.render"
-canCollide = 0 
-canDetect = 0 
-canInteract = 0 
-explosionName = "" //"defflarxpl"
 
 [MineClass]
 lifeSpan = 10.0
 
 [FlareMineClass]
-payloadName = NULL
-fireSound = ""
-
-triggerDelay = 0.0
-
 shotDelay = 1e30
-
-shotVariance = 0.0
 
 damageRadius = 40.0
 

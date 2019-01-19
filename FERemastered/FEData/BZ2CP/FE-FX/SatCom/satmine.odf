@@ -1,33 +1,10 @@
 [GameObjectClass]
-geometryName = NULL //"satmine.xsi"
-classLabel = "flare"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 9000
-maxAmmo = 100
-unitName = ""
-heatSignature = 0.0
-explosionName = "" //"defflarxpl"
-canDetect = 0
-canInteract = 0
-canSnipe = 0
+classLabel = "FXMine"
 
 [MineClass]
 lifeSpan = 20.0
 
 [FlareMineClass]
 payloadName = "satpop"
-fireSound = ""
-triggerDelay = 0.0
 shotDelay = 0.1
-shotVariance = 0.0
-damageRadius = 0.0
-damageValue(N) = 0 // none
-damageValue(L) = 0 // light
-damageValue(H) = 0 // heavy
-damageValue(S) = 0 // standard
-damageValue(D) = 0 // deflection
-damageValue(A) = 0 // absorbtion
-kickRadius = 0.1
-kickVeloc = 0.0
-kickOmega = 0.0
+

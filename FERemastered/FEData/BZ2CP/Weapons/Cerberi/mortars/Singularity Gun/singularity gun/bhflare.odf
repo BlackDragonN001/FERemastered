@@ -1,23 +1,13 @@
 [GameObjectClass]
-geometryName = NULL //"defflarmin.xsi" // "igflar00.xsi"
-classLabel = "flare"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 1250
-maxAmmo = 100
-unitName = "Solar Flare"
-heatSignature = 100.0
+classLabel = "FXMine"
+
 explosionName = "xbhxpl"
-canDetect = 0
-canInteract = 0
-canSnipe = 0
 
 [MineClass]
 lifeSpan = 4.0
 
 [FlareMineClass]
 payloadName = "bhflare2"
-fireSound = ""
 triggerDelay = 0.1
 shotDelay = 10
 shotVariance = 0.01
@@ -31,11 +21,13 @@ damageValue(A) = 5 // absorbtion
 kickRadius = 60.0
 kickVeloc = -5.2
 kickOmega = 1.5
-fieldRadius = 100.0
-objPushCenter = -150.0
-objPushEdge = 0.0
-objDrag = 2.0
-ordPushCenter = 0.0
-ordPushEdge = 0.0
-ordDrag = 2.0
+
+// These only work on MagnetMine. -GBD
+//fieldRadius = 100.0
+//objPushCenter = -150.0
+//objPushEdge = 0.0
+//objDrag = 2.0
+//ordPushCenter = 0.0
+//ordPushEdge = 0.0
+//ordDrag = 2.0
 

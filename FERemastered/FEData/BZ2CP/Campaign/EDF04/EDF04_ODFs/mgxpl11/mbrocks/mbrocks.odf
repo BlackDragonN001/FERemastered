@@ -1,23 +1,13 @@
 [GameObjectClass]
-geometryName = NULL //"gmflar00.x"
-classLabel = "flare"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 99150
-maxAmmo = 100
+classLabel = "FXMine"
+
 unitName = "mbrocks"
-heatSignature = 100.0
-explosionName = "" //"defflarxpl"
-canDetect = 0
-canInteract = 0
-canSnipe = 0
 
 [MineClass]
 lifeSpan = 3.06
 
 [FlareMineClass]
 payloadName = "mbrocks2"
-fireSound = ""
 triggerDelay = 3.0
 shotDelay = 0.01
 shotVariance = 1.3

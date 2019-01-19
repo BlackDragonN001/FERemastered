@@ -1,24 +1,11 @@
 [GameObjectClass]
-geometryName = NULL //"defflarmin.xsi"
-classLabel = "flare"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 0
-maxAmmo = 0
-unitName = "Solar Flare"
-heatSignature = 0.0
-canDetect = 0
-canInteract = 0
-canSnipe = 0
-explosionName = "" //"defflarxpl"
+classLabel = "FXMine"
 
 [MineClass]
-lifeSpan = 5.0//5.0
+lifeSpan = 5.0 //5.0
 
 [FlareMineClass]
 payloadName = "lavamin2"
-fireSound = ""
-triggerDelay = 0.0
 shotDelay = 0.06 //0.06
 shotVariance = 0.01
 damageRadius = 50.0

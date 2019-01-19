@@ -1,36 +1,17 @@
 [GameObjectClass]
-geometryName = NULL // "igflar00.xsi"
-classLabel = "flare"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 9999
-maxAmmo = 100
+classLabel = "FXMine"
+
 unitName = "Lightmine"
-heatSignature = 100.0
+
 effectHard1 = "Lightmine"
 effectName1 = "glightmine.light"
-lensflare = 0
-canInteract = 0
 
 [MineClass]
-lifeSpan = 999990.0
 
 [FlareMineClass]
 payloadName = "glightmine2"
 fireSound = ""
-triggerDelay = 0.0
 shotDelay = 0.1
-shotVariance = 0.0
-damageRadius = 0.0
-damageValue(N) = 0 // none
-damageValue(L) = 0 // light
-damageValue(H) = 0 // heavy
-damageValue(S) = 0 // standard
-damageValue(D) = 0 // deflection
-damageValue(A) = 0 // absorbtion
-kickRadius = 0.0
-kickVeloc = 0.0
-kickOmega = 0.0
 
 [Light]
 simulateBase = "sim_null"

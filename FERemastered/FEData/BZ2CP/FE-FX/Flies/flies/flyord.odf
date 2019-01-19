@@ -3,9 +3,9 @@ classLabel = "bullet"
 
 shotGeometry = NULL
 shotRadius = 1.0
-xplGround = "xflmhit"
-xplVehicle = "xflmhit"
-xplBuilding = "xflmhit"
+xplGround = NULL //"xflmhit"
+xplVehicle = NULL //"xflmhit"
+xplBuilding = NULL //"xflmhit"
 xplExpire = "flies"
 
 //renderName = "flyord.puff" // was "xflare", never worked. debug render? -GBD

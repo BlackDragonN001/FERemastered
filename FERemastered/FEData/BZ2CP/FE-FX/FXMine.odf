@@ -1,0 +1,35 @@
+[GameObjectClass]
+geometryName = NULL //"defflarmin.xsi"
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = " "
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canDetect = 0
+canInteract = 0
+canCollide = 0
+explosionName = ""
+
+[MineClass]
+lifeSpan = 1e6
+
+[FlareMineClass]
+payloadName = NULL
+fireSound = NULL
+triggerDelay = 0.0
+shotDelay = 1.0
+shotVariance = 0.0
+damageRadius = 0.0
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+kickRadius = 0.0
+kickVeloc = 0.0
+kickOmega = 0.0

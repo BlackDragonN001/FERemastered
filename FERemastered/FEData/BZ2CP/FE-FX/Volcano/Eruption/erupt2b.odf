@@ -1,16 +1,5 @@
 [GameObjectClass]
-geometryName = NULL //"defflarmin.xsi"
-classLabel = "flare"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 0
-maxAmmo = 0
-unitName = "Solar Flare"
-heatSignature = 10.0
-canDetect = 0
-canInteract = 0
-canSnipe = 0
-explosionName = "" //"defflarxpl"
+classLabel = "FXMine"
 
 [MineClass]
 lifeSpan = 3.0
@@ -18,16 +7,9 @@ lifeSpan = 3.0
 [FlareMineClass]
 payloadName = "erupt2c"
 fireSound = "xlrgcar.wav"
-triggerDelay = 0.0
 shotDelay = 0.03
 shotVariance = 1.9
-damageRadius = 20.0
-damageValue(N) = 0 // none
-damageValue(L) = 0 // light
-damageValue(H) = 0 // heavy
-damageValue(S) = 0 // standard
-damageValue(D) = 0 // deflection
-damageValue(A) = 0 // absorbtion
+
 kickRadius = 20.0
 kickVeloc = 0.2
 kickOmega = 0.5

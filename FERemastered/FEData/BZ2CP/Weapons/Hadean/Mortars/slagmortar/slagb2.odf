@@ -1,30 +1,18 @@
 [GameObjectClass]
-geometryName = "igflar00.xsi"
-classLabel = "flare"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 1000
+classLabel = "FXMine"
+
 unitName = "Slag explosion"
-heatSignature = 100.0
 
 [MineClass]
-lifeSpan = 0
-
+lifeSpan = 0.01
 
 [FlareMineClass]
 payloadName = "slag"
 fireSound = "xslagbld.wav"
-triggerDelay = 0
 shotDelay = 0.012
 shotVariance = 8.0
 damageRadius = 20.0
-damageValue(N) = 0 // none
-damageValue(L) = 0 // light
-damageValue(H) = 0 // heavy
-damageValue(S) = 0 // standard
-damageValue(D) = 0 // deflection
-damageValue(A) = 0 // absorbtion
+
 kickRadius = 20.0
 kickVeloc = 0.8
 kickOmega = 1.0

@@ -25,9 +25,9 @@ lifeSpan = 17.9	//was 12.0*****		(this is how long the zappod2 will stick around
 [FlareMineClass]
 payloadName = "arkzap"
 fireSound = "sonic03c.wav" // Other ideas: "ipgen01.wav", sonic03c.wav, stap01.wav, "glock02b.wav"
- (uplink sound for mine to make while "communicating" with Ark II)
+// (uplink sound for mine to make while "communicating" with Ark II)
 triggerDelay = 0.0
-shotDelay = 0.3 //.1 **  (don't change this!!)
+shotDelay = 0.3 //.1 //**  (don't change this!!)
 shotVariance = 0.0
 damageRadius = 0.0
 damageValue(N) = 0 // none

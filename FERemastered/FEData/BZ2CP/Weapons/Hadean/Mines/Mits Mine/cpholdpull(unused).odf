@@ -1,12 +1,13 @@
 [GameObjectClass]
 baseName = "magpull"
-geometryName = "igmits00.xsi"
+geometryName = "igmits00.fbx"
 classLabel = "magnet"
 scrapCost = 0
 scrapValue = 0
 maxHealth = 1000
 maxAmmo = 50
 unitName = ""
+canInteract = false
 
 [MineClass]
 lifeSpan = 300.0

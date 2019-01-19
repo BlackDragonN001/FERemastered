@@ -1,16 +1,5 @@
 [GameObjectClass]
-geometryName = NULL //"defflarmin.xsi"
-classLabel = "flare"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 99999
-maxAmmo = 1000
-unitName = "Solar Flare"
-heatSignature = 0.0
-explosionName = "" //"defflarxpl"
-canDetect = 0
-canInteract = 0
-canSnipe = 0
+classLabel = "FXMine"
 
 [MineClass]
 lifeSpan = 65.1
@@ -18,16 +7,9 @@ lifeSpan = 65.1
 [FlareMineClass]
 payloadName = "mlight2"
 fireSound = "sserv02.wav" // "stap01.wav"
-triggerDelay = 0.0
 shotDelay = 1.0 //0.02
 shotVariance = 0.5
-damageRadius = 10.0
-damageValue(N) = 0 // none
-damageValue(L) = 0 // light
-damageValue(H) = 0 // heavy
-damageValue(S) = 0 // standard
-damageValue(D) = 0 // deflection
-damageValue(A) = 0 // absorbtion
+
 kickRadius = 40.0
 kickVeloc = 3.0
 kickOmega = 3.0

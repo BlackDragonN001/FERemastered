@@ -46,7 +46,7 @@ damageValue(A) = 0 // absorbtion
 
 [flies1]
 simulateBase = "sim_smoke"
-lifeTime = 9000.0
+lifeTime = 1e6
 renderBase = "draw_twirl"
 textureName = "flies1.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
@@ -54,12 +54,12 @@ startColor = " 0 0 0 250"
 finishColor = "0 0 0 250"
 startRadius = 4.0
 finishRadius = 4.0
-animateTime = 9000.0
+animateTime = 1e6
 rotationRate = 4.5 // 1.5
 
 [flies2]
 simulateBase = "sim_smoke"
-lifeTime = 9000.0
+lifeTime = 1e6
 renderBase = "draw_twirl"
 textureName = "flies2.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
@@ -67,12 +67,12 @@ startColor = " 0 0 0 250"
 finishColor = "0 0 0 250"
 startRadius = 4.0
 finishRadius = 4.0
-animateTime = 9000.0
+animateTime = 1e6
 rotationRate = 4.6
 
 [flies3]
 simulateBase = "sim_smoke"
-lifeTime = 9000.0
+lifeTime = 1e6
 renderBase = "draw_twirl"
 textureName = "flies3.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
@@ -80,12 +80,12 @@ startColor = " 0 0 0 250"
 finishColor = "0 0 0 250"
 startRadius = 4.0
 finishRadius = 4.0
-animateTime = 9000.0
+animateTime = 1e6
 rotationRate = 4.55
 
 [flies4]
 simulateBase = "sim_smoke"
-lifeTime = 9000.0
+lifeTime = 1e6
 renderBase = "draw_twirl"
 textureName = "flies4.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
@@ -93,12 +93,12 @@ startColor = " 0 0 0 250"
 finishColor = "0 0 0 250"
 startRadius = 4.0
 finishRadius = 4.0
-animateTime = 9000.0
+animateTime = 1e6
 rotationRate = 4.4
 
 [flies5]
 simulateBase = "sim_smoke"
-lifeTime = 9000.0
+lifeTime = 1e6
 renderBase = "draw_twirl"
 textureName = "flies5.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
@@ -106,5 +106,5 @@ startColor = " 0 0 0 250"
 finishColor = "0 0 0 250"
 startRadius = 4.0
 finishRadius = 4.0
-animateTime = 9000.0
+animateTime = 1e6
 rotationRate = 4.65
