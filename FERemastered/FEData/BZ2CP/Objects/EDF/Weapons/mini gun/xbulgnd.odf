@@ -67,9 +67,10 @@ finishColor = "255 50 0 11"
 startRadius = 0.07
 finishRadius = 0.07
 animateTime = 1.0
-attenuateConstant = 0.0
-attenuateLinear = 2.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 [sand2]
 simulateBase = "sim_null"

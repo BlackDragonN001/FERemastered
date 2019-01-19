@@ -11,29 +11,12 @@ aiName = "PowerUpProcess"
 canDetect = 0
 canInteract= 0
 canSnipe = 0
-//setAltitude = 9.5
+
 lightHard1 = "hp_light_1"
-lightName1 = "apspotlight"
+lightName1 = "apspot_light"
 
 [CameraPodClass]
 omegaSpin = 0.6
 rangeScan = 0.0
 periodScan = 0.0
 //setAltitude = 9.5
-
-[LightClass]
-classLabel = "spotlight"
-lightColor.r = 1.0
-lightColor.g = 1.0
-lightColor.b = 1.0
-lightColor.a = 40.0
-lightRange = 700.0
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
-coneFalloff = 1.0
-coneAngInner = 0.2
-coneAngOuter = 0.6
-
-//[ComputerClass]
-beamname = "obj65"

@@ -35,9 +35,10 @@ finishColor = "255 50 0 1400"
 startRadius = 32.0
 finishRadius = 32.0
 animateTime = 0.5
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
 
 [Flame]
 renderBase = "draw_twirl_trail"

@@ -39,6 +39,10 @@ startColor = "227 43 69 400"
 finishColor = "227 43 69 400" 
 startRadius = 40.0
 finishRadius = 40.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 [glow]
 renderBase = "draw_sprite"

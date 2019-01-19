@@ -304,9 +304,10 @@ finishColor = "255 0 0 0"
 startRadius = 350.0
 finishRadius = 250.0
 animateTime = 8.0
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 [splash]
 simulateBase = "sim_null"

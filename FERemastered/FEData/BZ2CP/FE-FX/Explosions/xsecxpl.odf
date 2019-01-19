@@ -36,10 +36,10 @@ finishColor = "200 0 0 0"
 startRadius = 50
 finishRadius = 50
 animateTime = 1.1
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
-lensFlare = true
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
 
 [Core]
 simulateBase = "sim_null"

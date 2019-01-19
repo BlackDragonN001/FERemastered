@@ -35,6 +35,17 @@ armorClass = H
 //weaponHard4 = "HP_SPECIAL_1"
 //weaponName4 = "gproxmin"
 //weaponMask = 00011
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"  
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 3.0
+effectFlags1 = 2147483135
 	
 [CraftClass]
 rangeScan = 300.0

@@ -152,9 +152,10 @@ finishColor = "200 0 0 0"
 startRadius = 20
 finishRadius = 20.0
 animateTime = 1.5
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 [Shock]
 simulateBase = "sim_null"
@@ -205,8 +206,9 @@ finishColor = "255 0 0 0"
 startRadius = 0.5
 finishRadius = 0.1
 animateTime = 2.0
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 

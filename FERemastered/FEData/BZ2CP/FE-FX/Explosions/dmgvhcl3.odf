@@ -86,17 +86,18 @@ emitDelayVar = 0.2
 simulateBase = "sim_smoke"
 lifeTime = 0.1
 renderBase = "draw_light"
-textureName = "fire.tga" // flame2
-textureBlend = "one one modulate"
+//textureName = "fire.tga" // flame2
+//textureBlend = "one one modulate"
 startColor = " 255 150 0 150"
 finishColor = "255 0 0 150"
 startRadius = 60.0
 finishRadius = 60.0
 animateTime = 0.1
-rotationRate = 5.0
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+//rotationRate = 5.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 //emitDelayVar = 3.9
 
 [embers]

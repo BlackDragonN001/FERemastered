@@ -83,9 +83,10 @@ finishColor = "111 111 0 500"
 startRadius = 100.0
 finishRadius = 1.0
 animateTime = 1.8
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 [trail]
 simulateBase = "sim_ember"

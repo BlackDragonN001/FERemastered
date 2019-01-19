@@ -43,9 +43,10 @@ finishColor = "100 55 250 400"
 startRadius = 8.0
 finishRadius = 8.0
 animateTime = 0.3
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
 
 [Flare]
 renderBase = "draw_sprite"

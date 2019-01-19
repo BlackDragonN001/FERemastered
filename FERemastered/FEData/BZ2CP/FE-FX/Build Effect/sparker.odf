@@ -1,6 +1,6 @@
 [sparker]
 renderBase = "draw_multi"
-renderCount = 9
+renderCount = 4
 renderName1 = "sparker.e3" // trails
 renderName2 = "sparker.e5" // light
 renderName3 = "sparker.e8" // wave
@@ -118,9 +118,10 @@ finishColor = "255 0 0 0"
 startRadius = 30.0
 finishRadius = 30.0
 animateTime = 11.0
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 [e6]
 simulateBase = "sim_smoke"
@@ -137,12 +138,13 @@ lifeTime = 1.5
 renderBase = "draw_light"
 startColor = "255 0 0 124"
 finishColor = "0 0 255 0"
-startRadius = 80.0
-finishRadius = 80.0
+startRadius = 40.0 //80.0 // Reduced size. -GBD
+finishRadius = 40.0 //80.0
 animateTime = 12.0
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 [e7]
 simulateBase = "sim_smoke"

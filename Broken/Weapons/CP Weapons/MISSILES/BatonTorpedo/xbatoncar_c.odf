@@ -75,9 +75,10 @@ finishColor = "175 175 0 0"
 startRadius = 0.2
 finishRadius = 0.1
 animateTime = 1.0
-attenuateConstant = 3.0
-attenuateLinear = 1.0
-attenuateQuadratic = 3.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 [Shock]
 simulateBase = "sim_null"

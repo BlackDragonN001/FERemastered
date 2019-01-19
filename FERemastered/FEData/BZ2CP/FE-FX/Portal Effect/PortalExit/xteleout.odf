@@ -40,11 +40,10 @@ finishColor = "0 100 255 0"
 startRadius = 60.0
 finishRadius = 60.0
 animateTime = 1.0
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
-spriteCenter.x = 0.0
-spriteCenter.y = 1.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 [streamer]
 simulateBase = "sim_ember"
@@ -72,5 +71,3 @@ finishRadius = 14.0
 animateTime = 1.8
 latitudeBands = 8
 longitudeSegments = 16
-spriteCenter.x = 0.0
-spriteCenter.y = 1.5

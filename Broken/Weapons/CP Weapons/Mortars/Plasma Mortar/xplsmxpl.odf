@@ -61,7 +61,8 @@ finishRadius = 250.0
 animateTime = .5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
-attenuateQuadratic = 2.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 [flame]
 simulateBase = "sim_smoke"
@@ -73,6 +74,6 @@ startRadius = 150.0
 finishRadius = 225.0
 animateTime = 2
 
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 

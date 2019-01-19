@@ -168,18 +168,15 @@ segmentTime = 0.03
 animateTime = 0.05
 
 [light]
-simulateBase = "sim_null"
-lifeTime = 1e30
+//simulateBase = "sim_null"
+//lifeTime = 1e30
 renderBase = "draw_light"
 startColor = "20 20 255 850"
 finishColor = "20 20 255 850"
 startRadius = 45.0
 finishRadius = 45.0
-animateTime = 1e30
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
-
-
-
-
+//animateTime = 1e30
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

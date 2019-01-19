@@ -258,9 +258,10 @@ finishColor = "0 0 255 0"
 startRadius = 30.0 // 180
 finishRadius = 25.0 // 75
 animateTime = 3.0
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 
 [posroll]
