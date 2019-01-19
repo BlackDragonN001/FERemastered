@@ -73,7 +73,7 @@ local M = {
 
 	SCOUTODF = "ivscout11",
 	SERVODF = "ivserv",
-	CARGOODF = "ivstas1",
+	CARGOODF = "ivcargo",
 	DRONEODF = "nadir",
 
 -- Ints
