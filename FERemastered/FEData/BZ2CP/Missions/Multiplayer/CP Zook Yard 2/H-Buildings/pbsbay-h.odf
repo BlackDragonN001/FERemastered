@@ -1,0 +1,43 @@
+[GameObjectClass]
+geometryName = "pbsbay01.xsi"
+classLabel = "i76building"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0 //1E6
+maxAmmo = 0
+unitName = "Storage Hanger"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+collisionRadius = 5.0
+ownsTerrain = 1
+canCollide = 0
+canInteract = 0
+canDetect = 0
+
+[BuildingClass]
+tunnelCount = 4
+
+tunnel01X0 = 5
+tunnel01Z0 = 1
+tunnel01DX = 2
+tunnel01DZ = 2
+tunnel01Edge = "tfff"
+
+tunnel02X0 = 5
+tunnel02Z0 = 3
+tunnel02DX = 2
+tunnel02DZ = 5
+tunnel02Edge = "fwfw"
+
+tunnel03X0 = 2
+tunnel03Z0 = 1
+tunnel03DX = 3
+tunnel03DZ = 2
+tunnel03Edge = "wfww"
+
+tunnel04X0 = 7
+tunnel04Z0 = 1
+tunnel04DX = 3
+tunnel04DZ = 2
+tunnel04Edge = "wwwf"

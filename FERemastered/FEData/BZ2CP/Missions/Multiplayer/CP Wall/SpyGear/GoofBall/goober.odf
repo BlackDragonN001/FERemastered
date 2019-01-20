@@ -1,0 +1,71 @@
+[GameObjectClass]
+geometryName = "goober.xsi"
+//geometryScale = 1.0
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 200
+maxAmmo = 1
+unitName = "Goober"
+heatSignature = 10.01
+imageSignature = 10.01
+radarSignature = 10.0
+isAssault = 1 // 0
+armorClass = N
+canCollide = 1
+canDetect = 1 
+canInteract = 1 
+ownsTerrain = 0
+collisionRadius = 1.0
+
+//lightHard1 = "hp_light_1"
+//lightName1 = "omnigreen"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "goober.render"
+
+[MineClass]
+lifeSpan = 10.0
+
+[FlareMineClass]
+payloadName = "goofball"
+fireSound = NULL//"spawn.wav" // "ibpgen00.wav"
+triggerDelay = 0.0
+
+shotDelay = 10.5 
+shotVariance = 2.0 
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "goober.in"
+renderName2 = "goober.out"
+
+[In]
+simulateBase = "sim_null"
+lifeTime = 10.0 // 1.0
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"// "plasma.tga" //"vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "20 50 20 0"
+finishColor = "50 60 10 180"
+startRadius = 1.5
+finishRadius = 0.1
+animateTime = 9.0 //1.5
+latitudeBands = 4
+longitudeSegments = 8
+rotationRate = 2.0
+
+[Out]
+simulateBase = "sim_null"
+lifeTime = 10.0
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"//"plasma.tga" //"vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "30 70 20 255"
+finishColor = "50 60 10 0"
+startRadius = 0.1
+finishRadius = 1.0
+animateTime = 5.0
+latitudeBands = 6 
+longitudeSegments = 12 

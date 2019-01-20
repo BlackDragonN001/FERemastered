@@ -1,0 +1,39 @@
+////////// Safety Explosion ////////////
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "wlcan.wav" //"shipxpl.wav"
+
+damageRadius = 10
+damageValue(N) = -100
+damageValue(L) = -100
+damageValue(H) = -100
+
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+kickRadius = 15.0
+kickOmega = 0.5
+kickVeloc = -40.0
+
+particleTypes = 1
+
+particleClass1 = "radrxpl.shock"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "250 200 80 150"
+finishColor = "200 255 130 0"
+startRadius = 5.0
+finishRadius = 0.5
+animateTime = 0.2
+latitudeBands = 4
+longitudeSegments = 8

@@ -1,0 +1,33 @@
+[OrdnanceClass]
+classLabel = "popper"
+shotGeometry = NULL
+xplGround = "xwaterhit"
+xplVehicle = "xwaterhit"
+xplBuilding = "xwaterhit"
+renderName = "water.render"
+
+ammoCost = 1
+lifeSpan = 1e70
+shotSpeed = 15.0
+damageValue(N) = 1
+damageValue(L) = 1
+damageValue(H) = 1
+damageValue(S) = 1
+damageValue(D) = 1
+damageValue(A) = 1
+
+[PopperClass]
+scanRange = 20.0
+launchXpl = "xwaterhit"
+launchOrd = "flarepuff"
+
+[Render]
+renderBase = "draw_twirl"
+textureName = "water.tga"
+textureBlend = "one one modulate"
+textureRate = 0.1
+startColor = "0 0 233 255"
+finishColor = "0 0 0 244"
+startRadius = 0.0
+finishRadius = 0.0
+segmentTime = 0.0

@@ -1,0 +1,66 @@
+// =================
+// PILOT BLAST LASER VEHICLE HIT
+// =================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xsv2.wav"
+damageRadius = 0.0
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+particleTypes = 3
+particleClass1 = "xlasecar3.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xlasecar3.puff"
+particleCount2 = 4
+particleVeloc2 = "5.0 5.0 5.0"
+
+particleClass3 = "xlasecar3.splat"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = .9  // .3
+renderBase = "draw_twirl"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "255 40 0 255"
+finishColor = "255 20 0 0"
+startRadius = 0.4  // .2
+finishRadius = 2.5 //1.5
+animateTime = .9  // .3
+
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 40 0 255"
+finishColor = "60 10 0 0"
+startRadius = 0.5
+finishRadius = 3.5
+animateTime = 2.0
+rotaionRate = 10
+
+[Splat]
+simulateBase = "sim_null"
+lifeTime = 0.9
+renderBase = "draw_twirl"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "200 100 0 255"
+finishColor = "255 0 0 0"
+startRadius = 0.1
+finishRadius = 1.25
+animateTime = 0.9

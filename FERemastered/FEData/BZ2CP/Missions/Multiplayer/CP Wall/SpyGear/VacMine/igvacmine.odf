@@ -1,0 +1,19 @@
+[WeaponClass]
+classLabel = "dispenser"
+geometryName = "sgsatc00.xsi"
+geometryScale = 0.12
+wpnName = "Vacuum Mine"
+ordName = NULL
+isassault = 0
+
+wpnIcon = NULL
+fireSound = "itug03.wav"
+wpnReticle = "gproxmin"
+wpnLadder = "gmortar.L0"
+wpnPriority = 3
+wpnCategory = "SPEC"
+localAmmo = 2
+
+[DispenserClass]
+shotDelay = 5.0
+objectClass = "vacmine"

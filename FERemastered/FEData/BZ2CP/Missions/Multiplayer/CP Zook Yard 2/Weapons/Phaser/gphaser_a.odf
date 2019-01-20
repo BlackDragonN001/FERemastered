@@ -1,0 +1,54 @@
+[WeaponClass]
+classLabel = "cannon"
+
+// external geometry
+geometryName="igsnip_skel.xsi"
+geometryScale=0.12
+animCount=4
+animName1="stand"
+animFile1="igsnip_stand.xsi"
+animName2="walk"
+animFile2="igsnip_stand.xsi"
+animName3="crouch"
+animFile3="igsnip_deploy.xsi"
+animName4="jump"
+animFile4="igsnip_stand.xsi"
+
+// cockpit geometry
+cockpitName="iwrifl_cockpit_stand.xsi"
+cockpitScale=0.12
+animCountCockpit=4
+animNameCockpit1="stand"
+animFileCockpit1="iwrifl_cockpit_stand.xsi"
+animNameCockpit2="walk"
+animFileCockpit2="iwrifl_cockpit_run.xsi"
+animNameCockpit3="crouch"
+animFileCockpit3="iwrifl_cockpit_sniper.xsi"
+animNameCockpit4="jump"
+animFileCockpit4="iwrifl_cockpit_stand.xsi"
+
+ordName = "phaser_a"
+wpnName = "Phaser TKR"
+fireSound = "sonic03c.wav"//"glock02.wav"//"cornrclk.wav"
+wpnReticle = "gshotgun" 
+wpnCategory = "HAND"
+isAssault = 0
+isFlying = 0
+altName = "gphaser_c"
+
+[CannonClass]
+shotDelay = 3.5
+salvoCount = 30 //15
+salvoDelay = .06 
+shotVariance = 0.08 // 0.01 
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 255"
+finishColor = "255 150 0 0"
+startRadius = 3.0
+finishRadius = 1.0
+animateTime = 0.1
+geomName = "g_sflash.xsi"

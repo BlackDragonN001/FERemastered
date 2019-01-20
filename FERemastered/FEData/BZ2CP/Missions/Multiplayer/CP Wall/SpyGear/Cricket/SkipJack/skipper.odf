@@ -1,0 +1,99 @@
+[OrdnanceClass]
+classLabel = "thermalmissile"
+shotGeometry = "gravanchor.xsi"
+shotSound = "sjam01.wav"
+scrapValue = 0
+scrapCost = 0
+maxHealth = 100
+//maxAmmo = 1
+unitName = "Skip Jack"
+renderName = "skipper.render"
+ammoCost = 1
+lifeSpan = 30.0 
+shotSpeed = 35.0
+
+xplGround = NULL
+xplVehicle = "xpskip_car"
+xplBuilding = NULL//"xpskip_car"
+
+damageValue(N) = 400.0 // none
+damageValue(L) = 225 // light
+damageValue(H) = 50 // heavy
+damageValue(S) = 250 // standard
+damageValue(D) = 200 // deflection
+damageValue(A) = 150 // absorbtion
+
+kickRadius = 2.5
+kickOmega = -10.0 
+kickVeloc = -5.0
+
+lightHard1 = "hp_light_1"
+lightName1 = "omniblue"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "skipper.render"
+
+[MissileClass]
+omegaTurn = 50 // 30
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "skipper.main"
+renderName2 = "skipper.halo"
+renderName3 = "skipper.sparks"
+
+[Main]
+renderBase = "draw_sprite"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "20 150 255 255"
+finishColor = "20 100 255 180"
+startRadius = 1.2
+finishRadius = 0.6
+animateTime = 2.0
+
+[Halo]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 200 130"
+finishColor = "0 0 180 100"
+startRadius = 4.0
+finishRadius = 1.8
+animateTime = 2.0
+
+[Sparks]
+renderBase = "draw_emit"
+emitName = "skipper.sparker"
+emitDelay = 0.03 // 0.5
+emitVelocity = "0.0 0.0 2.0"
+emitVariance = "10.0 10.0 10.0"
+
+[Sparker]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "skipper.sparkflare"
+renderName2 = "skipper.sparkhalo"
+
+[SparkFlare]
+renderBase = "draw_sprite"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "0 100 255 255"
+finishColor = "0 80 155 0"
+startRadius = 1.2
+finishRadius = 0.4
+animateTime = 1.0
+
+[SparkHalo]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 150 150"
+finishColor = "0 0 150 0"
+startRadius = 3.0
+finishRadius = 1.0
+animateTime = 1.0

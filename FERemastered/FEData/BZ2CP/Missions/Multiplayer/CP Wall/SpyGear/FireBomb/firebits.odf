@@ -1,0 +1,30 @@
+[GameObjectClass]
+geometryName = NULL 
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 300
+maxAmmo = 100
+unitName = "Fire"
+heatSignature = 100.0
+
+[MineClass]
+lifeSpan = 15.0
+
+[FlareMineClass]
+payloadName = "fire1"
+fireSound = "crckt02.wav"
+triggerDelay = 0.002
+shotDelay = .08 // 0.02
+shotVariance = 4 // 0.2
+damageRadius = 25.0
+damageValue(N) = 250 // none
+damageValue(L) = 200 // light
+damageValue(H) = 0 // heavy
+damageValue(S) = 100 // standard
+damageValue(D) = 200 // deflection
+damageValue(A) = 50 // absorbtion
+
+kickRadius = 0 //20.0
+kickVeloc = 0 // 0.2
+kickOmega = 0 //0.5

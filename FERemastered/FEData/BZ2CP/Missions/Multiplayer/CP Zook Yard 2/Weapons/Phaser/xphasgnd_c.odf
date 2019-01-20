@@ -1,0 +1,56 @@
+// =================
+// PHASER GROUND HIT
+// =================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 2
+particleClass1 = "xphasgnd_c.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xphasgnd_c.char"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+explSound = "arrowclk.wav"
+
+damageRadius = 1.0
+
+kickRadius = 1.5
+kickOmega = 1.0 
+kickVeloc = -1.5
+
+damageValue(N) = .2
+damageValue(L) = 0
+damageValue(H) = 0
+
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_planar"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "255 120 0 255"
+finishColor = "150 0 0 0"
+startRadius = 0.2
+finishRadius = 0.8
+animateTime = 0.4
+
+[char]
+simulateBase = "sim_null"
+lifeTime = 3.0
+renderBase = "draw_planar"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = " 255 80 30 255"
+finishColor = "155 0 0 0"
+startRadius = .8
+finishRadius = 0.05
+animateTime = 2.0

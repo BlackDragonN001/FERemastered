@@ -1,0 +1,22 @@
+[WeaponClass]
+classLabel = "dispenser"
+geometryName = "sgsatc00.xsi"
+geometryScale = 0.12
+wpnName = "Ammo Pack"
+ordName = NULL
+aiRange = 0.1
+engageRange = 0.1
+wpnIcon = NULL 
+fireSound = "pickup01.wav"//"mnu_empt.wav" // NULL // "mmine01.wav"
+wpnReticle = "gproxmin"
+wpnLadder = "gmortar.L0"
+wpnPriority = 1 //3
+wpnCategory = "SPEC" // "PACK"
+
+isAssault = 0 
+
+//localAmmo = 6  wont work for negative values and ammo pack
+
+[DispenserClass]
+shotDelay = 30.0
+objectClass = "ammopack1"

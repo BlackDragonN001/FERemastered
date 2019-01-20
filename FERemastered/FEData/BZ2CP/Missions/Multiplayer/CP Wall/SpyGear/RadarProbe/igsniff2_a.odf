@@ -1,0 +1,58 @@
+[WeaponClass]
+classLabel = "cannon" //"machinegun"
+
+// external geometry
+geometryName = "igsnip_skel.xsi"
+geometryScale = 0.12
+animCount = 4
+animName1 = "stand"
+animFile1 = "igsnip_stand.xsi"
+animName2 = "walk"
+animFile2 = "igsnip_stand.xsi"
+animName3 = "crouch"
+animFile3 = "igsnip_deploy.xsi"
+animName4 = "jump"
+animFile4 = "igsnip_stand.xsi"
+
+// cockpit geometry
+cockpitName = "iwrifl_cockpit_stand.xsi"
+cockpitScale = 0.12
+animCountCockpit = 4
+animNameCockpit1 = "stand"
+animFileCockpit1 = "iwrifl_cockpit_stand.xsi"
+animNameCockpit2 = "walk"
+animFileCockpit2 = "iwrifl_cockpit_run.xsi"
+animNameCockpit3 = "crouch"
+animFileCockpit3 = "iwrifl_cockpit_sniper.xsi"
+animNameCockpit4 = "jump"
+animFileCockpit4 = "iwrifl_cockpit_stand.xsi"
+
+ordName = "sniffer2"
+wpnName = "Sniffer"
+fireSound = NULL
+wpnReticle = "grifle"
+wpnCategory = "HAND"
+wpnPriority = 3
+isAssault = 1
+isFlying = 0
+altName = NULL // "igdisrup_c"
+flashName = "igdisrup_a.flash"
+aiRange = 300
+
+[CannonClass]
+shotDelay = 2.5
+shotVariance = 0.7
+
+salvoCount = 2
+salvoDelay = 0.05 //0.002
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 255"
+finishColor = "255 255 255 255"
+startRadius = 3.0
+finishRadius = 1
+animateTime = 0.3
+geomName = "g_sflash.xsi"

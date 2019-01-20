@@ -1,0 +1,128 @@
+[GameObjectClass]
+baseName = "ivtank"
+geometryName = "ivtank00.xsi"
+cockpitName= "ivtank_cockpit.xsi"
+classLabel = "wingman"
+scrapValue = 20
+scrapCost = 55
+buildTime = 15.0
+maxHealth = 3000
+maxAmmo = 2000
+addAmmo = 5
+addhealth = 20
+unitName = "Commander"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+heatSignature = 1.0
+imageSignature = 3.0
+radarSignature = 0.2
+isAssault = 0
+
+canSnipe = 0
+
+armorClass = L
+
+requireCount = 2
+requireName1 = "ibfact"
+requireText1 = "Build Factory"
+requireName2 = "ibcbun"
+requireText2 = "Build Comm Bunk"
+
+cockpitName = "ivtank_cockpit.xsi"
+
+/////// weapons ///////////////////
+
+weaponMask = 00011
+
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gspstab_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_GUN_1"
+weaponName2 = "gminigun_c"
+weaponAssault2 = 0
+weaponHard3 = "HP_GUN_2"
+weaponName3 = "gminigun_c"
+weaponAssault3 = 0
+weaponHard4 = "HP_MORTAR_1"
+weaponName4 = "gmortar"
+weaponAssault4 = 0
+weaponHard5 = "HP_SPECIAL_1"
+weaponName5 = ""
+weaponAssault5 = 0
+
+////////////////////////////////////
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+lightHard2 = "hp_light_2"
+lightName2 =  
+
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 5.0f
+velocJam = 5.0f
+engageRange = 1120
+
+braccelFactor = 0.03
+velFactor = 0.2
+steerFactor = 1.5
+omegaFactor = 0.2
+strafeFactor = 0.2
+
+avoidSpeed = 30;
+topSpeed = 40;
+
+selectWaitMsg = "ivtank05.wav"
+selectAttackMsg = "ivtank02.wav"
+selectFollowMsg = "ivtank04.wav"
+selectGoMsg = "ivtank04.wav"
+selectOtherMsg = "ivtank05.wav"
+
+goMsg = "ivtank04.wav"
+attackMsg = "ivtank06.wav"
+followMeMsg = "ivtank08.wav"
+followMsg = "ivtank03.wav"
+repairMsg = "ivtank09.wav"
+reloadMsg = "ivtank09.wav"
+rescueMsg = "ivtank10.wav"
+recycleMsg = "ivtank11.wav"
+otherMsg = "ivtank05.wav" 
+holdMsg = "ivtank12.wav"
+user1Msg = ""  
+killedMsg = "ivtank07.wav"
+diedMsg = ""
+
+[HoverCraftClass]
+velocForward = 38.5 // []
+velocReverse = 25.0 // []
+velocStrafe = 26.0 // []
+accelThrust = 27.5 //acceleration []
+accelDragStop = 6.0 //how fast it stops once hands are off controls []
+accelJump = 35.0 // []
+w
+setAltitude = 1.0 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself []
+alphaDamp = 8.0 //shocks []
+
+pitchPitch = 0.25 //nose up []
+pitchThrust = 0.1 //nose down []
+
+rollStrafe = 0.08 //rolls while strafing []
+omegaSpin = 6.0 //spinning in place speed []
+omegaTurn = 2.3 //turning while moving speed []
+alphaSteer = 7.0 //how fast it responds to steering []
+rollSteer = 0.08 //rolls while steering []
+
+soundThrust = "itank01e.wav"
+soundTurbo = "avtanke3.wav"
+
+[Lod1]
+geometryName = "ivtankL1.xsi" ;geometry for lod1
+distance = 50                 ;...distance over this many meters => switch to lod2
+
+[Lod2]
+geometryName = "ivtankL2.xsi" ;geometry for lod2
+distance = 100                 ;...distance over this many meters => switch to lod2
+
+

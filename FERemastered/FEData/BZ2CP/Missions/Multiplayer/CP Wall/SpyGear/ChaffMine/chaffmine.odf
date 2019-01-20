@@ -1,0 +1,28 @@
+[GameObjectClass]
+geometryName = "igflar00.xsi"
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 1
+unitName = "Chaff Mine"
+heatSignature = 0.01
+imageSignature = 0.01
+radarSignature = 0.0
+//isAssault = 0
+armorClass = N
+canCollide = 1
+canDetect = 1 
+canInteract = 1 
+ownsTerrain = 0
+
+
+[MineClass]
+lifeSpan = 4.8 // 3.4 // -trigger * shotdelay for count
+
+[FlareMineClass]
+payloadName = "ecmchaff"
+fireSound = "quill01.wav"
+triggerDelay = 2.5
+shotDelay = .2 // 0.3
+shotVariance = 3.0 

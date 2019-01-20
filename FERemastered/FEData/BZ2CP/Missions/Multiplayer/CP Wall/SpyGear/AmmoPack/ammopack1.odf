@@ -1,0 +1,28 @@
+[GameObjectClass]
+geometryName = NULL //"igflar00.xsi"
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = -1000 // 35 //1
+unitName = "Ammo Pack"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+//isAssault = 0
+armorClass = N
+canCollide = 1
+canDetect = 1 
+canInteract = 1 
+ownsTerrain = 0
+
+
+[MineClass]
+lifeSpan = 10.0 
+
+[FlareMineClass]
+payloadName = NULL // "aaspore"
+fireSound = "mnu_empt.wav"
+triggerDelay = 0.5
+shotDelay = 0.1
+shotVariance = 0.0 

@@ -1,0 +1,97 @@
+/////  Mobile Radar Tranceiver /////
+
+[GameObjectClass]
+baseName = "ivtrans-r"
+geometryName = "pbtran00.xsi"
+cockpitName = "ivscav_cockpit.xsi"
+animCount = 0
+classLabel = "wingman"
+
+explosionName = "xsafexpl"
+
+geometryScale = 0.75
+scrapValue = 0 // 10
+scrapCost = 0 // 20
+buildTime = 1.0
+maxHealth = 600 // 3000
+maxAmmo = 100
+unitName = "Radar Station"
+aiName = "SentryProcess" 
+aiName2 = "SentryProcess"
+requireCount = 0
+weightInTons = 1e6
+accelDragStop = 1e6 
+
+///////////////////////////////////////
+
+armorClass = N  //  H
+heatSignature = 0.0
+imageSignature = 0.7
+radarSignature = 5.0
+isAssault = 0
+
+canSnipe = 1
+
+[CraftClass]
+rangeScan = 410.0 
+periodScan = 1.0
+velocJam = 0.0
+
+braccelFactor = 0.09
+velFactor =	0.3
+steerFactor = 1.5
+omegaFactor = .2 // 0.1 
+
+collisionRadius = 0.3 
+TeamTransferrable = true 
+needPilot = 1 // 0 makes it un pilotable
+isAssault = 0 
+
+[HoverCraftClass]
+velocForward = 1.0
+velocReverse = 0.9
+velocStrafe = 0.0
+accelThrust = 20.0
+accelBrake = 70.0
+
+soundThrust = "console.wav" //"icomm01.wav"
+SoundAmbientDist = 0.1 //0.7 dont think this works here
+
+accelDragStop = 2.0
+accelJump = 0.0 // 0.0
+
+setAltitude = 0.0 // how high off the ground
+
+alphaTrack = 20.0
+alphaDamp = 5.0
+
+pitchPitch = 0.0 // nose up
+pitchThrust = 0.0 // nose down
+
+rollStrafe = 0.0 // rolls while strafing
+omegaSpin = 5.0 //3.0 // spinning in place speed
+omegaTurn = 2.0 // turning while moving speed
+alphaSteer = 2.0 // how fast it responds to steering
+rollSteer = 0.0 // rolls while steering
+
+accelDragFull = 0.0 // nothing
+
+///////////////////////////////////
+selectWaitMsg = NULL // "ivscav01.wav"
+selectGoMsg = NULL // "ivscav02.wav"
+selectPickupMsg = NULL // "ivscav05.wav"
+selectDropoffMsg = NULL // "ivscav05.wav"
+selectOtherMsg = NULL // "ivscav01.wav"
+selectFollowMsg = NULL // "ivscav03.wav"
+holdMsg = NULL // "ivscav11.wav"
+goMsg = NULL // "ivscav04.wav"
+stopMsg = NULL // "ivscav04.wav"
+followMsg = NULL // "ivscav11.wav"
+followMeMsg = NULL // "ivscav07.wav"
+rescueMsg = NULL // "ivscav11.wav"
+repairMsg = NULL // "ivscav08.wav"
+recycleMsg = NULL // "ivscav10.wav"
+otherMsg = NULL // "ivscav13.wav"
+
+engineSound = "icomm01.wav" // "iscav01.wav"
+treadSound = "icomm01.wav" //"iscav01b.wav"

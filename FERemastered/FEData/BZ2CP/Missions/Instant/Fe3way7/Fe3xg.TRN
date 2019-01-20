@@ -1,0 +1,85 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX = -2048.0
+MinZ = -2048.0
+Width = 4096.0
+Depth = 4096.0
+Height = 5.0
+Tile = 1
+Color = "151 158 103 255"
+
+[NormalView]
+
+FogColor="81 79 41 255"
+FogStart=150
+FogEnd=250
+VisibilityRange=275
+
+[World]
+MusicTrack1=3
+MusicTrack2=4
+MusicTrack3=5
+MusicTrack4=6
+MusicTrack5=7
+
+[Light]
+SunPeriod = 24.0
+SunAngle = 14.0
+SunColor = "255 255 255 255"
+AmbientColor = "127 64 0 255"
+
+[Sky]
+SkyType= 0
+SkyHeight = 100
+SkyTexture = darksky.tga
+SkyColor = "254 130 29 255"
+SunTexture = sun.0
+SunColor = "0 0 0 0"
+
+[Water]
+WaterTexture1 = "rendlava.tga"
+WaterDiffuse1 = "127 64 0 200"
+WaterBlend1 = "one one modulate"
+BumpTexture1 = "rendlava.tga"
+BumpDiffuse1 = "127 64 0 200"
+BumpBlend1 = "one one modulate"
+
+[Texture]
+TileTexture1 = "mire.tga"
+TileTexture2 = "mire2.tga"
+TileTexture3 = "mire3.tga"
+TileTexture4 = "mire4.tga"
+TileTexture5 = "mire5.tga"
+TileTexture6 = "mire6.tga"
+TileTexture7 = "mire7.tga"
+TileTexture8 = "mbextf02.tga"
+TileTexture9 = "grass.tga"
+
+[DomeLight0]
+Name    = rendsun_2
+Time0   = 0
+Yaw0    = 0		// 0=N, 90=E, -90=W, 180=S
+Pitch0  = -65		// 0=Forward -90=Above
+Dist0   = -80		 // 100m from center of dome
+
+[DomeLight1]
+Name    = rendsun_1
+Time0   = 0
+Yaw0    = 180
+Pitch0  = -65
+Dist0   = -10
+
+[Dome]
+DomeGeom    = rendsky.xsi
+DomeRadius  = 375
+DomeHeight  = 0
+DomeType    = 0
+DomeUVSpeed = "0.009 0.009 0.009"
+
+Count       = 0
+Type        = 1
+TileSize    = 375
+
+
+

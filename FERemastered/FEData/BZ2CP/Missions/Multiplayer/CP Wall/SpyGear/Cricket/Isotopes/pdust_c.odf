@@ -1,0 +1,98 @@
+[OrdnanceClass]
+classLabel = "thermalmissile"
+
+shotGeometry = NULL //"sgstng00.xsi"
+shotSound = "smort02.wav"
+
+renderName = "pdust_c.render"
+
+xplGround = "xpdust_gnd"
+xplVehicle = "xpdust_car"
+xplBuilding = "xpdust_car"
+
+ammoCost = 4.5
+lifeSpan = 2.8 // 140m
+shotSpeed = 50.0
+
+kickRadius = 2.5
+kickOmega = 1.0 
+kickVeloc = -2.0
+
+damageRadius = 1.0
+
+damageValue(N) = 35 // 15.0 // none
+damageValue(L) = 30 // 25 // light
+damageValue(H) = 20 // heavy
+damageValue(S) = 15 // standard
+damageValue(D) = 30 // deflection
+damageValue(A) = 20 // absorbtion
+
+[MissileClass]
+omegaTurn = 25 // 15
+omegaWaver = 0.5 
+rateWaver = 20
+
+[ThermalMissileClass]
+coneAngle = 6
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "pdust_c.main"
+renderName2 = "pdust_c.halo"
+renderName3 = "pdust_c.sparks"
+
+[Main]
+renderBase = "draw_sprite"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "255 190 120 255"
+finishColor = "200 190 120 180"
+startRadius = 0.4
+finishRadius = 0.2
+animateTime = 3.75
+
+[Halo]
+renderBase = "draw_sprite"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "200 150 0 130"
+finishColor = "180 190 0 80"
+startRadius = 2.0
+finishRadius = 0.8
+animateTime = 3.75
+
+[Sparks]
+renderBase = "draw_emit"
+emitName = "pdust_c.sparker"
+emitDelay = .05 // 0.2 // 0.5
+emitVelocity = "0.0 0.0 30.0"
+emitVariance = "10.0 10.0 10.0"
+
+[Sparker]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "pdust_c.sparkflare"
+renderName2 = "pdust_c.sparkhalo"
+
+[SparkFlare]
+renderBase = "draw_sprite"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "200 170 100 350"
+finishColor = "200 150 0 0"
+startRadius = 0.6
+finishRadius = 0.12
+animateTime = 1.0
+
+[SparkHalo]
+renderBase = "draw_sprite"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "190 100 0 130"
+finishColor = "190 200 0 0"
+startRadius = 1.8
+finishRadius = 0.4
+animateTime = 1.0

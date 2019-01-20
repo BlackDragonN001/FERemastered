@@ -1,0 +1,38 @@
+[GameObjectClass]
+geometryName = "aprepa00.xsi"
+
+classLabel = "magnet"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 10 
+unitName = "Hold 10 min"
+effectHard1 = "Hold 10"
+effectName1 = "hold5.field"
+canDetect = 0
+canInteract = 0
+
+[MineClass]
+lifeSpan = 900 // 15 minutes
+
+[MagnetMineClass]
+triggerDelay = 2.0
+fieldRadius = 80 
+objPushCenter = -.5 // -10.0
+objPushEdge = 1 // 120 
+objDrag = 10 // 8
+ordPushCenter = 300.0
+ordPushEdge = 700.0
+ordDrag = 4  //3
+
+[Field]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "50 20 0 30"
+finishColor = "50 20 0 30" 
+startRadius = 1.0
+finishRadius = 80.0 //20
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16

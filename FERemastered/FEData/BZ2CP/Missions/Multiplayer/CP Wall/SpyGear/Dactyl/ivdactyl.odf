@@ -1,0 +1,127 @@
+[GameObjectClass]
+geometryName = "ivdactyl.xsi"
+geometryScale = 0.6
+cockpitName = "ivcons_cockpit.xsi"
+classLabel = "wingman"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 1400
+maxAmmo = 50
+unitName = "Dactyl"
+aiName = "SentryProcess"
+aiName2 = "SentryProcess"
+heatSignature = 0.1
+imageSignature = 0.4
+radarSignature = 0.01
+isAssault = 0
+armorClass = L
+canCollide = 1
+canDetect = 1 
+canInteract = 1
+canSnipe = 1
+//needPilot = 1 
+addAmmo = 6
+addHealth = 3.0
+collisionRadius = 0.2
+
+lightHard1 = "hp_light_1"
+lightName1 = "omniblue"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "ivdactyl.render"
+
+weaponMask = 11111
+weaponHard1 = "HP_GUN_1"
+weaponName1 = "igdisrup_a"
+weaponAssault1 = 0
+weaponHard2 = "HP_GUN_2"
+weaponName2 = "igdisrup_a"
+weaponAssault2 = 0
+weaponHard3 = "HP_CANNON_1"
+weaponName3 = "gdarc_c"
+weaponAssault3 = 0
+weaponHard4 = "HP_ROCKET_1"
+weaponName4 = "igtrac_a"
+weaponAssault4 = 1
+weaponHard5 = "HP_SPECIAL_1"
+weaponName5 = "igsporemine"
+weaponAssault5 = 0
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 1
+renderName1 = "ivdactyl.contrail"
+
+[Contrail]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "120 110 140 110"
+finishColor = "100 100 140 0"
+startRadius = 2.0
+finishRadius = 0.8 
+segmentTime = .6 // 3.0  // time each segment animates
+segmentVariance = "0.1 0.1 0.1"
+animateTime = 0.3
+textureRate = 0.05
+
+[CraftClass]
+rangeScan = 445.0f
+periodScan = 2.0f
+velocJam = 0.0f
+engageRange = 140
+
+braccelFactor = 0.03
+velFactor = 0.2
+steerFactor = 1.5
+omegaFactor = 0.2
+strafeFactor = 0.2
+
+avoidSpeed = 30;
+topSpeed = 30;
+
+selectWaitMsg = "robo05c.wav"
+selectAttackMsg = "robo05b.wav"
+selectFollowMsg = "robo05.wav"
+selectGoMsg = "robo05c.wav"
+selectOtherMsg = "robo05b.wav"
+goMsg = "robo05b.wav"
+attackMsg = "robo05.wav"
+followMeMsg = "robo05b.wav"
+followMsg = "robo05.wav"
+repairMsg = "robo05.wav"
+reloadMsg = "robo05b.wav"
+rescueMsg = "robo05c.wav"
+recycleMsg = "robo05.wav"
+otherMsg = "robo05b.wav" 
+holdMsg = "robo05b.wav"
+user1Msg = ""  
+killedMsg = "avrcktv9.wav"
+diedMsg = "ivscout13.wav"
+
+[HoverCraftClass]
+setAltitude = 24.5      //Height from the ground
+accelDragStop = 8.0    //Time of hands-off stop (more stops faster)
+accelDragFull = 60.0   // 1.0 //Can't see any difference
+accelThrust = 10 // 15.0 //Acceleration/deceleration (more = quicker!)
+accelBrake = 50 //10.0 //braking effect, more is more
+aiAccelDrag = 40 //10
+
+alphaTrack = 10.0 // 10.0 //15.0 //Speed at which the ship rights itself, terrain following
+alphaDamp = 8.0 //6.0    // 10.0 // Shock absorbers - steadiness of ship, gyros in effect
+pitchPitch = 0.15 // 0.05  Nose movement up (less is less)
+pitchThrust = 0.25 //0.05 Nose movement down (less is..urr less)
+rollStrafe = 0.3 // 0.2 Amount of Roll while strafing (bigger is more)
+rollSteer = 0.3 // 0.2 Amount of Roll while steering (bigger is more)
+
+velocForward = 25  // 22.0
+velocReverse = 14  // 8.0
+velocStrafe = 14  // 6.0
+
+omegaSpin = 5.0	//Speed of spinning while motionless (more is quicker)
+omegaTurn = 6.0 		//Speed of spinning while in motion (more is quicker)
+alphaSteer = 5.0	//Sensitivity to steer (mouse) - more is more sensitive
+accelJump = 28.0  // 20.0//Jump limiter
+
+soundThrust = "benv03.wav" //"cceng.wav" 
+soundTurbo = "ienge.wav"

@@ -1,0 +1,54 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX = -1024.0
+MinZ = -1024.0
+Width = 2048.0
+Depth = 2048.0
+Height = 100
+Tile = 1
+Color = "212 184 217 255"
+
+[NormalView] 
+FogColor="70 90 30 255"
+FogStart=350
+FogEnd=500
+VisibilityRange=550
+
+[World]
+MusicTrack1=7
+MusicTrack2=8
+MusicTrack3=6
+
+[Light]
+SunPeriod = 24.0
+SunAngle = 9.0
+SunColor = "80 190 180 255"
+AmbientColor = "140 180 100 255"
+
+[Sky]
+SkyType= 0
+SkyHeight = 100
+SkyTexture = darksky.tga
+SkyColor = "148 81 103 255"
+SunTexture = sun.0
+SunColor = "0 0 0 0"
+
+[Water]
+WaterTexture1 = "water256.tga"
+WaterDiffuse1 = "13 39 71 220"
+WaterBlend1 = "srcalpha invsrcalpha modulatealpha"
+BumpTexture1 = "water256.tga"
+BumpDiffuse1 = "13 39 71 220"
+BumpBlend1 = "srcalpha invsrcalpha modulatealpha"
+
+[Texture]
+TileTexture1  = "toxic_1.tga"
+TileTexture2  = "toxic_2.tga"
+TileTexture3  = "toxic_3.tga"
+TileTexture4  = "toxic_4.tga"
+TileTexture5  = "toxic_5.tga"
+TileTexture6  = "toxic_6.tga"
+TileTexture7  = "toxic_7.tga"
+TileTexture8  = "toxic_8.tga"
+TileTexture9  = "toxic_9.tga"

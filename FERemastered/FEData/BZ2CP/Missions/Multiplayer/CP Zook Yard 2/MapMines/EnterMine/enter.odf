@@ -1,0 +1,122 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotRadius = 2.0
+xplGround = NULL // "xflmhit"
+xplVehicle = NULL // "xflmhit"
+xplBuilding = NULL // "xflmhit"
+
+renderName = "enter.render"
+ammoCost = 1e-6 // 1
+lifeSpan = 0.8 // 1.0
+shotSpeed = 0.1 //50.0
+
+damageValue(N) = 0 // 25
+damageValue(L) = 0 // 10
+damageValue(H) = 0 // 2
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 6
+renderName1 = "enter.in"
+renderName2 = "enter.in2"
+renderName3 = "enter.in3"
+renderName4 = "enter.in4"
+renderName5 = "enter.in5"
+renderName6 = "enter.in6"
+
+
+
+[In]
+simulateBase = "sim_null"
+lifeTime = 0.8
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga" //"vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "100 0 255 5"
+finishColor = "60 0 255 150"
+startRadius = 1.5
+finishRadius = 0.1
+animateTime = 0.8
+latitudeBands = 4 // 8
+longitudeSegments = 8 // 16
+rotationRate = 2.0
+
+[In2]
+simulateBase = "sim_null"
+lifeTime = 0.8
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga" //"vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "80 0 255 0"
+finishColor = "60 30 255 150"
+startRadius = 3.0
+finishRadius = 0.1
+animateTime = .8
+latitudeBands = 4 // 8
+longitudeSegments = 8 // 16
+rotationRate = -2.0
+
+[In3]
+simulateBase = "sim_null"
+lifeTime = 0.8
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga" //"vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "60 0 255 0"
+finishColor = "60 60 255 150"
+startRadius = 4.5
+finishRadius = 0.1
+animateTime = .8
+latitudeBands = 4 // 8
+longitudeSegments = 8 // 16
+rotationRate = 12.0
+
+[In4]
+simulateBase = "sim_null"
+lifeTime = 0.8
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga" //"vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "40 0 255 0"
+finishColor = "60 90 255 140"
+startRadius = 6.0
+finishRadius = 0.1
+animateTime = .8
+latitudeBands = 4 // 8
+longitudeSegments = 8 // 16
+rotationRate = -12.0
+
+[In5]
+simulateBase = "sim_null"
+lifeTime = 0.8
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga" //"vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "20 0 255 0"
+finishColor = "60 120 255 130"
+startRadius = 7.5
+finishRadius = 0.1
+animateTime = .8
+latitudeBands = 4 // 8
+longitudeSegments = 8 // 16
+rotationRate = 20.0
+
+[In6]
+simulateBase = "sim_null"
+lifeTime = 0.8
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga" //"vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 255 0"
+finishColor = "60 150 255 120"
+startRadius = 9.0
+finishRadius = 0.1
+animateTime = .8
+latitudeBands = 4 // 8
+longitudeSegments = 8 // 16
+rotationRate = -20.0

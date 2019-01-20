@@ -1,0 +1,20 @@
+//
+// FE_ST_VEH.txt - listing of multiplayer vehicles usable in BZ2 FE
+//
+// Format of lines: xsi filename, space separator, odf filename, space separator, description
+// Lines starting with // are ignored. 
+//
+// Tip: do not put .odf extension on odf filename; added automatically on loading
+// 
+ivscout00.xsi ivscout Thunderbolt
+fvscout_skel.xsi fvscout Drone
+evscout00.xsi evscout Xypos
+ivtank00.xsi ivtank Sabre
+fvtank_skel.xsi fvtank Warrior
+evtank00.xsi evtank Xares
+ivmisl00.xsi ivmisl Avenger
+fvlancer_skel.xsi fvarch Lancer
+evmisl00.xsi evmisl Zeus
+ivatnk00.xsi ivatank Bull Dog
+fvtitan_skel.xsi fvatank Titan
+evatank00.xsi evatank Hedoux

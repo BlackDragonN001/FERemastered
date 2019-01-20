@@ -1,0 +1,40 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX=-1280
+MinZ=-1280
+Width=2520
+Depth=2520
+Height=100
+Tile = 1
+color=128 128 128 255
+
+[NormalView]
+
+FogColor="100 100 50 255"
+FogStart=300
+FogEnd=425
+VisibilityRange=425
+
+[World]
+MusicTrack1=9
+MusicTrack2=3
+MusicTrack3=4
+
+
+[Texture]
+TileTexture1 = "tunnel_8.tga"
+TileTexture2 = "tunnel_7.tga"
+TileTexture3 = "metal2.tga"
+TileTexture4 = "metal3.tga"
+TileTexture5 = "metal4.tga"
+TileTexture6 = "street_4.tga"
+TileTexture7 = "street_5.tga"
+TileTexture8 = "pluto2.tga" 
+TileTexture9 = 
+TileTexture10 = 
+TileTexture11 = "ibfoun00.tga"
+TileTexture12 = "ibfoun01.tga"
+TileTexture13 = 
+TileTexture14 = 
+TileTexture15 = 

@@ -1,0 +1,41 @@
+[GameObjectClass]
+geometryName = "pbcomm00.xsi"
+classLabel = "i76building"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0 // 1E6
+maxAmmo = 0
+unitName = "Communication Station"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+collisionRadius = 2.0
+ownsTerrain=1
+canDetect = 0
+canInteract = 0
+
+effectHard1 = "hp_emit_1"
+effectName1 = "pbcomm.smoke"
+// effectHard2 = "hp_emit_2"
+// effectName2 = "pbcomm.sparks"
+
+[BuildingClass]
+bldEdge = "wwww"
+
+[smoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.03
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 5.0
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "3 0 5 64"
+finishColor = "3 0 5 0"
+startRadius = .5
+finishRadius = 2
+animateTime = 5.0
+rotationRate = 2.0
+

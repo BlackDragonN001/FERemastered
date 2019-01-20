@@ -1,0 +1,105 @@
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "wcbl.wav" // "xsv2.wav"
+
+damageRadius = 20.0
+
+damageValue(N) = 300 // none
+damageValue(L) = 150 // light
+damageValue(H) = 50 // heavy
+ 
+damageValue(S) = 150 // standard
+damageValue(D) = 300 // deflection
+damageValue(A) = 50 // absorbtion
+
+kickRadius = 6.0
+kickOmega = -13.0
+kickVeloc = -6.0
+
+particleTypes = 5
+
+particleClass1 = "xchrgcar5.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xchrgcar5.puff"
+particleCount2 = 5
+particleVeloc2 = "7.0 7.0 7.0"
+
+particleClass3 = "xchrgcar5.splat"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xchrgcar5.light"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "xchrgcar5.shock"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "blast.tga" // flame
+textureBlend = "one one modulate"
+startColor = "255 90 0 255"
+finishColor = "255 90 0 0"
+startRadius = 1.5
+finishRadius = 0.2
+animateTime = 1.0
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 90 0 255"
+finishColor = "255 90 0 0"
+startRadius = 1.0
+finishRadius = 5.5
+animateTime = 1.5
+rotaionRate = 10
+
+[Splat]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "255 90 0 255"
+finishColor = "255 90 0 0"
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 1.5
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_light"
+startColor = "255 255 255 500"
+finishColor = "255 255 255 0"
+startRadius = 20.0
+finishRadius = 10.0
+animateTime = 1.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 90 0 255"
+finishColor = "255 90 0 0"
+startRadius = 1.0
+finishRadius = 5.0
+animateTime = 0.3
+latitudeBands = 8
+longitudeSegments = 16

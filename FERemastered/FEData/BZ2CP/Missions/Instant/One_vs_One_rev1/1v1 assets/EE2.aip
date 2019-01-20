@@ -1,0 +1,191 @@
+[Start]
+scrapCount = 40
+scavClass = "ivscav"
+consClass = "ivcons"
+
+[Cheat]
+moneyAmount = 20
+moneyDelay = 5
+
+[Plan1]
+planType = "buildminimums"
+planpriority = 200
+buildtype1 = "ivscav"
+buildcount1 = 2
+
+[Plan2]
+plantype = "CollectPool"
+planpriority = 195
+donextonfail = 1
+
+[plan3]
+plantype = "buildminimums"
+planpriority = 190
+buildtype1 = "ivcons"
+buildcount1 = 1
+
+[plan4]
+plantype = "basebuildminimums"
+planpriority = 185
+buildtype1 = "ibpgen"
+buildloc1 = "power1"
+buildtype2 = "ibfact"
+buildloc2 = "factory"
+buildtype3 = "ibcbun"
+buildloc3 = "bunker"
+
+[plan5]
+plantype = "buildminimums"
+planpriority = 180
+buildtype1 = "ivtank4w"
+buildcount1 = 1
+donextonfail = 1
+
+[plan6]
+plancondition = "HisExists"
+planconditionclass = "ibpgen"
+planconditioncount = 1
+planpriority = 175
+plantype = "attacker"
+targettype = "ibpgen"
+attacktype1 = "ivtank"
+buildifnoidle = 1
+donextonfail = 1
+
+[plan7]
+plantype = "basebuildminimums"
+planpriority = 170
+buildtype1 = "ibarmo"
+buildloc1 = "armory"
+buildtype2 = "ibpgen"
+buildloc2 = "power2"
+buildtype3 = "ibgtow"
+buildloc3 = "gtow1"
+
+[plan8]
+plantype = "buildminimums"
+planpriority = 120
+buildtype1 = "ivrckt"
+buildcount1 = 2
+
+[plan9]
+plantype = "basebuildminimums"
+planpriority = 160
+buildtype1 = "ibsbay"
+buildloc1 = "servicebay"
+buildtype2 = "ibpgen"
+buildloc2 = "power3"
+
+
+[plan10]
+plantype = "Hold"
+planpriority = 105
+holdtype1 = "ivrckt"
+holdcount1 = 1
+holdpoint = "hold5"
+
+[plan11]
+plantype = "Hold"
+planpriority = 100
+holdtype1 = "ivrckt"
+holdcount1 = 1
+holdpoint = "hold6"
+
+
+[plan12]
+plantype = "basebuildminimums"
+planpriority = 153
+buildtype1 = "ibtrain"
+buildloc1 = "techcenter"
+buildtype2 = "ibgtow"
+buildloc2 = "gtow2"
+
+
+[plan13]
+plantype = "collectpool"
+planpriority = 191
+donextonfail = 1
+
+[plan14]
+plantype = "collectpool"
+planpriority = 123
+donextonfail = 1
+
+[plan15]
+plancondition = "HisExists"
+planconditionclass = "ivcons"
+planconditioncount = 1
+planpriority = 155
+plantype = "buildminimums"
+buildtype1 = "ivmbike"
+buildcount1 = 2
+
+[plan16]
+plancondition = "HisExists"
+planconditionclass = "ivcons"
+planconditioncount = 1
+planpriority = 154
+plantype = "attacker"
+targettype = "ivcons"
+attacktype1 = "ivmbike"
+attacktype2 = "ivmbike"
+donextonfail = 1
+
+[plan17]
+plantype = "buildminimums"
+planpriority = 151
+buildtype1 = "ivtank13"
+buildcount1 = 3
+buildtype2 = "ivrckt"
+buildcount2 = 1
+
+[plan18]
+plantype = "attacker"
+planpriority = 150
+targettype = "ibrecy_m"
+attacktype1 = "ivtank13"
+attacktype2 = "ivtank13"
+attacktype3 = "ivtank13"
+buildifnoidle = 1
+donextonfail = 1
+
+[plan19]
+plantype = "collectpool"
+planpriority = 149
+donextonfail = 1
+
+[plan20]
+plancondition = "HisExists"
+planconditionclass = "ibtcen"
+planconditioncount = 1
+planpriority = 125
+plantype = "attacker"
+targettype = "ibtcen"
+attacktype1 = "commando"
+buildifnoidle = 1
+donextonfail = 1
+
+[plan21]
+plancondition = "hisexists"
+planconditionclass = "ibscav"
+planconditioncount = 1
+planpriority = 140
+plantype = "buildminimums"
+buildtype1 = "ivapc"
+buildcount1 = 2
+
+[plan22]
+plancondition = "HisExists"
+planconditionclass = "ibscav"
+planconditioncount = 1
+planpriority = 139
+plantype = "attacker"
+targettype = "ibscav"
+attacktype1 = "ivapc"
+attacktype2 = "ivapc"
+donextonfail = 1
+
+[Plan23]
+plantype = "CollectPool"
+planpriority = 138
+donextonfail = 1

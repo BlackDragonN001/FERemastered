@@ -1,0 +1,26 @@
+[OrdnanceClass]
+classLabel = "spraybomb"
+shotGeometry = "ioartl00.xsi"
+shotSound = "baz03.wav"
+rendername = "firebomb.render"
+
+ammoCost = 1
+lifeSpan = 1e30
+shotSpeed = 40.0
+
+[SprayBombClass]
+payloadName = "firemine"
+
+[Render]
+renderBase = "draw_twirl_trail"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"// "srcalpha invsrcalpha modulatealpha"
+startColor = "255 191 0 90"
+finishColor = "255 40 0 0"
+startRadius = 0.8
+finishRadius = 2.5
+animateTime = 1.0
+emitDelay = 0.02
+emitVelocity = "0.0 0.0 0.01"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 1.0

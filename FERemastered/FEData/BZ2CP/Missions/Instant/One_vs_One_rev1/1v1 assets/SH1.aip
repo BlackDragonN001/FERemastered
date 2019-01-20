@@ -1,0 +1,196 @@
+[Start]
+scrapCount = 40
+consClass = "fvcons"
+scavClass = "fvscav"
+
+[Cheat]
+moneyAmount = 20
+moneyDelay = 5
+
+[Plan1]
+planType = "buildminimums"
+planPriority = 200
+buildtype1 = "fvscav"
+buildcount1 = 2
+
+[Plan2]
+planType = "CollectPool"
+planPriority = 195
+doNextOnFail = 1
+
+[Plan3]
+plantype = "buildminimums"
+planpriority = 190
+buildtype1 = "fvcons"
+buildcount1 = 1
+
+[plan4]
+plantype = "basebuildminimums"
+planpriority = 185
+buildtype1 = "fbkiln"
+buildloc1 = "kiln"
+buildtype2 = "fbdowe"
+buildloc2 = "dower"
+
+[plan5]
+plancondition = "NotExists"
+planconditionclass = "fbforg"
+planconditioncount = 1
+plantype = "upgrade"
+planpriority = 175
+Unittype = "fbkiln"
+
+[plan6]
+plantype = "buildminimums"
+planpriority = 170
+buildtype1 = "fvtank4w"
+buildcount1 = 1
+buildtype2 = "fvturr13"
+buildcount2 = 2
+
+[plan7]
+plantype = "basebuildminimums"
+planpriority = 165
+buildtype1 = "fbstro"
+buildloc1 = "stronghold"
+buildtype2 = "fbantm"
+buildloc2 = "antenna"
+
+[plan8]
+plancondition = "NotExists"
+planconditionclass = "fbover"
+planconditioncount = 1
+plantype = "upgrade"
+planpriority = 169
+Unittype = "fbantm"
+
+[plan9]
+plantype = "basebuildminimums"
+planpriority = 164
+buildtype1 = "fbspir"
+buildloc1 = "spire1"
+buildtype2 = "fbspir"
+buildloc2 = "spire2"
+
+[plan10]
+plantype = "Hold"
+planpriority = 134
+holdtype1 = "fvrbomb"
+holdcount1 = 1
+holdpoint = "hold2"
+
+[plan11]
+plantype = "basebuildminimums"
+planpriority = 189
+buildtype1 = "fbspir"
+buildloc1 = "spire3"
+donextonfail = 1
+
+[plan12]
+plantype = "collectpool"
+planpriority = 196 
+donextonfail = 1
+
+[plan13]
+plantype = "Hold"
+planpriority = 159
+holdtype1 = "fvturr13"
+holdcount1 = 1
+holdpoint = "hold1"
+donextonfail = 1
+
+
+[plan14]
+plantype = "buildminimums"
+planpriority = 155
+buildtype1 = "fvrbomb"
+buildcount1 = 3
+buildtype2 = "fvwalk"
+buildcount2 = 2
+
+[plan15]
+plantype = "attacker"
+planpriority = 150
+targettype = "ebrecy_m"
+attacktype1 = "fvrbomb"
+attacktype2 = "fvrbomb"
+
+[plan16]
+plancondition = "Hisexists"
+planconditionclass = "evscav"
+planconditioncount = 1
+plantype = "attacker"
+planpriority = 145
+targettype = "evscav"
+attacktype1 = "fvwalk"
+donextonfail = 1
+
+[plan17]
+plancondition = "Hisexists"
+planconditionclass = "ebscav"
+planconditioncount = 1
+plantype = "attacker"
+planpriority = 144
+targettype = "ebscav"
+attacktype1 = "fvwalk"
+donextonfail = 1
+
+[plan18]
+plantype = "collectpool"
+planpriority = 140 
+donextonfail = 1
+
+
+[plan19]
+plancondition = "hisexists"
+planconditionclass = "evcons"
+planconditioncount = 1
+plantype = "attacker"
+planpriority = 121
+targettype = "evcons"
+attacktype1 = "commandos"
+attacktype2 = "commandos"
+buildifnoidle = 1
+donextonfail = 1
+
+[plan20]
+plancondition = "hisexists"
+planconditionclass = "evartl2"
+planconditioncount = 1
+plantype = "attacker"
+planpriority = 120
+targettype = "evartl2"
+attacktype1 = "fvsent"
+attacktype2 = "fvsent"
+buildifnoidle = 1
+donextonfail = 1
+
+[plan21]
+plancondition = "hisexists"
+planconditionclass = "ebfact2"
+planconditioncount = 1
+plantype = "collectpool"
+planpriority = 131
+donextonfail = 1
+
+[plan22]
+plantype = "collectpool"
+planpriority = 115
+donextonfail = 1
+
+[plan23]
+plancondition = "hisexists"
+planconditionclass = "ebscav"
+planconditioncount = 2
+plantype = "attacker"
+planpriority = 129
+targettype = "ebscav"
+attacktype1 = "fvarch"
+attacktype2 = "fvarch"
+buildifnoidle = 1
+donextonfail = 1
+
+[Plan24]
+planType = "CollectPool"
+planPriority = 100
+doNextOnFail = 1

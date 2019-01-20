@@ -1,0 +1,41 @@
+[GameObjectClass]
+geometryName = NULL //"aprepa00.xsi"
+
+classLabel = "magnet"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 10 
+unitName = "M-Shield"
+effectHard1 = "M-Shield"
+effectName1 = "mshield.field"
+canDetect = 0
+canInteract = 0
+
+//lightHard1 = "light2"
+//lightName1 = "omnigreen"
+
+[MineClass]
+lifeSpan = 840.0 // 14 minutes
+
+[MagnetMineClass]
+triggerDelay = 0.1
+fieldRadius = 120 
+objPushCenter = -.5 // -10.0
+objPushEdge = 1 // 120 
+objDrag = 10 // 8
+ordPushCenter = 300.0
+ordPushEdge = 700.0
+ordDrag = 4  //3
+
+[Field]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 180 25"
+finishColor = "0 0 100 25" 
+startRadius = 1.0
+finishRadius = 120.0 //20
+animateTime = 4.0
+latitudeBands = 8
+longitudeSegments = 16

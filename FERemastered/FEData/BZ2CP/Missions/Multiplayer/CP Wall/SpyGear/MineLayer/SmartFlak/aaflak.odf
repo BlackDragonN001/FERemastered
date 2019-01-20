@@ -1,0 +1,40 @@
+//////////////////////////////
+// FLAK DELIVERY ORDNANCE
+//////////////////////////////
+
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = NULL
+xplVehicle = NULL
+xplBuilding = NULL
+xplExpire = "xaaflak"
+
+shotSound = "gmdmg00.wav"
+
+renderName = "aaflak.render"
+
+ammoCost = .1
+lifeSpan = 1
+shotSpeed = 425
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+
+
+[Render]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "160 50 0 80"
+finishColor = "110 120 30 0"
+startRadius = 0.4
+finishRadius = 1.5 // 0.8 
+segmentTime = .6 //3.0  // time each segment animates
+segmentVariance = "0.1 0.1 0.1"
+animateTime = 0.6 // 0.3
+textureRate = 0.1 //0.05
