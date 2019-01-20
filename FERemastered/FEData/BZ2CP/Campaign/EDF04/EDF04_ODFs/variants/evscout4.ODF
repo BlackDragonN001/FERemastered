@@ -1,32 +1,21 @@
-// (c) BZ2CP unit "Xypos"
-// Mesh - Slaor, Pastell
-// Skin - Slaor
-// Skin map, odf, game adaptation, animations - Pastell
 // Modified by Natty Bumppo for EDF04
 
 [GameObjectClass]
 classLabel = "evscout"
+
+scrapValue = 20
+scrapCost = 40
+customCost = 45
+
 maxHealth = 1800
 unitName = "Xypos"
 
 armorClass = L
 
-/////// weapons ///////////////////
 
-weaponMask = 00011
-
-weaponHard1 = "HP_GUN_1"
 weaponName1 = "gshellgun_c"
-weaponAssault1 = 0
-weaponHard2 = "HP_GUN_2"
 weaponName2 = "gshellgun_c"
-weaponAssault2 = 0
-weaponHard3 = "HP_SPECIAL_1"
-weaponName3 = "gmflamemin"
-weaponAssault3 = 0
 
-////////////////////////////////////
- 
 [CraftClass]
 
 [HoverCraftClass]

@@ -1,0 +1,16 @@
+[GameObjectClass]
+classLabel = "ibgtoww1"
+powerCost = 1
+
+maxHealth = 8000
+addhealth = 10
+
+//requireText1 = "Kommunikationsbunker prod." // This ODF must have originally been from a German copy of BZ2. -GBD
+
+[BuildingClass]
+soundAmbient = "igtow01.wav"
+
+[CraftClass]
+//MinWeaponPitch = 1.0 // Re-Enable this if the GT has trouble hitting things near it. -GBD
+
+[TurretCraftClass]

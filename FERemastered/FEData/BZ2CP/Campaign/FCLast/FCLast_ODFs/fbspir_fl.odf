@@ -1,0 +1,22 @@
+[GameObjectClass]
+classLabel = "fbspir"
+
+scrapValue = 40
+
+maxHealth = 8000
+
+addHealth = 30
+
+heatSignature = 2.0
+
+weaponName1 = "gdragb_a"
+
+[BuildingClass]
+
+[CraftClass]
+rangeScan = 200.0
+periodScan = 0.0
+engageRange = 200
+
+[TurretCraftClass]
+detectRange = 200

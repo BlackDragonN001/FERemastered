@@ -1,0 +1,24 @@
+[GameObjectClass]
+baseName = "evtank"
+classLabel = "evtank"
+
+scrapValue = 40
+customTime = 18.0
+maxHealth = 3200
+addHealth = 5
+maxAmmo = 2800
+addAmmo = 8
+
+weaponName1 = "gfbgun_c"
+weaponName2 = "gslicer_c"
+weaponName3 = "gslicer_c"
+weaponName4 = "gmflamemin"
+
+[CraftClass]
+rangeScan = 400.0f
+
+[HoverCraftClass]
+
+[Lod1]
+
+[Lod2]

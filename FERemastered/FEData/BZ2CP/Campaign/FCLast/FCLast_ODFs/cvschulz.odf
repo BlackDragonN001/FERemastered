@@ -1,0 +1,21 @@
+[GameObjectClass]
+baseName = "cvschulz"
+classLabel = "cvwalk"
+
+scrapCost = 70
+customCost = 80
+
+maxHealth = 20000
+maxAmmo = 90000
+addAmmo = 50
+unitName = "Schulz"
+
+weaponName1 = "gcerblast"
+weaponName2 = "gcerblast"
+
+[CraftClass]
+engageRange = 250
+
+[WalkerClass]
+
+attackSpeed = 50

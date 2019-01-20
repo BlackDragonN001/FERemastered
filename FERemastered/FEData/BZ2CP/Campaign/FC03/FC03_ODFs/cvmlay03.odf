@@ -1,0 +1,16 @@
+[GameObjectClass]
+baseName = "cvmlay"
+classLabel = "cvmlay"
+
+needPilot = 0 // No pilots. -GBD
+
+armorClass = H
+
+[CraftClass]
+engageRange = 1
+
+[HoverCraftClass]
+velocForward = 25.5 // []
+velocReverse = 15.0 // []
+
+

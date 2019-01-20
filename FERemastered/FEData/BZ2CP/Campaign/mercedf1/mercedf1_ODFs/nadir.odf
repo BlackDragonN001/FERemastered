@@ -1,0 +1,17 @@
+[GameObjectClass]
+classLabel = "ivnadir"
+
+maxHealth = 1500	//2000
+
+canSnipe = 0
+needPilot = 0
+
+weaponName1 = "gcrubex_a"
+weaponName2 = "gcrubex_a"
+
+[CraftClass]
+
+[HoverCraftClass]
+
+omegaSpin = 2.0 //6.0//spinning in place speed []
+omegaTurn = 1.0 //2.3//turning while moving speed []

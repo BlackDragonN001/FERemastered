@@ -1,0 +1,12 @@
+[GameObjectClass]
+baseName = "cvdcar"
+classLabel = "cvdcar"
+
+maxHealth = 7000	//8000
+addHealth = 0		//10
+
+[CraftClass]
+
+doIdleDispatch = false
+
+[HoverCraftClass]

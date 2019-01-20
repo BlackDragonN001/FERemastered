@@ -1,0 +1,20 @@
+[GameObjectClass]
+baseName = "cvscav"
+classLabel = "cvscav"
+
+isAssault = 0
+
+[CraftClass]
+
+braccelFactor = 0.09
+omegaFactor = 0.1
+
+[TrackedVehicleClass]
+accelThrust = 50.0
+
+[TrackedDeployableClass]
+
+[ScavengerClass]
+deployClass = "cbscav_xx"
+
+

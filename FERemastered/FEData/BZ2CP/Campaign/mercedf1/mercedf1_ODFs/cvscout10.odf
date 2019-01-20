@@ -1,0 +1,14 @@
+[GameObjectClass]
+baseName = "cvscout"
+classLabel = "cvscout"
+
+armorClass = H
+
+[CraftClass]
+
+topSpeed = 60;
+
+[HoverCraftClass]
+velocForward = 50// []
+
+accelThrust = 30.0 //acceleration []

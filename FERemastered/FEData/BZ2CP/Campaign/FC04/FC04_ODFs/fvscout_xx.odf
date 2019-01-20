@@ -1,0 +1,53 @@
+[GameObjectClass]
+classLabel = "fvscout"
+
+weaponName2 = "gflare"
+weaponName3 = "gabsorb"
+
+[CraftClass]
+
+[HoverCraftClass]
+
+[MorphTankClass]
+// object data
+maxHealth = 900
+maxAmmo = 1500 //1820
+engageRange = 100
+isAssault = 0
+
+addAmmo = 0.0
+addHealth = 2.0
+
+unitName = "Scout"
+
+// radar properties
+rangeScan = 450.0f
+periodScan = 5.0f
+velocJam = 5.0f
+
+velocForward = 30.0 // [40]
+velocReverse = 15.0 // [20]
+velocStrafe = 10.0 // [20]
+accelThrust = 22.0 //acceleration [50]
+accelDragStop = 11.0 //how fast it stops once hands are off controls [13]
+accelJump = 10.0 // [20]
+
+setAltitude = 1.5 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself [21]
+alphaDamp = 7.0 //shocks [7]
+
+pitchPitch = 0.12 //nose up [.25]
+pitchThrust = 0.12 //nose down [.1]
+
+rollStrafe = 0.085 //rolls while strafing [.2]
+omegaSpin = 5.0 //spinning in place speed [4.0]
+omegaTurn = 2.5 //turning while moving speed [4.5]
+alphaSteer = 5.0 //how fast it speeds up and slows down to steering [5.0]
+rollSteer = 0.07 //rolls while steering [.25]
+
+// hovercraft sounds
+soundThrust = "ssent01j.wav"
+
+
+[DeployableClass]

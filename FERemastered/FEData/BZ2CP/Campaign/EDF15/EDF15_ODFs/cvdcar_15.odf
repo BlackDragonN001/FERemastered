@@ -1,0 +1,20 @@
+[GameObjectClass]
+baseName = "cvdcar"
+classLabel = "cvdcar"
+
+scrapCost = 50
+maxHealth = 5000
+addHealth = 2
+maxAmmo = 5000
+addAmmo = 8
+
+armorClass = N
+
+requireCount = 0
+
+[CraftClass]
+
+[HoverCraftClass]
+setAltitude = 25.0
+
+//[SavClass]

@@ -1,31 +1,22 @@
-// (c) BZ2CP unit "Xypos"
-// Mesh - Slaor, Pastell
-// Skin - Slaor
-// Skin map, odf, game adaptation, animations - Pastell
-
 [GameObjectClass]
 classLabel = "evscout"
+
+scrapValue = 20
+scrapCost = 40
+customCost = 45
+
 maxHealth = 1800
 maxAmmo = 2000
 addAmmo = 5
 
 armorClass = L
 
-/////// weapons ///////////////////
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
 
-weaponMask = 00011
-
-weaponHard1 = "HP_GUN_1"
 weaponName1 = "gshellgun_c"
-weaponAssault1 = 0
-weaponHard2 = "HP_GUN_2"
 weaponName2 = "gshellgun_c"
-weaponAssault2 = 0
-weaponHard3 = "HP_SPECIAL_1"
 weaponName3 = "gproxmin"
-weaponAssault3 = 0
-
-////////////////////////////////////
  
 [CraftClass]
 engageRange = 185
@@ -37,6 +28,7 @@ velocStrafe = 30.0 // []
 accelThrust = 30.0 //acceleration []
 accelJump = 25.0 // []
 
+pitchPitch = 0.25 //nose up []
 pitchThrust = 0.2 //nose down []
 
 omegaSpin = 6.0 //spinning in place speed []

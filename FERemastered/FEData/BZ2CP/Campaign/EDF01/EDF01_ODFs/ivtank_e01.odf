@@ -1,9 +1,13 @@
 [GameObjectClass]
 classLabel = "ivtank"
 
+needPilot = 0
+
 [CraftClass]
 
 [HoverCraftClass]
+
+velocForward = 20.0 // []
 
 [Lod1]
 

@@ -1,0 +1,31 @@
+[GameObjectClass]
+baseName = "fvturrxx"
+classLabel = "fvturr"
+
+scrapCost = 60
+customCost = 60
+
+maxHealth = 2700
+
+unitName = "Heavy Guardian"
+
+armorClass = H
+
+weaponName1 = "ggauss_c"
+weaponName2 = "ggauss_c"
+
+[CraftClass]
+engageRange = 170
+
+
+[HoverCraftClass]
+setAltitude = 0.5
+
+accelDragFull = 1.0
+alphaTrack = 10.0
+alphaDamp = 3.0
+pitchPitch = 0.5
+
+[TurretTankClass]
+alphaTurret = 2.0
+

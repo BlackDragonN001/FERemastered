@@ -1,0 +1,38 @@
+[GameObjectClass]
+geometryName = "apammo00.fbx"
+
+classLabel = "magnet"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 10 
+unitName = "Hold 5 min"
+effectHard1 = "LIGHT2"
+effectName1 = "holdit5.field"
+canDetect = 0
+canInteract = 0
+
+[MineClass]
+lifeSpan = 300 // 1 minutes
+
+[MagnetMineClass]
+triggerDelay = 0.0
+fieldRadius = 16 
+objPushCenter = 0 // -.5 // -10.0
+objPushEdge = 0 // 1 // 120 
+objDrag = 10 // 8
+ordPushCenter = 300.0
+ordPushEdge = 700.0
+ordDrag = 5  //3
+
+[Field]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "50 20 0 30"
+finishColor = "50 20 0 30" 
+startRadius = 16.0
+finishRadius = 16.0 //20
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16

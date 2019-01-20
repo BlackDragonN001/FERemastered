@@ -1,0 +1,19 @@
+[GameObjectClass]
+baseName = "evartl"
+classLabel = "evartl"
+
+maxHealth = 3000
+maxAmmo = 5000
+addAmmo = 25
+
+weaponName1 = "gpoptag"
+weaponAssault1 = 1
+
+[CraftClass]
+
+[TrackedVehicleClass]
+omegaSpin = 2.0
+omegaTurn = 1.0
+
+[AssaultTankClass]
+

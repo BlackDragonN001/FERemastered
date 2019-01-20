@@ -1,6 +1,3 @@
-//(c)BZ2CP
-// Created by Slaor and Pastell
-
 [GameObjectClass]
 classLabel = "evmort"
 scrapValue = 15
@@ -9,17 +6,11 @@ customTime = 15.0
 maxHealth = 2000
 maxAmmo = 2200
 
-/////// weapons ///////////////////
-
-weaponMask = 00001
-weaponHard1 = "HP_MORTAR_1"
 weaponName1 = "gplight"
-weaponAssault1 = 1
+
 weaponHard2 = "HP_SPECIAL_1"
 weaponName2 = ""
 weaponAssault2 = 0
-
-//////////////////////////////////
 
 [CraftClass]
 engageRange = 180

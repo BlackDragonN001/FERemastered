@@ -1,0 +1,29 @@
+[GameObjectClass]
+baseName = "evturr"
+classLabel = "evturr"
+
+scrapCost = 45
+customCost = 50
+scrapValue = 25
+buildTime = 12.0
+customTime = 12.0
+addHealth = 4
+addAmmo = 10
+unitName = "Xyr Guard SR"
+
+requireCount = 1
+requireName1 = "ebarmo"
+requireText1 = "Build Arsenal" // Weaponsvat Reference removed - HM
+
+weaponName1 = "gslicer_a"
+weaponName2 = "gslicer_a"
+
+[CraftClass]
+rangeScan = 400.0
+periodScan = 0.0
+velocJam = 1.0
+
+[HoverCraftClass]
+
+[TurretTankClass]
+

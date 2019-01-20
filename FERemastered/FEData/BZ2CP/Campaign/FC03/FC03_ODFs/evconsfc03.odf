@@ -1,0 +1,41 @@
+[GameObjectClass]
+baseName = "evcons"
+classLabel = "evcons"
+
+collisionRadius = 2.0
+
+requireCount = 0
+
+[CraftClass]
+
+selectUser1Msg = "ivcons01.wav"
+selectUser2Msg = "ivcons11.wav"
+selectWaitMsg = "ivcons04.wav"
+selectGoMsg = "ivcons02.wav"
+selectOtherMsg = "ivcons10.wav"
+selectFollowMsg = "ivcons03.wav"
+recycleMsg = "ivcons09.wav"
+attackMsg = "ivcons04.wav"
+goMsg = "ivcons05.wav"
+goObjectMsg = "ivcons02.wav"
+user1Msg = "ivcons12.wav"
+user2Msg = "ivcons13.wav"
+followMsg = "ivcons06.wav"
+holdMsg = "ivcons10.wav"
+otherMsg = ""
+diedMsg = ""
+
+[HoverCraftClass]
+
+[DeployableClass]
+
+[ConstructionRigClass]
+buildItem1 = "hbportfc03"
+buildItem2 = ""
+buildItem3 = ""
+buildItem4 = ""
+buildItem5 = ""
+buildItem6 = ""
+buildItem7 = ""
+buildItem8 = ""
+buildItem9 = ""
