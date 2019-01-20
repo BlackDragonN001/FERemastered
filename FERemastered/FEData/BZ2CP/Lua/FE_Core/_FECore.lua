@@ -5,8 +5,8 @@
 -- Links all the individual Lua Moduels together.
 --===================================================
 
--- Key Asset/Require Loader.
-assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+-- Key Asset/Require Loader. -- Already in root ODFs.
+--assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 
 -- Helper Luas.
 require ("_GlobalHandler");
