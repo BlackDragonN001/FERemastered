@@ -1,12 +1,11 @@
 // (c) BZ2CP unit "Xypos"
-// Mesh - Slaor, Pastell
-// Skin - Slaor
-// Skin map, odf, game adaptation, animations - Pastell
+// Original Concept: Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
 
 [GameObjectClass]
 baseName = "evscout"
 geometryName = "evscout00.fbx"
-cockpitName= "hvscout_cockpit.xsi" // cockpit – Tempest storm
+cockpitName = "evscout_cockpit.xsi" // cockpit – Tempest storm
 animCount = 3
 animName1 = "forward"
 animFile1 = "evscoutsf.fbx"
