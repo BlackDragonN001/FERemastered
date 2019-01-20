@@ -6,6 +6,16 @@
 //
 // Tip: do not put .odf extension on odf filename; added automatically on loading
 // 
-ivscout00.xsi ivscout Thunderbolt
-fvscout_skel.xsi fvscout Drone
-evscout00.xsi evscout Xypos
+
+[MPVehicles]
+xsi1 = "ivscout00.fbx"
+cfg1 = "ivscout"
+Description1 = "Thunderbolt"
+
+xsi2 = "fvscout_skel.fbx"
+cfg2 = "fvscout"
+Description2 = "Drone"
+
+xsi3 = "evscout00.fbx"
+cfg3 = "evscout"
+Description3 = "Xypos"

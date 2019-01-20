@@ -7,7 +7,9 @@
 // Tip: do not put .odf extension on odf filename; added automatically on loading
 // 
 
-ispilo_rifle_skel.xsi issnip EDF Sniper
-ispilo_rifle_skel.xsi issold EDF Bazooka
-ispilo_rifle_skel.xsi isuser2 EDF Gun/Satchel
-ispilo_rifle_skel.xsi isuser3 EDF Gun/Grenades
+
+[MPVehicles]
+xsi11 = "ispilo_rifle_skel.fbx"
+cfg11 = "issnip"
+Description11 = "EDF Sniper"
+
