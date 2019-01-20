@@ -1,4 +1,5 @@
-require "FE13Dev.FEAddon.lua.GlobalHandler";
+assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+require('_FECore');
 
 --Strings
 _Text1 = "dEPLOY tHE pROCREATOR aT a\nsECURE lOCATION, tHEN bUILD tHE\nbASE. mAJOR cERBERI aSSAULTS aRE\neXPECTED, sO mARSHAL yOUR\ndEFENSES cAREFULLY.";

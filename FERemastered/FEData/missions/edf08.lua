@@ -1,4 +1,5 @@
-require "FE13Dev.FEAddon.lua.GlobalHandler";
+assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+require('_FECore');
 
 --Strings
 local _Text1 = "Build up the base defenses and\ncreate more offensive units\nwhile Wyndt-Essex attacks the\nfirst missile turret.";

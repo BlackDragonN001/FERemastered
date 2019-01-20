@@ -1,4 +1,5 @@
-require "FE13Dev.FEAddon.lua.GlobalHandler";
+assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+require('_FECore');
 
 --Strings
 local WAIT_BEFORE_START = 2.0;

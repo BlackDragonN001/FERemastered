@@ -1,4 +1,5 @@
-require "FE13Dev.FEAddon.lua.GlobalHandler";
+assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+require('_FECore');
 
 --Strings
 local _Text1 = "yOU aRE nEAR tHE mAIN eNTRANCE\ntO tHE cERBERI bASE. dEPLOY tHE\npROCREATOR aND pREPARE a sOLID\ndEFENSE bEFORE tHE eNEMY mOUNTS\na mAJOR aTTACK!";

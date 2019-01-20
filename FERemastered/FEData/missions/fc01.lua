@@ -1,4 +1,5 @@
-require "FE13Dev.FEAddon.lua.GlobalHandler";
+assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+require('_FECore');
 
 local NUM_SOLDIERS = 7;
 local NUM_GTOWS = 5;

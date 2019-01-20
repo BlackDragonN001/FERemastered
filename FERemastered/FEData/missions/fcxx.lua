@@ -1,4 +1,5 @@
-require "FE13Dev.FEAddon.lua.GlobalHandler";
+assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+require('_FECore');
 
 --Strings
 local _Text1 = "lEAD yOUR sCIwIZARD tO tHE\nmATRIARCH, aND pROTECT hIM wHILE\nhE aTTEMPTS tO pERFORM rEPAIRS.";

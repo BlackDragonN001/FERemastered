@@ -1,4 +1,5 @@
-require ("FE13Dev.FEAddon.lua.GlobalHandler");
+assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+require('_FECore');
 
 --Strings
 local TRY_TO_CRASH = false;	--some tests may crash BZ2. Set this to true to run them anyways. If this is false, the offending code will be skipped.

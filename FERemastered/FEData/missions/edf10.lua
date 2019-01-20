@@ -1,4 +1,5 @@
-require "FE13Dev.FEAddon.lua.GlobalHandler";
+assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+require('_FECore');
 
 --Strings
 _Text1 = "The Hadean rebels have helped us\ndestroy the StarPortal, but a\nstrong Hadean loyalist force\nremains. Set up the base and \ndefenses.";

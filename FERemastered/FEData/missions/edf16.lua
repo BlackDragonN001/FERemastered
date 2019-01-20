@@ -1,4 +1,5 @@
-require "FE13Dev.FEAddon.lua.GlobalHandler";
+assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+require('_FECore');
 
 --Strings
 local _Text1 = "Establish a base at or near the\nindicated nav beacon. Your\nwingman is scouting for biometal\npools. Stay alert for Hadean\npatrols!";

@@ -1,3 +1,6 @@
+assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+require('_FECore');
+
 -- Variables Not saved. Constants that never change.
 local NUM_DEFENDERS = 10	--Player's starting forces
 local NUM_PILOTS = 8	--number of pilots that get out of Transport to crew empty Hadean ships by supply depot

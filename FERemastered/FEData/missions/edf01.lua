@@ -1,3 +1,6 @@
+assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+require('_FECore');
+
 -- Variables Not saved. Constants that never change.
 local NUM_TANKS = 6
 local NUM_SURVIVORS = 10
