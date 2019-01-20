@@ -5,18 +5,19 @@ geometryName = NULL //"igbolt00.fbx"
 classLabel = "weaponmine"
 scrapCost = 0
 scrapValue = 0
-maxHealth = 10000
-maxAmmo = 10000
+maxHealth = 0
+maxAmmo = 0
 unitName = "Soundmine"
 canCollide = 0 
 canDetect = 0 
 canInteract = 0 
 scanTeamLimit = 3
+explosionName = ""
 weaponHard1 = "Soundmine"
 weaponName1 = "mbeast1" // <<<<<<<<<<<<<<<<<
 
 [MineClass]
-lifeSpan = 90000
+lifeSpan = 1e6
 
 [WeaponMineClass]
 searchRadius = 150.0 // <<<<<<<<<<<<<<
