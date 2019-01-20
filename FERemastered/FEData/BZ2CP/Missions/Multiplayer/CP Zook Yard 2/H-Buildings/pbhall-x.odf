@@ -1,23 +1,11 @@
 [GameObjectClass]
-geometryName = "pbhall00.xsi"
-classLabel = "i76building"
+classLabel = "pbhall"
 scrapCost = 0
 scrapValue = 0
 maxHealth = 2000
-maxAmmo = 0
-unitName = "Building"
+
 heatSignature = 0.0
 imageSignature = 0.0
 radarSignature = 0.0
-collisionRadius = 0.1 //5.0
-ownsTerrain = 1
-canDetect = 0
-canInteract = 0
-
-
-armorClass = n 
-
-
-//canCollide = 1
 
 [BuildingClass]

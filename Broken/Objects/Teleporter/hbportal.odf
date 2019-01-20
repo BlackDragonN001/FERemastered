@@ -1,28 +1,12 @@
 [GameObjectClass]
-geometryName = "hbport.xsi"
-classLabel = "powerplant"
-animCount = 1
+classLabel = "hbport"
+//animCount = 1 // What anim? -GBD
 scrapCost = 30
 scrapValue = 10
 maxHealth = 3000
-maxAmmo = 0
-unitName = "Portal"
-heatSignature = 2.0
-imageSignature = 1.0
-radarSignature = 1.0
-collisionRadius = 1.0
-isAssault = 1
 
-armorClass = M
-
-requireCount = 0
-
-provideCount = 1
-provideName1 = "hbport"
-
-
+canDetect = 1
 
 [BuildingClass]
-soundAmbient = "ipgen01.wav"
 
 

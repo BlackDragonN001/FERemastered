@@ -1,18 +1,15 @@
 [GameObjectClass]
-geometryName = "ibgtow01.xsi"
-classLabel = "i76building"
-collisionRadius = 0.1 // 1.0
+classLabel = "ibgtow01"
 scrapCost = 0
 scrapValue = 0
 maxHealth = 400
-maxAmmo = 0
-unitName = "Gun Tower"
+
 heatSignature = 0.0 // 2.0
 imageSignature = 0.0 // 1.0
 radarSignature = 0.0 // 1.0
 canDetect = 0
 canInteract = 0
 
-armorClass = n
+armorClass = N
 
 [BuildingClass]

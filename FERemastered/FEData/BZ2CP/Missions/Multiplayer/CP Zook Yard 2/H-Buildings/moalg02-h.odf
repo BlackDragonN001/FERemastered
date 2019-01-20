@@ -1,19 +1,12 @@
 [GameObjectClass]
-geometryName = "moalg02.xsi"
-classLabel = "plant"
-scrapCost = 0
-scrapValue = 0
+classLabel = "moalg02"
+
 maxHealth = 0 // 200
-maxAmmo = 0
-unitName = "algae"
+
 heatSignature = 0 //0.1
 imageSignature = 0 //0.5
 radarSignature = 0 //0.1
-canDetect = 0
-canInteract = 0
-canSnipe = 0
 
 [BuildingClass]
 
 [PlantClass]
-standUp = 0

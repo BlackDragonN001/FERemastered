@@ -1,22 +1,8 @@
 [GameObjectClass]
-geometryName = "ibwseg01.xsi"
-classLabel = "i76building"
-collisionRadius = 1.0
+classLabel = "ibwseg01"
+
 scrapCost = 0
 scrapValue = 0
 maxHealth = 0 // 5000
-maxAmmo = 0
-unitName = "Wall"
-heatSignature = 0.0
-imageSignature = 0.0
-radarSignature = 0.0
-canDetect = 0
-canInteract = 0
-canSnipe = 0
-ownsTerrain = 0 //1
-
-canCollide = 0
-
-armorClass = H
 
 [BuildingClass]

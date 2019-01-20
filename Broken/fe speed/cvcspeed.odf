@@ -1,96 +1,24 @@
-// (c) BZ2CP Unit "Triton"
-// Model by Slaor and Pastell
-
 [GameObjectClass]
-
 baseName = "cvcspeed"
-geometryName = "cvscout00.xsi"
+classLabel = "cvscout"
 
-//animCount = 3
-//animName1 = "forward"
-//animFile1 = "evmislsf.xsi"
-//animName2 = "neutral"
-//animFile2 = "evmislsn.xsi"
-//animName3 = "reverse"
-//animFile3 = "evmislsr.xsi"
-classLabel = "wingman"
-
-scrapValue = 30
-scrapCost = 55
-customCost = 65
-buildTime = 15.0
-customTime = 15.0
 maxHealth = 1200
 maxAmmo = 2000
 addAmmo = 10
 unitName = "Triton Speed"
 
-aiName = "TankFriend"
-aiName2 = "TankEnemy"
-
-heatSignature = 1.5
-imageSignature = 1.5
-radarSignature = 0.3
-
 needPilot = 1
-
-isAssault = 0
 
 armorClass = N
 
-requireCount = 0
-
-
-/////// weapons ///////////////////
-
-weaponMask = 00001
-weaponHard1 = "HP_ROCKET_1"
 weaponName1 = "gcpfol"
-weaponAssault1 = 0
-
-weaponHard2 = "HP_ROCKET_2"
 weaponName2 = "gcpfol"
-weaponAssault2 = 0
 
-weaponHard3 = "HP_SHIELD_1"
-weaponName3 = "gdeflect"
-weaponAssault3 = 0
-
-////////////////////////////////////
 [CraftClass]
-rangeScan = 450.0f
-periodScan = 5.0f
-velocJam = 5.0f
 engageRange = 400
-
-braccelFactor = 0.03
-velFactor = 0.2
-steerFactor = 1.5
-omegaFactor = 0.2
-strafeFactor = 0.2
 
 avoidSpeed = 70;
 topSpeed = 70;
-
-selectWaitMsg = "evmslys1.wav"
-selectAttackMsg = "evmslat1.wav"
-selectFollowMsg = "evmslpro.wav"
-selectGoMsg = "evmslmov.wav"
-selectOtherMsg = "evmslys2.wav"
-
-goMsg = "evmslmto.wav"
-attackMsg = "evmslat.wav"
-followMeMsg = "evmslf2.wav"
-followMsg = "evmslys1.wav"
-repairMsg = "evmslrr.wav"
-reloadMsg = "evmslat1.wav"
-rescueMsg = "evmslpick.wav"
-recycleMsg = "evmslrec.wav"
-otherMsg = "evmslys2.wav" 
-holdMsg = "evmslh.wav"
-user1Msg = "evdeath01.wav"  
-killedMsg = "evmsldes.wav"
-diedMsg = "evdeath01.wav"
 
 [HoverCraftClass]
 velocForward = 70.0 // []
@@ -103,18 +31,10 @@ accelJump = 25.0 // []
 setAltitude = 1.1 // how high off the ground
 
 alphaTrack = 25.0 //springs speed it rights itself []
-alphaDamp = 8.0 //shocks []
 
 pitchPitch = 0.2 //nose up []
 pitchThrust = 0.05 //nose down []
 
 rollStrafe = 0.12 //rolls while strafing []
-omegaSpin = 4.0 //spinning in place speed []
 omegaTurn = 6.5 //turning while moving speed []
-alphaSteer = 6.5 //how fast it responds to steering []
 rollSteer = 0.1 //rolls while steering []
-
-soundThrust = "cvscout.wav"
-soundTurbo = "cvscout1.wav"
-
-
