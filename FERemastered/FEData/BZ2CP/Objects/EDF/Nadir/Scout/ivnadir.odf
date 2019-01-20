@@ -1,13 +1,13 @@
 [GameObjectClass]
-baseName = "fvnadir"
-geometryName = "fvnadir00.xsi"
+baseName = "ivnadir"
+geometryName = "ivnadir00.xsi"
 animCount = 3
 animName1 = "forward"
-animFile1 = "fvnadirsf.xsi"
+animFile1 = "ivnadirsf.xsi"
 animName2 = "neutral"
-animFile2 = "fvnadirsn.xsi"
+animFile2 = "ivnadirsn.xsi"
 animName3 = "reverse"
-animFile3 = "fvnadirsr.xsi"
+animFile3 = "ivnadirsr.xsi"
 
 classLabel = "wingman"
 scrapValue = 30
