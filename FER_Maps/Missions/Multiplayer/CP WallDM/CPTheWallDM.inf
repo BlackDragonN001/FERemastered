@@ -33,6 +33,6 @@ ivar22 = 3 // Default CPU AI skill for MPI non-turrets.
 // *not* read in, as that would cause an infinite loop
 svar1 = "Team Red" // Team name for team 1
 svar2 = "Team Blue" // Team name for team 2
-svar4 = "CPFlyPilots.txt"
+svar4 = "CPFlyPilots.odf"
 svar7 = "st" // Custom shell page to pull up [actually bzshell_multi_####.cfg]
 
