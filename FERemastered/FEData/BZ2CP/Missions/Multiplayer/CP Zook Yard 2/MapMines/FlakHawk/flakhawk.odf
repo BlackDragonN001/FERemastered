@@ -23,14 +23,14 @@ damageValue(S) = 0 // standard
 damageValue(D) = 0 // deflection
 damageValue(A) = 0 // absorbtion
 
-//[Render]
-//renderBase = "draw_twirl_trail"
-//textureName = "particle.tga"
-//textureBlend = "one one modulate"
-//startColor = "255 255 0 150"
-//finishColor = "255 255 0 0"
-//startRadius = 0.1
-//finishRadius = 0.5
+[Render]
+renderBase = "draw_twirl_trail"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 150"
+finishColor = "255 255 0 0"
+startRadius = 0.1
+finishRadius = 0.5
 animateTime = 0.2
 emitDelay = 0.001
 emitVariance = "3.0 3.0 3.0"

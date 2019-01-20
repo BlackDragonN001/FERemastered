@@ -1,0 +1,25 @@
+[GameObjectClass]
+geometryName = "crate01.xsi"//"appack00.fbx"
+classLabel = "wpnpower"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 0
+
+heatSignature = 0
+imageSignature = 0
+radarSignature = 0
+
+aiName = "PowerUpProcess"
+
+lightHard1 = "hp_light_1"
+lightName1 = "omniyellow"
+
+ignoreMissingInf = 1
+
+[PowerUpClass]
+soundPickup = "pickup01.wav"
+soundReject = "reject.wav"
+
+[WeaponPowerupClass]
+weaponName = "NULL"

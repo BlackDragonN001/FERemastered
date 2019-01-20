@@ -7,7 +7,7 @@ shotSound = "baz03.wav"
 xplGround = "xmortgnd"
 xplVehicle = "xmortxpl"
 xplBuilding = "xmortxpl"
-xplExpire = "smirv"
+xplExpire = NULL //"smirv" // ??? You can't point an explosion to a mine. -GBD
 
 renderName = "omirv1.render"
 

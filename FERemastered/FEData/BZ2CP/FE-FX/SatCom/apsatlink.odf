@@ -1,22 +1,16 @@
 [GameObjectClass]
-geometryName = "apspec00.xsi"
-classLabel = "wpnpower"
+baseName = "apsatlink"
+classLabel = "apspecial"
+
 scrapCost = 20
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
 
 requireCount = 1
 requireName1 = "ibarmo"
+requireText1 = "Build Armory"
 
-lightHard1 = "hp_light_1"
-lightName1 = "omnired"
+unitName = "Laser Pointer"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "satlink"

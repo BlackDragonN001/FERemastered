@@ -1,40 +1,7 @@
 [GameObjectClass]
 geometryName = "FeRpool01.xsi"
-classLabel = "deposit"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 20
-maxAmmo = 0
-unitName = "Biometal Pool"
-heatSignature = 0.0
-imageSignature = 0.0
-radarSignature = 0.0
-collisionRadius = 1.0
-
-effectHard1 = "hp_emit_1"
-effectName1 = "tepool01.render"
+classLabel = "tepool01"
 
 [BuildingClass]
-tunnelCount = 1
-
-tunnel01X0 = 1
-tunnel01Z0 = 1
-tunnel01DX = 2
-tunnel01DZ = 2
-tunnel01Edge = "wwtw"
 
 [DepositClass]
-
-[Render]
-renderBase = "draw_twirl_trail"
-textureName = "flame.tga"
-textureBlend = "one one modulate"//"srcalpha invsrcalpha modulatealpha"
-startColor = "153 153 153 150
-finishColor = "76 76 76 0"
-startRadius = 5.5
-finishRadius = 8.0
-animateTime = 1.0
-emitDelay = 0.1
-emitVelocity = "0.5 10.0 0.5"
-emitVariance = "10.0 1.0 10.0"
-emitLife = 1.0

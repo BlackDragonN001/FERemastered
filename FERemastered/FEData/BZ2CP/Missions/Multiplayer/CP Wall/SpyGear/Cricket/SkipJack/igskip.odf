@@ -11,30 +11,30 @@ isFlying = 0
 wpnCategory = "HAND"
 
 // external geometry
-geometryName = "igsnip_skel.xsi"
-geometryScale = 0.12
+geometryName = "igsnip_skel.fbx"
+//geometryScale = 0.12
 animCount = 4
-animName1 = "stand"
-animFile1 = "igsnip_stand.xsi"
+animName1 = "skel"
+animFile1 = "igsnip_skel.fbx"
 animName2 = "walk"
-animFile2 = "igsnip_stand.xsi"
+animFile2 = "igsnip_skel.fbx"
 animName3 = "crouch"
-animFile3 = "igsnip_deploy.xsi"
+animFile3 = "igsnip_deploy.fbx"
 animName4 = "jump"
-animFile4 = "igsnip_stand.xsi"
+animFile4 = "igsnip_skel.fbx"
 
 // cockpit geometry
-cockpitName = "iwrifl_cockpit_stand.xsi"
-cockpitScale = 0.12
+cockpitName = "iwrifl_cockpit_skel.fbx"
+//cockpitScale = 0.8
 animCountCockpit = 4
-animNameCockpit1 = "stand"
-animFileCockpit1 = "iwrifl_cockpit_stand.xsi"
+animNameCockpit1 = "skel"
+animFileCockpit1 = "iwrifl_cockpit_skel.fbx"
 animNameCockpit2 = "walk"
-animFileCockpit2 = "iwrifl_cockpit_run.xsi"
+animFileCockpit2 = "iwrifl_cockpit_run.fbx"
 animNameCockpit3 = "crouch"
-animFileCockpit3 = "iwrifl_cockpit_sniper.xsi"
+animFileCockpit3 = "iwrifl_cockpit_sniper.fbx"
 animNameCockpit4 = "jump"
-animFileCockpit4 = "iwrifl_cockpit_stand.xsi"
+animFileCockpit4 = "iwrifl_cockpit_skel.fbx"
 
 
 [CannonClass]

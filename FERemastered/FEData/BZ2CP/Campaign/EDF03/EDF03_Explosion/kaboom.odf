@@ -1,13 +1,13 @@
 [GameObjectClass]
 classLabel = "satchel"
-geometryName = "null"
-geometryScale = 1.0
+geometryName = NULL
 scrapCost = 0
 scrapValue = 0
 maxHealth = 100000
 maxAmmo = 1
 unitName = "megacannon"
 explosionName = "xkaboom"
+canInteract = 0
 
 [BuildingClass]
 

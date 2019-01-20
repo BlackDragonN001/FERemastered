@@ -1,20 +1,14 @@
 [GameObjectClass]
-geometryName = "crate03.xsi"
-geometryScale = .7 
-classLabel = "wpnpower"
-scrapCost = 20
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+baseName = "appinger"
+classLabel = "apcrate3"
 
-lightHard1 = "hp_light_1"
+scrapCost = 20
+
+unitName = "Sat Probe"
+
 lightName1 = "omnired"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "igpinger"

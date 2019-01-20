@@ -1,8 +1,6 @@
 [GameObjectClass]
-geometryName = NULL 
-classLabel = "flare"
-scrapCost = 0
-scrapValue = 0
+classLabel = "FXMine"
+
 maxHealth = 300
 maxAmmo = 100
 unitName = "Fire"
@@ -24,7 +22,3 @@ damageValue(H) = 0 // heavy
 damageValue(S) = 100 // standard
 damageValue(D) = 200 // deflection
 damageValue(A) = 50 // absorbtion
-
-kickRadius = 0 //20.0
-kickVeloc = 0 // 0.2
-kickOmega = 0 //0.5

@@ -1,20 +1,12 @@
 [GameObjectClass]
-geometryName = "crate01.xsi"//"apspec00.xsi"
-geometryScale = .7 
-classLabel = "wpnpower"
-scrapCost = 20
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+baseName = "apdisruptor"
+classLabel = "apcrate1"
 
-lightHard1 = "hp_light_1"
-lightName1 = "omniyellow"
+scrapCost = 30
+
+unitName = "Disruptor"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "igdisrup_c"

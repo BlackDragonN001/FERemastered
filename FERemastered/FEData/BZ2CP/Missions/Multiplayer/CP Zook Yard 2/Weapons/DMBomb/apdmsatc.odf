@@ -1,22 +1,16 @@
 [GameObjectClass]
-geometryName = "apspec00.xsi"
-classLabel = "wpnpower"
+baseName = "apdmsatc"
+classLabel = "appack"
+
 scrapCost = 20
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+
+unitName = "Time Bomb"
 
 requireCount = 1
-requireName1 = "ibtrain"
-
-lightHard1 = "hp_light_1"
-lightName1 = "omnired"
+requireName1 = "ibtcen"
+requireText1 = "Build Tech Center"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "igdmsatc"

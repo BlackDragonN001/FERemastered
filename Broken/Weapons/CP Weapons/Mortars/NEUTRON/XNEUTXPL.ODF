@@ -6,7 +6,7 @@
 classLabel = "explosion"
 
 particleTypes = 3
-particleClass1 = "xneutxpl.sparkle"
+particleClass1 = "xneutxpl.core" //sparkle" // sparkle doesn't exist, never worked. -GBD
 particleCount1 = 10
 particleVeloc1 = "2.0 2.0 2.0"
 particleClass2 = "xneutxpl.shock"

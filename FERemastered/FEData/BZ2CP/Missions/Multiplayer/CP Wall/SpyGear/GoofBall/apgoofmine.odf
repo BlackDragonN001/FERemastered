@@ -1,21 +1,13 @@
 [GameObjectClass]
-geometryName = "crate02.xsi"
-geometryScale = .7 
-classLabel = "wpnpower"
-scrapCost = 20
-scrapValue = 0
-maxHealth = 3500
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
-canDetect=0
+baseName = "apgoofmine"
+classLabel = "apcrate2"
 
-lightHard1 = "hp_light_1"
-lightName1 = "omnired"
+scrapCost = 30
+maxHealth = 3500
+
+unitName = "Goofball"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "iggoofmine"

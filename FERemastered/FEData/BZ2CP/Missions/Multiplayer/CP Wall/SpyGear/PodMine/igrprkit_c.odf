@@ -1,6 +1,6 @@
 [WeaponClass]
 classLabel = "dispenser"
-geometryName = "sgsatc00.xsi"
+geometryName = "fgsatc00.xsi"
 geometryScale = 0.12
 wpnName = "Service Pod"
 ordName = NULL
@@ -11,7 +11,7 @@ fireSound = "mnu_back.wav"
 wpnReticle = "gproxmin"
 wpnLadder = "gmortar.L0"
 wpnPriority = 3
-wpnCategory = "SPEC" // 
+wpnCategory = "SPEC"
 isAssault = 0
 altName = "igrprkit_a"
 

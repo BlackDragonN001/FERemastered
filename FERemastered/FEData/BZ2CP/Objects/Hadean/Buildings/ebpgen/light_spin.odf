@@ -1,23 +1,14 @@
-[GameObjectClass]
-geometryName="ibspot00.xsi"
-classLabel="i76sign"
-collisionRadius=0.0
-scrapCost=0
-scrapValue=0
-maxHealth=100
-maxAmmo=0
-unitName="Light"
-canDetect=0
-canInteract=0
-heatSignature=0.8
-imageSignature=8.0
-radarSignature=1.0
-
-armorClass=H
-
-lightHard1="hp_light_1"
-lightName1="spotwhite3"
-
-[BuildingClass]
-
-
+[LightClass]
+classLabel="spotlight"
+lightColor.r=2.5
+lightColor.g=2.7
+lightColor.b=15.5
+lightColor.a=1.0
+lightRange=0.10
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+coneFalloff=1.0
+coneAngInner=0.5
+coneAngOuter=20.0

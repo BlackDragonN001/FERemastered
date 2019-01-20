@@ -1,22 +1,16 @@
 [GameObjectClass]
-geometryName = "apmort00.xsi"
-classLabel = "wpnpower"
+baseName = "apmort"
+classLabel = "apmortar"
+
 scrapCost = 40
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+
+unitName = "Plasma Mortar"
 
 requireCount = 1
 requireName1 = "ibarmo"
-
-lightHard1 = "hp_light_1"
-lightName1 = "omnibrown"
+requireText1 = "Build Armory"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "gplasmrt"

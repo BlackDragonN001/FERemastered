@@ -45,12 +45,12 @@ BumpBlend1 = "srcalpha invsrcalpha modulatealpha"
 [Texture]
 TileTexture1 = "t16.bmp"
 TileTexture2 = "t89.bmp"
-TileTexture3 = "t87.bmp"
+TileTexture3 = "" //"t87.bmp" // Doesn't exist. -GBD
 TileTexture4 = "t63.bmp"
 TileTexture5 = "t61.bmp"
 TileTexture6 = "t93.bmp"
-TileTexture7 = "t20.bmp"
-TileTexture8 = "t18.bmp"
+//TileTexture7 = "t20.bmp" // These don't exist either. :( -GBD
+//TileTexture8 = "t18.bmp"
 
 [DomeLight0]
 Name    = "miresky"

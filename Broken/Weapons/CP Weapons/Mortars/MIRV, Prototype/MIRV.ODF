@@ -1,23 +1,16 @@
 [GameObjectClass]
-geometryName = "apspec00.xsi"
-classLabel = "wpnpower"
+baseName = "MIRV"
+classLabel = "apspecial"
+
 scrapCost = 1
-scrapValue = 0
-maxHealth = 150
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+
+unitName = "MIRV"
 
 requireCount = 1
 requireName1 = "ibarmo"
-
-
-lightHard1 = "hp_light_1"
-lightName1 = "omnired"
+requireText1 = "Build Armory"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "gmirv"

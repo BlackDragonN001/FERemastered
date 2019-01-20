@@ -1,36 +1,13 @@
 [GameObjectClass]
-geometryName = NULL //"igflar00.xsi"
-classLabel = "flare"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 0 // 150
-maxAmmo = 1E6 // 100
+classLabel = "FXMine"
+
 unitName = "Toxic Mine"
 
-heatSignature = 0.0
-imageSignature = 0.0
-radarSignature = 0.0
-canDetect = 0
-canInteract = 0
-canSnipe = 0
-canCollide = 0
-
 [MineClass]
-lifeSpan = 1e6 //10.0
 
 [FlareMineClass]
 payloadName = "toxic"
-fireSound = NULL //"smine01.wav"
+
 triggerDelay = 0.001 // 2.0
 shotDelay = 1.0 // 0.02
-shotVariance = 0 // 0.2
-damageRadius = 2.0 // 20.0
-damageValue(N) = 0 // 100 // none
-damageValue(L) = 0 // 50 // light
-damageValue(H) = 0 //5 // heavy
-damageValue(S) = 0 // standard
-damageValue(D) = 0 // deflection
-damageValue(A) = 0 // absorbtion
-kickRadius = 0 // 20.0
-kickVeloc = 0 // 0.2
-kickOmega = 0 // 0.5
+

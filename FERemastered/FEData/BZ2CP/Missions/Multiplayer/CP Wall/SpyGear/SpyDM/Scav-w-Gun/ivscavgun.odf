@@ -4,9 +4,9 @@ geometryName = "ivscavgun00.xsi"
 cockpitName = "ivscav_cockpit.xsi"
 animCount = 1
 animName1 = "deploy"
-animFile1 = "ivscav00.xsi"
+animFile1 = "ivscavgun00.xsi"
 classLabel = "scavenger" 
-geometryScale = 0.75
+//geometryScale = 0.75
 scrapValue = 0 // 10
 scrapCost = 0 // 20
 buildTime = 1.0
@@ -53,7 +53,7 @@ periodScan = 2.0
 velocJam = 0.0
 
 braccelFactor = .2f // 0.05f;
-strafeFactor = 0.1f;
+//strafeFactor = 0.1f;
 steerFactor = .85f;
 omegaFactor = 0.01f;
 velFactor = 0.2f;
@@ -126,9 +126,9 @@ pitchMin = -0.3 // -0.2
 pitchMax = 1.5 // 1.0
 
 [Lod1]
-geometryName = "ivscavL1.xsi" ;geometry for lod1
-distance = 75 // 50
+//geometryName = "ivscavL1.xsi" ;geometry for lod1
+//distance = 75 // 50
 
 [Lod2]
-geometryName = "ivscavL2.xsi" ;geometry for lod2
-distance = 175 // 135                ;...distance over this many meters => switch to lod2
+//geometryName = "ivscavL2.xsi" ;geometry for lod2
+//distance = 175 // 135                ;...distance over this many meters => switch to lod2

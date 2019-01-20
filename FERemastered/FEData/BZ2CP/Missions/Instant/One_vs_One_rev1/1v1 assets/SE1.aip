@@ -173,12 +173,12 @@ plantype = "collectpool"
 planpriority = 149
 donextonfail = 1
 
-[plan23]
+[plan24]
 plantype = "collectpool"
 planpriority = 148
 donextonfail = 1
 
-[plan24]
+[plan25]
 plancondition = "Hisexists"
 planconditionclass = "ibgtow"
 planconditioncount = 2
@@ -188,7 +188,7 @@ buildtype1 = "fvatank"
 buildcount1 = 1
 donextonfail = 1
 
-[plan25]
+[plan26]
 plancondition = "Exists"
 planconditionclass = "fvatank"
 planconditioncount = 1

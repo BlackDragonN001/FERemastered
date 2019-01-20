@@ -2,30 +2,30 @@
 classLabel = "cannon"
 
 // external geometry
-geometryName = "sgbzka_stand.xsi"
+geometryName = "fgbzka_stand.xsi"
 geometryScale = 0.12
 animCount = 4
 animName1 = "stand"
-animFile1 = "sgbzka_stand.xsi"
+animFile1 = "fgbzka_stand.xsi"
 animName2 = "walk"
-animFile2 = "sgbzka_stand.xsi"
+animFile2 = "fgbzka_stand.xsi"
 animName3 = "crouch"
-animFile3 = "sgbzka_stand.xsi"
+animFile3 = "fgbzka_stand.xsi"
 animName4 = "jump"
-animFile4 = "sgbzka_stand.xsi"
+animFile4 = "fgbzka_stand.xsi"
 
 // cockpit geometry
-cockpitName = "swbzka_cockpit_stand.xsi"
+cockpitName = "fwbzka_cockpit_stand.xsi"
 cockpitScale = 0.12
 animCountCockpit = 4
 animNameCockpit1 = "stand"
-animFileCockpit1 = "swbzka_cockpit_stand.xsi"
+animFileCockpit1 = "fwbzka_cockpit_stand.xsi"
 animNameCockpit2 = "walk"
-animFileCockpit2 = "swbzka_cockpit_run.xsi"
+animFileCockpit2 = "fwbzka_cockpit_run.xsi"
 animNameCockpit3 = "crouch"
-animFileCockpit3 = "swbzka_cockpit_stand.xsi"
+animFileCockpit3 = "fwbzka_cockpit_stand.xsi"
 animNameCockpit4 = "jump"
-animFileCockpit4 = "swbzka_cockpit_stand.xsi"
+animFileCockpit4 = "fwbzka_cockpit_stand.xsi"
 
 ordName = "sbazooka_c2"
 wpnName = "Scion Rocket"
@@ -34,7 +34,8 @@ wpnReticle = "gshotgun"
 wpnCategory = "HAND"
 isAssault = 0
 isFlying = 0
-altName = "sgbzka_a"
+altName = "fgbzka_a"
+flashName = "fgbzka_c2.flash"
 
 [CannonClass]
 shotDelay = 1.0

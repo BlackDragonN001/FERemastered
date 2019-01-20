@@ -1,6 +1,6 @@
 [GameObjectClass]
 geometryName = "ivcricket00.xsi"
-geometryScale = 1.2
+//geometryScale = 1.2
 classLabel = "wingman"
 scrapCost = 0
 scrapValue = 0
@@ -37,7 +37,7 @@ weaponName2 = "igneurnet"
 weaponAssault2 = 1
 weaponHard3 = "HP_SPECIAL_1"
 weaponName3 = "igsporemine"
-weaponAssault2 = 1
+weaponAssault3 = 1
 
 [Render]
 renderBase = "draw_multi"

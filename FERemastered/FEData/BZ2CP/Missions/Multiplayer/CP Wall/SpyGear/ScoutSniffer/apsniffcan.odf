@@ -1,20 +1,13 @@
 [GameObjectClass]
-geometryName = "crate02.xsi"//"apspec00.xsi"
-geometryScale = .7 
-classLabel = "wpnpower"
-scrapCost = 20
-scrapValue = 0
-maxHealth = 40
-maxAmmo = 0
-unitName = NULL
-aiName = "PowerUpProcess"
+baseName = "apsniffcan"
+classLabel = "apcrate2"
 
-lightHard1 = "hp_light_1"
-lightName1 = "omnired"
+scrapCost = 20
+maxHealth = 40
+
+unitName = "Sniffer"
 
 [PowerUpClass]
-soundPickup = "pickup01.wav"
-soundReject = "reject.wav"
 
 [WeaponPowerupClass]
 weaponName = "igsniffcan"
