@@ -200,16 +200,25 @@ local M = {
 }
 
 function Save()
+
+	_FECore.Save();
+	
 	return M;
 end
 
 function Load(...)
+
+	_FECore.Load();
+	
     if select('#', ...) > 0 then
 		M = ...;
     end
 end
 
 function InitialSetup()
+
+	_FECore.InitialSetup();
+
 	M.TPS = EnableHighTPS();
 	--Preload ODFs to reduce lag spikes when things are spawned in for the first time
 	PreloadODF("evcons");
@@ -257,6 +266,9 @@ function InitialSetup()
 end
 
 function Start()
+
+	_FECore.Start();
+
 	M.HadeanCommBunk = GetHandleOrDie("unnamed_ebcbun7");
 	M.HadeanPower = GetHandleOrDie("uplink_ebpgen");
 	M.Tug1 = GetHandleOrDie("conship1_ivtug");
@@ -279,6 +291,9 @@ function GetHandleOrDie(name)
 end
 
 function AddObject(h)
+
+	_FECore.AddObject(h);
+
 	if M.BreachOpened and IsPlayer(h) and IsPerson(h) then
 		GiveWeapon(h, "igjetp");
 	elseif IsOdf(h, "ivcons") then
@@ -288,9 +303,14 @@ end
 
 function DeleteObject(h)
 
+	_FECore.DeleteObject(h);
+
 end
 
 function Update()
+
+	_FECore.Update();
+
 	M.Player = GetPlayerHandle();
 	Routine2();
 	Routine3();

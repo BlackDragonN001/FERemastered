@@ -112,6 +112,9 @@ local M = {
 }
 
 function InitialSetup()
+
+	_FECore.InitialSetup();
+	
 	M.TPS = EnableHighTPS();
 	DefineRoutines();
 	--Preload to reduce lag spikes when resources are used for the first time.
@@ -163,10 +166,16 @@ function InitialSetup()
 end
 
 function Save()
+
+	_FECore.Save();
+	
     return M;
 end
 
 function Load(...)
+
+	_FECore.Load();
+
 	if select('#', ...) > 0 then
 		M = ...;
     end
@@ -225,6 +234,9 @@ function DefineRoutines()
 end
 
 function Start()
+
+	_FECore.Start();
+
 	Ally(1, 5);
 	Ally(5, 1);
 	Ally(1, 13);
@@ -266,13 +278,20 @@ end
 
 function AddObject(h)
 
+	_FECore.AddObject(h);
+
 end
 
 function DeleteObject(h)
 	
+	_FECore.DeleteObject(h);
+	
 end
 
 function Update()
+
+	_FECore.Update();
+
 	M.Player = GetPlayerHandle();
 	for routineID,r in pairs(Routines) do
 		if M.RoutineActive[routineID] and M.RoutineWakeTime[routineID] <= GetTime() then

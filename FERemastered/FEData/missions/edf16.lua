@@ -127,16 +127,25 @@ local M = {
 }
 
 function Save()
+
+	_FECore.Save();
+	
     return M
 end
 
 function Load(...)
+
+	_FECore.Load();
+	
     if select('#', ...) > 0 then
 		M = ...
     end
 end
 
 function InitialSetup()
+
+	_FECore.InitialSetup();
+	
 	M.TPS = EnableHighTPS();
 	--Preloading reduces lag spikes when resources are used for the first time
 	local preloadOdf = {
@@ -182,6 +191,9 @@ function GetHandleOrDie(name)
 end
 
 function Start()
+
+	_FECore.Start();
+
 	Ally(1, 6);
 	Ally(2, 3);
 	Ally(3, 4);
@@ -235,6 +247,9 @@ function Start()
 end
 
 function AddObject(h)
+
+	_FECore.AddObject(h);
+
 	if GetOdf(h) == "ibsbay.odf" then
 		M.Object46 = h;
 		SetObjectiveName(M.Object46, "Service Bay");
@@ -252,6 +267,9 @@ function AddObject(h)
 end
 
 function DeleteObject(h)
+
+	_FECore.DeleteObject(h);
+	
 	for i=1,table.getn(M.EvacuateUnits) do
 		if M.EvacuateUnits[i] == h then
 			table.remove(M.EvacuateUnits, i);
@@ -271,6 +289,9 @@ function PreGetIn(world, pilot, craft)
 end
 
 function Update()
+
+	_FECore.Update();
+
 	M.Object10 = GetPlayerHandle();
 	Routine1();
 	Routine2();
