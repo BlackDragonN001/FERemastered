@@ -1,13 +1,15 @@
-// Created by Slaor and Pastell
+// (c) BZ2CP unit "Repair Drone"
+// Original Concept: Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
 
 [GameObjectClass]
 baseName = "evserv"
-geometryName = "evserv_skel.xsi"
+geometryName = "evserv_skel.fbx"
 //cockpitName = "ivserv_cockpit.xsi"
 classLabel = "service"
 animCount = 1
 animName1 = "deploy"
-animFile1 = "evserv_repair.xsi"
+animFile1 = "evserv_repair.fbx"
 scrapValue = 20
 scrapCost = 50
 buildTime = 10.0
