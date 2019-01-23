@@ -79,6 +79,9 @@ local M = {
 }
 
 function InitialSetup()
+
+	_FECore.InitialSetup();
+	
 	M.TPS = EnableHighTPS();
 	--Preload to reduce lag spikes when resources are used for the first time.
 	local preloadOdf = {
@@ -116,10 +119,16 @@ function InitialSetup()
 end
 
 function Save()
+
+	_FECore.Save();
+	
     return M
 end
 
 function Load(...)
+
+	_FECore.Load();
+	
     if select('#', ...) > 0 then
 		M = ...
     end
@@ -131,6 +140,9 @@ function GetHandleOrDie(name)
 end
 
 function Start()
+
+	_FECore.Start();
+	
 	Ally(6, 1);
 	M.Procreator = GetHandleOrDie("unnamed_evrecy");
 	M.CerbAssembler = GetHandleOrDie("Cerberi Assembler");
@@ -139,16 +151,24 @@ function Start()
 end
 
 function AddObject(h)
+
+	_FECore.AddObject(h);
+
 	if GetCfg(h) == "zapmine" then
 		M.ArkUplink = h;
 	end
 end
 
 function DeleteObject(h)
+
+	_FECore.DeleteObject(h);
 	
 end
 
 function Update()
+
+	_FECore.Update();
+
 	M.Player = GetPlayerHandle();
 	Routine1();
 	Routine2();

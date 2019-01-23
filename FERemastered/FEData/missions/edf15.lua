@@ -79,16 +79,25 @@ local M = {
 }
 
 function Save()
+
+	_FECore.Save();
+	
     return M
 end
 
 function Load(...)
+	
+	_FECore.Load();
+	
     if select('#', ...) > 0 then
 		M = ...
     end
 end
 
 function InitialSetup()
+
+	_FECore.InitialSetup();
+
 	M.TPS = EnableHighTPS();
 	PreloadODF("ibrecy");
 	PreloadODF("evscout");
@@ -133,6 +142,9 @@ function GetHandleOrDie(name)
 end
 
 function Start()
+
+	_FECore.Start()
+
 	M.Recycler = BuildObject("ibrecy", 1, BuildDirectionalMatrix(GetPosition("recy")));
 	M.CerbRecy = GetObjectByTeamSlot(5, 1);
 	M.Jammer = GetHandleOrDie("cbjamm");
@@ -149,9 +161,14 @@ end
 
 function AddObject(h)
 	
+	_FECore.AddObject(h);
+	
 end
 
 function Update()
+
+	_FECore.Update();
+
 	M.Player = GetPlayerHandle();
 	Routine1();
 	Routine2();

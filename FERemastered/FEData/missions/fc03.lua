@@ -74,6 +74,9 @@ local M = {
 }
 
 function InitialSetup()
+	
+	_FECore.InitialSetup();
+	
 	M.TPS = EnableHighTPS();
 	--Preload to reduce lag spikes when resources are used for the first time.
 	local preloadOdf = {
@@ -114,10 +117,16 @@ function InitialSetup()
 end
 
 function Save()
+
+	_FECore.Save();
+	
     return M;
 end
 
 function Load(...)
+
+	_FECore.Load();
+	
     if select('#', ...) > 0 then
 		M = ...;
     end
@@ -129,6 +138,9 @@ function GetHandleOrDie(name)
 end
 
 function Start()
+
+	_FECore.Start();
+	
 	Ally(6, 1);
 	M.ScionPortal = GetHandleOrDie("portalfriend");
 	M.CerbPowerGen = GetHandleOrDie("power2");
@@ -140,6 +152,9 @@ function Start()
 end
 
 function AddObject(h)
+
+	_FECore.AddObject(h);
+
 	if M.RescuedMatriarch and GetCfg(h) == "fspilo" then
 		ReplaceObject(h, "anti", 6, 0.0, -1, false);
 	elseif GetCfg(h) == "fvsentfc03" then
@@ -152,10 +167,15 @@ function AddObject(h)
 end
 
 function DeleteObject(h)
+
+	_FECore.DeleteObject(h);
 	
 end
 
 function Update()
+
+	_FECore.Update();
+
 	M.Player = GetPlayerHandle();
 	Routine1();
 	Routine4();

@@ -60,16 +60,25 @@ local M = {
 }
 
 function Save()
+
+	_FECore.Save();
+	
     return M
 end
 
 function Load(...)
+
+	_FECore.Load();
+	
     if select('#', ...) > 0 then
 		M = ...
     end
 end
 
 function InitialSetup()
+
+	_FECore.InitialSetup();
+	
 	M.TPS = EnableHighTPS();
 	PreloadODF("ivrecy");
 	PreloadODF("ivscout");
@@ -108,6 +117,9 @@ function GetHandleOrDie(name)
 end
 
 function Start()
+
+	_FECore.Start();
+	
 	M.TechCenter1 = GetHandleOrDie("Tech1");
 	M.TechCenter2 = GetHandleOrDie("Tech2");
 	M.ExitShaft = GetHandleOrDie("Shaft");
@@ -120,6 +132,9 @@ function Start()
 end
 
 function AddObject(h)
+
+	_FECore.AddObject(h);
+
 	if IsOdf(h, "ibrecy") then	--Player tried to deploy the recycler
 		SetTeamNum(M.Recycler, 0);
 		StartEarthQuake(30.0);
@@ -131,6 +146,9 @@ function AddObject(h)
 end
 
 function Update()
+
+	_FECore.Update();
+	
 	M.Player = GetPlayerHandle();
 	Routine1();
 	Routine2();

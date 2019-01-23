@@ -95,16 +95,25 @@ local M = {
 }
 
 function Save()
+
+	_FECore.Save();
+	
 	return M
 end
 
 function Load(...)
+
+	_FECore.Load();
+	
     if select('#', ...) > 0 then
 		M = ...
     end
 end
 
 function InitialSetup()
+
+	_FECore.InitialSetup();
+	
 	PreloadODF("nadir");
 	PreloadODF("ivscout11");
 	PreloadODF("ivserv");
@@ -135,6 +144,9 @@ function InitialSetup()
 end
 
 function Start()
+	
+	_FECore.Start();
+
 	M.Object_WyndtEssex = GetHandle("Rodriguez");
 	M.Object_Corbernav = GetHandle("Corbernav");
 	M.Object_Condor = GetHandle("condor");
@@ -167,13 +179,20 @@ end
 
 function AddObject(h)
 
+	_FECore.AddObject(h);
+
 end
 
 function DeleteObject(h)
 
+	_FECore.DeleteObject(h);
+
 end
 
 function Update()
+
+	_FECore.Update();
+
 	M.Object_Player = GetPlayerHandle();
 	if(M.MissionTimer < GetTime()) then
 		if M.MissionState == 0 then

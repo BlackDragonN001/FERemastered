@@ -158,13 +158,53 @@ function MRH_InitialSetup() --Start()
 				WriteToFile(filename, mystring);
 			print("Group is: " .. tostring(Group));
 			
+				local lifespan = GetRemainingLifespan(ObjectList[n])
+				if lifespan == nil then
+					lifespan = -1
+				end
+				mystring = "Lifespan = " .. tostring(lifespan);
+				WriteToFile(filename, mystring);
+				
+				mystring = "CanSnipe = " .. tostring(GetCanSnipe(ObjectList[n]));
+				WriteToFile(filename, mystring);
+				
+				local CurTarget = GetTarget(ObjectList[n]);
+				if CurTarget ~= nil then
+					local targetlabel = GetLabel(CurTarget);
+					if targetlabel == nil then
+						targetlabel = ""
+					end
+					local mystring = "CurTargetLabel = \"" .. targetlabel .. "\"";
+					WriteToFile(filename, mystring);
+					
+					SetLabel(CurWho, "Object" .. n .. "_Target");
+				end				
 			
-				-- Lifespan? CanSnipe? WeaponMask? CurrCommand?
+				mystring = "CurCommand = " .. tostring(GetCurrentCommand(ObjectList[n]));
+				WriteToFile(filename, mystring);
+				
+				local CurWho = GetCurrentWho(ObjectList[n]);
+				if CurWho ~= nil then
+					local wholabel = GetLabel(CurWho);
+					if wholabel == nil then
+						wholabel = ""
+					end
+					local mystring = "CurWhoLabel = \"" .. wholabel .. "\"";
+					WriteToFile(filename, mystring);
+					
+					SetLabel(CurWho, "Object" .. n .. "_Who");
+				end
+				local CurWhere = GetCurrentCommandWhere(ObjectList[n]);
+				mystring = "CurWhere = \"" .. CurWhere.x .. " " .. CurWhere.y .. " " .. CurWhere.z .. "\"";
+				WriteToFile(filename, mystring);
+				
+			
+				-- WeaponMask? CurrCommand?
 				
 				
 				-- If we want to delete this object immediately, do it.
 				if b_saveload == 3 then
-					RemoveObject(Objec[n]);
+					RemoveObject(ObjectList[n]);
 				end
 
 			end
@@ -217,6 +257,15 @@ function MRH_InitialSetup() --Start()
 			local independence = GetODFInt(filename, mystring, "Independence");
 			local group = GetODFInt(filename, mystring, "Group");
 			
+			local lifespan = GetODFFloat(filename, mystring, "Lifespan");
+			local cansnipe = GetODFBool(filename, mystring, "CanSnipe");
+			
+			local targetlabel = GetODFString(filename, mystring, "CurTargetLabel");
+			
+			local curcmd = GetODFInt(filename, mystring, "CurCommand");
+			local wholabel = GetODFString(filename, mystring, "CurWhoLabel");
+			local curwhere = GetODFVector(filename, mystring, "CurWhere");
+			
 			-- Build the object, and set it's variables.
 			local h = BuildObject(odf, team, mat);
 			SetVelocity(h, velocity);
@@ -262,6 +311,26 @@ function MRH_InitialSetup() --Start()
 			if group ~= -1 then
 				SetGroup(h, group);
 			end
+			
+			if lifespan ~= -1 then
+				SetLifespan(h, lifespan);
+			end
+			
+			SetCanSnipe(h, cansnipe);
+			
+			local NewTarget = GetHandle("Object" .. n .. "_Target");
+			SetLabel(NewTarget, targetlabel);
+			SetTarget(h, NewTarget);
+			
+			local NewWho = GetHandle("Object" .. n .. "_Who");
+			SetLabel(NewWho, wholabel);
+			local priority = (group == -1);
+			if not IsNullVector(curwhere) then
+				SetCommand(h, curcmd, priority, NewWho, curwhere);
+			else
+				SetCommand(h, curcmd, priority, NewWho);
+			
+			
 		
 		end	
 	end

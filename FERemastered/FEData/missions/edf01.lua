@@ -116,6 +116,9 @@ end
 
 
 function InitialSetup()
+
+	_FECore.Start();
+	
 	M.TPS = EnableHighTPS();
 	DefineRoutines();
 	--Preload to reduce lag spikes when resources are used for the first time.
@@ -154,21 +157,33 @@ function InitialSetup()
 end
 
 function Save()
+
+	_FECore.Save();
+
     return M
 end
 
 function Load(...)
+
+	_FECore.Load();
+
     if select('#', ...) > 0 then
 		M = ...
     end
 end
 
 function Start()
+
+	_FECore.Start();
+
 	M.Dropship = GetHandleOrDie("DropShip");
 end
 
 
 function AddObject(h)
+
+	_FECore.AddObject(h);
+
 	if GetCfg(h) == "ispilo" and not IsPlayer(h) and M.RoutineState[1] < 4 then
 		M.ShultzPilot = h;
 	elseif GetCfg(h) == "evtank" or GetCfg(h) == "evscout" then
@@ -177,6 +192,9 @@ function AddObject(h)
 end
 
 function DeleteObject(h)
+
+	_FECore.DeleteObject(h);
+	
 	if GetCfg(h) == "evtank" or GetCfg(h) == "evscout" then
 		M.HadeanUnitsCount = M.HadeanUnitsCount - 1;
 	elseif GetCfg(h) == "ivtank" or GetCfg(h) == "ivtank_e01" then
@@ -186,6 +204,9 @@ function DeleteObject(h)
 end
 
 function Update()
+
+	_FECore.Update();
+
 	M.Player = GetPlayerHandle();
 	for routineID,r in pairs(Routines) do
 		if M.RoutineActive[routineID] and M.RoutineWakeTime[routineID] <= GetTime() then

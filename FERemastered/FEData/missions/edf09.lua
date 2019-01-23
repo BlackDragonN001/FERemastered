@@ -56,16 +56,25 @@ local M = {
 }
 
 function Save()
+
+	_FECore.Save();
+	
     return M
 end
 
 function Load(...)
+
+	_FECore.Load();
+	
     if select('#', ...) > 0 then
 		M = ...
     end
 end
 
 function InitialSetup()
+
+	_FECore.InitialSetup();
+	
 	PreloadODF("ibrecy09");
 	PreloadODF("evrecy");
 	PreloadODF("cvscout");
@@ -90,6 +99,9 @@ function InitialSetup()
 end
 
 function Start()
+
+	_FECore.Start();
+	
 	M.Portal = GetHandle("unnamed_hbport");
 	--M.Recycler = GetHandle("unnamed_ivrecy091");
 	
@@ -98,6 +110,9 @@ end
 
 
 function AddObject(h)
+
+	_FECore.AddObject(h);
+
 	if GetOdf(h) == "ivrecy09.odf" then	--GetCfg() sometimes returns the name with ":1" appended to it.
 		M.Recycler = h;
 	end
@@ -105,9 +120,14 @@ end
 
 function DeleteObject(h)
 
+	_FECore.DeleteObject(h);
+	
 end
 
 function Update()
+
+	_FECore.Update();
+
 	Routine1();
 	Routine2();
 	Routine3();

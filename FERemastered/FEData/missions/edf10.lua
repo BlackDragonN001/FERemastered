@@ -77,16 +77,25 @@ local M = {
 }
 
 function Save()
+
+	_FECore.Save();
+	
     return M
 end
 
 function Load(...)
+
+	_FECore.Load();
+	
     if select('#', ...) > 0 then
 		M = ...
     end
 end
 
 function InitialSetup()
+
+	_FECore.InitialSetup();
+
 	PreloadODF("evtanku");
 	PreloadODF("cvtank");
 	PreloadODF("cvtalon02");
@@ -111,6 +120,9 @@ function InitialSetup()
 end
 
 function Start()
+
+	_FECore.Start();
+
 	M.PlayerRecy = GetHandle("unnamed_ibrecy_r");
 	M.HadeanRecy = GetHandle("unnamed_ebrecy");
 	M.HadeanDropship = GetHandle("dropship");
@@ -128,6 +140,9 @@ end
 
 
 function AddObject(h)
+
+	_FECore.AddObject(h);
+
 	if IsOdf(h, "espilo") then
 		M.HadeanPilot = h;
 		M.Routine9Timer = GetTime() + 0.1;
@@ -140,6 +155,8 @@ end
 
 function DeleteObject(h)
 
+	_FECore.DeleteObject(h);
+
 end
 
 function PreSnipe(curWorld, shooterHandle, victimHandle, ordnanceTeam, ordnanceODF)
@@ -150,6 +167,9 @@ function PreSnipe(curWorld, shooterHandle, victimHandle, ordnanceTeam, ordnanceO
 end
 
 function Update()
+
+	_FECore.Update();
+
 	M.Player = GetPlayerHandle();
 	Routine1();
 	Routine3();

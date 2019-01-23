@@ -116,16 +116,25 @@ local M = {
 }
 
 function Save()
+
+	_FECore.Save();
+	
     return M
 end
 
 function Load(...)
+
+	_FECore.Load();
+
     if select('#', ...) > 0 then
 		M = ...
     end
 end
 
 function InitialSetup()
+
+	_FECore.InitialSetup();
+	
 	M.TPS = EnableHighTPS();
 	--Preload to reduce lag spikes when resources are used for the first time.
 	local preloadOdf = {
@@ -177,6 +186,9 @@ function GetHandleOrDie(name)
 end
 
 function Start()
+
+	_FECore.Start();
+	
 	Ally(1,3);
 	Ally(2,3);
 	--Ally(6,2);
@@ -202,6 +214,9 @@ function Start()
 end
 
 function AddObject(h)
+
+	_FECore.AddObject(h);
+
 	if GetCfg(M.Object1) == "ebrecy_m" and not IsPlayer(h) then
 		if GetCfg(h) == "ebscav" or GetCfg(h) == "ebscup" then
 			SetObjectiveName(h, "Defend Resourcer");
@@ -283,6 +298,9 @@ function ObjectKilled(deadObj, killerObj)
 end
 
 function DeleteObject(h)
+
+	_FECore.DeleteObject(h);
+	
 	if GetTeamNum(h) == 2 and GetCfg(h) == "cbgtow" then	--original script checked for "ebgtow". How did this work before??
 		M.GTowsRemaining = M.GTowsRemaining - 1;
 		if M.GTowsRemaining > 0 then
@@ -302,6 +320,9 @@ function DeleteObject(h)
 end
 
 function Update()
+
+	_FECore.Update();
+	
 	M.Object2 = GetPlayerHandle();
 	Routine1();
 	Routine4();

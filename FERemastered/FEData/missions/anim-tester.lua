@@ -35,6 +35,8 @@ local M = {
 }
 
 function InitialSetup()
+	_FECore.InitialSetup();
+
 	M.TPS = EnableHighTPS();
 	--Preload to reduce lag spikes when resources are used for the first time.
 	local preloadOdf = {		

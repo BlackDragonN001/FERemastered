@@ -109,6 +109,9 @@ end
 
 
 function InitialSetup()
+
+	_FECore.InitialSetup();
+	
 	M.TPS = EnableHighTPS();
 	DefineRoutines();
 	--Preload to reduce lag spikes when resources are used for the first time.
@@ -145,16 +148,25 @@ function InitialSetup()
 end
 
 function Save()
+
+	_FECore.Save();
+	
     return M
 end
 
 function Load(...)
+	
+	_FECore.Load();
+	
     if select('#', ...) > 0 then
 		M = ...
     end
 end
 
 function Start()
+
+	_FECore.Start();
+	
 	M.Recycler = GetHandleOrDie("Recycler");
 	M.DropshipLanded = GetHandleOrDie("DropShip");
 	M.Portals[1] = GetHandleOrDie("Portal1");	--first portal in canyon
@@ -167,6 +179,9 @@ end
 
 
 function AddObject(h)
+	
+	_FECore.AddObject(h);
+	
 	if GetCfg(h) == "ibgtow" then
 		M.GunTowersBuilt = M.GunTowersBuilt + 1;
 	elseif GetCfg(h) == "ibrecy" then
@@ -175,6 +190,9 @@ function AddObject(h)
 end
 
 function Update()
+
+	_FECore.Update();
+
 	M.Player = GetPlayerHandle();
 	for routineID,r in pairs(Routines) do
 		if M.RoutineActive[routineID] and M.RoutineWakeTime[routineID] <= GetTime() then

@@ -121,16 +121,25 @@ local M = {
 }
 
 function Save()
+
+	_FECore.Save();
+	
     return M
 end
 
 function Load(...)
+
+	_FECore.Load();
+	
     if select('#', ...) > 0 then
 		M = ...
     end
 end
 
 function InitialSetup()
+
+	_FECore.InitialSetup();
+	
 	M.TPS = EnableHighTPS();
 	--Preload to reduce lag spikes when things are spawned in for the first time.
 	local preloadOdf = {
@@ -189,6 +198,9 @@ function TerrainFloor(pos)
 end
 
 function Start()
+
+	_FECore.Start();
+	
 	GiveWeapon(GetPlayerHandle(), "gtytech");--DEBUG!
 	M.NexusHangar = GetHandleOrDie("nexhangar");
 	M.Recycler = BuildObject("ivrecy", 1, "Friend1");
@@ -201,6 +213,9 @@ function Start()
 end
 
 function AddObject(h)
+
+	_FECore.AddObject(h);
+	
 	local odf = GetCfg(h);
 	if odf == "ibgtow" then
 		M.Variable16 = M.Variable16 + 1;
@@ -233,6 +248,9 @@ function AddObject(h)
 end
 
 function DeleteObject(h)
+
+	_FECore.DeleteObject(h);
+
 	local odf = GetCfg(h);
 	if odf == "scraprock03" or odf == "scraprock01" then
 		if h == M.ScrapRock01 then
@@ -263,6 +281,9 @@ function DeleteObject(h)
 end
 
 function Update()
+
+	_FECore.Update();
+	
 	M.Player = GetPlayerHandle();
 	Routine1();
 	Routine2();

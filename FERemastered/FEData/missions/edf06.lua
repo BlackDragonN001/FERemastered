@@ -51,16 +51,25 @@ local M = {
 }
 
 function Save()
+
+	_FECore.Save();
+
     return M
 end
 
 function Load(...)
+
+	_FECore.Load();
+
     if select('#', ...) > 0 then
 		M = ...
     end
 end
 
 function InitialSetup()
+
+	_FECore.InitialSetup();
+
 	M.TPS = EnableHighTPS();
 	--Preload ODFs to reduce lag spikes when things are spawned in for the first time
 	PreloadODF("ivrecyE6");
@@ -78,6 +87,9 @@ function InitialSetup()
 end
 
 function Start()
+
+	_FECore.Start();
+
 	M.Recycler = GetHandle("ivrecy");
 	M.Transport = GetHandle("ivcargo1");
 	M.Wingman = GetHandle("unnamed_ivtank");
@@ -89,9 +101,14 @@ end
 
 function AddObject(h)
 
+	_FECore.AddObject(h);
+
 end
 
 function Update()
+
+	_FECore.Update();
+
 	M.Player = GetPlayerHandle();
 	if(M.MissionTimer < GetTime()) then
 		if M.MissionState == 0 then

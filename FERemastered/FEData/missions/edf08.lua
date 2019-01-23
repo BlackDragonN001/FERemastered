@@ -43,16 +43,25 @@ local M = {
 }
 
 function Save()
+
+	_FECore.Save();
+	
     return M
 end
 
 function Load(...)
+
+	_FECore.Load();
+
     if select('#', ...) > 0 then
 		M = ...
     end
 end
 
 function InitialSetup()
+
+	_FECore.InitialSetup();
+
 	local preloadAudio = {
 		"edf08_01.wav",
 		"edf08_02.wav",
@@ -70,6 +79,9 @@ function InitialSetup()
 end
 
 function Start()
+
+	_FECore.Start();
+
 	M.Portal = GetHandle("unnamed_ebport_e8");
 	M.Recycler = GetHandle("unnamed_ivrecy_r");
 	M.CerbMissileTurret = GetHandle("MisTur");
@@ -79,6 +91,9 @@ end
 
 
 function AddObject(h)
+
+	_FECore.AddObject(h);
+
 	--SetSkill(h, 3);
 	if IsOdf(h, "cvmlay8") then
 		M.CerbMinelayer = h;
@@ -89,9 +104,14 @@ end
 
 function DeleteObject(h)
 
+	_FECore.DeleteObject(h);
+
 end
 
 function Update()
+
+	_FECore.Update();
+
 	M.Player = GetPlayerHandle();
 	
 	Routine1();

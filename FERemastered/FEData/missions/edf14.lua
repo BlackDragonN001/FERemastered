@@ -62,16 +62,25 @@ local M = {
 }
 
 function Save()
+
+	_FECore.Save();
+	
     return M
 end
 
 function Load(...)
+
+	_FECore.Load();
+	
     if select('#', ...) > 0 then
 		M = ...
     end
 end
 
 function InitialSetup()
+
+	_FECore.InitialSetup();
+	
 	M.TPS = EnableHighTPS();
 	PreloadODF("ivrecy_e14");
 	PreloadODF("evcons_e14");
@@ -102,6 +111,9 @@ function GetHandleOrDie(name)
 end
 
 function Start()
+
+	_FECore.Start();
+	
 	M.HadeanBuilder = BuildObject("evcons_e14",1,"Constructor");
 	M.Recycler = BuildObject("ivrecy_e14", 1, "Recycler");
 	M.HadeanGtow1 = GetHandle("gtow1");
@@ -111,6 +123,9 @@ function Start()
 end
 
 function AddObject(h)
+
+	_FECore.AddObject(h);
+	
 	if GetOdf(h) == "ebcbun_e14.odf" then
 		M.CommJammers[M.Variable1] = h;
 	elseif GetOdf(h) == "ibscav.odf" then
@@ -141,6 +156,9 @@ function PreSnipe(curWorld, shooterHandle, victimHandle, ordnanceTeam, ordnanceO
 end
 
 function Update()
+
+	_FECore.Update();
+	
 	M.Player = GetPlayerHandle();
 	Routine1();
 	Routine2();

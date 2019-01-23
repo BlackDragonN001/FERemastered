@@ -109,6 +109,9 @@ end
 
 
 function InitialSetup()
+
+	_FECore.InitialSetup();
+
 	M.TPS = EnableHighTPS();
 	DefineRoutines();
 	--Preload to reduce lag spikes when resources are used for the first time.
@@ -144,16 +147,25 @@ function InitialSetup()
 end
 
 function Save()
+
+	_FECore.Save();
+	
     return M
 end
 
 function Load(...)
+
+	_FECore.Load();
+	
     if select('#', ...) > 0 then
 		M = ...
     end
 end
 
 function Start()
+
+	_FECore.Start();
+	
 	Ally(1, 2);
 	M.MegaGun = GetHandleOrDie("Mega Gun");
 	M.MegaGuard1 = GetHandleOrDie("MGD1");
@@ -172,6 +184,9 @@ end
 
 
 function AddObject(h)
+
+	_FECore.AddObject(h);
+	
 	--SetSkill(h, 3);
 	if GetCfg(h) == "ibfact_s" then
 		Attack(TeleportIn("cvhtank", 6, M.Portals[4], 20), h, 1);
@@ -185,6 +200,9 @@ function AddObject(h)
 end
 
 function Update()
+
+	_FECore.Update();
+	
 	M.Player = GetPlayerHandle();
 	for routineID,r in pairs(Routines) do
 		if M.RoutineActive[routineID] and M.RoutineWakeTime[routineID] <= GetTime() then
