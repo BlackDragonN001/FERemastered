@@ -205,6 +205,7 @@ function MRH_InitialSetup() --Start()
 				-- If we want to delete this object immediately, do it.
 				if b_saveload == 3 then
 					RemoveObject(ObjectList[n]);
+					print("Removing Object " .. label);
 				end
 
 			end
@@ -329,6 +330,7 @@ function MRH_InitialSetup() --Start()
 				SetCommand(h, curcmd, priority, NewWho, curwhere);
 			else
 				SetCommand(h, curcmd, priority, NewWho);
+			end
 			
 			
 		
