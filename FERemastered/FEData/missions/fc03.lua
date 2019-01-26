@@ -1,5 +1,5 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
-require('_FECore');
+local _FECore = require('_FECore');
 
 --Strings
 _Text1 = "eSCORT tHE nEOHYDRIUM cATALYSER\nrODS tO tHE sHIPYARD, fOR\niNSTALLATION iN tHE aRK ii'S\npROPULSOR cORES. bEWARE oF\ncERBERI aMBUSH eN rOUTE!";

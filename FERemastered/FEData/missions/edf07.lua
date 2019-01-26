@@ -1,5 +1,5 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
-require('_FECore');
+local _FECore = require('_FECore');
 
 -- Variables Not saved or constants that never change.
 local h	--temp handle

@@ -1,5 +1,5 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
-require('_FECore');
+local _FECore = require('_FECore');
 
 --Constants
 local KAMI_WAVE1_COUNT = 8;
@@ -391,7 +391,7 @@ function Routine1()
 			local h = BuildObject(REINFORCEMENTS1[M.Variable8], 1, BuildDirectionalMatrix(M.Position5));
 			Goto(h, "units", 0);
 			SetGroup(h, GROUPS1[M.Variable8]);
-			if M.Variable8 == table.getn(REINFORCEMENTS1) then
+			if M.Variable8 == #REINFORCEMENTS1 then
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 5;
 			else
@@ -481,7 +481,7 @@ function Routine2()
 			local h = BuildObject(REINFORCEMENTS2[M.Variable8], 1, BuildDirectionalMatrix(M.Position5));
 			Goto(h, "units", 0);
 			SetGroup(h, GROUPS2[M.Variable8]);
-			if M.Variable8 == table.getn(REINFORCEMENTS2) then
+			if M.Variable8 == #REINFORCEMENTS2 then
 				M.Routine2State = M.Routine2State + 1;
 				M.Routine2Timer = GetTime() + 2;
 			else

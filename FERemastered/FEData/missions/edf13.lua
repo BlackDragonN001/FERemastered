@@ -1,5 +1,5 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
-require('_FECore');
+local _FECore = require('_FECore');
 
 --Strings
 local _Text1 = "Search the caves for the two\nearly-warning control nodes.\nEscort Captain Eisenstein to\nboth stations. Be careful--\nthese caves are very unstable.";

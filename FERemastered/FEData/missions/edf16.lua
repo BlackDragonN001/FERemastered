@@ -1,5 +1,5 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
-require('_FECore');
+local _FECore = require('_FECore');
 
 --Strings
 local _Text1 = "Establish a base at or near the\nindicated nav beacon. Your\nwingman is scouting for biometal\npools. Stay alert for Hadean\npatrols!";
@@ -270,7 +270,7 @@ function DeleteObject(h)
 
 	_FECore.DeleteObject(h);
 	
-	for i=1,table.getn(M.EvacuateUnits) do
+	for i=1,#M.EvacuateUnits do
 		if M.EvacuateUnits[i] == h then
 			table.remove(M.EvacuateUnits, i);
 			break;
@@ -929,7 +929,7 @@ function Routine10()
 		if GetDistance(h, M.Object32) < 150 and h ~= M.Object10 and h ~= M.HackerScout then
 			RemoveObject(h);
 		end
-		if table.getn(M.EvacuateUnits) > 0 then
+		if #M.EvacuateUnits > 0 then
 			local h = M.EvacuateUnits[1];
 			if GetTeamNum(h) == 1 and IsAlive(h) and h ~= M.Object10 then
 				Goto(h, M.Object32, 1);

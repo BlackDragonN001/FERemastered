@@ -1,4 +1,24 @@
+--[[ Map Reloader Lua
+Written by General BlackDragon
+Version 1.0 - 1-24-2019
+
+For use with command lines to load/replace objects on a .BZN. Instructions:
+-- To Save objects, load the game with /ivar 120 1
+-- To specify a specific ODF to save/load, use /svar 31 blah.odf
+-- To Save objects and delete the objects after saving, use /ivar 120 3
+-- To Load objects, load the game with /ivar 120 2
+
+The object lists are saved to a .txt file matching the BZN file name in Documents\My Games\Battlezone Combat Commander\logs\
+Loading deletes all instances of the specified svar 31 from the map. To skip deleting on load, put some dummy value in svar 31.
+Note: the .odf extention is required on the svar 31 parameter. --]]
+
 print("Loading _MapReloader.lua");
+
+local _MapReloader = {}
+
+function bool_to_number(value)
+  return value and 1 or 0
+end
 
 local ObjectList = { }
 
@@ -7,12 +27,10 @@ local player = nil
 local mapClear = false
 local ObjectCount = 0
 
-_MRH = {
-	InitialSetup = MRH_InitialSetup,
-}
+function _MapReloader.InitialSetup()
 
+	--print("MAPRELOADER_INITSETUP");
 
-function MRH_InitialSetup() --Start()
 
 	ObjectList = GetAllGameObjectHandles();
 	
@@ -22,13 +40,14 @@ function MRH_InitialSetup() --Start()
 	local filename = GetMissionFilename(); --"testload.txt";
 	filename = string.sub(filename, 0, string.len(filename)-3);
 	filename = filename .. "txt";
-	
-	print("Created Object List: " .. filename);
 
 	player = GetPlayerHandle();
 
 	-- Save the entire map.
 	if b_saveload == 1 or b_saveload == 3 then
+		
+		print("Created Object List: " .. filename);
+	
 		WriteToFile(filename, "//Preload ODF List" , false);
 		WriteToFile(filename, "[ObjectList]");
 		
@@ -212,6 +231,8 @@ function MRH_InitialSetup() --Start()
 		end
 	elseif b_saveload == 2 then -- Load the entire map.
 	
+		print("Loaded Object List: " .. filename);
+	
 		-- Erase entire map.
 		for n = 1, #ObjectList do
 			if not IsPlayer(ObjectList[n]) and (s_odfname == "" or GetOdf(ObjectList[n]) == s_odfname) then
@@ -259,7 +280,7 @@ function MRH_InitialSetup() --Start()
 			local group = GetODFInt(filename, mystring, "Group");
 			
 			local lifespan = GetODFFloat(filename, mystring, "Lifespan");
-			local cansnipe = GetODFBool(filename, mystring, "CanSnipe");
+			local cansnipe = bool_to_number(GetODFBool(filename, mystring, "CanSnipe"));
 			
 			local targetlabel = GetODFString(filename, mystring, "CurTargetLabel");
 			
@@ -320,16 +341,28 @@ function MRH_InitialSetup() --Start()
 			SetCanSnipe(h, cansnipe);
 			
 			local NewTarget = GetHandle("Object" .. n .. "_Target");
-			SetLabel(NewTarget, targetlabel);
-			SetTarget(h, NewTarget);
+			if NewTarget ~= nil then
+				SetLabel(NewTarget, targetlabel);
+				SetTarget(h, NewTarget);
+			end
+			
+			local priority = bool_to_number(group == -1);
 			
 			local NewWho = GetHandle("Object" .. n .. "_Who");
-			SetLabel(NewWho, wholabel);
-			local priority = (group == -1);
-			if not IsNullVector(curwhere) then
-				SetCommand(h, curcmd, priority, NewWho, curwhere);
+			if NewWho ~= nil then
+				SetLabel(NewWho, wholabel);
+				
+				if not IsNullVector(curwhere) then
+					SetCommand(h, curcmd, priority, NewWho, curwhere);
+				else
+					SetCommand(h, curcmd, priority, NewWho);
+				end
 			else
-				SetCommand(h, curcmd, priority, NewWho);
+				if not IsNullVector(curwhere) then
+					SetCommand(h, curcmd, priority, 0, curwhere);
+				else
+					SetCommand(h, curcmd, priority);
+				end
 			end
 			
 			
@@ -340,3 +373,5 @@ function MRH_InitialSetup() --Start()
 end
 
 print("Finished _MapReloader.lua");
+
+return _MapReloader;

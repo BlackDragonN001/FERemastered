@@ -10,76 +10,62 @@ print("Loading _FECore.lua");
 
 -- Helper Luas.
 require('_GlobalHandler');
-require('_MapReloader');
+local _MapReloader = require('_MapReloader');
 
 -- FE Moduels.
 --require('_PortalHelper');
 --require('_DispatchHelper');
 
 
-
--- Function Overload system
-_FECore = {
-	InitialSetup = FEC_InitialSetup,
-	
-	Start = FEC_Start,
-	
-	Load = FEC_Load,
-	
-	Save = FEC_Save,
-	
-	AddObject = FEC_AddObject,
-	
-	DeleteObject = FEC_DeleteObject,
-	
-	Update = FEC_Update,
-}
+local _FECore = {}
 
 -- Core game functions.
-function FEC_InitialSetup()
+function _FECore.InitialSetup()
 
 -- Call helper functions.
 
-_MRH.InitialSetup();
+_MapReloader.InitialSetup();
 
 end
 
-function FEC_Start()
-
--- Call helper functions.
-
-end
-
-function FEC_Load()
+function _FECore.Start()
 
 -- Call helper functions.
 
 end
 
-function FEC_Save()
+function _FECore.Load()
 
 -- Call helper functions.
 
 end
 
-function FEC_AddObject(h)
+function _FECore.Save()
 
 -- Call helper functions.
 
 end
 
-function FEC_DeleteObject(h)
+function _FECore.AddObject(h)
 
 -- Call helper functions.
 
 end
 
-function FEC_Update()
+function _FECore.DeleteObject(h)
 
 -- Call helper functions.
 
 end
 
+function _FECore.Update()
 
+-- Call helper functions.
+
+end
+
+--]]
 
 print("Finished _FECore.lua");
+
+return _FECore;

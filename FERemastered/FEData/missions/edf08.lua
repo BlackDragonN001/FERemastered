@@ -1,5 +1,5 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
-require('_FECore');
+local _FECore = require('_FECore');
 
 --Strings
 local _Text1 = "Build up the base defenses and\ncreate more offensive units\nwhile Wyndt-Essex attacks the\nfirst missile turret.";
@@ -356,7 +356,7 @@ function Routine1()
 		elseif M.Routine1State == 34 then
 			--final Cerb assault wave spawns after destruction of the Cerb base
 			local spawnOdfs = {"cvdcar", "cvdcar", "cvatank2", "cvatank2", "cvhatank", "cvwalk"};
-			for i = 1, table.getn(spawnOdfs) do
+			for i = 1, #spawnOdfs do
 				M.FinalWave[i] = TeleportIn(spawnOdfs[i], 5, M.Portal, math.random(-40,40), math.random(-40,40));
 				Attack(M.FinalWave[i], M.Recycler, 1);
 			end
@@ -365,7 +365,7 @@ function Routine1()
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 35 then
 			local finalWaveDead = true;
-			for i = 1, table.getn(M.FinalWave) do
+			for i = 1, #M.FinalWave do
 				if IsAround(M.FinalWave[i]) then
 					finalWaveDead = false;
 					break;

@@ -1,5 +1,5 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
-require('_FECore');
+local _FECore = require('_FECore');
 
 --Strings
 local TRY_TO_CRASH = false;	--some tests may crash BZ2. Set this to true to run them anyways. If this is false, the offending code will be skipped.
@@ -316,7 +316,7 @@ end
 --end
 
 function Update()
-	if table.getn(Tests) == 0 then
+	if #Tests == 0 then
 		SetupTestTable();
 	end
 	if M.MissionTimer < GetTime() then
@@ -1858,8 +1858,8 @@ function Test_Paths()
 			local pathPoints = GetPathPoints("nav_path");
 			if pathPoints == nil then
 				FailTest("GetPathPoints() returned nil for 'nav_path'.");
-			elseif table.getn(pathPoints) ~= 5 then
-				FailTest("GetPathPoints() expected 5 points but got "..table.getn(pathPoints)..".");
+			elseif #pathPoints ~= 5 then
+				FailTest("GetPathPoints() expected 5 points but got "..#pathPoints..".");
 			else
 				--each path point should be close to the corresponding Nav beacon.
 				for i = 1,5 do
@@ -2140,7 +2140,7 @@ function Test_IsSelected()
 		elseif M.TestState == 5 then
 			if GetUserTarget() == M.Object01 then
 				local objs = WhoIsTargeting(M.Object01);
-				if objs == nil or table.getn(objs) == 0 then
+				if objs == nil or #objs == 0 then
 					FailTest("WhoIsTargeting() did not return player.");
 				elseif GetTarget(GetPlayerHandle()) ~= M.Object01 then
 					FailTest("GetTarget() returned wrong result.");
@@ -3770,8 +3770,8 @@ function Test_GetAllGameObjectHandles()
 		local allHandles = GetAllGameObjectHandles();
 		if type(allHandles) ~= "table" then
 			FailTest("GetAllGameObjectHandles(): expected table but got "..tostring(type(allHandles)));
-		elseif table.getn(allHandles) < 3 then
-			FailTest("GetAllGameObjectHandles(): expected >=3 entries but got "..tostring(table.getn(allHandles)));
+		elseif #allHandles < 3 then
+			FailTest("GetAllGameObjectHandles(): expected >=3 entries but got "..tostring(#allHandles));
 		else
 			for k,v in pairs(allHandles) do
 				if type(v) ~= "userdata" then

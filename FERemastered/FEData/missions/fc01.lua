@@ -1,5 +1,5 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
-require('_FECore');
+local _FECore = require('_FECore');
 
 local NUM_SOLDIERS = 7;
 local NUM_GTOWS = 5;
@@ -1057,7 +1057,7 @@ end
 
 --Sets any pilots ejected from player controlled Hadean ships back to team 3
 --function HandleEjectedPilots()
---	if table.getn(M.EjectedPilots) > 0 then
+--	if #M.EjectedPilots > 0 then
 --		local pilot = M.EjectedPilots[1];
 --		SetTeamNum(pilot, 3);
 --		table.remove(M.EjectedPilots, 1);
