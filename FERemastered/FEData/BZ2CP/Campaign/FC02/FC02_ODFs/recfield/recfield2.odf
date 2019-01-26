@@ -9,6 +9,7 @@ maxAmmo = 3000
 unitName = "Black Hole Mine"
 effectHard1 = "Black Hole Mine"
 effectName1 = "bhole.render"
+canInteract = 0
 
 [MineClass]
 lifeSpan = 9999.0
