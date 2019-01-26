@@ -44,7 +44,7 @@ planetGeom = "Spartacus.xsi"
 techCount = 1
 techName1 = "Hadean Scout"
 techInfo1 = "evscout.inf"
-techGeom1 = "evscout00.xsi"
+techGeom1 = "evscout00.fbx"
 
 mailCount = 1
 mailName1 = "Ship-to-ship communique:"
@@ -265,7 +265,7 @@ missionTitle = "A Short Break"
 missionInfo = "edf10.des"
 missionFile = "edf10.bzn"
 planetName = "Tranquility"
-planetInfo = "Tranquility.inf"
+planetInfo = "Tranquility.des"
 planetGeom = "Tranquility.xsi"
 
 techCount = 1
@@ -294,7 +294,7 @@ missionTitle = "Heart of Darkness"
 missionInfo = "edf13.des"
 missionFile = "edf13.bzn"
 planetName = "Facility"
-planetInfo = "Facility.inf"
+planetInfo = "Facility.des"
 planetGeom = "Facility.xsi"
 
 techCount = 1
@@ -319,7 +319,7 @@ missionTitle = "Cloak of Deception"
 missionInfo = "edf14.des"
 missionFile = "edf14.bzn"
 planetName = "Facility"
-planetInfo = "Facility.inf"
+planetInfo = "Facility.des"
 planetGeom = "Facility.xsi"
 
 techCount = 1
@@ -348,12 +348,12 @@ missionTitle = "Betrayed"
 missionInfo = "edf15.des"
 missionFile = "edf15.bzn"
 planetName = "Facility"
-planetInfo = "Facility.inf"
+planetInfo = "Facility.des"
 planetGeom = "Facility.xsi"
 
 techCount = 1
 techName1 = "Hadean Krahanos"
-techInfo1 = "ivewalk.inf"
+techInfo1 = "evwalk.inf"
 techGeom1 = "ivewalk_skel.xsi"
 
 mailCount = 3
@@ -384,7 +384,7 @@ missionTitle = "Two-Minute Warning"
 missionInfo = "edf16.des"
 missionFile = "edf16.bzn"
 planetName = "Facility"
-planetInfo = "Facility.inf"
+planetInfo = "Facility.des"
 planetGeom = "Facility.xsi"
 
 techCount = 1
@@ -456,7 +456,7 @@ planetGeom = "RuinCore.xsi"
 
 techCount = 1
 techName1 = "Hadean Procreator"
-techInfo1 = "cvrecy.inf"
+techInfo1 = "evrecy.inf" // Was cvrecy??? -GBD
 techGeom1 = "evrecy00.xsi"
 
 mailCount = 3
