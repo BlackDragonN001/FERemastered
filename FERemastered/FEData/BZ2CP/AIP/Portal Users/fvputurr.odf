@@ -1,0 +1,23 @@
+[GameObjectClass]
+baseName = "fvturr"
+classLabel = "fvturr"
+
+scrapCost = 45
+
+maxHealth = 2500
+
+[CraftClass]
+
+[HoverCraftClass]
+setAltitude = 0.5
+
+accelDragFull = 1.0
+alphaTrack = 10.0
+alphaDamp = 3.0
+pitchPitch = 0.5
+
+[DeployableClass]
+
+[TurretTankClass]
+alphaTurret = 2.0
+

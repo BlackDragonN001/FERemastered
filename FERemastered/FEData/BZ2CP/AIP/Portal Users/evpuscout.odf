@@ -1,0 +1,24 @@
+[GameObjectClass]
+baseName = "evscout"
+classLabel = "evscout"
+
+scrapValue = 15
+scrapCost = 45
+customCost = 50
+
+maxHealth = 1800
+addAmmo = 1
+
+armorClass = L
+
+[CraftClass]
+
+[HoverCraftClass]
+
+accelJump = 15.0 // []
+
+pitchPitch = 0.27 //nose up []
+
+[Lod1]
+
+[Lod2]

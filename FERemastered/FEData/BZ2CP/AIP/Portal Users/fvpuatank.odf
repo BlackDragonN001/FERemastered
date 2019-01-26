@@ -1,0 +1,20 @@
+[GameObjectClass]
+baseName = "fvatank"
+classLabel = "fvatank"
+
+scrapValue = 45
+
+maxHealth = 5500
+
+weaponMask = 00011
+
+[CraftClass]
+
+braccelFactor = 0.09
+velFactor = 0.1
+steerFactor = 1.5
+omegaFactor = 0.1
+
+[TrackedVehicleClass]
+
+[AssaultTankClass]

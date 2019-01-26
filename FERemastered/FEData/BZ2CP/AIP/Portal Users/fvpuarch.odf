@@ -1,0 +1,53 @@
+[GameObjectClass]
+baseName = "fvarch"
+classLabel = "fvarch"
+
+maxHealth = 2000
+
+[CraftClass]
+
+[HoverCraftClass]
+velocForward = 28.5 // []
+
+alphaSteer = 3.5 //how fast it responds to steering []
+
+[MorphTankClass]
+maxHealth = 2000
+maxAmmo = 3000
+addAmmo = 0.0
+addHealth = 9.0
+engageRange = 150
+isAssault = 0
+
+switchMask = 00001
+
+unitName = "Lancer"
+
+rangeScan = 250.0f
+periodScan = 5.0f
+velocJam = 5.0f
+
+velocForward = 28.0 // 
+velocReverse = 10.0 // 
+velocStrafe = 16.0 // 
+accelThrust = 25.0 //acceleration 
+accelDragStop = 8.0 //how fast it stops once hands are off controls 
+accelJump = 8.0 // 
+
+setAltitude = 1.0 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself 
+alphaDamp = 8.0 //shocks 
+
+pitchPitch = 0.25 //nose up 
+pitchThrust = 0.1 //nose down 
+
+rollStrafe = 0.08 //rolls while strafing 
+omegaSpin = 4.0 //spinning in place speed 
+omegaTurn = 0.5 //turning while moving speed 
+alphaSteer = 3.0 //how fast it responds to steering 
+rollSteer = 0.08 //rolls while steering 
+
+soundThrust = "ssent01k.wav"
+
+[DeployableClass]

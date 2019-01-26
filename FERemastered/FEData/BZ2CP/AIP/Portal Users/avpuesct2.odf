@@ -1,0 +1,30 @@
+[GameObjectClass]
+baseName = "evscout"
+classLabel = "evscout"
+
+scrapValue = 15
+scrapCost = 50
+customCost = 50
+
+maxHealth = 1800
+addAmmo = 1
+
+unitName = "Xypos SX"
+
+armorClass = L
+
+requireCount = 1
+requireName1 = "ebarmo"
+requireText1 = "Build Arsenal"
+
+weaponName1 = "gslicer_c"
+weaponName2 = "gslicer_c"
+
+[CraftClass]
+engageRange = 150
+
+[HoverCraftClass]
+
+[Lod1]
+
+[Lod2]

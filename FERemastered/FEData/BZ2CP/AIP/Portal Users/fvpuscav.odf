@@ -1,0 +1,21 @@
+[GameObjectClass]
+baseName = "fvscav"
+classLabel = "fvscav"
+
+scrapValue = 5
+
+isAssault = 0
+
+[CraftClass]
+
+braccelFactor = 0.05f
+omegaFactor = 0.1f
+velFactor = 0.2f
+
+[TrackedVehicleClass]
+
+accelThrust = 50.0
+
+[TrackedDeployableClass]
+
+[ScavengerClass]

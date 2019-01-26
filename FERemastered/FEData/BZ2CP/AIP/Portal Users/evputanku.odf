@@ -1,0 +1,38 @@
+[GameObjectClass]
+baseName = "evtanku"
+classLabel = "evtank"
+
+scrapCost = 60
+
+unitName = "Xares SGS"
+
+requireCount = 2
+requireName1 = "ebfact2"
+requireText1 = "Upgrade Mega Xenomator"
+requireName2 = "ebcbun"
+requireText2 = "Build Eyes of Xyr"
+
+weaponName1 = "gslagstab_c"
+weaponName2 = "gshellgun_c"
+weaponName3 = "gshellgun_c"
+weaponName4 = "gcpmitsmin"
+
+[CraftClass]
+rangeScan = 250.0f
+engageRange = 140
+
+avoidSpeed = 30;
+topSpeed = 50;
+
+[HoverCraftClass]
+
+accelDragStop = 6.0 //how fast it stops once hands are off controls []
+accelJump = 18.0 // []
+
+alphaDamp = 9.0 //shocks []
+
+rollStrafe = 0.08 //rolls while strafing []
+
+[Lod1]
+
+[Lod2]

@@ -1,0 +1,41 @@
+[GameObjectClass]
+baseName = "ivrckt"
+classLabel = "ivrckt"
+
+scrapValue = 20
+
+maxHealth = 3200
+maxAmmo = 2800
+addAmmo = 20
+
+heatSignature = 1.0
+
+isAssault = 0
+
+weaponMask = 00001
+
+weaponName1 = "gcomet_c"
+weaponName2 = "gcomet_c"
+weaponName3 = "gcomet_a"
+
+[CraftClass]
+rangeScan = 450.0f
+engageRange = 420
+
+braccelFactor = 0.05f;
+steerFactor = .85f;
+omegaFactor = 0.01f;
+
+[TrackedVehicleClass]
+omegaSpin = 2.0		//4.0
+omegaTurn = 1.0
+velocReverse = 15.0
+accelThrust = 15.0
+
+[AssaultTankClass]
+yawMax = 2.0
+
+[Lod1]
+
+[Lod2]
+

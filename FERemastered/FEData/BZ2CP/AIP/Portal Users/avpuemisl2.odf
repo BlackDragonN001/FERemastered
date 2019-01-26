@@ -1,0 +1,44 @@
+[GameObjectClass]
+baseName = "evmislu"
+classLabel = "evmisl"
+
+scrapCost = 75
+buildTime = 20.0
+customTime = 20.0
+maxHealth = 3500
+maxAmmo = 3500
+unitName = "Zeus WRM"
+
+imageSignature = 2.5
+radarSignature = 2.5
+
+canSnipe = 0
+isAssault = 1
+armorClass = H
+
+weaponName3 = "gcpworm_a"
+weaponName4 = "gsnare"
+
+[CraftClass]
+engageRange = 225
+
+steerFactor = 0.2
+
+[HoverCraftClass]
+velocForward = 29.5 // []
+
+velocStrafe = 12.0 // []
+accelThrust = 20.0 //acceleration []
+
+accelJump = 8.0 // []
+
+pitchPitch = 0.40 //nose up []
+
+rollStrafe = 0.10 //rolls while strafing []
+omegaSpin = 2.0 //spinning in place speed []
+omegaTurn = 1.0 //turning while moving speed []
+alphaSteer = 1.5 //how fast it responds to steering []
+
+[Lod1]
+
+[Lod2]

@@ -1,0 +1,60 @@
+[GameObjectClass]
+baseName = "fvsent"
+classLabel = "fvsent"
+
+scrapValue = 15
+
+maxHealth = 2000
+maxAmmo = 2500
+
+aiName = "ScoutFriend"
+aiName2 = "ScoutEnemy"
+
+armorClass = L
+
+[CraftClass]
+
+[HoverCraftClass]
+
+[MorphTankClass]
+maxHealth = 2500 //increased in rev.C to balance armour class reduction. ~DF //1500
+addhealth = 5.0
+
+maxAmmo = 2500
+addAmmo = 0.0
+
+engageRange = 100
+isAssault = 0
+
+switchMask = 00011
+
+unitName = "Sentry"
+
+rangeScan = 250.0f
+periodScan = 5.0f
+velocJam = 5.0f
+
+velocForward = 25.0
+velocReverse = 10.0
+velocStrafe = 25.0
+accelThrust = 15.0 //acceleration
+accelDragStop = 10.0 //how fast it stops once hands are off controls
+accelJump = 15.0
+
+setAltitude = 1.0 // how high off the ground
+
+alphaTrack = 23.0 //springs speed it rights itself 
+alphaDamp = 9.0 //shocks 
+
+pitchPitch = 0.2 //nose up 
+pitchThrust = 0.1 //nose down 
+
+rollStrafe = 0.05 //rolls while strafing
+omegaSpin = 2.8 //spinning in place speed
+omegaTurn = 3.3 //turning while moving speed
+alphaSteer = 3.9 //how fast it responds to steering
+rollSteer = 0.09 //rolls while steering
+
+soundThrust = "ssent01c.wav"
+
+[DeployableClass]

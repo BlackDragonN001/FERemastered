@@ -1,0 +1,24 @@
+[GameObjectClass]
+baseName = "ivmbike"
+classLabel = "ivmbike"
+
+scrapValue = 10
+
+maxHealth = 1400
+maxAmmo = 1600
+
+heatSignature = 3.5
+
+[CraftClass]
+engageRange = 180
+
+[HoverCraftClass]
+velocReverse = 25.0
+velocStrafe = 25.0
+accelThrust = 50.0 //acceleration
+
+accelJump = 25.0
+
+[Lod1]
+
+[Lod2]

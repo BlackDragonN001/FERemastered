@@ -1,0 +1,39 @@
+[GameObjectClass]
+baseName = "evatanku"
+classLabel = "evatank"
+
+scrapCost = 75
+customCost = 80
+buildTime = 20.0
+maxHealth = 5000
+addhealth = 5.0
+maxAmmo = 4000
+addAmmo = 8
+unitName = "Hedoux"
+
+requireCount = 3
+requireName1 = "ebfact2"
+requireText1 = "Build Mega Xenomator"
+requireName2 = "ebcbun"
+requireText2 = "Build Eyes of Xyr"
+requireName3 = "ebsbay"
+requireText3 = "Build Repair Vat"
+
+weaponName1 = "gdragb_a"
+weaponName2 = "gshellgun"
+weaponName3 = "gshellgun"
+
+[CraftClass]
+engageRange = 210
+
+[TrackedVehicleClass]
+velocForward = 18.0
+velocReverse = 10.0
+accelThrust = 8.0
+
+[AssaultTankClass]
+pitchMax = 0.99
+
+[Lod1]
+
+[Lod2]

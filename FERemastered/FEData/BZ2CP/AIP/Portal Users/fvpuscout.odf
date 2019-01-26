@@ -1,0 +1,52 @@
+[GameObjectClass]
+baseName = "fvscout"
+classLabel = "fvscout"
+
+[CraftClass]
+
+[HoverCraftClass]
+
+[MorphTankClass]
+// object data
+maxHealth = 900
+maxAmmo = 1820 //1500
+engageRange = 100
+isAssault = 0
+
+switchMask = 00001
+
+addAmmo = 0.0
+addHealth = 2.0
+
+unitName = "Scout"
+
+// radar properties
+rangeScan = 450.0f
+periodScan = 5.0f
+velocJam = 5.0f
+
+velocForward = 30.0 // 
+velocReverse = 15.0 // 
+velocStrafe = 10.0 // 
+accelThrust = 22.0 //acceleration 
+accelDragStop = 11.0 //how fast it stops once hands are off controls 
+accelJump = 10.0 // 
+
+setAltitude = 1.5 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself 
+alphaDamp = 7.0 //shocks 
+
+pitchPitch = 0.12 //nose up 
+pitchThrust = 0.12 //nose down 
+
+rollStrafe = 0.085 //rolls while strafing 
+omegaSpin = 5.0 //spinning in place speed 
+omegaTurn = 2.5 //turning while moving speed 
+alphaSteer = 5.0 //how fast it speeds up and slows down to steering 
+rollSteer = 0.07 //rolls while steering 
+
+// hovercraft sounds
+soundThrust = "ssent01j.wav"
+
+[DeployableClass]

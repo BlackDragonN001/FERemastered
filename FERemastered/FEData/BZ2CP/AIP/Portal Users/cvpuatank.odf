@@ -1,0 +1,33 @@
+[GameObjectClass] // What even is this? Cerberi Siren with Scion Model and ISDF Weapons? ??? -GBD
+baseName = "fvrbomb"
+geometryName = "fvrbomb00.xsi"
+
+classLabel = "cvrbomb"
+
+scrapValue = 25
+
+unitName = "Assault tank"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+
+canSnipe = 0
+
+weaponMask = 00001
+weaponName1 = "gshadow_c"
+weaponHard2 = "HP_ROCKET_2"
+weaponName2 = "gshadow_c"
+weaponHard3 = "HP_ROCKET_4"
+weaponName3 = "gshadow_a"
+weaponHard4 = "HP_MORTAR_1"
+weaponName4 = "gmortar"
+
+[CraftClass]
+rangeScan = 400.0f
+
+[HoverCraftClass]
+
+soundThrust = "ssent01j.wav"
+soundTurbo = "smort03.wav"
+
+
+ 

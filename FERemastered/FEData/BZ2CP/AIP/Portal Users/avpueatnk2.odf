@@ -1,0 +1,30 @@
+[GameObjectClass]
+baseName = "evatank"
+classLabel = "evatank"
+
+scrapValue = 35
+scrapCost = 85
+customCost = 85
+buildTime = 25.0
+customTime = 25.0
+maxHealth = 5500
+maxAmmo = 4000
+addAmmo = 16
+unitName = "Hedoux FBS"
+
+imageSignature = 5.5
+
+weaponName1 = "gfbgun_a"
+weaponName2 = "gslicer"
+weaponName3 = "gslicer"
+
+[CraftClass]
+engageRange = 245
+
+[TrackedVehicleClass]
+velocForward = 18.0
+velocReverse = 10.0
+accelThrust = 8.0
+
+[AssaultTankClass]
+pitchMax = 0.99

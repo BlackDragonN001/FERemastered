@@ -1,0 +1,47 @@
+[GameObjectClass]
+baseName = "ivrbomb"
+classLabel = "ivrbomb"
+
+scrapValue = 25
+scrapCost = 65
+maxHealth = 4200
+maxAmmo = 2400
+addAmmo = 4
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+
+imageSignature = 1.5
+radarSignature = 0.3
+
+canSnipe = 1
+
+weaponMask = 00011
+weaponHard1 = "HP_ROCKET_2"
+weaponName1 = "grktbomb_a"
+weaponAssault1 = 1
+weaponHard2 = "HP_ROCKET_4"
+weaponName2 = "grktbomb_a"
+weaponAssault2 = 1
+weaponHard3 = "HP_MORTAR_1"
+weaponName3 = ""
+weaponAssault3 = 0
+weaponHard4 = ""
+weaponName4 = ""
+weaponAssault4 = 0
+weaponHard5 = "HP_SPECIAL"
+weaponName5 = "gsitecam"
+weaponAssault5 = 0
+
+[CraftClass]
+rangeScan = 250.0f
+periodScan = 5.0f
+velocJam = 5.0f
+engageRange = 220
+
+[HoverCraftClass]
+velocForward = 25.0 // []
+
+accelThrust = 15.0 //acceleration []
+
+omegaSpin = 1.0 //spinning in place speed []
+omegaTurn = 0.5 //turning while moving speed []
