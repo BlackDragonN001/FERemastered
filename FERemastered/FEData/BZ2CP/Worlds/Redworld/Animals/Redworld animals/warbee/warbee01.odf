@@ -1,7 +1,7 @@
 [GameObjectClass]
 classLabel = "boid"
 geometryName = "warbee_skel.xsi"
-geometryScale =0.5
+geometryScale = 0.5
 
 
 animCount = 1
@@ -13,7 +13,7 @@ scrapValue = 0
 pilotCost = 1
 maxHealth = 250
 maxAmmo = 3
-unitName = "Nasty thing"
+unitName = "Nasty Thing"
 aiName = "BoidProcess"
 heatSignature = 0.2
 imageSignature = 0.3
@@ -21,11 +21,11 @@ radarSignature = 0.2
 
 [CraftClass]
 braccelFactor = 0.9
-velFactor =20.0
+velFactor = 20.0
 steerFactor = 1
 omegaFactor = 10
 strafeFactor = 0.1
 
 [Boid]
-animRate =2000
+animRate = 2000
 
