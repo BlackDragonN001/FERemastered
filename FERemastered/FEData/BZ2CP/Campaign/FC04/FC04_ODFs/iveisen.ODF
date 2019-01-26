@@ -111,8 +111,6 @@ rollSteer = 0.08 //rolls while steering []
 soundThrust = "xypos_idle.wav"
 soundTurbo = "xypos_acc.wav"
 
-animSteer = "steer"
-
 [Lod1]
 geometryName = "evscoutL1.xsi" ;geometry for lod1
 distance = 50

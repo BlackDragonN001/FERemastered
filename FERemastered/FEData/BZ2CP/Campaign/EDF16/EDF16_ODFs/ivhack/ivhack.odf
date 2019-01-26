@@ -115,8 +115,6 @@ rollSteer = 0.1 // rolls while steering [.35]
 soundThrust = "ieng01b.wav"
 soundTurbo = "avtanke3.wav"
 
-animSteer = "steer"
-
 [Lod1]
 geometryName = "ivhackL1.xsi" ;geometry for lod1
 distance = 30
