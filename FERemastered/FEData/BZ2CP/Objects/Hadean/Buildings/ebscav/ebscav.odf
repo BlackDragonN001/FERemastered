@@ -1,12 +1,15 @@
+// BZ2CP unit "Resourcer"
+// Original Concept by Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
+
 [GameObjectClass]
 baseName = "ebscav"
-mrmFactor = 0
-geometryName = "ebscav00.xsi"
+geometryName = "ebscav00.fbx"
 animCount = 2
 animName1 = "deploy"
-animFile1 = "ebscav00.xsi"
+animFile1 = "ebscav00.fbx"
 animName2 = "loop"
-animFile2 = "ebscav01.xsi"
+animFile2 = "ebscav00_loop.fbx"
 classLabel = "extractor"
 scrapCost = 20
 scrapValue = 20
