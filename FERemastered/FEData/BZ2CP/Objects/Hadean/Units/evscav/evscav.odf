@@ -91,6 +91,8 @@ soundUndeploy = "trundepl.wav"
 soundPickup = "suck.wav"
 scrapHold = 20
 deployClass = "ebscav"
+deployOffset = 3.6
+//scrapFirst = true
 
 [Lod1]
 //geometryName = "evscavl1.xsi" ;geometry for lod1
