@@ -1,5 +1,5 @@
 [GameObjectClass]
-geometryName = "crane02.xsi"
+geometryName = "crane02.fbx"
 classLabel = "i76building"
 geometryScale = 2.5
 scrapCost = 8
@@ -11,8 +11,6 @@ heatSignature = 0.8
 imageSignature = 8.0
 radarSignature = 1.0
 collisionRadius = 5.0
-
+ownsTerrain = 1
 
 [BuildingClass]
-loadAsDummy=1
-dummyVersion=1103
