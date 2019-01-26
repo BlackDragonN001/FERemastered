@@ -1,0 +1,21 @@
+[GameObjectClass]
+classLabel = "FXMine"
+
+[MineClass]
+
+[FlareMineClass]
+payloadName = "flarepuff"
+fireSound = "smine01.wav"
+triggerDelay = 0.1
+shotDelay = 0.01
+shotVariance = 0.2
+damageRadius = 20.0
+damageValue(N) = 100 // none
+damageValue(L) = 50 // light
+damageValue(H) = 5 // heavy
+damageValue(S) = 50 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 5 // absorbtion
+kickRadius = 20.0
+kickVeloc = 0.2
+kickOmega = 0.5

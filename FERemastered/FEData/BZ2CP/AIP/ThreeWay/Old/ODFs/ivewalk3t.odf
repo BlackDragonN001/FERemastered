@@ -1,0 +1,18 @@
+[GameObjectClass]
+baseName = "evwalk"
+classLabel = "evwalk"
+
+buildTime = 15.0
+
+maxHealth = 6500
+addAmmo = 20
+addHealth = 30
+
+[CraftClass]
+
+engageRange = 500
+
+[WalkerClass]
+
+omegaTurn = 40.0
+

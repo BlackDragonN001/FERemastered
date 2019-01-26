@@ -1,0 +1,20 @@
+[GameObjectClass]
+baseName = "fvatank"
+classLabel = "fvatank"
+
+scrapCost = 80
+buildTime = 10.0
+
+weaponMask = 00011
+weaponName3 = "ggauss_a"
+weaponAssault3 = 1
+weaponName4 = "ggauss_a"
+weaponAssault4 = 1
+
+[CraftClass]
+engageRange = 160
+
+[TrackedVehicleClass]
+omegaSpin = 2.0		//4.0
+
+[AssaultTankClass]

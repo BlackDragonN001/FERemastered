@@ -1,0 +1,102 @@
+[OrdnanceClass]
+classLabel = "grenade" //"thermalmissile"
+
+shotGeometry = ""sgstng00.xsi"
+shotSound = "crckt02.wav"
+
+renderName = "corbitb.render"
+
+xplGround = "celecxpl" //elecxpl
+xplVehicle = "xgasxpl"
+xplBuilding = "xgasxpl"
+
+ammoCost = 0
+lifeSpan = 4.0 // 200m
+shotSpeed = 60.0 // 60
+
+damageValue(N) = 0 // none // 90
+damageValue(L) = 0 // light // 10
+damageValue(H) = 0 // heavy // 45
+
+damageValue(S) = 0 // standard // 10
+damageValue(D) = 0 // deflection // 80
+damageValue(A) = 0 // absorbtion // 55
+
+[MissileClass]
+omegaTurn = 10.0 //1
+
+[ThermalMissileClass]
+coneAngle = 0.70 //.25
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 5
+renderName1 = "corbitb.flare"
+renderName2 = "corbitb.halo"
+renderName3 = "corbitb.trail"
+renderName4 = "corbitb.light"
+renderName5 = "corbitb.e4"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.50
+finishRadius = 0.50
+
+[Halo]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "127 0 255 164"
+finishColor = "127 0 255 164"
+startRadius = 0.3
+finishRadius = 0.3
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.05
+startColor = "127 0 255 255"
+finishColor = "60 0 255 0"
+startRadius = 0.1
+finishRadius = 0.5
+segmentTime = 3.0
+animateTime = 0.1
+
+[Light]
+renderBase = "draw_light"
+startColor = "127 0 255 300"
+finishColor = "127 0 255 300"
+startRadius = 7.0
+finishRadius = 7.0
+animateTime = 0.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[e4]
+simulateBase = "sim_dust"
+lifeTime = 0.1 //.1
+renderBase = "draw_emit"
+emitName = "corbitb.tgun2e4"
+emitDelay = 0.1
+emitVelocity = "0.0 0.0 0.0"//.4 0 0
+emitVariance = "0.0 0.0 0.0"// .5 .5 .5
+
+[tgun2e4]
+simulateBase = "sim_dust"
+lifeTime = 0.5 //2.5
+renderBase = "draw_light"
+textureName = "lightflare.tga"//lightflare
+textureBlend = "one one modulate"
+startColor = "127 0 255 255"
+finishColor = "0 0 255 100"
+startRadius = 2.9
+finishRadius = 2.9
+animateTime = 0.5
+
+

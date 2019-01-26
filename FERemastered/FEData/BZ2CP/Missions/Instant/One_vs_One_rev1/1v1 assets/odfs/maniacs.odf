@@ -1,0 +1,27 @@
+[GameObjectClass]
+baseName = "fspilo"
+classLabel = "fspilo"
+
+maxHealth = 500
+maxAmmo = 200
+addAmmo = 20
+
+aiName = "SoldierProcess"
+aiName2 = "SoldierProcess"
+
+weaponName1 = "sgbzka_c"
+weaponName2 = ""
+weaponName3 = "igamjet"
+
+[PersonClass]
+
+// running mode
+velocForwardRun  = 10.0
+velocJumpRun     = 10.0
+
+// flying mode
+velocForwardFly   = 35.0
+velocStrafeFly    = 20.0
+accelThrustFly    = 15.0
+velocJumpFly      = 5.0
+
