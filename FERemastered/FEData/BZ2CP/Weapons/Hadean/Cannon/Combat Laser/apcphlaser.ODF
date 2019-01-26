@@ -1,0 +1,15 @@
+[GameObjectClass]
+baseName = "apcphlas"
+classLabel = "apcannon"
+scrapCost = 10
+
+lightName1 = "omnipurp-ap"
+
+requireCount = 1
+requireName1 = "ebcbun"
+requireText1 = "Build Eyes of Xyr"
+
+[PowerUpClass]
+
+[WeaponPowerupClass]
+weaponName = "gcphlaser"
