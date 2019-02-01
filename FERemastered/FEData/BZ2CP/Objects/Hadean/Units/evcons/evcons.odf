@@ -40,7 +40,7 @@ scrapCost = 40
 buildTime = 10.0
 maxHealth = 2000
 maxAmmo = 0
-collisionRadius = 1.0
+collisionRadius = 5.0
 unitName = "Creator"
 aiName = "RigFriend"
 aiName2 = "RigEnemy"
@@ -68,7 +68,7 @@ periodScan = 5.0f
 velocJam = 5.0f
 TeamTransferrable = false
 
-braccelFactor = 0.1
+braccelFactor = 0.2 //0.1
 velFactor = 0.4
 steerFactor = 1.4
 omegaFactor = 0.3
@@ -99,8 +99,6 @@ velocStrafe = 0.0
 accelThrust = 20.0
 accelBrake = 70.0
 
-soundThrust = "icons01.wav"
-
 accelDragStop = 2.0
 accelJump = 0.0
 
@@ -119,6 +117,8 @@ alphaSteer = 2.0 //how fast it responds to steering
 rollSteer = 0.0 //rolls while steering
 
 accelDragFull = 0.0 //nothing
+
+soundThrust = "evwalken.wav" //"icons01.wav"
 
 [DeployableClass]
 timeDeploy = 2.0

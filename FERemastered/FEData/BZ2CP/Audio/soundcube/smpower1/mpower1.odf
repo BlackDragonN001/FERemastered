@@ -1,13 +1,13 @@
+// SOUNDMINE SOUND //
+
 [WeaponClass]
 classLabel = "cannon"
-//altName = "gatstab_a"
 ordName = "def"
-wpnName = "fire"
+wpnName = "Sound"
 fireSound = "power1.wav"
 wpnReticle = "gatstab"
 wpnCategory = "CANN"
 isAssault = 0
-//flashName = "xgatstab_c.flash"
 aiRange = 200
 
 [CannonClass]

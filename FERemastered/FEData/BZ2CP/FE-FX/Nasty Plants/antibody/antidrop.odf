@@ -6,7 +6,7 @@ scrapValue = 0
 maxHealth = 90000
 maxAmmo = 90000
 unitName = "Arc Mine"
-fireSound = "antishot.wav"
+fireSound = "antishot.wav" // Don't think this works... -GBD
 canCollide = 0 
 canDetect = 0 
 canInteract = 0 
@@ -18,10 +18,7 @@ weaponName1 = "antidrop1"
 
 [MineClass]
 lifeSpan = 90000
-fireSound = ""
 
 [WeaponMineClass]
 searchRadius = 150.0
 heightScale = 2.0
-fireSound = ""
-

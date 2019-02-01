@@ -6,7 +6,6 @@ scrapValue = 0
 maxHealth = 90000
 maxAmmo = 90000
 unitName = "Arc Mine"
-fireSound = ""
 canCollide = 0 
 canDetect = 0 
 canInteract = 0 
@@ -18,10 +17,8 @@ weaponName1 = "antibody1"
 
 [MineClass]
 lifeSpan = 90000
-fireSound = ""
 
 [WeaponMineClass]
 searchRadius = 150.0
 heightScale = 2.0
-fireSound = ""
 
