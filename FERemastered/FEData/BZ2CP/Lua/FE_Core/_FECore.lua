@@ -11,6 +11,7 @@ print("Loading _FECore.lua");
 -- Helper Luas.
 require('_GlobalHandler');
 local _MapReloader = require('_MapReloader');
+local _PropHeightFix = require('_PropHeightFix');
 
 -- FE Moduels.
 --require('_PortalHelper');
@@ -24,13 +25,15 @@ function _FECore.InitialSetup()
 
 -- Call helper functions.
 
-_MapReloader.InitialSetup();
+	_MapReloader.InitialSetup();
 
 end
 
 function _FECore.Start()
 
 -- Call helper functions.
+
+	_PropHeightFix.Start();
 
 end
 
@@ -49,6 +52,8 @@ end
 function _FECore.AddObject(h)
 
 -- Call helper functions.
+
+	_PropHeightFix.AddObject(h);
 
 end
 
