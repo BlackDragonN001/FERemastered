@@ -7,219 +7,678 @@ scavClass = "evscav"
 consClass = "evcons"
 CheckProvides = true
 sendAllUnitsOnStartup = 0
-
-[IdleDispatcher]
-IdleAllCraft = true
-ScavIdleSeconds = 1
-UnitIdleSeconds = 80
-MinAttackForce = 3
-MaxAttackForce = 5
+IdleAllCraft = false
 
 [Cheat]
 moneyAmount = 20
 moneyDelay = 5
 
+[IdleDispatcher]
+IdleAllCraft = true
+ScavIdleSeconds = 15
+UnitIdleSeconds = 60
+BomberIdleSeconds = 120
+MinAttackForce = 3
+MaxAttackForce = 10
+CraftTeamIsPilotTeam = false
+
 [Plan1]
-planType = "CollectPool"
-planPriority = 200
+planType = "Attacker"
+planPriority = 1000
+planCondition = "NotExists"
+planConditionClass = "ebarmo"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
+attackType1 = "evscout"
 buildIfNoIdle = 1
 ContinueEvenIfFail = 1
 
 [Plan2]
-planType = "BuildMinimums"
-planPriority = 195
-buildType1 = "evcons"
-buildCount1 = 1
-buildType2 = "evscav"
-buildCount2 = 1
+planType = "CollectPool"
+planPriority = 990
+buildIfNoIdle = 1
 
 [Plan3]
-planType = "BaseBuildMinimums"
-planPriority = 190
-buildType1 = "ebpgen"
-buildCount1 = 3
-//buildloc1 = "hpower1"
-buildType2 = "ebfact"
-//buildloc2 = "hfactory"
-buildType3 = "ebgt2g"
-//buildloc3 = "spike1"
+planType = "CollectPool"
+planPriority = 980
+buildIfNoIdle = 1
+defendType1 = "evscout"
+defendCount1 = 1
 
 [Plan4]
-planType = "Attacker"
-planPriority = 185
-planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_GUNTOWER"
+planType = "BuildMinimums"
+planPriority = 970
+planCondition = "NotExists"
+planConditionClass = "ebarmo"
 planConditionCount = 1
-targetType = "VIRTUAL_CLASS_GUNTOWER"
-attackType1 = "evmort"
-attackType2 = "evmort"
-buildIfNoIdle = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "evscout"
+buildCount1 = 1
 ContinueEvenIfFail = 1
 
 [Plan5]
-planType = "BaseBuildMinimums"
-planPriority = 180
-buildType1 = "ebpgen"
-//buildloc1 = "hpower2"
-buildType2 = "ebcbun"
-//buildloc2 = "hbunker"
-
-[Plan6]
-planType = "Attacker"
-planPriority = 175
-planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_ASSAULTTANK"
+planType = "DefendArea"
+planPriority = 960
+planCondition = "NotExists"
+planConditionClass = "ebarmo"
 planConditionCount = 1
-targetType = "ivatank"
-attackType1 = "evmort"
-attackType2 = "evmort"
-buildIfNoIdle = 1
-maxTries = 1
-
-[Plan7]
-planType = "BaseBuildMinimums"
-planPriority = 170
-buildType1 = "ebarmo"
-//buildloc1 = "harmory"
-buildType2 = "ebsbay"
-//buildloc2 = "hservicebay"
-buildType3 = "ebpgen"
-//buildloc3 = "hpower3"
-
-[Plan8]
-planType = "CollectPool"
-planPriority = 205
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "ebscav"
 buildIfNoIdle = 1
 ContinueEvenIfFail = 1
 
-[Plan9]
-planType = "Attacker"
-planPriority = 165
-planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_WALKER"
-planConditionCount = 1
-targettype = "VIRTUAL_CLASS_WALKER"
-attacktype1 = "evmisl"
-attacktype2 = "evtank"
-buildIfNoIdle = 1
-maxTries = 1
-
-[Plan10]
-planType = "Upgrade"
-planPriority = 160
-planCondition = "NotExists"
-planConditionClass = "ebfact2"
-planConditionCount = 1
-UnitType = "ebfact"
-
-[Plan11]
-planType = "Attacker"
-planPriority = 155
-planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
-planConditionCount = 1
-targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
-attackType1 = "evtanku"
-attackType2 = "evtanku"
-attackType3 = "evtanku"
-buildIfNoIdle = 1
-maxTries = 1
-
-[Plan12]
-planType = "Hold"
-planPriority = 155
-holdType1 = "evturr"
-holdCount1 = 1
-holdPoint = "hold3"
-buildIfNoIdle = 1
-maxtries = 1
-
-[Plan13]
-planType = "BaseBuildMinimums"
-planPriority = 150
-buildType1 = "ebgt4g"
-//buildloc1 = "hgtow1"
-buildType2 = "ebtrain"
-//buildloc2 = "htraining"
-
-[Plan14]
+[Plan6]
 planType = "BuildMinimums"
-planPriority = 145
+planPriority = 950
+buildType1 = "evcons"
+buildCount1 = 1
+
+[Plan7]
+planType = "BuildMinimums"
+planPriority = 940
+planCondition = "NotExists"
+planConditionClass = "ebgtow"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
 buildType1 = "evturr"
 buildCount1 = 2
 
-[Plan15]
-planType = "Attacker"
-planPriority = 140
-planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_ARTILLERY"
+[Plan8]
+planType = "Hold"
+planPriority = 930
+planCondition = "NotExists"
+planConditionClass = "ebgtow"
 planConditionCount = 1
-targetType = "VIRTUAL_CLASS_ARTILLERY"
-attackType1 = "evtank"
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+holdPoint = "eteam1_hold1"
+holdType1 = "evturr"
+holdCount1 = 1
+ContinueEvenIfFail = 1
+
+[Plan9]
+planType = "Hold"
+planPriority = 920
+planCondition = "NotExists"
+planConditionClass = "ebgtow"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+holdPoint = "eteam1_hold2"
+holdType1 = "evturr"
+holdCount1 = 1
+ContinueEvenIfFail = 1
+
+[Plan10]
+planType = "Explorer"
+planPriority = 910
+unitType = "evscout"
 buildIfNoIdle = 1
-maxTries = 1
+ContinueEvenIfFail = 1
+
+[Plan11]
+planType = "Attacker"
+planPriority = 900
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_EXTRACTOR"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_EXTRACTOR"
+attackType1 = "evscout"
+attackType2 = "evscout"
+buildIfNoIdle = 1
+maxAttacks = 3
+AttackAnything = 1
+ContinueEvenIfFail = 1
+
+[Plan12]
+planType = "CollectField"
+planPriority = 890
+buildIfNoIdle = 1
+defendType1 = "evscout"
+defendCount1 = 1
+
+[Plan13]
+planType = "BaseBuildMinimums"
+planPriority = 880
+planCondition = "NotExists"
+planConditionClass = "ebpgen"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebpgen"
+buildCount1 = 1
+buildLoc1 = "eteam2_pgen1" // Possibly need to change this at some point.
+
+[Plan14]
+planType = "BaseBuildMinimums"
+planPriority = 870
+planCondition = "Exists"
+planConditionClass = "ebpgen"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebfact"
+buildCount1 = 1
+buildLoc1 = "eteam2_fact"
+
+[Plan15]
+planType = "BaseBuildMinimums"
+planPriority = 860
+planCondition = "Exists"
+planConditionClass = "ebfact"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebcbun"
+buildCount1 = 1
+buildLoc1 = "eteam2_relay"
 
 [Plan16]
-planType = "Attacker"
-planPriority = 135
-planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_GUNTOWER"
-planConditionCount = 2
-targetType = "VIRTUAL_CLASS_GUNTOWER"
-attackType1 = "evartl2"
+planType = "Explorer"
+planPriority = 850
+unitType = "evtank"
 buildIfNoIdle = 1
-maxTries = 1
+ContinueEvenIfFail = 1
 
 [Plan17]
-planType = "CollectPool"
-planPriority = 204
+planType = "Attacker"
+planPriority = 840
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
+attackType1 = "evtank"
+attackType2 = "evscout"
+maxAttacks = 3
 buildIfNoIdle = 1
 ContinueEvenIfFail = 1
 
 [Plan18]
-planType = "CollectPool"
-planPriority = 146
-ContinueEvenIfFail = 1
+planType = "BaseBuildMinimums"
+planPriority = 830
+planCondition = "NotExists"
+planConditionClass = "ebpgen"
+planConditionCount = 2
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebpgen"
+buildCount1 = 1
+buildLoc1 = "eteam2_pgen2"
 
 [Plan19]
 planType = "Attacker"
-planPriority = 130
+planPriority = 820
 planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_FACTORY"
+planConditionClass = "VIRTUAL_CLASS_EXTRACTOR"
 planConditionCount = 1
-targetType = "VIRTUAL_CLASS_FACTORY"
-attackType1 = "evatank"
-attackType2 = "evatank"
-buildIfNoIdle = 1
-maxTries = 1
-
-[Plan20]
-planType = "attacker"
-planPriority = 134
-planCondition = "NotHisExists"
-planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
-planConditionCount = 1
-targetType = "VIRTUAL_CLASS_POWERPLANT"
-attackType1 = "evkami"
-attackType2 = "evkami"
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_EXTRACTOR"
+attackType1 = "evtank"
+attackType2 = "evtank"
+AttackAnything = 1
+maxAttacks = 0
 buildIfNoIdle = 1
 ContinueEvenIfFail = 1
 
-[plan21]
-planType = "Hold"
-planPriority = 133
-holdType1 = "evturr"
-holdCount1 = 1
-holdPoint = "hold4"
+[Plan20]
+planType = "Explorer"
+planPriority = 810
+unitType = "evmisl"
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan21]
+planType = "BaseBuildMinimums"
+planPriority = 800
+planCondition = "NotExists"
+planConditionClass = "ebgt4g"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebgt4g"
+buildCount1 = 1
+buildLoc1 = "eteam2_gtow1"
 
 [Plan22]
+planType = "BaseBuildMinimums"
+planPriority = 790
+planCondition = "NotExists"
+planConditionClass = "ebarmo"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebarmo"
+buildCount1 = 1
+buildLoc1 = "eteam2_armory"
+
+[Plan23]
+planType = "BaseBuildMinimums"
+planPriority = 780
+planCondition = "NotExists"
+planConditionClass = "ebsbay"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebsbay"
+buildCount1 = 1
+buildLoc1 = "eteam2_sbay"
+
+[Plan24]
 planType = "Attacker"
-planPriority = 125
-planCondition = "NotHisExists"
+planPriority = 770
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_POWERPLANT"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_POWERPLANT"
+attackType1 = "evtanks"
+attackType2 = "evtank"
+maxAttacks = 5
+AttackAnything = 1
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan25]
+planType = "Attacker"
+planPriority = 760
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_GUNTOWER"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_GUNTOWER"
+attackType1 = "evmort"
+attackType2 = "evmort"
+attackType3 = "evmisl"
+attackType4 = "evmisl"
+maxAttacks = 4
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan26]
+planType = "BaseBuildMinimums"
+planPriority = 750
+planCondition = "NotExists"
+planConditionClass = "ebpgen"
+planConditionCount = 3
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebpgen"
+buildCount1 = 1
+buildLoc1 = "eteam2_pgen3"
+
+[Plan27]
+planType = "BuildMinimums"
+planPriority = 740
+buildType1 = "evserv"
+buildCount1 = 4
+
+[Plan28]
+planType = "Attacker"
+planPriority = 730
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_FACTORY"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_FACTORY"
+attackType1 = "evatank"
+attackType2 = "evatank"
+maxAttacks = 6
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan29]
+planType = "Upgrade"
+planPriority = 720
+planCondition = "Exists"
+planConditionClass = "ebfact"
+planConditionCount = 1
+unitType = "ebfact"
+buildIfNoIdle = 1
+
+[Plan30]
+planType = "BaseBuildMinimums"
+planPriority = 710
+planCondition = "NotExists"
+planConditionClass = "ebgt2g"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebgt2g"
+buildCount1 = 1
+buildLoc1 = "eteam2_gtow2"
+
+[Plan31]
+planType = "BaseBuildMinimums"
+planPriority = 700
+planCondition = "NotExists"
+planConditionClass = "ebpgen"
+planConditionCount = 4
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebpgen"
+buildCount1 = 1
+buildLoc1 = "eteam2_pgen4"
+
+[Plan32]
+planType = "BaseBuildMinimums"
+planPriority = 690
+planCondition = "NotExists"
+planConditionClass = "ebtrain"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebtrain"
+buildCount1 = 1
+buildLoc1 = "eteam2_train"
+
+[Plan33]
+planType = "Attacker"
+planPriority = 680
+planCondition = "HisExists"
 planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
 planConditionCount = 1
-targetType = "VIRTUAL_CLASS_EXTRACTOR"
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
 attackType1 = "evmislu"
 attackType2 = "evmislu"
+maxAttacks = 6
 buildIfNoIdle = 1
-maxTries = 1
+ContinueEvenIfFail = 1
+
+[Plan34]
+planType = "BaseBuildMinimums"
+planPriority = 670
+planCondition = "NotExists"
+planConditionClass = "ebgt4g"
+planConditionCount = 2
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebgt4g"
+buildCount1 = 1
+buildLoc1 = "eteam2_gtow3"
+
+[Plan35]
+planType = "Recover"
+planPriority = 660
+planCondition = "Exists"
+planConditionClass = "ebsbay"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+serviceUnit = "ebsbay"
+unitType1 = "evscout"
+unitType2 = "evmisl"
+unitType3 = "evmislu"
+unitType4 = "evatank"
+unitType5 = "evtank"
+unitType6 = "evmbike"
+unitType7 = "evscav"
+
+[Plan36]
+planType = "CollectField"
+planPriority = 650
+buildIfNoIdle = 1
+defendType1 = "evtanku"
+defendCount1 = 1
+
+[Plan37]
+planType = "BaseBuildMinimums"
+planPriority = 640
+planCondition = "NotExists"
+planConditionClass = "ebtcen"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebtcen"
+buildCount1 = 1
+buildLoc1 = "eteam2_tech"
+
+[Plan38]
+planType = "BaseBuildMinimums"
+planPriority = 620
+planCondition = "NotExists"
+planConditionClass = "ebpgen"
+planConditionCount = 5
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebpgen"
+buildCount1 = 1
+buildLoc1 = "eteam2_pgen5"
+
+[Plan39]
+planType = "Attacker"
+planPriority = 610
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_ASSAULTTANK"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_ASSAULTTANK"
+attackType1 = "evtanku"
+attackType2 = "evtanku"
+attackType3 = "evtankf"
+attackType4 = "evtankf"
+maxAttacks = 10
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan40]
+planType = "BaseBuildMinimums"
+planPriority = 590
+planCondition = "NotExists"
+planConditionClass = "ebgt2g"
+planConditionCount = 2
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebgt2g"
+buildCount1 = 1
+buildLoc1 = "eteam2_gtow4"
+
+[Plan41]
+planType = "BaseBuildMinimums"
+planPriority = 580
+planCondition = "NotExists"
+planConditionClass = "ebgt4g"
+planConditionCount = 3
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebgt4g"
+buildCount1 = 1
+buildLoc1 = "eteam2_gtow5"
+
+[Plan42]
+planType = "BaseBuildMinimums"
+planPriority = 570
+planCondition = "NotExists"
+planConditionClass = "ebgt2g"
+planConditionCount = 3
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ebgt2g"
+buildCount1 = 1
+buildLoc1 = "eteam2_gtow6"
+
+[Plan43]
+planType = "BuildMinimums"
+planPriority = 560
+buildType1 = "evcons"
+buildCount1 = 1
+
+[Plan44]
+planType = "Upgrade"
+planPriority = 550
+planCondition = "Exists"
+planConditionClass = "ebscav"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+unitType = "ebscav"
+ContinueEvenIfFail = 1
+
+
+[Plan45]
+planType = "Attacker"
+planPriority = 540
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_GUNTOWER"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_GUNTOWER"
+attackType1 = "evartl2"
+attackType2 = "evartl2"
+attackType3 = "evatanks"
+maxAttacks = 5
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan46]
+planType = "Attacker"
+planPriority = 530
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_FACTORY"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_FACTORY"
+attackType1 = "ivewalk"
+attackType2 = "ivewalk"
+attackType3 = "evatanks"
+maxAttacks = 0
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan47]
+planType = "Attacker"
+planPriority = 520
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
+attackType1 = "evkami"
+attackType2 = "evkami"
+attackType3 = "evkami"
+attackType4 = "evkami"
+attackType5 = "evkami"
+maxAttacks = 0
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan48]
+planType = "Attacker"
+planPriority = 510
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_ARMORY"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_ARMORY"
+attackType1 = "evatanku"
+attackType2 = "evatanku"
+maxAttacks = 0
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan49]
+planType = "Attacker"
+planPriority = 500
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
+attackType1 = "ivewalk"
+attackType2 = "ivewalk"
+maxAttacks = 0
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan50]
+planType = "Attacker"
+planPriority = 520
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_ARMORY"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_ARMORY"
+attackType1 = "evmort"
+attackType2 = "evmort"
+attackType3 = "evmort"
+maxAttacks = 0
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan51]
+planType = "Attacker"
+planPriority = 510
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
+attackType1 = "evtankf"
+attackType2 = "evtankf"
+attackType3 = "evmislu"
+attackType4 = "evmort"
+maxAttacks = 0
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1

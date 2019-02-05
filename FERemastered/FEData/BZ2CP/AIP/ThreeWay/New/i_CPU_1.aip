@@ -7,10 +7,11 @@ consClass = "ivcons"
 scavClass = "ivscav"
 CheckProvides = true
 sendAllUnitsOnStartup = 0
+IdleAllCraft = false
 
 [Cheat]
 moneyAmount = 20
-moneyDelay = 10
+moneyDelay = 5
 
 [IdleDispatcher]
 IdleAllCraft = true
