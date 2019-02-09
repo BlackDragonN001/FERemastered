@@ -1,0 +1,683 @@
+// NEW FE Remastered 3way Cerberi AIP 
+// Written by JJ (AI_Unit)
+
+[Start]
+scrapCount = 40
+consClass = "cvcons02"
+scavClass = "cvscav"
+CheckProvides = true
+sendAllUnitsOnStartup = 0
+IdleAllCraft = false
+
+[Cheat]
+moneyAmount = 20
+moneyDelay = 5
+
+[IdleDispatcher]
+IdleAllCraft = true
+ScavIdleSeconds = 15
+UnitIdleSeconds = 60
+BomberIdleSeconds = 120
+MinAttackForce = 3
+MaxAttackForce = 10
+CraftTeamIsPilotTeam = false
+
+[Plan1]
+planType = "Attacker"
+planPriority = 1000
+planCondition = "NotExists"
+planConditionClass = "cbarmo"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
+attackType1 = "cvscout"
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan2]
+planType = "CollectPool"
+planPriority = 990
+buildIfNoIdle = 1
+
+[Plan3]
+planType = "CollectPool"
+planPriority = 980
+buildIfNoIdle = 1
+defendType1 = "cvscout"
+defendCount1 = 1
+
+[Plan4]
+planType = "BuildMinimums"
+planPriority = 970
+planCondition = "NotExists"
+planConditionClass = "cbarmo"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cvscout"
+buildCount1 = 1
+ContinueEvenIfFail = 1
+
+[Plan5]
+planType = "DefendArea"
+planPriority = 960
+planCondition = "NotExists"
+planConditionClass = "cbarmo"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "cbscav"
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan6]
+planType = "BuildMinimums"
+planPriority = 950
+buildType1 = "cvcons02"
+buildCount1 = 1
+
+[Plan7]
+planType = "BuildMinimums"
+planPriority = 940
+planCondition = "NotExists"
+planConditionClass = "cbgtow"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cvturr"
+buildCount1 = 2
+
+[Plan8]
+planType = "Hold"
+planPriority = 930
+planCondition = "NotExists"
+planConditionClass = "cbgtow"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+holdPoint = "eteam1_hold1"
+holdType1 = "cvturr"
+holdCount1 = 1
+ContinueEvenIfFail = 1
+
+[Plan9]
+planType = "Hold"
+planPriority = 920
+planCondition = "NotExists"
+planConditionClass = "cbgtow"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+holdPoint = "eteam1_hold2"
+holdType1 = "cvturr"
+holdCount1 = 1
+ContinueEvenIfFail = 1
+
+// Explore the map
+[Plan10]
+planType = "Explorer"
+planPriority = 910
+unitType = "cvscout"
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan11]
+planType = "Attacker"
+planPriority = 900
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_EXTRACTOR"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_EXTRACTOR"
+attackType1 = "cvscout"
+attackType2 = "cvscout"
+buildIfNoIdle = 1
+maxAttacks = 3
+AttackAnything = 1
+ContinueEvenIfFail = 1
+
+[Plan12]
+planType = "CollectField"
+planPriority = 890
+buildIfNoIdle = 1
+defendType1 = "cvscout"
+defendCount1 = 1
+
+[Plan13]
+planType = "BaseBuildMinimums"
+planPriority = 880
+planCondition = "NotExists"
+planConditionClass = "cbpgen"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbpgen"
+buildCount1 = 1
+buildLoc1 = "eteam1_pgen1"
+
+[Plan14]
+planType = "BaseBuildMinimums"
+planPriority = 870
+planCondition = "Exists"
+planConditionClass = "cbpgen"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbfact02"
+buildCount1 = 1
+buildLoc1 = "eteam1_fact"
+
+[Plan15]
+planType = "BaseBuildMinimums"
+planPriority = 860
+planCondition = "Exists"
+planConditionClass = "cbfact02"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbcbun"
+buildCount1 = 1
+//buildLoc1 = "eteam1_relay" -> Commented out for Cerb due to the size of this building. Less room for Gun Towers.
+
+[Plan16]
+planType = "Explorer"
+planPriority = 850
+unitType = "cvtank"
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan17]
+planType = "Attacker"
+planPriority = 840
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
+attackType1 = "cvtank"
+attackType2 = "cvscout"
+maxAttacks = 3
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan18]
+planType = "BaseBuildMinimums"
+planPriority = 830
+planCondition = "NotExists"
+planConditionClass = "cbpgen"
+planConditionCount = 2
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbpgen"
+buildCount1 = 1
+buildLoc1 = "eteam1_pgen2"
+
+[Plan19]
+planType = "Attacker"
+planPriority = 820
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_EXTRACTOR"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_EXTRACTOR"
+attackType1 = "cvtank"
+attackType2 = "cvtank"
+AttackAnything = 1
+maxAttacks = 0
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan20]
+planType = "Explorer"
+planPriority = 810
+unitType = "cvtank"
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan21]
+planType = "BaseBuildMinimums"
+planPriority = 800
+planCondition = "NotExists"
+planConditionClass = "cbarmo"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbarmo"
+buildCount1 = 1
+buildLoc1 = "eteam1_armory"
+
+[Plan22]
+planType = "BaseBuildMinimums"
+planPriority = 790
+planCondition = "NotExists"
+planConditionClass = "cbgtow"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbgtow"
+buildCount1 = 1
+buildLoc1 = "eteam1_gtow1"
+
+[Plan23]
+planType = "BaseBuildMinimums"
+planPriority = 780
+planCondition = "NotExists"
+planConditionClass = "cbsbay"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbsbay"
+buildCount1 = 1
+buildLoc1 = "eteam1_sbay"
+
+[Plan24]
+planType = "Attacker"
+planPriority = 770
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_POWERPLANT"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_POWERPLANT"
+attackType1 = "cvtank"
+attackType2 = "cvtank"
+maxAttacks = 5
+AttackAnything = 1
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan25]
+planType = "Attacker"
+planPriority = 760
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_GUNTOWER"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_GUNTOWER"
+attackType1 = "cvtank"
+attackType2 = "cvrbomb"
+attackType3 = "cvtank"
+maxAttacks = 4
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan26]
+planType = "BaseBuildMinimums"
+planPriority = 750
+planCondition = "NotExists"
+planConditionClass = "cbpgen"
+planConditionCount = 3
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbpgen"
+buildCount1 = 1
+buildLoc1 = "eteam1_pgen3"
+
+[Plan27]
+planType = "BuildMinimums"
+planPriority = 740
+buildType1 = "cvserv"
+buildCount1 = 4
+
+[Plan28]
+planType = "Attacker"
+planPriority = 730
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_FACTORY"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_FACTORY"
+attackType1 = "cvrbomb"
+attackType2 = "cvrbomb"
+maxAttacks = 6
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan29]
+planType = "Explorer"
+planPriority = 720
+unitType = "cvatank"
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan30]
+planType = "BaseBuildMinimums"
+planPriority = 710
+planCondition = "NotExists"
+planConditionClass = "cbgtow"
+planConditionCount = 2
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbgtow"
+buildCount1 = 1
+buildLoc1 = "eteam1_gtow2"
+
+[Plan31]
+planType = "BaseBuildMinimums"
+planPriority = 700
+planCondition = "NotExists"
+planConditionClass = "cbpgen"
+planConditionCount = 4
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbpgen"
+buildCount1 = 1
+buildLoc1 = "eteam1_pgen4"
+
+[Plan32]
+planType = "BaseBuildMinimums"
+planPriority = 690
+planCondition = "NotExists"
+planConditionClass = "cbjamm"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbjamm"
+buildCount1 = 1
+buildLoc1 = "eteam1_train"
+
+[Plan33]
+planType = "Attacker"
+planPriority = 680
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
+attackType1 = "cvdcar"
+attackType2 = "cvtank"
+attackType3 = "cvtank"
+maxAttacks = 6
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan34]
+planType = "BaseBuildMinimums"
+planPriority = 670
+planCondition = "NotExists"
+planConditionClass = "cbgtow"
+planConditionCount = 3
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbgtow"
+buildCount1 = 1
+buildLoc1 = "eteam1_gtow3"
+
+[Plan35]
+planType = "Recover"
+planPriority = 660
+planCondition = "Exists"
+planConditionClass = "cbsbay"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+serviceUnit = "cbsbay"
+unitType1 = "cvscout"
+unitType2 = "cvtank"
+unitType3 = "cvdcar"
+unitType4 = "cvatank"
+unitType5 = "cvrbomb"
+
+[Plan36]
+planType = "CollectField"
+planPriority = 650
+buildIfNoIdle = 1
+defendType1 = "cvtank"
+defendCount1 = 1
+
+[Plan37]
+planType = "BaseBuildMinimums"
+planPriority = 630
+planCondition = "NotExists"
+planConditionClass = "cbpgen"
+planConditionCount = 5
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbpgen"
+buildCount1 = 1
+buildLoc1 = "eteam1_pgen5"
+
+// Haha....People will hate me for this one.
+[Plan38]
+planType = "Attacker"
+planPriority = 620
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_ASSAULTTANK"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_ASSAULTTANK"
+attackType1 = "cvtank"
+attackType2 = "cvtank"
+attackType3 = "cvtank"
+attackType4 = "cvtank"
+maxAttacks = 10
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan39]
+planType = "BaseBuildMinimums"
+planPriority = 610
+planCondition = "NotExists"
+planConditionClass = "cbtcen"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbtcen"
+buildCount1 = 1
+buildLoc1 = "eteam1_tech"
+
+[Plan40]
+planType = "BaseBuildMinimums"
+planPriority = 600
+planCondition = "NotExists"
+planConditionClass = "cbgtow"
+planConditionCount = 4
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbgtow"
+buildCount1 = 1
+buildLoc1 = "eteam1_gtow4"
+
+[Plan41]
+planType = "BaseBuildMinimums"
+planPriority = 590
+planCondition = "NotExists"
+planConditionClass = "cbgtow"
+planConditionCount = 5
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbgtow"
+buildCount1 = 1
+buildLoc1 = "eteam1_gtow5"
+
+[Plan42]
+planType = "BaseBuildMinimums"
+planPriority = 580
+planCondition = "NotExists"
+planConditionClass = "cbgtow"
+planConditionCount = 6
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "cbgtow"
+buildCount1 = 1
+buildLoc1 = "eteam1_gtow6"
+
+[Plan43]
+planType = "BuildMinimums"
+planPriority = 570
+buildType1 = "cvcons"
+buildCount1 = 1
+
+// Upgrade Existing Extractors for Attacks
+
+[Plan44]
+planType = "Upgrade"
+planPriority = 570
+planCondition = "Exists"
+planConditionClass = "cbscav"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+unitType = "cbscav"
+ContinueEvenIfFail = 1
+
+[Plan45]
+planType = "Attacker"
+planPriority = 560
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_GUNTOWER"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_GUNTOWER"
+attackType1 = "cvrbomb"
+attackType2 = "cvrbomb"
+maxAttacks = 0
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan46]
+planType = "Attacker"
+planPriority = 550
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_FACTORY"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_FACTORY"
+attackType1 = "cvwalk"
+attackType2 = "cvtank"
+attackType3 = "cvtank"
+maxAttacks = 0
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan47]
+planType = "Attacker"
+planPriority = 540
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
+attackType1 = "cvdcar"
+attackType2 = "cvhatank"
+attackType3 = "cvtank"
+attackType4 = "cvtank"
+maxAttacks = 0
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan48]
+planType = "Attacker"
+planPriority = 530
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_ARMORY"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_ARMORY"
+attackType1 = "cvscout"
+attackType2 = "cvscout"
+attackType3 = "cvwalk"
+attackType4 = "cvtalon02"
+attackType5 = "cvtalon02"
+maxAttacks = 0
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan49]
+planType = "Attacker"
+planPriority = 520
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
+attackType1 = "cvdcar"
+attackType2 = "cvdcar"
+maxAttacks = 0
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan50]
+planType = "Attacker"
+planPriority = 510
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_ARMORY"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_ARMORY"
+attackType1 = "cvgorg"
+attackType2 = "cvgorg"
+maxAttacks = 0
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan51]
+planType = "Attacker"
+planPriority = 500
+planCondition = "HisExists"
+planConditionClass = "VIRTUAL_CLASS_RECYCLERBUILDING"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
+attackType1 = "cvtank"
+attackType2 = "cvtank"
+attackType3 = "cvtank"
+attackType4 = "cvtank"
+maxAttacks = 0
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
