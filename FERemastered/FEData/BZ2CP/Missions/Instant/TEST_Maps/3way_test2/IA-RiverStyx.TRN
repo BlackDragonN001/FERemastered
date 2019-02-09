@@ -1,0 +1,87 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX = -1024.0
+MinZ = -1024.0
+Width = 2048.0
+Depth = 2048.0
+Height = 100
+Tile = 1
+Color = "89 69 105 255"
+
+[NormalView]
+FogColor="20 15 50"
+FogStart=250
+FogEnd=300
+VisibilityRange=300
+
+[World]
+MusicTrack1=6
+MusicTrack2=10
+MusicTrack3=8
+
+[Light]
+SunPeriod = 24.0
+SunAngle = 12.0
+SunColor = "255 255 255 255"
+AmbientColor = "64 40 128"
+
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX = -1024.0
+MinZ = -1024.0
+Width = 2048.0
+Depth = 2048.0
+Height = 100
+Tile = 1
+Color = "89 69 105 255"
+
+[NormalView]
+DiffuseColor = "204 204 204"
+SpecularColor = "10 10 10"
+SpecularPower = 1024.0
+
+[World]
+MusicTrack1 = 6
+MusicTrack2 = 10
+MusicTrack3 = 8
+
+[Texture]
+TileTexture1 = "pluto.tga"
+TileTexture2 = "pluto2.tga"
+TileTexture3 = "pluto3.tga"
+TileTexture4 = "pluto6.tga"
+TileTexture5 = "pluto7.tga"
+TileTexture6 = "mire5.tga"
+TileTexture7 = "bane2.tga"
+TileTexture8 = "bane3.tga"
+TileTexture9 = "nattybumppo.tga"
+
+[Clouds]
+Count    = 0
+Type     = 1
+TileSize = 200
+
+Texture0 = acloud2.tga
+Size0    = 100
+Height0  = 30
+
+Texture1 = acloud.tga
+Size1    = 100
+Height1  = 40
+
+Texture2 = acloud2.tga
+Size2    = 100
+Height2  = 50
+
+[Dome]
+DomeGeom    = plutodome.xsi
+DomeRadius  = 275
+DomeHeight  = 0
+DomeType    = 0
+DomeUVSpeed = "0.002 0.002 0.002"
+
+Count       = 0
+Type        = 1
+TileSize    = 375
