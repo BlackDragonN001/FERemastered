@@ -34,6 +34,7 @@ effectName2 = "evdroptf.render"
 [BuildingClass]
 justFlat = 1
 soundAmbient = "sdrop01.wav"
+AmbeintSoundWhenUnpowered = true
 
 [Render]
 renderBase = "draw_multi"

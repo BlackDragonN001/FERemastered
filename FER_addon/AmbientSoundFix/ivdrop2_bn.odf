@@ -1,0 +1,47 @@
+[GameObjectClass]
+classLabel = "i76building"
+geometryName = "ivdrop02_bank.fbx"
+animCount = 1
+animName1 = "bank"
+animFile1 = "ivdrop02_bank.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 10000
+maxAmmo = 0
+unitName = "Condor"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+ownsTerrain = 0
+canDetect = 0
+canInteract = 0
+canCollide = 0
+armorClass = L
+
+effectHard1 = "hp_trail_1"
+effectName1 = "ivdrop_fly.trail"
+effectHard2 = "hp_trail_2"
+effectName2 = "ivdrop_fly.trail"
+
+[BuildingClass]
+soundAmbient = "sdrop01.wav"
+AmbeintSoundWhenUnpowered = true
+
+[trail]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 10.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = .5
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "0 100 255 127"
+finishColor = "0 100 255 0"
+startRadius = 15
+finishRadius = 1
+animateTime = .5
+rotationRate = 2.0
+maxDist	= 2000.0f
+maxRadii = 2000.0f

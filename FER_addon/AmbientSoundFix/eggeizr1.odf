@@ -1,0 +1,16 @@
+[GameObjectClass]
+geometryName = "nepool01.xsi"
+classLabel = "i76building"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "Geyser"
+heatSignature = 5.5
+imageSignature = 0.01
+radarSignature = 0.01
+collisionRadius = 1.0
+
+[BuildingClass]
+soundAmbient = "gflas00.wav"
+AmbeintSoundWhenUnpowered = true

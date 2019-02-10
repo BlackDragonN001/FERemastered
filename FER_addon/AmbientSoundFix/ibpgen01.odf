@@ -1,22 +1,22 @@
+//prop - destroyed ibpgen
 [GameObjectClass]
-geometryName = "fvnexus00.xsi"
-//geometryScale = 7.0
+baseName = "ibpgen"
 classLabel = "i76building"
+geometryName = "ibpgen01.fbx"
 scrapCost = 8
 scrapValue = 3
 maxHealth = 5000
 maxAmmo = 0
-unitName = "Unknown"
+unitName = "Power Generator"
 heatSignature = 2.0
 imageSignature = 1.0
 radarSignature = 1.0
 collisionRadius = 1.0
-//buildSupport = B
-canCollide = 0
-ownsTerrain = 0
-
 armorClass = H
+AllowUndergroundSpawn = 1
 
 [BuildingClass]
-soundAmbient = "nexus1.wav"
-AmbeintSoundWhenUnpowered = true
+//soundAmbient = "ipgen01.wav"
+
+[PoweredBuildingClass]
+detectRange = 50

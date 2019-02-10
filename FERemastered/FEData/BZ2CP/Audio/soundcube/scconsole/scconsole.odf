@@ -14,4 +14,5 @@ unitName = "Soundcube"
 
 [BuildingClass] 
 SoundAmbient = "console.wav" 
-SoundAmbientDist = 0.0 
+SoundAmbientDist = 0.0
+AmbeintSoundWhenUnpowered = true 

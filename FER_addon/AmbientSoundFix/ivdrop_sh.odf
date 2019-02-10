@@ -1,0 +1,97 @@
+[GameObjectClass]
+classLabel = "i76building"
+geometryName = "ivdrop00_shake.fbx"
+animCount = 1
+animName1 = "shake"
+animFile1 = "ivdrop00_shake.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 10000
+maxAmmo = 0
+unitName = "Condor"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+ownsTerrain = 0
+canDetect = 0
+canInteract = 0
+canCollide = 0
+armorClass = L
+
+effectHard1 = "hp_emit_1"
+effectName1 = "ivdrop_sh.render"
+effectHard2 = "hp_emit_2"
+effectName2 = "ivdrop_sh.render"
+effectHard3 = "hp_emit_3"
+effectName3 = "ivdrop_sh.render"
+
+effectHard4 = "hp_trail_1"
+effectName4 = "ivdrop_sh.trail"
+effectHard5 = "hp_trail_2"
+effectName5 = "ivdrop_sh.trail"
+
+[BuildingClass]
+soundAmbient = "sdrop01.wav"
+AmbeintSoundWhenUnpowered = true
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "ivdrop_sh.flare"
+renderName2 = "ivdrop_sh.smoke"
+renderName3 = "ivdrop_sh.flame"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 1.0
+finishRadius = 0.5
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor =   "70 70 70 108" 
+finishColor = "153 153 153 0"
+startRadius = 0.2
+finishRadius = 0.7
+animateTime = 2.0
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.6 0.6 0.6"
+emitLife = 2.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 0.2
+finishRadius = 0.02
+animateTime = 0.02
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitLife = 0.02
+
+[trail]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 10.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = .5
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "0 100 255 127"
+finishColor = "0 100 255 0"
+startRadius = 15
+finishRadius = 1
+animateTime = .5
+rotationRate = 2.0
+zBiaz = 5.0f

@@ -1,0 +1,16 @@
+[GameObjectClass]
+geometryName = "soundcube.xsi"
+classLabel = "I76Sign"
+scrapCost = 1
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+canCollide = 0
+canDetect = 0
+canInteract = 0
+unitName = "Soundcube"
+
+[BuildingClass]
+SoundAmbient = "wind02.wav"
+SoundAmbientDist = 0.7
+AmbeintSoundWhenUnpowered = true

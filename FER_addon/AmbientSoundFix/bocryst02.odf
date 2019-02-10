@@ -1,5 +1,5 @@
 [GameObjectClass]
-geometryName = "fe01tf02.xsi"
+geometryName = "bocryst02.fbx"
 classLabel = "i76building"
 scrapCost = 8
 scrapValue = 3
@@ -9,11 +9,13 @@ unitName = "crystal"
 heatSignature = 0.8
 imageSignature = 8.0
 radarSignature = 1.0
-collisionRadius = 5.0
+collisionRadius = 8.0
 canDetect = 0
 canInteract = 0
 canSnipe = 0
+ownsTerrain = 1
 
 [BuildingClass]
-soundAmbient = "BACRYS1B.wav"
+
+soundAmbient = "BACRYS2B.wav"
 AmbeintSoundWhenUnpowered = true
