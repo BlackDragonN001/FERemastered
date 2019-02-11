@@ -120,6 +120,7 @@ function InitialSetup()
 	_FECore.Start();
 	
 	M.TPS = EnableHighTPS();
+	AllowRandomTracks(false);
 	DefineRoutines();
 	--Preload to reduce lag spikes when resources are used for the first time.
 	local preloadODFs = {

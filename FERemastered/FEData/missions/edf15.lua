@@ -99,6 +99,8 @@ function InitialSetup()
 	_FECore.InitialSetup();
 
 	M.TPS = EnableHighTPS();
+	AllowRandomTracks(false);
+	
 	PreloadODF("ibrecy");
 	PreloadODF("evscout");
 	PreloadODF("evkami");

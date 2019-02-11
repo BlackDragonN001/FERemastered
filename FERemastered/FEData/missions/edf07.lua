@@ -220,6 +220,8 @@ function InitialSetup()
 	_FECore.InitialSetup();
 
 	M.TPS = EnableHighTPS();
+	AllowRandomTracks(false);
+	
 	--Preload ODFs to reduce lag spikes when things are spawned in for the first time
 	PreloadODF("evcons");
 	PreloadODF("ivshul1");

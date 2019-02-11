@@ -61,6 +61,8 @@ end
 function InitialSetup()
 
 	_FECore.InitialSetup();
+	
+	AllowRandomTracks(false);
 
 	local preloadAudio = {
 		"edf08_01.wav",

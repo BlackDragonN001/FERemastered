@@ -80,6 +80,8 @@ function InitialSetup()
 	_FECore.InitialSetup();
 	
 	M.TPS = EnableHighTPS();
+	AllowRandomTracks(false);
+	
 	PreloadODF("ivrecy");
 	PreloadODF("ivscout");
 	PreloadODF("ivtank");

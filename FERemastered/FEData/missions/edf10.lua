@@ -95,6 +95,8 @@ end
 function InitialSetup()
 
 	_FECore.InitialSetup();
+	
+	AllowRandomTracks(false);
 
 	PreloadODF("evtanku");
 	PreloadODF("cvtank");

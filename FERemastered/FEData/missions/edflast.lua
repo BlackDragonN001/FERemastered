@@ -141,6 +141,7 @@ function InitialSetup()
 	_FECore.InitialSetup();
 	
 	M.TPS = EnableHighTPS();
+	AllowRandomTracks(false);
 	--Preload to reduce lag spikes when things are spawned in for the first time.
 	local preloadOdf = {
 		"ivrecy",

@@ -75,6 +75,8 @@ function InitialSetup()
 
 	_FECore.InitialSetup();
 	
+	AllowRandomTracks(false);
+	
 	PreloadODF("ibrecy09");
 	PreloadODF("evrecy");
 	PreloadODF("cvscout");

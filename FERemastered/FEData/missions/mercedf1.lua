@@ -114,6 +114,8 @@ function InitialSetup()
 
 	_FECore.InitialSetup();
 	
+	AllowRandomTracks(false);
+	
 	PreloadODF("nadir");
 	PreloadODF("ivscout11");
 	PreloadODF("ivserv");

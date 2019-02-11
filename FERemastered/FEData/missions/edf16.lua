@@ -147,6 +147,7 @@ function InitialSetup()
 	_FECore.InitialSetup();
 	
 	M.TPS = EnableHighTPS();
+	AllowRandomTracks(false);
 	--Preloading reduces lag spikes when resources are used for the first time
 	local preloadOdf = {
 		"ivrecy",
