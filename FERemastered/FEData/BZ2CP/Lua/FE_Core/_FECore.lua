@@ -13,6 +13,11 @@ require('_GlobalHandler');
 local _MapReloader = require('_MapReloader');
 local _PropHeightFix = require('_PropHeightFix');
 
+
+--test
+local _DLLUtils = require('_DLLUtils');
+local _StartingVehicles = require('_StartingVehicles');
+
 -- FE Moduels.
 --require('_PortalHelper');
 --require('_DispatchHelper');

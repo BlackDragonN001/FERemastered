@@ -32,10 +32,10 @@ end
 
 function _STSV.Start()
 
-	for i = 1; MAX_STARTING_VEHICLES-1
+	for i = 1, MAX_STARTING_VEHICLES - 1
 	do
 		local pContents = GetNetworkListItem(NETLIST_StratStarting, i);
-		if (pContents or '') == '') then 
+		if (pContents == nil or pContents == "") then
 			break; 
 		end
 		
@@ -47,22 +47,22 @@ function _STSV.Start()
 end
 
 
-function _STSV.CreateVehicles(const int Team, const char TeamRace, const int Bitmask, const Vector Where)
+function _STSV.CreateVehicles(Team, TeamRace, Bitmask, Where)
 
-	local RandomizedPosition;
+	local RandomizedPosition = nil;
 	local VehicleH = 0;
 
 	if not StartingVehicles.Initialized then
 		return;
 	end
 
-	for i = 0; i < #StartingVehicles.s_StartingVehicleList-1
+	for i = 0, #StartingVehicles.s_StartingVehicleList-1
 	do
 		if bit32.band(Bitmask, bit32.lshift (1, i)) > 0 then
 			-- Need to build this.
 			RandomizedPosition = GetPositionNear(Where, VEHICLE_SPACING_DISTANCE, 4 * VEHICLE_SPACING_DISTANCE);
 			
-			local NewODF = TeamRace ..  StartingVehicles.s_StartingVehicleList[i]::sub(2);
+			local NewODF = TeamRace .. StartingVehicles.s_StartingVehicleList[i]:sub(2);
 
 			VehicleH = BuildObject(NewODF, Team, RandomizedPosition);
 			SetRandomHeadingAngle(VehicleH);
