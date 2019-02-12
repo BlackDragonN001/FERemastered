@@ -73,4 +73,111 @@ function _DLLUtils.GetCheckedNetworkSvar(svar, listType)
 	return nil;
 end
 
+-- Helper function for SetupTeam(), returns an appropriate spawnpoint.
+function _DLLUtils.GetSpawnpointForTeam(Team, FRIENDLY_SPAWNPOINT_MAX_ALLY, FRIENDLY_SPAWNPOINT_MIN_ENEMY, RANDOM_SPAWNPOINT_MIN_ENEMY);
+	
+	local spawnpointPosition = SetVector(0, 0, 0);
+	
+	-- Pick a random, ideally safe spawnpoint.
+	--SpawnPointInfo* pSpawnPointInfo;
+	--size_t i,count = GetAllSpawnpoints(pSpawnPointInfo, Team);
+	local pSpawnPointInfo = GetAllSpawnpoints(Team);
+	local count = #pSpawnPointInfo;
+	
+	-- Designer didn't seem to put any spawnpoints on the map :(
+	if(count == 0)
+	then
+		return spawnpointPosition;
+	end
+
+	-- First pass: see if a spawnpoint exists with this team #
+	--
+	-- Note: using a temporary array allocated on stack to keep track
+	-- of indices.
+	--size_t *pIndices = reinterpret_cast<size_t*>(_alloca(count * sizeof(size_t)));
+	--memset(pIndices, 0, count * sizeof(size_t));
+	local pIndices = { };
+	
+	local indexCount = 0;
+	for i = 1, count
+	do
+		if(pSpawnPointInfo[i].Team == Team)
+		then
+			pIndices[indexCount] = i;
+			indexCount = indexCount + 1;
+		end
+	end
+
+	-- Did we find any spawnpoints in the above search? If so,
+	-- randomize out of that list and return that
+	if(indexCount > 0)
+	then
+		local index = 0;
+		-- Might be unnecessary, but make sure we return a valid index
+		-- in [0,indexCount)
+		repeat
+			index = math.floor(GetRandomFloat(indexCount)) + 1;
+		until not(index >= indexCount);
+		return pSpawnPointInfo[pIndices[index]].Position;
+	end
+
+	-- Second pass: build up a list of spawnpoints that appear to have
+	-- allies close, randomly pick one of those.
+	indexCount = 0;
+	for i = 1, count
+	do
+		if(((pSpawnPointInfo[i].DistanceToClosestSameTeam < FRIENDLY_SPAWNPOINT_MAX_ALLY) or
+			(pSpawnPointInfo[i].DistanceToClosestAlly < FRIENDLY_SPAWNPOINT_MAX_ALLY)) and
+		   (pSpawnPointInfo[i].DistanceToClosestEnemy >= FRIENDLY_SPAWNPOINT_MIN_ENEMY))
+		then
+			pIndices[indexCount] = i;
+			indexCount = indexCount + 1;
+		end
+	end
+
+	-- Did we find any spawnpoints in the above search? If so,
+	-- randomize out of that list and return that
+	if(indexCount > 0)
+	then
+		local index = 0;
+		-- Might be unnecessary, but make sure we return a valid index
+		-- in [0,indexCount)
+		repeat
+			index = math.floor(GetRandomFloat(indexCount)) + 1;
+		until not(index >= indexCount);
+		return pSpawnPointInfo[pIndices[index]].Position;
+	end
+
+	-- Third pass: Make up a list of spawnpoints that appear to have
+	-- no enemies close.
+	indexCount = 0;
+	for i = 1, count
+	do
+		if(pSpawnPointInfo[i].DistanceToClosestEnemy >= RANDOM_SPAWNPOINT_MIN_ENEMY)
+		then
+			pIndices[indexCount] = i;
+			indexCount = indexCount + 1;
+		end
+	end
+
+	-- Did we find any spawnpoints in the above search? If so,
+	-- randomize out of that list and return that
+	if(indexCount > 0)
+	then
+		local index = 0;
+		-- Might be unnecessary, but make sure we return a valid index
+		-- in [0,indexCount)
+		repeat
+			index = math.floor(GetRandomFloat(indexCount)) + 1;
+		until not(index >= indexCount);
+		return pSpawnPointInfo[pIndices[index]].Position;
+	end
+
+	-- If here, all spawnpoints have an enemy within
+	-- RANDOM_SPAWNPOINT_MIN_ENEMY.  Fallback to old code.
+	return GetRandomSpawnpoint(Team);
+	
+end
+
+
 return _DLLUtils;

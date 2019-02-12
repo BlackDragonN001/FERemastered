@@ -13,6 +13,8 @@ local DoRespawnSafest = 1 -- Respawn a 'PLAYER' at safest spawnpoint
 local DLLHandled = 2 -- DLL handled actions. Do nothing ingame
 local DoGameOver = 3 -- Game over, man.
 
+local VEHICLE_SPACING_DISTANCE = 20.0
+
 local PRESNIPE_KILLPILOT = 0 -- Kill the pilot (1.0-1.3.6.4 default). Does still pass this to bullet hit code, where damage might also be applied
 local PRESNIPE_ONLYBULLETHIT = 1 -- Do not kill the pilot. Does still pass this to bullet hit code, where damage might also be applied
 
@@ -26,6 +28,16 @@ local TEAMRELATIONSHIP_ENEMYTEAM = 3 --Team # isn't identical, and teams are ene
 
 local DLL_TEAM_SLOT_RECYCLER = 1
 local DLL_TEAM_SLOT_FACTORY = 2
+
+local NETLIST_MPVehicles = 0
+local NETLIST_StratStarting = 1
+local NETLIST_Recyclers = 2
+local NETLIST_AIPs = 3
+local NETLIST_Animals = 4
+local NETLIST_STCTFGoals = 5
+local NETLIST_IAHumanRecyList = 6
+local NETLIST_IACPURecyclers = 7
+local NETLIST_IAAIPs = 8
 
 local MAX_TEAMS = 16 -- Teams to loop over.
 
@@ -63,7 +75,7 @@ local FRIENDLY_SPAWNPOINT_MIN_ENEMY = 400.0;
 -- Random spawnpoint: min distance away for enemy
 local RANDOM_SPAWNPOINT_MIN_ENEMY = 450.0;
 
-local m_GameTPS;
+local m_GameTPS = 20;
 
 local Mission = 
 { 
@@ -216,6 +228,10 @@ function Start()
 	if(not IsTeamplayOn())
 	then
 		-- Grab the "Team" numbers. 
+		for i = 1, MAX_TEAMS-1 do
+			Mission.m_AllyTeams[i] = GetVarItemInt("network.session.ivar" .. tostring(34+i));
+		end
+		--[[
 		Mission.m_AllyTeams[1] = GetVarItemInt("network.session.ivar35");
 		Mission.m_AllyTeams[2] = GetVarItemInt("network.session.ivar36");
 		Mission.m_AllyTeams[3] = GetVarItemInt("network.session.ivar37");
@@ -231,17 +247,13 @@ function Start()
 		Mission.m_AllyTeams[13] = GetVarItemInt("network.session.ivar47");
 		Mission.m_AllyTeams[14] = GetVarItemInt("network.session.ivar48");
 		Mission.m_AllyTeams[15] = GetVarItemInt("network.session.ivar49");
+		--]]
 
 		-- Loop over all teams, and ally them if they're set to be allies. 
 		for x = 1, MAX_TEAMS-1
 		do
-			print("Mission.m_AllyTeams[" .. tostring(x) .. "] = " .. tostring(Mission.m_AllyTeams[x]));
 			for y = 1, MAX_TEAMS-1
 			do
-			
-				--print("Mission.m_AllyTeams[" .. tostring(x) .. "] = " .. tostring(Mission.m_AllyTeams[x]));
-				--print("Mission.m_AllyTeams[" .. tostring(y) .. "] = " .. tostring(Mission.m_AllyTeams[y]));
-			
 				if((Mission.m_AllyTeams[x] > 0) and (x ~= y) and (Mission.m_AllyTeams[x] == Mission.m_AllyTeams[y]))
 				then
 					Ally(x, y);
@@ -249,6 +261,10 @@ function Start()
 				end
 			end
 		end	-- Finshed looping.
+	else -- Teamplay, gotta fill it with something.
+		for i = 1, MAX_TEAMS-1 do
+			Mission.m_AllyTeams[i] = GetVarItemInt("network.session.ivar" .. tostring(34+i));
+		end
 	end
 
 	Mission.m_RecyInvulnerabilityTime = GetVarItemInt("network.session.ivar25");
@@ -259,7 +275,7 @@ function Start()
 	-- creation of the proper vehicles in the right places for
 	-- everyone.
 	local PlayerEntryH = GetPlayerHandle();
-	if(PlayerEntryH) then
+	if(PlayerEntryH ~= nil) then
 		RemoveObject(PlayerEntryH);
 	end
 
@@ -422,7 +438,7 @@ end
 function GetInitialRecyclerODF(Race);
 
 	local TempODFName = nil;
-	local pContents = GetCheckedNetworkSvar(5, NETLIST_Recyclers);
+	local pContents = _DLLUtils.GetCheckedNetworkSvar(5, NETLIST_Recyclers);
 	if((pContents ~= nil) and (pContents[0] ~= '\0'))
 	then
 		TempODFName = pContents;
@@ -449,13 +465,13 @@ function SetupTeam(Team);
 		SetMPTeamRace(WhichTeamGroup(Team), TeamRace); -- Lock this down to prevent changes.
 	end
 
-	local spawnpointPosition = GetSpawnpointForTeam(Team);
+	local spawnpointPosition = _DLLUtils.GetSpawnpointForTeam(Team, FRIENDLY_SPAWNPOINT_MAX_ALLY, FRIENDLY_SPAWNPOINT_MIN_ENEMY, RANDOM_SPAWNPOINT_MIN_ENEMY);
 
 	-- Store position we created them at for later
 	Mission.m_TeamPos[Team] = spawnpointPosition;
 
 	-- Build recycler some distance away, if it's not preplaced on the map.
-	if(GetObjectByTeamSlot(Team, DLL_TEAM_SLOT_RECYCLER) == 0)
+	if(GetObjectByTeamSlot(Team, DLL_TEAM_SLOT_RECYCLER) == nil)
 	then
 		spawnpointPosition = GetPositionNear(spawnpointPosition, VEHICLE_SPACING_DISTANCE, 2 * VEHICLE_SPACING_DISTANCE);
 		local VehicleH = BuildObject(GetInitialRecyclerODF(TeamRace), Team, spawnpointPosition);
@@ -489,7 +505,7 @@ function SetupTeam(Team);
 			end -- Loop over allies not the commander
 		end
 	else -- FFA Mode. -GBD
-		for i = 0, MAX_TEAMS
+		for i = 1, MAX_TEAMS-1
 		do
 			if((i ~= Team) and (Mission.m_AllyTeams[Team] == Mission.m_AllyTeams[i]))
 			then
@@ -508,11 +524,11 @@ end
 -- as well as necessary
 function SetupPlayer(Team);
 
-	local PlayerH = 0;
+	local PlayerH = nil;
 	local spawnpointPosition = SetVector(0, 0, 0);
 
-	if((Team<0) or (Team>=MAX_TEAMS)) then
-		return 0; -- Sanity check... do NOT proceed
+	if((Team < 0) or (Team >= MAX_TEAMS)) then
+		return nil; -- Sanity check... do NOT proceed
 	end
 
 	Mission.m_SpawnedAtTime[Team] = Mission.m_ElapsedGameTime; -- Note when they spawned in.
@@ -549,7 +565,7 @@ function SetupPlayer(Team);
 	SetRandomHeadingAngle(PlayerH);
 
 	-- If on team 0 (dedicated server team), make this object gone from the world
-	if(not Team) then
+	if(Team == 0) then
 		MakeInert(PlayerH);
 	end
 
@@ -640,12 +656,11 @@ function ExecuteCheckIfGameOver();
 	end
 
 	-- Check for a gameover by no recycler & factory
-	local i = 0;
 	local NumFunctioningTeams = 0;
 	local TeamIsFunctioning = { };
 	local AlliesFunctioning = { }; -- Ally Functioning Flag. -GBD
 
-	for i = 0, MAX_TEAMS
+	for i = 1, MAX_TEAMS-1
 	do
 		if(Mission.m_TeamIsSetUp[i])
 		then
@@ -665,14 +680,14 @@ function ExecuteCheckIfGameOver();
 			end
 
 			-- Use the side effect of IsAlive as well, hence the TempH == 0 -GBD
-            if((not TempH) or (not IsAlive(TempH))) then
+            if((TempH == nil) or (not IsAlive(TempH))) then
 				Mission.m_RecyclerHandles[i] = 0; -- Clear this out for later
 			else
 				Functioning = true;
 			end
 
 			-- Set this here. -GBD
-			local RecyH = 0;
+			local RecyH = nil;
 
 			-- Check vehicle if it is around, else, check the buuilding -GBD
 			if(IsAround(TempH)) then -- This could let you drive it. :) -GBD
@@ -687,7 +702,7 @@ function ExecuteCheckIfGameOver();
 				RecyH = GetObjectByTeamSlot(i, DLL_TEAM_SLOT_FACTORY);
 			end
 
-			if(RecyH) then
+			if(RecyH ~= nil) then
 				Functioning = true;
 			--else
 			--	AlliesFunctioning[Mission.m_AllyTeams[i]] = false; -- If Allied team is dead, flag as so -GBD
@@ -696,32 +711,31 @@ function ExecuteCheckIfGameOver();
 			AlliesFunctioning[Mission.m_AllyTeams[i]] = AlliesFunctioning[Mission.m_AllyTeams[i]] or Functioning;
 			TeamIsFunctioning[i] = Functioning;
 
-
 			-- Moved Respawn check here to look for allies too. -GBD
 			-- Note deployed location first time it deploys, also every 25.6 seconds
 			if((not Mission.m_NotedRecyclerLocation[i]) or (not bit32.band(Mission.m_ElapsedGameTime, 0xFF)))
 			then
 				-- Grab out allie's Recy for respawn placement if ours is dead.
-				if(not RecyH) -- Uh oh, your recy+factory are dead. Look for ones on allied teams.
+				if(RecyH == nil) -- Uh oh, your recy+factory are dead. Look for ones on allied teams.
 				then
-					for x = 0, MAX_TEAMS -- Loop through all teams. 
+					for x = 1, MAX_TEAMS-1 -- Loop through all teams. 
 					do
 						-- If the team is set, and it's not the same team as the first loop, and they're allied, then we found one. 
 						if((i ~= x) and (IsTeamAllied(i, x)))
 						then
 							RecyH = GetObjectByTeamSlot(x, DLL_TEAM_SLOT_RECYCLER);
-							if(not RecyH) then-- Uh oh, no Recycler? Look for Factory.
+							if(RecyH == nil) then-- Uh oh, no Recycler? Look for Factory.
 								RecyH = GetObjectByTeamSlot(x, DLL_TEAM_SLOT_FACTORY);
 							end
 
-							if(RecyH) then
+							if(RecyH ~= nil) then
 								break; -- We found one, and they're alive. Abort X loop early. 
 							end
 						end
 					end
 				end
 				
-				if(RecyH) -- The above loop found something, update respawn positions.-GBD
+				if(RecyH ~= nil) -- The above loop found something, update respawn positions.-GBD
 				then
 					Mission.m_NotedRecyclerLocation[i] = true;
 					local RecyPos = GetPosition(RecyH);
@@ -740,7 +754,7 @@ function ExecuteCheckIfGameOver();
 		end -- Team is set up
 	end -- loop over functioning teams
 
-	for i = 0, MAX_TEAMS
+	for i = 1, MAX_TEAMS-1
 	do
 		if (IsTeamplayOn())
 		then
@@ -778,7 +792,7 @@ function ExecuteCheckIfGameOver();
 			if(IsTeamplayOn())
 			then
 				local WinningTeamgroup = -1;
-				for i = 0, MAX_TEAMS
+				for i = 1, MAX_TEAMS-1
 				do
 					if(TeamIsFunctioning[i])
 					then
@@ -791,7 +805,7 @@ function ExecuteCheckIfGameOver();
 				end
 
 				-- Also, give all players on winning team points...
-				for i = 0, MAX_TEAMS
+				for i = 1, MAX_TEAMS-1
 				do
 					if(WhichTeamGroup(i) == WinningTeamgroup) then
 						AddScore(GetPlayerHandle(i), ScoreForWinning);
@@ -804,7 +818,7 @@ function ExecuteCheckIfGameOver();
 				-- With alliances, we may not have a winner unless the team
 				-- remaining isn't allied (or we would have caught it above)
 	
-				for i = 0, MAX_TEAMS -- Start at 0. Also give a more proper message if allies are on. -GBD
+				for i = 1, MAX_TEAMS-1 -- Start at 0. Also give a more proper message if allies are on. -GBD
 				do
 					if(AlliesFunctioning[Mission.m_AllyTeams[i]]) --if(TeamIsFunctioning[i])
 					then
@@ -814,7 +828,7 @@ function ExecuteCheckIfGameOver();
 							TempMsgString = TranslateString("Network", "HitLastWithBaseStr"):format(TeamName);
 							NoteGameoverWithCustomMessage(TempMsgString); -- Custom message ftw. -GBD
 
-							for j = 0, j < MAX_TEAMS -- Give score to allies. -GBD
+							for j = 1, j < MAX_TEAMS-1 -- Give score to allies. -GBD
 							do
 								if((i ~= j) and (IsTeamAllied(i, j))) then
 									AddScore(GetPlayerHandle(j), ScoreForWinning);
@@ -843,8 +857,8 @@ function ExecuteRecyInvulnerability();
 		return;
 	end
 
-	local recyHandle = 0; -- for this team, either vehicle or building
-	for i = 0, MAX_TEAMS
+	local recyHandle = nil; -- for this team, either vehicle or building
+	for i = 1, MAX_TEAMS-1
 	do
 		if(Mission.m_TeamIsSetUp[i])
 		then
@@ -855,7 +869,7 @@ function ExecuteRecyInvulnerability();
 			-- it. Thus, we have a sacrificial copy of it the game can
 			-- obliterate w/o hurting anything.
 			local TempH = Mission.m_RecyclerHandles[i];
-			if((not IsAlive(TempH)) or (TempH == 0)) then
+			if((not IsAlive(TempH)) or (TempH == nil)) then
 				recyHandle = GetObjectByTeamSlot(i, DLL_TEAM_SLOT_RECYCLER);
 			else
 				recyHandle = Mission.m_RecyclerHandles[i];
@@ -966,7 +980,7 @@ function RespawnPilot(DeadObjectHandle, Team);
 	SetRandomHeadingAngle(NewPerson);
 
 	-- If on team 0 (dedicated server team), make this object gone from the world
-	if(not Team)
+	if(Team == 0)
 	then
 		MakeInert(NewPerson);
 	end
@@ -1101,109 +1115,4 @@ function DeadObject(DeadObjectHandle, KillersHandle, WasDeadPerson, WasDeadAI);
 			return DoEjectPilot;
 		end
 	end
-end
-
--- Helper function for SetupTeam(), returns an appropriate spawnpoint.
-function GetSpawnpointForTeam(Team);
-	
-	local spawnpointPosition = SetVector(0, 0, 0);
-	
-	-- Pick a random, ideally safe spawnpoint.
-	--SpawnPointInfo* pSpawnPointInfo;
-	--size_t i,count = GetAllSpawnpoints(pSpawnPointInfo, Team);
-	pSpawnPointInfo = GetAllSpawnpoints(Team);
-
-	-- Designer didn't seem to put any spawnpoints on the map :(
-	if(count == 0)
-	then
-		return spawnpointPosition;
-	end
-
-	-- First pass: see if a spawnpoint exists with this team #
-	--
-	-- Note: using a temporary array allocated on stack to keep track
-	-- of indices.
-	--size_t *pIndices = reinterpret_cast<size_t*>(_alloca(count * sizeof(size_t)));
-	--memset(pIndices, 0, count * sizeof(size_t));
-	local pIndices = { };
-	
-	local indexCount = 0;
-	for i = 0, count
-	do
-		if(pSpawnPointInfo[i].Team == Team)
-		then
-			pIndices[indexCount] = i;
-			indexCount = indexCount + 1;
-		end
-	end
-
-	-- Did we find any spawnpoints in the above search? If so,
-	-- randomize out of that list and return that
-	if(indexCount > 0)
-	then
-		local index = 0;
-		-- Might be unnecessary, but make sure we return a valid index
-		-- in [0,indexCount)
-		repeat
-			index = GetRandomFloat(indexCount);
-		until not(index >= indexCount);
-		return pSpawnPointInfo[pIndices[index]].Position;
-	end
-
-	-- Second pass: build up a list of spawnpoints that appear to have
-	-- allies close, randomly pick one of those.
-	indexCount = 0;
-	for i = 0, count
-	do
-		if(((pSpawnPointInfo[i].DistanceToClosestSameTeam < FRIENDLY_SPAWNPOINT_MAX_ALLY) or
-			(pSpawnPointInfo[i].DistanceToClosestAlly < FRIENDLY_SPAWNPOINT_MAX_ALLY)) and
-		   (pSpawnPointInfo[i].DistanceToClosestEnemy >= FRIENDLY_SPAWNPOINT_MIN_ENEMY))
-		then
-			pIndices[indexCount] = i;
-			indexCount = indexCount + 1;
-		end
-	end
-
-	-- Did we find any spawnpoints in the above search? If so,
-	-- randomize out of that list and return that
-	if(indexCount > 0)
-	then
-		local index = 0;
-		-- Might be unnecessary, but make sure we return a valid index
-		-- in [0,indexCount)
-		repeat
-			index = GetRandomFloat(indexCount);
-		until not(index >= indexCount);
-		return pSpawnPointInfo[pIndices[index]].Position;
-	end
-
-	-- Third pass: Make up a list of spawnpoints that appear to have
-	-- no enemies close.
-	indexCount = 0;
-	for i = 0, count
-	do
-		if(pSpawnPointInfo[i].DistanceToClosestEnemy >= RANDOM_SPAWNPOINT_MIN_ENEMY)
-		then
-			pIndices[indexCount] = i;
-			indexCount = indexCount + 1;
-		end
-	end
-
-	-- Did we find any spawnpoints in the above search? If so,
-	-- randomize out of that list and return that
-	if(indexCount > 0)
-	then
-		local index = 0;
-		-- Might be unnecessary, but make sure we return a valid index
-		-- in [0,indexCount)
-		repeat
-			index = GetRandomFloat(indexCount);
-		until not(index >= indexCount);
-		return pSpawnPointInfo[pIndices[index]].Position;
-	end
-
-	-- If here, all spawnpoints have an enemy within
-	-- RANDOM_SPAWNPOINT_MIN_ENEMY.  Fallback to old code.
-	return GetRandomSpawnpoint(Team);
-	
 end

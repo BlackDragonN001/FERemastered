@@ -56,7 +56,7 @@ function _STSV.CreateVehicles(Team, TeamRace, Bitmask, Where)
 		return;
 	end
 
-	for i = 0, #StartingVehicles.s_StartingVehicleList-1
+	for i = 1, #StartingVehicles.s_StartingVehicleList
 	do
 		if bit32.band(Bitmask, bit32.lshift (1, i)) > 0 then
 			-- Need to build this.
