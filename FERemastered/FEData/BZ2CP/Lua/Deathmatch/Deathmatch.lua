@@ -283,15 +283,17 @@ end
 -- If Teamplay is on, this function is called only on the
 -- _defensive_ team number for an alliance. 
 
-void Deathmatch01::SetupTeam(local Team)
-then
+function SetupTeam(Team)
+ 
 	-- Sanity checks: don't do anything that looks invalid
-	if((Team < 0) or (Team >= MAX_TEAMS))
+	if((Team < 0) or (Team >= MAX_TEAMS)) then
 		return;
+	end
 
 	-- Also, if we've already set up this team group, don't do anything
-	if((IsTeamplayOn()) and (Mission.m_TeamIsSetUp[Team]))
+	if((IsTeamplayOn()) and (Mission.m_TeamIsSetUp[Team])) then
 		return;
+	end
 
 	local TeamRace = GetRaceOfTeam(Team);
 
@@ -300,13 +302,13 @@ then
 		SetMPTeamRace(WhichTeamGroup(Team), TeamRace); -- Lock this down to prevent changes.
 	end
 
-	local Where;
+	local Where = SetVector(0, 0, 0);
 
 	if(DMIsRaceSubtype[Mission.m_MissionType])
 	then
 		-- Race-- everyone starts off at spawnpolocal 0's position
 		Where = GetSpawnpoint(0);
-	elseif(Mission.m_MissionType == DMSubtype_CTF) 
+	elseif(Mission.m_MissionType == DMSubtype_CTF) then
 		-- CTF-- find spawnpolocal by team # 
 		Where = _DLLUtils.GetSpawnpointForTeam(Team, FRIENDLY_SPAWNPOINT_MAX_ALLY, FRIENDLY_SPAWNPOINT_MIN_ENEMY, RANDOM_SPAWNPOINT_MIN_ENEMY);
 		-- And randomize around the spawnpolocal slightly so we'll
@@ -321,22 +323,17 @@ then
 	end
 
 	-- Store position we created them at for later
-	Mission.m_TeamPos[3*Team+0] = Where.x;
-	Mission.m_TeamPos[3*Team+1] = Where.y;
-	Mission.m_TeamPos[3*Team+2] = Where.z;
+	Mission.m_TeamPos[Team] = Where;
 
 	-- Find location to place flag at
 	if (Mission.m_MissionType == DMSubtype_CTF)
 	then
 		-- CTF
 		-- Find place to drop flag from AIPaths list
-		local DesiredName[64];
-		sprintf_s(DesiredName, "base%d", Team);
+		local DesiredName = "base" .. Team;
+		local DesiredName2 = "m_base" .. Team;
 
-		local DesiredName2[64];
-		sprintf_s(DesiredName2, "Mission.m_base%d", Team);
-
-		local i, pathCount;
+		local pathCount;
 		local **pathNames;
 		GetAiPaths(pathCount, pathNames);
 		for (i = 0; i<pathCount; ++i)
@@ -344,37 +341,36 @@ then
 			local *label = pathNames[i];
 			if(strcmp(label, DesiredName) == 0)
 			then
-				Handle FlagH = 0;
-				Handle BaseH = GetHandle(DesiredName2); -- First look for an existing base. -GBD
-				if(not BaseH)
+				local FlagH = nil;
+				local BaseH = GetHandle(DesiredName2); -- First look for an existing base. -GBD
+				if(BaseH == nil) then
 					BaseH = BuildObject(GetInitialFlagStandODF(TeamRace), Team, label); -- Build race specific base. -GBD
+				end
 				SetAnimation(BaseH, "loop", 0);
 
-				if(BaseH)
+				if(BaseH) then
 					FlagH = BuildObject(GetInitialFlagODF(TeamRace), Team, BaseH); -- Place directly ontop of flag stand. -GBD
 				else
 					FlagH = BuildObject(GetInitialFlagODF(TeamRace), Team, label);
+				end
 				SetAnimation(FlagH, "loop", 0);
 
 				if (Team == 1)
 				then
 					Mission.m_Base1 = BaseH;
 					Mission.m_Flag1 = FlagH;
-				end
 				elseif (Team == 6)
-				then
 					Mission.m_Base2 = BaseH;
 					Mission.m_Flag2 = FlagH;
 				end
 			end
 		end
 
-	end -- CTF Flag setup
-
+	-- CTF Flag setup
 	elseif ((DMIsRaceSubtype[Mission.m_MissionType]) and (not Mission.m_RaceIsSetup)) 
 	then
 		local intCheckpointCount = 0;
-		Handle hdlCheckpolocal = 0;
+		local hdlCheckpolocal = 0;
 		do then
 			intCheckpointCount++;
 			sprintf_s(TempODFName, "checkpoint%d", intCheckpointCount);
@@ -395,9 +391,7 @@ then
 				local NewPosition = GetPositionNear(Where, AllyMinRadiusAway, AllyMaxRadiusAway);
 
 				-- In teamplay, store where offense players were created for respawns later
-				Mission.m_TeamPos[3*i+0] = NewPosition.x;
-				Mission.m_TeamPos[3*i+1] = NewPosition.y;
-				Mission.m_TeamPos[3*i+2] = NewPosition.z;
+				Mission.m_TeamPos[i] = NewPosition;
 			end -- Loop over allies not the commander
 		end
 	end
@@ -421,17 +415,17 @@ then
 	-- Rabbit mode? Hammer the "it" player, nothing else to do
 	if((Mission.m_RabbitMode) and (Mission.m_AICraftHandles[index] ~= Mission.m_RabbitTargetHandle))
 	then
-		Handle TargetH = Mission.m_RabbitTargetHandle;
+		local TargetH = Mission.m_RabbitTargetHandle;
 		if(IsAlive(TargetH))
 			Attack(Mission.m_AICraftHandles[index], Mission.m_RabbitTargetHandle);
 		return;
 	end
 
-	Handle nearestEnemy = GetNearestEnemy(Mission.m_AICraftHandles[index]);
+	local nearestEnemy = GetNearestEnemy(Mission.m_AICraftHandles[index]);
 	local i;
 	for(i = 1;i<MAX_TEAMS;i++)
 	then
-		Handle PlayerH = GetPlayerHandle(i);
+		local PlayerH = GetPlayerHandle(i);
 		-- Ignore any close-by pilots.
 		if((nearestEnemy == PlayerH) and (IsAliveAndPilot(PlayerH)))
 			nearestEnemy = 0;
@@ -440,7 +434,7 @@ then
 	-- Was our last action an attack? Consider powerups now.
 	if(nearestEnemy and (not Mission.m_AILastWentForPowerup[index]))
 	then
-		Handle nearestPerson = GetNearestPerson(Mission.m_AICraftHandles[index], true, 100.0);
+		local nearestPerson = GetNearestPerson(Mission.m_AICraftHandles[index], true, 100.0);
 
 		float distToEnemy = GetDistance(Mission.m_AICraftHandles[index], nearestEnemy);
 
@@ -459,7 +453,7 @@ then
 			end -- Powerup is close
 		end -- nearestPerson exists
 
-		Handle nearestPowerup = GetNearestPowerup(Mission.m_AICraftHandles[index], true, 100.0);
+		local nearestPowerup = GetNearestPowerup(Mission.m_AICraftHandles[index], true, 100.0);
 		if(nearestPowerup)
 		then
 			float distToPowerup = GetDistance(Mission.m_AICraftHandles[index], nearestPowerup);
@@ -485,7 +479,7 @@ then
 		-- Nearest enemy scan failed (found pilot, too far, 
 		-- something). Try harder.
 		float BestDist = 1e10;
-		Handle BestHandle = 0;
+		local Bestlocal = 0;
 		if(not Mission.m_HumansVsBots)
 		then
 			-- Scan botlist..
@@ -499,7 +493,7 @@ then
 				if(not Mission.m_AICraftHandles[index])
 					continue;
 
-				Handle ThisBotH = Mission.m_AICraftHandles[i];
+				local ThisBotH = Mission.m_AICraftHandles[i];
 				-- If bot died, skip them.
 				if(not IsAlive(ThisBotH))
 					continue;
@@ -507,13 +501,13 @@ then
 				if(IsAlly(Mission.m_AICraftHandles[index], Mission.m_AICraftHandles[i]))
 					continue;
 				ThisBotH = Mission.m_AICraftHandles[i];
-				Handle MyH = Mission.m_AICraftHandles[index];
+				local MyH = Mission.m_AICraftHandles[index];
 				float ThisDist = GetDistance(MyH, ThisBotH);
 				if((ThisDist > 0.01) and (ThisDist < BestDist))
 				then
 					-- Winner (of sorts). Store them.
 					BestDist = ThisDist;
-					BestHandle = Mission.m_AICraftHandles[i];
+					Bestlocal = Mission.m_AICraftHandles[i];
 				end
 			end -- Loop over all AI units.
 		end -- Isn't humans vs bots, so need to consider bots.
@@ -521,22 +515,22 @@ then
 		--local i;
 		for(i = 1;i<MAX_TEAMS;i++)
 		then
-			Handle PlayerH = GetPlayerHandle(i);
+			local PlayerH = GetPlayerHandle(i);
 			if(not PlayerH)
 				continue;
-			Handle PlayerH2 = PlayerH;
+			local PlayerH2 = PlayerH;
 
 			-- Skip human pilots in this phase (GetWhoShotMe will pick up other attacks)
 			if(IsAliveAndPilot(PlayerH2))
 				continue;
 
-			Handle MyH = Mission.m_AICraftHandles[index];
+			local MyH = Mission.m_AICraftHandles[index];
 			float ThisDist = GetDistance(MyH, PlayerH);
 			if((ThisDist > 0.01) and (ThisDist < BestDist))
 			then
 				-- Winner (of sorts). Store them.
 				BestDist = ThisDist;
-				BestHandle = PlayerH;
+				Bestlocal = PlayerH;
 			end
 		end-- loop over all teams.
 
@@ -625,7 +619,7 @@ end -- SetupAnimal()
 -- For CTF, objectifies the other team's flag
 void Deathmatch01::ObjectifyFlag(void)
 then
-	const Handle PlayerH = GetPlayerHandle();
+	const local PlayerH = GetPlayerHandle();
 	if(PlayerH == 0)
 	then
 		-- Shouldn't happen, but be safe in case it does
@@ -636,8 +630,8 @@ then
 	local TeamBlock = WhichTeamGroup(team);
 	if((IsTeamplayOn()) and (TeamBlock >= 0))
 	then
-		const Handle myFlag = (TeamBlock == 0) ? Mission.m_Flag1 : Mission.m_Flag2;
-		const Handle opponentFlag = (TeamBlock == 0) ? Mission.m_Flag2 : Mission.m_Flag1;
+		const local myFlag = (TeamBlock == 0) ? Mission.m_Flag1 : Mission.m_Flag2;
+		const local opponentFlag = (TeamBlock == 0) ? Mission.m_Flag2 : Mission.m_Flag1;
 
 		SetObjectiveOff(myFlag);
 		SetObjectiveOn(myFlag);
@@ -653,7 +647,7 @@ end
 
 void Deathmatch01::ObjectifyRabbit(void)
 then
-	Handle PlayerH = GetPlayerHandle();
+	local PlayerH = GetPlayerHandle();
 	if(PlayerH == Mission.m_RabbitTargetHandle)
 	then
 		ClearObjectives();
@@ -670,7 +664,7 @@ end
 
 
 -- This handle is the new rabbit. Target themnot 
-void Deathmatch01::SetNewRabbit(const Handle h)
+void Deathmatch01::SetNewRabbit(const local h)
 then
 #ifndef EDITOR
 	--		BZTrace(("SetNewRabbit(%08X)\n", h));
@@ -682,7 +676,7 @@ then
 	if(not h)
 		return;
 
-	Handle h2 = h;
+	local h2 = h;
 	if(not IsAround(h2))
 	then
 		BZTrace(("ERROR: don't set the rabbit to something that doesn't existnot \n"));
@@ -717,7 +711,7 @@ then
 	local FoundIt = false;
 	for(i = 1;i<MAX_TEAMS;i++)
 	then
-		Handle PlayerH = GetPlayerHandle(i);
+		local PlayerH = GetPlayerHandle(i);
 		if(PlayerH == Mission.m_RabbitTargetHandle)
 		then
 			BZTrace(("New Rabbit is human, team %d\n", i));
@@ -739,7 +733,7 @@ then
 	end
 
 	-- Also, reset objectives the local player.
-	Handle PlayerH = GetPlayerHandle();
+	local PlayerH = GetPlayerHandle();
 	if(PlayerH == Mission.m_RabbitTargetHandle)
 	then
 		-- We're the victim. Let them know.
@@ -753,10 +747,10 @@ then
 end -- end of SetNewRabbit.
 
 
-Handle Deathmatch01::SetupPlayer(local Team)
+local Deathmatch01::SetupPlayer(local Team)
 then
 #ifndef EDITOR
-	Handle PlayerH = 0;
+	local PlayerH = 0;
 	local Where;
 	memset(&Where, 0, sizeof(Where));
 
@@ -891,7 +885,7 @@ then
 			-- Side effect to note: IsAliveAndPilot zeroes the handle if
 			-- pilot missing; that'd be bad for us here if we want to
 			-- manually remove it. Thus, we have a sacrificial varb
-			Handle TempH = Mission.m_EmptyVehicles[i];
+			local TempH = Mission.m_EmptyVehicles[i];
 			if(not IsAround(Mission.m_EmptyVehicles[i]))
 			then
 				Mission.m_EmptyVehicles[i] = 0; -- craft died. Forget about it.
@@ -938,7 +932,7 @@ end
 
 -- Adds a vehicle to the tracking list, and kills the oldest unpiloted
 -- one if list full
-void Deathmatch01::AddEmptyVehicle(Handle NewCraft)
+void Deathmatch01::AddEmptyVehicle(local NewCraft)
 then
 #ifndef EDITOR
 	_ASSERTE(NewCraft~= 0);
@@ -1099,8 +1093,8 @@ then
 		strcpy_s(pStoreConfig, len, pAnimalConfig);
 	end
 
-	Handle PlayerH = 0;
-	Handle playerEntryH = 0;
+	local PlayerH = 0;
+	local playerEntryH = 0;
 	local LocalTeamNum = GetLocalPlayerTeamNumber(); -- Query this from game
 
 	-- As the .bzn has a vehicle which may not be appropriate, we
@@ -1168,7 +1162,7 @@ then
 		if(not Mission.m_TotalRaceLaps or (Mission.m_LapNumber[Idx] < Mission.m_TotalRaceLaps))
 		then
 			sprintf_s(TempODFName, "checkpoint%d", Mission.m_NextRaceCheckpoint[Idx]);
-			Handle NextCheckpolocal = GetHandle(TempODFName);
+			local NextCheckpolocal = GetHandle(TempODFName);
 			if(NextCheckpoint)
 				SetObjectiveOn(NextCheckpoint);
 		end
@@ -1183,7 +1177,7 @@ then
 #ifndef EDITOR
 	-- Rebuild the rabbit if they're missing for more than a half
 	-- second...
-	Handle RabbitH = Mission.m_RabbitTargetHandle;
+	local RabbitH = Mission.m_RabbitTargetHandle;
 	if(IsAround(RabbitH))
 	then
 
@@ -1243,7 +1237,7 @@ then
 				for(i = 0;i<MAX_TEAMS;i++)
 				then
 					local T2 = (Mission.m_ElapsedGameTime+i) % MAX_TEAMS;
-					Handle PlayerH = GetPlayerHandle(T2);
+					local PlayerH = GetPlayerHandle(T2);
 					if((T2 and PlayerH) and (T2 ~= Mission.m_ForbidRabbitTeam))
 					then
 						SetNewRabbit(PlayerH);
@@ -1283,7 +1277,7 @@ then
 
 	-- Update the last *other* person to hit me, only overriding if
 	-- valid data
-	Handle LastShooter = GetWhoShotMe(Mission.m_RabbitTargetHandle);
+	local LastShooter = GetWhoShotMe(Mission.m_RabbitTargetHandle);
 	--	BZTrace(("LastShooter = %08X\n", LastShooter));
 	local i;
 	if((LastShooter) and (LastShooter ~= Mission.m_RabbitTargetHandle) and (LastShooter ~= Mission.m_RabbitShooterHandle))
@@ -1295,7 +1289,7 @@ then
 		local LastShooterTeam = GetTeamNum(LastShooter);
 		if((LastShooterTeam == Mission.m_RabbitShooterTeam) or (Mission.m_RabbitShooterTeam == 0))
 		then
-			Handle temph = GetPlayerHandle(Mission.m_RabbitShooterTeam);
+			local temph = GetPlayerHandle(Mission.m_RabbitShooterTeam);
 			if(temph)
 				LastShooter = temph;
 		end
@@ -1309,7 +1303,7 @@ then
 		local FoundIt = false;
 		for(i = 1;i<MAX_TEAMS;i++)
 		then
-			Handle PlayerH = GetPlayerHandle(i);
+			local PlayerH = GetPlayerHandle(i);
 			if(PlayerH == Mission.m_RabbitShooterHandle)
 			then
 				Mission.m_RabbitShooterWasHuman = true;
@@ -1366,12 +1360,12 @@ then
 	for(i = 0;i<MAX_TEAMS;i++)
 	then
 		Advanced[i] = false;
-		Handle PlayerH = GetPlayerHandle(i);
+		local PlayerH = GetPlayerHandle(i);
 		if(not PlayerH)
 			continue; -- Do nothing for them.
 
 		sprintf_s(TempODFName, "checkpoint%d", Mission.m_NextRaceCheckpoint[i]);
-		Handle NextCheckpolocal = GetHandle(TempODFName);
+		local NextCheckpolocal = GetHandle(TempODFName);
 		if(NextCheckpoint)
 		then
 			--Player is close enough AND (0 laps OR not finished already)
@@ -1408,7 +1402,7 @@ then
 		for(i = 0;i<MAX_TEAMS;i++) 
 			if(Advanced[i])
 			then
-				Handle PlayerH = GetPlayerHandle(i);
+				local PlayerH = GetPlayerHandle(i);
 
 				local LeadingPlayer = true;
 				for(j = 0;j<MAX_TEAMS;j++)
@@ -1491,11 +1485,11 @@ then
 	-- Go over all humans first
 	for(i = 1;i<MAX_TEAMS;i++)
 	then
-		Handle p = GetPlayerHandle(i);
+		local p = GetPlayerHandle(i);
 		if(p)
 		then
 			-- self-fire doesn't count (and possibly friendly fire doesn't either)
-			Handle h = GetWhoShotMe(p);
+			local h = GetWhoShotMe(p);
 			if (h and (h ~= p) and ((GetLastEnemyShot(p) >= 0.0) or Mission.m_bIsFriendlyFireOn))
 				DamageF(p, MAX_FLOAT);
 		end
@@ -1503,11 +1497,11 @@ then
 
 	for(i = 0;i<Mission.m_NumAIUnits;i++)
 	then
-		Handle p = Mission.m_AICraftHandles[i];
+		local p = Mission.m_AICraftHandles[i];
 		if(p)
 		then
 			-- self-fire doesn't count (and possibly friendly fire doesn't either)
-			Handle h = GetWhoShotMe(p);
+			local h = GetWhoShotMe(p);
 			if (h and (h ~= p) and ((GetLastEnemyShot(p) >= 0.0) or Mission.m_bIsFriendlyFireOn))
 				DamageF(p, MAX_FLOAT);
 		end
@@ -1515,11 +1509,11 @@ then
 
 	for(i = 0;i<Mission.m_NumAnimals;i++)
 	then
-		Handle p = Mission.m_AnimalHandles[i];
+		local p = Mission.m_AnimalHandles[i];
 		if(p)
 		then
 			-- self-fire doesn't count (and possibly friendly fire doesn't either)
-			Handle h = GetWhoShotMe(p);
+			local h = GetWhoShotMe(p);
 			if (h and (h ~= p) and ((GetLastEnemyShot(p) >= 0.0) or Mission.m_bIsFriendlyFireOn))
 				DamageF(p, MAX_FLOAT);
 		end
@@ -1527,11 +1521,11 @@ then
 
 	for(i = 0;i<Mission.m_NumVehiclesTracked;i++)
 	then
-		Handle p = Mission.m_EmptyVehicles[i];
+		local p = Mission.m_EmptyVehicles[i];
 		if(p)
 		then
 			-- self-fire doesn't count (and possibly friendly fire doesn't either)
-			Handle h = GetWhoShotMe(p);
+			local h = GetWhoShotMe(p);
 			if (h and (h ~= p) and ((GetLastEnemyShot(p) >= 0.0) or Mission.m_bIsFriendlyFireOn))
 				DamageF(p, MAX_FLOAT);
 		end
@@ -1549,7 +1543,7 @@ then
 	-- Go over all humans first
 	for(i = 1;i<MAX_TEAMS;i++)
 	then
-		Handle p = GetPlayerHandle(i);
+		local p = GetPlayerHandle(i);
 		if(p)
 		then
 			SetLifespan(p, -1.0); -- Ensure there's no lifespan killing this craft
@@ -1568,7 +1562,7 @@ then
 				end
 
 				-- Did they just hop out, leaving that craft w/o a pilot? Nuke that craft too.
-				Handle lastp = Mission.m_LastPlayerCraftHandle[i];
+				local lastp = Mission.m_LastPlayerCraftHandle[i];
 				if(IsAround(lastp))
 				then
 					lastp = Mission.m_LastPlayerCraftHandle[i];
@@ -1738,7 +1732,7 @@ then
 
 			if(Mission.m_AILastWentForPowerup[i])
 			then
-				Handle Target = Mission.m_AITargetHandles[i];
+				local Target = Mission.m_AITargetHandles[i];
 				Mission.m_PowerupGotoTime[i]++;
 				-- Max of 15 seconds to pick up a powerup, then we go again
 				if((not IsAlive(Target)) or (Mission.m_PowerupGotoTime[i] > 150) ||
@@ -1759,7 +1753,7 @@ then
 
 				local Retarget = false;
 				local TargetIsAlive = IsAlive(Mission.m_AITargetHandles[i]);
-				Handle WhoLastShotMe = GetWhoShotMe(Mission.m_AICraftHandles[i]);
+				local WhoLastShotMe = GetWhoShotMe(Mission.m_AICraftHandles[i]);
 
 				-- AI check: if we're getting shot by someone, and our primary
 				-- target is not getting hit by us (or they don't exist), nail
@@ -1812,7 +1806,7 @@ then
 	then
 		if(Mission.m_AnimalHandles[i] ~= 0)
 		then
-			Handle h = Mission.m_AnimalHandles[i];
+			local h = Mission.m_AnimalHandles[i];
 			if(not IsAlive(h))
 				Mission.m_AnimalHandles[i] = 0;
 		end
@@ -1869,7 +1863,7 @@ then
 	-- AI testing...
 	for(i = 1;i<4;i++)
 	then
-		Handle h = GetPlayerHandle(i);
+		local h = GetPlayerHandle(i);
 		if(not h)
 			continue;
 
@@ -1920,14 +1914,14 @@ then
 	then
 		if(Mission.m_Flying[i])
 		then
-			Handle PlayerH = GetPlayerHandle(i);
+			local PlayerH = GetPlayerHandle(i);
 			if((PlayerH ~= 0) and (not IsFlying(PlayerH)))
 			then
 				Mission.m_Flying[i] = false; -- clear flag so we don't check until they're dead
 				if(PlayerH)
 				then
 					local *ODF = GetNextVehicleODF(i, true);
-					Handle h = BuildEmptyCraftNear(PlayerH, ODF, i, RespawnMinRadiusAway, RespawnMaxRadiusAway);
+					local h = BuildEmptyCraftNear(PlayerH, ODF, i, RespawnMinRadiusAway, RespawnMaxRadiusAway);
 					if(h)
 					then
 						SetTeamNum(h, 0); -- flag as neutral so AI won't immediately hit it
@@ -1946,10 +1940,10 @@ then
 	then
 		local Teamplay = IsTeamplayOn();
 		local Teamscore[MAX_MULTIPLAYER_TEAMS] = then 0 end;
-		Handle TeamplayHandles[MAX_MULTIPLAYER_TEAMS] = then 0 end;
+		local TeamplayHandles[MAX_MULTIPLAYER_TEAMS] = then 0 end;
 		for(i=0;i<MAX_TEAMS;i++)
 		then
-			const Handle playerH = GetPlayerHandle(i);
+			const local playerH = GetPlayerHandle(i);
 			if (playerH == 0)
 			then
 				continue;
@@ -2003,7 +1997,7 @@ then
 	-- Server does all building; client doesn't need to do anything
 	if (IsNewPlayer)
 	then
-		Handle PlayerH = SetupPlayer(Team);
+		local PlayerH = SetupPlayer(Team);
 		SetAsUser(PlayerH, Team);
 		AddPilotByHandle(PlayerH);
 		SetNoScrapFlagByHandle(PlayerH);
@@ -2018,16 +2012,16 @@ then
 end
 
 -- Rebuilds pilot
-EjectKillRetCodes Deathmatch01::RespawnPilot(Handle DeadObjectHandle, local Team)
+EjectKillRetCodes Deathmatch01::RespawnPilot(local DeadObjectHandle, local Team)
 then
 #ifdef EDITOR
 	return DLLHandled;
 #else
 
 	local Where; -- Where they
-	local RespawnInVehicle = (GetRespawnInVehicle()) or (Mission.m_RabbitMode and (DeadObjectHandle == Mission.m_RabbitTargetHandle));
+	local RespawnInVehicle = (GetRespawnInVehicle()) or (Mission.m_RabbitMode and (DeadObjectlocal == Mission.m_RabbitTargetHandle));
 
-	if(Mission.m_RabbitMode and (DeadObjectHandle == Mission.m_RabbitTargetHandle))
+	if(Mission.m_RabbitMode and (DeadObjectlocal == Mission.m_RabbitTargetHandle))
 	then
 		Mission.m_ForbidRabbitTeam = Mission.m_RabbitTeam;
 		Mission.m_RabbitTargetHandle = 0;
@@ -2074,7 +2068,7 @@ then
 	if((not RespawnInVehicle) and (not Mission.m_RespawnAtLowAltitude))
 		Where.y += RespawnPilotHeight; -- Bounce them in the air to prevent multi-kills
 
-	Handle NewPerson;
+	local NewPerson;
 	if(RespawnInVehicle) 
 		NewPerson = BuildObject(GetNextVehicleODF(Team, true), Team, Where);
 	else
@@ -2112,11 +2106,11 @@ then
 	-- scoring for the rabbit below, as in other modes.
 	local KilledRabbit = false;
 	local UseRabbitScoring = false;
-	local WasMission.m_RabbitShooterHandle = (DeadObjectHandle == Mission.m_RabbitShooterHandle);
-	if((Mission.m_RabbitMode) and (KillersHandle ~= Mission.m_RabbitTargetHandle))
+	local WasMission.m_RabbitShooterHandle = (DeadObjectlocal == Mission.m_RabbitShooterHandle);
+	if((Mission.m_RabbitMode) and (Killerslocal ~= Mission.m_RabbitTargetHandle))
 	then
 		UseRabbitScoring = true;
-		KilledRabbit = (DeadObjectHandle == Mission.m_RabbitTargetHandle);
+		KilledRabbit = (DeadObjectlocal == Mission.m_RabbitTargetHandle);
 		if(KilledRabbit)
 		then
 			-- Clear the objective set on them...
@@ -2125,7 +2119,7 @@ then
 			-- See if the rabbit's last shooter is still alive. If so, 
 			-- make them the new target asap. Else, the next
 			-- ExecuteRabbit ought to pick it up.
-			Handle RabbitH = KillersHandle;
+			local RabbitH = KillersHandle;
 			if(IsAlive(RabbitH)) 
 				SetNewRabbit(RabbitH); -- Update for everyone
 			else
@@ -2152,7 +2146,7 @@ then
 	-- whether they killed enemy or ally
 
 	-- Spawnkill is a non-suicide, on a human by another human.
-	if((DeadObjectHandle ~= KillersHandle) and 
+	if((DeadObjectlocal ~= KillersHandle) and 
 		(DeadTeam > 0) and (DeadTeam < MAX_TEAMS) and (Mission.m_SpawnedAtTime[DeadTeam] > 0))
 	then
 		IsSpawnKill = (Mission.m_ElapsedGameTime - Mission.m_SpawnedAtTime[DeadTeam]) < Mission.m_MaxSpawnKillTime;
@@ -2183,7 +2177,7 @@ then
 	-- Jira 2445: Don't count kills/deaths/score for Team 0 (props). -GBD
 	if (DeadTeam ~= 0)
 	then
-		if ((DeadObjectHandle ~= KillersHandle) and (not IsAlly(DeadObjectHandle, KillersHandle)))
+		if ((DeadObjectlocal ~= KillersHandle) and (not IsAlly(DeadObjectHandle, KillersHandle)))
 		then
 			-- Killed enemy...
 			if ((not WasDeadAI) or (KillForAIKill))
@@ -2261,7 +2255,7 @@ then
 
 		for(i = 0;i<Mission.m_NumAIUnits;i++)
 		then
-			if(DeadObjectHandle == Mission.m_AICraftHandles[i])
+			if(DeadObjectlocal == Mission.m_AICraftHandles[i])
 			then
 				Mission.m_AICraftHandles[i] = 0;
 				BuildBotCraft(i); -- Respawn them asap.
@@ -2276,7 +2270,7 @@ then
 
 		for(i = 0;i<Mission.m_NumAnimals;i++)
 		then
-			if(DeadObjectHandle == Mission.m_AnimalHandles[i])
+			if(DeadObjectlocal == Mission.m_AnimalHandles[i])
 			then
 				SetupAnimal(i); -- Respawn them asap.
 				bFoundAI = true;
@@ -2319,7 +2313,7 @@ then
 #endif -- #ifndef EDITOR
 end
 
-EjectKillRetCodes Deathmatch01::PlayerEjected(Handle DeadObjectHandle)
+EjectKillRetCodes Deathmatch01::PlayerEjected(local DeadObjectHandle)
 then
 #ifdef EDITOR
 	return DLLHandled;
@@ -2522,7 +2516,7 @@ then
 	if(Mission.m_RabbitMode)
 	then
 		-- Clear, 
-		Handle OrigRabbit = Mission.m_RabbitTargetHandle;
+		local OrigRabbit = Mission.m_RabbitTargetHandle;
 		SetNewRabbit(0); -- Clear.
 		SetNewRabbit(OrigRabbit); -- re-aim everyone
 	end
@@ -2569,7 +2563,7 @@ end
 -- PreSnipe callback, they should (1) Ensure curWorld == 0 (lockstep)
 -- -- do NOTHING if curWorld is ~= 0, and (2) probably queue up an
 -- action to do in the next Execute() call.
-PreSnipeReturnCodes Deathmatch01::PreSnipe(local curWorld, Handle shooterHandle, Handle victimHandle, local ordnanceTeam, const char* pOrdnanceODF)
+PreSnipeReturnCodes Deathmatch01::PreSnipe(local curWorld, local shooterHandle, local victimHandle, local ordnanceTeam, const char* pOrdnanceODF)
 then
 	-- If Friendly Fire is off, then see if we should disallow the snipe
 	if(not Mission.m_bIsFriendlyFireOn)
