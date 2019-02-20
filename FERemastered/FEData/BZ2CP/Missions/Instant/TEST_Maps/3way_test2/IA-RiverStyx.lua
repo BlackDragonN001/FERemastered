@@ -231,18 +231,47 @@ end
 function CheckIfStuffAlive()
     if not M.IsGameOver then
         if not IsAround(M.EnemyTeam1Recy) and not IsAround(M.EnemyTeam2Recy) then
-            -- Player Wins
+            AddObjective("Game Over - Player Wins");
+			DoGameover(10.0);
         elseif not IsAround(M.EnemyTeam2Recy) and not IsAround(M.PlayerRecy) then
-            -- Enemy Team 1 Wins
+			AddObjective("Game Over - AI Team 1 Wins");
+			DoGameover(10.0);
         elseif not IsAround(M.EnemyTeam1Recy) and not IsAround(M.PlayerRecy) then
-            -- Enemy Team 2 Wins
+          	AddObjective("Game Over - AI Team 2 Wins");
+			DoGameover(10.0);
         end
-        M.IsGameOver = true
+        M.IsGameOver = true;
     end
 end
 
 function UpgradeUnitWeapons(handle)
+	local unit = GetOdf(handle);
 
+	-- Handle different upgrades per unit.
+	if (unit == "ivtank.odf") then
+		GiveWeapon(unit, "gspstab_c");
+	end
+
+	if (unit == "ivscout.odf") then
+		GiveWeapon(unit, "gchain_c");
+	end
+
+	if (unit == "ivatank.odf") then
+		GiveWeapon(unit, "gblast_a");
+	end
+
+	if (unit == "fvtank.odf" or unit == "fvscout.odf") then
+		GiveWeapon(unit, "garc_c");
+		GiveWeapon(unit, "gshield");
+	end
+
+	if (unit == "fvsent.odf") then
+		GiveWeapon(unit, "gdeflect");
+	end
+
+	if (unit == "fvarch.odf") then
+		GiveWeapon(unit, "gabsorb");
+	end
 end
 
 function HandleAICrazyUnits()
