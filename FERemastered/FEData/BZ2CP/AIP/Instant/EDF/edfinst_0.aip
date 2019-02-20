@@ -1,0 +1,79 @@
+// Original EDF instant AIP from FE 1.2
+// Re-written by AI_Unit (JJ)
+
+[Start]
+scrapCount = 40
+consClass = "ivcons"
+scavClass = "ivscav"
+CheckProvides = true
+sendAllUnitsOnStartup = 0
+
+[IdleDispatcher]
+IdleAllCraft = true
+ScavIdleSeconds = 20
+UnitIdleSeconds = 120
+MinAttackForce = 5 // Minimum amount of units that can be idle before the dispatcher kicks in.
+MaxAttackForce = 8 // Maximum amount of units that can be idle before the dispatcher kicks in.
+
+[Cheat]
+moneyAmount = 20
+moneyDelay = 10
+
+[Match]
+targetType1 = "VIRTUAL_CLASS_SCOUT"
+attackType1_1 = "ivscout"
+attackType1_2 = "ivscout"
+
+[Plan1]
+planType = "CollectPool"
+planPriority = 490
+planCondition = "Exists"
+planConditionClass = "ibrecy"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true
+CheckProvides = true
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan2]
+planType = "CollectPool"
+planPriority = 480
+planCondition = "Exists"
+planConditionClass = "ibrecy"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true
+CheckProvides = true
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan3]
+planType = "CollectField"
+planPriority = 470
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan4]
+planType = "Attacker"
+planPriority = 460
+targetType = "VIRTUAL_CLASS_SCOUT"
+attackType1 = "ivscout"
+attackType2 = "ivscout"
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan5]
+planType = "CollectField"
+planPriority = 450
+buildIfNoIdle = 1
+ContinueEvenIfFail = 1
+
+[Plan6]
+planType = "BuildMinimums"
+planPriority = 440
+buildType1 = "ivcons"
+buildCount1 = 1
+ContinueEvenIfFail = 1
+
+
