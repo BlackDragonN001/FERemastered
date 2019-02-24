@@ -56,7 +56,7 @@ particleClass8 = "xfbbld_c.char2"
 particleCount8 = 1
 particleVeloc8 = "0.0 0.0 0.0"
 
-// Never worked, "axfbbld_c". -GBD
+// Never worked, were "axfbbld_c". -GBD
 particleClass9 = "xfbbld_c.fire"
 particleCount9 = 1
 particleVeloc9 = "0.0 0.0 0.0"
@@ -79,7 +79,7 @@ finishRadius = 1.0
 animateTime = 2
 rotationRate = 10.0
 emitDelay = 0.05
-emitVelocity = "5.0 5.0 5.0"
+emitVelocity = "0.0 5.0 0.0"
 emitVariance = "5.0 5.0 5.0"
 emitLife = 1.0
 
@@ -120,7 +120,7 @@ finishRadius = 0.2
 animateTime = 1.0
 rotationRate = 10.0
 emitDelay = 0.03
-emitVelocity = "2.0 3.0 2.0"
+emitVelocity = "0.0 3.0 0.0"
 emitVariance = "2.0 3.0 2.0"
 emitLife = 0.9
 

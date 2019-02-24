@@ -5,10 +5,15 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 1
-particleClass1 = "xslicergnd_c.core"
+particleTypes = 2
+
+particleClass1 = "xslicergnd_a.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xslicergnd_c.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
 
 explSound = "xsv2.wav"
 damageRadius = 0.0

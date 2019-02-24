@@ -30,6 +30,8 @@ particleClass2 = "xfbcar_c.chunks"
 particleCount2 = 16
 particleVeloc2 = "30.0 30.0 30.0"
 particleBias2 = "0.0 10.0 0.0"
+particlePosVar2 = "2.0 2.0 2.0"
+particleInherit2 = "1.0 1.0 1.0"
 
 particleClass3 = "xfbcar_c.ring"
 particleCount3 = 1
@@ -80,7 +82,7 @@ emitLife = 1.0
 
 [Chunks]
 simulateBase = "sim_ember"
-lifeTime = .7
+lifeTime = 0.7
 renderBase = "draw_sprite"
 textureName = "flame2.tga"
 textureBlend = "one one modulate"
@@ -88,7 +90,7 @@ startColor = "255 200 70 255"
 finishColor = "155 80 0 0"
 startRadius = 1.5
 finishRadius = 6 //4.5
-animateTime = .7
+animateTime = 0.7
 
 [Ring]
 simulateBase = "sim_null"
@@ -115,7 +117,7 @@ finishRadius = 0.2
 animateTime = 1.0
 rotationRate = 10.0
 emitDelay = 0.03
-emitVelocity = "2.0 3.0 2.0"
+emitVelocity = "0.0 3.0 0.0"
 emitVariance = "2.0 3.0 2.0"
 emitLife = 0.9
 

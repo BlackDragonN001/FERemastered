@@ -5,10 +5,16 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 1
-particleClass1 = "xslicerbld_c.core"
+particleTypes = 2
+
+particleClass1 = "xslicerbld_a.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xslicergnd_c.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleInherit2 = "1.0 1.0 1.0"
 
 explSound = "xsv2.wav"
 damageRadius = 0.0
@@ -20,7 +26,7 @@ damageValue(D) = 0
 damageValue(A) = 0
 
 [Core]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.5
 renderBase = "draw_twirl"
 textureName = "ring.tga"

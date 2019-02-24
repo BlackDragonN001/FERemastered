@@ -6,12 +6,15 @@
 classLabel = "explosion"
 
 particleTypes = 3
+
 particleClass1 = "xstfcar.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xstfcar.puff"
 particleCount2 = 20
 particleVeloc2 = "15.0 15.0 15.0"
+
 particleClass3 = "xstfcar.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"

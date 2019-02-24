@@ -6,19 +6,24 @@
 classLabel = "explosion"
 
 particleTypes = 5
+
 particleClass1 = "xcpcruxpl.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xcpcruxpl.shock"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
+
 particleClass3 = "xcpcruxpl.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
+
 particleClass4 = "xcpcruxpl.trail"
 particleCount4 = 20
 particleVeloc4 = "40.0 60.0 40.0"
 particleBias4 = "0.0 0.0 0.0"
+
 particleClass5 = "xcpcruxpl.trail2"
 particleCount5 = 20
 particleVeloc5 = "30.0 50.0 30.0"

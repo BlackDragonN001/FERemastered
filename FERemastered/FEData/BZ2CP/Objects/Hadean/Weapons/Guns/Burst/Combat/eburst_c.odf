@@ -1,9 +1,13 @@
 [OrdnanceClass]
 classLabel = "bullet"
+
 shotGeometry = NULL
+
 xplGround = "xshellgnd"
 xplVehicle = "xshellcar"
 xplBuilding = "xshellcar"
+
+renderName = "eburst_c.render"
 
 ammoCost = 3.0  // 4.5 // 5FE
 lifeSpan = .30 // 0.35FE // 105m
@@ -19,3 +23,10 @@ damageValue(A) = 25 // absorbtion
 
 
 //burst fires 10 shots once per second, pummel fires 10 per half second
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "cphcg_c.core"
+renderName2 = "cphcg_c.bullettrail"
+//renderName3 = "cphcg_c.trail"

@@ -36,7 +36,7 @@ particleVeloc3 = "0.0 0.0 0.0"
 
 
 [Splat]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.3
 renderBase = "draw_sprite"
 textureName = "ring.tga"
@@ -46,6 +46,7 @@ finishColor = "255 0 0 0"
 startRadius = 0.2
 finishRadius = 3.0
 animateTime = 0.3
+BottomInteractsWithTerrain = false
 
 [Flame]
 simulateBase = "sim_smoke"
@@ -65,7 +66,7 @@ emitVariance = "2.0 2.0 2.0"
 emitLife = 0.3
 
 [Light]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.5
 renderBase = "draw_light"
 startColor = "255 200 0 555"

@@ -1,11 +1,22 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 1
+particleTypes = 2
 
 particleClass1 = "xhcgcar.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+particleInherit1 = "1.0 1.0 1.0"
+
+particleClass2 = "xhcgbld.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleInherit2 = "1.0 1.0 1.0"
+
+particleClass3 = "xhcgbld.shardsprite"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+particleInherit3 = "1.0 1.0 1.0"
 
 explSound = "wmgr1.wav"
 damageRadius = 0.0
@@ -17,7 +28,7 @@ damageValue(D) = 0
 damageValue(A) = 0
 
 [Core]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.5
 renderBase = "draw_twirl"
 textureName = "ring.tga"
@@ -27,3 +38,5 @@ finishColor = "25 27 155 0"
 startRadius = 0.2
 finishRadius = 1.0
 animateTime = 0.5
+rotationRate = 10.0
+BottomInteractsWithTerrain = false

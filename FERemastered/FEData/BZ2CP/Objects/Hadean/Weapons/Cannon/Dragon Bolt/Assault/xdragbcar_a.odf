@@ -35,7 +35,7 @@ kickOmega = 2.0
 kickVeloc = 3.0
 
 [Core]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.5
 renderBase = "draw_twirl"
 textureName = "firering.tga"
@@ -45,6 +45,7 @@ finishColor = "255 200 0 0"
 startRadius = 2.0
 finishRadius = 10.0
 animateTime = 0.5
+BottomInteractsWithTerrain = false
 
 [cloud]
 simulateBase = "sim_dust"
@@ -68,7 +69,7 @@ finishRadius = 10.0
 animateTime = 2.5
 
 [Light]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_light"
 startColor = "255 100 20 555"

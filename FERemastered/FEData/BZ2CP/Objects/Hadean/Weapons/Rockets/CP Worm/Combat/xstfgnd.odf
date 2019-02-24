@@ -6,17 +6,21 @@
 classLabel = "explosion"
 
 particleTypes = 4
+
 particleClass1 = "xstfgnd.ring"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xstfgnd.chunks"
 particleCount2 = 12
 particleVeloc2 = "5.0 5.0 5.0"
 particleBias2 = "0.0 5.0 0.0"
+
 particleClass3 = "xstfgnd.puff"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 particleBias3 = "0.0 1.0 0.0"
+
 particleClass4 = "xstfgnd.light"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"

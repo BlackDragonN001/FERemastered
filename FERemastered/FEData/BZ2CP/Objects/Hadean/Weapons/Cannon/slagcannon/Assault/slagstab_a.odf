@@ -27,7 +27,7 @@ damageValue(A) = 450 // absorbtion
 renderBase = "draw_multi"
 renderCount = 2
 renderName1 = "slagstab_a.flames"
-renderName2 = "slagstab_a.smoke""
+renderName2 = "slagstab_a.smoke"
 
 
 [flames]
@@ -55,6 +55,6 @@ startRadius = 0.1
 finishRadius = 1.0
 animateTime = 1.0
 emitDelay = 0.005
-emitVelocity = "1.5 1.5 1.5"
+emitVelocity = "0.0 1.5 0.0"
 emitVariance = "3.0 3.0 3.0"
 emitLife = 0.8

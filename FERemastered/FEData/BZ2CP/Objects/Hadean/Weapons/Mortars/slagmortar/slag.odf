@@ -22,6 +22,7 @@ damageValue(H) = 40 // heavy
 damageValue(S) = 60 // standard
 damageValue(D) = 40 // deflection
 damageValue(A) = 80 // absorbtion
+
 kickRadius = 10.0
 kickVeloc = 1.5
 kickOmega = 1.0
@@ -56,6 +57,6 @@ startRadius = 0.2
 finishRadius = 0.5
 animateTime = .2
 emitDelay = 0.01
-emitVelocity = "1.0 1.0 1.0"
+emitVelocity = "0.0 1.0 0.0"
 emitVariance = "3.0 3.0 3.0"
 emitLife = 1.0

@@ -1,0 +1,67 @@
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 3
+
+particleClass1 = "xhcgbld.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xhcgbld.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xhcgbld.shardsprite"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+explSound = "wmgr1.wav"
+damageRadius = 0.0
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+[Core]
+simulateBase = "sim_smoke"
+lifeTime = 0.7
+renderBase = "draw_twirl"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 100"
+finishColor = "25 27 155 0"
+startRadius = 0.2
+finishRadius = 2.0 //3.0
+animateTime = 0.7
+rotationRate = 10.0
+BottomInteractsWithTerrain = false
+
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_light"
+startColor = "255 255 255 300"
+finishColor = "120 150 230 0"
+startRadius = 10.0
+finishRadius = 7.0
+animateTime = 0.1
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[ShardSprite]
+simulateBase = "sim_smoke"
+lifeTime = 0.15
+renderBase = "draw_twirl"
+textureName = "crackle.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 250"
+finishColor = "50 127 255 0"
+startRadius = 0.4
+finishRadius = 1.1
+animateTime = 0.15
+rotationRate = 12.0
+BottomInteractsWithTerrain = false

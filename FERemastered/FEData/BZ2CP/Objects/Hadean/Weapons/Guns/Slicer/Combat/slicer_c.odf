@@ -9,7 +9,7 @@ xplBuilding = "xslicerbld_c"
 renderName = "slicer_c.render"
 
 ammoCost = 2.6
-lifeSpan = .000145 // 150mFE
+lifeSpan = 145e-6 //.000145 // 150mFE
 shotSpeed = 1e6
 
 damageValue(N) = 18.0 // none //350

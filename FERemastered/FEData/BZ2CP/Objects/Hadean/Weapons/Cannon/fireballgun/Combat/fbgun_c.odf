@@ -41,11 +41,11 @@ renderName3 = "fbgun_c.light"
 
 [Smoke]
 renderBase = "draw_twirl_trail"
-emitDelay = .02
+emitDelay = 0.02
 emitDelayVar = .01 
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "1.0 1.0 1.0"
-emitLife = .7 
+emitLife = 0.7 
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "0 0 0 128"
@@ -54,6 +54,7 @@ startRadius = 1.0
 finishRadius = 0.10
 animateTime = 0.7
 rotationRate = 1.0
+BottomInteractsWithTerrain = false
 
 [Flame]
 renderBase = "draw_twirl_trail"
@@ -61,15 +62,16 @@ emitDelay = 0.025
 emitDelayVar = 0.01
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "1.0 1.0 1.0"
-emitLife = .6 
+emitLife = 0.6 
 textureName = "fire.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 200 128"
 finishColor = "255 0 0 0"
 startRadius = 1.0 
 finishRadius = 0.1
-animateTime = .6 
+animateTime = 0.6 
 rotationRate = 8.0
+BottomInteractsWithTerrain = false
 
 [Light]
 renderBase = "draw_light"

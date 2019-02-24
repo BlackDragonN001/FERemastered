@@ -51,6 +51,7 @@ startRadius = 0.5
 finishRadius = 1.0
 animateTime = 0.7
 rotationRate = 1.0
+BottomInteractsWithTerrain = false
 
 [Flame]
 renderBase = "draw_twirl_trail"
@@ -68,6 +69,7 @@ startRadius = 0.8
 finishRadius = 0.2
 animateTime = 0.7
 rotationRate = 8.0
+BottomInteractsWithTerrain = false
 
 [trailer]
 simulateBase = "sim_dust"//dust

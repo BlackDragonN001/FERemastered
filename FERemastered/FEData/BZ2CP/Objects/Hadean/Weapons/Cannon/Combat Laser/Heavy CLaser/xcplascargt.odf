@@ -1,0 +1,68 @@
+// =================
+// VEHICLE & BUILDING HIT
+// =================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xsv2.wav"
+
+damageRadius = 10.0
+
+
+damageValue(N) = 5
+damageValue(L) = 5
+damageValue(H) = 5
+damageValue(S) = 5
+damageValue(D) = 5
+damageValue(A) = 5
+
+kickRadius = 5.0
+kickOmega = 2.0
+kickVeloc = 1.0
+
+particleTypes = 6
+
+particleClass1 = "xcplascar.puff"
+particleCount1 = 5
+particleVeloc1 = "4.0 4.0 4.0"
+
+particleClass2 = "xcplascargt.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xcplascar.splat"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xcplascar.flame"
+particleCount4 = 1
+particleVeloc4 = "0.0 1.0 0.0"
+particleBias4 = "0.0 0.0 0.0"
+
+particleClass5 = "xcplascar.chunks"
+particleCount5 = 20
+particleVeloc5 = "10.0 10.0.0 10.0"
+particleBias5 = "3.0 3.0 3.0"
+particlePosVar5 = "2.0 2.0 2.0"
+particleInherit5 = "1.0 1.0 1.0"
+
+particleClass6 = "xcplascar.puff2"
+particleCount6 = 20
+particleVeloc6 = "30.0 30.0.0 30.0"
+particleBias6 = "0.0 3.0 0.0"
+particleInherit6 = "0.5 0.5 0.5"
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 0.7
+renderBase = "draw_light"
+startColor = "255 128 64 3000"
+finishColor = "200 50 0 20"
+startRadius = 30.0
+finishRadius = 30.0
+animateTime = 0.7
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

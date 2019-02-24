@@ -5,10 +5,15 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 1
+particleTypes = 2
+
 particleClass1 = "xslicergnd_c.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xslicergnd_c.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
 
 explSound = "xsv2.wav"
 damageRadius = 0.0
@@ -30,3 +35,17 @@ finishColor = "190 23 196 0"
 startRadius = 0.2
 finishRadius = 2.0
 animateTime = 0.5
+
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_light"
+startColor = "255 255 255 300"
+finishColor = "230 63 230 0"
+startRadius = 10.0
+finishRadius = 7.0
+animateTime = 0.1
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

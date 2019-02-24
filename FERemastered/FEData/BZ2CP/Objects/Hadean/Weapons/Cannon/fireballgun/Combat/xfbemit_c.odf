@@ -22,14 +22,17 @@ particleTypes = 3
 particleClass1 = "xfbemit_c.shock"
 particleCount1 = 1
 particleVeloc1 = "0.0 12.0 0.0"
+particleInherit1 = "0.75 0.75 0.75"
 
 particleClass2 = "xfbemit_c.flame"
 particleCount2 = 1
 particleVeloc2 = "0.0 10.0 0.0"
+particleInherit2 = "0.75 0.75 0.75"
 
 particleClass3 = "xfbemit_c.flamedark"
 particleCount3 = 1
 particleVeloc3 = "0.0 8.0 0.0"
+particleInherit3 = "0.75 0.75 0.75"
 
 [Shock]
 simulateBase = "sim_null"
@@ -53,7 +56,7 @@ startColor = "255 155 100 10"
 finishColor = "90 60 0 180"
 startRadius = 4.0 
 finishRadius = 0.1
-animateTime = .3 // .4 
+animateTime = 0.3 // .4 
 
 [FlameDark]
 simulateBase = "sim_null"
@@ -65,5 +68,5 @@ startColor = "255 155 100 180"
 finishColor = "90 60 0 30"
 startRadius = 0.1 
 finishRadius = 6.0
-animateTime = .3 // .4
+animateTime = 0.3 // .4
 

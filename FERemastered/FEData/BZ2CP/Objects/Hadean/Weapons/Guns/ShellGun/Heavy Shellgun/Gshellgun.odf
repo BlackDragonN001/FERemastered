@@ -1,0 +1,16 @@
+[WeaponClass]
+classLabel = "machinegun"
+ordName = "shellgun"
+wpnName = "Shell Gun"
+fireSound = "shellgun.wav"
+wpnReticle = "gchain"
+wpnCategory = "GUN"
+isAssault = 0
+flashName = "gshellgun_a.flash"
+aiRange = 170 // 150 // 180 FE
+
+[CannonClass]
+shotDelay = 0.14
+shotVariance = 0.01
+
+//** Range reduced to 150m, damage vs heavy armour slightly reduced (20%).

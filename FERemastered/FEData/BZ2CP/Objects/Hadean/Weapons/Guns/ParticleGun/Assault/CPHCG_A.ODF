@@ -1,0 +1,19 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = "xbulgnd"
+xplVehicle = "xhcgcar"
+xplBuilding = "xhcgbld"
+renderName = "cphcg_c.render"
+
+ammoCost = 2.5
+lifeSpan = 0.45 // 105m  135 GEC
+shotSpeed = 300.0
+
+damageValue(N) = 15 // none // 300
+damageValue(L) = 13.5 // light // 270
+damageValue(H) = 12.5 // heavy // 250
+
+damageValue(S) = 13.5 // standard // 270
+damageValue(D) = 10 // deflection // 300
+damageValue(A) = 15 // absorbtion // 400

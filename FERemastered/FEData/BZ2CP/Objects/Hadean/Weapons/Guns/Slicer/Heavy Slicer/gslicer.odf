@@ -1,0 +1,13 @@
+[WeaponClass]
+classLabel = "machinegun"
+ordName = "slicer"
+wpnName = "Slicer H5X"
+fireSound = "sonic03c.wav"
+wpnReticle = "gblast"
+wpnCategory = "GUN"
+isAssault = 0
+aiRange = 150
+flashName = "gslicer_a.flash"
+
+[CannonClass]
+shotDelay = 0.3

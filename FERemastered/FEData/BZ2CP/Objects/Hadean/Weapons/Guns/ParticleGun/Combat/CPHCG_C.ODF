@@ -1,9 +1,12 @@
 [OrdnanceClass]
 classLabel = "bullet"
+
 shotGeometry = NULL
-xplGround = "xbulgnd"
+
+xplGround = "xhcggnd"
 xplVehicle = "xhcgcar"
 xplBuilding = "xhcgbld"
+
 renderName = "cphcg_c.render"
 
 ammoCost = 1.25
@@ -20,24 +23,41 @@ damageValue(A) = 5 // absorbtion // 200
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 3
 renderName1 = "cphcg_c.core"
 renderName2 = "cphcg_c.trail"
+renderName3 = "cphcg_c.bullettrail"
 
 [Core]
 renderBase = "draw_twirl"
-textureName = "lightflare.tga"
+textureName = "particle.tga" //lightflare.tga
 textureBlend = "one one modulate"
 startColor = "255 255 255 255"
 finishColor = "255 255 255 0"
-startRadius = 0.8
-finishRadius = 0.8
+startRadius = 0.5 //0.8
+finishRadius = 0.5 //0.8
+rotationRate = 10.0
+BottomInteractsWithTerrain = false
 
 [Trail]
 renderBase = "draw_trail"
-textureBlend = "one one modulate"
-startColor = "150 85 50 60"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "120 100 230 63"
 finishColor = "150 85 50 0"
-startRadius = 0.10
-finishRadius = 0.07
-segmentTime = 0.1
+startRadius = 0.15
+finishRadius = 0.025
+textureRate = 0.3
+segmentTime = 0.1 //0.3
+
+[BulletTrail]
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "hadbullet.tga"
+//startColor = "150 85 50 60"
+//finishColor = "150 85 50 0"
+startColor = "120 100 230 60"
+finishColor = "120 100 230 0"
+startRadius = 0.25 //1
+finishRadius = 0.25 //1
+tracerLength = 2.0 //5.6

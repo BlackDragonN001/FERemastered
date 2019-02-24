@@ -17,33 +17,34 @@ damageValue(A) = 0
 
 particleTypes = 7
 
-particleClass1 = "cplasgnd.core"
+particleClass1 = "xcplasgnd.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
-particleClass2 = "cplasgnd.ring"
+particleClass2 = "xcplasgnd.ring"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
 
-particleClass3 = "cplasgnd.char"
+particleClass3 = "xcplasgnd.char"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
-particleClass4 = "cplasgnd.cloud"
+particleClass4 = "xcplasgnd.cloud"
 particleCount4 = 1
 particleVeloc4 = "0.0 10.0 0.0"
 
-particleClass5 = "cplasgnd.flame"
+particleClass5 = "xcplasgnd.flame"
 particleCount5 = 1
 particleVeloc5 = "0.0 1.0 0.0"
 particleBias5 = "0.0 0.0 0.0"
 
-particleClass6 = "cplasgnd.chunks"
+particleClass6 = "xcplasgnd.chunks"
 particleCount6 = 20
 particleVeloc6 = "8.0 8.0.0 8.0"
 particleBias6 = "0.0 8.0 0.0"
+particlePosVar6 = "2.0 0.0 2.0"
 
-particleClass7 = "cplasgnd.light"
+particleClass7 = "xcplasgnd.light"
 particleCount7 = 1
 particleVeloc7 = "8.0 8.0.0 8.0"
 particleBias7 = "0.0 8.0 0.0"
@@ -88,7 +89,7 @@ animateTime = 2.0
 simulateBase = "sim_dust"
 lifeTime = 2.0
 renderBase = "draw_emit"
-emitName = "xgaussgnd.cloudemit"
+emitName = "xcplasgnd.cloudemit"
 emitDelay = 0.25
 emitVelocity = "0.0 1.5 0.0"
 emitVariance = "1.0 0.0 1.0"
@@ -97,7 +98,7 @@ emitVariance = "1.0 0.0 1.0"
 simulateBase = "sim_smoke"
 lifeTime = 3.0
 renderBase = "draw_twirl"
-textureName = "smoke.tga"
+textureName = "smoke2.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "255 100 0 100"
 finishColor = "150 0 0 0"
