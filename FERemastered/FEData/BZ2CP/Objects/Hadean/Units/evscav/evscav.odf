@@ -94,6 +94,12 @@ deployClass = "ebscav"
 deployOffset = 3.6
 //scrapFirst = true
 
+BeamColor = "204 153 101 31"
+BuildSparkConfig = "sparker_hadean"
+LineFinishColor = "255 255 255 0"
+LineStartColor = "204 153 101 255"
+lineSolidColor = "204 153 101 255"
+
 [Lod1]
 //geometryName = "evscavl1.xsi" ;geometry for lod1
 //distance = 50                 ;...distance over this many meters => switch to lod2

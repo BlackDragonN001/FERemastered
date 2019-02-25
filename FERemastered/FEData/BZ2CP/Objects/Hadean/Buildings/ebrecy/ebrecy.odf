@@ -53,6 +53,12 @@ buildItem7 = "apserv"
 reloadMsg = "evrecy12.wav"
 rescueMsg = "evrecy13.wav"
 
+BeamColor = "204 153 101 31"
+BuildSparkConfig = "sparker_hadean"
+LineFinishColor = "255 255 255 0"
+LineStartColor = "204 153 101 255"
+lineSolidColor = "204 153 101 255"
+
 [RecyclerClass]
 scrapHold = 40
 scrapDelay = 3.0 // # of seconds before +1 scrap

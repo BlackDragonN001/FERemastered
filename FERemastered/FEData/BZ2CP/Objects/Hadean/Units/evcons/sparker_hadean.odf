@@ -1,0 +1,19 @@
+[sparker_hadean]
+renderBase = "draw_emit"
+emitName = "sparker_hadean.spark"
+emitDelay = 0.05
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "2.0 0.0 2.0"
+
+[Spark]
+simulateBase = "sim_smoke"
+lifeTime = 4.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "204 153 101 31"
+finishColor = "204 153 101 0"
+startRadius = 2.0
+finishRadius = 0.1
+animateTime = 4.0
+rotationRate = 5.0
