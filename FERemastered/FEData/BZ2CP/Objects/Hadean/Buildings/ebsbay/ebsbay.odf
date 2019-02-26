@@ -1,6 +1,13 @@
 [GameObjectClass]
 baseName = "ebsbay"
-geometryName = "ebsbay00.xsi"
+geometryName = "ebsbay00.fbx"
+animCount = 2
+animName1 = "deploy"
+animFile1 = "ebsbay00.fbx"
+animName2 = "loop"
+animFile2 = "ebsbay00_loop.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
 classLabel = "supplydepot"
 collisionRadius = 1.0
 scrapCost = 50
@@ -27,6 +34,17 @@ provideName1 = "ebsbay"
 provideName2 = "VIRTUAL_CLASS_SUPPLYDEPOT"
 provideName3 = "base"
 
+lightHard1 = "hp_light_1"
+lightName1 = "omniyohad"
+lightHard2 = "hp_light_2"
+lightName2 = "spothadean"
+lightHard3 = "hp_light_3"
+lightName3 = "spothadean"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "ebsbay.wave"
+effectFlags1 = 2147483583 // only when powered.
+
 [PoweredBuildingClass]
 detectRange = 100
 
@@ -44,5 +62,27 @@ supplyRange = 40.0
 supplyRate = 150.0
 supplySound = "mnu_empt.wav"
 
+[Wave]
+renderBase = "draw_emit"
+emitName = "ebsbay.waveemit"
+emitDelay = 0.5
+emitVelocity = "0.0 -5.0 0.0"
+emitVariance = "0.0 0.0 0.0"
 
-
+[Waveemit]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "255 180 30 200"
+finishColor = "255 150 30 0"
+startRadius = 5.0
+finishRadius = 1.0
+animateTime = 2.0
+waveAngle = 3.14159265359
+waveDepth = 1.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 64
+maxCount = 256
