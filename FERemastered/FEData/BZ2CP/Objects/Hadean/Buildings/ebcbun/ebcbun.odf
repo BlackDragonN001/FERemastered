@@ -1,6 +1,10 @@
+// BZ2CP Building "Eyes of Xyr"
+// Original Concept by Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
+
 [GameObjectClass]
 baseName = "ebcbun"
-geometryName = "ebcbun00.xsi"
+geometryName = "ebcbun00.fbx"
 classLabel = "commtower"
 collisionRadius = 1.0
 scrapCost = 60
@@ -31,6 +35,9 @@ provideCount = 3
 provideName1 = "ebcbun"
 provideName2 = "VIRTUAL_CLASS_COMMBUNKER"
 provideName3 = "base"
+
+lightHard1 = "hp_light_1"
+lightName1 = "omniyohad"
 
 [BuildingClass]
 soundAmbient = "icomm01.wav"
