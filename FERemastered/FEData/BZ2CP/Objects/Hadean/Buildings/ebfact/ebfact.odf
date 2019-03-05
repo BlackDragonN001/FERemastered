@@ -1,9 +1,16 @@
-//(c)BZ2CP
-// Created by Pastell
+// BZ2CP Building "Xenomator"
+// Original Concept by Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
 
 [GameObjectClass]
 baseName = "ebfact"
-geometryName = "ebfact00.xsi"
+geometryName = "ebfact00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ebfact00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+
 classLabel = "factory"
 collisionRadius = 4.0
 scrapCost = 55
@@ -31,8 +38,17 @@ provideName2 = "base"
 
 /////// Lights and effects ///////////////////
 
+//lightHard1 = "hp_light_1"
+//lightName1 = "light_spin"
+
 lightHard1 = "hp_light_1"
-lightName1 = "light_spin"
+lightName1 = "omnipurple"
+lightHard2 = "hp_light_2"
+lightName2 = "omniyohad"
+lightHard3 = "hp_light_3"
+lightName3 = "omniyohad"
+lightHard4 = "hp_light_4"
+lightName4 = "omniyohad"
 
 upgradeName = "ebfact2"
 

@@ -1,16 +1,99 @@
-//(c)BZ2CP
-// Created by Pastell
+// BZ2CP Building "Mega Xenomator"
+// Original Concept by Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
 
 [GameObjectClass]
-geometryName = "ebfact02.xsi"
-classLabel = "ebfact2"
+baseName = "ebfact2"
+geometryName = "ebfact02.fbx"
+animCount = 3
+animName1 = "deploy"
+animFile1 = "ebfact02_deploy.fbx"
+animName2 = "loop"
+animFile2 = "ebfact02.fbx"
+animName3 = "undeploy"
+animFile3 = "ebfact02_undeploy.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+
+classLabel = "factory"
+collisionRadius = 4.0
 scrapCost = 10
+scrapValue = 40
+maxHealth = 8000
+maxAmmo = 0
+unitName = "Mega Xenomator"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+armorClass = H
+
+/////// Requirements ///////////////////
+
+requireCount = 2
+requireName1 = "ebarmo"
+requireText1 = "Build Arsenal"
+requireName2 = "ebcbun"
+requireText2 = "Build Eyes of Xyr"
+
+/////// Provides ///////////////////
+
+provideCount = 3
+provideName1 = "ebfact"
+provideName2 = "base"
+provideName3 = "ebfact2"
+
+/////// Lights and effects ///////////////////
+
+//lightHard1 = "hp_light_1"
+//lightName1 = "light_spin"
+
+lightHard1 = "hp_light_1"
+lightName1 = "omnipurple"
+lightHard2 = "hp_light_2"
+lightName2 = "omniyohad"
+lightHard3 = "hp_light_3"
+lightName3 = "omniyohad"
+lightHard4 = "hp_light_4"
+lightName4 = "omniyohad"
 
 upgradeName = "ebfact3"
 
 [PoweredBuildingClass]
+detectRange = 200
 
 [BuildingClass]
+tunnelCount = 1
 
+tunnel01X0 = 3
+tunnel01Z0 = 3
+tunnel01DX = 2
+tunnel01DZ = 4
+tunnel01Edge = "wwtw"
+
+soundAmbient = "ibfact00.wav"
 
 [FactoryClass]
+soundBuild = "ibrecy02.wav"
+soundFinish = "iapc04.wav"
+reloadMsg = "evrecy12.wav"
+rescueMsg = "evrecy13.wav"
+
+buildItem1 = "evmort"
+buildItem2 = "evtanku"
+buildItem3 = "evtankf"
+buildItem4 = "evmislu"
+buildItem5 = "evmislw"
+buildItem6 = "evatanku"
+buildItem7 = "evatanks"
+buildItem8 = "evkami"
+buildItem9 = "evartl2"
+buildItem10 = "ivewalk"
+
+BeamColor = "204 153 101 31"
+BuildSparkConfig = "sparker_hadean"
+LineFinishColor = "255 255 255 0"
+LineStartColor = "204 153 101 255"
+lineSolidColor = "204 153 101 255"

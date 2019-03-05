@@ -1,9 +1,20 @@
-//(c)BZ2CP
-// Created by Pastell
+// BZ2CP Building "Mega Xenomator"
+// Original Concept by Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
 
 [GameObjectClass]
 baseName = "ebfact2"
-geometryName = "ebfact02.xsi"
+geometryName = "ebfact02.fbx"
+animCount = 3
+animName1 = "deploy"
+animFile1 = "ebfact02_deploy.fbx"
+animName2 = "loop"
+animFile2 = "ebfact02.fbx"
+animName3 = "undeploy"
+animFile3 = "ebfact02_undeploy.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+
 classLabel = "factory"
 collisionRadius = 4.0
 scrapCost = 80
@@ -36,10 +47,19 @@ provideName3 = "ebfact2"
 
 /////// Lights and effects ///////////////////
 
-lightHard1 = "hp_light_1"
-lightName1 = "light_spin"
+//lightHard1 = "hp_light_1"
+//lightName1 = "light_spin"
 
-//upgradeName = "ebfact3"
+lightHard1 = "hp_light_1"
+lightName1 = "omnipurple"
+lightHard2 = "hp_light_2"
+lightName2 = "omniyohad"
+lightHard3 = "hp_light_3"
+lightName3 = "omniyohad"
+lightHard4 = "hp_light_4"
+lightName4 = "omniyohad"
+
+upgradeName = "ebfact3"
 
 [PoweredBuildingClass]
 detectRange = 200
