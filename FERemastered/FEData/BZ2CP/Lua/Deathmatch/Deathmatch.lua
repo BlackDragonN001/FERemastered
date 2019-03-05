@@ -107,7 +107,7 @@ local Mission =
 	m_MaxAIUnits = 0, -- Limit of AIs
 	m_NumAnimals = 0, -- Current count of AIs spawned in
 	m_MaxAnimals = 0, -- Limit of AIs
-	m_AnimalConfig[16] = 0, -- HACK - storing a string in here.
+	m_AnimalConfig = nil, -- HACK - storing a string in here.
 
 	--		AITeams[MAX_AI_UNITS], -- Which team # was last assigned to the specified AI unit
 	m_PowerupGotoTime = { }, -- How much time has elapsed on their quest for a powerup
@@ -193,14 +193,12 @@ function GetCanEject(h)
 		return false;
 	end
 
-	switch (Mission.m_MissionType)
+	if Mission.m_MissionType == DMSubtype_Normal or
+		Mission.m_MissionType == DMSubtype_KOH or
+		Mission.m_MissionType == DMSubtype_Loot
 	then
-	case DMSubtype_Normal:
-	case DMSubtype_KOH:
-	case DMSubtype_Loot:
 		return true;
-
-	default:
+	else
 		return false;
 	end
 end
@@ -213,31 +211,26 @@ function Deathmatch01::GetRespawnInVehicle()
 		return true;
 	end
 
-	switch (Mission.m_MissionType)
+	if Mission.m_MissionType == DMSubtype_Race2 or
+		Mission.m_MissionType == DMSubtype_Normal2
 	then
-	case DMSubtype_Race2:
-	case DMSubtype_Normal2:
 		return true;
-
-	default:
+	else
 		return false;
 	end
 end
 
-
 -- Given a race identifier, get the flag odf back
 function GetInitialFlagODF(Race)
 
-	strcpy_s(TempODFName, "ioflag01");
-	TempODFName[0] = Race;
+	local TempODFName = Race .. "oflag01";
 	return TempODFName;
 end
 
 -- Given a race identifier, get the stand odf back
 function GetInitialFlagStandODF(Race)
 
-	strcpy_s(TempODFName, "iostand01");
-	TempODFName[0] = Race;
+	local TempODFName = Race .. "ostand01";
 	return TempODFName;
 end
 
@@ -245,8 +238,7 @@ end
 -- Given a race identifier, get the pilot odf back
 function GetInitialPlayerPilotODF(Race)
 
-	strcpy_s(TempODFName, "ispilo");
-	TempODFName[0] = Race;
+	local TempODFName = Race .. "spilo"; -- With sniper.
 	return TempODFName;
 end
 
@@ -254,7 +246,7 @@ end
 -- Gets the next vehicle ODF for the player on a given team.
 function GetNextVehicleODF(TeamNum, Randomize)
 
-	RandomizeType RType = Randomize_None; -- Default
+	local RType = Randomize_None; -- Default
 	if(Randomize)
 	then
 		if(Mission.m_RespawnType == 1) then
@@ -422,7 +414,6 @@ then
 	end
 
 	local nearestEnemy = GetNearestEnemy(Mission.m_AICraftHandles[index]);
-	local i;
 	for(i = 1;i<MAX_TEAMS;i++)
 	then
 		local PlayerH = GetPlayerHandle(i);
@@ -436,11 +427,11 @@ then
 	then
 		local nearestPerson = GetNearestPerson(Mission.m_AICraftHandles[index], true, 100.0);
 
-		float distToEnemy = GetDistance(Mission.m_AICraftHandles[index], nearestEnemy);
+		local distToEnemy = GetDistance(Mission.m_AICraftHandles[index], nearestEnemy);
 
 		if(nearestPerson)
 		then
-			float distToPerson = GetDistance(Mission.m_AICraftHandles[index], nearestPerson);
+			local distToPerson = GetDistance(Mission.m_AICraftHandles[index], nearestPerson);
 
 			-- Consider objects a bit farther away than closest enemy
 			if(distToPerson < (distToEnemy * 1.2))
@@ -456,7 +447,7 @@ then
 		local nearestPowerup = GetNearestPowerup(Mission.m_AICraftHandles[index], true, 100.0);
 		if(nearestPowerup)
 		then
-			float distToPowerup = GetDistance(Mission.m_AICraftHandles[index], nearestPowerup);
+			local distToPowerup = GetDistance(Mission.m_AICraftHandles[index], nearestPowerup);
 
 			-- Consider objects a bit farther away than closest enemy
 			if(distToPowerup < (distToEnemy * 1.2))
@@ -478,7 +469,7 @@ then
 	then
 		-- Nearest enemy scan failed (found pilot, too far, 
 		-- something). Try harder.
-		float BestDist = 1e10;
+		local BestDist = 1e10;
 		local Bestlocal = 0;
 		if(not Mission.m_HumansVsBots)
 		then
@@ -502,7 +493,7 @@ then
 					continue;
 				ThisBotH = Mission.m_AICraftHandles[i];
 				local MyH = Mission.m_AICraftHandles[index];
-				float ThisDist = GetDistance(MyH, ThisBotH);
+				local ThisDist = GetDistance(MyH, ThisBotH);
 				if((ThisDist > 0.01) and (ThisDist < BestDist))
 				then
 					-- Winner (of sorts). Store them.
@@ -525,7 +516,7 @@ then
 				continue;
 
 			local MyH = Mission.m_AICraftHandles[index];
-			float ThisDist = GetDistance(MyH, PlayerH);
+			local ThisDist = GetDistance(MyH, PlayerH);
 			if((ThisDist > 0.01) and (ThisDist < BestDist))
 			then
 				-- Winner (of sorts). Store them.
@@ -1868,7 +1859,7 @@ then
 			continue;
 
 		-- Kill players every little bit to check respawns
-		float maxHealth = GetMaxHealth(h);
+		local maxHealth = GetMaxHealth(h);
 		SelfDamage(h, (float)(maxHealth / 200.0));
 	end
 #endif

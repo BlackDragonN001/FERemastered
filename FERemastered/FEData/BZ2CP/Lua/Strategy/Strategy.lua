@@ -3,6 +3,7 @@ Written by General BlackDragon
 Version 1.0 11-20-2018 --]]
 
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+local _GlobalVariables = require('_GlobalVariables');
 local _FECore = require('_FECore');
 local _DLLUtils = require('_DLLUtils');
 local _StartingVehicles = require('_StartingVehicles');

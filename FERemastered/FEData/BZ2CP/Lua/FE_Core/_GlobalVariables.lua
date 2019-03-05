@@ -9,6 +9,18 @@ _GlobalVariables.TEAMRELATIONSHIP_ENEMYTEAM = 3 --Team # isn't identical, and te
 -- TEAM SLOT VARS
 _GlobalVariables.DLL_TEAM_SLOT_RECYCLER = 1
 _GlobalVariables.DLL_TEAM_SLOT_FACTORY = 2
+_GlobalVariables.DLL_TEAM_SLOT_ARMORY = 3
+_GlobalVariables.DLL_TEAM_SLOT_TRAINING = 4
+_GlobalVariables.DLL_TEAM_SLOT_BOMBERBAY = 5
+_GlobalVariables.DLL_TEAM_SLOT_SERVICE = 6
+_GlobalVariables.DLL_TEAM_SLOT_TECHCENTER = 7
+_GlobalVariables.DLL_TEAM_SLOT_COMMTOWER = 8
+_GlobalVariables.DLL_TEAM_SLOT_BASE4 = 9
+_GlobalVariables.DLL_TEAM_SLOT_BASE5 = 10
+_GlobalVariables.DLL_TEAM_SLOT_BASE6 = 11
+_GlobalVariables.DLL_TEAM_SLOT_BASE7 = 12
+_GlobalVariables.DLL_TEAM_SLOT_BASE8 = 13
+_GlobalVariables.DLL_TEAM_SLOT_BASE9 = 14
 
 -- NETLIST VARS
 _GlobalVariables.NETLIST_MPVehicles = 0
