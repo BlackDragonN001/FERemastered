@@ -75,11 +75,10 @@ BottomInteractsWithTerrain = false
 
 [Light]
 renderBase = "draw_light"
-startColor = "255 150 0 800"
-finishColor = "199 0 0 800"
+startColor = "200 150 0 800"
+finishColor = "200 150 0 800"
 startRadius = 20.0
 finishRadius = 20.0
-animateTime = 0.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
