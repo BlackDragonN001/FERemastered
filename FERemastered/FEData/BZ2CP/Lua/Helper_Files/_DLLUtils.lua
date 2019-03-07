@@ -6,7 +6,7 @@ local _DLLUtils = {}
 
 -- Returns true if h is a recycler or recycler vehicle, false
 -- if h is invalid, or not a recycler
-function _DLLUtils.IsRecycler(h)
+function IsRecycler(h)
 
 	local ObjClass = GetObjInfo_GOClass(h);
 	if(ObjClass == nil) then
@@ -22,7 +22,7 @@ end
 -- actual allies) Note: should return at least 1, because each team is
 -- an ally of itself. Does not count the neutral team (0), which is an
 -- ally of all teams by default.
-function _DLLUtils.CountAlliedPlayers(team)
+function CountAlliedPlayers(team)
 
 	local count = 0;
 	
@@ -44,7 +44,7 @@ end
 -- Sanity wrapper for GetVarItemStr. Reads the specified svar, and
 -- verifies it's present in the specified list. If not found in
 -- there, returns NULL.
-function _DLLUtils.GetCheckedNetworkSvar(svar, listType)
+function GetCheckedNetworkSvar(svar, listType)
 
 	local svarStr = "network.session.svar" .. svar;
 
@@ -74,7 +74,7 @@ function _DLLUtils.GetCheckedNetworkSvar(svar, listType)
 end
 
 -- Helper function for SetupTeam(), returns an appropriate spawnpoint.
-function _DLLUtils.GetSpawnpointForTeam(Team, FRIENDLY_SPAWNPOINT_MAX_ALLY, FRIENDLY_SPAWNPOINT_MIN_ENEMY, RANDOM_SPAWNPOINT_MIN_ENEMY);
+function GetSpawnpointForTeam(Team, FRIENDLY_SPAWNPOINT_MAX_ALLY, FRIENDLY_SPAWNPOINT_MIN_ENEMY, RANDOM_SPAWNPOINT_MIN_ENEMY);
 	
 	local spawnpointPosition = SetVector(0, 0, 0);
 	

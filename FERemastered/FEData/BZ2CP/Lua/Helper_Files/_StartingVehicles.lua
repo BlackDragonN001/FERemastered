@@ -2,9 +2,6 @@
 Written by General BlackDragon
 Version 1.0 11-20-2018 --]]
 
--- Max # of vehicles that can be in the list. Do *NOT* change this. 
-local MAX_STARTING_VEHICLES = 32;
-local NETLIST_StratStarting = 1;
 local VEHICLE_SPACING_DISTANCE = 30.0;
 
 local _STSV = {}

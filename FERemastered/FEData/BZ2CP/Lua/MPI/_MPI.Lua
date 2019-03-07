@@ -6,7 +6,6 @@ assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 local _DLLUtils = require('_DLLUtils');
 local _StartingVehicles = require('_StartingVehicles');
-local _GlobalVariables = require('_GlobalVariables')
 
 -- VARS
 local DEBUG = true;
@@ -63,7 +62,7 @@ function _MPI.SpawnAITeam()
 	local AITeamRace = GetRaceOfTeam(CPU_TEAM_NUMBER);
 	
 	-- If the AI Recycler does not exist, build one for Team 5.
-	if (GetObjectByTeamSlot(CPU_TEAM_NUMBER, _GlobalVariables.DLL_TEAM_SLOT_RECYCLER) == nil) then
+	if (GetObjectByTeamSlot(CPU_TEAM_NUMBER, DLL_TEAM_SLOT_RECYCLER) == nil) then
 		AISpawnPosition = GetPositionNear(AISpawnPosition, VEHICLE_SPACING_DISTANCE, 2 * VEHICLE_SPACING_DISTANCE);
 		AIVehicles.AIRecycler = BuildObject("ivrecy_m", CPU_TEAM_NUMBER, AISpawnPosition);
 		SetRandomHeadingAngle(AIVehicles.AIRecycler);
@@ -126,7 +125,7 @@ function _MPI.SetAIPlan()
 	local planName = nil;
 	local planNameBase = "stock13_";
 
-	local pContents = _DLLUtils.GetCheckedNetworkSvar(3, _GlobalVariables.NETLIST_AIPS);
+	local pContents = GetCheckedNetworkSvar(3, NETLIST_AIPS);
 	if (pContents ~= nil) then
 		planNameBase = pContents;
 	end

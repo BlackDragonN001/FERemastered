@@ -3,9 +3,7 @@ Written by General BlackDragon
 Version 1.0 11-20-2018 --]]
 
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
-local _GlobalVariables = require('_GlobalVariables');
 local _FECore = require('_FECore');
-local _DLLUtils = require('_DLLUtils');
 local _StartingVehicles = require('_StartingVehicles');
 
 -- Local Defines? Will these propegate across other lua file's scope?
@@ -439,7 +437,7 @@ end
 function GetInitialRecyclerODF(Race);
 
 	local TempODFName = nil;
-	local pContents = _DLLUtils.GetCheckedNetworkSvar(5, NETLIST_Recyclers);
+	local pContents = GetCheckedNetworkSvar(5, NETLIST_Recyclers);
 	if((pContents ~= nil) and (pContents[0] ~= '\0'))
 	then
 		TempODFName = pContents;
@@ -466,7 +464,7 @@ function SetupTeam(Team);
 		SetMPTeamRace(WhichTeamGroup(Team), TeamRace); -- Lock this down to prevent changes.
 	end
 
-	local spawnpointPosition = _DLLUtils.GetSpawnpointForTeam(Team, FRIENDLY_SPAWNPOINT_MAX_ALLY, FRIENDLY_SPAWNPOINT_MIN_ENEMY, RANDOM_SPAWNPOINT_MIN_ENEMY);
+	local spawnpointPosition = GetSpawnpointForTeam(Team, FRIENDLY_SPAWNPOINT_MAX_ALLY, FRIENDLY_SPAWNPOINT_MIN_ENEMY, RANDOM_SPAWNPOINT_MIN_ENEMY);
 
 	-- Store position we created them at for later
 	Mission.m_TeamPos[Team] = spawnpointPosition;

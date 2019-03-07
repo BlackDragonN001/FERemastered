@@ -10,17 +10,17 @@ print("Loading _FECore.lua");
 
 -- Helper Luas.
 require('_GlobalHandler');
+require('_GlobalVariables');
+require('_DLLUtils');
 local _MapReloader = require('_MapReloader');
 local _PropHeightFix = require('_PropHeightFix');
-
-
---test
-local _DLLUtils = require('_DLLUtils');
-local _StartingVehicles = require('_StartingVehicles');
 
 -- FE Moduels.
 --require('_PortalHelper');
 --require('_DispatchHelper');
+--require('_AttacherHelper');
+--require('_AIWeaponHelper');
+--require('_CarrierHelper');
 
 
 local _FECore = {}
