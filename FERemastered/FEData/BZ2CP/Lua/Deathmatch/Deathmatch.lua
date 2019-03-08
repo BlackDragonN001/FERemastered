@@ -1691,7 +1691,7 @@ function UpdateAnimals()
 
 end -- UpdateAnimals()
 
-function Execute()
+function Update()
 
 	-- Always ensure we did this
 	if (not Mission.m_DidOneTimeInit) then
@@ -1842,7 +1842,7 @@ function RespawnPilot(DeadObjectHandle, Team)
 	if(Mission.m_RabbitMode and (DeadObjectHandle == Mission.m_RabbitTargetHandle))
 	then
 		Mission.m_ForbidRabbitTeam = Mission.m_RabbitTeam;
-		Mission.m_RabbitTargetHandle = 0;
+		Mission.m_RabbitTargetHandle = nil;
 	end
 
 	if(DMIsRaceSubtype[Mission.m_MissionType]) 
@@ -2060,7 +2060,7 @@ function DeadObject(DeadObjectHandle, KillersHandle, WasDeadPerson, WasDeadAI)
 		do
 			if(DeadObjectHandle == Mission.m_AICraftHandles[i])
 			then
-				Mission.m_AICraftHandles[i] = 0;
+				Mission.m_AICraftHandles[i] = nil;
 				BuildBotCraft(i); -- Respawn them asap.
 				bFoundAI = true;
 				if(Wasm_RabbitShooterHandle)

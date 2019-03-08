@@ -66,6 +66,7 @@ DMSubtype_RESERVED1 = 4 -- For internal Pandemic use-- Andrew's work
 DMSubtype_Race1 = 5 -- Race, respawn as person
 DMSubtype_Race2 = 6 -- Race, respawn as vehicle
 DMSubtype_Normal2 = 7 -- Normal, but respawn as vehicle (no person)
+DMIsRaceSubtype = {false,false,false,false,false,true,true,false};
 
 HP1_ON = 1
 HP2_ON = 2
