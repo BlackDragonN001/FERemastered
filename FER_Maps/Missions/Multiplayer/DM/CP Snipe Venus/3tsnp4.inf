@@ -1,5 +1,5 @@
 [DESCRIPTION]
-missionName = "CP Snipe: Venus"
+missionName = "CP DM: Snipe: Venus"
 mapTga = "CPVSnipe.bmp"
 mapDesc = "CPVSnipe.des"
 mySide = 1
@@ -8,17 +8,41 @@ MapURL = "http://www.planetbattlezone.com/bz2commproj/"
 
 [NetVars]
 // For master list of descriptions, see source\network\vars.txt
-ivar0 = 0 // Kill limit, 0= unlimited
-ivar1 = 0 // Time limit, 0= unlimited
-ivar2 = 4 // player limit. Commenting out this line means current setting not changed
-ivar3 = 0 // 1=Teamplay on, 0=Teamplay off
-ivar4 = 1 // Bitfields saying which vehicles out of mpvehicles.txt are allowable. 255 = all hovercraft
-ivar5 = 1 // All=0, DM=1, Strat=2, all other values undefined (used in filters)
-ivar6 = 0 // Vehicle selections allowable II (if implemented)
-ivar7 = 256 // Deathmatch subtype (0 = normal; 1 = KOH; 2 = CTF; add 256 for random respawn on same race, or add 512 for random respawn w/o regard to race)
-ivar8 = 0 // Sync Join. 0=off, 1=on.
-ivar11 = 0 // team play unlocked
+ivar0 = 0    // Kill limit, 0= unlimited
+ivar1 = 0    // Time limit, 0= unlimited
+ivar2 = 10   // player limit. Commenting out this line means current setting not changed
+ivar3 = 0    // 1=Teamplay on, 0=Teamplay off
+ivar4 = 1  // Bitfields saying which vehicles out of mpvehicles.txt are allowable. 255 = all hovercraft
+ivar5 = 1    // All=0, DM=1, Strat=2, all other values undefined (used in filters)
+ivar6 = 0    // Vehicle selections allowable II (if implemented)
+ivar7 = 256  // Deathmatch01: Used to set the game type. 
+             // 0 = Normal
+   	     // 1 = KOTH
+	     // 2 = CTF 
+	     // 3 = Loot
+	     // 4 = [RESERVED]
+	     // 5 = Race (respawn as person)
+	     // 6 = Race (respawn in craft)
+	     // 7 = Normal but vehicle-only combat
+	     // add 256 for random respawn on same race,
+	     // or add 512 for random respawn w/o regard to race
+ivar8 = 0    // Sync Join. 0=off, 1=on.
+ivar9 = 0    // Bot count
+ivar10 = 0   // 0=Pause joins on, 1=pause joins off. Commenting out this line means current setting not changed
+ivar11 = 0   // team play unlocked
+
+ivar13 = 15  // DM only: # of seconds after a respawn for a spawn kill (0=off, 15=default).
+ivar16 = 0   // DM: If 1, humans vs bots is the mode.
+ivar19 = 0   // DM: One shot/one kill if = 1.
+ivar23 = 0   // DM: Rabbit Mode if = 1.
+ivar27 = 0   // DM: Number of animals in the map. Default 0. Max is 8.
+
+
 // Svar0 (.bzn filename, used to look for an .inf file like this)
 // *not* read in, as that would cause an infinite loop
 
 svar4 = "MPsniper.odf"
+
+svar7 = "dm" // Custom shell page to pull up [actually bzshell_multi_####.cfg]
+
+svar11 = "Rogues" // Team name for a craft on team "group" 3 (teams 11..15)
