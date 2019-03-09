@@ -1,10 +1,7 @@
 //
-// MPVehicles.txt - listing of multiplayer vehicles usable in BZ2
+// FE_MPI_VEH.odf - listing of multiplayer vehicles usable in BZCC
 //
-// Format of lines: xsi filename, space separator, odf filename, space separator, description
-// Lines starting with // are ignored. 
-//
-// Tip: do not put .odf extension on odf filename; added automatically on loading
+// Tip: do not put .odf extension on cfg# = "" entries; added automatically on loading
 // 
 
 [MPVehicles]
