@@ -14,9 +14,7 @@ imageSignature = 1.5
 radarSignature = 0.3
 
 isAssault = 1
-
 armorClass = H
-
 
 weaponName1 = "gsprink_c"
 
@@ -38,7 +36,7 @@ lightName2 = "spotblue2"
 [CraftClass]
 rangeScan = 275.0f
 
-engageRange = 160
+engageRange = 1200
 
 [HoverCraftClass]
 velocForward = 28.5 // []
