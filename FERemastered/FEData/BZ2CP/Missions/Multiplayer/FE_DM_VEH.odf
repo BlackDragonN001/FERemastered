@@ -1,0 +1,88 @@
+//
+// DMVehicles.odf - listing of multiplayer vehicles usable in BZCC
+//
+//
+// Tip: do not put .odf extension on cfg# = "" entries; added automatically on loading
+// 
+
+[MPVehicles]
+xsi1 = "ivscout00.fbx"
+cfg1 = "ivscoutdm"
+Description1 = "Thunderbolt"
+
+xsi2 = "fvscout_skel.fbx"
+cfg2 = "fvscoutdm"
+Description2 = "Drone"
+
+xsi3 = "ivtank00.fbx"
+cfg3 = "ivtankdm"
+Description3 = "Sabre"
+
+xsi4 = "fvtank_skel.fbx"
+cfg4 = "fvtankdm"
+Description4 = "Warrior"
+
+xsi5 = "ivmbik00.fbx"
+cfg5 = "ivmbikedm"
+Description5 = "Jackal"
+
+xsi6 = "fvsent_skel.fbx"
+cfg6 = "fvsentdm"
+Description6 = "Sentry"
+
+xsi7 = "ivmisl00.fbx"
+cfg7 = "ivmisldm"
+Description7 = "Avenger"
+
+xsi8 = "fvlancer_skel.fbx"
+cfg8 = "fvarchdm"
+Description8 = "Lancer"
+
+xsi9 = "ivrckt00.fbx"
+cfg9 = "ivrcktdm"
+Description9 = "Rocket Tank"
+
+xsi10 = "ivstas00.fbx"
+cfg10 = "ivintcdm"
+Description10 = "Interceptor"
+
+xsi11 = "ivatnk00.fbx"
+cfg11 = "ivatankdm"
+Description11 = "Bulldog"
+
+xsi12 = "fvtitan_skel.fbx"
+cfg12 = "fvatankdm"
+Description12 = "Titan"
+
+xsi13 = "ivwalk_skel.fbx"
+cfg13 = "ivwalkdm"
+Description13 = "Attila LM"
+
+xsi14 = "fvwalk_skel.fbx"
+cfg14 = "fvwalkdm"
+Description14 = "Mauler"
+
+xsi15 = "ivturr00.fbx"
+cfg15 = "ivturrdm"
+Description15 = "Rattler"
+
+xsi16 = "fvturr_skel.fbx"
+cfg16 = "fvturrdm"
+Description16 = "Guardian"
+
+xsi17 = "ivscout00.fbx"
+cfg17 = "ivscout"
+Description17 = "Default ISDF"
+
+xsi18 = "fvscout_skel.fbx"
+cfg18 = "fvscout"
+Description18 = "Default Scion"
+
+xsi19 = "ispilo_rifle_skel.fbx"
+cfg19 = "ispilo"
+Description19 = "ISDF Pilot"
+
+xsi20 = "fspilo_rifle_skel.fbx"
+cfg20 = "fspilo"
+Description20 = "Scion Pilot"
+
