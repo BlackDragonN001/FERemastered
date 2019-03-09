@@ -119,12 +119,9 @@ local Mission =
 	m_ScoreLimit = 0, -- from ivar35, 0=unlimited
 		
 --bools
-	m_DidOneTimeInit = false,
-	m_FirstTime = false,
 	m_GameWon = false, 
 	m_Flying = { }, -- Flag saying we need to keep track of a specific player to build a craft when they land
 	m_TeamIsSetUp = { },
-	m_DMSetup = false,
 	m_RaceIsSetup = false,
 	m_HumansVsBots = false,
 	m_RabbitMode = false,
@@ -393,7 +390,7 @@ end
 function FindGoodAITarget(index)
 
 	-- Sanity check - if this AI craft went MIA, clear handle
-	if(not IsAliveAndPilot2(Mission.m_AICraftHandles[index]))
+	if(not IsAliveAndPilot(Mission.m_AICraftHandles[index]))
 	then
 		Mission.m_AICraftHandles[index] = nil;
 		return;
@@ -794,9 +791,6 @@ end
 
 function InitialSetup()
 
-	Mission.m_DidOneTimeInit = false;
-	Mission.m_FirstTime = true;
-	Mission.m_DMSetup = false;
 end
 
 -- Collapses the tracked vehicle list so there are no holes (values
@@ -828,7 +822,7 @@ end
 function UpdateEmptyVehicles()
 
 	-- Early-exit if no vehicles tracked.
-	if(not Mission.m_NumVehiclesTracked) then
+	if(Mission.m_NumVehiclesTracked == 0) then
 		return;
 	end
 
@@ -894,10 +888,10 @@ function AddEmptyVehicle(NewCraft)
 		UpdateEmptyVehicles();
 
 		-- Kill oldest one, NOW.
-		if(Mission.m_EmptyVehicles[0])
+		if(Mission.m_EmptyVehicles[1])
 		then
 			SelfDamage(Mission.m_EmptyVehicles[0], 1e+20);
-			Mission.m_EmptyVehicles[0] = nil; -- forget about this craft, as it better not exist anymore
+			Mission.m_EmptyVehicles[1] = nil; -- forget about this craft, as it better not exist anymore
 			CrunchEmptyVehicleList();
 		end
 	end
@@ -911,7 +905,7 @@ function AddEmptyVehicle(NewCraft)
 end -- AddEmptyVehicle()
 
 
-function Init()
+function Start()
 
 	RaceSetObjective = false;
 
@@ -1003,9 +997,9 @@ function Init()
 
 	if(Mission.m_MaxAnimals > 0)
 	then
-		local pAnimalConfig = GetCheckedNetworkSvar(12, NETLIST_Animals);
-		if((pAnimalConfig == nil) or string.len(pAnimalConfig) < 2) then
-			pAnimalConfig = "mcjak01";
+		Mission.m_AnimalConfig = GetCheckedNetworkSvar(12, NETLIST_Animals);
+		if((Mission.m_AnimalConfig == nil) or string.len(Mission.m_AnimalConfig) < 2) then
+			Mission.m_AnimalConfig = "mcjak01";
 		end
 	end
 
@@ -1047,9 +1041,6 @@ function Init()
 --------------------------------------------------------------------------------
 	--PUPMgr::Init(); -- !!! TODO: WRITE ME! -GBD
 --------------------------------------------------------------------------------
-	Mission.m_FirstTime = false;
-
-	Mission.m_DidOneTimeInit = true;
 end
 
 
@@ -1137,7 +1128,7 @@ function ExecuteRabbit()
 				do
 					local T2 = (Mission.m_ElapsedGameTime + i) % MAX_TEAMS;
 					local PlayerH = GetPlayerHandle(T2);
-					if((T2 and PlayerH) and (T2 ~= Mission.m_ForbidRabbitTeam))
+					if((T2 ~= 0 and PlayerH ~= nil) and (T2 ~= Mission.m_ForbidRabbitTeam))
 					then
 						SetNewRabbit(PlayerH);
 						foundNewRabbit = true;
@@ -1307,7 +1298,7 @@ function ExecuteRace()
 				LeadingPlayer = true;
 				for j = 1, MAX_TEAMS-1
 				do
-					if((i~= j) and (Mission.m_TotalCheckpointsCompleted[i]<Mission.m_TotalCheckpointsCompleted[j])) then
+					if((i~= j) and (Mission.m_TotalCheckpointsCompleted[i] < Mission.m_TotalCheckpointsCompleted[j])) then
 						LeadingPlayer = false;
 					end
 				end
@@ -1491,7 +1482,7 @@ function UpdateGameTime()
 			Seconds = Seconds % 60;
 			Minutes = Minutes % 60;
 
-			if(Hours) then
+			if(Hours ~= 0) then
 				TempMsgString = TranslateString("mission", ("Time Left %d:%02d:%02d\n"):format(Hours, Minutes, Seconds));
 			else
 				TempMsgString = TranslateString("mission", ("Time Left %d:%02d\n"):format(Minutes, Seconds));
@@ -1533,7 +1524,7 @@ function UpdateGameTime()
 			Seconds = Seconds % 60;
 			Minutes = Minutes % 60;
 
-			if(Hours) then
+			if(Hours ~= 0) then
 				TempMsgString = TranslateString("mission", ("Mission Time %d:%02d:%02d"):format(Hours, Minutes, Seconds));
 			else
 				TempMsgString = TranslateString("mission", ("Mission Time %d:%02d"):format(Minutes, Seconds));
@@ -1551,7 +1542,7 @@ function UpdateAIUnits()
 
 	local InitialSpawnInFrequency = 5; -- 10 ticks per second
 
-	if(not (Mission.m_ElapsedGameTime % InitialSpawnInFrequency))
+	if((Mission.m_ElapsedGameTime % InitialSpawnInFrequency) == 0)
 	then
 
 		if(Mission.m_NumAIUnits < Mission.m_MaxAIUnits)
@@ -1563,7 +1554,7 @@ function UpdateAIUnits()
 			do
 				-- Fix for mantis #400 - if a bot craft is sniped,
 				-- 'forget' about it and build another in its slot.
-				if(not IsNotDeadAndPilot2(Mission.m_AICraftHandles[i]))
+				if(not IsNotDeadAndPilot(Mission.m_AICraftHandles[i]))
 				then
 					SetLifespan(Mission.m_AICraftHandles[i], SNIPED_AI_LIFESPAN);
 					Mission.m_AICraftHandles[i] = nil;
@@ -1588,7 +1579,7 @@ function UpdateAIUnits()
 		if(bit32.band((Mission.m_ElapsedGameTime + i), 0x1F) == 0)
 		then
 
-			if(Mission.m_AILastWentForPowerup[i] ~= 0)
+			if(Mission.m_AILastWentForPowerup[i])
 			then
 				local Target = Mission.m_AITargetHandles[i];
 				Mission.m_PowerupGotoTime[i] = Mission.m_PowerupGotoTime[i] + 1;
@@ -1614,7 +1605,7 @@ function UpdateAIUnits()
 				-- AI check: if we're getting shot by someone, and our primary
 				-- target is not getting hit by us (or they don't exist), nail
 				-- them instead.
-				if((WhoLastShotMe ~= 0) and ((not TargetIsAlive) ||
+				if((WhoLastShotMe ~= nil) and ((not TargetIsAlive) ||
 					(GetWhoShotMe(Mission.m_AITargetHandles[i]) ~= Mission.m_AICraftHandles[i])))
 				then
 					-- Ignore anything close to friendly fire.
@@ -1670,7 +1661,7 @@ function UpdateAnimals()
 	-- seconds)
 	local InitialSpawnInFrequency = 4 * m_GameTPS; -- m_GameTPS ticks per second
 
-	if(not (Mission.m_ElapsedGameTime % InitialSpawnInFrequency))
+	if((Mission.m_ElapsedGameTime % InitialSpawnInFrequency) == 0)
 	then
 		if(Mission.m_NumAnimals < Mission.m_MaxAnimals)
 		then
@@ -1727,11 +1718,11 @@ function Update()
 	-- Do this as well...
 	UpdateGameTime();
 
-	if(Mission.m_MaxAIUnits) then
+	if(Mission.m_MaxAIUnits > 0) then
 		UpdateAIUnits();
 	end
 
-	if(Mission.m_MaxAnimals) then
+	if(Mission.m_MaxAnimals > 0) then
 		UpdateAnimals();
 	end
 
@@ -1784,7 +1775,7 @@ function Update()
 					then
 						Teamscore[whichteamgroupami] = Teamscore[whichteamgroupami] + GetScore(playerH);
 
-						if (not TeamplayHandles[whichteamgroupami]) then
+						if (TeamplayHandles[whichteamgroupami] == nil) then
 							TeamplayHandles[whichteamgroupami] = playerH;
 						end
 					end
@@ -1816,10 +1807,6 @@ function Update()
 end
 
 function AddPlayer(id, Team, IsNewPlayer)
-
-	if (not Mission.m_DidOneTimeInit) then
-		Init();
-	end
 
 	-- Server does all building; client doesn't need to do anything
 	if (IsNewPlayer)
@@ -1881,7 +1868,7 @@ function RespawnPilot(DeadObjectHandle, Team)
 		Where.y = Where.y + RespawnPilotHeight; -- Bounce them in the air to prevent multi-kills
 	end
 
-	local NewPerson;
+	local NewPerson = nil;
 	if(RespawnInVehicle) then
 		NewPerson = BuildObject(GetNextVehicleODF(Team, true), Team, Where);
 	else
@@ -2042,7 +2029,7 @@ function DeadObject(DeadObjectHandle, KillersHandle, WasDeadPerson, WasDeadAI)
 		end
 
 		-- Check to see if we have a Mission.m_KillLimit winner
-		if ((Mission.m_KillLimit) and (GetKills(KillersHandle) >= Mission.m_KillLimit))
+		if ((Mission.m_KillLimit > 0) and (GetKills(KillersHandle) >= Mission.m_KillLimit))
 		then
 			NoteGameoverByKillLimit(KillersHandle);
 			DoGameover(10.0);
@@ -2172,17 +2159,17 @@ function CreateObjectives()
 	ClearObjectives();
 	
 	if (Mission.m_MissionType == DMSubtype_Normal or Mission.m_MissionType == DMSubtype_Normal2) then 
-		AddObjective("mpobjective_dm.otf", WHITE, -1.0); -- negative time means don't change display to show it
+		AddObjective("mpobjective_dm.otf", "WHITE", -1.0); -- negative time means don't change display to show it
 	elseif (Mission.m_MissionType == DMSubtype_CTF) then
-		AddObjective("mpobjective_dmctf.otf", WHITE, -1.0); -- negative time means don't change display to show it
+		AddObjective("mpobjective_dmctf.otf", "WHITE", -1.0); -- negative time means don't change display to show it
 	elseif (Mission.m_MissionType == DMSubtype_KOH) then
-		AddObjective("mpobjective_dmkoth.otf", WHITE, -1.0); -- negative time means don't change display to show it
+		AddObjective("mpobjective_dmkoth.otf", "WHITE", -1.0); -- negative time means don't change display to show it
 	elseif (Mission.m_MissionType == DMSubtype_Loot) then
-		AddObjective("mpobjective_dmloot.otf", WHITE, -1.0); -- negative time means don't change display to show it
+		AddObjective("mpobjective_dmloot.otf", "WHITE", -1.0); -- negative time means don't change display to show it
 	elseif (Mission.m_MissionType == DMSubtype_Race1 or Mission.m_MissionType ==DMSubtype_Race2) then
-		AddObjective("mpobjective_dmrace.otf", WHITE, -1.0); -- negative time means don't change display to show it
+		AddObjective("mpobjective_dmrace.otf", "WHITE", -1.0); -- negative time means don't change display to show it
 	else
-		AddObjective("mpobjective_dm.otf", WHITE, -1.0); -- negative time means don't change display to show it
+		AddObjective("mpobjective_dm.otf", "WHITE", -1.0); -- negative time means don't change display to show it
 	end
 end
 

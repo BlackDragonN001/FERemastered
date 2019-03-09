@@ -138,15 +138,22 @@ function Load(...)
 
 	-- We're a 1.3 DLL.
 	WantBotKillMessages();
-
-	-- Do this for everyone as well.
-	ClearObjectives();
-	AddObjective("mpobjective_st.otf", WHITE, -1.0); -- negative time means don't change display to show it
 	
     if select('#', ...) > 0 then
 		Mission
 		= ...
     end
+	
+	-- Do this for everyone as well.
+	CreateObjectives();
+end
+
+function CreateObjectives()
+
+	-- Do this for everyone as well.
+	ClearObjectives();
+	AddObjective("mpobjective_st.otf", "WHITE", -1.0); -- negative time means don't change display to show it
+
 end
 
 function AddObject(h)
@@ -285,8 +292,8 @@ function Start()
 	if((ImServer()) or (not IsNetworkOn()))
 	then
 		Mission.m_ElapsedGameTime = 0;
-		if(not Mission.m_RemainingGameTime) then
-			Mission.m_RemainingGameTime = Mission.m_TotalGameTime * 60 * m_GameTPS; -- convert minutes to 1/10 seconds
+		if(Mission.m_RemainingGameTime == 0) then
+			Mission.m_RemainingGameTime = Mission.m_TotalGameTime * 60 * m_GameTPS; -- convert minutes to TPS seconds
 		end
 	end
 
@@ -295,6 +302,8 @@ function Start()
 	local PlayerH = SetupPlayer(LocalTeamNum);
 	SetAsUser(PlayerH, LocalTeamNum);
 	AddPilotByHandle(PlayerH);
+	
+	CreateObjectives();
 end
 
 function Update()
@@ -438,7 +447,7 @@ function GetInitialRecyclerODF(Race);
 
 	local TempODFName = nil;
 	local pContents = GetCheckedNetworkSvar(5, NETLIST_Recyclers);
-	if((pContents ~= nil) and (pContents[0] ~= '\0'))
+	if((pContents ~= nil) and (pContents ~= ""))
 	then
 		TempODFName = pContents;
 	else
@@ -591,7 +600,7 @@ function UpdateGameTime();
 			Seconds = Seconds % 60;
 			Minutes = Minutes % 60;
 
-			if(Hours) then
+			if(Hours ~= 0) then
 				TempMsgString = TranslateString("mission", ("Time Left %d:%02d:%02d\n"):format(Hours, Minutes, Seconds));
 			else
 				TempMsgString = TranslateString("mission", ("Time Left %d:%02d\n"):format(Minutes, Seconds));
@@ -636,7 +645,7 @@ function UpdateGameTime();
 			Seconds = Seconds % 60;
 			Minutes = Minutes % 60;
 			
-			if(Hours) then
+			if(Hours ~= 0) then
 				TempMsgString = TranslateString("mission", ("Mission Time %d:%02d:%02d"):format(Hours, Minutes, Seconds));
 			else
 				TempMsgString = TranslateString("mission", ("Mission Time %d:%02d"):format(Minutes, Seconds));
@@ -874,7 +883,7 @@ function ExecuteRecyInvulnerability();
 				recyHandle = Mission.m_RecyclerHandles[i];
 			end
 
-			if(recyHandle and DLLUtils.IsRecycler(recyHandle))
+			if((recyHandle ~= nil) and (IsRecycler(recyHandle)))
 			then
 				SetCurHealth(recyHandle, GetMaxHealth(recyHandle));
 			end
@@ -898,7 +907,7 @@ function ExecuteRecyInvulnerability();
 			TempMsgString = TranslateString("strat", "invulnerableExpiresSec"):format(Mission.m_RecyInvulnerabilityTime / m_GameTPS);
 		end
 
-		AddToMessagesBox2(TempMsgString, Make_RGB(255, 0, 255)); -- bright purple (ARGB)
+		AddToMessagesBox(TempMsgString, Make_RGB(255, 0, 255)); -- bright purple (ARGB)
 	end
 
 	-- Reduce timer
@@ -940,7 +949,7 @@ function RespawnPilot(DeadObjectHandle, Team);
 		else
 			-- Min of 40, max varies by # of allies. More penalty for
 			-- dying far away from your team
-			local numAllies = DLLUtils.CountAlliedPlayers(Team);
+			local numAllies = CountAlliedPlayers(Team);
 			respawnHeight = 30. + (math.sqrt(distanceAway) * 1.25);
 			local minRespawnHeight = 40.0;
 			local maxRespawnHeight = 72.0 + (15.0 * numAllies);
@@ -1079,14 +1088,13 @@ function DeadObject(DeadObjectHandle, KillersHandle, WasDeadPerson, WasDeadAI);
 		-- If this was a spawnkill, register that on the killers score
 		if (isSpawnKill)
 		then
-			TempMsgString = TranslateString("mission", "Spawn kill by %s on %s\n"):format(
-				GetPlayerName(KillersHandle), GetPlayerName(DeadObjectHandle));
+			TempMsgString = TranslateString("mission", "Spawn kill by %s on %s\n"):format(GetPlayerName(KillersHandle), GetPlayerName(DeadObjectHandle));
 			AddToMessagesBox(TempMsgString);
 			AddScore(KillersHandle, -ScoreDecrementForSpawnKill);
 		end
 
 		-- Check to see if we have a Mission.m_KillLimit winner
-		if ((Mission.m_KillLimit) and (GetKills(KillersHandle) >= Mission.m_KillLimit))
+		if ((Mission.m_KillLimit > 0) and (GetKills(KillersHandle) >= Mission.m_KillLimit))
 		then
 			NoteGameoverByKillLimit(KillersHandle);
 			DoGameover(10.0);

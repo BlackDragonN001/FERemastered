@@ -55,7 +55,7 @@ function _STSV.CreateVehicles(Team, TeamRace, Bitmask, Where)
 
 	for i = 1, #StartingVehicles.s_StartingVehicleList
 	do
-		if bit32.band(Bitmask, bit32.lshift (1, i)) > 0 then
+		if bit32.band(Bitmask, bit32.lshift (1, i-1)) > 0 then
 			-- Need to build this.
 			RandomizedPosition = GetPositionNear(Where, VEHICLE_SPACING_DISTANCE, 4 * VEHICLE_SPACING_DISTANCE);
 			

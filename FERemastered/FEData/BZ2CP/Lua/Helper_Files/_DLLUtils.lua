@@ -8,7 +8,7 @@ local _DLLUtils = {}
 -- if h is invalid, or not a recycler
 function IsRecycler(h)
 
-	local ObjClass = GetObjInfo_GOClass(h);
+	local ObjClass = GetClassLabel(h);
 	if(ObjClass == nil) then
 		return false;
 	end
