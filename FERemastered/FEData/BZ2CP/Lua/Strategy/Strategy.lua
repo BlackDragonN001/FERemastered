@@ -689,7 +689,7 @@ function ExecuteCheckIfGameOver();
 
 			-- Use the side effect of IsAlive as well, hence the TempH == 0 -GBD
             if((TempH == nil) or (not IsAlive(TempH))) then
-				Mission.m_RecyclerHandles[i] = 0; -- Clear this out for later
+				Mission.m_RecyclerHandles[i] = nil; -- Clear this out for later
 			else
 				Functioning = true;
 			end
