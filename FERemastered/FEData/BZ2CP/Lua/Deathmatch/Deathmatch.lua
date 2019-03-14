@@ -791,6 +791,20 @@ end
 
 function InitialSetup()
 
+	m_GameTPS = EnableHighTPS();
+	SetAutoGroupUnits(false);
+
+	-- Make sure we always call this
+	_FECore.InitialSetup();
+	
+		-- Always do this to hook up clients with the taunt engine as well.
+	InitTaunts(Mission.m_ElapsedGameTime, Mission.m_LastTauntPrintedAt, m_GameTPS, "Bots");
+
+	-- We're a 1.3 DLL.
+	WantBotKillMessages();
+
+	CreateObjectives();
+
 end
 
 -- Collapses the tracked vehicle list so there are no holes (values
@@ -1471,7 +1485,7 @@ function UpdateGameTime()
 	if(Mission.m_RemainingGameTime > 0)
 	then
 		Mission.m_RemainingGameTime = Mission.m_RemainingGameTime - 1;
-		if(not (Mission.m_RemainingGameTime % m_GameTPS))
+		if((Mission.m_RemainingGameTime % m_GameTPS) == 0)
 		then
 			-- Convert tenth-of-second ticks to hour/minutes/seconds format.
 			local Seconds = Mission.m_RemainingGameTime / m_GameTPS;
@@ -1494,11 +1508,11 @@ function UpdateGameTime()
 			then
 				-- Every 5 minutes down to 10 minutes, then every minute
 				-- thereafter.
-				if((Seconds == 0) and ((Minutes <= 10) or (not (Minutes % 5)))) then
+				if((Seconds == 0) and ((Minutes <= 10) or ((Minutes % 5) == 0))) then
 					AddToMessagesBox(TempMsgString);
 				else
 					-- Every 5 seconds when under a minute is remaining.
-					if((Minutes == 0) and (not (Seconds % 5))) then
+					if((Minutes == 0) and ((Seconds % 5) == 0)) then
 						AddToMessagesBox(TempMsgString);
 					end
 				end
@@ -1506,14 +1520,14 @@ function UpdateGameTime()
 		end
 
 		-- Game over due to timeout?
-		if(not Mission.m_RemainingGameTime)
+		if(Mission.m_RemainingGameTime == 0)
 		then
 			NoteGameoverByTimelimit();
 			DoGameover(10.0);
 		end
 	else
 		-- Infinite time game. Periodically update ingame clock.
-		if(not (Mission.m_ElapsedGameTime % m_GameTPS))
+		if((Mission.m_ElapsedGameTime % m_GameTPS) == 0)
 		then
 			-- Convert tenth-of-second ticks to hour/minutes/seconds format.
 			local Seconds = Mission.m_ElapsedGameTime / m_GameTPS;

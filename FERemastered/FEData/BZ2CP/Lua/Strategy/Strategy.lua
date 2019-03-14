@@ -114,6 +114,11 @@ function InitialSetup()
 	_FECore.InitialSetup();
 	m_GameTPS = EnableHighTPS();
 	SetAutoGroupUnits(false);
+	
+	WantBotKillMessages();
+	
+	-- Do this for everyone as well.
+	CreateObjectives();
 
 end
 
@@ -302,8 +307,6 @@ function Start()
 	local PlayerH = SetupPlayer(LocalTeamNum);
 	SetAsUser(PlayerH, LocalTeamNum);
 	AddPilotByHandle(PlayerH);
-	
-	CreateObjectives();
 end
 
 function Update()
@@ -589,7 +592,7 @@ function UpdateGameTime();
 	if(Mission.m_RemainingGameTime > 0)
 	then
 		Mission.m_RemainingGameTime = Mission.m_RemainingGameTime - 1;
-		if(not (Mission.m_RemainingGameTime % m_GameTPS))
+		if((Mission.m_RemainingGameTime % m_GameTPS) == 0)
 		then
 			-- Convert tenth-of-second ticks to hour/minutes/seconds format.
 			local Seconds = Mission.m_RemainingGameTime / m_GameTPS;
@@ -612,12 +615,12 @@ function UpdateGameTime();
 			then
 				-- Every 5 minutes down to 10 minutes, then every minute
 				-- thereafter.
-				if((Seconds == 0) and ((Minutes <= 10) or (not (Minutes % 5))))
+				if((Seconds == 0) and ((Minutes <= 10) or ((Minutes % 5) == 0)))
 				then
 					AddToMessagesBox(TempMsgString);
 				else
 					-- Every 5 seconds when under a minute is remaining.
-					if((Minutes == 0) and (not (Seconds % 5))) then
+					if((Minutes == 0) and ((Seconds % 5) == 0)) then
 						AddToMessagesBox(TempMsgString);
 					end
 				end
@@ -625,7 +628,7 @@ function UpdateGameTime();
 		end
 
 		-- Game over due to timeout?
-		if(not Mission.m_RemainingGameTime)
+		if(Mission.m_RemainingGameTime == 0)
 		then
 			NoteGameoverByTimelimit();
 			DoGameover(10.0);
@@ -633,7 +636,7 @@ function UpdateGameTime();
 
 	else 
 		-- Infinite time game. Periodically update ingame clock.
-		if(not (Mission.m_ElapsedGameTime % m_GameTPS))
+		if((Mission.m_ElapsedGameTime % m_GameTPS) == 0)
 		then
 
 			-- Convert tenth-of-second ticks to hour/minutes/seconds format.
@@ -936,21 +939,21 @@ function RespawnPilot(DeadObjectHandle, Team);
 	-- Find out how far we are away from starting location... use
 	-- default if couldn't get position of DeadObjectHandle
 	local respawnHeight = RespawnPilotHeight;
-	if((fabsf(OldPos.x) > 0.01) and (fabsf(OldPos.z) > 0.01))
+	if((math.abs(OldPos.x) > 0.01) and (math.abs(OldPos.z) > 0.01))
 	then
 		-- Position valid. Use it.
 		local dx = OldPos.x - spawnpointPosition.x;
 		local dz = OldPos.z - spawnpointPosition.z;
 		-- How far this person died from where we'll respawn them
 		local distanceAway = math.sqrt((dx * dx) + (dz * dz));
-		if(distanceAway < 100.)
+		if(distanceAway < 100.0)
 		then
 			respawnHeight = 35.0; -- 1.2 used 25.f here
 		else
 			-- Min of 40, max varies by # of allies. More penalty for
 			-- dying far away from your team
 			local numAllies = CountAlliedPlayers(Team);
-			respawnHeight = 30. + (math.sqrt(distanceAway) * 1.25);
+			respawnHeight = 30.0 + (math.sqrt(distanceAway) * 1.25);
 			local minRespawnHeight = 40.0;
 			local maxRespawnHeight = 72.0 + (15.0 * numAllies);
 
@@ -997,7 +1000,7 @@ function RespawnPilot(DeadObjectHandle, Team);
 end
 
 -- Helper function for ObjectKilled/Sniped
-function DeadObject(DeadObjectHandle, KillersHandle, WasDeadPerson, WasDeadAI);
+function DeadObject(DeadObjectHandle, KillersHandle, isDeadPerson, isDeadAI)
 
 	-- Get team number of the dead object
 	local deadObjectTeam = GetTeamNum(DeadObjectHandle);
