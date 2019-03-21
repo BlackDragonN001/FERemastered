@@ -798,7 +798,7 @@ function InitialSetup()
 	_FECore.InitialSetup();
 	
 		-- Always do this to hook up clients with the taunt engine as well.
-	InitTaunts(Mission.m_ElapsedGameTime, Mission.m_LastTauntPrintedAt, m_GameTPS, "Bots");
+	SetTauntCPUTeamName("Bots");
 
 	-- We're a 1.3 DLL.
 	WantBotKillMessages();
@@ -1048,9 +1048,6 @@ function Start()
 		end
 
 	end -- Server or no network
-
-	-- Throw up Objectives.
-	CreateObjectives();
 
 --------------------------------------------------------------------------------
 	--PUPMgr::Init(); -- !!! TODO: WRITE ME! -GBD
@@ -1698,11 +1695,6 @@ end -- UpdateAnimals()
 
 function Update()
 
-	-- Always ensure we did this
-	if (not Mission.m_DidOneTimeInit) then
-		Init();
-	end
-
 	-- Always see if any empties are filled or need to be killed
 	UpdateEmptyVehicles();
 
@@ -2206,7 +2198,7 @@ function Load(...)
 	_FECore.Load();
 	
 		-- Always do this to hook up clients with the taunt engine as well.
-	InitTaunts(Mission.m_ElapsedGameTime, Mission.m_LastTauntPrintedAt, m_GameTPS, "Bots");
+	SetTauntCPUTeamName("Bots");
 
 	-- We're a 1.3 DLL.
 	WantBotKillMessages();
