@@ -7,23 +7,17 @@ local VEHICLE_SPACING_DISTANCE = 30.0;
 local _STSV = {}
 	
 local StartingVehicles = {
-
-	Initialized = false,
-
 	s_StartingVehicleList = { },
  }
  
  
 function _STSV.Save()
     return 
-		StartingVehicles
+		StartingVehicles;
 end
 
-function _STSV.Load(...)	
-    if select('#', ...) > 0 then
-		StartingVehicles
-		= ...
-    end
+function _STSV.Load(StartingVehiclesData)	
+	StartingVehicles = StartingVehiclesData;
 end
 
 
@@ -38,9 +32,6 @@ function _STSV.Start()
 		
 		table.insert(StartingVehicles.s_StartingVehicleList, pContents);
 	end
-
-	StartingVehicles.Initialized = true;
-
 end
 
 
@@ -48,10 +39,6 @@ function _STSV.CreateVehicles(Team, TeamRace, Bitmask, Where)
 
 	local RandomizedPosition = nil;
 	local VehicleH = 0;
-
-	if not StartingVehicles.Initialized then
-		return;
-	end
 
 	for i = 1, #StartingVehicles.s_StartingVehicleList
 	do

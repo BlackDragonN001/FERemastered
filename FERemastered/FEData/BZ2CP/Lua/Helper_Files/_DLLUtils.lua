@@ -79,8 +79,6 @@ function GetSpawnpointForTeam(Team, FRIENDLY_SPAWNPOINT_MAX_ALLY, FRIENDLY_SPAWN
 	local spawnpointPosition = SetVector(0, 0, 0);
 	
 	-- Pick a random, ideally safe spawnpoint.
-	--SpawnPointInfo* pSpawnPointInfo;
-	--size_t i,count = GetAllSpawnpoints(pSpawnPointInfo, Team);
 	local pSpawnPointInfo = GetAllSpawnpoints(Team);
 	local count = #pSpawnPointInfo;
 	
@@ -94,8 +92,6 @@ function GetSpawnpointForTeam(Team, FRIENDLY_SPAWNPOINT_MAX_ALLY, FRIENDLY_SPAWN
 	--
 	-- Note: using a temporary array allocated on stack to keep track
 	-- of indices.
-	--size_t *pIndices = reinterpret_cast<size_t*>(_alloca(count * sizeof(size_t)));
-	--memset(pIndices, 0, count * sizeof(size_t));
 	local pIndices = { };
 	
 	local indexCount = 0;
@@ -115,9 +111,7 @@ function GetSpawnpointForTeam(Team, FRIENDLY_SPAWNPOINT_MAX_ALLY, FRIENDLY_SPAWN
 		local index = 0;
 		-- Might be unnecessary, but make sure we return a valid index
 		-- in [0,indexCount)
-		repeat
-			index = math.floor(GetRandomFloat(indexCount)) + 1;
-		until not(index >= indexCount);
+		local index = math.min(math.floor(GetRandomFloat(indexCount)),indexCount-1);
 		return pSpawnPointInfo[pIndices[index]].Position;
 	end
 
@@ -142,9 +136,7 @@ function GetSpawnpointForTeam(Team, FRIENDLY_SPAWNPOINT_MAX_ALLY, FRIENDLY_SPAWN
 		local index = 0;
 		-- Might be unnecessary, but make sure we return a valid index
 		-- in [0,indexCount)
-		repeat
-			index = math.floor(GetRandomFloat(indexCount)) + 1;
-		until not(index >= indexCount);
+		local index = math.min(math.floor(GetRandomFloat(indexCount)),indexCount-1);
 		return pSpawnPointInfo[pIndices[index]].Position;
 	end
 
@@ -167,9 +159,7 @@ function GetSpawnpointForTeam(Team, FRIENDLY_SPAWNPOINT_MAX_ALLY, FRIENDLY_SPAWN
 		local index = 0;
 		-- Might be unnecessary, but make sure we return a valid index
 		-- in [0,indexCount)
-		repeat
-			index = math.floor(GetRandomFloat(indexCount)) + 1;
-		until not(index >= indexCount);
+		local index = math.min(math.floor(GetRandomFloat(indexCount)),indexCount-1);
 		return pSpawnPointInfo[pIndices[index]].Position;
 	end
 

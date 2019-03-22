@@ -124,30 +124,25 @@ end
 
 function Save()
 
-	-- Make sure we always call this
-	_StartingVehicles.Save();
-	_FECore.Save();
-	
     return 
-		Mission
+		_FECore.Save(), 
+		_StartingVehicles.Save(), 
+		Mission;
 end
 
-function Load(...)	
+function Load(FECoreData, StartingVehicleData, MissionData)	
 
 	m_GameTPS = EnableHighTPS();
 	SetAutoGroupUnits(false);
 
-	-- Make sure we always call this
-	_StartingVehicles.Load();
-	_FECore.Load();
-
 	-- We're a 1.3 DLL.
 	WantBotKillMessages();
 	
-    if select('#', ...) > 0 then
-		Mission
-		= ...
-    end
+	-- Load sub moduels.
+	_FECore.Load(FECoreData);
+	_StartingVehicles.Load(StartingVehicleData);
+	-- Load mission data.
+	Mission = MissionData;
 	
 	-- Do this for everyone as well.
 	CreateObjectives();
@@ -452,7 +447,7 @@ function GetInitialRecyclerODF(Race);
 	local pContents = GetCheckedNetworkSvar(5, NETLIST_Recyclers);
 	if((pContents ~= nil) and (pContents ~= ""))
 	then
-		TempODFName = pContents;
+		TempODFName = Race .. string.sub(pContents, 2);
 	else
 		TempODFName = Race .. "vrecy_m";
 	end
