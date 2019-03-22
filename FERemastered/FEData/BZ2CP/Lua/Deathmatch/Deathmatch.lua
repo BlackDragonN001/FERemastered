@@ -2181,33 +2181,26 @@ end
 
 
 function Save()
-
-	-- Make sure we always call this
-	_FECore.Save();
-	
     return 
-		Mission
+		_FECore.Save(), 
+		Mission;
 end
 
-function Load(...)	
+function Load(FECoreData, MissionData)	
 
 	m_GameTPS = EnableHighTPS();
 	SetAutoGroupUnits(false);
 
-	-- Make sure we always call this
-	_FECore.Load();
-	
 		-- Always do this to hook up clients with the taunt engine as well.
 	SetTauntCPUTeamName("Bots");
 
 	-- We're a 1.3 DLL.
 	WantBotKillMessages();
 
-    if select('#', ...) > 0 then
-		Mission
-		= ...
-    end
-	
+	-- Make sure we always call this
+	_FECore.Load(FECoreData);
+	Mission = MissionData;
+
 	CreateObjectives();
 	SetGravity(Mission.m_Gravity * 0.5);
 	
