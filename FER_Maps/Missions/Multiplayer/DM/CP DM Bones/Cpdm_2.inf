@@ -41,7 +41,7 @@ ivar27 = 0   // DM: Number of animals in the map. Default 0. Max is 8.
 svar1 = "SKINS" // Team name for team 1
 svar2 = "SHIRTS" // Team name for team 2
 
-svar4 = "DMvehicles.odf"
+svar4 = "FE_DM_VEH.odf" //"DMvehicles.odf"
 
 svar7 = "dm" // Custom shell page to pull up [actually bzshell_multi_####.cfg]
 
