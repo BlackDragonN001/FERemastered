@@ -1,0 +1,22 @@
+[GameObjectClass]
+geometryName = "NULL"
+classLabel = "i76building"
+BZCClasslabel = "portswitch"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = ""
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+collisionRadius = 0.0
+powerCost = 0
+ownsTerrain = false
+canInteract = false
+CanCollide = false
+scanTeamLimit = 3
+armorClass = H
+
+[TeleportalSwitchClass]
+PortalChannel = 3

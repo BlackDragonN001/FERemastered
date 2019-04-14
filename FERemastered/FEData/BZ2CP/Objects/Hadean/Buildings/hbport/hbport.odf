@@ -1,6 +1,7 @@
 [GameObjectClass]
-geometryName = "hbport.xsi"
+geometryName = "hbportb00.xsi"
 classLabel = "powerplant"
+BZCClasslabel = "portal"
 unitName = "Portal"
 heatSignature = 2.0
 imageSignature = 1.0
@@ -18,8 +19,51 @@ provideName1 = "hbport"
 canDetect = 0
 canInteract = 1
 
+PositionOffset1 = "0.000000 5.000000 0.000000" // Teleport Exit Location.
+PositionOffset2 = "0.000000 0.000000 50.000000" // Goto Destination after AI unit Exits.
 
 [BuildingClass]
 soundAmbient = "ipgen01.wav"
 
 
+[TeleportalClass]
+soundActivate = "portalx.wav"  // not used.... the sound effect is made by the portalEffect's explosion, though it's sometimes quite soft :-/
+
+//DLLSet it's lifespan to 0.1 no scrap left behind.
+// it's just an i76building thats invisibile/invincible with a lifespan of 0.1. something that dies to create an explosion.
+PortalEffect = "PortalFx_E" // Effect # is added to the end, as well as a Start and End versions.
+InEffect = 1
+OutEffect = 0
+OnEffect = 0
+
+TeleporterChannel = 1
+ShowChannel = true
+CanEnter = true
+CanExit = true
+MatchType = 1 // 0 = Closest, 1 = Cycle, 2 = Random.
+MatchTypeUsesChannels = true
+ContinuousFx = false
+ContinuousFxRange = 0.0
+TeleportColorFade = "0 127 255 255"
+TeleportFilter = 3
+// Teleport Filter options: 
+// All         = 0
+// Craft       = 1
+// Pilots      = 2
+// Powerups    = 4
+// Weapons     = 8 (Torpedoes, Mines)
+// Other       = 16
+ExitForwardOnly = false
+ExitVelocity = 0
+ExitUsesCenter = true
+EnterRange = 20.0f
+TeleportTeamFilter = 0
+DestinationTeamFilter = 3
+// 0 = All Teams, 1 = same team only, 2 = allies only, 3 = Same Team + Allies, 4 = Enemies only, 5 = Same Team + Enemies, 6 = Allies + Enemies.
+// Team Filter options: 
+// All Teams        = 0
+// Same Team Only   = 1
+// Allies           = 2
+// Enemies          = 4
+// 
+// Add the values to get the desired result. Same Team + Allies is 3, Enemies + Allies is 6.

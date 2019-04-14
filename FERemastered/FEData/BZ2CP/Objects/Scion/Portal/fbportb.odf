@@ -1,0 +1,58 @@
+[GameObjectClass] // Version with no login terminal/no power use for maps. -GBD
+baseName = "fbport"
+geometryName = "fbportB00.xsi"
+classLabel = "fbport"
+RequirePowerMask = 0 // None
+maxHealth = 0 // Invincible.
+
+//the DLL sets the current ammo to 0 when it teleports
+//so, Ammo = full, Teleports, ammo = 0, addammo makes it go up, when it's full again, teleports
+maxAmmo = 0  // zero = instant,anything greater will be set as the delay until ammo if full.
+addAmmo = 0  // DLL sets ammo as zero so unless maxammo = o then you'll need to add ammo to reactivate portal.
+
+[TeleportalClass]
+//soundActivate = "portalx.wav"  // not used.... the sound effect is made by the portalEffect's explosion, though it's sometimes quite soft :-/
+
+PortalEffect = "PortalFx_F" // Effect # is added to the end, as well as a Start and End versions.
+InEffect = 1
+OutEffect = 1
+OnEffect = 0
+
+TeleporterChannel = 2
+ShowChannel = false
+CanEnter = true
+CanExit = true
+MatchType = 0 // 0 = Closest, 1 = Cycle, 2 = Random.
+MatchTypeUsesChannels = true
+ContinuousFx = false
+ContinuousFxRange = 0.0
+TeleportColorFade = "0 127 255 255"
+TeleportFilter = 3
+// Teleport Filter options: 
+// All         = 0
+// Craft       = 1
+// Pilots      = 2
+// Powerups    = 4
+// Weapons     = 8 (Torpedoes, Mines)
+// Other       = 16
+ExitForwardOnly = false
+ExitVelocity = 0
+ExitUsesCenter = true
+PortalTargetRange = 20.0f
+TeleportTeamFilter = 0
+DestinationTeamFilter = 3
+// 0 = All Teams, 1 = same team only, 2 = allies only, 3 = Same Team + Allies, 4 = Enemies only, 5 = Same Team + Enemies, 6 = Allies + Enemies.
+// Team Filter options: 
+// All Teams        = 0
+// Same Team Only   = 1
+// Allies           = 2
+// Enemies          = 4
+// 
+// Add the values to get the desired result. Same Team + Allies is 3, Enemies + Allies is 6.
+
+
+[PoweredBuildingClass]
+PoweredByTaps = false
+
+[BuildingClass]
+

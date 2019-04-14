@@ -2,6 +2,7 @@
 baseName = "ibtele"
 geometryName = "ibtele00.fbx"
 classLabel = "teleportal"
+BZCClasslabel = "portal"
 scrapCost = 8
 scrapValue = 3
 maxAmmo = 0
@@ -16,4 +17,48 @@ armorClass = H
 requireCount = 1
 requireName1 = "ibtcen"
 
+PositionOffset1 = "0.000000 5.000000 0.000000" // Teleport Exit Location.
+PositionOffset2 = "0.000000 0.000000 50.000000" // Goto Destination after AI unit Exits.
+
 [BuildingClass]
+
+
+[TeleportalClass]
+soundActivate = "portalx.wav"  // not used.... the sound effect is made by the portalEffect's explosion, though it's sometimes quite soft :-/
+
+PortalEffect = "PortalFx_I" // Effect # is added to the end, as well as a Start and End versions.
+InEffect = 1
+OutEffect = 0
+OnEffect = 0
+
+TeleporterChannel = 3 //0
+ShowChannel = true
+CanEnter = true
+CanExit = true
+ContinuousFx = true
+ContinuousFxRange = 200.0f
+MatchType = 0 // 0 = Closest, 1 = Cycle, 2 = Random.
+MatchTypeUsesChannels = true
+TeleportColorFade = "0 127 255 255"
+TeleportFilter = 3 // Pilots + Craft
+// Teleport Filter options: 
+// All         = 0
+// Craft       = 1
+// Pilots      = 2
+// Powerups    = 4
+// Weapons     = 8 (Torpedoes, Mines)
+// Other       = 16
+ExitForwardOnly = false
+ExitVelocity = 0
+ExitUsesCenter = true
+EnterRange = 31.0f
+TeleportTeamFilter = 0
+DestinationTeamFilter = 3
+// 0 = All Teams, 1 = same team only, 2 = allies only, 3 = Same Team + Allies, 4 = Enemies only, 5 = Same Team + Enemies, 6 = Allies + Enemies.
+// Team Filter options: 
+// All Teams        = 0
+// Same Team Only   = 1
+// Allies           = 2
+// Enemies          = 4
+// 
+// Add the values to get the desired result. Same Team + Allies is 3, Enemies + Allies is 6.

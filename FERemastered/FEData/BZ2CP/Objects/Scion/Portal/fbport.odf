@@ -1,0 +1,246 @@
+[GameObjectClass] // Scion Portal. Model by General BlackDragon.
+baseName = "fbport"
+geometryName = "fbport00.xsi"
+classLabel = "turret" //"powered" //"teleportal"
+BZCClasslabel = "portal"
+RequirePowerMask = 4 // Lung Power
+powerCost = 0
+scrapCost = 65
+scrapValue = 20
+unitName = "Teleporter"
+maxHealth = 6000 // 5000
+addHealth = 25
+maxAmmo = 0  // zero = instant, anything greater will be set as the delay until ammo if full.
+addAmmo = 0  // DLL sets ammo as zero upon teleport, so unless maxammo = 0 then you'll need to add ammo to reactivate portal.
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+isAssault = 1
+isSingle = 0
+isLimited = 0
+needLimit = 0
+armorClass = H
+collisionRadius = 0.01
+//explosionName = "xbldGHxpl"
+CanAcceptPowerups = false
+ownsTerrain = 1
+buildSupport = "F"
+buildRequire = "F"
+AlwaysShowAmmo = true
+
+PositionOffset1 = "0.000000 32.000000 0.000000" // Teleport Exit Location.
+RotationOffset1 = "0.0 0.0 45.0" // Teleporter Exit Location.
+PositionOffset2 = "-50.000000 0.000000 50.000000" // Goto Destination after AI unit Exits.
+
+GameObjectClassServiceMask = 9
+GameObjectClassServiceMatch = 9
+GameObjectClassServiceProvides = 9
+
+limitClass1 = "fbport"
+limitClass1Count = 8
+limitClass1Text = "Max Portals Reached"
+
+DoBettyAttack = true // true: do betty attack warnings when this is damaged.
+
+requireCount = 2
+requireName1 = "fbantm"
+requireText1 = "Build Antenna"
+requireName2 = "fbdowe"
+requireText2 = "Build Dower"
+
+provideCount = 3
+provideName1 = "fbport"
+provideName2 = "VIRTUAL_CLASS_TECHCENTER"
+provideName3 = "base"
+
+weaponMask = 00000
+weaponHard1 = "hp_hand_1"
+weaponName1 = "gchannel1"
+weaponAssault1 = 1
+weaponGroup1 = 0
+weaponHard2 = hp_hand_1
+weaponName2 = "gchannel2"
+weaponAssault2 = 1
+weaponGroup2 = 1
+weaponHard3 = hp_hand_1
+weaponName3 = "gchannel3"
+weaponAssault3 = 1
+weaponGroup3 = 2
+weaponHard4 = hp_hand_1
+weaponName4 = "gchannel4"
+weaponAssault4 = 1
+weaponGroup4 = 3
+
+// Tower 1.
+EffectHard1 = "hp_light_1"
+EffectName1 = "fbport.OmniLightYellow"
+EffectHard2 = "hp_light_2"
+EffectName2 = "fbport.OmniLightYellow"
+EffectHard3 = "hp_light_3"
+EffectName3 = "fbport.OmniLightYellow"
+EffectHard4 = "hp_light_4"
+EffectName4 = "fbport.OmniLightYellow"
+EffectHard5 = "hp_light_5"
+EffectName5 = "fbport.OmniLightYellow"
+EffectHard6 = "hp_light_6"
+EffectName6 = "fbport.OmniLightYellow"
+
+// Tower 2.
+EffectHard7 = "hp_light_9"
+EffectName7 = "fbport.OmniLightYellow"
+EffectHard8 = "hp_light_10"
+EffectName8 = "fbport.OmniLightYellow"
+EffectHard9 = "hp_light_11"
+EffectName9 = "fbport.OmniLightYellow"
+EffectHard10 = "hp_light_12"
+EffectName10 = "fbport.OmniLightYellow"
+EffectHard11 = "hp_light_13"
+EffectName11 = "fbport.OmniLightYellow"
+EffectHard12 = "hp_light_14"
+EffectName12 = "fbport.OmniLightYellow"
+
+EffectHard13 = "hp_light_7"
+EffectName13 = "fbport.OmniLightYellow"
+EffectHard14 = "hp_light_8"
+EffectName14 = "fbport.OmniLightYellow"
+EffectHard15 = "hp_light_15"
+EffectName15 = "fbport.OmniLightYellow"
+EffectHard16 = "hp_light_16"
+EffectName16 = "fbport.OmniLightYellow"
+
+// Real Lights.
+//lightHard1 = "hp_light_7"
+//lightName1 = "spotyellow"
+//lightHard2 = "hp_light_8"
+//lightName2 = "spotyellow"
+//lightHard3 = "hp_light_15"
+//lightName3 = "spotyellow"
+//lightHard4 = "hp_light_16"
+//lightName4 = "spotyellow"
+lightHard1 = "hp_light_17"
+lightName1 = "o_yellow_nf"
+
+[TeleportalClass]
+//soundActivate = "portalx.wav"  // not used.... the sound effect is made by the portalEffect's explosion, though it's sometimes quite soft :-/
+
+PortalEffect = "PortalFx_F" // Effect # is added to the end, as well as a Start and End versions.
+InEffect = 1
+OutEffect = 1
+OnEffect = 0
+
+TeleporterChannel = 2
+ShowChannel = true
+CanEnter = true
+CanExit = true
+ContinuousFx = true
+ContinuousFxRange = 200.0f
+MatchType = 1 // 0 = Closest, 1 = Cycle, 2 = Random.
+MatchTypeUsesChannels = true
+TeleportColorFade = "255 127 0 255"
+TeleportFilter = 3 // Pilots + Craft
+// Teleport Filter options: 
+// All         = 0
+// Craft       = 1
+// Pilots      = 2
+// Powerups    = 4
+// Weapons     = 8 (Torpedoes, Mines)
+// Other       = 16
+ExitForwardOnly = false
+ExitVelocity = 0
+ExitUsesCenter = true
+EnterRange = 31.0f
+TeleportTeamFilter = 0
+DestinationTeamFilter = 3
+// 0 = All Teams, 1 = same team only, 2 = allies only, 3 = Same Team + Allies, 4 = Enemies only, 5 = Same Team + Enemies, 6 = Allies + Enemies.
+// Team Filter options: 
+// All Teams        = 0
+// Same Team Only   = 1
+// Allies           = 2
+// Enemies          = 4
+// 
+// Add the values to get the desired result. Same Team + Allies is 3, Enemies + Allies is 6.
+
+
+[PoweredBuildingClass]
+CanAlliesUse = false
+//PoweredByTaps = true
+
+[BuildingClass]
+//soundAmbient = "portal03.wav"
+
+tunnelCount = 7
+bldEdge = "tttt"
+// Center
+tunnel01X0 = 3
+tunnel01Z0 = 3
+tunnel01DX = 2
+tunnel01DZ = 2
+tunnel01Edge = "ffff"
+// Top Edge
+tunnel02X0 = 3
+tunnel02Z0 = 0
+tunnel02DX = 2
+tunnel02DZ = 3
+tunnel02Edge = "twff"
+// Bottom Edge
+tunnel03X0 = 3
+tunnel03Z0 = 5
+tunnel03DX = 2
+tunnel03DZ = 3
+tunnel03Edge = "fftw"
+// Left Edge
+tunnel04X0 = 0
+tunnel04Z0 = 3
+tunnel04DX = 3
+tunnel04DZ = 2
+tunnel04Edge = "ffwt"
+// Right Edge
+tunnel05X0 = 5
+tunnel05Z0 = 3
+tunnel05DX = 3
+tunnel05DZ = 2
+tunnel05Edge = "wtff"
+// Top Left Corner
+tunnel06X0 = 0
+tunnel06Z0 = 0
+tunnel06DX = 3
+tunnel06DZ = 3
+tunnel06Edge = "tfft"
+// Bottom Right Corner
+tunnel07X0 = 5
+tunnel07Z0 = 5
+tunnel07DX = 3
+tunnel07DZ = 3
+tunnel07Edge = "fttf"
+
+candemolish = false
+
+
+[CraftClass]
+rangeScan = 210.0
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 1.5
+steerFactor = 1.0
+engageRange = 210
+
+[TurretCraftClass]
+powerTap1 = "HP_TAP_1"
+powerTap2 = "HP_TAP_2"
+powerName = "fblung"
+
+omegaTurret = 0.0
+detectRange = 500
+
+[OmniLightYellow]
+renderBase = "draw_light"
+startColor = "255 255 0 300"
+finishColor = "255 255 0 300"
+startRadius = 25.0
+finishRadius = 25.0
+//animateTime = 1.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

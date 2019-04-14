@@ -1,0 +1,101 @@
+[GameObjectClass] // Portal In ISDF
+geometryName = NULL //"BZCNullCube.xsi"
+classLabel = "i76sign" //"wpnpower" //"powered"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+unitName = " "
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+isAssault = false
+ownsTerrain = false
+collisionRadius = 0.0
+canCollide = false
+powerCost = 0
+canInteract = false
+//canDetect = false
+CanBeIdleVictim = false
+LeaveExplodeScorch = false
+ScanTeamLimit = 3
+//aiName = "PowerUpProcess"
+
+effectHard1 = " "
+effectName1 = "PortalFx_E1End.render"
+
+explosionName = ""
+xplChunk = ""
+xplCrash = ""
+CanAcceptPowerups = false
+
+DoBettyAttack = false // true: do betty attack warnings when this is damaged.
+
+[PoweredBuildingClass]
+detectRange = 0 //0
+
+[BuildingClass]
+soundAmbient = "portal02.wav" // On sound.
+canDemolish = false
+DoBettyLost = false
+UseCollapse = false // Default: True if not sign and collapseTime > 0.0
+UseChunks = false
+UseExplosion = false 
+
+[Render]
+simulateBase = "sim_null"
+lifeTime = 1.0 // Length matches off sound length.
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "PortalFx_E1End.light"
+renderName2 = "PortalFx_E1End.smoke"
+renderName3 = "PortalFx_E1End.shock"
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_light"
+startColor = "255 100 0 2500"
+finishColor = "255 255 255 0"
+startRadius = 60.0
+finishRadius = 0.0
+animateTime = 1.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[smoke]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl_trail"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 150 0 0"
+startRadius = 2.0
+finishRadius = 1.5
+animateTime = 1.0
+rotationRate = 2.0
+emitDelay = 0.015
+emitVelocity = "1.0 1.0 1.0"
+emitVariance = "12.0 12.0 12.0"
+emitLife = 1.0
+
+[shock]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 100 0 0"
+finishColor = "255 255 255 255"
+startRadius = 25.0
+finishRadius = 3.0
+animateTime = 1.0
+latitudeBands = 32
+longitudeSegments = 64
+InitialPitch = 0.0
+InitialYaw = 0.0
+InitialRoll = 0.0
+AddPitch = 10.0
+AddYaw = 10.0
+AddRoll = 10.0
