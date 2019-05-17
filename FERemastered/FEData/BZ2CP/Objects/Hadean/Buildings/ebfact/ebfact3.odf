@@ -7,11 +7,9 @@ baseName = "ebfact"
 geometryName = "ebfact03.fbx"
 animCount = 3
 animName1 = "deploy"
-animFile1 = "ebfact02_undeploy.fbx"
+animFile1 = "ebfact03_deploy.fbx"
 animName2 = "loop"
 animFile2 = "ebfact03.fbx"
-animName3 = "undeploy"
-animFile3 = "ebfact02_deploy.fbx"
 RunAnimation = "loop"
 RunAnimIsLooped = true
 
