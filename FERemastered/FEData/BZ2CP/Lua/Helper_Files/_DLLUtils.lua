@@ -114,6 +114,34 @@ function GetSpawnpointForTeam(Team, FRIENDLY_SPAWNPOINT_MAX_ALLY, FRIENDLY_SPAWN
 		local index = math.min(math.floor(GetRandomFloat(indexCount)),indexCount-1);
 		return pSpawnPointInfo[pIndices[index]].Position;
 	end
+	
+	if(not IsTeamplayOn())
+	then
+		-- 1.5 pass: build up a list of spawnpoints that appear to have
+		-- nobody close, randomly pick one of those.
+		indexCount = 0;
+		for i = 1, count
+		do
+			if((pSpawnPointInfo[i].DistanceToClosestSameTeam >= FRIENDLY_SPAWNPOINT_MAX_ALLY) and
+				(pSpawnPointInfo[i].DistanceToClosestAlly >= FRIENDLY_SPAWNPOINT_MAX_ALLY) and
+			   (pSpawnPointInfo[i].DistanceToClosestEnemy >= FRIENDLY_SPAWNPOINT_MIN_ENEMY))
+			then
+				pIndices[indexCount] = i;
+				indexCount = indexCount + 1;
+			end
+		end
+
+		-- Did we find any spawnpoints in the above search? If so,
+		-- randomize out of that list and return that
+		if(indexCount > 0)
+		then
+			local index = 0;
+			-- Might be unnecessary, but make sure we return a valid index
+			-- in [0,indexCount)
+			local index = math.min(math.floor(GetRandomFloat(indexCount)),indexCount-1);
+			return pSpawnPointInfo[pIndices[index]].Position;
+		end
+	end
 
 	-- Second pass: build up a list of spawnpoints that appear to have
 	-- allies close, randomly pick one of those.

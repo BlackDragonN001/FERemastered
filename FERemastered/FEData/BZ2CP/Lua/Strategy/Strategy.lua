@@ -496,7 +496,6 @@ function SetupTeam(Team);
 
 	SetScrap(Team, 40);
 
-	-- Modified spawn code to handle FFA Alliances with thugs. -GBD
 	if(IsTeamplayOn()) 
 	then
 		for i = GetFirstAlliedTeam(Team), GetLastAlliedTeam(Team)
@@ -509,16 +508,6 @@ function SetupTeam(Team);
 				-- In teamplay, store where offense players were created for respawns later
 				Mission.m_TeamPos[i] = pos;
 			end -- Loop over allies not the commander
-		end
-	else -- FFA Mode. -GBD
-		for i = 1, MAX_TEAMS-1
-		do
-			if((i ~= Team) and (Mission.m_AllyTeams[Team] == Mission.m_AllyTeams[i]))
-			then
-				local NewPosition = GetPositionNear(spawnpointPosition, AllyMinRadiusAway, AllyMaxRadiusAway);
-
-				Mission.m_TeamPos[i] = NewPosition;
-			end
 		end
 	end
 
