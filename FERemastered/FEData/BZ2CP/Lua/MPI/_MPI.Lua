@@ -1,6 +1,34 @@
 -- New MPI Files for FE 
 -- Written by JJ (AI_Unit)
 -- Version 1.0 - 26/02/2019
+
+--[[ TO DO Notes: -GBD
+
+Rewrite for dynamic spawning / function.
+
+-Table to store MPI specific vars. MPI ONLY vars go in this file.
+
+-SetupAITeam: pass in team number, and spawn using Enemy_# path points. (5 ... 1)
+
+-Save/load to be called from ST. (setup like StartingVehicles does)
+
+-Start function: read in vars and save them, setup / spawn AI team(s).
+-- Iterate over AI, spawn them if they're set, and if the map supports / allows that many AI.
+-- In AddObject Count how many Spawn points there are for total spawn areas.
+-- For FFA, use Player Limit to deduct from total base areas. For teamplay, use ivar11 to determine how many spots to reserve for players.
+-- Start AI at Team 15, and work backwards to 11. This way, 2 Teams of humans (Team 1-10) could be used vs multiple AI Teams if TeamPlay is on. (Team A vs Team B vs up to 5 AI) for a total support of 7 bases in Teamplay.
+
+-Update function: Iterate over AI Teams, perform scrap cheat updates.
+
+-AddObject: Call the AddToDispatch function for AI objects here, based on cpu difficulty. (read difficulty from [Start] section in AIP.)
+-- GBD TODO: Add Lua Callback for AddToDispatch.
+
+
+
+--]]
+
+
+
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 
 local _FECore = require('_FECore');
