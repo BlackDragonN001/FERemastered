@@ -1,6 +1,10 @@
+// BZ2CP Building "Spike"
+// Original Concept by Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
+
 [GameObjectClass]
 baseName = "ebgt2g"
-geometryName = "ebgt2g00.xsi"
+geometryName = "ebgt2g00.fbx"
 classLabel = "turret"
 collisionRadius = 4.0
 powerCost = 0
@@ -32,10 +36,12 @@ provideName3 = "defender"
 weaponMask = 00011
 weaponHard1 = "hp_gun_1"
 weaponName1 = "gshellgun"
+RecoilName1 = "gun_l"
 weaponAssault1 = 1
 weaponHard2 = "hp_gun_2"
 weaponName2 = "gshellgun"
 weaponAssault2 = 1
+RecoilName2 = "gun_r"
 
 /////// Lights ///////////////////
 
@@ -43,8 +49,8 @@ lightHard1 = "hp_light_1"
 lightName1 = "spothadean"
 
 turretCount = 4
-turretName1 = "turret_y_1"
-turretName2 = "turret_x_1"
+turretName1 = "turret_y"
+turretName2 = "turret_x"
 turretName3 = "hp_light_1"
 turretName4 = "hp_eyepoint"
 

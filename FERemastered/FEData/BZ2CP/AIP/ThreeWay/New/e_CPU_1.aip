@@ -590,8 +590,8 @@ planCompare = ">="
 planConditionClassProvided = true 
 planConditionOr = false
 targetType = "VIRTUAL_CLASS_FACTORY"
-attackType1 = "ivewalk"
-attackType2 = "ivewalk"
+attackType1 = "evwalk"
+attackType2 = "evwalk"
 attackType3 = "evatanks"
 maxAttacks = 0
 buildIfNoIdle = 1
@@ -642,8 +642,8 @@ planCompare = ">="
 planConditionClassProvided = true 
 planConditionOr = false
 targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
-attackType1 = "ivewalk"
-attackType2 = "ivewalk"
+attackType1 = "evwalk"
+attackType2 = "evwalk"
 maxAttacks = 0
 buildIfNoIdle = 1
 ContinueEvenIfFail = 1

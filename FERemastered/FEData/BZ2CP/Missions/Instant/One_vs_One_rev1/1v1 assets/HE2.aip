@@ -63,7 +63,7 @@ Unittype = "ebfact"
 [plan8]
 plantype = "Hold"
 planpriority = 118
-holdtype1 = "ivewalk"
+holdtype1 = "evwalk"
 holdcount1 = 1
 holdpoint = "hold3"
 maxtries = 1
@@ -99,7 +99,7 @@ donextonfail = 1
 [plan13]
 plantype = "Hold"
 planpriority = 119
-holdtype1 = "ivewalk"
+holdtype1 = "evwalk"
 holdcount1 = 1
 holdpoint = "hold4"
 
@@ -130,7 +130,7 @@ attacktype1 = "evkami"
 [plan17]
 plantype = "buildminimums"
 planpriority = 120
-buildtype1 = "ivewalk"
+buildtype1 = "evwalk"
 buildcount1 = 2
 
 

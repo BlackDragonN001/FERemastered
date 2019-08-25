@@ -222,7 +222,7 @@ buildloc1 = "htechcenter"
 [plan24]
 plantype = "buildminimums"
 planpriority = 115
-buildtype1 = "ivewalk"
+buildtype1 = "evwalk"
 buildcount1 = 1
 
 [plan25]
@@ -232,4 +232,4 @@ planconditioncount = 1
 plantype = "attacker"
 planpriority = 110
 targettype = "fblung"
-attacktype1 = "ivewalk"
+attacktype1 = "evwalk"

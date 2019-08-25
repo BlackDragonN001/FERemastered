@@ -122,8 +122,8 @@ attacktype1 = "evkami"
 plantype = "attacker"
 planpriority = 110
 targettype = "cbrecy03"
-attacktype1 = "ivewalk3t"
-attacktype2 = "ivewalk3t"
+attacktype1 = "evwalk3t"
+attacktype2 = "evwalk3t"
 
 [plan17]
 plantype = "collectpool"
@@ -133,7 +133,7 @@ donextonfail = 1
 [plan18]
 plantype = "buildminimums"
 planpriority = 115
-buildtype1 = "ivewalk3t"
+buildtype1 = "evwalk3t"
 buildcount1 = 2
 
 [plan19]
