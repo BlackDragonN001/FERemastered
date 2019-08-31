@@ -53,13 +53,48 @@ effectFlags1 = 2147483583 // only when powered.
 detectRange = 100
 
 [BuildingClass]
-tunnelCount = 1
+tunnelCount = 2
 
+// Central Pad
 tunnel01X0 = 1
 tunnel01Z0 = 1
-tunnel01Dx = 4
+tunnel01Dx = 6
 tunnel01Dz = 4
-tunnel01Edge = "twwt"
+tunnel01Edge = "ttft"
+
+// South Pillar Entrance
+tunnel02X0 = 3
+tunnel02Z0 = 5
+tunnel02Dx = 2
+tunnel02Dz = 2
+tunnel02Edge = "fwtw"
+
+// 4 square specific tunnel setup. Not as efficient as the 2 one above. -GBD
+//tunnelCount = 4
+
+//tunnel01X0 = 1
+//tunnel01Z0 = 1
+//tunnel01Dx = 2
+//tunnel01Dz = 4
+//tunnel01Edge = "tfwt"
+
+//tunnel02X0 = 3
+//tunnel02Z0 = 1
+//tunnel02Dx = 2
+//tunnel02Dz = 4
+//tunnel02Edge = "tfff"
+
+//tunnel03X0 = 5
+//tunnel03Z0 = 1
+//tunnel03Dx = 2
+//tunnel03Dz = 4
+//tunnel03Edge = "ttwf"
+
+//tunnel04X0 = 3
+//tunnel04Z0 = 5
+//tunnel04Dx = 2
+//tunnel04Dz = 2
+//tunnel04Edge = "fwtw"
 
 [SupplyDepotClass]
 supplyRange = 40.0
