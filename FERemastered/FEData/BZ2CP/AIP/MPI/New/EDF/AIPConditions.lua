@@ -1,11 +1,6 @@
 function InitAIPLua(team)
-        gTeam = team;
-        hTeam = 1;
-        cTeam = 6;
-        dTeam = 7;
-        uTeam = 8;
-
-        AIPUtil.print("Initiating AIP Plan Conditions - AI_Unit")
+    hTeam = 1;
+    AIPUtil.print("Initiating AIP Plan Conditions - AI_Unit")
 end
 
 -- Conditional checks against the CPU Team for units and buildings that are present.
@@ -194,3 +189,24 @@ function BuildGunTower6(team, time)
 end
 
 -- Forgotten Enemies Specific 
+function HoldCheckPlan1()
+	local hold1Exists = AIPUtil.PathExists("hold1");
+	local cpuHasRecycler = CPURecyclerExists(team);
+
+	if (hold1Exists and cpuHasRecycler) then
+		return true, "I can add a turret to the Hold 1 path.";
+	else
+		return false, "I can't add a turret to the Hold 1 path.";
+	end
+end
+
+function HoldCheckPlan2()
+	local hold2Exists = AIPUtil.PathExists("hold2");
+	local cpuHasRecycler = CPURecyclerExists(team);
+
+	if (hold2Exists and cpuHasRecycler) then
+		return true, "I can add a turret to the Hold 2 path.";
+	else
+		return false, "I can't add a turret to the Hold 2 path.";
+	end
+end
