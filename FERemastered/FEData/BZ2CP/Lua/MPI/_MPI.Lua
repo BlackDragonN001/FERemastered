@@ -51,17 +51,14 @@ local MAX_TEAMS = 16;
 
 -- TABLES
 local _MPI = {};
+local MPIValues = {};
+local HumanBuildings = {};
 
 local AIVehicles = {
 	AIRecycler = nil,
+	AICommander = nil,
+	AIDemolishers = {},
 };
-
-local MPIValues = {
-	-- How long the Bad Weather on the map will last.
-	BadWeatherTimer = 60;
-	-- Set the cooldown to 10 minutes by default.
-	BadWeatherCooldown = 600;
-}
 
 --[[
 	Here is a list of all available custom IVARs. 
@@ -76,8 +73,30 @@ local MPIValues = {
 	- ivar78 - Artifacts.
 	- ivar79 - Weapon Caches.
 	- ivar80 - Scrap Silos.
-	- ivar81 - Bad Weather.
 ]]
+
+function _MPI.AddObject(h)
+	local ObjBaseClass = GetBase(h);
+	local ODFName = GetCfg(h);
+
+	if (GetTeamNum(h) == CPU_TEAM_NUMBER) then
+		if (ODFName == "%svcmdr_c":format(GetRaceOfTeam(CPU_TEAM_NUMBER))) then
+			AIVehicles.AICommander = h;
+		elseif (ObjBaseClass == "Demolisher") then
+			AIVehicles.AIDemolishers[#AIVehicles.AIDemolishers] = h;
+		end
+	elseif (GetTeamNum(h) == 1) then
+		if (IsBuilding(h)) then
+			table.insert(HumanBuildings, h);
+		end
+	end
+end
+
+function _MPI.DeleteObject(h)
+	if (GetCfg(h) == "%svcmdr_c":format(GetRaceOfTeam(CPU_TEAM_NUMBER))) then
+		AIVehicles.AICommander = nil;
+	end
+end
 
 function _MPI.Start()
 	-- Define Custom Variables here for options - AI_Unit
@@ -92,7 +111,7 @@ function _MPI.Start()
 
 	-- If Debugging is enabled, we should print all available data related to the AI team
 	if (DEBUG) then
-		print("Current Race of AI Team: (" .. CPU_TEAM_NUMBER .. "): ");
+		print("Current Race of AI Team: (" .. GetRaceOfTeam(CPU_TEAM_NUMBER) .. "): ");
 		Ally(1, CPU_TEAM_NUMBER);
 	end
 
@@ -169,7 +188,7 @@ function _MPI.SpawnAITeams()
 
 	_MPI.SetAIPlan(CPU_TEAM_NUMBER);
 
-	-- We should handle setting any customised options here in methods. Make sure the options are enabled for them.
+	-- We should handle setting any customised options here in methods. Make sure the options are enabled for them -- AI_Unit.
 end
 
 function _MPI.SpawnAdditionalAIUnits(choice, team) 
@@ -178,11 +197,11 @@ function _MPI.SpawnAdditionalAIUnits(choice, team)
 	if (choice == "turrets") then
 		chosenUnit = ("%svturr"):format(GetRaceOfTeam(team));
 	else
-		-- We need to handle specific Gun Tower ODFs here based on the CPU Race.
+		-- We need to handle specific Gun Tower ODFs here based on the CPU Race -- AI_Unit.
 		chosenUnit = ("%sbgtow"):format(GetRaceOfTeam(team));
 	end
 
-	-- Spawn Extra Enemy units. We could probably do this based on difficulty.
+	-- Spawn Extra Enemy units. We could probably do this based on difficulty -- AI_Unit.
 	local CPUSpawnCount = {2, 4, 6, 8};
 
 	for i = 1, CPUSpawnCount[CPU_DIFFICULTY + 1] do
@@ -200,28 +219,42 @@ function _MPI.SetAIPlan(team)
 		planNameBase = pContents;
 	end
 
-	-- Based on a difficulty IVAR, we can set the difficulty of the AI. ivar70 will need to be changed when this is set up.
-	-- Edited to be dynamic for multiple teams. Each team will use the same difficulty.
+	-- Based on a difficulty IVAR, we can set the difficulty of the AI. ivar70 will need to be changed when this is set up -- AI_Unit.
+	-- Edited to be dynamic for multiple teams. Each team will use the same difficulty -- AI_Unit.
 	planName = ("%s%s_%d.aip"):format(planNameBase, GetRaceOfTeam(team), CPU_DIFFICULTY);
 
-	-- Ensure that at least one CPU unit has spawned before setting the AIP here.
+	-- Ensure that at least one CPU unit has spawned before setting the AIP here -- AI_Unit.
 	if (CPU_Spawned) then
 		SetAIP(planName, team);
 	end
 end
 
--- Use this to iterate through all active AI teams and add scrap cheats based on options.
+-- Use this to iterate through all active AI teams and add scrap cheats based on options -- AI_Unit.
 function _MPI.Update()
+	if (IsAlive(AIVehicles.AICommander)) then
+		_MPI.HandleAICommander()
+	end
 
+	if (IsAlive(AIVehicles.AIDemolishers[#AIVehicles.AIDemolishers]) and IsIdle(AIVehicles.AIDemolishers[#AIVehicles.AIDemolishers])) then
+		_MPI.HandleAIDemolisher(AIVehicles.AIDemolishers[#AIVehicles.AIDemolishers]);
+	end
 end
 
 -- Experimental
 function _MPI.HandleAICommander()
-
+	-- If the Commander is idle, we should send him off to attack or protect something -- AI_Unit.
+	if (IsIdle(AIVehicles.AICommander)) then
+		
+	end
 end
 
-function _MPI.HandleAIDemolishers()
+function _MPI.HandleAIDemolisher(h)
+	-- Select a target for these units to demolish. Potentially sensitive units, such as Extractors, etc -- AI_Unit.
+	local target = HumanBuildings[math.floor(GetRandomFloat(1, #HumanBuildings))];
 
+	if (IsAlive(target)) then
+		SetCommand(h, 31, 1, target);
+	end
 end
 
 function _MPI.CreateArtifacts()
@@ -230,6 +263,15 @@ end
 
 function _MPI.CreateSavageUnits()
 
+end
+
+function _MPI.CompareAndRemove(handle, list)
+	for i, v in ipairs(list) do
+		if v == handle then
+			table.remove(list, i)
+			break
+		end
+	end
 end
 
 return _MPI;
