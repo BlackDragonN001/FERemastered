@@ -1,0 +1,19 @@
+[WeaponClass]
+classLabel = "dispenser"
+geometryName = "fgsatc00.xsi"
+geometryScale = 0.12
+wpnName = "Radar Probe"
+ordName = NULL
+isassault = 1
+
+wpnIcon = "wire_igrdrprobe.tga"
+fireSound = "unitenabled.wav"// "mdmort02.wav" //"mmine01.wav"
+wpnReticle = "gproxmin"
+wpnLadder = "gmortar.L0"
+wpnPriority = 3
+wpnCategory = "GUN"
+localAmmo = 2
+
+[DispenserClass]
+shotDelay = 10.0
+objectClass = "radarprobe"

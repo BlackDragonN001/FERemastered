@@ -1,0 +1,16 @@
+[GameObjectClass]
+classLabel = "FXMine"
+canInteract = 0
+
+maxAmmo = -1000 // 35 //1
+unitName = "Ammo Pack"
+
+[MineClass]
+lifeSpan = 10.0 
+
+[FlareMineClass]
+payloadName = NULL
+fireSound = "mnu_empt.wav"
+triggerDelay = 0.5
+shotDelay = 0.1
+

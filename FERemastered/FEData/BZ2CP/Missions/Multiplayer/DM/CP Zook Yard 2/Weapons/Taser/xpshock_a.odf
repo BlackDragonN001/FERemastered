@@ -1,0 +1,43 @@
+////////////////////
+// Near miss Shock (assault)
+///////////////////
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 1
+particleClass1 = "xpshock_a.shock"
+particleCount1 = 6 //10
+particleVeloc1 = "15.0 15.0 5.0" //  "10.0 10.0 5.0"
+particleBias1 = "1.0 1.0 15.0"// "2.0 2.0 10.0" // "0.0 0.0 15.0"
+
+explSound = "gbolt00.wav" //"gtagg00.wav"
+
+damageRadius = 9.0
+
+kickRadius = 9.0
+kickOmega = 1.2
+kickVeloc = -3.0
+
+damageValue(N) = 19 
+damageValue(L) = 15
+damageValue(H) = 20
+
+damageValue(S) = 17
+damageValue(D) = 13
+damageValue(A) = 15
+
+[Shock]
+simulateBase = "ember"
+lifeTime = 0.4
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 100 100"
+finishColor = "200 200 80 0"
+startRadius = .1  //0.03
+finishRadius = .05  //.4  
+segmentLength = 0.7 //0.4 
+segmentVariance = "1.5 1.5 1.5"   //"0.5 0.5 0.5"
+animateTime = 0.37
+textureRate = 0.01

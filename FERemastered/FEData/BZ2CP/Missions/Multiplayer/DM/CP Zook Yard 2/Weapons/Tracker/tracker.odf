@@ -1,0 +1,46 @@
+[OrdnanceClass]
+classLabel = "thermalmissile"
+
+shotGeometry = "sgstng00.xsi"
+shotSound = "ashield01.wav"
+
+renderName = "tracker.render"
+
+xplGround = "xtracker_gnd"
+xplVehicle = "xtracker_car"
+xplBuilding = "xtracker_gnd"
+
+ammoCost = 2.5
+lifeSpan = 6 
+shotSpeed = 50.0
+
+damageRadius = 0.5 // 5.0
+
+damageValue(N) = 1.0 // 2.5 // none
+damageValue(L) = 3 // light
+damageValue(H) = 3 // heavy
+
+damageValue(S) = 2 // standard
+damageValue(D) = 2 // deflection
+damageValue(A) = 2 // absorbtion
+
+
+[MissileClass]
+omegaTurn = 50 //
+
+[ThermalMissileClass]
+coneAngle = 10 //
+
+[Render]
+renderBase = "draw_bolt"
+textureName = "plasma.tga" //"trail2.tga"
+textureBlend = "one one modulate"
+startColor = "230 100 0 140"  //100 alpha
+finishColor = "100 90 80 0"
+startRadius = 0.3    //0.2
+finishRadius = 0.05  //0.01
+segmentLength = 3.0  //3.0 
+segmentVariance = "0.1 0.1 0.2" //"0.1 0.1 0.1"
+animateTime = 3
+textureRate = 0.01
+

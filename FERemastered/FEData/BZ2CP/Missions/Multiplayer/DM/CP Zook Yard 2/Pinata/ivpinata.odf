@@ -1,0 +1,77 @@
+[GameObjectClass]
+geometryName = "ivpinata.xsi"// "cotran01.xsi"
+//geometryScale = 0.5
+classLabel = "wingman"
+scrapValue = 0
+scrapCost = 0
+buildTime = 0
+maxHealth = 350
+maxAmmo = 300
+unitName = "Piñata"
+aiName = "TurretTankFriend"
+aiName2 = "TurretTankFriend"
+heatSignature = 0.000001
+imageSignature = 3.0
+radarSignature = 10.0
+addAmmo = 3
+addHealth = 1
+engageRange = 250
+
+explosionName = "xsafexpl"
+
+armorClass = L
+canSnipe = 1
+
+collisionRadius = 0.3 
+
+TeamTransferrable = true 
+needPilot = 1 
+
+weaponMask = 00001
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gstickler"
+weaponAssault1 = 0
+
+weaponHard2 = "HP_GUN_1"
+weaponName2 =  "igtracker"
+weaponAssault2 = 1
+weaponHard3 = "HP_GUN_2"
+weaponName3 = "igtracker" 
+weaponAssault3 = 1
+
+weaponHard4 = "HP_ROCKET_1"
+weaponName4 = "gfshield1"
+weaponAssault4 = 0
+
+weaponHard5 = "HP_SPECIAL_1"
+weaponName5 = "igblack"
+weaponAssault5 = 0
+
+[CraftClass]
+rangeScan = 450.0f
+periodScan = 0.75f
+velocJam = 30.0f 
+
+[HoverCraftClass]
+setAltitude = -0.01
+accelDragStop = 1.0 // 4.0
+accelDragFull = 1.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.0 
+pitchThrust = 0.0 
+rollStrafe = 0.0 
+rollSteer = 0.0 
+
+velocForward = 0.0
+velocReverse = 0.0
+velocStrafe = 0.0
+accelThrust = 8.0 // 20.0
+accelBrake = 75.0
+omegaSpin = 3.5
+omegaTurn = 1.5
+alphaSteer = 5.0
+accelJump = 13.0 // 20.0
+
+soundThrust = "srecy01.wav" 
+soundTurbo = NULL //"scrapdn.wav"

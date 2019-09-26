@@ -1,0 +1,60 @@
+//
+// MPbomber.odf - listing of multiplayer vehicles usable in BZCC
+//
+// Tip: do not put .odf extension on cfg# = "" entries; added automatically on loading
+// 
+// modified by Morpheus
+
+
+[MPVehicles]
+xsi1 = "avhraz00.xsi"
+cfg1 = "avhrazdm"
+Description1 = "ThunderBolt"
+
+xsi2 = "svhraz00.xsi"
+cfg2 = "svhrazdm"
+Description2 = "CCA Grendal"
+
+xsi3 = "bvhraz00.xsi"
+cfg3 = "bvhrazdm"
+Description3 = "BDog ThunderBolt"
+
+xsi4 = "cvhraz00.xsi"
+cfg4 = "cvhrazdm"
+Description4 = "Chinese Phoenix"
+
+xsi5 = "ivrbomb00.xsi"
+cfg5 = "ivrbombdm2"
+Description5 = "Hammer"
+
+xsi6 = "fvrbomb00.xsi"
+cfg6 = "fvrbombdm"
+Description6 = "Brawler"
+
+xsi7 = "evmisl00.xsi"
+cfg7 = "evmisludm"
+Description7 = "Zeus"
+
+xsi8 = "cvdrbomb00.xsi"
+cfg8 = "cvdrbombdm"
+Description8 = "Siren"
+
+xsi9 = "ivrbomb00.xsi"
+cfg9 = "ivrbom2dm"
+Description9 = "Hammer Hornet"
+
+xsi10 = "ivrbomb00.xsi"
+cfg10 = "ivrbom3dm"
+Description10 = "Hammer Torpedo"
+
+xsi11 = "fvrbomb00.xsi"
+cfg11 = "FVRBOM1DM"
+Description11 = "Brawler WASP"
+
+xsi12 = "fvrbomb00.xsi"
+cfg12 = "FVRBOM2DM"
+Description12 = "Brawler Swarm"
+
+xsi13 = "fvrbomb00.xsi"
+cfg13 = "FVRBOM3DM"
+Description13 = "Brawler Torpedo"

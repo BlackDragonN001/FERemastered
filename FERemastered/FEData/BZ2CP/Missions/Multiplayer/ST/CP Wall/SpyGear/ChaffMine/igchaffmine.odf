@@ -1,0 +1,21 @@
+[WeaponClass]
+classLabel = "dispenser"
+geometryName = "fgsatc00.xsi"
+geometryScale = 0.12
+wpnName = "Chaff Mine"
+ordName = NULL
+
+wpnIcon = NULL //"wire_igrdrprobe.tga"
+fireSound = "mmine01.wav"
+wpnReticle = "gproxmin"
+wpnLadder = "gmortar.L0"
+wpnPriority = 3
+wpnCategory = "SPEC" // "PACK"
+
+isAssault = 0 // will overide spy planes thruster, careful
+
+localAmmo = 1
+
+[DispenserClass]
+shotDelay = 10.0
+objectClass = "chaffmine"

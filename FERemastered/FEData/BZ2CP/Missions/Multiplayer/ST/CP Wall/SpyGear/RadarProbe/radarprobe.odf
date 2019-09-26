@@ -1,0 +1,45 @@
+[GameObjectClass]
+classLabel = "turret"
+geometryName = "radarprobe.xsi"
+//geometryScale = 1.5
+scrapCost = 0
+scrapValue = 0
+maxHealth = 900
+maxAmmo = 1
+addAmmo = 1
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+unitName = "Radar Probe"
+heatSignature = .01
+imageSignature = .1
+radarSignature = 1.0
+isAssault = 1
+armorClass = L // so flak and disruptor affect
+canCollide = 1
+canDetect = 1
+canInteract = 1
+ownsTerrain = 0
+powerCost = 0
+addHealth = -0.5 // decays to 0 health
+engageRange = 450
+
+
+weaponMask = 00011
+weaponHard1 = "HP_GUN_1"
+weaponName1 = "igsniff2_a"
+weaponAssault1 = 0
+weaponHard2 = "HP_GUN_2"
+weaponName2 = "igsniff2_a"
+weaponAssault2 = 0
+
+//turretCount = 3
+//turretName1 = "turret_y" 
+//turretName2 = "turret_x"
+//turretName3 = "HP_eyepoint"
+
+[CraftClass]
+rangeScan = 250.0f
+periodScan = 1.0f
+velocJam = 0.0f
+
+

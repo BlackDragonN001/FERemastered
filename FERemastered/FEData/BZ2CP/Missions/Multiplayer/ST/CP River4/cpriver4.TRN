@@ -1,0 +1,116 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX = -1024.0
+MinZ = -1024.0
+Width = 2048.0
+Depth = 2048.0
+Height = 50.0
+Tile = 1
+Color = "151 158 103 255"
+
+[NormalView]
+
+FogColor="81 79 41 255"
+FogStart=150
+FogEnd=250
+VisibilityRange=275
+
+[World]
+MusicTrack1=10
+MusicTrack2=8
+MusicTrack3=7
+MusicTrack4=9
+
+[Light]
+SunPeriod = 24.0
+SunAngle = 9.0
+SunColor = "255 255 255 255"
+AmbientColor = "102 102 102 102"
+
+[Sky]
+SkyType= 0
+SkyHeight = 100
+SkyTexture = miresky.tga
+SkyColor = "33 39 8 255"
+SunTexture = sun.0
+SunColor = "0 0 0 0"
+
+[Water]
+WaterTexture1 = "water256.tga"
+WaterDiffuse1 = "96 128 64 64"
+WaterBlend1 = "srcalpha invsrcalpha modulatealpha"
+BumpTexture1 = "water256.tga"
+BumpDiffuse1 = "96 128 64 64"
+BumpBlend1 = "srcalpha invsrcalpha modulatealpha"
+
+[Texture]
+TileTexture1 = "metal.tga"
+TileTexture2 = "metal2.tga"
+TileTexture3 = "metal3.tga"
+TileTexture4 = "metal4.tga"
+TileTexture5 = "metal5.tga"
+TileTexture6 = "metal6.tga"
+TileTexture7 = "metal7.tga"
+TileTexture8 = "metal8.tga"
+TileTexture9 = "metal9.tga"
+TileTexture10 = "metal10.tga"
+TileTexture11 = "metal11.tga"
+TileTexture12 = "metal12.tga"
+
+[Clouds]
+Count    = 0
+Type     = 1
+TileSize = 200
+
+Texture0 = acloud2.tga
+Size0    = 100
+Height0  = 30
+
+Texture1 = acloud.tga
+Size1    = 100
+Height1  = 40
+
+Texture2 = acloud2.tga
+Size2    = 100
+Height2  = 50
+
+[DomeLight0]
+Name    = miresky
+Time0   = 0
+Yaw0    = 0		// 0=N, 90=E, -90=W, 180=S
+Pitch0  = -90		// 0=Forward -90=Above
+Dist0   = 10		// 100m from center of dome
+
+[DomeLight1]
+Name    = miresun_1
+Time0   = 0
+Yaw0    = -35
+Pitch0  = 0
+Dist0   = 200
+
+[DomeLight2]
+Name    = miresun_2
+Time0   = 0
+Yaw0    = 100
+Pitch0  = 0
+Dist0   = 100
+
+[Dome]
+DomeGeom    = miredome.xsi
+DomeRadius  = 275
+DomeHeight  = 50
+DomeType    = 0
+DomeUVSpeed = "0.002 0.002 0.002"
+
+Count       = 0
+Type        = 1
+TileSize    = 375
+
+Geom0       = mirecloud.xsi
+Height0     = 100
+Fade0       = "0.25 0.75 1.00"
+UVSpeed0    = "0.00 0.01 0.00"
+Scale0      = "1.00 1.00 1.00"
+
+

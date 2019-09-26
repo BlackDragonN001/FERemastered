@@ -1,0 +1,55 @@
+////////// Disruptor Round Expire ////////////
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = NULL //"ping.wav"
+
+damageRadius = 2
+damageValue(N) = 2
+damageValue(L) = 4
+damageValue(H) = 2
+damageValue(S) = 2
+damageValue(D) = 2
+damageValue(A) = 2
+
+kickRadius = 3.0
+kickOmega = 0.5
+kickVeloc = 4.0
+
+particleTypes = 2
+
+particleClass1 = "xdisrupxpr.shock"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xdisrupxpr.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 100 0 140"
+finishColor = "200 0 0 0"
+startRadius = 0.1
+finishRadius = 1.0
+animateTime = 0.3
+latitudeBands = 4
+longitudeSegments = 8
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_light"
+startColor = "200 80 0 150"
+finishColor = "180 50 0 0"
+startRadius = 0.2
+finishRadius = 2.0
+animateTime = 0.2
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

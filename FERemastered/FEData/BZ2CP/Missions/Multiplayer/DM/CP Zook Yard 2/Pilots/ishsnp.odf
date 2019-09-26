@@ -1,0 +1,36 @@
+[GameObjectClass]
+baseName = "ispilo"
+classLabel = "ispilo"
+
+scrapValue = 0
+
+unitName = "Hover Sniper"
+heatSignature = 5.0 // 10
+imageSignature = 0 // 10
+radarSignature = 0 // 10 
+canDetect = 0
+canInteract = 1 
+
+weaponName1 = "igtracker"
+weaponName2 = "igsnipextr"
+weaponName3 = "igjetp3"
+
+[CraftClass]
+rangeScan = 150.0
+periodScan = 0.0
+velocJam = 0.0
+
+[PersonClass]
+
+// crawling mode
+omegaSpinCrawl    = 0.9 //0.5
+omegaTurnCrawl    = 0.9 //0.5
+
+// flying mode
+velocForwardFly   = 10.0   //15.0
+velocReverseFly   = 7.0   //10.0
+velocStrafeFly    = 7.0   //10.0
+accelThrustFly    = 4.0   //5.0
+
+animRate = 8.0
+

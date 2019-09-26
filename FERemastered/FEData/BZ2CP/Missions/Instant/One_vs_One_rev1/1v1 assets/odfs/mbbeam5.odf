@@ -1,0 +1,69 @@
+[OrdnanceClass]
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = NULL //"defflarxpl"
+xplVehicle = NULL //"defflarxpl"
+xplBuilding = NULL //"defflarxpl"
+shotSound = "sserv02.wav" // "stap01.wav"
+renderName = "mbbeam5.render"
+
+ammoCost = 0
+lifeSpan = 500e-6 // 100m
+shotSpeed = 1e6
+
+damageValue(N) = 250 // none //350
+damageValue(L) = 225 // light //250
+damageValue(H) = 200 // heavy //150
+
+damageValue(S) = 50 // standard //250
+damageValue(D) = 85 // deflection //350
+damageValue(A) = 30 // absorbtion //80
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "mbbeam5.core"
+renderName2 = "mbbeam5.fringe"
+renderName3 = "mbbeam5.light"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = NULL
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 110 0 0"
+startRadius = 0.55
+finishRadius = 0.3
+segmentLength = 5.0
+segmentVariance = "0.1 0.1 0.1"
+animateTime = 0.2
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 230 0 255"
+finishColor = "200 40 40 0"
+startRadius = 1.2
+finishRadius = 6.0
+segmentLength = 5.0
+segmentVariance = "0.9 0.9 0.9"
+animateTime = 0.3
+textureRate = 0.02
+textureSpeed = 3.0
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 0.9
+renderBase = "draw_light"
+startColor = "255 200 63 5550"
+finishColor = "255 0 0 0"
+startRadius = 250.0
+finishRadius = 250.0
+animateTime = 0.9
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+

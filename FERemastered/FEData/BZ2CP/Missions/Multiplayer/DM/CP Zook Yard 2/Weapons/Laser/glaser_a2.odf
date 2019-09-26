@@ -1,0 +1,41 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "glaser_c2"
+ordName = "laser_a2"
+wpnName = "Blast Laser"
+fireSound = "blast01.wav" // gblas00.wav 
+wpnReticle = "glaser"
+wpnCategory = "GUN"
+isAssault = 1
+aiRange = 175
+flashName = "glaser_a2.flash"
+
+[CannonClass]
+shotDelay = 2.5   //2.5
+//shotAlternate = 1
+
+//[Flash]
+//renderBase = "draw_sphere"
+//textureName = "vsmoke.tga"
+//textureBlend = "one one modulate"
+//startColor = "100 60 255 120"
+//finishColor = "0 0 255 0"
+//startRadius = 2.0         // 3.0
+//finishRadius = .2        // 1.0
+//animateTime = 0.15         // .1
+//latitudeBands = 8         // 8
+//longitudeSegments = 16    // 16
+
+
+[Flash]
+simulateBase = "sim_null"
+lifeTime = .9
+renderBase = "draw_light"
+startColor = "60 30 255 700"
+finishColor = "0 0 255 0"
+startRadius = 30.0
+finishRadius = 30.0
+animateTime = .9
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

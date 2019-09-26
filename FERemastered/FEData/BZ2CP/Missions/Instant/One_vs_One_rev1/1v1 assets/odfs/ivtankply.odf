@@ -1,0 +1,36 @@
+[GameObjectClass]
+baseName = "ivtank"
+classLabel = "ivtank"
+
+maxHealth = 3000
+maxAmmo = 2000
+
+addhealth = 20
+unitName = "Commander"
+heatSignature = 1.0
+imageSignature = 3.0
+radarSignature = 0.2
+
+canSnipe = 0
+
+weaponMask = 00011
+
+weaponName1 = "gspstab_c"
+
+[CraftClass]
+engageRange = 1120
+
+avoidSpeed = 30;
+topSpeed = 40;
+
+[HoverCraftClass]
+velocForward = 38.5 // []
+velocReverse = 25.0 // []
+velocStrafe = 26.0 // []
+accelThrust = 27.5 //acceleration []
+
+accelJump = 35.0 // []
+
+[Lod1]
+
+[Lod2]

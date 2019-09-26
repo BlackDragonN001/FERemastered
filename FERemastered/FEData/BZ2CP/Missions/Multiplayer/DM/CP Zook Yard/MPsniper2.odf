@@ -1,0 +1,25 @@
+//
+// MPVehicles.txt - listing of multiplayer vehicles usable in BZ2
+// modified by Morpheus
+// Format of lines: xsi filename, space separator, odf filename, space separator, description
+// Lines starting with // are ignored. 
+//
+// Tip: do not put .odf extension on odf filename; added automatically on loading
+// 
+
+[MPVehicles]
+xsi1 = "ispilo_rifle_skel.fbx" // Sniper
+cfg1 = "issnip"
+Description1 = "EDF Sniper"
+
+xsi2 = "ispilo_rifle_skel.fbx" // Bazooka
+cfg2 = "issold"
+Description2 = "EDF Bazooka"
+
+xsi3 = "ispilo_rifle_skel.fbx" // Sniper
+cfg3 = "isuser2"
+Description3 = "EDF Gun/Satchel"
+
+xsi4 = "ispilo_rifle_skel.fbx" // Sniper
+cfg4 = "isuser3"
+Description4 = "EDF Gun/Grenades"

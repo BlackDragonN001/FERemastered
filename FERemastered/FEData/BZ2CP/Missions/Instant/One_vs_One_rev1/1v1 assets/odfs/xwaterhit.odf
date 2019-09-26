@@ -1,0 +1,66 @@
+// ===============
+// PLASMA BALL HIT
+// ===============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 3
+particleClass1 = "xwaterhit.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleClass2 = "xwaterhit.puff"
+particleCount2 = 20
+particleVeloc2 = "30.0 30.0 30.0"
+particleClass3 = "xwaterhit.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+
+explSound = ""
+damageRadius = 20.0
+
+damageValue(N) = 75 // none
+damageValue(L) = 60 // light
+damageValue(H) = 50 // heavy
+
+damageValue(S) = 60 // standard
+damageValue(D) = 75 // deflection
+damageValue(A) = 50 // absorbtion
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 0 255"
+finishColor = "255 0 0 0"
+startRadius = 2.0
+finishRadius = 20.0
+animateTime = 1.0
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 0 255"
+finishColor = "233 0 0 0"
+startRadius = 2.0
+finishRadius = 0.2
+animateTime = 1.0
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_light"
+startColor = "255 0 0 1000"
+finishColor = "255 0 0 200"
+startRadius = 40.0
+finishRadius = 40.0
+animateTime = 1.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

@@ -1,0 +1,15 @@
+[GameObjectClass]
+classLabel = "FXMine"
+
+unitName = "Fountain"
+
+explosionName = "xbmbxpl"
+
+[MineClass]
+
+[FlareMineClass]
+payloadName = "water"
+triggerDelay = 19.0
+shotDelay = 0.15
+shotVariance = 3.0
+

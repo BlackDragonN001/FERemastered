@@ -1,0 +1,84 @@
+[OrdnanceClass]
+classLabel = "spraybomb"
+shotGeometry = "gravanchor.xsi" //"ioartl00.xsi"
+shotSound = NULL //"fmiss02.wav"
+xplGround = NULL
+xplVehicle = NULL
+xplBuilding = NULL
+rendername = "skipfire.render"
+
+ammoCost = 30 
+lifeSpan =  3.0 //5
+shotSpeed = 150 //40 
+
+damageValue(N) = 30
+damageValue(L) = 50
+damageValue(H) = 40
+damageValue(S) = 50
+damageValue(D) = 30
+damageValue(A) = 20
+
+[SprayBombClass]
+payloadName = "skipanchor"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "skipfire.main"
+renderName2 = "skipfire.halo"
+renderName3 = "skipfire.sparks"
+
+[Main]
+renderBase = "draw_sprite"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "20 150 255 255"
+finishColor = "20 100 255 180"
+startRadius = 1.2
+finishRadius = 0.6
+animateTime = 2.0
+
+[Halo]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 200 130"
+finishColor = "0 0 180 100"
+startRadius = 4.0
+finishRadius = 1.8
+animateTime = 2.0
+
+[Sparks]
+renderBase = "draw_emit"
+emitName = "skipfire.sparker"
+emitDelay = 0.03 // 0.5
+emitVelocity = "0.0 0.0 2.0"
+emitVariance = "10.0 10.0 10.0"
+
+[Sparker]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "skipfire.sparkflare"
+renderName2 = "skipfire.sparkhalo"
+
+[SparkFlare]
+renderBase = "draw_sprite"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "0 100 255 255"
+finishColor = "0 80 155 0"
+startRadius = 1.2
+finishRadius = 0.4
+animateTime = 1.0
+
+[SparkHalo]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 150 150"
+finishColor = "0 0 150 0"
+startRadius = 3.0
+finishRadius = 1.0
+animateTime = 1.0

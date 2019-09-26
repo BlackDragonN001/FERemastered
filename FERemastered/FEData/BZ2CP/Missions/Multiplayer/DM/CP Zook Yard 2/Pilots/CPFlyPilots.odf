@@ -1,0 +1,38 @@
+/////////////////////////////////////////////////////////////////////////////
+//
+// FlyPilots.txt - listing of multiplayer flying pilots usable in FE Pilot Games
+//  
+/////////////////////////////////////////////////////////////////////////////
+
+
+[MPVehicles]
+xsi1 = "ispilo_rifle_skel.fbx" // Sniper
+cfg1 = "ishsnp"
+Description1 = "Hover Sniper"
+
+xsi2 = "ispilo_rifle_skel.fbx" // Bazooka
+cfg2 = "isshock"
+Description2 = "Shock Trooper"
+
+xsi3 = "ispilo_rifle_skel.fbx" // Sniper
+cfg3 = "islase"
+Description3 = "Laserman"
+
+xsi4 = "ispilo_rifle_skel.fbx" // Sniper
+cfg4 = "isphase"
+Description4 = "Phaserman"
+
+xsi5 = "ispilo_rifle_skel.fbx" // Sniper
+cfg5 = "issold3"
+Description5 = "Rocketman"
+
+///////------------  ivar4 value for map infs ------------////////////
+
+//   Hover Sniper        //  1
+//   Shock Trooper       //  2
+//   Laserman            //  4 
+//   Phaserman           //  8
+//   Rocketman           //  16
+
+
+

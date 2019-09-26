@@ -1,0 +1,20 @@
+[WeaponClass]
+classLabel = "targeting"
+altName = "gtaggun_a"
+ordName = "BZ1swarmer"
+wpnName = "BZ1TAG Cannon"
+fireSound = "gBZ1tagg00.wav"
+wpnReticle = "gtaggun.0"
+wpnCategory = "ROCK"
+isAssault = 0
+aiRange = 200
+
+[TargetingGunClass]
+leaderName = "leader_c"
+leaderSound = "gBZ1tagg03.wav"
+shotDelay = 1.0
+firstDelay = 1.0
+salvoDelay = 0.2
+salvoCount = 10
+lockingReticle = "gtaggun.1"
+lockedReticle = "gtaggun.2"

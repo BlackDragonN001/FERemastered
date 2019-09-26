@@ -1,0 +1,31 @@
+[GameObjectClass]
+geometryName = "techsensor2.xsi"
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 1000
+maxAmmo = 1
+unitName = "Pod Mine"
+heatSignature = 0.001
+imageSignature = 0.00
+radarSignature = 0.00
+//isAssault = 0
+armorClass = L
+canCollide = 0
+canDetect = 1 
+canInteract = 1 
+ownsTerrain = 0
+
+
+[MineClass]
+lifeSpan = 1.51 // -trigger * shotdelay for count
+
+[FlareMineClass]
+payloadName = "podkicker"
+fireSound = "snip02.wav"// "mnu_back.wav" 
+triggerDelay = 1.5
+shotDelay = 3.0 
+shotVariance = 2.5
+
+[BuildingClass]
+SoundAmbient = "mnu_back.wav" 

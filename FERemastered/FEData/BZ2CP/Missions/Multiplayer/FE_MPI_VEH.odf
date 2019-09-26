@@ -1,0 +1,18 @@
+//
+// FE_MPI_VEH.odf - listing of multiplayer vehicles usable in BZCC
+//
+// Tip: do not put .odf extension on cfg# = "" entries; added automatically on loading
+// 
+
+[MPVehicles]
+xsi1 = "ivscout00.fbx"
+cfg1 = "ivscout"
+Description1 = "Thunderbolt"
+
+xsi2 = "fvscout_skel.fbx"
+cfg2 = "fvscout"
+Description2 = "Drone"
+
+xsi3 = "evscout00.fbx"
+cfg3 = "evscout"
+Description3 = "Xypos"

@@ -1,0 +1,89 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX = 2048.0
+MinZ = 2048.0
+Width = 4096.0
+Depth = 4096.0
+Height = 200.0
+Tile = 1
+Color = "212 184 217 255"
+
+[NormalView] 
+FogColor="40 30 70"
+FogStart250
+FogEnd=350
+VisibilityRange=375
+
+[World]
+MusicTrack1=5
+MusicTrack2=6
+MusicTrack3=7
+MusicTrack4=1
+MusicTrack5=2
+
+[Light]
+SunPeriod = 24.0
+SunAngle = 6.0
+SunColor = "255 255 255 255"
+AmbientColor = "80 60 160"
+
+[Sky]
+SkyType= 0
+SkyHeight = 100
+SkyTexture = darksky.tga
+SkyColor = "148 81 103" //"32 48 64 255"
+SunTexture = sun.0
+SunColor = "0 0 0 0"
+
+[Water]
+WaterTexture1 = "water256.tga"
+WaterDiffuse1 = "13 39 71 220"
+WaterBlend1 = "srcalpha invsrcalpha modulatealpha"
+BumpTexture1 = "water256.tga"
+BumpDiffuse1 = "13 39 71 220"
+BumpBlend1 = "srcalpha invsrcalpha modulatealpha"
+
+[Texture]
+TileTexture1  = "bane.tga"
+TileTexture2  = "bane2.tga"
+TileTexture3  = "bane3.tga"
+TileTexture4  = "bane4.tga"
+TileTexture5  = "bane5.tga"
+TileTexture6  = "bbextf01.pic"
+TileTexture7  = "bbextf02.pic"
+
+[DomeLight0]
+Name    = "banesky"
+Time0   = 0
+Yaw0    = 0		      // 0=N, 90=E, -90=W, 180=S
+Pitch0  = -65		// 0=Forward -90=Above
+Dist0   = -80           // 100m from center of dome
+
+[DomeLight1]
+Name    = "banesun_1"
+Time0   = 0
+Yaw0    = 90
+Pitch0  = -65
+Dist0   = -80
+
+[/DomeLight2]
+Name    = "banesun_2"
+Time0   = 0
+Yaw0    = 100
+Pitch0  = 0
+Dist0   = 100
+
+[Dome]
+DomeGeom    = "banedome.xsi"
+DomeRadius  = 375
+DomeHeight  = 0
+DomeType    = 0
+DomeUVSpeed = "0.002 0.002 0.002"
+
+Count       = 0
+Type        = 1
+TileSize    = 375
+
+
+

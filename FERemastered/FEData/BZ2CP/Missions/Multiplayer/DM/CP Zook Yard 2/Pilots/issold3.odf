@@ -1,0 +1,38 @@
+[GameObjectClass]
+baseName = "ispilo"
+classLabel = "ispilo"
+
+scrapValue = 0
+
+addAmmo = 10
+unitName = "RocketMan"
+aiName = "SoldierProcess"
+heatSignature = 10
+imageSignature = 10
+radarSignature = 10
+canDetect = 1
+canInteract = 1
+
+weaponHard1 = "HP_HAND_1"
+visualHard1 = "HP_DOCK_H"
+weaponAssault1 = 0
+weaponName1 = "fgbzka_c2"
+
+weaponHard2 = ""
+visualHard2 = ""
+weaponAssault2 = 1
+weaponName2 = "" //"fgbzka_a"
+
+weaponHard3 = "HP_PACK_1"
+visualHard3 = "HP_DOCK_P"
+weaponAssault3 = 0
+weaponName3 = "igjetp2"
+
+[CraftClass]
+rangeScan = 300.0
+periodScan = 0.0
+velocJam = 0.0
+
+[PersonClass]
+
+animRate = 8.0

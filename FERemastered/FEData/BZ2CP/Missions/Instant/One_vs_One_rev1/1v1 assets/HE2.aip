@@ -1,0 +1,163 @@
+[Start]
+consClass = "evcons"
+scavClass = "evscav"
+
+[Cheat]
+moneyAmount = 20
+moneyDelay = 5
+
+
+[Plan1]
+planType = "buildminimums"
+planpriority = 200
+buildtype1 = "evscav"
+buildcount1 = 2
+
+[plan2]
+plantype = "buildminimums"
+planpriority = 195
+buildtype1 = "evcons"
+buildcount1 = 1
+
+[plan3]
+plantype = "basebuildminimums"
+planpriority = 190
+buildtype1 = "ebpgen"
+buildloc1 = "hpower1"
+buildtype2 = "ebfact"
+buildloc2 = "hfactory"
+buildtype3 = "ebgt2g"
+buildloc3 = "spike1"
+
+[plan4]
+plantype = "basebuildminimums"
+planpriority = 186
+buildtype1 = "ebpgen"
+buildloc1 = "hpower2"
+buildtype2 = "ebcbun"
+buildloc2 = "hbunker"
+
+[plan5]
+plantype = "basebuildminimums"
+planpriority = 170
+buildtype1 = "ebarmo"
+buildloc1 = "harmory"
+buildtype2 = "ebsbay"
+buildloc2 = "hservicebay"
+buildtype3 = "ebpgen"
+buildloc3 = "hpower3"
+
+[plan6]
+plantype = "collectpool"
+planpriority = 111
+donextonfail = 1
+
+[plan7]
+plancondition = "NotExists"
+planconditionclass = "ebfact2"
+planconditioncount = 1
+plantype = "upgrade"
+planpriority = 160
+Unittype = "ebfact"
+
+[plan8]
+plantype = "Hold"
+planpriority = 118
+holdtype1 = "evwalk"
+holdcount1 = 1
+holdpoint = "hold3"
+maxtries = 1
+
+[plan9]
+plantype = "basebuildminimums"
+planpriority = 150
+buildtype1 = "ebgt4g"
+buildloc1 = "hgtow1"
+buildtype2 = "ebtrain"
+buildloc2 = "htraining"
+buildtype3 = "ebtcen"
+buildloc3 = "htechcenter"
+
+[plan10]
+plantype = "buildminimums"
+planpriority = 155
+buildtype1 = "evtank4w"
+buildcount1 = 1
+buildtype2 = "evscav4w"
+buildcount2 = 1
+
+[plan11]
+plantype = "Collectpool"
+planpriority = 198
+donextonfail = 1
+
+[plan12]
+plantype = "collectpool"
+planpriority = 199
+donextonfail = 1
+
+[plan13]
+plantype = "Hold"
+planpriority = 119
+holdtype1 = "evwalk"
+holdcount1 = 1
+holdpoint = "hold4"
+
+[plan14]
+plantype = "buildminimums"
+planpriority = 130
+buildtype1 = "evkami"
+buildcount1 = 2
+
+[plan15]
+plancondition = "Hisexists"
+planconditionclass = "ibscav"
+planconditioncount = 1
+plantype = "attacker"
+planpriority = 125
+targettype = "ibscav"
+attacktype1 = "evkami"
+
+[plan16]
+plancondition = "Hisexists"
+planconditionclass = "ibscav"
+planconditioncount = 2
+plantype = "attacker"
+planpriority = 126
+targettype = "ibscav"
+attacktype1 = "evkami"
+
+[plan17]
+plantype = "buildminimums"
+planpriority = 120
+buildtype1 = "evwalk"
+buildcount1 = 2
+
+
+[plan18]
+plantype = "collectpool"
+planpriority = 131
+donextonfail = 1
+
+[plan19]
+plancondition = "hisexists"
+planconditionclass = "ibgtow"
+planconditioncount = 1
+plantype = "attacker"
+planpriority = 145
+targettype = "ibgtow"
+attacktype1 = "evtank"
+attacktype2 = "evtank"
+buildifnoidle = 1
+donextonfail = 1
+
+[plan20]
+plantype = "buildminimums"
+planpriority = 100
+buildtype1 = "evmislu4w"
+buildcount1 = 2
+
+[plan21]
+plantype = "collectpool"
+planpriority = 101
+donextonfail = 1

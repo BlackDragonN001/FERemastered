@@ -1,0 +1,55 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = NULL // "glaser_a2"
+ordName = "stickler"
+wpnName = "Stickler"
+fireSound = "gbmin00.wav"
+wpnReticle = "glaser"
+wpnCategory = "CANNON"
+isAssault = 0
+aiRange = 250
+flashName = "gstickler.flash"
+
+// external geometry
+geometryName = "igsnip_skel.fbx"
+//geometryScale = 0.12
+animCount = 4
+animName1 = "skel"
+animFile1 = "igsnip_skel.fbx"
+animName2 = "walk"
+animFile2 = "igsnip_skel.fbx"
+animName3 = "crouch"
+animFile3 = "igsnip_deploy.fbx"
+animName4 = "jump"
+animFile4 = "igsnip_skel.fbx"
+
+// cockpit geometry
+cockpitName = "iwrifl_cockpit_skel.fbx"
+//cockpitScale = 0.8
+animCountCockpit = 4
+animNameCockpit1 = "skel"
+animFileCockpit1 = "iwrifl_cockpit_skel.fbx"
+animNameCockpit2 = "walk"
+animFileCockpit2 = "iwrifl_cockpit_run.fbx"
+animNameCockpit3 = "crouch"
+animFileCockpit3 = "iwrifl_cockpit_sniper.fbx"
+animNameCockpit4 = "jump"
+animFileCockpit4 = "iwrifl_cockpit_skel.fbx"
+
+
+[CannonClass]
+shotDelay = 1.0 // .5/sec
+salvoCount = 5
+salvoDelay = 0.15
+shotVariance = 0.00001
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "plasma.tga" //"sflash.tga"
+textureBlend = "one one modulate"
+startColor = "155 127 255 255"
+finishColor = "155 127 255 0"
+startRadius = 16.0
+finishRadius = 0.75
+animateTime = 0.15
+geomName = "g_fflash.xsi"

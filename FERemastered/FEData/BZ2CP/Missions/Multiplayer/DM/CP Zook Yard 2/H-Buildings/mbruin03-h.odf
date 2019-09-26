@@ -1,0 +1,14 @@
+[GameObjectClass]
+classLabel = "mbruin03"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0 // 5000
+
+unitName = "Temple"
+heatSignature = 0.0 // 0.8
+imageSignature = 0.0 // 8.0
+radarSignature = 0.0 // 1.0
+
+[BuildingClass]
+SoundAmbient = "baruin1b.wav"
+SoundAmbientDist = 0.8

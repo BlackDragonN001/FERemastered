@@ -1,0 +1,26 @@
+[WeaponClass]
+classLabel = "multilauncher"
+ordName = "torp_c"
+altName = "gtorp_a"
+wpnName = "Photon Torpedo"
+fireSound = "torp1.wav"
+wpnReticle = "gsonic_c"
+wpnCategory = "CANN"
+aiRange = 150
+isAssault = 0
+
+[LauncherClass]
+lockRange = 180.0
+shotDelay = .33
+lockDelay = 1
+coneAngle = 0.05
+lockingReticle = "gshadow.A"
+lockingSound = "lock01.wav"
+lockedReticle = "gshadow.B"
+lockedSound = "lock02.wav"
+targetCount = 3
+targetReticle = "gmlock_c.1"
+
+[MultiLauncherClass]
+targetCount = 3
+loseAngle = 1//.2

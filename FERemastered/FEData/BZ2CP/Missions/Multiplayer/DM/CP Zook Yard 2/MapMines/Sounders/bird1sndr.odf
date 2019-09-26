@@ -1,0 +1,11 @@
+[GameObjectClass]
+classLabel = "FXMine"
+
+[MineClass]
+
+[FlareMineClass]
+
+payloadName = "bird1snd" // this one is timed by shot delay
+fireSound = "mire.wav" // this one just loops
+triggerDelay = 0.001 
+shotDelay = 15.0 

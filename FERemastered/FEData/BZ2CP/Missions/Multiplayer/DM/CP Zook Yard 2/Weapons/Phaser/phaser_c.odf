@@ -1,0 +1,62 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+shotSound = "flash01.wav" 
+renderName = "phaser_c.render"
+
+xplGround = "xphasgnd_c"
+xplVehicle = "xphascar_c"
+xplBuilding = "xphascar_c"
+xplExpire = "xphasxpr"
+
+ammoCost = .50 //
+lifeSpan = 1.6 // 160m
+shotSpeed = 100 //
+
+damageRadius = 1.0
+kickRadius = 0.8
+kickOmega = 1.0 
+kickVeloc = -1.5
+
+damageValue(N) = 1.5 // 1.4
+damageValue(L) = 2 //
+damageValue(H) = 3 //
+
+damageValue(S) = 1 //
+damageValue(D) = 1 // 
+damageValue(A) = 1 //
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "phaser_c.flare"
+renderName2 = "phaser_c.halo"
+renderName3 = "phaser_c.trail"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 60 0 120"
+finishColor = "255 30 0 120"
+startRadius = 1.4
+finishRadius = 1.4
+
+[Halo]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "255 130 0 127"
+finishColor = "255 30 0 127"
+startRadius = 0.2
+finishRadius = 0.2
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 0 90"
+finishColor = "255 0 0 0"
+startRadius = 0.5
+finishRadius = 0.0
+segmentTime = .05 //0.3

@@ -1,0 +1,15 @@
+[GameObjectClass]
+classLabel = "ibgtow01"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 400
+
+heatSignature = 0.0 // 2.0
+imageSignature = 0.0 // 1.0
+radarSignature = 0.0 // 1.0
+canDetect = 0
+canInteract = 0
+
+armorClass = N
+
+[BuildingClass]

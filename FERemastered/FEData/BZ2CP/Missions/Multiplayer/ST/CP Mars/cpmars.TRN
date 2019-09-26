@@ -1,0 +1,35 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX=-1024
+MinZ=-1024
+Width=2560
+Depth=2560
+Height=100
+Tile = 1
+color=149 123 87 255
+
+[NormalView]
+
+FogColor="106 63 44 255"
+FogStart=200
+FogEnd=350
+VisibilityRange=375
+
+[World]
+MusicTrack1=9
+MusicTrack2=3
+MusicTrack3=4
+
+
+[Texture]
+TileTexture1 = "mars1.tga"
+TileTexture2 = "mars2.tga"
+TileTexture3 = "mars3.tga"
+TileTexture4 = "mars4.tga"
+TileTexture5 = "mars5.tga"
+TileTexture6 = "mars6.tga"
+TileTexture7 = "mars7.tga"
+TileTexture9 = "dark3.tga"
+TileTexture10 = "dark6.tga"
+

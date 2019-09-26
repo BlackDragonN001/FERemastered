@@ -1,0 +1,25 @@
+[GameObjectClass]
+baseName = "ispilo"
+classLabel = "ispilo"
+
+scrapValue = 0
+unitName = "Phaserman"
+
+heatSignature = 10
+imageSignature = 10
+radarSignature = 10
+canDetect = 1
+canInteract = 1 
+
+weaponName1 = "gphaser_c"
+weaponName2 = "gphaser_a"
+weaponName3 = "igjetp2"
+
+[CraftClass]
+rangeScan = 325.0
+periodScan = 0.0
+velocJam = 0.0
+
+[PersonClass]
+
+animRate = 8.0

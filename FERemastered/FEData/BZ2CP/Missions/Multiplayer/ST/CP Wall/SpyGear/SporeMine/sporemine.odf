@@ -1,0 +1,28 @@
+[GameObjectClass]
+geometryName = "igflar00.fbx"
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 35 //1
+unitName = "Spore Mine"
+heatSignature = 1.01
+imageSignature = 1.01
+radarSignature = 1.0
+//isAssault = 0
+armorClass = N
+canCollide = 1
+canDetect = 1 
+canInteract = 1 
+ownsTerrain = 0
+
+
+[MineClass]
+lifeSpan = 4.0 // 3.7 // -trigger * shotdelay for count
+
+[FlareMineClass]
+payloadName = "aaspore"
+fireSound = "quill01.wav"
+triggerDelay = 1.0
+shotDelay = 0.3
+shotVariance = 3.0 

@@ -1,0 +1,63 @@
+[GameObjectClass]
+baseName = "ispilo"
+classLabel = "ispilo"
+
+scrapValue = 0
+
+maxHealth = 150
+unitName = "Leap Bomber"
+heatSignature = 10
+imageSignature = 10
+radarSignature = 10
+canDetect = 1
+canInteract = 1
+
+weaponName1 = "igtracker" //"igadvsnp_c"
+weaponName2 = "glaser_a2"
+weaponName3 = "iggren2"
+
+[CraftClass]
+rangeScan = 350.0
+periodScan = 0.0
+velocJam = 0.0
+
+[PersonClass]
+
+// crawling mode
+alphaDampCrawl    = 10.0
+alphaTrackCrawl   = 20.0
+accelThrustCrawl  = 20.0 // 10.0 friction from sliding while kneeling
+omegaSpinCrawl    = 1.2
+omegaTurnCrawl    = 1.2
+alphaSteerCrawl   = 1.0
+pitchScaleCrawl   = 0.5
+
+// running mode
+alphaDampRun     = 10.0
+alphaTrackRun    = 20.0
+velocForwardRun  = 9 // 7.5
+velocReverseRun  = 9 // 7.5
+velocStrafeRun   = 9 // 7.5
+accelThrustRun   = 40.0
+omegaSpinRun     = 2.5
+omegaTurnRun     = 1.5
+alphaSteerRun    = 10.0
+velocJumpRun     = 21.0  // 5.0, 25 makes 30 meter leap, hurts head in tunnels
+pitchScaleRun    = 1.5
+
+// flying mode
+alphaDampFly      = 2.0  // 2.0   this keep you from tipping over
+alphaTrackFly     = 5.0  // 5.0 also related to tipping over
+pitchPitchFly     = 0.35 // 0.35, 0 makes you tippy
+pitchThrustFly    = 0.0  // 0.15  not sure yet, set to 40 didnt notice 
+rollStrafeFly     = 0.15 // 0.15 set to 20, not very noticeable
+velocForwardFly   = 9.5  // 10 movement speed
+velocReverseFly   = 9.5  // 10 movement speed
+velocStrafeFly    = 9.5  // 10 movement speed
+accelThrustFly    = 5.0  // 5.0 this allows you direction changes in flight
+omegaTurnFly      = 4.0
+alphaSteerFly     = 10.0 // 10.0 didnt notice when it was .5
+velocJumpFly      = 0.0  // 0.0 no effect
+pitchScaleFly     = 1.2  // 1.0 this affects how fast you can look up and down
+
+animRate = 8.0

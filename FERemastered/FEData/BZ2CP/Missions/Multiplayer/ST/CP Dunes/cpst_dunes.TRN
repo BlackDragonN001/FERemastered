@@ -1,0 +1,84 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX = -2048.0
+MinZ = -2048.0
+Width = 4096.0
+Depth = 4096.0
+Height = 5.0
+Tile = 1
+Color = "170 150 120 255"
+
+[NormalView]
+FogColor="165 143 156 255"
+FogStart=300
+FogEnd=400
+VisibilityRange=400
+
+[World]
+MusicTrack1=7
+MusicTrack2=8
+MusicTrack3=9
+MusicTrack4=10
+
+[Light]
+SunPeriod = 24.0
+SunAngle = 9.0
+SunColor = "255 255 255 255" //"128 128 128 128" "32 48 64 48"
+AmbientColor = "102 102 102"
+
+[Sky]
+SkyType= 0
+SkyHeight = 100
+SkyTexture = darksky.tga
+SkyColor = "148 81 103" //"32 48 64 255"
+SunTexture = sun.0
+SunColor = "255 255 255"
+
+[Water]
+WaterTexture1 = "water256.tga"
+WaterDiffuse1 = "96 128 64 64"
+WaterBlend1 = "srcalpha invsrcalpha modulatealpha"
+BumpTexture1 = "water256.tga"
+BumpDiffuse1 = "96 128 64 64"
+BumpBlend1 = "srcalpha invsrcalpha modulatealpha"
+
+[Texture]
+TileTexture1 = "dune1.tga"
+TileTexture2 = "dune2.tga"
+TileTexture3 = "dune3.tga"
+TileTexture4 = "dune4.tga"
+TileTexture5 = "dune5.tga"
+TileTexture6 = "dune6.tga"
+TileTexture7 = "dune7.tga"
+TileTexture8 = "dune8.tga"
+TileTexture9 = "dune9.tga"
+
+
+[DomeLight0]
+Name    = "miresky"
+Time0   = 0
+Yaw0    = 0		// 0=N, 90=E, -90=W, 180=S
+Pitch0  = -90		// 0=Forward -90=Above
+Dist0   = 10		// 100m from center of dome
+
+[DomeLight1]
+Name    = "miresun_1"
+Time0   = 0
+Yaw0    = -35
+Pitch0  = 0
+Dist0   = 200
+
+[DomeLight2]
+Name    = "miresun_2"
+Time0   = 0
+Yaw0    = 100
+Pitch0  = 0
+Dist0   = 100
+
+[Dome]
+DomeGeom    = "miredome.xsi"
+DomeRadius  = 200
+DomeHeight  = 50
+DomeType    = 0
+DomeUVSpeed = "0.002 0.002 0.002"

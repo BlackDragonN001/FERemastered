@@ -1,0 +1,190 @@
+[Start]
+scrapCount = 40
+consClass = "fvcons"
+scavClass = "fvscav"
+
+[Cheat]
+moneyAmount = 20
+moneyDelay = 10
+
+[Plan1]
+planType = "buildminimums"
+planPriority = 200
+buildtype1 = "fvscav"
+buildcount1 = 2
+
+[Plan2]
+planType = "CollectPool"
+planPriority = 195
+doNextOnFail = 1
+
+[Plan3]
+plantype = "buildminimums"
+planpriority = 190
+buildtype1 = "fvcons"
+buildcount1 = 1
+
+[plan4]
+plantype = "basebuildminimums"
+planpriority = 185
+buildtype1 = "fbkiln"
+buildloc1 = "kiln"
+buildtype2 = "fbdowe"
+buildloc2 = "dower"
+
+[plan6]
+plancondition = "NotExists"
+planconditionclass = "fbforg"
+planconditioncount = 1
+plantype = "upgrade"
+planpriority = 175
+Unittype = "fbkiln"
+
+[plan7]
+plantype = "buildminimums"
+planpriority = 170
+buildtype1 = "fvtank4w"
+buildcount1 = 1
+buildtype2 = "fvturr13"
+buildcount2 = 1
+
+[plan8]
+plantype = "basebuildminimums"
+planpriority = 165
+buildtype1 = "fbstro"
+buildloc1 = "stronghold"
+buildtype2 = "fbantm"
+buildloc2 = "antenna"
+
+[plan9]
+plancondition = "NotExists"
+planconditionclass = "fbover"
+planconditioncount = 1
+plantype = "upgrade"
+planpriority = 169
+Unittype = "fbantm"
+
+[plan10]
+plantype = "basebuildminimums"
+planpriority = 164
+buildtype1 = "fbspir"
+buildloc1 = "spire1"
+buildtype2 = "fbspir"
+buildloc2 = "spire2"
+
+[plan11]
+plantype = "Hold"
+planpriority = 134
+holdtype1 = "fvartl"
+holdcount1 = 1
+holdpoint = "hold2"
+
+[plan12]
+plantype = "basebuildminimums"
+planpriority = 189
+buildtype1 = "fbspir"
+buildloc1 = "spire3"
+donextonfail = 1
+
+[plan13]
+plantype = "collectpool"
+planpriority = 196 
+donextonfail = 1
+
+[plan14]
+plantype = "Hold"
+planpriority = 158
+holdtype1 = "fvartl"
+holdcount1 = 1
+holdpoint = "hold1"
+donextonfail = 1
+
+[plan15]
+plantype = "buildminimums"
+planpriority = 155
+buildtype1 = "fvrbomb"
+buildcount1 = 1
+buildtype2 = "fvwalk"
+buildcount2 = 2
+
+[plan16]
+plantype = "attacker"
+planpriority = 150
+targettype = "fbrecy_m"
+attacktype1 = "fvrbomb"
+
+[plan17]
+plancondition = "Hisexists"
+planconditionclass = "fvscav"
+planconditioncount = 1
+plantype = "attacker"
+planpriority = 145
+targettype = "fvscav"
+attacktype1 = "fvwalk"
+donextonfail = 1
+
+[plan18]
+plancondition = "Hisexists"
+planconditionclass = "fbscav"
+planconditioncount = 1
+plantype = "attacker"
+planpriority = 144
+targettype = "fbscav"
+attacktype1 = "fvwalk"
+donextonfail = 1
+
+[plan19]
+plantype = "collectpool"
+planpriority = 140 
+donextonfail = 1
+
+[plan20]
+plantype = "buildminimums"
+planpriority = 130
+buildtype1 = "fvarch"
+buildcount1 = 2
+buildtype2 = "fvatank"
+buildcount2 = 1
+
+[plan21]
+plancondition = "HisExists"
+planconditionclass = "fbscav"
+planconditioncount = 2
+plantype = "attacker"
+planpriority = 120
+targettype = "fbscav"
+attacktype1 = "fvarch"
+attacktype2 = "fvarch"
+buildifnoidle = 1
+donextonfail = 1
+
+[plan22]
+plantype = "collectpool"
+planpriority = 143
+donextonfail = 1
+
+
+[plan23]
+plancondition = "HisExists"
+planconditionclass = "fbforg"
+planconditioncount = 1
+plantype = "attacker"
+planpriority = 120
+targettype = "fbforg"
+attacktype1 = "fvatank"
+
+[plan24]
+plantype = "collectpool"
+planpriority = 186
+donextonfail = 1
+
+[plan25]
+plantype = "collectpool"
+planpriority = 151
+donextonfail = 1
+
+[plan26]
+plantype = "buildminimums"
+planpriority = 159
+buildtype1 = "fvartl"
+buildcount1 = 2

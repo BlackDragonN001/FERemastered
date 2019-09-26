@@ -1,0 +1,67 @@
+[OrdnanceClass]
+classLabel = "anchor"//"bullet"
+
+shotGeometry = "iorckt00.xsi" // NULL
+shotRadius = 0.5
+xplGround = "xchrggnd1"
+xplVehicle = "xchrgcar1"
+xplBuilding = "xchrgcar1"
+
+renderName = "charge_g.render"
+
+ammoCost = 1.5
+lifeSpan = 2.5 
+shotSpeed = 40.0
+
+damageValue(N) = 0 // none 
+damageValue(L) = 0 // light 
+damageValue(H) = 0 // heavy 
+
+damageValue(S) = 0 // standard 
+damageValue(D) = 0 // deflection 
+damageValue(A) = 0 // absorbtion 
+
+[LeaderRoundClass]
+stickTime = 1.25 //
+
+[AnchorRocketClass]
+accelDrag = 12.0 // 8.0
+alphaDrag = 2.5 // 0.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "charge_g.flare"
+renderName2 = "charge_g.halo"
+renderName3 = "charge_g.trail"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "200 200 20 255"
+finishColor = "200 200 20 255"
+startRadius = 0.5
+finishRadius = 0.5
+
+[Halo]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "150 160 50 127"
+finishColor = "150 160 50 127"
+startRadius = 0.5
+finishRadius = 0.5
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "boltline.tga"
+textureBlend = "one one modulate"
+startColor = "200 200 0 255"
+finishColor = "200 200 0 0"
+startRadius = 0.1    //0.3
+finishRadius = 0.01  //0.05
+segmentTime = 0.9  // time each segment animates
+segmentVariance = "0.001 0.001 0.001 "
+animateTime = 0.2 
+textureRate = 0.01

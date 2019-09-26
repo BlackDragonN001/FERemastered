@@ -1,0 +1,54 @@
+/////////////////////////////////////////////////////////////////////////////
+//
+// DMPilots.txt - listing of multiplayer DM pilots usable in FE Pilot Games
+//  
+/////////////////////////////////////////////////////////////////////////////
+
+[MPVehicles]
+xsi1 = "ispilo_rifle_skel.fbx" // Sniper
+cfg1 = "ishsnp"
+Description1 = "Hover Sniper"
+
+xsi2 = "ispilo_rifle_skel.fbx" // Bazooka
+cfg2 = "isgren1"
+Description2 = "Mad Bomber"
+
+xsi3 = "ispilo_rifle_skel.fbx" // Sniper
+cfg3 = "isgren2"
+Description3 = "Leap Bomber"
+
+xsi4 = "ispilo_rifle_skel.fbx" // Bazooka
+cfg4 = "isshock"
+Description4 = "Shock Trooper"
+
+xsi5 = "ispilo_rifle_skel.fbx" // Sniper
+cfg5 = "islase"
+Description5 = "Laserman"
+
+xsi6 = "ispilo_rifle_skel.fbx" // Sniper
+cfg6 = "isphase"
+Description6 = "Phaserman"
+
+xsi7 = "ispilo_rifle_skel.fbx" // Bazooka
+cfg7 = "issold3"
+Description7 = "Rocketman"
+
+xsi8 = "ispilo_rifle_skel.fbx" // Bazooka
+cfg8 = "issold2"
+Description8 = "Bazookaman"
+
+xsi9 = "ispilo_rifle_skel.fbx" // Sniper
+cfg9 = "isgsnp"
+Description9 = "Tech Sniper"
+
+///////---------  ivar4 value for map infs ----------////////////
+
+//  Sniperman              //  1
+//  Mad Bomber             //  2 
+//  Leap Bomber            //  4
+//  Shock Trooper          //  8
+//  Laserman               //  16
+//  Phaserman              //  32
+//  Rocketman              //  64
+//  Bazookaman             //  128
+//  Tech Sniper            //  256

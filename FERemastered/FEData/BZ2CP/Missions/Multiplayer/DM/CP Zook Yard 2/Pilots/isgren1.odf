@@ -1,0 +1,58 @@
+[GameObjectClass]
+baseName = "ispilo"
+classLabel = "ispilo"
+
+scrapValue = 0
+maxHealth = 200  // 100
+addAmmo = 10
+unitName = "Mad Bomber"
+heatSignature = 10
+imageSignature = 10
+radarSignature = 10
+canDetect = 1
+canInteract = 1
+
+weaponName1 = "igbzka_c"
+weaponName2 = "igdmsatc" 
+weaponName3 = "iggren2"
+
+[CraftClass]
+rangeScan = 325.0
+periodScan = 0.0
+velocJam = 0.0
+
+[PersonClass]
+
+// crawling mode
+alphaDampCrawl    = 10.0
+alphaTrackCrawl   = 20.0
+accelThrustCrawl  = 10.0
+omegaSpinCrawl    = 1.1 //0.9
+omegaTurnCrawl    = 1.1 //0.9
+alphaSteerCrawl   = 1.0
+pitchScaleCrawl   = 0.5
+
+// running mode
+alphaDampRun     = 10.0
+alphaTrackRun    = 20.0
+velocForwardRun  = 7.1  // 7.0
+velocReverseRun  = 7.1  // 7.0
+velocStrafeRun   = 7.1  // 7.0
+accelThrustRun   = 40.0
+omegaSpinRun     = 2.5
+omegaTurnRun     = 1.5
+alphaSteerRun    = 10.0
+velocJumpRun     = 5.8  //  5.0 ..  a little more for his madness
+pitchScaleRun    = 1.5
+
+// flying mode
+velocForwardFly   = 10.6  // 10
+velocReverseFly   = 10.6  // 10
+velocStrafeFly    = 10.6  // 10
+accelThrustFly    = 5.5 // 5
+omegaTurnFly      = 4.0
+alphaSteerFly     = 10.0
+velocJumpFly      = 0.0
+pitchScaleFly     = 1.0
+
+animRate = 8.0 //8.0

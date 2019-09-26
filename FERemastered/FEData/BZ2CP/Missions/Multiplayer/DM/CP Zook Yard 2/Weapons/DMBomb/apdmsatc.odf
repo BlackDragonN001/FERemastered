@@ -1,0 +1,16 @@
+[GameObjectClass]
+baseName = "apdmsatc"
+classLabel = "appack"
+
+scrapCost = 20
+
+unitName = "Time Bomb"
+
+requireCount = 1
+requireName1 = "ibtcen"
+requireText1 = "Build Tech Center"
+
+[PowerUpClass]
+
+[WeaponPowerupClass]
+weaponName = "igdmsatc"

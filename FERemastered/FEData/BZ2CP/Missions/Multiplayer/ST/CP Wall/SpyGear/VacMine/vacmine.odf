@@ -1,0 +1,30 @@
+[GameObjectClass]
+geometryName = "igflar00.fbx"
+//geometryScale = .5
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 300
+maxAmmo = 1
+unitName = "Vac Mine"
+addAmmo = 1
+addHealth = .5
+
+fireSound = "gmasg00.wav"
+
+heatSignature = 0.01
+imageSignature = 0.1
+radarSignature = 0.01
+canDetect = 1
+canInteract = 1
+canCollide = 1
+armorClass = L // so a disruptor is fast against it
+
+[MineClass]
+lifeSpan = 30 
+
+[FlareMineClass]
+payloadName = "vacflak"
+triggerDelay = 2.0
+shotDelay = 0.2
+shotVariance = 0.02

@@ -1,0 +1,14 @@
+[WeaponClass]
+classLabel = "mortar"
+geometryName = "iggren00.fbx"
+geometryScale = 0.12
+ordName = "grenade2"
+wpnName = "Concussion Grnd"
+wpnIcon = "wire_iggren3.tga" //"wire_iggren%d.tga"
+fireSound = "mdmort03.wav"
+wpnReticle = "gmortar"
+wpnLadder = "gmortar.L0"
+wpnCategory = "PACK"
+
+[CannonClass]
+shotDelay = 2.5

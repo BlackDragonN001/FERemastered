@@ -1,0 +1,58 @@
+[OrdnanceClass]
+classLabel = "anchor"
+
+shotGeometry = "NULL"
+shotSound = "sonic03c.wav"
+
+xplGround = "xzempgnd_c"
+xplVehicle = "xzempcar_c"
+xplBuilding = "xzempcar_c"
+
+renderName = "zempdown_c.render"
+
+ammoCost = 10
+lifeSpan = 0.75 
+shotSpeed = 200.0
+
+damageValue(N) = 1 // none
+damageValue(L) = 1 // light
+damageValue(H) = 1 // heavy
+
+damageValue(S) = 1 // standard
+damageValue(D) = 1 // deflection
+damageValue(A) = 1 // absorbtion
+
+[LeaderRoundClass]
+stickTime = 2.75 //2.0
+
+[AnchorRocketClass]
+accelDrag = 12.5 // 8.0
+alphaDrag = 2.5 // 0.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "zempdown_c.flare"
+renderName2 = "zempdown_c.trail"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "wasplat.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 60 127" 
+finishColor = "255 220 0 0" 
+startRadius = .6 // 1.5
+finishRadius = .2 // 1.0
+
+[Trail]
+renderBase = "draw_twirl_trail"
+textureName = "wasplat.tga"
+textureBlend = "one one modulate"
+startColor = "255 180 60 127" 
+finishColor = "255 220 0 0" 
+startRadius = .6 // 1.0
+finishRadius = 0.001
+animateTime = 0.7
+emitDelay = 0.02
+emitLife = 0.7
+rotationrate = 20
