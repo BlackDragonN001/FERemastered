@@ -1,0 +1,20 @@
+[GameObjectClass]
+classLabel = "ibgtow"
+powerCost = 0
+buildSupport = "A"
+buildRequire = "F"
+
+/////// REQUIRES ///////////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName4 = "ibgtow_c"
+
+[BuildingClass]
+
+[CraftClass]
+
+[TurretCraftClass]
+
+[Lod1]

@@ -1,0 +1,42 @@
+[GameObjectClass]
+classLabel = "ivtank"
+maxHealth = 4000
+maxAmmo = 2600
+addAmmo = 15
+aiName = "AttachWingman"
+aiName2 = "AttachWingman"
+scrapCost = 0
+customCost = 0
+unitName = "Commander"
+armorClass = M
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName4 = "ivcmdr_c"
+
+/////// WEAPONS ////////////////////
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gspstab_c"
+recoilName1 = "recoil"
+weaponAssault1 = 0
+weaponHard2 = "HP_GUN_1"
+weaponName2 = "gchain_c"
+weaponAssault2 = 0
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotred"
+lightHard2 = "hp_light_2"
+lightName2 = "spotred"
+LightsOnlyWhenPiloted = true
+
+[CraftClass]
+
+[HoverCraftClass]
+
+[Lod1]
+
+[Lod2]
