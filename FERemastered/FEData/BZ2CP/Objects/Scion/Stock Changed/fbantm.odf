@@ -1,0 +1,82 @@
+[GameObjectClass]
+geometryName = "fbantm00.fbx"
+animCount = 1 //2
+animName1 = "loop"
+animFile1 = "fbantm00.fbx"
+//animName2 = "deploy"
+//animFile2 = "fbantm01.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+classLabel = "commtower"
+collisionRadius = 1.0
+scrapCost = 60
+scrapValue = 20
+maxHealth = 6000
+maxAmmo = 0
+powerCost = 0
+unitName = "Antenna"
+aiName = "CommTowerProcess"
+aiName2 = "CommTowerProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+collisionName = "fbantm00_col.fbx"
+
+
+armorClass = H
+
+buildSupport = "A"
+buildRequire = "F"
+
+upgradeName = "fbover"
+
+/////// REQUIREMENTS ///////////////
+
+requireCount = 1
+requireName1 = "fbkiln"
+requireText1 = "Build Kiln"
+
+////////////////////////////////////
+
+
+/////// PROVIDES ///////////////////
+
+provideCount = 5
+provideName1 = "fbantm"
+provideName2 = "VIRTUAL_CLASS_COMMBUNKER"
+provideName3 = "VIRTUAL_CLASS_COMMTOWER"
+provideName4 = "VIRTUAL_CLASS_ANTENNA_MOUND"
+provideName5 = "base"
+
+lightHard1 = "hp_light_1"
+lightName1 = "omniteal2"
+
+////////////////////////////////////
+
+[PoweredBuildingClass]
+powerTap1 = "HP_TAP_1"
+powerName = "fblung"
+detectRange = 300
+
+[BuildingClass]
+soundAmbient = "santm01.wav"
+
+[CommBunkerClass]
+rangeScan = 600
+periodScan = 0.0
+viewDist = 300.0
+viewZoom = 1.5
+minZoom = 1.0
+maxZoom = 3.0
+viewPitch = 1.0
+minPitch = 0.75
+maxPitch = 1.5
+nearPlane = 1
+farPlane = 1000
+disableFog = 1
+
+[Lod1]
+//geometryName = "fbantmL1.fbx" ;geometry for lod1
+radius = 50                    ;bsphere under 200 pixel => switch to lod1
+dontShiftLOD = 1

@@ -1,0 +1,87 @@
+[GameObjectClass]
+baseName = "fbover"
+geometryName = "fbover00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "fbover00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+classLabel = "commtower"
+collisionRadius = 1.0
+scrapCost = 80
+scrapValue = 30
+maxHealth = 8000
+maxAmmo = 0
+powerCost = 0
+unitName = "Overseer Array"
+aiName = "CommTowerProcess"
+aiName2 = "CommTowerProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+collisionName = "fbover00_col.fbx"
+
+armorClass = H
+
+buildSupport = "A"
+buildRequire = "F"
+
+/////// REQUIREMENTS ///////////////
+
+requireCount = 2
+requireName1 = "fbantm"
+requireText1 = "Build Antenna"
+requireName2 = "fbforg"
+requireText2 = "Build Forge"
+
+////////////////////////////////////
+
+
+/////// PROVIDES ///////////////////
+
+provideCount = 8
+provideName1 = "fbantm"
+provideName2 = "fbover"
+provideName3 = "VIRTUAL_CLASS_COMMBUNKER"
+provideName4 = "VIRTUAL_CLASS_COMMTOWER"
+provideName5 = "VIRTUAL_CLASS_COMMBUNKER_U"
+provideName6 = "VIRTUAL_CLASS_COMMTOWER_U"
+provideName7 = "VIRTUAL_CLASS_OVERSEER_ARRAY"
+provideName8 = "base"
+
+
+lightHard1 = "hp_light_1"
+lightName1 = "omniteal2"
+
+////////////////////////////////////
+
+[PoweredBuildingClass]
+powerTap1 = "HP_TAP_1"
+powerTap2 = "HP_TAP_2"
+powerName = "fblung"
+detectRange = 600
+
+[BuildingClass]
+soundAmbient = "santm01.wav"
+
+[CommBunkerClass]
+rangeScan = 1000 // copied from ibcbun.odf... fix this?
+periodScan = 0.0
+viewDist = 400.0
+viewZoom = 1.5
+minZoom = 1.0
+maxZoom = 3.0
+viewPitch = 1.0
+minPitch = 0.75
+maxPitch = 1.5
+nearPlane = 1
+farPlane = 1000
+disableFog = 1
+
+[Lod1]
+//geometryName = "fboverL1.xsi" ;geometry for lod1
+distance = 100                    ;bsphere under 200 pixel => switch to lod1
+dontShiftLOD = 1
+
+
