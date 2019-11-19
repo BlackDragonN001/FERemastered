@@ -1,6 +1,6 @@
 -- New MPI Files for FE 
 -- Written by JJ (AI_Unit)
--- Version 1.0 - 26/02/2019
+-- Version 1.0 - 19/11/2019
 
 --[[ TO DO Notes: -GBD
 
@@ -38,6 +38,10 @@ local CPU_COMMANDER_ENABLED = 0;
 local CPU_SUPER_UNITS = 0;
 local CPU_REINFORCEMENTS = 0;
 
+local CPU_SCAV_COUNT = 0;
+local CPU_MAX_SCAVS = 15;
+local MIN_CPU_SCAVS_AFTER_CLEANUP = 5;
+
 local SAVAGE_UNITS = 0;
 local ARTIFACTS = 0;
 local WEAPON_CACHES = 0;
@@ -53,6 +57,8 @@ local MAX_TEAMS = 16;
 local _MPI = {};
 local MPIValues = {};
 local HumanBuildings = {};
+local CPUScavs = {};
+local CPUCons = {};
 
 local AIVehicles = {
 	AIRecycler = nil,
@@ -78,12 +84,15 @@ local AIVehicles = {
 function _MPI.AddObject(h)
 	local ObjBaseClass = GetBase(h);
 	local ODFName = GetCfg(h);
+	local ObjClass = GetClassLabel(h);
 
 	if (GetTeamNum(h) == CPU_TEAM_NUMBER) then
-		if (ODFName == "%svcmdr_c":format(GetRaceOfTeam(CPU_TEAM_NUMBER))) then
+		if (ODFName == ("%svcmdr_c"):format(GetRaceOfTeam(CPU_TEAM_NUMBER))) then
 			AIVehicles.AICommander = h;
 		elseif (ObjBaseClass == "Demolisher") then
-			AIVehicles.AIDemolishers[#AIVehicles.AIDemolishers] = h;
+			AIVehicles.AIDemolishers[#AIVehicles.AIDemolishers + 1] = h;
+		elseif (ObjClass == "CLASS_SCAVENGER" or ObjClass == "CLASS_SCAVENGERH") then
+			_MPI.HandleNewCPUScav(h);
 		end
 	elseif (GetTeamNum(h) == 1) then
 		if (IsBuilding(h)) then
@@ -230,7 +239,7 @@ function _MPI.SetAIPlan(team)
 end
 
 -- Use this to iterate through all active AI teams and add scrap cheats based on options -- AI_Unit.
-function _MPI.Update()
+function _MPI.CustomUpdate()
 	if (IsAlive(AIVehicles.AICommander)) then
 		_MPI.HandleAICommander()
 	end
@@ -244,8 +253,30 @@ end
 function _MPI.HandleAICommander()
 	-- If the Commander is idle, we should send him off to attack or protect something -- AI_Unit.
 	if (IsIdle(AIVehicles.AICommander)) then
-		
+		local attackChance = GetRandomFloat(1.0);
+		local target = nil;
+
+		if (attackChance >= 0.5) then
+			target = HumanBuildings[math.floor(GetRandomFloat(1, #HumanBuildings))];
+
+			if (IsAround(target)) then
+				Attack(AIVehicles.AICommander, target, 1);
+			end
+		else 
+			local defenderChoice = GetRandomFloat(1.0);
+
+			if (defenderChoice < 0.5) then
+				target = CPUScavs[math.floor(GetRandomFloat(1, #CPUScavs))];
+			else
+				target = CPUCons[math.floor(GetRandomFloat(1, #CPUCons))];
+			end
+
+			Defend2(AIVehicles.AICommander, target, 1);
+		end
 	end
+
+	-- If the Commander is low on health or ammo, retreat to the nearest service unit (if available).
+
 end
 
 function _MPI.HandleAIDemolisher(h)
@@ -263,6 +294,41 @@ end
 
 function _MPI.CreateSavageUnits()
 
+end
+
+function _MPI.AddCPUScav(scavHandle)
+	if (CPU_SCAV_COUNT < MAX_CPU_SCAVS) then
+		CPUScavs[CPU_SCAV_COUNT + CPU_SCAV_COUNT + 1] = scavHandle;
+		return;
+	end
+
+	DoTaunt(TAUNTS_Random);
+
+	local newScavList = {};
+	local newScavListCount = 0;
+
+	for i = 1, CPU_SCAV_COUNT do
+		local keepIt = false;
+		local checkScav = CPUScavs[i];
+		
+		keepIt = (checkScav == scavHandle);
+
+		if (keepIt) then
+			newScavList[newScavListCount + newScavListCount + 1] = checkScav;
+		end
+	end
+
+	CPU_SCAV_COUNT = newScavListCount;
+
+	while (CPU_SCAV_COUNT > MIN_CPU_SCAVS_AFTER_CLEANUP) do
+		local i = CPU_SCAV_COUNT - 1;
+
+		SetNoScrapFlagByHandle(CPUScavs[i]);
+		SelfDamage(CPUScavs[i], 9999);
+
+		CPU_SCAV_COUNT = CPU_SCAV_COUNT - 1;
+		CPUScavs[CPU_SCAV_COUNT] = nil;
+	end
 end
 
 function _MPI.CompareAndRemove(handle, list)
