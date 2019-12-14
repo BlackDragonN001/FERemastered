@@ -1,6 +1,10 @@
+// BZ2CP Building "Defender"
+// Original Concept by Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
+
 [GameObjectClass]
 baseName = "ebgt4g"
-geometryName = "ebgt4g00.xsi"
+geometryName = "ebgt4g00.fbx"
 classLabel = "turret"
 collisionRadius = 6.0
 powerCost = 2
@@ -49,8 +53,8 @@ lightHard1 = "hp_light_1"
 lightName1 = "spothadean"
 
 turretCount = 4
-turretName1 = "turret_y_1"
-turretName2 = "turret_x_1"
+turretName1 = "turret_y"
+turretName2 = "turret_x"
 turretName3 = "hp_light_1"
 turretName4 = "hp_eyepoint"
 
