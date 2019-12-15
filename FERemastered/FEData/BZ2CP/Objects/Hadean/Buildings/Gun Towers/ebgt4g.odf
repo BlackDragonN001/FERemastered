@@ -41,11 +41,25 @@ provideName3 = "defender"
 
 weaponMask = 00011
 weaponHard1 = "hp_cannon_1"
+RecoilName1 = "recoil_l"
 weaponName1 = "gcphlaser"
 weaponAssault1 = 0
+weaponGroup1 = 0
 weaponHard2 = "hp_cannon_2"
+RecoilName2 = "recoil_r"
 weaponName2 = "gcphlaser"
 weaponAssault2 = 0
+weaponGroup2 = 1
+weaponHard3 = "hp_cannon_3"
+RecoilName3 = "recoil_l2"
+weaponName3 = "gcphlaser"
+weaponAssault3 = 0
+weaponGroup3 = 0
+weaponHard4 = "hp_cannon_4"
+RecoilName4 = "recoil_r2"
+weaponName4 = "gcphlaser"
+weaponAssault4 = 0
+weaponGroup4 = 1
 
 /////// Lights and Effects ///////////////
 
@@ -53,8 +67,8 @@ lightHard1 = "hp_light_1"
 lightName1 = "spothadean"
 
 turretCount = 4
-turretName1 = "turret_y"
-turretName2 = "turret_x"
+turretName1 = "turret_y_1"
+turretName2 = "turret_x_1"
 turretName3 = "hp_light_1"
 turretName4 = "hp_eyepoint"
 
