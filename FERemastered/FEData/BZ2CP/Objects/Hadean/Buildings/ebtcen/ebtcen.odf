@@ -35,6 +35,10 @@ provideName3 = "base"
 
 /////// Lights and Effects ///////////////////
 
+effectHard1 = "hp_emit_1"
+effectName1 = "ebtcen.render"
+effectFlags1 = 2147483583 // only when powered.
+
 lightHard1 = "hp_light_1"
 lightName1 = "o_orange_nf"
 
@@ -49,3 +53,123 @@ detectRange = 100
 //distance = 100                   ;bsphere under 200 pixel => switch to lod1
 //dontShiftLOD = 1
 
+[Render]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "ebtcen.beam"
+renderName2 = "ebtcen.wave"
+renderName3 = "ebtcen.bolt"
+
+// Won't move without being attached to an emitter. :( -GBD
+// Need a new render type for a static cross plane, like Tracer, but with scrolling UV coordinates.
+//[Beam]
+//renderBase = "draw_bolt"
+//textureName = "trail2.tga" //"arctrail2" 
+//textureBlend = "one one modulate"
+//textureRate = 0.1
+//textureSpeed = -0.3
+//startColor = "255 180 30 200"
+//finishColor = "255 150 30 200"
+//startRadius = 2.0
+//finishRadius = 2.0
+//segmentLength = 5.0
+//segmentVariance = "0.0 0.0 0.0"
+//maxCount = 128
+
+[Beam]
+renderBase = "draw_emit"
+emitName = "ebtcen.beamemit"
+emitDelay = 0.2 // Lower delays cause twitchy position interpolation. -GBD
+emitVelocity = "0.0 100 0.0"
+
+[BeamEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.21
+renderBase = "draw_trail"
+textureName = "arctrail2.tga" //"trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.1 //0.01
+textureSpeed = -0.3
+startColor = "255 180 30 200"
+finishColor = "255 150 30 200"
+startRadius = 2.0
+finishRadius = 2.0
+segmentTime = 0.21
+maxCount = 128
+
+
+[Bolt]
+renderBase = "draw_emit"
+emitName = "ebtcen.boltemit"
+emitDelay = 0.5
+emitDelayVar = 1.0
+emitVelocity = "0.0 60.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitPosVariance = "2.0 0.0 2.0"
+
+[BoltEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.2
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ebtcen.lightemit"
+renderName2 = "ebtcen.boltrender"
+
+[LightEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.2
+renderBase = "draw_light"
+startColor = "255 255 255 1000"
+finishColor = "255 100 0 0"
+startRadius = 0.0
+finishRadius = 60.0
+animateTime = 0.2
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
+
+[BoltRender]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_bolt"
+textureName = "arctrail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.5 //0.1
+textureSpeed = 0.0 //-0.1
+startColor = "500 400 300 300" //oversaturate start color. -GBD
+finishColor = "255 150 30 200"
+startRadius = 1.0
+finishRadius = 1.0
+animateTime = 0.1
+segmentLength = 1.0
+segmentVariance = "1.5 0.0 1.5"
+maxCount = 128
+
+
+[Wave]
+renderBase = "draw_emit"
+emitName = "ebtcen.waveemit"
+emitDelay = 0.2
+emitVelocity = "0.0 25.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[Waveemit]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "255 180 30 200"
+finishColor = "255 150 30 200"
+startRadius = 1.0
+finishRadius = 1.0
+animateTime = 0.5
+waveAngle = 3.14159265359
+waveDepth = 1.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 64
+maxCount = 256
