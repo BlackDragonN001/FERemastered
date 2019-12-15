@@ -1,4 +1,4 @@
-[GameObjectClass]
+[GameObjectClass] // Original FE Portal, for use in Pre Placed Maps.
 geometryName = "hbportb00.xsi"
 classLabel = "powerplant"
 BZCClasslabel = "portal"
@@ -55,6 +55,7 @@ TeleportFilter = 3
 // Other       = 16
 ExitForwardOnly = false
 ExitVelocity = 0
+EnterGotoIsExit = false // If true, AI ordered to goto this portal will goto the exit position offset instead of the object.
 ExitUsesCenter = true
 EnterRange = 20.0f
 TeleportTeamFilter = 0

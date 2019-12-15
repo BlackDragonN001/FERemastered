@@ -51,17 +51,21 @@ provideName4 = "VIRTUAL_CLASS_TECHCENTER"
 
 //DLLSet it's lifespan to 0.1 no scrap left behind.
 // it's just an i76building thats invisibile/invincible with a lifespan of 0.1. something that dies to create an explosion.
-//PortalEffectIn = "PortalEffectinH"
-PortalEffectOut = "PortalEffectoutH"
-PortalEffectVehicle = "PortalEffectVehH"
+PortalEffect = "PortalFx_E" // Effect # is added to the end, as well as a Start and End versions.
+InEffect = 1
+OutEffect = 0
+OnEffect = 0
 
-TeleporterChannel = 3 //0
+TeleporterChannel = 1
 ShowChannel = true
 CanEnter = true
 CanExit = true
-RandomDestination = false
-RandomUsesChannels = true
-TeleportFilter = 3 // Craft + Pilot
+MatchType = 1 // 0 = Closest, 1 = Cycle, 2 = Random.
+MatchTypeUsesChannels = true
+ContinuousFx = false
+ContinuousFxRange = 0.0
+TeleportColorFade = "0 127 255 255"
+TeleportFilter = 3
 // Teleport Filter options: 
 // All         = 0
 // Craft       = 1
@@ -71,8 +75,9 @@ TeleportFilter = 3 // Craft + Pilot
 // Other       = 16
 ExitForwardOnly = false
 ExitVelocity = 0
+EnterGotoIsExit = false // If true, AI ordered to goto this portal will goto the exit position offset instead of the object.
 ExitUsesCenter = true
-PortalTargetRange = 10.0f
+EnterRange = 20.0f
 TeleportTeamFilter = 0
 DestinationTeamFilter = 3
 // 0 = All Teams, 1 = same team only, 2 = allies only, 3 = Same Team + Allies, 4 = Enemies only, 5 = Same Team + Enemies, 6 = Allies + Enemies.

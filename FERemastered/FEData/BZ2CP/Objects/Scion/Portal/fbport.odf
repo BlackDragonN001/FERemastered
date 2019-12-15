@@ -149,6 +149,7 @@ TeleportFilter = 3 // Pilots + Craft
 // Other       = 16
 ExitForwardOnly = false
 ExitVelocity = 0
+EnterGotoIsExit = false // If true, AI ordered to goto this portal will goto the exit position offset instead of the object.
 ExitUsesCenter = true
 EnterRange = 31.0f
 TeleportTeamFilter = 0
