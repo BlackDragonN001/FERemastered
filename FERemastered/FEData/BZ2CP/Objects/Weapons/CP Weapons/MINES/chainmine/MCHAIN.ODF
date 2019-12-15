@@ -1,6 +1,6 @@
 [OrdnanceClass]
 classLabel = "bullet"
-shotGeometry = null
+shotGeometry = NULL
 shotSound = "bchainord.wav"
 
 xplGround = "xbchaingnd"
@@ -25,8 +25,8 @@ damageValue(A) = 12 // absorbtion // 320
 [Render]
 renderBase = "draw_multi"
 renderCount = 2
-renderName1 = "bchain_c.core"
-renderName2 = "bchain_c.tail"
+renderName1 = "mchain.core"
+renderName2 = "mchain.tail"
 
 [core]
 renderBase = "draw_trail"
