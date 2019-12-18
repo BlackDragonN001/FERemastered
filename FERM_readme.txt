@@ -14,7 +14,7 @@ Step 3: Make a new folder on the same HDD you have BZCC installed on. (preferabl
 
 Step 4: Go to your BZCC folder in Steam, (Steam\steamapps\common\BZ2R) and select all the folders, right click and select "Pick Link Source". Then go to the folder you made and right click inside it and select "Drop As" then "Symbolic Link"
 
-Step 5: Go back to the BZCC Folder in Steam, select all the loose files (except bzone.cfg), and select "Pick Link Source". Then go to the folder you made, and right click and select "Drop As", then "Hardlink".
+Step 5: Go back to the BZCC Folder in Steam, select all the loose files (except bzone.cfg), and select "Pick Link Source". Then go to the folder you made, and right click and select "Drop As", then "Symbolic Link".
 
 Step 6: Go to your BZCC Folder in Steam, copy the "bzone.cfg" and paste it in your new symlinked BZCC folder.
 
