@@ -21,6 +21,7 @@ aiName2 = "AssaultTankProcess"
 heatSignature = 0.5
 imageSignature = 5.0
 radarSignature = 5.0
+needPilot = 0
 
 isAssault = 1
 
@@ -54,6 +55,8 @@ turretName1 = "turret_y"
 turretName2 = "turret_x"
 
 [CraftClass]
+EjectRatio = 0.0f // Don't eject pilots. -GBD
+
 rangeScan = 300.0f
 periodScan = 4.0f
 velocJam = 0.0f
@@ -97,7 +100,6 @@ TREAD_STATIC_FRICTION = 1.5
 
 engineSound	= "iatank01.wav"
 treadSound = "iatank02.wav"
-
 
 [AssaultTankClass]
 yawRate = 4.0
