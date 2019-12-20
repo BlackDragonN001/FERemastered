@@ -155,6 +155,9 @@ function PreSnipe(curWorld, shooterHandle, victimHandle, ordnanceTeam, ordnanceO
 		SetObjectiveOn(pilot);
 		SetObjectiveOff(victimHandle);
 	end
+
+	-- Return a value to stop an Invalid Params in console - AI_Unit
+	return 0; -- PRESNIPE_KILLPILOT 
 end
 
 function Update()
