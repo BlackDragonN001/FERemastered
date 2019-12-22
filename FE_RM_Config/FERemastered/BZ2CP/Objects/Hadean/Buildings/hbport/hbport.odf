@@ -27,7 +27,8 @@ soundAmbient = "ipgen01.wav"
 
 
 [TeleportalClass]
-soundActivate = "portalx.wav"  // not used.... the sound effect is made by the portalEffect's explosion, though it's sometimes quite soft :-/
+soundActivate = "portalx.wav"
+//soundDeactivate = NULL
 
 //DLLSet it's lifespan to 0.1 no scrap left behind.
 // it's just an i76building thats invisibile/invincible with a lifespan of 0.1. something that dies to create an explosion.
@@ -55,10 +56,13 @@ TeleportFilter = 3
 // Other       = 16
 ExitForwardOnly = false
 ExitVelocity = 0
+ExitKickAI = true
 EnterGotoIsExit = false // If true, AI ordered to goto this portal will goto the exit position offset instead of the object.
 ExitUsesCenter = true
 EnterRange = 20.0f
 TeleportTeamFilter = 0
+DestinationMinRange = 0.0
+DestinationMaxRange = 0.0
 DestinationTeamFilter = 3
 // 0 = All Teams, 1 = same team only, 2 = allies only, 3 = Same Team + Allies, 4 = Enemies only, 5 = Same Team + Enemies, 6 = Allies + Enemies.
 // Team Filter options: 
