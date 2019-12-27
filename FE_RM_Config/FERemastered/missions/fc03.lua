@@ -156,9 +156,12 @@ function AddObject(h)
 
 	_FECore.AddObject(h);
 
-	if M.RescuedMatriarch and GetCfg(h) == "fspilo" then
-		ReplaceObject(h, "anti", 6, 0.0, -1, false);
-	elseif GetCfg(h) == "fvsentfc03" then
+	if M.RescuedMatriarch and GetTeamNum(h) == 6 then
+		--ReplaceObject(h, "anti", 6, 0.0, -1, false); -- Removed as this was breaking the "Pick me Up" command for the player when the Matriarch was deployed. Replaced with "SetPilotClass" instead. - AI_Unit.
+		SetPilotClass(h, "anti");
+	end
+
+	if GetCfg(h) == "fvsentfc03" then
 		SetTeamNum(h, 1);
 		SetGroup(h, 8);
 	elseif GetCfg(h) == "fvrbomb03" then
