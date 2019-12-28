@@ -279,12 +279,18 @@ end
 
 function AddObject(h)
 
+	-- TEMP: Remove EDF bomber that spawns with the EDF off-map Bomber Bay until we figure out a true solution. - AI_Unit.
+	if (GetCfg(h) == "ivbomb") then
+		RemoveObject(h);
+		print("Destroying Bomber...");
+	end
+
 	_FECore.AddObject(h);
 
 end
 
 function DeleteObject(h)
-	
+
 	_FECore.DeleteObject(h);
 	
 end
