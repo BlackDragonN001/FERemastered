@@ -63,6 +63,7 @@ local M = {
 	Variable6 = 0,	--# of Maulers
 	Variable10 = 0,		--Routine4 loop counter
 	Variable11 = 0,		--if player was warned about too many unspent points in the reinforcements GUI
+	ScionSpireCount = 0,
 --Vectors
 	Position3 = SetVector( 1102,85,1008 ),	--Captured Scion Matriarch location
 	Position4 = SetVector( 762,0,-651 ),	--Portal spawn location
@@ -156,17 +157,21 @@ function AddObject(h)
 
 	_FECore.AddObject(h);
 
-	if M.RescuedMatriarch and GetTeamNum(h) == 6 then
-		--ReplaceObject(h, "anti", 6, 0.0, -1, false); -- Removed as this was breaking the "Pick me Up" command for the player when the Matriarch was deployed. Replaced with "SetPilotClass" instead. - AI_Unit.
-		SetPilotClass(h, "anti");
-	end
-
-	if GetCfg(h) == "fvsentfc03" then
-		SetTeamNum(h, 1);
-		SetGroup(h, 8);
-	elseif GetCfg(h) == "fvrbomb03" then
-		SetTeamNum(h, 1);
-		SetGroup(h, 9);
+	if (GetTeamNum(h) == 6) then
+		if (M.RescuedMatriarch) then
+			--ReplaceObject(h, "anti", 6, 0.0, -1, false); -- Removed as this was breaking the "Pick me Up" command for the player when the Matriarch was deployed. Replaced with "SetPilotClass" instead. - AI_Unit.
+			SetPilotClass(h, "anti");
+		end
+	
+		if (GetCfg(h) == "fvsentfc03") then
+			SetTeamNum(h, 1);
+			SetGroup(h, 8);
+		elseif (GetCfg(h) == "fvrbomb03") then
+			SetTeamNum(h, 1);
+			SetGroup(h, 9);
+		elseif (GetCfg(h) == "fbspir") then
+			M.ScionSpireCount = M.ScionSpireCount + 1;
+		end
 	end
 end
 
@@ -174,6 +179,13 @@ function DeleteObject(h)
 
 	_FECore.DeleteObject(h);
 	
+	-- Added new method of counting Scion Spires as the old way was broken.
+	if (GetTeamNum(h) == 6) then
+		if (GetCfg(h) == "fbspir") then
+			M.ScionSpireCount = M.ScionSpireCount - 1;
+		end
+	end
+
 end
 
 function Update()
@@ -185,7 +197,7 @@ function Update()
 	Routine4();
 	Routine5();
 	Routine7();
-	
+
 	CheckStuffIsAlive();
 end
 
@@ -403,12 +415,12 @@ function Routine1()
 			if not M.MissionOver and not IsAround(M.Matriarch) then
 				FailMission(GetTime() + 8, "fc03lose.des");
 				M.MissionOver = true;
-			elseif CountUnitsNearObject(M.Matriarch, M.Variable3, 6, "fbspir") >= 5 then
+			elseif M.ScionSpireCount >= 5 then
 				AudioMessage("fc03_05.wav");	--LeBlanc:"I have ordered the haulers through the portal once again..."
 				ClearObjectives();
 				AddObjective(_Text9, "green");
 				M.Routine1State = M.Routine1State + 1;
-				M.Routine1Timer = GetTime() + 90
+				M.Routine1Timer = GetTime() + 90;
 			else
 				M.Routine1Timer = GetTime() + 1;
 			end
@@ -537,7 +549,7 @@ function Routine5()
 			M.Routine5State = M.Routine5State + 1;
 			M.Routine5Timer = GetTime() + 20;
 		elseif M.Routine5State == 2 then	--LOC_302
-			if CountUnitsNearObject(M.Matriarch, M.Variable3, 6, "fbspir") > 4 then
+			if M.ScionSpireCount > 4 then
 				M.Routine5State = 12;--to LOC_376
 			else
 				Patrol(TeleportIn("cvtalon02", 5, M.Portal1Aurora1, 0), "mine1", 0);
@@ -613,7 +625,7 @@ function Routine5()
 			RemoveObject(M.Portal1Aurora2);
 			RemoveObject(M.Portal1Aurora3);
 			RemoveObject(M.Portal1Aurora4);
-			if CountUnitsNearObject(M.Matriarch, M.Variable3, 6, "fbspir") > 4 or IsAround(M.Hauler1) then
+			if M.ScionSpireCount > 4 or IsAround(M.Hauler1) then
 				M.Routine5State = M.Routine5State + 1;
 			else
 				local jmp = {5, 1, 2, 1};
