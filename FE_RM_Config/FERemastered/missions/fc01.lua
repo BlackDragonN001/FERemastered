@@ -728,18 +728,18 @@ function Routine4()
 				SetIndependence(M.Object24, 0);
 				FireAt(M.Object24, nil);
 				Follow(M.Object24, M.Object2, 1);
-				ClearObjectives();
-				AddObjective("DEBUG: dcar aggroed.");
+				--ClearObjectives();
+				--AddObjective("DEBUG: dcar aggroed.");
 				M.Routine4State = M.Routine4State + 1;
 			end
 		elseif M.Routine4State == 1 then
 			if not IsAround(M.Object24) then
 				M.Routine4State = 4;--to LOC_323
 			elseif GetDistance(M.Object2, "SoldierMeet") < 100 then
-				ClearObjectives();
+				--ClearObjectives();
 				SetIndependence(M.Object24, 0);
 				FireAt(M.Object24, nil);
-				AddObjective("DEBUG: dcar heading to ambush.");
+				--AddObjective("DEBUG: dcar heading to ambush.");
 				Goto(M.Object24, "SoldierMeet", 1);
 				M.Routine4State = M.Routine4State + 1;
 			end
