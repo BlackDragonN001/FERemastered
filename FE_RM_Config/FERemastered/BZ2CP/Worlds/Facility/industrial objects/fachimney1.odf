@@ -12,6 +12,30 @@ radarSignature = 1.0
 collisionRadius = 5.0
 ownsTerrain=1
 
+//effectHard1 = "hp_smoke"
+//effectName1 = "fachimney1.e1"
+
 [BuildingClass]
 loadAsDummy=1
 dummyVersion=1103
+
+[e1]
+simulateBase="sim_dust"
+lifeTime=1e6
+renderBase="draw_emit"
+emitName="fachimney1.e2"
+emitDelay=0.35
+emitVelocity="0.3 5.0 0.2"
+emitVariance="0.0 1.0 0.0"
+
+[e2]
+simulateBase="sim_smoke"
+lifeTime=8
+renderBase="draw_twirl"
+textureName="smoke.tga"
+textureBlend="srcalpha invsrcalpha modulatealpha"
+startColor="0 0 0 255"
+finishColor="0 0 0 0"
+startRadius=2
+finishRadius=8
+animateTime=8
