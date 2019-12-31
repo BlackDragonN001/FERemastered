@@ -237,6 +237,7 @@ function Routine1()
                 Ally(1,9);
                 UnAlly(9,2);
 
+				IFace_EnterMenuMode();
                 IFace_Exec("merc01.cfg");
 
                 FreeCamera();
@@ -303,20 +304,23 @@ function Routine1()
             local iFaceVal = IFace_GetInteger("images.page");
 
 			if (iFaceVal == 3) then
+				IFace_ExitMenuMode();
                 FreeFinish();
 
 				M.Routine1State = M.Routine1State + 1;
             end
         elseif (M.Routine1State == 7) then
+			M.Routine1State = M.Routine1State + 1; -- Wait one more turn for FreeFinish() to Finish. -GBD
+		elseif (M.Routine1State == 8) then
             CameraFinish();
             M.Routine1State = M.Routine1State + 1;
-        elseif (M.Routine1State == 8) then
+        elseif (M.Routine1State == 9) then
 			IFace_Deactivate("INFO");
             Goto(M.Object_Cargo1, "convoy", 1);
             
 			M.convoyWaitTillTime = GetTime() + 1;
             M.Routine1State = M.Routine1State + 1;
-        elseif (M.Routine1State == 9) then
+        elseif (M.Routine1State == 10) then
             if (GetTime() >= M.convoyWaitTillTime) then
                 UpdateEarthQuake(4.0);
 
@@ -325,7 +329,7 @@ function Routine1()
 
                 M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 10) then
+        elseif (M.Routine1State == 11) then
             if (GetTime() >= M.convoyWaitTillTime) then
                 AudioMessage("mercury_02.wav");
 
@@ -333,7 +337,7 @@ function Routine1()
 
                 M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 11) then
+        elseif (M.Routine1State == 12) then
             if (GetTime() >= M.convoyWaitTillTime) then
                 SetObjectiveOn(M.Object_Cargo2);
                 AddObjective(_Text1, "white");
@@ -359,7 +363,7 @@ function Routine1()
 
                 M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 12) then
+        elseif (M.Routine1State == 13) then
             if (GetTime() >= M.convoyWaitTillTime) then
                 Goto(M.Object_Cargo2, "convoy", 1);
 
@@ -367,7 +371,7 @@ function Routine1()
 
 				M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 13) then
+        elseif (M.Routine1State == 14) then
             if (GetTime() >= M.convoyWaitTillTime) then
                 M.Object_Nadir1 = BuildObject(M.DRONEODF, 2, M.Position12);
 
@@ -380,7 +384,7 @@ function Routine1()
 
                 M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 14) then
+        elseif (M.Routine1State == 15) then
             if (GetTime() >= M.convoyWaitTillTime) then
                 SetPerceivedTeam(M.Object_Nadir1, 2);
 
@@ -394,7 +398,7 @@ function Routine1()
                     M.Routine1State = M.Routine1State + 1;
                 end
             end
-        elseif (M.Routine1State == 15) then
+        elseif (M.Routine1State == 16) then
             if (GetTime() >= M.convoyWaitTillTime) then
                 ClearObjectives();
                 AddObjective(_Text2, "WHITE");
@@ -405,7 +409,7 @@ function Routine1()
 
                 M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 16) then            
+        elseif (M.Routine1State == 17) then            
             if (GetTeamNum(M.Object_Radar1) == 0 and GetTeamNum(M.Object_Radar2) == 0) then
 				SetTeamNum(M.Object_Gun1, 0);
 				SetTeamNum(M.Object_Gun2, 0);
@@ -420,7 +424,7 @@ function Routine1()
                 
 				M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 17) then 
+        elseif (M.Routine1State == 18) then 
             if (GetTime() >= M.convoyWaitTillTime) then
                 AudioMessage("mercury_07.wav");
 
@@ -428,7 +432,7 @@ function Routine1()
 
                 M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 18) then 
+        elseif (M.Routine1State == 19) then 
             if (M.ConvoyContinueToBase == true) then
                 Goto(M.Object_Hardin, "hardin", 1);
                 
@@ -436,7 +440,7 @@ function Routine1()
                 
 				M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 19) then
+        elseif (M.Routine1State == 20) then
             if (GetTime() >= M.convoyWaitTillTime) then
                 Goto(M.Object_WyndtEssex, "hardin", 1);
 
@@ -444,7 +448,7 @@ function Routine1()
 
                 M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 20) then
+        elseif (M.Routine1State == 21) then
             if (GetTime() >= M.convoyWaitTillTime) then
                 Goto(M.Object_Cargo1, "transport1", 1);
 
@@ -452,11 +456,11 @@ function Routine1()
 
                 M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 21) then
+        elseif (M.Routine1State == 22) then
             Goto(M.Object_Cargo2, "transport1", 1);
 
             M.Routine1State = M.Routine1State + 1;
-        elseif (M.Routine1State == 22) then
+        elseif (M.Routine1State == 23) then
             local d1 = GetDistance(M.Object_Cargo1, M.Object_ServiceBay);
 			local d2 = GetDistance(M.Object_Cargo2, M.Object_ServiceBay);
             local d3 = GetDistance(M.Object_WyndtEssex, M.Object_ServiceBay);
@@ -496,7 +500,7 @@ function Routine1()
                 
 				M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 23) then
+        elseif (M.Routine1State == 24) then
             if (GetDistance(M.Object_Hardin, M.Object_Player) <= 200) then
                 Goto(M.Object_WyndtEssex, M.Object_ServiceBay, 1);
                 Goto(M.Object_Scout1, M.Object_ServiceBay, 1);
@@ -511,7 +515,7 @@ function Routine1()
 
                 M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 24) then
+        elseif (M.Routine1State == 25) then
             if (GetDistance(M.Object_Corbernav, M.Object_Player) <= 10) then
                 StartEarthQuake(4.0);
 
@@ -528,7 +532,7 @@ function Routine1()
 
                 M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 25) then
+        elseif (M.Routine1State == 26) then
             if (GetTime() >= M.convoyWaitTillTime) then
                 RemoveObject(M.Object_Cargo1);
                 RemoveObject(M.Object_Cargo2);
@@ -545,7 +549,7 @@ function Routine1()
 
                 M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 26) then
+        elseif (M.Routine1State == 27) then
             if (GetTime() >= M.convoyWaitTillTime) then
                 AudioMessage("dropleav.wav");
 
@@ -553,7 +557,7 @@ function Routine1()
 
                 M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 27) then
+        elseif (M.Routine1State == 28) then
             if (GetTime() >= M.convoyWaitTillTime) then
                 AudioMessage("mercury_09.wav");
 
@@ -561,7 +565,7 @@ function Routine1()
 
                 M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 28) then
+        elseif (M.Routine1State == 29) then
             if (GetTime() >= M.convoyWaitTillTime) then
                 local mat = GetTransform(M.Object_Carrier);
 
@@ -573,7 +577,7 @@ function Routine1()
 
                 M.Routine1State = M.Routine1State + 1;
             end
-        elseif (M.Routine1State == 29) then
+        elseif (M.Routine1State == 30) then
             if (GetTime() >= M.convoyWaitTillTime) then
                 StopEarthQuake();
                 SucceedMission(0, "winmerc.des");
