@@ -856,7 +856,8 @@ function Routine6()
 				end
             end
         elseif (M.Routine6State == 3) then
-            RemoveObject(M.Object_CerbUnit);
+            --RemoveObject(M.Object_CerbUnit); -- I don't like the idea of this poofing into nothingness. Do something else? either leave it till it's offmap, or zoof it up into space? actually, hold that thought...
+			SetVelocity(M.Object_CerbUnit, SetVector(0, 10000, 0));
             
 			M.Routine6State = M.Routine6State + 1;
         end
