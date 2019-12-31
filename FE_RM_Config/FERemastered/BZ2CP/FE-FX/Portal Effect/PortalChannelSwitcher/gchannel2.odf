@@ -1,11 +1,11 @@
 [WeaponClass]
 classLabel = "dispenser"
-wpnName = "Channel 1"
+wpnName = "Channel 2"
 fireSound = "toggle.wav"
-wpnReticle = "gBZCnavdrop"
+wpnReticle = "sight"
 wpnPriority = 1
 wpnCategory = "SPEC"
 
 [DispenserClass]
 shotDelay = 2.0
-objectClass = "channel1"
+objectClass = "channel2"
