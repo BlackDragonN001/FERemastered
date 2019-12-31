@@ -321,7 +321,7 @@ function Routine1(R, STATE)
 		SetObjectiveOn(M.HadeanTech);
 		SetSkill(M.HadeanTech, 3);	--make Kranios a bit more resilient
 		--M.ScionDropship = ReplaceObject(M.ScionDropship, "scibomb");
-		M.ScionDropship = BuildObject("scibomb", 1, GetPosition(M.BomberBay) + SetVector(0,50,0));
+		M.ScionDropship = BuildObject("scibomb", 6, GetPosition(M.BomberBay) + SetVector(0,50,0));
 		SetGroup(M.ScionDropship, 10);
 		SetPerceivedTeam(M.ScionDropship, 0);
 		SetPerceivedTeam(M.BomberBay, 0);
