@@ -1,6 +1,10 @@
 --[[ Prop Height Fixer Lua
 Written by General BlackDragon
-Version 1.0 - 2-2-2019 --]]
+Version 1.0 - 2-2-2019 
+
+For use with command lines to adjust the height of objects under ground on a .BZN. Instructions:
+-- To adjust the height of underground objects, use /ivar 121 1
+--]]
 
 print("Loading _PropHeightFix.lua");
 

@@ -14,6 +14,7 @@ require('_GlobalVariables');
 require('_DLLUtils');
 local _MapReloader = require('_MapReloader');
 local _PropHeightFix = require('_PropHeightFix');
+local _ObjectReplacer = require('_ObjectReplacer');
 
 -- FE Moduels.
 --require('_PortalHelper');
@@ -31,6 +32,7 @@ function _FECore.InitialSetup()
 -- Call helper functions.
 
 	_MapReloader.InitialSetup();
+	_ObjectReplacer.InitialSetup();
 
 end
 
