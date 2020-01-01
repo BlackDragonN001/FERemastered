@@ -1,0 +1,210 @@
+//================================
+// Dust Circle: Medium. 2.0 Lifespan.
+// Used in: HadPortalOpenFx
+//================================
+
+[FEDustRing]
+simulateBase = "sim_null"
+lifeTime = 3.0
+renderBase = "draw_multi"
+renderCount = 16
+renderName1 = "FEDustRing.puff1"
+renderName2 = "FEDustRing.puff2"
+renderName3 = "FEDustRing.puff3"
+renderName4 = "FEDustRing.puff4"
+renderName5 = "FEDustRing.puff5"
+renderName6 = "FEDustRing.puff6"
+renderName7 = "FEDustRing.puff7"
+renderName8 = "FEDustRing.puff8"
+renderName9 = "FEDustRing.puff9"
+renderName10 = "FEDustRing.puff10"
+renderName11 = "FEDustRing.puff11"
+renderName12 = "FEDustRing.puff12"
+renderName13 = "FEDustRing.puff13"
+renderName14 = "FEDustRing.puff14"
+renderName15 = "FEDustRing.puff15"
+renderName16 = "FEDustRing.puff16"
+
+// 4 main directions
+
+[puff1]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "FEDustRing.smokeemit"
+emitDelay = 1e6 //3.1 //2.48
+emitVelocity = "12.0 0.0 0.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "1.0 1.0 1.0"
+
+[puff2]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "FEDustRing.smokeemit"
+emitDelay = 1e6 //3.1 //2.48
+emitVelocity = "0.0 0.0 12.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "1.0 1.0 1.0"
+
+[puff3]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "FEDustRing.smokeemit"
+emitDelay = 1e6 //3.1 //2.48
+emitVelocity = "-12.0 0.0 0.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "1.0 1.0 1.0"
+
+[puff4]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "FEDustRing.smokeemit"
+emitDelay = 1e6 //3.1 //2.48
+emitVelocity = "0.0 0.0 -12.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "1.0 1.0 1.0"
+
+// 4 diagonal directions.
+
+[puff5]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "FEDustRing.smokeemit"
+emitDelay = 1e6 //3.1 //2.48
+emitVelocity = "8.0 0.0 8.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "1.0 1.0 1.0"
+
+[puff6]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "FEDustRing.smokeemit"
+emitDelay = 1e6 //3.1 //2.48
+emitVelocity = "-8.0 0.0 8.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "1.0 1.0 1.0"
+
+[puff7]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "FEDustRing.smokeemit"
+emitDelay = 1e6 //3.1 //2.48
+emitVelocity = "8.0 0.0 -8.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "1.0 1.0 1.0"
+
+[puff8]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "FEDustRing.smokeemit"
+emitDelay = 1e6 //3.1 //2.48
+emitVelocity = "-8.0 0.0 -8.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "1.0 1.0 1.0"
+
+// 8 inbetween directions.
+
+[puff9]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "FEDustRing.smokeemit"
+emitDelay = 1e6 //3.1 //2.48
+emitVelocity = "10.0 0.0 6.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "1.0 1.0 1.0"
+
+[puff10]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "FEDustRing.smokeemit"
+emitDelay = 1e6 //3.1 //2.48
+emitVelocity = "10.0 0.0 -6.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "1.0 1.0 1.0"
+
+[puff11]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "FEDustRing.smokeemit"
+emitDelay = 1e6 //3.1 //2.48
+emitVelocity = "6.0 0.0 10.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "1.0 1.0 1.0"
+
+[puff12]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "FEDustRing.smokeemit"
+emitDelay = 1e6 //3.1 //2.48
+emitVelocity = "-6.0 0.0 10.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "1.0 1.0 1.0"
+
+[puff13]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "FEDustRing.smokeemit"
+emitDelay = 1e6 //3.1 //2.48
+emitVelocity = "-10.0 0.0 6.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "1.0 1.0 1.0"
+
+[puff14]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "FEDustRing.smokeemit"
+emitDelay = 1e6 //3.1 //2.48
+emitVelocity = "-10.0 0.0 -6.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "1.0 1.0 1.0"
+
+[puff15]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "FEDustRing.smokeemit"
+emitDelay = 1e6 //3.1 //2.48
+emitVelocity = "6.0 0.0 -10.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "1.0 1.0 1.0"
+
+[puff16]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "FEDustRing.smokeemit"
+emitDelay = 1e6 //3.1 //2.48
+emitVelocity = "-6.0 0.0 -10.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "1.0 1.0 1.0"
+
+
+// this is what actually appears.
+[smokeemit]
+simulateBase = "sim_dust"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "127 127 127 200"
+finishColor = "127 127 127 0"
+startRadius = 1.0
+finishRadius = 5.0
+animateTime = 2.0
+rotateTime = 20.0
+BottomInteractsWithTerrain = false
+useTerrainColor = 0.9
+maxCount = 256

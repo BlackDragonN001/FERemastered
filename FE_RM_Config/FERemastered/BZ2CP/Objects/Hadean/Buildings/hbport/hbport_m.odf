@@ -1,7 +1,11 @@
+// BZ2CP Building "Hadean Portal"
+// Original Concept by Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
+
 [GameObjectClass]
 baseName = "hbport"
-geometryName = "hbport00.xsi"
-classLabel = "turret" //"powerplant"
+geometryName = "hbport00.fbx"
+classLabel = "turret" // For login terminal.
 BZCClasslabel = "portal"
 RequirePowerMask = 0 // None. //2 // ISDF Power
 powerCost = 0
@@ -29,6 +33,7 @@ AlwaysShowAmmo = true
 
 PositionOffset1 = "0.000000 5.000000 0.000000" // Teleport Exit Location.
 PositionOffset2 = "0.000000 0.000000 50.000000" // Goto Destination after AI unit Exits.
+PositionOffset3 = "0.000000 0.000000 0.000000" // Teleport FX Location.
 
 GameObjectClassServiceMask = 9
 GameObjectClassServiceMatch = 9
@@ -46,7 +51,7 @@ requireText2 = "Build Repair Vat"
 
 provideCount = 4
 provideName1 = "hbport"
-provideName2 = "hbport_vsr"
+provideName2 = "hbport_m"
 provideName3 = "base"
 provideName4 = "VIRTUAL_CLASS_TECHCENTER"
 
@@ -68,15 +73,33 @@ weaponName4 = "gchannel4"
 weaponAssault4 = 1
 weaponGroup4 = 3
 
+[PoweredBuildingClass]
+CanAlliesUse = false
+
+[BuildingClass]
+//soundAmbient = "ipgen01.wav"
+DeploySound = "ipgen01.wav"
+DeploySoundLoop = true
+
+tunnelCount = 1
+bldEdge = "twtw"
+tunnel01X0 = 1
+tunnel01Z0 = 1
+tunnel01DX = 2
+tunnel01DZ = 2
+tunnel01Edge = "twtw"
+
+candemolish = false
+
 [TeleportalClass]
-//soundActivate = "portalx.wav"
+soundActivate = "teleport.wav"
 //soundDeactivate = NULL
 
 //DLLSet it's lifespan to 0.1 no scrap left behind.
 // it's just an i76building thats invisibile/invincible with a lifespan of 0.1. something that dies to create an explosion.
 PortalEffect = "PortalFx_E" // Effect # is added to the end, as well as a Start and End versions.
 InEffect = 1
-OutEffect = 0
+OutEffect = 2
 OnEffect = 0
 
 TeleporterChannel = 1
@@ -85,7 +108,7 @@ CanEnter = true
 CanExit = true
 MatchType = 1 // 0 = Closest, 1 = Cycle, 2 = Random.
 MatchTypeUsesChannels = true
-ContinuousFx = false
+ContinuousFx = true //false
 ContinuousFxRange = 0.0
 TeleportColorFade = "0 127 255 255"
 TeleportFilter = 3
@@ -101,7 +124,7 @@ ExitVelocity = 0
 ExitKickAI = true
 EnterGotoIsExit = false // If true, AI ordered to goto this portal will goto the exit position offset instead of the object.
 ExitUsesCenter = true
-EnterRange = 20.0f
+EnterRange = 14.0f
 TeleportTeamFilter = 0
 DestinationMinRange = 0.0
 DestinationMaxRange = 0.0
@@ -115,25 +138,6 @@ DestinationTeamFilter = 3
 // 
 // Add the values to get the desired result. Same Team + Allies is 3, Enemies + Allies is 6.
 
-[PoweredBuildingClass]
-CanAlliesUse = false
-PoweredByTaps = true
-
-
-[BuildingClass]
-soundAmbient = "ipgen01.wav"
-
-tunnelCount = 1
-bldEdge = "twtw"
-tunnel01X0 = 1
-tunnel01Z0 = 1
-tunnel01DX = 2
-tunnel01DZ = 2
-tunnel01Edge = "twtw"
-
-candemolish = false
-
-
 [CraftClass]
 rangeScan = 210.0
 periodScan = 0.0
@@ -142,19 +146,11 @@ weaponPitch = 1.5
 steerFactor = 1.0
 engageRange = 210
 
-damageEffect1 = "dmgvhcl1_hadean"
-damageEffect2 = "dmgvhcl2_hadean"
-damageEffect3 = "dmgvhcl3_hadean"
-damageEffect4 = "dmgvhcl4_hadean"
+//damageEffect1 = "dmgvhcl1_hadean"
+//damageEffect2 = "dmgvhcl2_hadean"
+//damageEffect3 = "dmgvhcl3_hadean"
+//damageEffect4 = "dmgvhcl4_hadean"
 
 [TurretCraftClass]
-// Teleport destionation exit point.
-//powerTap1 = "hp_PortalExit_1"
-//powerName1 = "PortalExitGH"// invincible nav beacon.
-
-// "Goto" after exiting teleporter.
-//powerTap2 = "hp_PortalNav_1"
-//powerName2 = "PortalNavGH"// invincible nav beacon.
-
 omegaTurret = 0.0
 detectRange = 500

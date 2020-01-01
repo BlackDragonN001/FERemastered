@@ -1,13 +1,23 @@
-[GameObjectClass] // Original FE Portal, for use in Pre Placed Maps.
-geometryName = "hbportb00.xsi"
-classLabel = "powerplant"
+// BZ2CP Building "Hadean Portal"
+// Original Concept by Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
+// Original FE Portal, no Terminal, for use in Pre Placed Maps.
+[GameObjectClass]
+geometryName = "hbportb00.fbx"
+classLabel = "i76building" //"powerplant" // interesting choice for original classlabel. kept for efficiency sake. -GBD
 BZCClasslabel = "portal"
+RequirePowerMask = 0 // 0 = None, 1 = BZ1, 2 = ISDF, 4 = Lung.
 unitName = "Portal"
+addHealth = 0
+maxAmmo = 0  // zero = instant, anything greater will be set as the delay until ammo if full.
+addAmmo = 0  // DLL sets ammo as zero so unless maxammo = 0 then you'll need to add ammo to reactivate portal.
 heatSignature = 2.0
 imageSignature = 1.0
 radarSignature = 1.0
 collisionRadius = 1.0
 isAssault = 1
+ownsTerrain = 1
+powerCost = 0
 
 armorClass = H //M // Really? M? You can't just make stuff up in ODFs. The headaches of 1.2 era ODFs... -GBD
 
@@ -21,20 +31,29 @@ canInteract = 1
 
 PositionOffset1 = "0.000000 5.000000 0.000000" // Teleport Exit Location.
 PositionOffset2 = "0.000000 0.000000 50.000000" // Goto Destination after AI unit Exits.
+PositionOffset3 = "0.000000 0.000000 0.000000" // Teleport FX Location.
+
+//[PowerPlantClass]
+//DoBettyPower = false // We're not a real powerplant. -GBD
 
 [BuildingClass]
-soundAmbient = "ipgen01.wav"
+soundAmbient = "ipgen01.wav" // Make me a custom sound? -GBD
 
+tunnelCount = 1
+bldEdge = "twtw"
+tunnel01X0 = 1
+tunnel01Z0 = 1
+tunnel01DX = 2
+tunnel01DZ = 2
+tunnel01Edge = "twtw"
 
 [TeleportalClass]
-soundActivate = "portalx.wav"
-//soundDeactivate = NULL
+soundActivate = "teleport.wav"
+//soundDeactivate = "teleport.wav"
 
-//DLLSet it's lifespan to 0.1 no scrap left behind.
-// it's just an i76building thats invisibile/invincible with a lifespan of 0.1. something that dies to create an explosion.
 PortalEffect = "PortalFx_E" // Effect # is added to the end, as well as a Start and End versions.
 InEffect = 1
-OutEffect = 0
+OutEffect = 2
 OnEffect = 0
 
 TeleporterChannel = 1
@@ -43,9 +62,9 @@ CanEnter = true
 CanExit = true
 MatchType = 1 // 0 = Closest, 1 = Cycle, 2 = Random.
 MatchTypeUsesChannels = true
-ContinuousFx = false
+ContinuousFx = true
 ContinuousFxRange = 0.0
-TeleportColorFade = "0 127 255 255"
+TeleportColorFade = "127 63 255 255"
 TeleportFilter = 3
 // Teleport Filter options: 
 // All         = 0
@@ -59,7 +78,7 @@ ExitVelocity = 0
 ExitKickAI = true
 EnterGotoIsExit = false // If true, AI ordered to goto this portal will goto the exit position offset instead of the object.
 ExitUsesCenter = true
-EnterRange = 20.0f
+EnterRange = 14.0f
 TeleportTeamFilter = 0
 DestinationMinRange = 0.0
 DestinationMaxRange = 0.0

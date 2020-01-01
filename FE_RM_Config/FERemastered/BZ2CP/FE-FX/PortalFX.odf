@@ -1,0 +1,41 @@
+[GameObjectClass] // Portal FX root object
+geometryName = NULL
+classLabel = "i76sign"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+unitName = " "
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+isAssault = false
+ownsTerrain = false
+collisionRadius = 0.0
+canCollide = false
+powerCost = 0
+canInteract = false
+//canDetect = false // overrides scanTeamLimit. :(
+CanBeIdleVictim = false
+LeaveExplodeScorch = false
+ScanTeamLimit = 3
+
+effectHard1 = " "
+//effectName1 = "PortalFx_E0.render"
+
+explosionName = NULL
+xplChunk = NULL
+xplCrash = NULL
+CanAcceptPowerups = false
+
+DoBettyAttack = false
+
+[PoweredBuildingClass]
+detectRange = 0.0
+
+[BuildingClass]
+soundAmbient = NULL
+canDemolish = false
+DoBettyLost = false
+UseCollapse = false
+UseChunks = false
+UseExplosion = false 

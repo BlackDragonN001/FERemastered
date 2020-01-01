@@ -1,46 +1,12 @@
 [GameObjectClass] // Portal Constant On ISDF
-geometryName = NULL //"BZCNullCube.xsi"
-classLabel = "i76sign" //"wpnpower" //"powered"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 0
-unitName = " "
-heatSignature = 0.0
-imageSignature = 0.0
-radarSignature = 0.0
-isAssault = false
-ownsTerrain = false
-collisionRadius = 0.0
-canCollide = false
-powerCost = 0
-canInteract = false
-//canDetect = false
-CanBeIdleVictim = false
-LeaveExplodeScorch = false
-ScanTeamLimit = 3
-//aiName = "PowerUpProcess"
+classLabel = "PortalFX"
 
-effectHard1 = " "
 effectName1 = "PortalFx_I0End.render"
 
-explosionName = ""
-xplChunk = ""
-xplCrash = ""
-CanAcceptPowerups = false
-
-DoBettyAttack = false // true: do betty attack warnings when this is damaged.
-
 [PoweredBuildingClass]
-detectRange = 0 //0
 
 [BuildingClass]
-soundAmbient = "portal02.wav" // On sound.
-canDemolish = false
-DoBettyLost = false
-UseCollapse = false // Default: True if not sign and collapseTime > 0.0
-UseChunks = false
-UseExplosion = false 
-
+//soundAmbient = NULL "" // On sound.
 
 [Render]
 renderBase = "draw_multi"

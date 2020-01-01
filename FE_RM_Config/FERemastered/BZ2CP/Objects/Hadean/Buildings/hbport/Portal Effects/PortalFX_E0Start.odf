@@ -1,0 +1,92 @@
+[GameObjectClass] // Portal Start: Hadean
+classLabel = "PortalFX"
+
+effectName1 = "PortalFX_E0Start.render"
+
+[PoweredBuildingClass]
+
+[BuildingClass]
+//soundAmbient = "portal02.wav" // Open sound.
+
+[Render]
+simulateBase = "sim_null"
+lifeTime = 1.0 // Length matches off sound length.
+renderBase = "draw_multi"
+renderCount = 5
+renderName1 = "PortalFX_E0Start.light"
+renderName2 = "PortalFX_E0Start.vortex" //twirl"
+renderName3 = "PortalFX_E0Start.Flash"
+renderName4 = "PortalFX_E0Start.Shock"
+renderName5 = "FEDustRing"
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 0 255 0"
+finishColor = "255 127 255 250"
+startRadius = 0.0
+finishRadius = 30.0
+animateTime = 1.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
+
+[Vortex]
+renderBase = "draw_geom"
+ForceDrawTransparent = false
+textureName = "hbport00_wormhole.tga"
+textureBlend = "one one modulate" //"srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.0
+finishRadius = 1.0
+animateTime = 1.0
+geomName = "hbport00_wormhole.fbx"
+InitialPitch = 0.0
+InitialYaw = 0.0
+InitialRoll = 0.0
+AddPitch = 0.0
+AddYaw = 0.0
+AddRoll = -15.0
+
+[Twirl]
+renderBase = "draw_twirl"
+textureName = "hbport00_wormhole.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 200"
+finishColor = "255 255 255 200"
+startRadius = 0.0
+finishRadius = 10.0
+animateTime = 1.0
+rotationRate = 2.0
+BottomInteractsWithTerrain = false
+
+[Flash]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 0"
+startRadius = 0.0
+finishRadius = 30.0
+animateTime = 0.5
+rotationRate = 2.0
+BottomInteractsWithTerrain = false
+
+[Shock]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "200 127 200 255"
+finishColor = "127 63 255 0"
+startRadius = 0.0
+finishRadius = 15.0
+animateTime = 1.0
+latitudeBands = 16
+longitudeSegments = 32
+InitialPitch = 0.0
+InitialYaw = 0.0
+InitialRoll = 0.0
+AddPitch = 10.0
+AddYaw = 10.0
+AddRoll = 10.0

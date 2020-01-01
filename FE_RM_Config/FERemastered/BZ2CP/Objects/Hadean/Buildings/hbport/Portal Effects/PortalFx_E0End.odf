@@ -1,45 +1,12 @@
-[GameObjectClass] // Portal Out ISDF
-geometryName = NULL //"BZCNullCube.xsi"
-classLabel = "i76sign" //"wpnpower" //"powered"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 0
-unitName = " "
-heatSignature = 0.0
-imageSignature = 0.0
-radarSignature = 0.0
-isAssault = false
-ownsTerrain = false
-collisionRadius = 0.0
-canCollide = false
-powerCost = 0
-canInteract = false
-//canDetect = false
-CanBeIdleVictim = false
-LeaveExplodeScorch = false
-ScanTeamLimit = 3
-//aiName = "PowerUpProcess"
+[GameObjectClass] // Portal Out: Hadean
+classLabel = "PortalFX"
 
-effectHard1 = " "
 effectName1 = "PortalFx_E0End.render"
 
-explosionName = ""
-xplChunk = ""
-xplCrash = ""
-CanAcceptPowerups = false
-
-DoBettyAttack = false // true: do betty attack warnings when this is damaged.
-
 [PoweredBuildingClass]
-detectRange = 0 //0
 
 [BuildingClass]
-soundAmbient = "portal02.wav" // On sound.
-canDemolish = false
-DoBettyLost = false
-UseCollapse = false // Default: True if not sign and collapseTime > 0.0
-UseChunks = false
-UseExplosion = false 
+//soundAmbient = "portal02.wav" // Close sound.
 
 [Render]
 simulateBase = "sim_null"
@@ -47,52 +14,76 @@ lifeTime = 0.5 // Length matches off sound length.
 renderBase = "draw_multi"
 renderCount = 3
 renderName1 = "PortalFx_E0End.light"
-renderName2 = "PortalFx_E0End.smoke"
-renderName3 = "PortalFx_E0End.shock"
+//renderName2 = "PortalFx_E0End.vortex" //twirl" // No way to know the current rotation of the prev frame, just explode it.
+renderName2 = "PortalFx_E0End.Shock"
+renderName3 = "PortalFx_E0End.Flash"
 
 [Light]
-simulateBase = "sim_null"
-lifeTime = 0.5//1.0
 renderBase = "draw_light"
-startColor = "255 255 255 2500"
-finishColor = "255 100 0 0"
-startRadius = 60.0
+startColor = "255 127 255 250"
+finishColor = "255 0 255 0"
+startRadius = 30.0
 finishRadius = 0.0
-animateTime = 0.5//1.0
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+animateTime = 1.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
 
-[smoke]
-simulateBase = "sim_smoke"
-lifeTime = 1.0
-renderBase = "draw_twirl_trail"
-textureName = "lighthalo.tga"
-textureBlend = "one one modulate"
+[Vortex]
+//simulateBase = "sim_smoke"
+renderBase = "draw_geom"
+ForceDrawTransparent = false
+textureName = "hbport00_wormhole.tga"
+textureBlend = "one one modulate" //"srcalpha invsrcalpha modulatealpha"
 startColor = "255 255 255 255"
-finishColor = "255 150 0 0"
-startRadius = 2.0
-finishRadius = 0.75//1.5
+finishColor = "255 255 255 255"
+startRadius = 1.0
+finishRadius = 0.0
+animateTime = 1.0
+geomName = "hbport00_wormhole.fbx"
+InitialPitch = 0.0
+InitialYaw = 0.0
+InitialRoll = 0.0
+AddPitch = 0.0
+AddYaw = 0.0
+AddRoll = -15.0
+
+[Twirl]
+renderBase = "draw_twirl"
+textureName = "hbport00_wormhole.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 200"
+finishColor = "255 255 255 200"
+startRadius = 10.0
+finishRadius = 0.0
 animateTime = 1.0
 rotationRate = 2.0
-emitDelay = 0.015
-emitVelocity = "1.0 1.0 1.0"
-emitVariance = "12.0 12.0 12.0"
-emitLife = 1.0
+BottomInteractsWithTerrain = false
 
-[shock]
-simulateBase = "sim_null"
-lifeTime = 0.5
+[Flash]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 0"
+startRadius = 30.0
+finishRadius = 0.0
+animateTime = 0.5
+rotationRate = 2.0
+BottomInteractsWithTerrain = false
+
+[Shock]
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 100 0 0"
-startRadius = 3.0
-finishRadius = 25.0
+startColor = "127 63 255 255"
+finishColor = "127 200 255 0"
+startRadius = 10.0
+finishRadius = 0.0
 animateTime = 0.5
-latitudeBands = 32
-longitudeSegments = 64
+latitudeBands = 16
+longitudeSegments = 32
 InitialPitch = 0.0
 InitialYaw = 0.0
 InitialRoll = 0.0

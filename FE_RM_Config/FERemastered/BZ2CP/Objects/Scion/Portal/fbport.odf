@@ -30,9 +30,10 @@ buildSupport = "F"
 buildRequire = "F"
 AlwaysShowAmmo = true
 
-PositionOffset1 = "0.000000 32.000000 0.000000" // Teleport Exit Location.
+PositionOffset1 = "0.000000 16.000000 0.000000" // Teleport Exit Location.
 RotationOffset1 = "0.0 0.0 45.0" // Teleporter Exit Location.
 PositionOffset2 = "-50.000000 0.000000 50.000000" // Goto Destination after AI unit Exits.
+PositionOffset3 = "0.000000 32.000000 0.000000" // Fx Location.
 
 GameObjectClassServiceMask = 9
 GameObjectClassServiceMatch = 9
@@ -123,8 +124,8 @@ lightHard1 = "hp_light_17"
 lightName1 = "o_yellow_nf"
 
 [TeleportalClass]
-//soundActivate = "portalx.wav"
-//soundDeactivate = NULL
+soundActivate = "portalx.wav"
+soundDectivate = NULL
 
 PortalEffect = "PortalFx_F" // Effect # is added to the end, as well as a Start and End versions.
 InEffect = 1
@@ -135,11 +136,11 @@ TeleporterChannel = 2
 ShowChannel = true
 CanEnter = true
 CanExit = true
+MatchType = 0 // 0 = Closest, 1 = Cycle, 2 = Random.
+MatchTypeUsesChannels = true
+TeleportColorFade = "0 255 127 255"
 ContinuousFx = true
 ContinuousFxRange = 200.0f
-MatchType = 1 // 0 = Closest, 1 = Cycle, 2 = Random.
-MatchTypeUsesChannels = true
-TeleportColorFade = "255 127 0 255"
 TeleportFilter = 3 // Pilots + Craft
 // Teleport Filter options: 
 // All         = 0
@@ -151,8 +152,8 @@ TeleportFilter = 3 // Pilots + Craft
 ExitForwardOnly = false
 ExitVelocity = 0
 ExitKickAI = true
-EnterGotoIsExit = false // If true, AI ordered to goto this portal will goto the exit position offset instead of the object.
 ExitUsesCenter = true
+EnterGotoIsExit = false // If true, AI ordered to goto this portal will goto the exit position offset instead of the object.
 EnterRange = 31.0f
 TeleportTeamFilter = 0
 DestinationMinRange = 0.0
@@ -170,58 +171,58 @@ DestinationTeamFilter = 3
 
 [PoweredBuildingClass]
 CanAlliesUse = false
-//PoweredByTaps = true
 
 [BuildingClass]
 //soundAmbient = "portal03.wav"
+DeploySound = "portal03.wav"
+DeploySoundLoop = true
 
 tunnelCount = 7
 bldEdge = "tttt"
 // Center
-tunnel01X0 = 3
-tunnel01Z0 = 3
-tunnel01DX = 2
-tunnel01DZ = 2
+tunnel01X0 = 2.5
+tunnel01Z0 = 2.5
+tunnel01DX = 3
+tunnel01DZ = 3
 tunnel01Edge = "ffff"
 // Top Edge
-tunnel02X0 = 3
+tunnel02X0 = 2.5
 tunnel02Z0 = 0
-tunnel02DX = 2
-tunnel02DZ = 3
+tunnel02DX = 3
+tunnel02DZ = 2.5
 tunnel02Edge = "twff"
 // Bottom Edge
-tunnel03X0 = 3
-tunnel03Z0 = 5
-tunnel03DX = 2
-tunnel03DZ = 3
+tunnel03X0 = 2.5
+tunnel03Z0 = 5.5
+tunnel03DX = 3
+tunnel03DZ = 2.5
 tunnel03Edge = "fftw"
 // Left Edge
 tunnel04X0 = 0
-tunnel04Z0 = 3
-tunnel04DX = 3
-tunnel04DZ = 2
+tunnel04Z0 = 2.5
+tunnel04DX = 2.5
+tunnel04DZ = 3
 tunnel04Edge = "ffwt"
 // Right Edge
-tunnel05X0 = 5
-tunnel05Z0 = 3
-tunnel05DX = 3
-tunnel05DZ = 2
+tunnel05X0 = 5.5
+tunnel05Z0 = 2.5
+tunnel05DX = 2.5
+tunnel05DZ = 3
 tunnel05Edge = "wtff"
 // Top Left Corner
 tunnel06X0 = 0
 tunnel06Z0 = 0
-tunnel06DX = 3
-tunnel06DZ = 3
+tunnel06DX = 2.5
+tunnel06DZ = 2.5
 tunnel06Edge = "tfft"
 // Bottom Right Corner
-tunnel07X0 = 5
-tunnel07Z0 = 5
-tunnel07DX = 3
-tunnel07DZ = 3
+tunnel07X0 = 5.5
+tunnel07Z0 = 5.5
+tunnel07DX = 2.5
+tunnel07DZ = 2.5
 tunnel07Edge = "fttf"
 
 candemolish = false
-
 
 [CraftClass]
 rangeScan = 210.0
@@ -241,11 +242,12 @@ detectRange = 500
 
 [OmniLightYellow]
 renderBase = "draw_light"
-startColor = "255 255 0 300"
-finishColor = "255 255 0 300"
+startColor = "255 255 0 600"
+finishColor = "255 255 0 600"
 startRadius = 25.0
 finishRadius = 25.0
 //animateTime = 1.5
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = true
