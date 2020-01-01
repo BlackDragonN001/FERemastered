@@ -48,6 +48,7 @@ local M = {
 	Schultz = nil,
 	CerbGuard = nil,
 	WorldPortal = nil,
+	Portal3 = nil, -- (hadean base portal)
 	Portal4 = nil,	--(southern portal)
 	PortalA0 = nil,
 	PortalA1 = nil,
@@ -130,10 +131,17 @@ function Start()
 	M.HadeanDropship = GetHandle("dropship");
 	M.ScrapyardNav = GetHandle("scrapyard");
 	M.Portal2 = GetHandle("portal2");
+	ClearPortalDest(M.Portal2, true); -- Lock Portal to script only.
 	M.WorldPortal = GetHandle("unnamed_hbportbig");
+	M.Portal3 = GetHandle("portal3");
+	ClearPortalDest(M.Portal3, true); -- Lock Portal to script only.
 	M.Portal4 = GetHandle("portal4");
+	ClearPortalDest(M.Portal4, true); -- Lock Portal to script only.
 	M.PortalA0 = GetHandle("PortalA0");
 	M.PortalA1 = GetHandle("PortalA1");
+	-- Might tweak script to leave these working for all units?? -GBD
+	ClearPortalDest(M.PortalA0, true); -- Lock Portal to script only.
+	ClearPortalDest(M.PortalA1, true); -- Lock Portal to script only.
 	
 	M.Position_ScrapYard = GetPosition(M.ScrapyardNav);
 	

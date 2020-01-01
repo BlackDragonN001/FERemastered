@@ -177,7 +177,8 @@ function Start()
 	M.Dropship = GetHandleOrDie("Drop3");
 	for i = 1, NUM_PORTALS do
 		M.Portals[i] = GetHandleOrDie(string.format("Portal%d", i));
-	end
+			ClearPortalDest(M.Portals[i], true); -- Lock Portal to script only.
+	end	
 	for i = 1, NUM_GUARDIANS do
 		M.HadeanGuardianTurrets[i] = GetHandleOrDie(string.format("ET%d", i));
 	end

@@ -175,7 +175,15 @@ function Start()
 	M.Portals[3] = GetHandleOrDie("Portal3");	--portal beside scrap pool
 	M.Portals[4] = GetHandleOrDie("Portal4");	--south east portal
 	M.Portals[5] = GetHandleOrDie("Portal5");	--player's portal (southern most one)
+	
+	for i = 1, 5 do
+		ClearPortalDest(M.Portals[i], true); -- Lock Portal to script only.
+		--M.Portals[i] = GetHandleOrDie(string.format("Portal%d", i));
+	end
+	
 	M.ScrapPool = GetHandleOrDie("Pool1");
+	
+	GLOBAL_lock(_G);	--prevents script from accidentally creating new global variables.
 end
 
 

@@ -147,6 +147,7 @@ function Start()
 	
 	Ally(6, 1);
 	M.ScionPortal = GetHandleOrDie("portalfriend");
+	ClearPortalDest(M.ScionPortal, true); -- Lock Portal to script only.
 	M.CerbPowerGen = GetHandleOrDie("power2");
 	M.WeaponsCacheNav = GetHandleOrDie("west");
 	M.BeamTurret1 = GetHandleOrDie("defense1");

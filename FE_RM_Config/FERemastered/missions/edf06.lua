@@ -96,7 +96,12 @@ function Start()
 	M.Transport = GetHandle("ivcargo1");
 	M.Wingman = GetHandle("unnamed_ivtank");
 	M.Portal = GetHandle("portal");
+	ClearPortalDest(M.Portal, true); -- Lock Portal to script only.
 	M.CerbRelay = GetHandle("relay");
+	
+	local TempH = GetHandleOrDie("portal_in");
+	ClearPortalDest(TempH, true); -- Lock Portal to script only.
+	
 	GLOBAL_lock(_G);	--prevents script from accidentally creating new global variables.
 end
 

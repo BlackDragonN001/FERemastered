@@ -178,8 +178,11 @@ function Start()
 	_FECore.Start();
 
 	M.Portal1 = GetHandleOrDie("portal1");
+	ClearPortalDest(M.Portal1, true); -- Lock Portal to script only.
 	M.Portal2 = GetHandleOrDie("portal2");
+	ClearPortalDest(M.Portal2, true); -- Lock Portal to script only.
 	M.ExitPortal = GetHandleOrDie("exitportal");
+	ClearPortalDest(M.ExitPortal, true); -- Lock Portal to script only.
 	--M.HadeanTrain = GetHandleOrDie("hadeantrain");
 	
 	--spawn player's starting forces

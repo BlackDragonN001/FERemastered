@@ -284,6 +284,22 @@ function Start()
 	M.CerbTransport = GetHandleOrDie("cerbtran_cbprop04");
 	M.CerbRecy = GetObjectByTeamSlot(5, 1);
 	M.CerbFact = GetObjectByTeamSlot(5, 2);
+	
+	-- Portals, May save/use the actual handles later. -GBD
+	local TempH = GetHandleOrDie("islandstart_hbport");
+	ClearPortalDest(TempH, true); -- Lock Portal to script only.
+	TempH = GetHandleOrDie("south_hbport");
+	ClearPortalDest(TempH, true); -- Lock Portal to script only.
+	TempH = GetHandleOrDie("craterin_hbport");
+	ClearPortalDest(TempH, true); -- Lock Portal to script only.
+	TempH = GetHandleOrDie("craterin2_hbport");
+	ClearPortalDest(TempH, true); -- Lock Portal to script only.
+	TempH = GetHandleOrDie("westcrater_hbport");
+	ClearPortalDest(TempH, true); -- Lock Portal to script only.
+	TempH = GetHandleOrDie("water_hbport");
+	ClearPortalDest(TempH, true); -- Lock Portal to script only.
+	TempH = GetHandleOrDie("craterout_hbport");
+	ClearPortalDest(TempH, true); -- Lock Portal to script only.
 
 	GLOBAL_lock(_G);	--prevents script from accidentally creating new global variables.
 end
