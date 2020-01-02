@@ -1,7 +1,7 @@
 [OrdnanceClass]
 classLabel = "anchor"
 canCollide = 0 
-canDetect = 0 
+scanTeamLimit = 3 
 canInteract = 0 
 
 shotGeometry = NULL //"snaremort.xsi" // empty model... -GBD

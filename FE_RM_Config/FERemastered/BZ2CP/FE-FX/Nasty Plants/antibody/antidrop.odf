@@ -8,7 +8,7 @@ maxAmmo = 90000
 unitName = "Arc Mine"
 fireSound = "antishot.wav" // Don't think this works... -GBD
 canCollide = 0 
-canDetect = 0 
+scanTeamLimit = 3
 canInteract = 0 
 explosionName = "" //"defflarxpl"
 

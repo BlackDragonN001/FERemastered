@@ -16,7 +16,7 @@ radarSignature = 0.2
 effectHard3 = "firefly" // "hp_emit_3"
 effectName3 = "firefly.light"
 canCollide = 0
-canDetect = 0
+scanTeamLimit = 3
 canInteract = 0
 
 [CraftClass]

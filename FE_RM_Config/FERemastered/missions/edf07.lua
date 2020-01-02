@@ -844,10 +844,11 @@ function Routine8()
 			AudioMessage("e7start.wav");	--Windex:"Corber, you're in charge of escorting the convoy..."
 			SetObjectiveOn(M.Recycler);	--added objective marker on recy for the duration of the escort
 
-			-- Order the tug to pick up the jammer iff both handles exist
-			if IsAround(M.Tug1) and IsAround(M.EcmJammer) then
-				Pickup(M.Tug1, M.EcmJammer, 0);
-			end
+			-- Order the tug to pick up the jammer if both handles exist
+			-- Tug now carries it from BZN, side effect: tug model isn't in Deployed state, purely visual (technically). -GBD
+	--		if IsAround(M.Tug1) and IsAround(M.EcmJammer) then
+	--			Pickup(M.Tug1, M.EcmJammer, 0);
+	--		end
 
 			M.Routine8State = M.Routine8State + 1;
 			M.Routine8Timer = GetTime() + 25;	--bumped up from 10 to give the player a bit more time to prepare

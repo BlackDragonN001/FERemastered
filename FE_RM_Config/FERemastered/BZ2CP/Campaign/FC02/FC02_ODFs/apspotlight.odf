@@ -8,7 +8,7 @@ maxHealth = 99999
 maxAmmo = 0
 unitName = "Crane"
 aiName = "PowerUpProcess"
-canDetect = 0
+scanTeamLimit = 3
 canInteract= 0
 canSnipe = 0
 

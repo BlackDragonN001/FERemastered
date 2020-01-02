@@ -9,7 +9,7 @@ maxAmmo = 10
 unitName = "M-Shield"
 effectHard1 = "M-Shield"
 effectName1 = "mshield.field"
-canDetect = 0
+scanTeamLimit = 3
 canInteract = 0
 
 //lightHard1 = "light2"
