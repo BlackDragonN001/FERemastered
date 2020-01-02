@@ -3995,7 +3995,7 @@ euler =
 -2.56237268e+00
 name = Scrap Shipment
 saveFlags [1] =
-44
+104
 isVisible [1] =
 65535
 EffectsMask [1] =
@@ -4007,7 +4007,7 @@ groupNumber [1] =
 undefaicmd =
 priority [1] =
 0
-what = 11000000
+what = 00000000
 who [1] =
 0
 where = 00000000
@@ -4017,9 +4017,9 @@ aiProcess [1] =
 true
 independence [1] =
 1
-state = 00000000
+state = 02000000
 cargoHandle [1] =
-0
+936004080
 [GameObject]
 objClass = ivserv
 seqno [1] =
