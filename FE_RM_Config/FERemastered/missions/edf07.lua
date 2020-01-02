@@ -1204,8 +1204,7 @@ function Routine9()
 			if M.Constructor ~= nil then
 				Attack(M.Attacker14, M.Constructor, 1);
 				--Attack(M.Attacker15, M.Constructor, 1);
-			end			
-			SetCurHealth(M.Attacker14, 6000);
+			end
 			M.Attacker16 = TeleportIn("cvscout", 5, "islandstart", 10);
 			M.Attacker17 = TeleportIn("cvturr02", 5, "islandstart", 10);
 			Patrol(M.Attacker16, "islandpath", 1);
@@ -1213,8 +1212,6 @@ function Routine9()
 			M.Routine9State = M.Routine9State + 1;
 			M.Routine9Timer = GetTime() + 20;
 		elseif M.Routine9State == 4 then
-			SetCurHealth(M.Attacker16, 2200);
-			SetCurHealth(M.Attacker16, 2500);
 			Goto(M.Attacker14, "waterstart2", 1);
 			Goto(M.Attacker16, "waterstart2", 1);
 			Goto(M.Attacker17, "waterstart2", 1);
