@@ -11,7 +11,7 @@ unitName = "Time Bomb"
 heatSignature = 100.0
 imageSignature = 0.001
 radarSignature = 0.001
-canDetect = 0
+scanTeamLimit = 3
 canInteract = 0
 
 [BuildingClass]

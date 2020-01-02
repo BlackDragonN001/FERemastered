@@ -8,7 +8,7 @@ maxAmmo = 5000
 unitName = "recfield"
 effectHard1 = "recfield"
 effectName1 = "recfield.field"
-canDetect = 0
+scanTeamLimit = 3
 canInteract = 0
 canSnipe = 0
 

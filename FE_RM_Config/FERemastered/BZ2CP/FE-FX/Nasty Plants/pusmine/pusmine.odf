@@ -7,7 +7,7 @@ maxHealth = 500
 maxAmmo = 200
 unitName = "Prox Mine"
 canCollide = 0 
-canDetect = 0 
+scanTeamLimit = 3 
 canInteract = 0 
 explosionName = "pusxpl"
 

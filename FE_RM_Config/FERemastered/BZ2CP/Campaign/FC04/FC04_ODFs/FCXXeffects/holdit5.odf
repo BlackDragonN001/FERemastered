@@ -9,7 +9,7 @@ maxAmmo = 10
 unitName = "Hold 5 min"
 effectHard1 = "LIGHT2"
 effectName1 = "holdit5.field"
-canDetect = 0
+scanTeamLimit = 3
 canInteract = 0
 
 [MineClass]

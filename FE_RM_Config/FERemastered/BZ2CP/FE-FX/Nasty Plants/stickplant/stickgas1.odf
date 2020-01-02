@@ -9,7 +9,7 @@ wpnPriority = 2
 wpnCategory = "MORT"
 aiRange = 15
 canCollide = 0 
-canDetect = 0 
+scanTeamLimit = 3 
 canInteract = 0 
 
 [CannonClass]
