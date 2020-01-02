@@ -144,9 +144,10 @@ startRadius = 20.0
 finishRadius = 20.0
 animateTime = 0.3
 rotationRate = 5.0
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
 //emitDelayVar = 3.9
 
 [lightflash]
@@ -174,7 +175,7 @@ animateTime = 0.1
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
-lensFlare = 0
+lensFlare = false
 //emitDelayVar = 3.9
 
 [bolt]

@@ -62,7 +62,7 @@ particleCount9 = 160
 particleVeloc9 = "150.0 150.0 150.0"
 
 particleClass10 = "mbxpl.puff2"
-particleCount10 = 150
+particleCount10 = 0 //150 // WTF? 150 lights? Maybe it was meant to be attached to [Puff]? Disabled until VFX rewrite. -GBD
 particleVeloc10 = "170.0 170.0 170.0"
 
 particleClass11 = "mbxpl.ring1"
@@ -208,9 +208,10 @@ finishColor = "255 0 0 0"
 startRadius = 350.0
 finishRadius = 350.0
 animateTime = 0.7
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
 
 
 [posroll]
@@ -242,16 +243,15 @@ animateTime = 6.0
 simulateBase = "sim_smoke"
 lifeTime = 6.0
 renderBase = "draw_light"
-textureName = "flame.tga"
-textureBlend = "one one modulate"
 startColor = "255 255 255 255"
 finishColor = "255 150 0 0"
 startRadius = 9.0
 finishRadius = 1.0
 animateTime = 6.0
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
 
 [ring1]
 simulateBase = "sim_null"

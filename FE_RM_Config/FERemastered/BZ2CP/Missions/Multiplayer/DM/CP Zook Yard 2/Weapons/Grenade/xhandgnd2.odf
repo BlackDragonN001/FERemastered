@@ -114,9 +114,10 @@ finishColor = "180 50 200 0"
 startRadius = 14.0
 finishRadius = 14.0
 animateTime = 0.5
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
 
 [ring]
 simulateBase = "sim_null"

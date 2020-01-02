@@ -62,7 +62,7 @@ particleCount9 = 60
 particleVeloc9 = "50.0 50.0 50.0"
 
 particleClass10 = "kamixpl.puff2"
-particleCount10 = 50
+particleCount10 = 0 //50 // Lights, probably meant to be attached to [Puff]? Disabled until VFX rewrite. -GBD
 particleVeloc10 = "70.0 70.0 70.0"
 
 particleClass11 = "kamixpl.ring1"
@@ -234,16 +234,15 @@ animateTime = 6.0
 simulateBase = "sim_smoke"
 lifeTime = 6.0
 renderBase = "draw_light"
-textureName = "flame.tga"
-textureBlend = "one one modulate"
 startColor = "255 255 255 255"
 finishColor = "255 150 0 0"
 startRadius = 4.0
 finishRadius = 1.0
 animateTime = 6.0
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
 
 [ring1]
 simulateBase = "sim_null"

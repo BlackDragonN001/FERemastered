@@ -152,9 +152,10 @@ finishColor = "200 0 0 0"
 startRadius = 20
 finishRadius = 20.0
 animateTime = 1.5
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
 
 [Shock]
 simulateBase = "sim_null"
@@ -198,15 +199,14 @@ animateTime = 1
 simulateBase = "sim_smoke"
 lifeTime = 2.0
 renderBase = "draw_light"
-textureName = "flame.tga"
-textureBlend = "one one modulate"
 startColor = "255 200 200 255"
 finishColor = "255 0 0 0"
 startRadius = 0.5
 finishRadius = 0.1
 animateTime = 2.0
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
 
 

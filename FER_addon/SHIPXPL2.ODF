@@ -225,9 +225,10 @@ finishColor = "255 0 0 0"
 startRadius = 550.0
 finishRadius = 550.0
 animateTime = 2.0
-attenuateConstant = 9.0
-attenuateLinear = 9.0
-attenuateQuadratic = 9.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
 
 [Puff]
 simulateBase = "sim_smoke"
@@ -252,9 +253,6 @@ finishColor = "255 0 0 0"
 startRadius = 2.3 //.3
 finishRadius = 2.2 //.2
 animateTime = 6.0
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
 
 [ring1]
 simulateBase = "sim_null"

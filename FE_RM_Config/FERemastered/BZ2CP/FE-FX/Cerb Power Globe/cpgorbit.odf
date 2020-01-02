@@ -43,9 +43,9 @@ finishColor = "127 0 255 455"
 startRadius = 50.0
 finishRadius = 50.0
 animateTime = 0.2
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
 
 [sphere]
 simulateBase = "sim_null"

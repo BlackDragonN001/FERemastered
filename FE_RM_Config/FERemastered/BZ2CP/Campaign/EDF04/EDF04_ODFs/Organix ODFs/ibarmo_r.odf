@@ -43,9 +43,10 @@ finishColor = "255 0 0 0"
 startRadius = 50.0
 finishRadius = 50.0
 animateTime = 0.4
-attenuateConstant = 0.0
-attenuateLinear = 2.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
 
 [light2]
 simulateBase = "sim_smoke"
@@ -65,6 +66,7 @@ finishColor = "0 0 255 0"
 startRadius = 50.0
 finishRadius = 50.0
 animateTime = 0.4
-attenuateConstant = 0.0
-attenuateLinear = 2.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false

@@ -49,9 +49,9 @@ finishColor = "255 0 0 2550"
 startRadius = 50.0
 finishRadius = 50.0
 animateTime = .20
-attenuateConstant = 0.0
-attenuateLinear = 1.0
-attenuateQuadratic = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
 
 [Center]
 simulateBase = "sim_null"
