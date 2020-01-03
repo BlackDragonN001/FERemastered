@@ -1,18 +1,6 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
---Strings
-_Text1 = "The Hadean rebels have helped us\ndestroy the StarPortal, but a\nstrong Hadean loyalist force\nremains. Set up the base and \ndefenses.";
-_Text2 = "Intercept the incoming Cerberi\nforces.";
-_Text3 = "Help our Hadean allies finish\noff the Cerberi!";
-_Text4 = "Follow the Hadean rebels to see\nif they have any information for\nus.";
-_Text5 = "Hold position. General Hardin is\nmonitoring your conversation\nwith Marshall Pantelas.";
-_Text6 = "Use the Portal transit system to\ncapture the scrap field and its\ntwo biometal pools. Deploy a scav\non each of the island's pools.";
-_Text7 = "Good job capturing the scrap\npools. There's even better news--\nthe Hadean rebels may have found\nLieutenant Schultz!";
-_Text8 = "Find Schultz and bring him back\nto base. General Hardin will want\nto debrief him as soon as he\nreturns.";
-_Text9 = "Take out the Hadean base. We\nmust capture the WorldPortal to\nFacility, in order to learn\nmore about the Hadean fleet.";
-_Text10 = "Major Corber, you are disobeying\norders. You must attack and\ndestroy the Hadean Recycler as\nquickly as possible!";
-
 local M = {
 -- Bools
 	MissionOver = false,
@@ -208,7 +196,7 @@ function Routine1()
 		elseif M.Routine1State == 2 then
 			StartAnimation(M.HadeanDropship);
 			ClearObjectives();
-			AddObjective(_Text1, "green");
+			AddObjective("edf1001.otf", "green");
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 6;
 		elseif M.Routine1State == 3 then
@@ -246,7 +234,7 @@ function Routine1()
 			M.Routine1Timer = GetTime() + 5;
 		elseif M.Routine1State == 7 then
 			ClearObjectives();
-			AddObjective(_Text2, "green");
+			AddObjective("edf1002.otf", "green");
 			AudioMessage("edf10b.wav");	--Sgt. Wong:"Sir, our scanners show several Cerberi units incoming from the South-West..."
 			M.AmbushNav = BuildObject("ibnav", 1, "ambush");
 			SetObjectiveName(M.AmbushNav, "Forces");
@@ -261,7 +249,7 @@ function Routine1()
 				SetObjectiveName(M.HadeanAlly2, "Hadean Ally");
 				AudioMessage("edf10c.wav");	--Hardin:"Our scanners identify those Hadeans as being on our side..."
 				ClearObjectives();
-				AddObjective(_Text3, "white");
+				AddObjective("edf1003.otf", "white");
 				M.Routine1State = M.Routine1State + 1;
 			end
 		elseif M.Routine1State == 9 then	--LOC_42
@@ -271,7 +259,7 @@ function Routine1()
 				Goto(M.HadeanAlly2, "meeting", 1);
 				Follow(M.HadeanAlly1, M.HadeanAlly2, 0);
 				ClearObjectives();
-				AddObjective(_Text4, "green");
+				AddObjective("edf1004.otf", "green");
 				AudioMessage("edf10c2.wav");	--Hardin:"Follow that Hadean commander and see if he has any news for us."
 				M.Routine1State = M.Routine1State + 1;
 			elseif GetCurrentCommand(M.HadeanAlly1) == 0 then
@@ -285,7 +273,7 @@ function Routine1()
 				AudioMessage("edf10d.wav");	--Pantelas:"The Prince, er, General has advised us to render all possible assistance to our new allies..."
 				ClearObjectives();
 				M.PortalsActive = true;
-				AddObjective(_Text5, "white");
+				AddObjective("edf1005.otf", "white");
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 44;
 			end
@@ -315,7 +303,7 @@ function Routine1()
 			RemoveObject(M.HadeanAlly1);
 			RemoveObject(M.HadeanAlly2);
 			ClearObjectives();
-			AddObjective(_Text6, "green");
+			AddObjective("edf1006.otf", "green");
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 10;
 		elseif M.Routine1State == 16 then
@@ -325,7 +313,7 @@ function Routine1()
 			if CountUnitsNearObject(M.Portal2, 300, 1, "ibscav") > 1 then
 				SetObjectiveOff(M.ScrapyardNav);
 				ClearObjectives();
-				AddObjective(_Text7, "white");
+				AddObjective("edf1007.otf", "white");
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 20;
 			end
@@ -344,7 +332,7 @@ function Routine1()
 			M.CerbGuard = BuildObject("cvrbomb", 4, M.Position6);
 			Defend2(M.CerbGuard, M.Schultz, 0);
 			M.CheckSchultz = true; --RunSpeed,_Routine4,1,true
-			AddObjective(_Text8, "white");
+			AddObjective("edf1008.otf", "white");
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 20 then
 			if GetDistance(M.Player, "shultz") < 70 then
@@ -352,7 +340,7 @@ function Routine1()
 				AudioMessage("edf10z.wav");	--Schultz:"Is that you? Corber?..."
 				Follow(M.Schultz, M.Player, 0);
 				ClearObjectives();
-				AddObjective(_Text8, "green");
+				AddObjective("edf1008.otf", "green");
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 50;
 			end
@@ -383,7 +371,7 @@ function Routine1()
 		elseif M.Routine1State == 26 then
 			AudioMessage("edf10g2.wav");	--Hardin:"You've got to destroy that base as quick as you can..."
 			ClearObjectives();
-			AddObjective(_Text9, "green");
+			AddObjective("edf1009.otf", "green");
 			SetObjectiveOn(M.WorldPortal);
 			SetObjectiveName(M.WorldPortal, "WorldPortal");
 			M.Routine5Active = false;--RunSpeed,_Routine5,0,true
@@ -436,7 +424,7 @@ end
 function Routine5()
 	if M.Routine5Active and M.Routine5Timer < GetTime() and GetDistance(M.Player, M.HadeanRecy) < 500 then
 		ClearObjectives();
-		AddObjective(_Text10, "red");
+		AddObjective("edf1010.otf", "red");
 		M.Variable2 = M.Variable2 + 1;
 		if M.Variable2 > 2 then
 			FailMission(GetTime() + 5, "badplayer.des");

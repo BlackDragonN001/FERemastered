@@ -1,18 +1,6 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
---Strings
-_Text1 = "eSCORT tHE nEOHYDRIUM cATALYSER\nrODS tO tHE sHIPYARD, fOR\niNSTALLATION iN tHE aRK ii'S\npROPULSOR cORES. bEWARE oF\ncERBERI aMBUSH eN rOUTE!";
-_Text2 = "tHE sHIPYARD hAS bEEN cAPTURED,\naLONG wITH tHE sCION mATRIARCH.\neSCORT tHE hAULERS bACK tO tHE\npORTAL iMMEDIATELY!";
-_Text3 = "wE mUST rECAPTURE tHE sHIPYARD\naS sOON aS pOSSIBLE--\naWAIT fURTHER oRDERS. . . .";
-_Text4 = "tHE nEW pORTAL iS a dIRECT lINK\ntO tHE aRK ii, bUT oNLY a fEW\nuNITS mAY bE tRANSPORTED\ntO aVOID rEVEALING tHE aRK'S\npOSITION. cHOOSE cAREFULLY!";
-_Text5 = "sOME sALVAGEABLE wEAPONS aND\neQUIPMENT hAS bEEN dISCOVERED,\ntO tHE wEST oF tHE pORTAL. iTS\nlOCATION iS hIGHLIGHTED oN yOUR\ndISPLAY.";
-_Text6 = "tHE mASKED tURRETS wILL bE\naCTIVATED tO cOVER yOUR aSSAULT,\noNCE yOU aPPROACH wITHIN 400\nmETERS oF tHEIR pOSITION.";
-_Text7 = "yOUR rEINFORCEMENTS hAVE\naRRIVED, aND aWAIT fURTHER\noRDERS.";
-_Text8 = "pROTECT tHE bUILDER aND kEY\nsTRUCTURES wHILE fIXED dEFENSES\naRE cONSTRUCTED. aT lEAST fIVE\ngUN-sPIRES aRE nECESSARY tO\nsECURE tHE sHIPYARD.";
-_Text9 = "tHE sHIPYARD iS sECURE, sO tHE\nhAULERS wILL bE sENT tHROUGH tHE\npORTAL. eSCORT tHE nEOHYDRIUM tO\ntHE eNGINE cORES aND bEWARE oF\ncERBERI aTTACK!";
-
-
 local M = {
 -- Bools
 	MissionOver = false,
@@ -234,7 +222,7 @@ function Routine1()
 			h = TeleportIn("fvturr", 1, M.ScionPortal, 20);
 			AddHealth(h, -2000);
 			SetGroup(h, 5);
-			AddObjective(_Text1, "white");
+			AddObjective("fc0301.otf", "white");
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 4;
 		elseif M.Routine1State == 3 then
@@ -262,7 +250,7 @@ function Routine1()
 		elseif M.Routine1State == 6 then	--LOC_51
 			if GetDistance(M.Hauler1, "back") < 30 then
 				ClearObjectives();
-				AddObjective(_Text2, "red");
+				AddObjective("fc0302.otf", "red");
 				AudioMessage("fc03_02.wav");	--LeBlanc:"The Cerberi have launched a surprise attack on the Shipyard..."
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 3;
@@ -296,7 +284,7 @@ function Routine1()
 				RemoveObject(M.Portal1Aurora4);
 				AudioMessage("fc03_02b.wav");	--LeBlanc:"The Cerberi just captured our Matriarch..."
 				ClearObjectives();
-				AddObjective(_Text3, "white");
+				AddObjective("fc0303.otf", "white");
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 10;
 			else
@@ -314,7 +302,7 @@ function Routine1()
 			M.HadeanBuilderAround = true;--RunSpeed,_Routine2,1,true
 			Dropoff(M.HadeanBuilder, "patrol", 1);
 			AudioMessage("fc03_02c.wav");	--Thanatos:"We have sent a builder through the portal..."
-			AddObjective(_Text4, "white");
+			AddObjective("fc0304.otf", "white");
 			Follow(M.Hauler1, M.ScionPortal, 1);
 			Follow(M.Hauler2, M.ScionPortal, 1);
 			M.Routine1State = M.Routine1State + 1;
@@ -329,7 +317,7 @@ function Routine1()
 			SetObjectiveName(M.WeaponsCacheNav, "Weapons Cache");
 			SetObjectiveOn(M.WeaponsCacheNav);
 			ClearObjectives();
-			AddObjective(_Text5, "white");
+			AddObjective("fc0305.otf", "white");
 			M.TugsAround = false;--RunSpeed,_Routine3,0,true
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 10;
@@ -385,7 +373,7 @@ function Routine1()
 			SetObjectiveOn(M.BeamTurret1);
 			SetObjectiveOn(M.BeamTurret2);
 			ClearObjectives();
-			AddObjective(_Text6, "green");
+			AddObjective("fc0306.otf", "green");
 			AudioMessage("fc03_03b.wav");	--LeBlanc:"Two masked turrets were not destroyed during the Cerberi takeover..."
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 23 then	--LOC_166
@@ -410,7 +398,7 @@ function Routine1()
 			M.Routine1Timer = GetTime() + 2;
 		elseif M.Routine1State == 26 then
 			ClearObjectives();
-			AddObjective(_Text8, "green");
+			AddObjective("fc0308.otf", "green");
 			AudioMessage("fc03_04.wav");	--LeBlanc:"The surviving Scions will start building a more solid line of defenses..."
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 27 then	--LOC_185
@@ -421,7 +409,7 @@ function Routine1()
 			elseif M.ScionSpireCount >= 5 then
 				AudioMessage("fc03_05.wav");	--LeBlanc:"I have ordered the haulers through the portal once again..."
 				ClearObjectives();
-				AddObjective(_Text9, "green");
+				AddObjective("fc0309.otf", "green");
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 90;
 			else
@@ -522,7 +510,7 @@ function Routine4()
 		elseif M.Routine4State == 7 then
 			M.Variable10 = M.Variable10 + 1;
 			if M.Variable10 > M.Variable6 then
-				AddObjective(_Text7, "green");
+				AddObjective("fc0307.otf", "green");
 				M.Routine4State = M.Routine4State + 1;
 			else
 				local h = TeleportIn("fvwalk", 1, M.ScionPortal, 20);

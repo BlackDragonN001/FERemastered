@@ -6,29 +6,6 @@ local h	--temp handle
 local ZERO_VECTOR = SetVector(0,0,0);
 local UP_VECTOR = SetVector(0,1,0);
 
---Strings
-local _Text1 = "Escort the convoy and establish\na base. Beware of the molten\nbiometal rivers!\n\nKeep the ECM pod near the\nRecycler to reduce its radar\nprofile."
-local _Text2 = "Long-range scans have detected\na comm bunker bearing an\nunusual friend-or-foe\nidentity code. Go to the\nindicated nav beacon and\ninvestigate."
-local _Text3 = "Hop out of your tank,\nand enter the comm bunker\non foot. Access the\ninterface if possible."
-local _Text4 = "Once you clear the targeted\nguntower, the Recycler will\nmove across the bridge."
-local _Text5 = "Clear the other guntower\nbefore your recycler is fried.\nMake SURE to carefully recon\nthe remainder of the route!"
-local _Text6 = "We must bomb the bridge to\nblock a massive counterattack.\nClimb to the observation point\nand target the weakest bridge\nsegment using the 'T' key."
-local _Text7 = "Major Wyndt-Essex has ordered\nyou to deploy the Recycler\nat the point she recommends.\nDisobey her at your peril."
-local _Text8 = "Enemy attack waves detected.\nBuild defenses and key\nstructures (power, factory,\narmory), and await further\norders."
-local _Text9 = "Engineers have placed a\nbooster-pad to help you\ncatapult across the river.\nHover on the pad's center for\n5 seconds in order to launch."
-local _Text10 = "Conduct a security patrol\nalong the nav points with\nSchultz. Engage and destroy all\nenemies inside the perimeter."
-local _Text11 = "CONDITION EPSILON: Return\nto base at once to assist\nwith defense! Lt. Schultz is\nto finish patrol alone."
-local _Text12 = "CONDITION EPSILON: ALL\nUNITS EXCEPT SCHULTZ RTB\nIMMEDIATELY! Lt. Schul@#\nmust mainta]n patr@]\nto secur@ p@r|m@+er."
-local _Text13 = "A large assault force is needed\nto rescue Schultz. Lead the Hadean\nBuilder to the Repair Point\nand it will rebuild the bridge."
-local _Text14 = "The crater has been sealed off.\nGrab the nuclear satchel-bomb\nand deploy it at the nav point\nin order to breach the rim\nand rescue Schultz."
-local _Text15 = "You'll need to build a large\nforce to storm the base.\nDestroy the Foundry AND the\nCrucible in order to gain\ncontrol of the Proteus facility."
-local _Text16 = "You placed the nuclear excavator\ntoo far from the designated\ndrop point. Deploy it in the\nindicated position next time!"
-local _Text17 = "You just lost the Recycler,\nalong with all our hopes of\nescaping this wretched planet!"
-local _Text18 = "Schultz remains a prisoner, but\nyou've bought us a chance to\nland the StormPetrel safely.\nReturn to base at once."
-local _Text19 = "You failed to protect your\nwingman. Now he's dead, or a\nprisoner of the alien machines.\nReturn to base immediately!"
-local _Text20 = "You have lost the Builder that\nour new allies had sent to help\nus. The Hadean Fifth Column\nwill be most displeased."
-local _Text21 = "A biometal storage facility\nhas been found near your\nposition. Destroy the\ntanks to harvest the scrap."
-
 local M = {
 -- Bools
 	MissionOver = false,
@@ -478,7 +455,7 @@ function Routine3()
 		elseif M.Routine3State == 13 then
 			if AtTerminal(M.Player) ~= M.HadeanCommBunk then
 				ClearObjectives();
-				AddObjective(_Text3, "green");
+				AddObjective("edf0703.otf", "green");
 				SetTeamNum(M.HadeanPower, 0);
 				RemoveObject(M.HadeanPower);
 				M.CbunkUploadFinished = 1;
@@ -840,7 +817,7 @@ function Routine8()
 			SetObjectiveName(M.NextWaypointNav, "First Waypoint");
 			SetObjectiveOn(M.NextWaypointNav);
 			--SetCockpitTimer(15); --??
-			AddObjective(_Text1, "white");
+			AddObjective("edf0701.otf", "white");
 			AudioMessage("e7start.wav");	--Windex:"Corber, you're in charge of escorting the convoy..."
 			SetObjectiveOn(M.Recycler);	--added objective marker on recy for the duration of the escort
 
@@ -849,7 +826,7 @@ function Routine8()
 	--		if IsAround(M.Tug1) and IsAround(M.EcmJammer) then
 	--			Pickup(M.Tug1, M.EcmJammer, 0);
 	--		end
-
+	
 			M.Routine8State = M.Routine8State + 1;
 			M.Routine8Timer = GetTime() + 25;	--bumped up from 10 to give the player a bit more time to prepare
 		elseif M.Routine8State == 1 then
@@ -889,7 +866,7 @@ function Routine8()
 					Stop(M.Recycler, 1);
 					AudioMessage("e7bridtow1.wav");	--Windex:"Mr Corber, you were supposed to clear our path of all threats..."
 					ClearObjectives();
-					AddObjective(_Text4, "white");
+					AddObjective("edf0704.otf", "white");
 					SetObjectiveName(M.BridgeGuard1, "Eliminate MegaGuard!");
 					SetObjectiveOn(M.BridgeGuard1);
 					M.Routine8State = M.Routine8State + 1;
@@ -902,7 +879,7 @@ function Routine8()
 		elseif M.Routine8State == 9 then	--LOC_358
 			if not IsAround(M.BridgeGuard1) then
 				ClearObjectives();
-				AddObjective(_Text4, "green");
+				AddObjective("edf0704.otf", "green");
 				M.Routine8State = M.Routine8State + 1;
 				M.Routine8Timer = GetTime() + 3;
 			end
@@ -924,7 +901,7 @@ function Routine8()
 					end
 					M.PlayerUsingCbunk = 1;
 					ClearObjectives();
-					AddObjective(_Text2, "white");
+					AddObjective("edf0702.otf", "white");
 					AudioMessage("findbunk.wav");	--Eisenstein:"Skyeye is picking up some unusual radio signals coming from a nearby comm bunker..."
 					SetObjectiveName(M.HadeanCommBunk, "Investigate");
 					SetObjectiveOn(M.HadeanCommBunk);
@@ -934,7 +911,7 @@ function Routine8()
 		elseif M.Routine8State == 12 then	--LOC_379
 			if GetDistance(M.Player, M.HadeanCommBunk) < 100 then
 				ClearObjectives();
-				AddObjective(_Text3, "white");
+				AddObjective("edf0703.otf", "white");
 				M.Routine8State = M.Routine8State + 1;
 			end
 		elseif M.Routine8State == 13 then	--LOC_383
@@ -953,14 +930,14 @@ function Routine8()
 		elseif M.Routine8State == 15 then
 			AudioMessage("e7bridtow2.wav");	--Windex:"Corber, your blundering incompetence is going to get us all killed..."
 			ClearObjectives();
-			AddObjective(_Text5, "white");
+			AddObjective("edf0705.otf", "white");
 			SetObjectiveName(M.BridgeGuard2, "Destroy 2nd MegaGuard!");
 			SetObjectiveOn(M.BridgeGuard2);
 			M.Routine8State = M.Routine8State + 1;
 		elseif M.Routine8State == 16 then	--LOC_394
 			if not IsAround(M.BridgeGuard2) then
 				ClearObjectives();
-				AddObjective(_Text5, "green");
+				AddObjective("edf0705.otf", "green");
 				M.Routine8State = M.Routine8State + 1;
 				M.Routine8Timer = GetTime() + 10;
 			end
@@ -981,7 +958,7 @@ function Routine8()
 		elseif M.Routine8State == 19 then
 			Stop(M.Recycler, 1);
 			ClearObjectives();
-			AddObjective(_Text6, "white");
+			AddObjective("edf0706.otf", "white");
 			AudioMessage("letsbomb.wav");	--Skyeye:"Reporting a massive wave of heavy armor approaching the river from the east..."
 			M.Bridge1 = GetHandle("bomseg1_hbbseg07d");
 			M.Bridge2 = GetHandle("bomseg2_hbbseg07");
@@ -1068,7 +1045,7 @@ function Routine8()
 				Damage(M.Attacker06, 2000);
 				Damage(M.Attacker07, 2500);
 				ClearObjectives();
-				AddObjective(_Text6, "green");
+				AddObjective("edf0706.otf", "green");
 				RemoveObject(M.BridgeLookoutNav);
 				M.Routine8State = M.Routine8State + 1;
 				M.Routine8Timer = GetTime() + 1;
@@ -1122,7 +1099,7 @@ function Routine8()
 				SetObjectiveName(M.SchultzDeployNav, "Schultz's Alternate Point");
 				SetObjectiveOn(M.SchultzDeployNav);
 				ClearObjectives();
-				AddObjective(_Text7, "red");
+				AddObjective("edf0707.otf", "red");
 				M.Routine8State = M.Routine8State + 1;
 				M.Routine8Timer = GetTime() + 30;
 			else
@@ -1145,7 +1122,7 @@ function Routine8()
 			end
 		elseif M.Routine8State == 38 then	--LOC_531
 			ClearObjectives();
-			AddObjective(_Text8, "white");
+			AddObjective("edf0708.otf", "white");
 			M.Routine8State =  M.Routine8State + 1;
 			M.Routine8Timer = GetTime() + 10;
 		elseif M.Routine8State == 39 then
@@ -1158,7 +1135,7 @@ function Routine8()
 			M.NextWaypointNav = BuildObject("ibnav", 1, "biotanks");
 			SetObjectiveName(M.NextWaypointNav, "Resources Detected");
 			SetObjectiveOn(M.NextWaypointNav);
-			AddObjective(_Text21, "white");
+			AddObjective("edf0721.otf", "white");
 			M.Routine10Active = true;--RunSpeed,_Routine10,1,false
 			AudioMessage("Shultank.wav");	--Shultz:"Good news for your scav jockeys..."
 			M.Routine8State = M.Routine8State + 1;
@@ -1205,7 +1182,7 @@ function Routine9()
 			if M.Constructor ~= nil then
 				Attack(M.Attacker14, M.Constructor, 1);
 				--Attack(M.Attacker15, M.Constructor, 1);
-			end
+			end			
 			M.Attacker16 = TeleportIn("cvscout", 5, "islandstart", 10);
 			M.Attacker17 = TeleportIn("cvturr02", 5, "islandstart", 10);
 			Patrol(M.Attacker16, "islandpath", 1);
@@ -1266,7 +1243,7 @@ function Routine9()
 			--player has just built an armory
 			M.Routine9Counter = 0;
 			ClearObjectives();
-			AddObjective(_Text8, "green");
+			AddObjective("edf0708.otf", "green");
 			M.Attacker18 = TeleportIn("cvdcar", 5, "islandstart", 10);
 			Patrol(M.Attacker18, "islandpath", 1);
 			M.Attacker19 = TeleportIn("cvtalon02", 5, "portalsouth", 10);
@@ -1661,7 +1638,7 @@ function Routine11()
 			AudioMessage("Shulhere.wav");	--Schultz:"Hey Corber, this is Schultz. Windex asked me to babysit you again..."
 			RemoveObject(M.NextWaypointNav);
 			ClearObjectives();
-			AddObjective(_Text10, "white");
+			AddObjective("edf0710.otf", "white");
 			M.NextWaypointNav = BuildObject("ibnav", 1, "MtnPass");
 			SetObjectiveName(M.NextWaypointNav, "First Patrol Point");
 			SetObjectiveOn(M.NextWaypointNav);
@@ -1703,7 +1680,7 @@ function Routine11()
 			end
 		elseif M.Routine11State == 6 then
 			--SetCockpitTimer(12);--??
-			AddObjective(_Text9, "white");
+			AddObjective("edf0709.otf", "white");
 			M.NextWaypointNav = BuildObject("ibnav", 1, "patrolp2");
 			SetObjectiveName(M.NextWaypointNav, "Fourth Patrol Point");
 			SetObjectiveOn(M.NextWaypointNav);
@@ -1747,12 +1724,12 @@ function Routine11()
 			end
 		elseif M.Routine11State == 9 then	--LOC_919
 			ClearObjectives();
-			AddObjective(_Text11, "red");
+			AddObjective("edf0711.otf", "red");
 			M.Routine11State = M.Routine11State + 1;
 			M.Routine11Timer = GetTime() + 1;
 		elseif M.Routine11State == 10 then
 			ClearObjectives();
-			AddObjective(_Text11, "white");
+			AddObjective("edf0711.otf", "white");
 			M.Routine11State = M.Routine11State + 1;
 			M.Routine11Timer = GetTime() + 1;
 		elseif M.Routine11State == 11 then
@@ -1762,14 +1739,14 @@ function Routine11()
 			else
 				AudioMessage("chatter1.wav");
 				ClearObjectives();
-				AddObjective(_Text11, "red");
+				AddObjective("edf0711.otf", "red");
 				M.Routine11State = M.Routine11State + 1;
 				M.Routine11Timer = GetTime() + 2;
 			end
 		elseif M.Routine11State == 12 then
 			AudioMessage("stat01.wav");
 			ClearObjectives();
-			AddObjective(_Text12, "red");
+			AddObjective("edf0712.otf", "red");
 			M.Routine11State = M.Routine11State + 1;
 			M.Routine11Timer = GetTime() + 1;
 		elseif M.Routine11State == 13 then
@@ -2016,7 +1993,7 @@ function Routine14()
 				SetPerceivedTeam(M.HadeanBuilder, 1);
 				SetPerceivedTeam(M.Player, 1);
 				ClearObjectives();
-				AddObjective(_Text13, "white");
+				AddObjective("edf0713.otf", "white");
 				Stop(M.HadeanBuilder, 1);
 				M.Routine9Counter = 0;
 				M.Routine14State = M.Routine14State + 1;
@@ -2114,11 +2091,11 @@ function Routine14()
 			SetObjectiveName(M.NextWaypointNav, "Bomb Set Point");
 			SetObjectiveOn(M.NextWaypointNav);
 			ClearObjectives();
-			AddObjective(_Text14, "white");
+			AddObjective("edf0714.otf", "white");
 			M.Routine14State = M.Routine14State + 1;
 			M.Routine14Timer = GetTime() + 5;
 		elseif M.Routine14State == 28 then
-			AddObjective(_Text15, "white");
+			AddObjective("edf0715.otf", "white");
 			M.Routine14State = M.Routine14State + 1;
 		elseif M.Routine14State == 29 then	--LOC_1163
 			if not IsAround(M.SatchelPickup) then
@@ -2172,11 +2149,11 @@ function Routine14()
 			M.Routine14Timer = GetTime() + 2;
 		elseif M.Routine14State == 36 then
 			ClearObjectives();
-			AddObjective(_Text14, "green");
+			AddObjective("edf0714.otf", "green");
 			M.Routine14State = M.Routine14State + 1;
 			M.Routine14Timer = GetTime() + 13;
 		elseif M.Routine14State == 37 then
-			AddObjective(_Text13, "white");
+			AddObjective("edf0713.otf", "white");
 			RemoveObject(M.Attacker09);
 			RemoveObject(M.Attacker10);
 			RemoveObject(M.Attacker11);
@@ -2227,7 +2204,7 @@ function Routine14()
 						M.Routine14State = 99;
 					else
 						ClearObjectives();
-						AddObjective(_Text16, "red");
+						AddObjective("edf0716.otf", "red");
 						M.Routine14State = 30;--to LOC_1166
 					end
 				end
@@ -2347,22 +2324,22 @@ function CheckStuffIsAlive()
 		if M.SchultzState == 1 and not IsAround(M.Schultz) then
 			ClearObjectives();
 			AudioMessage("abetty8.wav");
-			AddObjective(_Text19, "red");
+			AddObjective("edf0719.otf", "red");
 			FailMission(GetTime() + 7, "e7shultz.des");
 			M.MissionOver = true;
 		elseif not IsAround(M.Recycler) then
 			ClearObjectives();
-			AddObjective(_Text17, "red");
+			AddObjective("edf0717.otf", "red");
 			AudioMessage("recydead.wav");
 			FailMission(GetTime() + 7, "e7recyf.des");
 			M.MissionOver = true;
 		elseif M.HadeanBuilderArrived > 0 and not IsAround(M.HadeanBuilder) and not IsAround(M.Bridge2) then
-			AddObjective(_Text20, "red");
+			AddObjective("edf0720.otf", "red");
 			FailMission(GetTime() + 13, "fixerded.des");
 			M.MissionOver = true;
 		elseif not IsAround(M.CerbRecy) and not IsAround(M.CerbFact) then
 			ClearObjectives();
-			AddObjective(_Text18, "green");
+			AddObjective("edf0718.otf", "green");
 			if M.DisobeyedWindex < 1 then
 				SucceedMission(GetTime() + 7, "e7win.des");
 			else

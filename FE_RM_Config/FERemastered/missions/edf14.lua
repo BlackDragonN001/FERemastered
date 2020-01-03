@@ -1,19 +1,6 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
---Strings
-local _Text1 = "Escort the Hadean constructor\nas it builds the jammers. Make\nsure no Hadean scouts reach their\nbase with news of your presence!";
-local _Text2 = "Our cover is blown! The Creator\nwas destroyed before it could\nfinish making the jammers!";
-local _Text3 = "They're on to us now--you let\nthat scout reach his base to \nalert the Hadeans!";
-local _Text4 = "The Creator has finished its\nwork and self-destructed to cover\nour tracks. Next, you must seize\nthe scrap pool and assemble a\nCerberi squadron.";
-local _Text5 = "Destroy the highlighted Defender\ngun-towers using your Cerberi\nimposter units.";
-local _Text6 = "The Hadeans have reported an\nEDF attack! You need to use\nCERBERI units, or this entire\nmission is a waste of time.";
-local _Text7 = "Your mission was to attack the\nDefenders with CERBERI units!\nYour incompetence has jeopardized\nour force. You are hereby\nrelieved of command.";
-local _Text8 = "The Hadeans reported a Cerberi\nassault, so jamming has resumed.\nNow you must find the geothermal\ncontrol station as quickly\nas possible.";
-local _Text9 = "Mission accomplished! The \nHadean-Cerberi alliance is in\ndisarray, and this region's power\ngrid is temporarily disabled.";
-local _Text10 = "The Geothermal Control\nCenter is highlighted on\nyour display. You may\nuse EDF or Cerberi units\nto destroy it.";
-local _Text11 = "Base defenses are breached and\nthe VENGEANCE has been destroyed!\nAny surviving units: head for the\ncaves and rendezvous at the\nWorldPortal!";
-
 local NUM_PATROLS = 5;	--pairs of Hadean scouts that will try to warn their base if attacked
 local NUM_JAMMERS = 5;
 
@@ -208,7 +195,7 @@ function Routine1()
 					SetObjectiveName(M.NextNavBeacon, "Biometal Pool");
 					SetObjectiveOn(M.NextNavBeacon);
 					ClearObjectives();
-					AddObjective(_Text4, "white");
+					AddObjective("edf1404.otf", "white");
 					M.Routine1State = M.Routine1State + 1;
 					M.Routine1Timer = GetTime() + 60;
 				end
@@ -220,7 +207,7 @@ function Routine1()
 			if M.Variable4 > 0 then
 				AudioMessage("EDF14z03.wav");	--Stewart:"The Vengeance has been programmed to manufacture counterfeit Cerberi Spider Tanks and Sirens..."
 				ClearObjectives();
-				AddObjective(_Text5, "white");
+				AddObjective("edf1405.otf", "white");
 				SetObjectiveOn(M.HadeanGtow1);
 				SetObjectiveOn(M.HadeanGtow2);
 				M.Routine2Active = true;--RunSpeed,_Routine2,1,true
@@ -233,7 +220,7 @@ function Routine1()
 				if gtow1Alive ~= gtow2Alive and M.Variable8 == 0 then
 					--player destroyed one of the gtows without using Cerb units
 					ClearObjectives();
-					AddObjective(_Text6, "red");
+					AddObjective("edf1406.otf", "red");
 					AudioMessage("EDF14z04a.wav");	--Stewart:"Perhaps I didn't make myself clear enough..."
 					M.Variable8 = 1;
 					M.Routine1State = M.Routine1State + 1;
@@ -242,7 +229,7 @@ function Routine1()
 					--player destroyed both gtows without using Cerb units.
 					AudioMessage("EDF14z04b.wav");	--Stewart:"The whole point of this deception was to attack the gun towers with Cerberi units..."
 					ClearObjectives();
-					AddObjective(_Text7, "red");
+					AddObjective("edf1407.otf", "red");
 					FailMission(GetTime() + 20, "EDF14l4.txt");
 					M.MissionOver = true;
 					M.Routine1State = 99;
@@ -253,7 +240,7 @@ function Routine1()
 				M.Routine2Active = false;--RunSpeed,_Routine2,0,false
 				BuildObject("evserv", 5, "Serv1");
 				ClearObjectives();
-				AddObjective(_Text8, "white");
+				AddObjective("edf1408.otf", "white");
 				SetObjectiveName(M.GeothermalControlCen, "Geothermal Control Center");				
 				M.Routine1State = 9;
 			end
@@ -272,14 +259,14 @@ function Routine1()
 				SetObjectiveOn(M.GeothermalControlCen);
 				AudioMessage("edf14z10.wav");	--Stewart:"There's the Geothermal Control Station..."
 				ClearObjectives();
-				AddObjective(_Text10, "green");
+				AddObjective("edf1410.otf", "green");
 				M.Routine1State = M.Routine1State + 1;
 			end	
 		elseif M.Routine1State == 10 then	--LOC_104
 			if not IsAround(M.GeothermalControlCen) then
 				AudioMessage("EDF14z05.wav");	--Stewart:"Well done, Joseph..."
 				ClearObjectives();
-				AddObjective(_Text9, "green");
+				AddObjective("edf1409.otf", "green");
 				SucceedMission(GetTime() + 20, "edf14w1.txt");
 				M.Routine1State = M.Routine1State + 1;
 			end
@@ -313,7 +300,7 @@ function Routine3()
 			M.HadeanScoutB = GetHandle("ScoutB"..tostring(M.Variable2));
 			if GetDistance(M.HadeanScoutA, "Retreat") < 100 or GetDistance(M.HadeanScoutB, "Retreat") < 100 then
 				ClearObjectives();
-				AddObjective(_Text3, "red");
+				AddObjective("edf1403.otf", "red");
 				FailMission(GetTime() + 11, "edf14L1.txt");
 				M.Routine3State = 99;
 			elseif IsAlive(M.HadeanScoutA) and GetTeamNum(M.HadeanScoutA) == 2 and GetCurrentCommand(M.HadeanScoutA) == 0 then
@@ -419,7 +406,7 @@ function Routine8()
 			M.Routine8Timer = GetTime() + 2;
 		elseif M.Routine8State == 2 then
 			ClearObjectives();
-			AddObjective(_Text1, "white");
+			AddObjective("edf1401.otf", "white");
 			M.Routine8State = M.Routine8State + 1;
 			M.Routine8Timer = GetTime() + 300;
 		elseif M.Routine8State == 3 then
@@ -446,13 +433,13 @@ function CheckStuffIsAlive()
 	if not M.MissionOver then
 		if M.CheckHadeanBuilder and not IsAround(M.HadeanBuilder) then
 			ClearObjectives();
-			AddObjective(_Text2, "red");
+			AddObjective("edf1402.otf", "red");
 			AudioMessage("EDF14z06.wav");	--Stewart:"I can't believe you lost that Creator..."
 			FailMission(GetTime() + 11, "edf14L3.txt");
 			M.MissionOver = true;
 		elseif not IsAround(M.Recycler) then
 			ClearObjectives();
-			AddObjective(_Text11, "red");
+			AddObjective("edf1411.otf", "red");
 			AudioMessage("EDF14z07.wav");	--Hardin:"The Vengeance has been destroyed and Col. Stewart is dead..."
 			FailMission(GetTime() + 11, "edf14L2.txt");
 			M.MissionOver = true;

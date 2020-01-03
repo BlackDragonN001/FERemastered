@@ -1,14 +1,6 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
---Strings
-local _Text1 = "Build up the base defenses and\ncreate more offensive units\nwhile Wyndt-Essex attacks the\nfirst missile turret.";
-local _Text2 = "You failed to protect the\nVENGEANCE. The Cerberi are\nvictorious.";
-local _Text3 = "Protect the base while our\ntechnicians analyze the data\ngathered during Windex's ill-\nfated attack. Perhaps we can\nfind some weakness.";
-local _Text4 = "We need info on the highlighted\nportal. Approach to within\n250 meters to allow our scanners\nto take a reading.";
-local _Text5 = "Level the Cerberi base, but do\nNOT destroy the interplanetary\nportal. We may need it in\norder to escape Miasma.";
-local _Text6 = "Halt the Cerberi attack-wave,\nbut do NOT destroy the \ninterplanetary portal!";
-
 local M = {
 -- Bools
 	AIP2Loaded = false,
@@ -181,7 +173,7 @@ function Routine1()
 			Patrol(M.Wingman1, "BSP1", 1);
 			Patrol(M.Wingman2, "BSP1", 1);
 			ClearObjectives();
-			AddObjective(_Text1, "white");
+			AddObjective("edf0801.otf", "white");
 			M.Routine1State = M.Routine1State + 1;
 			--M.Routine1Timer = GetTime() + 1;
 		elseif M.Routine1State == 3 then
@@ -299,12 +291,12 @@ function Routine1()
 			local h = BuildObject("cvdcar", 5, "Spawna");
 			Attack(h, M.Recycler, 1);
 			ClearObjectives();
-			AddObjective(_Text3, "white");
+			AddObjective("edf0803.otf", "white");
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 750;
 		elseif M.Routine1State == 24 then
 			ClearObjectives();
-			AddObjective(_Text4, "white");
+			AddObjective("edf0804.otf", "white");
 			TeleportIn("cvrbomb", 5, M.Portal, 20, 0);
 			AudioMessage("edf08_06.wav");	--Wong:"One of our scouts spotted a Cerberi unit coming through a portal in the center of their base..."
 			SetObjectiveOn(M.Portal);
@@ -313,7 +305,7 @@ function Routine1()
 			if GetDistance(M.Player, M.Portal) < 250 then
 				AudioMessage("edf08_06b.wav");	--Wong:"I have a clear reading now sir. That is definitely an interplanetary portal..."
 				ClearObjectives();
-				AddObjective(_Text5, "white");
+				AddObjective("edf0805.otf", "white");
 				StartEarthQuake(25.0);
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 11;
@@ -351,7 +343,7 @@ function Routine1()
 			if not IsAround(M.CerbRecy) and not IsAround(M.CerbFact) then
 				AudioMessage("edf08_07.wav");	--Wong:"Sir, I'm showing a big wave of heavy Cerberi reinforcements coming through their StarPortal..."
 				ClearObjectives();
-				AddObjective(_Text5, "green");
+				AddObjective("edf0805.otf", "green");
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 4;
 			end
@@ -363,7 +355,7 @@ function Routine1()
 				Attack(M.FinalWave[i], M.Recycler, 1);
 			end
 			ClearObjectives();
-			AddObjective(_Text6, "white");
+			AddObjective("edf0806.otf", "white");
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 35 then
 			local finalWaveDead = true;
@@ -406,7 +398,7 @@ function Routine1()
 		elseif M.Routine1State == 42 then
 			StopEarthQuake();
 			ClearObjectives();
-			AddObjective(_Text6, "green");
+			AddObjective("edf0806.otf", "green");
 			SucceedMission(GetTime() + 15, "edf08w.des");
 			M.Routine1State = M.Routine1State + 1;
 		end
@@ -444,12 +436,12 @@ function CheckStuffIsAlive()
 	if not M.MissionFailed then
 		if not IsAround(M.Recycler) then
 			ClearObjectives();
-			AddObjective(_Text2, "red");
+			AddObjective("edf0802.otf", "red");
 			FailMission(GetTime() + 10, "edf08l1.des");
 			M.MissionFailed = true;
 		elseif not IsAround(M.Portal) then
 			ClearObjectives();
-			AddObjective(_Text5, "red");
+			AddObjective("edf0805.otf", "red");
 			FailMission(GetTime() + 10, "edf08l2.des");
 			M.MissionFailed = true;
 		end

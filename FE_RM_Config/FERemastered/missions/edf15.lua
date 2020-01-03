@@ -10,21 +10,6 @@ local GROUPS1 = {4,4,4,5};
 local REINFORCEMENTS2 = {"evtank_15","evtank_15","evtank_15", "evartl_15", "evturr", "evturr", "evserv"};
 local GROUPS2 = {4,4,4,8,9,9,5};
 
---Strings
-local _Text1 = "Scout the tunnel entrance that\nleads toward the Wormhole Control\nCenter. We need intel on enemy\ndefenses before we can attack.";
-local _Text2 = "Captain Schultz will remain\nbehind to erect base defenses\nand assemble an assault force.";
-local _Text3 = "      !E!M!E!R!G!E!N!C!Y!      \n !!RETURN TO BASE IMMEDIATELY!! ";
-local _Text4 = "Hurry to Nav Beta, so you can\ndisable the Hadean defense grid\nby uploading Eisenstein's virus.";
-local _Text5 = "You need to get out of your\nvehicle and stand within 40\nmeters of the Defense Nerve in\norder for the transmitter to\noverride the normal signal.";
-local _Text6 = "Head to Nav Gamma, where Hadean\nrebel dropships will periodically\nland to unload reinforcements.";
-local _Text7 = "More troops will land every 5\nminutes. Your task is to destroy\nthe Cerberi Recycler while our\nallies attack the tunnel as a\ndiversion.";
-local _Text8 = "Uploading ARMAGEDDON II virus.";
-local _Text9 = "ARMAGEDDON II virus uploaded\nand installed. . . . . . . .\nHadean automated defense system\noperating at 75 percent\n effectiveness.";
-local _Text10 = "Hadean automated defense system\noperating at 50 percent\n effectiveness.";
-local _Text11 = "Hadean automated defense system\noperating at 25 percent\n effectiveness.";
-local _Text12 = "Hadean automated defense system\noperating at 10 percent\n effectiveness. Dropships are\nnow on final approach.";
-local _Text13 = "Proceed to Nav Gamma if you wish\nto help the Hadean Rebels defeat\nthe Cerberi. Otherwise, head to\nthe tunnel entrance to stay with\nthe EDF.";
-
 local M = {
 -- Bools
 	MissionOver = false,
@@ -212,8 +197,8 @@ function Routine1()
 		elseif M.Routine1State == 3 then
 			AudioMessage("edf15b.wav");	--Stewart:"There's been a change in plans. Your tank's sensors just picked up a tunnel entrance nearby..."
 			ClearObjectives();
-			AddObjective(_Text1, "white");
-			AddObjective(_Text2, "white");
+			AddObjective("edf1501.otf", "white");
+			AddObjective("edf1502.otf", "white");
 			SetObjectiveOff(M.NavBeta);
 			M.TunnelEntranceNav = BuildObject("ibnav", 1, "tunnel");
 			SetObjectiveName(M.TunnelEntranceNav, "Tunnel Entrance");
@@ -281,7 +266,7 @@ function Routine1()
 		elseif M.Routine1State == 14 then
 			AudioMessage("edf15f.wav");	--Stewart:"We're undeploying the Vengeance and getting out of here..."
 			ClearObjectives();
-			AddObjective(_Text3, "white");
+			AddObjective("edf1503.otf", "white");
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 30;
 		elseif M.Routine1State == 15 then
@@ -314,13 +299,13 @@ function Routine1()
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 90;
 		elseif M.Routine1State == 19 then
-			AddObjective(_Text4, "white");
+			AddObjective("edf1504.otf", "white");
 			SetObjectiveOn(M.NavBeta);
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 20 then	--LOC_115
 			if GetDistance(M.Player, M.NavBeta) < 150 then
 				ClearObjectives();
-				AddObjective(_Text5, "white");
+				AddObjective("edf1505.otf", "white");
 				AudioMessage("edf15j.wav");	--Eisenstein:"The transmitter's signal won't penetrate the hull of your tank..."
 				SetObjectiveOn(M.Nerve);
 				M.Routine1State = M.Routine1State + 1;
@@ -338,30 +323,30 @@ function Routine1()
 			end
 		elseif M.Routine1State == 22 then
 			ClearObjectives();
-			AddObjective(_Text9, "green");
+			AddObjective("edf1509.otf", "green");
 			SetObjectiveOff(M.NavBeta);
 			SetObjectiveOff(M.Nerve);
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 3;
 		elseif M.Routine1State == 23 then
 			ClearObjectives();
-			AddObjective(_Text10, "green");
+			AddObjective("edf1510.otf", "green");
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 3;
 		elseif M.Routine1State == 24 then
 			ClearObjectives();
-			AddObjective(_Text11, "green");
+			AddObjective("edf1511.otf", "green");
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 3;
 		elseif M.Routine1State == 25 then
 			ClearObjectives();
-			AddObjective(_Text12, "green");
+			AddObjective("edf1512.otf", "green");
 			AudioMessage("edf15k.wav");	--Eisenstein:"Great job sir. The virus is already working..."
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 10;
 		elseif M.Routine1State == 26 then
 			ClearObjectives();
-			AddObjective(_Text6, "white");
+			AddObjective("edf1506.otf", "white");
 			M.NavGamma = BuildObject("ibnav", 1, "gamma");
 			SetObjectiveName(M.NavGamma, "Nav Gamma");
 			SetObjectiveOn(M.NavGamma);
@@ -402,7 +387,7 @@ function Routine1()
 		elseif M.Routine1State == 31 then
 			M.Routine2Active = true;--M.Variable4 = 1;
 			ClearObjectives();
-			AddObjective(_Text7, "white");
+			AddObjective("edf1507.otf", "white");
 			AudioMessage("edf15l.wav");	--Thanatos:"Our dropships will be landing every 5 minutes..."
 			SetObjectiveOn(M.CerbRecy);
 			M.Routine1State = M.Routine1State + 1;
@@ -410,7 +395,7 @@ function Routine1()
 			if not IsAround(M.CerbRecy) then
 				AudioMessage("edf15m.wav");	--Thanatos:"General Hardin, I am honored to announce the first victory of our combined forces..."
 				ClearObjectives();
-				AddObjective(_Text7, "green")
+				AddObjective("edf1507.otf", "green")
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 70;
 			end
@@ -432,7 +417,7 @@ function Routine1()
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 5;
 		elseif M.Routine1State == 36 then
-			AddObjective(_Text13, "white");
+			AddObjective("edf1513.otf", "white");
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 4;
 		elseif M.Routine1State == 37 then	--LOC_217
@@ -604,7 +589,7 @@ function CheckStuffIsAlive()
 	if not M.MissionOver then
 		if M.Variable7 == 0 and not IsAround(M.Recycler) then
 			ClearObjectives();
-			AddObjective(_Text2, "red");
+			AddObjective("edf1502.otf", "red");
 			FailMission(GetTime() + 10, "edf15recy.txt");
 			M.MissionOver = true;
 		end

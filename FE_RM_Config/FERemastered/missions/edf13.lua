@@ -1,20 +1,6 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
---Strings
-local _Text1 = "Search the caves for the two\nearly-warning control nodes.\nEscort Captain Eisenstein to\nboth stations. Be careful--\nthese caves are very unstable.";
-local _Text2 = "Now, find the other control\nstation and escort Captain\nEisenstein there.";
-local _Text3 = "Captain Eisenstein has learned\nof a service elevator somewhere\nnearby. Find the exit, so he\ncan hot-wire the elevator.";
-local _Text4 = "Escort your convoy to the exit\nyou have found. Eisenstein will\nget the elevator working.";
-local _Text5 = "There's the exit--but we'll\nneed to disable both control\nstations before we can leave.";
-local _Text6 = "There's the exit we need. Get\nyour units to that service\nelevator so Eisenstein can get\nus out of these caves.";
-local _Text7 = "Here's the elevator. Captain\nEisenstein says he can have it\nrunning in just a few minutes.";
-local _Text8 = "Captain Eisenstein's Tech\nSupport Vehicle was crucial to\nthis mission. Without it, we\nhave no hope of penetrating\nFacility's defenses.";
-local _Text9 = "You have failed utterly. The\nEDF-Recycler VENGEANCE is lost, \nand her entire crew has been\ncaptured.";
-local _Text10 = "Data Point: 'TARTARUS IV WAS\n&>$ANCIENT HADEAN RESEARCH BASE\n@#^DEFENSE SYSTEM#$%COMBAT FURY\nAGGRESSI*#$ EST. LOCAT&: HUMAN\nSOLA& SYS#'";
-local _Text11 = "Data Point: 'TARTARUS IV WAS\nORIGIN@!$ NEXUS BATTLE TECH*&@\nADVANCED *&#OMNI-SHIELD, PULSAR\nCANNON*#! QUANTUM PROP&# TO*@\nCOMBAT FURY THREAT*&'";
-local _Text12 = "WARNING: Structural compromise\ndetected! Cave walls weakened\nin vicinity of VENGEANCE; \ncollapse imminent!";
-
 local M = {
 -- Bools
 	MissionOver = false,
@@ -140,7 +126,7 @@ function AddObject(h)
 	if IsOdf(h, "ibrecy") then	--Player tried to deploy the recycler
 		SetTeamNum(M.Recycler, 0);
 		StartEarthQuake(30.0);
-		AddObjective(_Text12, "red");
+		AddObjective("edf1312.otf", "red");
 		AudioMessage("edf13_07.wav");	--Eisenstein:"Our instruments are showing dangerous weaknesses in the cave walls near the Recycler!..."
 		M.CaveCollapse = true;
 		M.CaveCollapseTime = GetTime() + 12;
@@ -187,7 +173,7 @@ function Routine1()
 		elseif M.Routine1State == 1 then
 			AudioMessage("edf13_01.wav");	--Eisenstein:"General Thanatos says these caves hold the primary control stations for this region's early warning systems..."
 			ClearObjectives();
-			AddObjective(_Text1, "white");
+			AddObjective("edf1301.otf", "white");
 			Goto(M.TechSupport, "RecyclerDest", 0);
 			SetObjectiveOn(M.TechSupport);
 			Goto(M.ServiceTruck, "ServDest", 0);
@@ -206,11 +192,11 @@ function Routine1()
 				M.Variable6 = M.Variable6 + 1;
 				if M.Variable6 < 2 then
 					ClearObjectives();
-					AddObjective(_Text10, "white");
+					AddObjective("edf1310.otf", "white");
 					AudioMessage("edf13_05.wav");	--Eisenstein:"Hey, here is something interesting, sir..."
 				else
 					ClearObjectives();
-					AddObjective(_Text11, "white");
+					AddObjective("edf1311.otf", "white");
 					AudioMessage("edf13_06.wav");	--Eisenstein:"Just give me another minute, sir..."
 				end
 				M.Routine1State = M.Routine1State + 1;
@@ -222,7 +208,7 @@ function Routine1()
 				M.Routine1State = 8;--to LOC_74
 			else
 				ClearObjectives();
-				AddObjective(_Text2, "white");
+				AddObjective("edf1302.otf", "white");
 				AudioMessage("edf13_03.wav");
 				M.Routine1State = M.Routine1State + 1;
 			end
@@ -239,11 +225,11 @@ function Routine1()
 				M.Variable6 = M.Variable6 + 1;
 				if M.Variable6 < 2 then
 					ClearObjectives();
-					AddObjective(_Text10, "white");
+					AddObjective("edf1310.otf", "white");
 					AudioMessage("edf13_05.wav");	--Eisenstein:"Hey, here is something interesting, sir..."
 				else
 					ClearObjectives();
-					AddObjective(_Text11, "white");
+					AddObjective("edf1311.otf", "white");
 					AudioMessage("edf13_06.wav");	--Eisenstein:"Just give me another minute, sir..."
 				end
 				M.Routine1State = M.Routine1State + 1;
@@ -259,7 +245,7 @@ function Routine1()
 		elseif M.Routine1State == 8 then	--LOC_74
 			if M.Variable5 == 0 then
 				AudioMessage("edf13_04.wav");	--Eisenstein:"According to the Hadean computer, there is an elevator shaft in this cave..."
-				AddObjective(_Text3, "white");
+				AddObjective("edf1303.otf", "white");
 				M.Routine1State = M.Routine1State + 1;
 			else
 				M.Routine1State = 10;--to LOC_81
@@ -270,7 +256,7 @@ function Routine1()
 			end
 		elseif M.Routine1State == 10 then	--LOC_81
 			ClearObjectives();
-			AddObjective(_Text4, "white");
+			AddObjective("edf1304.otf", "white");
 			AudioMessage("edf13_09.wav");	--Eisenstein:"This takes care of the early warning systems for this sector, sir..."
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 11 then	--LOC_84
@@ -279,7 +265,7 @@ function Routine1()
 			   and GetDistance(M.Recycler, M.ExitShaft) < 80 then
 				AudioMessage("edf13_10.wav");	--Eisenstein:"Here's the elevator, sir..."
 				ClearObjectives();
-				AddObjective(_Text7, "green");
+				AddObjective("edf1307.otf", "green");
 				SucceedMission(GetTime() + 14, "edf13w1.txt");
 				M.Routine1State = M.Routine1State + 1;
 		    end
@@ -334,7 +320,7 @@ function Routine3()
 	if M.Variable5 == 0 and GetDistance(M.Player, M.ExitShaft) < 230 then
 		if M.Variable3 == 1 and M.Variable4 == 1 then
 			ClearObjectives();
-			AddObjective(_Text6, "white");
+			AddObjective("edf1306.otf", "white");
 			AudioMessage("edf13_11b.wav");	--Eisenstein:"There's the elevator shaft, major..."
 		else
 			ClearObjectives();
@@ -403,13 +389,13 @@ function CheckStuffIsAlive()
 	if not M.MissionOver then
 		if not IsAround(M.Recycler) then
 			ClearObjectives();
-			AddObjective(_Text9, "red");
+			AddObjective("edf1309.otf", "red");
 			AudioMessage("edf13_08b.wav");	--Eisenstein:"Sir, we lost the Vengeance..."
 			FailMission(GetTime() + 15, "edf13L2.txt");
 			M.MissionOver = true;
 		elseif not IsAround(M.TechSupport) then
 			ClearObjectives();
-			AddObjective(_Text8, "red");
+			AddObjective("edf1308.otf", "red");
 			AudioMessage("edf13_08a.wav");	--Wong:"I've lost Captain Eisenstein's signal..."
 			FailMission(GetTime() + 15, "edf13L1.txt");
 			M.MissionOver = true;

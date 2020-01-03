@@ -5,18 +5,6 @@ local _FECore = require('_FECore');
 local NUM_DEFENDERS = 10	--Player's starting forces
 local NUM_PILOTS = 8	--number of pilots that get out of Transport to crew empty Hadean ships by supply depot
 
---Strings
-local _Text1 = "Stay here and buy time for the\nRecycler to reach safety. Do NOT\nfollow yet; the canyon is carpeted \nwith high-power trip mines.";
-local _Text2 = "The Recycler has found a short-\ndistance Portal that will buy us a\nlead. Wyndt-Essex has ordered it\nto be destroyed after we pass\nthrough.";
-local _Text3 = "The Major has allowed just one\nminute before detonation. You must\nget to the Portal NOW or find\nanother way to catch up with us.";
-local _Text4 = "We're passing through enemy lines\nnow. Defend the VENGEANCE and the\ntransport at all costs.";
-local _Text5 = "We've found a Hadean repair yard. \nLeave your tank and grab the\nglider pack. Then make a stealthy\napproach and snipe the depot's\nturrets.";
-local _Text6 = "We are dispatching the transport\nwith enough pilots to take control\nof the remaining ships.";
-local _Text7 = "Use the service trucks to restore\nthe ships to full strength.";
-local _Text8 = "The StarPortal lies just a few\nklicks to the east. Let's get\nmoving.";
-local _Text9 = "MASSIVE INCOMING ATTACK WAVE:\nMULTIPLE HADEAN WALKERS, NUMEROUS\nASSAULT VEHICLES...Lock and load,\ntroops--protect the VENGEANCE at \nall costs.";
-local _Text10 = "Find another way to rejoin the\nconvoy. Hurry--the VENGEANCE\nwon't last long without an\nescort.";
-
 local Routines = {};
 
 local M = {
@@ -284,7 +272,7 @@ function HandleMainState(R, STATE)
 	elseif STATE == 1 then
 		AudioMessage("edf0501.wav");	--Windex:"The Hadeans have us surrounded..."
 		ClearObjectives();
-		AddObjective(_Text1, "white");
+		AddObjective("edf0501.otf", "white");
 		Advance(R, 3.0);
 	elseif STATE == 2 then	--LOC_20
 		if M.Variable2 > 0 then
@@ -297,7 +285,7 @@ function HandleMainState(R, STATE)
 	elseif STATE == 4 then
 		AudioMessage("edf0505.wav");	--O'Ryan:"We should be safe up here for a while..."
 		ClearObjectives();
-		AddObjective(_Text5, "white");
+		AddObjective("edf0505.otf", "white");
 		M.HangGliderPickup = BuildObject("aphanglider", 1, "gliderspawn");
 		Goto(M.Transport, "apcpathtobase", 1);
 		SetObjectiveOn(M.HangGliderPickup);
@@ -343,7 +331,7 @@ function HandleMainState(R, STATE)
 		SetObjectiveOn(M.ExitPortal);
 		AudioMessage("edf0508.wav");	--Windex:"There's the portal up ahead on radar..."
 		ClearObjectives();
-		AddObjective(_Text8, "white");
+		AddObjective("edf0508.otf", "white");
 		Advance(R, 60.0);
 	elseif STATE == 7 then
 		Goto(M.Recycler, "recyclerexit", 1);
@@ -388,7 +376,7 @@ function HandleRecyEscort(R, STATE)
 	elseif STATE == 1 then
 		AudioMessage("edf0503.wav");	--Windex:"My engineers have deactivated the heavy mines..."
 		ClearObjectives();
-		AddObjective(_Text3, WHITE);
+		AddObjective("edf0503.otf", WHITE);
 		for i = 1, NUM_DEFENDERS do
 			if not IsPlayer(M.Defenders[i]) then
 				Follow(M.Defenders[i], M.Transport, 1);
@@ -409,7 +397,7 @@ function HandleRecyEscort(R, STATE)
 			--audio doesn't make sense here?
 			AudioMessage("edf0510.wav");	--Windex:"Corporal, we don't have a few minutes..."
 			ClearObjectives();
-			AddObjective(_Text10, "red");
+			AddObjective("edf0510.otf", "red");
 			Advance(R, 60.0);
 		end
 	elseif STATE == 4 then
@@ -443,7 +431,7 @@ function HandleRecyRetreat(R, STATE)
 		if GetDistance(M.Recycler, M.Portal1) < 25 then
 			AudioMessage("edf0502.wav");	--Windex:"We found a short range portal..."
 			ClearObjectives();
-			AddObjective(_Text2, "white");
+			AddObjective("edf0502.otf", "white");
 			M.Variable2 = 1;
 			Teleport(M.Recycler, M.Portal2, -30);
 			Stop(M.Recycler, 1);
@@ -507,7 +495,7 @@ function SpawnPlateauAttackers(R, STATE)
 		Advance(R, 30.0);
 	elseif STATE == 1 then
 		ClearObjectives();
-		AddObjective(_Text9, "white");
+		AddObjective("edf0509.otf", "white");
 		Goto(BuildObject("evatank", 2, "attackerspawn"), "tankpath", 1);
 		Goto(BuildObject("evscout", 2, "attackerspawn"), "zeuspath", 1);
 		Goto(BuildObject("evscout", 2, "attackerspawn"), "walkpath", 1);

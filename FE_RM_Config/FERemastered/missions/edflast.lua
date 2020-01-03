@@ -1,18 +1,6 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
---Strings
-_Text1 = "Take out the Hadean recycler.";
-_Text2 = "Escort the PEACEMAKER and\nlook around for a good location\nto establish a base. Hurry,\nbecause several units were\ndamaged in the crash.";
-_Text3 = "Deploy the PEACEMAKER, then\nsearch for biometal deposits.\nSkyEye has documented\nsubstantial quantities buried\ndeep beneath the surface.";
-_Text4 = "SkyEye has tagged several\nlarge boulders in the area\nwhich may be capstones for\nbiometal veins. Destroy them\nto find any hidden scrap pools.";
-_Text5 = "Establish a base and fortify\nit carefully. The Hadeans have\ndetected our presence and\nhave already generated a\nformidable assault force!";
-_Text6 = "Recon the area near this nav\nbeacon until further notice.\nDo NOT leave this vicinity for\nany reason!";
-_Text7 = "Head to the nav beacon and\nrecon that area quickly! Time\nis running out, and we need\nto know what's happening down\nthere!";
-_Text8 = "Do NOT leave this area! Micro-\ntremors and electromagnetic\nactivity are peaking. Return to\nthe nav beacon and continue to\nobserve!";
-_Text9 = "Build an assault force and\ndestroy the Nexus. It's heavily\nshielded, so you'll need\nsubstantial firepower!";
-_Text10 = "You've lost the PEACEMAKER, and\nallowed the Imperials to create\nan overwhelming Nexus force.\nEarth will soon be under the\nEmperor's control!";
-
 local M = {
 -- Bools
 	MissionOver = false,
@@ -403,7 +391,7 @@ function Routine1()
 			SetPerceivedTeam(M.Scout1, 5);
 			SetPerceivedTeam(M.Scout2, 5);
 			ClearObjectives();
-			AddObjective(_Text3, "white");
+			AddObjective("edflast03.otf", "white");
 			M.BaseNav2 = BuildObject("evcons", 5, "EnemySpawn0");
 			SetAIP("edflast2.aip", 5);
 			M.Variable15 = 2;
@@ -467,7 +455,7 @@ function Routine1()
 				SetTeamNum(h, 5);
 			end
 			ClearObjectives();
-			AddObjective(_Text4, "white");
+			AddObjective("edflast04.otf", "white");
 			Goto(BuildObject("evtank", 5, "TarPatrol1"), M.Recycler, 0);
 			Goto(M.Enemy1, M.Recycler, 0);
 			M.Routine1State = M.Routine1State + 1;
@@ -525,7 +513,7 @@ function Routine1()
 		elseif M.Routine1State == 24 then
 			if GetTime() > 390 or GetMaxScrap(1) >= 60 then
 				ClearObjectives();
-				AddObjective(_Text5, "white");
+				AddObjective("edflast05.otf", "white");
 				AudioMessage("edflast_05.wav");	--Rubikov:"Skyeye has just detected a series of electromagnetic pulses..."
 				M.HadeanActivityNav = BuildObject("ibnav", 1, M.Position1);
 				SetObjectiveName(M.HadeanActivityNav, "Hadean Activity");
@@ -553,7 +541,7 @@ function Routine2()
 			if CameraPos(M.CamNav, M.CamNav, M.Position9, M.Position10, 1500) or CameraCancelled() then
 				CameraFinish();
 				ClearObjectives();
-				AddObjective(_Text2, "white");
+				AddObjective("edflast02.otf", "white");
 				RemoveObject(M.CamNav);
 				M.Routine2Active = false;--RunSpeed,_Routine2,0,true
 				M.Routine2State = M.Routine2State + 1;
@@ -611,7 +599,7 @@ function Routine2()
 				M.Nexus = ReplaceObject(M.Nexus, "ebnexus01");
 				SetTeamNum(M.Nexus, 0);
 				ClearObjectives();
-				AddObjective(_Text1, "white");
+				AddObjective("edflast01.otf", "white");
 			end
 			M.Routine2State = M.Routine2State + 1;
 		elseif M.Routine2State == 13 then	--LOC_210
@@ -642,7 +630,7 @@ function Routine5()
 			M.Routine5Timer = GetTime() + 1200;
 		elseif M.Routine5State == 1 then
 			ClearObjectives();
-			AddObjective(_Text7, "white");
+			AddObjective("edflast07.otf", "white");
 			StartCockpitTimer(240);
 			AudioMessage("edflast_06.wav");	--Rubikov:"We're reading microtremors..."
 			M.Routine5State = M.Routine5State + 1;
@@ -656,7 +644,7 @@ function Routine5()
 			elseif M.HardinNagCount == 2 and  GetCockpitTimer() <= 1 then
 				AudioMessage("edflast_13.wav");	--Hardin:"You were ordered to investigate the area..."
 				ClearObjectives();
-				AddObjective(_Text7, "red");
+				AddObjective("edflast07.otf", "red");
 				FailMission(GetTime() + 15, "EDFLastL1.txt");
 				M.HardinNagCount = M.HardinNagCount + 1;
 				M.Routine5State = 99;
@@ -664,7 +652,7 @@ function Routine5()
 				HideCockpitTimer();
 				M.Routine10Active = true;--RunSpeed,_Routine10,1,true
 				ClearObjectives();
-				AddObjective(_Text6, "white");
+				AddObjective("edflast06.otf", "white");
 				AudioMessage("edflast_07.wav");	--Rubikov:"We're recording your video feed..."			
 				M.Routine5State = M.Routine5State + 1;
 				M.Routine5Timer = GetTime() + 20;
@@ -764,7 +752,7 @@ function Routine5()
 				M.Routine8Active = true;--RunSpeed,_Routine8,3,true
 				M.Routine11Active = true;--RunSpeed,_Routine11,1,true
 				ClearObjectives();
-				AddObjective(_Text9, "white");
+				AddObjective("edflast09.otf", "white");
 				M.Variable3 = 20.0;
 				RemoveObject(M.HadeanActivityNav);
 				M.Routine5State = M.Routine5State + 1;
@@ -1031,7 +1019,7 @@ function Routine8()
 		elseif M.Routine8State == 6 then	--LOC_644
 			if not IsAround(M.HadeanRecy) then
 				ClearObjectives();
-				AddObjective(_Text1, "green");
+				AddObjective("edflast01.otf", "green");
 				M.Routine8State = M.Routine8State + 1;
 				M.Routine8Timer = GetTime() + 2;
 			end
@@ -1057,7 +1045,7 @@ function Routine10()
 		if M.Routine10State == 0 then	--LOC_665
 			if GetDistance(M.Player, M.Nexus) > 295 then
 				ClearObjectives();
-				AddObjective(_Text8, "white");
+				AddObjective("edflast08.otf", "white");
 				AudioMessage("edflast_8a.wav");	--Hardin:"Get back to the nav beacon..."
 				M.Variable19 = GetTime() + 35;
 				M.Routine10State = M.Routine10State + 1;
@@ -1069,7 +1057,7 @@ function Routine10()
 				M.Routine10Timer = GetTime() + 1;
 			elseif M.Variable19 < GetTime() then
 				ClearObjectives();
-				AddObjective(_Text8, "red");
+				AddObjective("edflast08.otf", "red");
 				AudioMessage("edflast_13.wav");	--Hardin:"You were ordered to investigate the nav beacon..."
 				FailMission(GetTime() + 15, "EDFLastL3.txt");
 				M.Routine10State = M.Routine10State + 1;
@@ -1181,7 +1169,7 @@ function CheckStuffIsAlive()
 	if not M.MissionOver then
 		if not IsAround(M.Recycler) then
 			ClearObjectives();
-			AddObjective(_Text10, "red");
+			AddObjective("edflast10.otf", "red");
 			AudioMessage("edflast_14.wav");	--Hardin:"You've just lost the only Recycler on the entire planet..."
 			FailMission(GetTime() + 18, "EDFLastL2.txt");
 			M.MissionOver = true;

@@ -4,23 +4,6 @@ local _FECore = require('_FECore');
 local NUM_SOLDIERS = 7;
 local NUM_GTOWS = 5;
 
---Strings
-local _Text1 = "fOLLOW gENERAL tHANATOS aS hE\ngATHERS tHE rEBEL sCOUTS. wATCH\nyOUR dISPLAY tO aVOID fIRING oN\naLLIED uNITS. oUR fORCES aRE\nhIGHLIGHTED iN bLUE.";
-local _Text2 = "a sTRANGE eNERGY sIGNATURE hAS\nmANIFESTED iTSELF nEAR oUR bASE.\nhURRY tO tHE hIGHLIGHTED nAV\nbEACON aND iNVESTIGATE tHE\npHENOMENON.";
-local _Text3 = "yOUR fAILURE tO iNVESTIGATE tHE\neNERGY sIGNATURE hAS aNGERED\nsLASHER/pRIME tHANATOS. rETURN\ntO bASE iMMEDIATELY.";
-local _Text4 = "oUR pROCREATOR hAS bEEN\ndESTROYED. iT wAS fOOLISH oF uS\ntO rELY oN a sOFT-sKINNED\ncREATURE fOR sUCH aN iMPORTANT\ntASK!";
-local _Text5 = "  iNCOMING hUMAN mESSAGE:  \n||Colonel Corber, our trap is\nset. Lure the drone-carrier and\nits drones to our position as\nquickly as possible!";
-local _Text6 = "yOU lOST a vALUABLE sCOUT wITH\nhARDLY a fIGHT. yOUR rACE iS\ndOOMED iF oTHER hUMANS fIGHT aS\npOORLY aS yOU dO!";
-local _Text7 = "dEFEND oUR hARVESTERS aND\nrESOURCERS sO tHAT wE mAY gATHER\neNOUGH sCRAP tO bUILD aN aSSAULT\nfORCE.";
-local _Text8 = "yOUR bLOOD-lUST iS cOMMENDABLE,\nbUT yOU mUST bE pATIENT. tHE\npROCREATOR wILL sOON bUILD a\nrEPLACEMENT sCOUT sO yOU mAY\nrETURN tO bATTLE!";
-local _Text9 = "yOU cLAIM tO bE oUR aLLY, yET\nyOU fAIL tO aCT lIKE oNE! oUR\nfORCES aRE nOW wARY oF yOU, aND\naRE uNLIKELY tO cOOPERATE\nfULLY!";
-local _Text10 = "aLL cERBERI gUN-tOWERS hAVE\nfALLEN! oUR wARRIORS aRE aS\nfEROCIOUS aS kALI-wOLVES, aND\ntHE bLOOD oF hEROES fLOWS iN\ntHEIR vEINS!";
-local _Text11 = "aNOTHER cERBERI eNERGY-pORTAL\nhAS aPPEARED nEAR oUR bASE.\npREPARE fOR a mAJOR aSSAULT!";
-local _Text12 = "rEMEMBER, wE aRE pOSING aS tHE\ncERBERI'S aLLIES! yOU mUST nOT\nfIRE aNY wEAPONS uNTIL tHE\ncOMMAND iS gIVEN!";
-local _Text13 = "tHE cERBERI aRE mOVING iNTO\naTTACK fORMATION! pROTECT tHE\npROCREATOR aND yOUR vEHICLE! nO\nsHIPS cAN bE rEPLACED uNTIL tHE\npROCREATOR dEPLOYS.";
-local _Text14 = "eSCORT tHE pROCREATOR aS wE\npILOT iT tO sAFETY. aVOID fIRING\nyOUR wEAPONS oR mAKING aNY\nsUSPICIOUS mOVEMENTS.";
-local _Text15 = "bETRAYAL wILL nOT bE tOLERATED!";	--added failure condition if Thanatos dies before reaching Cerb base
-
 local M = {
 -- Bools
 	MissionOver = false,
@@ -288,7 +271,7 @@ end
 function ObjectKilled(deadObj, killerObj)
 	if GetTeamNum(h) == 3 and IsPlayer(killerObj) then
 		ClearObjectives();
-		AddObjective(_Text9, "red");
+		AddObjective("fc0109.otf", "red");
 		M.Variable5 = M.Variable5 - 1;
 		M.Variable7 = M.Variable7 - 1;
 		M.Variable9 = M.Variable9 - 1;
@@ -369,7 +352,7 @@ function Routine1()
 		elseif M.Routine1State == 4 then	--LOC_22
 			if GetCurrentCommand(M.Object3) == 0 then
 				LookAt(M.Object3, M.Object2, 0);
-				AddObjective(_Text1, "white");
+				AddObjective("fc0101.otf", "white");
 				AudioMessage("fc01_01.wav");	--Thanatos:"Welcome, Talon Corber..."
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 20;
@@ -488,7 +471,7 @@ function Routine1()
 				Follow(M.Object7, M.Object3, 0);
 				RemoveObject(M.Object25);
 				ClearObjectives();
-				AddObjective(_Text12, "white");
+				AddObjective("fc0112.otf", "white");
 				M.Routine1State = M.Routine1State + 1;
 			end
 		elseif M.Routine1State == 23 then	--LOC_111
@@ -536,7 +519,7 @@ function Routine1()
 			M.Routine1Timer = GetTime() + 5;
 		elseif M.Routine1State == 31 then
 			ClearObjectives();
-			AddObjective(_Text14, "white");
+			AddObjective("fc0114.otf", "white");
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 32 then	--LOC_138
 			if GetDistance(M.Object1, "UnallyPoint") < 60 then
@@ -554,7 +537,7 @@ function Routine1()
 		elseif M.Routine1State == 33 then
 			AudioMessage("fc01_09.wav");	--Cerberi:"Return the procreator immediately and prepare to be liquidated..."
 			ClearObjectives();
-			AddObjective(_Text13, "white");
+			AddObjective("fc0113.otf", "white");
 			M.CheckThanatos = false;	--added check to make sure player doesn't backstab Thanatos before this point
 			BuildObject("AuroraBolt", 2, "Bolt2");
 			BuildObject("AuroraBolt", 2, "Bolt3");
@@ -573,7 +556,7 @@ function Routine1()
 		elseif M.Routine1State == 35 then
 			AudioMessage("fc01_10.wav");	--Miller:"We've laid a trap for that drone carrier..."
 			ClearObjectives();
-			AddObjective(_Text5, "white");
+			AddObjective("fc0105.otf", "white");
 			M.Routine4Active = true;--RunSpeed,_Routine4,1,true
 			M.Object13 = BuildObject("ibnav", 1, "SoldierMeet");
 			SetObjectiveName(M.Object13, "Lure Carrier and Drones Here!");
@@ -634,7 +617,7 @@ function Routine1()
 		elseif M.Routine1State == 42 then
 			AudioMessage("fc01_11b.wav");	--SciWizard:"The Crucible guards a Research Node crucial to the Cerberi Weapons development program..."
 			ClearObjectives();
-			AddObjective(_Text7, "white");
+			AddObjective("fc0107.otf", "white");
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 10;
 		elseif M.Routine1State == 43 then
@@ -655,13 +638,13 @@ function Routine1()
 		elseif M.Routine1State == 45 then	--LOC_230
 			AudioMessage("fc01_12.wav");	--Thanatos:"Our SciWizards have detected a strange energy signature nearby..."
 			ClearObjectives();
-			AddObjective(_Text2, "white");
+			AddObjective("fc0102.otf", "white");
 			M.Variable2 = GetTime() + 35;
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 46 then
 			if GetDistance(M.Object2, M.Object31) < 60 then
 				ClearObjectives();
-				AddObjective(_Text2, "green");
+				AddObjective("fc0102.otf", "green");
 				AudioMessage("fc01_12A.wav");	--SciWizard:"Your scout's sensors have just detected a teleportation..."
 				M.Routine1State = M.Routine1State + 1;
 			elseif M.Variable2 < GetTime() then
@@ -671,7 +654,7 @@ function Routine1()
 				else
 					AudioMessage("fc01_13.wav");	--Thanatos:"You have failed to investigate the energy source..."
 					ClearObjectives();
-					AddObjective(_Text3, "red");
+					AddObjective("fc0103.otf", "red");
 					FailMission(GetTime() + 30);	--(bumped up from 10s) TODO: custom failure text for this condition
 					M.MissionOver = true;
 					M.Routine1State = 99;
@@ -800,7 +783,7 @@ function Routine8()
 			if not IsAround(M.Object26) then
 				SetAIP("fc01_1h.aip", 3);
 				ClearObjectives();
-				AddObjective(_Text8, "white");
+				AddObjective("fc0108.otf", "white");
 				M.Routine8State = M.Routine8State + 1;
 			else
 				M.Routine8State = M.Routine8State + 2;
@@ -929,7 +912,7 @@ function Routine10()
 			M.Object21 = BuildObject("aurorafield", 2, BuildDirectionalMatrix(M.Position3));
 			AudioMessage("fc01_15.wav");	--Thanatos:"The Cerberi have created one of their energy portals near our base..."
 			ClearObjectives();
-			AddObjective(_Text11, "white");
+			AddObjective("fc0111.otf", "white");
 			M.Routine10State = M.Routine10State + 1;
 			M.Routine10Timer = GetTime() + 60;
 		elseif M.Routine10State == 9 then
@@ -951,7 +934,7 @@ function Routine10()
 			M.Object0 = BuildObject("aurora3", 2, BuildDirectionalMatrix(M.Position2));
 			M.Object21 = BuildObject("aurorafield", 2, BuildDirectionalMatrix(M.Position2));
 			ClearObjectives();
-			AddObjective(_Text11, "white");
+			AddObjective("fc0111.otf", "white");
 			M.Routine10State = M.Routine10State + 1;
 			M.Routine10Timer = GetTime() + 60;
 		elseif M.Routine10State == 12 then
@@ -1069,19 +1052,19 @@ function CheckStuffIsAlive()
 	if not M.MissionOver then
 		if not IsAround(M.Object1) then
 			ClearObjectives();
-			AddObjective(_Text4, "red");
+			AddObjective("fc0104.otf", "red");
 			AudioMessage("fc01_16.wav");	--Thanatos:"You failed to defend the base..."
 			FailMission(GetTime() + 13, "FC01L1.txt");
 			M.MissionOver = true;
 		elseif not M.CanLoseShip and not IsAround(M.Object26) then
 			ClearObjectives();
-			AddObjective(_Text6, "red");
+			AddObjective("fc0106.otf", "red");
 			FailMission(GetTime() + 10, "FC01L2.txt");
 			M.MissionOver = true;
 		elseif M.CheckThanatos and not IsAlive(M.Object3) then
 			--Player is a traitor and shot Thanatos
 			ClearObjectives();
-			AddObjective(_Text15, "red");
+			AddObjective("fc0115.otf", "red");
 			FailMission(GetTime() + 10);	--TODO: write some text chastising the player
 			M.MissionOver = true;
 		elseif not (IsAround(M.Object35[1]) or IsAround(M.Object35[2]) 
@@ -1090,7 +1073,7 @@ function CheckStuffIsAlive()
 			M.Routine10Active = false;
 			AudioMessage("fc01_18.wav");	--Thanatos:"The last Gun Tower has been destroyed..."
 			ClearObjectives();
-			AddObjective(_Text10, "green");
+			AddObjective("fc0110.otf", "green");
 			SucceedMission(GetTime() + 30, "FC01W1.txt");
 			M.MissionOver = true;
 		end

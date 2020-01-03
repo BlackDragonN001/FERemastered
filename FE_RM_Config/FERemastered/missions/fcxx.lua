@@ -1,22 +1,6 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
---Strings
-local _Text1 = "lEAD yOUR sCIwIZARD tO tHE\nmATRIARCH, aND pROTECT hIM wHILE\nhE aTTEMPTS tO pERFORM rEPAIRS.";
-local _Text2 = "nOW tHAT tHE mATRIARCH iS\nwORKING pROPERLY, sCOUT fOR\nbIOMETAL pOOLS aND bUILD uP a\nsTRONG dEFENSIVE fORCE.";
-local _Text3 = "wE nEED rECONNAISSANCE dATA oN\ntHE cERBERI bIOMETAL hARVESTING\noPERATION aND iTS dEFENSES.\nsCOUT tHE tARGET aREA, bUT\neXERCISE eXTREME cAUTION!";
-local _Text4 = "yOU mUST cONTROL aLL fOUR sCRAP \npOOLS iN tHE aREA fOR tHE pLASMA\nbOMB tO fUNCTION. wHEN yOUR\nsCRAP mETER hITS 120, tHE bOMB\nwILL bE dEPLOYED!";
-local _Text5 = "eSCORT tHE dROPsHIP tO tHE\nbIOMETAL hARVESTING oPERATION.\ncLEAR aLL tALONS fROM tHE aREA\nbEFORE tHE dROPsHIP aRRIVES!";
-local _Text6 = "eXPLORE tHE nEARBY uNDERGROUND\nrESEARCH fACILITY. pERHAPS iT\nwILL hOLD iNFORMATION aBOUT tHE\nlOCATION oF tHE eXPERIMENTAL\nfIGHTER cRAFT.";
-local _Text7 = "fIND tHE eXPERIMENTAL fIGHTER\ncRAFT. tHE mAP sHOWS iT tO bE\noN tHE fAR sHORE oF tHE wESTERN\nlAKE. tHOSE tUNNELS aRE oNLY\naCCESSIBLE oN fOOT.";
-local _Text8 = "cLEAR tHE dROPsHIP'S pATH tO\ntHE tARGET. bE sURE tO dESTROY\naNY tALONS wHICH aRE hIGHLIGHTED\noN yOUR dISPLAY--tHEY aRE\npARTICULARLY dANGEROUS!";
---local _Text9 = "Actual %i, counter%i";
-local _Text10 = "yOU hAVE lOST tHE mATRIARCH,\naND jEOPARDIZED tHE eNTIRE sCION\naLLIANCE. yOUR iNCOMPETENCE\nkNOWS nO bOUNDS!";
-local _Text11 = "fOOL! yOU lET tHE dROPsHIP bE\ndESTROYED. tHE pLASMA bOMB iS\nlOST, aLONG wITH aLL hoPE oF\ncAPPING tHE mEGA-wELL aND\nhALTING cERBERI pRODUCTION.";
-local _Text12 = "scav";
-local _Text13 = "mATRIARCH rEPAIRS aRE cOMPLETE.\nmAIN cATALYSER iS %i%% cHARGED.";
-local _Text14 = "mATRIARCH wILL aCTIVATE iN:  \n----0 mINUTES, %i sECONDS----";
-
 --Routines
 local Routines = {};
 
@@ -359,7 +343,7 @@ function Routine1(R, STATE)
 		Goto(BuildObject("evta_IH", 3, "attack"), "attack", 1);
 		Goto(BuildObject("evta_IH", 3, "attack"), "attack", 1);
 		ClearObjectives();
-		AddObjective(_Text1, "white");
+		AddObjective("fcxx01.otf", "white");
 		AudioMessage("fcxx_01.wav");	--Kranios:"Lead me to the Scion Procreator..."
 		Advance(R, 15.0);	--5.0
 	elseif STATE == 1 then
@@ -395,8 +379,8 @@ function Routine1(R, STATE)
 		M.RepairPercentage = M.RepairPercentage + 4;
 		M.RepairTimeLeft = M.RepairTimeLeft - 2;
 		ClearObjectives();
-		AddObjective(string.format(_Text13, M.RepairPercentage), "white");
-		AddObjective(string.format(_Text14, M.RepairTimeLeft), "white");
+		AddObjective(string.format("fcxx13.otf", M.RepairPercentage), "white");
+		AddObjective(string.format("fcxx14.otf", M.RepairTimeLeft), "white");
 		if M.RepairTimeLeft <= 0 then
 			SetScrap(1, 40);
 			SetCurAmmo(M.HadeanTech, 50);
@@ -410,15 +394,15 @@ function Routine1(R, STATE)
 		end
 	elseif STATE == 7 then	--LOC_131
 		ClearObjectives();
-		AddObjective(_Text1, "green");
-		AddObjective(_Text2, "white");
+		AddObjective("fcxx01.otf", "green");
+		AddObjective("fcxx02.otf", "white");
 		M.Variable9 = GetTime() + 600;
 		Advance(R);
 	elseif STATE == 8 then	--LOC_136
 		if M.Variable9 < GetTime()  then
 			SetRoutineActive(15, true);--RunSpeed,_Routine15,1,false
 			ClearObjectives();
-			AddObjective(_Text2, "red");
+			AddObjective("fcxx02.otf", "red");
 			SetState(R, 6, 3.0);--to LOC_131
 		elseif not IsAround(M.Scav1) then
 			Advance(R, 2.0);
@@ -432,16 +416,16 @@ function Routine1(R, STATE)
 		Advance(R);
 	elseif STATE == 10 then	--LOC_152
 		ClearObjectives();
-		AddObjective(_Text2, "green");
-		AddObjective(_Text3, "white");
+		AddObjective("fcxx02.otf", "green");
+		AddObjective("fcxx03.otf", "white");
 		M.Variable9 = GetTime() + 500;
 		Advance(R);
 	elseif STATE == 11 then	--LOC_157
 		if M.Variable9 < GetTime() then
 			SetRoutineActive(15, true);--RunSpeed,_Routine15,1,false
 			ClearObjectives();
-			AddObjective(_Text2, "white");
-			AddObjective(_Text3, "red");
+			AddObjective("fcxx02.otf", "white");
+			AddObjective("fcxx03.otf", "red");
 			SetState(R, 10, 3.0);--to LOC_152
 		elseif GetDistance(M.Player, M.MainTargetNav) < 40 then
 			Ally(2, 1);
@@ -463,8 +447,8 @@ function Routine1(R, STATE)
 		end
 	elseif STATE == 13 then
 		ClearObjectives();
-		AddObjective(_Text3, "green");
-		AddObjective(_Text4, "white");
+		AddObjective("fcxx03.otf", "green");
+		AddObjective("fcxx04.otf", "white");
 		AudioMessage("fcxx_03b.wav");	--Thanatos:"We lack the forces to take and hold the bio-metal field..."
 		Advance(R, 28.0);
 	elseif STATE == 14 then
@@ -484,8 +468,8 @@ function Routine1(R, STATE)
 			SetPosition(M.HadeanTech, M.Position13);
 			M.CheckMatriarch = false;--RunSpeed,_Routine8,0,false
 			ClearObjectives();
-			AddObjective(_Text4, "green");
-			AddObjective(_Text6, "white");
+			AddObjective("fcxx04.otf", "green");
+			AddObjective("fcxx06.otf", "white");
 			AudioMessage("fcxx_04.wav");	--LeBlanc:"My men have planted the smaller bombs at the 4 bio-metal pools..."
 			SetObjectiveOn(M.HadeanTech);
 			M.TunnelNav1 = BuildObject("ibnav", 5, M.Position14);
@@ -511,8 +495,8 @@ function Routine1(R, STATE)
 	elseif STATE == 19 then	--LOC_221
 		if GetDistance(M.Player, M.MapSign) < 10 then
 			ClearObjectives();
-			AddObjective(_Text6, "green");
-			AddObjective(_Text7, "white");
+			AddObjective("fcxx06.otf", "green");
+			AddObjective("fcxx07.otf", "white");
 			AudioMessage("fcxx_04b.wav");	--LeBlanc:"Our historians believe that the map you found points the way to the main research facility..."
 			Goto(M.HadeanTech, "scion", 1);
 			SetRoutineActive(14, true);--RunSpeed,_Routine14,1,false
@@ -560,8 +544,8 @@ function Routine1(R, STATE)
 	elseif STATE == 26 then
 		Patrol(M.CerbTalon4,"patrol2", 1);
 		ClearObjectives();
-		AddObjective(_Text7, "green");
-		AddObjective(_Text8, "white");
+		AddObjective("fcxx07.otf", "green");
+		AddObjective("fcxx08.otf", "white");
 		SetObjectiveOn(M.CerbTalon1);
 		SetObjectiveOn(M.CerbTalon2);
 		SetObjectiveOn(M.CerbTalon3);
@@ -573,8 +557,8 @@ function Routine1(R, STATE)
 		and not IsAround(M.CerbTalon3)
 		and not IsAround(M.CerbTalon4) then
 			ClearObjectives();
-			AddObjective(_Text8, "green");
-			AddObjective(_Text5, "white");
+			AddObjective("fcxx08.otf", "green");
+			AddObjective("fcxx05.otf", "white");
 			SetGroup(M.ScionDropship, 10);
 			SetUserTarget(M.ScionDropship);
 			Attack(M.ScionDropship, M.BombTarget, 1);
@@ -841,13 +825,13 @@ function CheckStuffIsAlive()
 	if not M.MissionOver then
 		if M.CheckBomber and not IsAround(M.ScionDropship) then
 			ClearObjectives();
-			AddObjective(_Text5, "red");
+			AddObjective("fcxx05.otf", "red");
 			AudioMessage("fcxx_07.wav");	--LeBlanc:"That was our only plasma bomb..."
 			FailMission(GetTime() + 10, "fcxxbomb.des");
 			M.MissionOver = true;
 		elseif M.CheckMatriarch and not IsAround(M.ScionRecy) then
 			ClearObjectives();
-			AddObjective(_Text10, "red");
+			AddObjective("fcxx10.otf", "red");
 			AudioMessage("fcxx_06.wav");	--LeBlanc:"You've lost the Matriarch..."
 			FailMission(GetTime() + 15, "fcxxrecy.des");
 			M.MissionOver = true;

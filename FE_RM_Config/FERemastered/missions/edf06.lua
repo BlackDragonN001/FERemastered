@@ -5,17 +5,6 @@ local _FECore = require('_FECore');
 local AUDIO_MESSAGE_COUNT = 16;
 local h	--temp handle
 
---Strings
-local _Text1 = "You have lost the Recycler\nVENGEANCE, and squandered our\nlast hope of surviving the\nHadean onslaught."
-local _Text2 = "You failed to protect the\ntransport, which was carrying\nour entire engineering crew,\nalong with all our supplies and\nspare life-support equipment."
-local _Text3 = "Defend the Recycler and the\ntransport, which is carrying\nour engineer and intel crews\nplus vital supplies and parts."
-local _Text4 = "Your cowardly reluctance to\ncheck out those radio signals\nwill guarantee a court-martial-\nif we ever make it home again!"
-local _Text5 = "Escort the transport as we try\nto gain control of the relay\nstation. This may be our only\nhope for contacting the Storm-\nPetrel."
-local _Text6 = "Defend the transport against\nthe incoming attack wave!"
-local _Text7 = "Cover the Recycler VENGEANCE\nas Wyndt-Essex retreats to the\nnorth."
-local _Text8 = "The VENGEANCE has reached\nsafety--for the moment."
-local _Text9 = "Investigate the source of the\nstrange radio signals."
-
 local M = {
 -- Bools
 	WindexNag = false,
@@ -134,7 +123,7 @@ function Update()
 			M.MissionState = M.MissionState + 1;
 			M.MissionTimer = GetTime() + 3;
 		elseif M.MissionState == 2 then
-			AddObjective(_Text3, "white");
+			AddObjective("edf0603.otf", "white");
 			AudioMessage("edf06_01.wav");	--Windex:"Anyone know what planet this is?..."
 			M.MissionState = M.MissionState + 1;
 			M.MissionTimer = GetTime() + 12;
@@ -209,7 +198,7 @@ function Update()
 				SetObjectiveOn(M.Transport);
 				SetObjectiveOff(M.InterferenceNav);
 				ClearObjectives();
-				AddObjective(_Text5, "white");
+				AddObjective("edf0605.otf", "white");
 				M.MissionState = M.MissionState + 1;
 				M.MissionTimer = GetTime() + 5;
 			end
@@ -262,7 +251,7 @@ function Update()
 			M.MissionTimer = GetTime() + 3;
 		elseif M.MissionState == 21 then
 			ClearObjectives();
-			AddObjective(_Text6, "white");
+			AddObjective("edf0606.otf", "white");
 			M.MissionState = M.MissionState + 1;
 			M.MissionTimer = GetTime() + 5;
 		elseif M.MissionState == 22 then
@@ -311,7 +300,7 @@ function Update()
 			SetObjectiveOn(M.Recycler);
 			Defend2(M.Wingman, M.Recycler, 1);
 			ClearObjectives();
-			AddObjective(_Text7, "white");
+			AddObjective("edf0607.otf", "white");
 			M.MissionState = M.MissionState + 1;
 			M.MissionTimer = GetTime() + 2;
 		elseif M.MissionState == 31 then
@@ -344,7 +333,7 @@ function Update()
 			end
 		elseif M.MissionState == 33 then
 			ClearObjectives();
-			AddObjective(_Text8, "green");
+			AddObjective("edf0608.otf", "green");
 			SucceedMission(GetTime() + 5, "edf06Win.des");
 			M.MissionState = M.MissionState + 1;
 		end
@@ -373,7 +362,7 @@ function WindexNag()	--Routine5
 		elseif M.WindexNagState == 3 then
 			AudioMessage("edf06_16.wav");	
 			ClearObjectives();
-			AddObjective(_Text4, "red");	--Windex:"Corber, I'm relieving you..."
+			AddObjective("edf0604.otf", "red");	--Windex:"Corber, I'm relieving you..."
 			M.WindexNagState = M.WindexNagState + 1;
 			M.WindexNagTimer = GetTime() + 17;
 		elseif M.WindexNagState == 4 then
@@ -482,13 +471,13 @@ end
 function CheckStuffIsAlive()
 	if not IsAround(M.Recycler) and not M.MissionFailed then
 		ClearObjectives();
-		AddObjective(_Text1, "red");
+		AddObjective("edf0601.otf", "red");
 		FailMission(GetTime() + 5, "edf06L1.des");
 		M.MissionFailed = true;
 	end
 	if not IsAround(M.Transport) and not M.MissionFailed and M.CheckTransport then
 		ClearObjectives();
-		AddObjective(_Text2, "red");
+		AddObjective("edf0602.otf", "red");
 		FailMission(GetTime() + 5, "edf06L2aa.des");
 		M.MissionFailed = true;
 	end

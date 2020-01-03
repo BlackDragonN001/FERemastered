@@ -3,18 +3,6 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
-_Text1 = "Protect your assigned transport,\nhighlighted with a blue beacon.\nIt's carrying biometal-refining\nmodules for our Recycler, so\ndon't lose it!";
-_Text2 = "Follow Major Wyndt-Essex. Stay\nin loose formation, and cover\nher as necessary.";
-_Text3 = "Take out the gun tower near\nthe bridge. Major Wyndt-Essex\nwill stay out of range and watch\nfor enemy patrols.";
-_Text4 = "Now, take out the power supply.\nAnd hurry up; the Major says you\nare taking far too long!";
-_Text5 = "ATTENTION ALL UNITS: Begin to\nboard the StormPetrel in an\norderly fashion.";
-_Text6 = "Follow Hardin and head over to\nthe Training Center at the base.\nHop out of your vehicle and join\nthe General inside.";
-_Text7 = "Get into the StormPetrel.";
-_Text8 = "Your negligence and cowardice\nhave led to the death of Major\nWyndt-Essex.";
-_Text9 = "General Hardin is dead, and\nwith him all our hopes for \ndefending Earth from the Hadean\ninvasion.";
-_Text10 = "You failed to protect the\ntransport as directed. Without\nthe biometal-refining modules,\nour mission cannot continue.\nPrepare to head back to Earth.";
-_Text11 = "Defend the transports in the\nconvoy. Each one is carrying\ncritical components necessary\nfor our mission's success.";
-
 local M = {
     -- Bools
     PlayerCanMove = false,
@@ -340,7 +328,7 @@ function Routine1()
         elseif (M.Routine1State == 12) then
             if (GetTime() >= M.convoyWaitTillTime) then
                 SetObjectiveOn(M.Object_Cargo2);
-                AddObjective(_Text1, "white");
+                AddObjective("mercedf101.otf", "white");
 
                 StopEarthQuake();
                 SetAnimation(M.Object_Condor, "deploy", 1);
@@ -401,7 +389,7 @@ function Routine1()
         elseif (M.Routine1State == 16) then
             if (GetTime() >= M.convoyWaitTillTime) then
                 ClearObjectives();
-                AddObjective(_Text2, "WHITE");
+                AddObjective("mercedf102.otf", "WHITE");
 
                 -- Run new routines.
                 M.RunPowerAIStateMachine = true;
@@ -428,7 +416,7 @@ function Routine1()
             if (GetTime() >= M.convoyWaitTillTime) then
                 AudioMessage("mercury_07.wav");
 
-                AddObjective(_Text11, "white");
+                AddObjective("mercedf111.otf", "white");
 
                 M.Routine1State = M.Routine1State + 1;
             end
@@ -485,7 +473,7 @@ function Routine1()
                 
 				ClearObjectives();
 				LookAt(M.Object_Hardin, M.Object_Player, 1);
-				AddObjective(_Text6, "white");
+				AddObjective("mercedf106.otf", "white");
 				AudioMessage("mercury_08.wav");
                 SetObjectiveName(M.Object_Corbernav, "Enter StormPetrel here");
                 
@@ -520,7 +508,7 @@ function Routine1()
                 StartEarthQuake(4.0);
 
                 ClearObjectives();
-                AddObjective(_Text5, "green");
+                AddObjective("mercedf105.otf", "green");
 
                 AudioMessage("mercury_08a.wav");
 
@@ -674,7 +662,7 @@ function Routine3()
         elseif (M.Routine3State == 2) then
             if (GetTime() >= M.Routine3Timer) then
                 ClearObjectives();
-                AddObjective(_Text3, "white");
+                AddObjective("mercedf103.otf", "white");
 
                 M.CerbRoutine = true;
 
@@ -687,8 +675,8 @@ function Routine3()
                 Goto(Object_WyndtEssex, "blue_goto_power_2", 1);
 
                 ClearObjectives();
-                AddObjective(_Text3, "green");
-                AddObjective(_Text4, "white");
+                AddObjective("mercedf103.otf", "green");
+                AddObjective("mercedf104.otf", "white");
 
                 M.Routine3Timer = GetTime() + 22;
 
@@ -702,7 +690,7 @@ function Routine3()
                     SetTeamNum(M.Object_Radar2, 0);
 
                     ClearObjectives();
-                    AddObjective(_Text2, "white");
+                    AddObjective("mercedf102.otf", "white");
 
                     AudioMessage("mercury_06.wav");
 
@@ -807,19 +795,19 @@ function Routine5()
             M.EnableFailCheck = false;
             
 			ClearObjectives();
-			AddObjective(_Text8, "red");
+			AddObjective("mercedf108.otf", "red");
 			FailMission(GetTime() + 10, "rodmerc.des");
 		elseif (not IsAround(M.Object_Cargo2)) then
             M.EnableFailCheck = false;
             
 			ClearObjectives();
-			AddObjective(_Text10, "red");
+			AddObjective("mercedf110.otf", "red");
 			FailMission(GetTime() + 10, "transmerc.des");
 		elseif (not IsAround(M.Object_Hardin)) then
             M.EnableFailCheck = false;
             
 			ClearObjectives();
-			AddObjective(_Text9, "red");
+			AddObjective("mercedf109.otf", "red");
 			FailMission(GetTime() + 10, "hardmerc.des");
 		end
 	end

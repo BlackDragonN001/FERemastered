@@ -4,20 +4,6 @@ local _FECore = require('_FECore');
 -- Variables Not saved. Constants that never change.
 local NUM_PORTALS = 5;
 local NUM_ATTACKERS = 8;
---Strings
-local _Text1 = "Scout ahead of the Recycler and\nmake sure this canyon is safe!";
-local _Text2 = "You've lost the Recycler and\na platoon's worth of good men.\nWe now have no hope of securing\nour eastern flank.";
-local _Text3 = "The Hadeans are alerted to our\npresence. You must act quickly to\n make it to safer ground!";
-local _Text4 = "Deploy the Recycler, and get\nsome gun towers built. Hurry--you\ndon't have much time!";
-local _Text5 = "Excellent job, Lieutenant! The\nGeneral will be pleased to hear\nthat we have a competent CO \nholding our eastern flank.\nReinforcements are en route.";
-local _Text6 = "Command has some suspicions.\nStay clear and observe the\nactivity near the structure.";
-local _Text7 = "Get your units out of the\ncanyon through that portal.\nIt may be your only hope.";
-local _Text8 = "Use the 'I' key of your Digital\nControl Interface to scan the\nstructure.";
-local _Text9 = "Try to pass through the portal\nby cruising under the arch. If\nyou succeed, try to return in the\nsame way.";
-local _Text10 = "Sensors show a major attack wave\napproaching from two directions\nand closing fast!";
-local _Text11 = "The Hadean attackers are almost\nwithin firing range!  Brace\n for an attack!";
-local _Text12 = "You cannot seem to follow a\nsimple order, Lieutenant. Return\nto base and turn in your sidearm\nand wings.";
-
 
 local Routines = {};
 
@@ -269,7 +255,7 @@ function HandleMainState(R, STATE)
 		SetObjectiveName(M.InvestigateNav, "Investigate");
 		SetObjectiveOn(M.InvestigateNav);
 		ClearObjectives();
-		AddObjective(_Text1, "white");
+		AddObjective("edf0201.otf", "white");
 		Advance(R, 30.0);
 	elseif STATE == 6 then
 		AudioMessage("edf02_03.wav");	--Stewart:"Our scanners just picked up a huge energy spike..."
@@ -312,7 +298,7 @@ function HandleScavTeleport(R, STATE)
 		if GetDistance(M.Player, M.InvestigateNav) < 220 then
 			SetObjectiveOff(M.InvestigateNav);
 			ClearObjectives();
-			AddObjective(_Text6, "white");
+			AddObjective("edf0206.otf", "white");
 			M.HadeanScav = BuildObject("evscav", 5, "EnemyScav");
 			SetObjectiveName(M.HadeanScav, "Observe");
 			SetObjectiveOn(M.HadeanScav);
@@ -349,7 +335,7 @@ function HandleHadeanAttack(R, STATE)
 	elseif STATE == 3 then
 		AudioMessage("edf02_08.wav");	--Stewart:"The first enemy squadron is closing in..."
 		ClearObjectives();
-		AddObjective(_Text10, "white");
+		AddObjective("edf0210.otf", "white");
 		M.HadeanAttackTime = GetTime() + 600.0;
 		Advance(R);
 	elseif STATE == 4 then	--LOC_94
@@ -366,7 +352,7 @@ function HandleHadeanAttack(R, STATE)
 	elseif STATE == 6 then	--LOC_104
 		AudioMessage("edf02_09.wav");	--Stewart:"The hostiles are just seconds away..."
 		ClearObjectives();
-		AddObjective(_Text11, "white");
+		AddObjective("edf0211.otf", "white");
 		M.AttackIndex = 1;
 		Advance(R);
 	elseif STATE == 7 then	--LOC_107
@@ -408,7 +394,7 @@ function HandleHadeanAttack(R, STATE)
 				--Win
 				AudioMessage("edf02_10.wav");	--Stewart:"Well done. You've smashed the Hadeans..."
 				ClearObjectives();
-				AddObjective(_Text5, "green");
+				AddObjective("edf0205.otf", "green");
 				SucceedMission(GetTime() + 18, "edf02W1.txt");
 				Advance(R);
 			end
@@ -421,7 +407,7 @@ function HandleStewartNag(R, STATE)
 	if STATE == 0 then	--LOC_259
 		AudioMessage("EDF02_05A.wav");	--Stewart:"Try going through that arch."
 		ClearObjectives();
-		AddObjective(_Text9, "white");
+		AddObjective("edf0209.otf", "white");
 		M.StewartNextNagTime = GetTime() + 30.0;
 		Advance(R);
 	elseif STATE == 1 then
@@ -444,7 +430,7 @@ function HandleStewartNag(R, STATE)
 		Advance(R, 3.0);
 	elseif STATE == 3 then
 		ClearObjectives();
-		AddObjective(_Text7, "white");
+		AddObjective("edf0207.otf", "white");
 		Advance(R);
 	elseif STATE == 4 then
 		if M.RecyTeleported and GetDistance(M.Player, M.Recycler) < 150 then
@@ -475,7 +461,7 @@ function OnPortalDist(portal, h)
 			SetObjectiveOn(M.BaseNav);
 			Teleport(h, M.Portals[2], 30);
 			ClearObjectives();
-			AddObjective(_Text4, "white");
+			AddObjective("edf0204.otf", "white");
 			Goto(M.Recycler, M.BaseNav, 0);
 			M.RecyTeleported = true;
 		end
@@ -506,7 +492,7 @@ function CheckStuffIsAlive()
 		if not IsAround(M.Recycler) then
 			AudioMessage("edf02_11.wav");	--Stewart:"You lost the recycler..."
 			ClearObjectives();
-			AddObjective(_Text2, "red");
+			AddObjective("edf0202.otf", "red");
 			FailMission(GetTime() + 12, "edf02L1.txt");
 			M.MissionOver = true;
 		end

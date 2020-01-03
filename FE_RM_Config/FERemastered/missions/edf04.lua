@@ -8,20 +8,6 @@ local NUM_KRULS = 5;
 local NUM_TURRETS1 = 4;
 local NUM_TURRETS2 = 4;
 
---Strings
-local _Text1 = "Escort the Recycler to the \nindicated Nav point and deploy\nit at that site.";
-local _Text2 = "Take control of the Megagun relic\nto the east of our base, then\nescort the engineers' transport\nto the Megagun.";
-local _Text3 = "Stand by while Captain O'Ryan\nand his team of engineers attempt\nto crack the Hadean codes and take\ncontrol of the Megagun.";
-local _Text4 = "Each Megagun shot consumes 160\nmetric tons of scrap. Capture and\nhold 6 scrap pools so O'Ryan can\nblast the other Megaguns.";
-local _Text5 = "--WARNING-WARNING-WARNING--\nSkyEye reports incoming fire from\nthe Athena Megagun. Take cover!\n--WARNING-WARNING-WARNING--";
-local _Text6 = "Build up another 160 tons of\nbiometal so that O'Ryan can\ndestroy the second Megagun, on\nthe planet Troy.";
-local _Text7 = "The last Megagun, on Alexandria,\nis preparing to fire! Hurry and\ngather the necessary scrap!";
-local _Text8 = "You have failed in your primary\nobjective. Our last Recycler, the\nVENGEANCE, has been destroyed.";
-local _Text9 = "You allowed the transport with \nour engineers to be destroyed.\nWe can no longer take control of\nthe Megagun.";
-local _Text10 = "Collect resources and fortify\nyour position. Do NOT attack the\nHadean base until so ordered.";
-local _Text11 = "Escort the EDF Recycler VENGEANCE\nto the safe zone at Nav Delta.";
-
-
 local Routines = {};
 
 local M = {
@@ -247,7 +233,7 @@ function HandleMainState(R, STATE)
 	elseif STATE == 1 then
 		if CameraPath("rcam", 1500, 2000, M.Recycler) or CameraCancelled() then
 			CameraFinish();
-			AddObjective(_Text1, "white");
+			AddObjective("edf0401.otf", "white");
 			M.BaseNav = BuildObject("ibnav", 1, "bss");
 			SetObjectiveName(M.BaseNav, "Base Site");
 			SetObjectiveOn(M.BaseNav);
@@ -263,7 +249,7 @@ function HandleMainState(R, STATE)
 			else
 				RemoveObject(M.BaseNav);
 				ClearObjectives();
-				AddObjective(_Text10, "white");
+				AddObjective(_Te"edf0410.otf"xt10, "white");
 				M.HadeanBaseNav = BuildObject("ibnav", 1, "ebs");
 				SetObjectiveName(M.HadeanBaseNav, "Hadean Base");
 				SetObjectiveOn(M.HadeanBaseNav);
@@ -272,7 +258,7 @@ function HandleMainState(R, STATE)
 			end
 		end
 	elseif STATE == 3 then
-		AddObjective(_Text2, "white");
+		AddObjective("edf0402.otf", "white");
 		AudioMessage("edf0404.wav");	--Skyeye:"We've found the Mega Gun location..."
 		M.MegaGunNav = BuildObject("ibnav", 1, "mgs");
 		SetObjectiveName(M.MegaGunNav, "Mega Gun");
@@ -302,14 +288,14 @@ function HandleMainState(R, STATE)
 		if GetDistance(M.Engineer, M.MegaGun) < 40 then
 			RemoveObject(M.Engineer);
 			ClearObjectives();
-			AddObjective(_Text3, "green");
+			AddObjective("edf0403.otf", "green");
 			AudioMessage("edf0406.wav");	--O'Ryan:"I'm inside the megagun..."
 			Advance(R, 15.0);
 		end
 	elseif STATE == 7 then
 		ClearObjectives();
-		AddObjective(_Text2, "green");
-		AddObjective(_Text4, "white");
+		AddObjective("edf0402.otf", "green");
+		AddObjective("edf0404.otf", "white");
 		AudioMessage("edf0407.wav");	--O'Ryan:"Yes! The megagun is online..."
 		SetTeamNum(M.MegaGun, 1);
 		SetTeamNum(M.MegaGuard1, 1);
@@ -323,7 +309,7 @@ function HandleMainState(R, STATE)
 		if GetScrap(1) >= 110 then
 			AudioMessage("edf0409.wav");	--Skyeye:"We've just detected a massive energy spike on the planet Athena..."
 			ClearObjectives();
-			AddObjective(_Text5, "red");
+			AddObjective("edf0405.otf", "red");
 			Advance(R, 60.0);
 		end
 	elseif STATE == 10 then
@@ -334,7 +320,7 @@ function HandleMainState(R, STATE)
 	elseif STATE == 11 then
 		AudioMessage("edf0410.wav");	--Windex:"That was far too close..."
 		ClearObjectives();
-		AddObjective(_Text4, "white");
+		AddObjective("edf0404.otf", "white");
 		Advance(R);
 	elseif STATE == 12 then	--LOC_119
 		if GetScrap(1) >= 160 then
@@ -347,7 +333,7 @@ function HandleMainState(R, STATE)
 			CameraFinish();
 			SetScrap(1, 0);
 			ClearObjectives();
-			AddObjective(_Text4, "green");
+			AddObjective("edf0404.otf", "green");
 			SetRoutineActive(7, true);--M.HadRetaliate = true;
 			AudioMessage("edf0413.wav");	--Skyeye:"We're picking up substantial energy pulsations.."
 			Advance(R);
@@ -362,12 +348,12 @@ function HandleMainState(R, STATE)
 			CameraFinish();
 			SetScrap(1, 0);
 			ClearObjectives();
-			AddObjective(_Text6, "green");
+			AddObjective("edf0406.otf", "green");
 			Advance(R, 5.0);
 		end
 	elseif STATE == 16 then
 		AudioMessage("edf0414.wav");	--Skyeye:"We just wiped out the megagun on planet Troy..."
-		AddObjective(_Text7, "white");
+		AddObjective("edf0407.otf", "white");
 		SetAIP("edf04d.aip", 6);
 		SetRoutineActive(7, true);--M.HadRetaliate = true;
 		Goto(M.EngineerTransport, M.MegaGunNav, 1);
@@ -421,7 +407,7 @@ function HandleMainState(R, STATE)
 			RemoveObject(M.CutsceneTarget);
 			SetScrap(1, 0);
 			ClearObjectives();
-			AddObjective(_Text11, "white");
+			AddObjective("edf0411.otf", "white");
 			AudioMessage("edf0417.wav");
 			SetRoutineActive(3, false);--M.SpawnTurrets = false;
 			SetRoutineActive(4, false);--M.SpawnKruls = false;
@@ -434,7 +420,7 @@ function HandleMainState(R, STATE)
 		if GetDistance(M.Recycler, M.NavDelta) < 30 
 		and GetDistance(M.Player, M.NavDelta) < 75 then
 			ClearObjectives();
-			AddObjective(_Text11, "green");
+			AddObjective("edf0411.otf", "green");
 			SucceedMission(GetTime() + 10, "edf04w1.des");
 			Advance(R);
 		end
@@ -563,7 +549,7 @@ function CheckStuffIsAlive()
 			M.MissionOver = true;
 		elseif not IsAround(M.EngineerTransport) then
 			ClearObjectives();
-			AddObjective(_Text9, "red");
+			AddObjective("edf0409.otf", "red");
 			--AudioMessage("edf04l3.wav");	--doesn't exist (that's an 'L', not a '1')
 			--AudioMessage("edf0413a.wav");	--O'Ryan:"AAARRRGGGGH!"
 			FailMission(GetTime() + 10, "edf04l3.des");

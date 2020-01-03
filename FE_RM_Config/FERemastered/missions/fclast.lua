@@ -1,13 +1,6 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
---Strings
-local _Text1 = "yOU aRE nEAR tHE mAIN eNTRANCE\ntO tHE cERBERI bASE. dEPLOY tHE\npROCREATOR aND pREPARE a sOLID\ndEFENSE bEFORE tHE eNEMY mOUNTS\na mAJOR aTTACK!";
-local _Text2 = "dESTROY tHE cERBERI fOUNDRY.\ntHIS wILL dISABLE mOST oF tHE\naUTONOMOUS dEFENSES gUARDING tHE\nmAIN aPPROACH tO tHE tRANSPORTER\naND cERBERIZERS.";
-local _Text3 = "fOOL! bY lOSING tHE pROCREATOR,\nyOU hAVE aBOLISHED aLL hOPE oF\nsTOPPING tHE cERBERI oNSLAUGHT!\naLL uNITS, rETREAT tO yOUR\ndROPSHIPS aT oNCE!";
-local _Text4 = "tHE tRANSPORTER iS sITED aLONG\ntHE mAIN aPPROACH rOUTE. dESTROY\ntHE cATALYZER tO iGNITE a cHAIN\nrEACTION tHAT wILL dEMOLISH tHE\ntRANSPORTER.";
-local _Text5 = "eXCELLENT jOB--tHE cATALYZER\naND tRANSPORTER hAVE bEEN\ndESTROYED! yOUR rEINFORCEMENTS\nwILL dEACTIVATE tHE cERBERIZER\nvATS, tHEN dESTROY tHEM.";
-
 local NUM_POWERGLOBES = 4;
 local NUM_BOLTMINES = 20;
 
@@ -216,13 +209,13 @@ function Routine1(R, STATE)
 		SetScrap(1, 40);
 		SetGroup(M.Object32, 0);
 		Goto(M.Object32, "RecyclerFriend", 0);
-		AddObjective(_Text1, "white");
+		AddObjective("fclast01.otf", "white");
 		AudioMessage("fclast_01.wav");	--Thanatos:"You are near the main approach to the Cerberi stronghold..."
 		M.CheckProcreator = true;
 		Advance(R);
 	elseif STATE == 1 then	--LOC_2
 		if GetCfg(M.Object32) == "ebrecy" then
-			AddObjective(_Text2, "white");
+			AddObjective("fclast02.otf", "white");
 			AudioMessage("fclast_02.wav");	--Thanatos:"The Cerberi Foundry controls a network of virtually impenetrable defenses..."
 			SetObjectiveOn(M.Object31);
 			Advance(R, 170.0);
@@ -275,7 +268,7 @@ function Routine1(R, STATE)
 	elseif STATE == 6 then
 		ClearObjectives();
 		AudioMessage("fclast_03a.wav");	--Thanatos:"The Cerberi transporter is located deep inside the stronghold..."
-		AddObjective(_Text4, "white");
+		AddObjective("fclast04.otf", "white");
 		local h = BuildObject("ibnav", 1, "Nav01");
 		SetObjectiveName(h, "Cerberi Main Route");
 		SetObjectiveOn(h);
@@ -421,7 +414,7 @@ function Routine8(R, STATE)
 		if not IsAround(M.Object30) then
 			M.CheckProcreator = false;--RunSpeed,_Routine11,0,true
 			ClearObjectives();
-			AddObjective(_Text5, "green");
+			AddObjective("fclast05.otf", "green");
 			Advance(R, 8.0);
 		end
 	elseif STATE == 2 then
@@ -474,7 +467,7 @@ function CheckStuffIsAlive()
 	if not M.MissionOver then
 		if M.CheckProcreator and not IsAround(M.Object32) then
 			ClearObjectives();
-			AddObjective(_Text3, "red");
+			AddObjective("fclast03.otf", "red");
 			AudioMessage("fclast_14.wav");	--Thanatos:"The Procreator has been destroyed..."
 			FailMission(GetTime() + 13, "fclastL1.txt");
 			M.MissionOver = true;

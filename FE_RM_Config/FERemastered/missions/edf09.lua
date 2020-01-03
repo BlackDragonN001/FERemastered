@@ -1,16 +1,6 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
---Strings
-_Text1 = "Undeploy the VENGEANCE and\nescort her to the StarPortal.";
-_Text2 = "The Hadean Procreator must be\ndestroyed before they get a\nchance to establish a base!";
-_Text3 = "The planet's seismic activity \nhas reached a critical level.\nWe must get to the StarPortal\nquickly, before a massive quake\nstrikes!";
-_Text4 = "The higher-intensity quakes\nare damaging the VENGEANCE. You\nmust undeploy it before the\nRecycler is totally destroyed.";
-_Text5 = "Clear the route to the Star-\nPortal. Sergeant Wong will \nfollow in the VENGEANCE.";
-_Text6 = "A large enemy assault force\nis approaching. Get the\nVENGEANCE out of here!";
-_Text7 = "One of the treads has snapped.\nCover the VENGEANCE while Sgt.\nWong replaces the tread.";
-_Text8 = "The tread has been replaced,\nand the VENGEANCE is on the\nmove once again. She should\nreach the StarPortal soon.";
-
 local M = {
 -- Bools
 	Routine4Active = false;
@@ -148,7 +138,7 @@ function Routine1()
 			M.Routine1Timer = GetTime() + 5;
 		elseif M.Routine1State == 1 then
 			ClearObjectives();
-			AddObjective(_Text1, "white");
+			AddObjective("edf0901.otf", "white");
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 2 then	--LOC_5
 			if IsAround(M.Recycler) then
@@ -158,7 +148,7 @@ function Routine1()
 				Goto(M.Recycler, "recy", 1);
 				ClearObjectives();
 				AudioMessage("edf09b.wav");
-				AddObjective(_Text5, "white");
+				AddObjective("edf0905.otf", "white");
 				M.Routine1State = M.Routine1State + 1;
 			elseif not IsAround(M.RecyDeployed) then
 				M.Routine1State = 4;
@@ -199,7 +189,7 @@ function Routine2()
 			Stop(M.Recycler, 1);
 			AudioMessage("edf09t.wav");
 			ClearObjectives();
-			AddObjective(_Text7, "white");
+			AddObjective("edf0907.otf", "white");
 			M.MLight = BuildObject("mlight", 5, "mlight");
 			M.Routine2State = M.Routine2State + 1;
 		elseif M.Routine2State == 4 then
@@ -234,7 +224,7 @@ function Routine2()
 			end
 		elseif M.Routine2State == 8 then
 			ClearObjectives();
-			AddObjective(_Text2, "white");
+			AddObjective("edf0902.otf", "white");
 			AudioMessage("edf09t2.wav");
 			M.Routine2State = M.Routine2State + 1;
 			M.Routine2Timer = GetTime() + 5;
@@ -245,7 +235,7 @@ function Routine2()
 		elseif M.Routine2State == 10 then
 			if not IsAround(M.HadeanRecy) then
 				ClearObjectives();
-				AddObjective(_Text3, "white");
+				AddObjective("edf0903.otf", "white");
 				M.Routine4Active = true;--RunSpeed,_Routine4,1,true
 				M.Routine2State = M.Routine2State + 1;
 			end
@@ -296,7 +286,7 @@ function Routine3()
 				Damage(M.RecyDeployed, 300);
 				Damage(M.Scavenger, 500);
 				ClearObjectives();
-				AddObjective(_Text4, "white");
+				AddObjective("edf0904.otf", "white");
 				UpdateEarthQuake(6.0);
 				M.Routine3State = 1; --to LOC_81
 				M.Routine3Timer = GetTime() + 20;
@@ -369,7 +359,7 @@ function Routine4()
 		elseif M.Routine4State == 1 then
 			if GetDistance(M.Recycler, M.Portal) < 200 then
 				ClearObjectives();
-				AddObjective(_Text6, "white");
+				AddObjective("edf0906.otf", "white");
 				M.Routine4State = M.Routine4State + 1;
 			end
 		elseif M.Routine4State == 2 then	--LOC_150

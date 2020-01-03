@@ -4,19 +4,6 @@ local _FECore = require('_FECore');
 -- Variables Not saved. Constants that never change.
 local NUM_TANKS = 6
 local NUM_SURVIVORS = 10
---Strings
-local _Text1 = "Your vehicle is equipped with\na special scanning device.\nScan the power source by\ngetting near it.";
-local _Text2 = "Hostiles are moving to attack!!\nTake action!";
-local _Text3 = "Have your subordinate tanks pick\nup the survivors, and bring them\nback to the dropships.  Only the\nsubordinate Sabres can get them.";
-local _Text4 = "Tanks carrying survivors will be\nplaced in Group 10 automatically.\nThey can't pick you up while\ncarrying a survivor.  Don't lose\nany survivors!";
-local _Text5 = "Scan the next highlighted\npower source.";
-local _Text6 = "You've lost too many tanks\nto complete this mission.";
-local _Text7 = "That's two survivors dead.  That\nlast one was no ordinary survivor,\nbut General Hardin himself!";
-local _Text8 = "The Hadeans have overrun the\narea.  There's no hope now.";
-local _Text9 = "Congratulations.  All the\nsurvivors are safe.  General\nHardin was among them, and\nwould like to thank you.";
-local _Text10 = "A survivor was KILLED.  We\nCANNOT afford to lose another!!!";
-local _Text11 = "All the remaining survivors are\nsafe.  We lost one, regretably.";
-
 
 local Routines = {};
 local RoutineToIDMap = {};
@@ -267,7 +254,7 @@ function HandleIntro(R, STATE)
 		RemoveObject(M.ShultzPilot);
 		Advance(R);
 	elseif STATE == 6 then
-		AddObjective(_Text1, "white");
+		AddObjective("edf0101.otf", "white");
 		AudioMessage("edf01_03.wav");	--Stewart:"Bravo Leader, scan those power sources..."
 		Advance(R, 3.0);
 	elseif STATE == 7 then	--LOC_49
@@ -300,7 +287,7 @@ function HandleIntro(R, STATE)
 			Advance(R);
 		else
 			ClearObjectives();
-			AddObjective(_Text5, "white");
+			AddObjective("edf0105.otf", "white");
 			SetState(R, 7);--to LOC_49
 		end
 	end
@@ -340,7 +327,7 @@ function HandleMainState(R, STATE)
 			SetPerceivedTeam(M.PlayerTanks[i], 1);
 		end
 		ClearObjectives();
-		AddObjective(_Text2, "white");
+		AddObjective("edf0102.otf", "white");
 		Advance(R);
 	elseif STATE == 6 then
 		--Attack() doesn't seem to work if called in the same tick as SetPerceivedTeam()	
@@ -368,8 +355,8 @@ function HandleMainState(R, STATE)
 		Advance(R, 8.0);
 	elseif STATE == 10 then
 		ClearObjectives();
-		AddObjective(_Text3, "white");
-		AddObjective(_Text4, "white");
+		AddObjective("edf0103.otf", "white");
+		AddObjective("edf0104.otf", "white");
 		Advance(R, 6.0);
 	elseif STATE == 11 then
 		AudioMessage("edf01_05A.wav");	--Stewart: "Rescue the Alpha survivors..."
@@ -418,7 +405,7 @@ function HandleSurvivorPickup(R, STATE)	--Routine5
 			if M.SurvivorsKilled > 0 then
 				--2 survivors died
 				ClearObjectives();
-				AddObjective(_Text7, "red");
+				AddObjective("edf0107.otf", "red");
 				AudioMessage("edf01_07.wav");	--Stewart:"You just let another survivor die. It was Hardin..."
 				FailMission(GetTime() + 15, "edf01L2.txt");
 				SetRoutineActive(R, false);
@@ -426,13 +413,13 @@ function HandleSurvivorPickup(R, STATE)	--Routine5
 				--rescued 9 survivors and one died
 				m_HandleSurvivorDropoff = false;
 				ClearObjectives();
-				AddObjective(_Text10, "red");
+				AddObjective("edf0110.otf", "red");
 				AudioMessage("edf01_06a.wav");	--Stewart:"You've just lost a survivor..."
 				SetState(R, 199, 10.0);
 			else
 				--one died, rest still need rescue
 				ClearObjectives();
-				AddObjective(_Text10, "red");
+				AddObjective("edf0110.otf", "red");
 				AudioMessage("edf01_06a.wav");	--Stewart:"You've just lost a survivor..."
 				Advance(R);
 			end
@@ -464,7 +451,7 @@ function HandleSurvivorPickup(R, STATE)	--Routine5
 		SetState(R, STATE - 1);--to LOC_285
 	elseif STATE == 199 then
 		ClearObjectives();
-		AddObjective(_Text11, "green");
+		AddObjective("edf0111.otf", "green");
 		AudioMessage("edf01_06.wav");	--Stewart:"Good work Corber. You may be surprised to hear Gen. Hardin was among the survivors..."
 		SucceedMission(GetTime() + 16, "edf01W2.txt");--15
 		Advance(R);
@@ -491,7 +478,7 @@ function HandleSurvivorDropoff(R, STATE)
 		elseif M.SurvivorsRescued == 9 then	--LOC_365
 			--win - 1 survivor died
 			ClearObjectives();
-			AddObjective(_Text11, "green");
+			AddObjective("edf0111.otf", "green");
 			AudioMessage("edf01_06.wav");
 			SucceedMission(GetTime() + 15, "edf01W2.txt");
 			SetRoutineActive(R, false);
@@ -499,7 +486,7 @@ function HandleSurvivorDropoff(R, STATE)
 			--win - no survivors died
 			AudioMessage("edf01_06.wav");	--Stewart:"Good work Corber. You may be surprised to hear Gen. Hardin was among the survivors..."
 			ClearObjectives();
-			AddObjective(_Text9, "green");
+			AddObjective("edf0109.otf", "green");
 			SucceedMission(GetTime() + 16, "edf01W1.txt");--15
 			SetRoutineActive(R, false);
 		end
@@ -580,7 +567,7 @@ function CheckHadeanOverrun(R, STATE)
 	if STATE == 0 then
 		if M.HadeanUnitsCount > 24 and M.SurvivorsWaiting > 0 then
 			ClearObjectives();
-			AddObjective(_Text8, "red");
+			AddObjective("edf0108.otf", "red");
 			AudioMessage("edf01_08.wav");	--Stewart:"You've taken too long! The Hadeans have control over the area." 
 			Advance(R, 7.0);
 		end
@@ -618,7 +605,7 @@ function CheckTanksRemaining(R, STATE)
 	if STATE == 0 then
 		if M.SabresRemaining < 2 then
 			ClearObjectives();
-			AddObjective(_Text6, "red");
+			AddObjective("edf0106.otf", "red");
 			AudioMessage("edf01_09.wav");	--Stewart:"Return to base, we've lost too many Sabres"
 			Advance(R, 9.0);
 		end

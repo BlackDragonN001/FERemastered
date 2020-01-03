@@ -5,23 +5,6 @@ local _FECore = require('_FECore');
 local NUM_MEGATURRETS = 4;
 local NUM_BLOCKAGES = 7;
 
---Strings
-local _Text1 = "Escort the Recycler until it \nreaches the deployment zone on\nthe other side of the lake.";
-local _Text2 = "The object appears to be some\nkind of data storage unit. Bring\nit back to base immediately!";
-local _Text3 = "A map inside the data pod points\nto a possible back door to the\nHadean base. Get the satchel pack\nand investigate the nav point.";
-local _Text4 = "Our map indicates a ruined city\nup ahead, but defenses may still\nbe active. Cautiously head down\nthe canyon and check it out.";
-local _Text5 = "This ruined city appears to be\npre-Hadean, possibly very early\nCthonian in origin.";
-local _Text6 = "Our sensors are showing a strong\nelectromagnetic field. Head to\nthe position shown on your radar\nand investigate.";
-local _Text7 = "Use the 'I' key of your Digital\nControl Interface to scan the\nstructure.";
-local _Text8 = "This facility powers the Hadean\nMegagun Megagun. Protect it at\nall costs while you take out the\nbase defenses.";
-local _Text9 = "Protect the engineers as they\ntravel to the Megapower plant.";
-local _Text10 = "We have dispatched a squad of\nengineers to take control of the\nMegagun's power facility.";
-local _Text11 = "The engineers have taken control\nof the Megapower facility. They\nalso reprogrammed the Hadean gate\ntowers to ally with our forces.";
-local _Text12 = "Marshal your forces and forge\nahead for a final assault on the\nHadean base.";
-local _Text13 = "A massive bolt from an off-planet\nMegagun has just decimated our\nbase. The situation is very grim,\nwith few survivors.";
-local _Text14 = "A strange pod has been dropped\njust outside the Hadean gates.\nHead over there and see if you\ncan retrieve it.";
-
-
 local Routines = {};
 
 local M = {
@@ -239,7 +222,7 @@ function HandleMainState(R, STATE)
 		SetScrap(1, 40);
 		SetAIP("edf3a.aip", 2);
 		ClearObjectives();
-		AddObjective(_Text1, WHITE);
+		AddObjective("edf0301.otf", WHITE);
 		AudioMessage("edf0301.wav");	--Stewart:"We're a good 2 clicks from the deployment point"
 		M.BaseNav = BuildObject("ibnav", 1, "deploy");
 		SetObjectiveName(M.BaseNav, "BASE SITE");
@@ -286,7 +269,7 @@ function HandleMainState(R, STATE)
 		end
 	elseif STATE == 11 then
 		ClearObjectives();
-		AddObjective(_Text14, "white");
+		AddObjective("edf0314.otf", "white");
 		AudioMessage("edf0307.wav");	--Stewart:"An APC went down. Get the flight recorder..."
 		BuildObject("peapc", 0, "bunker4");
 		M.FlightRecorder = BuildObject("gbag01", 0, "gtow7");
@@ -303,7 +286,7 @@ function HandleMainState(R, STATE)
 			RemoveObject(M.FlightRecorder);
 			AudioMessage("pickup01.wav");
 			ClearObjectives();
-			AddObjective(_Text2, "white");
+			AddObjective("edf0302.otf", "white");
 			AudioMessage("edf0308.wav");	--Stewart:"Your cargo is extremely important. Get back to base."
 			Advance(R);
 		end
@@ -317,7 +300,7 @@ function HandleMainState(R, STATE)
 		Advance(R, 5.0);
 	elseif STATE == 16 then
 		ClearObjectives();
-		AddObjective(_Text3, "white");
+		AddObjective("edf0303.otf", "white");
 		M.CanyonNav = BuildObject("ibnav", 1, M.Position12);
 		SetObjectiveName(M.CanyonNav, "Canyon Blockage");
 		SetObjectiveOn(M.CanyonNav);
@@ -335,7 +318,7 @@ function HandleMainState(R, STATE)
 	elseif STATE == 18 then	--LOC_111
 		if not IsAround(M.Rocks[1]) then
 			ClearObjectives();
-			AddObjective(_Text4, "white");
+			AddObjective("edf0304.otf", "white");
 			AudioMessage("edf0311.wav");	--Stewart:"Our map shows abandoned structures at the other end of the canyon..."
 			RemoveObject(M.SatchelPickupNav);
 			RemoveObject(M.CanyonNav);
@@ -348,7 +331,7 @@ function HandleMainState(R, STATE)
 		if GetDistance(M.Player, M.CityRuinsNav) < 150 then
 			RemoveObject(M.CityRuinsNav);
 			ClearObjectives();
-			AddObjective(_Text5, "white");
+			AddObjective("edf0305.otf", "white");
 			--AudioMessage("edf0312.wav");	//missing?
 			Advance(R, 30.0);
 		end
@@ -368,7 +351,7 @@ function HandleMainState(R, STATE)
 			CameraFinish();
 			M.MegaPowerNav = BuildObject("ibnav", 1, M.Position13);
 			ClearObjectives();
-			AddObjective(_Text6, "white");
+			AddObjective("edf0306.otf", "white");
 			SetObjectiveName(M.MegaPowerNav, "power disturbance");
 			SetObjectiveOn(M.MegaPowerNav);
 			Advance(R);
@@ -377,13 +360,13 @@ function HandleMainState(R, STATE)
 		if GetDistance(M.Player, M.MegaPowerNav) < 50 then
 			SetObjectiveOff(M.MegaPowerNav);
 			ClearObjectives();
-			AddObjective(_Text7, "white");
+			AddObjective("edf0307.otf", "white");
 			Advance(R);
 		end
 	elseif STATE == 25 then
 		if IsInfo("ebmgen") then
 			ClearObjectives();
-			AddObjective(_Text7, "green");
+			AddObjective("edf0307.otf", "green");
 			AudioMessage("edf0314.wav");	--Stewart:"Good work. We've got a clear scan of the structure"
 			Advance(R, 10.0);
 		end
@@ -411,7 +394,7 @@ function HandleMainState(R, STATE)
 		AudioMessage("edf0316.wav");	--Stewart:"You've captured the megapower. The gate defenses are on our side now..."
 		SetObjectiveOff(M.EngineerTransport);
 		ClearObjectives();
-		AddObjective(_Text11, "white");
+		AddObjective("edf0311.otf", "white");
 		M.MegaTurretVictim = BuildObject("evtank", 2, "spawnvictim");
 		Attack(M.MegaTurretVictim, M.MegaTurrets[3], 1);
 		SetRoutineActive(5, true);
@@ -439,7 +422,7 @@ function HandleMainState(R, STATE)
 		ClearObjectives();
 		BuildObject("g3beamd", 2, "deploy");
 		AudioMessage("edf0317.wav");	--Stewart:"<PAIN> We've just been hit..."
-		AddObjective(_Text13, "white");
+		AddObjective("edf0313.otf", "white");
 		M.CutsceneNav = BuildObject("ibnav", 1, "deploy");
 		SetRoutineActive(5, true);
 		CameraReady();
@@ -450,7 +433,7 @@ function HandleMainState(R, STATE)
 			RemoveObject(M.Recycler);
 			RemoveObject(M.CutsceneNav);
 			ClearObjectives();
-			AddObjective(_Text8, "white");
+			AddObjective("edf0308.otf", "white");
 			Advance(R, 30.0);
 		end
 	elseif STATE == 35 then
@@ -534,7 +517,7 @@ function HandleEngineerTransport(R, STATE)
 		M.EngineerTransport = BuildObject("ivcargo", 1, "engineerspawn");
 		Stop(M.EngineerTransport, 1);
 		SetObjectiveOn(M.EngineerTransport);
-		AddObjective(_Text9, "white");
+		AddObjective("edf0309.otf", "white");
 		AudioMessage("edf0315.wav");
 		Advance(R, 20.0);
 	elseif STATE == 1 then

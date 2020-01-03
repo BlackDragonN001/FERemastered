@@ -1,22 +1,6 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
---Strings
-local _Text1 = "Establish a base at or near the\nindicated nav beacon. Your\nwingman is scouting for biometal\npools. Stay alert for Hadean\npatrols!";
-local _Text2 = "Destroy all enemy Procreators\nin the area, then capture the\nWormhole Controller. Be careful\nnot to destroy the Controller!";
-local _Text3 = "The Wormhole Generator has been\nactivated and is charging its\nantimatter cells. You have two\nminutes left to capture the\nWormhole Controller.";
-local _Text4 = "The Wormhole to Sol is open...\nAll five Star-Destroyers have\npassed through.";
-local _Text5 = "Once you have destroyed all the\nImperial Procreators, access\nthe Wormhole Controller by\napproaching it in the Hacker\nScout and pressing the 'I' key.";
-local _Text6 = "One or more Imperial factories\nor Procreators remain. You must\ndestroy all Imperial production\nfacilities before the rebels\ncan land safely.";
-local _Text7 = "Clear the rebels' landing area\nof hostile forces, then meet\nthem to receive the new\ndecryption algorithm. Protect\nour allies until they leave!";
-local _Text9 = "**FILE TRANSFER IN PROGRESS.**\n%i%% of file labeled\n'Revised Decryption Algorithm'\nhas been received.\nErrors found on re-check: 00";
-local _Text10 = "MS Worm version 1.0 now updated.\nPasscode is: 852";
-local _Text11 = "Erect an impregnable array of\nautomated defenses before\nactivating the Wormhole\nController. Evacuation of pilots\nwill begin shortly.";
-local _Text12 = "The Wormhole Generator is now\ncharging its antimatter cells.\nProtect the Wormhole Controller\nuntil the system is ready to\ntransport our forces.";
-local _Text13 = "The CONDOR has reached the\nlanding site. You must board her\nwithin the 90-second window or\nrisk being stranded on Facility\nforever.";
-local _Text14 = "  **ERROR! ERROR! ERROR!**  \nINVALID PASSCODE ENTERED INTO\nSYSTEM. CONTROLLER NODE SHUTTING\nDOWN IMMEDIATELY!";
-local _Text15 = "You must be in the Hacker Scout\n to login to the wormhole controller.";	--added msg if player doesn't use Hacker Scout to login
-
 local EvacuateBlacklist = { --Anything not on this list will be evacuated.
 	["ivturr.odf"]=true, 
 	["ivcons.odf"]=true, 
@@ -312,7 +296,7 @@ function Routine1()
 	if M.Routine1Timer < GetTime() then
 		if M.Routine1State == 0 then
 			AudioMessage("edf16_01.wav");	--Eisenstein:"Our forward scouts have located the Wormhole Control center..."
-			AddObjective(_Text1, "white");
+			AddObjective("edf1601.otf", "white");
 			M.Object15 = BuildObject("ibnav", 2, M.Position7);
 			SetObjectiveName(M.Object15, "hadeannav");
 			M.Routine5Active = true;--RunSpeed,_Routine5,1,false
@@ -325,7 +309,7 @@ function Routine1()
 			SetObjectiveOff(M.Object37);
 			AudioMessage("edf16_02.wav");	--Hardin:"We estimate that the main body of the Hadean fleet is about 15 min from the wormhole jump point..."
 			ClearObjectives();
-			AddObjective(_Text2, "white");
+			AddObjective("edf1602.otf", "white");
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 5;
 		elseif M.Routine1State == 3 then
@@ -336,7 +320,7 @@ function Routine1()
 			if M.Variable3 == 0 and GetCockpitTimer() < 120 then
 				AudioMessage("edf16_03.wav");	--EDF Officer:"The Hadean fleet has assembled at the jump point..."
 				ClearObjectives();
-				AddObjective(_Text3, "white");
+				AddObjective("edf1603.otf", "white");
 				StartEarthQuake(1.0);
 				M.Variable3 = 1;
 			elseif GetCockpitTimer() <= 1 then
@@ -348,7 +332,7 @@ function Routine1()
 			UpdateEarthQuake(10.0);
 			AudioMessage("edf16_04.wav");	--EDF Officer:"The wormhole has been activated..."
 			ClearObjectives();
-			AddObjective(_Text4, "red");
+			AddObjective("edf1604.otf", "red");
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 5;
 		elseif M.Routine1State == 6 then
@@ -365,7 +349,7 @@ function Routine1()
 			M.Routine1Timer = GetTime() + 3;
 		elseif M.Routine1State == 9 then
 			ClearObjectives();
-			AddObjective(_Text5, "white");
+			AddObjective("edf1605.otf", "white");
 			HideCockpitTimer();
 			SetAIP("edf16_team2.aip", 2);
 			M.Routine12Active = true;--RunSpeed,_Routine12,1,false
@@ -386,8 +370,8 @@ function Routine1()
 				else
 					--Player used something other than the Hacker scout to login...
 					ClearObjectives();
-					AddObjective(_Text10, "green");
-					AddObjective(_Text15, "red");
+					AddObjective("edf1610.otf", "green");
+					AddObjective("edf1615.otf", "red");
 					M.Routine1Timer = GetTime() + 4;
 				end
 			end
@@ -427,7 +411,7 @@ function Routine1()
 			IFace_Deactivate("Win3");
 			FreeFinish();
 			ClearObjectives();
-			AddObjective(_Text14, "red");
+			AddObjective("edf1614.otf", "red");
 			FailMission(GetTime() + 8, "nopass16.des");
 			M.Routine1State = 99;
 		elseif M.Routine1State == 16 then	--LOC_111
@@ -442,7 +426,7 @@ function Routine1()
 				FreeFinish();
 				AudioMessage("edf16_09.wav");	--Hadean AI:"Wormhole activation sequence initiated..."	
 				ClearObjectives();
-				AddObjective(_Text12, "white");
+				AddObjective("edf1612.otf", "white");
 				M.Object14 = ReplaceObject(M.Object14, "wormgen5");
 				SetTeamNum(M.Object14, 1);
 				SetTeamNum(M.Object3, 6);
@@ -463,7 +447,7 @@ function Routine1()
 			if GetCockpitTimer() < 90 then
 				AudioMessage("edf16_10.wav");	--Hardin:"I've sent the Condor down to pick you up..."
 				ClearObjectives();
-				AddObjective(_Text13, "white");
+				AddObjective("edf1613.otf", "white");
 				M.Object2 = BuildObject("ivdrop2_ld", 1, M.Position10);
 				SetAnimation(M.Object2, "land", 1);
 				StartAnimation(M.Object2);
@@ -547,7 +531,7 @@ function Routine4()
 				AudioMessage("edf16_06.wav");	--Rebel Tech:"Our dropship is beginning its descent..."
 				CalcCliffs(M.Object14, nil, 400);	--fixes mysterious annoying pathing problems in Hadean base after some buildings are destroyed
 				ClearObjectives();
-				AddObjective(_Text7, "white");
+				AddObjective("edf1607.otf", "white");
 				M.Object45 = BuildObject("ibnav", 1, M.Position10);
 				SetObjectiveName(M.Object45, "Rebel Landing Site");
 				SetObjectiveOn(M.Object45);
@@ -600,7 +584,7 @@ function Routine4()
 				LookAt(M.Object17, M.Object10, 1);
 				M.Variable6 = M.Variable6 + 4;
 				ClearObjectives();
-				AddObjective(string.format(_Text9, M.Variable6), "white");
+				AddObjective(string.format("edf1609.otf", M.Variable6), "white");
 				if M.Variable6 >= 100 then
 					M.Routine4State = M.Routine4State + 1;
 				end
@@ -610,7 +594,7 @@ function Routine4()
 			LookAt(M.Object17, M.Object10, 1);
 			AudioMessage("edf16_07.wav");	--Rebel Tech:"The new encryption algorithm has been installed..."
 			ClearObjectives();
-			AddObjective(_Text10, "green");
+			AddObjective("edf1610.otf", "green");
 			SetObjectiveOff(M.Object45);			
 			M.DownloadFinished = true;
 			SetAnimation(M.Object19, "takeoff", 1);
@@ -640,7 +624,7 @@ function Routine4()
 				M.Routine10Active = true;--RunSpeed,_Routine10,1,false
 				AudioMessage("edf16_08.wav");	--Hardin:"You'd better build plenty of automated defenses around the Wormhole Controller..."
 				--ClearObjectives();	--want to keep the password in the objectives box!
-				AddObjective(_Text11, "white");
+				AddObjective("edf1611.otf", "white");
 				SetAnimation(M.Object16, "takeoff", 1);
 				StartAnimation(M.Object16);
 				M.Routine4State = M.Routine4State + 1;
@@ -949,7 +933,7 @@ function Routine12()
 		if not IsAround(M.Object8) or not IsAround(M.Object7) or not IsAround(M.Object6) then
 			AudioMessage("edf16_05.wav");	--Rebel Tech:"Our scanners are still showing Imperial Factories or Recyclers..."
 			ClearObjectives();
-			AddObjective(_Text6, "white");
+			AddObjective("edf1606.otf", "white");
 			M.Routine4Active = true;--RunSpeed,_Routine4,1,false
 			M.Routine12Active = false;
 		end

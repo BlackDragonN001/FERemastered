@@ -1,15 +1,6 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
---Strings
-_Text1 = "dEPLOY tHE pROCREATOR aT a\nsECURE lOCATION, tHEN bUILD tHE\nbASE. mAJOR cERBERI aSSAULTS aRE\neXPECTED, sO mARSHAL yOUR\ndEFENSES cAREFULLY.";
-_Text2 = "aDMIRAL lEbLANC'S pARTY wILL\nsOON tELEPORT fROM oRBIT tO a\nlOCATION nORTH oF oUR bASE.\naSSEMBLE a pOWERFUL eSCORT tO\nbRING tHEM hERE sAFELY.";
-_Text3 = "tHE sCION eMISSARIES hAVE\naRRIVED oN cORE. eSCORT tHEM tO\ntHE bASE iN sAFETY.";
-_Text4 = "**wARNING!! aMBUSH aHEAD!!**\naN eNERGY pORTAL hAS aPPEARED\ndIRECTLY iN yOUR pATH. tHE\ncONVOY'S gUIDANCE sYSTEM wILL\nfOLLOW aN aLTERNATE rOUTE.";
-_Text5 = "aPPROACH tHE aSSEMBLER aND\ntARGET iT uSING tHE 't' kEY.\nwITH tHE aSSEMBLER sELECTED,\ndEPLOY tHE bEACON tO fIRE\ntHE aRK II'S aNTIMATTER bEAM.";
-_Text6 = "bEWARE oF tHE pOWER gLOBE!!\nwEAPONS aND tARGETING aRE\nuNRELIABLE iN iTS vICINITY.\naPPROACHING oR dESTROYING tHE\ngLOBE iS eXTREMELY hAZARDOUS!";
-
-
 local M = {
 -- Bools
 	MissionOver = false,
@@ -186,7 +177,7 @@ function Routine1()
 	if M.Routine1Timer < GetTime() then
 		if M.Routine1State == 0 then			
 			AddScrap(1, 40);
-			AddObjective(_Text1, "white");
+			AddObjective("fc0201.otf", "white");
 			AudioMessage("fc02_01.wav");	--Thanatos:"This is a suitable area to deploy..."
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 1400;
@@ -194,7 +185,7 @@ function Routine1()
 			BuildObject("recfield", 5, M.Position10);
 			BuildObject("recfield", 5, M.Position11);
 			ClearObjectives();
-			AddObjective(_Text2, "white");
+			AddObjective("fc0202.otf", "white");
 			AudioMessage("fc02_02.wav");	--SciWizard:"The Scion representatives have sent a coded message..."
 			BuildObject("fvturr", 6, "turr1");
 			BuildObject("fvturr", 6, "turr2");
@@ -205,7 +196,7 @@ function Routine1()
 			SetObjectiveOn(M.ScionLeader);
 			M.ScionLeaderAround = true;--RunSpeed,_Routine6,1,true
 			ClearObjectives();
-			AddObjective(_Text3, "white");
+			AddObjective("fc0203.otf", "white");
 			AudioMessage("fc02_03.wav");	--Thanatos:"The Scion admiral and his party have just travelled through the orbital teleporter..."
 			M.RoyalGuard = BuildObject("fvtank", 6, M.Position3);
 			GiveWeapon(M.RoyalGuard, "gshield");
@@ -226,7 +217,7 @@ function Routine1()
 			end
 		elseif M.Routine1State == 4 then	--LOC_35
 			if GetDistance(M.ScionLeader, "ambush") < 140 then
-				AddObjective(_Text4, "white");
+				AddObjective("fc0204.otf", "white");
 				AudioMessage("fc02_04.wav");	--SciWizard:"The Cerberi have deployed an energy portal directly in your path..."
 				M.Routine4Active = false;--RunSpeed,_Routine4,0,true
 				local portalPos = TerrainFloor(M.Position5) + SetVector(0,40,0);
@@ -282,7 +273,7 @@ function Routine1()
 			end
 		elseif M.Routine1State == 9 then
 			ClearObjectives();
-			AddObjective(_Text5, "white");
+			AddObjective("fc0205.otf", "white");
 			AudioMessage("fc02_05.wav");	--LeBlanc:"I have directed the Ark II into a distant orbit..."
 			M.ArkUplinkPickup = BuildObject("zapmine_sp", 0, M.Position9);
 			SetObjectiveName(M.ArkUplinkPickup, "Ark II Comlink");
@@ -297,7 +288,7 @@ function Routine1()
 			end
 		elseif M.Routine1State == 11 then
 			ClearObjectives()
-			AddObjective(_Text6, "red");
+			AddObjective("fc0206.otf", "red");
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 5;
 		elseif M.Routine1State == 12 then
@@ -488,7 +479,7 @@ end
 function CheckStuffIsAlive()
 	if not M.MissionOver then
 		if M.ArkComlinkAround and not IsAround(M.CerbAssembler) then
-			AddObjective(_Text5, "green");
+			AddObjective("fc0205.otf", "green");
 			SucceedMission(GetTime() + 5, "fc02win.des");
 			M.MissionOver = true;
 		elseif not IsAround(M.Procreator) then
