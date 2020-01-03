@@ -240,6 +240,10 @@ function Start()
 	Ally(12, 3);
 	Ally(12, 13);
 	Ally(12, 15);
+
+	-- We decided to move the off-map player units to an allied team to prevent issues with Servicing, etc. They are not controlled by the player so better off unseen until they are used. -- AI_Unit
+	Ally(1, 6);
+	Ally(6, 1);
 	
 	M.ScionFighter = GetHandleOrDie("unnamed_fvsky00");
 	M.CerbFact = GetHandleOrDie("unnamed_cbfact");
