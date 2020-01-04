@@ -42,6 +42,7 @@ local M = {
 	CerbMinelayer = nil,
 	EdfNav = nil,
 	HadeanNav = nil,
+
 -- Ints
 	TPS = 10,
 	Routine1State = 0,
@@ -132,7 +133,11 @@ function Start()
 
 	_FECore.Start()
 
-	M.Recycler = BuildObject("ibrecy", 1, BuildDirectionalMatrix(GetPosition("recy")));
+	-- Ally Team 3 to make the Schultz scene a bit easier for us. We will put Schultz on Team 3 - AI_Unit
+	Ally(1, 3);
+	Ally(3, 1);
+
+	M.Recycler = BuildObject("ibrecy_15", 1, BuildDirectionalMatrix(GetPosition("recy")));
 	M.CerbRecy = GetObjectByTeamSlot(5, 1);
 	M.Jammer = GetHandleOrDie("cbjamm");
 	M.Constructor = GetHandleOrDie("cons");
@@ -141,6 +146,12 @@ function Start()
 	M.Position2 = GetPosition(M.Recycler);
 	M.Position5 = GetPosition(M.HadeanNav);
 	M.DropshipPosition = GetTransform(M.HadeanDropship);
+
+	-- Minor change to the mission. I want Schultz in a tank here to make it seem better with his dialogue. - AI_Unit
+	M.Schultz = BuildObject("ivtank", 3, "shulz");
+	SetObjectiveName(M.Schultz, "Schultz");
+	SetObjectiveOn(M.Schultz);
+
 	RemoveObject(M.HadeanDropship);
 	
 	GLOBAL_lock(_G);	--prevents script from accidentally creating new global variables.
@@ -150,6 +161,11 @@ function AddObject(h)
 	
 	_FECore.AddObject(h);
 	
+	-- This should be Schultz.
+	if (GetCfg(h) == "ispilo" and GetTeamNum(h) == 3) then
+		M.Schultz = h;
+		Goto(h, M.Constructor, 1);
+	end
 end
 
 function Update()
@@ -180,6 +196,12 @@ function Routine1()
 			M.SchultzInvincible = true;--RunSpeed,_Routine9,1,true
 			SetScrap(1, 40);
 			SetScrap(5, 40);
+
+			-- Have Schultz's Tank follow the Player until he goes back to build the base defenses.
+			if (IsAlive(M.Player)) then
+				Follow(M.Schultz, M.Player, 1);
+			end
+
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 25;
 		elseif M.Routine1State == 1 then
@@ -203,6 +225,10 @@ function Routine1()
 			M.TunnelEntranceNav = BuildObject("ibnav", 1, "tunnel");
 			SetObjectiveName(M.TunnelEntranceNav, "Tunnel Entrance");
 			SetObjectiveOn(M.TunnelEntranceNav);
+
+			-- Move Schultz to the Recycler. -- AI_Unit
+			Follow(M.Schultz, M.Recycler, 1);
+
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 50;
 		elseif M.Routine1State == 4 then
@@ -215,8 +241,13 @@ function Routine1()
 				M.Routine7Active = false; --M.Variable5 = 1;
 				SetPerceivedTeam(M.Player, 5);
 				M.Routine4Active = true;--M.Variable1 = 1;
-				M.Schultz = BuildObject("ispilo", 1, "shulz");	--changed Schultz to be an ispilo instead of espilo
-				Goto(M.Schultz, M.Constructor, 1);
+
+				-- Have Schultz hop out of his tank and go to the constructor. - AI_Unit
+				SetObjectiveOff(M.Schultz);
+				SetObjectiveName(M.Schultz, "Tank");
+				SetTransform(M.Schultz, BuildDirectionalMatrix(GetPosition("shulz"), GetPosition("cons")));
+				HopOut(M.Schultz);			
+			
 				M.Routine1State = M.Routine1State + 1;
 			end
 		elseif M.Routine1State == 6 then	--LOC_37
@@ -226,7 +257,7 @@ function Routine1()
 				SetAnimation(M.Constructor, "startup", 1);
 				StartAnimation(M.Constructor);
 				M.Routine1State = M.Routine1State + 1;
-				M.Routine1Timer = GetTime() + 5;
+				M.Routine1Timer = GetTime() + 3;
 			end
 		elseif M.Routine1State == 7 then
 			M.Constructor = ReplaceObject(M.Constructor, "ivpcon", -1, 0.0, 0);
@@ -238,10 +269,11 @@ function Routine1()
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 9 then	--LOC_48
 			if GetDistance(M.Constructor, GetPosition("demolish")) < 15 then
-				SetAnimation(M.Constructor, "cons2", 1);
-				StartAnimation(M.Constructor);
+				Stop(M.Constructor, 1);
+				--SetAnimation(M.Constructor, "deploy", 1);
+				Deploy(M.Constructor);
 				M.Routine1State = M.Routine1State + 1;
-				M.Routine1Timer = GetTime() + 1;
+				M.Routine1Timer = GetTime() + 8;
 			end
 		elseif M.Routine1State == 10 then
 			RemoveObject(M.Jammer);
@@ -527,7 +559,7 @@ function Routine4()
 			M.Routine4State = M.Routine4State + 1;
 		elseif M.Routine4State == 1 then
 			SetCurHealth(M.Player, M.OldPlayerHealth);
-			if CameraPath("cam1", 5000, 800, M.Recycler) then
+			if CameraPath("cam1", 4000, 800, M.Recycler) then
 				CameraFinish();
 				M.Routine4Active = false;
 				UnAlly(1, 5);
