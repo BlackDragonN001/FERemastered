@@ -15,6 +15,7 @@ imageSignature = 1.0
 radarSignature = 1.0
 isAssault = 1
 armorClass = H
+AllowUndergroundSpawn = 1
 
 /////// Requirements ///////////////////
 
@@ -37,6 +38,12 @@ lightName1 = "o_white_nf"
 detectRange = 100
 
 [BuildingClass]
+tunnelCount = 1
+tunnel01X0 = 3
+tunnel01Z0 = 3
+tunnel01DX = 2
+tunnel01DZ = 4
+tunnel01Edge = "wwtw"
 
 soundAmbient = "ibfact00.wav"
 
