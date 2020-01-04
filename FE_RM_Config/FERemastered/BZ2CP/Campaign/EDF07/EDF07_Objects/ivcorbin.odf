@@ -1,7 +1,7 @@
 [GameObjectClass]
 baseName = "ivtank"
-geometryName = "ivcorbin.xsi"
-cockpitName= "ivtank_cockpit.fbx"
+geometryName = "ivcorb00.fbx"
+cockpitName= "ivcorb_cockpit.fbx"
 classLabel = "ivtank"
 
 maxHealth = 7500			//normal is 3500 - 5000, but need endurance for this mission. Had used 15,000, but that's too much
