@@ -433,7 +433,7 @@ function Routine1()
 				SetTeamNum(GetObjectByTeamSlot(1, 2), 6);
 				SetTeamNum(GetObjectByTeamSlot(1, 3), 6);
 				SetTeamNum(GetObjectByTeamSlot(1, 5), 6);
-				StartCockpitTimer(480);
+				StartCockpitTimer(600); -- Corrected to 10 minutes as per what is said by the audio message. - AI_Unit
 				M.Routine9Active = true;--RunSpeed,_Routine9,1,false
 				M.CheckHackerScout = false;--RunSpeed,_Routine3,0,false
 				M.Routine1State = M.Routine1State + 1;
