@@ -293,6 +293,8 @@ function AddObject(h)
 		GiveWeapon(h, "igjetp");
 	elseif IsOdf(h, "ivcons") then
 		M.Constructor = h;
+	elseif (IsOdf(h, "cvturr02")) then
+		SetSkill(h, 3); -- Added to make sure Cerberi Turrets shoot at you before shooting them. - AI_Unit.
 	end
 end
 
@@ -470,7 +472,8 @@ function Routine3()
 				M.Routine3Timer = GetTime() + 3;
 			end
 		elseif M.Routine3State == 14 then
-			M.Attacker15 = BuildObject("cvtalon02",5,"waterstart");
+			-- M.Attacker15 = BuildObject("cvtalon02",5,"waterstart");
+			M.Attacker15 = BuildObject("cvtalon02",5,"bunker_talon_spawn"); -- Changed to this as the Talon was spawning right in front of the player which is bad. - AI_Unit
 			Attack(M.Attacker15,M.HadeanCommBunk,1);
 			M.Routine3State = M.Routine3State + 1;
 			M.Routine3Timer = GetTime() + 2;
