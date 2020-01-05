@@ -201,11 +201,11 @@ end
 --Main mission state
 function HandleMainState(R, STATE)
 	if STATE == 0 then
-		M.StayPut = BuildObject("stayput", 0, GetTransform(M.Player));
+		M.StayPut = BuildObjectAndLabel("stayput", 0, GetTransform(M.Player), "Stayput 1");
 		Stop(M.Recycler, 1);
 		StartEarthQuake(10.0);
-		M.DropshipFlying = BuildObject("ivdrop_fly", 0, M.Position2);
-		SetObjectiveName(BuildObject("ibnav", 1, M.Position2), "Position2");
+		M.DropshipFlying = BuildObjectAndLabel("ivdrop_fly", 0, M.Position2, "Dropship Flying");
+		-- SetObjectiveName(BuildObjectAndLabel("ibnav", 1, M.Position2), "Position2"); - Not sure why this is needed? - AI_Unit
 		Advance(R, 7.0);
 	elseif STATE == 1 then
 		AudioMessage("edf02_01.wav");	--Pilot:"That blast came awfully close..."
@@ -231,10 +231,10 @@ function HandleMainState(R, STATE)
 		SetVelocity(M.Recycler, SetVector(0, 0, 15));
 		SetPosition(M.Player, "PlacePlayer");
 		SetVelocity(M.Player, SetVector(0, 0, 40));
-		local escort1 = BuildObject("ivtank", 1, "Escort1");
-		local escort2 = BuildObject("ivscout", 1, "Escort2");
-		local escort3 = BuildObject("ivscout", 1, "Escort3");
-		local escort4 = BuildObject("ivscout", 1, "Escort4");
+		local escort1 = BuildObjectAndLabel("ivtank", 1, "Escort1", "Tank 1");
+		local escort2 = BuildObjectAndLabel("ivscout", 1, "Escort2", "Scout 1");
+		local escort3 = BuildObjectAndLabel("ivscout", 1, "Escort3", "Scout 2");
+		local escort4 = BuildObjectAndLabel("ivscout", 1, "Escort4", "Scout 3");
 		Follow(escort1, M.Recycler, 0);
 		Follow(escort2, M.Recycler, 0);
 		Follow(escort3, M.Recycler, 0);
@@ -243,15 +243,15 @@ function HandleMainState(R, STATE)
 		SetGroup(escort2, 1);	
 		SetGroup(escort3, 1);
 		SetGroup(escort4, 1);
-		SetSkill(BuildObject("evscout_e02", 5, "Enemy1"), 3);
-		SetSkill(BuildObject("evscout_e02", 5, "Enemy2"), 3);
+		SetSkill(BuildObjectAndLabel("evscout_e02", 5, "Enemy1", "Hadean Scout 1"), 3);
+		SetSkill(BuildObjectAndLabel("evscout_e02", 5, "Enemy2", "Hadean Scout 2"), 3);
 		SetGroup(M.Recycler, 0);
 		SetScrap(1, 30);
 		Advance(R, 3.0);
 	elseif STATE == 5 then
 		AudioMessage("edf02_02.wav");	--Stewart:"Good landing under the circumstances..."
 		Goto(M.Recycler, "RecyclerPath", 1);
-		M.InvestigateNav = BuildObject("ibnav", 1, "NavSpawn");
+		M.InvestigateNav = BuildObjectAndLabel("ibnav", 1, "NavSpawn", "Investigate Nav");
 		SetObjectiveName(M.InvestigateNav, "Investigate");
 		SetObjectiveOn(M.InvestigateNav);
 		ClearObjectives();
@@ -264,17 +264,17 @@ function HandleMainState(R, STATE)
 		AudioMessage("edf02_04.wav");	--Stewart:"You've got enemy units in the canyon..."
 		Advance(R, 5.0);
 	elseif STATE == 8 then
-		Patrol(BuildObject("evscout_e02", 5, "Spawn2"), "Patrol2", 0);
+		Patrol(BuildObjectAndLabel("evscout_e02", 5, "Spawn2", "Hadean Scout 3"), "Patrol2", 0);
 		Advance(R, 5.0);
 	elseif STATE == 9 then	--LOC_43
 		if GetTime() > 780 then
-			Goto(BuildObject("evtank", 5, "Spawn1"), "Patrol1", 0);
+			Goto(BuildObjectAndLabel("evtank", 5, "Spawn1", , "Hadean Xares 1"), "Patrol1", 0);
 			Advance(R, 27.0);
 		else
 			Advance(R);
 		end
 	elseif STATE == 10 then	--LOC_48
-		Goto(BuildObject("evscout_e02", 5, "Spawn1"), "Patrol1", 0);
+		Goto(BuildObjectAndLabel("evscout_e02", 5, "Spawn1", "Hadean Scout 4"), "Patrol1", 0);
 		SetState(R, STATE-1, 48.0);--to LOC_43
 	end
 end
@@ -283,10 +283,10 @@ end
 function SpawnDinos(R, STATE)
 	if GetTime() > 360 then
 		if not IsAround(M.Dino1) then
-			M.Dino1 = BuildObject("raptor01", 3, "DinoSpawn1");
+			M.Dino1 = BuildObjectAndLabel("raptor01", 3, "DinoSpawn1", "Raptor 1");
 			Goto(M.Dino1, "DinoPatrol1", 0);
 		elseif not IsAround(M.Dino2) then
-			M.Dino2 = BuildObject("raptor01", 3, "DinoSpawn1");
+			M.Dino2 = BuildObjectAndLabel("raptor01", 3, "DinoSpawn1", "Raptor 2");
 			Goto(M.Dino2, "DinoPatrol1", 0);
 		end
 	end
@@ -299,14 +299,14 @@ function HandleScavTeleport(R, STATE)
 			SetObjectiveOff(M.InvestigateNav);
 			ClearObjectives();
 			AddObjective("edf0206.otf", "white");
-			M.HadeanScav = BuildObject("evscav", 5, "EnemyScav");
+			M.HadeanScav = BuildObjectAndLabel("evscav", 5, "EnemyScav", "Hadean Scav");
 			SetObjectiveName(M.HadeanScav, "Observe");
 			SetObjectiveOn(M.HadeanScav);
 			Goto(M.HadeanScav, M.Portals[1], 1);
 			Advance(R, 25.0);
 		end
 	elseif STATE == 1 then
-		M.EnemyScout1 = BuildObject("evscout", 5, "Spawn2");
+		M.EnemyScout1 = BuildObjectAndLabel("evscout", 5, "Spawn2", "Hadean Scout 5");
 		Goto(M.EnemyScout1, M.Portals[1], 0);
 		Advance(R, 6.0);
 	elseif STATE == 2 then
@@ -358,7 +358,7 @@ function HandleHadeanAttack(R, STATE)
 	elseif STATE == 7 then	--LOC_107
 		--Wave 1
 		local odfs = {"evtank", "evtanku", "evscout_e02", "evmislu"};
-		M.Attackers[M.AttackIndex] = BuildObject(odfs[M.AttackIndex], 5, "Wave1");
+		M.Attackers[M.AttackIndex] = BuildObjectAndLabel(odfs[M.AttackIndex], 5, "Wave1", string.format("Wave 1 Unit %d", M.AttackIndex));
 		Goto(M.Attackers[M.AttackIndex], M.Recycler, 1);
 		if M.AttackIndex == 4 then
 			M.AttackIndex = 1;
@@ -370,7 +370,7 @@ function HandleHadeanAttack(R, STATE)
 	elseif STATE == 8 then
 		--Wave 2
 		local odfs = {"evtanku", "evmislu", "evscout_e02", "evmort"};
-		M.Attackers[M.AttackIndex+4] = BuildObject(odfs[M.AttackIndex], 5, "Wave2");
+		M.Attackers[M.AttackIndex+4] = BuildObjectAndLabel(odfs[M.AttackIndex], 5, "Wave2", string.format("Wave 2 Unit %d", M.AttackIndex));
 		Goto(M.Attackers[M.AttackIndex+4], M.Recycler, 1);
 		if M.AttackIndex == 4 then
 			Advance(R, 3.0);
@@ -456,7 +456,7 @@ function OnPortalDist(portal, h)
 	if GetCfg(h) == "ivrecy" then
 		if not M.RecyTeleported then
 			SetObjectiveOff(M.Portals[1]);
-			M.BaseNav = BuildObject("ibnav", 1, M.Position4);
+			M.BaseNav = BuildObjectAndLabel("ibnav", 1, M.Position4, "Base Location");
 			SetObjectiveName(M.BaseNav, "Deploy Base");
 			SetObjectiveOn(M.BaseNav);
 			Teleport(h, M.Portals[2], 30);
@@ -504,10 +504,10 @@ function TerrainFloor(pos)
 end
 
 function Teleport(h, dest, offset)
-	BuildObject("teleportout", 0, GetPosition(h));
+	BuildObjectAndLabel("teleportout", 0, GetPosition(h), "Teleport Out");
 	local dir = Normalize(GetPosition(dest) - GetPosition(h))
 	local pos = GetPosition(dest) + dir*offset;
-	BuildObject("teleportin", 0, pos);
+	BuildObjectAndLabel("teleportin", 0, pos, , "Teleport In");
 	SetPosition(h, pos);
 	SetVelocity(h, Length(GetVelocity(h))*dir);
 	if h == GetPlayerHandle() then
@@ -534,4 +534,15 @@ function Move2(h, r, v, dest)
 		SetInterpolablePosition(h, newTransform, oldTransform, true);
 		return false;
 	end
+end
+
+-- New method for building and labelling units. - AI_Unit.
+function BuildObjectAndLabel(handle, team, pos, label) 
+    local h = BuildObject(handle, team, pos);
+
+    if (label ~= nil) then
+        SetLabel(h, label);
+    end
+
+    return h;
 end

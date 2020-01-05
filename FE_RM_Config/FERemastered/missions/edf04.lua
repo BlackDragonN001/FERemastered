@@ -178,11 +178,11 @@ function AddObject(h)
 	
 	--SetSkill(h, 3);
 	if GetCfg(h) == "ibfact_s" then
-		Attack(TeleportIn("cvhtank", 6, M.Portals[4], 20), h, 1);
+		Attack(TeleportIn("cvhtank", 6, M.Portals[4], 20, "Cerb Tank 1"), h, 1);
 	elseif GetCfg(h) == "ibgtow" then
-		Attack(TeleportIn("cvhscout", 6, M.Portals[2], 20), h, 1);
+		Attack(TeleportIn("cvhscout", 6, M.Portals[2], 20, "Cerb Scout 1"), h, 1);
 	elseif GetCfg(h) == "ibpgen" then
-		Attack(TeleportIn("cvhscout", 6, M.Portals[4], 20), h, 1);
+		Attack(TeleportIn("cvhscout", 6, M.Portals[4], 20, "Cerb Scout 2"), h, 1);
 	elseif GetCfg(h) == "ibsbay" then
 		SetObjectiveOn(h);
 	end
@@ -204,20 +204,20 @@ end
 --Builds 3 Hadean turrets by base site, lifts off dropship, and spawns birds
 function HandleIntro(R, STATE)
 	if STATE == 0 then
-		BuildObject("evturr", 6, "path_5");
-		BuildObject("evturr", 6, "path_6");
-		BuildObject("evturr", 6, "path_7");
+		BuildObjectAndLabel("evturr", 6, "path_5", "Hadean Turret 1");
+		BuildObjectAndLabel("evturr", 6, "path_6", "Hadean Turret 2");
+		BuildObjectAndLabel("evturr", 6, "path_7", "Hadean Turret 3");
 		SetAnimation(M.Dropship, "takeoff", 1);
 		StartAnimation(M.Dropship);
 		Advance(R, 15.0);
 	elseif STATE == 1 then
 		RemoveObject(M.Dropship);
-		Patrol(BuildObject("ptera02", 0, "aniwalk1"), "aniwalk1", 1);
-		Patrol(BuildObject("ptera03", 0, "aniwalk2"), "aniwalk2", 1);
-		Patrol(BuildObject("herbiv01", 0, "aniwalk3"), "aniwalk3", 1);
-		BuildObject("compy01", 0, "anidrink1");
-		BuildObject("compy01", 0, "anidrink3");
-		BuildObject("raptor01", 0, "anidrink2");
+		Patrol(BuildObjectAndLabel("ptera02", 0, "aniwalk1", "Ptera 1"), "aniwalk1", 1);
+		Patrol(BuildObjectAndLabel("ptera03", 0, "aniwalk2", "Ptera 2"), "aniwalk2", 1);
+		Patrol(BuildObjectAndLabel("herbiv01", 0, "aniwalk3", "Herbi 1"), "aniwalk3", 1);
+		BuildObjectAndLabel("compy01", 0, "anidrink1", "Compy 1");
+		BuildObjectAndLabel("compy01", 0, "anidrink3", "Compy 2");
+		BuildObjectAndLabel("raptor01", 0, "anidrink2", "Raptor 1");
 		Advance(R);
 	end
 end
@@ -234,7 +234,7 @@ function HandleMainState(R, STATE)
 		if CameraPath("rcam", 1500, 2000, M.Recycler) or CameraCancelled() then
 			CameraFinish();
 			AddObjective("edf0401.otf", "white");
-			M.BaseNav = BuildObject("ibnav", 1, "bss");
+			M.BaseNav = BuildObjectAndLabel("ibnav", 1, "bss", "Base Location");
 			SetObjectiveName(M.BaseNav, "Base Site");
 			SetObjectiveOn(M.BaseNav);
 			--SetAIP("edf04a.aip", 6);	--causes Hadeans to rush Player before they set up the Recycler
@@ -250,7 +250,7 @@ function HandleMainState(R, STATE)
 				RemoveObject(M.BaseNav);
 				ClearObjectives();
 				AddObjective(_Te"edf0410.otf"xt10, "white");
-				M.HadeanBaseNav = BuildObject("ibnav", 1, "ebs");
+				M.HadeanBaseNav = BuildObjectAndLabel("ibnav", 1, "ebs", "Hadean Base Location");
 				SetObjectiveName(M.HadeanBaseNav, "Hadean Base");
 				SetObjectiveOn(M.HadeanBaseNav);
 				AudioMessage("edf0403.wav");	--Skyeye:"We've pinpointed the Hadean stronghold..."
@@ -260,7 +260,7 @@ function HandleMainState(R, STATE)
 	elseif STATE == 3 then
 		AddObjective("edf0402.otf", "white");
 		AudioMessage("edf0404.wav");	--Skyeye:"We've found the Mega Gun location..."
-		M.MegaGunNav = BuildObject("ibnav", 1, "mgs");
+		M.MegaGunNav = BuildObjectAndLabel("ibnav", 1, "mgs", "Mega Gun Location");
 		SetObjectiveName(M.MegaGunNav, "Mega Gun");
 		SetObjectiveOn(M.MegaGunNav);
 		SetAIP("edf04b.aip", 6);
@@ -275,7 +275,7 @@ function HandleMainState(R, STATE)
 	elseif STATE == 5 then	--LOC_79
 		if GetDistance(M.EngineerTransport, M.MegaGun) < 75 then
 			Stop(M.EngineerTransport, 1);
-			M.Engineer = BuildObject("ispilo", 1, GetPosition(M.EngineerTransport));
+			M.Engineer = BuildObjectAndLabel("ispilo", 1, GetPosition(M.EngineerTransport), "Engineer Pilot");
 			SetObjectiveName(M.Engineer, "Engineer");
 			SetObjectiveOn(M.Engineer);
 			SetObjectiveOff(M.MegaGun);
@@ -313,9 +313,9 @@ function HandleMainState(R, STATE)
 			Advance(R, 60.0);
 		end
 	elseif STATE == 10 then
-		BuildObject("mbbeam", 9, "mgbbb");
-		BuildObject("mbfire", 9, "mgbbb");
-		BuildObject("mbrocks", 9, "mgbbb");
+		BuildObjectAndLabel("mbbeam", 9, "mgbbb", "Beam");
+		BuildObjectAndLabel("mbfire", 9, "mgbbb", "Fire");
+		BuildObjectAndLabel("mbrocks", 9, "mgbbb", "Rocks");
 		Advance(R, 15.0);
 	elseif STATE == 11 then
 		AudioMessage("edf0410.wav");	--Windex:"That was far too close..."
@@ -372,9 +372,9 @@ function HandleMainState(R, STATE)
 			--player took too long. Mission failed
 			local pos1 = GetPosition(M.MegaGun) + SetVector(0, 10, 0);
 			local pos2 = GetPosition(M.MegaGun) + SetVector(0, 15, 0);
-			M.CutsceneTarget = BuildObject("stick", 0, pos1);
-			BuildObject("mbbeam", 9, pos2);
-			BuildObject("mbfire", 9, pos2);
+			M.CutsceneTarget = BuildObjectAndLabel("stick", 0, pos1, "Cutscene Target");
+			BuildObjectAndLabel("mbbeam", 9, pos2, "Beam 2");
+			BuildObjectAndLabel("mbfire", 9, pos2, "Fire 2");
 			CameraReady();
 			SetState(R, 199);
 		elseif GetScrap(1) >= 160 then
@@ -385,7 +385,7 @@ function HandleMainState(R, STATE)
 		AudioMessage("edf0416.wav");	--O'Ryan:"Fire!"
 		SetRoutineActive(6, true);--M.RecyclerRetreat = true;
 		local pos = GetPosition(M.MegaGun) + SetVector(0, 10, 0);
-		M.CutsceneTarget = BuildObject("stick", 0, pos);
+		M.CutsceneTarget = BuildObjectAndLabel("stick", 0, pos, "Cutscene Target");
 		SetRoutineActive(5, true);--M.DestroyMegaturrets = true;
 		CameraReady();
 		Advance(R);
@@ -411,7 +411,7 @@ function HandleMainState(R, STATE)
 			AudioMessage("edf0417.wav");
 			SetRoutineActive(3, false);--M.SpawnTurrets = false;
 			SetRoutineActive(4, false);--M.SpawnKruls = false;
-			M.NavDelta = BuildObject("ibnav", 1, "NGTE");
+			M.NavDelta = BuildObjectAndLabel("ibnav", 1, "NGTE", "Nav Delta");
 			SetObjectiveName(M.NavDelta, "Nav Delta");
 			SetObjectiveOn(M.NavDelta);
 			Advance(R);
@@ -440,8 +440,8 @@ function DestroyMegaturrets(R, STATE)
 		Advance(R, 11.0);--9.0
 	elseif STATE == 1 then
 		local pos = GetPosition(M.MegaGun) + SetVector(0, 15, 0);
-		BuildObject("mbbeam", 9, pos);
-		BuildObject("mbfire", 9, pos);
+		BuildObjectAndLabel("mbbeam", 9, pos, "Beam 3");
+		BuildObjectAndLabel("mbfire", 9, pos, "Fire 3");
 		Advance(R, 11.0);--14.0
 	elseif STATE == 2 then
 		EjectPilot(M.MegaGuard1);
@@ -464,7 +464,7 @@ function SpawnKruls(R, STATE)
 	local patrols = {"STDpath","STDpath","STDpath","STDs1","STDs2"};
 	for i = 1,NUM_KRULS do
 		if not IsAround(M.Kruls[i]) then
-			M.Kruls[i] = TeleportIn("cvhtank", 6, M.Portals[6], 30);
+			M.Kruls[i] = TeleportIn("cvhtank", 6, M.Portals[6], 30, "Cerb Tank 2");
 			Patrol(M.Kruls[i], patrols[i], 1);
 		end
 	end
@@ -480,7 +480,7 @@ function SpawnTurrets(R, STATE)
 	elseif STATE == 1 then	--LOC_238
 		for i = 1,NUM_TURRETS1 do
 			if not IsAround(M.Turrets1[i]) then
-				M.Turrets1[i] = TeleportIn("evturr", 6, M.Portals[3], 30);
+				M.Turrets1[i] = TeleportIn("evturr", 6, M.Portals[3], 30, string.format("Hadean Turret Teleported %d", i));
 				Goto(M.Turrets1[i], dest1[i]);
 			end
 		end
@@ -488,7 +488,7 @@ function SpawnTurrets(R, STATE)
 	elseif STATE == 2 then	--LOC_253
 		for i = 1,NUM_TURRETS2 do
 			if not IsAround(M.Turrets2[i]) then
-				M.Turrets2[i] = TeleportIn("evturr", 6, M.Portals[5], 30);
+				M.Turrets2[i] = TeleportIn("evturr", 6, M.Portals[5], 30, string.format("Hadean Turret Teleported %d", i));
 				Goto(M.Turrets2[i], dest2[i]);
 			end
 		end
@@ -511,17 +511,17 @@ function HandleMegaGunRetaliate(R, STATE)
 			local r = math.random(1,5);
 			Goto(TeleportIn(odfs[r], 6, M.Portals[portals[r]], 20), targets[r], 0);
 		end
-		Attack(TeleportIn("cvhtank", 6, M.Portals[4], 20), M.Recycler, 1);
-		Attack(TeleportIn("cvhscout", 6, M.Portals[4], 20), M.Recycler, 1);
-		Attack(TeleportIn("cvhtank", 6, M.Portals[4], 20), M.Recycler, 1);
-		Attack(TeleportIn("cvhscout", 6, M.Portals[4], 20), M.Recycler, 1);
+		Attack(TeleportIn("cvhtank", 6, M.Portals[4], 20, "Cerb Tank 3"), M.Recycler, 1);
+		Attack(TeleportIn("cvhscout", 6, M.Portals[4], 20, "Cerb Scout 4"), M.Recycler, 1);
+		Attack(TeleportIn("cvhtank", 6, M.Portals[4], 20, "Cerb Tank 4"), M.Recycler, 1);
+		Attack(TeleportIn("cvhscout", 6, M.Portals[4], 20, "Cerb Scout 5"), M.Recycler, 1);
 		Advance(R, 15.0);
 	elseif STATE == 2 then
 		--Hadean off planet megaguns target a random extractor on the map
 		local r = math.random(1,5);
-		BuildObject("mbbeam", 9, targets[r]);
-		BuildObject("mbfire", 9, targets[r]);
-		BuildObject("mbrocks", 9, targets[r]);
+		BuildObjectAndLabel("mbbeam", 9, targets[r], "Beam 4");
+		BuildObjectAndLabel("mbfire", 9, targets[r], "Fire 4");
+		BuildObjectAndLabel("mbrocks", 9, targets[r], "Rocks 2");
 		SetState(R, 0);
 	end
 end
@@ -558,10 +558,20 @@ function CheckStuffIsAlive()
 	end
 end
 
-function TeleportIn(odf,  team,  dest, offset)
+function TeleportIn(odf,  team,  dest, offset, label)
 	local pos = GetPosition(dest);
 	pos.x = pos.x + offset;
-	BuildObject("teleportin",  0,  pos);
-	return BuildObject(odf,  team,  pos);
+	BuildObjectAndLabel("teleportin",  0,  pos, "Teleport In");
+	return BuildObjectAndLabel(odf,  team,  pos, label);
 end
 
+-- New method for building and labelling units. - AI_Unit.
+function BuildObjectAndLabel(handle, team, pos, label) 
+    local h = BuildObject(handle, team, pos);
+
+    if (label ~= nil) then
+        SetLabel(h, label);
+    end
+
+    return h;
+end

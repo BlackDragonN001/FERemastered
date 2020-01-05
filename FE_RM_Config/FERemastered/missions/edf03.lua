@@ -224,12 +224,12 @@ function HandleMainState(R, STATE)
 		ClearObjectives();
 		AddObjective("edf0301.otf", WHITE);
 		AudioMessage("edf0301.wav");	--Stewart:"We're a good 2 clicks from the deployment point"
-		M.BaseNav = BuildObject("ibnav", 1, "deploy");
+		M.BaseNav = BuildObjectAndLabel("ibnav", 1, "deploy", "Base Location");
 		SetObjectiveName(M.BaseNav, "BASE SITE");
 		SetObjectiveOn(M.BaseNav);
 		Advance(R, 20.0);
 	elseif STATE == 2 then
-		M.HadeanScout = BuildObject("evscout", 2, M.Position8);
+		M.HadeanScout = BuildObjectAndLabel("evscout", 2, M.Position8, "Hadean Scout 1");
 		Attack(M.HadeanScout, M.Recycler, 1);
 		AudioMessage("edf0302.wav");	--Stewart:"Heads up. Hostiles incoming."
 		Advance(R, 10.0);
@@ -242,18 +242,18 @@ function HandleMainState(R, STATE)
 			Advance(R, 10.0);
 		end
 	elseif STATE == 5 then
-		Attack(BuildObject("evscout", 2, M.Position9), M.Recycler, 1);
+		Attack(BuildObjectAndLabel("evscout", 2, M.Position9, "Hadean Scout 2"), M.Recycler, 1);
 		Advance(R, 15.0);
 	elseif STATE == 6 then
 		AudioMessage("edf0305.wav");	--Stewart:"Hold on Corber, here comes another attack wave"
 		Advance(R, 60.0);
 	elseif STATE == 7 then
-		Attack(BuildObject("evscout", 2, M.Position9), M.Recycler, 1);
-		Attack(BuildObject("evscout", 2, "stage1"), M.Recycler, 1);
+		Attack(BuildObjectAndLabel("evscout", 2, M.Position9, "Hadean Scout 3"), M.Recycler, 1);
+		Attack(BuildObjectAndLabel("evscout", 2, "stage1", "Hadean Scout 4"), M.Recycler, 1);
 		Advance(R, 60.0);
 	elseif STATE == 8 then	--LOC_54
-		Attack(BuildObject("evscout", 2, "stage1"), M.Recycler, 1);
-		Attack(BuildObject("evscout", 2, "stage1"), M.Recycler, 1);
+		Attack(BuildObjectAndLabel("evscout", 2, "stage1", "Hadean Scout 5"), M.Recycler, 1);
+		Attack(BuildObjectAndLabel("evscout", 2, "stage1", "Hadean Scout 6"), M.Recycler, 1);
 		Advance(R);
 	elseif STATE == 9 then	--LOC_61
 		if IsAround(M.Recycler) and GetCfg(M.Recycler) ~= "ivrecy" then
@@ -271,8 +271,8 @@ function HandleMainState(R, STATE)
 		ClearObjectives();
 		AddObjective("edf0314.otf", "white");
 		AudioMessage("edf0307.wav");	--Stewart:"An APC went down. Get the flight recorder..."
-		BuildObject("peapc", 0, "bunker4");
-		M.FlightRecorder = BuildObject("gbag01", 0, "gtow7");
+		BuildObjectAndLabel("peapc", 0, "bunker4", "APC");
+		M.FlightRecorder = BuildObjectAndLabel("gbag01", 0, "gtow7", "Flight Recorder");
 		SetObjectiveName(M.FlightRecorder, "Flight Recorder");
 		SetObjectiveOn(M.FlightRecorder);
 		Advance(R);
@@ -301,11 +301,11 @@ function HandleMainState(R, STATE)
 	elseif STATE == 16 then
 		ClearObjectives();
 		AddObjective("edf0303.otf", "white");
-		M.CanyonNav = BuildObject("ibnav", 1, M.Position12);
+		M.CanyonNav = BuildObjectAndLabel("ibnav", 1, M.Position12, "Canyon Nav");
 		SetObjectiveName(M.CanyonNav, "Canyon Blockage");
 		SetObjectiveOn(M.CanyonNav);
-		BuildObject("apsatc", 1, "satchelspawn3");
-		M.SatchelPickupNav = BuildObject("ibnav", 1, "satchelspawn3");
+		BuildObjectAndLabel("apsatc", 1, "satchelspawn3", "Satchel Pack");
+		M.SatchelPickupNav = BuildObjectAndLabel("ibnav", 1, "satchelspawn3", "Satchel Pack Nav");
 		SetObjectiveOn(M.SatchelPickupNav);
 		SetObjectiveName(M.SatchelPickupNav, "pack explosive");
 		Advance(R);
@@ -322,7 +322,7 @@ function HandleMainState(R, STATE)
 			AudioMessage("edf0311.wav");	--Stewart:"Our map shows abandoned structures at the other end of the canyon..."
 			RemoveObject(M.SatchelPickupNav);
 			RemoveObject(M.CanyonNav);
-			M.CityRuinsNav = BuildObject("ibnav", 1, M.Position14);
+			M.CityRuinsNav = BuildObjectAndLabel("ibnav", 1, M.Position14, "City Ruins Nav");
 			SetObjectiveName(M.CityRuinsNav, "cityruins");
 			SetObjectiveOn(M.CityRuinsNav);
 			Advance(R);
@@ -349,7 +349,7 @@ function HandleMainState(R, STATE)
 	elseif STATE == 23 then
 		if CameraPath("megacam", 1000, 1200, M.MegaPower) or CameraCancelled() then
 			CameraFinish();
-			M.MegaPowerNav = BuildObject("ibnav", 1, M.Position13);
+			M.MegaPowerNav = BuildObjectAndLabel("ibnav", 1, M.Position13, "Mega Power Nav");
 			ClearObjectives();
 			AddObjective("edf0306.otf", "white");
 			SetObjectiveName(M.MegaPowerNav, "power disturbance");
@@ -380,7 +380,7 @@ function HandleMainState(R, STATE)
 	elseif STATE == 28 then
 		if GetDistance(M.EngineerTransport, M.MegaPower) < 150 then
 			SetTeamNum(M.MegaPower, 1);
-			M.Engineer = BuildObject("ispilo", 1, GetPosition(M.EngineerTransport));
+			M.Engineer = BuildObjectAndLabel("ispilo", 1, GetPosition(M.EngineerTransport), "Engineer Transport");
 			Goto(M.Engineer, M.MegaPower, 1);
 			Advance(R, 25.0);--30.0
 		end
@@ -395,7 +395,7 @@ function HandleMainState(R, STATE)
 		SetObjectiveOff(M.EngineerTransport);
 		ClearObjectives();
 		AddObjective("edf0311.otf", "white");
-		M.MegaTurretVictim = BuildObject("evtank", 2, "spawnvictim");
+		M.MegaTurretVictim = BuildObjectAndLabel("evtank", 2, "spawnvictim", "Mega Turret Victim");
 		Attack(M.MegaTurretVictim, M.MegaTurrets[3], 1);
 		SetRoutineActive(5, true);
 		CameraReady();
@@ -413,17 +413,17 @@ function HandleMainState(R, STATE)
 		Advance(R, 120.0);
 	elseif STATE == 32 then
 		AudioMessage("edf0316a.wav");	--Cervelli:"Incoming energy beam..."
-		BuildObject("kaboom", 2, "deploy");
-		BuildObject("kaboom", 2, "deploy");
-		BuildObject("kaboom", 2, "deploy");
+		BuildObjectAndLabel("kaboom", 2, "deploy");
+		BuildObjectAndLabel("kaboom", 2, "deploy");
+		BuildObjectAndLabel("kaboom", 2, "deploy");
 		Advance(R, 28.0);
 	elseif STATE == 33 then
 		M.BaseDestroyed = true;
 		ClearObjectives();
-		BuildObject("g3beamd", 2, "deploy");
+		BuildObjectAndLabel("g3beamd", 2, "deploy");
 		AudioMessage("edf0317.wav");	--Stewart:"<PAIN> We've just been hit..."
 		AddObjective("edf0313.otf", "white");
-		M.CutsceneNav = BuildObject("ibnav", 1, "deploy");
+		M.CutsceneNav = BuildObjectAndLabel("ibnav", 1, "deploy", "Cutscene Nav");
 		SetRoutineActive(5, true);
 		CameraReady();
 		Advance(R);
@@ -457,37 +457,37 @@ function HandleDinos(R, STATE)
 	elseif STATE == 1 then
 		RemoveObject(M.Dropship);
 		Goto(M.Recycler, "recyclerpath", 1);
-		Patrol(BuildObject("lneck01", 0, "brontopath"), "brontopath", 1);
-		Patrol(BuildObject("lneck01", 0, "brontopath2"), "brontopath2", 1);
+		Patrol(BuildObjectAndLabel("lneck01", 0, "brontopath", "Bronto 1"), "brontopath", 1);
+		Patrol(BuildObjectAndLabel("lneck01", 0, "brontopath2", "Bronto 2"), "brontopath2", 1);
 		for i = 1,3 do
-			Patrol(BuildObject("ptera01", 0, "pterosaur1"), "pterosaur1", 1);
+			Patrol(BuildObjectAndLabel("ptera01", 0, "pterosaur1", "Ptero 1"), "pterosaur1", 1);
 		end
 		for i = 1,4 do
-			Patrol(BuildObject("ptera02", 0, "pterosaur2"), "pterosaur2", 1);
+			Patrol(BuildObjectAndLabel("ptera02", 0, "pterosaur2", "Ptero 2"), "pterosaur2", 1);
 		end
 		for i = 1,5 do
-			Patrol(BuildObject("ptera03", 0, "pterosaur3"), "pterosaur3", 1);
+			Patrol(BuildObjectAndLabel("ptera03", 0, "pterosaur3", "Ptero 3"), "pterosaur3", 1);
 		end
 		for i = 1,6 do
-			Patrol(BuildObject("compy01", 9, "littledino1"), "littledino1", 1);
+			Patrol(BuildObjectAndLabel("compy01", 9, "littledino1", "Little Dino 1"), "littledino1", 1);
 		end
 		Advance(R, 15.0);
 	elseif STATE == 2 then
-		Patrol(BuildObject("raptor01", 9, "dino1"), "dino1", 1);
+		Patrol(BuildObjectAndLabel("raptor01", 9, "dino1"), "dino1", 1);
 		Advance(R, 15.0);
 	elseif STATE == 3 then
-		Patrol(BuildObject("raptor01", 9, "dino1"), "dino1", 1);
+		Patrol(BuildObjectAndLabel("raptor01", 9, "dino1"), "dino1", 1);
 		--changed Cerb units from team 2 to team 3, since they
 		--were driving across the map and attacking player's base!
-		Patrol(BuildObject("cvhtank", 3, "cerberi1"), "cerberi1", 1);
-		Patrol(BuildObject("cvhtank", 3, "cerberi1"), "cerberi1", 1);
-		Patrol(BuildObject("cvhscout", 3, "cerberi1"), "cerberi1", 1);
+		Patrol(BuildObjectAndLabel("cvhtank", 3, "cerberi1", "Cerberi 1"), "cerberi1", 1);
+		Patrol(BuildObjectAndLabel("cvhtank", 3, "cerberi1", "Cerberi 2"), "cerberi1", 1);
+		Patrol(BuildObjectAndLabel("cvhscout", 3, "cerberi1", "Cerberi 3"), "cerberi1", 1);
 		Advance(R, 2.0);
 	elseif STATE == 4 then
-		Patrol(BuildObject("cvhscout", 3, "cerberi1"), "cerberi1", 1);
+		Patrol(BuildObjectAndLabel("cvhscout", 3, "cerberi1", "Cerberi 4"), "cerberi1", 1);
 		Advance(R, 2.0);
 	elseif STATE == 5 then
-		Patrol(BuildObject("cvhscout", 3, "cerberi1"), "cerberi1", 1);
+		Patrol(BuildObjectAndLabel("cvhscout", 3, "cerberi1", "Cerberi 5"), "cerberi1", 1);
 		Advance(R);
 	elseif STATE == 6 then
 		if GetCurrentCommand(M.Recycler) == 0 then
@@ -502,7 +502,7 @@ function RemoveRocks(R, STATE)
 	if STATE == 0 then
 		Advance(R, 30.0);
 	elseif STATE == 1 then
-		BuildObject("satchelmine", 2, GetPosition(M.Rocks[5]));
+		BuildObjectAndLabel("satchelmine", 2, GetPosition(M.Rocks[5]), "Satchel Mine");
 		for i = 1,NUM_BLOCKAGES do
 			RemoveObject(M.Rocks[i]);
 		end
@@ -514,7 +514,7 @@ end
 --code for spawning eng transport and it following the player
 function HandleEngineerTransport(R, STATE)
 	if STATE == 0 then
-		M.EngineerTransport = BuildObject("ivcargo", 1, "engineerspawn");
+		M.EngineerTransport = BuildObjectAndLabel("ivcargo", 1, "engineerspawn", "Engineer Transport");
 		Stop(M.EngineerTransport, 1);
 		SetObjectiveOn(M.EngineerTransport);
 		AddObjective("edf0309.otf", "white");
@@ -563,4 +563,15 @@ function CheckStuffIsAlive()
 			M.MissionOver = true;
 		end
 	end
+end
+
+-- New method for building and labelling units. - AI_Unit.
+function BuildObjectAndLabel(handle, team, pos, label) 
+    local h = BuildObject(handle, team, pos);
+
+    if (label ~= nil) then
+        SetLabel(h, label);
+    end
+
+    return h;
 end

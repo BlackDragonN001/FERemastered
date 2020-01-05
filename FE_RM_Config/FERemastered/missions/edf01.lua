@@ -207,25 +207,25 @@ end
 function HandleIntro(R, STATE)
 	if STATE == 0 then
 		SetPerceivedTeam(M.Player, 5);
-		M.FriendTurret1 = BuildObject("ivturr", 1, "FriendTurret1");
-		M.FriendTurret2 = BuildObject("ivturr", 1, "FriendTurret2");
-		M.FriendTurret3 = BuildObject("ivturr", 1, "FriendTurret3");
+		M.FriendTurret1 = BuildObjectAndLabel("ivturr", 1, "FriendTurret1", "Turret 1");
+		M.FriendTurret2 = BuildObjectAndLabel("ivturr", 1, "FriendTurret2", "Turret 2");
+		M.FriendTurret3 = BuildObjectAndLabel("ivturr", 1, "FriendTurret3", "Turret 3");
 		SetGroup(M.FriendTurret1, 1);
 		SetGroup(M.FriendTurret2, 1);
 		SetGroup(M.FriendTurret3, 1);
 		Stop(M.FriendTurret1, 1);
 		Stop(M.FriendTurret2, 1);
 		Stop(M.FriendTurret3, 1);
-		M.APC1 = BuildObject("ivapc", 1, "APC1");
-		M.APC2 = BuildObject("ivapc", 1, "APC2");
+		M.APC1 = BuildObjectAndLabel("ivapc", 1, "APC1", "APC 1");
+		M.APC2 = BuildObjectAndLabel("ivapc", 1, "APC2", "APC 2");
 		Stop(M.APC1, 1);
 		Stop(M.APC2, 1);
 		for i = 1,NUM_TANKS do
-			M.PlayerTanks[i] = BuildObject("ivtank", 1, string.format("Buddy%d", i));
+			M.PlayerTanks[i] = BuildObjectAndLabel("ivtank", 1, string.format("Buddy%d", i), string.format("Tank %d", i));
 			Stop(M.PlayerTanks[i], 1);
 			SetPerceivedTeam(M.PlayerTanks[i], 5);
 		end
-		M.ShultzTank = BuildObject("ivtank", 1, "Dummy");
+		M.ShultzTank = BuildObjectAndLabel("ivtank", 1, "Dummy", "Schultz Tank");
 		Stop(M.ShultzTank, 1);
 		SetObjectiveName(M.ShultzTank, "Schulz");
 		SetObjectiveOn(M.ShultzTank);
@@ -298,8 +298,8 @@ function HandleMainState(R, STATE)
 	if STATE == 0 then
 		Advance(R, 40.0);
 	elseif STATE == 1 then
-		M.Hadean1 = BuildObject("evtank", 5, "Observer1");
-		M.Hadean2 = BuildObject("evtank", 5, "Observer2");
+		M.Hadean1 = BuildObjectAndLabel("evtank", 5, "Observer1", "Hadean Xares 1");
+		M.Hadean2 = BuildObjectAndLabel("evtank", 5, "Observer2", "Hadean Xares 2");
 		LookAt(M.Hadean1, M.Player, 0);
 		LookAt(M.Hadean2, M.Player, 0);
 		Advance(R, 10.0);
@@ -360,29 +360,29 @@ function HandleMainState(R, STATE)
 		Advance(R, 6.0);
 	elseif STATE == 11 then
 		AudioMessage("edf01_05A.wav");	--Stewart: "Rescue the Alpha survivors..."
-		M.SafeNav = BuildObject("ibnav", 1, "SafeNav");
+		M.SafeNav = BuildObjectAndLabel("ibnav", 1, "SafeNav", "Safe Nav");
 		SetObjectiveName(M.SafeNav, "Survivor Dropoff");
 		SetObjectiveOn(M.SafeNav);
-		local nav1 = BuildObject("ibnav", 1, "SurvivorNav1");
-		local nav2 = BuildObject("ibnav", 1, "SurvivorNav2");
+		local nav1 = BuildObjectAndLabel("ibnav", 1, "SurvivorNav1", "Survivor Nav 1");
+		local nav2 = BuildObjectAndLabel("ibnav", 1, "SurvivorNav2", "Survivor Nav 2");
 		SetObjectiveName(nav1, "Survivors");
 		SetObjectiveName(nav2, "Survivors");
 		SetObjectiveOn(nav1);
 		SetObjectiveOn(nav2);
-		BuildObject("evscout", 5, "Enemy2");
-		BuildObject("evscout", 5, "Enemy3");
+		BuildObjectAndLabel("evscout", 5, "Enemy2", "Hadean Scout 1");
+		BuildObjectAndLabel("evscout", 5, "Enemy3", "Hadean Scout 2");
 		Advance(R, 140.0);
 	elseif STATE == 12 then	--LOC_209
 		if GetDistance(M.Player, M.Dropship) > 200 then
-			Goto(BuildObject("evturr", 5, "TurretSpawn"), "Turret1", 1);
-			Goto(BuildObject("evturr", 5, "TurretSpawn"), "Turret2", 1);
-			Goto(BuildObject("evturr", 5, "TurretSpawn"), "Turret3", 1);
+			Goto(BuildObjectAndLabel("evturr", 5, "TurretSpawn", "Hadean Turret 1"), "Turret1", 1);
+			Goto(BuildObjectAndLabel("evturr", 5, "TurretSpawn", "Hadean Turret 2"), "Turret2", 1);
+			Goto(BuildObjectAndLabel("evturr", 5, "TurretSpawn", "Hadean Turret 3"), "Turret3", 1);
 			Stop(M.FriendTurret1, 0);
 			Stop(M.FriendTurret2, 0);
 			Stop(M.FriendTurret3, 0);
-			SetGroup(BuildObject("ivserv", 1, "Buddy4"), 2);
-			SetGroup(BuildObject("ivserv", 1, "Buddy5"), 3);
-			SetGroup(BuildObject("ivserv", 1, "Buddy6"), 4);
+			SetGroup(BuildObjectAndLabel("ivserv", 1, "Buddy4", "Service Truck 1"), 2);
+			SetGroup(BuildObjectAndLabel("ivserv", 1, "Buddy5", "Service Truck 2"), 3);
+			SetGroup(BuildObjectAndLabel("ivserv", 1, "Buddy6", "Service Truck 3"), 4);
 			AudioMessage("edf01_05B.wav");	--Stewart:"I've put some turrets and service trucks at your disposal..."
 			Advance(R);
 		end
@@ -431,7 +431,7 @@ function HandleSurvivorPickup(R, STATE)	--Routine5
 				--player's henchman picks up the pilot
 				M.SabresRemaining = M.SabresRemaining + 1;
 				RemoveObject(survivor);
-				h = ReplaceObject2(h, "ivtank_e01");
+				h = ReplaceObject2(h, "ivtank_e01", GetLabel(h));
 				M.Survivors[M.SurvivorIndex1] = h;
 				AudioMessage("ivtank03.wav");	--Tank:"I've got 'em"
 				SetObjectiveName(h, string.format("Has survivor %i", M.SurvivorIndex1));
@@ -464,7 +464,7 @@ function HandleSurvivorDropoff(R, STATE)
 	if GetCfg(h) == "ivtank_e01" and GetDistance(h, "SafeNav") < 60 then	--85
 		M.SabresRemaining = M.SabresRemaining + 1;
 		M.Survivors[M.SurvivorIndex2] = M.Dropship;
-		h = ReplaceObject2(h, "ivtank");
+		h = ReplaceObject2(h, "ivtank", GetLabel(h));
 		Stop(h, 0);
 		SetGroup(h, 0);
 		M.SurvivorsRescued = M.SurvivorsRescued + 1;
@@ -472,9 +472,9 @@ function HandleSurvivorDropoff(R, STATE)
 		if M.SurvivorsRescued == 3 
 		or M.SurvivorsRescued == 7 
 		or (M.SurvivorsRescued == 9 and M.SurvivorsKilled == 0) then
-			Goto(BuildObject("evtank", 5, "AttackerSpawn2"), "SafeNav", 0);
-			Goto(BuildObject("evmisl", 5, "AttackerSpawn2"), "SafeNav", 0);
-			Goto(BuildObject("evmisl", 5, "AttackerSpawn2"), "SafeNav", 0);
+			Goto(BuildObjectAndLabel("evtank", 5, "AttackerSpawn2", "Hadean Xares 3"), "SafeNav", 0);
+			Goto(BuildObjectAndLabel("evmisl", 5, "AttackerSpawn2", "Hadean Zeus 1"), "SafeNav", 0);
+			Goto(BuildObjectAndLabel("evmisl", 5, "AttackerSpawn2", "Hadean Zeus 2"), "SafeNav", 0);
 		elseif M.SurvivorsRescued == 9 then	--LOC_365
 			--win - 1 survivor died
 			ClearObjectives();
@@ -503,14 +503,14 @@ function SpawnHadeans(R, STATE)
 	if STATE == 0 then	--LOC_72
 		Advance(R, 61.0);
 	elseif STATE == 1 then
-		Patrol(BuildObject("evscout", 5, "AttackerSpawn1"), "EnemyPatrol1", 0);
-		Patrol(BuildObject("evscout", 5, "AttackerSpawn1"), "EnemyPatrol1", 0);
+		Patrol(BuildObjectAndLabel("evscout", 5, "AttackerSpawn1", "Hadean Scout 3"), "EnemyPatrol1", 0);
+		Patrol(BuildObjectAndLabel("evscout", 5, "AttackerSpawn1", "Hadean Scout 4"), "EnemyPatrol1", 0);
 		Advance(R, 67.0);
 	elseif STATE == 2 then
-		Patrol(BuildObject("evtank", 5, "AttackerSpawn1"), "EnemyPatrol1", 0);
+		Patrol(BuildObjectAndLabel("evtank", 5, "AttackerSpawn1", "Hadean Xares 4"), "EnemyPatrol1", 0);
 		Advance(R, 61.0);
 	elseif STATE == 3 then
-		Patrol(BuildObject("evtank", 5, "AttackerSpawn1"), "EnemyPatrol1", 0);
+		Patrol(BuildObjectAndLabel("evtank", 5, "AttackerSpawn1", "Hadean Xares 5"), "EnemyPatrol1", 0);
 		Advance(R);
 	elseif STATE == 4 then	--LOC_83
 		if M.SurvivorsRescued > 0 then
@@ -519,15 +519,15 @@ function SpawnHadeans(R, STATE)
 			Advance(R, 7.0);
 		end
 	elseif STATE == 5 then
-		Patrol(BuildObject("evscout", 5, "AttackerSpawn2"), "EnemyPatrol1", 0);
-		Patrol(BuildObject("evscout", 5, "AttackerSpawn2"), "EnemyPatrol1", 0);
+		Patrol(BuildObjectAndLabel("evscout", 5, "AttackerSpawn2", "Hadean Scout 5"), "EnemyPatrol1", 0);
+		Patrol(BuildObjectAndLabel("evscout", 5, "AttackerSpawn2", "Hadean Scout 6"), "EnemyPatrol1", 0);
 		if M.SurvivorsRescued > 0 then
 			SetState(R, 7);--to LOC_101
 		else
 			Advance(R, 95.0);
 		end
 	elseif STATE == 6 then
-		Patrol(BuildObject("evtank", 5, "AttackerSpawn2"), "EnemyPatrol1", 0);
+		Patrol(BuildObjectAndLabel("evtank", 5, "AttackerSpawn2", "Hadean Xares 6"), "EnemyPatrol1", 0);
 		if M.SurvivorsRescued > 0 then
 			Advance(R);
 		else
@@ -536,24 +536,24 @@ function SpawnHadeans(R, STATE)
 	elseif STATE == 7 then	--LOC_101
 		Advance(R, 75.0);
 	elseif STATE == 8 then
-		Patrol(BuildObject("evscout", 5, "AttackerSpawn2"), "EnemyPatrol1", 0);
-		Patrol(BuildObject("evscout", 5, "AttackerSpawn2"), "EnemyPatrol1", 0);
+		Patrol(BuildObjectAndLabel("evscout", 5, "AttackerSpawn2", "Hadean Scout 7"), "EnemyPatrol1", 0);
+		Patrol(BuildObjectAndLabel("evscout", 5, "AttackerSpawn2", "Hadean Scout 8"), "EnemyPatrol1", 0);
 		Advance(R, 95.0);
 	elseif STATE == 9 then
-		Patrol(BuildObject("evtank", 5, "AttackerSpawn2"), "EnemyPatrol1", 0);
+		Patrol(BuildObjectAndLabel("evtank", 5, "AttackerSpawn2", "Hadean Xares 7"), "EnemyPatrol1", 0);
 		Advance(R, 75.0);
 	elseif STATE == 10 then
-		Patrol(BuildObject("evtank", 5, "AttackerSpawn2"), "EnemyPatrol1", 0);
+		Patrol(BuildObjectAndLabel("evtank", 5, "AttackerSpawn2", "Hadean Xares 8"), "EnemyPatrol1", 0);
 		Advance(R, 75.0);
 	elseif STATE == 11 then
-		Patrol(BuildObject("evscout", 5, "AttackerSpawn2"), "EnemyPatrol1", 0);
-		Patrol(BuildObject("evscout", 5, "AttackerSpawn2"), "EnemyPatrol1", 0);
+		Patrol(BuildObjectAndLabel("evscout", 5, "AttackerSpawn2", "Hadean Scout 9"), "EnemyPatrol1", 0);
+		Patrol(BuildObjectAndLabel("evscout", 5, "AttackerSpawn2", "Hadean Scout 10"), "EnemyPatrol1", 0);
 		Advance(R, 95.0);
 	elseif STATE == 12 then
-		Patrol(BuildObject("evtank", 5, "TurretSpawn"), "EnemyPatrol1", 0);
+		Patrol(BuildObjectAndLabel("evtank", 5, "TurretSpawn", "Hadean Xares 9"), "EnemyPatrol1", 0);
 		Advance(R, 75.0);
 	elseif STATE == 13 then
-		Patrol(BuildObject("evtank", 5, "TurretSpawn"), "EnemyPatrol1", 0);
+		Patrol(BuildObjectAndLabel("evtank", 5, "TurretSpawn", "Hadean Xares 10"), "EnemyPatrol1", 0);
 		if M.HadeanUnitsCount < 15 then
 			SetState(R, 7);--to LOC_101
 		else
@@ -617,12 +617,23 @@ function CheckTanksRemaining(R, STATE)
 end
 
 --work around for crash when ReplaceObject() is called on unit told to go to nav by player 
-function ReplaceObject2(h, odf)
+function ReplaceObject2(h, odf, label)
 	local team = GetTeamNum(h);
 	local health = GetCurHealth(h);
 	local pos = GetTransform(h);
 	RemoveObject(h);
-	h = BuildObject(odf, team, pos);
+	h = BuildObjectAndLabel(odf, team, pos, label);
 	SetCurHealth(h, health);
 	return h;
+end
+
+-- New method for building and labelling units. - AI_Unit.
+function BuildObjectAndLabel(handle, team, pos, label) 
+    local h = BuildObject(handle, team, pos);
+
+    if (label ~= nil) then
+        SetLabel(h, label);
+    end
+
+    return h;
 end
