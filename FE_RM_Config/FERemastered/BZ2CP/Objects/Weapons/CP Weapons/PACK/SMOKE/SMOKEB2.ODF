@@ -8,6 +8,7 @@ maxAmmo = 0
 unitName = "Smoke Grenade"
 effectHard1 = "Smoke Grenade"
 effectName1 = "smokeb2.render"
+canInteract = 0
 
 [MineClass]
 lifeSpan = 40.0
