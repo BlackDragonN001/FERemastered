@@ -178,7 +178,7 @@ local M = {
 	Position18 = SetVector(0,0,0),	--Cerb transport move target
 	Position23 = nil, --SetVector(0,10,10),	--used for cam offset in routine20
 	Position28 = nil, --SetVector(817,53,851),	--move target for routine16
-	Position29 = nil --SetVector(-1544,104,-948),	--move target for routine17
+	Position29 = nil, --SetVector(-1544,104,-948),	--move target for routine17
 	Position30 = SetVector(0,0,0),	--move to position for tug service pods
 	endme = 0
 }
