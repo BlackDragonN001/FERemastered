@@ -268,7 +268,7 @@ function HandleMainState(R, STATE)
 		Advance(R, 5.0);
 	elseif STATE == 9 then	--LOC_43
 		if GetTime() > 780 then
-			Goto(BuildObjectAndLabel("evtank", 5, "Spawn1", , "Hadean Xares 1"), "Patrol1", 0);
+			Goto(BuildObjectAndLabel("evtank", 5, "Spawn1", "Hadean Xares 1"), "Patrol1", 0);
 			Advance(R, 27.0);
 		else
 			Advance(R);
@@ -507,7 +507,7 @@ function Teleport(h, dest, offset)
 	BuildObjectAndLabel("teleportout", 0, GetPosition(h), "Teleport Out");
 	local dir = Normalize(GetPosition(dest) - GetPosition(h))
 	local pos = GetPosition(dest) + dir*offset;
-	BuildObjectAndLabel("teleportin", 0, pos, , "Teleport In");
+	BuildObjectAndLabel("teleportin", 0, pos, "Teleport In");
 	SetPosition(h, pos);
 	SetVelocity(h, Length(GetVelocity(h))*dir);
 	if h == GetPlayerHandle() then
