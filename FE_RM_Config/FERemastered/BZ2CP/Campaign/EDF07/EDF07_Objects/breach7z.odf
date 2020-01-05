@@ -1,6 +1,6 @@
 [GameObjectClass]
 geometryName = "breach7z.xsi"
-geometryScale = 0.5
+//geometryScale = 0.5
 classLabel = "terrain"
 scrapCost = 0
 scrapValue = 0
@@ -13,6 +13,8 @@ radarSignature = 1.0
 scanTeamLimit = 3
 canInteract = 0
 canSnipe = 0
+
+lifeSpan = 0.1
 
 [BuildingClass]
 justTerrain = 1
