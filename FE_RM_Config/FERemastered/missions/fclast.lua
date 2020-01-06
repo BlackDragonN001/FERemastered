@@ -475,24 +475,8 @@ function CheckStuffIsAlive()
 	end
 end
 
---snaps the pos to the terrain height at that location
-function TerrainFloor(pos)
-	return SetVector(pos.x, TerrainFindFloor(pos), pos.z);
-end
-
 --removes the object with a teleportout effect
 function TeleportOut(h)
 	BuildObject("teleportout", 0, GetPosition(h));
 	RemoveObject(h);
-end
-
--- New method for building and labelling units. - AI_Unit.
-function BuildObjectAndLabel(handle, team, pos, label) 
-    local h = BuildObject(handle, team, pos);
-
-    if (label ~= nil) then
-        SetLabel(h, label);
-    end
-
-    return h;
 end

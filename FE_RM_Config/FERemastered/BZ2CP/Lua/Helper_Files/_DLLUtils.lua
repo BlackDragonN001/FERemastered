@@ -200,6 +200,11 @@ end
 
 --[[-- FE Utils --]]--
 
+--snaps the pos to the terrain height at that location
+function TerrainFloor(pos)
+	return SetVector(pos.x, TerrainFindFloor(pos), pos.z);
+end
+
 -- New method for building and labelling units. - AI_Unit.
 function BuildObjectAndLabel(handle, team, pos, label) 
     local h = BuildObject(handle, team, pos);

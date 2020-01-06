@@ -626,14 +626,3 @@ function ReplaceObject2(h, odf, label)
 	SetCurHealth(h, health);
 	return h;
 end
-
--- New method for building and labelling units. - AI_Unit.
-function BuildObjectAndLabel(handle, team, pos, label) 
-    local h = BuildObject(handle, team, pos);
-
-    if (label ~= nil) then
-        SetLabel(h, label);
-    end
-
-    return h;
-end
