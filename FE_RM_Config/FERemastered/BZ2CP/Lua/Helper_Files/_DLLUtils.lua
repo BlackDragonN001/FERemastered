@@ -198,4 +198,51 @@ function GetSpawnpointForTeam(Team, FRIENDLY_SPAWNPOINT_MAX_ALLY, FRIENDLY_SPAWN
 end
 
 
+--[[-- FE Utils --]]--
+
+-- New method for building and labelling units. - AI_Unit.
+function BuildObjectAndLabel(handle, team, pos, label) 
+    local h = BuildObject(handle, team, pos);
+
+    if (label ~= nil) then
+        SetLabel(h, label);
+    end
+
+    return h;
+end
+
+-- Teleports Handle h to Handle dest, with optional offset.
+function Teleport(h, dest, offset)
+	if not IsAround(h) then 
+		return; 
+	end
+	
+	BuildObject("teleportout", 0, GetPosition(h));
+	local dir = Normalize(offset);
+	local pos = GetPosition(dest) + offset;
+	BuildObject("teleportin", 0, pos);
+	SetPosition(h, pos);
+	SetVelocity(h, Length(GetVelocity(h))*dir);
+	if h == GetPlayerHandle() then
+		StartSoundEffect("teleport.wav", nil);	--sound effects seem to get cut off when player is teleporting
+	end
+end
+
+-- Teleports In (spawns) an ODF at a Portal Handle dest.
+function TeleportIn(odf, team, dest, offset)
+	if IsAround(dest) then
+		local pos = GetPosition(dest) + offset; -- Need to localize to object coordinates, not world coordinates. -GBD
+		BuildObject("teleportin", 0, pos);
+		return BuildObject(odf, team, pos);
+	else
+		return nil;
+	end
+end
+
+--removes the object with a teleportout effect
+function TeleportOut(h)
+	BuildObject("teleportout", 0, GetPosition(h));
+	RemoveObject(h);
+end
+
 return _DLLUtils;
