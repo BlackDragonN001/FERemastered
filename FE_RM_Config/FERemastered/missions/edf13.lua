@@ -100,10 +100,6 @@ function InitialSetup()
 	end
 end
 
-function GetHandleOrDie(name)
-	return GetHandle(name) or error("Error: object '"..name.."' not found!", 2);
-end
-
 function Start()
 
 	_FECore.Start();

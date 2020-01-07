@@ -61,10 +61,6 @@ function Load(...)
     end
 end
 
-function GetHandleOrDie(name)
-	return GetHandle(name) or error("Error: object '"..name.."' not found!");
-end
-
 function Info(str)
 	ClearObjectives();
 	AddObjective(str, "white");

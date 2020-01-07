@@ -134,11 +134,6 @@ function SetRoutineActive(routineID, active)
 	M.RoutineActive[routineID] = active;
 end
 
---gets an object handle by label. If it doesn't exist, throws an error.
-function GetHandleOrDie(name)
-	return GetHandle(name) or error("Error: object '"..name.."' not found!", 2);
-end
-
 function DefineRoutines()
 	DefineRoutine(1, Routine1, true);
 	DefineRoutine(2, Routine2, true);

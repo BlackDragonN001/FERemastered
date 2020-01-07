@@ -126,11 +126,6 @@ function Load(...)
     end
 end
 
---gets an object handle by label. If it doesn't exist, throws an error.
-function GetHandleOrDie(name)
-	return GetHandle(name) or error("Error: object '"..name.."' not found!", 2);
-end
-
 function Start()
 
 	_FECore.Start();

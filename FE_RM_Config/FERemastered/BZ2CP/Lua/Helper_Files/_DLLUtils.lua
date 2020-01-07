@@ -200,6 +200,11 @@ end
 
 --[[-- FE Utils --]]--
 
+--gets an object handle by label. If it doesn't exist, throws an error.
+function GetHandleOrDie(name)
+	return GetHandle(name) or error("Error: object '"..name.."' not found!");
+end
+
 --snaps the pos to the terrain height at that location
 function TerrainFloor(pos)
 	return SetVector(pos.x, TerrainFindFloor(pos), pos.z);

@@ -288,10 +288,6 @@ function Start()
 	GLOBAL_lock(_G);	--prevents script from accidentally creating new global variables.
 end
 
-function GetHandleOrDie(name)
-	return GetHandle(name) or error("Error: object '"..name.."' not found!");
-end
-
 function AddObject(h)
 
 	_FECore.AddObject(h);
