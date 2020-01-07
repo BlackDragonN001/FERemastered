@@ -219,26 +219,124 @@ end
 -- Teleports Handle h to Handle dest, with optional offset.
 function Teleport(h, dest, offset)
 	if not IsAround(h) then 
-		return; 
+		return false;
+	end
+
+	--[[ -- Original BS-er Code converted. -GBD
+	local PortalPos = GetPosition(dest);
+	local Front = GetFront(h);
+	local StartPos = GetPosition(h);
+	
+	PortalPos.x = PortalPos.x + Front.x * offset;
+	PortalPos.z = PortalPos.z + Front.z * offset;
+	
+	Front.x = Front.x * 8.0;
+	Front.z = Front.z * 8.0;
+	
+	if h == GetPlayerHandle() then
+		SetColorFade(1.0, 1.0, 32767);
+		StartSoundEffect("teleport.wav", nil);	--sound effects seem to get cut off when player is teleporting
+		AddHealth(h, -15);
+	else
+		BuildObject("TeleportOut", 0, PortalPos);
+		BuildObject("TeleportIn", 0, StartPos);
+		Stop(h, 0);
 	end
 	
-	BuildObject("teleportout", 0, GetPosition(h));
+	SetPosition(h, PortalPos);
+	SetVelocity(h, Front);
+	--]]
+	
+	
+	
+	--[[-- Transport code from DLL. Offset based on matricies. Bit complex? Requires entrance portal position. -GBD
+	local StartPortal = GetTransform(startportal);
+	local EndPortal = GetTransform(dest);
+	local ShipPosition = GetTransform(h);
+	
+	local NewMatrix = EndPortal;
+	local Teleport = Identity_Matrix;
+	
+	local Velocity = SetVector(0, 0, 0);
+	local ShipVelocity = GetVelocity(h);
+	
+	local InvStartPortal = Matrix_Inverse(StartPortal); -- Inverse Matrix.
+	Teleport = InvStartPortal * EndPortal; --Matrix_Multiply(InvStartPortal, EndPortal); -- Apply inverse angle to Destination Matrix.
+	--NewMatrix = Matrix_Multiply(ShipPosition, EndPortal);
+
+	-- Off set Position.
+	local ShipOffset = Vector_TransformInv(ShipPosition, StartPortal.posit); -- Calculate position offset.
+	NewMatrix.posit = Vector_Transform(NewMatrix, ShipOffset); -- Apply position offset.
+	--Velocity = Vector_Rotate(Teleport, ShipVelocity); -- Apply velocity rotation.
+	
+	-- Appy code offset.
+	NewMatrix.posit = NewMatrix.posit + (EndPortal.front * offset);
+	Velocity = EndPortal.front * math.max(ShipVelocity.x, ShipVelocity.z);
+	
+	BuildObject("teleportin", 0, ShipPosition);
+	
+	-- Teleport them.
+	SetTransform(h, NewMatrix);
+	SetVelocity(h, Velocity);
+	
+	BuildObject("teleportout", 0, NewMatrix);
+	--]]
+
+
+
+	--[[ Old code from Kevin? Position is in world coordinates, not local coordinates. -GBD
+	BuildObject("teleportin", 0, GetPosition(h));
+	
 	local dir = Normalize(offset);
 	local pos = GetPosition(dest) + offset;
-	BuildObject("teleportin", 0, pos);
+	
+	BuildObject("teleportout", 0, pos);
+	
 	SetPosition(h, pos);
-	SetVelocity(h, Length(GetVelocity(h))*dir);
+	SetVelocity(h, Length(GetVelocity(h)) * dir);
+	--]]
+	
+	
+	-- Simpler, Transform based code. -GBD
+	BuildObject("teleportin", 0, GetPosition(h));
+	
+	local pos = GetTransform(dest);
+	pos.posit = pos.posit + pos.front * offset;
+	pos.posit.y = pos.posit.y + 5;
+	
+	BuildObject("teleportout", 0, pos);
+	
+	SetTransform(h, pos);
+	SetVelocity(h, Length(GetVelocity(h)) * pos.front);
+	
 	if h == GetPlayerHandle() then
+		SetColorFade(1.0, 1.0, 32767);
 		StartSoundEffect("teleport.wav", nil);	--sound effects seem to get cut off when player is teleporting
+		--AddHealth(h, -15);
 	end
+	
+	return true;
 end
 
 -- Teleports In (spawns) an ODF at a Portal Handle dest.
-function TeleportIn(odf, team, dest, offset)
+function TeleportIn(odf, team, dest, offset, label)
 	if IsAround(dest) then
-		local pos = GetPosition(dest) + offset; -- Need to localize to object coordinates, not world coordinates. -GBD
+	
+	--	local pos = GetPosition(dest) + offset; -- Need to localize to object coordinates, not world coordinates. -GBD
+	--	pos = BuildDirectionalMatrix(pos);
+	
+		local pos = GetTransform(dest);
+		pos.posit = pos.posit + pos.front * offset;
+		pos.posit.y = pos.posit.y + 5;
+	
 		BuildObject("teleportin", 0, pos);
-		return BuildObject(odf, team, pos);
+		local h = BuildObject(odf, team, pos);
+		
+		if (label ~= nil) then
+			SetLabel(h, label);
+		end
+		
+		return h;
 	else
 		return nil;
 	end
@@ -246,7 +344,7 @@ end
 
 --removes the object with a teleportout effect
 function TeleportOut(h)
-	BuildObject("teleportout", 0, GetPosition(h));
+	BuildObject("teleportout", 0, BuildDirectionalMatrix(GetPosition(h)));
 	RemoveObject(h);
 end
 
