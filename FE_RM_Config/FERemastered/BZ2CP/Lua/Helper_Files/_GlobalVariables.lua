@@ -1,4 +1,4 @@
---[[ Global Constants. Do *NOT* try to change these. --]]
+--[[ Global Constants of BZCC. Do *NOT* try to change these. --]]
 
 local _AICmd = require('_AICmd');
 
@@ -127,5 +127,13 @@ CTRL_ABANDON = bit32.lshift(1, 7)
 CTRL_FIRE = bit32.lshift(1, 8)
 
 MAX_FLOAT = 3.402823466e+38
+
+
+--[[ FE Custom Constants ]]--
+
+PRETELEPORT_DEFAULT = 0 -- Allow default behavior.
+PRETELEPORT_ALLOW = 1 -- Allow the teleport, reguardless.
+PRETELEPORT_DENY = 2 -- Deny the teleport.
+
 
 return _GlobalVariables;
