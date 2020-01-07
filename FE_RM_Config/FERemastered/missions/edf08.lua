@@ -297,7 +297,7 @@ function Routine1()
 		elseif M.Routine1State == 24 then
 			ClearObjectives();
 			AddObjective("edf0804.otf", "white");
-			TeleportIn("cvrbomb", 5, M.Portal, 20, 0);
+			TeleportIn("cvrbomb", 5, M.Portal, 20);
 			AudioMessage("edf08_06.wav");	--Wong:"One of our scouts spotted a Cerberi unit coming through a portal in the center of their base..."
 			SetObjectiveOn(M.Portal);
 			M.Routine1State = M.Routine1State + 1;
@@ -351,7 +351,7 @@ function Routine1()
 			--final Cerb assault wave spawns after destruction of the Cerb base
 			local spawnOdfs = {"cvdcar", "cvdcar", "cvatank2", "cvatank2", "cvhatank", "cvwalk"};
 			for i = 1, #spawnOdfs do
-				M.FinalWave[i] = TeleportIn(spawnOdfs[i], 5, M.Portal, math.random(-40,40), math.random(-40,40));
+				M.FinalWave[i] = TeleportIn(spawnOdfs[i], 5, M.Portal, math.random(-40,40));
 				Attack(M.FinalWave[i], M.Recycler, 1);
 			end
 			ClearObjectives();
@@ -446,10 +446,4 @@ function CheckStuffIsAlive()
 			M.MissionFailed = true;
 		end
 	end
-end
-
-function TeleportIn(odf, team, dest, offsetX, offsetZ)
-	local pos = GetPosition(dest) + SetVector(offsetX, 0, offsetZ);
-	BuildObject("teleportin", 0, pos);
-	return BuildObject(odf, team, pos);
 end

@@ -202,11 +202,11 @@ function Routine2()
 			M.Routine2State = M.Routine2State + 1;
 			M.Routine2Timer = GetTime() + 50;
 		elseif M.Routine2State == 6 then
-			Attack(TeleportIn("evscout", 6, M.Portal, 25, 0), M.Recycler, 0);
+			Attack(TeleportIn("evscout", 6, M.Portal, 25), M.Recycler, 0);
 			M.HadeanRecy = TeleportIn("evrecy", 6, M.Portal, 50, 0);
 			Goto(M.HadeanRecy, "turr1", 0);
-			local h1 = TeleportIn("evmisl", 6, M.Portal, 40, -20);
-			local h2 = TeleportIn("evmisl", 6, M.Portal, 30, 20);
+			local h1 = TeleportIn("evmisl", 6, M.Portal, 40);
+			local h2 = TeleportIn("evmisl", 6, M.Portal, 30);
 			--Follow(h1, M.HadeanRecy);
 			--Goto(h2, "turr1", 0);
 			SetAIP("edf09.aip", 6);	--moved this here so recy doesn't sit there doing nothing during cutscene
@@ -216,7 +216,7 @@ function Routine2()
 		elseif M.Routine2State == 7 then
 			if CameraPath("cam", 1000, 800, M.Portal) or CameraCancelled() then
 				CameraFinish();
-				local h = TeleportIn("evscout",6,M.Portal, 20, 0);
+				local h = TeleportIn("evscout",6,M.Portal, 20);
 				GiveWeapon(h, "gslicer_c");
 				Attack(h, M.Recycler, 1);
 				M.Routine2State = M.Routine2State + 1;
@@ -241,7 +241,7 @@ function Routine2()
 			end
 		elseif M.Routine2State == 11 then
 			if GetDistance(M.Recycler, M.Portal) < 40 then
-				Teleport(M.Recycler, GetHandle("unnamed_rwpool1"));
+				TeleportOut(M.Recycler);
 				SucceedMission(GetTime() + 6, "edf09c.des");
 				M.Routine2State = M.Routine2State + 1;
 			end
@@ -370,18 +370,4 @@ function Routine4()
 			M.Routine4Timer = GetTime() + 60;
 		end
 	end
-end
-
-function Teleport(h, dest)
-	BuildObject("teleportout", 0, GetPosition(h));
-	local pos = GetPosition(dest);
-	pos.y = TerrainFindFloor(pos.x, pos.z) + 5;
-	BuildObject("teleportin", 0, pos);
-	SetPosition(h, pos);
-end
-
-function TeleportIn(odf, team, dest, offsetX, offsetZ)
-	local pos = GetPosition(dest) + SetVector(offsetX, offsetZ);
-	BuildObject("teleportin", 0, pos);
-	return BuildObject(odf, team, pos);
 end

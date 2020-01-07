@@ -556,21 +556,3 @@ function CheckStuffIsAlive()
 		end
 	end
 end
-
-function Teleport(h, dest, offset)
-	BuildObject("teleportout", 0, GetPosition(h));
-	local pos = GetPosition(dest);
-	pos.x = pos.x + offset;
-	BuildObject("teleportin", 0, pos);
-	SetPosition(h, pos);
-	if h == GetPlayerHandle() then
-		AudioMessage("teleport.wav");	--sound effects seem to get cut off when player is teleporting
-	end
-end
-
-function TeleportIn(odf,  team,  dest, offset)
-	local pos = GetPosition(dest);
-	pos.x = pos.x + offset;
-	BuildObject("teleportin",  0,  pos);
-	return BuildObject(odf,  team,  pos);
-end

@@ -316,9 +316,4 @@ function CheckStuffIsAlive()
 	end
 end
 
-function TerrainFloor(pos)
-	return SetVector(pos.x, TerrainFindFloor(pos), pos.z);
-end
-
-
 

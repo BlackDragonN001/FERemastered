@@ -693,13 +693,3 @@ function CheckStuffIsAlive()
 		end
 	end
 end
-
---spawns a unit with a 'teleportin' effect at the dest object with given x offset
-function TeleportIn(odf,  team,  dest, offset)
-	local pos = GetPosition(dest);
-	pos.x = pos.x + offset;
-	--pos.y = TerrainFindFloor(pos.x, pos.z) + 5;
-	pos = BuildDirectionalMatrix(pos);
-	BuildObject("teleportin",  0,  pos);
-	return BuildObject(odf,  team,  pos);
-end

@@ -2294,11 +2294,11 @@ function Routine18()
 	if M.Routine18Active then
 		local h = GetNearestVehicle("portalin");
 		if GetDistance(h, "portalin") < 75 and GetTeamNum(h) ~= 1 then
-			Teleport(h, "portalsouth");
+			Teleport(h, "portalsouth", 10);
 		end
 		h = GetNearestVehicle("portalin2");
 		if GetDistance(h, "portalin2") < 75 and GetTeamNum(h) ~= 1 then
-			Teleport(h, "islandstart");
+			Teleport(h, "islandstart", 10);
 		end
 	end
 end
@@ -2358,20 +2358,4 @@ function CheckStuffIsAlive()
 			M.MissionOver = true;
 		end
 	end
-end
-
-function Teleport(h, dest)
-	BuildObject("teleportout", 0, GetPosition(h));
-	local pos = GetPosition(dest);
-	pos.y = TerrainFindFloor(pos.x, pos.z) + 5;
-	BuildObject("teleportin", 0, pos);
-	SetPosition(h, pos);
-end
-
-function TeleportIn(odf,  team,  dest, offset)
-	local pos = GetPosition(dest);
-	pos.x = pos.x + offset;
-	pos.y = TerrainFindFloor(pos.x, pos.z) + 5;
-	BuildObject("teleportin",  0,  pos);
-	return BuildObject(odf,  team,  pos);
 end

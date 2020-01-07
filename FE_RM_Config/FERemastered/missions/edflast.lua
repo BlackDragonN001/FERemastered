@@ -181,10 +181,6 @@ function GetHandleOrDie(name)
 	return GetHandle(name) or error("Error: object '"..name.."' not found!", 2);
 end
 
---snaps a position to the terrain height at that location
-function TerrainFloor(pos)
-	return SetVector(pos.x, TerrainFindFloor(pos), pos.z);
-end
 
 function Start()
 

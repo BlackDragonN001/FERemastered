@@ -296,8 +296,8 @@ function Routine1()
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 5;
 		elseif M.Routine1State == 14 then
-			Teleport(M.HadeanAlly1, M.PortalA1, 40, 0);
-			Teleport(M.HadeanAlly2, M.PortalA1, 40, 0);
+			Teleport(M.HadeanAlly1, M.PortalA1, 40);
+			Teleport(M.HadeanAlly2, M.PortalA1, 40);
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 15 then
 			RemoveObject(M.HadeanAlly1);
@@ -388,32 +388,32 @@ function Routine3()
 			M.Routine3Timer = GetTime() + 200;
 		elseif M.Routine3State == 1 then
 			if not IsAround(M.CerbTalon1) then
-				M.CerbTalon1 = TeleportIn("cvtalon10", 4, M.Portal4, 10, 0);
+				M.CerbTalon1 = TeleportIn("cvtalon10", 4, M.Portal4, 10);
 				Patrol(M.CerbTalon1, "patrol", 0);
 			end
-			Attack(TeleportIn("evtank", 4, M.Portal2, 10, 0), M.PlayerRecy, 0);
+			Attack(TeleportIn("evtank", 4, M.Portal2, 10), M.PlayerRecy, 0);
 			--Patrol(h, "attack1", 0);
 			M.Routine3State = M.Routine3State + 1;
 			M.Routine3Timer = GetTime() + 10;
 		elseif M.Routine3State == 2 then
-			Attack(TeleportIn("evmisl", 4, M.Portal2, 10, 0), M.PlayerRecy, 0);
+			Attack(TeleportIn("evmisl", 4, M.Portal2, 10), M.PlayerRecy, 0);
 			--Patrol(h, "attack1", 0);
 			M.Routine3State = M.Routine3State + 1;
 			M.Routine3Timer = GetTime() + 200;
 		elseif M.Routine3State == 3 then
 			if not IsAround(M.CerbTalon2) then
-				M.CerbTalon2 = TeleportIn("cvtalon10", 4, M.Portal4, 20, 0);
+				M.CerbTalon2 = TeleportIn("cvtalon10", 4, M.Portal4, 20);
 				Patrol(M.CerbTalon2, "patrol", 0);
 			end
 			if CountUnitsNearObject(M.PlayerRecy, 300, 1, "ibpgen") >= 2 then
-				Attack(TeleportIn("cvrbomb", 4, M.Portal4, 20, 0), M.PlayerRecy, 0);
+				Attack(TeleportIn("cvrbomb", 4, M.Portal4, 20), M.PlayerRecy, 0);
 			end
 			M.Routine3State = M.Routine3State + 1;
 			M.Routine3Timer = GetTime() + 200;
 		elseif M.Routine3State == 4 then
 			local playerScav = GetHandle("unnamed_ivscav") or GetHandle("unnamed_ibscav");
 			if playerScav ~= nil then
-				Attack(TeleportIn("evkami", 4, M.Portal4, 20, 0), playerScav, 0);
+				Attack(TeleportIn("evkami", 4, M.Portal4, 20), playerScav, 0);
 			end
 			M.Routine3State = 0;
 		end
@@ -483,18 +483,19 @@ function Routine9()
 	end
 end
 
+-- Maybe use this to toggle DLL behavior on? -GBD
 function HandlePortals()
 	if M.PortalsActive then
 		local h = GetNearestVehicle(M.PortalA0);
 		if GetDistance(h, M.PortalA0) < 20 then
-			Teleport(h, M.PortalA1, 40, 40);
+			Teleport(h, M.PortalA1, 40);
 			if h ~= M.Player then
 				Stop(h, 0);
 			end
 		end
 		h = GetNearestVehicle(M.PortalA1);
 		if GetDistance(h, M.PortalA1) < 20 then
-			Teleport(h, M.PortalA0, 40, 40);
+			Teleport(h, M.PortalA0, 40);
 			if h ~= M.Player then
 				Stop(h, 0);
 			end
@@ -517,32 +518,5 @@ function CheckStuffIsAlive()
 			SucceedMission(GetTime() + 5, "win.des");
 			M.MissionOver = true;
 		end	
-	end
-end
-
-function Teleport(h, dest, offsetX, offsetZ)
-	if not IsAround(h) then 
-		return; 
-	end
-	
-	BuildObject("teleportout", 0, GetPosition(h));
-	local offset = SetVector(offsetX, 0, offsetZ);
-	local dir = Normalize(offset);
-	local pos = GetPosition(dest) + offset;
-	BuildObject("teleportin", 0, pos);
-	SetPosition(h, pos);
-	SetVelocity(h, Length(GetVelocity(h))*dir);
-	if h == GetPlayerHandle() then
-		StartSoundEffect("teleport.wav", nil);	--sound effects seem to get cut off when player is teleporting
-	end
-end
-
-function TeleportIn(odf, team, dest, offsetX, offsetZ)
-	if IsAround(dest) then
-		local pos = GetPosition(dest) + SetVector(offsetX, offsetZ);
-		BuildObject("teleportin", 0, pos);
-		return BuildObject(odf, team, pos);
-	else
-		return nil;
 	end
 end

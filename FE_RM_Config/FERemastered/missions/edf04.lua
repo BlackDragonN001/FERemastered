@@ -557,10 +557,3 @@ function CheckStuffIsAlive()
 		end
 	end
 end
-
-function TeleportIn(odf,  team,  dest, offset, label)
-	local pos = GetPosition(dest);
-	pos.x = pos.x + offset;
-	BuildObjectAndLabel("teleportin",  0,  pos, "Teleport In");
-	return BuildObjectAndLabel(odf,  team,  pos, label);
-end

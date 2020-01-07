@@ -482,11 +482,3 @@ function CheckStuffIsAlive()
 		M.MissionFailed = true;
 	end
 end
-
-function TeleportIn(odf, team, dest, offset)
-	local pos = GetPosition(dest);
-	pos.x = pos.x + offset;
-	pos.y = TerrainFindFloor(pos.x, pos.z) + 5;
-	BuildObject("teleportin", 0, pos);
-	return BuildObject(odf, team, pos);
-end

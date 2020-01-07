@@ -499,22 +499,6 @@ function CheckStuffIsAlive()
 	end
 end
 
-function TerrainFloor(pos)
-	return SetVector(pos.x, TerrainFindFloor(pos), pos.z);
-end
-
-function Teleport(h, dest, offset)
-	BuildObjectAndLabel("teleportout", 0, GetPosition(h), "Teleport Out");
-	local dir = Normalize(GetPosition(dest) - GetPosition(h))
-	local pos = GetPosition(dest) + dir*offset;
-	BuildObjectAndLabel("teleportin", 0, pos, "Teleport In");
-	SetPosition(h, pos);
-	SetVelocity(h, Length(GetVelocity(h))*dir);
-	if h == GetPlayerHandle() then
-		StartSoundEffect("teleport.wav", nil);	--sound effects seem to get cut off when player is teleporting
-	end
-end
-
 --work around for flickering caused by calling Move() on a building that was spawned off map (for dropship cutscene)
 function Move2(h, r, v, dest)
 	local oldTransform = GetTransform(h);
