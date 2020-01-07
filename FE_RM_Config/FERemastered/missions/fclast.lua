@@ -474,9 +474,3 @@ function CheckStuffIsAlive()
 		end
 	end
 end
-
---removes the object with a teleportout effect
-function TeleportOut(h)
-	BuildObject("teleportout", 0, GetPosition(h));
-	RemoveObject(h);
-end

@@ -703,9 +703,3 @@ function TeleportIn(odf,  team,  dest, offset)
 	BuildObject("teleportin",  0,  pos);
 	return BuildObject(odf,  team,  pos);
 end
-
---removes the object with a 'teleportout' effect
-function TeleportOut(h)
-	BuildObject("teleportout", 0, BuildDirectionalMatrix(GetPosition(h)));
-	RemoveObject(h);
-end
