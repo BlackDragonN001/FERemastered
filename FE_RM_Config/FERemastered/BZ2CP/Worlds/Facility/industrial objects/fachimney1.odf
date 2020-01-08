@@ -1,19 +1,7 @@
 [GameObjectClass]
 geometryName = "Chimney1.xsi"
-classLabel = "i76building"
-scrapCost = 8
-scrapValue = 3
-maxHealth = 5000
-maxAmmo = 0
+classLabel = "facilitybuildingprop"
 unitName = "Chimney"
-heatSignature = 0
-imageSignature = 0
-radarSignature = 0
-collisionRadius = 5.0
-ownsTerrain=1
-canDetect = false
-ScanTeamLimit = 3
-canInteract = false
 
 //effectHard1 = "hp_smoke"
 //effectName1 = "fachimney1.e1"

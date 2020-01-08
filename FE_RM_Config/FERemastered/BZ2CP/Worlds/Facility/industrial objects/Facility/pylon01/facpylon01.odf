@@ -1,19 +1,7 @@
 [GameObjectClass]
 geometryName = "pylon01.xsi"
-classLabel = "i76building"
-scrapCost = 8
-scrapValue = 3
-maxHealth = 5000
-maxAmmo = 0
+classLabel = "facilitybuildingprop"
 unitName = "Industrial Object"
-heatSignature = 0
-imageSignature = 0
-radarSignature = 0
-collisionRadius = 5.0
-ownsTerrain = 1
-canDetect = false
-ScanTeamLimit = 3
-canInteract = false
 
 //lightHard1 = "hp_light_1"
 //lightName1 = "facpylon01_light"
