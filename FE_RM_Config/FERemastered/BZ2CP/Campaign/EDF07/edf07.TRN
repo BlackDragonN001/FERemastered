@@ -5,9 +5,9 @@ MinX = -1024
 MinZ = -1024
 Width = 2560
 Depth = 2560
-Height = 100
-Tile = 1
-color = 0 255 0 255// was 180 103 137 255//before that, was 149 123 87 255
+Height = 45
+Tile = 6
+Color = "255 255 255 255"// 0 255 0 255// was 180 103 137 255//before that, was 149 123 87 255
 
 [NormalView]
 FogColor = "240 10 10 255"
