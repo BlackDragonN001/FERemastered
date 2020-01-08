@@ -6,10 +6,13 @@ scrapValue = 3
 maxHealth = 5000
 maxAmmo = 0
 unitName = "Crane"
-heatSignature = 0.8
-imageSignature = 8.0
-radarSignature = 1.0
+heatSignature = 0
+imageSignature = 0
+radarSignature = 0
 collisionRadius = 5.0
 ownsTerrain = 1
+canDetect = false
+ScanTeamLimit = 3
+canInteract = false
 
 [BuildingClass]

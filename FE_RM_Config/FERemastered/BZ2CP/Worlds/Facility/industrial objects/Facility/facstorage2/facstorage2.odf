@@ -7,13 +7,14 @@ scrapValue = 3
 maxHealth = 5000
 maxAmmo = 0
 unitName = "Storage Tank"
-heatSignature = 0.8
-imageSignature = 8.0
-radarSignature = 1.0
+heatSignature = 0
+imageSignature = 0
+radarSignature = 0
 collisionRadius = 5.0
 scanTeamLimit = 3
 canInteract = 0
 canSnipe = 0
 ownsTerrain = 1
+canDetect = false
 
 [BuildingClass]
