@@ -1,0 +1,34 @@
+[GameObjectClass]
+geometryName = "bebrig01.xsi"
+classLabel = "I76Building"
+animCount = 1
+animName1 = "collapse"
+animFile1 = "bebrig02.xsi"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 500
+maxAmmo = 0
+unitName = "bebrig01"
+heatSignature = 1.0
+imageSignature = 1.0
+radarSignature = 1.0
+canDetect = 1
+canInteract = 0
+collisionRadius = 0.1
+
+[BuildingClass]
+tunnelCount = 2
+bldEdge = "wwww"
+
+// 28 width. 20 height.
+tunnel01X0 = 10
+tunnel01Z0 = 0
+tunnel01DX = 8
+tunnel01DZ = 20
+tunnel01Edge = "fwfw"
+
+tunnel02X0 = 0
+tunnel02Z0 = 4
+tunnel02DX = 28
+tunnel02DZ = 12
+tunnel02Edge = "wfwf"
