@@ -1,21 +1,9 @@
 [GameObjectClass]
 geometryName = "sign-tsao.xsi"
 geometryScale = 2.5
-classLabel = "i76building"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 0
-maxAmmo = 0
+classLabel = "sign-map"
+
 unitName = "top secret"
-heatSignature = 0.0
-imageSignature = 0.0
-radarSignature = 0.0
-collisionRadius = 0.0
-scanTeamLimit = 3
-canInteract = 0
-canSnipe = 0
 
-
-ownsTerrain = 0 //1
 
 

@@ -1,19 +1,6 @@
 [GameObjectClass]
 geometryName = "cpstal03.xsi"
 geometryScale = 18.0
-classLabel = "i76building"
-scrapCost = 10	
-scrapValue = 10
-maxHealth = 25000
-maxAmmo = 0
-unitName = "Bones"
-heatSignature = 0.0
-imageSignature = 0.0
-radarSignature = 0.0
-collisionRadius = 5.0
-ownsTerrain=1
-canInteract = 0
+classLabel = "cpstal00"
 
 [BuildingClass]
-loadAsDummy=1
-dummyVersion=1103

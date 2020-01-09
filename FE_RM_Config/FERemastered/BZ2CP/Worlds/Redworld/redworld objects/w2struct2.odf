@@ -1,17 +1,5 @@
 [GameObjectClass]
 geometryName = "veincrnr1a.xsi"
-classLabel = "i76building"
-scrapCost = 8
-scrapValue = 3
-maxHealth = 5000
-maxAmmo = 0
-unitName = "Pipe"
-heatSignature = 0.8
-imageSignature = 8.0
-radarSignature = 1.0
-collisionRadius = 5.0
-ownsTerrain = 1
+classLabel = "w2struct1"
 
 [BuildingClass]
-loadAsDummy=1
-dummyVersion=1103

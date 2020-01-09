@@ -1,27 +1,5 @@
 [GameObjectClass]
 geometryName = "pbtunn03s.xsi"
-classLabel = "i76building" //"terrain"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 0
-maxAmmo = 0
-unitName = "tunnel"
-heatSignature = 0.0
-imageSignature = 0.0
-radarSignature = 0.0
-scanTeamLimit = 3
-canInteract = 0
-canSnipe = 0
-
-
-ownsTerrain = 1
+classLabel = "pbtunn03"
 
 [BuildingClass]
-tunnelCount = 1
-bldEdge = wwww	//new
-
-tunnel01X0 = 4	//1
-tunnel01Z0 = 0
-tunnel01DX = 4	//2
-tunnel01DZ = 4
-tunnel01Edge = "twfw"

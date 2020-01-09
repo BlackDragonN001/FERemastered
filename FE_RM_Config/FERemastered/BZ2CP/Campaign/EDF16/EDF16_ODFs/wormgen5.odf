@@ -1,37 +1,12 @@
 [GameObjectClass]
-geometryName = "wormgen_loop.xsi"
-//geometryscale = 15.65
-classLabel = "powerplant"
-animCount = 1
-animName1 = "loop"
-animFile1 = "wormgen_loop.xsi"
-scrapCost = 30
-scrapValue = 3
-maxHealth = 10000
-maxAmmo = 0
-unitName = "Wormhole Controller"
-heatSignature = 2.0
-imageSignature = 1.0
-radarSignature = 1.0
-collisionRadius = 1.0
-isAssault = 1
+classLabel = "wormgen3"
 
-armorClass = H
-
-requireCount = 0
-
-buildSupport = B
-buildRequire = F
-
-provideCount = 1
 provideName1 = "wormgen5"
 
 lightHard1 = "hp_light_1"
 lightName1 = "wormlight"
 
 [BuildingClass]
-soundAmbient = "ipgen01.wav"
 
 [PoweredBuildingClass]
-detectRange = 100
 

@@ -1,26 +1,7 @@
 [GameObjectClass]
 geometryName = "stars.xsi"
-classLabel = "i76building"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 0
-maxAmmo = 0
-unitName = "stars"
-heatSignature = 0.0
-imageSignature = 0.0
-radarSignature = 0.0
-collisionRadius = 0.0
-scanTeamLimit = 3
-canInteract = 0
-canSnipe = 0
+classLabel = "fxtube"
 
-ownsTerrain = 0
+unitName = "stars"
 
 [BuildingClass]
-//tunnelCount = 1
-
-//tunnel01X0 = 1
-//tunnel01Z0 = 0
-//tunnel01DX = 2
-//tunnel01DZ = 4
-//tunnel01Edge = "fwfw"

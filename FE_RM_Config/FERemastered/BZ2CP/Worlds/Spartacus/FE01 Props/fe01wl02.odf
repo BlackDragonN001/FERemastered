@@ -1,20 +1,6 @@
 [GameObjectClass]
 geometryName = "fespwl02.xsi"
-geometryScale = 2
-classLabel = "i76building"
-scrapCost = 8
-scrapValue = 3
-maxHealth = 8000
-maxAmmo = 0
-unitName = "Wall"
-heatSignature = 0.8
-imageSignature = 8.0
-radarSignature = 1.0
-collisionRadius = 1.0
-canDetect = 1
-canInteract = 0
-canSnipe = 0
-ownsTerrain = 0
-canCollide = 1
+geometryScale = 2.0
+classLabel = "fe01wl01"
 
 [BuildingClass]

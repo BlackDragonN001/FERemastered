@@ -1,7 +1,7 @@
 [GameObjectClass]
 geometryName = "FErock_01.xsi"
 //geometryScale = 1.4
-classLabel = "turret"
+classLabel = "turret" // Why is this class Turret?? -GBD
 collisionRadius = 0.1
 scrapCost = 50
 scrapValue = 3

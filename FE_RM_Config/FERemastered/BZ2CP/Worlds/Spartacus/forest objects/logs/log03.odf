@@ -1,21 +1,6 @@
 [GameObjectClass]
 geometryName = "log03.xsi"
-classLabel = "i76building"
 geometryScale = 3.0
-scrapCost = 8
-scrapValue = 3
-maxHealth = 5000
-maxAmmo = 0
-unitName = "Tree"
-heatSignature = 0.0
-imageSignature = 0.5
-radarSignature = 1.0
-collisionRadius = 1.0
-scanTeamLimit = 3
-canInteract = 0
-canSnipe = 0
-ownsTerrain=1
+classLabel = "log01"
 
 [BuildingClass]
-loadAsDummy=1
-dummyVersion=1103

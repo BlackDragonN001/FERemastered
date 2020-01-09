@@ -2,7 +2,7 @@
 geometryName = "bones.xsi"
 //geometryScale = 2.4
 classLabel = "i76building"
-scrapCost = 10	
+scrapCost = 10
 scrapValue = 10
 maxHealth = 10000
 maxAmmo = 0
@@ -11,7 +11,7 @@ heatSignature = 0.8
 imageSignature = 8.0
 radarSignature = 1.0
 collisionRadius = 5.0
-ownsTerrain=1
+ownsTerrain = 1
 
 [BuildingClass]
 loadAsDummy=1

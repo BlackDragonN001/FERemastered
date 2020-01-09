@@ -1,18 +1,6 @@
 [GameObjectClass]
 geometryName = "palmcanopy2.xsi"
 geometryScale = 1.5
-classLabel = "i76building"
-scrapCost = 8
-scrapValue = 3
-maxHealth = 5000
-maxAmmo = 0
-unitName = "Tree"
-heatSignature = 0.8
-imageSignature = 8.0
-radarSignature = 1.0
-collisionRadius = 5.0
-scanTeamLimit = 3
-canInteract = 0
-canSnipe = 0
+classLabel = "foliage2"
 
 [BuildingClass]

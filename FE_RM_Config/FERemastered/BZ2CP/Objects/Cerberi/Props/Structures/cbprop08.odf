@@ -1,19 +1,6 @@
 [GameObjectClass]
 geometryName = "cbprop08.xsi"
-geometryScale = 4
-classLabel = "i76building"
-scrapCost = 8
-scrapValue = 3
-maxHealth = 5000
-maxAmmo = 0
-unitName = "Structure"
-heatSignature = 0.8
-imageSignature = 8.0
-radarSignature = 1.0
-collisionRadius = 5.0
-scanTeamLimit = 3
-canInteract = 0
-canSnipe = 0
-ownsTerrain = 1
+geometryScale = 4.0
+classLabel = "cbprop02"
 
 [BuildingClass]

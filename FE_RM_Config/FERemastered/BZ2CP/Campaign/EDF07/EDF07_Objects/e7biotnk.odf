@@ -1,7 +1,7 @@
 [GameObjectClass]
 geometryName = "e7biotnk.xsi"
 geometryScale = 2
-classLabel = "turret"
+classLabel = "turret" // Why is this a turret? ?? -GBD
 scrapCost = 80
 scrapValue = 200		//had been 100 first (too little), then 1000 (frame rate complaints) 
 maxHealth = 10000			//7500

@@ -1,19 +1,6 @@
 [GameObjectClass]
 geometryName = "Storage2.fbx"
-classLabel = "i76building"
 geometryScale = 4.5
-scrapCost = 8
-scrapValue = 3
-maxHealth = 5000
-maxAmmo = 0
-unitName = "Storage Tank"
-heatSignature = 0.8
-imageSignature = 8.0
-radarSignature = 1.0
-collisionRadius = 5.0
-scanTeamLimit = 3
-canInteract = 0
-canSnipe = 0
-ownsTerrain = 1
+classLabel = "facstorage"
 
 [BuildingClass]

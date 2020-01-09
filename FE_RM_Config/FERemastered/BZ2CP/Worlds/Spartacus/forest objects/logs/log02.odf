@@ -1,34 +1,6 @@
 [GameObjectClass]
 geometryName = "log02.xsi"
-classLabel = "i76building"
 geometryScale = 4.5
-scrapCost = 8
-scrapValue = 3
-maxHealth = 5000
-maxAmmo = 0
-unitName = "Fallen tree"
-heatSignature = 0.0
-imageSignature = 0.5
-radarSignature = 1.0
-collisionRadius = 5.0
-scanTeamLimit = 3
-canInteract = 0
-canSnipe = 0
-isAssualt = 1
-ownsTerrain=1
+classLabel = "log01"
 
 [BuildingClass]
-tunnelCount = 2
-bldEdge = "wwww"
-
-tunnel01X0 = 1
-tunnel01Z0 = 0
-tunnel01DX = 2
-tunnel01DZ = 4
-tunnel01Edge = "fwfw"
-
-tunnel02X0 = 0
-tunnel02Z0 = 1
-tunnel02DX = 4
-tunnel02DZ = 2
-tunnel02Edge = "wtwt"
