@@ -7,9 +7,9 @@ scrapValue = 10
 maxHealth = 10000
 maxAmmo = 0
 unitName = "Bones"
-heatSignature = 0.8
-imageSignature = 8.0
-radarSignature = 1.0
+heatSignature = 0.0 //0.8
+imageSignature = 0.0 //8.0
+radarSignature = 0.0 //1.0
 collisionRadius = 5.0
 ownsTerrain = 1
 
