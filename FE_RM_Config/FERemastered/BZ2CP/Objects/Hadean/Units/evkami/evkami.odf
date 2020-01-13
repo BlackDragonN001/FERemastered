@@ -7,7 +7,13 @@
 baseName = "evkami"
 geometryName = "evkami00.xsi"
 cockpitName= "evkami_cockpit.xsi" // cockpit – Tempest storm
-animCount = 0
+animCount=3
+animName1="forward"
+animFile1="evkamisf.xsi"
+animName2="neutral"
+animFile2="evkamisn.xsi"
+animName3="reverse"
+animFile3="evkamisr.xsi"
 classLabel = "wingman"
 explosionName = "kamixpl"
 canSnipe = 0
