@@ -370,7 +370,7 @@ function Routine1(R, STATE)
 			Advance(R, 10.0);
 		end
 	elseif STATE == 5 then
-		SetCurHealth(M.Jammer, 1);
+		Damage(M.Jammer, 100000); --SetCurHealth(M.Jammer, 1);
 		BuildObject("poolmine", 2, GetPosition(M.Jammer));
 		Goto(M.HadeanTech, M.ScionRecy, 1);
 		Advance(R);
