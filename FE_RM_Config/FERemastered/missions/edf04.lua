@@ -244,7 +244,7 @@ function HandleMainState(R, STATE)
 			else
 				RemoveObject(M.BaseNav);
 				ClearObjectives();
-				AddObjective(_Te"edf0410.otf"xt10, "white");
+				AddObjective("edf0410.otf", "white");
 				M.HadeanBaseNav = BuildObjectAndLabel("ibnav", 1, "ebs", "Hadean Base Location");
 				SetObjectiveName(M.HadeanBaseNav, "Hadean Base");
 				SetObjectiveOn(M.HadeanBaseNav);
