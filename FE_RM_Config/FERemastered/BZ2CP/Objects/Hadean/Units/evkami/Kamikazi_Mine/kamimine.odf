@@ -1,11 +1,14 @@
 [GameObjectClass]
 classLabel = "FXMine"
 
+explosionName = "KAMIORDXPL"
+
 [MineClass]
 lifeSpan = 0.01
 
 [FlareMineClass]
-payloadName = "kamiord"
+triggerDelay = 1e6
+payloadName = NULL
 fireSound = "smine01.wav"
 shotDelay = 2.0
 
