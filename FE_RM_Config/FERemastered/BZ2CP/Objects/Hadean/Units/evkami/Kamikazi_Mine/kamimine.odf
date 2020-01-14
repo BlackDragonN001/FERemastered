@@ -1,14 +1,15 @@
 [GameObjectClass]
-classLabel = "FXMine"
+geometryName = NULL
+classLabel = "mine"
+maxHealth = 0
+maxAmmo = 0
+unitName = "Kamikazi Mine"
+heatSignature = 100.0
+scanTeamLimit = 3
+canInteract = 0
 
 explosionName = "KAMIORDXPL"
 
 [MineClass]
 lifeSpan = 0.01
-
-[FlareMineClass]
-triggerDelay = 1e6
-payloadName = NULL
-fireSound = "smine01.wav"
-shotDelay = 2.0
 
