@@ -86,6 +86,7 @@ function DefineRoutines()
 	DefineRoutine(5, DestroyMegaturrets, false);
 	DefineRoutine(6, HandleRecyclerRetreat, false);
 	DefineRoutine(7, HandleMegaGunRetaliate, true);
+	DefineRoutine("Initial Attack", HandleInitialAttack, false);
 end
 
 
@@ -217,6 +218,17 @@ function HandleIntro(R, STATE)
 	end
 end
 
+-- An initial attack starts 25 seconds after cutscene
+-- Causes Hadeans to rush Player before they set up the Recycler
+function HandleInitialAttack(R, STATE)
+	if STATE == 0 then
+		Advance(R, 25);
+	elseif STATE == 1 then
+		SetAIP("edf04a.aip", 6);
+		SetRoutineActive(R, false);
+	end
+end
+
 --Main mission state
 function HandleMainState(R, STATE)
 	if STATE == 0 then
@@ -232,7 +244,7 @@ function HandleMainState(R, STATE)
 			M.BaseNav = BuildObjectAndLabel("ibnav", 1, "bss", "Base Location");
 			SetObjectiveName(M.BaseNav, "Base Site");
 			SetObjectiveOn(M.BaseNav);
-			--SetAIP("edf04a.aip", 6);	--causes Hadeans to rush Player before they set up the Recycler
+			SetRoutineActive("Initial Attack", true);
 			Advance(R);
 		end
 	elseif STATE == 2 then	--LOC_46
