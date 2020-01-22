@@ -56,6 +56,20 @@ weaponName3 = "gmflamemin"
 weaponAssault3 = 0
 
 ////////////////////////////////////
+
+// Dust fx.
+effectHard1 = "hp_com_1"
+effectName1 = "dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectFlags1 = 2147483135 // thrusting only.
+
+// Engine flame glow.
+effectHard2 = "hp_special_1"
+effectName2 = "engglow_e.small"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 5.0
+effectFlags2 = 2147483135 // thrusting only.
  
 [CraftClass]
 rangeScan = 450.0f
