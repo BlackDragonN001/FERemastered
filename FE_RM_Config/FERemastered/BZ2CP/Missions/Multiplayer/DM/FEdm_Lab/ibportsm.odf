@@ -22,24 +22,29 @@ lightName1 = "spotblue2"
 
 PositionOffset1 = "0.000000 5.000000 0.000000" // Teleport Exit Location.
 PositionOffset2 = "0.000000 0.000000 50.000000" // Goto Destination after AI unit Exits.
+PositionOffset3 = "0.000000 5.000000 0.000000" // Teleport FX Location.
 
 [BuildingClass]
 soundAmbient = "ipgen01.wav"
 
 
 [TeleportalClass]
-//soundActivate = "portalx.wav"  // not used.... the sound effect is made by the portalEffect's explosion, though it's sometimes quite soft :-/
+soundActivate = "teleport.wav"
 
-//PortalEffectIn = "PortalEffectinI"
-PortalEffectOut = "PortalEffectoutI"
-PortalEffectVehicle = "PortalEffectVehI"
+PortalEffect = "PortalFx_I" // Effect # is added to the end, as well as a Start and End versions.
+InEffect = 1
+OutEffect = 2
+OnEffect = 0
 
 TeleporterChannel = 3 //0
 ShowChannel = true
 CanEnter = true
 CanExit = true
-RandomDestination = false
-RandomUsesChannels = true
+MatchType = 0 // 0 = Closest, 1 = Cycle, 2 = Random.
+MatchTypeUsesChannels = true
+ContinuousFx = false
+ContinuousFxRange = 0.0
+TeleportColorFade = "63 127 255 255"
 TeleportFilter = 3 // Craft + Pilot
 // Teleport Filter options: 
 // All         = 0
@@ -48,11 +53,15 @@ TeleportFilter = 3 // Craft + Pilot
 // Powerups    = 4
 // Weapons     = 8 (Torpedoes, Mines)
 // Other       = 16
-ExitForwardOnly = false
-ExitVelocity = 0
+ExitForwardOnly = true //false
+ExitVelocity = 1.0
+ExitKickAI = true
+EnterGotoIsExit = false // If true, AI ordered to goto this portal will goto the exit position offset instead of the object.
 ExitUsesCenter = true
-PortalTargetRange = 10.0f
+EnterRange = 14.0f
 TeleportTeamFilter = 0
+DestinationMinRange = 0.0
+DestinationMaxRange = 0.0
 DestinationTeamFilter = 3
 // 0 = All Teams, 1 = same team only, 2 = allies only, 3 = Same Team + Allies, 4 = Enemies only, 5 = Same Team + Enemies, 6 = Allies + Enemies.
 // Team Filter options: 
