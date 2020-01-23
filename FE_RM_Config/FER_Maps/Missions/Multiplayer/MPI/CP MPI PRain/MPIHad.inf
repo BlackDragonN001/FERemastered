@@ -21,6 +21,8 @@ ivar16 = 0 // keep sniper rifle on pilot respawn
 ivar23 = 0 // Default scrap cheat for humans
 ivar24 = 2 // Default scrap cheat for CPU
 
+ivar31 = 25 // Gravity.
+
 // Svar0 (.bzn filename, used to look for an .inf file like this)
 // *not* read in, as that would cause an infinite loop
 svar1 = "Renegades" // Team name for team 1

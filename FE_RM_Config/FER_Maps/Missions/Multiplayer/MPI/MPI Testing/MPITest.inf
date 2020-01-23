@@ -24,6 +24,8 @@ ivar22 = 3
 ivar23 = 3 // Default scrap cheat for humans
 ivar24 = 3 // Default scrap cheat for CPU
 
+ivar31 = 25 // Gravity.
+
 // Svar0 (.bzn filename, used to look for an .inf file like this)
 // *not* read in, as that would cause an infinite loop
 

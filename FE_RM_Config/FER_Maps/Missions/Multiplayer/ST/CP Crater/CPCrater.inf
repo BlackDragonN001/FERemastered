@@ -29,6 +29,8 @@ ivar18 = 3 // Default AI skill for human non-turrets
 ivar21 = 3 // Default CPU AI skill for MPI turrets
 ivar22 = 3 // Default CPU AI skill for MPI non-turrets.
 
+ivar31 = 25 // Gravity.
+
 // Svar0 (.bzn filename, used to look for an .inf file like this)
 // *not* read in, as that would cause an infinite loop
 svar1 = "Team Red" // Team name for team 1

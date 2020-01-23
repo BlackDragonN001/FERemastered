@@ -20,6 +20,8 @@ ivar9 = 30 //unit limit, 0 is unlimited
 ivar11 = 1 // team play is locked
 ivar16 = 0 // keep sniper rifle on pilot respawn
 
+ivar31 = 25 // Gravity.
+
 // Svar0 (.bzn filename, used to look for an .inf file like this)
 // *not* read in, as that would cause an infinite loop
 svar1 = "Team Red" // Team name for team 1
