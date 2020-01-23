@@ -21,7 +21,6 @@ Rewrite for dynamic spawning / function.
 -Update function: Iterate over AI Teams, perform scrap cheat updates.
 
 -AddObject: Call the AddToDispatch function for AI objects here, based on cpu difficulty. (read difficulty from [Start] section in AIP.)
--- GBD TODO: Add Lua Callback for AddToDispatch.
 --]]
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 
@@ -92,7 +91,7 @@ function _MPI.AddObject(h)
 		elseif (ObjBaseClass == "Demolisher") then
 			AIVehicles.AIDemolishers[#AIVehicles.AIDemolishers + 1] = h;
 		elseif (ObjClass == "CLASS_SCAVENGER" or ObjClass == "CLASS_SCAVENGERH") then
-			_MPI.HandleNewCPUScav(h);
+			_MPI.AddCPUScav(h);
 		end
 	elseif (GetTeamNum(h) == 1) then
 		if (IsBuilding(h)) then

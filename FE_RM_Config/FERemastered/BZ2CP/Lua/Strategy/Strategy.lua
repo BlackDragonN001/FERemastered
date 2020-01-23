@@ -6,43 +6,12 @@ assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 local _StartingVehicles = require('_StartingVehicles');
 
--- Local Defines? Will these propegate across other lua file's scope?
-local DoEjectPilot = 0 -- Do 'standard' eject
-local DoRespawnSafest = 1 -- Respawn a 'PLAYER' at safest spawnpoint
-local DLLHandled = 2 -- DLL handled actions. Do nothing ingame
-local DoGameOver = 3 -- Game over, man.
-
-local VEHICLE_SPACING_DISTANCE = 20.0
-
-local PRESNIPE_KILLPILOT = 0 -- Kill the pilot (1.0-1.3.6.4 default). Does still pass this to bullet hit code, where damage might also be applied
-local PRESNIPE_ONLYBULLETHIT = 1 -- Do not kill the pilot. Does still pass this to bullet hit code, where damage might also be applied
-
-local PREGETIN_DENY = 0 -- Deny the pilot entry to the craft
-local PREGETIN_ALLOW = 1 -- Allow the pilot entry
-
-local TEAMRELATIONSHIP_INVALIDHANDLE = 0 -- One or both handles is invalid
-local TEAMRELATIONSHIP_SAMETEAM = 1 -- Team # for both items is the same
-local TEAMRELATIONSHIP_ALLIEDTEAM = 2 -- Team # isn't identical, but teams are allied
-local TEAMRELATIONSHIP_ENEMYTEAM = 3 --Team # isn't identical, and teams are enemies
-
-local DLL_TEAM_SLOT_RECYCLER = 1
-local DLL_TEAM_SLOT_FACTORY = 2
-
-local NETLIST_MPVehicles = 0
-local NETLIST_StratStarting = 1
-local NETLIST_Recyclers = 2
-local NETLIST_AIPs = 3
-local NETLIST_Animals = 4
-local NETLIST_STCTFGoals = 5
-local NETLIST_IAHumanRecyList = 6
-local NETLIST_IACPURecyclers = 7
-local NETLIST_IAAIPs = 8
-
-local MAX_TEAMS = 16 -- Teams to loop over.
 
 -- Static Variables:
 local ScoreDecrementForSpawnKill = 500;
 local ScoreForWinning = 100;
+
+local VEHICLE_SPACING_DISTANCE = 20.0
 
 -- How long a "spawn" kill lasts, in tenth of second ticks. If the
 -- time since they were spawned to current is less than this, it's a
