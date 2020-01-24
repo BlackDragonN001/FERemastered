@@ -6,6 +6,10 @@ moneyDelay = 1
 scrapCount = 40
 scavClass = "ivscav"
 consClass = "ivconsE6"
+IdleAllCraft = false // Prevent Interrupting AI.
+
+[IdleDispatcher]
+UnitIdleSeconds = 999999 // Don't send out units via Dispatch.
 
 [Match]
 targetType1= "ivscout"

@@ -2,6 +2,10 @@
 scrapCount = 200
 consClass = "cvcons02"
 scavClass = "cvscav02"
+IdleAllCraft = false // Prevent Interrupting AI.
+
+[IdleDispatcher]
+UnitIdleSeconds = 999999 // Don't send out units via Dispatch.
 
 [Cheat]
 moneyAmount = 3

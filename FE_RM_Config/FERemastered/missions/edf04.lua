@@ -232,7 +232,7 @@ function HandleMainState(R, STATE)
 			M.BaseNav = BuildObjectAndLabel("ibnav", 1, "bss", "Base Location");
 			SetObjectiveName(M.BaseNav, "Base Site");
 			SetObjectiveOn(M.BaseNav);
-			--SetAIP("edf04a.aip", 6);	--causes Hadeans to rush Player before they set up the Recycler
+			SetAIP("edf04a.aip", 6);
 			Advance(R);
 		end
 	elseif STATE == 2 then	--LOC_46

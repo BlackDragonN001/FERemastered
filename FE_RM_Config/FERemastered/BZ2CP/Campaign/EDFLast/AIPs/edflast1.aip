@@ -1,7 +1,10 @@
 [Start]
-IdleAllCraft = false
+IdleAllCraft = false // Prevent Interrupting AI.
 consClass = "evcons"
 scavClass = "evscav"
+
+[IdleDispatcher]
+UnitIdleSeconds = 999999 // Don't send out units via Dispatch.
 
 [Cheat]
 moneyAmount = 60

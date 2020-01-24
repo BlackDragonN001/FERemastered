@@ -1,4 +1,8 @@
 [Start]
+IdleAllCraft = false // Prevent Interrupting AI.
+
+[IdleDispatcher]
+UnitIdleSeconds = 999999 // Don't send out units via Dispatch.
 
 [Plan1]
 planType = "BuildMinimums"
