@@ -1,0 +1,44 @@
+[GameObjectClass]
+baseName = "pbatun01"
+geometryName = "pbatun02.fbx"
+classLabel = "i76building"
+scrapCost = 8
+scrapValue = 3
+maxHealth = 0
+maxAmmo = 0
+unitName = "Tunnel L"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+collisionRadius = 5.0
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+
+AlignTerrainReplaceType = 5 //2
+
+[BuildingClass]
+CanDemolish = false
+tunnelCount = 3
+
+//  Elbow
+tunnel01X0 = 1
+tunnel01Z0 = 1
+tunnel01DX = 2
+tunnel01DZ = 2
+tunnel01Edge = "ffww"
+
+//  North Passage
+tunnel02X0 = 1            
+tunnel02Z0 = 0
+tunnel02DX = 2
+tunnel02DZ = 1
+tunnel02Edge = "fwfw"
+
+ // East Passage
+tunnel03X0 = 3            
+tunnel03Z0 = 1
+tunnel03DX = 1
+tunnel03DZ = 2
+tunnel03Edge = "wfwf"
+
