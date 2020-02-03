@@ -1,0 +1,63 @@
+[GameObjectClass]
+baseName = "ibbomb"
+geometryName = "ibbomb00.fbx"
+classLabel = "BomberBay"
+scrapCost = 100
+scrapValue = 30
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Bomber Bay"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+collisionRadius = 4.0
+collisionName = "ibbomb00_col.fbx"
+
+armorClass = H
+
+/////// REQUIREMENTS ///////////////
+
+requireCount = 1
+requireName1 = "ibtrain"
+requireText1 = "Build Training"
+
+////////////////////////////////////
+
+
+/////// PROVIDES ///////////////////
+
+provideCount = 3
+provideName1 = "ibbomb"
+provideName2 = "VIRTUAL_CLASS_BOMBERBAY"
+provideName3 = "base"
+
+///////// LIGHTS & EFFECTS /////////
+lightHard1 = "hp_light_1"
+lightName1 = "o_lblue_nf"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "emit_greenblink"
+effectFlags1 = "447" //447 powered  479 unpowered
+effectHard2 = "hp_emit_2"
+effectName2 = "emit_redblink"
+effectFlags2 = "447" //447 powered  479 unpowered
+effectHard3 = "hp_emit_3"
+effectName3 = "emit_redblink"
+effectFlags3 = "447" //447 powered  479 unpowered
+effectHard4 = "hp_emit_4"
+effectName4 = "emit_greenblink"
+effectFlags4 = "447" //447 powered  479 unpowered
+
+[BuildingClass]
+soundAmbient = "iabomb01.wav"
+
+[BomberBayClass]
+bomberType = "ivbomb"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[Lod1]
+//geometryName = "ibbombL1.fbx" ;geometry for lod1
+//distance = 80

@@ -1,0 +1,64 @@
+[GameObjectClass]
+baseName = "ibcbun"
+geometryName = "ibcbun00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ibcbun00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+classLabel = "commbunker"
+collisionRadius = 11.0
+scrapCost = 50
+scrapValue = 20
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Relay Bunker"
+aiName = "CommTowerProcess"
+aiName2 = "CommTowerProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+armorClass = H
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+collisionName = "ibcbun00_col.fbx"
+
+/////// REQUIREMENTS ///////////////
+requireCount = 1
+requireName1 = "ibpgen"
+requireText1 = "Build Power"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "ibcbun"
+provideName2 = "VIRTUAL_CLASS_COMMBUNKER"
+provideName3 = "base"
+
+///////// LIGHTS & EFFECTS /////////
+lightHard1 = "hp_light_1"
+lightName1 = "o_blue_nf"
+
+[BuildingClass]
+soundAmbient = "icomm01.wav"
+
+[CommBunkerClass]
+rangeScan = 400
+periodScan = 0.0
+viewDist = 300.0
+viewZoom = 1.5
+minZoom = 1.0
+maxZoom = 3.0
+viewPitch = 1.0
+minPitch = 0.75
+maxPitch = 1.5
+nearPlane = 1
+farPlane = 1000
+disableFog = 1
+
+[PoweredBuildingClass]
+detectRange = 300
+
+[Lod1]
+//geometryName = "ibcbunL1.fbx" ;geometry for lod1
+//distance = 64                    ;bsphere under 200 pixel => switch to lod1
+//dontShiftLOD = 1
