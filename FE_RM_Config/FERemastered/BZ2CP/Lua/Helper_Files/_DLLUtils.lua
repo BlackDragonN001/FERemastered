@@ -325,26 +325,33 @@ end
 
 -- Teleports In (spawns) an ODF at a Portal Handle dest.
 function TeleportIn(odf, team, dest, offset, label)
-	if IsAround(dest) then
+
+	local pos = nil;
+	
+	if type(dest) == "string" then
+	
+		pos = GetPosition(dest);
+	
+	elseif IsAround(dest) then
 	
 	--	local pos = GetPosition(dest) + offset; -- Need to localize to object coordinates, not world coordinates. -GBD
 	--	pos = BuildDirectionalMatrix(pos);
 	
-		local pos = GetTransform(dest);
+		pos = GetTransform(dest);
 		pos.posit = pos.posit + pos.front * offset;
 		pos.posit.y = pos.posit.y + 5;
-	
-		BuildObject("teleportin", 0, pos);
-		local h = BuildObject(odf, team, pos);
-		
-		if (label ~= nil) then
-			SetLabel(h, label);
-		end
-		
-		return h;
 	else
 		return nil;
 	end
+	
+	BuildObject("teleportin", 0, pos);
+	local h = BuildObject(odf, team, pos);
+	
+	if (label ~= nil) then
+		SetLabel(h, label);
+	end
+	
+	return h;
 end
 
 --removes the object with a teleportout effect
