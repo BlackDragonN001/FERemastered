@@ -1,6 +1,17 @@
+// BZ2CP Building "Procreator"
+// Original Concept by Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
+
 [GameObjectClass]
 baseName = "ebrecy"
-geometryName = "ebrecy00.xsi"
+geometryName = "ebrecy00.fbx"
+animCount = 2
+animName1 = "deploy"
+animFile1 = "ebrecy00_deploy.fbx"
+animName2 = "loop"
+animFile2 = "ebrecy00_loop.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
 classLabel = "recycler"
 collisionRadius = 4.0
 powerCost = 0
@@ -24,6 +35,15 @@ provideName1 = "ebrecy"
 provideName2 = "ebrecycpu"
 provideName3 = "VIRTUAL_CLASS_RECYCLER"
 provideName4 = "VIRTUAL_CLASS_RECYCLERBUILDING"
+
+lightHard1 = "hp_light_1"
+lightName1 = "omnipurple"
+lightHard2 = "hp_light_2"
+lightName2 = "omniyohad"
+lightHard3 = "hp_light_3"
+lightName3 = "omniyohad"
+lightHard4 = "hp_light_4"
+lightName4 = "omniyohad"
 
 [PoweredBuildingClass]
 detectRange = 100

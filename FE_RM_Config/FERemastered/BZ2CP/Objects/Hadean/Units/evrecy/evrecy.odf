@@ -1,9 +1,13 @@
+// BZ2CP unit "Procreator"
+// Original Concept by Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
+
 [GameObjectClass]
 baseName = "evrecy"
-geometryName = "evrecy00.xsi"
+geometryName = "evrecy00.fbx"
 animCount = 1
 animName1 = "deploy"
-animFile1 = "evrecy01.xsi"
+animFile1 = "evrecy00_deploy.fbx"
 classLabel = "recyclervehicle"
 collisionRadius = 7.0
 scrapCost = 0
