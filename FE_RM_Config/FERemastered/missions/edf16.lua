@@ -1,6 +1,12 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
+local Position10 = BuildDirectionalMatrix(SetVector(-1000,0,-92)),	--Rebel dropship landing site (matrix)
+local Position11 = BuildDirectionalMatrix(SetVector(-1000,0,165)),	--Loyalist dropship landing site (matrix)
+local Position15 = SetVector(-1000,1000,0),	--Dropship exit target (off map)
+local Position16 = SetVector(0,100,100),	--Camera offset in final cutscene
+local Position23 = SetVector(0,0,3),	--Camera offset in final cutscene
+
 local EvacuateBlacklist = { --Anything not on this list will be evacuated.
 	["ivturr.odf"]=true, 
 	["ivcons.odf"]=true, 
@@ -96,16 +102,11 @@ local M = {
 
 --Vectors
 	Position7 = nil,	--Hadean reinforcements spawn ("hadeannav")
-	Position10 = BuildDirectionalMatrix(SetVector(-1000,0,-92)),	--Rebel dropship landing site (matrix)
-	Position11 = BuildDirectionalMatrix(SetVector(-1000,0,165)),	--Loyalist dropship landing site (matrix)
-	Position15 = SetVector(-1000,1000,0),	--Dropship exit target (off map)
-	Position16 = SetVector(0,100,100),	--Camera offset in final cutscene
 	Position18 = nil,	--next landing site for Cerb dropship (matrix)
 	Position19 = nil,	--spawn loc for Cerb forces exiting dropship (matrix)
 	CerbLandingPos = {},	--landing sites for cerb dropships (matrix array)
 	CerbLandingSpawn = {},	--landing sites for cerb dropships (matrix array)
 	Position21 = nil,	--Hadean elite forces landing zone (matrix)
-	Position23 = SetVector(0,0,3),	--Camera offset in final cutscene
 --End
 	endme = 0
 }

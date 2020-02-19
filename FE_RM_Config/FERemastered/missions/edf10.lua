@@ -1,6 +1,12 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
+local Position1 = SetVector(-1403,0,1547),	--Move target for beam fence
+local Position2 = SetVector(-1270,0,1508), --Move target for beam fence
+local Position4 = SetVector(-1692,63,1959), --Cerb spawn
+local Position5 = SetVector(1015,0,8), --Hadean Ally spawn
+local Position6 = SetVector(-1341,93,1301), --Schultz spawn
+
 local M = {
 -- Bools
 	MissionOver = false,
@@ -53,14 +59,6 @@ local M = {
 	Variable6 =  10.0, --beam fence 2 move speed
 	Variable7 =  1, --beam fence 1 rotate speed
 	Variable8 =  20.0, --beam fence 1 move speed
-	
---Vectors
-	Position1 = SetVector(-1403,0,1547),	--Move target for beam fence
-	Position2 = SetVector(-1270,0,1508), --Move target for beam fence
-	Position4 = SetVector(-1692,63,1959), --Cerb spawn
-	Position5 = SetVector(1015,0,8), --Hadean Ally spawn
-	Position6 = SetVector(-1341,93,1301), --Schultz spawn
-	Position_ScrapYard = nil,
 --End
 	endme = 0
 }
@@ -279,7 +277,7 @@ function Routine1()
 			end
 		elseif M.Routine1State == 11 then
 			SetObjectiveOff(M.HadeanAlly2);
-			M.ScrapyardNav = BuildObject("ibnav", 1, M.Position_ScrapYard);
+			M.ScrapyardNav = BuildObject("ibnav", 1, GetPosition(M.ScrapyardNav));
 			SetObjectiveName(M.ScrapyardNav, "Bio-metal Pools");
 			SetObjectiveOn(M.ScrapyardNav);
 			M.Routine1State = M.Routine1State + 1;

@@ -5,6 +5,10 @@ local _FECore = require('_FECore');
 local NUM_PORTALS = 5;
 local NUM_ATTACKERS = 8;
 
+local Position2 = SetVector( -450, -120, -1460 ),	--flying dropship start position
+local Position3 = SetVector( -590, -155, -1190 ),	--flying dropship end position
+local Position4 = SetVector( 420, 0, 920 ),	--deploy base location
+
 local Routines = {};
 
 local M = {
@@ -34,10 +38,6 @@ local M = {
 	Attackers = {},
 	Dino1 = nil,
 	Dino2 = nil,
---Vectors
-	Position2 = SetVector( -450, -120, -1460 ),	--flying dropship start position
-	Position3 = SetVector( -590, -155, -1190 ),	--flying dropship end position
-	Position4 = SetVector( 420, 0, 920 ),	--deploy base location
 -- Ints
 	TPS = 10,
 	StewartNagCounter = 0,

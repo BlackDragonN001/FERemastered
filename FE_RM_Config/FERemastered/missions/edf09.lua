@@ -1,6 +1,11 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
+local Position2 = SetVector(-800,22,-326),	--cerb reinforcements spawn location
+local Position3 = SetVector(-80,30,700),	--cerb attacker spawn
+local Position4 = SetVector(315,-15,-525),	--debris spawn
+local Position7 = SetVector(-183,-12,55),	--mlight move target
+
 local M = {
 -- Bools
 	Routine4Active = false;
@@ -32,15 +37,6 @@ local M = {
 	Variable1 = 0,	--routine3 counter
 	Variable2 = 40,	--mlight rotate rate
 	Variable3 = 100,	--mlight move speed
-	
---Vectors
-	Position1 = SetVector(-799,0,-658),	--temp spawn location
-	Position2 = SetVector(-800,22,-326),	--cerb reinforcements spawn location
-	Position3 = SetVector(-80,30,700),	--cerb attacker spawn
-	Position4 = SetVector(315,-15,-525),	--debris spawn
-	--Position5 = SetVector(0,0,0),	--temp
-	--Position6 = SetVector(0,0,0),	--unused
-	Position7 = SetVector(-183,-12,55),	--mlight move target
 --End
 	endme = 0
 }

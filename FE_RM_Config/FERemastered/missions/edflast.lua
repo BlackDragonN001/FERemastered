@@ -1,6 +1,14 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
+local Position7 = SetVector( -2,2,-5),	--CameraOf offset
+local Position8 = SetVector( 5,2,2),		--CameraOf offset
+local Position9 = SetVector( 160,160,80),		--offset for CamPos
+local Position10 = SetVector( 20,25,-70),		--move to for CamPos
+local Position11 = SetVector( 140,100,140),	--CameraObject offset
+local Position13 = SetVector( 0,100,100),		--offset for CamPos
+local Position14 = SetVector( 150,180,150),	--move to for CamPos
+
 local M = {
 -- Bools
 	MissionOver = false,
@@ -91,14 +99,7 @@ local M = {
 	Position1 = SetVector(-25,-65,150),	--"Hadean Activity" nav loc
 	Position2 = SetVector( 0,0,0),	--Nexus bolt pos
 	Position4 = SetVector( 0,0,0),		--used for placing/moving Nexus towers
-	Position5 = SetVector( 0,0,0),		--used for placing/moving Nexus towers
-	Position7 = SetVector( -2,2,-5),	--CameraOf offset
-	Position8 = SetVector( 5,2,2),		--CameraOf offset
-	Position9 = SetVector( 160,160,80),		--offset for CamPos
-	Position10 = SetVector( 20,25,-70),		--move to for CamPos
-	Position11 = SetVector( 140,100,140),	--CameraObject offset
-	Position13 = SetVector( 0,100,100),		--offset for CamPos
-	Position14 = SetVector( 150,180,150),	--move to for CamPos
+	Position5 = SetVector( 0,0,0),		--used for placing/moving Nexus towers	
 	Position15 = SetVector( -240,180,70),	--dead Nexus spawn location (for cutscene)
 	Position16 = SetVector( -270,250,40),	--dead Nexus move target
 	Position17 = SetVector( -320,150,-95),	--Nexus crash location

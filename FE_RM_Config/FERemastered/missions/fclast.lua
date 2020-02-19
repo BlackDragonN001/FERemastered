@@ -4,6 +4,11 @@ local _FECore = require('_FECore');
 local NUM_POWERGLOBES = 4;
 local NUM_BOLTMINES = 20;
 
+local Position5 = SetVector( 90,80,40 ),	--CamPos offset 1
+local Position6 = SetVector( -20,10,5 ),	--CamPos offset 2
+local Position8 = SetVector( 40,250,40 ),	--CamPos offset 1
+local Position9 = SetVector( -40,40,40 ),	--CamPos offset 2
+
 --Routines
 local Routines = {};
 
@@ -45,11 +50,7 @@ local M = {
 	Position2 = SetVector( 0,0,0 ),	--Escape Craft finish position
 	--Position3 = SetVector(  0,0,0 ),	--portal spawn location (scratch)
 	--Position4 = SetVector( 1000,0,1000 ),	--off map position for teleporting out units
-	Position5 = SetVector( 90,80,40 ),	--CamPos offset 1
-	Position6 = SetVector( -20,10,5 ),	--CamPos offset 2
 	Position7 = SetVector( 0,0,0 ),		--Old player position
-	Position8 = SetVector( 40,250,40 ),	--CamPos offset 1
-	Position9 = SetVector( -40,40,40 ),	--CamPos offset 2
 --End
 	endme = 0
 }

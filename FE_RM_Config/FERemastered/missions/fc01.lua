@@ -4,6 +4,10 @@ local _FECore = require('_FECore');
 local NUM_SOLDIERS = 7;
 local NUM_GTOWS = 5;
 
+local Position5 = SetVector( -5,5,10),	--was ( -1,1,4) Camera offset for Steinman cutscene (changed due to FOV bug in 1.3.7.2)
+local Position6 = SetVector( 4,13,2),	--was ( 4,3,2); offset 1 for CamPos (Lt. Miller cutscene)
+local Position7 = SetVector( 4,12,-2),	--was ( 4,2,-2); offset 2 for CamPos (Lt. Miller cutscene)
+
 local M = {
 -- Bools
 	MissionOver = false,
@@ -91,9 +95,6 @@ local M = {
 	Position2 = SetVector( 360,0,-385),		--Cerb portal location
 	Position3 = SetVector( 380,0,-580),		--Cerb portal location
 	--Position4 = SetVector( -1000,0,-1000),	--temp pos for teleporting cerb units
-	Position5 = SetVector( -5,5,10),	--was ( -1,1,4) Camera offset for Steinman cutscene (changed due to FOV bug in 1.3.7.2)
-	Position6 = SetVector( 4,13,2),	--was ( 4,3,2); offset 1 for CamPos (Lt. Miller cutscene)
-	Position7 = SetVector( 4,12,-2),	--was ( 4,2,-2); offset 2 for CamPos (Lt. Miller cutscene)
 --End
 	endme = 0
 }

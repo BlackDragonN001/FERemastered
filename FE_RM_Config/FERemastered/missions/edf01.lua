@@ -5,6 +5,8 @@ local _FECore = require('_FECore');
 local NUM_TANKS = 6
 local NUM_SURVIVORS = 10
 
+local Position1 = SetVector( -10, 50, -10);	--Camera offset
+
 local Routines = {};
 local RoutineToIDMap = {};
 
@@ -34,8 +36,6 @@ local M = {
 	FriendTurret3 = nil,
 	APC1 = nil,
 	APC2 = nil,
---Vectors
-	Position1 = SetVector( -10, 50, -10 );	--Camera offset
 -- Ints
 	TPS = 10,
 	ScanPercentage = 0,	--Cthonian power source scan percentage

@@ -1,6 +1,11 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
+local Position3 = SetVector( 1102,85,1008 ),	--Captured Scion Matriarch location
+local Position4 = SetVector( 762,0,-651 ),	--Portal spawn location
+local Position5 = SetVector( 700,50,521 ),	--Portal spawn location
+local Position6 = SetVector( 386,50,738 ),	--Portal spawn location
+
 local M = {
 -- Bools
 	MissionOver = false,
@@ -51,17 +56,11 @@ local M = {
 	Variable6 = 0,	--# of Maulers
 	Variable10 = 0,		--Routine4 loop counter
 	Variable11 = 0,		--if player was warned about too many unspent points in the reinforcements GUI
+	ScionSpireCount = 0
 --Vectors
-	Position3 = SetVector( 1102,85,1008 ),	--Captured Scion Matriarch location
-	Position4 = SetVector( 762,0,-651 ),	--Portal spawn location
-	Position5 = SetVector( 700,50,521 ),	--Portal spawn location
-	Position6 = SetVector( 386,50,738 ),	--Portal spawn location
 	Position9 = SetVector( 0,0,0 ),	--Portal spawn location (set later)
 --End
 	endme = 0,
-
-	-- New Variables - AI_Unit
-	ScionSpireCount = 0
 }
 
 function InitialSetup()

@@ -5,6 +5,13 @@ local _FECore = require('_FECore');
 local NUM_MEGATURRETS = 4;
 local NUM_BLOCKAGES = 7;
 
+
+local Position8 = SetVector( -911, 76, -726 ),	--Hadean scout spawn
+local Position9 = SetVector( -467, 40, -308 ),	--Hadean scout spawn
+local Position12 = SetVector( -624, 59, -1056 ),	--Canyon Nav position
+local Position13 = SetVector( 1133, -1, 351 ),	--MegaPower nav position
+local Position14 = SetVector( 662, -55, -501 ),	--City Ruins Nav position
+
 local Routines = {};
 
 local M = {
@@ -37,11 +44,6 @@ local M = {
 	FlightRecorder = nil,
 	MegaTurrets = {},
 --Vectors
-	Position8 = SetVector( -911, 76, -726 ),	--Hadean scout spawn
-	Position9 = SetVector( -467, 40, -308 ),	--Hadean scout spawn
-	Position12 = SetVector( -624, 59, -1056 ),	--Canyon Nav position
-	Position13 = SetVector( 1133, -1, 351 ),	--MegaPower nav position
-	Position14 = SetVector( 662, -55, -501 ),	--City Ruins Nav position
 	OldPlayerPos = nil,
 -- Ints
 	TPS = 10,
