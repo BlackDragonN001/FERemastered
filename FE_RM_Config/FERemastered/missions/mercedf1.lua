@@ -3,6 +3,9 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
+local Position11 = SetVector(-674, 1000, -783),
+local Position12 = SetVector(0, 0, 100),
+
 local M = {
     -- Bools
     PlayerCanMove = false,
@@ -92,14 +95,6 @@ local M = {
     Position3 = SetVector(0, 0, 0),
     Position4 = SetVector(0, 0, 0),
     Position5 = SetVector(0, 0, 0),
-    Position6 = SetVector(0, 0, 0),
-    Position7 = SetVector(148, 100, 998),
-    Position8 = SetVector(0, 0, 0),
-    Position9 = SetVector(-674, 80, -782),
-    Position10 = SetVector(0, 6000, 0),
-    Position11 = SetVector(-674, 1000, -783),
-    Position12 = SetVector(0, 0, 100),
-    Position13 = SetVector(0, 0, 0),
 }
 
 function Save()
@@ -190,6 +185,12 @@ function Start()
 
 	M.Object_Radar1 = GetHandle("Radar1");
     M.Object_Radar2 = GetHandle("Radar2");
+	
+	M.Position1 = GetPosition("landing_zone");
+	M.Position2 = GetPosition(M.Object_ServiceBay);
+	M.Position3 = GetPosition("hardin_spawn");
+	M.Position4 = GetPosition("red_spawn");
+	M.Position5 = GetPosition("blue_spawn");
     
     GLOBAL_lock(_G); --prevents script from accidentally creating new global variables.
 end
@@ -263,12 +264,6 @@ function Routine1()
             M.Routine1State = M.Routine1State + 1;
         elseif (M.Routine1State == 5) then
             M.Object_CarrierLaunchCamDummy = BuildObjectAndLabel("dummy", 2, M.Position11, "Dummy 1");
-
-            M.Position1 = GetPosition("landing_zone");
-            M.Position2 = GetPosition(M.Object_ServiceBay);
-            M.Position3 = GetPosition("hardin_spawn");
-            M.Position4 = GetPosition("red_spawn");
-            M.Position5 = GetPosition("blue_spawn");
             
 			SetGroup(M.Object_WyndtEssex, 10);
             SetObjectiveName(M.Object_WyndtEssex, "Wyndt-Essex");
