@@ -8,7 +8,6 @@ local UP_VECTOR = SetVector(0,1,0);
 
 -- Moved constant Vectors to constants. No need to save/load them if they never change. -GBD
 local Position6 = SetVector(1040, 0, 880); --1024, 47.286, 880); --1024, -7.04959, 880); --1036,42,872);	--"breach7z" spawn location
-local Position7 = SetVector(1040, 50, 880); --1024, 50.5166, 880), --SetVector(1036, 49, 879), --check terrain height here to see if we need to build another breach7z
 local Position23 = SetVector(0, 10, 10);	--used for cam offset in routine20
 local Position28 = SetVector(817, 53, 851);	--move target for routine16
 local Position29 = SetVector(-1544, 104, -948);	--move target for routine17
@@ -172,13 +171,8 @@ local M = {
 	Position2 = SetVector(0,0,0),	--bridge seg 1 pos
 	Position3 = SetVector(0,0,0),	--bridge seg 2 pos
 	Position4 = SetVector(0,0,0),	--bridge seg 3 pos
-	Position6 = nil, --SetVector(1040, 0, 880), --1036,42,872),	--"breach7z" spawn location
-	Position7 = nil, --SetVector(1040, 50, 880), --SetVector(1036, 49, 879), --check terrain height here to see if we need to build another breach7z
 	Position17 = SetVector(0,0,0),	--Shultz spawn location
 	Position18 = SetVector(0,0,0),	--Cerb transport move target
-	Position23 = nil, --SetVector(0,10,10),	--used for cam offset in routine20
-	Position28 = nil, --SetVector(817,53,851),	--move target for routine16
-	Position29 = nil, --SetVector(-1544,104,-948),	--move target for routine17
 	Position30 = SetVector(0,0,0),	--move to position for tug service pods
 	endme = 0
 }
@@ -197,6 +191,11 @@ function Load(...)
     if select('#', ...) > 0 then
 		M = ...;
     end
+	
+	-- Special note: Terrain resets on load, so after everything is loaded, re-stamp terrain if the mission was past that point.
+	if M.Routine14State >= 34 then
+		EDF07NukeTerrain();
+	end
 end
 
 function InitialSetup()
@@ -2133,7 +2132,7 @@ function Routine14()
 			SetColorFade(4, 0.2, Make_RGBA(0,0,0,255));
 			--need to use the matrix version of BuildObject here, since the vector version 
 			--will place it at the terrain height rather than the actual position we want!
-			M.Breach = BuildObject("breach7z", 0, BuildDirectionalMatrix(Position6));
+			EDF07NukeTerrain();
 			M.Routine14State = M.Routine14State + 1;
 			M.Routine14Timer = GetTime() + 1;
 		elseif M.Routine14State == 33 then
@@ -2145,8 +2144,6 @@ function Routine14()
 				M.Routine14State = M.Routine14State + 1;
 			end
 		elseif M.Routine14State == 34 then
-			RemoveObject(M.Breach);
-			M.Breach = BuildObject("smokeb2", 0, Position6);
 			M.Routine14State = M.Routine14State + 1;
 		elseif M.Routine14State == 35 then
 			StopEarthQuake();
@@ -2192,12 +2189,6 @@ function Routine14()
 					M.SirenRespawnTimer = GetTime() + 70;	--bumped up from 60
 				end
 			end
-			if TerrainFindFloor(Position7) > 75 then
-				--if you save and reload the game, the terrain resets, so we need to check for this
-				--and build another "breach7z" if necessary.
-				M.Breach = BuildObject("breach7z", 0, BuildDirectionalMatrix(Position6));
-				M.Routine14State = 40;
-			end	
 		elseif M.Routine14State == 39 then	--LOC_1259
 			if GetCockpitTimer() <= 1 then
 				if GetMaxHealth(M.Player) < 500 then
@@ -2215,9 +2206,6 @@ function Routine14()
 					end
 				end
 			end
-		elseif M.Routine14State == 40 then
-			RemoveObject(M.Breach);
-			M.Routine14State = 38;
 		end
 	end
 end
@@ -2354,4 +2342,10 @@ function CheckStuffIsAlive()
 			M.MissionOver = true;
 		end
 	end
+end
+
+function EDF07NukeTerrain()
+	M.Breach = BuildObject("breach7z", 0, BuildDirectionalMatrix(Position6));
+	RemoveObject(M.Breach);
+	M.Breach = BuildObject("smokeb2", 0, Position6);
 end
