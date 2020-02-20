@@ -305,7 +305,16 @@ function Teleport(h, dest, offset)
 	-- Simpler, Transform based code. -GBD
 	BuildObject("teleportin", 0, GetPosition(h));
 	
-	local pos = GetTransform(dest);
+	local pos = nil;
+	if type(dest) == "string" then
+		-- If we are a path point then make a new matrix with no directional data
+		pos = BuildDirectionalMatrix(GetPosition(dest), nil);
+	elseif IsAround(dest) then
+		pos = GetTransform(dest);
+	else
+		return nil;
+	end
+
 	pos.posit = pos.posit + pos.front * offset;
 	pos.posit.y = pos.posit.y + 5;
 	
