@@ -1,13 +1,13 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
-local Position7 = SetVector( -2,2,-5),	--CameraOf offset
-local Position8 = SetVector( 5,2,2),		--CameraOf offset
-local Position9 = SetVector( 160,160,80),		--offset for CamPos
-local Position10 = SetVector( 20,25,-70),		--move to for CamPos
-local Position11 = SetVector( 140,100,140),	--CameraObject offset
-local Position13 = SetVector( 0,100,100),		--offset for CamPos
-local Position14 = SetVector( 150,180,150),	--move to for CamPos
+local Position7 = SetVector( -2,2,-5);	--CameraOf offset
+local Position8 = SetVector( 5,2,2);		--CameraOf offset
+local Position9 = SetVector( 160,160,80);		--offset for CamPos
+local Position10 = SetVector( 20,25,-70);		--move to for CamPos
+local Position11 = SetVector( 140,100,140);	--CameraObject offset
+local Position13 = SetVector( 0,100,100);		--offset for CamPos
+local Position14 = SetVector( 150,180,150);	--move to for CamPos
 
 local M = {
 -- Bools

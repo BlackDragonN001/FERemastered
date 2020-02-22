@@ -3,8 +3,8 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
-local Position11 = SetVector(-674, 1000, -783),
-local Position12 = SetVector(0, 0, 100),
+local Position11 = SetVector(-674, 1000, -783);
+local Position12 = SetVector(0, 0, 100);
 
 local M = {
     -- Bools

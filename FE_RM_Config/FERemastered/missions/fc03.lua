@@ -1,10 +1,10 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
-local Position3 = SetVector( 1102,85,1008 ),	--Captured Scion Matriarch location
-local Position4 = SetVector( 762,0,-651 ),	--Portal spawn location
-local Position5 = SetVector( 700,50,521 ),	--Portal spawn location
-local Position6 = SetVector( 386,50,738 ),	--Portal spawn location
+local Position3 = SetVector( 1102,85,1008 );	--Captured Scion Matriarch location
+local Position4 = SetVector( 762,0,-651 );	--Portal spawn location
+local Position5 = SetVector( 700,50,521 );	--Portal spawn location
+local Position6 = SetVector( 386,50,738 );	--Portal spawn location
 
 local M = {
 -- Bools

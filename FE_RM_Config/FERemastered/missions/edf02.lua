@@ -5,9 +5,9 @@ local _FECore = require('_FECore');
 local NUM_PORTALS = 5;
 local NUM_ATTACKERS = 8;
 
-local Position2 = SetVector( -450, -120, -1460 ),	--flying dropship start position
-local Position3 = SetVector( -590, -155, -1190 ),	--flying dropship end position
-local Position4 = SetVector( 420, 0, 920 ),	--deploy base location
+local Position2 = SetVector( -450, -120, -1460 );	--flying dropship start position
+local Position3 = SetVector( -590, -155, -1190 );	--flying dropship end position
+local Position4 = SetVector( 420, 0, 920 );	--deploy base location
 
 local Routines = {};
 

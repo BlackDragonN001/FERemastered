@@ -1,11 +1,11 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
-local Position1 = SetVector(-1403,0,1547),	--Move target for beam fence
-local Position2 = SetVector(-1270,0,1508), --Move target for beam fence
-local Position4 = SetVector(-1692,63,1959), --Cerb spawn
-local Position5 = SetVector(1015,0,8), --Hadean Ally spawn
-local Position6 = SetVector(-1341,93,1301), --Schultz spawn
+local Position1 = SetVector(-1403,0,1547);	--Move target for beam fence
+local Position2 = SetVector(-1270,0,1508); --Move target for beam fence
+local Position4 = SetVector(-1692,63,1959); --Cerb spawn
+local Position5 = SetVector(1015,0,8); --Hadean Ally spawn
+local Position6 = SetVector(-1341,93,1301); --Schultz spawn
 
 local M = {
 -- Bools

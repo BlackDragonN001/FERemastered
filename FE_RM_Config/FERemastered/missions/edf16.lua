@@ -1,11 +1,11 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
-local Position10 = BuildDirectionalMatrix(SetVector(-1000,0,-92)),	--Rebel dropship landing site (matrix)
-local Position11 = BuildDirectionalMatrix(SetVector(-1000,0,165)),	--Loyalist dropship landing site (matrix)
-local Position15 = SetVector(-1000,1000,0),	--Dropship exit target (off map)
-local Position16 = SetVector(0,100,100),	--Camera offset in final cutscene
-local Position23 = SetVector(0,0,3),	--Camera offset in final cutscene
+local Position10 = BuildDirectionalMatrix(SetVector(-1000,0,-92));	--Rebel dropship landing site (matrix)
+local Position11 = BuildDirectionalMatrix(SetVector(-1000,0,165));	--Loyalist dropship landing site (matrix)
+local Position15 = SetVector(-1000,1000,0);	--Dropship exit target (off map)
+local Position16 = SetVector(0,100,100);	--Camera offset in final cutscene
+local Position23 = SetVector(0,0,3);	--Camera offset in final cutscene
 
 local EvacuateBlacklist = { --Anything not on this list will be evacuated.
 	["ivturr.odf"]=true, 

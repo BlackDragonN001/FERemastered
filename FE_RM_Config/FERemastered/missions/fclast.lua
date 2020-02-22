@@ -4,10 +4,10 @@ local _FECore = require('_FECore');
 local NUM_POWERGLOBES = 4;
 local NUM_BOLTMINES = 20;
 
-local Position5 = SetVector( 90,80,40 ),	--CamPos offset 1
-local Position6 = SetVector( -20,10,5 ),	--CamPos offset 2
-local Position8 = SetVector( 40,250,40 ),	--CamPos offset 1
-local Position9 = SetVector( -40,40,40 ),	--CamPos offset 2
+local Position5 = SetVector( 90,80,40 );	--CamPos offset 1
+local Position6 = SetVector( -20,10,5 );	--CamPos offset 2
+local Position8 = SetVector( 40,250,40 );	--CamPos offset 1
+local Position9 = SetVector( -40,40,40 );	--CamPos offset 2
 
 --Routines
 local Routines = {};
