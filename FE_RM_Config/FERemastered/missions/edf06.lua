@@ -185,7 +185,7 @@ function Update()
 			M.DoRadioInterference = true; --RunSpeed,_Routine6,4,true
 			M.WindexNag = true; 	--RunSpeed,_Routine5,1,true
 			ClearObjectives();
-			AddObjective(_Text9, "white");
+			AddObjective("edf0609.otf", "white");
 			M.InterferenceNav = BuildObject("ibnav", 1, "relay");
 			SetObjectiveName(M.InterferenceNav, "Source");
 			SetObjectiveOn(M.InterferenceNav);
