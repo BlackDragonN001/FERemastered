@@ -1,21 +1,20 @@
 // (c) BZ2CP unit "Xares"
-// Mesh - Slaor, Pastell
-// Skin - Slaor
-// Skin map, odf, model adaptation, animations - Pastell
-// voice acting - Firebird  voice effects - Chipotle
+// Original Concept: Slaor and Pastell
+// Voice acting - Firebird  voice effects - Chipotle
+// FE Remastered Model and Texture: Jayden Hopkins
 
 [GameObjectClass]
 baseName = "evtank"
-geometryName = "evtank00.xsi"
+geometryName = "evtank00.fbx"
 CockpitName = "evtank_cockpit.xsi" // cockpit – Tempest storm
 classLabel = "wingman"
 animCount = 3
 animName1 = "forward"
-animFile1 = "evtanksf.xsi"
+animFile1 = "evtanksf.fbx"
 animName2 = "neutral"
-animFile2 = "evtanksn.xsi"
+animFile2 = "evtanksn.fbx"
 animName3 = "reverse"
-animFile3 = "evtanksr.xsi"
+animFile3 = "evtanksr.fbx"
 scrapValue = 25
 scrapCost = 55		
 customCost = 55
@@ -54,14 +53,32 @@ weaponAssault1 = 0
 weaponHard2 = "HP_GUN_1"
 weaponName2 = "gcphcg_c"
 weaponAssault2 = 0
+recoilName2 = "recoil_r"
+recoilDist2 = -0.3f
 weaponHard3 = "HP_GUN_2"
 weaponName3 = "gcphcg_c"
 weaponAssault3 = 0
+recoilName3 = "recoil_l"
+recoilDist3 = -0.3f
 weaponHard4 = "HP_SPECIAL_1"
 weaponName4 = "gproxmin"
 weaponAssault4 = 0
 
 ////////////////////////////////////
+
+// Dust fx.
+effectHard1 = "hp_com_1"
+effectName1 = "dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectFlags1 = 2147483135 // thrusting only.
+
+// Engine flame glow.
+effectHard2 = "hp_emit_1"
+effectName2 = "engglow_e.small"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 5.0
+effectFlags2 = 2147483135 // thrusting only.
 
 [CraftClass]
 rangeScan = 325.0f
