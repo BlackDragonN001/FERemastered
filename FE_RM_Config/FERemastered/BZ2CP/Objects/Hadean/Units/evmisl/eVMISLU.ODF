@@ -1,7 +1,3 @@
-// (c) BZ2CP Unit "Zeus"
-// Mesh, skin - Slaor
-// Skin Map, odf, model adaptation, animations - Pastell
-
 [GameObjectClass]
 baseName = "evmislu"
 classLabel = "evmisl"
@@ -24,15 +20,15 @@ requireText2 = "Build Arsenal"
 /////// Weapons ///////////////////
 
 weaponMask = 00001
-weaponHard1 = "HP_ROCKET_1"
 weaponName1 = "gsprink_c"
-weaponAssault1 = 0
 weaponHard2 = "HP_ROCKET_2"
 weaponName2 = "gsprink_c"
-weaponAssault2 = 0
+recoilName2 = "recoil_02"
 weaponHard3 = "HP_ROCKET_3"
 weaponName3 = "gsprink_a"
 weaponAssault3 = 1
+recoilName3 = "recoil_03"
+recoilDist3 = 0.3f
 weaponHard4 = "HP_SPECIAL_1"
 weaponName4 = "gsnare"
 weaponAssault4 = 0

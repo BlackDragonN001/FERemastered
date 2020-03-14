@@ -1,18 +1,18 @@
-// (c) BZ2CP Unit "Zeus"
-// Mesh, skin - Slaor
-// Skin Map, odf, model adaptation, animations - Pastell
+// (c) BZ2CP unit "Zeus"
+// Original Concept: Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
 
 [GameObjectClass]
 baseName = "evmisl"
-geometryName = "evmisl00.xsi"
+geometryName = "evmisl00.fbx"
 CockpitName = "evmisl_cockpit.xsi" // cockpit – Tempest storm
 animCount = 3
 animName1 = "forward"
-animFile1 = "evmislsf.xsi"
+animFile1 = "evmislsf.fbx"
 animName2 = "neutral"
-animFile2 = "evmislsn.xsi"
+animFile2 = "evmislsn.fbx"
 animName3 = "reverse"
-animFile3 = "evmislsr.xsi"
+animFile3 = "evmislsr.fbx"
 classLabel = "wingman"
 scrapValue = 25
 scrapCost = 55
@@ -52,11 +52,29 @@ weaponMask = 00001
 weaponHard1 = "HP_ROCKET_1"
 weaponName1 = "gcpworm_c"
 weaponAssault1 = 0
+recoilName1 = "recoil_01"
+recoilDist1 = 0.3f
 weaponHard2 = "HP_ROCKET_3"
 weaponName2 = "gcpworm_c"
 weaponAssault2 = 0
+recoilName2 = "recoil_03"
+recoilDist2 = 0.3f
 
 ////////////////////////////////////
+
+// Dust fx.
+effectHard1 = "hp_com_1"
+effectName1 = "dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectFlags1 = 2147483135 // thrusting only.
+
+// Engine flame glow.
+effectHard2 = "hp_emit_01"
+effectName2 = "engglow_e.small"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 5.0
+effectFlags2 = 2147483135 // thrusting only.
 
 [CraftClass]
 rangeScan = 325.0f
