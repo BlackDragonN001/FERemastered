@@ -240,7 +240,7 @@ function HandleIntro(R, STATE)
 		M.CameraEndTime = GetTime() + 18;
 		Advance(R);
 	elseif STATE == 4 then
-		CameraObject(M.Dropship, M.Position1, M.ShultzPilot);
+		CameraObject(M.Dropship, Position1, M.ShultzPilot);
 		if M.CameraEndTime < GetTime() then
 			CameraFinish();
 			Advance(R, 2.0);

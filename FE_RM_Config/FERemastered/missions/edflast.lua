@@ -425,7 +425,7 @@ function Routine1()
 				M.Routine1State = M.Routine1State + 2;
 			end
 		elseif M.Routine1State == 13 then
-			CameraOf(M.Scout1, M.Position7);
+			CameraOf(M.Scout1, Position7);
 			if M.CameraEndTime < GetTime() then
 				CameraFinish();
 				Goto(M.Scout1, "Friend1", 0);
@@ -468,7 +468,7 @@ function Routine1()
 			M.CameraEndTime = GetTime() + 7;
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 19 then
-			CameraOf(M.Scout2, M.Position8);
+			CameraOf(M.Scout2, Position8);
 			if M.CameraEndTime < GetTime() then
 				CameraFinish();
 				SetUserTarget(M.NexusTube);
@@ -529,7 +529,7 @@ function Routine2()
 			CameraReady();
 			M.Routine2State = M.Routine2State + 1;
 		elseif M.Routine2State == 2 then
-			if CameraPos(M.CamNav, M.CamNav, M.Position9, M.Position10, 1500) or CameraCancelled() then
+			if CameraPos(M.CamNav, M.CamNav, Position9, Position10, 1500) or CameraCancelled() then
 				CameraFinish();
 				ClearObjectives();
 				AddObjective("edflast02.otf", "white");
@@ -543,7 +543,7 @@ function Routine2()
 			CameraReady();
 			M.Routine2State = M.Routine2State + 1;
 		elseif M.Routine2State == 4 then
-			if CameraPos(M.NexusHangar, M.NexusHangar, M.Position13, M.Position14, 900.0) or CameraCancelled() then
+			if CameraPos(M.NexusHangar, M.NexusHangar, Position13, Position14, 900.0) or CameraCancelled() then
 				CameraFinish();
 				M.Routine2State = M.Routine2State + 1;
 			end
@@ -555,7 +555,7 @@ function Routine2()
 				M.Routine2State = M.Routine2State + 1;
 			end
 		elseif M.Routine2State == 6 then
-			CameraObject(M.NexusTube, M.Position11, M.NexusAttacker);
+			CameraObject(M.NexusTube, Position11, M.NexusAttacker);
 			if M.CameraEndTime < GetTime() then
 				CameraFinish();
 				M.Routine2State = M.Routine2State + 1;

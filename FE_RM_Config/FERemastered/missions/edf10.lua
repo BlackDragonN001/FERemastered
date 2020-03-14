@@ -202,11 +202,11 @@ function Routine1()
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 20;
 		elseif M.Routine1State == 4 then
-			M.CerbAttacker1 = BuildObject("cvtank", 4, M.Position4);
+			M.CerbAttacker1 = BuildObject("cvtank", 4, Position4);
 			Goto(M.CerbAttacker1, "ambush", 1);
-			M.CerbAttacker2 = BuildObject("cvtank", 4, M.Position4);
+			M.CerbAttacker2 = BuildObject("cvtank", 4, Position4);
 			Goto(M.CerbAttacker2, "ambush", 1);
-			M.CerbAttacker3 = BuildObject("cvtank", 4, M.Position4);
+			M.CerbAttacker3 = BuildObject("cvtank", 4, Position4);
 			Goto(M.CerbAttacker3, "ambush", 1);
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 55;
@@ -216,14 +216,14 @@ function Routine1()
 			Goto(M.CerbAttacker2, "ambush", 1);
 			Goto(M.CerbAttacker3, "ambush", 1);
 			Ally(1,5);
-			M.HadeanAlly1 = BuildObject("evtanku", 5, M.Position5);
+			M.HadeanAlly1 = BuildObject("evtanku", 5, Position5);
 			SetMaxHealth(M.HadeanAlly1, 5000);	--bumped up the Hadean allies' health so they don't die immediately
 			SetCurHealth(M.HadeanAlly1, 5000);
 			Goto(M.HadeanAlly1, "ambush", 0);
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 3;
 		elseif M.Routine1State == 6 then
-			M.HadeanAlly2 = BuildObject("evtanku", 5, M.Position5);
+			M.HadeanAlly2 = BuildObject("evtanku", 5, Position5);
 			SetMaxHealth(M.HadeanAlly2, 5000); 	--bumped up the Hadean allies' health so they don't die immediately
 			SetCurHealth(M.HadeanAlly2, 5000);
 			Goto(M.HadeanAlly2, "ambush", 0);
@@ -325,9 +325,9 @@ function Routine1()
 			Ally(3, 2);
 			Ally(3, 4);
 			Ally(1, 3);
-			M.Schultz = BuildObject("ivshul2", 3, M.Position6);
+			M.Schultz = BuildObject("ivshul2", 3, Position6);
 			SetObjectiveOn(M.Schultz);
-			M.CerbGuard = BuildObject("cvrbomb", 4, M.Position6);
+			M.CerbGuard = BuildObject("cvrbomb", 4, Position6);
 			Defend2(M.CerbGuard, M.Schultz, 0);
 			M.CheckSchultz = true; --RunSpeed,_Routine4,1,true
 			AddObjective("edf1008.otf", "white");
@@ -442,13 +442,13 @@ function Routine7()
 				M.Routine7State = M.Routine7State + 1;
 			end
 		elseif M.Routine7State == 1 then
-			if Move(M.BeamFence1, M.Variable7, M.Variable8, M.Position1) then
+			if Move(M.BeamFence1, M.Variable7, M.Variable8, Position1) then
 				M.BeamFence1 = BuildObject("beamfence10", 4, "gate2");
 				M.Routine7State = M.Routine7State + 1;
 				M.Routine7Timer = GetTime() + 2;
 			end
 		elseif M.Routine7State == 2 then
-			if Move(M.BeamFence1, M.Variable7, M.Variable8, M.Position2) then
+			if Move(M.BeamFence1, M.Variable7, M.Variable8, Position2) then
 				M.Routine7State = 0;
 				M.Routine7Timer = GetTime() + 10;
 			end
@@ -465,7 +465,7 @@ function Routine8()
 				M.Routine8State = M.Routine8State + 1;
 			end
 		elseif M.Routine8State == 1 then
-			if Move(M.BeamFence2, M.Variable5, M.Variable6, M.Position1) then
+			if Move(M.BeamFence2, M.Variable5, M.Variable6, Position1) then
 				M.Routine8State = 0;
 				M.Routine8Timer = GetTime() + 10;
 			end

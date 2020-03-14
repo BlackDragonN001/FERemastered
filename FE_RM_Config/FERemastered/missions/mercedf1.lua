@@ -263,7 +263,7 @@ function Routine1()
             
             M.Routine1State = M.Routine1State + 1;
         elseif (M.Routine1State == 5) then
-            M.Object_CarrierLaunchCamDummy = BuildObjectAndLabel("dummy", 2, M.Position11, "Dummy 1");
+            M.Object_CarrierLaunchCamDummy = BuildObjectAndLabel("dummy", 2, Position11, "Dummy 1");
             
 			SetGroup(M.Object_WyndtEssex, 10);
             SetObjectiveName(M.Object_WyndtEssex, "Wyndt-Essex");
@@ -356,7 +356,7 @@ function Routine1()
             end
         elseif (M.Routine1State == 14) then
             if (GetTime() >= M.convoyWaitTillTime) then
-                M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, M.Position12, "Nadir 1");
+                M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, Position12, "Nadir 1");
 
                 SetPerceivedTeam(M.Object_Nadir1, 1);
                 Attack(M.Object_Nadir1, M.Object_Cargo2, 1);
@@ -633,7 +633,7 @@ function Routine3()
             
             AudioMessage("mercury_04.wav");
             
-            M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, M.Position12, "Nadir 1");
+            M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, Position12, "Nadir 1");
             
 			Attack(M.Object_Nadir1, M.Object_WyndtEssex, 1);
             Goto(M.Object_WyndtEssex, "rod1", 1);

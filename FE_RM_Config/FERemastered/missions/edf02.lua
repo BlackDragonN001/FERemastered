@@ -199,8 +199,8 @@ function HandleMainState(R, STATE)
 		M.StayPut = BuildObjectAndLabel("stayput", 0, GetTransform(M.Player), "Stayput 1");
 		Stop(M.Recycler, 1);
 		StartEarthQuake(10.0);
-		M.DropshipFlying = BuildObjectAndLabel("ivdrop_fly", 0, M.Position2, "Dropship Flying");
-		-- SetObjectiveName(BuildObjectAndLabel("ibnav", 1, M.Position2), "Position2"); - Not sure why this is needed? - AI_Unit
+		M.DropshipFlying = BuildObjectAndLabel("ivdrop_fly", 0, Position2, "Dropship Flying");
+		-- SetObjectiveName(BuildObjectAndLabel("ibnav", 1, Position2), "Position2"); - Not sure why this is needed? - AI_Unit
 		Advance(R, 7.0);
 	elseif STATE == 1 then
 		AudioMessage("edf02_01.wav");	--Pilot:"That blast came awfully close..."
@@ -211,7 +211,7 @@ function HandleMainState(R, STATE)
 		CameraReady();
 		Advance(R);
 	elseif STATE == 3 then
-		Move2(M.DropshipFlying, 0.0, 30.0, TerrainFloor(M.Position3));
+		Move2(M.DropshipFlying, 0.0, 30.0, TerrainFloor(Position3));
 		if CameraPath("CamPath", 5500, 3200, M.DropshipFlying) 
 		or CameraCancelled() then
 			CameraFinish();
@@ -451,7 +451,7 @@ function OnPortalDist(portal, h)
 	if GetCfg(h) == "ivrecy" then
 		if not M.RecyTeleported then
 			SetObjectiveOff(M.Portals[1]);
-			M.BaseNav = BuildObjectAndLabel("ibnav", 1, M.Position4, "Base Location");
+			M.BaseNav = BuildObjectAndLabel("ibnav", 1, Position4, "Base Location");
 			SetObjectiveName(M.BaseNav, "Deploy Base");
 			SetObjectiveOn(M.BaseNav);
 			Teleport(h, M.Portals[2], 30);

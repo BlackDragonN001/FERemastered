@@ -255,7 +255,7 @@ function Routine1(R, STATE)
 		CameraReady();
 		Advance(R);
 	elseif STATE == 5 then
-		if CameraPos(M.Object12, M.Object12, M.Position5, M.Position6, 900) or CameraCancelled() then
+		if CameraPos(M.Object12, M.Object12, Position5, Position6, 900) or CameraCancelled() then
 			CameraFinish();
 			SetPosition(M.Object11, M.Position7);
 			Patrol(M.Object12, "SchulzPath", 0);
@@ -445,7 +445,7 @@ function Routine8(R, STATE)
 			Move(M.Object1, 0, M.Variable1, M.Position2);
 			M.Variable1 = math.min(600, M.Variable1 + 2);
 		end
-		if CameraPos(M.Object1, M.Object1, M.Position8, M.Position9, 400) then
+		if CameraPos(M.Object1, M.Object1, Position8, Position9, 400) then
 			CameraFinish();
 			Advance(R);
 		end

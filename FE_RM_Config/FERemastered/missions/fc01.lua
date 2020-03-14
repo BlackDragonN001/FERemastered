@@ -434,7 +434,7 @@ function Routine1()
 			M.CameraEndTime = GetTime() + 7;
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 19 then
-			CameraObject(M.Object25, M.Position5, M.Object25);
+			CameraObject(M.Object25, Position5, M.Object25);
 			if M.CameraEndTime < GetTime() or CameraCancelled() then
 				CameraFinish();
 				M.Routine1State = M.Routine1State + 1;
@@ -487,7 +487,7 @@ function Routine1()
 			CameraReady();
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 26 then
-			if CameraPos(M.Object30, M.Object30, M.Position6, M.Position7, 30) then
+			if CameraPos(M.Object30, M.Object30, Position6, Position7, 30) then
 				CameraFinish();
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 13;--16

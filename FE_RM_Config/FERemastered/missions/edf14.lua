@@ -4,6 +4,8 @@ local _FECore = require('_FECore');
 local NUM_PATROLS = 5;	--pairs of Hadean scouts that will try to warn their base if attacked
 local NUM_JAMMERS = 5;
 
+local Position2 = SetVector(-430,100,-720);	--Pilots spawn location
+
 local M = {
 -- Bools
 	MissionOver = false,
@@ -42,8 +44,6 @@ local M = {
 	Variable5 = 0,	--whether player is using Cerb units to attack
 	Variable8 = 0,	--Player warned about not using Cerb units to attack gtows
 
---Vectors
-	Position2 = SetVector(-430,100,-720),	--Pilots spawn location
 --End
 	endme = 0
 }
@@ -132,7 +132,7 @@ end
 function PreSnipe(curWorld, shooterHandle, victimHandle, ordnanceTeam, ordnanceODF)
 	if GetOdf(victimHandle) == "evscout.odf" then
 		--spawn EDF pilot to commandeer the sniped ship
-		local pilot = BuildObject("ispilo", 2, M.Position2);
+		local pilot = BuildObject("ispilo", 2, Position2);
 		SetIndependence(pilot, 0);	--stops pilots from sometimes trying to attack the empty ships instead of getting in
 		Goto(pilot, victimHandle, 1);
 		SetObjectiveOn(pilot);

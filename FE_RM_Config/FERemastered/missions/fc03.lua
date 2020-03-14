@@ -255,7 +255,7 @@ function Routine1()
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 5;
 		elseif M.Routine1State == 8 then
-			local pos = BuildDirectionalMatrix(TerrainFloor(M.Position4) + SetVector(0, 40, 0));
+			local pos = BuildDirectionalMatrix(TerrainFloor(Position4) + SetVector(0, 40, 0));
 			M.Portal1Aurora1 = BuildObject("aurora1", 5, pos);
 			M.Portal1Aurora2 = BuildObject("aurora2", 5, pos);
 			M.Portal1Aurora3 = BuildObject("aurora3", 5, pos);
@@ -321,7 +321,7 @@ function Routine1()
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 12;
 		elseif M.Routine1State == 17 then
-			local pos = BuildDirectionalMatrix(TerrainFloor(M.Position5) + SetVector(0, 40, 0));
+			local pos = BuildDirectionalMatrix(TerrainFloor(Position5) + SetVector(0, 40, 0));
 			M.Portal1Aurora1 = BuildObject("aurora1", 5, pos);
 			M.Portal1Aurora2 = BuildObject("aurora2", 5, pos);
 			M.Portal1Aurora3 = BuildObject("aurora3", 5, pos);
@@ -336,13 +336,13 @@ function Routine1()
 			RemoveObject(M.Portal1Aurora2);
 			RemoveObject(M.Portal1Aurora3);
 			RemoveObject(M.Portal1Aurora4);
-			M.MatriarchHolder = BuildObject("recfield2", 5, BuildDirectionalMatrix(M.Position3));
+			M.MatriarchHolder = BuildObject("recfield2", 5, BuildDirectionalMatrix(Position3));
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 2;
 		elseif M.Routine1State == 19 then
-			M.Matriarch = BuildObject("fbdummy",6,BuildDirectionalMatrix(M.Position3));
+			M.Matriarch = BuildObject("fbdummy",6,BuildDirectionalMatrix(Position3));
 			Ally(6, 5);
-			local pos = BuildDirectionalMatrix(TerrainFloor(M.Position5) + SetVector(0, 40, 0));
+			local pos = BuildDirectionalMatrix(TerrainFloor(Position5) + SetVector(0, 40, 0));
 			M.Portal1Aurora1 = BuildObject("aurora1", 5, pos);
 			M.Portal1Aurora2 = BuildObject("aurora2", 5, pos);
 			M.Portal1Aurora3 = BuildObject("aurora3", 5, pos);
@@ -526,7 +526,7 @@ function Routine5()
 			end
 		elseif M.Routine5State == 1 then	--LOC_295
 			M.Variable2 = 0;
-			local pos = BuildDirectionalMatrix(TerrainFloor(M.Position5) + SetVector(0,40,0));
+			local pos = BuildDirectionalMatrix(TerrainFloor(Position5) + SetVector(0,40,0));
 			M.Portal1Aurora1 = BuildObject("aurora1", 5, pos);
 			M.Portal1Aurora2 = BuildObject("aurora2", 5, pos);
 			M.Portal1Aurora3 = BuildObject("aurora3", 5, pos);
@@ -565,7 +565,7 @@ function Routine5()
 			RemoveObject(M.Portal1Aurora2);
 			RemoveObject(M.Portal1Aurora3);
 			RemoveObject(M.Portal1Aurora4);
-			local pos = BuildDirectionalMatrix(TerrainFloor(M.Position6) + SetVector(0,40,0));
+			local pos = BuildDirectionalMatrix(TerrainFloor(Position6) + SetVector(0,40,0));
 			M.Portal1Aurora1 = BuildObject("aurora1", 5, pos);
 			M.Portal1Aurora2 = BuildObject("aurora2", 5, pos);
 			M.Portal1Aurora3 = BuildObject("aurora3", 5, pos);
@@ -580,7 +580,7 @@ function Routine5()
 				M.Routine5Timer = GetTime() + 20;
 			end
 		elseif M.Routine5State == 7 then
-			local pos = BuildDirectionalMatrix(TerrainFloor(M.Position5) + SetVector(0,40,0));
+			local pos = BuildDirectionalMatrix(TerrainFloor(Position5) + SetVector(0,40,0));
 			M.Portal2Aurora1 = BuildObject("aurora1", 5, pos);
 			M.Portal2Aurora2 = BuildObject("aurora2", 5, pos);
 			M.Portal2Aurora3 = BuildObject("aurora3", 5, pos);
@@ -637,7 +637,7 @@ function Routine5()
 			RemoveObject(M.Portal1Aurora2);
 			RemoveObject(M.Portal1Aurora3);
 			RemoveObject(M.Portal1Aurora4);
-			local pos = BuildDirectionalMatrix(TerrainFloor(M.Position5) + SetVector(0,40,0));
+			local pos = BuildDirectionalMatrix(TerrainFloor(Position5) + SetVector(0,40,0));
 			M.Portal2Aurora1 = BuildObject("aurora1", 2, pos);
 			M.Portal2Aurora2 = BuildObject("aurora2", 2, pos);
 			M.Portal2Aurora3 = BuildObject("aurora3", 2, pos);
@@ -660,7 +660,7 @@ end
 function Routine7()
 	if M.Routine7Active and M.Routine7Timer < GetTime() then
 		if M.Routine7State == 0 then
-			M.CerbMinelayer = BuildObject("cvmlay03", 5, M.Position5);
+			M.CerbMinelayer = BuildObject("cvmlay03", 5, Position5);
 			Patrol(M.CerbMinelayer, "mine1", 1);
 			M.Routine7State = M.Routine7State + 1;
 			M.Routine7Timer = GetTime() + 20;

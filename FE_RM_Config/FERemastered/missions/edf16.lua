@@ -445,7 +445,7 @@ function Routine1()
 				AudioMessage("edf16_10.wav");	--Hardin:"I've sent the Condor down to pick you up..."
 				ClearObjectives();
 				AddObjective("edf1613.otf", "white");
-				M.Object2 = BuildObject("ivdrop2_ld", 1, M.Position10);
+				M.Object2 = BuildObject("ivdrop2_ld", 1, Position10);
 				SetAnimation(M.Object2, "land", 1);
 				StartAnimation(M.Object2);
 				M.Routine1State = M.Routine1State + 1;
@@ -470,7 +470,7 @@ function Routine1()
 			M.CameraEndTime = GetTime() + 7;
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 22 then
-			CameraObject(M.Object14, M.Position16, M.Object14)
+			CameraObject(M.Object14, Position16, M.Object14)
 			if M.CameraEndTime < GetTime() then
 				local viewstand = GetHandleOrDie("unnamed_viewstand");
 				local pos = GetPosition(viewstand);
@@ -483,7 +483,7 @@ function Routine1()
 				M.Routine1State = M.Routine1State + 1;
 			end
 		elseif M.Routine1State == 23 then
-			if CameraObject(M.Object53, M.Position23, M.Object52) then
+			if CameraObject(M.Object53, Position23, M.Object52) then
 				--CameraFinish();	--camera stays in cutscene mode until mission ends
 				M.Routine1State = 99;
 			end
@@ -529,27 +529,27 @@ function Routine4()
 				CalcCliffs(M.Object14, nil, 400);	--fixes mysterious annoying pathing problems in Hadean base after some buildings are destroyed
 				ClearObjectives();
 				AddObjective("edf1607.otf", "white");
-				M.Object45 = BuildObject("ibnav", 1, M.Position10);
+				M.Object45 = BuildObject("ibnav", 1, Position10);
 				SetObjectiveName(M.Object45, "Rebel Landing Site");
 				SetObjectiveOn(M.Object45);
 				M.Routine4State = M.Routine4State + 1;
 				M.Routine4Timer = GetTime() + 30;				
 			end
 		elseif M.Routine4State == 2 then
-			M.Object16 = BuildObject("evdrop_l2", 6, M.Position10);
+			M.Object16 = BuildObject("evdrop_l2", 6, Position10);
 			SetAnimation(M.Object16, "land", 1);
 			StartAnimation(M.Object16);
 			M.Routine4State = M.Routine4State + 1;
 			M.Routine4Timer = GetTime() + 20;
 		elseif M.Routine4State == 3 then
 			M.Object16 = ReplaceObject(M.Object16, "evdroptf");
-			M.Object17 = BuildObject("evscout", 6, M.Position10);
-			M.Object18 = BuildObject("evscout", 6, M.Position10);
+			M.Object17 = BuildObject("evscout", 6, Position10);
+			M.Object18 = BuildObject("evscout", 6, Position10);
 			SetSkill(M.Object17, 3);
 			SetSkill(M.Object18, 3);
 			SetObjectiveName(M.Object17, "Rebel Tech Officer");
 			SetObjectiveOn(M.Object17);
-			M.Object19 = BuildObject("evdrop_l2", 2, BuildDirectionalMatrix(M.Position11));
+			M.Object19 = BuildObject("evdrop_l2", 2, BuildDirectionalMatrix(Position11));
 			SetAnimation(M.Object19, "land", 1);
 			StartAnimation(M.Object19);
 			SetAnimation(M.Object16, "deploy", 1);
@@ -563,9 +563,9 @@ function Routine4()
 			M.Object19 = ReplaceObject(M.Object19, "evdroptf");
 			SetAnimation(M.Object19, "deploy", 1);
 			StartAnimation(M.Object19);
-			M.Object20 = BuildObject("evscout", 2, M.Position11);
-			M.Object21 = BuildObject("evscout", 2, M.Position11);
-			M.Object22 = BuildObject("evscout", 2, M.Position11);
+			M.Object20 = BuildObject("evscout", 2, Position11);
+			M.Object21 = BuildObject("evscout", 2, Position11);
+			M.Object22 = BuildObject("evscout", 2, Position11);
 			Goto(M.Object20, M.Object17, 1);
 			Goto(M.Object21, M.Object17, 1);
 			Goto(M.Object22, M.Object17, 1);
@@ -599,7 +599,7 @@ function Routine4()
 			M.Variable2 = 30.0;
 			M.Routine4State = M.Routine4State + 1;
 		elseif M.Routine4State == 8 then
-			if Move(M.Object19, 0, M.Variable2, M.Position15) then
+			if Move(M.Object19, 0, M.Variable2, Position15) then
 				RemoveObject(M.Object19);
 				M.Routine4State = M.Routine4State + 1;
 				M.Routine4Timer = GetTime() + 20;	--lowered time Hadean Tech spends waiting from 40s to 20s
@@ -614,7 +614,7 @@ function Routine4()
 				M.Routine4Timer = GetTime() + 2;
 			end
 		elseif M.Routine4State == 11 then
-			if Move(M.Object17, 0, M.Variable2, M.Position10) then
+			if Move(M.Object17, 0, M.Variable2, Position10) then
 				M.CheckRebelTech = false;
 				RemoveObject(M.Object17);
 				RemoveObject(M.Object18);
@@ -627,7 +627,7 @@ function Routine4()
 				M.Routine4State = M.Routine4State + 1;
 			end
 		elseif M.Routine4State == 12 then
-			if Move(M.Object16, 0, M.Variable2, M.Position15) then
+			if Move(M.Object16, 0, M.Variable2, Position15) then
 				RemoveObject(M.Object16);
 				M.Routine4State = M.Routine4State + 1;
 			end
@@ -721,7 +721,7 @@ function Routine6()
 			M.Routine6State = M.Routine6State + 1;
 			M.Routine6Timer = GetTime() + 10;
 		elseif M.Routine6State == 5 then
-			if Move(M.Object34, 0, M.Variable2, M.Position15) then
+			if Move(M.Object34, 0, M.Variable2, Position15) then
 				RemoveObject(M.Object34);
 				M.Routine6State = M.Routine6State + 1;
 				M.Routine6Timer = GetTime() + 420;
@@ -759,7 +759,7 @@ function Routine6()
 			M.Routine6State = M.Routine6State + 1;
 			M.Routine6Timer = GetTime() + 10;
 		elseif M.Routine6State == 10 then
-			if Move(M.Object34, 0, M.Variable2, M.Position15) then
+			if Move(M.Object34, 0, M.Variable2, Position15) then
 				RemoveObject(M.Object34);
 				if M.DownloadFinished then
 					M.Routine6State = M.Routine6State + 1;
@@ -846,7 +846,7 @@ function Routine8()
 			StartAnimation(M.Object44);
 			M.Routine8State = M.Routine8State + 1;
 		elseif M.Routine8State == 4 then
-			if Move(M.Object44, 0, M.Variable2, M.Position15) then
+			if Move(M.Object44, 0, M.Variable2, Position15) then
 				RemoveObject(M.Object44);
 				M.Routine8State = M.Routine8State + 1;
 				M.Routine8Timer = GetTime() + 300;
@@ -895,7 +895,7 @@ function Routine9()
 			StartAnimation(M.Object44);
 			M.Routine9State = M.Routine9State + 1;
 		elseif M.Routine9State == 6 then
-			if Move(M.Object44, 0, M.Variable2, M.Position15) then
+			if Move(M.Object44, 0, M.Variable2, Position15) then
 				RemoveObject(M.Object44);
 				M.Routine9State = 2;--to LOC_459
 				M.Routine9Timer = GetTime() + 50;

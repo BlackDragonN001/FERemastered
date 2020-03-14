@@ -226,7 +226,7 @@ function HandleMainState(R, STATE)
 		SetObjectiveOn(M.BaseNav);
 		Advance(R, 20.0);
 	elseif STATE == 2 then
-		M.HadeanScout = BuildObjectAndLabel("evscout", 2, M.Position8, "Hadean Scout 1");
+		M.HadeanScout = BuildObjectAndLabel("evscout", 2, Position8, "Hadean Scout 1");
 		Attack(M.HadeanScout, M.Recycler, 1);
 		AudioMessage("edf0302.wav");	--Stewart:"Heads up. Hostiles incoming."
 		Advance(R, 10.0);
@@ -239,13 +239,13 @@ function HandleMainState(R, STATE)
 			Advance(R, 10.0);
 		end
 	elseif STATE == 5 then
-		Attack(BuildObjectAndLabel("evscout", 2, M.Position9, "Hadean Scout 2"), M.Recycler, 1);
+		Attack(BuildObjectAndLabel("evscout", 2, Position9, "Hadean Scout 2"), M.Recycler, 1);
 		Advance(R, 15.0);
 	elseif STATE == 6 then
 		AudioMessage("edf0305.wav");	--Stewart:"Hold on Corber, here comes another attack wave"
 		Advance(R, 60.0);
 	elseif STATE == 7 then
-		Attack(BuildObjectAndLabel("evscout", 2, M.Position9, "Hadean Scout 3"), M.Recycler, 1);
+		Attack(BuildObjectAndLabel("evscout", 2, Position9, "Hadean Scout 3"), M.Recycler, 1);
 		Attack(BuildObjectAndLabel("evscout", 2, "stage1", "Hadean Scout 4"), M.Recycler, 1);
 		Advance(R, 60.0);
 	elseif STATE == 8 then	--LOC_54
@@ -298,7 +298,7 @@ function HandleMainState(R, STATE)
 	elseif STATE == 16 then
 		ClearObjectives();
 		AddObjective("edf0303.otf", "white");
-		M.CanyonNav = BuildObjectAndLabel("ibnav", 1, M.Position12, "Canyon Nav");
+		M.CanyonNav = BuildObjectAndLabel("ibnav", 1, Position12, "Canyon Nav");
 		SetObjectiveName(M.CanyonNav, "Canyon Blockage");
 		SetObjectiveOn(M.CanyonNav);
 		BuildObjectAndLabel("apsatc", 1, "satchelspawn3", "Satchel Pack");
@@ -319,7 +319,7 @@ function HandleMainState(R, STATE)
 			AudioMessage("edf0311.wav");	--Stewart:"Our map shows abandoned structures at the other end of the canyon..."
 			RemoveObject(M.SatchelPickupNav);
 			RemoveObject(M.CanyonNav);
-			M.CityRuinsNav = BuildObjectAndLabel("ibnav", 1, M.Position14, "City Ruins Nav");
+			M.CityRuinsNav = BuildObjectAndLabel("ibnav", 1, Position14, "City Ruins Nav");
 			SetObjectiveName(M.CityRuinsNav, "cityruins");
 			SetObjectiveOn(M.CityRuinsNav);
 			Advance(R);
@@ -346,7 +346,7 @@ function HandleMainState(R, STATE)
 	elseif STATE == 23 then
 		if CameraPath("megacam", 1000, 1200, M.MegaPower) or CameraCancelled() then
 			CameraFinish();
-			M.MegaPowerNav = BuildObjectAndLabel("ibnav", 1, M.Position13, "Mega Power Nav");
+			M.MegaPowerNav = BuildObjectAndLabel("ibnav", 1, Position13, "Mega Power Nav");
 			ClearObjectives();
 			AddObjective("edf0306.otf", "white");
 			SetObjectiveName(M.MegaPowerNav, "power disturbance");

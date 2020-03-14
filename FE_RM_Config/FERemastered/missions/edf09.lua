@@ -181,7 +181,7 @@ function Routine2()
 				M.Routine2Timer = GetTime() + 200;
 			end
 		elseif M.Routine2State == 3 then
-			Attack(BuildObject("cvscout", 5, M.Position3), M.Recycler, 1);
+			Attack(BuildObject("cvscout", 5, Position3), M.Recycler, 1);
 			Stop(M.Recycler, 1);
 			AudioMessage("edf09t.wav");
 			ClearObjectives();
@@ -189,12 +189,12 @@ function Routine2()
 			M.MLight = BuildObject("mlight", 5, "mlight");
 			M.Routine2State = M.Routine2State + 1;
 		elseif M.Routine2State == 4 then
-			if Move(M.MLight, M.Variable2, M.Variable3, M.Position7) then
+			if Move(M.MLight, M.Variable2, M.Variable3, Position7) then
 				M.Routine2State = M.Routine2State + 1;
 				M.Routine2Timer = GetTime() + 50;
 			end
 		elseif M.Routine2State == 5 then
-			Attack(BuildObject("cvgdron", 5, M.Position3), M.Recycler, 0);
+			Attack(BuildObject("cvgdron", 5, Position3), M.Recycler, 0);
 			M.Routine2State = M.Routine2State + 1;
 			M.Routine2Timer = GetTime() + 50;
 		elseif M.Routine2State == 6 then
@@ -294,7 +294,7 @@ function Routine3()
 			M.Routine3State = M.Routine3State + 1;
 			M.Routine3Timer = GetTime() + 2;
 		elseif M.Routine3State == 4 then
-			local h = BuildObject("cvtank", 5, M.Position3);
+			local h = BuildObject("cvtank", 5, Position3);
 			--GiveWeapon(h, "gclaser_c");	--cvtank doesn't have a gun slot???
 			Attack(h, M.Recycler, 0);
 			UpdateEarthQuake(15.0);
@@ -308,8 +308,8 @@ function Routine3()
 			BuildObject("vsmoke", 5, "vol1");
 			BuildObject("vfire", 5, "vol2");
 			BuildObject("vsmoke", 5, "vol2");
-			BuildObject("vfire", 5, M.Position4);
-			BuildObject("vsmoke", 5, M.Position4);
+			BuildObject("vfire", 5, Position4);
+			BuildObject("vsmoke", 5, Position4);
 			--local pos = GetPosition(GetHandle("pool"));	--doesn't exist
 			--BuildObject("meteor", 5, pos);
 			M.Routine3State = M.Routine3State + 1;
@@ -338,7 +338,7 @@ function Routine3()
 			if IsAround(M.RecyDeployed) then
 				M.Routine3State = 7; --to LOC_130
 			else
-				local h = BuildObject("cvdcar", 5, M.Position3);
+				local h = BuildObject("cvdcar", 5, Position3);
 				--GiveWeapon(h, "gclaser_c");	--cvdcar doesn't have a gun slot???
 				Attack(h, M.Recycler, 0);
 				M.Routine3State = M.Routine3State + 1;
@@ -359,10 +359,10 @@ function Routine4()
 				M.Routine4State = M.Routine4State + 1;
 			end
 		elseif M.Routine4State == 2 then	--LOC_150
-			Attack(BuildObject("cvrbomb", 5, M.Position2), M.Recycler, 1);
-			Attack(BuildObject("cvrbomb", 5, M.Position2), M.Recycler, 0);
-			Attack(BuildObject("cvtank", 5, M.Position2), M.Recycler, 0);
-			Attack(BuildObject("cvtank", 5, M.Position2), M.Recycler, 0);
+			Attack(BuildObject("cvrbomb", 5, Position2), M.Recycler, 1);
+			Attack(BuildObject("cvrbomb", 5, Position2), M.Recycler, 0);
+			Attack(BuildObject("cvtank", 5, Position2), M.Recycler, 0);
+			Attack(BuildObject("cvtank", 5, Position2), M.Recycler, 0);
 			M.Routine4Timer = GetTime() + 60;
 		end
 	end
