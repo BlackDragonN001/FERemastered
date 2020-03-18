@@ -36,6 +36,15 @@ provideCount = 2
 provideName1 = "evserv"
 provideName2 = "VIRTUAL_CLASS_SERVICETRUCK"
 
+effectHard1 = "hp_emit_1"
+effectName1 = "dusttrail2"
+effectMinVelocity1 = 5.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_emit_2"
+effectName2 = "dusttrail2"
+effectMinVelocity2 = 5.0
+effectMaxVelocity2 = 500.0
+
 [CraftClass]
 rangeScan = 300.0f
 periodScan = 5.0f
