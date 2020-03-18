@@ -38,7 +38,16 @@ provideName2 = "VIRTUAL_CLASS_SCAVENGER"
 /////// Lights ///////////////////
 lightHard1 = "hp_light_1"
 lightName1 = "spotblue2"
-LightsOnlyWhenPiloted = true 
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_emit_1"
+effectName1 = "dusttrail3"
+effectMinVelocity1 = 5.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_emit_2"
+effectName2 = "dusttrail3"
+effectMinVelocity2 = 5.0
+effectMaxVelocity2 = 500.0
 
 [CraftClass]
 rangeScan = 200.0
@@ -91,7 +100,7 @@ soundUndeploy = "trundepl.wav"
 soundPickup = "suck.wav"
 scrapHold = 20
 deployClass = "ebscav"
-deployOffset = 3.6
+deployOffset = 3.25
 //scrapFirst = true
 
 BeamColor = "204 153 101 31"
