@@ -32,6 +32,15 @@ provideName2 = "evrecycpu"
 provideName3 = "VIRTUAL_CLASS_RECYCLER"
 provideName4 = "VIRTUAL_CLASS_RECYCLERVEHICLE"
 
+effectHard1 = "hp_emit_1"
+effectName1 = "dusttrailrec"
+effectMinVelocity1 = 2.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_emit_2"
+effectName2 = "dusttrailrec"
+effectMinVelocity2 = 2.0
+effectMaxVelocity2 = 500.0
+
 [CraftClass]
 rangeScan = 400.0f
 periodScan = 5.0f
