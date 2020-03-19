@@ -1,10 +1,5 @@
-// (c) BZ2CP unit "Hedoux"
-// Created by Slaor and Pastell
-// Vehicle V/O's - Zeeder  
-// Voice effects, vehicle sounds - Chipotle
-
 [GameObjectClass]
-baseName = "evatank"
+baseName = "evatanku"
 classLabel = "evatank"
 scrapValue = 40
 scrapCost = 75
@@ -14,6 +9,8 @@ maxHealth = 5500
 maxAmmo = 4000
 addAmmo = 8
 unitName = "Hedoux"
+
+unitStatus = "wire_evatanku.tga"
 
 /////// Requirements ///////////////
 
