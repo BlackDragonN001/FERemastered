@@ -804,7 +804,7 @@ function Routine5()
 			ClearObjectives();
 			AddObjective("mercedf109.otf", "red");
 			FailMission(GetTime() + 10, "hardmerc.des");
-		elseif (M.CerbRoutine and not IsAround(M.CerbUnit)) then
+		elseif (M.CerbRoutine and not IsAround(M.Object_CerbUnit)) then
 			M.EnableFailCheck = false;
 		
 			ClearObjectives();
