@@ -804,6 +804,12 @@ function Routine5()
 			ClearObjectives();
 			AddObjective("mercedf109.otf", "red");
 			FailMission(GetTime() + 10, "hardmerc.des");
+		elseif (M.CerbRoutine and not IsAround(M.CerbUnit)) then
+			M.EnableFailCheck = false;
+		
+			ClearObjectives();
+			AddObjective("mercedf112.otf", "red");
+			FailMission(GetTime() + 10, "cerbmerc.des"); -- WRITE ME! AHadley? "You failed to follow wynt essex's orders, blablabla."
 		end
 	end
 end
@@ -840,10 +846,17 @@ function Routine6()
             end
         elseif (M.Routine6State == 3) then
             --RemoveObject(M.Object_CerbUnit); -- I don't like the idea of this poofing into nothingness. Do something else? either leave it till it's offmap, or zoof it up into space? actually, hold that thought...
-			SetVelocity(M.Object_CerbUnit, SetVector(0, 10000, 0));
+			--SetVelocity(M.Object_CerbUnit, SetVector(0, 10000, 0)); -- Just kidding... :P
+			local OffMap = SetVector(-4000, TerrainFindFloor(-4000, -4000), -4000);
+			Goto(M.CerbUnit, OffMap, 1);
             
 			M.Routine6State = M.Routine6State + 1;
         end
+		
+		-- If cerb unit dies, fail mission.
+		if(M.Routine6State > 0) then
+		
+		end
     end
 end
 
