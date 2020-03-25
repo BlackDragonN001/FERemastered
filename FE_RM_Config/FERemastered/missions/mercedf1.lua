@@ -205,8 +205,8 @@ function Update()
     Routine2();
     Routine3();
     Routine4();
+	Routine6();
     Routine5();
-    Routine6();
 
     DamagePrevention();
 end
