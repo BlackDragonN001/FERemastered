@@ -24,6 +24,8 @@ damageValue(A) = 200 // absorbtion // 200 + 50
 [MissileClass]
 omegaTurn = 1.5
 
+TeamFilter = 3 // Enemies only.
+
 [Render]
 renderBase = "draw_multi"
 renderCount = 3
