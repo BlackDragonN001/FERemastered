@@ -25,7 +25,6 @@ Rewrite for dynamic spawning / function.
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 
 local _FECore = require('_FECore');
-local _DLLUtils = require('_DLLUtils');
 local _StartingVehicles = require('_StartingVehicles');
 
 -- VARS
@@ -56,8 +55,6 @@ local MAX_TEAMS = 16;
 local _MPI = {};
 local MPIValues = {};
 local HumanBuildings = {};
-local CPUScavs = {};
-local CPUCons = {};
 
 local AIVehicles = {
 	AIRecycler = nil,
@@ -86,9 +83,7 @@ function _MPI.AddObject(h)
 	local ObjClass = GetClassLabel(h);
 
 	if (GetTeamNum(h) == CPU_TEAM_NUMBER) then
-		if (ODFName == ("%svcmdr_c"):format(GetRaceOfTeam(CPU_TEAM_NUMBER))) then
-			AIVehicles.AICommander = h;
-		elseif (ObjBaseClass == "Demolisher") then
+		if (ObjBaseClass == "Demolisher") then
 			AIVehicles.AIDemolishers[#AIVehicles.AIDemolishers + 1] = h;
 		elseif (ObjClass == "CLASS_SCAVENGER" or ObjClass == "CLASS_SCAVENGERH") then
 			_MPI.AddCPUScav(h);
@@ -101,7 +96,7 @@ function _MPI.AddObject(h)
 end
 
 function _MPI.DeleteObject(h)
-	if (GetCfg(h) == "%svcmdr_c":format(GetRaceOfTeam(CPU_TEAM_NUMBER))) then
+	if (GetCfg(h) == ("%svcmdr_c"):format(GetRaceOfTeam(CPU_TEAM_NUMBER))) then
 		AIVehicles.AICommander = nil;
 	end
 end
@@ -117,14 +112,8 @@ function _MPI.Start()
 	WEAPON_CACHES = GetVarItemInt("network.session.ivar79");
 	SCRAP_SILOS = GetVarItemInt("network.session.ivar80");
 
-	-- If Debugging is enabled, we should print all available data related to the AI team
-	if (DEBUG) then
-		print("Current Race of AI Team: (" .. GetRaceOfTeam(CPU_TEAM_NUMBER) .. "): ");
-		Ally(1, CPU_TEAM_NUMBER);
-	end
-
 	-- Grab a list of all available spawn points.
-	TOTAL_SPAWN_COUNT = GetAllSpawnPoints();
+	TOTAL_SPAWN_COUNT = GetAllSpawnpoints();
 
 	-- Call methods in order.
 	_MPI.SpawnAITeams();
@@ -135,41 +124,26 @@ function _MPI.Taunt(event)
 end
 
 function _MPI.SpawnAITeams()
-	-- Grab the path point to spawn the Enemy Recycler
-	local AISpawnPosition = GetPosition("RecyclerEnemy");
-	local AITeamRace = GetRaceOfTeam(CPU_TEAM_NUMBER);
-	
-	-- If the AI Recycler does not exist, build one for Team 5.
-	if (GetObjectByTeamSlot(CPU_TEAM_NUMBER, DLL_TEAM_SLOT_RECYCLER) == nil) then
-		AISpawnPosition = GetPositionNear(AISpawnPosition, VEHICLE_SPACING_DISTANCE, 2 * VEHICLE_SPACING_DISTANCE);
-		AIVehicles.AIRecycler = BuildObject("ivrecy_m", CPU_TEAM_NUMBER, AISpawnPosition);
-		SetRandomHeadingAngle(AIVehicles.AIRecycler);
-	end
-
-	local AIStartingUnits = GetVarItemInt("network.session.ivar72");
-
-	if (AIStartingUnits == 0) then
-		_MPI.SpawnAdditionalAIUnits("turrets", CPU_TEAM_NUMBER);
-	else
-		_MPI.SpawnAdditionalAIUnits("towers", CPU_TEAM_NUMBER);
-	end
-
-	-- Commented out for now, experimental.
-	-- Don't do team 1, this is the human team.
-	--[[for team = 2, MAX_TEAMS do
-		if (team == 1) then
+	-- Start at Team 6, as 1 - 5 are players.
+	for team = 6, 6 do
+		if (team < 6) then
 			return;
 		end
 
-		-- Spawn the right amount of AI units based on options.
-		for i = 1, TOTAL_SPAWN_COUNT do
-			local chosenPoint = GetSafestSpawnPoint();
-			-- If the AI Recycler does not exist, build one for each team.
-			if (GetObjectByTeamSlot(team, DLL_TEAM_SLOT_RECYCLER) == nil) then
-				AISpawnPosition = GetPositionNear(chosenPoint, VEHICLE_SPACING_DISTANCE, 2 * VEHICLE_SPACING_DISTANCE);
-				AIVehicles.AIRecycler = BuildObject("ivrecy_m", team, chosenPoint);
-				SetRandomHeadingAngle(AIVehicles.AIRecycler);
-			end
+		-- If Debugging is enabled, we should print all available data related to the AI team
+		if (DEBUG) then
+			print("Current Race of AI Team: (" .. GetRaceOfTeam(team) .. "): ");
+			Ally(1, team);
+		end
+
+		local AITeamRace = GetRaceOfTeam(team);
+		local chosenPoint = GetSafestSpawnpoint();
+
+		-- If the AI Recycler does not exist, build one for each team.
+		if (GetObjectByTeamSlot(team, DLL_TEAM_SLOT_RECYCLER) == nil) then
+			AISpawnPosition = GetPositionNear(chosenPoint, VEHICLE_SPACING_DISTANCE, 2 * VEHICLE_SPACING_DISTANCE);
+			AIVehicles.AIRecycler = BuildObject("ivrecy_m", team, AISpawnPosition);
+			SetRandomHeadingAngle(AIVehicles.AIRecycler);
 		end
 
 		-- We could consider a variable here for AI starting forces, and build vehicles based on that.
@@ -189,12 +163,7 @@ function _MPI.SpawnAITeams()
 		-- For each active AI team, insert their team number into a table for later use.
 		-- Lastly, create the plan for the AI team.
 		_MPI.SetAIPlan(team);
-	end]]--
-
-	SetGroup(CPU_TEAM_NUMBER.AIRecycler, 0);
-	SetScrap(CPU_TEAM_NUMBER, 40);
-
-	_MPI.SetAIPlan(CPU_TEAM_NUMBER);
+	end
 
 	-- We should handle setting any customised options here in methods. Make sure the options are enabled for them -- AI_Unit.
 end
@@ -222,62 +191,31 @@ function _MPI.SetAIPlan(team)
 	local planName = nil;
 	local planNameBase = "stock13_";
 
-	local pContents = GetCheckedNetworkSvar(3, NETLIST_AIPS);
-	if (pContents ~= nil) then
-		planNameBase = pContents;
+	if (DEBUG) then
+		planNameBase = 'fermpi';
 	end
+
+	--local pContents = GetCheckedNetworkSvar(3, NETLIST_AIPS);
+	--if (pContents ~= nil) then
+	--	planNameBase = pContents;
+	--end
 
 	-- Based on a difficulty IVAR, we can set the difficulty of the AI. ivar70 will need to be changed when this is set up -- AI_Unit.
 	-- Edited to be dynamic for multiple teams. Each team will use the same difficulty -- AI_Unit.
-	planName = ("%s%s_%d.aip"):format(planNameBase, GetRaceOfTeam(team), CPU_DIFFICULTY);
+	planName = ("%s_%s%d.aip"):format(planNameBase, GetRaceOfTeam(team), CPU_DIFFICULTY);
 
 	-- Ensure that at least one CPU unit has spawned before setting the AIP here -- AI_Unit.
-	if (CPU_Spawned) then
-		SetAIP(planName, team);
-	end
+	SetAIP(planName, team);
 end
 
 -- Use this to iterate through all active AI teams and add scrap cheats based on options -- AI_Unit.
 function _MPI.CustomUpdate()
-	if (IsAlive(AIVehicles.AICommander)) then
-		_MPI.HandleAICommander()
-	end
-
 	if (IsAlive(AIVehicles.AIDemolishers[#AIVehicles.AIDemolishers]) and IsIdle(AIVehicles.AIDemolishers[#AIVehicles.AIDemolishers])) then
 		_MPI.HandleAIDemolisher(AIVehicles.AIDemolishers[#AIVehicles.AIDemolishers]);
 	end
 end
 
 -- Experimental
-function _MPI.HandleAICommander()
-	-- If the Commander is idle, we should send him off to attack or protect something -- AI_Unit.
-	if (IsIdle(AIVehicles.AICommander)) then
-		local attackChance = GetRandomFloat(1.0);
-		local target = nil;
-
-		if (attackChance >= 0.5) then
-			target = HumanBuildings[math.floor(GetRandomFloat(1, #HumanBuildings))];
-
-			if (IsAround(target)) then
-				Attack(AIVehicles.AICommander, target, 1);
-			end
-		else 
-			local defenderChoice = GetRandomFloat(1.0);
-
-			if (defenderChoice < 0.5) then
-				target = CPUScavs[math.floor(GetRandomFloat(1, #CPUScavs))];
-			else
-				target = CPUCons[math.floor(GetRandomFloat(1, #CPUCons))];
-			end
-
-			Defend2(AIVehicles.AICommander, target, 1);
-		end
-	end
-
-	-- If the Commander is low on health or ammo, retreat to the nearest service unit (if available).
-
-end
-
 function _MPI.HandleAIDemolisher(h)
 	-- Select a target for these units to demolish. Potentially sensitive units, such as Extractors, etc -- AI_Unit.
 	local target = HumanBuildings[math.floor(GetRandomFloat(1, #HumanBuildings))];
@@ -296,7 +234,7 @@ function _MPI.CreateSavageUnits()
 end
 
 function _MPI.AddCPUScav(scavHandle)
-	if (CPU_SCAV_COUNT < MAX_CPU_SCAVS) then
+	if (CPU_SCAV_COUNT < CPU_MAX_SCAVS) then
 		CPUScavs[CPU_SCAV_COUNT + CPU_SCAV_COUNT + 1] = scavHandle;
 		return;
 	end

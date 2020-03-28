@@ -5,7 +5,7 @@ Version 1.0 11-20-2018 --]]
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 local _StartingVehicles = require('_StartingVehicles');
-
+local _MPI = require('_MPI');
 
 -- Static Variables:
 local ScoreDecrementForSpawnKill = 500;
@@ -61,6 +61,7 @@ local Mission =
 	m_SpawnedAtTime = { },
 	m_RecyInvulnerabilityTime = 0, -- ivar25, if >0, this is currently active
 	m_AllyTeams = { }, -- New alliance var setting. Yay! -GBD
+	m_IsMPI = 0, -- ivar12
 		
 --locals
 	m_DidInit = false,
@@ -96,10 +97,11 @@ function Save()
     return 
 		_FECore.Save(), 
 		_StartingVehicles.Save(), 
+		_MPI.Save(),
 		Mission;
 end
 
-function Load(FECoreData, StartingVehicleData, MissionData)	
+function Load(FECoreData, StartingVehicleData, MPIData, MissionData)	
 
 	m_GameTPS = EnableHighTPS();
 	SetAutoGroupUnits(false);
@@ -110,6 +112,7 @@ function Load(FECoreData, StartingVehicleData, MissionData)
 	-- Load sub moduels.
 	_FECore.Load(FECoreData);
 	_StartingVehicles.Load(StartingVehicleData);
+	_MPI.Load(MPIData);
 	-- Load mission data.
 	Mission = MissionData;
 	
@@ -128,6 +131,11 @@ end
 function AddObject(h)
 
 	_FECore.AddObject(h);
+
+	-- Add MPI Support - AI_Unit
+	if (Mission.m_IsMPI) then
+		_MPI.AddObject(h);
+	end
 
 	local ODFName = GetCfg(h);
 	local ObjClass = GetClassLabel(h);
@@ -183,6 +191,7 @@ function Start()
 	Mission.m_PointsForAIKill = (GetVarItemInt("network.session.ivar14") ~= 0);
 	Mission.m_KillForAIKill = (GetVarItemInt("network.session.ivar15") ~= 0);
 	Mission.m_RespawnWithSniper = (GetVarItemInt("network.session.ivar16") ~= 0);
+	Mission.m_IsMPI = (GetVarItemInt("network.session.ivar12") ~= 0);
 
 	Mission.m_TurretAISkill = GetVarItemInt("network.session.ivar17");
 	if(Mission.m_TurretAISkill < 0) then
@@ -271,11 +280,19 @@ function Start()
 	local PlayerH = SetupPlayer(LocalTeamNum);
 	SetAsUser(PlayerH, LocalTeamNum);
 	AddPilotByHandle(PlayerH);
+
+	if (Mission.m_IsMPI) then
+		_MPI.Start();
+	end
 end
 
 function Update()
 
 	_FECore.Update();
+
+	if (Mission.m_IsMPI) then
+		_MPI.CustomUpdate();
+	end
 
 	-- If Recycler invulnerability is on, then does the job of it.
 	ExecuteRecyInvulnerability();
