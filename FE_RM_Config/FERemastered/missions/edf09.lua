@@ -3,7 +3,7 @@ local _FECore = require('_FECore');
 
 local Position2 = SetVector(-800,22,-326);	--cerb reinforcements spawn location
 local Position3 = SetVector(-80,30,700);	--cerb attacker spawn
-local Position4 = SetVector(315,-15,-525;,	--debris spawn
+local Position4 = SetVector(315,-15,-525;	--debris spawn
 local Position7 = SetVector(-183,-12,55);	--mlight move target
 
 local M = {
