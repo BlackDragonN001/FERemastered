@@ -221,6 +221,16 @@ function BuildObjectAndLabel(handle, team, pos, label)
     return h;
 end
 
+-- Get the Difficulty setting from Player Options.
+function GetDifficulty()
+
+	if IsNetworkOn() then
+		-- return ???? MP difficulty setting, possibly from ivar?
+	else
+		return GetVarItemInt("options.play.difficulty");
+	end
+end
+
 -- Teleports Handle h to Handle dest, with optional offset.
 function Teleport(h, dest, offset)
 	if not IsAround(h) then 
