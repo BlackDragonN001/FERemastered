@@ -1,10 +1,11 @@
 // (c) BZ2CP unit "Atlas"
-// Created by Slaor and Pastell
-//v/o, voice effects, vehicle sounds by Chipotle
+// Original Concept: Slaor and Pastell
+// Voice acting,  voice effects/vehicle sounds - Chipotle
+// FE Remastered Model and Texture: Jayden Hopkins
 
 [GameObjectClass]
 baseName = "evartl"
-geometryName = "evartl00.xsi"
+geometryName = "evartl00.fbx"
 classLabel = "assaulttank"
 scrapValue = 30
 scrapCost = 65
@@ -55,7 +56,16 @@ needPilot = 0
 turretCount = 2
 turretName1 = "turret_y"
 turretName2 = "turret_x"
-turretName3 = "hp_eyepoint"
+//turretName3 = "hp_eyepoint"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "dusttrail3"
+effectMinVelocity1 = 3.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_emit_2" 
+effectName2 = "dusttrail3"
+effectMinVelocity2 = 3.0
+effectMaxVelocity2 = 500.0
 
 [CraftClass]
 rangeScan = 400.0f
