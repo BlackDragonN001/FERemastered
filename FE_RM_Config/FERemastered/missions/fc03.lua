@@ -56,7 +56,7 @@ local M = {
 	Variable6 = 0,	--# of Maulers
 	Variable10 = 0,		--Routine4 loop counter
 	Variable11 = 0,		--if player was warned about too many unspent points in the reinforcements GUI
-	ScionSpireCount = 0
+	ScionSpireCount = 0,
 --Vectors
 	Position9 = SetVector( 0,0,0 ),	--Portal spawn location (set later)
 --End
