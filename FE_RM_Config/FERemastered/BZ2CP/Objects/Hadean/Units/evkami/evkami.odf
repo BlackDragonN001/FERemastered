@@ -1,19 +1,18 @@
 // (c) BZ2CP unit "Xerrakis"
-// Mesh - Slaor
-// Skin - Slaor
-// Skin map, odf, game adaptation, animations - Pastell
+// Original Concept: Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
 
 [GameObjectClass]
 baseName = "evkami"
-geometryName = "evkami00.xsi"
+geometryName = "evkami00.fbx"
 cockpitName= "evkami_cockpit.xsi" // cockpit – Tempest storm
-animCount=3
-animName1="forward"
-animFile1="evkamisf.xsi"
-animName2="neutral"
-animFile2="evkamisn.xsi"
-animName3="reverse"
-animFile3="evkamisr.xsi"
+animCount = 3
+animName1 = "forward"
+animFile1 = "evkamisf.fbx"
+animName2 = "neutral"
+animFile2 = "evkamisn.fbx"
+animName3 = "reverse"
+animFile3 = "evkamisr.fbx"
 classLabel = "wingman"
 explosionName = "kamixpl"
 canSnipe = 0
@@ -56,6 +55,20 @@ weaponName1 = "gkamimin"
 weaponAssault1 = 0
 
 ////////////////////////////////////
+
+// Dust fx.
+effectHard1 = "hp_com_1"
+effectName1 = "dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectFlags1 = 2147483135 // thrusting only.
+
+// Engine flame glow.
+effectHard2 = "hp_special_1"
+effectName2 = "engglow_e.small"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 5.0
+effectFlags2 = 2147483135 // thrusting only.
  
 [CraftClass]
 rangeScan = 220.0f
@@ -118,5 +131,3 @@ rollSteer = 0.08 //rolls while steering []
 
 soundThrust = "evkamien.wav"
 soundTurbo = "evkamitu.wav"
-
-
