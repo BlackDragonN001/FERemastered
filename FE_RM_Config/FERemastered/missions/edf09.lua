@@ -29,6 +29,7 @@ local M = {
 	ServiceBay = nil, --Player sbay
 	RelayBunk = nil,	--Player CBun
 	Constructor = nil,	--Player Constructor
+
 -- Ints
 	Routine1State = 0,
 	Routine2State = 0,
@@ -37,6 +38,10 @@ local M = {
 	Variable1 = 0,	--routine3 counter
 	Variable2 = 40,	--mlight rotate rate
 	Variable3 = 100,	--mlight move speed
+
+-- Bools
+	RecyTeleported = false,
+
 --End
 	endme = 0
 }
@@ -156,8 +161,14 @@ function Routine1()
 				--player redeployed the recycler after undeploying
 				FailMission(GetTime() + 5, "edf09b.des");
 				M.Routine1State = 99;
-			end	
+			end
 		elseif M.Routine1State == 4 then
+			-- Recycler has teleported out, no need to check if it is alive
+			if (M.RecyTeleported == true) then
+				M.Routine1State = 99;
+				return;
+			end
+
 			--recycler was destroyed
 			FailMission(GetTime() + 5, "edf09a.des");
 			M.Routine1State = M.Routine1State + 1;
@@ -238,6 +249,7 @@ function Routine2()
 		elseif M.Routine2State == 11 then
 			if GetDistance(M.Recycler, M.Portal) < 40 then
 				TeleportOut(M.Recycler);
+				M.RecyTeleported = true;
 				SucceedMission(GetTime() + 6, "edf09c.des");
 				M.Routine2State = M.Routine2State + 1;
 			end
