@@ -41,6 +41,7 @@ local M = {
 
 -- Bools
 	RecyTeleported = false,
+	EnablePlayerTeleport = false,
 
 --End
 	endme = 0
@@ -125,6 +126,18 @@ function Update()
 	Routine2();
 	Routine3();
 	Routine4();
+	TeleportRoutine();
+end
+
+function Succeed(time)
+	SucceedMission(time, "edf09c.des");
+end
+
+function TeleportAndSucceed()
+	BuildObject("teleportout", 0, BuildDirectionalMatrix(GetPosition(GetPlayerHandle())));
+	SetColorFade(2.0, 1.0, 32767);
+	StartSoundEffect("teleport.wav", nil);
+	Succeed(GetTime() + 0.5);
 end
 
 --handles undeploying the recycler, checks if Recycler died
@@ -250,7 +263,9 @@ function Routine2()
 			if GetDistance(M.Recycler, M.Portal) < 40 then
 				TeleportOut(M.Recycler);
 				M.RecyTeleported = true;
-				SucceedMission(GetTime() + 6, "edf09c.des");
+				M.EnablePlayerTeleport = true;
+				Succeed(GetTime() + 6);
+				-- SucceedMission(GetTime() + 6, "edf09c.des");
 				M.Routine2State = M.Routine2State + 1;
 			end
 		end
@@ -377,5 +392,12 @@ function Routine4()
 			Attack(BuildObject("cvtank", 5, Position2), M.Recycler, 0);
 			M.Routine4Timer = GetTime() + 60;
 		end
+	end
+end
+
+function TeleportRoutine()
+	if (M.EnablePlayerTeleport == true and GetDistance(GetPlayerHandle(), M.Portal) < 10) then
+		TeleportAndSucceed();
+		M.EnablePlayerTeleport = false;
 	end
 end
