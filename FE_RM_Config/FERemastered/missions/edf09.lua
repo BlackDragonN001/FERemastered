@@ -202,16 +202,17 @@ function Routine2()
 		elseif M.Routine2State == 2 then
 			if IsAround(M.Recycler) then
 				M.Routine2State = M.Routine2State + 1;
-				M.Routine2Timer = GetTime() + 200;
 			end
 		elseif M.Routine2State == 3 then
-			Attack(BuildObject("cvscout", 5, Position3), M.Recycler, 1);
-			Stop(M.Recycler, 1);
-			AudioMessage("edf09t.wav");
-			ClearObjectives();
-			AddObjective("edf0907.otf", "white");
-			M.MLight = BuildObject("mlight", 5, "mlight");
-			M.Routine2State = M.Routine2State + 1;
+			if (GetDistance(M.Recycler, "recy_breakdown") < 25) then
+				Attack(BuildObject("cvscout", 5, Position3), M.Recycler, 1);
+				Stop(M.Recycler, 1);
+				AudioMessage("edf09t.wav");
+				ClearObjectives();
+				AddObjective("edf0907.otf", "white");
+				M.MLight = BuildObject("mlight", 5, "mlight");
+				M.Routine2State = M.Routine2State + 1;
+			end
 		elseif M.Routine2State == 4 then
 			if Move(M.MLight, M.Variable2, M.Variable3, Position7) then
 				M.Routine2State = M.Routine2State + 1;
