@@ -1,11 +1,22 @@
 [GameObjectClass]
 classLabel = "ibgtoww1"
+geometryName = "ibatow00_gh_bw1.fbx"
 powerCost = 1
 
 maxHealth = 8000
 addhealth = 10
 
 //requireText1 = "Kommunikationsbunker prod." // This ODF must have originally been from a German copy of BZ2. -GBD
+
+/////// LIGHTS and EFFECTS /////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotred"
+lightHard2 = "hp_light_2"
+lightName2 = "o_red_nf"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "emit_blueblink"
+effectFlags1 = "447" //447 powered  479 unpowered
 
 [BuildingClass]
 soundAmbient = "igtow01.wav"
