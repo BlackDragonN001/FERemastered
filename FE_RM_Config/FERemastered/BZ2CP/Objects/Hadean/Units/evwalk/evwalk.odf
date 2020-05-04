@@ -5,29 +5,29 @@
 baseName = "evwalk"
 classLabel = "iv_walker"
 cockpitName = "evwalk_cockpit.xsi" // cockpit – Tempest storm
-geometryName = "evwalk_skel.xsi"
+geometryName = "evwalk_skel.fbx"
 geometryScale = 1.0
 animCount = 10
 animName1 = "idle"
-animFile1 = "evwalk_idle.xsi"
+animFile1 = "evwalk_idle.fbx"
 animName2 = "idle2"
-animFile2 = "evwalk_idle.xsi"
+animFile2 = "evwalk_idle2.fbx"
 animName3 = "idle3"
-animFile3 = "evwalk_idle.xsi"
+animFile3 = "evwalk_idle3.fbx"
 animName4 = "sitdown"
-animFile4 = "evwalk_sit.xsi"
+animFile4 = "evwalk_sit.fbx"
 animName5 = "walk"
-animFile5 = "evwalk_walk.xsi"
+animFile5 = "evwalk_walk.fbx"
 animName6 = "turn"
-animFile6 = "evwalk_turn.xsi"
+animFile6 = "evwalk_turn.fbx"
 animName7 = "death"
-animFile7 = "evwalk_death01.xsi"
+animFile7 = "evwalk_death01.fbx"
 animName8 = "death2"
-animFile8 = "evwalk_death02.xsi"
+animFile8 = "evwalk_death02.fbx"
 animName9 = "death3"
-animFile9 = "evwalk_death03.xsi"
+animFile9 = "evwalk_death03.fbx"
 animName10 = "run"
-animFile10 = "evwalk_walk.xsi"
+animFile10 = "evwalk_run.fbx"
 scrapValue = 30
 scrapCost = 100
 customCost = 115
@@ -69,18 +69,23 @@ weaponMask = 00011
 weaponHard1 = "HP_CANNON_1"
 weaponName1 = "gcphlaser"
 weaponAssault1 = 0
+recoilName1 = "cannon_recoil_1"
 weaponHard2 = "HP_CANNON_2"
 weaponName2 = "gcphlaser"
 weaponAssault2 = 0
+recoilName2 = "cannon_recoil_2"
 weaponHard3 = "HP_ROCKET_1"
 weaponName3 = "gsprink_a"
 weaponAssault3 = 1
+recoilName3 = "msl_recoil_1"
 weaponHard4 = "HP_GUN_1"
 weaponName4 = "gshellgun"
 weaponAssault4 = 0
+recoilName4 = "gun_recoil_r"
 weaponHard5 = "HP_GUN_2"
 weaponName5 = "gshellgun"
 weaponAssault5 = 0
+recoilName5 = "gun_recoil_l"
 
 //////////////////////////////////
 
@@ -118,7 +123,7 @@ maxHeadYaw =  75.0
 minHeadPitch = -40.0
 maxHeadPitch = 30.0
 
-is13Walker = false // Set to false for a 1.2 style walker hierarchy. -GBD
+is13Walker = true //false // Set to false for a 1.2 style walker hierarchy. -GBD
 Walker12Type = 0 // -1 = auto, 0 = isdf style, 1 = fury style. -GBD
 
 alphaDamp = 5.0
@@ -134,9 +139,9 @@ accelThrust = 8.0
 velocForward = 15.0
 velocReverse = 8.0
 
-headpiece = "neck"
+headpiece = "head"
 rightfootpiece = "rfoot";
-leftfootpiece = "rfoot01";
+leftfootpiece = "lfoot";
 
 jumpSound  = "avwalke2.wav"
 landSound  = "avwalke3.wav"
