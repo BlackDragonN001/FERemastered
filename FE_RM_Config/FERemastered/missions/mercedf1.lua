@@ -764,7 +764,11 @@ function Routine4()
 	if (M.Routine4Enable == true) then
 		if (M.Routine4State == 0) then
             CameraReady();
-            
+
+            -- Ally both edf teams with the drones to prevent any accidents during cutscene
+            Ally(1, 2);
+            Ally(2, 9);
+
 			M.Routine4State = M.Routine4State + 1;
 		elseif M.Routine4State == 1 then
 			if (CameraPath("end", 4000, 1000, M.Object_Carrier)) then
