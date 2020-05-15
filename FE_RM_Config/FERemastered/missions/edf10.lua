@@ -160,6 +160,7 @@ function PreSnipe(curWorld, shooterHandle, victimHandle, ordnanceTeam, ordnanceO
 		--Bad player - fired at allied Hadeans!
 		FailMission(GetTime() + 5, "edf10lose.des");
 	end
+	return 0;
 end
 
 function Update()
