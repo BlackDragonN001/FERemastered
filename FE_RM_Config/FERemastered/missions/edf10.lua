@@ -278,7 +278,7 @@ function Routine1()
 			end
 		elseif M.Routine1State == 11 then
 			SetObjectiveOff(M.HadeanAlly2);
-			M.ScrapyardNav = BuildObject("ibnav", 1, GetPosition(M.ScrapyardNav));
+			M.ScrapyardNav = BuildObject("ibnav", 1, M.Position_ScrapYard);
 			SetObjectiveName(M.ScrapyardNav, "Bio-metal Pools");
 			SetObjectiveOn(M.ScrapyardNav);
 			M.Routine1State = M.Routine1State + 1;
