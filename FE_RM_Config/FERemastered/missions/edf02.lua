@@ -150,7 +150,8 @@ function Start()
 	_FECore.Start();
 	
 	M.Recycler = GetHandleOrDie("Recycler");
-	M.DropshipLanded = GetHandleOrDie("DropShip");
+	M.DropshipLanded = GetHandleOrDie("DropShip"); --original dropship -Gravey
+	M.DropshipLanded2 = GetHandle("DropShip2a"); --added dropship -Gravey
 	M.Portals[1] = GetHandleOrDie("Portal1");	--first portal in canyon
 	M.Portals[2] = GetHandleOrDie("Portal2");	--recycler portal east of deploy zone
 	M.Portals[3] = GetHandleOrDie("Portal3");	--portal beside scrap pool
@@ -207,6 +208,7 @@ function HandleMainState(R, STATE)
 		Advance(R, 3.0);
 	elseif STATE == 2 then
 		SetAnimation(M.DropshipLanded, "Deploy", 1);
+		SetAnimation(M.DropshipLanded2, "Deploy",1); 
 		StartAnimation(M.DropshipLanded);	--open the landed dropship doors while player isn't looking
 		CameraReady();
 		Advance(R);
@@ -226,10 +228,10 @@ function HandleMainState(R, STATE)
 		SetVelocity(M.Recycler, SetVector(0, 0, 15));
 		SetPosition(M.Player, "PlacePlayer");
 		SetVelocity(M.Player, SetVector(0, 0, 40));
-		local escort1 = BuildObjectAndLabel("ivtank", 1, "Escort1", "Tank 1");
-		local escort2 = BuildObjectAndLabel("ivscout", 1, "Escort2", "Scout 1");
-		local escort3 = BuildObjectAndLabel("ivscout", 1, "Escort3", "Scout 2");
-		local escort4 = BuildObjectAndLabel("ivscout", 1, "Escort4", "Scout 3");
+		local escort1 = GetHandle("Tank 1"); --Removed BuildObjectandLabel and instead had them prebuilt in the dropship. - Gravey
+		local escort2 = GetHandle("Scout 1");
+		local escort3 = GetHandle("Scout 2");
+		local escort4 = GetHandle("Scout 3");
 		Follow(escort1, M.Recycler, 0);
 		Follow(escort2, M.Recycler, 0);
 		Follow(escort3, M.Recycler, 0);
