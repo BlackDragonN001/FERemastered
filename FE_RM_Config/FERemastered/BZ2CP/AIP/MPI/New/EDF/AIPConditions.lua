@@ -1,5 +1,4 @@
 function InitAIPLua(team)
-    hTeam = 1;
     AIPUtil.print("Initiating AIP Plan Conditions - AI_Unit")
 end
 
@@ -189,9 +188,9 @@ function BuildGunTower6(team, time)
 end
 
 -- Forgotten Enemies Specific 
-function HoldCheckPlan1()
+function HoldCheckPlan1(team, time)
 	local hold1Exists = AIPUtil.PathExists("hold1");
-	local cpuHasRecycler = CPURecyclerExists(team);
+	local cpuHasRecycler = CPURecyclerExists(team, time);
 
 	if (hold1Exists and cpuHasRecycler) then
 		return true, "I can add a turret to the Hold 1 path.";
@@ -200,13 +199,61 @@ function HoldCheckPlan1()
 	end
 end
 
-function HoldCheckPlan2()
+function HoldCheckPlan2(team, time)
 	local hold2Exists = AIPUtil.PathExists("hold2");
-	local cpuHasRecycler = CPURecyclerExists(team);
+	local cpuHasRecycler = CPURecyclerExists(team, time);
 
 	if (hold2Exists and cpuHasRecycler) then
 		return true, "I can add a turret to the Hold 2 path.";
 	else
 		return false, "I can't add a turret to the Hold 2 path.";
+	end
+end
+
+-- Count units
+function CountCPUScavengers(team, time)
+	return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_SCAVENGER", "sameteam", true);
+end
+
+function CountCPUExtractors(team, time) 
+	return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_EXTRACTOR", "sameteam", true);
+end
+
+function CountCPUConstructor(team, time)
+	return AIPUtils.CountUnits(team, "VIRTUAL_CLASS_CONSTRUCTIONRIG", "sameteam", true);
+end
+
+-- Start up conditions. Make sure we have a Recycler and a certain amount of pools.
+function CollectPoolPlanCheck1(team, time) 
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUScavCount = CountCPUScavengers(team, time);
+	local CPUExtractorCount = CountCPUExtractors(team, time);
+
+	if (CPUHasRecy and CPUScavCount <= 0 and CPUExtractorCount < 1) then
+		return true, "I need to send a Scavenger to my first pool.";
+	else 
+		return false, "I have too many Extractors to execute this plan.";
+	end
+end
+
+function CollectPoolPlanCheck2(team, time)
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUExtractorCount = CountCPUExtractors(team, time);
+
+	if (CPUHasRecy and CPUExtractorCount < 3) then
+		return true, "I need to send a Scavenger to more pools.";
+	else
+		return false, "I have too many Extractors to execute this plan.";
+	end
+end
+
+function BuildConstructorCheck1(team, time)
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUConstructorCount = CountCPUConstructor(team, time);
+
+	if (CPUHasRecy and CPUConstructorCount <= 0) then
+		return true, "I need to build my first constructor";
+	else
+		return false, "I already have a Constructor.";
 	end
 end

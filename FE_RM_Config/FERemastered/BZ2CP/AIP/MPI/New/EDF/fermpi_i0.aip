@@ -31,46 +31,50 @@ attackType3_2 = "ivscout"
 [Plan1]
 planType = "CollectPool"
 planPriority = 1000
-planCondition = "Exists"
-planConditionClass = "ibrecy"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true
-planConditionOr = false
-planCondition2 = "NotExists"
-planConditionClass2 = "extract"
-planConditionCount2 = 2
-planCompare2 = ">=" 
-planConditionClassProvided2 = true 
-planConditionOr2 = false
+planCondition1 = "Lua"
+LuaFunction = "CollectPoolPlanCheck1"
 buildIfNoIdle = true
-ContinueEvenIfFail = true
+continueEvenIfFail = true
 
 [Plan2]
 planType = "CollectPool"
 planPriority = 990
-planCondition = "Exists"
-planConditionClass = "ibrecy"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true
-planConditionOr = false
-planCondition2 = "NotExists"
-planConditionClass2 = "extract"
-planConditionCount2 = 4
-planCompare2 = ">=" 
-planConditionClassProvided2 = true 
-planConditionOr2 = false
+planCondition1 = "Lua"
+LuaFunction = "CollectPoolPlanCheck2"
 buildIfNoIdle = true
-ContinueEvenIfFail = true
+continueEvenIfFail = true
 
 [Plan3]
-planType = "CollectField"
+planType = "BuildMinimums"
 planPriority = 980
+planCondition = "NotExists"
+planConditionClass = "ivturr"
+planConditionCount = 2
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+buildType1 = "ivturr"
+buildCount1 = 2
+buildIfNoIdle = true
+continueEvenIfFail = true
+
+[Plan4]
+planType = "BuildMinimums"
+planPriority = 970
+planCondition = "Lua"
+LuaFunction = "BuildConstructorCheck1"
+buildType1 = "ivcons"
+buildCount1 = 1
+buildIfNoIdle = true
+continueEvenIfFail = true
+
+[Plan5]
+planType = "CollectField"
+planPriority = 960
 planCondition = "FriendlyExists"
 planConditionClass = "resource"
-planConditionCount = 5
-planCompare = ">=" 
+planConditionCount = 3
+planCompare = ">="
 planConditionClassProvided = true 
 planConditionOr = false
 planCondition2 = "Exists"
@@ -80,73 +84,29 @@ planCompare2 = ">="
 planConditionClassProvided2 = true 
 planConditionOr2 = false
 buildIfNoIdle = true
-maxTries = 5
-
-[Plan4]
-planType = "BuildMinimums"
-planPriority = 970
-planCondition = "Exists"
-planConditionClass = "ibrecy"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "Exists"
-planConditionClass2 = "extract"
-planConditionCount2 = 2
-planCompare2 = ">=" 
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-buildType1 = "ivcons"
-buildCount1 = 2
-
-[Plan5]
-planType = "Attacker"
-planPriority = 960
-planCondition = "Exists"
-planConditionClass = "ibrecy"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "HisExists"
-planConditionClass2 = "VIRTUAL_CLASS_RECYCLER"
-planConditionCount2 = 1
-planCompare2 = ">=" 
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-planCondition3 = "NotExists"
-planConditionClass3 = "ibfact"
-planConditionCount3 = 1
-planCompare3 = ">="
-planConditionClassProvided3 = true 
-planConditionOr3 = false
-targetType = "VIRTUAL_CLASS_RECYCLER"
-attackType1 = "ivscout"
-attackType2 = "ivscout"
-maxAttacks = 3
-AttackAnything = false
-buildIfNoIdle = true
+continueEvenIfFail = true
 
 [Plan6]
 planType = "Hold"
 planPriority = 950
 planCondition = "Lua"
+LuaFunction = "HoldCheckPlan1"
+holdPoint = "hold1"
 holdType1 = "ivturr"
 holdCount1 = 1
-holdPoint = "hold1"
 buildIfNoIdle = true
-LuaFunction = "HoldCheckPlan1"
+continueEvenIfFail = true
 
 [Plan7]
 planType = "Hold"
 planPriority = 940
 planCondition = "Lua"
+LuaFunction = "HoldCheckPlan2"
+holdPoint = "hold2"
 holdType1 = "ivturr"
 holdCount1 = 1
-holdPoint = "hold2"
 buildIfNoIdle = true
-LuaFunction = "HoldCheckPlan2"
+continueEvenIfFail = true
 
 [Plan8]
 planType = "Attacker"
@@ -154,676 +114,38 @@ planPriority = 930
 planCondition = "HisExists"
 planConditionClass = "VIRTUAL_CLASS_EXTRACTOR"
 planConditionCount = 1
-planCompare = ">=" 
+planCompare = ">="
 planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "NotExists"
-planConditionClass2 = "ibfact"
+planConditionOr = true
+planCondition2 = "HisExists"
+planConditionClass2 = "VIRTUAL_CLASS_SCAVENGER"
 planConditionCount2 = 1
-planCompare2 = ">=" 
+planCompare2 = ">="
 planConditionClassProvided2 = true 
-planConditionOr2 = false
+planConditionOr2 = true
 targetType = "VIRTUAL_CLASS_EXTRACTOR"
-attackType1 = "ivscout"
-maxAttacks = 5
-AttackAnything = false
-buildIfNoIdle = true
-
-[Plan9] // patrol
-planType = "BuildMinimums"
-planPriority = 920
-planCondition = "Exists"
-planConditionClass = "ibrecy"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "NotExists"
-planConditionClass2 = "ibfact"
-planConditionCount2 = 1
-planCompare2 = ">=" 
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-buildType1 = "ivscout"
-buildCount1 = 1
-
-[Plan10]
-planType = "BaseBuildMinimums"
-planPriority = 910
-planCondition = "Exists"
-planConditionClass = "ivcons"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "NotExists"
-planConditionClass2 = "ibpgen"
-planConditionCount2 = 2
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-buildType1 = "ibpgen"
-buildCount1 = 2
-ContinueEvenIfFail = 1
-
-[Plan11]
-planType = "BaseBuildMinimums"
-planPriority = 900
-planCondition = "Exists"
-planConditionClass = "ivcons"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "Exists"
-planConditionClass2 = "ibpgen"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-buildType1 = "ibcbun"
-buildCount1 = 1
-ContinueEvenIfFail = 1
-MinCurPower = 1
-
-[Plan12]
-planType = "Attacker"
-planPriority = 890
-planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_SCAVENGER"
-planConditionCount = 1
-planCompare = ">=" 
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "NotExists"
-planConditionClass2 = "ibfact"
-planConditionCount2 = 1
-planCompare2 = ">=" 
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-targetType = "VIRTUAL_CLASS_SCAVENGER"
+targetType2 = "VIRTUAL_CLASS_SCAVENGER"
 attackType1 = "ivscout"
 maxAttacks = 3
-AttackAnything = true
 buildIfNoIdle = true
+continueEvenIfFail = true
 
-[Plan13] // Change to specific ODF for Gun Towers
+[Plan9]
 planType = "BuildMinimums"
-planPriority = 880
-planCondition = "Exists"
-planConditionClass = "ibrecy"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-buildType1 = "ivcons_g"
-buildCount1 = 1
-
-[Plan14]
-planType = "Explorer"
-planPriority = 870
-planCondition = "Exists"
-planConditionClass = "ibrecy"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "NotExists"
-planConditionClass2 = "ibfact"
-planConditionCount2 = 1
-planCompare2 = ">=" 
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-unitType = "ivscout"
-buildIfNoIdle = true
-ContinueEvenIfFail = 1
-
-[Plan15]
-planType = "BaseBuildMinimums"
-planPriority = 860
-planCondition = "Exists"
-planConditionClass = "ivcons"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "Exists"
-planConditionClass2 = "ibpgen"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-planCondition3 = "Exists"
-planConditionClass3 = "ibcbun"
-planConditionCount3 = 1
-planCompare3 = ">="
-planConditionClassProvided3 = true 
-planConditionOr3 = false
-buildType1 = "ibgtow"
-buildCount1 = 1
-ContinueEvenIfFail = 1
-MinCurPower = 1
-
-[Plan16] // Build a ship Commander to be handled by Lua.
-planType = "BuildMinimums"
-planPriority = 850
-planCondition = "Exists"
-planConditionClass = "ibrecy"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "NotExists"
-planConditionClass2 = "ivcmdr_c"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
+planPriority = "920"
+planCondition = "Lua"
+LuaFunction = "CPURecyclerExists"
 buildType1 = "ivcmdr_c"
 buildCount1 = 1
-
-[Plan17] // Send scouts to attack the main base.
-planType = "Attacker"
-planPriority = 840
-planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_RECYCLER"
-planConditionCount = 1
-planCompare = ">=" 
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "NotExists"
-planConditionClass2 = "ibfact"
-planConditionCount2 = 1
-planCompare2 = ">=" 
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-targetType = "VIRTUAL_CLASS_RECYCLER"
-attackType1 = "ivscout"
-attackType2 = "ivscout"
-attackType3 = "ivscout"
-maxAttacks = 3
-AttackAnything = true
 buildIfNoIdle = true
+continueEvenIfFail = true
 
-[Plan18]
-planType = "BaseBuildMinimums"
-planPriority = 830
-planCondition = "Exists"
-planConditionClass = "ivcons"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "Exists"
-planConditionClass2 = "ibpgen"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-buildType1 = "ibfact"
-buildCount1 = 1
-ContinueEvenIfFail = 1
-MinCurPower = 1
-
-[Plan19]
-planType = "Explorer"
-planPriority = 820
-planCondition = "Exists"
-planConditionClass = "ibfact"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-unitType = "ivmisl"
-buildIfNoIdle = true
-ContinueEvenIfFail = 1
-
-[Plan20]
-planType = "Attacker"
-planPriority = 810
-planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_RECYCLER"
-planConditionCount = 1
-planCompare = ">=" 
-planConditionClassProvided = true 
-planConditionOr = false
-targetType = "VIRTUAL_CLASS_RECYCLER"
-attackType1 = "ivmisl"
-attackType2 = "ivmisl"
-maxAttacks = 3
-AttackAnything = false
-buildIfNoIdle = true
-
-[Plan21]
-planType = "Explorer"
-planPriority = 800
-planCondition = "Exists"
-planConditionClass = "ibfact"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "Exists"
-planConditionClass2 = "ibcbun"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-unitType = "ivtank"
-buildIfNoIdle = true
-ContinueEvenIfFail = 1
-
-// Time to build towers.
-[Plan22]
-planType = "BaseBuildMinimums"
-planPriority = 790
+[Plan10]
+planType = "BuildMinimums"
+planPriority = "910"
 planCondition = "Lua"
-buildType1 = "ibgtow_c"
+LuaFunction = "CPURecyclerExists"
+buildType1 = "ivcons_g"
 buildCount1 = 1
-buildLoc1 = "gtow1"
-LuaFunction = "BuildGunTower1"
-ContinueEvenIfFail = true
-maxTries = 3
-consClass = "ivcons_g"
-
-[Plan23]
-planType = "Attacker"
-planPriority = 780
-planCondition = "HisExists"
-planConditionClass = "extract"
-planConditionCount = 1
-planCompare = ">=" 
-planConditionClassProvided = true 
-planConditionOr = false
-targetType = "extract"
-attackType1 = "ivtank"
-maxAttacks = 5
-AttackAnything = false
 buildIfNoIdle = true
-
-[Plan24]
-planType = "BaseBuildMinimums"
-planPriority = 770
-planCondition = "NotExists"
-planConditionClass = "ibpgen"
-planConditionClassCount = 3
-planCompare = ">="
-planConditionClassProvided = true
-planConditionOr = false
-planCondition2 = "Exists"
-planConditionClass2 = "ivcons"
-planConditionClassCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true
-planConditionOr2 = false
-buildType1 = "ibpgen"
-buildCount1 = 1
-
-[Plan25] // patrol
-planType = "BuildMinimums"
-planPriority = 760
-planCondition = "Exists"
-planConditionClass = "ibfact"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "Exists"
-planConditionClass2 = "ibcbun"
-planConditionCount2 = 1
-planCompare2 = ">=" 
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-buildType1 = "ivtank"
-buildCount1 = 1
-
-[Plan26] // Providing we have more than 10 units of scrap, we should send Scavs to collect it.
-planType = "CollectField"
-planPriority = 740
-planCondition = "FriendlyExists"
-planConditionClass = "resource"
-planConditionCount = 15
-planCompare = ">=" 
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "Exists"
-planConditionClass2 = "ibrecy"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-buildIfNoIdle = true
-maxTries = 5
-
-[Plan27]
-planType = "Attacker"
-planPriority = 730
-planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_RECYCLER"
-planConditionCount = 2
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "Exists"
-planConditionClass2 = "ibfact"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-planCondition3 = "Exists"
-planConditionClass3 = "ibcbun"
-planConditionCount3 = 1
-planCompare3 = ">="
-planConditionClassProvided3 = true 
-planConditionOr3 = false
-targetType = "VIRTUAL_CLASS_RECYCLER"
-attackType1 = "ivtank"
-attackType2 = "ivtank"
-maxAttacks = 3
-AttackAnything = false
-buildIfNoIdle = true
-
-[Plan28]
-planType = "BaseBuildMinimums"
-planPriority = 720
-planCondition = "Lua"
-buildType1 = "ibgtow_c"
-buildCount1 = 1
-buildLoc1 = "gtow2"
-LuaFunction = "BuildGunTower2"
-ContinueEvenIfFail = true
-maxTries = 3
-consClass = "ivcons_g"
-
-[Plan29]
-planType = "BaseBuildMinimums"
-planPriority = 710
-planCondition = "Exists"
-planConditionClass = "ivcons"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "Exists"
-planConditionClass2 = "ibpgen"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-planCondition3 = "Exists"
-planConditionClass3 = "ibcbun"
-planConditionCount3 = 1
-planCompare3 = ">="
-planConditionClassProvided3 = true 
-planConditionOr3 = false
-buildType1 = "ibgtow"
-buildCount1 = 1
-ContinueEvenIfFail = 1
-MinCurPower = 1
-
-[Plan30] // Send out some attackers to target enemy scavs.
-planType = "Attacker"
-planPriority = 700
-planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_SCAVENGER"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "Exists"
-planConditionClass2 = "ibfact"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-planCondition3 = "Exists"
-planConditionClass3 = "ibcbun"
-planConditionCount3 = 1
-planCompare3 = ">="
-planConditionClassProvided3 = true 
-planConditionOr3 = false
-targetType = "VIRTUAL_CLASS_SCAVENGER"
-attackType1 = "ivtank"
-attackType2 = "ivtank"
-maxAttacks = 4
-AttackAnything = false
-buildIfNoIdle = true
-
-[Plan31] // Start constructing some more buildings.
-planType = "BaseBuildMinimums"
-planPriority = 690
-planCondition = "Exists"
-planConditionClass = "ivcons"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "NotExists"
-planConditionClass2 = "ibpgen"
-planConditionCount2 = 3
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-buildType1 = "ibpgen"
-buildCount1 = 1
-ContinueEvenIfFail = 1
-
-[Plan32] // Weapon upgrades.
-planType = "BaseBuildMinimums"
-planPriority = 680
-planCondition = "Exists"
-planConditionClass = "ivcons"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "NotExists"
-planConditionClass2 = "ibarmo"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-buildType1 = "ibarmo"
-buildCount1 = 1
-ContinueEvenIfFail = 1
-MinCurPower = 1
-
-[Plan33]
-planType = "BuildMinimums"
-planPriority = 670
-planCondition = "Exists"
-planConditionClass = "ibrecy"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-buildType1 = "ivscav"
-buildCount1 = 2
-ContinueEvenIfFail = 1
-
-[Plan34]
-planType = "Attacker"
-planPriority = 660
-planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_GUNTOWER"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "Exists"
-planConditionClass2 = "ibfact"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-planCondition3 = "Exists"
-planConditionClass3 = "ibarmo"
-planConditionCount3 = 1
-planCompare3 = ">="
-planConditionClassProvided3 = true 
-planConditionOr3 = false
-planCondition4 = "Exists"
-planConditionClass4 = "ibcbun"
-planConditionCount4 = 1
-planCompare4 = ">="
-planConditionClassProvided4 = true 
-planConditionOr4 = false
-targetType = "VIRTUAL_CLASS_GUNTOWER"
-attackType1 = "ivrckt"
-attackType2 = "ivrckt"
-maxAttacks = 5
-AttackAnything = true
-buildIfNoIdle = true
-
-[Plan35]
-planType = "BaseBuildMinimums"
-planPriority = 650
-planCondition = "Exists"
-planConditionClass = "ivcons"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "Exists"
-planConditionClass2 = "ibpgen"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-planCondition3 = "Exists"
-planConditionClass3 = "ibcbun"
-planConditionCount3 = 1
-planCompare3 = ">="
-planConditionClassProvided3 = true 
-planConditionOr3 = false
-buildType1 = "ibgtow"
-buildCount1 = 2
-ContinueEvenIfFail = 1
-MinCurPower = 2
-
-[Plan36]
-planType = "BaseBuildMinimums"
-planPriority = 640
-planCondition = "Exists"
-planConditionClass = "ivcons"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "NotExists"
-planConditionClass2 = "ibpgen"
-planConditionCount2 = 4
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-buildType1 = "ibpgen"
-buildCount1 = 1
-ContinueEvenIfFail = 1
-
-[Plan37]
-planType = "BaseBuildMinimums"
-planPriority = 630
-planCondition = "Exists"
-planConditionClass = "ivcons"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "NotExists"
-planConditionClass2 = "ibsbay"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-buildType1 = "ibsbay"
-buildCount1 = 1
-ContinueEvenIfFail = 1
-MinCurPower = 1
-
-// Few attacker plans here.
-[Plan38]
-planType = "Attacker"
-planPriority = 620
-planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_SCAVENGER"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "Exists"
-planConditionClass2 = "ibfact"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-planCondition3 = "Exists"
-planConditionClass3 = "ibcbun"
-planConditionCount3 = 1
-planCompare3 = ">="
-planConditionClassProvided3 = true 
-planConditionOr3 = false
-planCondition4 = "Exists"
-planConditionClass4 = "ibarmo"
-planConditionCount4 = 1
-planCompare4 = ">="
-planConditionClassProvided4 = true 
-planConditionOr4 = false
-targetType = "VIRTUAL_CLASS_SCAVENGER"
-attackType1 = "ivmisl"
-attackType2 = "ivtank"
-attackType3 = "ivmbike"
-maxAttacks = 3
-AttackAnything = true
-buildIfNoIdle = true
-
-[Plan39]
-planType = "Attacker"
-planPriority = 610
-planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_GUNTOWER"
-planConditionCount = 3
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "Exists"
-planConditionClass2 = "ibfact"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-planCondition3 = "Exists"
-planConditionClass3 = "ibarmo"
-planConditionCount3 = 1
-planCompare3 = ">="
-planConditionClassProvided3 = true 
-planConditionOr3 = false
-targetType = "VIRTUAL_CLASS_GUNTOWER"
-attackType1 = "ivmbike"
-attackType2 = "ivmbike"
-attackType3 = "ivmbike"
-attackType4 = "ivmbike"
-attackType5 = "ivmbike"
-maxAttacks = 5
-AttackAnything = true
-buildIfNoIdle = true
-
-[Plan40]
-planType = "BuildMinimums"
-planPriority = 600
-planCondition = "Exists"
-planConditionClass = "ibrecy"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-planCondition2 = "Exists"
-planConditionClass2 = "ibsbay"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
-buildType1 = "ivserv"
-buildCount1 = 4
-ContinueEvenIfFail = 1
-
-// Some upgrades.
+continueEvenIfFail = true
