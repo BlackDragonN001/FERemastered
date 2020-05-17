@@ -33,7 +33,29 @@ AlwaysShowAmmo = true
 
 PositionOffset1 = "0.000000 5.000000 0.000000" // Teleport Exit Location.
 PositionOffset2 = "0.000000 0.000000 50.000000" // Goto Destination after AI unit Exits.
-PositionOffset3 = "0.000000 0.000000 0.000000" // Teleport FX Location.
+//PositionOffset3 = "0.000000 0.000000 0.000000" // Teleport FX Location.
+
+effectsMask = 0 // Start out OFF.
+effectHard1 = "hp_emit_1"
+effectName1 = "PortalFx_E0Start.render"
+effectHard2 = "hp_emit_1"
+effectName2 = "PortalFx_E0.render"
+effectHard3 = "hp_emit_1"
+effectName3 = "PortalFx_E0End.render"
+
+effectHard4 = "hp_emit_1"
+effectName4 = NULL //"PortalFx_E1Start.render"
+effectHard5 = "hp_emit_1"
+effectName5 = NULL //"PortalFx_E1.render"
+effectHard6 = "hp_emit_1"
+effectName6 = "PortalFx_E1End.render"
+
+effectHard7 = "hp_emit_1"
+effectName7 = NULL //"PortalFx_E2Start.render"
+effectHard8 = "hp_emit_1"
+effectName8 = NULL //"PortalFx_E2.render"
+effectHard9 = "hp_emit_1"
+effectName9 = "PortalFx_E2End.render"
 
 GameObjectClassServiceMask = 9
 GameObjectClassServiceMatch = 9
@@ -78,7 +100,7 @@ CanAlliesUse = false
 
 [BuildingClass]
 //soundAmbient = "ipgen01.wav"
-DeploySound = "ipgen01.wav"
+DeploySound = "LoopTeleporterAmbient_11k.wav"  //"ipgen01.wav"
 DeploySoundLoop = true
 
 tunnelCount = 1
@@ -97,10 +119,10 @@ soundActivate = "teleport.wav"
 
 //DLLSet it's lifespan to 0.1 no scrap left behind.
 // it's just an i76building thats invisibile/invincible with a lifespan of 0.1. something that dies to create an explosion.
-PortalEffect = "PortalFx_E" // Effect # is added to the end, as well as a Start and End versions.
-InEffect = 1
-OutEffect = 2
-OnEffect = 0
+//PortalEffect = "PortalFx_E" // Effect # is added to the end, as well as a Start and End versions.
+InEffect = 4 //1
+OutEffect = 7 //2
+OnEffect = 1 //0
 
 TeleporterChannel = 1
 ShowChannel = true
