@@ -117,10 +117,15 @@ candemolish = false
 soundActivate = "teleport.wav"
 //soundDeactivate = NULL
 
-PortalEffect = "PortalFx_E" // Effect # is added to the end, as well as a Start and End versions.
+// EffectHard#'s for Portal Fx.
 InEffect = 4 //1
 OutEffect = 7 //2
 OnEffect = 1 //0
+
+// Effect ODF Mine for Vehicle Fx.
+PortalEffect = "PortalFx_E" // Effect # is added to the end, as well as a Start and End versions.
+VehInEffect = 1
+VehOutEffect = 2
 
 TeleporterChannel = 1
 ShowChannel = true
