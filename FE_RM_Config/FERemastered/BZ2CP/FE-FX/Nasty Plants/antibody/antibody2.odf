@@ -31,4 +31,6 @@ alphaSteer = 5.0
 lifeSpan = 20.0
 xplBlast = "antixpl"
 
+SlowFall = false // Make physics use gravity properly. -GBD
+
 soundThrust = ""
