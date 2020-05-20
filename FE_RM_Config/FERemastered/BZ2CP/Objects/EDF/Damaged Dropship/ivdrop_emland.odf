@@ -1,0 +1,73 @@
+[GameObjectClass]
+classLabel = "i76building"
+geometryName = "ivdrop00_land.fbx"
+animCount = 1
+animName1 = "land"
+animFile1 = "ivdrop00_land.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 10000
+maxAmmo = 0
+unitName = "Condor"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+ownsTerrain = 0
+canDetect = 0
+canInteract = 0
+canCollide = 0
+armorClass = L
+alwaysClip = 1
+
+effectHard1 = "hp_emit_7"
+effectName1 = "crashdrop.render"
+//effectHard2 = "hp_emit_2"
+//effectName2 = "crashdrop.render"
+//effectHard3 = "hp_emit_3"
+//effectName3 = "crashdrop.render"
+//effectHard4 = "hp_emit_4"
+//effectName4 = "crashdrop.render"
+
+[BuildingClass]
+soundAmbient = "sdrop01.wav"
+
+[render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "crashdrop.smokeemitter"
+renderName2 = "crashdrop.flameemitter"
+renderName3 = "emit_firelight.render"
+
+[SmokeEmitter]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.03
+emitVelocity = "-5.0 5.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 2.0
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 128"
+finishColor = "0 0 0 0"
+startRadius = 2
+finishRadius = 5
+animateTime = 2.0
+rotationRate = 2.0
+
+[FlameEmitter]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.03
+emitDelayVar = 0.02
+emitVelocity = "-5.0 5.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.5 0.5 0.5"
+emitLife = 1.0
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 200 128"
+finishColor = "255 0 0 0"
+startRadius = 8
+finishRadius = .5
+animateTime = 1.0
+rotationRate = 10.0

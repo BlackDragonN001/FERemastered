@@ -9,8 +9,9 @@ local Position2 = SetVector( -450, -120, -1460 );	--flying dropship start positi
 local Position3 = SetVector( -590, -155, -1190 );	--flying dropship end position
 local Position4 = SetVector( 420, 0, 920 );	--deploy base location
 
-local Routines = {};
 
+local Routines = {};
+local SpawnDelaySTATE = 0;
 local M = {
 --Mission State
 	RoutineState = {},
@@ -34,10 +35,12 @@ local M = {
 	ScrapPool = nil,
 	HadeanScav = nil,
 	DropshipFlying = nil,
+	DropshipFlyingNorm = nil,
 	DropshipLanded = nil,
 	Attackers = {},
 	Dino1 = nil,
 	Dino2 = nil,
+	
 -- Ints
 	TPS = 10,
 	StewartNagCounter = 0,
@@ -149,9 +152,9 @@ function Start()
 
 	_FECore.Start();
 	
-	M.Recycler = GetHandleOrDie("Recycler");
+	--M.Recycler = GetHandleOrDie("Recycler"); --commented out due to intro scene change moved into HandleMainState check
 	M.DropshipLanded = GetHandleOrDie("DropShip"); --original dropship -Gravey
-	M.DropshipLanded2 = GetHandle("DropShip2a"); --added dropship -Gravey
+	M.DropshipLanded2 = GetHandle("DropShip2a"); --added dropship flying approach -Gravey
 	M.Portals[1] = GetHandleOrDie("Portal1");	--first portal in canyon
 	M.Portals[2] = GetHandleOrDie("Portal2");	--recycler portal east of deploy zone
 	M.Portals[3] = GetHandleOrDie("Portal3");	--portal beside scrap pool
@@ -196,11 +199,21 @@ end
 
 --Main mission state
 function HandleMainState(R, STATE)
+PrintConsoleMessage(STATE)
 	if STATE == 0 then
+		local escort1 = GetHandle("Tank 1"); --Removed BuildObjectandLabel and instead had them prebuilt in the dropship. - Gravey
+		local escort2 = GetHandle("Scout 1");
+		local escort3 = GetHandle("Scout 2");
+		local escort4 = GetHandle("Scout 3");
+		SetGroup(escort1, 2);	
+		SetGroup(escort2, 1);	
+		SetGroup(escort3, 1);
+		SetGroup(escort4, 1);
 		M.StayPut = BuildObjectAndLabel("stayput", 0, GetTransform(M.Player), "Stayput 1");
-		Stop(M.Recycler, 1);
+		--Stop(M.Recycler, 1);
 		StartEarthQuake(10.0);
 		M.DropshipFlying = BuildObjectAndLabel("ivdrop_fly", 0, Position2, "Dropship Flying");
+		M.DropshipFlyingNorm = GetHandle("Drophip2a");
 		-- SetObjectiveName(BuildObjectAndLabel("ibnav", 1, Position2), "Position2"); - Not sure why this is needed? - AI_Unit
 		Advance(R, 7.0);
 	elseif STATE == 1 then
@@ -208,7 +221,6 @@ function HandleMainState(R, STATE)
 		Advance(R, 3.0);
 	elseif STATE == 2 then
 		SetAnimation(M.DropshipLanded, "Deploy", 1);
-		SetAnimation(M.DropshipLanded2, "Deploy",1); 
 		StartAnimation(M.DropshipLanded);	--open the landed dropship doors while player isn't looking
 		CameraReady();
 		Advance(R);
@@ -221,31 +233,65 @@ function HandleMainState(R, STATE)
 		end
 	elseif STATE == 4 then
 		AudioMessage("xemt2.wav");
+		
 		StopEarthQuake();
+		
 		RemoveObject(M.DropshipFlying);
+		
 		RemoveObject(M.StayPut);
-		SetPosition(M.Recycler, "RecyclerPath");
-		SetVelocity(M.Recycler, SetVector(0, 0, 15));
+		
 		SetPosition(M.Player, "PlacePlayer");
 		SetVelocity(M.Player, SetVector(0, 0, 40));
+		
 		local escort1 = GetHandle("Tank 1"); --Removed BuildObjectandLabel and instead had them prebuilt in the dropship. - Gravey
 		local escort2 = GetHandle("Scout 1");
 		local escort3 = GetHandle("Scout 2");
 		local escort4 = GetHandle("Scout 3");
+		
+		SetPosition(escort1, "PlacePlayer"); --need to make these more distributed
+		SetVelocity(escort1, SetVector(10, 0, 40));
+		SetPosition(escort2, "PlacePlayer");
+		SetVelocity(escort2, SetVector(5, 0, 40));
+		SetPosition(escort3, "PlacePlayer");
+		SetVelocity(escort3, SetVector(15, 0, 40));
+		SetPosition(escort4, "PlacePlayer");
+		SetVelocity(escort4, SetVector(13, 0, 40));
+		
+		Advance(R,10.0);
+		
+	elseif STATE == 5 then
+		local Position5 = SetVector( -650, -155, -1190); -- Flying recy dropship end position -Gravey
+		--Start dropoff of recy dropship. - Gravey
+		--Move2(M.DropshipFlyingNorm, 0.0, 30.0, TerrainFloor(Position5));
+		BuildObjectAndLabel("ivrecy", 1, Position5, "Recycler"); --spawn recy in carrier currently broken
+		SetGroup(M.Recycler, 0);
+		M.Recycler = GetHandleOrDie("Recycler");
+		--SetAnimation(M.DropshipFlyingNorm, "Deploy", 1);
+		--StartAnimation(M.DropshipFlyingNorm); --open recy carrier
+		
+		SetScrap(1, 30);
+		
+		Advance(R,10.0);
+	elseif STATE == 6 then	
+	
+		SpawnDelaySTATE = 1;
+		
+		local escort1 = GetHandle("Tank 1"); --Removed BuildObjectandLabel and instead had them prebuilt in the dropship. - Gravey
+		local escort2 = GetHandle("Scout 1");
+		local escort3 = GetHandle("Scout 2");
+		local escort4 = GetHandle("Scout 3");
+		
 		Follow(escort1, M.Recycler, 0);
 		Follow(escort2, M.Recycler, 0);
 		Follow(escort3, M.Recycler, 0);
 		Follow(escort4, M.Recycler, 0);
-		SetGroup(escort1, 2);	
-		SetGroup(escort2, 1);	
-		SetGroup(escort3, 1);
-		SetGroup(escort4, 1);
+		
 		SetSkill(BuildObjectAndLabel("evscout_e02", 5, "Enemy1", "Hadean Scout 1"), 3);
 		SetSkill(BuildObjectAndLabel("evscout_e02", 5, "Enemy2", "Hadean Scout 2"), 3);
-		SetGroup(M.Recycler, 0);
-		SetScrap(1, 30);
+		
 		Advance(R, 3.0);
-	elseif STATE == 5 then
+		
+	elseif STATE == 7 then
 		AudioMessage("edf02_02.wav");	--Stewart:"Good landing under the circumstances..."
 		Goto(M.Recycler, "RecyclerPath", 1);
 		M.InvestigateNav = BuildObjectAndLabel("ibnav", 1, "NavSpawn", "Investigate Nav");
@@ -254,23 +300,23 @@ function HandleMainState(R, STATE)
 		ClearObjectives();
 		AddObjective("edf0201.otf", "white");
 		Advance(R, 30.0);
-	elseif STATE == 6 then
+	elseif STATE == 8 then
 		AudioMessage("edf02_03.wav");	--Stewart:"Our scanners just picked up a huge energy spike..."
 		Advance(R, 220.0);
-	elseif STATE == 7 then
+	elseif STATE == 9 then
 		AudioMessage("edf02_04.wav");	--Stewart:"You've got enemy units in the canyon..."
 		Advance(R, 5.0);
 	elseif STATE == 8 then
 		Patrol(BuildObjectAndLabel("evscout_e02", 5, "Spawn2", "Hadean Scout 3"), "Patrol2", 0);
 		Advance(R, 5.0);
-	elseif STATE == 9 then	--LOC_43
+	elseif STATE == 10 then	--LOC_43
 		if GetTime() > 780 then
 			Goto(BuildObjectAndLabel("evtank", 5, "Spawn1", "Hadean Xares 1"), "Patrol1", 0);
 			Advance(R, 27.0);
 		else
 			Advance(R);
 		end
-	elseif STATE == 10 then	--LOC_48
+	elseif STATE == 11 then	--LOC_48
 		Goto(BuildObjectAndLabel("evscout_e02", 5, "Spawn1", "Hadean Scout 4"), "Patrol1", 0);
 		SetState(R, STATE-1, 48.0);--to LOC_43
 	end
@@ -486,12 +532,14 @@ end
 
 function CheckStuffIsAlive()
 	if not M.MissionOver then
-		if not IsAround(M.Recycler) then
-			AudioMessage("edf02_11.wav");	--Stewart:"You lost the recycler..."
-			ClearObjectives();
-			AddObjective("edf0202.otf", "red");
-			FailMission(GetTime() + 12, "edf02L1.txt");
-			M.MissionOver = true;
+		if SpawnDelaySTATE > 0 then --updated to not fail on start
+			if not IsAround(M.Recycler) then
+				AudioMessage("edf02_11.wav");	--Stewart:"You lost the recycler..."
+				ClearObjectives();
+				AddObjective("edf0202.otf", "red");
+				FailMission(GetTime() + 12, "edf02L1.txt");
+				M.MissionOver = true;
+			end
 		end
 	end
 end
