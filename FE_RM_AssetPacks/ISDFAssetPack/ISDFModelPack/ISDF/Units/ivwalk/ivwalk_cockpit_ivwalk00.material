@@ -1,0 +1,14 @@
+[solid]
+diffuse = 0.800000  0.800000  0.800000  1.000000
+specular = 0.501961  0.501961  0.501961  1.000000
+specularPower = 1024.000000
+emissive = 0.000000  0.000000  0.000000  1.000000
+ambient = 0.000000  0.000000  0.000000  1.000000
+
+
+[texture]
+diffuse = ivwalk00.dds
+teamColor = ivwalk00_c.dds
+emissive = ivwalk00_e.dds
+normal = ivwalk00_n.dds
+specular = ivwalk00_s.dds
