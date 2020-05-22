@@ -1,0 +1,22 @@
+[GameObjectClass]
+geometryName = NULL
+classLabel = "tripmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+heatSignature = 10.0
+imageSignature = 0.1
+radarSignature = 0.1
+unitName = "Flame Mine"
+
+effectHard1 = "Flame Mine"
+effectName1 = "fball2a.render"
+
+[MineClass]
+lifeSpan = 30
+
+[TripMineClass]
+triggerRadius = 250.0
+suppressRadius = 10.0
+payloadName = "fball2a"
