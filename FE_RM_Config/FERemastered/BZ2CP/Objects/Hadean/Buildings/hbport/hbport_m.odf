@@ -100,7 +100,7 @@ CanAlliesUse = false
 
 [BuildingClass]
 //soundAmbient = "ipgen01.wav"
-DeploySound = "LoopTeleporterAmbient_11k.wav"  //"ipgen01.wav"
+DeploySound = "hbport_loop.wav" // Custom sound by Gravey. -GBD
 DeploySoundLoop = true
 
 tunnelCount = 1
