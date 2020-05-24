@@ -48,7 +48,7 @@ provideName4 = "DefendUnit"
 
 /////// Weapons ///////////////////
 
-weaponMask = 1100
+weaponMask = 0111
 weaponHard1 = "HP_CANNON_2"
 weaponName1 = "gcplasma_c"
 weaponAssault1 = 0
@@ -77,6 +77,7 @@ rangeScan = 450.0f
 periodScan = 5.0f
 velocJam = 5.0f
 engageRange = 250
+UseSelectWeapon = false
 
 braccelFactor = 0.03
 velFactor = 0.2
