@@ -49,13 +49,86 @@ lightName4 = "omniyohad"
 detectRange = 100
 
 [BuildingClass]
-tunnelCount = 1
+bldEdge = "wwww"
 
+tunnelCount = 11
+
+// Pad.
 tunnel01X0 = 3
 tunnel01Z0 = 3
 tunnel01DX = 2
-tunnel01DZ = 4
-tunnel01Edge = "wwtw"
+tunnel01DZ = 4.5
+tunnel01Edge = "wwfw"
+
+// Top Left Corner.
+tunnel02X0 = 0
+tunnel02Z0 = 0
+tunnel02DX = 1
+tunnel02DZ = 1
+tunnel02Edge = "tfft"
+
+// Top (back)
+tunnel03X0 = 1
+tunnel03Z0 = 0
+tunnel03DX = 6
+tunnel03DZ = 1
+tunnel03Edge = "tfwf"
+
+// Top Right Corner
+tunnel04X0 = 7
+tunnel04Z0 = 0
+tunnel04DX = 1
+tunnel04DZ = 1
+tunnel04Edge = "ttff"
+
+// Left side
+tunnel05X0 = 0
+tunnel05Z0 = 1
+tunnel05DX = 1
+tunnel05DZ = 6.5
+tunnel05Edge = "fwft"
+
+// Right side
+tunnel06X0 = 7
+tunnel06Z0 = 1
+tunnel06DX = 1
+tunnel06DZ = 6.5
+tunnel06Edge = "ftfw"
+
+// Bottom Left Corner
+tunnel07X0 = 0
+tunnel07Z0 = 7.5
+tunnel07DX = 1
+tunnel07DZ = 0.5
+tunnel07Edge = "fftt"
+
+// Bottom Right Corner
+tunnel08X0 = 7
+tunnel08Z0 = 7.5
+tunnel08DX = 1
+tunnel08DZ = 0.5
+tunnel08Edge = "fttf"
+
+// Bottom (front) Edge Left
+tunnel09X0 = 1
+tunnel09Z0 = 7.5
+tunnel09DX = 2
+tunnel09DZ = 0.5
+tunnel09Edge = "wftf"
+
+// Bottom (front) Edge Center
+tunnel10X0 = 3
+tunnel10Z0 = 7.5
+tunnel10DX = 2
+tunnel10DZ = 0.5
+tunnel10Edge = "fftf"
+
+// Bottom (front) Edge Right
+tunnel11X0 = 5
+tunnel11Z0 = 7.5
+tunnel11DX = 2
+tunnel11DZ = 0.5
+tunnel11Edge = "wftf"
 
 soundAmbient = "ibrecy01.wav"
 
