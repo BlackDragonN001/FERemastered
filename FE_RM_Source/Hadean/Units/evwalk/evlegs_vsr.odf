@@ -1,0 +1,144 @@
+// BZ2CP Hadean Walker "Krahanos"
+// Created by Slaor and Pastell
+
+
+[GameObjectClass]
+baseName="evwalk"
+classLabel="fv_walker"
+//cockpitName="ivcons_cockpit.xsi"
+infoName="evlegs_vsr.inf"
+
+geometryName="evlegs_skel.fbx"
+geometryScale=1.0
+
+animCount=10
+
+animName1="idle"
+animFile1="evwalk_idle.fbx"
+
+animName2="idle2"
+animFile2="evwalk_idle2.fbx"
+
+animName3="idle3"
+animFile3="evwalk_idle3.fbx"
+
+animName4="sitdown"
+animFile4="evwalk_sit.fbx"
+
+animName5="walk"
+animFile5="evwalk_walk.fbx"
+
+animName6="turn"
+animFile6="evwalk_turn.fbx"
+
+animName7="death"
+animFile7="evwalk_death01.fbx"
+
+animName8="death2"
+animFile8="evwalk_death02.fbx"
+
+animName9="death3"
+animFile9="evwalk_death03.fbx"
+
+animName10="run"
+animFile10="evwalk_run.fbx"
+
+scrapValue=30
+scrapCost=100
+customCost=115
+buildTime=22.0
+customTime=25.0
+maxHealth=7500
+maxAmmo=50000
+addAmmo=20
+addHealth=10
+unitName="Krohonus Legs"
+aiName="GechProcess"
+heatSignature=0.1
+imageSignature=5.0
+radarSignature=5.0
+collisionRadius=4.0
+isAssault=1
+
+//PilotConfig="espilo" // If blank, uses [if]spilo/[if]suser. Otherwise, pilot for craft
+
+armorClass=H
+
+requireCount=2
+requireName1="ebfact2"
+requireText1="Upgrade to Mega Xenomator"
+requireName2="ebtcen"
+requireText2="Build Xyr Tower"
+
+/////// weapons ///////////////////
+
+weaponMask=00001
+weaponHard1="HP_SPECIAL_1"
+weaponName1="gthumper"
+weaponAssault1=0
+
+//////////////////////////////////
+
+[CraftClass]
+rangeScan=300.0
+periodScan=5.0
+velocJam=0.0
+engageRange=220
+
+selectWaitMsg="evewalk01.wav"
+selectAttackMsg="evewalk02.wav"
+selectFollowMsg="evewalk03.wav"
+selectGoMsg="evewalk04.wav"
+selectOtherMsg="evewalk01.wav"
+
+goMsg="evewalk05.wav"
+attackMsg="evewalk06.wav"
+followMeMsg="evewalk07.wav"
+followMsg="evewalk08.wav"
+repairMsg="evewalk09.wav"
+reloadMsg=""
+rescueMsg="evewalk07.wav"
+recycleMsg="evewalk09.wav"
+otherMsg="evewalk05.wav" 
+holdMsg="evewalk10.wav"
+user1Msg=""  
+killedMsg="evewalk11.wav"
+diedMsg=""
+
+
+// Angles are in degress
+[WalkerClass]
+headYawRate=75.0 
+minHeadYaw=-75.0
+maxHeadYaw= 75.0
+minHeadPitch=-40.0
+maxHeadPitch=30.0
+
+alphaDamp=5.0
+omegaTurn=30.0
+omegaTurnAttenuation=0.5f
+
+is13Walker=true // Set to false for a 1.2 style walker hierarchy
+Walker12Type=1 //1 // -1=auto, 0=isdf style, 1=fury style
+
+alphaSteer=0.1
+velocJump=20;
+alphaTrack=20.0
+pitchPitch=0.0
+pitchThrust=0.0
+accelThrust=8.0
+velocForward=45.0
+velocReverse=8.0
+velocWalkFactor=0.41
+attackSpeed=35.0 
+
+headpiece="head"
+rightfootpiece="rfoot";
+leftfootpiece="lfoot";
+
+jumpSound ="avwalke2.wav"
+landSound ="avwalke3.wav"
+stepSound ="ivewalkst.wav"
+
+engineSound="evwalken.wav"
+

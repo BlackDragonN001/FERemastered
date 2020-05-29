@@ -100,7 +100,7 @@ CanAlliesUse = false
 
 [BuildingClass]
 //soundAmbient = "ipgen01.wav"
-DeploySound = "LoopTeleporterAmbient_11k.wav"  //"ipgen01.wav"
+DeploySound = "hbport_loop.wav" // Custom sound by Gravey. -GBD
 DeploySoundLoop = true
 
 tunnelCount = 1
@@ -117,12 +117,15 @@ candemolish = false
 soundActivate = "teleport.wav"
 //soundDeactivate = NULL
 
-//DLLSet it's lifespan to 0.1 no scrap left behind.
-// it's just an i76building thats invisibile/invincible with a lifespan of 0.1. something that dies to create an explosion.
-//PortalEffect = "PortalFx_E" // Effect # is added to the end, as well as a Start and End versions.
+// EffectHard#'s for Portal Fx.
 InEffect = 4 //1
 OutEffect = 7 //2
 OnEffect = 1 //0
+
+// Effect ODF Mine for Vehicle Fx.
+PortalEffect = "PortalFx_E" // Effect # is added to the end, as well as a Start and End versions.
+VehInEffect = 1
+VehOutEffect = 2
 
 TeleporterChannel = 1
 ShowChannel = true
@@ -132,6 +135,7 @@ MatchType = 1 // 0 = Closest, 1 = Cycle, 2 = Random.
 MatchTypeUsesChannels = true
 ContinuousFx = true //false
 ContinuousFxRange = 0.0
+FxOnVehicle = false
 TeleportColorFade = "0 127 255 255"
 TeleportFilter = 3
 // Teleport Filter options: 

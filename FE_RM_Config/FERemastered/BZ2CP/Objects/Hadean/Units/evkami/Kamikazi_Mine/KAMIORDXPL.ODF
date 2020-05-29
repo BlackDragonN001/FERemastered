@@ -4,6 +4,7 @@
 
 [ExplosionClass]
 classLabel = "explosion"
+FriendlyFireDamage = true // Always damage.
 
 explSound = "shipxpl.wav"
 
