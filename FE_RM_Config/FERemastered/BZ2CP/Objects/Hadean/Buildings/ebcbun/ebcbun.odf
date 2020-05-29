@@ -5,7 +5,7 @@
 [GameObjectClass]
 baseName = "ebcbun"
 geometryName = "ebcbun00.fbx"
-classLabel = "commtower"
+classLabel = "commbunker"
 collisionRadius = 1.0
 scrapCost = 60
 scrapValue = 30
@@ -42,9 +42,19 @@ lightName1 = "omniyohad"
 [BuildingClass]
 soundAmbient = "icomm01.wav"
 
-[CommTowerClass]
+[CommBunkerClass]
 rangeScan = 1000
 periodScan = 3.0
+viewDist = 300.0
+viewZoom = 1.5
+minZoom = 1.0
+maxZoom = 3.0
+viewPitch = 1.0
+minPitch = 0.75
+maxPitch = 1.5
+nearPlane = 1
+farPlane = 1000
+disableFog = 1
 
 [PoweredBuildingClass]
 detectRange = 300
