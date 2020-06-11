@@ -1,10 +1,10 @@
 [LightClass]
 classLabel = "pointlight"
-lightColor.r = 0.6
-lightColor.g = 0.3
-lightColor.b = 0.05
-lightRange = 20.0
+lightColor.r = 2.4
+lightColor.g = 1.2
+lightColor.b = 0.2
+lightRange = 30.0 //20.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
-lensflare = 0
+lensflare = false
