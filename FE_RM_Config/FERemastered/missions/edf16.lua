@@ -713,7 +713,7 @@ function Routine6()
 			M.Routine6Timer = GetTime() + 10;
 		elseif M.Routine6State == 4 then
 			M.CerberiAttacker = BuildObject("cvtank", 5, M.Position19);
-			Goto(M.CerberiAttacker, M.Object3, 1);
+			Goto(M.CerberiAttacker, M.Recycler, 1);
 			Follow(BuildObject("cvtank", 5, M.Position19), M.CerberiAttacker, 0);
 			Follow(BuildObject("cvtank", 5, M.Position19), M.CerberiAttacker, 0);
 			Follow(BuildObject("cvtank", 5, M.Position19), M.CerberiAttacker, 0);
