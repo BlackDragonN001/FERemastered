@@ -11,13 +11,13 @@ moneyDelay = 5
 planType = "CollectPool"
 planPriority = 200
 buildIfNoIdle = 1
-Donextonfail = 1
+
 
 [Plan2]
 plantype = "CollectPool"
 planpriority = 195
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan3]
 plantype = "buildminimums"
@@ -126,7 +126,7 @@ targettype = "ebscav"
 attacktype1 = "ivatank"
 attacktype2 = "ivatank"
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan15]
 plancondition = "Hisexists"
@@ -158,12 +158,12 @@ targettype = "ebpgen"
 attacktype1 = "ivrbomb"
 attacktype2 = "ivrbomb"
 attacktype3 = "ivrbomb"
-donextonfail = 1
+
 
 [plan18]
 plantype = "collectpool"
 planpriority = 123
-donextonfail = 1
+
 
 [plan19]
 plancondition = "Nothisexists"
@@ -182,11 +182,11 @@ plantype = "attacker"
 planpriority = 115
 targettype = "ebrecy_m"
 attacktype1 = "ivwalk"
-donextonfail = 1
+
 
 [plan21]
 plantype = "buildminimums"
 planpriority = 121
 buildtype1 = "ivrbomb"
 buildcount1 = 3
-donextonfail = 1
+

@@ -14,7 +14,7 @@ planConditionClass = "fvfurytk"
 planConditionCount = 1
 targetType = "ibpgen"
 attackType1 = "fvfurytk"
-doNextOnFail = 1
+
 
 [Plan2]
 planType = "Attacker"
@@ -24,7 +24,7 @@ planConditionClass = "cvclaw"
 planConditionCount = 1
 targetType = "ibgtow"
 attackType1 = "cvclaw"
-doNextOnFail = 1
+
 
 [Plan3]
 planType = "Attacker"
@@ -34,14 +34,14 @@ planConditionClass = "cvtyrant"
 planConditionCount = 1
 targetType = "ibgtow"
 attackType1 = "cvtyrant"
-doNextOnFail = 1
+
 
 [Plan4]
 planType = "BuildMinimums"
 planPriority = 170
 buildType1 = "evcons"
 buildCount1 = 1
-doNextOnFail = 1
+
 
 [Plan5]
 planType = "BaseBuildMinimums"
@@ -52,7 +52,7 @@ buildType2 = "ebcbun"
 buildCount2 = 1
 buildType3 = "ebarmo"
 buildCount3 = 1
-doNextOnFail = 1
+
 
 [Plan6]
 planType = "BaseBuildMinimums"
@@ -62,7 +62,7 @@ planConditionClass = "ebfact2"
 planConditionCount = 1
 buildType1 = "ebfact"
 buildCount1 = 1
-doNextOnFail = 1
+
 
 [Plan7]
 planType = "BaseBuildMinimums"
@@ -90,14 +90,14 @@ planCondition = "NotExists"
 planConditionClass = "ebfact2"
 planConditionCount = 1
 unitType = "ebfact"
-doNextOnFail = 1
+
 
 [Plan9]
 planType = "BuildMinimums"
 planPriority = 120
 buildType1 = "evtanku"
 buildCount1 = 2
-doNextOnFail = 1
+
 
 [Plan10]
 planType = "Attacker"
@@ -108,14 +108,14 @@ planConditionCount = 1
 targetType = "ibscav"
 attackType1 = "evtanku"
 attackType2 = "evtanku"
-doNextOnFail = 1
+
 
 [Plan11]
 planType = "BuildMinimums"
 planPriority = 100
 buildType1 = "evmislu"
 buildCount1 = 2
-doNextOnFail = 1
+
 
 [Plan12]
 planType = "Attacker"
@@ -123,7 +123,7 @@ planPriority = 90
 targetType = "ibrecy"
 attackType1 = "evmislu"
 attackType2 = "evmislu"
-doNextOnFail = 1
+
 
 [Plan13]
 planType = "Recover"
@@ -137,7 +137,7 @@ planType = "BuildMinimums"
 planPriority = 70
 buildType1 = "evscout"
 buildCount1 = 2
-doNextOnFail = 1
+
 
 [Plan15]
 planType = "Attacker"
@@ -148,7 +148,7 @@ planConditionCount = 1
 targetType = "ibpgen"
 attackType1 = "evscout"
 attackType2 = "evscout"
-doNextOnFail = 1
+
 
 [Plan16]
 planType = "Attacker"
@@ -159,7 +159,7 @@ planConditionCount = 1
 targetType = "ivscav"
 attackType1 = "evscout"
 attackType2 = "evscout"
-doNextOnFail = 1
+
 
 [Plan17]
 planType = "Hold"
@@ -188,5 +188,5 @@ planPriority = 10
 targetType = "ibcbun"
 attackType1 = "evscout"
 attackType2 = "evscout"
-doNextOnFail = 1
+
 

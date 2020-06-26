@@ -18,21 +18,21 @@ buildCount1 = 1
 planCondition = "NotExists"
 planConditionClass = "apserv"
 planConditionCount = 3
-doNextOnFail = 1
+
 
 [Plan2]
 planType = "BuildMinimums"
 planPriority = 40
 buildType1 = "evscav"
 buildCount1 = 1
-doNextOnFail = 1
+
 
 [Plan3]
 planType = "BuildMinimums"
 planPriority = 30
 buildType1 = "evscout"
 buildCount1 = 12
-doNextOnFail = 1
+
 
 [Plan4]
 planType = "CollectPool"

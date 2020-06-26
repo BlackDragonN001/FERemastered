@@ -11,13 +11,13 @@ moneyDelay = 5
 planType = "CollectPool"
 planPriority = 200
 buildIfNoIdle = 1
-Donextonfail = 1
+
 
 [Plan2]
 plantype = "CollectPool"
 planpriority = 195
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan3]
 plantype = "buildminimums"
@@ -115,7 +115,7 @@ plantype = "attacker"
 attacktype1 = "ivatank"
 attacktype2 = "ivatank"
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan13]
 plantype = "Hold"
@@ -152,7 +152,7 @@ maxtries = 1
 [plan16]
 plantype = "collectpool"
 planpriority = 133
-donextonfail = 1
+
 
 [plan17]
 plantype = "buildminimums"

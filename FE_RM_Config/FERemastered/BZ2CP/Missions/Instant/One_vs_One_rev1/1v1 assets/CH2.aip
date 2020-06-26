@@ -48,7 +48,7 @@ buildloc2 = "cgtow"
 [plan6]
 plantype = "collectpool"
 planpriority = 199
-donextonfail = 1
+
 
 [plan7]
 plantype = "buildminimums"
@@ -65,7 +65,7 @@ planpriority = 160
 targettype = "ebscav"
 attacktype1 = "cvtank"
 attacktype2 = "cvtank"
-donextonfail = 1
+
 
 [plan9]
 plantype = "basebuildminimums"
@@ -80,12 +80,12 @@ buildloc3 = "ctechcenter"
 [plan10]
 plantype = "collectpool"
 planpriority = 197
-donextonfail = 1
+
 
 [plan11]
 plantype = "collectpool"
 planpriority = 155
-donextonfail = 1
+
 
 [plan12]
 plantype = "buildminimums"
@@ -113,7 +113,7 @@ buildloc1 = "cgtow3"
 [plan15]
 plantype = "collectpool"
 planpriority = 130
-donextonfail = 1
+
 
 [plan16]
 plantype = "buildminimums"
@@ -131,7 +131,7 @@ plantype = "attacker"
 planpriority = 120
 targettype = "ebscav"
 attacktype1 = "cvdcar"
-donextonfail = 1
+
 
 [plan18]
 plancondition = "Hisexists"
@@ -145,4 +145,3 @@ attacktype1 = "cvwalk"
 [plan19]
 plantype = "collectpool"
 planpriority = 159
-donextonfail = 1

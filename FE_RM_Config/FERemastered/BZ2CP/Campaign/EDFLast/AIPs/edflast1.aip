@@ -18,7 +18,7 @@ planConditionClass = "fvfurytk"
 planConditionCount = 1
 targetType = "ibgtow"
 attackType1 = "fvfurytk"
-doNextOnFail = 1
+
 
 [Plan2]
 planType = "Attacker"
@@ -28,7 +28,7 @@ planConditionClass = "cvclaw"
 planConditionCount = 1
 targetType = "ibgtow"
 attackType1 = "cvclaw"
-doNextOnFail = 1
+
 
 [Plan3]
 planType = "Attacker"
@@ -38,14 +38,14 @@ planConditionClass = "cvtyrant"
 planConditionCount = 1
 targetType = "ibgtow"
 attackType1 = "cvtyrant"
-doNextOnFail = 1
+
 
 [Plan4]
 planType = "BuildMinimums"
 planPriority = 170
 buildType1 = "evcons"
 buildCount1 = 1
-doNextOnFail = 1
+
 
 [Plan5]
 planType = "BaseBuildMinimums"
@@ -56,7 +56,7 @@ buildType2 = "ebcbun"
 buildCount2 = 1
 buildType3 = "ebarmo"
 buildCount3 = 1
-doNextOnFail = 1
+
 
 [Plan6]
 planType = "BaseBuildMinimums"
@@ -66,7 +66,7 @@ planConditionClass = "ebfact2"
 planConditionCount = 1
 buildType1 = "ebfact"
 buildCount1 = 1
-doNextOnFail = 1
+
 
 [Plan7]
 planType = "BaseBuildMinimums"
@@ -86,7 +86,7 @@ buildLoc4 = "GT3"
 buildType5 = "ebgt4g"
 buildCount5 = 1
 buildLoc5 = "GT4"
-doNextOnFail = 1
+
 
 [Plan8]
 planType = "Upgrade"
@@ -95,42 +95,42 @@ planCondition = "NotExists"
 planConditionClass = "ebfact2"
 planConditionCount = 1
 unitType = "ebfact"
-doNextOnFail = 1
+
 
 [Plan9]
 planType = "BuildMinimums"
 planPriority = 120
 buildType1 = "evtanku"
 buildCount1 = 2
-doNextOnFail = 1
+
 
 [Plan10]
 planType = "BuildMinimums"
 planPriority = 110
 buildType1 = "evscout"
 buildCount1 = 2
-doNextOnFail = 1
+
 
 [Plan11]
 planType = "BuildMinimums"
 planPriority = 100
 buildType1 = "evmislu"
 buildCount1 = 2
-doNextOnFail = 1
+
 
 [Plan12]
 planType = "BuildMinimums"
 planPriority = 90
 buildType1 = "evatanku"
 buildCount1 = 2
-doNextOnFail = 1
+
 
 [Plan13]
 planType = "BuildMinimums"
 planPriority = 80
 buildType1 = "evturr"
 buildCount1 = 3
-doNextOnFail = 1
+
 
 [Plan14]
 planType = "Hold"
@@ -165,7 +165,7 @@ planType = "BuildMinimums"
 planPriority = 30
 buildType1 = "evkami"
 buildCount1 = 2
-doNextOnFail = 1
+
 
 [Plan19]
 planType = "Attacker"
@@ -173,7 +173,7 @@ planPriority = 20
 targetType = "ibscav"
 attackType1 = "evkami"
 attackType2 = "evkami"
-doNextOnFail = 1
+
 
 [Plan20]
 planType = "Attacker"
@@ -181,5 +181,5 @@ planPriority = 10
 targetType = "ibrecy"
 attackType1 = "evkami"
 attackType2 = "evkami"
-doNextOnFail = 1
+
 

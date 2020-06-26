@@ -50,7 +50,7 @@ buildloc3 = "hpower3"
 [plan6]
 plantype = "collectfield"
 planpriority = 115
-donextonfail = 1
+
 
 [plan7]
 plancondition = "NotExists"
@@ -67,7 +67,7 @@ holdtype1 = "evatank"
 holdcount1 = 1
 holdpoint = "hold3"
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan9]
 plantype = "basebuildminimums"
@@ -89,12 +89,12 @@ buildcount2 = 2
 [plan11]
 plantype = "Collectpool"
 planpriority = 197
-donextonfail = 1
+
 
 [plan12]
 plantype = "collectpool"
 planpriority = 198
-donextonfail = 1
+
 
 [plan13]
 plancondition = "hisexists"
@@ -113,7 +113,7 @@ planpriority = 144
 holdtype1 = "evatank"
 holdcount1 = 1
 holdpoint = "hold4"
-donextonfail = 1
+
 
 [plan15]
 plantype = "buildminimums"

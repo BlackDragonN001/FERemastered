@@ -130,19 +130,19 @@ attackType50_1 = "evscout"
 planType = "CollectField"
 planPriority = 140
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan2]
 planType = "CollectField"
 planPriority = 130
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan3]
 planType = "CollectPool"
 planPriority = 120
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan4]
 planType = "BuildMinimums"

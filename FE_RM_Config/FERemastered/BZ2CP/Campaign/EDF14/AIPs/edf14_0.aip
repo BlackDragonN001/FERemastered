@@ -16,7 +16,7 @@ planType = "BuildMinimums"
 planPriority = 70
 buildType1 = "evtanku"
 buildCount1 = 6
-doNextOnFail = 1
+
 
 [Plan2]
 planType = "BuildMinimums"
@@ -26,7 +26,7 @@ planConditionClass = "ibpgen"
 planConditionCount = 1
 buildType1 = "evmisl"
 buildCount1 = 4
-doNextOnFail = 1
+
 
 [Plan3]
 planType = "Attacker"
@@ -38,7 +38,7 @@ targetType = "ibpgen"
 attackType1 = "evmisl"
 attackType2 = "evmisl"
 attackType3 = "evmisl"
-doNextOnFail = 1
+
 
 [Plan4]
 planType = "BuildMinimums"
@@ -48,7 +48,7 @@ planConditionClass = "ibgtow"
 planConditionCount = 1
 buildType1 = "evmisl"
 buildCount1 = 5
-doNextOnFail = 1
+
 
 [Plan5]
 planType = "Attacker"
@@ -59,14 +59,14 @@ planConditionCount = 1
 targetType = "ibgtow"
 attackType1 = "evmisl"
 attackType2 = "evmisl"
-doNextOnFail = 1
+
 
 [Plan6]
 planType = "BuildMinimums"
 planPriority = 20
 buildType1 = "evmisl"
 buildCount1 = 2
-doNextOnFail = 1
+
 
 [Plan8]
 planType = "Attacker"

@@ -11,7 +11,7 @@ moneyDelay = 5
 planType = "CollectPool"
 planPriority = 200
 buildifnoidle = 1
-doNextOnFail = 1
+
 
 [plan2]
 plantype = "buildminimums"
@@ -41,7 +41,7 @@ targettype = "ibgtow"
 attacktype1 = "evmort"
 attacktype2 = "evmort"
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan5]
 plantype = "basebuildminimums"
@@ -77,7 +77,7 @@ buildloc3 = "hpower3"
 plantype = "collectpool"
 planpriority = 205
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan9]
 plancondition = "HisExists"
@@ -162,12 +162,12 @@ maxtries = 1
 plantype = "Collectpool"
 planpriority = 204
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan18]
 plantype = "collectpool"
 planpriority = 146
-donextonfail = 1
+
 
 [plan19]
 plancondition = "Hisexists"
@@ -191,7 +191,7 @@ targettype = "ibpgen"
 attacktype1 = "evkami"
 attacktype2 = "evkami"
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan21]
 plantype = "Hold"

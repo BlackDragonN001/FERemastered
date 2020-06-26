@@ -31,7 +31,7 @@ planType = "CollectField"
 planPriority = 490
 maxTries = 2
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 //Send scavs to deploy on pools:
 [Plan2]
@@ -39,7 +39,7 @@ planType = "CollectPool"
 planPriority = 480
 maxtries = 2
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 
 [Plan3]
@@ -49,7 +49,7 @@ buildType1 = "evtank"
 buildCount1 = 3
 buildType2 = "evscout"
 buildCount2 = 4
-doNextOnFail = 1
+
 
 //Attack his recycler:
 [Plan4]
@@ -60,7 +60,7 @@ targetType = "ivrecy_s"
 attackType1 = "evtank"
 attackType2 = "evscout"
 attackType3 = "evscout"
-doNextOnFail = 1
+
 
 //Attack his cargo transport:
 [Plan5]
@@ -72,7 +72,7 @@ attackType1 = "evtank"
 attackType2 = "evtank"
 attackType3 = "evscout"
 attackType4 = "evscout"
-doNextOnFail = 1
+
 
 //Attack his recycler:
 [Plan6]
@@ -83,7 +83,7 @@ attackType1 = "evscout"
 attackType2 = "evscout"
 attackType3 = "evscout"
 attackType4 = "evscout"
-doNextOnFail = 1
+
 
 //Attack his cargo transport:
 [Plan7]
@@ -93,7 +93,7 @@ targetType = "ivcargo"
 attackType1 = "evtank"
 attackType2 = "evtank"
 attackType3 = "evtank"
-doNextOnFail = 1
+
 
 
 //Build a constructor:
@@ -105,14 +105,14 @@ planType = "BuildMinimums"
 planPriority = 180
 buildType1 = "evcons"
 buildCount1 = 1
-doNextOnFail = 1
+
 
 //Upgrade an extractor:
 [Plan9]
 planType = "Upgrade"
 planPriority = 170
 unitType = "ebscav"
-doNextOnFail = 1
+
 
 
 //Send scavs to collect scrap:
@@ -121,11 +121,11 @@ planType = "CollectPool"
 planPriority = 110
 maxtries = 2
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 //Send scavs to deploy on pools:
 [Plan11]
 planType = "CollectField"
 planPriority = 100
 buildIfNoIdle = 1
-doNextOnFail = 1
+

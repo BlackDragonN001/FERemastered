@@ -50,7 +50,7 @@ buildloc3 = "hpower3"
 [plan6]
 plantype = "collectpool"
 planpriority = 111
-donextonfail = 1
+
 
 [plan7]
 plancondition = "NotExists"
@@ -89,12 +89,12 @@ buildcount2 = 1
 [plan11]
 plantype = "Collectpool"
 planpriority = 198
-donextonfail = 1
+
 
 [plan12]
 plantype = "collectpool"
 planpriority = 199
-donextonfail = 1
+
 
 [plan13]
 plantype = "Hold"
@@ -137,7 +137,7 @@ buildcount1 = 2
 [plan18]
 plantype = "collectpool"
 planpriority = 131
-donextonfail = 1
+
 
 [plan19]
 plancondition = "hisexists"
@@ -149,7 +149,7 @@ targettype = "ibgtow"
 attacktype1 = "evtank"
 attacktype2 = "evtank"
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan20]
 plantype = "buildminimums"
@@ -160,4 +160,3 @@ buildcount1 = 2
 [plan21]
 plantype = "collectpool"
 planpriority = 101
-donextonfail = 1

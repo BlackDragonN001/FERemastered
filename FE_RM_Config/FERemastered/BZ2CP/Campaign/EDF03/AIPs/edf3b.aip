@@ -142,13 +142,13 @@ attackType53_2 = "evmort"
 planType = "CollectPool"
 planPriority = 320
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan2]
 planType = "CollectPool"
 planPriority = 310
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan3]
 planType = "BuildMinimums"
@@ -223,21 +223,21 @@ planType = "CollectField"
 planPriority = 240
 maxTries = 4
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan10]
 planType = "CollectPool"
 planPriority = 230
 maxTries = 4
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan11]
 planType = "CollectField"
 planPriority = 220
 maxTries = 4
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan12]
 planType = "Attacker"

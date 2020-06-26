@@ -448,7 +448,7 @@ planType = "BuildMinimums"
 planPriority = 295
 buildType1 = "evputank"
 buildCount1 = 2
-doNextOnFail = 1
+
 
 [Plan25]
 planType = "BaseBuildMinimums"
@@ -490,20 +490,20 @@ ContinueEvenIfFail = true
 planType = "CollectField"
 planPriority = 265
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan29]
 planType = "CollectPool"
 planPriority = 260
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan30]
 planType = "BuildMinimums"
 planPriority = 250
 buildType1 = "evcons"
 buildCount1 = 2
-doNextOnFail = 1
+
 
 [Plan31]
 planType = "BaseBuildMinimums"

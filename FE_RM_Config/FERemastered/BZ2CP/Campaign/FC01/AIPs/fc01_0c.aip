@@ -11,7 +11,7 @@ planType = "BuildMinimums"
 planPriority = 80
 buildType1 = "cvtank"
 buildCount1 = 4
-doNextOnFail = 1
+
 
 [Plan2]
 planType = "Attacker"
@@ -21,7 +21,7 @@ planConditionClass = "ebscav"
 planConditionCount = 1
 targetType = "ebscav"
 attackType1 = "cvtank"
-doNextOnFail = 1
+
 
 [Plan3]
 planType = "Attacker"
@@ -31,7 +31,7 @@ planConditionClass = "evscav"
 planConditionCount = 1
 targetType = "evscav"
 attackType1 = "cvtank"
-doNextOnFail = 1
+
 
 [Plan4]
 planType = "Attacker"
@@ -41,7 +41,7 @@ planConditionClass = "ebrecy_m"
 planConditionCount = 1
 targetType = "ebrecy_m"
 attackType1 = "cvtank"
-doNextOnFail = 1
+
 
 [Plan5]
 planType = "BuildMinimums"
@@ -51,7 +51,7 @@ planConditionClass = "evturr"
 planConditionCount = 1
 buildType1 = "cvscout"
 buildCount1 = 1
-doNextOnFail = 1
+
 
 [Plan6]
 planType = "Attacker"
@@ -61,7 +61,7 @@ planConditionClass = "evturr"
 planConditionCount = 1
 targetType = "evturr"
 attackType1 = "cvscout"
-doNextOnFail = 1
+
 
 [Plan7]
 planType = "Attacker"
@@ -71,5 +71,5 @@ planConditionClass = "ebscav"
 planConditionCount = 1
 targetType = "ebscav"
 attackType1 = "cvtank"
-doNextOnFail = 1
+
 

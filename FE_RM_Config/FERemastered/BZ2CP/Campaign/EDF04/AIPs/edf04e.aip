@@ -36,7 +36,7 @@ planType = "BuildMinimums"
 planPriority = 460
 buildType1 = "evtanku"
 buildCount1 = 3
-doNextOnFail = 1
+
 
 [Plan2]
 planType = "BuildMinimums"
@@ -45,7 +45,7 @@ buildType1 = "evmort"
 buildCount1 = 3
 buildType2 = "evmislu"
 buildCount2 = 2
-doNextOnFail = 1
+
 
 //Attack his recycler:
 [Plan3]
@@ -60,7 +60,7 @@ attackType4 = "evmort"
 //attackType6 = "evmort"
 attackType5 = "evmislu"
 attackType6 = "evmislu"
-doNextOnFail = 1
+
 
 
 [Plan4]
@@ -68,14 +68,14 @@ planType = "BuildMinimums"
 planPriority = 420
 buildType1 = "evtank"
 buildCount1 = 3
-doNextOnFail = 1
+
 
 [Plan5]
 planType = "BuildMinimums"
 planPriority = 415
 buildType1 = "evscout4"
 buildCount1 = 3
-doNextOnFail = 1
+
 
 //Attack his tanks:
 [Plan6]
@@ -85,7 +85,7 @@ targetType = "ivtank"
 attackType1 = "evtank"
 attackType2 = "evtank"
 attackType3 = "evtank"
-doNextOnFail = 1
+
 
 //Attack his scouts:
 [Plan7]
@@ -95,7 +95,7 @@ targetType = "ivscout"
 attackType1 = "evscout4"
 attackType2 = "evscout4"
 attackType3 = "evscout4"
-doNextOnFail = 1
+
 
 
 //Build a constructor:
@@ -107,7 +107,7 @@ planType = "BuildMinimums"
 planPriority = 380
 buildType1 = "evcons"
 buildCount1 = 1
-doNextOnFail = 1
+
 
 //Make sure Xenomator is upgraded:
 [Plan9]
@@ -117,7 +117,7 @@ planConditionCount = 1
 planType = "Upgrade"
 planPriority = 370
 unitType = "ebfact"
-doNextOnFail = 1
+
 
 //Make sure Believers Vat is constructed:
 [Plan10]
@@ -128,7 +128,7 @@ planType = "BaseBuildMinimums"
 planPriority = 360
 buildType1 = "ebtrain"
 buildCount1 = 1
-doNextOnFail = 1
+
 
 
 [Plan11]
@@ -138,7 +138,7 @@ buildType1 = "evkami"
 buildCount1 = 3
 buildType2 = "evtank4"
 buildCount2 = 2
-doNextOnFail = 1
+
 
 //Attack his rocket tanks:
 [Plan12]
@@ -150,7 +150,7 @@ attackType2 = "evkami"
 attackType3 = "evkami"
 attackType4 = "evtank4"
 attackType5 = "evtank4"
-doNextOnFail = 1
+
 
 
 [Plan13]
@@ -158,14 +158,14 @@ planType = "BuildMinimums"
 planPriority = 330
 buildType1 = "evscout"
 buildCount1 = 4
-doNextOnFail = 1
+
 
 [Plan14]
 planType = "BuildMinimums"
 planPriority = 325
 buildType1 = "evmort4"
 buildCount1 = 2
-doNextOnFail = 1
+
 
 //Attack his recycler:
 [Plan15]
@@ -178,7 +178,7 @@ attackType3 = "evscout"
 attackType4 = "evscout"
 attackType5 = "evmort4"
 attackType6 = "evmort4"
-doNextOnFail = 1
+
 
 
 //Maintain the central Spikes:
@@ -188,7 +188,7 @@ planPriority = 310
 buildType1 = "ebpgen"
 buildCount1 = 1
 buildLoc1 = "cppgen1"
-doNextOnFail = 1
+
 
 [Plan17]
 planType = "BaseBuildMinimums"
@@ -199,7 +199,7 @@ buildLoc1 = "cpspike2"
 buildType2 = "ebgt2g"
 buildCount2 = 1
 buildLoc2 = "cpspike1"
-doNextOnFail = 1
+
 
 [Plan18]
 planType = "BaseBuildMinimums"
@@ -207,7 +207,7 @@ planPriority = 290
 buildType1 = "ebpgen"
 buildCount1 = 1
 buildLoc1 = "cppgen2"
-doNextOnFail = 1
+
 
 [Plan19]
 planType = "BaseBuildMinimums"
@@ -215,7 +215,7 @@ planPriority = 280
 buildType1 = "ebgt2g"
 buildCount1 = 1
 buildLoc1 = "cpspike3"
-doNextOnFail = 1
+
 
 
 //Send scavs to deploy on pools:
@@ -224,11 +224,11 @@ planType = "CollectPool"
 planPriority = 110
 maxTries = 2
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 //Send scavs to collect scrap:
 [Plan21]
 planType = "CollectField"
 planPriority = 100
 buildIfNoIdle = 1
-doNextOnFail = 1
+

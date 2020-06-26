@@ -11,13 +11,13 @@ moneyDelay = 5
 planType = "CollectPool"
 planPriority = 200
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan2]
 planType = "CollectPool"
 planPriority = 195
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan3]
 plantype = "buildminimums"
@@ -76,7 +76,7 @@ planpriority = 162
 targettype = "ebscav"
 attacktype1 = "fvwalk"
 attacktype2 = "fvwalk"
-donextonfail = 1
+
 
 
 [plan10]
@@ -96,7 +96,7 @@ planpriority = 160
 targettype = "ebrecy_m"
 attacktype1 = "fvrbomb"
 attacktype2 = "fvrbomb"
-donextonfail = 1
+
 
 [plan12]
 plantype = "basebuildminimums"
@@ -115,7 +115,7 @@ planpriority = 158
 targettype = "ebpgen"
 attacktype1 = "fvarch"
 attacktype2 = "fvarch"
-donextonfail = 1
+
 
 [plan14]
 plancondition = "Hisexists"
@@ -136,7 +136,7 @@ planpriority = 150
 plantype = "attacker"
 targettype = "evcons"
 attacktype1 = "fvrbomb"
-donextonfail = 1
+
 
 [plan16]
 plantype = "Hold"
@@ -152,12 +152,12 @@ plantype = "basebuildminimums"
 planpriority = 189
 buildtype1 = "fbspir"
 buildloc1 = "spire3"
-donextonfail = 1
+
 
 [plan18]
 plantype = "collectpool"
 planpriority = 178 
-donextonfail = 1
+
 
 [plan19]
 plancondition = "nothisexists"
@@ -168,7 +168,7 @@ planpriority = 168
 targettype = "ebrecy_m"
 attacktype1 = "fvatank3t"
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan20]
 plantype = "buildminimums"

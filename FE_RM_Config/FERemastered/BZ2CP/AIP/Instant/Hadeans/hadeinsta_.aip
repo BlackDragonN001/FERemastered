@@ -405,7 +405,7 @@ planPriority = 400
 buildType1 = "evserv"
 buildCount1 = 2
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan20]
 planType = "Service"
@@ -424,7 +424,7 @@ planType = "BuildMinimums"
 planPriority = 390
 buildType1 = "evcons"
 buildCount1 = 2
-doNextOnFail = 1
+
 
 [Plan22]
 planType = "BaseBuildMinimums"

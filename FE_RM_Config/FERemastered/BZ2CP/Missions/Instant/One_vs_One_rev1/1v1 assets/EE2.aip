@@ -16,7 +16,7 @@ buildcount1 = 2
 [Plan2]
 plantype = "CollectPool"
 planpriority = 195
-donextonfail = 1
+
 
 [plan3]
 plantype = "buildminimums"
@@ -39,7 +39,7 @@ plantype = "buildminimums"
 planpriority = 180
 buildtype1 = "ivtank4w"
 buildcount1 = 1
-donextonfail = 1
+
 
 [plan6]
 plancondition = "HisExists"
@@ -50,7 +50,7 @@ plantype = "attacker"
 targettype = "ibpgen"
 attacktype1 = "ivtank"
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan7]
 plantype = "basebuildminimums"
@@ -104,12 +104,12 @@ buildloc2 = "gtow2"
 [plan13]
 plantype = "collectpool"
 planpriority = 191
-donextonfail = 1
+
 
 [plan14]
 plantype = "collectpool"
 planpriority = 123
-donextonfail = 1
+
 
 [plan15]
 plancondition = "HisExists"
@@ -129,7 +129,7 @@ plantype = "attacker"
 targettype = "ivcons"
 attacktype1 = "ivmbike"
 attacktype2 = "ivmbike"
-donextonfail = 1
+
 
 [plan17]
 plantype = "buildminimums"
@@ -147,12 +147,12 @@ attacktype1 = "ivtank13"
 attacktype2 = "ivtank13"
 attacktype3 = "ivtank13"
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan19]
 plantype = "collectpool"
 planpriority = 149
-donextonfail = 1
+
 
 [plan20]
 plancondition = "HisExists"
@@ -163,7 +163,7 @@ plantype = "attacker"
 targettype = "ibtcen"
 attacktype1 = "commando"
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan21]
 plancondition = "hisexists"
@@ -183,9 +183,8 @@ plantype = "attacker"
 targettype = "ibscav"
 attacktype1 = "ivapc"
 attacktype2 = "ivapc"
-donextonfail = 1
+
 
 [Plan23]
 plantype = "CollectPool"
 planpriority = 138
-donextonfail = 1

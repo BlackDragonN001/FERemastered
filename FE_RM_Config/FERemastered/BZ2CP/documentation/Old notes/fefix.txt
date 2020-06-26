@@ -344,7 +344,7 @@ X    - reduced particleTypes from 14 to 13
     buildCount1 = 2
     buildType2 = "evscout4
     buildCount2 = 1
-    doNextOnFail = 1
+    
     Now Reads
     [Plan11]
     planType = "BuildMinimums"
@@ -353,7 +353,7 @@ X    - reduced particleTypes from 14 to 13
     buildCount1 = 2
     buildType2 = "evscout4"
     buildCount2 = 1
-    doNextOnFail = 1
+    
     mdmgun2.odf
     - changed renderName = from "xmdmgun.render" to NULL
     fbgun_a.odf [From REV C]

@@ -11,13 +11,13 @@ moneyDelay = 5
 planType = "CollectPool"
 planPriority = 200
 buildIfNoIdle = 1
-Donextonfail = 1
+
 
 [Plan2]
 plantype = "CollectPool"
 planpriority = 195
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan3]
 plantype = "buildminimums"
@@ -53,7 +53,7 @@ targettype = "fbscav"
 attacktype1 = "ivscout"
 attacktype2 = "ivscout"
 maxtries = 1
-donextonfail = 1
+
 
 [plan7]
 plantype = "basebuildminimums"
@@ -84,7 +84,7 @@ buildtype3 = "ibpgen"
 buildloc3 = "power3"
 buildtype4 = "ibgtow"
 buildloc4 = "gtow2"
-donextonfail = 1
+
 
 [plan10]
 plancondition = "HisExists"
@@ -152,7 +152,7 @@ maxtries = 1
 [plan16]
 plantype = "collectpool"
 planpriority = 133
-donextonfail = 1
+
 
 [plan17]
 plantype = "buildminimums"

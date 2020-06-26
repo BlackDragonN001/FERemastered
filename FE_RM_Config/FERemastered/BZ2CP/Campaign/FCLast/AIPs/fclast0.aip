@@ -11,7 +11,7 @@ buildType1 = "cvtank"
 buildCount1 = 1
 buildType2 = "cvrbomb"
 buildCount2 = 1
-doNextOnFail = 1
+
 
 [Plan2]
 planType = "Attacker"
@@ -22,4 +22,4 @@ planConditionCount = 1
 targetType = "ebrecy"
 attackType1 = "cvtank"
 attackType2 = "cvrbomb"
-doNextOnFail = 1
+

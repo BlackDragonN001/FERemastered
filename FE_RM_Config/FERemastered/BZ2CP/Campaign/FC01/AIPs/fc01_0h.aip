@@ -18,33 +18,33 @@ buildCount1 = 1
 planCondition = "NotExists"
 planConditionClass = "apserv"
 planConditionCount = 3
-doNextOnFail = 1
+
 
 [Plan2]
 planType = "BuildMinimums"
 planPriority = 140
 buildType1 = "evscav"
 buildCount1 = 1
-doNextOnFail = 1
+
 
 [Plan3]
 planType = "CollectField"
 planPriority = 130
-doNextOnFail = 1
+
 
 [Plan4]
 planType = "BuildMinimums"
 planPriority = 120
 buildType1 = "evscav"
 buildCount1 = 2
-doNextOnFail = 1
+
 
 [Plan5]
 planType = "BuildMinimums"
 planPriority = 110
 buildType1 = "evcons"
 buildCount1 = 1
-doNextOnFail = 1
+
 
 [Plan6]
 planType = "CollectPool"
@@ -52,24 +52,24 @@ planPriority = 100
 planCondition = "NotExists"
 planConditionClass = "ebscav"
 planConditionCount = 1
-doNextOnFail = 1
+
 
 [Plan7]
 planType = "BaseBuildMinimums"
 planPriority = 90
 buildType1 = "ebgt2g"
 buildLoc1 = "TowerFriend1"
-doNextOnFail = 1
+
 
 [Plan8]
 planType = "CollectPool"
 planPriority = 80
-doNextOnFail = 1
+
 
 [Plan9]
 planType = "CollectPool"
 planPriority = 70
-doNextOnFail = 1
+
 
 [Plan10]
 planType = "BaseBuildMinimums"
@@ -78,14 +78,14 @@ buildType1 = "ebpgen"
 buildType2 = "ebfact"
 buildType3 = "ebcbun"
 buildType4 = "ebsbay"
-doNextOnFail = 1
+
 
 [Plan11]
 planType = "BuildMinimums"
 planPriority = 50
 buildType1 = "evtank"
 buildCount1 = 1
-doNextOnFail = 1
+
 
 [Plan12]
 planType = "BaseBuildMinimums"
@@ -94,7 +94,7 @@ buildType1 = "ebpgen"
 buildCount1 = 3
 buildType2 = "ebgt4g"
 buildCount2 = 2
-doNextOnFail = 1
+
 
 [Plan13]
 planType = "BaseBuildMinimums"
@@ -105,14 +105,14 @@ buildType2 = "ebgt4g"
 buildCount2 = 4
 buildType3 = "ebarmo"
 buildCount3 = 1
-doNextOnFail = 1
+
 
 [Plan14]
 planType = "BuildMinimums"
 planPriority = 20
 buildType1 = "evatank"
 buildCount1 = 3
-doNextOnFail = 1
+
 
 [Plan15]
 planType = "BaseBuildMinimums"

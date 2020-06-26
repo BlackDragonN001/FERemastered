@@ -11,13 +11,13 @@ moneyDelay = 5
 planType = "CollectPool"
 planPriority = 200
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan2]
 planType = "CollectPool"
 planPriority = 195
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan3]
 plantype = "buildminimums"
@@ -107,7 +107,7 @@ targettype = "ibpgen"
 attacktype1 = "fvarch"
 attacktype2 = "fvarch"
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan14]
 plancondition = "Hisexists"
@@ -117,7 +117,7 @@ planpriority = 155
 plantype = "attacker"
 targettype = "ibarmo"
 attacktype1 = "fvarch"
-donextonfail = 1
+
 
 [plan15]
 plancondition = "Nothisexists"
@@ -129,7 +129,7 @@ targettype = "ibrecy_m"
 attacktype1 = "fvrbomb"
 attacktype2 = "fvrbomb"
 attacktype3 = "fvrbomb"
-donextonfail = 1
+
 
 [plan16]
 plantype = "Hold"
@@ -143,7 +143,7 @@ plantype = "basebuildminimums"
 planpriority = 189
 buildtype1 = "fbspir"
 buildloc1 = "spire3"
-donextonfail = 1
+
 
 [plan18]
 plancondition = "NotHisExists"
@@ -175,4 +175,3 @@ plantype = "buildminimums"
 planpriority = 151
 buildtype1 = "fvrbomb"
 buildcount1 = 3
-donextonfail = 1

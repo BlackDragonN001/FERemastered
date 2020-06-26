@@ -16,7 +16,7 @@ buildcount1 = 2
 [Plan2]
 plantype = "CollectPool"
 planpriority = 195
-donextonfail = 1
+
 
 [plan3]
 plantype = "buildminimums"
@@ -104,17 +104,17 @@ buildloc2 = "gtow2"
 [plan13]
 plantype = "collectpool"
 planpriority = 191
-donextonfail = 1
+
 
 [plan14]
 plantype = "collectpool"
 planpriority = 123
-donextonfail = 1
+
 
 [plan15]
 plantype = "collectpool"
 planpriority = 188
-donextonfail = 1
+
 
 [plan16]
 plancondition = "HisExists"
@@ -126,7 +126,7 @@ targettype = "cvcons03"
 attacktype1 = "ivmbike"
 attacktype2 = "ivmbike"
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan17]
 plancondition = "HisExists"
@@ -137,7 +137,7 @@ planpriority = 129
 targettype = "cvrbombP"
 attacktype1 = "ivtank"
 buildifnoidle = 151
-donextonfail = 1
+
 
 [plan18]
 plantype = "attacker"
@@ -146,7 +146,7 @@ targettype = "cbrecy03"
 attacktype1 = "ivtank13"
 attacktype2 = "ivtank13"
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan19]
 plancondition = "HisExists"
@@ -156,7 +156,7 @@ plantype = "attacker"
 planpriority = 130
 targettype = "cbgtow"
 attacktype1 = "ivatank"
-donextonfail = 1
+
 
 [plan20]
 plancondition = "HisExists"
@@ -166,12 +166,12 @@ plantype = "attacker"
 planpriority = 129
 targettype = "cbscav"
 attacktype1 = "ivatank"
-donextonfail = 1
+
 
 [plan21]
 plantype = "collectpool"
 planpriority = 133
-donextonfail = 1
+
 
 
 [plan22]

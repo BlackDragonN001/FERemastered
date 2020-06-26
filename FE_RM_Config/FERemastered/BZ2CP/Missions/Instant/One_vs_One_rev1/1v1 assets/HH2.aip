@@ -50,7 +50,7 @@ buildloc3 = "hpower3"
 [plan6]
 plantype = "collectpool"
 planpriority = 189
-donextonfail = 1
+
 
 [plan7]
 plancondition = "NotExists"
@@ -87,12 +87,12 @@ buildcount2 = 1
 [plan11]
 plantype = "Collectpool"
 planpriority = 198
-donextonfail = 1
+
 
 [plan12]
 plantype = "collectpool"
 planpriority = 199
-donextonfail = 1
+
 
 [plan13]
 plantype = "Hold"
@@ -127,7 +127,7 @@ attacktype1 = "evwalk"
 [plan17]
 plantype = "Collectpool"
 planpriority = 121
-donextonfail = 1
+
 
 [plan18]
 plantype = "buildminimums"

@@ -17,13 +17,13 @@ UnitIdleSeconds = 999999 // Don't send out units via Dispatch.
 [Plan1]
 planType = "CollectPool"
 planPriority = 200
-donextonfail = 1
+
 
 [plan2]
 plantype = "CollectPool"
 planpriority = 190
 buildifnoidle = 1
-donextonfail = 1
+
 
 
 [Plan3]
@@ -132,7 +132,7 @@ holdpoint = "hold2"
 [plan15]
 plantype = "collectfield"
 planpriority = 150
-donextonfail = 1
+
 
 [plan16]
 plantype = "buildminimums"

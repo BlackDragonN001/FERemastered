@@ -11,7 +11,7 @@ planType = "BaseBuildMinimums"
 planPriority = 90
 buildType1 = "ebpgen"
 buildLoc1 = "gen2"
-doNextOnFail = 1
+
 
 [Plan2]
 planType = "BaseBuildMinimums"
@@ -21,21 +21,21 @@ planConditionClass = "ebcbun"
 planConditionCount = 1
 buildType1 = "ebcbun"
 buildLoc1 = "gen1"
-doNextOnFail = 1
+
 
 [Plan3]
 planType = "BaseBuildMinimums"
 planPriority = 70
 buildType1 = "ebfact"
 buildLoc1 = "ebfact"
-doNextOnFail = 1
+
 
 [Plan4]
 planType = "BaseBuildMinimums"
 planPriority = 60
 buildType1 = "ebpgen"
 buildLoc1 = "gen3"
-doNextOnFail = 1
+
 
 [Plan5]
 planType = "BaseBuildMinimums"
@@ -44,14 +44,14 @@ buildType1 = "ebgt4g"
 buildLoc1 = "gunner1"
 buildType2 = "ebgt4g"
 buildLoc2 = "gunner2"
-doNextOnFail = 1
+
 
 [Plan6]
 planType = "Upgrade"
 planPriority = 40
 unitType = "ebfact"
 targetType = "ebfact2"
-doNextOnFail = 1
+
 
 [Plan7]
 planType = "Attacker"
@@ -67,7 +67,7 @@ planPriority = 20
 targetType = "ibrecy"
 attackType1 = "evwalk"
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan9]
 planType = "Attacker"
@@ -76,5 +76,5 @@ targetType = "ivturr"
 attackType1 = "evmort"
 attackType2 = "evmort"
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 

@@ -16,7 +16,7 @@ buildcount1 = 2
 [Plan2]
 plantype = "CollectPool"
 planpriority = 195
-donextonfail = 1
+
 
 [plan3]
 plantype = "buildminimums"
@@ -102,12 +102,12 @@ holdpoint = "hold5"
 [plan12]
 plantype = "collectpool"
 planpriority = 191
-donextonfail = 1
+
 
 [plan13]
 plantype = "collectpool"
 planpriority = 133
-donextonfail = 1
+
 
 [plan14]
 plancondition = "HisExists"
@@ -137,7 +137,7 @@ plantype = "attacker"
 targettype = "fvwalk"
 attacktype1 = "ivtank"
 attacktype2 = "ivtank"
-donextonfail = 1
+
 
 [plan17]
 plancondition = "hisexists"
@@ -145,7 +145,7 @@ planconditionclass = "fbstro"
 planconditioncount = 1
 planpriority = 120
 plantype = "CollectPool"
-donextonfail = 1
+
 
 [plan18]
 plantype = "buildminimums"
@@ -169,7 +169,7 @@ planconditionclass = "fbover"
 planconditioncount = 1
 planpriority = 181
 plantype = "CollectPool"
-donextonfail = 1
+
 
 [plan21]
 plancondition = "hisexists"
@@ -179,7 +179,7 @@ planpriority = 114
 plantype = "attacker"
 targettype = "fbscav"
 attacktype1 = "ivtank13"
-donextonfail = 1
+
 
 [plan22]
 plancondition = "hisexists"
@@ -190,4 +190,3 @@ plantype = "attacker"
 targettype = "fvartl"
 attacktype1 = "commando"
 buildifnoidle = 1
-donextonfail = 1

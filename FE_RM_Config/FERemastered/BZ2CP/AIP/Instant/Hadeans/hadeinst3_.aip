@@ -513,7 +513,7 @@ planType = "BuildMinimums"
 planPriority = 250
 buildType1 = "evcons"
 buildCount1 = 2
-doNextOnFail = 1
+
 
 [Plan32]
 planType = "BaseBuildMinimums"

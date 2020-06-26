@@ -90,7 +90,7 @@ planConditionCount = 1
 buildType1 = "cvcons02"
 buildCount1 = 1
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan2]
 planType = "BaseBuildMinimums"
@@ -104,7 +104,7 @@ buildCount1 = 1
 buildCount2 = 1
 buildLoc1 = "CPGEN1"
 buildLoc2 = "CPGEN2"
-doNextOnFail = 1
+
 
 [Plan3]
 planType = "BaseBuildMinimums"
@@ -121,7 +121,7 @@ buildLoc2 = "CGTOW2"
 buildType3 = "cbgtow"
 buildCount3 = 1
 buildLoc3 = "CGTOW3"
-doNextOnFail = 1
+
 
 [Plan4]
 planType = "BuildMinimums"
@@ -132,7 +132,7 @@ planConditionCount = 2
 buildType1 = "cvserv02"
 buildCount1 = 2
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan5]
 planType = "BuildMinimums"
@@ -153,7 +153,7 @@ planConditionCount = 1
 buildType1 = "CBFACT02"
 buildCount1 = 1
 buildLoc1 = "CFACT"
-doNextOnFail = 1
+
 
 [Plan7]
 planType = "BaseBuildMinimums"
@@ -164,7 +164,7 @@ planConditionCount = 1
 buildType1 = "CBSBAY"
 buildCount1 = 1
 buildLoc1 = "CBAY"
-doNextOnFail = 1
+
 
 [Plan8]
 planType = "Recover"
@@ -193,7 +193,7 @@ attackType1 = "cvtank"
 attackType2 = "cvtank"
 maxAttacks = 10
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan11]
 planType = "Attacker"
@@ -206,7 +206,7 @@ attackType1 = "cvrbomb"
 attackType2 = "cvrbomb"
 maxAttacks = 5
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan12]
 planType = "Attacker"
@@ -219,7 +219,7 @@ attackType1 = "cvscout"
 attackType2 = "cvscout"
 maxTries = 4
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan13]
 planType = "Attacker"
@@ -232,7 +232,7 @@ attackType1 = "cvdcar"
 attackType2 = "cvtank"
 maxAttacks = 3
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan14]
 planType = "Attacker"
@@ -245,5 +245,5 @@ attackType1 = "cvhatank"
 attackType2 = "cvhatank"
 maxAttacks = 5
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 

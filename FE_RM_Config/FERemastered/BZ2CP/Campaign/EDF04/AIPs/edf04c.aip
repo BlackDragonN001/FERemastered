@@ -39,7 +39,7 @@ planType = "CollectPool"
 planPriority = 490
 maxTries = 3
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 //Send eight scavs to collect scrap:
 [Plan2]
@@ -47,7 +47,7 @@ planType = "CollectField"
 planPriority = 480
 maxTries = 8
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 
 [Plan3]
@@ -57,7 +57,7 @@ buildType1 = "evtank"
 buildCount1 = 3
 buildType2 = "evmort"
 buildCount2 = 2
-doNextOnFail = 1
+
 
 [Plan4]
 planType = "BuildMinimums"
@@ -66,7 +66,7 @@ buildType1 = "evmisl"
 buildCount1 = 3
 buildType2 = "evscout4"
 buildCount2 = 2
-doNextOnFail = 1
+
 
 //Attack his extractors:
 [Plan5]
@@ -78,7 +78,7 @@ attackType2 = "evtank"
 attackType3 = "evtank"
 attackType4 = "evmort"
 attackType5 = "evmort"
-doNextOnFail = 1
+
 
 //Attack his constructor:
 [Plan6]
@@ -90,7 +90,7 @@ attackType2 = "evmisl"
 attackType3 = "evmisl"
 attackType4 = "evscout4"
 attackType5 = "evscout4"
-doNextOnFail = 1
+
 
 
 //Build a constructor:
@@ -102,7 +102,7 @@ planType = "BuildMinimums"
 planPriority = 420
 buildType1 = "evcons"
 buildCount1 = 1
-doNextOnFail = 1
+
 
 //Make sure Xenomator is upgraded:
 [Plan8]
@@ -112,7 +112,7 @@ planConditionCount = 1
 planType = "Upgrade"
 planPriority = 410
 unitType = "ebfact"
-doNextOnFail = 1
+
 
 //Make sure Believers Vat is constructed:
 [Plan9]
@@ -123,7 +123,7 @@ planType = "BaseBuildMinimums"
 planPriority = 400
 buildType1 = "ebtrain"
 buildCount1 = 1
-doNextOnFail = 1
+
 
 
 [Plan10]
@@ -131,7 +131,7 @@ planType = "BuildMinimums"
 planPriority = 395
 buildType1 = "evmislu"
 buildCount1 = 3
-doNextOnFail = 1
+
 
 //Attack his turrets:
 [Plan11]
@@ -141,14 +141,14 @@ targetType = "ibscup"
 attackType1 = "evmislu"
 attackType2 = "evmislu"
 attackType3 = "evmislu"
-doNextOnFail = 1
+
 
 [Plan12]
 planType = "BuildMinimums"
 planPriority = 385
 buildType1 = "evkami"
 buildCount1 = 3
-doNextOnFail = 1
+
 
 //Attack his power generators:
 [Plan13]
@@ -158,7 +158,7 @@ targetType = "ibpgen"
 attackType1 = "evkami"
 attackType2 = "evkami"
 attackType3 = "evkami"
-doNextOnFail = 1
+
 
 
 [Plan14]
@@ -166,14 +166,14 @@ planType = "BuildMinimums"
 planPriority = 360
 buildType1 = "evtanku"
 buildCount1 = 4
-doNextOnFail = 1
+
 
 [Plan15]
 planType = "BuildMinimums"
 planPriority = 355
 buildType1 = "evmort4"
 buildCount1 = 3
-doNextOnFail = 1
+
 
 //Attack his factory:
 [Plan16]
@@ -184,7 +184,7 @@ attackType1 = "evtanku"
 attackType2 = "evtanku"
 attackType3 = "evtanku"
 attackType4 = "evtanku"
-doNextOnFail = 1
+
 
 //Attack his extractors:
 [Plan17]
@@ -194,7 +194,7 @@ targetType = "ibscav"
 attackType1 = "evmort4"
 attackType2 = "evmort4"
 attackType3 = "evmort4"
-doNextOnFail = 1
+
 
 
 //Maintain the central Spikes:
@@ -204,7 +204,7 @@ planPriority = 330
 buildType1 = "ebpgen"
 buildCount1 = 1
 buildLoc1 = "cppgen1"
-doNextOnFail = 1
+
 
 [Plan19]
 planType = "BaseBuildMinimums"
@@ -215,7 +215,7 @@ buildLoc1 = "cpspike2"
 buildType2 = "ebgt2g"
 buildCount2 = 1
 buildLoc2 = "cpspike1"
-doNextOnFail = 1
+
 
 [Plan20]
 planType = "BaseBuildMinimums"
@@ -223,7 +223,7 @@ planPriority = 310
 buildType1 = "ebpgen"
 buildCount1 = 1
 buildLoc1 = "cppgen2"
-doNextOnFail = 1
+
 
 [Plan21]
 planType = "BaseBuildMinimums"
@@ -231,7 +231,7 @@ planPriority = 300
 buildType1 = "ebgt2g"
 buildCount1 = 1
 buildLoc1 = "cpspike3"
-doNextOnFail = 1
+
 
 
 //Build a battery tray:
@@ -241,7 +241,7 @@ planPriority = 290
 buildType1 = "ebpgen"
 buildCount1 = 1
 buildLoc1 = "SGP1"
-doNextOnFail = 1
+
 
 //Build spikes:
 [Plan23]
@@ -253,7 +253,7 @@ buildLoc1 = "SGT1"
 buildType2 = "ebgt2g"
 buildCount2 = 1
 buildLoc2 = "SGT2"
-doNextOnFail = 1
+
 
 
 //Upgrade an extractor:
@@ -261,7 +261,7 @@ doNextOnFail = 1
 planType = "Upgrade"
 planPriority = 270
 unitType = "ebscav"
-doNextOnFail = 1
+
 
 
 [Plan25]
@@ -271,7 +271,7 @@ buildType1 = "evscout"
 buildCount1 = 3
 buildType2 = "evtank4"
 buildCount2 = 2
-doNextOnFail = 1
+
 
 //Attack his upgraded extractors:
 [Plan26]
@@ -283,7 +283,7 @@ attackType3 = "evscout"
 attackType2 = "evscout"
 attackType4 = "evtank4"
 attackType5 = "evtank4"
-doNextOnFail = 1
+
 
 
 //Send scavs to deploy on pools:
@@ -292,11 +292,11 @@ planType = "CollectPool"
 planPriority = 110
 maxTries = 3
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 //Send scavs to collect scrap:
 [Plan28]
 planType = "CollectField"
 planPriority = 100
 buildIfNoIdle = 1
-doNextOnFail = 1
+

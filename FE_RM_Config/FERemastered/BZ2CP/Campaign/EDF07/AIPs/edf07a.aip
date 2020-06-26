@@ -97,7 +97,7 @@ attackType1 = "cvscout"
 attackType2 = "cvscout"
 maxAttacks = 10
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan3]
 planType = "Attacker"
@@ -110,7 +110,7 @@ attackType1 = "cvrbomb"
 attackType2 = "cvrbomb"
 maxAttacks = 10
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan4]
 planType = "Attacker"
@@ -124,7 +124,7 @@ attackType2 = "cvtank"
 attackType3 = "cvtank"
 maxTries = 4
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan5]
 planType = "Attacker"
@@ -137,7 +137,7 @@ attackType1 = "cvtalon02"
 attackType2 = "cvtalon02"
 maxAttacks = 10
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan6]
 planType = "Attacker"
@@ -150,7 +150,7 @@ attackType1 = "cvdcar"
 attackType2 = "cvdcar"
 maxAttacks = 12
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan7]
 planType = "Attacker"
@@ -162,7 +162,7 @@ targetType = "ibcbun"
 attackType1 = "cvhatank"
 attackType2 = "cvhatank"
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan8]
 planType = "Attacker"
@@ -176,5 +176,5 @@ attackType2 = "cvdcar"
 attackType3 = "cvtank"
 maxAttacks = 10
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 

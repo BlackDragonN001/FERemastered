@@ -20,12 +20,12 @@ buildCount1 = 2
 [Plan2]
 planType = "CollectPool"
 planPriority = 90
-doNextOnFail = 1
+
 
 [Plan3]
 planType = "CollectField"
 planPriority = 80
-doNextOnFail = 1
+
 
 [Plan4]
 planType = "BuildMinimums"
@@ -57,15 +57,15 @@ attackType1 = "evmi_ih"
 [Plan8]
 planType = "CollectPool"
 planPriority = 30
-doNextOnFail = 1
+
 
 [Plan9]
 planType = "CollectPool"
 planPriority = 20
-doNextOnFail = 1
+
 
 [Plan10]
 planType = "CollectPool"
 planPriority = 10
-doNextOnFail = 1
+
 

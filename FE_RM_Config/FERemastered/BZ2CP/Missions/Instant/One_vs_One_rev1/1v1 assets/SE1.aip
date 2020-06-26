@@ -16,7 +16,7 @@ buildcount1 = 2
 [Plan2]
 planType = "CollectPool"
 planPriority = 195
-doNextOnFail = 1
+
 
 [Plan3]
 plantype = "buildminimums"
@@ -107,12 +107,12 @@ plantype = "basebuildminimums"
 planpriority = 189
 buildtype1 = "fbspir"
 buildloc1 = "spire3"
-donextonfail = 1
+
 
 [plan15]
 plantype = "collectpool"
 planpriority = 191
-donextonfail = 1
+
 
 [plan16]
 plancondition = "Hisexists"
@@ -128,7 +128,7 @@ buildifnoidle = 1
 [plan17]
 plantype = "collectpool"
 planpriority = 150
-donextonfail = 1
+
 
 [plan18]
 plancondition = "HisExists"
@@ -171,12 +171,12 @@ buildcount1 = 1
 [plan23]
 plantype = "collectpool"
 planpriority = 149
-donextonfail = 1
+
 
 [plan24]
 plantype = "collectpool"
 planpriority = 148
-donextonfail = 1
+
 
 [plan25]
 plancondition = "Hisexists"
@@ -186,7 +186,7 @@ plantype = "buildminimums"
 planpriority = 100
 buildtype1 = "fvatank"
 buildcount1 = 1
-donextonfail = 1
+
 
 [plan26]
 plancondition = "Exists"

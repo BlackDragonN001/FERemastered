@@ -11,7 +11,7 @@ moneyDelay = 5
 planType = "CollectPool"
 planPriority = 200
 buildifnoidle = 1
-doNextOnFail = 1
+
 
 [plan2]
 plantype = "buildminimums"
@@ -79,7 +79,7 @@ buildloc3 = "hpower3"
 plantype = "collectpool"
 planpriority = 205
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan9]
 plancondition = "HisExists"
@@ -147,7 +147,7 @@ planpriority = 140
 plantype = "attacker"
 targettype = "fvarch"
 attacktype1 = "evtank"
-donextonfail = 1
+
 
 
 [plan16]
@@ -158,18 +158,18 @@ plantype = "attacker"
 planpriority = 135
 targettype = "fbspir"
 attacktype1 = "evatanku"
-donextonfail = 1
+
 
 [plan17]
 plantype = "Collectpool"
 planpriority = 204
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan18]
 plantype = "collectpool"
 planpriority = 146
-donextonfail = 1
+
 
 [plan19]
 plancondition = "Hisexists"
@@ -179,7 +179,7 @@ planpriority = 130
 plantype = "attacker"
 targettype = "ibfact"
 attacktype1 = "evatank"
-donextonfail = 1
+
 
 [plan20]
 plancondition = "NotHisExists"
@@ -191,7 +191,7 @@ targettype = "fblung"
 attacktype1 = "evkami"
 attacktype2 = "evkami"
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan21]
 plantype = "Hold"
@@ -199,7 +199,7 @@ planpriority = 133
 holdtype1 = "evturr"
 holdcount1 = 1
 holdpoint = "hold4"
-donextonfail = 1
+
 
 [plan22]
 plancondition = "NotHisExists"

@@ -11,13 +11,13 @@ moneyDelay = 5
 planType = "CollectPool"
 planPriority = 200
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan2]
 planType = "CollectPool"
 planPriority = 195
 buildIfNoIdle = 1
-doNextOnFail = 1
+
 
 [Plan3]
 plantype = "buildminimums"
@@ -70,7 +70,7 @@ planpriority = 164
 targettype = "ibfact"
 attacktype1 = "fvwalk"
 attacktype2 = "fvwalk"
-donextonfail = 1
+
 
 [plan10]
 plancondition = "NotExists"
@@ -105,7 +105,7 @@ attacktype1 = "fvarch"
 attacktype2 = "fvarch"
 attacktype3 = "fvarch"
 buildifnoidle = 1
-donextonfail = 1
+
 
 [plan14]
 plancondition = "Hisexists"
@@ -115,7 +115,7 @@ planpriority = 154
 plantype = "attacker"
 targettype = "ibarmo"
 attacktype1 = "fvatank3t"
-donextonfail = 1
+
 
 [plan15]
 plancondition = "Nothisexists"
@@ -139,7 +139,7 @@ plantype = "basebuildminimums"
 planpriority = 189
 buildtype1 = "fbspir"
 buildloc1 = "spire3"
-donextonfail = 1
+
 
 [plan18]
 plancondition = "NotHisExists"
@@ -162,7 +162,7 @@ targettype = "ibscav"
 attacktype1 = "fvtank3t"
 attacktype2 = "fvtank"
 attacktype3 = "fvtank"
-donextonfail = 1
+
 
 [plan20]
 plantype = "buildminimums"
@@ -175,7 +175,7 @@ plantype = "buildminimums"
 planpriority = 155
 buildtype1 = "fvatank3t"
 buildcount1 = 1
-donextonfail = 1
+
 
 [plan22]
 plantype = "buildminimums"
