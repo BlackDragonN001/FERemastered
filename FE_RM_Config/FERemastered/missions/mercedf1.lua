@@ -777,7 +777,7 @@ function Routine4()
 				M.Routine4State = M.Routine4State + 1;
 			end
 		elseif M.Routine4State == 2 then
-			SetCameraPosition(M.Position_CarrierLaunchCamDummy, SetVector(0,1,0));
+			SetCameraPosition(GetPosition(M.Object_CarrierLaunchCamDummy), SetVector(0,1,0));
 			
 			if (GetTime() >= M.Routine4WaitTillTime) then
 				CameraFinish();
