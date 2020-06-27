@@ -5,7 +5,7 @@
 [GameObjectClass]
 baseName = "evmisl"
 geometryName = "evmisl00.fbx"
-CockpitName = "evmisl_cockpit.xsi" // cockpit – Tempest storm
+CockpitName = "evmisl_cockpit.fbx"
 animCount = 3
 animName1 = "forward"
 animFile1 = "evmislsf.fbx"
@@ -13,6 +13,13 @@ animName2 = "neutral"
 animFile2 = "evmislsn.fbx"
 animName3 = "reverse"
 animFile3 = "evmislsr.fbx"
+animCountCockpit = 3
+animNameCockpit1 = "forward"
+animFileCockpit1 = "evmislsf_cockpit.fbx"
+animNameCockpit2 = "neutral"
+animFileCockpit2 = "evmislsn_cockpit.fbx"
+animNameCockpit3 = "reverse"
+animFileCockpit3 = "evmislsr_cockpit.fbx"
 classLabel = "wingman"
 scrapValue = 25
 scrapCost = 55
