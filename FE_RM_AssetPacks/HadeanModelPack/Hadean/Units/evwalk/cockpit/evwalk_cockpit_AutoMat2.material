@@ -1,0 +1,14 @@
+[solid]
+diffuse = 0.800000  0.800000  0.800000  1.000000
+specular = 0.500000  0.500000  0.500000  1.000000
+specularPower = 1024.000000
+emissive = 0.500000  0.500000  0.500000  1.000000
+ambient = 0.000000  0.000000  0.000000  1.000000
+
+
+[texture]
+diffuse = evwalk00.dds
+teamColor = evwalk00_c.dds
+emissive = evwalk00_e.dds
+normal = evwalk00_n.dds
+specular = evwalk00_s.dds
