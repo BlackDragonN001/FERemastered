@@ -1,14 +1,9 @@
-//(c)BZ2CP
-// Created by Pastell
-
 [GameObjectClass]
 classLabel = "ebfact"
 
 [PoweredBuildingClass]
 
 [BuildingClass]
-
-// play ambient sound
 
 [FactoryClass]
 buildItem2 = "evmi_ih"
