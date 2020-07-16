@@ -8,10 +8,13 @@ local NUM_ATTACKERS = 8;
 local Position2 = SetVector( -450, -120, -1460 );	--flying dropship start position
 local Position3 = SetVector( -590, -155, -1190 );	--flying dropship end position
 local Position4 = SetVector( 420, 0, 920 );	--deploy base location
-
-
+local RecyDropshipPositionStart = SetVector(-1200, -120, -860 ); --start position recydrop
+local RecyDropshipPositionStartAdjust = SetVector(-1500, -120, -860); -- facing inward
+local RecyDropshipPositionEnd = SetVector(-845, -178, -840); --end position recydrop
+local dropoff = SetVector(-590, -155, -1190); --dropoff position
 local Routines = {};
 local SpawnDelaySTATE = 0;
+
 local M = {
 --Mission State
 	RoutineState = {},
@@ -22,6 +25,8 @@ local M = {
 	RecyTeleported = false,
 	ScavTeleported = false,
 	PlayerTeleported = false,
+	StartLanding = false,
+	StateSetup = false,
 -- Floats
 	StewartNextNagTime = 0.0,
 -- Handles
@@ -37,9 +42,11 @@ local M = {
 	DropshipFlying = nil,
 	DropshipFlyingNorm = nil,
 	DropshipLanded = nil,
+	RecyDropShip = nil,
 	Attackers = {},
 	Dino1 = nil,
 	Dino2 = nil,
+	smoke = nil,
 	
 -- Ints
 	TPS = 10,
@@ -47,7 +54,10 @@ local M = {
 	GunTowersBuilt = 0,
 	AttackWave = 0,	--hadean attack wave counter
 	AttackIndex = 0,
-	endme = 0
+	endme = 0,
+	counter = 0,
+	maxFrames =0,
+	curFrame =0
 };
 
 function DefineRoutine(routineID, func, activeOnStart)
@@ -90,7 +100,63 @@ function DefineRoutines()
 	DefineRoutine(4, HandleHadeanAttack, true);
 	DefineRoutine(5, HandleStewartNag, false);
 end
-
+function DropLand()
+	if M.StartLanding == false and M.StateSetup == false
+	then
+		M.RecyDropShip = BuildObjectAndLabel("ivpdrop", 1, RecyDropshipPositionStart, "RecyDropShip");
+		SetAngle(M.RecyDropShip, 270.0);
+		SetAnimation(M.RecyDropShip, "landing", 1);
+		M.maxFrames = SetAnimation(M.RecyDropShip, "landing",1);
+		M.StartLanding = true;
+		print("M.MaxFrames: ", M.maxFrames);
+	elseif(M.StartLanding) 
+	then	
+		print("Landing is starting");	
+		StartAnimation(M.RecyDropship);
+		Move2(M.RecyDropShip, 0.0, 30.0, (RecyDropshipPositionEnd));
+		M.curFrame = GetAnimationFrame(M.RecyDropShip, "landing");
+		M.counter = M.counter + 1;
+			
+        if (M.counter ==(70.0))
+		then --//70 
+           M.smoke = BuildObject("kickup", 0, RecyDropshipPositionEnd);
+		end
+        if (M.curFrame == (M.maxFrames - 5))
+		then
+            RemoveObject(smoke);
+        end
+		print("M.curFrame is: ", M.curFrame);
+		if (M.curFrame == (M.maxFrames-1)) 
+		then
+			M.RecyDropship = ReplaceObject(M.RecyDropship, "ivdrop");
+			M.maxFrames = SetAnimation(M.RecyDropShip, "deploy",1);
+			M.StateSetup = true;
+			M.StartLanding = false;
+			M.Recycler = BuildObjectAndLabel("ivrecy",1,RecyDropshipPositionEnd, "Recycler");  --buildDirectionalMatrix is needed
+			SetGroup(M.Recycler, 0);
+			StartAnimation(M.RecyDropship);
+			StartSoundEffect("dropdoor.wav", M.RecyDropShip);
+		end	
+	elseif M.StateSetup
+	then
+		print("opening doors");
+		M.maxFrames = SetAnimation(M.RecyDropShip, "deploy",1);
+		M.curFrame = GetAnimationFrame(M.RecyDropShip,"deploy");
+		if(curFrame == (M.maxFrames-1))
+		then
+			StateSetup = false;
+		end
+	else
+		Dropoff(M.Recycler, dropoff);
+		if(GetDistance(M.Recycler, dropoff) < 5.0)
+		then
+		SetAnimation(M.RecyDropShip,"takeoff",1);
+		StartSoundEffect("dropdoor.wav",M.RecyDropShip);
+		StartAnimation(M.RecyDropship);
+		end
+	end
+end
+	--RemoveObject(M.RecyDropship);
 
 function InitialSetup()
 
@@ -107,7 +173,8 @@ function InitialSetup()
 		"evscav",
 		"evmislu",
 		"evtanku",
-		"evmort"
+		"evmort",
+		"ivrecy"
 	};
 	local preloadAudio = {
 		"edf02_01.wav",
@@ -154,7 +221,6 @@ function Start()
 	
 	--M.Recycler = GetHandleOrDie("Recycler"); --commented out due to intro scene change moved into HandleMainState check
 	M.DropshipLanded = GetHandleOrDie("DropShip"); --original dropship -Gravey
-	M.DropshipLanded2 = GetHandle("DropShip2a"); --added dropship flying approach -Gravey
 	M.Portals[1] = GetHandleOrDie("Portal1");	--first portal in canyon
 	M.Portals[2] = GetHandleOrDie("Portal2");	--recycler portal east of deploy zone
 	M.Portals[3] = GetHandleOrDie("Portal3");	--portal beside scrap pool
@@ -199,7 +265,6 @@ end
 
 --Main mission state
 function HandleMainState(R, STATE)
-PrintConsoleMessage(STATE)
 	if STATE == 0 then
 		local escort1 = GetHandle("Tank 1"); --Removed BuildObjectandLabel and instead had them prebuilt in the dropship. - Gravey
 		local escort2 = GetHandle("Scout 1");
@@ -213,7 +278,6 @@ PrintConsoleMessage(STATE)
 		--Stop(M.Recycler, 1);
 		StartEarthQuake(10.0);
 		M.DropshipFlying = BuildObjectAndLabel("ivdrop_fly", 0, Position2, "Dropship Flying");
-		M.DropshipFlyingNorm = GetHandle("Drophip2a");
 		-- SetObjectiveName(BuildObjectAndLabel("ibnav", 1, Position2), "Position2"); - Not sure why this is needed? - AI_Unit
 		Advance(R, 7.0);
 	elseif STATE == 1 then
@@ -248,7 +312,7 @@ PrintConsoleMessage(STATE)
 		local escort3 = GetHandle("Scout 2");
 		local escort4 = GetHandle("Scout 3");
 		
-		SetPosition(escort1, "PlacePlayer"); --need to make these more distributed
+		SetPosition(escort1, "PlacePlayer"); --need to make these more distributed? - Gravey
 		SetVelocity(escort1, SetVector(10, 0, 40));
 		SetPosition(escort2, "PlacePlayer");
 		SetVelocity(escort2, SetVector(5, 0, 40));
@@ -257,21 +321,19 @@ PrintConsoleMessage(STATE)
 		SetPosition(escort4, "PlacePlayer");
 		SetVelocity(escort4, SetVector(13, 0, 40));
 		
-		Advance(R,10.0);
+		Advance(R,1.0);
 		
 	elseif STATE == 5 then
-		local Position5 = SetVector( -650, -155, -1190); -- Flying recy dropship end position -Gravey
-		--Start dropoff of recy dropship. - Gravey
-		--Move2(M.DropshipFlyingNorm, 0.0, 30.0, TerrainFloor(Position5));
-		BuildObjectAndLabel("ivrecy", 1, Position5, "Recycler"); --spawn recy in carrier currently broken
-		SetGroup(M.Recycler, 0);
-		M.Recycler = GetHandleOrDie("Recycler");
-		--SetAnimation(M.DropshipFlyingNorm, "Deploy", 1);
-		--StartAnimation(M.DropshipFlyingNorm); --open recy carrier
-		
+		DropLand();
 		SetScrap(1, 30);
-		
+		if GetHandle("Recycler") == nil
+			then
+			print("not advancing");
+			
+		else
 		Advance(R,10.0);
+		end
+			
 	elseif STATE == 6 then	
 	
 		SpawnDelaySTATE = 1;
