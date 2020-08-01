@@ -2,9 +2,11 @@
 baseName = "cbscav"
 mrmFactor = 0
 geometryName = "cbscav00.xsi"
-animCount = 1
+animCount = 2
 animName1 = "deploy"
 animFile1 = "cbscav00.xsi"
+animName2 = "loop"
+animFile2 = "cbscav01.xsi"
 classLabel = "extractor"
 scrapCost = 20
 scrapValue = 1

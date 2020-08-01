@@ -2,9 +2,11 @@
 baseName = "cbscup"
 mrmFactor = 0
 geometryName = "cbscup00.xsi"
-animCount = 1
+animCount = 2
 animName1 = "deploy"
 animFile1 = "cbscup00.xsi"
+animName2 = "loop"
+animFile2 = "cbscup01.xsi"
 classLabel = "extractor"
 scrapCost = 60
 scrapValue = 2
