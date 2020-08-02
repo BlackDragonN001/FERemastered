@@ -11,6 +11,7 @@ local Position4 = SetVector( 420, 0, 920 );	--deploy base location
 local RecyDropshipPositionStart = SetVector(-1200, -120, -860 ); --start position recydrop
 local RecyDropshipPositionStartAdjust = SetVector(-1500, -120, -860); -- facing inward
 local RecyDropshipPositionEnd = SetVector(-845, -178, -840); --end position recydrop
+local RecyDropshipSpawnRecy = SetVector(-845, -183, -840); --spawn inside dropship
 local dropoff = SetVector(-590, -155, -1190); --dropoff position
 local Routines = {};
 local SpawnDelaySTATE = 0;
@@ -101,62 +102,62 @@ function DefineRoutines()
 	DefineRoutine(5, HandleStewartNag, false);
 end
 function DropLand()
+	M.counter = M.counter + 1;
+	print("Counter is: ", M.counter);	
 	if M.StartLanding == false and M.StateSetup == false
 	then
 		M.RecyDropShip = BuildObjectAndLabel("ivpdrop", 1, RecyDropshipPositionStart, "RecyDropShip");
-		SetAngle(M.RecyDropShip, 270.0);
 		SetAnimation(M.RecyDropShip, "landing", 1);
 		M.maxFrames = SetAnimation(M.RecyDropShip, "landing",1);
 		M.StartLanding = true;
-		print("M.MaxFrames: ", M.maxFrames);
-	elseif(M.StartLanding) 
+	
+	elseif(M.StartLanding == true) 
 	then	
 		print("Landing is starting");	
-		StartAnimation(M.RecyDropship);
-		Move2(M.RecyDropShip, 0.0, 30.0, (RecyDropshipPositionEnd));
+		
+		SetAngle(M.RecyDropShip, 90.0);
+		StartAnimation(M.RecyDropShip);
+		Move(M.RecyDropShip, 0.0, 30.0, (RecyDropshipPositionEnd));
 		M.curFrame = GetAnimationFrame(M.RecyDropShip, "landing");
-		M.counter = M.counter + 1;
-			
-        if (M.counter ==(70.0))
-		then --//70 
-           M.smoke = BuildObject("kickup", 0, RecyDropshipPositionEnd);
+					
+        if (M.counter == 245)
+		then  
+		   print("Spawning Smoke!");
+           M.smoke = BuildObject("kickup", 0, GetPosition(M.RecyDropShip));
 		end
         if (M.curFrame == (M.maxFrames - 5))
 		then
-            RemoveObject(smoke);
+            --RemoveObject(smoke);
         end
-		print("M.curFrame is: ", M.curFrame);
-		if (M.curFrame == (M.maxFrames-1)) 
+		if (M.counter == 300 and M.StateSetup == false)
 		then
-			M.RecyDropship = ReplaceObject(M.RecyDropship, "ivdrop");
+			print("replacing drop");
+			M.RecyDropShip = ReplaceObject(M.RecyDropShip, "ivdrop");
 			M.maxFrames = SetAnimation(M.RecyDropShip, "deploy",1);
 			M.StateSetup = true;
 			M.StartLanding = false;
-			M.Recycler = BuildObjectAndLabel("ivrecy",1,RecyDropshipPositionEnd, "Recycler");  --buildDirectionalMatrix is needed
+			print("spawning recy");
+			M.Recycler = BuildObjectAndLabel("ivrecy",1,RecyDropshipSpawnRecy, "Recycler");  --buildDirectionalMatrix is needed
 			SetGroup(M.Recycler, 0);
-			StartAnimation(M.RecyDropship);
+			StartAnimation(M.RecyDropShip);
 			StartSoundEffect("dropdoor.wav", M.RecyDropShip);
 		end	
-	elseif M.StateSetup
-	then
-		print("opening doors");
-		M.maxFrames = SetAnimation(M.RecyDropShip, "deploy",1);
-		M.curFrame = GetAnimationFrame(M.RecyDropShip,"deploy");
-		if(curFrame == (M.maxFrames-1))
+	if (M.StateSetup == true and M.StartLanding == false)
 		then
-			StateSetup = false;
-		end
-	else
+		print("recy dropoff");
 		Dropoff(M.Recycler, dropoff);
-		if(GetDistance(M.Recycler, dropoff) < 5.0)
+		if(GetDistance(M.Recycler, RecyDropshipPositionEnd) > 10.0)
 		then
+		print("taking off");
 		SetAnimation(M.RecyDropShip,"takeoff",1);
 		StartSoundEffect("dropdoor.wav",M.RecyDropShip);
-		StartAnimation(M.RecyDropship);
+		StartAnimation(M.RecyDropShip);
+		end
 		end
 	end
 end
-	--RemoveObject(M.RecyDropship);
+
+	--RemoveObject(M.RecyDropShip);
 
 function InitialSetup()
 
