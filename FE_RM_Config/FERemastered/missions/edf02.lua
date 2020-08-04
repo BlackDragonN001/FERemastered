@@ -125,7 +125,7 @@ function DropLand()
 		   print("Spawning Smoke!");
            M.smoke = BuildObject("kickup", 0, GetPosition(M.RecyDropShip));
 		end
-        if (M.curFrame == (M.maxFrames - 5))
+        if (M.counter == 300)
 		then
             --RemoveObject(smoke);
         end
@@ -137,7 +137,10 @@ function DropLand()
 			M.StateSetup = true;
 			M.StartLanding = false;
 			print("spawning recy");
-			M.Recycler = BuildObjectAndLabel("ivrecy",1,RecyDropshipSpawnRecy, "Recycler");  --buildDirectionalMatrix is needed
+			local RecySpawn = RecyDropshipSpawnRecy;
+			RecySpawn.y = RecySpawn.y - 10;
+			M.Recycler = BuildObjectAndLabel("ivrecy",1,RecySpawn, "Recycler");  
+			SetAngle(M.Recycler, 90.0);
 			SetGroup(M.Recycler, 0);
 			StartAnimation(M.RecyDropShip);
 			StartSoundEffect("dropdoor.wav", M.RecyDropShip);
