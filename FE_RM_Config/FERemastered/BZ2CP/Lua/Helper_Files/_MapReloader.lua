@@ -1,16 +1,16 @@
 --[[ Map Reloader Lua
 Written by General BlackDragon
-Version 1.0 - 1-24-2019
+Version 1.1 9-22-202 //<Version 1.0 - 1-24-2019>
 
 For use with command lines to load/replace objects on a .BZN. Instructions:
 -- To Save objects, load the game with /ivar 120 1
--- To specify a specific ODF to save/load, use /svar 31 blah.odf
+-- To specify a specific ODF to save/load, use /svar 31 blah.odf, optionally use svar30 for a second odf to save.
 -- To Save objects and delete the objects after saving, use /ivar 120 3
 -- To Load objects, load the game with /ivar 120 2
 
 The object lists are saved to a .txt file matching the BZN file name in Documents\My Games\Battlezone Combat Commander\logs\
-Loading deletes all instances of the specified svar 31 from the map. To skip deleting on load, put some dummy value in svar 31.
-Note: the .odf extention is required on the svar 31 parameter. --]]
+Loading deletes all instances of the specified svar 31 from the map, or all objects if svar31 is empty. To skip deleting on load, put some dummy value in svar 31.
+Note: the odf filter in svar 31 will find all items that start with the contents of the parameter. i.e. "ivtank" will find "ivtank", and "ivtank01". --]]
 
 print("Loading _MapReloader.lua");
 
@@ -26,6 +26,20 @@ local tank = nil
 local player = nil
 local mapClear = false
 local ObjectCount = 0
+
+function StartsWith(hay, needle)
+	if(string.len(needle) > string.len(hay)) then
+		return false; 
+	end
+	return (string.sub(hay,1,string.len(needle)) == needle);
+end
+
+function EndsWith(hay, needle)
+	if(string.len(needle) > string.len(hay)) then
+		return false;
+	end
+	return (string.sub(hay,-string.len(needle)) == needle);
+end
 
 function _MapReloader.InitialSetup()
 
@@ -45,26 +59,26 @@ function _MapReloader.InitialSetup()
 
 	-- Save the entire map.
 	if b_saveload == 1 or b_saveload == 3 then
-		
-		print("Created Object List: " .. filename);
-	
+			
 		WriteToFile(filename, "//Preload ODF List" , false);
 		WriteToFile(filename, "[ObjectList]");
 		
 		for n = 1, #ObjectList do
-			if not IsPlayer(ObjectList[n]) and (s_odfname == "" or GetOdf(ObjectList[n]) == s_odfname) then
+			if not IsPlayer(ObjectList[n]) and (s_odfname == "" or StartsWith(GetOdf(ObjectList[n]), s_odfname)) then
 				ObjectCount = ObjectCount + 1;
 			end
 		end
 		
-		WriteToFile(filename, "ObjectCount = " .. ObjectCount); --#ObjectList);
+		WriteToFile(filename, "ObjectCount = " .. ObjectCount);
+		
+		print("Created Object List: " .. filename .. " Object Count: " .. ObjectCount);
 		
 		local iterCount = 0;
 		
 		for n = 1, #ObjectList do
 		
 			-- If this is an object we care about, save it's info.
-			if not IsPlayer(ObjectList[n]) and (s_odfname == "" or GetOdf(ObjectList[n]) == s_odfname) then
+			if not IsPlayer(ObjectList[n]) and (s_odfname == "" or StartsWith(GetOdf(ObjectList[n]), s_odfname)) then
 			
 				iterCount = iterCount + 1;
 				WriteToFile(filename, "[ObjectList" .. iterCount  .."]");
@@ -84,7 +98,6 @@ function _MapReloader.InitialSetup()
 				local deflabel = GetOdf(ObjectList[n]);
 				deflabel = string.sub(deflabel, 0, string.len(deflabel)-4);
 				deflabel = "unnamed_" .. deflabel;	
-			print(deflabel);
 				
 				local label = GetLabel(ObjectList[n]);
 				if label == nil or label == deflabel then
@@ -100,7 +113,7 @@ function _MapReloader.InitialSetup()
 				local mystring = "ObjectName = \"" .. name .. "\"";
 				WriteToFile(filename, mystring);
 				
-				local pilot = GetPilotClass(ObjectList[b]);
+				local pilot = GetPilotClass(ObjectList[n]);
 				if pilot == nil then
 					pilot = ""
 				end
@@ -175,7 +188,6 @@ function _MapReloader.InitialSetup()
 				end
 				mystring = "Group = " .. tostring(Group);
 				WriteToFile(filename, mystring);
-			print("Group is: " .. tostring(Group));
 			
 				local lifespan = GetRemainingLifespan(ObjectList[n])
 				if lifespan == nil then
@@ -220,6 +232,8 @@ function _MapReloader.InitialSetup()
 			
 				-- WeaponMask? CurrCommand?
 				
+				--print("Object: " .. iterCount .. " ODF: " .. Odf .. " Label: " .. label .. " Group is: " .. tostring(Group));
+				
 				
 				-- If we want to delete this object immediately, do it.
 				if b_saveload == 3 then
@@ -235,7 +249,7 @@ function _MapReloader.InitialSetup()
 	
 		-- Erase entire map.
 		for n = 1, #ObjectList do
-			if not IsPlayer(ObjectList[n]) and (s_odfname == "" or GetOdf(ObjectList[n]) == s_odfname) then
+			if not IsPlayer(ObjectList[n]) and (s_odfname == "" or StartsWith(GetOdf(ObjectList[n]), s_odfname)) then
 				RemoveObject(ObjectList[n]);
 			end
 		end

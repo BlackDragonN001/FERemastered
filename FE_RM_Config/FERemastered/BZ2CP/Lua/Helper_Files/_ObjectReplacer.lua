@@ -3,8 +3,8 @@ Script by General BlackDragon
 Version 1.0 - 1-1-2020
 
 For use with command lines to replace objects on a .BZN. Instructions:
--- To specify the specific ODF to replace, use /svar 31 blah.odf
--- To specify the ODF to replace it with, use /svar 30 blah.odf
+-- To specify the specific ODF to replace, use /svar 29 blah.odf
+-- To specify the ODF to replace it with, use /svar 28 blah.odf
 
 The objects are replaced, as is, preserving as much information about 
 the original object as possible. --]]
@@ -27,8 +27,8 @@ function _ObjectReplacer.InitialSetup()
 	end
 	--]]
 	
-	local s_odffind = GetVarItemStr("network.session.svar31");
-	local s_odfreplace = GetVarItemStr("network.session.svar30");
+	local s_odffind = GetVarItemStr("network.session.svar29");
+	local s_odfreplace = GetVarItemStr("network.session.svar28");
 	
 	local ObjectList = GetAllGameObjectHandles();
 	
