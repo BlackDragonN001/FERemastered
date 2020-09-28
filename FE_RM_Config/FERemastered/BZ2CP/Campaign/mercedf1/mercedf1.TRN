@@ -9,11 +9,15 @@ Height = 60
 Tile = 8
 Color = "200 170 140 255"
 
+
 [NormalView]
 FogColor = "80 80 80 255"
 FogStart = 150
 FogEnd = 250
 VisibilityRange = 275
+DiffuseColor = "255 255 255"
+SpecularColor = "10 10 10"
+SpecularPower = 1024.0
 
 [World]
 MusicTrack1 = 5
@@ -21,13 +25,13 @@ MusicTrack2 = 8
 MusicTrack3 = 10
 
 [Texture]
-TileTexture1 = "moon2.tga"
-TileTexture2 = "dune2.tga"
-TileTexture3 = "titan3.tga"
+TileTexture1 = "dune2.tga" 
+TileTexture2 = "mercury1_d.tga" //cratered main texture 
+TileTexture3 = "mercury4_d.tga" //cracked rocky mountains
 TileTexture4 = "dune5.tga"
-TileTexture5 = "fbintfc1.pic"
+TileTexture5 = "ibfoun00.tga"
 TileTexture6 = "dune9.tga"
-TileTexture7 = "moon3.tga"
-TileTexture8 = "moon1.tga"
-TileTexture9 = "dune6.tga"
+TileTexture7 = "mercury3_d.tga" //rock outcroppings in sand
+TileTexture8 = "mercury2_d.tga" //cracked clay light
+TileTexture9 = "rend5.tga" //lava
 
