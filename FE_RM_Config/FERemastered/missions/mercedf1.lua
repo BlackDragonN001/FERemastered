@@ -679,7 +679,7 @@ function Routine3()
 			end
 		elseif (M.Routine3State == 4) then
 			if (GetTime() >= M.Routine3Timer) then
-				SetPosition(M.Object_WyndtEssex, "blue_goto_power_2");
+				--SetPosition(M.Object_WyndtEssex, "blue_goto_power_2"); -- BAD! No! -GBD
 
 				if (not IsAround(M.Object_Power1) and not IsAround(M.Object_Power2) and not IsAround(M.Object_Power3) and not IsAround(M.Object_Power4)) then
 					SetTeamNum(M.Object_Radar2, 0);
