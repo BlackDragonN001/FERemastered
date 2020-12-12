@@ -721,7 +721,7 @@ function Routine3()
 				Service(M.Object_ServTruck1, M.Object_Cargo1, 0);
 				Service(M.Object_ServTruck2, M.Object_Cargo2, 0);
 
-				M.Routine3Timer = GetTime() + 80;
+				M.Routine3Timer = GetTime() + 40;  -- Reduced from 80, felt like ages before the first wave. - Gravey
 
 				M.Routine3State = M.Routine3State + 1;
 			end
