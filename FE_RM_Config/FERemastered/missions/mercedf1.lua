@@ -124,6 +124,7 @@ function InitialSetup()
 	
 	AllowRandomTracks(false);
 	
+	PreloadODF("cvscout");
 	PreloadODF("nadir");
 	PreloadODF("ivscout11");
 	PreloadODF("ivserv");
@@ -714,8 +715,8 @@ function Routine3()
 				SetTeamNum(M.Object_Scout1, 1);
 				SetTeamNum(M.Object_ServTruck2, 1);
 				SetGroup(M.Object_Scout1, 0);
-				SetGroup(M.Object_ServTruck2, 8);
-				SetGroup(M.Object_ServTruck1, 8);
+				SetGroup(M.Object_ServTruck2, 3);
+				SetGroup(M.Object_ServTruck1, 3);
 
 				Service(M.Object_ServTruck1, M.Object_Cargo1, 0);
 				Service(M.Object_ServTruck2, M.Object_Cargo2, 0);
