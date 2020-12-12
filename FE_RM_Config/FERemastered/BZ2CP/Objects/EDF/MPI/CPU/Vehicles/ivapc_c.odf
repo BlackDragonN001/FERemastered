@@ -1,0 +1,22 @@
+[GameObjectClass]
+classLabel = "ivapc"
+ejectRatio = 1
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "ivapc_c"
+
+/////// REQUIREMENTS ///////////////
+requireCount = 2
+requireName1 = "ibfact_c"
+requireText1 = "Build Factory"
+requireName2 = "ibtrain_c"
+requireText2 = "Build Training"
+
+[CraftClass]
+
+[HoverCraftClass]
+
+[APCClass]
+
+[Lod1]

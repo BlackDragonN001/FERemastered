@@ -1,0 +1,18 @@
+[GameObjectClass]
+classLabel = "ivwalk"
+ejectRatio = 1
+
+/////// REQUIREMENTS ///////////////
+requireCount = 2
+requireName1 = "ibfact_c"
+requireText1 = "Build Factory"
+requireName2 = "ibtcen_c"
+requireText2 = "Build Tech Cen"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName1 = "ivwalk_c"
+
+[CraftClass]
+
+[WalkerClass]

@@ -1,0 +1,27 @@
+[GameObjectClass]
+classLabel = "ivatank"
+ejectRatio = 1
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName5 = "ivatank_c"
+
+/////// REQUIREMENTS ///////////////
+requireCount = 3
+requireName1 = "ibfact_c"
+requireText1 = "Build Factory"
+requireName2 = "ibcbun_c"
+requireText2 = "Build Relay Bunk"
+requireName3 = "ibsbay_c"
+requireText3 = "Build Service Bay"
+
+[CraftClass]
+ClosestEnemyGoodEyes = true
+SitAttackAllowIndependence = true
+SitAttackAllowCounterattack = true 
+LightsOnlyWhenPiloted = true
+GotoTaskHasLeader = false
+
+[TrackedVehicleClass]
+
+[AssaultTankClass]

@@ -1,0 +1,22 @@
+[GameObjectClass]
+classLabel = "ivmbike"
+ejectRatio = 1
+
+/////// REQUIREMENTS ///////////////
+requireCount = 2
+requireName1 = "ibfact_c"
+requireText1 = "Build Factory"
+requireName2 = "ibarmo_c"
+requireText2 = "Build Armory"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName4 = "ivmbike_c"
+
+[CraftClass]
+
+[HoverCraftClass]
+
+[Lod1]
+
+[Lod2]

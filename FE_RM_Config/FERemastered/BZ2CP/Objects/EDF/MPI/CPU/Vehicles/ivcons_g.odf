@@ -1,6 +1,9 @@
 [GameObjectClass]
 classLabel = "ivcons"
-unitName = "Tower Constructor"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName3 = "ivcons_g"
 
 [CraftClass]
 
@@ -10,5 +13,3 @@ unitName = "Tower Constructor"
 
 [ConstructionRigClass]
 buildItem6 = "ibgtow_c"
-soundBuild = "ivrecye3.wav"
-soundFinish = "ivrecye5.wav"
