@@ -60,6 +60,7 @@ local AIVehicles = {
 	AIRecycler = nil,
 	AICommander = nil,
 	AIDemolishers = {},
+	AIScavs = {}
 };
 
 --[[
@@ -132,7 +133,7 @@ function _MPI.SpawnAITeams()
 
 		-- If Debugging is enabled, we should print all available data related to the AI team
 		if (DEBUG) then
-			print("Current Race of AI Team: (" .. GetRaceOfTeam(team) .. "): ");
+			print("Current Race of AI Team: (" .. GetRaceOfTeam(team) .. ")");
 			Ally(1, team);
 		end
 
@@ -196,9 +197,9 @@ function _MPI.SetAIPlan(team)
 	end
 
 	--local pContents = GetCheckedNetworkSvar(3, NETLIST_AIPS);
-	--if (pContents ~= nil) then
-	--	planNameBase = pContents;
-	--end
+	if (pContents ~= nil) then
+		planNameBase = pContents;
+	end
 
 	-- Based on a difficulty IVAR, we can set the difficulty of the AI. ivar70 will need to be changed when this is set up -- AI_Unit.
 	-- Edited to be dynamic for multiple teams. Each team will use the same difficulty -- AI_Unit.
@@ -235,7 +236,7 @@ end
 
 function _MPI.AddCPUScav(scavHandle)
 	if (CPU_SCAV_COUNT < CPU_MAX_SCAVS) then
-		CPUScavs[CPU_SCAV_COUNT + CPU_SCAV_COUNT + 1] = scavHandle;
+		AIVehicles.AIScavs[CPU_SCAV_COUNT + CPU_SCAV_COUNT + 1] = scavHandle;
 		return;
 	end
 
@@ -246,7 +247,7 @@ function _MPI.AddCPUScav(scavHandle)
 
 	for i = 1, CPU_SCAV_COUNT do
 		local keepIt = false;
-		local checkScav = CPUScavs[i];
+		local checkScav = AIVehicles.AIScavs[i];
 		
 		keepIt = (checkScav == scavHandle);
 
@@ -260,11 +261,11 @@ function _MPI.AddCPUScav(scavHandle)
 	while (CPU_SCAV_COUNT > MIN_CPU_SCAVS_AFTER_CLEANUP) do
 		local i = CPU_SCAV_COUNT - 1;
 
-		SetNoScrapFlagByHandle(CPUScavs[i]);
-		SelfDamage(CPUScavs[i], 9999);
+		SetNoScrapFlagByHandle(AIVehicles.AIScavs[i]);
+		SelfDamage(AIVehicles.AIScavs[i], 9999);
 
 		CPU_SCAV_COUNT = CPU_SCAV_COUNT - 1;
-		CPUScavs[CPU_SCAV_COUNT] = nil;
+		AIVehicles.AIScavs[CPU_SCAV_COUNT] = nil;
 	end
 end
 
