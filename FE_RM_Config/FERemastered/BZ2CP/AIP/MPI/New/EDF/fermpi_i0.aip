@@ -1,7 +1,7 @@
 [Start]
 Difficulty = 1 // Easy
-scavClass = "ivscav"
-consClass = "ivcons"
+scavClass = "ivscav_c"
+consClass = "ivcons_c"
 CheckProvides = true
 idleAllCraft = false
 scrapCount = 40
@@ -16,136 +16,143 @@ sendAllUnitsOnStartup = false
 CraftTeamIsPilotTeam = true
 
 [Match]
-targetType1 = "VIRTUAL_CLASS_EXTRACTOR"
-attackType1_1 = "ivscout"
-attackType1_2 = "ivscout"
 
-targetType2 = "VIRTUAL_CLASS_TURRET"
-attackType2_1 = "ivscout"
-attackType2_2 = "ivscout"
-
-targetType3 = "VIRTUAL_CLASS_SCOUT"
-attackType3_1 = "ivscout"
-attackType3_2 = "ivscout"
-
-[Plan1]
-planType = "CollectPool"
+[Plan1] // Build 2 scavengers to start.
+planType = "BuildMinimums"
 planPriority = 1000
+MinCurScrap = 20
 planCondition1 = "Lua"
-LuaFunction = "CollectPoolPlanCheck1"
-buildIfNoIdle = true
-continueEvenIfFail = true
-
-[Plan2]
-planType = "CollectPool"
-planPriority = 990
-planCondition1 = "Lua"
-LuaFunction = "CollectPoolPlanCheck2"
-buildIfNoIdle = true
-continueEvenIfFail = true
-
-[Plan3]
-planType = "BuildMinimums"
-planPriority = 980
-planCondition = "NotExists"
-planConditionClass = "ivturr"
-planConditionCount = 2
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = false
-buildType1 = "ivturr"
+buildType1 = "ivscav_c"
 buildCount1 = 2
-buildIfNoIdle = true
-continueEvenIfFail = true
+ContinueEvenIfFail = true
+LuaFunction = "BuildScavengerCheck1"
 
-[Plan4]
-planType = "BuildMinimums"
-planPriority = 970
-planCondition = "Lua"
-LuaFunction = "BuildConstructorCheck1"
-buildType1 = "ivcons"
-buildCount1 = 1
-buildIfNoIdle = true
-continueEvenIfFail = true
-
-[Plan5]
+[Plan2] // Collect any loose scrap on the map for a boost.
 planType = "CollectField"
-planPriority = 960
+planPriority = 990
 planCondition = "FriendlyExists"
 planConditionClass = "resource"
-planConditionCount = 3
-planCompare = ">="
+planConditionCount = 1
+planCompare = ">=" 
 planConditionClassProvided = true 
 planConditionOr = false
 planCondition2 = "Exists"
-planConditionClass2 = "ibrecy"
+planConditionClass2 = "ibrecy_c"
 planConditionCount2 = 1
 planCompare2 = ">="
 planConditionClassProvided2 = true 
 planConditionOr2 = false
-buildIfNoIdle = true
-continueEvenIfFail = true
+planCondition3 = "Exists"
+planConditionClass3 = "ivscav_c"
+planConditionCount3 = 1
+planCompare3 = ">="
+planConditionClassProvided3 = true 
+planConditionOr3 = false
+buildIfNoIdle = 1
+ContinueEvenIfFail = true
 
-[Plan6]
+[Plan3] // Start collecting pools if I don't have 3 or more.
+planType = "CollectPool"
+planPriority = 980
+planCondition1 = "Lua"
+ContinueEvenIfFail = true
+LuaFunction = "CollectPoolPlanCheck1"
+
+[Plan4] // When I have 2 or more pools, we should start deploying turrets across the map.
 planType = "Hold"
-planPriority = 950
-planCondition = "Lua"
-LuaFunction = "HoldCheckPlan1"
+planPriority = 970
+MinCurScrap = 40
+planCondition1 = "Lua"
 holdPoint = "hold1"
-holdType1 = "ivturr"
-holdCount1 = 1
 buildIfNoIdle = true
-continueEvenIfFail = true
+ContinueEvenIfFail = true
+pathpointsCanBeMissing = true
+LuaFunction = "HoldCheckPlan1"
 
-[Plan7]
+[Plan5] // When I have 2 or more pools, we should start deploying turrets across the map.
 planType = "Hold"
-planPriority = 940
-planCondition = "Lua"
-LuaFunction = "HoldCheckPlan2"
+planPriority = 960
+MinCurScrap = 40
+planCondition1 = "Lua"
 holdPoint = "hold2"
-holdType1 = "ivturr"
-holdCount1 = 1
 buildIfNoIdle = true
-continueEvenIfFail = true
+ContinueEvenIfFail = true
+pathpointsCanBeMissing = true
+LuaFunction = "HoldCheckPlan2"
 
-[Plan8]
+[Plan6] // When I have 2 or more pools, I need to start thinking about using a builder...
+planType = "BuildMinimums"
+planPriority = 950
+MinCurScrap = 40
+planCondition1 = "Lua"
+buildType1 = "ivcons_c"
+buildCount1 = 1
+ContinueEvenIfFail = true
+LuaFunction = "BuildConstructorCheck1"
+
+[Plan7] // Send some scouts to mess with enemy scavs...
+planType = "Attacker"
+planPriority = 940
+planCondition1 = "Lua"
+AttackAnything = true
+targetType = "VIRTUAL_CLASS_SCAVENGER"
+attackType1 = "ivscout_c"
+attackType2 = "ivscout_c"
+buildIfNoIdle = true
+maxAttacks = 4
+MinCurScrap = 50
+ContinueEvenIfFail = true
+LuaFunction = "SendFirstScoutAttackWave"
+
+[Plan8] // Send some scouts to mess with enemy Recycler...
 planType = "Attacker"
 planPriority = 930
-planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_EXTRACTOR"
-planConditionCount = 1
-planCompare = ">="
-planConditionClassProvided = true 
-planConditionOr = true
-planCondition2 = "HisExists"
-planConditionClass2 = "VIRTUAL_CLASS_SCAVENGER"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = true
-targetType = "VIRTUAL_CLASS_EXTRACTOR"
-targetType2 = "VIRTUAL_CLASS_SCAVENGER"
-attackType1 = "ivscout"
+planCondition1 = "Lua"
+AttackAnything = true
+targetType = "VIRTUAL_CLASS_RECYCLERBUILDING"
+attackType1 = "ivscout_c"
+attackType2 = "ivscout_c"
+buildIfNoIdle = true
 maxAttacks = 3
-buildIfNoIdle = true
-continueEvenIfFail = true
+MinCurScrap = 50
+ContinueEvenIfFail = true
+LuaFunction = "SendSecondScoutAttackWave"
 
-[Plan9]
+[Plan9] // Maintain 2 more Scavs, bringing our total up to 4.
 planType = "BuildMinimums"
-planPriority = "920"
-planCondition = "Lua"
-LuaFunction = "CPURecyclerExists"
-buildType1 = "ivcmdr_c"
+planPriority = 920
+MinCurScrap = 20
+planCondition1 = "Lua"
+buildType1 = "ivscav_c"
+buildCount1 = 2
+ContinueEvenIfFail = true
+LuaFunction = "BuildScavengerCheck2"
+
+[Plan10] // Start building the base out. 
+planType = "BaseBuildMinimums"
+planPriority = 910
+MinCurScrap = 30
+planCondition1 = "Lua"
+buildType1 = "ibpgen_c"
 buildCount1 = 1
-buildIfNoIdle = true
-continueEvenIfFail = true
+ContinueEvenIfFail = true
+LuaFunction = "FirstPowerGeneratorCheck"
 
-[Plan10]
+[Plan11] // Send out another turret...
+planType = "Hold"
+planPriority = 900
+MinCurScrap = 40
+planCondition1 = "Lua"
+holdPoint = "hold3"
+buildIfNoIdle = true
+ContinueEvenIfFail = true
+pathpointsCanBeMissing = true
+LuaFunction = "HoldCheckPlan3"
+
+[Plan12] // Build our first constructor for Gun Towers
 planType = "BuildMinimums"
-planPriority = "910"
-planCondition = "Lua"
-LuaFunction = "CPURecyclerExists"
+planPriority = 890
+MinCurScrap = 40
 buildType1 = "ivcons_g"
 buildCount1 = 1
-buildIfNoIdle = true
-continueEvenIfFail = true
+ContinueEvenIfFail = true

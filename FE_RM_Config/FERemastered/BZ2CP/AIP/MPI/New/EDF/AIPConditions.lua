@@ -190,23 +190,35 @@ end
 -- Forgotten Enemies Specific 
 function HoldCheckPlan1(team, time)
 	local hold1Exists = AIPUtil.PathExists("hold1");
-	local cpuHasRecycler = CPURecyclerExists(team, time);
+	local CPUHasRecycler = CPURecyclerExists(team, time);
+	local CPUExtractorCount = CountCPUExtractors(team, time); 
 
-	if (hold1Exists and cpuHasRecycler) then
-		return true, "I can add a turret to the Hold 1 path.";
+	if (hold1Exists and CPUHasRecycler and CPUExtractorCount >= 2) then
+		return true, "Sending a turret to Hold1...";
 	else
-		return false, "I can't add a turret to the Hold 1 path.";
+		return false, "Could not send a turret to Hold1. Conditions haven't been met.";
 	end
 end
 
 function HoldCheckPlan2(team, time)
 	local hold2Exists = AIPUtil.PathExists("hold2");
-	local cpuHasRecycler = CPURecyclerExists(team, time);
+	local CPUHasRecycler = CPURecyclerExists(team, time);
 
-	if (hold2Exists and cpuHasRecycler) then
-		return true, "I can add a turret to the Hold 2 path.";
+	if (hold2Exists and CPUHasRecycler) then
+		return true, "Sending a turret to Hold2...";
 	else
-		return false, "I can't add a turret to the Hold 2 path.";
+		return false, "Could not send a turret to Hold2. Conditions haven't been met.";
+	end
+end
+
+function HoldCheckPlan3(team, time)
+	local hold2Exists = AIPUtil.PathExists("hold3");
+	local CPUHasRecycler = CPURecyclerExists(team, time);
+
+	if (hold2Exists and CPUHasRecycler) then
+		return true, "Sending a turret to Hold3...";
+	else
+		return false, "Could not send a turret to Hold3. Conditions haven't been met.";
 	end
 end
 
@@ -223,27 +235,54 @@ function CountCPUConstructor(team, time)
 	return AIPUtils.CountUnits(team, "VIRTUAL_CLASS_CONSTRUCTIONRIG", "sameteam", true);
 end
 
--- Start up conditions. Make sure we have a Recycler and a certain amount of pools.
-function CollectPoolPlanCheck1(team, time) 
-	local CPUHasRecy = CPURecyclerExists(team, time);
-	local CPUScavCount = CountCPUScavengers(team, time);
-	local CPUExtractorCount = CountCPUExtractors(team, time);
-
-	if (CPUHasRecy and CPUScavCount <= 0 and CPUExtractorCount < 1) then
-		return true, "I need to send a Scavenger to my first pool.";
-	else 
-		return false, "I have too many Extractors to execute this plan.";
-	end
+function CountCPUPowerGenerators(team, time)
+	return AIPUtils.CountUnits(team, "VIRTUAL_CLASS_POWERPLANT", "sameteam", true);
 end
 
-function CollectPoolPlanCheck2(team, time)
+-- Count Human units
+function CountHumanScavengers(team, time) 
+	return AIPUtil.CountUnits(1, "VIRTUAL_CLASS_SCAVENGER", "sameteam", true);
+end
+
+function CountHumanExtractors(team, time) 
+	return AIPUtil.CountUnits(1, "VIRTUAL_CLASS_EXTRACTOR", "sameteam", true);
+end
+
+function CountHumanRecyclerBuildings(team, time)
+    return AIPUtil.CountUnits(1, "VIRTUAL_CLASS_RECYCLERBUILDING", 'sameteam', true);
+end
+
+-- Start up conditions. Make sure we have a Recycler and a certain amount of pools.
+function CollectPoolPlanCheck1(team, time)
 	local CPUHasRecy = CPURecyclerExists(team, time);
 	local CPUExtractorCount = CountCPUExtractors(team, time);
 
 	if (CPUHasRecy and CPUExtractorCount < 3) then
-		return true, "I need to send a Scavenger to more pools.";
+		return true, "I need to send a scavenger to more pools.";
 	else
-		return false, "I have too many Extractors to execute this plan.";
+		return false, "I have too many extractors to execute this plan.";
+	end
+end
+
+function BuildScavengerCheck1(team, time)
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUScavCount = CountCPUScavengers(team, time);
+
+	if (CPUHasRecy and CPUScavCount < 2) then
+		return true, "Building first scavenger set...";
+	else
+		return false, "Scavenger not needed, two already exists.";
+	end
+end
+
+function BuildScavengerCheck1(team, time)
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUScavCount = CountCPUScavengers(team, time);
+
+	if (CPUHasRecy and CPUScavCount < 4) then
+		return true, "Building second scavenger set...";
+	else
+		return false, "Scavenger not needed, four already exists.";
 	end
 end
 
@@ -254,6 +293,56 @@ function BuildConstructorCheck1(team, time)
 	if (CPUHasRecy and CPUConstructorCount <= 0) then
 		return true, "I need to build my first constructor";
 	else
-		return false, "I already have a Constructor.";
+		return false, "I already have a constructor.";
+	end
+end
+
+-- Attacker Conditions
+function SendFirstScoutAttackWave(team, time)
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUExtractorCount = CountCPUExtractors(team, time);
+	local HumanScavCount = CountHumanScavengers(team, time);
+
+	if (CPUHasRecy and CPUExtractorCount >= 2 and HumanScavCount > 0) then
+		return true, "Sending first attack party at enemy Scavengers...";
+	else
+		return false, "Could not send first scout attack party. Conditions haven't been met."
+	end
+end
+
+function SendSecondScoutAttackWave(team, time)
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUExtractorCount = CountCPUExtractors(team, time);
+	local HumanRecyclerBuildingCount = CountHumanRecyclerBuildings(team, time);
+
+	if (CPUHasRecy and CPUExtractorCount >= 2 and HumanRecyclerBuildingCount > 0) then
+		return true, "Sending second attack party at enemy Recycler...";
+	else
+		return false, "Could not send second scout attack party. Conditions haven't been met."
+	end
+end
+
+-- Base functions
+function FirstPowerGeneratorCheck(team, time)
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUBuilderExists = CPUBuilderExists(team, time);
+	local CPUPowerGeneratorCount = CountCPUPowerGenerators(team, time);
+
+	if (CPUHasRecy and CPUBuilderExists and CPUPowerGeneratorCount <= 0) then
+		return true, "Building first power plant...";
+	else
+		return false, "Already have first power plant.";
+	end
+end
+
+function SecondPowerGeneratorCheck(team, time)
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUBuilderExists = CPUBuilderExists(team, time);
+	local CPUPowerGeneratorCount = CountCPUPowerGenerators(team, time);
+
+	if (CPUHasRecy and CPUBuilderExists and CPUPowerGeneratorCount <= 1) then
+		return true, "Building second power plant...";
+	else
+		return false, "Already have second power plant.";
 	end
 end
