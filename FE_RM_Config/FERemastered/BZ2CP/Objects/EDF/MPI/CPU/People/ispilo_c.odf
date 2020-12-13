@@ -1,0 +1,36 @@
+[GameObjectClass]
+classLabel = "ispilo"
+canInteract = 1
+isGrouped = 0
+needGroup = 0
+isLimited = 0
+needLimit = 0
+canDetect = 1
+canTarget = 1
+needPilot = 0
+pilotCost = 1
+maxAmmo = 200
+addAmmo = 25
+aiAddAmmo = 30
+aiName = "PersonFriend"
+aiName2 = "PersonEnemy"
+isSealth = 1
+heatSignature = 0.2
+imageSignature = 0.2
+radarSignature = 0.1
+
+[CraftClass]
+OffensiveProcessIsDistractable = true
+OffensiveProcessIsDistractableAITeam = true
+OffensiveProcessIsTenacious = false
+OffensiveProcessMadTime = 5.0
+PathingType = 2 // -1 = auto, 0 = Hover, 1 = Walker, 2 = Person, 3 = Tracked, 4 = Flyer
+AvoidType = -1 // -1 = auto, 0 = None, 1 = force, 2 = plan
+GotoTaskHasLeader = false // if true, gotos will be done in a leader/follower model
+AttackTaskUsesGroups = false
+
+[PersonClass]
+UseFastTransitions = true
+autoDeploy = false
+PersonMass = 100.0
+PersonRadius = 15.0

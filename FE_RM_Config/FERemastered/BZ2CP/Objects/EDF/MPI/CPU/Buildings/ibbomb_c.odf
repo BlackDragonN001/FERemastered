@@ -1,0 +1,23 @@
+[GameObjectClass]
+classLabel = "ibbomb"
+UseCollisionMeshForPathing = 1
+
+/////// REQUIREMENTS ///////////////
+
+requireCount = 1
+requireName1 = "ibtrain_c"
+requireText1 = "Build Training"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 4
+provideName4 = "ibbomb_c"
+
+[BuildingClass]
+
+[BomberBayClass]
+bomberType = "ivbomb_c"
+
+[PoweredBuildingClass]
+
+[Lod1]

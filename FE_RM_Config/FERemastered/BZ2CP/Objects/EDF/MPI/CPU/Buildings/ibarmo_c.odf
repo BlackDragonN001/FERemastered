@@ -1,0 +1,36 @@
+[GameObjectClass]
+classLabel = "ibarmo"
+UseCollisionMeshForPathing = 1
+
+/////// REQUIREMENTS ///////////////
+
+requireCount = 1
+requireName1 = "ibfact_c"
+requireText1 = "Build Factory"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 4
+provideName4 = "ibarmo_c"
+
+[BuildingClass]
+
+[PoweredBuildingClass]
+
+[ArmoryClass]
+
+[ArmoryGroup1]
+
+[ArmoryGroup2]
+
+[ArmoryGroup3]
+
+[ArmoryGroup4]
+
+[ArmoryGroup5]
+
+[ArmoryGroup6]
+
+[ArmoryGroup7]
+
+[steam]

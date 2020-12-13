@@ -1,0 +1,13 @@
+[GameObjectClass]
+classLabel = "ibpgen"
+UseCollisionMeshForPathing = 1
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName3 = "ibpgen_c"
+
+[BuildingClass]
+
+[PoweredBuildingClass]
+
+[Lod1]

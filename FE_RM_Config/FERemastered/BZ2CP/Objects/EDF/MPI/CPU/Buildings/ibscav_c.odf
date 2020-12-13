@@ -1,0 +1,15 @@
+[GameObjectClass]
+classLabel = "ibscav"
+unitName = "Extractor I"
+upgradeName = "ibscup_c"
+UseCollisionMeshForPathing = 1
+
+/////// PROVIDES ///////////////////
+provideCount = 6
+provideName1 = "ibscav_c"
+
+[steam]
+
+[BuildingClass]
+
+[ExtractorClass]

@@ -1,0 +1,27 @@
+[GameObjectClass]
+classLabel = "ivscav"
+ejectRatio = 1
+PilotConfig = "ispilo_c"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName4 = "ivscav_c"
+
+////////////////////////////////////
+
+ExplosionName = "xvehcpuxpl"
+
+[CraftClass]
+XplChunk = "xseccpuxpl"
+
+[TrackedVehicleClass]
+
+[TrackedDeployableClass]
+
+[ScavengerClass]
+deployClass = "ibscav_c"
+ScavClassProvides = 22 		// Matches DepositClassMatch (dzpoolGH01_L.odf) allowing it to deploy.  22 = 01101
+
+[Lod1]
+
+[Lod2]
