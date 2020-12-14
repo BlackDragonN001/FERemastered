@@ -193,6 +193,8 @@ function Start()
 	M.Position4 = GetPosition("red_spawn");
 	M.Position5 = GetPosition("blue_spawn");
 	
+	M.MessagePlayed = false; --added for looping audio.
+	
 	GLOBAL_lock(_G); --prevents script from accidentally creating new global variables.
 end
 
@@ -686,12 +688,13 @@ function Routine3()
 		elseif (M.Routine3State == 4) then
 			if (GetTime() >= M.Routine3Timer) then
 				--SetPosition(M.Object_WyndtEssex, "blue_goto_power_2"); -- BAD! No! -GBD
-				local MessagePlayed = false;
+				
 				if (not IsAround(M.Object_Power1) and not IsAround(M.Object_Power2) and not IsAround(M.Object_Power3) and not IsAround(M.Object_Power4)  ) then 
 					SetTeamNum(M.Object_Radar2, 0);
 					
-					if (MessagePlayed == false) then
+					if (M.MessagePlayed == false) then
 						AudioMessage("mercury_06.wav"); --moved for logical order and player attention to go to wynd --Gravey
+						M.MessagePlayed = true;
 					end
 					
 					if (GetDistance(M.Object_WyndtEssex, "blue_goto_power_2") <= 20 and GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 20) then --added for logical reasons - Gravey
@@ -820,7 +823,7 @@ function Routine5()
 			ClearObjectives();
 			AddObjective("mercedf109.otf", "red");
 			FailMission(GetTime() + 10, "hardmerc.des");
-		elseif (M.CerbRoutine and not IsAround(M.Object_CerbUnit)and not M.Routine6State == 2 and not M.Routine6State == 3) then --added routine6state ==2 to prevent fail on out of bounds delete. 
+		elseif (M.CerbRoutine and not IsAround(M.Object_CerbUnit)and not M.Routine6State == 2 ) then --added routine6state ==2 to prevent fail on out of bounds delete. and not M.Routine6State == 3 causes no failure if killed early.
 			M.EnableFailCheck = false;
 		
 			ClearObjectives();
@@ -834,11 +837,11 @@ end
 function Routine6() 
 	if (M.CerbRoutine) then
 		if (M.Routine6State == 0) then
-			M.Object_CerbUnit = BuildObjectAndLabel("cvscout", 4, "blue_goto_power_2", "CerbUnit");
+			M.Object_CerbUnit = BuildObjectAndLabel("cvscout", 4, "TritonSpawn", "CerbUnit"); --updating location to be in a better spot no blue_goto_power_2 -Gravey
 			
 			SetObjectiveName(M.Object_CerbUnit, "Unknown");
 			
-			Goto(M.Object_CerbUnit, M.Object_Gun10, 1);
+			--Goto(M.Object_CerbUnit, M.Object_Gun10, 1); removed to make better sense with new spawn point.
 			
 			M.Routine6Timer = GetTime() + 8;
 			
@@ -846,7 +849,7 @@ function Routine6()
 		elseif (M.Routine6State == 1) then
 			if (GetTime() >= M.Routine6Timer) then
 				Retreat(M.Object_CerbUnit, "path_2", 1);
-
+				
 				M.Routine6State = M.Routine6State + 1;
 			end
 		elseif (M.Routine6State == 2) then
@@ -861,7 +864,7 @@ function Routine6()
 					M.Routine6State = M.Routine6State + 1;
 				end
 			end
-		--elseif (M.Routine6State == 3) then
+		elseif (M.Routine6State == 3) then
 			--RemoveObject(M.Object_CerbUnit); -- I don't like the idea of this poofing into nothingness. Do something else? either leave it till it's offmap, or zoof it up into space? actually, hold that thought...
 			--SetVelocity(M.Object_CerbUnit, SetVector(0, 10000, 0)); -- Just kidding... :P
 			--local OffMap = SetVector(-4000, TerrainFindFloor(-4000, -4000), -4000);
