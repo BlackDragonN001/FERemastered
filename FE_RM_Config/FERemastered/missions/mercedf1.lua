@@ -823,7 +823,7 @@ function Routine5()
 			ClearObjectives();
 			AddObjective("mercedf109.otf", "red");
 			FailMission(GetTime() + 10, "hardmerc.des");
-		elseif (M.CerbRoutine and not IsAround(M.Object_CerbUnit)and not M.Routine6State == 2 ) then --added routine6state ==2 to prevent fail on out of bounds delete. and not M.Routine6State == 3 causes no failure if killed early.
+		elseif (M.CerbRoutine and not IsAround(M.Object_CerbUnit)) then 
 			M.EnableFailCheck = false;
 		
 			ClearObjectives();
@@ -854,8 +854,9 @@ function Routine6()
 			end
 		elseif (M.Routine6State == 2) then
 			if (GetDistance(M.Object_CerbUnit, "DeleteTriton") <= 10) then --changed path point
+				M.CerbRoutine = false; --stop cerb routine failcheck. --Gravey
 				RemoveObject(M.Object_CerbUnit); -- delete triton when it reaches out of bounds Gravey
-				--M.Routine6State = M.Routine6State + 1;
+				M.Routine6State = M.Routine6State + 1;
 			else
 				local h = GetWhoShotMe(M.Object_CerbUnit);
 
