@@ -334,7 +334,7 @@ function Routine1()
 				StartAnimation(M.Object_Condor);
 				AudioMessage("dropdoor.wav");
 				RemoveObject(M.Object_Stayput);
-
+				
 				M.PlayerCanMove = true;
 
 				Goto(M.Object_Scout2, "convoy", 1);
@@ -355,15 +355,16 @@ function Routine1()
 				Goto(M.Object_Cargo2, "convoy", 1);
 
 				M.convoyWaitTillTime = GetTime() + 30;
-
+				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFirstSpawn", "Nadir 1"); --moved spawn time up so player doesn't see it POOF from thin air. 
+				Attack(M.Object_Nadir1, M.Object_Cargo2, 1);
 				M.Routine1State = M.Routine1State + 1;
 			end
 		elseif (M.Routine1State == 14) then
 			if (GetTime() >= M.convoyWaitTillTime) then
-				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, Position12, "Nadir 1");
+				--M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFirstSpawn", "Nadir 1"); -- updated path location was Position12 --Gravey
 
 				SetPerceivedTeam(M.Object_Nadir1, 1);
-				Attack(M.Object_Nadir1, M.Object_Cargo2, 1);
+				--Attack(M.Object_Nadir1, M.Object_Cargo2, 1); moved to line 338
 
 				AudioMessage("mercury_02a.wav");
 
@@ -631,7 +632,7 @@ end
 function Routine3() 
 	if (M.RunPowerPlayerStateMachine) then
 		if (M.Routine3State == 0) then
-			--SetCurHealth(M.Object_Gun10, 20000); cleanup -Gravey
+			SetCurHealth(M.Object_Gun10, 3000); --cleanup -Gravey
 			SetObjectiveOn(M.Object_WyndtEssex);
 			LookAt(M.Object_WyndtEssex, M.Object_Player, 1);
 			
@@ -685,12 +686,16 @@ function Routine3()
 		elseif (M.Routine3State == 4) then
 			if (GetTime() >= M.Routine3Timer) then
 				--SetPosition(M.Object_WyndtEssex, "blue_goto_power_2"); -- BAD! No! -GBD
-
-				if (not IsAround(M.Object_Power1) and not IsAround(M.Object_Power2) and not IsAround(M.Object_Power3) and not IsAround(M.Object_Power4))  then  
+				local MessagePlayed = false;
+				if (not IsAround(M.Object_Power1) and not IsAround(M.Object_Power2) and not IsAround(M.Object_Power3) and not IsAround(M.Object_Power4)  ) then 
 					SetTeamNum(M.Object_Radar2, 0);
-					AudioMessage("mercury_06.wav"); --moved for logical order and player attention to go to wynd --Gravey
+					
+					if (MessagePlayed == false) then
+						AudioMessage("mercury_06.wav"); --moved for logical order and player attention to go to wynd --Gravey
 					end
-				if (GetDistance(M.Object_WyndtEssex, "blue_goto_power_2") <= 20 and GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 50) then --added for logical reasons - Gravey
+					
+					if (GetDistance(M.Object_WyndtEssex, "blue_goto_power_2") <= 20 and GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 20) then --added for logical reasons - Gravey
+					
 					ClearObjectives();
 					AddObjective("mercedf102.otf", "white");
 	
@@ -703,6 +708,7 @@ function Routine3()
 					Attack(M.Object_Nadir2, M.Object_Player, 1);
 
 					M.Routine3State = M.Routine3State + 1;
+					end
 				end
 			end
 		elseif (M.Routine3State == 5) then
@@ -814,7 +820,7 @@ function Routine5()
 			ClearObjectives();
 			AddObjective("mercedf109.otf", "red");
 			FailMission(GetTime() + 10, "hardmerc.des");
-		elseif (M.CerbRoutine and not IsAround(M.Object_CerbUnit)) then
+		elseif (M.CerbRoutine and not IsAround(M.Object_CerbUnit)and not M.Routine6State == 2 and not M.Routine6State == 3) then --added routine6state ==2 to prevent fail on out of bounds delete. 
 			M.EnableFailCheck = false;
 		
 			ClearObjectives();
@@ -844,8 +850,9 @@ function Routine6()
 				M.Routine6State = M.Routine6State + 1;
 			end
 		elseif (M.Routine6State == 2) then
-			if (GetDistance(M.Object_CerbUnit, "path_2") <= 10) then
-				M.Routine6State = M.Routine6State + 1;
+			if (GetDistance(M.Object_CerbUnit, "DeleteTriton") <= 10) then --changed path point
+				RemoveObject(M.Object_CerbUnit); -- delete triton when it reaches out of bounds Gravey
+				--M.Routine6State = M.Routine6State + 1;
 			else
 				local h = GetWhoShotMe(M.Object_CerbUnit);
 
@@ -854,13 +861,14 @@ function Routine6()
 					M.Routine6State = M.Routine6State + 1;
 				end
 			end
-		elseif (M.Routine6State == 3) then
+		--elseif (M.Routine6State == 3) then
 			--RemoveObject(M.Object_CerbUnit); -- I don't like the idea of this poofing into nothingness. Do something else? either leave it till it's offmap, or zoof it up into space? actually, hold that thought...
 			--SetVelocity(M.Object_CerbUnit, SetVector(0, 10000, 0)); -- Just kidding... :P
-			local OffMap = SetVector(-4000, TerrainFindFloor(-4000, -4000), -4000);
-			Goto(M.CerbUnit, OffMap, 1);
+			--local OffMap = SetVector(-4000, TerrainFindFloor(-4000, -4000), -4000);
+			--Goto(M.CerbUnit, OffMap, 1);
 			
-			M.Routine6State = M.Routine6State + 1;
+		--	M.Routine6State = M.Routine6State + 1;
+		--Unecessary state check -- Gravey
 		end
 		
 		-- If cerb unit dies, fail mission.
@@ -874,8 +882,8 @@ end
 function DamagePrevention()
 	if (M.PreventPowerDamage) then
 		if (not M.SetGun10Health) then
-			--SetCurHealth(M.Object_Gun10, 20000); cleanup to avoid visual HP spike -Gravey
-			SetCurHealth(M.Object_Gun10, 3000);
+			SetCurHealth(M.Object_Gun10, 20000); --cleanup to avoid visual HP spike -Gravey
+			--SetCurHealth(M.Object_Gun10, 3000);
 			SetCurHealth(M.Object_Power1, 800);
 			SetCurHealth(M.Object_Power2, 800);
 			SetCurHealth(M.Object_Power3, 800);
