@@ -161,7 +161,7 @@ function Start()
 	M.Object_WyndtEssex = GetHandle("Rodriguez");
 	M.Object_Corbernav = GetHandle("Corbernav");
 	M.Object_Condor = GetHandle("condor");
-			
+
 	M.Object_ServiceBay = GetHandle("unnamed_ibsbay");
 	M.Object_Carrier = GetHandle("unnamed_ivcarrs");
 
@@ -192,9 +192,7 @@ function Start()
 	M.Position3 = GetPosition("hardin_spawn");
 	M.Position4 = GetPosition("red_spawn");
 	M.Position5 = GetPosition("blue_spawn");
-	SetGroup(M.Object_WyndtEssex, 0); -- moved from line 269 changed to group 0
-			SetGroup(M.Object_ServTruck1, 0); --moved gravey from line 282 changed to group 0
-			-- prevents player from using f1 on wynd and truck at start
+	
 	GLOBAL_lock(_G); --prevents script from accidentally creating new global variables.
 end
 
@@ -218,7 +216,9 @@ function Routine1()
 	if (M.Routine1Timer < GetTime()) then
 	
 		if (M.Routine1State == 0) then
-			
+			SetGroup(M.Object_WyndtEssex, 0); -- moved from line 269 changed to group 0
+			SetGroup(M.Object_ServTruck1, 0); --moved gravey from line 282 changed to group 0
+			-- prevents player from using f1 on wynd and truck at start
 			StartEarthQuake(1.5);
 			M.Position_LandingZone3 = GetPosition(M.Object_Player);
 			M.Object_Stayput = BuildObjectAndLabel("stayput", 0, M.Position_LandingZone3, "Stayput 1");
