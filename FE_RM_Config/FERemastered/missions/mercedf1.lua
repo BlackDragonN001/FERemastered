@@ -705,8 +705,8 @@ function Routine3()
 	
 					Goto(M.Object_WyndtEssex, "path_1", 1);
 
-					M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 2");
-					M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 3");
+					M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFlank", "Nadir 2"); --changed from NaidrFirstSpawn to renew OH SHIT momoent when they come around the corner
+					M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFlank", "Nadir 3"); --This was an unintended change when I was adjusting path points. But it felt good. -Gravey
 
 					Attack(M.Object_Nadir1, M.Object_WyndtEssex, 1);
 					Attack(M.Object_Nadir2, M.Object_Player, 1);
