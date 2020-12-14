@@ -161,7 +161,7 @@ function Start()
 	M.Object_WyndtEssex = GetHandle("Rodriguez");
 	M.Object_Corbernav = GetHandle("Corbernav");
 	M.Object_Condor = GetHandle("condor");
-
+			
 	M.Object_ServiceBay = GetHandle("unnamed_ibsbay");
 	M.Object_Carrier = GetHandle("unnamed_ivcarrs");
 
@@ -192,7 +192,9 @@ function Start()
 	M.Position3 = GetPosition("hardin_spawn");
 	M.Position4 = GetPosition("red_spawn");
 	M.Position5 = GetPosition("blue_spawn");
-	
+	SetGroup(M.Object_WyndtEssex, 0); -- moved from line 269 changed to group 0
+			SetGroup(M.Object_ServTruck1, 0); --moved gravey from line 282 changed to group 0
+			-- prevents player from using f1 on wynd and truck at start
 	GLOBAL_lock(_G); --prevents script from accidentally creating new global variables.
 end
 
@@ -214,9 +216,10 @@ end
 
 function Routine1() 
 	if (M.Routine1Timer < GetTime()) then
+	
 		if (M.Routine1State == 0) then
+			
 			StartEarthQuake(1.5);
-
 			M.Position_LandingZone3 = GetPosition(M.Object_Player);
 			M.Object_Stayput = BuildObjectAndLabel("stayput", 0, M.Position_LandingZone3, "Stayput 1");
 			M.convoyWaitTillTime = GetTime() + 1;
@@ -266,7 +269,7 @@ function Routine1()
 		elseif (M.Routine1State == 5) then
 			M.Object_CarrierLaunchCamDummy = BuildObjectAndLabel("dummy", 2, Position11, "Dummy 1");
 			
-			SetGroup(M.Object_WyndtEssex, 10);
+			--SetGroup(M.Object_WyndtEssex, 10); --moved gravey
 			SetObjectiveName(M.Object_WyndtEssex, "Wyndt-Essex");
 			
 			M.Object_Hardin = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position3, "Hardin");
@@ -277,7 +280,7 @@ function Routine1()
 			M.Object_Scout3 = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position5, "Scout 3");
 			M.Object_ServTruck1 = BuildObjectAndLabel(M.SERVODF, 1, M.Position5, "Service Truck 1");
 			
-			SetGroup(M.Object_ServTruck1, 10);
+			--SetGroup(M.Object_ServTruck1, 10); --moved gravey
 			
 			M.Object_ServTruck2 = BuildObjectAndLabel(M.SERVODF, 9, M.Position1, "Service Truck 2");
 			M.Object_Cargo1 = BuildObjectAndLabel(M.CARGOODF, 9, M.Position1, "Cargo 1");
@@ -628,7 +631,7 @@ end
 function Routine3() 
 	if (M.RunPowerPlayerStateMachine) then
 		if (M.Routine3State == 0) then
-			SetCurHealth(M.Object_Gun10, 20000);
+			--SetCurHealth(M.Object_Gun10, 20000); cleanup -Gravey
 			SetObjectiveOn(M.Object_WyndtEssex);
 			LookAt(M.Object_WyndtEssex, M.Object_Player, 1);
 			
@@ -657,19 +660,20 @@ function Routine3()
 			end
 		elseif (M.Routine3State == 2) then
 			if (GetTime() >= M.Routine3Timer) then
+				
 				ClearObjectives();
 				AddObjective("mercedf103.otf", "white");
 
 				M.CerbRoutine = true;
 
 				SetObjectiveOn(M.Object_Gun10);
-
+				
 				M.Routine3State = M.Routine3State + 1;
 			end
 		elseif (M.Routine3State == 3) then
-			if (not IsAround(M.Object_Gun10)) then
-				Goto(Object_WyndtEssex, "blue_goto_power_2", 1);
-
+			 
+			if (not IsAround(M.Object_Gun10)) then 
+				Goto(M.Object_WyndtEssex, "blue_goto_power_2", 1);
 				ClearObjectives();
 				AddObjective("mercedf103.otf", "green");
 				AddObjective("mercedf104.otf", "white");
@@ -682,14 +686,14 @@ function Routine3()
 			if (GetTime() >= M.Routine3Timer) then
 				--SetPosition(M.Object_WyndtEssex, "blue_goto_power_2"); -- BAD! No! -GBD
 
-				if (not IsAround(M.Object_Power1) and not IsAround(M.Object_Power2) and not IsAround(M.Object_Power3) and not IsAround(M.Object_Power4)) then
+				if (not IsAround(M.Object_Power1) and not IsAround(M.Object_Power2) and not IsAround(M.Object_Power3) and not IsAround(M.Object_Power4))  then  
 					SetTeamNum(M.Object_Radar2, 0);
-
+					AudioMessage("mercury_06.wav"); --moved for logical order and player attention to go to wynd --Gravey
+					end
+				if (GetDistance(M.Object_WyndtEssex, "blue_goto_power_2") <= 20 and GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 50) then --added for logical reasons - Gravey
 					ClearObjectives();
 					AddObjective("mercedf102.otf", "white");
-
-					AudioMessage("mercury_06.wav");
-
+	
 					Goto(M.Object_WyndtEssex, "path_1", 1);
 
 					M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 2");
@@ -704,24 +708,25 @@ function Routine3()
 		elseif (M.Routine3State == 5) then
 			if (GetDistance(M.Object_WyndtEssex, "convoy_halt") <= 50) then
 				SetObjectiveOff(M.Object_WyndtEssex);
-
+				
+				SetTeamNum(M.Object_Scout1, 1);
 				SetTeamNum(M.Object_Scout2, 1);
 				SetTeamNum(M.Object_Scout3, 1);
+				SetGroup(M.Object_Scout1, 0);
 				SetGroup(M.Object_Scout2, 0);
 				SetGroup(M.Object_Scout3, 0);
 
 				Follow(M.Object_Scout3, M.Object_Player, 0);
-
-				SetTeamNum(M.Object_Scout1, 1);
+			
 				SetTeamNum(M.Object_ServTruck2, 1);
-				SetGroup(M.Object_Scout1, 0);
-				SetGroup(M.Object_ServTruck2, 3);
 				SetGroup(M.Object_ServTruck1, 3);
+				SetGroup(M.Object_ServTruck2, 3);
+				
 
 				Service(M.Object_ServTruck1, M.Object_Cargo1, 0);
 				Service(M.Object_ServTruck2, M.Object_Cargo2, 0);
 
-				M.Routine3Timer = GetTime() + 40;  -- Reduced from 80, felt like ages before the first wave. - Gravey
+				M.Routine3Timer = GetTime() + 45;  -- Reduced from 80, felt like ages before the first wave. - Gravey
 
 				M.Routine3State = M.Routine3State + 1;
 			end
@@ -869,7 +874,7 @@ end
 function DamagePrevention()
 	if (M.PreventPowerDamage) then
 		if (not M.SetGun10Health) then
-			SetCurHealth(M.Object_Gun10, 20000);
+			--SetCurHealth(M.Object_Gun10, 20000); cleanup to avoid visual HP spike -Gravey
 			SetCurHealth(M.Object_Gun10, 3000);
 			SetCurHealth(M.Object_Power1, 800);
 			SetCurHealth(M.Object_Power2, 800);
