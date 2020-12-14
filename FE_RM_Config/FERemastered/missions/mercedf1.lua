@@ -340,7 +340,8 @@ function Routine1()
 				M.PlayerCanMove = true;
 
 				Goto(M.Object_Scout2, "convoy", 1);
-				Defend2(M.Object_WyndtEssex, M.Object_Cargo2, 1);
+				--Defend2(M.Object_WyndtEssex, M.Object_Cargo2, 1); moved to prevent Wynd from climbing the walls inside the dropship.
+				LookAt(M.Object_WyndtEssex, M.Object_Cargo2, 1); --added to turn wynd to face the exit before moving. 
 				Follow(M.Object_ServTruck1, M.Object_Cargo2, 1);
 				Follow(M.Object_ServTruck2, M.Object_Cargo1, 1);
 				Follow(M.Object_Hardin, M.Object_Cargo1, 1);
@@ -355,7 +356,7 @@ function Routine1()
 		elseif (M.Routine1State == 13) then
 			if (GetTime() >= M.convoyWaitTillTime) then
 				Goto(M.Object_Cargo2, "convoy", 1);
-
+				Defend2(M.Object_WyndtEssex, M.Object_Cargo2, 1); --moved down from above. 
 				M.convoyWaitTillTime = GetTime() + 30;
 				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFirstSpawn", "Nadir 1"); --moved spawn time up so player doesn't see it POOF from thin air. 
 				Attack(M.Object_Nadir1, M.Object_Cargo2, 1);
@@ -856,7 +857,7 @@ function Routine6()
 			if (GetDistance(M.Object_CerbUnit, "DeleteTriton") <= 10) then --changed path point
 				M.CerbRoutine = false; --stop cerb routine failcheck. --Gravey
 				RemoveObject(M.Object_CerbUnit); -- delete triton when it reaches out of bounds Gravey
-				M.Routine6State = M.Routine6State + 1;
+				--M.Routine6State = M.Routine6State + 1;
 			else
 				local h = GetWhoShotMe(M.Object_CerbUnit);
 
@@ -870,7 +871,10 @@ function Routine6()
 			--SetVelocity(M.Object_CerbUnit, SetVector(0, 10000, 0)); -- Just kidding... :P
 			--local OffMap = SetVector(-4000, TerrainFindFloor(-4000, -4000), -4000);
 			--Goto(M.CerbUnit, OffMap, 1);
-			
+			if (GetDistance(M.Object_CerbUnit, "DeleteTriton") <= 10) then --changed path point
+				M.CerbRoutine = false; --stop cerb routine failcheck. --Gravey
+				RemoveObject(M.Object_CerbUnit);
+			end
 		--	M.Routine6State = M.Routine6State + 1;
 		--Unecessary state check -- Gravey
 		end
