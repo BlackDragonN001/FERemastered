@@ -287,7 +287,9 @@ function Routine1()
 			
 			M.Object_ServTruck2 = BuildObjectAndLabel(M.SERVODF, 9, M.Position1, "Service Truck 2");
 			M.Object_Cargo1 = BuildObjectAndLabel(M.CARGOODF, 9, M.Position1, "Cargo 1");
+			SetCanSnipe(M.Object_Cargo1, 0); --Gravey
 			M.Object_Cargo2 = BuildObjectAndLabel(M.CARGOODF, 9, M.Position1, "Cargo 2");
+			SetCanSnipe(M.Object_Cargo2, 0); --Gravey
 			
 			M.Routine1State = M.Routine1State + 1;
 		elseif (M.Routine1State == 6) then
