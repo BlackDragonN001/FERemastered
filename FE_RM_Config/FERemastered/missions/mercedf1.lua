@@ -698,14 +698,14 @@ function Routine3()
 						M.MessagePlayed = true;
 					end
 					
-					if (GetDistance(M.Object_WyndtEssex, "blue_goto_power_2") <= 20 and GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 20) then --added for logical reasons - Gravey
+					if (GetDistance(M.Object_WyndtEssex, "blue_goto_power_2") <= 20 or GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 20) then --added for gameplay fluidity - Gravey
 					
 					ClearObjectives();
 					AddObjective("mercedf102.otf", "white");
 	
 					Goto(M.Object_WyndtEssex, "path_1", 1);
 
-					M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFlank", "Nadir 2"); --changed from NaidrFirstSpawn to renew OH SHIT momoent when they come around the corner
+					M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFlank", "Nadir 2"); --changed from NaidrFirstSpawn to new OH SHIT momoent when they come around the corner
 					M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFlank", "Nadir 3"); --This was an unintended change when I was adjusting path points. But it felt good. -Gravey
 
 					Attack(M.Object_Nadir1, M.Object_WyndtEssex, 1);
@@ -726,7 +726,7 @@ function Routine3()
 				SetGroup(M.Object_Scout2, 0);
 				SetGroup(M.Object_Scout3, 0);
 
-				Follow(M.Object_Scout3, M.Object_Player, 0);
+				--Follow(M.Object_Scout3, M.Object_Player, 0); --Disabled, units shouldn't be given orders to do things before being handed to player. --Gravey
 			
 				SetTeamNum(M.Object_ServTruck2, 1);
 				SetGroup(M.Object_ServTruck1, 3);
