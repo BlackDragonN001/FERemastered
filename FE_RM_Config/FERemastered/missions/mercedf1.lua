@@ -721,16 +721,24 @@ function Routine3()
 		elseif (M.Routine3State == 5) then
 			if (GetDistance(M.Object_WyndtEssex, "convoy_halt") <= 50) then
 				SetObjectiveOff(M.Object_WyndtEssex);
+																			--add custom routine bool true here.
+				if(GetDistance(M.Object_Scout1, "convoy_halt") <=30) then --added condition so player cannot break their return path early --Gravey
 				
-				SetTeamNum(M.Object_Scout1, 1);
-				SetTeamNum(M.Object_Scout2, 1);
+					SetTeamNum(M.Object_Scout1, 1);
+					end
+				if(GetDistance(M.Object_Scout2, "convoy_hal") <= 30) then ---added condition so player cannot break their return path early --Gravey
+					SetTeamNum(M.Object_Scout2, 1);
+					end
 				SetTeamNum(M.Object_Scout3, 1);
+				--Gravey Note: The added route comes in just before the wave where all three scouts are needed for help.
+				--This feels quite nice as they cut in just early enough to assist.
+				
 				SetGroup(M.Object_Scout1, 0);
 				SetGroup(M.Object_Scout2, 0);
 				SetGroup(M.Object_Scout3, 0);
 
 				--Follow(M.Object_Scout3, M.Object_Player, 0); --Disabled, units shouldn't be given orders to do things before being handed to player. --Gravey
-			
+				Stop(M.Object_Scout3, 0); --added so F1 scout is given to player
 				SetTeamNum(M.Object_ServTruck2, 1);
 				SetGroup(M.Object_ServTruck1, 3);
 				SetGroup(M.Object_ServTruck2, 3);
