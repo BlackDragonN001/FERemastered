@@ -159,6 +159,7 @@ function Start()
 	_FECore.Start();
 
 	M.Object_WyndtEssex = GetHandle("Rodriguez");
+	Stop(M.Object_WyndtEssex, 1); --added to prevent targeting. -Gravey
 	M.Object_Corbernav = GetHandle("Corbernav");
 	M.Object_Condor = GetHandle("condor");
 
