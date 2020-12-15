@@ -118,9 +118,9 @@ end
 function BuildGunTower1(team, time)
 	local gtow1Exists = AIPUtil.PathExists("gtow1");
 	local gtow1Taken = AIPUtil.PathBuildingExists("gtow1");
-	local cpuHasBuilder = CPUBuilderExists(team);
+	local CPUBuilderExists = CPUBuilderExists(team);
 
-	if (gtow1Exists and not gtow1Taken and cpuHasBuilder) then
+	if (gtow1Exists and not gtow1Taken and CPUBuilderExists) then
 		return true, "I can build a Gun Tower on gtow1.";
 	else
 		return false, "GTOW1 is occupied or doesn't exist, or I don't have a builder.";
@@ -252,18 +252,11 @@ function CountHumanRecyclerBuildings(team, time)
     return AIPUtil.CountUnits(1, "VIRTUAL_CLASS_RECYCLERBUILDING", 'sameteam', true);
 end
 
--- Start up conditions. Make sure we have a Recycler and a certain amount of pools.
-function CollectPoolPlanCheck1(team, time)
-	local CPUHasRecy = CPURecyclerExists(team, time);
-	local CPUExtractorCount = CountCPUExtractors(team, time);
-
-	if (CPUHasRecy and CPUExtractorCount < 3) then
-		return true, "I need to send a scavenger to more pools.";
-	else
-		return false, "I have too many extractors to execute this plan.";
-	end
+function CountHumanConstructors(team, time)
+	return AIPUtil.CountUnits(1, "VIRTUAL_CLASS_CONSTRUCTIONRIG", 'sameteam', true);
 end
 
+-- Start up conditions. Make sure we have a Recycler and a certain amount of pools.
 function BuildScavengerCheck1(team, time)
 	local CPUHasRecy = CPURecyclerExists(team, time);
 	local CPUScavCount = CountCPUScavengers(team, time);
@@ -316,6 +309,18 @@ function SendSecondScoutAttackWave(team, time)
 	local HumanRecyclerBuildingCount = CountHumanRecyclerBuildings(team, time);
 
 	if (CPUHasRecy and CPUExtractorCount >= 2 and HumanRecyclerBuildingCount > 0) then
+		return true, "Sending second attack party at enemy Recycler...";
+	else
+		return false, "Could not send second scout attack party. Conditions haven't been met."
+	end
+end
+
+function SendThirdScoutAttackWave(team, time)
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUExtractorCount = CountCPUExtractors(team, time);
+	local HumanConstructorCount = CountHumanRecyclerBuildings(team, time);
+
+	if (CPUHasRecy and CPUExtractorCount >= 3 and HumanConstructorCount > 0) then
 		return true, "Sending second attack party at enemy Recycler...";
 	else
 		return false, "Could not send second scout attack party. Conditions haven't been met."

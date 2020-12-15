@@ -51,38 +51,41 @@ planConditionOr3 = false
 buildIfNoIdle = 1
 ContinueEvenIfFail = true
 
-[Plan3] // Start collecting pools if I don't have 3 or more.
+[Plan3]
 planType = "CollectPool"
 planPriority = 980
-planCondition1 = "Lua"
-ContinueEvenIfFail = true
-LuaFunction = "CollectPoolPlanCheck1"
-
-[Plan4] // When I have 2 or more pools, we should start deploying turrets across the map.
-planType = "Hold"
-planPriority = 970
-MinCurScrap = 40
-planCondition1 = "Lua"
-holdPoint = "hold1"
 buildIfNoIdle = true
 ContinueEvenIfFail = true
-pathpointsCanBeMissing = true
-LuaFunction = "HoldCheckPlan1"
+
+[Plan4]
+planType = "CollectPool"
+planPriority = 970
+buildIfNoIdle = true
+ContinueEvenIfFail = true
 
 [Plan5] // When I have 2 or more pools, we should start deploying turrets across the map.
-planType = "Hold"
+planType = "BuildMinimums"
 planPriority = 960
 MinCurScrap = 40
 planCondition1 = "Lua"
-holdPoint = "hold2"
-buildIfNoIdle = true
+buildType1 = "ivturr_c"
+buildCount1 = 1
 ContinueEvenIfFail = true
-pathpointsCanBeMissing = true
-LuaFunction = "HoldCheckPlan2"
+LuaFunction = "HoldCheckPlan1"
 
-[Plan6] // When I have 2 or more pools, I need to start thinking about using a builder...
+[Plan6] // When I have 2 or more pools, we should start deploying turrets across the map.
 planType = "BuildMinimums"
 planPriority = 950
+MinCurScrap = 40
+planCondition1 = "Lua"
+buildType1 = "ivturr_c"
+buildCount1 = 1
+ContinueEvenIfFail = true
+LuaFunction = "HoldCheckPlan2"
+
+[Plan7] // When I have 2 or more pools, I need to start thinking about using a builder...
+planType = "BuildMinimums"
+planPriority = 940
 MinCurScrap = 40
 planCondition1 = "Lua"
 buildType1 = "ivcons_c"
@@ -90,9 +93,9 @@ buildCount1 = 1
 ContinueEvenIfFail = true
 LuaFunction = "BuildConstructorCheck1"
 
-[Plan7] // Send some scouts to mess with enemy scavs...
+[Plan8] // Send some scouts to mess with enemy scavs...
 planType = "Attacker"
-planPriority = 940
+planPriority = 935
 planCondition1 = "Lua"
 AttackAnything = true
 targetType = "VIRTUAL_CLASS_SCAVENGER"
@@ -104,7 +107,7 @@ MinCurScrap = 50
 ContinueEvenIfFail = true
 LuaFunction = "SendFirstScoutAttackWave"
 
-[Plan8] // Send some scouts to mess with enemy Recycler...
+[Plan9] // Send some scouts to mess with enemy Recycler...
 planType = "Attacker"
 planPriority = 930
 planCondition1 = "Lua"
@@ -118,7 +121,7 @@ MinCurScrap = 50
 ContinueEvenIfFail = true
 LuaFunction = "SendSecondScoutAttackWave"
 
-[Plan9] // Maintain 2 more Scavs, bringing our total up to 4.
+[Plan10] // Maintain 2 more Scavs, bringing our total up to 4.
 planType = "BuildMinimums"
 planPriority = 920
 MinCurScrap = 20
@@ -128,7 +131,7 @@ buildCount1 = 2
 ContinueEvenIfFail = true
 LuaFunction = "BuildScavengerCheck2"
 
-[Plan10] // Start building the base out. 
+[Plan11] // Start building the base out. 
 planType = "BaseBuildMinimums"
 planPriority = 910
 MinCurScrap = 30
@@ -138,7 +141,7 @@ buildCount1 = 1
 ContinueEvenIfFail = true
 LuaFunction = "FirstPowerGeneratorCheck"
 
-[Plan11] // Send out another turret...
+[Plan12] // Send out another turret...
 planType = "Hold"
 planPriority = 900
 MinCurScrap = 40
@@ -149,10 +152,53 @@ ContinueEvenIfFail = true
 pathpointsCanBeMissing = true
 LuaFunction = "HoldCheckPlan3"
 
-[Plan12] // Build our first constructor for Gun Towers
+[Plan13] // Build our first constructor for Gun Towers
 planType = "BuildMinimums"
 planPriority = 890
 MinCurScrap = 40
 buildType1 = "ivcons_g"
+buildCount1 = 2
+ContinueEvenIfFail = true
+
+[Plan14] // Build the Commander
+planType = "BuildMinimums"
+planPriority = 880
+buildType1 = "ivcmdr_c"
 buildCount1 = 1
 ContinueEvenIfFail = true
+
+[Plan15] // Start putting Gun Towers on the map to secure lanes.
+planType = "BaseBuildMinimums"
+planPriority = 870
+planCondition1 = "Lua"
+buildType1 = "ibgtow_c"
+buildCount1 = 1
+buildLoc1 = "gtow1"
+ContinueEvenIfFail = true
+consClass = "ivcons_g"
+LuaFunction = "BuildGunTower1"
+
+[Plan16] // Start putting Gun Towers on the map to secure lanes.
+planType = "BaseBuildMinimums"
+planPriority = 860
+planCondition1 = "Lua"
+buildType1 = "ibgtow_c"
+buildCount1 = 1
+buildLoc1 = "gtow2"
+ContinueEvenIfFail = true
+consClass = "ivcons_g"
+LuaFunction = "BuildGunTower2"
+
+[Plan17] // Send some scouts to mess with enemy constructors...
+planType = "Attacker"
+planPriority = 850
+planCondition1 = "Lua"
+AttackAnything = true
+targetType = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+attackType1 = "ivscout_c"
+attackType2 = "ivscout_c"
+buildIfNoIdle = true
+maxAttacks = 2
+MinCurScrap = 50
+ContinueEvenIfFail = true
+LuaFunction = "SendThirdScoutAttackWave"
