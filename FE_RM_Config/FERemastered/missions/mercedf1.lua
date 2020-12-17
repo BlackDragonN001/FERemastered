@@ -17,7 +17,7 @@ local M = {
 	PreventPowerDamage = true,
 	SetGun10Health = false,
 	Routine4Enable = false,
-
+	Routine7Enable = false,
 	-- Floats
 	MissionTimer = 0.0,
 	convoyWaitTillTime = 0.0,
@@ -184,7 +184,7 @@ function Start()
 	M.Object_Gun8 = GetHandle("gun8");
 	M.Object_Gun9 = GetHandle("gun9");
 	M.Object_Gun10 = GetHandle("gun10");
-
+	StopGt10Heal = false; --Gravey added for better GT10 heal.
 	M.Object_Radar1 = GetHandle("Radar1");
 	M.Object_Radar2 = GetHandle("Radar2");
 	
@@ -211,7 +211,7 @@ function Update()
 	Routine4();
 	Routine6();
 	Routine5();
-
+	Routine7(); --Gravey see R7
 	DamagePrevention();
 end
 
@@ -464,7 +464,8 @@ function Routine1()
 				M.RunPowerPlayerStateMachine = false;
 				M.RunPowerAIStateMachine = false;
 				M.CerbRoutine = false;
-
+				
+				
 				SetObjectiveOn(M.Object_Hardin);
 				
 				Ally(2,9);
@@ -637,8 +638,17 @@ end
 -- Handles the player side of attacking a set of power generators.
 function Routine3() 
 	if (M.RunPowerPlayerStateMachine) then
-		if (M.Routine3State == 0) then
+		if (IsPlayer(GetWhoShotMe(M.Object_Gun10))) then
+			M.StopGt10Heal = true;
+			
+		elseif (M.StopGt10Heal == true) then --added to run looping hp hold. moved out of 3State = 0 -Gravey
+				
+			
+		else
 			SetCurHealth(M.Object_Gun10, 3000); --cleanup -Gravey
+		end
+		if (M.Routine3State == 0) then
+			
 			SetObjectiveOn(M.Object_WyndtEssex);
 			LookAt(M.Object_WyndtEssex, M.Object_Player, 1);
 			
@@ -658,7 +668,7 @@ function Routine3()
 		elseif (M.Routine3State == 1) then
 			if (GetDistance(M.Object_WyndtEssex, "blue_goto_power_1") <= 20 and GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 50) then
 				LookAt(M.Object_WyndtEssex, M.Object_Player, 1);
-				
+				SetCurHealth(M.Object_Gun10, 3000); --cleanup -Gravey
 				AudioMessage("mercury_05.wav");
 
 				M.Routine3Timer = GetTime() + 1;
@@ -701,7 +711,7 @@ function Routine3()
 						M.MessagePlayed = true;
 					end
 					
-					if (GetDistance(M.Object_WyndtEssex, "blue_goto_power_2") <= 20 or GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 20) then --added for gameplay fluidity - Gravey
+					if (GetDistance(M.Object_WyndtEssex, "blue_goto_power_2") <= 75 and GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 20) then --added for gameplay fluidity - Gravey
 					
 					ClearObjectives();
 					AddObjective("mercedf102.otf", "white");
@@ -719,22 +729,16 @@ function Routine3()
 				end
 			end
 		elseif (M.Routine3State == 5) then
-			if (GetDistance(M.Object_WyndtEssex, "convoy_halt") <= 50) then
+			if (GetDistance(M.Object_WyndtEssex, "convoy_halt") <= 200) then
 				SetObjectiveOff(M.Object_WyndtEssex);
-																			--add custom routine bool true here.
-				if(GetDistance(M.Object_Scout1, "convoy_halt") <=30) then --added condition so player cannot break their return path early --Gravey
+				M.Routine7Enable = true;		--add custom routine bool true here.
 				
-					SetTeamNum(M.Object_Scout1, 1);
-					end
-				if(GetDistance(M.Object_Scout2, "convoy_hal") <= 30) then ---added condition so player cannot break their return path early --Gravey
-					SetTeamNum(M.Object_Scout2, 1);
-					end
+				
 				SetTeamNum(M.Object_Scout3, 1);
 				--Gravey Note: The added route comes in just before the wave where all three scouts are needed for help.
 				--This feels quite nice as they cut in just early enough to assist.
 				
-				SetGroup(M.Object_Scout1, 0);
-				SetGroup(M.Object_Scout2, 0);
+				
 				SetGroup(M.Object_Scout3, 0);
 
 				--Follow(M.Object_Scout3, M.Object_Player, 0); --Disabled, units shouldn't be given orders to do things before being handed to player. --Gravey
@@ -747,7 +751,7 @@ function Routine3()
 				Service(M.Object_ServTruck1, M.Object_Cargo1, 0);
 				Service(M.Object_ServTruck2, M.Object_Cargo2, 0);
 
-				M.Routine3Timer = GetTime() + 45;  -- Reduced from 80, felt like ages before the first wave. - Gravey
+				M.Routine3Timer = GetTime() + 50;  -- Reduced from 80, felt like ages before the first wave. - Gravey
 
 				M.Routine3State = M.Routine3State + 1;
 			end
@@ -871,7 +875,8 @@ function Routine6()
 				--M.Routine6State = M.Routine6State + 1;
 			else
 				local h = GetWhoShotMe(M.Object_CerbUnit);
-
+				
+			end
 				if (IsPlayer(h)) then
 					AudioMessage("mercury_07a.wav");
 					M.Routine6State = M.Routine6State + 1;
@@ -895,8 +900,25 @@ function Routine6()
 		
 		end
 	end
+--handles giving player scouts based on their arrival to "convoy_halt"
+function Routine7()  
+	if (M.Routine7Enable == true) then
+	
+		if(GetDistance(M.Object_Scout1, "convoy_halt") <= 600 and (GetDistance(M.Object_Scout2, "convoy_halt") <= 600) and M.Routine7State < 1) then --added condition so player cannot break their return path early --Gravey
+			SetTeamNum(M.Object_Scout1, 1);
+			SetTeamNum(M.Object_Scout2, 1);
+			SetGroup(M.Object_Scout1, 0);
+			SetGroup(M.Object_Scout2, 0);
+			Goto(M.Object_Scout2,"convoy_halt", 0);
+			Goto(M.Object_Scout1,"convoy_halt", 0);
+			print("Scout1 = true");
+			print("Scout2 = true");
+			M.Routine7State = M.Routine7State + 1;
+		end
+		
+		
+	end
 end
-
 -- Prevent meteor damage to key structures until we need this to happen.
 function DamagePrevention()
 	if (M.PreventPowerDamage) then
