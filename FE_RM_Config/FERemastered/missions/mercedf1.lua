@@ -18,6 +18,7 @@ local M = {
 	SetGun10Health = false,
 	Routine4Enable = false,
 	Routine7Enable = false,
+	FlankSpawn = false,
 	-- Floats
 	MissionTimer = 0.0,
 	convoyWaitTillTime = 0.0,
@@ -666,7 +667,7 @@ function Routine3()
 			
 			M.Routine3State = M.Routine3State + 1;
 		elseif (M.Routine3State == 1) then
-			if (GetDistance(M.Object_WyndtEssex, "blue_goto_power_1") <= 20 and GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 50) then
+			if (GetDistance(M.Object_WyndtEssex, "blue_goto_power_1") <= 20 and GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 100) then
 				LookAt(M.Object_WyndtEssex, M.Object_Player, 1);
 				SetCurHealth(M.Object_Gun10, 3000); --cleanup -Gravey
 				AudioMessage("mercury_05.wav");
@@ -711,19 +712,18 @@ function Routine3()
 						M.MessagePlayed = true;
 					end
 					
-					if (GetDistance(M.Object_WyndtEssex, "blue_goto_power_2") <= 75 and GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 20) then --added for gameplay fluidity - Gravey
-					
+					if (GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 50 or GetDistance(M.Object_WyndtEssex,"blue_goto_power_2") <=20) then --added for gameplay fluidity - Gravey
+					M.FlankSpawn = true;
 					ClearObjectives();
 					AddObjective("mercedf102.otf", "white");
-	
 					Goto(M.Object_WyndtEssex, "path_1", 1);
-
+					end
+					if (GetDistance(M.Object_WyndtEssex, "FlankTarget") <= 200 and M.FlankSpawn == true) then --additional spawn logic for consistency.
 					M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFlank", "Nadir 2"); --changed from NaidrFirstSpawn to new OH SHIT momoent when they come around the corner
-					M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFlank", "Nadir 3"); --This was an unintended change when I was adjusting path points. But it felt good. -Gravey
-
+					M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 3"); --This was an unintended change when I was adjusting path points. But it felt good. -Gravey
+					M.FlankSpawn = false;
 					Attack(M.Object_Nadir1, M.Object_WyndtEssex, 1);
 					Attack(M.Object_Nadir2, M.Object_Player, 1);
-
 					M.Routine3State = M.Routine3State + 1;
 					end
 				end
@@ -751,11 +751,16 @@ function Routine3()
 				Service(M.Object_ServTruck1, M.Object_Cargo1, 0);
 				Service(M.Object_ServTruck2, M.Object_Cargo2, 0);
 
-				M.Routine3Timer = GetTime() + 50;  -- Reduced from 80, felt like ages before the first wave. - Gravey
+				M.Routine3Timer = GetTime() + 80;  
 
 				M.Routine3State = M.Routine3State + 1;
 			end
 		elseif (M.Routine3State == 6) then
+			if (GetTime() >= M.Routine3Timer -40 and M.FlankSpawn == false) then --added single drone to attack player during waiting time for scouts. Keeps the player from sitting idle. 
+				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 4");
+				Attack(M.Object_Nadir1, M.Object_Player, 1);
+				M.FlankSpawn = true;
+				end
 			if (GetTime() >= M.Routine3Timer) then
 				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 4");
 				M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 5");
