@@ -215,45 +215,38 @@ function Update()
 	Routine5();
 	Routine7(); --Gravey see R7
 	DamagePrevention();
-	UpdateShipHandles();
+	UpdateShipHandles(); --see next function
 end
 
 function UpdateShipHandles()
---Gravey, created this to not have to rewrite end code for game breaking bug crashing from ship variables having the same handle at once. 
+--Gravey, created this to not have to rewrite end code for game breaking bug crashing mission script from ship variables having the same handle at once. 
 if (M.Object_Player ~= GetPlayerHandle(1)) then
 		
 		M.HandleCounter = M.HandleCounter + 1;
-		--print(M.HandleCounter);
 		if(M.HandleCounter == 1) then --sets hop out of ship to stored handle
 			M.LastShipHandle = M.Object_Player;
 		end
 		
 		M.Object_Player = GetPlayerHandle(1); --updates M.Object_Player to what should be a pilot player handle first, then on the following iteration: the ship the player got into
 		
-		if(M.HandleCounter >= 2 ) then --if player has gotten a new handle again then update new ship to old stored handle
+		if(M.HandleCounter >= 2 ) then --if player has a new handle again then update new ship to old stored handle
 			
 			if(M.Object_Scout1 == GetPlayerHandle(1)) then
-				--print("Scout1 is now set to handle #", M.LastShipHandle, "from", M.Object_Scout1);
 				M.Object_Scout1 = M.LastShipHandle;
 				M.HandleCounter = 0;
 			elseif(M.Object_Scout2 == GetPlayerHandle(1)) then
-				--print("Scout2 is now set to handle #", M.LastShipHandle, "from", M.Object_Scout2);
 				M.Object_Scout2 = M.LastShipHandle;
 				M.HandleCounter = 0;
 			elseif(M.Object_Scout3 == GetPlayerHandle(1)) then
-				--print("Scout3 is now set to handle #", M.LastShipHandle, "from", M.Object_Scout3);
 				M.Object_Scout3 = M.LastShipHandle;
 				M.HandleCounter = 0;
 			else
-			--print("Sameship who diss");
 			M.HandleCounter = 0;
 			end
 		end
 	end
-
-
-
 end
+
 function Routine1() 
 	if (M.Routine1Timer < GetTime()) then
 	
@@ -423,7 +416,11 @@ function Routine1()
 
 				if (GetDistance(M.Object_Cargo2, "convoy_halt") <= 50) then
 					SetObjectiveOff(M.Object_Cargo2);
-
+					Stop(M.Object_Scout1, 1); --added stop line to prevent scouts from floundering around stopped units. -Gravey
+					Stop(M.Object_Scout2, 1); --could probably just use an array here for better tunning. Review later. 
+					Stop(M.Object_Scout3, 1);
+					Stop(M.Object_Hardin, 1);
+					Stop(M.Object_WyndtEssex, 1);
 					AudioMessage("mercury_03.wav");
 
 					M.convoyWaitTillTime = GetTime() + 19;
