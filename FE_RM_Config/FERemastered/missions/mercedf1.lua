@@ -25,7 +25,7 @@ local M = {
 	powerPlayerWaitTillTime = 0.0,
 	CerbWaitTillTime = 0.0,
 	Routine4WaitTillTime = 0.0,
-
+	HandleCounter = 0.0,
 	-- Handles
 	Object_Power1 = nil,
 	Object_Power2 = nil,
@@ -66,6 +66,7 @@ local M = {
 	Object_Nadir4 = nil,
 	Object_CerbUnit = nil,
 	Object_CarrierLaunchCamDummy = nil,
+	StoredHandle = nil,
 
 	-- ODF Specific Variables
 	SCOUTODF = "ivscout11",
@@ -194,7 +195,7 @@ function Start()
 	M.Position3 = GetPosition("hardin_spawn");
 	M.Position4 = GetPosition("red_spawn");
 	M.Position5 = GetPosition("blue_spawn");
-	
+	M.Object_Player = GetPlayerHandle(1); --Initial set for player handle at mission start -Gravey
 	M.MessagePlayed = false; --added for looping audio.
 	
 	GLOBAL_lock(_G); --prevents script from accidentally creating new global variables.
@@ -203,7 +204,7 @@ end
 function Update()
 	_FECore.Update();
 
-	M.Object_Player = GetPlayerHandle(1);
+	
 
 	-- Handle Routines.
 	Routine1();
@@ -214,8 +215,45 @@ function Update()
 	Routine5();
 	Routine7(); --Gravey see R7
 	DamagePrevention();
+	UpdateShipHandles();
 end
 
+function UpdateShipHandles()
+--Gravey, created this to not have to rewrite end code for game breaking bug crashing from handle referencing two ships at once. 
+if (M.Object_Player ~= GetPlayerHandle(1)) then
+		
+		M.HandleCounter = M.HandleCounter + 1;
+		--print(M.HandleCounter);
+		if(M.HandleCounter == 1) then --sets hop out of ship to stored handle
+			M.StoredHandle = M.Object_Player;
+		end
+		
+		M.Object_Player = GetPlayerHandle(1); --updates M.Object_Player to what should be a pilot player handle first, then on the following iteration: the ship the player got into
+		
+		if(M.HandleCounter >= 2 ) then --if player has gotten a new handle again then update new ship to old stored handle
+			
+			if(M.Object_Scout1 == GetPlayerHandle(1)) then
+				--print("Scout1 is now set to handle #", M.StoredHandle, "from", M.Object_Scout1);
+				M.Object_Scout1 = M.StoredHandle;
+				M.HandleCounter = 0;
+			elseif(M.Object_Scout2 == GetPlayerHandle(1)) then
+				--print("Scout2 is now set to handle #", M.StoredHandle, "from", M.Object_Scout2);
+				M.Object_Scout2 = M.StoredHandle;
+				M.HandleCounter = 0;
+			elseif(M.Object_Scout3 == GetPlayerHandle(1)) then
+				--print("Scout3 is now set to handle #", M.StoredHandle, "from", M.Object_Scout3);
+				M.Object_Scout3 = M.StoredHandle;
+				M.HandleCounter = 0;
+			else
+			--print("Sameship who diss");
+			M.HandleCounter = 0;
+			end
+		end
+	end
+
+
+
+end
 function Routine1() 
 	if (M.Routine1Timer < GetTime()) then
 	
