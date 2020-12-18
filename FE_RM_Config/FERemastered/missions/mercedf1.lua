@@ -381,14 +381,14 @@ function Routine1()
 				
 				M.PlayerCanMove = true;
 
-				Goto(M.Object_Scout2, "convoy", 1);
+				Defend2(M.Object_Scout2, M.Object_Scout1, 1); --changed to Defend2 
 				--Defend2(M.Object_WyndtEssex, M.Object_Cargo2, 1); moved to prevent Wynd from climbing the walls inside the dropship.
 				LookAt(M.Object_WyndtEssex, M.Object_Cargo2, 1); --added to turn wynd to face the exit before moving. 
 				Follow(M.Object_ServTruck1, M.Object_Cargo2, 1);
 				Follow(M.Object_ServTruck2, M.Object_Cargo1, 1);
 				Follow(M.Object_Hardin, M.Object_Cargo1, 1);
 				Follow(M.Object_Scout1, M.Object_Cargo1, 1);
-				Goto(M.Object_Scout3, "convoy", 1);
+				Defend2(M.Object_Scout3, M.Object_Hardin, 1); --changed to Defend2 
 
 				M.EnableFailCheck = true;
 				M.convoyWaitTillTime = GetTime() + 5;
@@ -750,7 +750,7 @@ function Routine3()
 						M.MessagePlayed = true;
 					end
 					
-					if (GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 50 or GetDistance(M.Object_WyndtEssex,"blue_goto_power_2") <=20) then --added for gameplay fluidity - Gravey
+					if (GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 50 or GetDistance(M.Object_WyndtEssex,"blue_goto_power_2") <= 50) then --added for gameplay fluidity - Gravey
 					M.FlankSpawn = true;
 					ClearObjectives();
 					AddObjective("mercedf102.otf", "white");
@@ -799,7 +799,7 @@ function Routine3()
 				Attack(M.Object_Nadir1, M.Object_Player, 1);
 				M.FlankSpawn = true;
 				end
-			if (GetTime() >= M.Routine3Timer) then
+			if (GetDistance(M.Object_Scout1, "ReturnNadirSpawn") <= 100 and GetDistance(M.Object_Scout2, "ReturnNadirSpawn") <= 100 and GetTime() >= M.Routine3Timer) then
 				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 4");
 				M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 5");
 				M.Object_Nadir3 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 6");
