@@ -1,0 +1,46 @@
+[GameObjectClass]
+baseName = "ibtrain"
+geometryName = "ibtrain00.fbx"
+classLabel = "commtower"
+scrapCost = 70
+scrapValue = 30
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Training Fac."
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0
+isAssault = 1
+armorClass = H
+
+/////// REQUIREMENTS ///////////////
+requireCount = 2
+requireName1 = "ibcbun"
+requireText1 = "Build Relay Bunk"
+requireName2 = "ibarmo"
+requireText2 = "Build Armory"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "ibtrain"
+provideName2 = "VIRTUAL_CLASS_BARRACKS"
+provideName3 = "base"
+
+///////// LIGHTS & EFFECTS /////////
+effectHard1 = "hp_emit_1"
+effectName1 = "emit_redblink"
+effectFlags1 = "447" //447 powered  479 unpowered
+effectHard2 = "hp_emit_2"
+effectName2 = "emit_redblink"
+effectFlags2 = "447" //447 powered  479 unpowered
+
+[BuildingClass]
+soundAmbient = "abbarre0.wav"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[Lod1]
+//geometryName = "ibtrainL1.fbx" ;geometry for lod1
+//distance = 64                    ;bsphere under 200 pixel => switch to lod1
