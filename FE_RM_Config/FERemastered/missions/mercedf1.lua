@@ -736,33 +736,32 @@ function Routine3()
 				M.Routine3State = M.Routine3State + 1;
 			end
 		elseif (M.Routine3State == 4) then
-			if (GetTime() >= M.Routine3Timer) then
-				--SetPosition(M.Object_WyndtEssex, "blue_goto_power_2"); -- BAD! No! -GBD
-				
-				if (not IsAround(M.Object_Power1) and not IsAround(M.Object_Power2) and not IsAround(M.Object_Power3) and not IsAround(M.Object_Power4)  ) then 
-					SetTeamNum(M.Object_Radar2, 0);
-					
-					if (M.MessagePlayed == false) then
-						AudioMessage("mercury_06.wav"); --moved for logical order and player attention to go to wynd --Gravey
-						M.MessagePlayed = true;
-					end
-					
-					if (GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 50 or GetDistance(M.Object_WyndtEssex,"blue_goto_power_2") <= 50) then --added for gameplay fluidity - Gravey
-					M.FlankSpawn = true;
-					ClearObjectives();
-					AddObjective("mercedf102.otf", "white");
-					Goto(M.Object_WyndtEssex, "path_1", 1);
-					end
-					if (GetDistance(M.Object_WyndtEssex, "FlankTarget") <= 200 and M.FlankSpawn == true) then --additional spawn logic for consistency.
-					M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFlank", "Nadir 2"); --changed from NaidrFirstSpawn to new OH SHIT momoent when they come around the corner
-					M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 3"); --This was an unintended change when I was adjusting path points. But it felt good. -Gravey
-					M.FlankSpawn = false;
-					Attack(M.Object_Nadir1, M.Object_WyndtEssex, 1);
-					Attack(M.Object_Nadir2, M.Object_Player, 1);
-					M.Routine3State = M.Routine3State + 1;
-					end
+			if (M.MessagePlayed == false) then
+					AudioMessage("mercury_06.wav"); --moved for logical order and player attention to go to wynd --Gravey
+					M.MessagePlayed = true;
 				end
+			
+			if (GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 50 and M.FlankSpawn == false) then --added for gameplay fluidity - Gravey
+				M.FlankSpawn = true;
+				ClearObjectives();
+				AddObjective("mercedf102.otf", "white");
+				Retreat(M.Object_WyndtEssex, "WyndtRetreat",1);
+				
+				
+			elseif (GetDistance(M.Object_WyndtEssex, "FlankTarget") <= 150 and M.FlankSpawn == true) then --additional spawn logic for consistency.
+				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFlank", "Nadir 2"); --changed from NaidrFirstSpawn to new OH SHIT momoent when they come around the corner
+				M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 3"); --This was an unintended change when I was adjusting path points. But it felt good. -Gravey
+				M.FlankSpawn = false;
+				Attack(M.Object_Nadir1, M.Object_WyndtEssex, 1);
+				Attack(M.Object_Nadir2, M.Object_Player, 1);
+				M.Routine3State = M.Routine3State + 1;
+				end
+				
+			if (not IsAround(M.Object_Power1) and not IsAround(M.Object_Power2) and not IsAround(M.Object_Power3) and not IsAround(M.Object_Power4)  ) then 
+				SetTeamNum(M.Object_Radar2, 0);
+							
 			end
+			
 		elseif (M.Routine3State == 5) then
 			if (GetDistance(M.Object_WyndtEssex, "convoy_halt") <= 200) then
 				SetObjectiveOff(M.Object_WyndtEssex);
@@ -786,16 +785,12 @@ function Routine3()
 				Service(M.Object_ServTruck1, M.Object_Cargo1, 0);
 				Service(M.Object_ServTruck2, M.Object_Cargo2, 0);
 
-				M.Routine3Timer = GetTime() + 80;  
+				M.Routine3Timer = GetTime() + 70;  
 
 				M.Routine3State = M.Routine3State + 1;
 			end
 		elseif (M.Routine3State == 6) then
-			if (GetTime() >= M.Routine3Timer -50 and M.FlankSpawn == false) then --added single drone to attack player during waiting time for scouts. Keeps the player from sitting idle. 
-				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 4");
-				Attack(M.Object_Nadir1, M.Object_Player, 1);
-				M.FlankSpawn = true;
-				end
+			
 			if (GetDistance(M.Object_Scout1, "ReturnNadirSpawn") <= 100 or GetDistance(M.Object_Scout2, "ReturnNadirSpawn") <= 100 and GetTime() >= M.Routine3Timer) then
 				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 4");
 				M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 5");
