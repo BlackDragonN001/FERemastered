@@ -102,6 +102,9 @@ local M = {
 	--Arrays and Tables
 	Controls = {},
 	AIScouts = {},
+	--Frame Timing 
+	CurFrame =nil,
+	MaxFrame =nil,
 }
 
 function Save()
@@ -254,16 +257,28 @@ if (M.Object_Player ~= GetPlayerHandle(1)) then
 end
 function DropshipTakeoff()
 	M.Object_Condor = GetHandle("condor");
-	if(GetDistance(M.Object_Player, M.Object_Condor) > 20.0 and M.CondorTakeoff == false)
+	if(GetDistance(M.Object_Player, M.Object_Condor) > 30.0 and M.CondorTakeoff == false)
 		then
 		
 		print("taking off");
 		SetAnimation(M.Object_Condor,"takeoff", 1);
+		M.MaxFrame = SetAnimation(M.Object_Condor,"takeoff", 1);
 		StartSoundEffect("dropdoor.wav",M.Object_Condor);
 		StartAnimation(M.Object_Condor);
+		StartEmitter(M.Object_Condor,1);
+		StartEmitter(M.Object_Condor,2);
 		M.CondorTakeoff = true;
+		
+		end
+	if(M.CondorTakeoff == true) then
+		M.CurFrame = GetAnimationFrame(M.Object_Condor, "takeoff");
+		
+		if(M.CurFrame >= M.MaxFrame -2) then
+		
+		RemoveObject(M.Object_Condor);
 		end
 	end
+end
 function Routine1() 
 	if (M.Routine1Timer < GetTime()) then
 	
