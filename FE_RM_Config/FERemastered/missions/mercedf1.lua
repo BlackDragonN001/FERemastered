@@ -97,6 +97,9 @@ local M = {
 	Position3 = SetVector(0, 0, 0),
 	Position4 = SetVector(0, 0, 0),
 	Position5 = SetVector(0, 0, 0),
+	--Arrays and Tables
+	Controls = {},
+	AIScouts = {},
 }
 
 function Save()
@@ -323,6 +326,12 @@ function Routine1()
 			M.Object_Cargo2 = BuildObjectAndLabel(M.CARGOODF, 9, M.Position1, "Cargo 2");
 			SetCanSnipe(M.Object_Cargo2, 0); --Gravey
 			
+			
+			M.AIScouts = {M.Object_Scout1,M.Object_Scout2,M.Object_Scout3,M.Object_Hardin,M.Object_WyndtEssex};
+			
+			
+			
+			
 			M.Routine1State = M.Routine1State + 1;
 		elseif (M.Routine1State == 6) then
 			local iFaceVal = IFace_GetInteger("images.page");
@@ -414,19 +423,21 @@ function Routine1()
 			if (GetTime() >= M.convoyWaitTillTime) then
 				SetPerceivedTeam(M.Object_Nadir1, 2);
 
-				if (GetDistance(M.Object_Cargo2, "convoy_halt") <= 50) then
-					SetObjectiveOff(M.Object_Cargo2);
-					Stop(M.Object_Scout1, 1); --added stop line to prevent scouts from floundering around stopped units. -Gravey
-					Stop(M.Object_Scout2, 1); --could probably just use an array here for better tunning. Review later. 
-					Stop(M.Object_Scout3, 1);
-					Stop(M.Object_Hardin, 1);
-					Stop(M.Object_WyndtEssex, 1);
-					AudioMessage("mercury_03.wav");
+				if (GetDistance(M.Object_Cargo1, "convoy_halt") <= 50 and GetDistance(M.Object_Cargo1, "convoy_halt") >=40) then
+					
+					for i=1,4 do --created array logic to prevent scouts from playing bumper scouts. -Gravey
+						Goto(M.AIScouts[i], GetPositionNear("convoy_halt",0, 5, 10), 1);
+					end
+				end	
+				if (GetDistance(M.Object_Cargo2, "convoy_halt") <= 20) then
+				SetObjectiveOff(M.Object_Cargo2);
+				AudioMessage("mercury_03.wav");
+				Stop(M.Object_WyndtEssex,1); -- added stop line for Wyndt.
+				M.convoyWaitTillTime = GetTime() + 19;
 
-					M.convoyWaitTillTime = GetTime() + 19;
-
-					M.Routine1State = M.Routine1State + 1;
+				M.Routine1State = M.Routine1State + 1;
 				end
+				
 			end
 		elseif (M.Routine1State == 16) then
 			if (GetTime() >= M.convoyWaitTillTime) then
