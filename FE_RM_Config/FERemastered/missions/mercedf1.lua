@@ -20,6 +20,7 @@ local M = {
 	Routine4Enable = false,
 	Routine7Enable = false,
 	FlankSpawn = false,
+	CondorTakeoff = false,
 	-- Floats
 	MissionTimer = 0.0,
 	convoyWaitTillTime = 0.0,
@@ -217,9 +218,10 @@ function Update()
 	Routine4();
 	Routine6();
 	Routine5();
-	Routine7(); --Gravey see R7
+	Routine7(); --Controls scout f1 groups -Gravey
 	DamagePrevention();
-	UpdateShipHandles(); --see next function
+	UpdateShipHandles(); --Controls handle swapping by player "pick me up" -Gravey
+	DropshipTakeoff();-- added for effect and reasoning -Gravey
 end
 
 function UpdateShipHandles()
@@ -250,7 +252,18 @@ if (M.Object_Player ~= GetPlayerHandle(1)) then
 		end
 	end
 end
-
+function DropshipTakeoff()
+	M.Object_Condor = GetHandle("condor");
+	if(GetDistance(M.Object_Player, M.Object_Condor) > 20.0 and M.CondorTakeoff == false)
+		then
+		
+		print("taking off");
+		SetAnimation(M.Object_Condor,"takeoff", 1);
+		StartSoundEffect("dropdoor.wav",M.Object_Condor);
+		StartAnimation(M.Object_Condor);
+		M.CondorTakeoff = true;
+		end
+	end
 function Routine1() 
 	if (M.Routine1Timer < GetTime()) then
 	
