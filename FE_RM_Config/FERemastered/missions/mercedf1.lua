@@ -2,6 +2,7 @@
 
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
+local _SPUtils = require("_SPUtils"); --spawn clustering adjustments via function --by JJ 
 
 local Position11 = SetVector(-674, 1000, -783);
 local Position12 = SetVector(0, 0, 100);
@@ -803,10 +804,14 @@ function Routine3()
 		elseif (M.Routine3State == 6) then
 			
 			if (GetDistance(M.Object_Scout1, "ReturnNadirSpawn") <= 100 or GetDistance(M.Object_Scout2, "ReturnNadirSpawn") <= 100 and GetTime() >= M.Routine3Timer) then
-				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 4");
-				M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 5");
-				M.Object_Nadir3 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 6");
-
+				--M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 4");
+				--M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 5");
+				--M.Object_Nadir3 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 6");
+				local Attackwave = {M.DRONEODF,M.DRONEODF,M.DRONEODF};
+				_SPUtils.BuildObjectSpread(Attackwave,2,"NadirAttackSpawn","Nadir")
+				M.Object_Nadir1 = GetHandle("Nadir1");
+				M.Object_Nadir2 = GetHandle("Nadir2");
+				M.Object_Nadir3 = GetHandle("Nadir3");
 				Attack(M.Object_Nadir1, M.Object_WyndtEssex, 1);
 				Attack(M.Object_Nadir2, M.Object_Cargo2, 1);
 				Attack(M.Object_Nadir3, M.Object_Player, 1);
@@ -817,11 +822,16 @@ function Routine3()
 			if (not IsAround(M.Object_Nadir1) and not IsAround(M.Object_Nadir2) and not IsAround(M.Object_Nadir3)) then
 				M.ConvoyContinueToBase = true;
 
-				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 7");
-				M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 8");
-				M.Object_Nadir3 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 9");
-				M.Object_Nadir4 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 10");
-
+				--M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 7");
+				--M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 8");
+				--M.Object_Nadir3 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 9");
+				--M.Object_Nadir4 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 10");
+				local Attackwave = {M.DRONEODF,M.DRONEODF,M.DRONEODF,M.DRONEODF};
+				_SPUtils.BuildObjectSpread(Attackwave,2,"NadirAttackSpawn","Nadir")
+				M.Object_Nadir1 = GetHandle("Nadir1");
+				M.Object_Nadir2 = GetHandle("Nadir2");
+				M.Object_Nadir3 = GetHandle("Nadir3");
+				M.Object_Nadir4 = GetHandle("Nadir4");
 				Attack(M.Object_Nadir1, M.Object_Player, 1);
 				Attack(M.Object_Nadir2, M.Object_Player, 1);
 
