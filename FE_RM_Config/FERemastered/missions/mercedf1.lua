@@ -21,6 +21,7 @@ local M = {
 	Routine7Enable = false,
 	FlankSpawn = false,
 	CondorTakeoff = false,
+	ScoutsPassedToPlayer = false,
 	-- Floats
 	MissionTimer = 0.0,
 	convoyWaitTillTime = 0.0,
@@ -167,7 +168,7 @@ end
 
 function Start()
 	_FECore.Start();
-
+	PlayerControls();
 	M.Object_WyndtEssex = GetHandle("Rodriguez");
 	Stop(M.Object_WyndtEssex, 1); --added to prevent targeting. -Gravey
 	M.Object_Corbernav = GetHandle("Corbernav");
@@ -211,9 +212,6 @@ end
 
 function Update()
 	_FECore.Update();
-
-	
-
 	-- Handle Routines.
 	Routine1();
 	Routine2();
@@ -224,9 +222,20 @@ function Update()
 	Routine7(); --Controls scout f1 groups -Gravey
 	DamagePrevention();
 	UpdateShipHandles(); --Controls handle swapping by player "pick me up" -Gravey
-	DropshipTakeoff();-- added for effect and reasoning -Gravey
+	DropshipTakeoff();-- added for effect -Gravey
 end
+function PlayerControls()	
+	--if(M.PlayerCanMove == false) then
+	
+	--M.Controls = {"braccel 0.0", "steer 1.0", "pitch 0.0", "strafe 0.0", "jump false", "deploy false", "eject false", "abandon false", "fire false"};
+	--SetControls(M.Object_Player, M.Controls);
+	
+	--else
+	--M.Controls = {"braccel .05", "steer 1.0", "pitch .25", "strafe .2", "jump true", "deploy true", "eject true", "abandon true", "fire true"};	
+  --  SetControls(M.Object_Player, M.Controls);
+   -- end
 
+end
 function UpdateShipHandles()
 --Gravey, created this to not have to rewrite end code for game breaking bug crashing mission script from ship variables having the same handle at once. 
 if (M.Object_Player ~= GetPlayerHandle(1)) then
@@ -283,6 +292,7 @@ function Routine1()
 	if (M.Routine1Timer < GetTime()) then
 	
 		if (M.Routine1State == 0) then
+			PlayerControls();
 			SetGroup(M.Object_WyndtEssex, 0); -- moved from line 269 changed to group 0
 			SetGroup(M.Object_ServTruck1, 0); --moved gravey from line 282 changed to group 0
 			-- prevents player from using f1 on wynd and truck at start
@@ -411,7 +421,7 @@ function Routine1()
 				RemoveObject(M.Object_Stayput);
 				
 				M.PlayerCanMove = true;
-
+				
 				Defend2(M.Object_Scout2, M.Object_Scout1, 1); --changed to Defend2 
 				--Defend2(M.Object_WyndtEssex, M.Object_Cargo2, 1); moved to prevent Wynd from climbing the walls inside the dropship.
 				LookAt(M.Object_WyndtEssex, M.Object_Cargo2, 1); --added to turn wynd to face the exit before moving. 
@@ -430,6 +440,8 @@ function Routine1()
 			if (GetTime() >= M.convoyWaitTillTime) then
 				Goto(M.Object_Cargo2, "convoy", 1);
 				Defend2(M.Object_WyndtEssex, M.Object_Cargo2, 1); --moved down from above. 
+				
+				PlayerControls(); --control check - gravey
 				M.convoyWaitTillTime = GetTime() + 30;
 				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFirstSpawn", "Nadir 1"); --moved spawn time up so player doesn't see it POOF from thin air. 
 				Attack(M.Object_Nadir1, M.Object_Cargo2, 1);
@@ -536,7 +548,7 @@ function Routine1()
 			local d3 = GetDistance(M.Object_WyndtEssex, M.Object_ServiceBay);
 			
 			if (d1 <= 300 and d2 <= 300 and d3 <= 300) then
-				M.EnableFailCheck = false;
+				
 				M.RunPowerPlayerStateMachine = false;
 				M.RunPowerAIStateMachine = false;
 				M.CerbRoutine = false;
@@ -577,19 +589,20 @@ function Routine1()
 				Goto(M.Object_Scout1, M.Object_ServiceBay, 1);
 				Goto(M.Object_Scout2, M.Object_ServiceBay, 1);
 				Goto(M.Object_Scout3, M.Object_ServiceBay, 1);
-
+				
 				HopOut(M.Object_Hardin);
-
+				IsAliveAndPilot(M.Object_Hardin);--added to set objective on hardins pilot and not ship. 
 				SetTeamNum(M.Object_Corbernav, 1);
+				
 				SetObjectiveOn(M.Object_Corbernav);
 				SetObjectiveOff(M.Object_Hardin);
-
+				
 				M.Routine1State = M.Routine1State + 1;
 			end
 		elseif (M.Routine1State == 25) then
-			if (GetDistance(M.Object_Corbernav, M.Object_Player) <= 10) then
+			if (GetDistance(M.Object_Corbernav,M.Object_Player ) <= 10 and IsAliveAndPilot(M.Object_Player)) then --updated so cutscene requires player to get out of ship. --Gravey
 				StartEarthQuake(4.0);
-
+				
 				ClearObjectives();
 				AddObjective("mercedf105.otf", "green");
 
@@ -602,6 +615,7 @@ function Routine1()
 				M.convoyWaitTillTime = GetTime() + 3;
 
 				M.Routine1State = M.Routine1State + 1;
+				M.EnableFailCheck = false;
 			end
 		elseif (M.Routine1State == 26) then
 			if (GetTime() >= M.convoyWaitTillTime) then
@@ -825,13 +839,14 @@ function Routine3()
 				Service(M.Object_ServTruck1, M.Object_Cargo1, 0);
 				Service(M.Object_ServTruck2, M.Object_Cargo2, 0);
 
-				M.Routine3Timer = GetTime() + 70;  
+				M.Routine3Timer = GetTime() + 60;  
 
 				M.Routine3State = M.Routine3State + 1;
 			end
 		elseif (M.Routine3State == 6) then
 			
-			if (GetDistance(M.Object_Scout1, "ReturnNadirSpawn") <= 100 or GetDistance(M.Object_Scout2, "ReturnNadirSpawn") <= 100 and GetTime() >= M.Routine3Timer) then
+			if (M.ScoutsPassedToPlayer == true) then
+			
 				--M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 4");
 				--M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 5");
 				--M.Object_Nadir3 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 6");
@@ -988,7 +1003,7 @@ function Routine6()
 function Routine7()  
 	if (M.Routine7Enable == true) then
 	
-		if(GetDistance(M.Object_Scout1, "convoy_halt") <= 600 and (GetDistance(M.Object_Scout2, "convoy_halt") <= 600) and M.Routine7State < 1) then --added condition so player cannot break their return path early --Gravey
+		if(GetDistance(M.Object_Scout1, "convoy_halt") <= 100 and (GetDistance(M.Object_Scout2, "convoy_halt") <= 100) and M.Routine7State < 1) then --added condition so player cannot break their return path early --Gravey
 			SetTeamNum(M.Object_Scout1, 1);
 			SetTeamNum(M.Object_Scout2, 1);
 			SetGroup(M.Object_Scout1, 0);
@@ -996,6 +1011,7 @@ function Routine7()
 			Goto(M.Object_Scout2,"convoy_halt", 0);
 			Goto(M.Object_Scout1,"convoy_halt", 0);
 			M.Routine7State = M.Routine7State + 1;
+			M.ScoutsPassedToPlayer = true;
 		end
 		
 		
