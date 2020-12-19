@@ -791,12 +791,12 @@ function Routine3()
 				M.Routine3State = M.Routine3State + 1;
 			end
 		elseif (M.Routine3State == 6) then
-			if (GetTime() >= M.Routine3Timer -40 and M.FlankSpawn == false) then --added single drone to attack player during waiting time for scouts. Keeps the player from sitting idle. 
+			if (GetTime() >= M.Routine3Timer -50 and M.FlankSpawn == false) then --added single drone to attack player during waiting time for scouts. Keeps the player from sitting idle. 
 				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 4");
 				Attack(M.Object_Nadir1, M.Object_Player, 1);
 				M.FlankSpawn = true;
 				end
-			if (GetDistance(M.Object_Scout1, "ReturnNadirSpawn") <= 100 and GetDistance(M.Object_Scout2, "ReturnNadirSpawn") <= 100 and GetTime() >= M.Routine3Timer) then
+			if (GetDistance(M.Object_Scout1, "ReturnNadirSpawn") <= 100 or GetDistance(M.Object_Scout2, "ReturnNadirSpawn") <= 100 and GetTime() >= M.Routine3Timer) then
 				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 4");
 				M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 5");
 				M.Object_Nadir3 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 6");
@@ -951,8 +951,6 @@ function Routine7()
 			SetGroup(M.Object_Scout2, 0);
 			Goto(M.Object_Scout2,"convoy_halt", 0);
 			Goto(M.Object_Scout1,"convoy_halt", 0);
-			print("Scout1 = true");
-			print("Scout2 = true");
 			M.Routine7State = M.Routine7State + 1;
 		end
 		
