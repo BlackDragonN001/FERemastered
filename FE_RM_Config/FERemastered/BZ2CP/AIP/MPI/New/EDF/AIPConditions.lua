@@ -212,10 +212,10 @@ function HoldCheckPlan2(team, time)
 end
 
 function HoldCheckPlan3(team, time)
-	local hold2Exists = AIPUtil.PathExists("hold3");
+	local hold3Exists = AIPUtil.PathExists("hold3");
 	local CPUHasRecycler = CPURecyclerExists(team, time);
 
-	if (hold2Exists and CPUHasRecycler) then
+	if (hold3Exists and CPUHasRecycler) then
 		return true, "Sending a turret to Hold3...";
 	else
 		return false, "Could not send a turret to Hold3. Conditions haven't been met.";
@@ -256,6 +256,10 @@ function CountHumanConstructors(team, time)
 	return AIPUtil.CountUnits(1, "VIRTUAL_CLASS_CONSTRUCTIONRIG", 'sameteam', true);
 end
 
+function CountHumanGunTowers(team, time)
+	return AIPUtil.CountUnits(1, "VIRTUAL_CLASS_GUNTOWER", 'sameteam', true);
+end
+
 -- Start up conditions. Make sure we have a Recycler and a certain amount of pools.
 function BuildScavengerCheck1(team, time)
 	local CPUHasRecy = CPURecyclerExists(team, time);
@@ -268,7 +272,7 @@ function BuildScavengerCheck1(team, time)
 	end
 end
 
-function BuildScavengerCheck1(team, time)
+function BuildScavengerCheck2(team, time)
 	local CPUHasRecy = CPURecyclerExists(team, time);
 	local CPUScavCount = CountCPUScavengers(team, time);
 
@@ -291,36 +295,32 @@ function BuildConstructorCheck1(team, time)
 end
 
 -- Attacker Conditions
-function SendFirstScoutAttackWave(team, time)
+function SendFirstScoutAttackWave(team, time) -- First scout function. Send out some scouts if it's safe enough, don't waste scrap if a player has enough defenses.
 	local CPUHasRecy = CPURecyclerExists(team, time);
 	local CPUExtractorCount = CountCPUExtractors(team, time);
+	local CPUHasFactory = CPUFactoryExists(team, time);
 	local HumanScavCount = CountHumanScavengers(team, time);
+	local HumanExtractorCount = CountHumanExtractors(team, time);
+	local HumanGunTowerCount = CountHumanGunTowers(team, time);
 
-	if (CPUHasRecy and CPUExtractorCount >= 2 and HumanScavCount > 0) then
+	local shouldAttack = (CPUHasRecy and CPUExtractorCount >= 2 and (HumanScavCount > 0 or HumanExtractorCount > 0) and not CPUHasFactory and HumanGunTowerCount <= 0);
+
+	if (shouldAttack) then
 		return true, "Sending first attack party at enemy Scavengers...";
 	else
 		return false, "Could not send first scout attack party. Conditions haven't been met."
 	end
 end
 
-function SendSecondScoutAttackWave(team, time)
+function SendSecondScoutAttackWave(team, time) -- Second scout function. Send out some scouts if it's safe enough, don't waste scrap if a player has enough defenses.
 	local CPUHasRecy = CPURecyclerExists(team, time);
 	local CPUExtractorCount = CountCPUExtractors(team, time);
 	local HumanRecyclerBuildingCount = CountHumanRecyclerBuildings(team, time);
+	local HumanGunTowerCount = CountHumanGunTowers(team, time); 
 
-	if (CPUHasRecy and CPUExtractorCount >= 2 and HumanRecyclerBuildingCount > 0) then
-		return true, "Sending second attack party at enemy Recycler...";
-	else
-		return false, "Could not send second scout attack party. Conditions haven't been met."
-	end
-end
+	local shouldAttack = (CPUHasRecy and CPUExtractorCount >= 2 and HumanRecyclerBuildingCount > 0 and HumanGunTowerCount <= 0);
 
-function SendThirdScoutAttackWave(team, time)
-	local CPUHasRecy = CPURecyclerExists(team, time);
-	local CPUExtractorCount = CountCPUExtractors(team, time);
-	local HumanConstructorCount = CountHumanRecyclerBuildings(team, time);
-
-	if (CPUHasRecy and CPUExtractorCount >= 3 and HumanConstructorCount > 0) then
+	if (shouldAttack) then
 		return true, "Sending second attack party at enemy Recycler...";
 	else
 		return false, "Could not send second scout attack party. Conditions haven't been met."
@@ -328,7 +328,7 @@ function SendThirdScoutAttackWave(team, time)
 end
 
 -- Base functions
-function FirstPowerGeneratorCheck(team, time)
+function FirstPowerGeneratorCheck(team, time) -- Build our first Power Generator if necessary.
 	local CPUHasRecy = CPURecyclerExists(team, time);
 	local CPUBuilderExists = CPUBuilderExists(team, time);
 	local CPUPowerGeneratorCount = CountCPUPowerGenerators(team, time);
@@ -336,11 +336,11 @@ function FirstPowerGeneratorCheck(team, time)
 	if (CPUHasRecy and CPUBuilderExists and CPUPowerGeneratorCount <= 0) then
 		return true, "Building first power plant...";
 	else
-		return false, "Already have first power plant.";
+		return false, "Could not build a Power Generator. Conditions haven't been met.";
 	end
 end
 
-function SecondPowerGeneratorCheck(team, time)
+function SecondPowerGeneratorCheck(team, time) -- Build our second Power Generator if necessary.
 	local CPUHasRecy = CPURecyclerExists(team, time);
 	local CPUBuilderExists = CPUBuilderExists(team, time);
 	local CPUPowerGeneratorCount = CountCPUPowerGenerators(team, time);
@@ -348,6 +348,30 @@ function SecondPowerGeneratorCheck(team, time)
 	if (CPUHasRecy and CPUBuilderExists and CPUPowerGeneratorCount <= 1) then
 		return true, "Building second power plant...";
 	else
-		return false, "Already have second power plant.";
+		return false, "Could not build a second Power Generator. Conditions haven't been met.";
+	end
+end
+
+function RelayBunkerCheck(team, time) -- Build our Relay Bunker generator if necessary.
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUBuilderExists = CPUBuilderExists(team, time);
+	local CPURelayBunkerExists = CPURelayBunkerExists(team, time);
+
+	if (CPUHasRecy and CPUBuilderExists and not CPURelayBunkerExists) then
+		return true, "I can build a Relay Bunker...";
+	else
+		return false, "Could not build a Relay Bunker. Conditions haven't been met.";
+	end
+end
+
+function FactoryCheck(team, time)
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUBuilderExists = CPUBuilderExists(team, time);
+	local CPUFactoryExists = CPUHasFactory(team, time);
+
+	if (CPUHasRecy and CPUBuilderExists and not CPUFactoryExists) then
+		return true, "I can build a Factory...";
+	else
+		return false, "Could not build a Factory. Conditions haven't been met.";
 	end
 end
