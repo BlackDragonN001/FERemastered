@@ -22,6 +22,7 @@ local M = {
 	FlankSpawn = false,
 	CondorTakeoff = false,
 	ScoutsPassedToPlayer = false,
+	FirstWave = false,
 	-- Floats
 	MissionTimer = 0.0,
 	convoyWaitTillTime = 0.0,
@@ -266,10 +267,8 @@ if (M.Object_Player ~= GetPlayerHandle(1)) then
 end
 function DropshipTakeoff()
 	M.Object_Condor = GetHandle("condor");
-	if(GetDistance(M.Object_Player, M.Object_Condor) > 30.0 and M.CondorTakeoff == false)
-		then
+	if(GetDistance(M.Object_Player, M.Object_Condor) > 30.0 and M.CondorTakeoff == false) then
 		
-		print("taking off");
 		SetAnimation(M.Object_Condor,"takeoff", 1);
 		M.MaxFrame = SetAnimation(M.Object_Condor,"takeoff", 1);
 		StartSoundEffect("dropdoor.wav",M.Object_Condor);
@@ -347,7 +346,7 @@ function Routine1()
 			--M.Object_CarrierLaunchCamDummy = BuildObjectAndLabel("dummy", 2, Position11, "Dummy 1");
 			
 			--SetGroup(M.Object_WyndtEssex, 10); --moved gravey
-			--SetObjectiveName(M.Object_WyndtEssex, "Wyndt-Essex");
+			SetObjectiveName(M.Object_WyndtEssex, "Wyndt-Essex");
 			
 			--M.Object_Hardin = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position3, "Hardin");
 			--SetObjectiveName(M.Object_Hardin, "Hardin");
@@ -616,7 +615,12 @@ function Routine1()
 				Goto(M.Object_Scout3, M.Object_ServiceBay, 1);
 				
 				HopOut(M.Object_Hardin);
-				IsAliveAndPilot(M.Object_Hardin);--added to set objective on hardins pilot and not ship. 
+				SetObjectiveName(M.Object_Hardin, "Scout"); --sets hardins old scout to "Scout" instead of "Hardin"
+				
+				--M.Object_Hardin = HoppedOutOf(M.Object_Hardin); --update M.Object_Hardin with pilot handle here to fix fail condition 
+				
+				--Stop(M.Object_Hardin);--give order to stop instead of trying to enter the players empty? 
+				
 				SetTeamNum(M.Object_Corbernav, 1);
 				
 				SetObjectiveOn(M.Object_Corbernav);
@@ -627,7 +631,7 @@ function Routine1()
 		elseif (M.Routine1State == 25) then
 			if (GetDistance(M.Object_Corbernav,M.Object_Player ) <= 10 and IsAliveAndPilot(M.Object_Player)) then --updated so cutscene requires player to get out of ship. --Gravey
 				StartEarthQuake(4.0);
-				
+				Stop(M.Object_Hardin);
 				ClearObjectives();
 				AddObjective("mercedf105.otf", "green");
 
@@ -815,7 +819,7 @@ function Routine3()
 				M.Routine3State = M.Routine3State + 1;
 			end
 		elseif (M.Routine3State == 4) then
-			if (M.MessagePlayed == false) then
+			if (M.MessagePlayed == false and not IsAround(M.Object_Power3) and not IsAround(M.Object_Power4) and not IsAround(M.Object_Gun10) ) then --Updated VO logic.
 					AudioMessage("mercury_06.wav"); --moved for logical order and player attention to go to wynd --Gravey
 					M.MessagePlayed = true;
 				end
@@ -842,17 +846,24 @@ function Routine3()
 			end
 			
 		elseif (M.Routine3State == 5) then
-			if (GetDistance(M.Object_WyndtEssex, "convoy_halt") <= 200) then
+					
+			if (GetDistance(M.Object_WyndtEssex, "convoy_halt") <= 100) then --was 200
 				SetObjectiveOff(M.Object_WyndtEssex);
 				M.Routine7Enable = true;		--add custom routine bool true here.
 				
 				
 				SetTeamNum(M.Object_Scout3, 1);
-				--Gravey Note: The added route comes in just before the wave where all three scouts are needed for help.
-				--This feels quite nice as they cut in just early enough to assist.
-				
-				
 				SetGroup(M.Object_Scout3, 0);
+				
+				if(M.FirstWave == false) then
+				
+				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "ReturnNadirSpawn", "Nadir 4");
+				Attack(M.Object_Nadir1, M.Object_Cargo1, 1);
+				
+				M.Attackwave = true;
+				end
+				
+				
 
 				--Follow(M.Object_Scout3, M.Object_Player, 0); --Disabled, units shouldn't be given orders to do things before being handed to player. --Gravey
 				Stop(M.Object_Scout3, 0); --added so F1 scout is given to player
@@ -864,12 +875,22 @@ function Routine3()
 				Service(M.Object_ServTruck1, M.Object_Cargo1, 0);
 				Service(M.Object_ServTruck2, M.Object_Cargo2, 0);
 
-				M.Routine3Timer = GetTime() + 60;  
+				M.Routine3Timer = GetTime() + 60;  --was 80
 
 				M.Routine3State = M.Routine3State + 1;
+				M.FirstWave=false;
 			end
 		elseif (M.Routine3State == 6) then
 			
+			if(not IsAround(M.Object_Nadir1) and not IsAround(M.Object_Nadir2) and M.FirstWave == false)then -- added 2nd wave before x3 and x4 drone waves to feel more like a natural progression and keep the player engaged instead of waiting.
+				local Attackwave = {M.DRONEODF,M.DRONEODF};
+				_SPUtils.BuildObjectSpread(Attackwave,2,"ReturnNadirSpawn","Nadir")
+				M.Object_Nadir1 = GetHandle("Nadir1");
+				M.Object_Nadir2 = GetHandle("Nadir2");
+				Attack(M.Object_Nadir1, M.Object_Cargo1, 1);
+				Attack(M.Object_Nadir2, M.Object_Cargo2, 1);
+				M.FirstWave = true
+				end
 			if (M.ScoutsPassedToPlayer == true) then
 			
 				--M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 4");
