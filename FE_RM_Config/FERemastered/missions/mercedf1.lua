@@ -169,7 +169,6 @@ end
 
 function Start()
 	_FECore.Start();
-	PlayerControls();
 	M.Object_WyndtEssex = GetHandle("Rodriguez");
 	Stop(M.Object_WyndtEssex, 1); --added to prevent targeting. -Gravey
 	M.Object_Corbernav = GetHandle("Corbernav");
@@ -224,19 +223,19 @@ function Update()
 	DamagePrevention();
 	UpdateShipHandles(); --Controls handle swapping by player "pick me up" -Gravey
 	DropshipTakeoff();-- added for effect -Gravey
+	PlayerControls(); --Gravey, thanks N1 and GBD
 end
 function PlayerControls()	
-	--if(M.PlayerCanMove == false) then
+
+	if(M.PlayerCanMove == false) then
 	
-	--M.Controls = {"braccel 0.0", "steer 1.0", "pitch 0.0", "strafe 0.0", "jump false", "deploy false", "eject false", "abandon false", "fire false"};
-	--SetControls(M.Object_Player, M.Controls);
+	M.Controls = {["braccel"] = 0.0,  ["pitch"] = nil, ["strafe"] =0.0, ["jump"] = false, ["deploy"] = false, ["eject"] = false, ["abandon"] = false, ["fire"] = false};
+	SetControls(M.Object_Player, M.Controls);
 	
-	--else
-	--M.Controls = {"braccel .05", "steer 1.0", "pitch .25", "strafe .2", "jump true", "deploy true", "eject true", "abandon true", "fire true"};	
-  --  SetControls(M.Object_Player, M.Controls);
-   -- end
+	end
 
 end
+
 function UpdateShipHandles()
 --Gravey, created this to not have to rewrite end code for game breaking bug crashing mission script from ship variables having the same handle at once. 
 if (M.Object_Player ~= GetPlayerHandle(1)) then
@@ -287,6 +286,7 @@ function DropshipTakeoff()
 		end
 	end
 end
+
 function Routine1() 
 	if (M.Routine1Timer < GetTime()) then
 	
@@ -424,7 +424,7 @@ function Routine1()
 				AudioMessage("dropdoor.wav");
 				RemoveObject(M.Object_Stayput);
 				
-				M.PlayerCanMove = true;
+				
 				M.Object_Hardin = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position3, "Hardin");
 				SetObjectiveName(M.Object_Hardin, "Hardin");
 				
@@ -464,8 +464,7 @@ function Routine1()
 			if (GetTime() >= M.convoyWaitTillTime) then
 				Goto(M.Object_Cargo2, "convoy", 1);
 				Defend2(M.Object_WyndtEssex, M.Object_Cargo2, 1); --moved down from above. 
-				
-				PlayerControls(); --control check - gravey
+				M.PlayerCanMove = true;
 				M.convoyWaitTillTime = GetTime() + 30;
 				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFirstSpawn", "Nadir 1"); --moved spawn time up so player doesn't see it POOF from thin air. 
 				Attack(M.Object_Nadir1, M.Object_Cargo2, 1);
