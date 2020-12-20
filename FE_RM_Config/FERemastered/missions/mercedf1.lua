@@ -344,26 +344,26 @@ function Routine1()
 			
 			M.Routine1State = M.Routine1State + 1;
 		elseif (M.Routine1State == 5) then
-			M.Object_CarrierLaunchCamDummy = BuildObjectAndLabel("dummy", 2, Position11, "Dummy 1");
+			--M.Object_CarrierLaunchCamDummy = BuildObjectAndLabel("dummy", 2, Position11, "Dummy 1");
 			
 			--SetGroup(M.Object_WyndtEssex, 10); --moved gravey
-			SetObjectiveName(M.Object_WyndtEssex, "Wyndt-Essex");
+			--SetObjectiveName(M.Object_WyndtEssex, "Wyndt-Essex");
 			
-			M.Object_Hardin = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position3, "Hardin");
-			SetObjectiveName(M.Object_Hardin, "Hardin");
-			
-			M.Object_Scout1 = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position4, "Scout 1");
-			M.Object_Scout2 = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position4, "Scout 2");
-			M.Object_Scout3 = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position5, "Scout 3");
-			M.Object_ServTruck1 = BuildObjectAndLabel(M.SERVODF, 1, M.Position5, "Service Truck 1");
+			--M.Object_Hardin = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position3, "Hardin");
+			--SetObjectiveName(M.Object_Hardin, "Hardin");
+			--
+			--M.Object_Scout1 = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position4, "Scout 1");
+			--M.Object_Scout2 = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position4, "Scout 2");
+			--M.Object_Scout3 = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position5, "Scout 3");
+			--M.Object_ServTruck1 = BuildObjectAndLabel(M.SERVODF, 1, M.Position5, "Service Truck 1");
 			
 			--SetGroup(M.Object_ServTruck1, 10); --moved gravey
 			
-			M.Object_ServTruck2 = BuildObjectAndLabel(M.SERVODF, 9, M.Position1, "Service Truck 2");
-			M.Object_Cargo1 = BuildObjectAndLabel(M.CARGOODF, 9, M.Position1, "Cargo 1");
-			SetCanSnipe(M.Object_Cargo1, 0); --Gravey
-			M.Object_Cargo2 = BuildObjectAndLabel(M.CARGOODF, 9, M.Position1, "Cargo 2");
-			SetCanSnipe(M.Object_Cargo2, 0); --Gravey
+			--M.Object_ServTruck2 = BuildObjectAndLabel(M.SERVODF, 9, M.Position1, "Service Truck 2");
+			--M.Object_Cargo1 = BuildObjectAndLabel(M.CARGOODF, 9, M.Position1, "Cargo 1");
+			--SetCanSnipe(M.Object_Cargo1, 0); --Gravey
+			--M.Object_Cargo2 = BuildObjectAndLabel(M.CARGOODF, 9, M.Position1, "Cargo 2");
+			--SetCanSnipe(M.Object_Cargo2, 0); --Gravey
 			
 			
 			M.AIScouts = {M.Object_Scout1,M.Object_Scout2,M.Object_Scout3,M.Object_Hardin,M.Object_WyndtEssex};
@@ -388,7 +388,7 @@ function Routine1()
 			M.Routine1State = M.Routine1State + 1;
 		elseif (M.Routine1State == 9) then
 			IFace_Deactivate("INFO");
-			Goto(M.Object_Cargo1, "convoy", 1);
+			
 			
 			M.convoyWaitTillTime = GetTime() + 1;
 			M.Routine1State = M.Routine1State + 1;
@@ -411,6 +411,11 @@ function Routine1()
 			end
 		elseif (M.Routine1State == 12) then
 			if (GetTime() >= M.convoyWaitTillTime) then
+				
+				
+				
+				
+				
 				SetObjectiveOn(M.Object_Cargo2);
 				AddObjective("mercedf101.otf", "white");
 
@@ -421,6 +426,26 @@ function Routine1()
 				RemoveObject(M.Object_Stayput);
 				
 				M.PlayerCanMove = true;
+				M.Object_Hardin = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position3, "Hardin");
+				SetObjectiveName(M.Object_Hardin, "Hardin");
+				
+				M.Object_Scout1 = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position4, "Scout 1");
+				M.Object_Scout2 = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position4, "Scout 2");
+				M.Object_Scout3 = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position5, "Scout 3");
+				M.Object_ServTruck1 = BuildObjectAndLabel(M.SERVODF, 1, M.Position5, "Service Truck 1");
+				
+				
+				
+				M.Object_ServTruck2 = BuildObjectAndLabel(M.SERVODF, 9, M.Position1, "Service Truck 2");
+				M.Object_Cargo1 = BuildObjectAndLabel(M.CARGOODF, 9, "Cargo1Spawn", "Cargo 1");
+				SetCanSnipe(M.Object_Cargo1, 0); --Gravey
+				M.Object_Cargo2 = BuildObjectAndLabel(M.CARGOODF, 9, M.Position1, "Cargo 2");
+				SetCanSnipe(M.Object_Cargo2, 0); --Gravey
+				Goto(M.Object_Cargo1, "convoy", 1);
+				
+				M.AIScouts = {M.Object_Scout1,M.Object_Scout2,M.Object_Scout3,M.Object_Hardin,M.Object_WyndtEssex};
+				
+				
 				
 				Defend2(M.Object_Scout2, M.Object_Scout1, 1); --changed to Defend2 
 				--Defend2(M.Object_WyndtEssex, M.Object_Cargo2, 1); moved to prevent Wynd from climbing the walls inside the dropship.
