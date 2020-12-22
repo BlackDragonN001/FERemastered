@@ -134,7 +134,7 @@ function _MPI.SpawnAITeams()
 		-- If Debugging is enabled, we should print all available data related to the AI team
 		if (DEBUG) then
 			print("Current Race of AI Team: (" .. GetRaceOfTeam(team) .. ")");
-			Ally(1, team);
+			--Ally(1, team);
 		end
 
 		local AITeamRace = GetRaceOfTeam(team);
