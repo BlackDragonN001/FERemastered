@@ -7,8 +7,8 @@ idleAllCraft = false
 scrapCount = 40
 
 [IdleDispatcher]
-ScavIdleSeconds = 20
-UnitIdleSeconds = 60
+ScavIdleSeconds = 1
+UnitIdleSeconds = 30
 BomberIdleSeconds = 75
 MinAttackForce = 4
 MaxAttackForce = 8
@@ -246,3 +246,55 @@ planConditionOr2 = false
 buildType1 = "apserv"
 buildCount1 = 1
 ContinueEvenIfFail = true
+
+[Plan23] // Time for some upgrades...
+planType = "Upgrade"
+planPriority = 790
+planConditionClass = "ibscav_c"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+consClass = "ivcons_g"
+MinCurScrap = 60
+unitType = "ibscav_c"
+ContinueEvenIfFail = true
+
+[Plan24] // Build some Gun Towers to defend the base.
+planType = "BaseBuildMinimums"
+planPriority = 780
+planCondition = "Lua"
+MinCurScrap = 50
+buildType1 = "ibgtow_c"
+buildCount1 = 2
+ContinueEvenIfFail = true
+LuaFunction = "FirstBaseGunTowersCheck"
+
+[Plan25] // Time for some tanks to attack out of the factory.
+planType = "Attacker"
+planPriority = 770
+planCondition = "Lua"
+AttackAnything = true
+targetType1 = "VIRTUAL_CLASS_POWERPLANT"
+targetType2 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType3 = "VIRTUAL_CLASS_FACTORY"
+targetType4 = "VIRTUAL_CLASS_COMMBUNKER"
+targetType5 = "VIRTUAL_CLASS_TURRETTANK"
+targetType6 = "VIRTUAL_CLASS_SCAVENGER"
+attackType1 = "ivscout_c"
+attackType2 = "ivmisl_c"
+attackType3 = "ivtank_c"
+buildIfNoIdle = true
+maxAttacks = 0
+ContinueEvenIfFail = true
+LuaFunction = "SendTankAttackPartyWave1"
+
+[Plan26] // Build some Gun Towers to defend the base.
+planType = "BaseBuildMinimums"
+planPriority = 760
+planCondition = "Lua"
+MinCurScrap = 60
+buildType1 = "ibarmo_c"
+buildCount1 = 1
+ContinueEvenIfFail = true
+LuaFunction = "ArmoryCheck"
