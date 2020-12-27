@@ -16,6 +16,20 @@ sendAllUnitsOnStartup = false
 CraftTeamIsPilotTeam = true
 
 [Match]
+targetType1 = "VIRTUAL_CLASS_SCOUT"
+attackType1_1 = "ivcmdr_c"
+
+targetType2 = "VIRTUAL_CLASS_SCOUT"
+attackType2_1 = "ivscout_c"
+attackType2_2 = "ivscout_c"
+
+targetType3 = "VIRTUAL_CLASS_TURRET"
+attackType3_1 = "ivcmdr_c"
+
+targetType4 = "VIRTUAL_CLASS_TURRET"
+attackType4_1 = "ivscout_c"
+attackType4_2 = "ivscout_c"
+attackType4_3 = "ivscout_c"
 
 [Plan1] // Service Plans for units to use pods
 planType = "Recover"
@@ -237,12 +251,12 @@ LuaFunction = "SendMissileScoutAttackWave1"
 [Plan22] 
 planType = "BuildMinimums"
 planPriority = 800
-planCondition2 = "NotExists"
-planConditionClass2 = "apserv"
-planConditionCount2 = 1
-planCompare2 = ">="
-planConditionClassProvided2 = true 
-planConditionOr2 = false
+planCondition = "NotExists"
+planConditionClass = "apserv"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
 buildType1 = "apserv"
 buildCount1 = 1
 ContinueEvenIfFail = true
@@ -279,11 +293,12 @@ targetType1 = "VIRTUAL_CLASS_POWERPLANT"
 targetType2 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
 targetType3 = "VIRTUAL_CLASS_FACTORY"
 targetType4 = "VIRTUAL_CLASS_COMMBUNKER"
-targetType5 = "VIRTUAL_CLASS_TURRETTANK"
+targetType5 = "VIRTUAL_CLASS_TURRET"
 targetType6 = "VIRTUAL_CLASS_SCAVENGER"
 attackType1 = "ivscout_c"
 attackType2 = "ivmisl_c"
 attackType3 = "ivtank_c"
+attackType4 = "ivtank_c"
 buildIfNoIdle = true
 maxAttacks = 0
 ContinueEvenIfFail = true
@@ -298,3 +313,131 @@ buildType1 = "ibarmo_c"
 buildCount1 = 1
 ContinueEvenIfFail = true
 LuaFunction = "ArmoryCheck"
+
+[Plan27] // Time for some bikes to attack out of the factory.
+planType = "Attacker"
+planPriority = 750
+planCondition = "Lua"
+AttackAnything = true
+targetType1 = "VIRTUAL_CLASS_GUNTOWER"
+targetType2 = "VIRTUAL_CLASS_TURRET"
+targetType3 = "VIRTUAL_CLASS_FACTORY"
+targetType4 = "VIRTUAL_CLASS_COMMBUNKER"
+targetType5 = "VIRTUAL_CLASS_SCOUT"
+targetType6 = "VIRTUAL_CLASS_SCAVENGER"
+targetType7 = "VIRTUAL_CLASS_RECYCLERBUILDING"
+targetType8 = "VIRTUAL_CLASS_POWERPLANT"
+attackType1 = "ivmbike_c"
+attackType2 = "ivmbike_c"
+attackType3 = "ivmbike_c"
+attackType4 = "ivmbike_c"
+buildIfNoIdle = true
+maxAttacks = 0
+ContinueEvenIfFail = true
+LuaFunction = "SendMortarBikeAttackPartyWave1"
+
+[Plan28] // Time to build our Service Bay.
+planType = "BaseBuildMinimums"
+planPriority = 740
+planCondition = "Lua"
+MinCurScrap = 50
+buildType1 = "ibsbay_c"
+buildCount1 = 1
+ContinueEvenIfFail = true
+LuaFunction = "ServiceBayCheck"
+
+[Plan29] // Build Service Trucks
+planType = "BuildMinimums"
+planPriority = 730
+planCondition = "Lua"
+buildType1 = "ivserv_c"
+buildCount1 = 5
+ContinueEvenIfFail = true
+LuaFunction = "ServiceTruckCheck"
+
+[Plan30] // Time for some upgrades...
+planType = "Upgrade"
+planPriority = 720
+planConditionClass = "ibscav_c"
+planConditionCount = 1
+planCompare = ">="
+planConditionClassProvided = true 
+planConditionOr = false
+consClass = "ivcons_g"
+MinCurScrap = 60
+unitType = "ibscav_c"
+ContinueEvenIfFail = true
+
+[Plan31] // Start building the base out. 
+planType = "BaseBuildMinimums"
+planPriority = 710
+MinCurScrap = 30
+planCondition = "Lua"
+buildType1 = "ibpgen_c"
+buildCount1 = 1
+ContinueEvenIfFail = true
+LuaFunction = "SecondPowerGeneratorCheck"
+
+[Plan32] // Start building the base out. 
+planType = "BaseBuildMinimums"
+planPriority = 700
+MinCurScrap = 30
+planCondition = "Lua"
+buildType1 = "ibpgen_c"
+buildCount1 = 1
+ContinueEvenIfFail = true
+LuaFunction = "ThirdPowerGeneratorCheck"
+
+[Plan33] // Start putting Gun Towers on the map to secure lanes.
+planType = "BaseBuildMinimums"
+planPriority = 690
+planCondition = "Lua"
+buildType1 = "ibgtow_c"
+buildCount1 = 1
+buildLoc1 = "gtow3"
+ContinueEvenIfFail = true
+consClass = "ivcons_g"
+MinCurScrap = 55
+LuaFunction = "BuildGunTower3"
+
+[Plan34] // Start putting Gun Towers on the map to secure lanes.
+planType = "BaseBuildMinimums"
+planPriority = 680
+planCondition = "Lua"
+buildType1 = "ibgtow_c"
+buildCount1 = 1
+buildLoc1 = "gtow4"
+ContinueEvenIfFail = true
+consClass = "ivcons_g"
+MinCurScrap = 55
+LuaFunction = "BuildGunTower4"
+
+[Plan35] // Build some Gun Towers to defend the base.
+planType = "BaseBuildMinimums"
+planPriority = 670
+planCondition = "Lua"
+MinCurScrap = 50
+buildType1 = "ibgtow_c"
+buildCount1 = 2
+ContinueEvenIfFail = true
+LuaFunction = "SecondBaseGunTowersCheck"
+
+[Plan36] // Service all buildings and units where possible. Put buildings first.
+planType = "Service"
+planPriority = 660
+serviceUnit = "ivserv_c"
+unitType1 = "ibrecy_c"
+unitType2 = "ibfact_c"
+unitType3 = "ibarmo_c"
+unitType4 = "ibgtow_c"
+unitType5 = "ivtank_c"
+unitType6 = "ivscav_c"
+unitType7 = "ivcons_c"
+unitType8 = "ibscav_c"
+unitType9 = "ivatank_c"
+unitType10 = "ivmbike_c"
+unitType11 = "ivmisl_c"
+unitType12 = "ivrckt_c"
+unitType13 = "ibpgen_c"
+unitType14 = "ibsbay_c"
+ContinueEvenIfFail = true

@@ -3,8 +3,10 @@ local EasyAIPScoutAttackThreshold = 60 * 11; -- Use scouts to attack for the fir
 local EasyAIPFactoryBuildThreshold = 60 * 12; -- Make sure the AIP doesn't build a factory until 12 minutes in.
 local EasyAIPFactoryAttackThreshold = 60 * 13; -- Start sending units from our factory after this timeframe has passed.
 local EasyAIPArmoryBuildThreshold = 60 * 15; -- Build the Armory at the 15 minute mark.
+local EasyAIPServiceBayBuildThreshold = 60 * 18; -- Build our Service Bay at the 18 minute mark.
 
 local EasyAIPScoutAttacksSent = 0; -- Used to keep track of how many scout attacks have been sent by the AIP.
+local EasyAIPMortarBikeAttacksSend = 0; -- Used to keep track of how many mortar bikes have been sent by the AIP.
 
 function InitAIPLua(team)
 	AIPUtil.print(team, "Starting AIP Lua Conditionals. - AI_Unit ");
@@ -257,6 +259,10 @@ function CountCPUPowerGenerators(team, time)
 	return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_POWERPLANT", "sameteam", true);
 end
 
+function CountCPUServiceTrucks(team, time)
+	return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_SERVICETRUCK", "sameteam", true);
+end
+
 -- Count Human units
 function CountHumanScavengers(team, time) 
 	return AIPUtil.CountUnits(1, "VIRTUAL_CLASS_SCAVENGER", "sameteam", true);
@@ -280,6 +286,10 @@ end
 
 function CountHumanAssaultUnits(team, time)
 	return AIPUtil.CountUnits(1, "VIRTUAL_CLASS_ASSAULTTANK", 'sameteam', true);
+end
+
+function CountHumanTechCentres(team, time)
+	return AIPUtil.CountUnits(1, "VIRTUAL_CLASS_TECHCENTER", 'sameteam', true);
 end
 
 --------------------------------------------------------------------------------------------------------
@@ -408,12 +418,14 @@ function SendTankAttackPartyWave1(team, time)
 	local CPUHasFactory = CPUFactoryExists(team, time);
 	local HumanGunTowerCount = CountHumanGunTowers(team, time);
 	local HumanAssaultUnitCount = CountHumanAssaultUnits(team, time); 
+	local CPUHasRelayBunker = CPUBunkerExists(team, time);
 
 	local shouldAttack = (CPUHasRecy 
 					  and CPUExtractorCount >= 2
 					  and CPUHasFactory
 					  and HumanGunTowerCount < 5
-					  and HumanAssaultUnitCount <= 0
+					  and HumanAssaultUnitCount <= 2
+					  and CPUHasRelayBunker
 					  and GetCurrentMissionTime(team, time) > EasyAIPFactoryAttackThreshold);
 
 	if (shouldAttack) then
@@ -421,6 +433,33 @@ function SendTankAttackPartyWave1(team, time)
 		return true;
 	else
 		AIPUtil.print(team, "Could not send fourth attack party. Conditions haven't been met. ");
+		return false;
+	end
+end
+
+function SendMortarBikeAttackPartyWave1(team, time)
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUExtractorCount = CountCPUExtractors(team, time);
+	local CPUHasFactory = CPUFactoryExists(team, time);
+	local CPUArmoryExists = CPUArmoryExists(team, time);
+	local HumanGunTowerCount = CountHumanGunTowers(team, time);
+	local HumanTechCentreExists = CountHumanTechCentres(team, time) > 0;
+
+	local shouldAttack = (CPUHasRecy 
+					  and CPUExtractorCount >= 2
+					  and CPUHasFactory
+					  and HumanGunTowerCount > 0
+					  and CPUArmoryExists
+					  and not HumanTechCentreExists
+					  and GetCurrentMissionTime(team, time) > EasyAIPArmoryBuildThreshold);
+
+	if (shouldAttack) then
+		EasyAIPMortarBikeAttacksSend = EasyAIPMortarBikeAttacksSend + 1;
+
+		AIPUtil.print(team, "Sending fifth attack party at enemy units. ");
+		return true;
+	else
+		AIPUtil.print(team, "Could not send fifth attack party. Conditions haven't been met. ");
 		return false;
 	end
 end
@@ -466,10 +505,31 @@ function SecondPowerGeneratorCheck(team, time) -- Build our second Power Generat
 	end
 end
 
+function ThirdPowerGeneratorCheck(team, time) -- Build our third Power Generator if necessary.
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUBuilderExists = CPUBuilderExists(team, time);
+	local CPUPowerGeneratorCount = CountCPUPowerGenerators(team, time);
+	local CPUHasPositivePower = CPUHasPositivePower(team, time);
+
+	local buildPower = (CPUHasRecy
+						and CPUBuilderExists
+						and CPUPowerGeneratorCount <= 2
+						and not CPUHasPositivePower
+						and GetCurrentMissionTime(team, time) > EasyAIPConstructorWaitThreshold);
+
+	if (buildPower) then
+		AIPUtil.print(team, "Building third power plant. ");
+		return true;
+	else
+		AIPUtil.print(team, "Could not build third Power Generator. Conditions haven't been met. ");
+		return false;
+	end
+end
+
 function RelayBunkerCheck(team, time) -- Build our Relay Bunker generator if necessary.
 	local CPUHasRecy = CPURecyclerExists(team, time);
 	local CPUBuilderExists = CPUBuilderExists(team, time);
-	local CPURelayBunkerExists = CPURelayBunkerExists(team, time);
+	local CPURelayBunkerExists = CPUBunkerExists(team, time);
 	local CPUHasPositivePower = CPUHasPositivePower(team, time);
 
 	local buildBunker = (CPUHasRecy
@@ -527,6 +587,27 @@ function FirstBaseGunTowersCheck(team, time)
 	end
 end
 
+function SecondBaseGunTowersCheck(team, time)
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUBuilderExists = CPUBuilderExists(team, time);
+	local CPUHasPositivePower = CPUHasPositivePower(team, time);
+	local CPUHasServiceBay = CPUServiceBayExists(team, time);
+
+	local buildGunTowers = (CPUHasRecy
+				   		and CPUBuilderExists
+				   		and CPUHasPositivePower
+				   		and CPUHasServiceBay
+				   		and EasyAIPMortarBikeAttacksSend > 1);
+
+	if (buildGunTowers) then
+		AIPUtil.print(team, "Building my second base Gun Towers. ");
+		return true;
+	else
+		AIPUtil.print(team, "Could not build my second two Gun Towers. Conditions haven't been met. ");
+		return false;
+	end
+end
+
 function ArmoryCheck(team, time)
 	local CPUHasRecy = CPURecyclerExists(team, time);
 	local CPUBuilderExists = CPUBuilderExists(team, time);
@@ -544,6 +625,47 @@ function ArmoryCheck(team, time)
 		return true;
 	else
 		AIPUtil.print(team, "Could not build an Armory. Conditions haven't been met. ");
+		return false;
+	end
+end
+
+function ServiceBayCheck(team, time)
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUBuilderExists = CPUBuilderExists(team, time);
+	local CPUServiceBayExists = CPUServiceBayExists(team, time);
+	local CPUHasPositivePower = CPUHasPositivePower(team, time);
+
+	local buildServiceBay = (CPUHasRecy
+					 and CPUBuilderExists
+					 and CPUHasPositivePower
+					 and not CPUServiceBayExists
+					 and GetCurrentMissionTime(team, time) > EasyAIPServiceBayBuildThreshold);
+
+	if (buildServiceBay) then
+		AIPUtil.print(team, "Building a Service Bay. ");
+		return true;
+	else
+		AIPUtil.print(team, "Could not build a Service Bay. Conditions haven't been met. ");
+		return false;
+	end
+end
+
+function ServiceTruckCheck(team, time)
+	local CPUHasRecy = CPURecyclerExists(team, time);
+	local CPUServiceBayExists = CPUServiceBayExists(team, time);
+	local CPUServiceTruckCount = CountCPUServiceTrucks(team, time);
+
+	local buildServiceTrucks = (CPUHasRecy
+				 and CPUBuilderExists
+				 and CPUServiceBayExists
+				 and CPUServiceTruckCount < 5
+				 and GetCurrentMissionTime(team, time) > EasyAIPServiceBayBuildThreshold);
+
+	if (buildServiceTrucks) then
+		AIPUtil.print(team, "Building Service Trucks. ");
+		return true;
+	else
+		AIPUtil.print(team, "Could not build Service Trucks. Conditions haven't been met. ");
 		return false;
 	end
 end
