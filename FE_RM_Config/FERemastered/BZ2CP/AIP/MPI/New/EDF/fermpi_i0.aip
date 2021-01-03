@@ -125,15 +125,15 @@ buildCount1 = 2
 ContinueEvenIfFail = true
 LuaFunction = "BuildScavengerCheck2"
 
-[Plan10] // Start building the base out. 
-planType = "BaseBuildMinimums"
+[Plan10] // Start building the base out.
+planType = "BaseBuildLoop"
 planPriority = 920
 MinCurScrap = 30
 planCondition = "Lua"
 buildType1 = "ibpgen_c"
 buildCount1 = 1
 ContinueEvenIfFail = true
-LuaFunction = "FirstPowerGeneratorCheck"
+LuaFunction = "PowerGeneratorCheck"
 
 [Plan11] // Send out another turret...
 planType = "BuildMinimums"
@@ -368,29 +368,9 @@ MinCurScrap = 60
 unitType = "ibscav_c"
 ContinueEvenIfFail = true
 
-[Plan31] // Start building the base out. 
+[Plan31] // Start putting Gun Towers on the map to secure lanes.
 planType = "BaseBuildMinimums"
 planPriority = 710
-MinCurScrap = 30
-planCondition = "Lua"
-buildType1 = "ibpgen_c"
-buildCount1 = 1
-ContinueEvenIfFail = true
-LuaFunction = "SecondPowerGeneratorCheck"
-
-[Plan32] // Start building the base out. 
-planType = "BaseBuildMinimums"
-planPriority = 700
-MinCurScrap = 30
-planCondition = "Lua"
-buildType1 = "ibpgen_c"
-buildCount1 = 1
-ContinueEvenIfFail = true
-LuaFunction = "ThirdPowerGeneratorCheck"
-
-[Plan33] // Start putting Gun Towers on the map to secure lanes.
-planType = "BaseBuildMinimums"
-planPriority = 690
 planCondition = "Lua"
 buildType1 = "ibgtow_c"
 buildCount1 = 1
@@ -400,9 +380,9 @@ consClass = "ivcons_g"
 MinCurScrap = 55
 LuaFunction = "BuildGunTower3"
 
-[Plan34] // Start putting Gun Towers on the map to secure lanes.
+[Plan32] // Start putting Gun Towers on the map to secure lanes.
 planType = "BaseBuildMinimums"
-planPriority = 680
+planPriority = 700
 planCondition = "Lua"
 buildType1 = "ibgtow_c"
 buildCount1 = 1
@@ -412,9 +392,9 @@ consClass = "ivcons_g"
 MinCurScrap = 55
 LuaFunction = "BuildGunTower4"
 
-[Plan35] // Build some Gun Towers to defend the base.
+[Plan33] // Build some Gun Towers to defend the base.
 planType = "BaseBuildMinimums"
-planPriority = 670
+planPriority = 690
 planCondition = "Lua"
 MinCurScrap = 50
 buildType1 = "ibgtow_c"
@@ -422,9 +402,9 @@ buildCount1 = 2
 ContinueEvenIfFail = true
 LuaFunction = "SecondBaseGunTowersCheck"
 
-[Plan36] // Service all buildings and units where possible. Put buildings first.
+[Plan34] // Service all buildings and units where possible. Put buildings first.
 planType = "Service"
-planPriority = 660
+planPriority = 680
 serviceUnit = "ivserv_c"
 unitType1 = "ibrecy_c"
 unitType2 = "ibfact_c"

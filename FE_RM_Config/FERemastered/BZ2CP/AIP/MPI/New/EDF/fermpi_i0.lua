@@ -465,14 +465,14 @@ function SendMortarBikeAttackPartyWave1(team, time)
 end
 
 -- Base functions
-function FirstPowerGeneratorCheck(team, time) -- Build our first Power Generator if necessary.
+function PowerGeneratorCheck(team, time) -- Build our first Power Generator if necessary.
 	local CPUHasRecy = CPURecyclerExists(team, time);
 	local CPUBuilderExists = CPUBuilderExists(team, time);
-	local CPUPowerGeneratorCount = CountCPUPowerGenerators(team, time);
+	local CPUHasPositivePower = CPUHasPositivePower(team, time);
 
 	local buildPower = (CPUHasRecy
 						and CPUBuilderExists
-						and CPUPowerGeneratorCount <= 0
+						and not CPUHasPositivePower
 						and GetCurrentMissionTime(team, time) > EasyAIPConstructorWaitThreshold);
 
 	if (buildPower) then
@@ -480,48 +480,6 @@ function FirstPowerGeneratorCheck(team, time) -- Build our first Power Generator
 		return true;
 	else
 		AIPUtil.print(team, "Could not build a Power Generator. Conditions haven't been met. ");
-		return false;
-	end
-end
-
-function SecondPowerGeneratorCheck(team, time) -- Build our second Power Generator if necessary.
-	local CPUHasRecy = CPURecyclerExists(team, time);
-	local CPUBuilderExists = CPUBuilderExists(team, time);
-	local CPUPowerGeneratorCount = CountCPUPowerGenerators(team, time);
-	local CPUHasPositivePower = CPUHasPositivePower(team, time);
-
-	local buildPower = (CPUHasRecy
-						and CPUBuilderExists
-						and CPUPowerGeneratorCount <= 1
-						and not CPUHasPositivePower
-						and GetCurrentMissionTime(team, time) > EasyAIPConstructorWaitThreshold);
-
-	if (buildPower) then
-		AIPUtil.print(team, "Building second power plant. ");
-		return true;
-	else
-		AIPUtil.print(team, "Could not build second Power Generator. Conditions haven't been met. ");
-		return false;
-	end
-end
-
-function ThirdPowerGeneratorCheck(team, time) -- Build our third Power Generator if necessary.
-	local CPUHasRecy = CPURecyclerExists(team, time);
-	local CPUBuilderExists = CPUBuilderExists(team, time);
-	local CPUPowerGeneratorCount = CountCPUPowerGenerators(team, time);
-	local CPUHasPositivePower = CPUHasPositivePower(team, time);
-
-	local buildPower = (CPUHasRecy
-						and CPUBuilderExists
-						and CPUPowerGeneratorCount <= 2
-						and not CPUHasPositivePower
-						and GetCurrentMissionTime(team, time) > EasyAIPConstructorWaitThreshold);
-
-	if (buildPower) then
-		AIPUtil.print(team, "Building third power plant. ");
-		return true;
-	else
-		AIPUtil.print(team, "Could not build third Power Generator. Conditions haven't been met. ");
 		return false;
 	end
 end
