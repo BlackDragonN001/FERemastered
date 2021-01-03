@@ -70,6 +70,7 @@ local M = {
 	Object_Nadir4 = nil,
 	Object_CerbUnit = nil,
 	Object_CarrierLaunchCamDummy = nil,
+	Object_HardinPilot = nil,
 	StoredHandle = nil,
 
 	-- ODF Specific Variables
@@ -104,6 +105,7 @@ local M = {
 	--Arrays and Tables
 	Controls = {},
 	AIScouts = {},
+	FindingHardin = {},
 	--Frame Timing 
 	CurFrame =nil,
 	MaxFrame =nil,
@@ -124,7 +126,13 @@ function Load(...)
 end
 
 function AddObject(h)
+
 	_FECore.AddObject(h);
+	
+	if(GetOdf(h) == "ispilo.odf" and M.Object_HardinPilot == nil) then
+				table.insert(M.FindingHardin, h);
+				
+	end
 end
 
 function DeleteObject(h)
@@ -224,6 +232,8 @@ function Update()
 	UpdateShipHandles(); --Controls handle swapping by player "pick me up" -Gravey
 	DropshipTakeoff();-- added for effect -Gravey
 	PlayerControls(); --Gravey, thanks N1 and GBD
+	
+	
 end
 function PlayerControls()	
 
@@ -235,7 +245,18 @@ function PlayerControls()
 	end
 
 end
-
+function FindHardin();
+		
+	if(M.Object_HardinPilot == nil) then		
+		for k,v in ipairs(M.FindingHardin) do
+			if(HoppedOutOf(M.FindingHardin[k]) == M.Object_Hardin) then
+				M.Object_HardinPilot =  M.FindingHardin[k];
+				
+			end
+		end
+	
+	end
+end
 function UpdateShipHandles()
 --Gravey, created this to not have to rewrite end code for game breaking bug crashing mission script from ship variables having the same handle at once. 
 if (M.Object_Player ~= GetPlayerHandle(1)) then
@@ -264,6 +285,7 @@ if (M.Object_Player ~= GetPlayerHandle(1)) then
 		end
 	end
 end
+
 function DropshipTakeoff()
 	M.Object_Condor = GetHandle("condor");
 	if(GetDistance(M.Object_Player, M.Object_Condor) > 30.0 and M.CondorTakeoff == false) then
@@ -615,11 +637,14 @@ function Routine1()
 				Goto(M.Object_Scout3, M.Object_ServiceBay, 1);
 				
 				HopOut(M.Object_Hardin);
+				
+				FindHardin(); -- added to find Hardin's pilot
+				
 				SetObjectiveName(M.Object_Hardin, "Scout"); --sets hardins old scout to "Scout" instead of "Hardin"
 				
 				--M.Object_Hardin = HoppedOutOf(M.Object_Hardin); --update M.Object_Hardin with pilot handle here to fix fail condition 
 				
-				--Stop(M.Object_Hardin);--give order to stop instead of trying to enter the players empty? 
+				--Stop(M.Object_HardinPilot); --give order to stop instead of trying to enter the players empty? 
 				
 				SetTeamNum(M.Object_Corbernav, 1);
 				
@@ -627,11 +652,14 @@ function Routine1()
 				SetObjectiveOff(M.Object_Hardin);
 				
 				M.Routine1State = M.Routine1State + 1;
+				
 			end
 		elseif (M.Routine1State == 25) then
-			if (GetDistance(M.Object_Corbernav,M.Object_Player ) <= 10 and IsAliveAndPilot(M.Object_Player)) then --updated so cutscene requires player to get out of ship. --Gravey
+				FindHardin();
+			if (GetDistance(M.Object_Corbernav,M.Object_Player ) <= 10 and IsAliveAndPilot(M.Object_Player) and M.Object_HardinPilot ~= nil) then --updated so cutscene requires player to get out of ship. --Gravey
 				StartEarthQuake(4.0);
 				Stop(M.Object_Hardin);
+				Stop(M.Object_HardinPilot); --added to prevent pilot from getting in user ship.
 				ClearObjectives();
 				AddObjective("mercedf105.otf", "green");
 
@@ -979,6 +1007,13 @@ function Routine5()
 			AddObjective("mercedf110.otf", "red");
 			FailMission(GetTime() + 10, "transmerc.des");
 		elseif (not IsAround(M.Object_Hardin)) then
+			M.EnableFailCheck = false;
+			
+			ClearObjectives();
+			AddObjective("mercedf109.otf", "red");
+			FailMission(GetTime() + 10, "hardmerc.des");
+		
+		elseif (not IsAround(M.Object_HardinPilot) and HasPilot(M.Object_Hardin) == false) then
 			M.EnableFailCheck = false;
 			
 			ClearObjectives();
