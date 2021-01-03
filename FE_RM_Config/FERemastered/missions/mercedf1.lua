@@ -530,7 +530,6 @@ function Routine1()
 				M.Routine1State = M.Routine1State + 1;
 			end
 		elseif (M.Routine1State == 18) then 
-			if (GetTime() >= M.convoyWaitTillTime) then
 				AudioMessage("mercury_07.wav");
 
 				AddObjective("mercedf111.otf", "white");
@@ -584,7 +583,8 @@ function Routine1()
 				SetTeamNum(M.Object_Scout1, 9);
 				SetTeamNum(M.Object_Scout2, 9);
 				SetTeamNum(M.Object_Scout3, 9);
-				
+				SetTeamNum(M.Object_ServTruck1, 9);--added to give trucks back to t9 so player isn't left with half their units. --Gravey
+				SetTeamNum(M.Object_ServTruck2, 9);--added to give trucks back to t9 so player isn't left with half their units.
 				Retreat(M.Object_Scout1, "hardin", 1);
 				Retreat(M.Object_Scout2, "hardin", 1);
 				Retreat(M.Object_Scout3, "hardin", 1);
