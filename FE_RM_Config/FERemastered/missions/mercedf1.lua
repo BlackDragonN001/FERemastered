@@ -656,9 +656,9 @@ function Routine1()
 			end
 		elseif (M.Routine1State == 25) then
 				FindHardin();
-			if (IsAliveAndPilot(M.Object_Player))then -- added for logic to control pilot from moving when the player jumps out. 
+			
 				Defend(M.Object_HardinPilot,1);
-				end
+				
 			if (GetDistance(M.Object_Corbernav,M.Object_Player ) <= 10 and IsAliveAndPilot(M.Object_Player) and M.Object_HardinPilot ~= nil) then --updated so cutscene requires player to get out of ship. --Gravey
 				StartEarthQuake(4.0);
 				Stop(M.Object_Hardin);
