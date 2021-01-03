@@ -530,6 +530,7 @@ function Routine1()
 				M.Routine1State = M.Routine1State + 1;
 			end
 		elseif (M.Routine1State == 18) then 
+			if (GetTime() >= M.convoyWaitTillTime and GetDistance(M.Object_WyndtEssex, "convoy_halt") <= 100) then --added logic to wait for wyndt to play audio message. 
 				AudioMessage("mercury_07.wav");
 
 				AddObjective("mercedf111.otf", "white");
