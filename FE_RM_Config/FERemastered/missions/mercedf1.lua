@@ -27,6 +27,8 @@ local M = {
 	CondorTakeoff = false,
 	ScoutsPassedToPlayer = false,
 	FirstWave = false,
+	StopWyndt = false,
+
 	-- Floats
 	MissionTimer = 0.0,
 	convoyWaitTillTime = 0.0,
@@ -34,6 +36,7 @@ local M = {
 	CerbWaitTillTime = 0.0,
 	Routine4WaitTillTime = 0.0,
 	HandleCounter = 0.0,
+
 	-- Handles
 	Object_Power1 = nil,
 	Object_Power2 = nil,
@@ -106,10 +109,12 @@ local M = {
 	Position3 = SetVector(0, 0, 0),
 	Position4 = SetVector(0, 0, 0),
 	Position5 = SetVector(0, 0, 0),
+
 	--Arrays and Tables
 	Controls = {},
 	AIScouts = {},
 	FindingHardin = {},
+
 	--Frame Timing 
 	CurFrame =nil,
 	MaxFrame =nil,
@@ -130,12 +135,13 @@ function Load(...)
 end
 
 function AddObject(h)
-
 	_FECore.AddObject(h);
 	
-	if(GetOdf(h) == "ispilo.odf" and M.Object_HardinPilot == nil) then
-				table.insert(M.FindingHardin, h);
-				
+	if (GetOdf(h) == "ispilo.odf" and M.Object_HardinPilot == nil) then
+		table.insert(M.FindingHardin, h);		
+	elseif (GetLabel(h) == "Rodriguez" and not M.StopWyndt) then
+		SetTeamNum(h, 9);
+		M.StopWyndt = true;
 	end
 end
 
@@ -218,6 +224,9 @@ function Start()
 	M.Position5 = GetPosition("blue_spawn");
 	M.Object_Player = GetPlayerHandle(1); --Initial set for player handle at mission start -Gravey
 	M.MessagePlayed = false; --added for looping audio.
+
+	Ally(1,9);
+	UnAlly(9,2);
 	
 	GLOBAL_lock(_G); --prevents script from accidentally creating new global variables.
 end
@@ -329,9 +338,6 @@ function Routine1()
 			M.Routine1State = M.Routine1State + 1;
 		elseif (M.Routine1State == 1) then
 			if (GetTime() >= M.convoyWaitTillTime) then
-				Ally(1,9);
-				UnAlly(9,2);
-
 				IFace_EnterMenuMode();
 				IFace_Exec("merc01.cfg");
 
@@ -372,6 +378,7 @@ function Routine1()
 			--M.Object_CarrierLaunchCamDummy = BuildObjectAndLabel("dummy", 2, Position11, "Dummy 1");
 			
 			--SetGroup(M.Object_WyndtEssex, 10); --moved gravey
+			SetTeamNum(M.Object_WyndtEssex, 1);
 			SetObjectiveName(M.Object_WyndtEssex, "Wyndt-Essex");
 			
 			--M.Object_Hardin = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position3, "Hardin");
@@ -392,10 +399,7 @@ function Routine1()
 			
 			
 			M.AIScouts = {M.Object_Scout1,M.Object_Scout2,M.Object_Scout3,M.Object_Hardin,M.Object_WyndtEssex};
-			
-			
-			
-			
+	
 			M.Routine1State = M.Routine1State + 1;
 		elseif (M.Routine1State == 6) then
 			local iFaceVal = IFace_GetInteger("images.page");
@@ -413,7 +417,6 @@ function Routine1()
 			M.Routine1State = M.Routine1State + 1;
 		elseif (M.Routine1State == 9) then
 			IFace_Deactivate("INFO");
-			
 			
 			M.convoyWaitTillTime = GetTime() + 1;
 			M.Routine1State = M.Routine1State + 1;
@@ -436,11 +439,6 @@ function Routine1()
 			end
 		elseif (M.Routine1State == 12) then
 			if (GetTime() >= M.convoyWaitTillTime) then
-				
-				
-				
-				
-				
 				SetObjectiveOn(M.Object_Cargo2);
 				AddObjective("mercedf101.otf", "white");
 
@@ -837,6 +835,7 @@ function Routine3()
 
 				M.CerbRoutine = true;
 
+				SetObjectiveName(M.Object_Gun10, "Gun Tower");
 				SetObjectiveOn(M.Object_Gun10);
 				
 				M.Routine3State = M.Routine3State + 1;
