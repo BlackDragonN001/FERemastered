@@ -1,3 +1,9 @@
+----------------------------------------------------------------
+-- FE edf01.lua Mission - Version 1.0 
+-- Date Modified: 11/01/2021
+-- Summary: Mission script for the EDF01 Forgotten Enemies Mission.
+----------------------------------------------------------------
+
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 

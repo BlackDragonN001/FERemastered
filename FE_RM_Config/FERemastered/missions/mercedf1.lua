@@ -1,4 +1,8 @@
--- BZCC mercedf1.lua converted by AI_Unit.
+----------------------------------------------------------------
+-- FE mercedf1.lua Mission - Version 1.7 
+-- Date Modified: 11/01/2021
+-- Summary: Mission script for the Mercury Rising Forgotten Enemies Mission.
+----------------------------------------------------------------
 
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
