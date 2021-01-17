@@ -1,5 +1,5 @@
 ----------------------------------------------------------------
--- FE mercedf1.lua Mission - Version 1.8 
+-- FE mercedf1.lua Mission - Version 1.9 
 -- Date Modified: 1/17/2021
 -- Summary: Mission script for the Mercury Rising Forgotten Enemies Mission.
 ----------------------------------------------------------------
@@ -29,6 +29,7 @@ local M = {
 	ScoutsPassedToPlayer = false,
 	FirstWave = false,
 	StopWyndt = false,
+	Nadir2AttackUpdate = false,
 
 	-- Floats
 	MissionTimer = 0.0,
@@ -246,7 +247,7 @@ function Update()
 	UpdateShipHandles(); --Controls handle swapping by player "pick me up" -Gravey
 	DropshipTakeoff();-- added for effect -Gravey
 	PlayerControls(); --Gravey, thanks N1 and GBD
-	
+	UpdateNadir2Target();
 	
 end
 function PlayerControls()	
@@ -271,6 +272,21 @@ function FindHardin();
 	
 	end
 end
+--while not the most elegant this prevents nadir 1 from stalling out the mission during wyndts retreat across routine states -Gravey
+function UpdateNadir2Target()
+	if(GetCfg(M.Object_Player) == "isuser" and M.Nadir2AttackUpdate == false) then --player pilot is isuer.odf
+		print(M.Nadir2AttackUpdate);
+		if(IsAround(M.Object_Cargo1) == true ) then
+		Attack(M.Object_Nadir2, M.Object_Cargo1,1);
+			
+		else
+		Attack(M.Object_Nadir2, M.Object_Cargo2,1);
+		end
+	M.Nadir2AttackUpdate = true;
+	end
+
+end
+
 function UpdateShipHandles()
 --Gravey, created this to not have to rewrite end code for game breaking bug crashing mission script from ship variables having the same handle at once. 
 if (M.Object_Player ~= GetPlayerHandle(1)) then
