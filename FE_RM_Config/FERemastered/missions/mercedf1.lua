@@ -25,6 +25,7 @@ local M = {
 	Routine7Enable = false,
 	FlankSpawn = false,
 	CondorTakeoff = false,
+	CondorTakeoffAudio = false,
 	ScoutsPassedToPlayer = false,
 	FirstWave = false,
 	StopWyndt = false,
@@ -314,6 +315,11 @@ function DropshipTakeoff()
 		end
 	if(M.CondorTakeoff == true) then
 		M.CurFrame = GetAnimationFrame(M.Object_Condor, "takeoff");
+		
+		if(M.CondorTakeoffAudio == false) then
+		StartSoundEffect("dropleav.wav",M.Object_Condor);
+		M.CondorTakeoffAudio = true;
+		end
 		
 		if(M.CurFrame >= M.MaxFrame -2) then
 		
@@ -613,6 +619,8 @@ function Routine1()
 				Retreat(M.Object_Scout1, "hardin", 1);
 				Retreat(M.Object_Scout2, "hardin", 1);
 				Retreat(M.Object_Scout3, "hardin", 1);
+				Retreat(M.Object_ServTruck1, M.Object_ServiceBay, 1); --added to send trucks to base. --Gravey
+				Retreat(M.Object_ServTruck2, M.Object_ServiceBay, 1);
 				
 				ClearObjectives();
 				LookAt(M.Object_Hardin, M.Object_Player, 1);
