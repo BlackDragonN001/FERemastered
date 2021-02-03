@@ -1048,10 +1048,7 @@ function Routine6()
 				RemoveObject(M.Object_CerbUnit); -- delete triton when it reaches out of bounds Gravey
 				--M.Routine6State = M.Routine6State + 1;
 			else
-				local h = GetWhoShotMe(M.Object_CerbUnit);
-				
-			end
-				if (IsPlayer(h)) then
+				if (GetWhoShotMe(M.Object_CerbUnit) == M.Object_Player) then
 					AudioMessage("mercury_07a.wav");
 					M.Routine6State = M.Routine6State + 1;
 				end
@@ -1074,6 +1071,7 @@ function Routine6()
 		
 		end
 	end
+end
 --handles giving player scouts based on their arrival to "convoy_halt"
 function Routine7()  
 	if (M.Routine7Enable == true) then
