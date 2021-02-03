@@ -115,8 +115,8 @@ local M = {
 	FindingHardin = {},
 
 	--Frame Timing 
-	CurFrame =nil,
-	MaxFrame =nil,
+	CurFrame = nil,
+	MaxFrame = nil,
 }
 
 function Save()
@@ -249,47 +249,43 @@ function Update()
 	UpdateNadir2Target();
 	
 end
+
+-- Disable player controls while inside dropship.
 function PlayerControls()	
-
 	if(M.PlayerCanMove == false) then
-	
-	M.Controls = {["braccel"] = 0.0,  ["pitch"] = nil, ["strafe"] =0.0, ["jump"] = false, ["deploy"] = false, ["eject"] = false, ["abandon"] = false, ["fire"] = false};
-	SetControls(M.Object_Player, M.Controls);
-	
+		M.Controls = {["braccel"] = 0.0,  ["pitch"] = nil, ["strafe"] =0.0, ["jump"] = false, ["deploy"] = false, ["eject"] = false, ["abandon"] = false, ["fire"] = false};
+		SetControls(M.Object_Player, M.Controls);
 	end
-
 end
-function FindHardin();
-		
+
+-- Find Hardin's Pilot after he hops out. HoppedOutOf() needs to be called in first Update() after he hops out.
+function FindHardin()
 	if(M.Object_HardinPilot == nil) then		
 		for k,v in ipairs(M.FindingHardin) do
 			if(HoppedOutOf(M.FindingHardin[k]) == M.Object_Hardin) then
 				M.Object_HardinPilot =  M.FindingHardin[k];
-				
 			end
 		end
-	
 	end
 end
+
 --while not the most elegant this prevents nadir 1 from stalling out the mission during wyndts retreat across routine states -Gravey
 function UpdateNadir2Target()
-	if(GetCfg(M.Object_Player) == "isuser" and M.Nadir2AttackUpdate == false) then --player pilot is isuer.odf
-		print(M.Nadir2AttackUpdate);
+	if(IsPerson(M.Object_Player) and M.Nadir2AttackUpdate == false) then
+	
 		if(IsAround(M.Object_Cargo1) == true ) then
-		Attack(M.Object_Nadir2, M.Object_Cargo1,1);
-			
+			Attack(M.Object_Nadir2, M.Object_Cargo1,1);
 		else
-		Attack(M.Object_Nadir2, M.Object_Cargo2,1);
+			Attack(M.Object_Nadir2, M.Object_Cargo2,1);
 		end
-	M.Nadir2AttackUpdate = true;
+		
+		M.Nadir2AttackUpdate = true;
 	end
-
 end
 
 function DropshipTakeoff()
-	M.Object_Condor = GetHandle("condor");
+
 	if(GetDistance(M.Object_Player, M.Object_Condor) > 30.0 and M.CondorTakeoff == false) then
-		
 		SetAnimation(M.Object_Condor,"takeoff", 1);
 		M.MaxFrame = SetAnimation(M.Object_Condor,"takeoff", 1);
 		StartSoundEffect("dropdoor.wav",M.Object_Condor);
@@ -299,6 +295,7 @@ function DropshipTakeoff()
 		StartSoundEffect("dropleav.wav",M.Object_Condor);
 		M.CondorTakeoff = true;
 	end
+	
 	if(M.CondorTakeoff == true) then
 		M.CurFrame = GetAnimationFrame(M.Object_Condor, "takeoff");
 		
@@ -1086,7 +1083,6 @@ function Routine7()
 			M.Routine7State = M.Routine7State + 1;
 			M.ScoutsPassedToPlayer = true;
 		end
-		
 		
 	end
 end
