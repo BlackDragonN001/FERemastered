@@ -17,6 +17,8 @@ local SERVODF = "ivserv";
 local CARGOODF = "ivcargo";
 local DRONEODF = "nadir";
 
+local FindHardin = false; -- Temp 1-off, doesn't need to be saved.
+
 local M = {
 	-- Bools
 	PlayerCanMove = false,
@@ -112,11 +114,10 @@ local M = {
 	--Arrays and Tables
 	Controls = {},
 	AIScouts = {},
-	FindingHardin = {},
 
 	--Frame Timing 
-	CurFrame = nil,
-	MaxFrame = nil,
+	CurFrame = 0.0,
+	MaxFrame = 0.0,
 }
 
 function Save()
@@ -136,9 +137,14 @@ end
 function AddObject(h)
 	_FECore.AddObject(h);
 	
-	if (GetOdf(h) == "ispilo.odf" and M.Object_HardinPilot == nil) then
-		table.insert(M.FindingHardin, h);		
-	elseif (GetLabel(h) == "Rodriguez" and not M.StopWyndt) then
+	if(IsPerson(h) and M.Object_HardinPilot == nil and FindHardin) then
+		M.Object_HardinPilot = h;
+		SetIndependence(M.Object_HardinPilot, 0); -- Don't do anything. -GBD
+		Defend(M.Object_HardinPilot,1); -- Stay right there. -GBD
+		FindHardin = false;
+	end
+	
+	if (GetLabel(h) == "Rodriguez" and not M.StopWyndt) then
 		SetTeamNum(h, 9);
 		M.StopWyndt = true;
 	end
@@ -255,17 +261,6 @@ function PlayerControls()
 	if(M.PlayerCanMove == false) then
 		M.Controls = {["braccel"] = 0.0,  ["pitch"] = nil, ["strafe"] =0.0, ["jump"] = false, ["deploy"] = false, ["eject"] = false, ["abandon"] = false, ["fire"] = false};
 		SetControls(M.Object_Player, M.Controls);
-	end
-end
-
--- Find Hardin's Pilot after he hops out. HoppedOutOf() needs to be called in first Update() after he hops out.
-function FindHardin()
-	if(M.Object_HardinPilot == nil) then		
-		for k,v in ipairs(M.FindingHardin) do
-			if(HoppedOutOf(M.FindingHardin[k]) == M.Object_Hardin) then
-				M.Object_HardinPilot =  M.FindingHardin[k];
-			end
-		end
 	end
 end
 
@@ -623,9 +618,8 @@ function Routine1()
 				Goto(M.Object_Scout2, M.Object_ServiceBay, 1);
 				Goto(M.Object_Scout3, M.Object_ServiceBay, 1);
 				
+				FindHardin = true; -- Flag this here. -GBD
 				HopOut(M.Object_Hardin);
-				
-				FindHardin(); -- added to find Hardin's pilot
 				
 				SetObjectiveName(M.Object_Hardin, "Scout"); --sets hardins old scout to "Scout" instead of "Hardin"
 				
@@ -642,10 +636,6 @@ function Routine1()
 				
 			end
 		elseif (M.Routine1State == 25) then
-				FindHardin();
-			
-				Defend(M.Object_HardinPilot,1);
-				
 			if (GetDistance(M.Object_Corbernav,M.Object_Player ) <= 10 and IsAliveAndPilot(M.Object_Player) and M.Object_HardinPilot ~= nil) then --updated so cutscene requires player to get out of ship. --Gravey
 				StartEarthQuake(4.0);
 				Stop(M.Object_Hardin);
