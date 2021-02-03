@@ -25,7 +25,6 @@ local M = {
 	Routine7Enable = false,
 	FlankSpawn = false,
 	CondorTakeoff = false,
-	CondorTakeoffAudio = false,
 	ScoutsPassedToPlayer = false,
 	FirstWave = false,
 	StopWyndt = false,
@@ -326,20 +325,14 @@ function DropshipTakeoff()
 		StartAnimation(M.Object_Condor);
 		StartEmitter(M.Object_Condor,1);
 		StartEmitter(M.Object_Condor,2);
+		StartSoundEffect("dropleav.wav",M.Object_Condor);
 		M.CondorTakeoff = true;
-		
-		end
+	end
 	if(M.CondorTakeoff == true) then
 		M.CurFrame = GetAnimationFrame(M.Object_Condor, "takeoff");
 		
-		if(M.CondorTakeoffAudio == false) then
-		StartSoundEffect("dropleav.wav",M.Object_Condor);
-		M.CondorTakeoffAudio = true;
-		end
-		
 		if(M.CurFrame >= M.MaxFrame -2) then
-		
-		RemoveObject(M.Object_Condor);
+			RemoveObject(M.Object_Condor);
 		end
 	end
 end
