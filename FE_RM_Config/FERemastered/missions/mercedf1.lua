@@ -36,7 +36,6 @@ local M = {
 	powerPlayerWaitTillTime = 0.0,
 	CerbWaitTillTime = 0.0,
 	Routine4WaitTillTime = 0.0,
-	HandleCounter = 0.0,
 
 	-- Handles
 	Object_Power1 = nil,
@@ -79,7 +78,6 @@ local M = {
 	Object_CerbUnit = nil,
 	Object_CarrierLaunchCamDummy = nil,
 	Object_HardinPilot = nil,
-	StoredHandle = nil,
 
 	-- ODF Specific Variables
 	SCOUTODF = "ivscout11",
@@ -234,6 +232,9 @@ end
 
 function Update()
 	_FECore.Update();
+	
+	M.Object_Player = GetPlayerHandle(1); -- Update and save player handle every turn, in top of Update(). Needs to be an Array of 15 if the mission ever becomes COOP. -GBD
+	
 	-- Handle Routines.
 	Routine1();
 	Routine2();
@@ -243,7 +244,6 @@ function Update()
 	Routine5();
 	Routine7(); --Controls scout f1 groups -Gravey
 	DamagePrevention();
-	UpdateShipHandles(); --Controls handle swapping by player "pick me up" -Gravey
 	DropshipTakeoff();-- added for effect -Gravey
 	PlayerControls(); --Gravey, thanks N1 and GBD
 	UpdateNadir2Target();
@@ -284,35 +284,6 @@ function UpdateNadir2Target()
 	M.Nadir2AttackUpdate = true;
 	end
 
-end
-
-function UpdateShipHandles()
---Gravey, created this to not have to rewrite end code for game breaking bug crashing mission script from ship variables having the same handle at once. 
-if (M.Object_Player ~= GetPlayerHandle(1)) then
-		
-		M.HandleCounter = M.HandleCounter + 1;
-		if(M.HandleCounter == 1) then --sets hop out of ship to stored handle
-			M.LastShipHandle = M.Object_Player;
-		end
-		
-		M.Object_Player = GetPlayerHandle(1); --updates M.Object_Player to what should be a pilot player handle first, then on the following iteration: the ship the player got into
-		
-		if(M.HandleCounter >= 2 ) then --if player has a new handle again then update new ship to old stored handle
-			
-			if(M.Object_Scout1 == GetPlayerHandle(1)) then
-				M.Object_Scout1 = M.LastShipHandle;
-				M.HandleCounter = 0;
-			elseif(M.Object_Scout2 == GetPlayerHandle(1)) then
-				M.Object_Scout2 = M.LastShipHandle;
-				M.HandleCounter = 0;
-			elseif(M.Object_Scout3 == GetPlayerHandle(1)) then
-				M.Object_Scout3 = M.LastShipHandle;
-				M.HandleCounter = 0;
-			else
-			M.HandleCounter = 0;
-			end
-		end
-	end
 end
 
 function DropshipTakeoff()
