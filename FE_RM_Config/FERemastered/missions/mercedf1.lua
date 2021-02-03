@@ -11,6 +11,12 @@ local _SPUtils = require("_SPUtils"); --spawn clustering adjustments via functio
 local Position11 = SetVector(-674, 1000, -783);
 local Position12 = SetVector(0, 0, 100);
 
+	-- ODF Specific Variables
+local SCOUTODF = "ivscout11";
+local SERVODF = "ivserv";
+local CARGOODF = "ivcargo";
+local DRONEODF = "nadir";
+
 local M = {
 	-- Bools
 	PlayerCanMove = false,
@@ -78,12 +84,6 @@ local M = {
 	Object_CerbUnit = nil,
 	Object_CarrierLaunchCamDummy = nil,
 	Object_HardinPilot = nil,
-
-	-- ODF Specific Variables
-	SCOUTODF = "ivscout11",
-	SERVODF = "ivserv",
-	CARGOODF = "ivcargo",
-	DRONEODF = "nadir",
 
 	-- Ints
 	Routine1State = 0,
@@ -154,10 +154,10 @@ function InitialSetup()
 	AllowRandomTracks(false);
 	
 	PreloadODF("cvscout");
-	PreloadODF("nadir");
-	PreloadODF("ivscout11");
-	PreloadODF("ivserv");
-	PreloadODF("ivcargo");
+	PreloadODF(DRONEODF);
+	PreloadODF(SCOUTODF);
+	PreloadODF(SERVODF);
+	PreloadODF(CARGOODF);
 	
 	local preloadAudio = {
 		"hardm1.wav",
@@ -367,24 +367,24 @@ function Routine1()
 			SetTeamNum(M.Object_WyndtEssex, 1);
 			SetObjectiveName(M.Object_WyndtEssex, "Wyndt-Essex");
 			
-			--M.Object_Hardin = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position3, "Hardin");
+			--M.Object_Hardin = BuildObjectAndLabel(SCOUTODF, 9, M.Position3, "Hardin");
 			--SetObjectiveName(M.Object_Hardin, "Hardin");
 			--
-			--M.Object_Scout1 = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position4, "Scout 1");
-			--M.Object_Scout2 = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position4, "Scout 2");
-			--M.Object_Scout3 = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position5, "Scout 3");
-			--M.Object_ServTruck1 = BuildObjectAndLabel(M.SERVODF, 1, M.Position5, "Service Truck 1");
+			--M.Object_Scout1 = BuildObjectAndLabel(SCOUTODF, 9, M.Position4, "Scout 1");
+			--M.Object_Scout2 = BuildObjectAndLabel(SCOUTODF, 9, M.Position4, "Scout 2");
+			--M.Object_Scout3 = BuildObjectAndLabel(SCOUTODF, 9, M.Position5, "Scout 3");
+			--M.Object_ServTruck1 = BuildObjectAndLabel(SERVODF, 1, M.Position5, "Service Truck 1");
 			
 			--SetGroup(M.Object_ServTruck1, 10); --moved gravey
 			
-			--M.Object_ServTruck2 = BuildObjectAndLabel(M.SERVODF, 9, M.Position1, "Service Truck 2");
-			--M.Object_Cargo1 = BuildObjectAndLabel(M.CARGOODF, 9, M.Position1, "Cargo 1");
+			--M.Object_ServTruck2 = BuildObjectAndLabel(SERVODF, 9, M.Position1, "Service Truck 2");
+			--M.Object_Cargo1 = BuildObjectAndLabel(CARGOODF, 9, M.Position1, "Cargo 1");
 			--SetCanSnipe(M.Object_Cargo1, 0); --Gravey
-			--M.Object_Cargo2 = BuildObjectAndLabel(M.CARGOODF, 9, M.Position1, "Cargo 2");
+			--M.Object_Cargo2 = BuildObjectAndLabel(CARGOODF, 9, M.Position1, "Cargo 2");
 			--SetCanSnipe(M.Object_Cargo2, 0); --Gravey
 			
 			
-			M.AIScouts = {M.Object_Scout1,M.Object_Scout2,M.Object_Scout3,M.Object_Hardin,M.Object_WyndtEssex};
+			--M.AIScouts = {M.Object_Scout1,M.Object_Scout2,M.Object_Scout3,M.Object_Hardin,M.Object_WyndtEssex};
 	
 			M.Routine1State = M.Routine1State + 1;
 		elseif (M.Routine1State == 6) then
@@ -435,20 +435,20 @@ function Routine1()
 				RemoveObject(M.Object_Stayput);
 				
 				
-				M.Object_Hardin = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position3, "Hardin");
+				M.Object_Hardin = BuildObjectAndLabel(SCOUTODF, 9, M.Position3, "Hardin");
 				SetObjectiveName(M.Object_Hardin, "Hardin");
 				
-				M.Object_Scout1 = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position4, "Scout 1");
-				M.Object_Scout2 = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position4, "Scout 2");
-				M.Object_Scout3 = BuildObjectAndLabel(M.SCOUTODF, 9, M.Position5, "Scout 3");
-				M.Object_ServTruck1 = BuildObjectAndLabel(M.SERVODF, 1, M.Position5, "Service Truck 1");
+				M.Object_Scout1 = BuildObjectAndLabel(SCOUTODF, 9, M.Position4, "Scout 1");
+				M.Object_Scout2 = BuildObjectAndLabel(SCOUTODF, 9, M.Position4, "Scout 2");
+				M.Object_Scout3 = BuildObjectAndLabel(SCOUTODF, 9, M.Position5, "Scout 3");
+				M.Object_ServTruck1 = BuildObjectAndLabel(SERVODF, 1, M.Position5, "Service Truck 1");
 				
 				
 				
-				M.Object_ServTruck2 = BuildObjectAndLabel(M.SERVODF, 9, M.Position1, "Service Truck 2");
-				M.Object_Cargo1 = BuildObjectAndLabel(M.CARGOODF, 9, "Cargo1Spawn", "Cargo 1");
+				M.Object_ServTruck2 = BuildObjectAndLabel(SERVODF, 9, M.Position1, "Service Truck 2");
+				M.Object_Cargo1 = BuildObjectAndLabel(CARGOODF, 9, "Cargo1Spawn", "Cargo 1");
 				SetCanSnipe(M.Object_Cargo1, 0); --Gravey
-				M.Object_Cargo2 = BuildObjectAndLabel(M.CARGOODF, 9, M.Position1, "Cargo 2");
+				M.Object_Cargo2 = BuildObjectAndLabel(CARGOODF, 9, M.Position1, "Cargo 2");
 				SetCanSnipe(M.Object_Cargo2, 0); --Gravey
 				Goto(M.Object_Cargo1, "convoy", 1);
 				
@@ -476,13 +476,13 @@ function Routine1()
 				Defend2(M.Object_WyndtEssex, M.Object_Cargo2, 1); --moved down from above. 
 				M.PlayerCanMove = true;
 				M.convoyWaitTillTime = GetTime() + 30;
-				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFirstSpawn", "Nadir 1"); --moved spawn time up so player doesn't see it POOF from thin air. 
+				M.Object_Nadir1 = BuildObjectAndLabel(DRONEODF, 2, "NadirFirstSpawn", "Nadir 1"); --moved spawn time up so player doesn't see it POOF from thin air. 
 				Attack(M.Object_Nadir1, M.Object_Cargo2, 1);
 				M.Routine1State = M.Routine1State + 1;
 			end
 		elseif (M.Routine1State == 14) then
 			if (GetTime() >= M.convoyWaitTillTime) then
-				--M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFirstSpawn", "Nadir 1"); -- updated path location was Position12 --Gravey
+				--M.Object_Nadir1 = BuildObjectAndLabel(DRONEODF, 2, "NadirFirstSpawn", "Nadir 1"); -- updated path location was Position12 --Gravey
 
 				SetPerceivedTeam(M.Object_Nadir1, 1);
 				--Attack(M.Object_Nadir1, M.Object_Cargo2, 1); moved to line 338
@@ -794,7 +794,7 @@ function Routine3()
 			
 			AudioMessage("mercury_04.wav");
 			
-			M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, Position12, "Nadir 1");
+			M.Object_Nadir1 = BuildObjectAndLabel(DRONEODF, 2, Position12, "Nadir 1");
 			
 			Attack(M.Object_Nadir1, M.Object_WyndtEssex, 1);
 			Goto(M.Object_WyndtEssex, "rod1", 1);
@@ -854,8 +854,8 @@ function Routine3()
 				
 				
 			elseif (GetDistance(M.Object_WyndtEssex, "FlankTarget") <= 150 and M.FlankSpawn == true) then --additional spawn logic for consistency.
-				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirFlank", "Nadir 2"); --changed from NaidrFirstSpawn to new OH SHIT momoent when they come around the corner
-				M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 3"); --This was an unintended change when I was adjusting path points. But it felt good. -Gravey
+				M.Object_Nadir1 = BuildObjectAndLabel(DRONEODF, 2, "NadirFlank", "Nadir 2"); --changed from NaidrFirstSpawn to new OH SHIT momoent when they come around the corner
+				M.Object_Nadir2 = BuildObjectAndLabel(DRONEODF, 2, "NadirAttackSpawn", "Nadir 3"); --This was an unintended change when I was adjusting path points. But it felt good. -Gravey
 				M.FlankSpawn = false;
 				Attack(M.Object_Nadir1, M.Object_WyndtEssex, 1);
 				Attack(M.Object_Nadir2, M.Object_Player, 1);
@@ -879,7 +879,7 @@ function Routine3()
 				
 				if(M.FirstWave == false) then
 				
-				M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "ReturnNadirSpawn", "Nadir 4");
+				M.Object_Nadir1 = BuildObjectAndLabel(DRONEODF, 2, "ReturnNadirSpawn", "Nadir 4");
 				Attack(M.Object_Nadir1, M.Object_Cargo1, 1);
 				
 				M.Attackwave = true;
@@ -905,7 +905,7 @@ function Routine3()
 		elseif (M.Routine3State == 6) then
 			
 			if(not IsAround(M.Object_Nadir1) and not IsAround(M.Object_Nadir2) and M.FirstWave == false)then -- added 2nd wave before x3 and x4 drone waves to feel more like a natural progression and keep the player engaged instead of waiting.
-				local Attackwave = {M.DRONEODF,M.DRONEODF};
+				local Attackwave = {DRONEODF,DRONEODF};
 				_SPUtils.BuildObjectSpread(Attackwave,2,"ReturnNadirSpawn","Nadir")
 				M.Object_Nadir1 = GetHandle("Nadir1");
 				M.Object_Nadir2 = GetHandle("Nadir2");
@@ -915,10 +915,10 @@ function Routine3()
 				end
 			if (M.ScoutsPassedToPlayer == true) then
 			
-				--M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 4");
-				--M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 5");
-				--M.Object_Nadir3 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 6");
-				local Attackwave = {M.DRONEODF,M.DRONEODF,M.DRONEODF};
+				--M.Object_Nadir1 = BuildObjectAndLabel(DRONEODF, 2, "NadirAttackSpawn", "Nadir 4");
+				--M.Object_Nadir2 = BuildObjectAndLabel(DRONEODF, 2, "NadirAttackSpawn", "Nadir 5");
+				--M.Object_Nadir3 = BuildObjectAndLabel(DRONEODF, 2, "NadirAttackSpawn", "Nadir 6");
+				local Attackwave = {DRONEODF,DRONEODF,DRONEODF};
 				_SPUtils.BuildObjectSpread(Attackwave,2,"NadirAttackSpawn","Nadir")
 				M.Object_Nadir1 = GetHandle("Nadir1");
 				M.Object_Nadir2 = GetHandle("Nadir2");
@@ -933,11 +933,11 @@ function Routine3()
 			if (not IsAround(M.Object_Nadir1) and not IsAround(M.Object_Nadir2) and not IsAround(M.Object_Nadir3)) then
 				M.ConvoyContinueToBase = true;
 
-				--M.Object_Nadir1 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 7");
-				--M.Object_Nadir2 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 8");
-				--M.Object_Nadir3 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 9");
-				--M.Object_Nadir4 = BuildObjectAndLabel(M.DRONEODF, 2, "NadirAttackSpawn", "Nadir 10");
-				local Attackwave = {M.DRONEODF,M.DRONEODF,M.DRONEODF,M.DRONEODF};
+				--M.Object_Nadir1 = BuildObjectAndLabel(DRONEODF, 2, "NadirAttackSpawn", "Nadir 7");
+				--M.Object_Nadir2 = BuildObjectAndLabel(DRONEODF, 2, "NadirAttackSpawn", "Nadir 8");
+				--M.Object_Nadir3 = BuildObjectAndLabel(DRONEODF, 2, "NadirAttackSpawn", "Nadir 9");
+				--M.Object_Nadir4 = BuildObjectAndLabel(DRONEODF, 2, "NadirAttackSpawn", "Nadir 10");
+				local Attackwave = {DRONEODF,DRONEODF,DRONEODF,DRONEODF};
 				_SPUtils.BuildObjectSpread(Attackwave,2,"NadirAttackSpawn","Nadir")
 				M.Object_Nadir1 = GetHandle("Nadir1");
 				M.Object_Nadir2 = GetHandle("Nadir2");
