@@ -43,6 +43,6 @@ function _PropHeightFix.AddObject(h)
 	end
 end
 
-print("Finished _PropHeightFix.lua");
+print("Loaded _PropHeightFix.lua");
 
 return _PropHeightFix;

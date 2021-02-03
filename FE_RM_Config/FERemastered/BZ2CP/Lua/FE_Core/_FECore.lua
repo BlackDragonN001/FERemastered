@@ -76,8 +76,18 @@ function _FECore.Update()
 
 end
 
+function PreOrdnanceHit(ShooterHandle, VictimHandle, OrdnanceTeam, OrdnanceODF)
+
+-- Call helper functions.
+
+	if ((not IsNetworkOn()) and (GetVarItemInt("network.session.ivar116") == 1)) and IsPlayer(ShooterHandle) and GetTarget(ShooterHandle) == VictimHandle then
+		Damage(VictimHandle, 10000); -- It's over 9000! -GBD
+	end
+
+end
+
 --]]
 
-print("Finished _FECore.lua");
+print("Loaded _FECore.lua");
 
 return _FECore;

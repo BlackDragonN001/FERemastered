@@ -386,6 +386,6 @@ function _MapReloader.InitialSetup()
 
 end
 
-print("Finished _MapReloader.lua");
+print("Loaded _MapReloader.lua");
 
 return _MapReloader;

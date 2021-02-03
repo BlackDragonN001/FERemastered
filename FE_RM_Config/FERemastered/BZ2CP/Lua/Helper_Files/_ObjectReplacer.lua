@@ -49,6 +49,6 @@ function _ObjectReplacer.InitialSetup()
 
 end
 
-print("Finished _ObjectReplacer.lua");
+print("Loaded _ObjectReplacer.lua");
 
 return _ObjectReplacer;
