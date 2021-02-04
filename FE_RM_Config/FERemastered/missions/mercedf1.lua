@@ -160,6 +160,11 @@ function InitialSetup()
 	
 	AllowRandomTracks(false);
 	
+	PreloadODF("edflogo");
+	PreloadODF("arktwo");
+	PreloadODF("core");
+	PreloadODF("ivcarr00_new");
+	
 	PreloadODF("cvscout");
 	PreloadODF(DRONEODF);
 	PreloadODF(SCOUTODF);
