@@ -45,7 +45,6 @@ local M = {
 	powerPlayerWaitTillTime = 0.0,
 	CerbWaitTillTime = 0.0,
 	Routine4WaitTillTime = 0.0,
-	HandleCounter = 0.0,
 
 	-- Handles
 	Object_Power1 = nil,
@@ -74,9 +73,6 @@ local M = {
 	Object_Carrier = nil,
 	Object_Player = nil,
 	Object_Stayput = nil,
-	Object_Scout1 = nil,
-	Object_Scout2 = nil,
-	Object_Scout3 = nil,
 	Object_ServTruck1 = nil,
 	Object_ServTruck2 = nil,
 	Object_Cargo1 = nil,
@@ -88,7 +84,6 @@ local M = {
 	Object_CerbUnit = nil,
 	Object_CarrierLaunchCamDummy = nil,
 	Object_HardinPilot = nil,
-	StoredHandle = nil,
 
 	-- Ints
 	Routine1State = 0,
@@ -246,6 +241,9 @@ end
 
 function Update()
 	_FECore.Update();
+	
+	M.Object_Player = GetPlayerHandle(1); -- Update and save player handle every turn, in top of Update(). Needs to be an Array of 15 if the mission ever becomes COOP. -GBD
+	
 	-- Handle Routines.
 	Routine1();
 	Routine2();
@@ -255,11 +253,30 @@ function Update()
 	Routine5();
 	Routine7(); --Controls scout f1 groups -Gravey
 	DamagePrevention();
-	UpdateShipHandles(); --Controls handle swapping by player "pick me up" -Gravey
 	DropshipTakeoff();-- added for effect -Gravey
 	PlayerControls(); --Gravey, thanks N1 and GBD
 	UpdateNadir2Target();
 	
+end
+
+-- Update the AI Scout's handle if the player hops into one. (If the previous ship exists, set it to replace the AIScouts variable we got into.
+function PreGetIn(curWorld, pilotHandle, emptyCraftHandle) 
+
+	if IsPlayer(pilotHandle) then 
+		for i = 1, 3 do
+			if(M.AIScouts[i] == emptyCraftHandle) then
+				local Hoppy = HoppedOutOf(pilotHandle);
+				
+				if(Hoppy ~= nil) then
+					M.AIScouts[i] = Hoppy
+				else
+					M.AIScouts[i] = nil;
+				end
+			end
+		end
+	end	
+
+    return 1;
 end
 
 -- Disable player controls while inside dropship.
@@ -281,35 +298,6 @@ function UpdateNadir2Target()
 		end
 		
 		M.Nadir2AttackUpdate = true;
-	end
-end
-
-function UpdateShipHandles()
---Gravey, created this to not have to rewrite end code for game breaking bug crashing mission script from ship variables having the same handle at once. 
-if (M.Object_Player ~= GetPlayerHandle(1)) then
-		
-		M.HandleCounter = M.HandleCounter + 1;
-		if(M.HandleCounter == 1) then --sets hop out of ship to stored handle
-			M.LastShipHandle = M.Object_Player;
-		end
-		
-		M.Object_Player = GetPlayerHandle(1); --updates M.Object_Player to what should be a pilot player handle first, then on the following iteration: the ship the player got into
-		
-		if(M.HandleCounter >= 2 ) then --if player has a new handle again then update new ship to old stored handle
-			
-			if(M.Object_Scout1 == GetPlayerHandle(1)) then
-				M.Object_Scout1 = M.LastShipHandle;
-				M.HandleCounter = 0;
-			elseif(M.Object_Scout2 == GetPlayerHandle(1)) then
-				M.Object_Scout2 = M.LastShipHandle;
-				M.HandleCounter = 0;
-			elseif(M.Object_Scout3 == GetPlayerHandle(1)) then
-				M.Object_Scout3 = M.LastShipHandle;
-				M.HandleCounter = 0;
-			else
-			M.HandleCounter = 0;
-			end
-		end
 	end
 end
 
@@ -396,9 +384,9 @@ function Routine1()
 			--M.Object_Hardin = BuildObjectAndLabel(SCOUTODF, 9, M.Position3, "Hardin");
 			--SetObjectiveName(M.Object_Hardin, "Hardin");
 			--
-			--M.Object_Scout1 = BuildObjectAndLabel(SCOUTODF, 9, M.Position4, "Scout 1");
-			--M.Object_Scout2 = BuildObjectAndLabel(SCOUTODF, 9, M.Position4, "Scout 2");
-			--M.Object_Scout3 = BuildObjectAndLabel(SCOUTODF, 9, M.Position5, "Scout 3");
+			--M.AIScouts[1] = BuildObjectAndLabel(SCOUTODF, 9, M.Position4, "Scout 1");
+			--M.AIScouts[2] = BuildObjectAndLabel(SCOUTODF, 9, M.Position4, "Scout 2");
+			--M.AIScouts[3] = BuildObjectAndLabel(SCOUTODF, 9, M.Position5, "Scout 3");
 			--M.Object_ServTruck1 = BuildObjectAndLabel(SERVODF, 1, M.Position5, "Service Truck 1");
 			
 			--SetGroup(M.Object_ServTruck1, 10); --moved gravey
@@ -409,8 +397,6 @@ function Routine1()
 			--M.Object_Cargo2 = BuildObjectAndLabel(CARGOODF, 9, M.Position1, "Cargo 2");
 			--SetCanSnipe(M.Object_Cargo2, 0); --Gravey
 			
-			
-			--M.AIScouts = {M.Object_Scout1,M.Object_Scout2,M.Object_Scout3,M.Object_Hardin,M.Object_WyndtEssex};
 	
 			M.Routine1State = M.Routine1State + 1;
 		elseif (M.Routine1State == 6) then
@@ -464,9 +450,9 @@ function Routine1()
 				M.Object_Hardin = BuildObjectAndLabel(SCOUTODF, 9, M.Position3, "Hardin");
 				SetObjectiveName(M.Object_Hardin, "Hardin");
 				
-				M.Object_Scout1 = BuildObjectAndLabel(SCOUTODF, 9, M.Position4, "Scout 1");
-				M.Object_Scout2 = BuildObjectAndLabel(SCOUTODF, 9, M.Position4, "Scout 2");
-				M.Object_Scout3 = BuildObjectAndLabel(SCOUTODF, 9, M.Position5, "Scout 3");
+				M.AIScouts[1] = BuildObjectAndLabel(SCOUTODF, 9, M.Position4, "Scout 1");
+				M.AIScouts[2] = BuildObjectAndLabel(SCOUTODF, 9, M.Position4, "Scout 2");
+				M.AIScouts[3] = BuildObjectAndLabel(SCOUTODF, 9, M.Position5, "Scout 3");
 				M.Object_ServTruck1 = BuildObjectAndLabel(SERVODF, 1, M.Position5, "Service Truck 1");
 				
 				
@@ -478,18 +464,14 @@ function Routine1()
 				SetCanSnipe(M.Object_Cargo2, 0); --Gravey
 				Goto(M.Object_Cargo1, "convoy", 1);
 				
-				M.AIScouts = {M.Object_Scout1,M.Object_Scout2,M.Object_Scout3,M.Object_Hardin,M.Object_WyndtEssex};
-				
-				
-				
-				Defend2(M.Object_Scout2, M.Object_Scout1, 1); --changed to Defend2 
+				Defend2(M.AIScouts[2], M.AIScouts[1], 1); --changed to Defend2 
 				--Defend2(M.Object_WyndtEssex, M.Object_Cargo2, 1); moved to prevent Wynd from climbing the walls inside the dropship.
 				LookAt(M.Object_WyndtEssex, M.Object_Cargo2, 1); --added to turn wynd to face the exit before moving. 
 				Follow(M.Object_ServTruck1, M.Object_Cargo2, 1);
 				Follow(M.Object_ServTruck2, M.Object_Cargo1, 1);
 				Follow(M.Object_Hardin, M.Object_Cargo1, 1);
-				Follow(M.Object_Scout1, M.Object_Cargo1, 1);
-				Defend2(M.Object_Scout3, M.Object_Hardin, 1); --changed to Defend2 
+				Follow(M.AIScouts[1], M.Object_Cargo1, 1);
+				Defend2(M.AIScouts[3], M.Object_Hardin, 1); --changed to Defend2 
 
 				M.EnableFailCheck = true;
 				M.convoyWaitTillTime = GetTime() + 5;
@@ -524,8 +506,8 @@ function Routine1()
 				SetPerceivedTeam(M.Object_Nadir1, 2);
 
 				if (GetDistance(M.Object_Cargo1, "convoy_halt") <= 50 and GetDistance(M.Object_Cargo1, "convoy_halt") >=40) then
-					
-					for i=1,4 do --created array logic to prevent scouts from playing bumper scouts. -Gravey
+					Goto(M.Object_Hardin, GetPositionNear("convoy_halt",0, 5, 10), 1);
+					for i=1,3 do --created array logic to prevent scouts from playing bumper scouts. -Gravey
 						Goto(M.AIScouts[i], GetPositionNear("convoy_halt",0, 5, 10), 1);
 					end
 				end	
@@ -617,14 +599,14 @@ function Routine1()
 				
 				Ally(2,9);
 				
-				SetTeamNum(M.Object_Scout1, 9);
-				SetTeamNum(M.Object_Scout2, 9);
-				SetTeamNum(M.Object_Scout3, 9);
+				SetTeamNum(M.AIScouts[1], 9);
+				SetTeamNum(M.AIScouts[2], 9);
+				SetTeamNum(M.AIScouts[3], 9);
 				SetTeamNum(M.Object_ServTruck1, 9);--added to give trucks back to t9 so player isn't left with half their units. --Gravey
 				SetTeamNum(M.Object_ServTruck2, 9);--added to give trucks back to t9 so player isn't left with half their units.
-				Retreat(M.Object_Scout1, "hardin", 1);
-				Retreat(M.Object_Scout2, "hardin", 1);
-				Retreat(M.Object_Scout3, "hardin", 1);
+				Retreat(M.AIScouts[1], "hardin", 1);
+				Retreat(M.AIScouts[2], "hardin", 1);
+				Retreat(M.AIScouts[3], "hardin", 1);
 				Retreat(M.Object_ServTruck1, M.Object_ServiceBay, 1); --added to send trucks to base. --Gravey
 				Retreat(M.Object_ServTruck2, M.Object_ServiceBay, 1);
 				
@@ -648,9 +630,9 @@ function Routine1()
 		elseif (M.Routine1State == 24) then
 			if (GetDistance(M.Object_Hardin, M.Object_Player) <= 200) then
 				Goto(M.Object_WyndtEssex, M.Object_ServiceBay, 1);
-				Goto(M.Object_Scout1, M.Object_ServiceBay, 1);
-				Goto(M.Object_Scout2, M.Object_ServiceBay, 1);
-				Goto(M.Object_Scout3, M.Object_ServiceBay, 1);
+				Goto(M.AIScouts[1], M.Object_ServiceBay, 1);
+				Goto(M.AIScouts[2], M.Object_ServiceBay, 1);
+				Goto(M.AIScouts[3], M.Object_ServiceBay, 1);
 				
 				FindHardin = true; -- Flag this here. -GBD
 				HopOut(M.Object_Hardin);
@@ -678,9 +660,9 @@ function Routine1()
 
 				AudioMessage("mercury_08a.wav");
 
-				HopOut(M.Object_Scout1);
-				HopOut(M.Object_Scout2);
-				HopOut(M.Object_Scout3);
+				HopOut(M.AIScouts[1]);
+				HopOut(M.AIScouts[2]);
+				HopOut(M.AIScouts[3]);
 
 				M.convoyWaitTillTime = GetTime() + 3;
 
@@ -747,12 +729,12 @@ end
 function Routine2()
 	if (M.RunPowerAIStateMachine) then
 		if (M.Routine2State == 0) then
-			Goto(M.Object_Scout2, "scout1", 1);
-			Goto(M.Object_Scout1, "scout1", 1);
+			Goto(M.AIScouts[2], "scout1", 1);
+			Goto(M.AIScouts[1], "scout1", 1);
 			
 			M.Routine2State = M.Routine2State + 1;
 		elseif (M.Routine2State == 1) then
-			if (GetDistance(M.Object_Scout1, "red_goto_power") <= 20) then
+			if (GetDistance(M.AIScouts[1], "red_goto_power") <= 20) then
 				M.Routine2Timer = GetTime() + 5;
 
 				M.Routine2State = M.Routine2State + 1;
@@ -760,26 +742,26 @@ function Routine2()
 		elseif (M.Routine2State == 2) then
 			if (GetTime() >= M.Routine2Timer) then
 				RemoveObject(M.Object_Gun9);
-				Attack(M.Object_Scout2, M.Object_Power7, 1);
-				Attack(M.Object_Scout1, M.Object_Power7, 1);
+				Attack(M.AIScouts[2], M.Object_Power7, 1);
+				Attack(M.AIScouts[1], M.Object_Power7, 1);
 
 				M.Routine2State = M.Routine2State + 1;
 			end
 		elseif (M.Routine2State == 3) then
 			if (not IsAround(M.Object_Power7)) then
-				SetCurAmmo(M.Object_Scout2, 800);
-				SetCurAmmo(M.Object_Scout1, 800);
-				Attack(M.Object_Scout2, M.Object_Power6, 1);
-				Attack(M.Object_Scout1, M.Object_Power6, 1);
+				SetCurAmmo(M.AIScouts[2], 800);
+				SetCurAmmo(M.AIScouts[1], 800);
+				Attack(M.AIScouts[2], M.Object_Power6, 1);
+				Attack(M.AIScouts[1], M.Object_Power6, 1);
 
 				M.Routine2State = M.Routine2State + 1;
 			end
 		elseif (M.Routine2State == 4) then
 			if (not IsAround(M.Object_Power6)) then
-				SetCurAmmo(M.Object_Scout2, 800);
-				SetCurAmmo(M.Object_Scout1, 800);
-				Attack(M.Object_Scout2, M.Object_Power5, 1);
-				Attack(M.Object_Scout1, M.Object_Power5, 1);
+				SetCurAmmo(M.AIScouts[2], 800);
+				SetCurAmmo(M.AIScouts[1], 800);
+				Attack(M.AIScouts[2], M.Object_Power5, 1);
+				Attack(M.AIScouts[1], M.Object_Power5, 1);
 
 				M.Routine2State = M.Routine2State + 1;
 			end
@@ -787,8 +769,8 @@ function Routine2()
 			if (not IsAround(M.Object_Power5)) then
 				SetTeamNum(M.Object_Radar1, 0);
 
-				Goto(M.Object_Scout2, "scout3", 0);
-				Goto(M.Object_Scout1, "scout3", 0);
+				Goto(M.AIScouts[2], "scout3", 0);
+				Goto(M.AIScouts[1], "scout3", 0);
 
 				M.Routine2State = M.Routine2State + 1;
 			end
@@ -895,8 +877,8 @@ function Routine3()
 				M.Routine7Enable = true;		--add custom routine bool true here.
 				
 				
-				SetTeamNum(M.Object_Scout3, 1);
-				SetGroup(M.Object_Scout3, 0);
+				SetTeamNum(M.AIScouts[3], 1);
+				SetGroup(M.AIScouts[3], 0);
 				
 				if(M.FirstWave == false) then
 				
@@ -908,8 +890,8 @@ function Routine3()
 				
 				
 
-				--Follow(M.Object_Scout3, M.Object_Player, 0); --Disabled, units shouldn't be given orders to do things before being handed to player. --Gravey
-				Stop(M.Object_Scout3, 0); --added so F1 scout is given to player
+				--Follow(M.AIScouts[3], M.Object_Player, 0); --Disabled, units shouldn't be given orders to do things before being handed to player. --Gravey
+				Stop(M.AIScouts[3], 0); --added so F1 scout is given to player
 				SetTeamNum(M.Object_ServTruck2, 1);
 				SetGroup(M.Object_ServTruck1, 3);
 				SetGroup(M.Object_ServTruck2, 3);
@@ -1100,13 +1082,13 @@ end
 function Routine7()  
 	if (M.Routine7Enable == true) then
 	
-		if(GetDistance(M.Object_Scout1, "convoy_halt") <= 100 and (GetDistance(M.Object_Scout2, "convoy_halt") <= 100) and M.Routine7State < 1) then --added condition so player cannot break their return path early --Gravey
-			SetTeamNum(M.Object_Scout1, 1);
-			SetTeamNum(M.Object_Scout2, 1);
-			SetGroup(M.Object_Scout1, 0);
-			SetGroup(M.Object_Scout2, 0);
-			Goto(M.Object_Scout2,"convoy_halt", 0);
-			Goto(M.Object_Scout1,"convoy_halt", 0);
+		if(GetDistance(M.AIScouts[1], "convoy_halt") <= 100 and (GetDistance(M.AIScouts[2], "convoy_halt") <= 100) and M.Routine7State < 1) then --added condition so player cannot break their return path early --Gravey
+			SetTeamNum(M.AIScouts[1], 1);
+			SetTeamNum(M.AIScouts[2], 1);
+			SetGroup(M.AIScouts[1], 0);
+			SetGroup(M.AIScouts[2], 0);
+			Goto(M.AIScouts[2],"convoy_halt", 0);
+			Goto(M.AIScouts[1],"convoy_halt", 0);
 			M.Routine7State = M.Routine7State + 1;
 			M.ScoutsPassedToPlayer = true;
 		end
