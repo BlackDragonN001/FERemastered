@@ -10,6 +10,7 @@ local _SPUtils = require("_SPUtils"); --spawn clustering adjustments via functio
 
 local Position11 = SetVector(-674, 1000, -783);
 local Position12 = SetVector(0, 0, 100);
+local Position13 = SetVector(-674, 80, -783);
 
 	-- ODF Specific Variables
 local SCOUTODF = "ivscout11";
@@ -353,7 +354,6 @@ function Routine1()
 			
 			M.Routine1State = M.Routine1State + 1;
 		elseif (M.Routine1State == 5) then
-			--M.Object_CarrierLaunchCamDummy = BuildObjectAndLabel("dummy", 2, Position11, "Dummy 1");
 			
 			--SetGroup(M.Object_WyndtEssex, 10); --moved gravey
 			SetTeamNum(M.Object_WyndtEssex, 1);
@@ -959,10 +959,13 @@ function Routine4()
 			if (CameraPath("end", 4000, 1000, M.Object_Carrier)) then
 				M.Routine4WaitTillTime = GetTime() + 27;
 				
+				SetPosition(M.Object_Corbernav, SetVector(0, 0, 0)); -- Center of map, used for camera position offset below, as per original mission behavior. -GBD
+				M.Object_CarrierLaunchCamDummy = BuildObjectAndLabel("dummy", 2, Position11, "Dummy 1");
+				
 				M.Routine4State = M.Routine4State + 1;
 			end
 		elseif M.Routine4State == 2 then
-			SetCameraPosition(GetPosition(M.Object_CarrierLaunchCamDummy), SetVector(0,1,0));
+			CameraObject(M.Object_Corbernav, Position13, M.Object_CarrierLaunchCamDummy);
 			
 			if (GetTime() >= M.Routine4WaitTillTime) then
 				CameraFinish();
