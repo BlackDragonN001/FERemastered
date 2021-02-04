@@ -708,7 +708,7 @@ function Routine1()
 			if (GetTime() >= M.convoyWaitTillTime) then
 				StopEarthQuake();
 				SucceedMission(0, "winmerc.des");
-				M.MissionState = M.MissionState + 1;
+				M.Routine1State = M.Routine1State + 1;
 			end
 		end
 	end
