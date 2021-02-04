@@ -212,10 +212,19 @@ end
 
 -- New method for building and labelling units. - AI_Unit.
 function BuildObjectAndLabel(handle, team, pos, label) 
-    local h = BuildObject(handle, team, pos);
 
-    if (label ~= nil) then
-        SetLabel(h, label);
+	local h = GetHandle(label);
+
+	if(h == nil) then
+		if type(pos) == "string" then
+			h = BuildObject(handle, team, GetPositionNear(GetPosition(pos), 5.0, 10.0));
+		else
+			h = BuildObject(handle, team, pos);
+		end
+
+		if (label ~= nil) then
+			SetLabel(h, label);
+		end
     end
 
     return h;
