@@ -80,6 +80,8 @@ finishColor = "255 200 10 222"
 startRadius = 0.5
 finishRadius = 0.4
 animateTime = 3.0
+BottomInteractsWithTerrain = false
+useTerrainColor = 0.9
 
 [Ring]
 simulateBase = "sim_null"
@@ -87,7 +89,7 @@ lifeTime = 10.0
 renderBase = "draw_planar"
 textureName = "crater3b.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "20 20 20 255"
+startColor = "0 0 0 255"
 finishColor = "0 0 0 0"
 startRadius = 10.0
 finishRadius = 10.0
@@ -123,6 +125,7 @@ finishColor = "255 100 0 0"
 startRadius = 2.0
 finishRadius = 8.0
 animateTime = 1.2
+useTerrainColor = 0.9
 
 [Light]
 simulateBase = "sim_null"
@@ -163,3 +166,5 @@ finishColor = "220 100 0 0"
 startRadius = 6.0
 finishRadius = 25.0
 animateTime = 1.5
+BottomInteractsWithTerrain = false
+useTerrainColor = 0.9
