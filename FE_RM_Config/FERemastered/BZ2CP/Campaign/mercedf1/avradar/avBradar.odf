@@ -25,6 +25,25 @@ lightName1 = "o_lblue_nf"
 
 [BuildingClass]
 soundAmbient = "ipgen01.wav"
+tunnelCount = 3
+
+tunnel01X0 = 1.5
+tunnel01Z0 = 2.0
+tunnel01DX = 2
+tunnel01DZ = 4
+tunnel01Edge = "wwww"
+
+tunnel02X0 = 4
+tunnel02Z0 = 3.0
+tunnel02DX = 2
+tunnel02DZ = 2
+tunnel02Edge = "wwww"
+
+tunnel03X0 = 0
+tunnel03Z0 = 0
+tunnel03DX = 8
+tunnel03DZ = 8
+tunnel03Edge = "ffff"
 
 [PoweredBuildingClass]
 detectRange = 50
