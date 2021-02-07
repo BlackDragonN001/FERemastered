@@ -48,7 +48,7 @@ lightName2 = "o_red_nf"
 
 effectHard1 = "hp_emit_1"
 effectName1 = "emit_blueblink"
-effectFlags1 = "447" //447 powered  479 unpowered
+effectFlags1 = 2147483583 // only when powered.
 
 /////// TURRETS ////////////////////
 turretCount = 4

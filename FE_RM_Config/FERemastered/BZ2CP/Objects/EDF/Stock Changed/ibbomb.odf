@@ -38,16 +38,16 @@ lightName1 = "o_lblue_nf"
 
 effectHard1 = "hp_emit_1"
 effectName1 = "emit_greenblink"
-effectFlags1 = "447" //447 powered  479 unpowered
+effectFlags1 = 2147483583 // only when powered.
 effectHard2 = "hp_emit_2"
 effectName2 = "emit_redblink"
-effectFlags2 = "447" //447 powered  479 unpowered
+effectFlags2 = 2147483583 // only when powered.
 effectHard3 = "hp_emit_3"
 effectName3 = "emit_redblink"
-effectFlags3 = "447" //447 powered  479 unpowered
+effectFlags3 = 2147483583 // only when powered.
 effectHard4 = "hp_emit_4"
 effectName4 = "emit_greenblink"
-effectFlags4 = "447" //447 powered  479 unpowered
+effectFlags4 = 2147483583 // only when powered.
 
 [BuildingClass]
 soundAmbient = "iabomb01.wav"

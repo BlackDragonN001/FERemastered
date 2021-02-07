@@ -30,10 +30,10 @@ provideName3 = "base"
 ///////// LIGHTS & EFFECTS /////////
 effectHard1 = "hp_emit_1"
 effectName1 = "emit_redblink"
-effectFlags1 = "447" //447 powered  479 unpowered
+effectFlags1 = 2147483583 // only when powered.
 effectHard2 = "hp_emit_2"
 effectName2 = "emit_redblink"
-effectFlags2 = "447" //447 powered  479 unpowered
+effectFlags2 = 2147483583 // only when powered.
 
 [BuildingClass]
 soundAmbient = "abbarre0.wav"
