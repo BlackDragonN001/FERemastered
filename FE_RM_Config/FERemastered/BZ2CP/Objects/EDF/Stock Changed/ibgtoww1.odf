@@ -1,0 +1,62 @@
+[GameObjectClass]
+geometryName = "ibgtoww00.fbx"
+collisionName = "ibgtoww00.fbx"
+classLabel = "turret"
+collisionRadius = 10.0
+scrapCost = 50
+powerCost = 0
+scrapValue = 3
+maxHealth = 500000
+maxAmmo = 10000 // 0 is *not* treated as infinite ammo!
+unitName = "Gun Tower"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+armorClass = H
+ownsTerrain = 1
+
+/////// REQUIREMENTS ///////////////
+requireCount = 1
+requireName1 = "ibcbun"
+requireText1 = "Build Comm Bunk"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "ibgtoww1"
+provideName2 = "VIRTUAL_CLASS_GUNTOWER"
+provideName3 = "VIRTUAL_CLASS_ASSAULTTOWER"
+provideName4 = "defender"
+
+/////// weapons ////////////////////
+weaponMask = 00011
+weaponHard1 = "hp_cannon_1"
+recoilName1 = "recoil_r"
+weaponName1 = "gplasma_c"
+weaponAssault1 = 0
+
+////////////////////////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotwhite"
+
+turretCount = 2
+turretName1 = "turret_y_1"
+turretName2 = "turret_x_1"
+
+[BuildingClass]
+soundAmbient = "igtow01.wav"
+
+[CraftClass]
+rangeScan = 200
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 1.5
+steerFactor = 0.5
+engageRange = 200
+MinWeaponPitch = 0.75 // For turretcraft/turrettank (i.e. GunTower/GunSpire/turret)
+
+[TurretCraftClass]
+omegaTurret = 2.0
+detectRange = 200

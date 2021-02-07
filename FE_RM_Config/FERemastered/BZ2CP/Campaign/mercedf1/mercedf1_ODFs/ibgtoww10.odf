@@ -1,6 +1,7 @@
 [GameObjectClass]
 classLabel = "ibgtoww1"
 geometryName = "ibatow00.fbx"
+collisionName = "ibatow00.fbx"
 powerCost = 1
 
 maxHealth = 8000
@@ -22,6 +23,6 @@ effectFlags1 = 2147483583 // only when powered.
 soundAmbient = "igtow01.wav"
 
 [CraftClass]
-//MinWeaponPitch = 1.0 // Re-Enable this if the GT has trouble hitting things near it. -GBD
+MinWeaponPitch = 1.0
 
 [TurretCraftClass]
