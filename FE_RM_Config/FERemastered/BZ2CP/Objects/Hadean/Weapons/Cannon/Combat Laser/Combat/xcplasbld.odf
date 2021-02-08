@@ -23,32 +23,33 @@ kickVeloc = 1.0
 
 particleTypes = 7
 
-particleClass1 = "xcplascar.smoke"
+particleClass1 = "xcplasbld.smoke"
 particleCount1 = 5
 particleVeloc1 = "4.0 4.0 4.0"
-particleBias1 = "0.0 0.5 0.0"
+particlePosVar1 = "1.0 0.0 1.0"
+particleBias1 = "0.0 2.0 0.0"
 
-particleClass2 = "xcplascar.light"
+particleClass2 = "xcplasbld.light"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
 
-particleClass3 = "xcplascar.splat"
+particleClass3 = "xcplasbld.splat"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
-particleClass4 = "xcplascar.flame"
+particleClass4 = "xcplasbld.flame"
 particleCount4 = 1
 particleVeloc4 = "0.0 1.0 0.0"
 particleBias4 = "0.0 0.0 0.0"
 
-particleClass5 = "xcplascar.chunks"
+particleClass5 = "xcplasbld.chunks"
 particleCount5 = 20
 particleVeloc5 = "10.0 10.0.0 10.0"
 particleBias5 = "3.0 3.0 3.0"
 particlePosVar5 = "2.0 2.0 2.0"
 particleInherit5 = "1.0 1.0 1.0"
 
-particleClass6 = "xcplascar.puff"
+particleClass6 = "xcplasbld.puff"
 particleCount6 = 20
 particleVeloc6 = "30.0 30.0.0 30.0"
 particleBias6 = "0.0 3.0 0.0"
@@ -69,9 +70,10 @@ finishColor = "237 113 82 0"
 startRadius = 0.7
 finishRadius = 4.0
 animateTime = 2.5
+BottomInteractsWithTerrain = false
 
 [Light]
-simulateBase = "sim_smoke"
+simulateBase = "sim_null"
 lifeTime = 0.7
 renderBase = "draw_light"
 startColor = "255 128 64 3000"
@@ -85,7 +87,7 @@ attenuateQuadratic = 15.0
 lensFlare = 0
 
 [Splat]
-simulateBase = "sim_smoke"
+simulateBase = "sim_null"
 lifeTime = 1.0
 renderBase = "draw_twirl"
 textureName = "ring.tga"
@@ -99,20 +101,22 @@ BottomInteractsWithTerrain = false
 
 [Flame]
 simulateBase = "sim_smoke"
-lifeTime = 0.3
+lifeTime = 1.0
 renderBase = "draw_twirl_trail"
 textureName = "flame2.tga"
 textureBlend = "one one modulate"
 startColor = "239 218 80 100"
 finishColor = "150 20 0 0"
 startRadius = 1.5
-finishRadius = 3.1
-animateTime = 0.3
+finishRadius = 3.0
+animateTime = 0.8
 rotationRate = 10.0
 emitDelay = 0.03
-emitVelocity = "2.0 2.0 2.0"
+emitVelocity = "0.0 2.5 0.0"
 emitVariance = "2.0 2.0 2.0"
-emitLife = 1.2
+emitPosVariance = "1.0 0.0 1.0"
+emitLife = 0.8
+BottomInteractsWithTerrain = false
 
 [Chunks]
 simulateBase = "sim_ember"
@@ -138,3 +142,4 @@ finishColor = "255 0 0 0"
 startRadius = 0.2
 finishRadius = 0.1
 animateTime = 1.4
+BottomInteractsWithTerrain = false
