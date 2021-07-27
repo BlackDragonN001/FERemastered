@@ -7,8 +7,13 @@ Width = 4096.0
 Depth = 4096.0
 Height = 5.0
 Tile = 1
-Color = "212 184 217 255"
+Color = "255 255 255 255"
 
+[NormalView]
+DiffuseColor = "255 255 255"
+SpecularColor = "10 10 10"
+SpecularPower = 1024.0
+ 
 [World]
 MusicTrack1=6
 MusicTrack2=7
