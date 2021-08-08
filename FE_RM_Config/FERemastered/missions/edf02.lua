@@ -240,13 +240,13 @@ function HandleMainState(R, STATE)
 		Follow(escort2, M.Recycler, 0);
 		Follow(escort3, M.Recycler, 0);
 		Follow(escort4, M.Recycler, 0);
-		SetGroup(escort1, 2);	
-		SetGroup(escort2, 1);	
-		SetGroup(escort3, 1);
-		SetGroup(escort4, 1);
+		SetBestGroup(escort1);
+		SetBestGroup(escort2);	
+		SetBestGroup(escort3);
+		SetBestGroup(escort4);
 		SetSkill(BuildObjectAndLabel("evscout_e02", 5, "Enemy1", "Hadean Scout 1"), 3);
 		SetSkill(BuildObjectAndLabel("evscout_e02", 5, "Enemy2", "Hadean Scout 2"), 3);
-		SetGroup(M.Recycler, 0);
+		SetBestGroup(M.Recycler);
 		SetScrap(1, 30);
 		Advance(R, 3.0);
 	elseif STATE == 5 then
