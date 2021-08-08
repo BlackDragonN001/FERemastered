@@ -383,7 +383,7 @@ function HandleMainState(R, STATE)
 	elseif STATE == 28 then
 		if GetDistance(M.EngineerTransport, M.MegaPower) < 150 then
 			SetTeamNum(M.MegaPower, 1);
-			M.Engineer = BuildObjectAndLabel("ispilo", 1, GetPosition(M.EngineerTransport), "Engineer Transport");
+			M.Engineer = BuildObjectAndLabel("ispilo", 1, GetPosition(M.EngineerTransport), "Engineer Pilot");
 			Goto(M.Engineer, M.MegaPower, 1);
 			Advance(R, 25.0);--30.0
 		end
