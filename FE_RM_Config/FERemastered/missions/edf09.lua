@@ -210,7 +210,7 @@ function Routine2()
 				M.Routine2State = M.Routine2State + 1;
 			end
 		elseif M.Routine2State == 3 then
-			if (GetDistance(M.Recycler, "recy_breakdown") < 25) then
+			if (GetDistance(M.Recycler, "recy_breakdown") < 35) then
 				Attack(BuildObject("cvscout", 5, Position3), M.Recycler, 1);
 				Stop(M.Recycler, 1);
 				AudioMessage("edf09t.wav");
