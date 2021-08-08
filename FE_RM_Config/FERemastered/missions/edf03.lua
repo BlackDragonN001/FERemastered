@@ -416,14 +416,14 @@ function HandleMainState(R, STATE)
 		Advance(R, 120.0);
 	elseif STATE == 32 then
 		AudioMessage("edf0316a.wav");	--Cervelli:"Incoming energy beam..."
-		BuildObjectAndLabel("kaboom", 2, "deploy");
-		BuildObjectAndLabel("kaboom", 2, "deploy");
-		BuildObjectAndLabel("kaboom", 2, "deploy");
+		BuildObjectAndLabel("kaboom", 2, "deploy", "Kaboom1");
+		BuildObjectAndLabel("kaboom", 2, "deploy", "Kaboom2");
+		BuildObjectAndLabel("kaboom", 2, "deploy", "Kaboom3");
 		Advance(R, 28.0);
 	elseif STATE == 33 then
 		M.BaseDestroyed = true;
 		ClearObjectives();
-		BuildObjectAndLabel("g3beamd", 2, "deploy");
+		BuildObjectAndLabel("g3beamd", 2, "deploy", "g3beamd");
 		AudioMessage("edf0317.wav");	--Stewart:"<PAIN> We've just been hit..."
 		AddObjective("edf0313.otf", "white");
 		M.CutsceneNav = BuildObjectAndLabel("ibnav", 1, "deploy", "Cutscene Nav");
@@ -476,10 +476,10 @@ function HandleDinos(R, STATE)
 		end
 		Advance(R, 15.0);
 	elseif STATE == 2 then
-		Patrol(BuildObjectAndLabel("raptor01", 9, "dino1"), "dino1", 1);
+		Patrol(BuildObjectAndLabel("raptor01", 9, "dino1", "Raptor 1"), "dino1", 1);
 		Advance(R, 15.0);
 	elseif STATE == 3 then
-		Patrol(BuildObjectAndLabel("raptor01", 9, "dino1"), "dino1", 1);
+		Patrol(BuildObjectAndLabel("raptor01", 9, "dino1", "Raptor 2"), "dino1", 1);
 		--changed Cerb units from team 2 to team 3, since they
 		--were driving across the map and attacking player's base!
 		Patrol(BuildObjectAndLabel("cvhtank", 3, "cerberi1", "Cerberi 1"), "cerberi1", 1);
