@@ -384,8 +384,10 @@ function Routine1(R, STATE)
 		M.RepairPercentage = M.RepairPercentage + 4;
 		M.RepairTimeLeft = M.RepairTimeLeft - 2;
 		ClearObjectives();
-		AddObjective(string.format("fcxx13.otf", M.RepairPercentage), "white");
-		AddObjective(string.format("fcxx14.otf", M.RepairTimeLeft), "white");
+		local ObjectiveA = LoadFile("fcxx13.otf");
+		AddObjective(string.format(ObjectiveA, M.RepairPercentage), "white");
+		local ObjectiveB = LoadFile("fcxx14.otf");
+		AddObjective(string.format(ObjectiveB, M.RepairTimeLeft), "white");
 		if M.RepairTimeLeft <= 0 then
 			SetScrap(1, 40);
 			SetCurAmmo(M.HadeanTech, 50);
