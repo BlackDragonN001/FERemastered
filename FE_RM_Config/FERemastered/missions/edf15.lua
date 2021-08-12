@@ -458,7 +458,7 @@ function Routine1()
 			if GetDistance(M.Player, M.Position5) < 150 then
 				ChangeSide();
 				AudioMessage("edf15hadean.wav");	--Thanatos:"Welcome Major Corber..."
-				SucceedMission(GetTime() + 18, "edf15hadean.txt");
+				SucceedMission(GetTime() + 18, "edf15had.txt");
 				M.Routine1State = M.Routine1State + 1;
 			elseif GetDistance(M.Player, "tunnel") < 150 then
 				AudioMessage("edf15edf.wav");	--Hardin:"Welcome back Joseph..."
