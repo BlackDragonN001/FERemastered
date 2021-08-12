@@ -249,28 +249,28 @@ function UpgradeUnitWeapons(handle)
 
 	-- Handle different upgrades per unit.
 	if (unit == "ivtank.odf") then
-		GiveWeapon(unit, "gspstab_c");
+		GiveWeapon(handle, "gspstab_c");
 	end
 
 	if (unit == "ivscout.odf") then
-		GiveWeapon(unit, "gchain_c");
+		GiveWeapon(handle, "gchain_c");
 	end
 
 	if (unit == "ivatank.odf") then
-		GiveWeapon(unit, "gblast_a");
+		GiveWeapon(handle, "gblast_a");
 	end
 
 	if (unit == "fvtank.odf" or unit == "fvscout.odf") then
-		GiveWeapon(unit, "garc_c");
-		GiveWeapon(unit, "gshield");
+		GiveWeapon(handle, "garc_c");
+		GiveWeapon(handle, "gshield");
 	end
 
 	if (unit == "fvsent.odf") then
-		GiveWeapon(unit, "gdeflect");
+		GiveWeapon(handle, "gdeflect");
 	end
 
 	if (unit == "fvarch.odf") then
-		GiveWeapon(unit, "gabsorb");
+		GiveWeapon(handle, "gabsorb");
 	end
 end
 
