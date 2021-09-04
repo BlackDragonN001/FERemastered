@@ -61,7 +61,7 @@ local M = {
 	Variable5 = 0,	--# of Lancers
 	Variable6 = 0,	--# of Maulers
 	Variable10 = 0,		--Routine4 loop counter
-	Variable11 = 0,		--if player was warned about too many unspent points in the reinforcements GUI
+	Variable11 = 0,		--if player was warned about too many unspent points in the reinforcements GUI and wants to reselect
 	ScionSpireCount = 0,
 --Vectors
 	Position9 = SetVector( 0,0,0 ),	--Portal spawn location (set later)
@@ -448,45 +448,65 @@ function Routine4()
 			end
 		elseif M.Routine4State == 1 then
 			TeleportOut(M.HadeanBuilder);
-			IFace_Exec("fc03i01.cfg");
 			M.Routine4State = M.Routine4State + 1;
 			M.Routine4Timer = GetTime() + 5;
-		elseif M.Routine4State == 2 then	--LOC_234
-			IFace_SetInteger("mission.var1", 0);
-			IFace_SetInteger("mission.var2", 0);
-			IFace_SetInteger("mission.var3", 0);
-			IFace_SetInteger("mission.var4", 0);
+		elseif M.Routine4State == 2 then
+			if (CameraReady()) then
+				local pos = GetPosition(M.Player);
+				local ang = GetFront(M.Player);
+				pos.y = pos.y + 3.0;
+				SetCameraPosition(pos, ang);
+				M.Routine4State = M.Routine4State + 1;
+			end
+		elseif M.Routine4State == 3 then	--LOC_234
+			if M.Variable11 == 0 then -- First time
+				IFace_EnterMenuMode();
+				IFace_Exec("fc03i01.cfg");
+				FreeCamera();
+			else
+				M.Variable11 = 0; -- reset.
+			end
+			IFace_SetInteger("script.var1", 0);
+			IFace_SetInteger("script.var2", 0);
+			IFace_SetInteger("script.var3", 0);
+			IFace_SetInteger("script.var4", 0);
 			IFace_Activate("Window1");
-			FreeCamera();
 			M.Routine4State = M.Routine4State + 1;
-		elseif M.Routine4State == 3 then
-			if IFace_GetInteger("mission.var4") ~= 0 then
-				IFace_SetInteger("mission.var4", 0);
-				FreeFinish();
-				M.Variable4 = IFace_GetInteger("mission.var1");
-				M.Variable5 = IFace_GetInteger("mission.var2");
-				M.Variable6 = IFace_GetInteger("mission.var3");
+		elseif M.Routine4State == 4 then
+			if IFace_GetInteger("script.var4") ~= 0 then
+				IFace_SetInteger("script.var4", 0);
+				M.Variable4 = IFace_GetInteger("script.var1");
+				M.Variable5 = IFace_GetInteger("script.var2");
+				M.Variable6 = IFace_GetInteger("script.var3");
 				M.Variable10 = 0;
 				local sum = M.Variable4 * 90 + M.Variable5 * 55 + M.Variable6 * 55;
 				if sum <= 200 and sum > 145 then
 					M.Routine4State = M.Routine4State + 2;--to LOC_266
+					IFace_ExitMenuMode();
+					FreeFinish();
 				else
 					IFace_Activate("Window2");
 					M.Routine4State = M.Routine4State + 1;
 				end
 			end
-		elseif M.Routine4State == 4 then
-			if IFace_GetInteger("mission.var4") ~= 0 then
-				IFace_SetInteger("mission.var4", 0);
-				FreeFinish();
-				if M.Variable11 == 0 then
-					M.Variable11 = 1;
-					M.Routine4State = 2;--to LOC_234
+		elseif M.Routine4State == 5 then
+			if IFace_GetInteger("script.var4") ~= 0 then
+				if IFace_GetInteger("script.var4") == 1 then
+					IFace_SetInteger("script.var4", 0);
+					M.Variable11 = 1; -- redo selection
+					M.Routine4State = M.Routine4State - 2;--to LOC_234
 				else
 					M.Routine4State = M.Routine4State + 1;
+					IFace_ExitMenuMode();
+					FreeFinish();
 				end
 			end
-		elseif M.Routine4State == 5 then	--LOC_266
+		elseif M.Routine4State == 6 then
+			M.Routine4State = M.Routine4State + 1;
+		elseif M.Routine4State == 7 then
+			CameraFinish();
+			M.Routine4State = M.Routine4State + 1;
+		elseif M.Routine4State == 8 then	--LOC_266
 			M.Variable10 = M.Variable10 + 1;
 			if M.Variable10 > M.Variable4 then
 				M.Variable10 = 0;
@@ -496,7 +516,7 @@ function Routine4()
 				SetGroup(h, 1);
 				M.Routine4Timer = GetTime() + 0.5;
 			end
-		elseif M.Routine4State == 6 then	--LOC_273
+		elseif M.Routine4State == 9 then	--LOC_273
 			M.Variable10 = M.Variable10 + 1;
 			if M.Variable10 > M.Variable5 then
 				M.Variable10 = 0;
@@ -507,7 +527,7 @@ function Routine4()
 				SetGroup(h, 2);
 				M.Routine4Timer = GetTime() + 0.5;
 			end
-		elseif M.Routine4State == 7 then
+		elseif M.Routine4State == 10 then
 			M.Variable10 = M.Variable10 + 1;
 			if M.Variable10 > M.Variable6 then
 				AddObjective("fc0307.otf", "green");
