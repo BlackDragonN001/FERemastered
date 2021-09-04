@@ -369,7 +369,6 @@ function Routine1()
 			if IsInfo("wormgen3") then
 				if M.Player == M.HackerScout then
 					ClearObjectives();
-					IFace_Exec("wormgen.cfg");
 					M.Routine1State = M.Routine1State + 1;
 					M.Routine1Timer = GetTime() + 2;
 				else
@@ -381,8 +380,10 @@ function Routine1()
 				end
 			end
 		elseif M.Routine1State == 12 then
+			IFace_EnterMenuMode();
 			FreeCamera();
-			IFace_SetInteger("mission.var4", 0);
+			IFace_Exec("wormgen.cfg");
+			IFace_SetInteger("script.var4", 0);
 			IFace_Activate("Win1");
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 5;
@@ -391,14 +392,15 @@ function Routine1()
 			IFace_Activate("Win2");
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 14 then	--LOC_99
-			local var4 = IFace_GetInteger("mission.var4");
+			local var4 = IFace_GetInteger("script.var4");
 			if var4 == 2 then
+				IFace_ExitMenuMode();
 				FreeFinish();
 				M.Routine1State = M.Routine1State + 2;--to LOC_111
 				M.Routine1Timer = GetTime() + 10;
 			elseif var4 > 0 then
-				IFace_SetInteger("mission.var4", 0);
-				if IFace_GetInteger("mission.pass") == 852 then
+				IFace_SetInteger("script.var4", 0);
+				if IFace_GetInteger("script.pass") == 852 then
 					if not M.DownloadFinished then
 						M.Routine1State = M.Routine1State + 1;--to LOC_105
 					else
@@ -414,6 +416,7 @@ function Routine1()
 		elseif M.Routine1State == 15 then	--LOC_105
 			--player entered wrong password
 			IFace_Deactivate("Win3");
+			IFace_ExitMenuMode();
 			FreeFinish();
 			ClearObjectives();
 			AddObjective("edf1614.otf", "red");
@@ -425,9 +428,10 @@ function Routine1()
 			end
 			M.Routine1State = 11;--to LOC_83
 		elseif M.Routine1State == 17 then	--LOC_119
-			local var4 = IFace_GetInteger("mission.var4");
+			local var4 = IFace_GetInteger("script.var4");
 			if var4 == 1 then	--"Activate"
-				IFace_SetInteger("mission.var4", 0);
+				IFace_SetInteger("script.var4", 0);
+				IFace_ExitMenuMode();
 				FreeFinish();
 				AudioMessage("edf16_09.wav");	--Hadean AI:"Wormhole activation sequence initiated..."	
 				ClearObjectives();
@@ -443,6 +447,7 @@ function Routine1()
 				M.CheckHackerScout = false;--RunSpeed,_Routine3,0,false
 				M.Routine1State = M.Routine1State + 1;
 			elseif var4 == 2 then	--"Logout"
+				IFace_ExitMenuMode();
 				FreeFinish();
 				M.Routine1State = M.Routine1State - 1;--to LOC_111
 			elseif var4 == 3 then	--"Shutdown"

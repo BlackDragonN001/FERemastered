@@ -363,7 +363,7 @@ function Routine1()
 				M.Routine1State = M.Routine1State + 1;
 			end
 		elseif (M.Routine1State == 3) then
-			local iFaceVal = IFace_GetInteger("images.page");
+			local iFaceVal = IFace_GetInteger("script.images.page");
 
 			if (iFaceVal == 4) then
 				M.Routine1State = M.Routine1State + 1;
@@ -400,7 +400,7 @@ function Routine1()
 	
 			M.Routine1State = M.Routine1State + 1;
 		elseif (M.Routine1State == 6) then
-			local iFaceVal = IFace_GetInteger("images.page");
+			local iFaceVal = IFace_GetInteger("script.images.page");
 
 			if (iFaceVal == 3) then
 				IFace_ExitMenuMode();

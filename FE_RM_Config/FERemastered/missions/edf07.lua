@@ -385,6 +385,7 @@ function Routine3()
 			end
 		elseif M.Routine3State == 2 then	--LOC_58
 			if AtTerminal(M.Player) == M.HadeanCommBunk then
+				IFace_EnterMenuMode();
 				IFace_Exec("07iface.cfg");
 				FreeCamera();
 				IFace_Activate("Rauschen");
@@ -440,7 +441,7 @@ function Routine3()
 			IFace_Deactivate("EMAIL2");
 			M.Routine3State = M.Routine3State + 1;
 		elseif M.Routine3State == 10 then	--LOC_87
-			if IFace_GetInteger("end.count") ~= 0 then
+			if IFace_GetInteger("script.end.count") ~= 0 then
 				IFace_Deactivate("EMAIL3");
 				IFace_Activate("Bar");
 				IFace_Deactivate("Bar.Decoding");
@@ -459,6 +460,7 @@ function Routine3()
 				IFace_Deactivate("Bar");
 				IFace_Deactivate("Bar.Bar7");
 				IFace_Deactivate("Bar.Sending");
+				IFace_ExitMenuMode();
 				FreeFinish();
 				M.Routine3State = M.Routine3State + 1;
 			end
