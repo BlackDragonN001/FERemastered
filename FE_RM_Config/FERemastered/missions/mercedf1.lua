@@ -37,8 +37,8 @@ local M = {
 	ScoutsPassedToPlayer = false,
 	FirstWave = false,
 	StopWyndt = false,
-	Nadir2AttackUpdate = false,
-
+	NadirAttackUpdate = false,
+	ShipMaybeDestroyed = false,
 	-- Floats
 	MissionTimer = 0.0,
 	convoyWaitTillTime = 0.0,
@@ -72,6 +72,7 @@ local M = {
 	Object_ServiceBay = nil,
 	Object_Carrier = nil,
 	Object_Player = nil,
+	Object_PlayerShip = nil,
 	Object_Stayput = nil,
 	Object_ServTruck1 = nil,
 	Object_ServTruck2 = nil,
@@ -146,6 +147,11 @@ function AddObject(h)
 		SetTeamNum(h, 9);
 		M.StopWyndt = true;
 	end
+	
+	if(M.Object_Player ~= h and IsPerson(h)==true) then --flags when a user either jumps out or ejects
+		print("Running Nadir Update Check. Player ship may be killed or ejected");
+		M.ShipMaybeDestroyed = true;
+	end
 end
 
 function DeleteObject(h)
@@ -199,7 +205,7 @@ function Start()
 	Stop(M.Object_WyndtEssex, 1); --added to prevent targeting. -Gravey
 	M.Object_Corbernav = GetHandle("Corbernav");
 	M.Object_Condor = GetHandle("condor");
-
+	M.Object_PlayerShip = GetPlayerHandle(1); -- added Player ship var to track its death.
 	M.Object_ServiceBay = GetHandle("unnamed_ibsbay");
 	M.Object_Carrier = GetHandle("unnamed_ivcarrs");
 
@@ -255,8 +261,7 @@ function Update()
 	DamagePrevention();
 	DropshipTakeoff();-- added for effect -Gravey
 	PlayerControls(); --Gravey, thanks N1 and GBD
-	UpdateNadir2Target();
-	
+	UpdateNadirTarget();
 end
 
 -- Update the AI Scout's handle if the player hops into one. (If the previous ship exists, set it to replace the AIScouts variable we got into.
@@ -268,7 +273,9 @@ function PreGetIn(curWorld, pilotHandle, emptyCraftHandle)
 				local Hoppy = HoppedOutOf(pilotHandle);
 				
 				if(Hoppy ~= nil) then
-					M.AIScouts[i] = Hoppy
+					M.Object_PlayerShip = M.AIScouts[i];
+					M.AIScouts[i] = Hoppy;
+					
 				else
 					M.AIScouts[i] = nil;
 				end
@@ -287,22 +294,31 @@ function PlayerControls()
 	end
 end
 
---while not the most elegant this prevents nadir 1 from stalling out the mission during wyndts retreat across routine states -Gravey
-function UpdateNadir2Target()
-	if(IsPerson(M.Object_Player) and M.Nadir2AttackUpdate == false) then
-	
-		if(IsAround(M.Object_Cargo1) == true ) then
-			Attack(M.Object_Nadir2, M.Object_Cargo1,1);
-		else
-			Attack(M.Object_Nadir2, M.Object_Cargo2,1);
+--While not the most elegant this prevents nadir from stalling out the mission during wyndts retreat across routine states
+--Only Nadir1 and Nadir2 target the player -Gravey
+function UpdateNadirTarget()
+	if(M.ShipMaybeDestroyed == true and IsAround(M.Object_PlayerShip) == false) then
+		NadirAttackUpdate = true
+		if(NadirAttackUpdate == true)then
+			if(IsAround(M.Object_Nadir1) == true) then--checks if alive
+				print(GetTarget(M.Object_Nadir1));
+				if(GetTarget(M.Object_Nadir1) == nil) then --checks if no target
+					Goto(M.Object_Nadir1, "convoy_halt", 1); --orders unit to go to location with friendlies to attack
+				end
+			end
+				
+			if(IsAround(M.Object_Nadir2) == true) then  --checks if alive
+				if(GetTarget(M.Object_Nadir2) == nil) then  --checks if no target
+				print(GetTarget(M.Object_Nadir2));
+					Goto(M.Object_Nadir2, "convoy_halt", 1); --orders unit to go to location with friendlies to attack
+				end
+			end
 		end
-		
-		M.Nadir2AttackUpdate = true;
+		NadirAttackUpdate = false;
+		M.ShipMaybeDestroyed = false;
 	end
 end
-
 function DropshipTakeoff()
-
 	if(GetDistance(M.Object_Player, M.Object_Condor) > 30.0 and M.CondorTakeoff == false) then
 		SetAnimation(M.Object_Condor,"takeoff", 1);
 		M.MaxFrame = SetAnimation(M.Object_Condor,"takeoff", 1);
@@ -380,7 +396,7 @@ function Routine1()
 			--SetGroup(M.Object_WyndtEssex, 10); --moved gravey
 			SetTeamNum(M.Object_WyndtEssex, 1);
 			SetObjectiveName(M.Object_WyndtEssex, "Wyndt-Essex");
-			
+			SetObjectiveOn(M.Object_WyndtEssex);
 			--M.Object_Hardin = BuildObjectAndLabel(SCOUTODF, 9, M.Position3, "Hardin");
 			--SetObjectiveName(M.Object_Hardin, "Hardin");
 			--
@@ -472,7 +488,9 @@ function Routine1()
 				Follow(M.Object_Hardin, M.Object_Cargo1, 1);
 				Follow(M.AIScouts[1], M.Object_Cargo1, 1);
 				Defend2(M.AIScouts[3], M.Object_Hardin, 1); --changed to Defend2 
-
+				SetObjectiveOn(M.Object_Hardin);
+				SetObjectiveOn(M.Object_Cargo1);
+				SetObjectiveOn(M.Object_Cargo2);
 				M.EnableFailCheck = true;
 				M.convoyWaitTillTime = GetTime() + 5;
 
@@ -512,9 +530,10 @@ function Routine1()
 					end
 				end	
 				if (GetDistance(M.Object_Cargo2, "convoy_halt") <= 20) then
-				SetObjectiveOff(M.Object_Cargo2);
-				AudioMessage("mercury_03.wav");
+				
+					AudioMessage("mercury_03.wav");
 				Stop(M.Object_WyndtEssex,1); -- added stop line for Wyndt.
+				
 				M.convoyWaitTillTime = GetTime() + 19;
 
 				M.Routine1State = M.Routine1State + 1;
@@ -525,7 +544,9 @@ function Routine1()
 			if (GetTime() >= M.convoyWaitTillTime) then
 				ClearObjectives();
 				AddObjective("mercedf102.otf", "WHITE");
-
+				SetObjectiveOff(M.Object_Cargo2);
+				SetObjectiveOff(M.Object_Cargo1);
+				SetObjectiveOff(M.Object_Hardin);
 				-- Run new routines.
 				M.RunPowerAIStateMachine = true;
 				M.RunPowerPlayerStateMachine = true;
@@ -550,7 +571,7 @@ function Routine1()
 		elseif (M.Routine1State == 18) then 
 			if (GetTime() >= M.convoyWaitTillTime and GetDistance(M.Object_WyndtEssex, "convoy_halt") <= 100) then --added logic to wait for wyndt to play audio message. 
 				AudioMessage("mercury_07.wav");
-
+				
 				AddObjective("mercedf111.otf", "white");
 
 				M.Routine1State = M.Routine1State + 1;
@@ -926,10 +947,10 @@ function Routine3()
 				M.Object_Nadir1 = GetHandle("Nadir1");
 				M.Object_Nadir2 = GetHandle("Nadir2");
 				M.Object_Nadir3 = GetHandle("Nadir3");
-				Attack(M.Object_Nadir1, M.Object_WyndtEssex, 1);
+				Attack(M.Object_Nadir1, M.Object_Player, 1);
 				Attack(M.Object_Nadir2, M.Object_Cargo2, 1);
-				Attack(M.Object_Nadir3, M.Object_Player, 1);
-
+				Attack(M.Object_Nadir3, M.Object_WyndtEssex, 1);
+					
 				M.Routine3State = M.Routine3State + 1;
 			end
 		elseif (M.Routine3State == 7) then
@@ -945,10 +966,9 @@ function Routine3()
 				M.Object_Nadir1 = GetHandle("Nadir1");
 				M.Object_Nadir2 = GetHandle("Nadir2");
 				M.Object_Nadir3 = GetHandle("Nadir3");
-				M.Object_Nadir4 = GetHandle("Nadir4");
-				Attack(M.Object_Nadir1, M.Object_Player, 1);
+				M.Object_Nadir4 = GetHandle("Nadir4");				
+				Attack(M.Object_Nadir1, M.Object_Player, 1)
 				Attack(M.Object_Nadir2, M.Object_Player, 1);
-
 				Goto(M.Object_Nadir3, "hardin", 1);
 				Goto(M.Object_Nadir4, "hardin", 1);
 
