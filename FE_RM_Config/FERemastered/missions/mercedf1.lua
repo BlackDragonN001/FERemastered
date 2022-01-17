@@ -149,7 +149,6 @@ function AddObject(h)
 	end
 	
 	if(M.Object_Player ~= h and IsPerson(h)==true) then --flags when a user either jumps out or ejects
-		print("Running Nadir Update Check. Player ship may be killed or ejected");
 		M.ShipMaybeDestroyed = true;
 	end
 end
@@ -301,7 +300,6 @@ function UpdateNadirTarget()
 		NadirAttackUpdate = true
 		if(NadirAttackUpdate == true)then
 			if(IsAround(M.Object_Nadir1) == true) then--checks if alive
-				print(GetTarget(M.Object_Nadir1));
 				if(GetTarget(M.Object_Nadir1) == nil) then --checks if no target
 					Goto(M.Object_Nadir1, "convoy_halt", 1); --orders unit to go to location with friendlies to attack
 				end
@@ -309,7 +307,6 @@ function UpdateNadirTarget()
 				
 			if(IsAround(M.Object_Nadir2) == true) then  --checks if alive
 				if(GetTarget(M.Object_Nadir2) == nil) then  --checks if no target
-				print(GetTarget(M.Object_Nadir2));
 					Goto(M.Object_Nadir2, "convoy_halt", 1); --orders unit to go to location with friendlies to attack
 				end
 			end
