@@ -72,8 +72,8 @@ omegaTurn = 0.5
 
 TREAD_STATIC_FRICTION = 1.5
 
-engineSound = "irecy01.wav"
-treadSound = "irecy01b.wav"
+engineSound = "ship10.wav" //"irecy01.wav"
+treadSound = "ship12.wav" //"irecy01b.wav"
 
 [TrackedDeployableClass]
 timeDeploy = 10.0
