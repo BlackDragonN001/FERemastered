@@ -296,7 +296,7 @@ end
 --While not the most elegant this prevents nadir from stalling out the mission during wyndts retreat across routine states
 --Only Nadir1 and Nadir2 target the player -Gravey
 function UpdateNadirTarget()
-	if(M.ShipMaybeDestroyed == true and IsAround(M.Object_PlayerShip) == false) then
+	if(M.ShipMaybeDestroyed == true and IsAround(M.Object_PlayerShip) == false and (IsAround(M.Object_Nadir1) or IsAround(M.Object_Nadir2))==true) then
 		NadirAttackUpdate = true
 		if(NadirAttackUpdate == true)then
 			if(IsAround(M.Object_Nadir1) == true) then--checks if alive
