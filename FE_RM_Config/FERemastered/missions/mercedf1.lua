@@ -480,6 +480,8 @@ function Routine1()
 				Defend2(M.AIScouts[2], M.AIScouts[1], 1); --changed to Defend2 
 				--Defend2(M.Object_WyndtEssex, M.Object_Cargo2, 1); moved to prevent Wynd from climbing the walls inside the dropship.
 				LookAt(M.Object_WyndtEssex, M.Object_Cargo2, 1); --added to turn wynd to face the exit before moving. 
+				Follow(M.Object_Hardin, M.Object_Cargo1, 1);
+				Follow(M.AIScouts[1], M.Object_Cargo1, 1);
 				Follow(M.Object_ServTruck1, M.Object_Cargo2, 1);
 				Follow(M.Object_ServTruck2, M.Object_Cargo1, 1);
 				Follow(M.Object_Hardin, M.Object_Cargo1, 1);
@@ -1013,32 +1015,36 @@ function Routine5()
 	if (M.EnableFailCheck) then
 		if (not IsAround(M.Object_WyndtEssex)) then
 			M.EnableFailCheck = false;
-			
 			ClearObjectives();
 			AddObjective("mercedf108.otf", "red");
 			FailMission(GetTime() + 10, "rodmerc.des");
+		
 		elseif (not IsAround(M.Object_Cargo2)) then
 			M.EnableFailCheck = false;
-			
 			ClearObjectives();
 			AddObjective("mercedf110.otf", "red");
 			FailMission(GetTime() + 10, "transmerc.des");
+			
+		elseif (M.Routine3State <= 3 and IsPerson(M.Object_Player) == true) then
+			M.EnableFailCheck = false;
+			ClearObjectives();
+			AddObjective("mercedf113.otf", "red");
+			FailMission(GetTime() + 10, "transmerc.des");
+			
 		elseif (not IsAround(M.Object_Hardin)) then
 			M.EnableFailCheck = false;
-			
 			ClearObjectives();
 			AddObjective("mercedf109.otf", "red");
 			FailMission(GetTime() + 10, "hardmerc.des");
 		
 		elseif (not IsAround(M.Object_HardinPilot) and HasPilot(M.Object_Hardin) == false) then
 			M.EnableFailCheck = false;
-			
 			ClearObjectives();
 			AddObjective("mercedf109.otf", "red");
 			FailMission(GetTime() + 10, "hardmerc.des");
+			
 		elseif (M.CerbRoutine and not IsAround(M.Object_CerbUnit)) then 
 			M.EnableFailCheck = false;
-		
 			ClearObjectives();
 			AddObjective("mercedf112.otf", "red");
 			FailMission(GetTime() + 10, "cerbmerc.des"); -- WRITE ME! AHadley? "You failed to follow wynt essex's orders, blablabla."
