@@ -78,10 +78,8 @@ effectMaxAltitude1 = 5.0
 effectFlags1 = 2147483127 // thrusting only when undeployed.
 
 // Engine flame glow.
-effectHard2 = "hp_com_1"
+effectHard2 = "flame_1"
 effectName2 = "engglow_e.small"
-effectMinAltitude2 = 0.0
-effectMaxAltitude2 = 5.0
 effectFlags2 = 2147483127 // thrusting only when undeployed.
 
 [CraftClass]
