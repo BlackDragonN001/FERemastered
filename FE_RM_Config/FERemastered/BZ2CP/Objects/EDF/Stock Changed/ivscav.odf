@@ -1,0 +1,105 @@
+[GameObjectClass]
+classLabel = "scavenger"
+baseName = "ivscav"
+geometryName = "ivscav00.fbx"
+cockpitName = "ivscav_cockpit.fbx"
+scrapValue = 10
+scrapCost = 20
+buildTime = 10.0
+maxHealth = 3000
+maxAmmo = 0
+unitName = "Scavenger"
+aiName = "ScavProcess"
+aiName2 = "ScavProcess"
+heatSignature = 5.0
+imageSignature = 3.0
+radarSignature = 2.0
+isAssault = 1
+armorClass = H
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "ivscav"
+provideName2 = "VIRTUAL_CLASS_SCAVENGER"
+
+////////////////////////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+LightsOnlyWhenPiloted = true
+
+//don't set an altitude for tracked vehicles
+effectHard1 = "hp_dust_1"
+effectName1 = "dusttrail3"
+effectMinVelocity1 = 5.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_2"
+effectName2 = "dusttrail3"
+effectMinVelocity2 = 5.0
+effectMaxVelocity2 = 500.0
+
+[CraftClass]
+rangeScan = 200.0
+periodScan = 0.0
+velocJam = 0.0
+
+braccelFactor = 0.1
+velFactor =	0.3
+strafeFactor = 0.1
+steerFactor = 1.0
+omegaFactor = 1.0
+
+TeamTransferrable = true
+GotoTaskHasLeader = false
+
+selectOtherMsg = "ivscav01.wav"
+selectWaitMsg = "ivscav01.wav"
+selectGoMsg = "ivscav02.wav"
+selectFollowMsg = "ivscav03.wav"
+selectPickupMsg = "ivscav01.wav"
+selectDropoffMsg = "ivscav01.wav"
+otherMsg = "ivscav11.wav"
+goMsg = "ivscav04.wav"
+goObjectMsg = "ivscav13.wav"
+followMsg = "ivscav03.wav"
+followMeMsg = "ivscav07.wav"
+repairMsg = "ivscav08.wav"
+rescueMsg = "ivscav09.wav"
+recycleMsg = "ivscav10.wav"
+holdMsg = "ivscav04.wav"
+
+[TrackedVehicleClass]
+velocForward = 15.0
+velocReverse = 10.0
+accelThrust = 5.0
+omegaSpin = 1.0
+omegaTurn = 0.5
+alphaSteer = 2.0
+TREAD_STATIC_FRICTION = 1.5
+
+engineSound	= "iscav01.wav"
+treadSound = "iscav01b.wav"
+
+[TrackedDeployableClass]
+timeDeploy = 5.0
+timeUndeploy = 5.0
+soundDeploy = "irecy03.wav"
+soundUndeploy = "trundepl.wav"
+
+[ScavengerClass]
+soundPickup = "suck.wav"
+scrapHold = 20
+deployClass = "ibscav"
+deployOffset = 4.5
+
+BuildSparkConfig = "sparker_edf"
+
+[Lod1]
+//geometryName = "ivscavL1.fbx" ;geometry for lod1
+//distance = 50
+
+[Lod2]
+//geometryName = "ivscavL2.fbx" ;geometry for lod2
+//distance = 135                ;...distance over this many meters => switch to lod2

@@ -46,6 +46,18 @@ particleInherit5 = "1.0 1.0 1.0"
 
 ////////////
 
+[Core]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_sprite"
+textureName = "bulhit.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 100"
+finishColor = "255 127 0 0"
+startRadius = 0.2
+finishRadius = 2.0 //3.0
+animateTime = 0.5
+
 [Spark]
 simulateBase = "sim_ember"
 lifeTime = 2.0
@@ -62,23 +74,47 @@ rotationRate = 90.0
 [Trail]
 simulateBase = "sim_ember"
 lifeTime = 3.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xshellcar.trailflare"
+renderName2 = "xshellcar.trailemit"
+
+[TrailFlare]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 127 255"
+finishColor = "255 127 63 0"
+startRadius = 0.3
+finishRadius = 0.3
+animateTime = 3.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[TrailEmit]
+simulateBase = "sim_smoke" //ember"
+lifeTime = 3.0
 renderBase = "draw_trail"
+textureName = "trail.tga"
 textureBlend = "one one modulate"
 startColor = "255 80 0 255"
 finishColor = "255 30 0 200"
 startRadius = 0.02
 finishRadius = 0.0
-trailTime = 3.0
+//trailTime = 3.0
 segmentTime = 0.1
+textureRate = 0.1
 
 [Light]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.2
 renderBase = "draw_light"
 startColor = "255 255 63 150"
 finishColor = "255 0 0 0"
-startRadius = 5.0
-finishRadius = 5.0
+startRadius = 10.0
+finishRadius = 10.0
 animateTime = 0.2
 attenuateConstant = 1.0
 attenuateLinear = 0.0

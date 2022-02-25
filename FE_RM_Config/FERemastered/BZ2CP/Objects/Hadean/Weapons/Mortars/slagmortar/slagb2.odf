@@ -3,6 +3,8 @@ classLabel = "FXMine"
 
 unitName = "Slag explosion"
 
+explosionName = "xslagmort"
+
 [MineClass]
 lifeSpan = 0.01
 
@@ -10,8 +12,8 @@ lifeSpan = 0.01
 payloadName = "slag"
 fireSound = "xslagbld.wav"
 shotDelay = 0.012
-shotVariance = 8.0
-damageRadius = 20.0
+shotVariance = 3.0 //8.0 // 8.0 is too much, weapon sometimes mis-fires. -GBD
+damageRadius = 0.0 //20.0 // no damage values, skip damage field. -GBD
 
 kickRadius = 20.0
 kickVeloc = 0.8

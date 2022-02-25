@@ -16,24 +16,37 @@ damageValue(S) = 0
 damageValue(D) = 0
 damageValue(A) = 0
 
+particleTypes = 4
 
-particleTypes = 3 //4
 particleClass1 = "xparbstcar_c.core"
 particleCount1 = 1
-particleVeloc1 = "0.0 0.0 0.0"
+particleVeloc1 = "0.0 2.0 0.0"
+particleBias1 = "0.0 1.0 0.0"
+particleInherit1 = "0.5 0.5 0.5"
+
 particleClass2 = "xparbstcar_c.light"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
+particleInherit2 = "0.5 0.5 0.5"
+
 particleClass3 = "xparbstcar_c.spark"
-particleCount3 = 10
+particleCount3 = 4
 particleVeloc3 = "25.0 25.0 25.0"
-particleBias3 = "0.0 1.0 0.0"
-particleClass4 = "parbstcar_c.shock" // was "xxpartbstcar_c", never worked. -GBD
+particleBias3 = "0.0 5.0 0.0"
+particleInherit3 = "0.8 0.8 0.8"
+
+particleClass4 = "xparbstcar_c.smoke"
 particleCount4 = 1
-particleVeloc4 = "0.0 0.0 0.0"
+particleVeloc4 = "0.0 5.0 0.0"
+particleBias4 = "0.0 3.0 0.0"
+particleInherit4 = "0.5 0.5 0.5"
+
+//particleClass4 = "parbstcar_c.shock" // was "xxpartbstcar_c", never worked. -GBD
+//particleCount4 = 1
+//particleVeloc4 = "0.0 0.0 0.0"
 
 [Core]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_twirl"
 textureName = "flame.tga"
@@ -43,6 +56,8 @@ finishColor = "135 155 0 0"
 startRadius = 1.0
 finishRadius = 3.5
 animateTime = 1.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
 
 [Spark]
 simulateBase = "sim_ember"
@@ -50,23 +65,37 @@ lifeTime = 1.5
 renderBase = "draw_twirl"
 textureName = "spark.tga"
 textureBlend = "one one modulate"
-startColor = "255 0 0 255"
+startColor = "255 127 0 255"
 finishColor = "155 155 0 0"
-startRadius = 0.35
+startRadius = 0.1
 finishRadius = 0.05
 animateTime = 1.5
 rotationRate = 20.0
 
 [Light]
-simulateBase = "sim_null"
-lifeTime = 1.2
+simulateBase = "sim_smoke"
+lifeTime = 1.0
 renderBase = "draw_light"
 startColor = "255 0 0 455"
 finishColor = "255 255 0 0"
 startRadius = 1.0
-finishRadius = 0.05
-animateTime = 1.2
+finishRadius = 0.0
+animateTime = 1.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 1.3
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "127 63 31 127"
+finishColor = "31 31 31 0"
+startRadius = 1.0
+finishRadius = 4.0
+animateTime = 1.3
+rotationRate = 5.0
+bottomInteractsWithTerrain = false

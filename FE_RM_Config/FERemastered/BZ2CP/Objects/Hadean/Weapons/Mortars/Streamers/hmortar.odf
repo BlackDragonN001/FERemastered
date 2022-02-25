@@ -11,7 +11,7 @@ xplBuilding = "xhmortxp"
 renderName = "hmortar.render"
 
 ammoCost = 20
-lifeSpan = 70
+lifeSpan = 70.0
 shotSpeed = 65.0
 
 damageValue(N) = 80 // none
@@ -24,42 +24,69 @@ damageValue(A) = 80 // absorbtion
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
-renderName1 = "hmortar.e2"
+renderCount = 5
+renderName1 = "hmortar.flare"
 renderName2 = "hmortar.trail"
 renderName3 = "hmortar.trail2"
+renderName4 = "hmortar.light"
+renderName5 = "hmortar.sparks"
 
-
-[e2]
-simulateBase = "sim_null"
-lifeTime = 1.2
-renderBase = "draw_sprite"
+[Flare]
+renderBase = "draw_twirl"
 textureName = "lightflare.tga" //lightflare.tga
 textureBlend = "one one modulate"
-startColor = "255 130 0 255"
-finishColor = "255 130 0 255"
-startRadius = 0.4
-finishRadius = 0.4
+startColor = "2550 1300 0 255"
+finishColor = "2550 1300 0 255"
+startRadius = 1.0 //0.4
+finishRadius = 1.0 //0.4
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
 
-[trail]
+[Trail]
 renderBase = "draw_trail"
 textureName = "trail2.tga"
 textureBlend = "one one modulate"
-textureRate = 0.21
 startColor = "255 255 255 40"
 finishColor = "255 255 255 0"
 startRadius = 0.1
 finishRadius = 1.0
-segmentTime = 1.0//3.0
-animateTime = 0.9
+segmentTime = 1.0 //3.0 //animateTime = 0.9
+textureRate = 0.21
+textureSpeed = -0.5
 
-[trail2]
+[Trail2]
 renderBase = "draw_trail"
-textureName = "flame.tga"
+textureName = "blastenergy.tga" //"flame.tga"
 textureBlend = "one one modulate"
 startColor = "200 200 50 150"
 finishColor = "200 200 50 150"
 startRadius = 0.13
 finishRadius = 0.0 //13
-segmentTime = 0.2
-animateTime = 0.2
+segmentTime = 0.2 //animateTime = 0.2
+textureRate = 0.4
+textureSpeed = 2.0
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 130 0 255"
+finishColor = "255 130 0 255"
+startRadius = 20.0
+finishRadius = 20.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+[Sparks]
+renderBase = "draw_twirl_trail"
+textureName = "spark.tga" // flame
+textureblend = "one one modulate"
+startColor = "255 140 10 255"
+finishColor = "255 60 0 0"
+startRadius = 0.05
+finishRadius = 0.05
+animateTime = 0.5
+emitDelay = 0.01 //0.005
+emitVariance = "10.0 10.0 0.0"
+emitInherit = "0.5 0.5 0.5"
+emitLife = 0.5

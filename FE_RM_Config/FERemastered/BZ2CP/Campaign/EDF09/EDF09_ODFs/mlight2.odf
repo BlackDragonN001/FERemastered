@@ -38,7 +38,7 @@ finishRadius = 0.3
 segmentLength = 5.0
 segmentVariance = "1.9 1.7 0.1"
 animateTime = 0.2
-textureRate = 0.01
+textureRate = 0.025
 
 [Fringe]
 renderBase = "draw_bolt"
@@ -51,7 +51,7 @@ finishRadius = 1.0
 segmentLength = 5.0
 segmentVariance = "1.9 0.4 0.3"
 animateTime = 0.3
-textureRate = 0.02
+textureRate = 0.05
 textureSpeed = 3.0
 
 [Light]

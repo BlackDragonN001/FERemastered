@@ -1,0 +1,73 @@
+[GameObjectClass]
+geometryName = "ibrecy00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ibrecy00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+classLabel = "recycler"
+powerCost = 0
+scrapCost = 0
+scrapValue = 10
+maxHealth = 12000
+maxAmmo = 0
+unitName = "Recycler"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+collisionRadius = 4.0
+armorClass = H
+AllowUndergroundSpawn = 1
+UseCollisionMeshForPathing = 1
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "ibrecy"
+provideName2 = "ibrecycpu"
+provideName3 = "VIRTUAL_CLASS_RECYCLER"
+provideName4 = "VIRTUAL_CLASS_RECYCLERBUILDING"
+
+/////////LIGHTS AND EFFECTS/////////
+lightHard1 = "hp_light_5"
+lightName1 = "o_red_nf"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[BuildingClass]
+tunnelCount = 1
+tunnel01X0 = 3
+tunnel01Z0 = 3
+tunnel01DX = 2
+tunnel01DZ = 4
+tunnel01Edge = "wwtw"
+
+soundAmbient = "ibrecy01.wav"
+
+[FactoryClass]
+soundBuild = "ibrecy02.wav"
+soundFinish = "iapc04.wav"
+buildItem1 = "ivscav"
+buildItem2 = "ivscout"
+buildItem3 = "ivturr"
+buildItem4 = "ivtug"
+buildItem5 = "ivcons"
+buildItem6 = "ivserv"
+buildItem7 = "apserv"
+
+reloadMsg = "ivrecy12.wav"
+rescueMsg = "ivrecy13.wav"
+
+BuildSparkConfig = "sparker_edf"
+
+[RecyclerClass]
+scrapHold = 40
+scrapDelay = 3.0 // # of seconds before +1 scrap
+
+[Lod1]
+//geometryName = "ibrecyL1.fbx" ;geometry for lod1
+//distance = 80
+//dontShiftLOD = 1

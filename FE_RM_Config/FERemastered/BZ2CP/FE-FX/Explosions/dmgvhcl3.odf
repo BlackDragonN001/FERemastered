@@ -61,16 +61,18 @@ emitDelay = 0.02
 emitDelayVar = 0.01
 emitVelocity = "0.0 3.0 0.0"
 emitVariance = "9.0 9.0 9.0"
-emitInherit = "1.0 1.0 1.0"
+emitPosVariance = "4.0 4.0 4.0"
+emitInherit = "0.8 0.8 0.8"
 emitLife = 1.2
-textureName = "spark.tga"
+textureName = "spark3.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 0 255"
-finishColor = "255 0 0 0"
-startRadius = 0.3
+startColor = "255 255 63 255"
+finishColor = "255 127 31 0"
+startRadius = 0.15
 finishRadius = 0.1
 animateTime = 1.2
-rotationRate = 30.0
+rotationRate = 3.0
+BottomInteractsWithTerrain = false
 
 [light]
 simulateBase = "sim_smoke"

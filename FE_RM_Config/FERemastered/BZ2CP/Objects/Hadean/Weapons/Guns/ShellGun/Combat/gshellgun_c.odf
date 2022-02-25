@@ -14,50 +14,37 @@ aiRange = 110
 shotDelay = 0.14
 shotVariance = 0.01
 
-[flash]
+[Flash]
 renderBase = "draw_multi"
-renderCount = 5
-renderName1 = "gshellgun_c.e4"
-renderName2 = "gshellgun_c.e5"
-renderName3 = "gshellgun_c.e6"
-renderName4 = "gshellgun_c.e7"
-renderName5 = "gshellgun_c.e8"
-// Below were "xgshellgun_c", never worked. -GBD
-renderName6 = "gshellgun_c.e1"
+renderCount = 4
+renderName1 = "gshellgun_c.smoke"
+renderName2 = "gshellgun_c.spark"
+renderName3 = "gshellgun_c.muzflash"
+renderName4 = "gshellgun_c.light"
+renderName5 = "gshellgun_c.shell" // used in assault version.
+// unused. -GBD
+renderName6 = "gshellgun_c.muzcone"
 renderName7 = "gshellgun_c.e2"
-renderName8 = "gshellgun_c.e3"
+renderName8 = "gshellgun_c.e7"
 
-[e1]
+[MuzCone]
 renderBase = "draw_geom"
 textureName = "muz2.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 255"
-finishColor = "255 120 0 100"
+finishColor = "255 120 0 0"
 startRadius = 1.2
 finishRadius = 0.7
 animateTime = 0.1
 geomName = "g_fflash.xsi"//sflash
 
-[e2]
-renderBase = "draw_geom"
-textureName = "muz2.tga"
-textureBlend = "one one modulate"
-startColor = "255 150 100 255"
-finishColor = "255 150 0 255"
-startRadius = 1.3
-finishRadius = 0.5
-animateTime = 0.13
-geomName = "g_fflash.xsi"//sflash
-
-[e3]
-simulateBase = "sim_smoke"
-lifeTime = 0.1
+[Shell]
 renderBase = "draw_emit"
-emitName = "gshellgun_c.shell"
+emitName = "gshellgun_c.shellemit"
 emitDelay = 0.1
 emitVelocity = "2.0 3.0 0.0"//.4 0 0
-emitVariance = "1.0 1.0 0.0"// .5 .5 .5
-[shell]
+emitVariance = "1.5 2.0 0.0"// .5 .5 .5
+[ShellEmit]
 simulateBase = "sim_ember"
 lifeTime = 2.5
 renderBase = "draw_twirl"
@@ -70,15 +57,13 @@ finishRadius = 0.11
 animateTime = 2.5
 rotationRate = 0.1
 
-[e4]
-simulateBase = "sim_dust"
-lifeTime = 0.5
+[Smoke]
 renderBase = "draw_emit"
-emitName = "gshellgun_c.smoke"
+emitName = "gshellgun_c.smokeemit"
 emitDelay = 0.5
 emitVelocity = "0.0 1.0 0.0"
 emitVariance = "0.1 1.0 0.1"
-[smoke]
+[SmokeEmit]
 simulateBase = "sim_smoke"
 lifeTime = 2.0
 renderBase = "draw_twirl"
@@ -87,18 +72,18 @@ textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "50 50 50 250"
 finishColor = "60 60 60 0"
 startRadius = 0.1
-finishRadius = 0.3 //
+finishRadius = 0.3
 animateTime = 2.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
 
-[e5]
-simulateBase = "sim_dust"
-lifeTime = 0.5
+[Spark]
 renderBase = "draw_emit"
-emitName = "gshellgun_c.spark"
+emitName = "gshellgun_c.sparkemit"
 emitDelay = 0.01
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "10.0 10.0 2.0"
-[spark]
+[SparkEmit]
 simulateBase = "sim_smoke"
 lifeTime = 0.4
 renderBase = "draw_twirl"
@@ -107,19 +92,44 @@ textureBlend = "one one modulate"
 startColor = "255 255 63 255"
 finishColor = "255 0 0 50"
 startRadius = 0.05
-finishRadius = 0.005
+finishRadius = 0.0
 animateTime = 0.4
+rotationRate = 1.0
+BottomInteractsWithTerrain = false
 
-[e6]
+[MuzFlash]
 renderBase = "draw_geom"
 textureName = "muzfir.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 255"
-finishColor = "255 150 0 100"
+finishColor = "255 150 0 0"
 startRadius = 1.6
 finishRadius = 1.1
-animateTime = 0.1
+animateTime = 0.11
 geomName = "g_sflash.xsi"//sflash
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 180 127 100"
+finishColor = "255 180 127 100"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+
+[e2]
+renderBase = "draw_geom"
+textureName = "muz2.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 100 255"
+finishColor = "255 150 0 255"
+startRadius = 1.3
+finishRadius = 0.5
+animateTime = 0.13
+geomName = "g_fflash.xsi"//sflash
 
 [e7]
 renderBase = "draw_geom"
@@ -131,15 +141,3 @@ startRadius = 1.4
 finishRadius = 0.8
 animateTime = 0.11
 geomName = "g_sflash.xsi"//sflash
-
-[e8]
-simulateBase = "sim_null"
-lifeTime = 0.9
-renderBase = "draw_sprite"
-textureName = "lightflare.tga"//lightflare.tga
-textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 150 0 100"
-startRadius = 0.05
-finishRadius = 0.01
-animateTime = 0.9

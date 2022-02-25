@@ -1,11 +1,12 @@
 [OrdnanceClass]
 classLabel = "leader"
-shotGeometry = "iorckt00.xsi"
+shotGeometry = NULL //"iorckt00.xsi"
+
 xplGround = NULL// "xbulgnd"
 xplVehicle = NULL//"xleadcar"
 xplBuilding = NULL//"xleadbld"
 
-renderName = "skipflead.trail"
+//renderName = "skipflead.trail"
 
 ammoCost = 1
 lifeSpan =  150E-6   // 175m

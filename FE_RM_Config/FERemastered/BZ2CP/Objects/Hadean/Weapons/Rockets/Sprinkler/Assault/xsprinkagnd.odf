@@ -7,27 +7,53 @@ classLabel = "explosion"
 
 ///////////////////////////////
 
-particleTypes = 4
+particleTypes = 8
 
 particleClass1 = "xsprinkagnd.shock"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xsprinkagnd.flame"
 particleCount2 = 2
-particleVeloc2 = "0.0 10.0 0.0"
-particleClass3 = "xsprinkagnd.light"
+particleVeloc2 = "0.0 3.0 0.0"
+particleBias2 = "0.0 4.0 0.0"
+particlePosVar2 = "1.0 0.0 1.0"
+
+particleClass3 = "xsprinkagnd.smoke"
 particleCount3 = 1
-particleVeloc3 = "0.0 0.0 0.0"
-particleClass4 = "xsprinkagnd.ring"
+particleVeloc3 = "0.0 4.0 0.0"
+particleBias3 = "0.0 6.0 0.0"
+particlePosVar3 = "1.0 0.0 1.0"
+
+particleClass4 = "xsprinkagnd.light"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
-// Were "axsprinkagnd", never worked. -GBD
-particleClass5 = "xsprinkagnd.cloud"
+
+particleClass5 = "xsprinkagnd.ring"
 particleCount5 = 1
-particleVeloc5 = "0.0 10.0 0.0"
-particleClass6 = "xsprinkagnd.posroll"
-particleCount6 = 8
-particleVeloc6 = "5.0 0.0 5.0"
+particleVeloc5 = "0.0 0.0 0.0"
+
+particleClass6 = "xsprinkagnd.chunks"
+particleCount6 = 6
+particleVeloc6 = "20.0 15.0 20.0"
+particleBias6 = "0.0 10.0 0.0"
+particlePosVar6 = "1.0 0.0 1.0"
+
+particleClass7 = "xsprinkgnd.dirtkickup"
+particleCount7 = 3
+particleVeloc7 = "7.0 15.0 7.0"
+particleBias7 = "0.0 6.0 0.0"
+particlePosVar7 = "3.0 0.0 3.0"
+
+particleClass8 = "xsprinkgnd.FlameSmoke"
+particleCount8 = 8
+particleVeloc8 = "4.0 15.0 4.0"
+particleBias8 = "0.0 8.0 0.0"
+
+// Were "axsprinkagnd", never worked. -GBD
+particleClass9 = "xsprinkagnd.posroll"
+particleCount9 = 8
+particleVeloc9 = "5.0 0.0 5.0"
 
 ///////////////////////////////
 
@@ -59,48 +85,33 @@ animateTime = 0.3
 latitudeBands = 8
 longitudeSegments = 16
 
-[cloud]
-simulateBase = "sim_dust"
-lifeTime = .5
-renderBase = "draw_emit"
-emitName = "xsalvognd.cloudemit"
-emitDelay = 0.5
-emitVelocity = "0.0 2.0 0.0"
-emitVariance = "0.0 1.0 0.0"
-
-[cloudemit]
-simulateBase = "sim_smoke"
-lifeTime = 2.0
-renderBase = "draw_twirl"
-textureName = "smoke.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "70 30 10 255"
-finishColor = "100 100 70 0"
-startRadius = 1.0
-finishRadius = 3.0
-animateTime = 2.0
-
-[flame]
-simulateBase = "sim_smoke"
-lifeTime = 0.1
-renderBase = "draw_emit"
-emitName = "xsalvognd.flameemit"
-emitDelay = 0.1
-emitVelocity = "0.0 3.0 0.0"
-emitVariance = "0.0 0.0 0.0"
-
-[flameemit]
+[Flame]
 simulateBase = "sim_smoke"
 lifeTime = 0.5
 renderBase = "draw_twirl"
-textureName = "flame2.tga"
+textureName = "fire.tga"
 textureBlend = "one one modulate"
 startColor = " 255 255 200 255"
-finishColor = "255 0 0 0"
+finishColor = "255 127 63 0"
 startRadius = 0.0
 finishRadius = 4.0
 animateTime = 0.5
 rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 1.2
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "50 30 10 200"
+finishColor = "100 90 70 0"
+startRadius = 3.0
+finishRadius = 8.0
+animateTime = 1.2
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
 
 [Light]
 simulateBase = "sim_null"
@@ -116,7 +127,7 @@ attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
 
-[ring]
+[Ring]
 simulateBase = "sim_null"
 lifeTime = 10.0
 renderBase = "draw_planar"
@@ -124,11 +135,28 @@ textureName = "grndchar.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "10 10 10 255"
 finishColor = "10 10 10 0"
-startRadius = 3.0
-finishRadius = 3.0
+startRadius = 10.0
+finishRadius = 10.0
 animateTime = 5.0
+useTerrainColor = 0.9
 
-[posroll]
+[Chunks]
+simulateBase = "sim_ember"
+lifeTime = 3.0
+renderBase = "draw_twirl" //sprite
+textureName = "dirt.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 150 0 255"
+finishColor = "255 0 0 255"
+startRadius = 0.3
+finishRadius = 0.2
+animateTime = 3.0
+rotationRate = 5.0
+useTerrainColor = 0.9
+BottomInteractsWithTerrain = false
+
+
+[Posroll]
 simulateBase = "sim_dust"
 lifeTime = 2.0
 renderBase = "draw_twirl"

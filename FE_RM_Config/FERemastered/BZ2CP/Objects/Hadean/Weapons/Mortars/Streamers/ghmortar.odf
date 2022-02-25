@@ -21,47 +21,97 @@ shotAlternate = 0
 
 [flash]
 renderBase = "draw_multi"
-renderCount = 6
-renderName1 = "ghmortar.e1"
-renderName2 = "ghmortar.e2"
-renderName3 = "ghmortar.e5"
-renderName4 = "ghmortar.e6"
-renderName5 = "ghmortar.e7"
-renderName6 = "ghmortar.e8"
-//renderName3 = "ghmortar.e3"
-//renderName4 = "ghmortar.e4"
+renderCount = 5
+renderName1 = "ghmortar.muzcone"
+renderName2 = "ghmortar.spark"
+renderName3 = "ghmortar.smoke"
+renderName4 = "ghmortar.muzflash"
+renderName5 = "ghmortar.light"
+// Not used. -GBD
+renderName5 = "ghmortar.e2"
+renderName6 = "ghmortar.e7"
+renderName7 = "ghmortar.shell"
 
-[e1]
+[MuzCone]
 renderBase = "draw_geom"
 textureName = "muz2.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 255"
-finishColor = "255 120 0 100"
-startRadius = 1.2
-finishRadius = 0.7
+finishColor = "255 120 0 0"
+startRadius = 2.4
+finishRadius = 1.4
 animateTime = 0.1
-geomName = "g_fflash.xsi"//sflash
+geomName = "g_fflash.xsi" //sflash
 
-[e2]
+[MuzFlash]
 renderBase = "draw_geom"
-textureName = "muz2.tga"
+textureName = "muzfir.tga"
 textureBlend = "one one modulate"
-startColor = "255 150 100 255"
-finishColor = "255 150 0 255"
-startRadius = 1.3
-finishRadius = 0.5
-animateTime = 0.13
-geomName = "g_fflash.xsi"//sflash
+startColor = "255 255 255 255"
+finishColor = "255 150 0 0"
+startRadius = 3.2
+finishRadius = 2.2
+animateTime = 0.1
+geomName = "g_sflash.xsi"//sflash
 
-[e3]
-simulateBase = "sim_smoke"
-lifeTime = 0.1
+[Smoke]
 renderBase = "draw_emit"
-emitName = "gshellgun_c.shell"
+emitName = "ghmortar.smokeemit"
+emitDelay = 0.5
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "0.5 1.0 0.5"
+[SmokeEmit]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "50 50 50 250"
+finishColor = "60 60 60 0"
+startRadius = 0.2
+finishRadius = 0.6 //
+animateTime = 2.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[Spark]
+renderBase = "draw_emit"
+emitName = "ghmortar.sparkemit"
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "15.0 15.0 4.0"
+[SparkEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.4
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 50"
+startRadius = 0.05
+finishRadius = 0.005
+animateTime = 0.4
+BottomInteractsWithTerrain = false
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 180 127 100"
+finishColor = "255 180 127 100"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+
+[Shell]
+renderBase = "draw_emit"
+emitName = "ghmortar.shellemit"
 emitDelay = 0.1
 emitVelocity = "2.0 3.0 0.0"//.4 0 0
 emitVariance = "1.0 1.0 0.0"// .5 .5 .5
-[shell]
+[ShellEmit]
 simulateBase = "sim_ember"
 lifeTime = 2.5
 renderBase = "draw_twirl"
@@ -73,57 +123,7 @@ startRadius = 0.11
 finishRadius = 0.11
 animateTime = 2.5
 rotationRate = 0.1
-
-[e4]
-simulateBase = "sim_dust"
-lifeTime = 0.5
-renderBase = "draw_emit"
-emitName = "gshellgun_c.smoke"
-emitDelay = 0.5
-emitVelocity = "0.0 1.0 0.0"
-emitVariance = "0.1 1.0 0.1"
-[smoke]
-simulateBase = "sim_smoke"
-lifeTime = 2.0
-renderBase = "draw_twirl"
-textureName = "smoke.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "50 50 50 250"
-finishColor = "60 60 60 0"
-startRadius = 0.1
-finishRadius = 0.3 //
-animateTime = 2.0
-
-[e5]
-simulateBase = "sim_dust"
-lifeTime = 0.5
-renderBase = "draw_emit"
-emitName = "gshellgun_c.spark"
-emitDelay = 0.01
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "10.0 10.0 2.0"
-[spark]
-simulateBase = "sim_smoke"
-lifeTime = 0.4
-renderBase = "draw_twirl"
-textureName = "flame.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 63 255"
-finishColor = "255 0 0 50"
-startRadius = 0.05
-finishRadius = 0.005
-animateTime = 0.4
-
-[e6]
-renderBase = "draw_geom"
-textureName = "muzfir.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 150 0 100"
-startRadius = 1.6
-finishRadius = 1.1
-animateTime = 0.1
-geomName = "g_sflash.xsi"//sflash
+BottomInteractsWithTerrain = false
 
 [e7]
 renderBase = "draw_geom"
@@ -136,14 +136,13 @@ finishRadius = 0.8
 animateTime = 0.11
 geomName = "g_sflash.xsi"//sflash
 
-[e8]
-simulateBase = "sim_null"
-lifeTime = 0.9
-renderBase = "draw_sprite"
-textureName = "lightflare.tga"//lightflare.tga
+[e2]
+renderBase = "draw_geom"
+textureName = "muz2.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 150 0 100"
-startRadius = 0.05
-finishRadius = 0.01
-animateTime = 0.9
+startColor = "255 150 100 255"
+finishColor = "255 150 0 255"
+startRadius = 1.3
+finishRadius = 0.5
+animateTime = 0.13
+geomName = "g_fflash.xsi"//sflash

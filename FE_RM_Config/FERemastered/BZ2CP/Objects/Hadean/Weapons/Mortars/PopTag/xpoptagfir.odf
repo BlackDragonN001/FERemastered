@@ -6,9 +6,11 @@
 classLabel = "explosion"
 
 particleTypes = 1
+
 particleClass1 = "xpoptagfir.core"
 particleCount1 = 1
-particleVeloc1 = "0.0 0.0 0.0"
+particleVeloc1 = "0.0 1.0 0.0"
+particleBias1 = "0.0 2.0 0.0"
 
 explSound = "wrock.wav"
 damageRadius = 10.0
@@ -20,14 +22,16 @@ damageValue(D) = 50
 damageValue(A) = 50
 
 [Core]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_twirl"
-textureName = "smoke.tga"
+textureName = "smoke2.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "153 153 153 255"
+startColor = "63 63 63 127"
 finishColor = "153 153 153 0"
 startRadius = 0.5
 finishRadius = 5.0
 animateTime = 1.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
 

@@ -72,9 +72,11 @@ particleVeloc11 = "0.0 0.0 0.0"
 particleClass12 = "xbhxpl.ring1"
 particleCount12 = 1
 particleVeloc12 = "0.0 0.0 0.0"
+
 particleClass13 = "xbhxpl.black"
 particleCount13 = 1
 particleVeloc13 = "0.0 0.0 0.0"
+
 particleClass14 = "xbhxpl.dome"
 particleCount14 = 1
 particleVeloc14 = "0.0 0.0 0.0"
@@ -108,10 +110,11 @@ startRadius = 1.0
 finishRadius = 1.0
 animateTime = 3.0
 rotationRate = 40.0
+bottomInteractsWithTerrain = false
 
 [Thrust]
 simulateBase = "sim_null"
-lifeTime = 6
+lifeTime = 6.0
 renderBase = "draw_sprite"
 spriteCenter.x = 0.0
 spriteCenter.y = 0.0
@@ -121,7 +124,7 @@ startColor = "220 205 255 60"
 finishColor = "0 0 255 0"
 startRadius = 9.0
 finishRadius = 90.0
-animateTime = 6
+animateTime = 6.0
 
 [Shock]
 simulateBase = "sim_null"
@@ -137,7 +140,7 @@ startRadius = 5.0
 finishRadius = 30.0 // 50
 animateTime = 1.0
 
-[trail]
+[Trail]
 simulateBase = "sim_ember"
 lifeTime = 5.0
 renderBase = "draw_trail"
@@ -149,7 +152,7 @@ finishRadius = 0.0
 trailTime = 2.0
 segmentTime = 0.5
 
-[lines]
+[Lines]
 simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_emit"
@@ -158,9 +161,9 @@ emitDelay = 0.05
 emitVelocity = "1.0 1.0 1.0"//.4 0 0
 emitVariance = "240.0 240.0 240.0"// .5 .5 .5
 
-[linesemit]
+[LinesEmit]
 simulateBase = "sim_dust"//dust
-lifeTime = 2.5 //2.5
+lifeTime = 2.0 //2.5
 renderBase = "draw_trail"
 textureName = "trail2.tga"
 textureBlend = "one one modulate"
@@ -170,9 +173,8 @@ finishColor = "0 0 255 0"
 startRadius = 0.4
 finishRadius = 6.5
 segmentTime = 2.0
-animateTime = 2.5
 
-[beams]
+[Beams]
 simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_emit"
@@ -181,10 +183,10 @@ emitDelay = 0.1
 emitVelocity = "0.0 220.0 0.0"
 emitVariance = "800.0 800.0 800.0"
 
-[beamsemit]
+[BeamsEmit]
 simulateBase = "sim_smoke"
 lifeTime = 0.7
-renderBase = "draw_bolt"
+renderBase = "draw_trail" //bolt"
 textureName = "bhbolt3.tga"
 textureBlend = "one one modulate"
 startColor = "220 180 255 250"
@@ -192,21 +194,21 @@ finishColor = "250 220 255 0"
 startRadius = 0.5
 finishRadius = 1.9
 segmentLength = 2.5
-segmentVariance = "0.0 0.0 0.0"
-animateTime = 0.7
+//segmentVariance = "0.0 0.0 0.0"
+segmentTime = 0.7 //animateTime = 0.7
 textureRate = 0.1 //.01
 
 //////////////////////////////////
-[cloud]
+[Cloud]
 simulateBase = "sim_dust"
-lifeTime = .5
+lifeTime = 0.5
 renderBase = "draw_emit"
 emitName = "shipxpl.cloudemit"
 emitDelay = 0.5
 emitVelocity = "0.0 1.0 0.0"
 emitVariance = "0.0 1.0 0.0"
 
-[cloudemit]
+[CloudEmit]
 simulateBase = "sim_smoke"
 lifeTime = 1.3
 renderBase = "draw_twirl"
@@ -218,7 +220,7 @@ startRadius = 1.0
 finishRadius = 2.0
 animateTime = 1.3
 
-[flame]
+[Flame]
 simulateBase = "sim_smoke"
 lifeTime = 0.1
 renderBase = "draw_emit"
@@ -227,7 +229,7 @@ emitDelay = 0.1
 emitVelocity = "7.0 7.0 7.0"
 emitVariance = "0.0 0.0 0.0"
 
-[flameemit]
+[FlameEmit]
 simulateBase = "sim_smoke"
 lifeTime = 0.8
 renderBase = "draw_twirl"
@@ -241,7 +243,7 @@ animateTime = 0.8
 rotationRate = 5.0
 ///////////////////////////////////////////
 
-[light]
+[Light]
 simulateBase = "sim_smoke"
 lifeTime = 2.0
 renderBase = "draw_emit"
@@ -250,7 +252,7 @@ emitDelay = 2.0
 emitVelocity = "0.0 150.0 0.0"
 emitVariance = "875.0 875.0 875.0"
 
-[Lightemit]
+[LightEmit]
 simulateBase = "sim_null"
 lifeTime = 3.0
 renderBase = "draw_light"
@@ -265,7 +267,7 @@ attenuateQuadratic = 15.0
 lensFlare = false
 
 
-[posroll]
+[Posroll]
 simulateBase = "sim_dust"
 lifeTime = 2.0
 renderBase = "draw_twirl"
@@ -283,7 +285,7 @@ simulateBase = "sim_smoke"
 lifeTime = 4.0
 renderBase = "draw_twirl"
 textureName = "xbhchar3.tga"
-textureBlend = "one one modulate"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "220 200 255 255"
 finishColor = "200 150 255 0"
 startRadius = 0.6
@@ -306,7 +308,7 @@ attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
 
-[ring1]
+[Ring1]
 simulateBase = "sim_null"
 lifeTime = 1.0
 renderBase = "draw_sphere"
@@ -320,7 +322,7 @@ animateTime = 1.0
 latitudeBands = 8
 longitudeSegments = 16
 
-[ring2]
+[Ring2]
 simulateBase = "sim_null"
 lifeTime = 0.5
 renderBase = "draw_sphere"
@@ -334,9 +336,9 @@ animateTime = 0.5
 latitudeBands = 8
 longitudeSegments = 16
 
-[ring3]
+[Ring3]
 simulateBase = "sim_null"
-lifeTime = 2.1
+lifeTime = 0.4
 renderBase = "draw_sphere"
 textureName = "xbhchar3.tga"
 textureBlend = "one one modulate"
@@ -348,7 +350,7 @@ animateTime = 0.4
 latitudeBands = 8
 longitudeSegments = 16
 
-[black]
+[Black]
 simulateBase = "sim_smoke"
 lifeTime = 2.0
 renderBase = "draw_emit"
@@ -357,19 +359,19 @@ emitDelay = 0.5
 emitVelocity = "0.0 150.0 0.0"
 emitVariance = "875.0 875.0 875.0"
 
-[blackemit]
+[BlackEmit]
 simulateBase = "sim_null"
 lifeTime = 2.0
 renderBase = "draw_planar"
 textureName = "xbhchar3.tga"
-textureBlend =  "srcalpha invsrcalpha modulatealpha" // "one one modulate" //
+textureBlend = "srcalpha invsrcalpha modulatealpha" // "one one modulate" //
 startColor = "200 200 200 255"
 finishColor = "200 200 200 0"
 startRadius = 25.0
 finishRadius = 40.0
 animateTime = 2.0
 
-[dome]
+[Dome]
 simulateBase = "sim_smoke"
 lifeTime = 3.0
 renderBase = "draw_emit"
@@ -377,19 +379,20 @@ emitName = "xbhxpl.domeemit"
 emitDelay = 3.0
 emitVelocity = "0.0 0.1 0.0"
 emitVariance = "0.0 0.0 0.0"
-textureName = "vsmoke.tga"
-textureBlend = "one one modulate"
-startColor = "250 250 250 0"
-finishColor = "0 0 255 255"
-startRadius = 35.0
-finishRadius = 10.0
-animateTime = 4.0
-latitudeBands = 8
-longitudeSegments = 16
 
-[domeemit]
+//textureName = "vsmoke.tga"
+//textureBlend = "one one modulate"
+//startColor = "250 250 250 0"
+//finishColor = "0 0 255 255"
+//startRadius = 35.0
+//finishRadius = 10.0
+//animateTime = 4.0
+//latitudeBands = 8
+//longitudeSegments = 16
+
+[DomeEmit]
 simulateBase = "sim_smoke"
-lifeTime = 2.2
+lifeTime = 0.2
 renderBase = "draw_sphere"
 textureName = "xbhchar3.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha" // "one one modulate"

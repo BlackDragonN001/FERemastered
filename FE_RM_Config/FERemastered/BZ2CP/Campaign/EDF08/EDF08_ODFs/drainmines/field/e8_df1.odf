@@ -6,7 +6,7 @@ fireSound = "stat01.wav"
 wpnReticle = "gstatic.0"
 wpnCategory = "SPEC"
 isAssault = 0
-flashName = "e8_df1.render";
+flashName = "e8_df1.render"
 
 [DamageFieldClass]
 ammoCost = 0.0
@@ -29,8 +29,7 @@ renderName1 = "e8_df1.static"
 renderName2 = "e8_df1.globe"
 renderName3 = "e8_df1.globe2"
 
-
-[static]
+[Static]
 renderBase = "draw_static"
 textureName = "static.tga"
 textureBlend = "one one modulate"
@@ -43,8 +42,9 @@ emitDelayVar = 0.0
 innerRadius = 30.0
 outerRadius = 200.0
 segmentTime = 0.4
+maxDist = 512
 
-[globe]
+[Globe]
 simulateBase = "sim_smoke"
 lifeTime = 2.0
 renderBase = "draw_emit"
@@ -52,8 +52,9 @@ emitName = "e8_df1.globeemit"
 emitDelay = 2.0
 emitVelocity = "0.0 0.1 0.0"
 emitVariance = "75.0 75.0 75.0"
+maxDist = 512
 
-[globeemit]
+[GlobeEmit]
 simulateBase = "sim_null"
 lifeTime = 2.0
 renderBase = "draw_sphere"
@@ -64,10 +65,11 @@ finishColor = "255 0 0 250"
 startRadius = 190.0
 finishRadius = 200.0
 animateTime = 2.0
-latitudeBands = 1 //
-longitudeSegments = 1 //
+latitudeBands = 8
+longitudeSegments = 16
+maxDist = 512
 
-[globe2]
+[Globe2]
 simulateBase = "sim_smoke"
 lifeTime = 2.0
 renderBase = "draw_emit"
@@ -75,8 +77,9 @@ emitName = "e8_df1.globeemit2"
 emitDelay = 2.0
 emitVelocity = "0.0 0.1 0.0"
 emitVariance = "75.0 75.0 75.0"
+maxDist = 512
 
-[globeemit2]
+[GlobeEmit2]
 simulateBase = "sim_null"
 lifeTime = 2.0
 renderBase = "draw_sphere"
@@ -87,5 +90,6 @@ finishColor = "0 0 255 0"
 startRadius = 200.0
 finishRadius = 190.0
 animateTime = 2.0
-latitudeBands = 1 //
-longitudeSegments = 1 //
+latitudeBands = 8
+longitudeSegments = 16
+maxDist = 512

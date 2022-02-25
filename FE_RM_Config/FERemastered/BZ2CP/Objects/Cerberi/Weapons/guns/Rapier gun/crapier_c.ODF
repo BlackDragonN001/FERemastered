@@ -23,35 +23,36 @@ damageValue(A) = 8 // absorbtion //80
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
+renderCount = 2
 renderName1 = "crapier_c.core"
 renderName2 = "crapier_c.fringe"
-renderName3 = "crapier_c.sparkle"
+//renderName3 = "crapier_c.sparkle" // moved to explosion.
 
 [Core]
-renderBase = "draw_bolt"
-textureName = NULL
+renderBase = "draw_trail" //bolt"
+textureName = "blastenergy.tga"
 textureBlend = "one one modulate"
 startColor = "149 156 255 255"
 finishColor = "0 17 255 0"
-startRadius = 0.1
-finishRadius = 0.05
+startRadius = 0.05
+finishRadius = 0.025
 segmentLength = 5.0
-segmentVariance = "0.0 0.0 0.0"
-animateTime = 0.2
-textureRate = 0.01
+//segmentVariance = "0.0 0.0 0.0"
+segmentTime = 0.2
+textureRate = 0.1
+textureSpeed = -5.0
 
 [Fringe]
-renderBase = "draw_bolt"
+renderBase = "draw_trail" //bolt"
 textureName = "batonfringe.tga"
 textureBlend = "one one modulate"
 startColor = "0 17 255 255"
 finishColor = "190 23 196 0"
-startRadius = 0.2
-finishRadius = 1.0
+startRadius = 0.05
+finishRadius = 0.25
 segmentLength = 5.0
-segmentVariance = "0.0 0.0 0.0"
-animateTime = 0.3
+//segmentVariance = "0.0 0.0 0.0"
+segmentTime = 0.3
 textureRate = 0.02
 textureSpeed = -5.0
 
@@ -64,9 +65,9 @@ textureblend = "one one modulate"
 startColor = "20 50 255 255"
 finishColor = "0 200 200 255"
 
-startRadius = .3 // 0.15
+startRadius = 0.3 // 0.15
 finishRadius = 0.01 // 0.01
-animateTime = .6 // 1.0
-emitDelay = .003 // 0.002
+animateTime = 0.6 // 1.0
+emitDelay = 0.003 // 0.002
 emitVariance = "5.0 5.0 5.0"//"2.0 2.0 2.0"
 emitLife = 0.8 //1.3

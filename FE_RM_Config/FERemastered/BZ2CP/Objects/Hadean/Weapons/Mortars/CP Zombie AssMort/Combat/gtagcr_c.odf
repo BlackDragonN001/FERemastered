@@ -5,7 +5,7 @@ wpnName = "Zombie Jr."
 fireSound = "" // "tcmort01.wav"
 wpnReticle = "gtaggun.0"
 wpnCategory = "MORT"
-isAssault = 1
+isAssault = 0 //1
 aiRange = 160
 
 [TargetingGunClass]

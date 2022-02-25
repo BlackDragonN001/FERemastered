@@ -6,7 +6,7 @@ xplGround = "xfocusgnd"
 xplVehicle = "xfocuscar"
 xplBuilding = "xfocusbld"
 
-renderName = "mfocusedf3.render"
+renderName = "mfocus.render"
 
 ammoCost = 0
 lifeSpan = 410e-3 // 200m
@@ -20,35 +20,3 @@ damageValue(S) = 13 // standard //250
 damageValue(D) = 20 // deflection //350
 damageValue(A) = 5 // absorbtion //80
 
-[Render]
-renderBase = "draw_multi"
-renderCount = 2
-renderName1 = "mfocusedf3.core"
-renderName2 = "mfocusedf3.fringe"
-
-[Core]
-renderBase = "draw_bolt"
-textureName = "trail2.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 255 100 50"
-startRadius = 0.25
-finishRadius = 0.2
-segmentLength = 5.0
-segmentVariance = "0.0 0.0 0.0"
-animateTime = 0.2
-textureRate = 0.01
-
-[Fringe]
-renderBase = "draw_bolt"
-textureName = "trail2.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 100 255"
-finishColor = "255 200 0 0"
-startRadius = 0.3
-finishRadius = 1.5
-segmentLength = 5.0
-segmentVariance = "0.0 0.0 0.0"
-animateTime = 0.2
-textureRate = 0.02
-textureSpeed = -5.0

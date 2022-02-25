@@ -16,13 +16,14 @@ damageValue(S) = 5 // standard
 damageValue(D) = 0 // deflection
 damageValue(A) = 0 // absorbtion
 
-particleTypes = 5
+particleTypes = 8
+
 particleClass1 = "xclasgnd_c.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
 particleClass2 = "xclasgnd_c.puff"
-particleCount2 = 4
+particleCount2 = 3
 particleVeloc2 = "7.0 7.0 7.0"
 
 particleClass3 = "xclasgnd_c.light"
@@ -37,17 +38,34 @@ particleClass5 = "xclasgnd_c.splat"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
 
+particleClass6 = "xclasgnd_c.chunks"
+particleCount6 = 1
+particleVeloc6 = "4.0 4.0 4.0"
+particleBias6 = "0.0 5.0 0.0"
+
+particleClass7 = "xclasgnd_c.char"
+particleCount7 = 1
+particleVeloc7 = "0.0 0.0 0.0"
+
+particleClass8 = "xclasgnd_c.FlameSmoke"
+particleCount8 = 2
+particleVeloc8 = "3.0 6.0 3.0"
+particleBias8 = "0.0 5.0 0.0"
+particlePosVar8 = "0.5 0.0 0.5"
+
 [Core]
 simulateBase = "sim_null"
-lifeTime = 1.0
+lifeTime = 0.3
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
 startColor = "80 60 120 255"
 finishColor = "100 100 100 0"
 startRadius = 0.5
-finishRadius = 0.05
-animateTime = 0.5
+finishRadius = 0.0
+animateTime = 0.3
+rotationRate = 5.0
+//bottomInteractsWithTerrain = false
 
 [Puff]
 simulateBase = "sim_smoke"
@@ -64,13 +82,13 @@ rotationRate = 0.3
 
 [Light]
 simulateBase = "sim_null"
-lifeTime = 0.7
+lifeTime = 0.2
 renderBase = "draw_light"
 startColor = "149 120 255 555"
 finishColor = "80 60 155 0"
-startRadius = 0.1
-finishRadius = 0.05
-animateTime = 0.4
+startRadius = 10.0
+finishRadius = 0.0
+animateTime = 0.2
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
@@ -86,14 +104,14 @@ startColor = "150 139 255 190"
 finishColor = "0 0 255 0" 
 startRadius = 0.1
 finishRadius = 1.0
-animateTime = 0.06
+animateTime = 0.2 //0.06
 latitudeBands = 6
 longitudeSegments = 12
 
 [Splat]
 simulateBase = "sim_null"
-lifeTime = 0.4
-renderBase = "draw_twirl"
+lifeTime = 0.2
+renderBase = "draw_planar"
 textureName = "ring.tga"
 textureBlend = "one one modulate"
 startColor = "120 100 190 255"
@@ -101,3 +119,46 @@ finishColor = "40 0 255 0"
 startRadius = 0.1
 finishRadius = 1.0
 animateTime = 0.2
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Char]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_planar"
+textureName = "grndchar.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "10 10 10 255"
+finishColor = "10 10 10 0"
+startRadius = 2.0
+finishRadius = 2.0
+animateTime = 1.0
+
+[Chunks]
+simulateBase = "sim_ember"
+lifeTime = 1.0
+renderBase = "draw_twirl" //sprite
+textureName = "dirt.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "120 100 255 255"
+finishColor = "30 30 30 222"
+startRadius = 0.3
+finishRadius = 0.3
+animateTime = 1.0
+rotationRate = 5.0
+useTerrainColor = 0.9
+bottomInteractsWithTerrain = false
+
+[FlameSmoke]
+simulateBase = "sim_ember"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 87"
+finishColor = "28 28 28 0"
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 1.0
+rotationRate = 1.6
+BottomInteractsWithTerrain = false

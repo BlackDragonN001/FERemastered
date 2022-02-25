@@ -23,7 +23,7 @@ kickVeloc = 1.0
 
 particleTypes = 7
 
-particleClass1 = "xcplascara.smoke"
+particleClass1 = "xcplascara.core"
 particleCount1 = 5
 particleVeloc1 = "4.0 4.0 4.0"
 particleBias1 = "0.0 0.5 0.0"
@@ -43,14 +43,14 @@ particleBias4 = "0.0 0.0 0.0"
 
 particleClass5 = "xcplascara.chunks"
 particleCount5 = 20
-particleVeloc5 = "10.0 10.0.0 10.0"
-particleBias5 = "3.0 3.0 3.0"
+particleVeloc5 = "10.0 10.0 10.0"
+particleBias5 = "0.0 3.0 0.0"
 particlePosVar5 = "2.0 2.0 2.0"
 particleInherit5 = "1.0 1.0 1.0"
 
 particleClass6 = "xcplascara.puff"
 particleCount6 = 20
-particleVeloc6 = "30.0 30.0.0 30.0"
+particleVeloc6 = "30.0 30.0 30.0"
 particleBias6 = "0.0 3.0 0.0"
 particleInherit6 = "0.5 0.5 0.5"
 
@@ -58,7 +58,7 @@ particleClass7 = "xcplasgnda.sphere"
 particleCount7 = 1
 particleVeloc7 = "0.0 0.0 0.0"
 
-[Smoke]
+[Core]
 simulateBase = "sim_smoke"
 lifeTime = 2.5
 renderBase = "draw_twirl"
@@ -125,6 +125,7 @@ finishColor = "150 0 0 0"
 startRadius = 0.5
 finishRadius = 0.4
 animateTime = 2.5
+rotationRate = 5.0
 BottomInteractsWithTerrain = false
 
 [Puff]

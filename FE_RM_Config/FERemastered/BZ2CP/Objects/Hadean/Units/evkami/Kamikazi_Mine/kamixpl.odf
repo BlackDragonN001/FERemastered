@@ -68,9 +68,11 @@ particleVeloc10 = "70.0 70.0 70.0"
 particleClass11 = "kamixpl.ring1"
 particleCount11 = 1
 particleVeloc11 = "0.0 0.0 0.0"
+
 particleClass12 = "kamixpl.ring2"
 particleCount12 = 1
 particleVeloc12 = "0.0 0.0 0.0"
+
 particleClass13 = "kamixpl.ring3"
 particleCount13 = 1
 particleVeloc13 = "0.0 0.0 0.0"
@@ -143,7 +145,7 @@ startColor = "255 127 0 200"
 finishColor = "255 0 0 0"
 startRadius = 0.06
 finishRadius = 0.0
-trailTime = 2.0
+//trailTime = 2.0
 segmentTime = 0.5
 
 

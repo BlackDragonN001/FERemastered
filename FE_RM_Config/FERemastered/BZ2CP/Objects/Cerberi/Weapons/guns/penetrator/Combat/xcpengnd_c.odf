@@ -1,0 +1,94 @@
+// =========================
+// BATONIC STREAM GROUND HIT
+// =========================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 4
+
+particleClass1 = "xcpengnd_c.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xcpengnd_c.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xcpengnd_c.shock2"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xcpengnd_c.ripple"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+explSound = "sonic02.wav"
+
+damageRadius = 0.0
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_planar"
+textureName = "absorb.tga"
+textureBlend = "one one modulate"
+startColor = "200 127 255 255"
+finishColor = "127 31 127 0"
+startRadius = 0.2
+finishRadius = 2.0
+animateTime = 0.3
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_sphere"
+textureName = "elecsphere.tga"
+textureBlend = "one one modulate"
+startColor = "62 255 255 250" 
+finishColor = "62 255 255 0"
+startRadius = 0.0
+finishRadius = 1.0
+animateTime = 0.5
+latitudeBands = 8
+longitudeSegments = 16
+AddYaw = 100.0
+//AddPitch = 20.0
+//AddRoll = 20.0
+
+[Shock2]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_sphere"
+textureName = "elecsphere.tga"
+textureBlend = "one one modulate"
+startColor = "62 255 255 250" 
+finishColor = "62 255 255 0"
+startRadius = 0.0
+finishRadius = 1.0
+animateTime = 0.5
+latitudeBands = 8
+longitudeSegments = 16
+AddYaw = -100.0
+
+[Ripple]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_twirl_trail"
+textureName = "sonicboom.tga"
+textureBlend = "one one modulate"
+startColor = "62 255 255 180"
+finishColor = "62 255 255 0"
+startRadius = 0.0
+finishRadius = 2.0
+animateTime = 0.3
+rotationRate = 10.0
+BottomInteractsWithTerrain = false
+emitDelay = 0.2
+emitLife = 0.3

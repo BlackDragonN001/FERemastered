@@ -30,22 +30,22 @@ renderName2 = "leadcr_c.light"
 
 [Trail]
 renderBase = "draw_trail"
+textureName = "firetrail1.tga" //"trail2.tga" //"wispytrail.tga"
 textureBlend = "one one modulate"
-startColor = "100 200 55 128"
-finishColor = "20 100 0 0"
+startColor = "1000 2000 550 127"
+finishColor = "200 1000 0 0"
 startRadius = 0.15
 finishRadius = 0.0
 segmentTime = 0.3
+textureRate = 0.5
 
 [Light]
-simulateBase = "sim_null"
-lifeTime = 2.5
 renderBase = "draw_light"
-startColor = "60 150 0 200"
+startColor = "60 150 0 500"
 finishColor = "20 90 0 0"
-startRadius = 10
-finishRadius = 0
-animateTime = 2.5
+startRadius = 10.0
+finishRadius = 10.0
+animateTime = 1.1
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0

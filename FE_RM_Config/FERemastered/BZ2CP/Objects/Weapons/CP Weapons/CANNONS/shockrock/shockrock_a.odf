@@ -27,9 +27,9 @@ xplPulse = "xshockrockemit"
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 1
+renderCount = 2
 renderName1 = "shockrock_a.flame"
-
+renderName2 = "shockrock_a.light"
 
 [Flame]
 renderBase = "draw_twirl_trail"
@@ -45,3 +45,14 @@ emitDelay = 0.001
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "1.0 1.0 2.0"
 emitLife = 0.12
+
+[Light]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 3.0
+finishRadius = 3.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false

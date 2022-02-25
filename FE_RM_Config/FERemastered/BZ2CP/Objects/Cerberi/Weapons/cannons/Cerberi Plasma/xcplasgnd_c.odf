@@ -1,0 +1,194 @@
+// ===============
+// CERBERI PLASMA GROUND HIT
+// ===============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xbombf.wav"
+damageRadius = 20.0
+
+damageValue(N) = 100 // none
+damageValue(L) = 70 // light
+damageValue(H) = 40 // heavy
+
+damageValue(S) = 70 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 40 // absorbtion
+
+kickRadius = 15.0
+kickOmega = 1.0
+kickVeloc = 3.0
+
+particleTypes = 9
+
+particleClass1 = "xcplasgnd_c.splat"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xcplasgnd_c.chunks"
+particleCount2 = 8
+particleVeloc2 = "7.0 7.0 7.0"
+particleBias2 = "0.0 10.0 0.0"
+
+particleClass3 = "xcplasgnd_c.char"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xcplasgnd_c.flame"
+particleCount4 = 1
+particleVeloc4 = "0.0 1.0 0.0"
+particleBias4 = "0.0 0.0 0.0"
+
+particleClass5 = "xcplasgnd_c.light"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+particleClass6 = "xcplasgnd_c.shock"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0"
+
+particleClass7 = "xcplasgnd_c.core"
+particleCount7 = 1
+particleVeloc7 = "0.0 0.0 0.0"
+
+particleClass8 = "xcplasgnd_c.DirtKickup"
+particleCount8 = 3
+particleVeloc8 = "3.0 10.0 3.0"
+particleBias8 = "0.0 6.0 0.0"
+particlePosVar8 = "2.0 0.0 2.0"
+
+particleClass9 = "xcplasgnd_c.FlameSmoke"
+particleCount9 = 5
+particleVeloc9 = "6.0 15.0 6.0"
+particleBias9 = "0.0 10.0 0.0"
+particlePosVar9 = "2.0 0.0 2.0"
+
+[Splat]
+simulateBase = "sim_null"
+lifeTime = 0.4
+renderBase = "draw_planar"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "63 190 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.2
+finishRadius = 4.5
+animateTime = 0.4
+
+[Chunks]
+simulateBase = "sim_ember"
+lifeTime = 4.0
+renderBase = "draw_twirl" //sprite
+textureName = "dirt.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "100 255 255 255"
+finishColor = "30 30 30 222"
+startRadius = 0.3
+finishRadius = 0.3
+animateTime = 4.0
+rotationRate = 5.0
+useTerrainColor = 0.9
+bottomInteractsWithTerrain = false
+
+[Char]
+simulateBase = "sim_null"
+lifeTime = 10.0
+renderBase = "draw_planar"
+textureName = "grndchar.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "20 10 0 255"
+finishColor = "10 10 10 0"
+startRadius = 3.0
+finishRadius = 3.0
+animateTime = 10.0
+useTerrainColor = 0.9
+
+[Flame]
+simulateBase = "sim_smoke"
+lifeTime = 0.6
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "63 127 255 127"
+finishColor = "0 0 255 0"
+startRadius = 0.7
+finishRadius = 0.1
+animateTime = 0.6
+rotationRate = 10.0
+emitDelay = 0.03
+emitVelocity = "0.0 2.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitPosVariance = "2.0 0.0 2.0"
+emitLife = 0.6
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 0.7
+renderBase = "draw_light"
+startColor = "80 100 250 555"
+finishColor = "0 155 255 0"
+startRadius = 30.0
+finishRadius = 0.0
+animateTime = 0.7
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "100 255 255 127"
+finishColor = "0 0 255 0"
+startRadius = 0.5
+finishRadius = 5.0
+animateTime = 0.2
+latitudeBands = 8
+longitudeSegments = 16
+
+[Core]
+simulateBase = "sim_smoke" //null
+lifeTime = 0.8
+renderBase = "draw_twirl"
+textureName = "smoke.tga" // flame
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 127 255 170"
+finishColor = "100 100 100 0"
+startRadius = 2.0
+finishRadius = 8.0
+animateTime = 0.8
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[DirtKickup]
+simulateBase = "sim_ember"
+lifeTime = 1.2
+renderBase = "draw_twirl"
+textureName = "dirtcloud.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "136 154 65 255"
+finishColor = "45 50 40 0"
+startRadius = 1.7
+finishRadius = 5.9
+animateTime = 1.2
+rotationRate = 1.7
+useTerrainColor = 0.9
+BottomInteractsWithTerrain = false
+
+[FlameSmoke]
+simulateBase = "sim_ember"
+lifeTime = 1.8
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 87"
+finishColor = "28 28 28 0"
+startRadius = 2.0
+finishRadius = 6.0
+animateTime = 1.8
+rotationRate = 1.6
+BottomInteractsWithTerrain = false

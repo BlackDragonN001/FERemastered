@@ -3,11 +3,13 @@ classLabel = "bullet"
 
 shotGeometry = NULL
 shotRadius = 1.0
-xplGround = "xflmhit"
-xplVehicle = "xflmhit"
-xplBuilding = "xflmhit"
 
-renderName = "cflame_a.puff"
+xplGround = "xcflmhit"
+xplVehicle = "xcflmhit"
+xplBuilding = "xcflmhit"
+
+renderName = "cflame_a.render"
+
 ammoCost = 1
 lifeSpan = 1.0
 shotSpeed = 120.0
@@ -20,12 +22,30 @@ damageValue(S) = 10 // standard
 damageValue(D) = 15 // deflection
 damageValue(A) = 5 // assault
 
-[Puff]
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "cflame_a.puff1"
+renderName2 = "cflame_a.puff2"
+
+[Puff1]
+renderBase = "draw_twirl"
+textureName = "fire2.tga"
+textureBlend = "one one modulate"
+startColor = "100 100 255 127"
+finishColor = "100 100 255 0"
+startRadius = 0.2
+finishRadius = 2.0
+animateTime = 1.0
+rotationRate = -5.0
+
+[Puff2]
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = "40 70 255 128"
-finishColor = "40 70 255 0"
-startRadius = 2.0
-finishRadius = 7.0
+startColor = "0 127 255 63"
+finishColor = "0 127 255 0"
+startRadius = 0.4
+finishRadius = 4.0
 animateTime = 1.0
+rotationRate = -8.0

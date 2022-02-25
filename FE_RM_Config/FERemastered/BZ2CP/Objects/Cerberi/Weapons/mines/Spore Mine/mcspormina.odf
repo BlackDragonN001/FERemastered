@@ -15,6 +15,7 @@ weaponName1 = "mcsporminb"
 
 effectHard1 = "Spore Mine"
 effectName1 = "mcspormina.render"
+
 [MineClass]
 lifeSpan = 280
 
@@ -39,7 +40,7 @@ finishColor = " 0 0 255 0"
 startRadius = 0.1
 finishRadius = 0.15
 emitDelay = 0.01 // 0.005
-emitDelayVar = 0.0
+emitDelayVar = 0.01
 innerRadius = 2.0
 outerRadius = 15.0
 segmentTime = 0.8
@@ -53,7 +54,7 @@ finishColor = "0 0 255 0"
 startRadius = 0.1
 finishRadius = 0.02
 emitDelay = 0.07
-emitDelayVar = 0.0
+emitDelayVar = 0.01
 innerRadius = 2.0
 outerRadius = 18.0
 segmentTime = 0.4
@@ -69,6 +70,7 @@ finishRadius = 2.5
 animateTime = 0.2
 latitudeBands = 8
 longitudeSegments = 16
+addYaw = 100
 
 [Eff4]
 renderBase = "draw_sphere"
@@ -81,3 +83,4 @@ finishRadius = 18.5
 animateTime = 0.2
 latitudeBands = 8
 longitudeSegments = 16
+addYaw = 20

@@ -26,12 +26,12 @@ damageValue(A) = 220 // absorbtion
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 3
 renderName1 = "8bcann_c.flames"
-renderName2 = "8bcann_c.smoke""
+renderName2 = "8bcann_c.smoke"
+renderName3 = "8bcann_c.sparks"
 
-
-[flames]
+[Flames]
 renderBase = "draw_twirl_trail"
 //textureName = "particle.tga"
 textureName = "fire.tga"
@@ -42,20 +42,35 @@ finishColor = "200 200 200 0"
 startRadius = 0.05
 finishRadius = 0.1
 animateTime = 0.4
-emitDelay = 0.01
+emitDelay = 0.005
 emitVariance = "1.0 1.0 1.0"
 emitLife = 0.1
 
-[smoke]
+[Smoke]
 renderBase = "draw_twirl_trail"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "0 0 0 200"
-finishColor = "100 100 100 100"
+finishColor = "100 100 100 0"
 startRadius = 0.1
 finishRadius = 0.3
-animateTime = 1.0
+animateTime = 0.4
 emitDelay = 0.005
-emitVelocity = "1.5 1.5 1.5"
+emitVelocity = "0.0 1.5 0.0"
 emitVariance = "3.0 3.0 3.0"
-emitLife = .4
+emitInherit = "0.3 0.3 0.3"
+emitLife = 0.4
+
+[Sparks]
+renderBase = "draw_twirl_trail"
+textureName = "spark.tga" // flame
+textureblend = "one one modulate"
+startColor = "255 140 10 255"
+finishColor = "255 60 0 0"
+startRadius = 0.05
+finishRadius = 0.05
+animateTime = 0.3
+emitDelay = 0.01 //0.005
+emitVariance = "5.0 5.0 0.0"
+emitInherit = "0.5 0.5 0.5"
+emitLife = 0.3

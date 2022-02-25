@@ -3,6 +3,7 @@ classLabel = "missile"
 
 shotGeometry = NULL
 shotsound = "taglead.wav"
+
 xplGround = "xtaggnd_c"
 xplVehicle = "xtagcar_c"
 xplBuilding = "xtagbld_c"
@@ -12,6 +13,7 @@ renderName = "tmk1_c.render"
 ammoCost = 10
 lifeSpan = 6.2 // 500m
 shotSpeed = 80.0
+
 // stock are (5 salvo)   FE are (10 salvo)
 damageValue(N) = 40 // 40FE // 80FE/60
 damageValue(L) = 30 // 30FE // 60FE/55
@@ -23,55 +25,67 @@ damageValue(A) = 40 // 40FE // 80FE/60
 
 [MissileClass]
 omegaTurn =  2.2 // 1.5FEA-B // 2.2stock
-omegaWaver = .6 // 0.7FEA-B
+omegaWaver = 0.6 // 0.7FEA-B
 rateWaver = 2.0
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
+renderCount = 4
 renderName1 = "tmk1_c.flame"
 renderName2 = "tmk1_c.halo"
 renderName3 = "tmk1_c.trail"
+renderName4 = "tmk1_c.flametrail"
 
 [Flame]
 renderBase = "draw_twirl_trail"
-textureName = "blast.tga"
+textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = "200 200 0 255"
-finishColor = "255 255 255 0"
-startRadius = 0.15
-finishRadius = 0.02
-animateTime = 0.26
+startColor = "190 190 100 255"
+finishColor = "255 0 0 0"
+startRadius = 0.2
+finishRadius = 0.0
 rotationRate = 10.0
-emitDelay = 0.02
+animateTime = 0.15
+emitDelay = 0.003 //0.001
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "0.0 0.5 0.0"
-emitLife = 0.26
+emitLife = 0.15
+BottomInteractsWithTerrain = false
 
 [Halo]
-renderBase = "draw_sprite"
-textureName = "lighthalo.tga"
+renderBase = "draw_twirl"
+textureName = "particle.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 60" //64
-finishColor = "255 255 255 0"
-startRadius = 1.0
-finishRadius = 1.0
-rotationRate = 10.0
+startColor = "255 200 70 80" //64
+finishColor = "255 100 70 0"
+startRadius = 1.5
+finishRadius = 1.5
 animateTime = 10.0
-emitDelay = 0.001
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "0.0 0.0 0.0"
-emitLife = 1.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
 
 [Trail]
 renderBase = "draw_trail"
-textureName = "smoke.tga" // trail2
+textureName = "trail3.tga" // trail2
 textureBlend = "srcalpha invsrcalpha modulatealpha" // "one one modulate"
-textureRate = 0.004
-startColor =  "150 150 150 90"// "100 0 0 100" 
-finishColor =  "255 255 255 0" // "100 100 100 0"
-startRadius = 0.1
+startColor =  "150 100 100 80"// "100 0 0 100" 
+finishColor =  "10 10 10 0" // "100 100 100 0"
+startRadius = 0.008
 finishRadius = 1.0
-segmentTime = 1.5
-animateTime = 1.4
+segmentTime = 1.0 //1.4 //animateTime = 0.5
+textureRate = 0.08 //0.004
+TextureSpeed = 1.0
+
+[FlameTrail]
+renderBase = "draw_trail"
+textureName = "firetrail1.tga"
+textureBlend = "one one modulate"
+startColor = "190 190 100 255"
+finishColor = "255 0 0 0"
+startRadius = 0.2
+finishRadius = 0.05
+segmentTime = 0.2 //animateTime = 0.2
+segmentLength = 0.3
+textureRate = 0.5 //0.2
+TextureSpeed = 3.0
 

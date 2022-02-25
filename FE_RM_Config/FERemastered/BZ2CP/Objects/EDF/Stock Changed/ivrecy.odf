@@ -1,0 +1,104 @@
+[GameObjectClass]
+baseName = "ivrecy"
+geometryName = "ivrecy00.fbx"
+animCount = 1
+animName1 = "deploy"
+animFile1 = "ivrecy00.fbx"
+classLabel = "recyclervehicle"
+collisionRadius = 7.0
+scrapCost = 0
+scrapValue = 10
+maxHealth = 6000
+maxAmmo = 0
+unitName = "Recycler"
+aiName = "DeployBuildingFriend"
+aiName2 = "DeployBuildingEnemy"
+heatSignature = 2.0
+imageSignature = 5.0
+radarSignature = 5.0
+isAssault = 1
+armorClass = H
+mass = 500000
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "ivrecy"
+provideName2 = "ivrecycpu"
+provideName3 = "VIRTUAL_CLASS_RECYCLER"
+provideName4 = "VIRTUAL_CLASS_RECYCLERVEHICLE"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotorange"
+lightHard2 = "hp_light_2"
+lightName2 = "spotorange"  
+lightHard3 = "hp_light_3"
+lightName3 = "spotorange"
+lightHard4 = "hp_light_4"
+lightName4 = "spotorange"  
+
+effectHard1 = "hp_dust_1"
+effectName1 = "dusttrailrec"
+effectMinVelocity1 = 2.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_2"
+effectName2 = "dusttrailrec"
+effectMinVelocity2 = 2.0
+effectMaxVelocity2 = 500.0
+
+[CraftClass]
+rangeScan = 400.0f
+periodScan = 5.0f
+velocJam = 0.0f
+braccelFactor = 0.1
+velFactor = 0.3
+steerFactor = 1.5
+omegaFactor = 0.3
+strafeFactor = 0.0
+TeamTransferrable = false
+
+user1Msg = "ivrecydeploy.wav"  // "Roger that, Commander. Deploying underway."
+user2Msg = "ivrecy04.wav"  // yes sir
+selectUser2Msg = "ivrecy10.wav"  // can't do
+holdMsg = "ivrecy09.wav"  // holding position
+selectWaitMsg = "ivrecy04.wav"  // yes sir
+goMsg = "ivrecy05.wav"  // moving out
+selectGoMsg = "ivrecy01.wav"  // in transit
+goObjectMsg = "ivrecy11.wav"  // setting up
+followMsg = "ivrecy06.wav"  // Set to follow
+selectFollowMsg = "ivrecy03.wav"  // following
+followMeMsg = "ivrecy07.wav"  // Set to follow
+otherMsg = "ivrecy04.wav"  // yes sir
+selectOtherMsg = "ivrecy11.wav"  // yes sir  (used when idle or on way to setting up)
+selectUser1Msg = "ivrecy04.wav"  // setting up
+attackMsg = "ivrecy05.wav"  // moving out
+diedMsg = "abetty1.wav"
+
+[TrackedVehicleClass]
+velocForward = 10.0
+velocReverse = 5.0
+accelThrust = 3.0
+omegaSpin = 0.5
+omegaTurn = 0.5
+alphaSteer = 0.5
+TREAD_STATIC_FRICTION = 1.5
+engineSound = "irecy01.wav"
+treadSound = "irecy01b.wav"
+
+[TrackedDeployableClass]
+timeDeploy = 10.0
+timeUndeploy = 10.0
+soundDeploy = "irecy03.wav"
+soundUndeploy = "irecy03.wav"
+
+[DeployBuildingClass]
+deployName = "ibrecy"
+
+BuildSparkConfig = "sparker_edf"
+
+[RecyclerVehicleClass]
+scrapHold = 40
+
+[Lod1]
+//geometryName = "ivrecyL1.fbx" ;geometry for lod1
+//distance = 100

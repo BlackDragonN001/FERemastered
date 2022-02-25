@@ -20,14 +20,14 @@ kickRadius = 20.0
 kickOmega = 2.0
 kickVeloc = 2.0
 
-particleTypes = 6
+particleTypes = 10
 
 particleClass1 = "xsprinkgnd.splat"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
 particleClass2 = "xsprinkgnd.chunks"
-particleCount2 = 15
+particleCount2 = 10
 particleVeloc2 = "8.0 8.0 8.0"
 particleBias2 = "0.0 9.0 0.0"
 
@@ -37,33 +37,51 @@ particleVeloc3 = "0.0 0.0 0.0"
 
 particleClass4 = "xsprinkgnd.flame"
 particleCount4 = 1
-particleVeloc4 = "0.0 2.0 0.0"
-particleBias4 = "0.0 0.0 0.0"
+particleVeloc4 = "0.0 0.0 0.0"
 
-particleClass5 = "xsprinkgnd.light"
+particleClass5 = "xsprinkgnd.smoke"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
 
-particleClass6 = "xsprinkgnd.trail"
-particleCount6 = 10
-particleVeloc6 = "20.0 25.0 20.0"
+particleClass6 = "xsprinkgnd.light"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0"
+
+particleClass7 = "xsprinkgnd.trail"
+particleCount7 = 5
+particleVeloc7 = "20.0 25.0 20.0"
+
+particleClass8 = "xsprinkgnd.dirtkickup"
+particleCount8 = 3
+particleVeloc8 = "7.0 15.0 7.0"
+particleBias8 = "0.0 6.0 0.0"
+particlePosVar8 = "3.0 0.0 3.0"
+
+particleClass9 = "xsprinkgnd.FlameSmoke"
+particleCount9 = 8
+particleVeloc9 = "4.0 15.0 4.0"
+particleBias9 = "0.0 8.0 0.0"
+
+particleClass10 = "xsprinkgnd.sphere"
+particleCount10 = 1
+particleVeloc10 = "0.0 0.0 0.0"
 
 // What the hell? never worked, copy pasta from FB gun? left over? MIA? KIA? -GBD
-//particleClass5 = "axfbgnd.thrust"
-//particleCount5 = 1
-//particleVeloc5 = "0.0 0.0 0.0"
-
-//particleClass7 = "axfbgnd.shock"
-//particleCount7 = 1
-//particleVeloc7 = "0.0 0.0 0.0"
-
-//particleClass8 = "axfbgnd.core"
-//particleCount8 = 1
-//particleVeloc8 = "0.0 0.0 0.0"
-
-//particleClass9 = "axfbgnd.char2"
+//particleClass9 = "axfbgnd.thrust"
 //particleCount9 = 1
 //particleVeloc9 = "0.0 0.0 0.0"
+
+//particleClass10 = "axfbgnd.shock"
+//particleCount10 = 1
+//particleVeloc10 = "0.0 0.0 0.0"
+
+//particleClass11 = "axfbgnd.core"
+//particleCount11 = 1
+//particleVeloc11 = "0.0 0.0 0.0"
+
+//particleClass12 = "axfbgnd.char2"
+//particleCount12 = 1
+//particleVeloc12 = "0.0 0.0 0.0"
 
 
 [Splat]
@@ -77,6 +95,7 @@ finishColor = "0 0 0 0"
 startRadius = 1.7
 finishRadius = 1.7
 animateTime = 8.0
+useTerrainColor = 0.9
 
 [Chunks]
 simulateBase = "sim_ember"
@@ -89,13 +108,16 @@ finishColor = "255 0 0 255"
 startRadius = 0.3
 finishRadius = 0.2
 animateTime = 3.0
+rotationRate = 5.0
+useTerrainColor = 0.9
+BottomInteractsWithTerrain = false
 
 [Ring]
 simulateBase = "sim_null"
 lifeTime = 3.0
 renderBase = "draw_planar"
-textureName = "sprinkc.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
+textureName = "crackle.tga" //"sprinkc.tga"
+textureBlend = "one one modulate" //"srcalpha invsrcalpha modulatealpha"
 startColor = "170 200 200 200"
 finishColor = "0 0 0 0"
 startRadius = 1.5
@@ -129,9 +151,107 @@ finishRadius = 0.1
 animateTime = 0.4
 rotationRate = 10.0
 emitDelay = 0.04
-emitVelocity = "2.0 3.0 2.0"
+emitVelocity = "0.0 3.0 0.0"
 emitVariance = "2.0 3.0 2.0"
 emitLife = 0.4
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 0.4
+renderBase = "draw_twirl_trail"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 31 31 127"
+finishColor = "63 63 63 0"
+startRadius = 1.3
+finishRadius = 2.0
+animateTime = 0.75
+rotationRate = 10.0
+emitDelay = 0.05
+emitVelocity = "0.0 5.0 0.0"
+emitVariance = "3.0 3.0 3.0"
+emitPosVariance = "1.0 0.0 1.0"
+emitLife = 0.8
+
+[Trail]
+simulateBase = "sim_ember"
+lifeTime = 3.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xsprinkgnd.trailflare"
+renderName2 = "xsprinkgnd.trailemit"
+
+[TrailFlare]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 127 255"
+finishColor = "255 127 63 0"
+startRadius = 0.2
+finishRadius = 0.2
+animateTime = 3.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[TrailEmit]
+simulateBase = "sim_smoke" //ember"
+lifeTime = 3.0
+renderBase = "draw_trail"
+textureName = "trail.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 0 200"
+finishColor = "255 0 0 0"
+startRadius = 0.01
+finishRadius = 0.0
+//trailTime = 2.0
+segmentTime = 0.5 //animateTime = 3.0
+textureRate = 0.1
+
+[DirtKickup]
+simulateBase = "sim_ember"
+lifeTime = 1.2
+renderBase = "draw_twirl"
+textureName = "dirtcloud.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "136 154 65 255"
+finishColor = "45 50 40 0"
+startRadius = 1.7
+finishRadius = 5.9
+animateTime = 1.2
+rotationRate = 1.7
+useTerrainColor = 0.9
+BottomInteractsWithTerrain = false
+
+[FlameSmoke]
+simulateBase = "sim_ember"
+lifeTime = 2.1
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 87"
+finishColor = "28 28 28 0"
+startRadius = 2.1
+finishRadius = 5.6
+animateTime = 2.1
+rotationRate = 1.6
+BottomInteractsWithTerrain = false
+
+[Sphere]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "127 63 31 255"
+finishColor = "127 96 63 0"
+startRadius = 0.1
+finishRadius = 4.0
+animateTime = 0.2
+latitudeBands = 8
+longitudeSegments = 16
+
 
 [Thrust]
 simulateBase = "sim_null"
@@ -146,8 +266,9 @@ finishColor = "255 100 0 0"
 startRadius = 2.0
 finishRadius = 8.0
 animateTime = 1.2
+useTerrainColor = 0.9
 
-[xShock]
+[Shock]
 simulateBase = "sim_null"
 lifeTime = 1.0
 renderBase = "draw_sphere"
@@ -173,7 +294,7 @@ startRadius = 6.0
 finishRadius = 15.0
 animateTime = 1.5
 
-[char2]
+[Char2]
 simulateBase = "sim_null"
 lifeTime = 1.0
 renderBase = "draw_planar"
@@ -184,16 +305,3 @@ finishColor = "200 100 100 0"
 startRadius = 2.0
 finishRadius = 20.0
 animateTime = 1.0
-
-[trail]
-simulateBase = "sim_ember"
-lifeTime = 3.0
-renderBase = "draw_trail"
-textureBlend = "one one modulate"
-startColor = "255 127 0 200"
-finishColor = "255 0 0 0"
-startRadius = 0.01
-finishRadius = 0.0
-trailTime = 2.0
-segmentTime = 0.5
-animateTime = 3.0

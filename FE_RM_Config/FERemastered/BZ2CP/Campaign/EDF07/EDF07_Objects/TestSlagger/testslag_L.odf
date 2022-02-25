@@ -1,12 +1,12 @@
 [OrdnanceClass]
 classLabel = "bullet"
 
-shotGeometry = "ioartl00.xsi"
+shotGeometry = NULL //"ioartl00.xsi"
 shotSound = "TestSlag.wav"
 
-xplGround = "xsupergnd"
-xplVehicle = "xsupercar"
-xplBuilding = "xsupercar"
+xplGround = "xslaggnd"
+xplVehicle = "xslagcar"
+xplBuilding = "xslagcar"
 
 renderName = "slagstab_c.render"
 

@@ -1,16 +1,17 @@
 [OrdnanceClass]
-classLabel = "grenade"
+classLabel = "spraybomb" //"grenade"
 
-shotGeometry = "ioartl00.xsi"
+shotGeometry = NULL //"ioartl00.xsi"
 shotSound = "crckt02.wav"
 
 xplGround = "xhfire"
-xplVehicle = "xhfire"
+xplVehicle = "xhfire" //"xhfirecar"
 xplBuilding = "xhfire"
+xplExpire = "xhfire"
 
 renderName = "hfire.render"
 
-ammoCost = 50
+ammoCost = 120
 lifeSpan = 60.0
 shotSpeed = 65.0
 
@@ -22,21 +23,105 @@ damageValue(S) = 200 // standard
 damageValue(D) = 225 // deflection
 damageValue(A) = 150 // absorbtion
 
+[SprayBombClass]
+payloadName = "hfire2"
+bounceRatio = 0.001
+soundBounce = "bounce.wav"
+hitExplodeTypes = 31
+buildSprayOnHit = true
+explodeOnHit = true
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 6
 renderName1 = "hfire.flare"
-renderName2 = "hfire.sparkle"
+renderName2 = "hfire.flame" //trail"
+renderName3 = "hfire.smoke"
+renderName4 = "hfire.light"
+renderName5 = "hfire.elec"
+renderName6 = "hfire.elec"
+renderName7 = "hfire.sparkle"
 
 [Flare]
-renderBase = "draw_sprite"
-textureName = "lightflare.tga"
+renderBase = "draw_twirl"
+textureName = "plascore.tga"
 textureBlend = "one one modulate"
-startColor = "180 100 30 50"
-finishColor = "180 100 30 50"
+startColor = "180 150 130 250"
+finishColor = "180 100 30 250"
+startRadius = 2.0
+finishRadius = 2.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 150 63 500"
+finishColor = "255 150 63 500"
+startRadius = 40.0
+finishRadius = 40.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.02
+emitDelayVar = 0.01
+emitVelocity = "0.0 0.5 0.0"
+emitVariance = "1.5 1.5 0.0"
+//emitInherit = "1.5 1.5 1.5"
+emitLife = 1.5
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 200 127"
+finishColor = "255 100 100 0"
+startRadius = 0.5
+finishRadius = 4.0
+animateTime = 1.5
+rotationRate = 8.0
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.02
+emitDelayVar = 0.01
+emitVelocity = "0.0 2.0 0.0"
+emitVariance = "2.0 2.0 1.0"
+emitPosVariance = "0.5 0.5 0.0"
+//emitInherit = "1.5 1.5 1.5"
+emitLife = 2.0
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 31 31 127"
+finishColor = "63 63 63 0"
 startRadius = 1.0
-finishRadius = 0.5
+finishRadius = 6.0
+animateTime = 2.0
+rotationRate = 8.0
+
+[Elec]
+renderBase = "draw_twirl"
+textureName = "elec.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 200 255"
+finishColor = "255 255 200 255"
+startRadius = 5.0
+finishRadius = 5.0
+animateTime = 0.6
+rotationRate = 50.0
+BottomInteractsWithTerrain = false
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "firetrail2.tga"
+textureBlend = "one one modulate" // "srcalpha invsrcalpha modulatealpha"
+startColor = "2000 2000 2000 255"
+finishColor = "2000 2000 2000 0"
+startRadius = 0.5
+finishRadius = 4.0
+segmentTime = 1.5 //2.5 //animateTime = 8.8
+textureRate = 0.05
+textureSpeed = 0.5
 
 [Sparkle]
 renderBase = "draw_twirl_trail"
@@ -45,22 +130,9 @@ textureblend = "one one modulate"
 startColor = "120 70 0 50"
 finishColor = "120 70 0 200"
 startRadius = 0.75
-finishRadius = 0.05
-animateTime = 2.4
+finishRadius = 0.0
+animateTime = 2.5
 emitDelay = 0.005
 emitVariance = "3.0 3.0 3.0"
 emitLife = 2.5
 BottomInteractsWithTerrain = false
-
-//renderBase = "draw_twirl_trail"
-//textureName = "smoke.tga"
-//textureBlend = "srcalpha invsrcalpha modulatealpha"
-//startColor = "255 255 255 64"
-//finishColor = "255 255 255 0"
-//startRadius = 0.5
-//finishRadius = 2.0
-//animateTime = 2.0
-//emitDelay = 0.01
-//emitVelocity = "0.0 0.0 0.0"
-//emitVariance = "1.0 1.0 1.0"
-//emitLife = 2.0

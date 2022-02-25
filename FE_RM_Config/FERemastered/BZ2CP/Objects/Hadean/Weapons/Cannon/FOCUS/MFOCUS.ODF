@@ -27,28 +27,29 @@ renderName1 = "mfocus.core"
 renderName2 = "mfocus.fringe"
 
 [Core]
-renderBase = "draw_bolt"
+renderBase = "draw_trail" //bolt"
 textureName = "trail2.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 255"
 finishColor = "255 255 100 50"
 startRadius = 0.25
-finishRadius = 0.2
+finishRadius = 0.25
 segmentLength = 5.0
-segmentVariance = "0.0 0.0 0.0"
-animateTime = 0.2
-textureRate = 0.01
+segmentTime = 0.2 //animateTime = 0.2
+//segmentVariance = "0.0 0.0 0.0"
+textureRate = 0.1
+textureSpeed = -5.0
 
 [Fringe]
-renderBase = "draw_bolt"
-textureName = "trail2.tga"
+renderBase = "draw_trail" //bolt"
+textureName = "fbeam.tga" //"trail2.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 100 255"
 finishColor = "255 200 0 0"
-startRadius = 0.3
+startRadius = 1.5
 finishRadius = 1.5
 segmentLength = 5.0
-segmentVariance = "0.0 0.0 0.0"
-animateTime = 0.2
-textureRate = 0.02
+segmentTime = 0.2 //animateTime = 0.2
+//segmentVariance = "0.0 0.0 0.0"
+textureRate = 0.1
 textureSpeed = -5.0

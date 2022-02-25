@@ -1,11 +1,13 @@
 [OrdnanceClass]
 classLabel = "imagemissile"
-shotGeometry = "iorckt00.xsi"
+
+shotGeometry = NULL //"iorckt00.xsi" //Make me? -GBD
 shotSound = "smort03.wav"
 
-xplGround = "xshdwgnd"
-xplVehicle = "xshdwcar"
-xplBuilding = "xshdwbld"
+xplGround = "xhavocgnd_c"
+xplVehicle = "xhavoccar_c"
+xplBuilding = "xhavocbld_c"
+
 renderName = "havoc_c.render"
 
 ammoCost = 25
@@ -25,33 +27,41 @@ omegaTurn = 1.5
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
+renderCount = 5
 renderName1 = "havoc_c.flare"
 renderName2 = "havoc_c.smoke"
 renderName3 = "havoc_c.flame"
+renderName4 = "havoc_c.trail"
+renderName5 = "havoc_c.sparks"
 
 [Flare]
-renderBase = "draw_sprite"
-textureName = "lightflare.tga"
-textureBlend = "one one modulate"
-startColor = "200 200 255 255"
-finishColor = "255 200 255 255"
-startRadius = 2.0
-finishRadius = 3.0
+renderBase = "draw_light" //sprite"
+//textureName = "lightflare.tga"
+//textureBlend = "one one modulate"
+startColor = "200 127 255 400"
+finishColor = "200 127 255 400"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
 
 [Smoke]
 renderBase = "draw_twirl_trail"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "153 153 200 128"
-finishColor = "200 153 200 0"
+startColor = "27 27 63 63"
+finishColor = "0 0 0 0"
 startRadius = 0.3
 finishRadius = 2.5
 animateTime = 1.0
-emitDelay = 0.02
-emitVelocity = "0.1 0.1 0.1"
-emitVariance = "3.0 3.0 2.0"
-emitLife = 1.3
+emitDelay = 0.005
+emitVelocity = "0.0 0.5 0.0"
+emitVariance = "3.0 3.0 0.0"
+emitLife = 1.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
 
 [Flame]
 renderBase = "draw_twirl_trail"
@@ -66,3 +76,36 @@ emitDelay = 0.002
 emitVelocity = "0.1 0.1 0.1"
 emitVariance = "3.0 3.0 2.0"
 emitLife = 0.2
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "trail3.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 127"
+finishColor = "0 0 0 0"
+startRadius = 0.3
+finishRadius = 0.0
+segmentLength = 1.0
+segmentTime = 0.8
+textureRate = 1.0
+textureSpeed = 0.0
+
+[Sparks]
+renderBase = "draw_twirl_trail"
+textureName = "spark2.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 200 255"
+finishColor = "255 127 200 0"
+startRadius = 0.15
+finishRadius = 0.10
+rotationRate = 1.0
+animateTime = 0.1
+emitDelay = 0.005 //0.003
+emitDelayVar = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "25.0 25.0 0.0"
+emitInherit = "0.0 0.0 0.5"
+emitLife = 0.1
+BottomInteractsWithTerrain = false

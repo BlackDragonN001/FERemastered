@@ -35,10 +35,12 @@ renderCount = 1
 renderName1 = "shockrock_c.light"
 
 [Light]
-renderBase = "draw_sprite"
+renderBase = "draw_twirl"
 textureName = "lightflare.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 255"
 finishColor = "255 255 255 255"
 startRadius = 3.0
 finishRadius = 0.5
+rotationRate = 5.0
+bottomInteractsWithTerrain = false

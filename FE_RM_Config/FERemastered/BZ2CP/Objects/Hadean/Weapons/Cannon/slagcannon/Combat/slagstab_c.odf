@@ -1,12 +1,12 @@
 [OrdnanceClass]
 classLabel = "bullet"
 
-shotGeometry = "ioartl00.xsi"
+shotGeometry = NULL //"ioartl00.xsi"
 shotSound = "slagord.wav"
 
-xplGround = "xsupergnd"
-xplVehicle = "xsupercar"
-xplBuilding = "xsupercar"
+xplGround = "xslaggnd"
+xplVehicle = "xslagcar"
+xplBuilding = "xslagbld"
 
 renderName = "slagstab_c.render"
 
@@ -25,34 +25,111 @@ damageValue(A) = 190 // absorbtion
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
-renderName1 = "slagstab_c.flames"
-renderName2 = "slagstab_c.smoke"
+renderCount = 7
+renderName1 = "slagstab_c.core"
+renderName2 = "slagstab_c.core2"
+renderName3 = "slagstab_c.ember"
+renderName4 = "slagstab_c.flames"
+renderName5 = "slagstab_c.smoke"
+renderName6 = "slagstab_c.sparks"
+renderName7 = "slagstab_c.light"
 
+[Core]
+renderBase = "draw_twirl_trail"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "255 180 127 255"
+finishColor = "255 180 127 255"
+startRadius = 0.2
+finishRadius = 0.15
+animateTime = 0.005
+rotationRate = 10.0
+emitDelay = 0.00075
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.005
 
-[flames]
+[Core2]
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "hadbullet.tga"
+startColor = "255 200 150 255"
+finishColor = "255 200 150 255"
+startRadius = 0.35
+finishRadius = 0.35
+tracerLength = 0.6
+
+[Flames]
 renderBase = "draw_twirl_trail"
 textureName = "fire.tga"
 textureBlend = "one one modulate"
 startColor = "200 130 0 100"
 finishColor = "200 100 0 0"
-startRadius = 0.1
+startRadius = 0.15
 finishRadius = 0.4
 animateTime = 0.2
-emitDelay = 0.01
+emitDelay = 0.003
 emitVariance = "1.0 1.0 1.0"
 emitLife = 0.2
 
-[smoke]
+[Smoke]
 renderBase = "draw_twirl_trail"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "0 0 0 150"
-finishColor = "50 50 50 5"
-startRadius = 0.1
-finishRadius = .5
+finishColor = "50 50 50 0"
+startRadius = 0.15
+finishRadius = 0.5
 animateTime = 0.4
-emitDelay = 0.005
+emitDelay = 0.004
 emitVelocity = "0.0 1.5 0.0"
 emitVariance = "1.5 0.5 1.5"
 emitLife = 0.4
+
+[Sparks]
+renderBase = "draw_twirl_trail"
+textureName = "spark.tga" // flame
+textureblend = "one one modulate"
+startColor = "255 140 10 255"
+finishColor = "255 60 0 0"
+startRadius = 0.05
+finishRadius = 0.05
+animateTime = 0.3
+emitDelay = 0.01 //0.005
+emitVariance = "8.0 8.0 0.0"
+emitInherit = "0.5 0.5 0.5"
+emitLife = 0.3
+
+[Light]
+renderBase = "draw_light"
+startColor = "200 150 0 800"
+finishColor = "200 150 0 800"
+startRadius = 8.0
+finishRadius = 8.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Ember]
+renderBase = "draw_emit"
+emitName = "slagstab_c.emberemit"
+emitVelocity = "0.0 -1.0 0.0"
+emitVariance = "3.0 -0.5 0.0"
+emitPosVariance = "0.5 0.0 0.0"
+emitInherit = "0.5 0.0 0.5"
+emitDelay = 0.075
+emitDelayVar = 0.2
+//emitLife = 1.0
+
+[EmberEmit]
+simulateBase = "sim_ember"
+lifeTime = 1.0
+renderBase = "draw_sprite"
+textureName = "spark.tga"
+textureblend = "one one modulate"
+startColor = "255 180 127 255"
+finishColor = "255 127 63 0"
+startRadius = 0.1
+finishRadius = 0.1
+animateTime = 1.0

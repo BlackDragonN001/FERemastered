@@ -3,15 +3,18 @@
 // =============
 
 [ExplosionClass]
-classLabel = "explosion"
+classLabel = "quakeblast" //"explosion"
 
 particleTypes = 3
+
 particleClass1 = "xneutxpl.core" //sparkle" // sparkle doesn't exist, never worked. -GBD
 particleCount1 = 10
 particleVeloc1 = "2.0 2.0 2.0"
+
 particleClass2 = "xneutxpl.shock"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
+
 particleClass3 = "xneutxpl.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
@@ -27,10 +30,19 @@ damageValue(S) = 25 // standard
 damageValue(D) = 50 // deflection
 damageValue(A) = 5 // absorbtion
 
+[QuakeBlastClass]
+quakeCount = 180
+quakeClass = "neutron"
+pitchVariance  = 0.0f
+yawVariance = 0.0f
+initialPitch = 0.0f
+initialYaw = 0.0f
+quakeMagnitude = 0.0f
+quakeTime = 0.0f
 
 [Core]
 simulateBase = "sim_null"
-lifeTime = 2.5
+lifeTime = 1.5
 renderBase = "draw_twirl"
 textureName = "plasma.tga"
 textureBlend = "one one modulate"
@@ -38,7 +50,7 @@ startColor = "255 255 70 255"
 finishColor = "0 255 100 0"
 startRadius = 3.0
 finishRadius = 1.0
-animateTime = 2.5
+animateTime = 1.5
 
 [Shock]
 simulateBase = "sim_null"
@@ -47,7 +59,7 @@ renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 63 255"
-finishColor = "0 200 100 100"
+finishColor = "0 200 100 0"
 startRadius = 3.0
 finishRadius = 60.0
 animateTime = 0.7
@@ -56,13 +68,13 @@ longitudeSegments = 16
 
 [Light]
 simulateBase = "sim_null"
-lifeTime = 2.5
+lifeTime = 1.5
 renderBase = "draw_light"
 startColor = "255 255 63 2550"
 finishColor = "0 255 63 255"
 startRadius = 60.0
-finishRadius = 60.0
-animateTime = 2.5
+finishRadius = 0.0
+animateTime = 1.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0

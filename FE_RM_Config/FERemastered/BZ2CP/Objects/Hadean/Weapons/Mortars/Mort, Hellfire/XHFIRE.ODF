@@ -15,15 +15,20 @@ particleVeloc1 = "0.0 0.0 0.0"
 
 particleClass2 = "xhfire.cloud"
 particleCount2 = 1
-particleVeloc2 = "0.0 10.0 0.0"
+particleVeloc2 = "0.0 6.0 0.0"
+particleBias2 = "0.0 8.0 0.0"
+particleInherit2 = "0.5 0.5 0.5"
 
 particleClass3 = "xhfire.flame"
-particleCount3 = 2
-particleVeloc3 = "0.0 10.0 0.0"
+particleCount3 = 1
+particleVeloc3 = "0.0 4.0 0.0"
+particleBias3 = "0.0 6.0 0.0"
+particleInherit3 = "0.5 0.5 0.5"
 
 particleClass4 = "xhfire.light"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
+particleInherit4 = "0.5 0.5 0.5"
 
 particleClass5 = "xhfire.ring"
 particleCount5 = 1
@@ -32,19 +37,21 @@ particleVeloc5 = "0.0 0.0 0.0"
 particleClass6 = "xhfire.posroll"
 particleCount6 = 8
 particleVeloc6 = "5.0 0.0 5.0"
+particlePosVar6 = "10.0 0.0 10.0"
 
 particleClass7 = "xhfire.puff"
 particleCount7 = 20
 particleVeloc7 = "15.0 15.0 15.0"
+particleInherit7 = "0.5 0.5 0.5"
 
 ///////////////////////////////
 
 explSound = "xmv1.wav"
-damageRadius = 100.0
+damageRadius = 75.0
 
 damageValue(N) = 70 // none
 damageValue(L) = 50 // light
-damageValue(H) = 5 // heavy
+damageValue(H) = 10 // heavy
 
 damageValue(S) = 50 // standard
 damageValue(D) = 70 // deflection
@@ -54,78 +61,61 @@ damageValue(A) = 20 // absorbtion
 
 [Shock]
 simulateBase = "sim_null"
-lifeTime = 0.3
+lifeTime = 0.5
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
-startColor = "255 120 0 50"
-finishColor = "255 120 0 250"
+startColor = "255 120 0 250"
+finishColor = "255 120 0 0"
 startRadius = 5.0
 finishRadius = 60.0
-animateTime = 1.5
+animateTime = 0.5
 latitudeBands = 8
 longitudeSegments = 16
 
-[cloud]
-simulateBase = "sim_dust"
-lifeTime = .5
-renderBase = "draw_emit"
-emitName = "xgreengnd.cloudemit"
-emitDelay = 0.5
-emitVelocity = "0.0 3.0 0.0"
-emitVariance = "0.0 1.0 0.0"
-
-[cloudemit]
+[Cloud]
 simulateBase = "sim_smoke"
-lifeTime = 2
+lifeTime = 2.0
 renderBase = "draw_twirl"
-textureName = "smoke.tga"
+textureName = "smoke2.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "0 0 0 255"
-finishColor = "0 0 0 0"
-startRadius = 3
-finishRadius = 6
-animateTime = 2
+startColor = "31 31 31 255"
+finishColor = "127 127 127 0"
+startRadius = 3.0
+finishRadius = 6.0
+animateTime = 2.0
+rotationRate = 2.0
 
-[flame]
+[Flame]
 simulateBase = "sim_smoke"
-lifeTime = 0.1
-renderBase = "draw_emit"
-emitName = "xhfire.flameemit"
-emitDelay = 0.1
-emitVelocity = "0.0 3.0 0.0"
-emitVariance = "0.0 0.0 0.0"
-
-[flameemit]
-simulateBase = "sim_smoke"
-lifeTime = .5
+lifeTime = 0.5
 renderBase = "draw_twirl"
 textureName = "flame2.tga"
 textureBlend = "one one modulate"
 startColor = " 255 120 0 50"
-finishColor = "255 120 0 50"
-startRadius = 0
-finishRadius = 4
-animateTime = .5
-rotationRate = 5
+finishColor = "255 120 0 0"
+startRadius = 0.0
+finishRadius = 40.0
+animateTime = 0.5
+rotationRate = 5.0
 
 [Light]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.5
 renderBase = "draw_light"
-startColor = "255 120 0 50"
-finishColor = "255 120 0 500"
+startColor = "255 120 0 500"
+finishColor = "255 120 0 0"
 startRadius = 60.0
-finishRadius = 60.0
-animateTime = 1.5
+finishRadius = 0.0
+animateTime = 0.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
 
-[ring]
+[Ring]
 simulateBase = "sim_null"
-lifeTime = 10
+lifeTime = 5.0
 renderBase = "draw_planar"
 textureName = "grndchar.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
@@ -133,20 +123,22 @@ startColor = "10 10 10 255"
 finishColor = "10 10 10 0"
 startRadius = 6.0
 finishRadius = 6.0
-animateTime = 5
+animateTime = 5.0
+useTerrainColor = 0.9
 
 [posroll]
 simulateBase = "sim_dust"
-lifeTime = 3
+lifeTime = 3.0
 renderBase = "draw_twirl"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "32 32 32 255"
+startColor = "31 31 31 255"
 finishColor = "127 127 127 0"
-startRadius = 2
-finishRadius = 1
-animateTime = 3
-rotationRate = 2
+startRadius = 2.0
+finishRadius = 1.0
+animateTime = 3.0
+rotationRate = 2.0
+useTerrainColor = 0.9
 
 [Puff]
 simulateBase = "sim_smoke"
@@ -157,5 +149,5 @@ textureBlend = "one one modulate"
 startColor = "255 120 0 50"
 finishColor = "255 120 200 50"
 startRadius = 0.5
-finishRadius = 0.05
+finishRadius = 0.0
 animateTime = 3.0

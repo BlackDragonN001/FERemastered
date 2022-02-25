@@ -1,0 +1,79 @@
+// ==============
+// BLACKHOLE EXPLOSION
+// ==============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "shipxpl.wav"
+
+particleTypes = 3
+
+particleClass1 = "xbhole.shock"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xbhole.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xbhole.ring"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+damageRadius = 0.0
+
+damageValue(N) = 0	
+damageValue(L) = 0
+damageValue(H) = 0
+
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+kickRadius = 40.0
+kickOmega = 50.0
+kickVeloc = 30.0
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "invsrc invsrc modulate"
+startColor = "5 5 5 250"
+finishColor = "5 5 5 0"
+startRadius = 8.0
+finishRadius = 16.0
+animateTime = 0.5
+latitudeBands = 8
+longitudeSegments = 16
+addYaw = 20.0
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_light"
+startColor = "80 100 250 555"
+finishColor = "0 155 255 0"
+startRadius = 30.0
+finishRadius = 0.0
+animateTime = 0.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Ring]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_planar"
+textureName = "absorb.tga" //"bhole.tga"
+textureBlend = "one one modulate"
+startColor = "240 100 255 125"
+finishColor = "240 150 255 0"
+startRadius = 15.0
+finishRadius = 30.0
+animateTime = 1.0
+rotationBias = 5.0
+rotationRate = 5.0

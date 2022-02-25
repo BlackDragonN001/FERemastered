@@ -82,20 +82,66 @@ attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
 
-[trail]
+[Trail]
 simulateBase = "sim_ember"
 lifeTime = 2.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xcpcruxpl.trailflare"
+renderName2 = "xcpcruxpl.trailemit"
+
+[TrailFlare]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "127 255 127 255"
+finishColor = "63 255 63 0"
+startRadius = 0.8
+finishRadius = 0.8
+animateTime = 2.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[TrailEmit]
+simulateBase = "sim_smoke" //ember"
+lifeTime = 2.0
 renderBase = "draw_trail"
+textureName = "blastenergy.tga"
 textureBlend = "one one modulate"
 startColor = "213 255 63 200"
 finishColor = "0 100 0 0"
 startRadius = 0.1
 finishRadius = 0.0
-trailTime = 2.0
+//trailTime = 2.0
 segmentTime = 0.5
+textureRate = 0.5
 
-[trail2]
+[Trail2]
 simulateBase = "sim_ember"
+lifeTime = 2.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xcpcruxpl.trail2flare"
+renderName2 = "xcpcruxpl.trail2emit"
+
+[Trail2Flare]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "127 255 127 255"
+finishColor = "63 255 63 0"
+startRadius = 0.5
+finishRadius = 0.5
+animateTime = 2.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[Trail2Emit]
+simulateBase = "sim_smoke" //ember"
 lifeTime = 2.0
 renderBase = "draw_trail"
 textureName = "trail2.tga"
@@ -105,8 +151,8 @@ startColor = "120 170 43 100"
 finishColor = "0 50 0 0"
 startRadius = 0.1  /0.3
 finishRadius = 0.4 //1.0
-segmentTime = 0.8 // 1.0
-animateTime = 2.0
-trailTime = 0.8
+segmentTime = 0.8 // 1.0 //animateTime = 2.0
+//trailTime = 0.8
+textureRate = 0.1
 
 

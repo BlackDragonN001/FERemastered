@@ -16,88 +16,35 @@ damageValue(S) = 10 // standard
 damageValue(D) = 40 // deflection
 damageValue(A) = 0 // absorbtion
 
-particleTypes = 5
-particleClass1 = "xcplasbld_c.core"
+particleTypes = 7
+
+particleClass1 = "xcplascar_c.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
-particleClass2 = "xcplasbld_c.puff"
+particleClass2 = "xcplascar_c.puff"
 particleCount2 = 4
 particleVeloc2 = "7.0 7.0 7.0"
 
-particleClass3 = "xcplasbld_c.light"
+particleClass3 = "xcplascar_c.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
-particleClass4 = "xcplasbld_c.shock"
+particleClass4 = "xcplascar_c.shock"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
 
-particleClass5 = "xcplasbld_c.splat"
+particleClass5 = "xcplascar_c.splat"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
 
-[Core]
-simulateBase = "sim_null"
-lifeTime = 1.0
-renderBase = "draw_twirl"
-textureName = "flame.tga"
-textureBlend = "one one modulate"
-startColor = "120 120 200 255"
-finishColor = "100 100 100 0"
-startRadius = 1.0
-finishRadius = 0.1
-animateTime = 1.0
+particleClass6 = "xcplascar_c.chunks"
+particleCount6 = 6
+particleVeloc6 = "10.0 10.0 10.0"
+particleBias6 = "0.0 0.0 0.0"
+particlePosVar6 = "2.0 2.0 2.0"
 
-[Puff]
-simulateBase = "sim_smoke"
-lifeTime = 0.7
-renderBase = "draw_twirl"
-textureName = "flame.tga"
-textureBlend = "one one modulate"
-startColor = "50 100 255 200" 
-finishColor = "200 255 255 0" 
-startRadius = 0.5
-finishRadius = 2.0
-animateTime = 0.7
-rotationRate = 0.3
-
-[Light]
-simulateBase = "sim_null"
-lifeTime = 0.7
-renderBase = "draw_light"
-startColor = "0 100 255 555"
-finishColor = "0 155 255 0"
-startRadius = 0.2
-finishRadius = 0.1
-animateTime = 0.7
-attenuateConstant = 1.0
-attenuateLinear = 0.0
-attenuateQuadratic = 15.0
-lensFlare = 0
-
-[Shock]
-simulateBase = "sim_null"
-lifeTime = 0.2
-renderBase = "draw_sphere"
-textureName = "vsmoke.tga"
-textureBlend = "one one modulate"
-startColor = "50 255 255 190" 
-finishColor = "0 255 255 0" 
-startRadius = 0.5
-finishRadius = 3.0
-animateTime = 0.2
-latitudeBands = 8
-longitudeSegments = 16
-
-[Splat]
-simulateBase = "sim_null"
-lifeTime = 0.4
-renderBase = "draw_twirl"
-textureName = "ring.tga"
-textureBlend = "one one modulate"
-startColor = "100 190 190 255"
-finishColor = "0 0 255 0"
-startRadius = 0.1
-finishRadius = 1.0
-animateTime = 0.4
+particleClass7 = "xcplascar_c.smoke"
+particleCount7 = 4
+particleVeloc7 = "5.0 7.0 5.0"
+particleBias7 = "0.0 5.0 0.0"

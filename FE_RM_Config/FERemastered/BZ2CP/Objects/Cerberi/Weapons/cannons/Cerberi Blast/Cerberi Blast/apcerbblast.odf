@@ -1,0 +1,17 @@
+[GameObjectClass]
+baseName = "apcblast"
+classLabel = "apcannon"
+scrapCost = 20
+
+lightName1 = "omnipurp-ap"
+
+requireCount = 2
+requireName1 = "cbarmo"
+requireText1 = "Build Armory"
+requireName2 = "cbsbay"
+requireText2 = "Build Service Bay"
+
+[PowerUpClass]
+
+[WeaponPowerupClass]
+weaponName = "gcerblast"

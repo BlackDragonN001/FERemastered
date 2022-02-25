@@ -20,6 +20,9 @@ damageValue(A) = 200
 
 [SprayBombClass]
 payloadName = "neutronb2"
+HitExplodeTypes = 15
+BuildSprayOnHit = false
+ExplodeOnHit = true
 
 [Render]
 renderBase = "draw_twirl_trail"

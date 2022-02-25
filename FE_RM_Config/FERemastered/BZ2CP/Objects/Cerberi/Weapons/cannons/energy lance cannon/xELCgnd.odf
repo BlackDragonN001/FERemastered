@@ -1,0 +1,74 @@
+// ================
+// FLASH GROUND HIT
+// ================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 4
+particleClass1 = "xelcgnd.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xelcgnd.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xelccar.sparkTrails"
+particleCount3 = 2 //4
+particleVeloc3 = "26.0 60.0 26.0"
+particleBias3 = "0.0 0.0 0.0"
+
+particleClass4 = "xelcgnd.SmokeKickup"
+particleCount4 = 1 //7
+particleVeloc4 = "4.0 6.0 4.0" //"7.0 6.0 7.0"
+particleBias4 = "0.0 2.5 0.0"
+
+
+explSound = "xehit1.wav"
+damageRadius = 0.0
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_planar"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "255 63 255 255"
+finishColor = "0 63 255 0"
+startRadius = 0.2
+finishRadius = 2.0
+animateTime = 0.5
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 0.5 //0.7
+renderBase = "draw_light"
+startColor = "255 63 255 855"
+finishColor = "0 0 255 0"
+startRadius = 10.0
+finishRadius = 0.0
+animateTime = 0.5 //0.7
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+
+[SmokeKickup]
+simulateBase = "sim_smoke"
+lifeTime = 2.4
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "20 20 20 80"
+finishColor = "20 20 20 0"
+startRadius = 1.3
+finishRadius = 2.7
+animateTime = 2.4
+rotationRate = 5.0
+useTerrainColor = 0.9

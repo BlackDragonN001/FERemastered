@@ -11,7 +11,7 @@ xplBuilding = "xdaywreck2"
 renderName = "omirv2.render"
 
 ammoCost = 1
-lifeSpan = 30
+lifeSpan = 60.0 // 30 // RESTORE in later version > 2.0.185. -GBD
 shotSpeed = 5.0
 
 damageValue(N) = 400 // none

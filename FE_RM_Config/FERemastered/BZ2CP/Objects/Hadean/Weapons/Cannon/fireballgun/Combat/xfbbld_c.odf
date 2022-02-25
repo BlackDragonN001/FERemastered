@@ -20,7 +20,7 @@ kickRadius = 40.0
 kickOmega = 10.0
 kickVeloc = 10.0
 
-particleTypes = 7
+particleTypes = 9
 
 particleClass1 = "xfbbld_c.chunks"
 particleCount1 = 35
@@ -31,57 +31,66 @@ particleClass2 = "xfbbld_c.ring"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
 
-particleClass3 = "xfbbld_c.thrust"
+particleClass3 = "xfbbld_c.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
-particleClass4 = "xfbbld_c.light"
+particleClass4 = "xfbbld_c.shock"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
 
-particleClass5 = "xfbbld_c.shock"
+particleClass5 = "xfbbld_c.core"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
 
-particleClass6 = "xfbbld_c.core"
-particleCount6 = 1
-particleVeloc6 = "0.0 0.0 0.0"
+particleClass6 = "xfbbld_c.trail"
+particleCount6 = 20
+particleVeloc6 = "30.0 30.0 30.0"
 
-particleClass7 = "xfbbld_c.trail"
-particleCount7 = 20
-particleVeloc7 = "30.0 30.0 30.0"
+particleClass7 = "xfbbld_c.flame"
+particleCount7 = 1
+particleVeloc7 = "0.0 0.0 0.0"
 
-// Never worked, was "achar2". -GBD
-particleClass8 = "xfbbld_c.char2"
+particleClass8 = "xfbbld_c.smoke"
 particleCount8 = 1
 particleVeloc8 = "0.0 0.0 0.0"
 
-// Never worked, were "axfbbld_c". -GBD
-particleClass9 = "xfbbld_c.fire"
+particleClass9 = "xfbbld_c.sparks"
 particleCount9 = 1
 particleVeloc9 = "0.0 0.0 0.0"
 
-particleClass10 = "xfbbld_c.flame"
+particleClass10 = "xfbbld_c.thrust"
 particleCount10 = 1
-particleVeloc10 = "0.0 2.0 0.0"
-particleBias4 = "0.0 0.0 0.0"
+particleVeloc10 = "0.0 0.0 0.0"
 
-[fire]
-simulateBase = "sim_smoke"
+// Never worked, was "achar2". -GBD
+particleClass11 = "xfbbld_c.char2"
+particleCount11 = 1
+particleVeloc11 = "0.0 0.0 0.0"
+
+// Never worked, was "axfbbld_c". -GBD
+particleClass12 = "xfbbld_c.fire"
+particleCount12 = 1
+particleVeloc12 = "0.0 0.0 0.0"
+
+
+[Fire]
+simulateBase = "sim_null"
 lifeTime = 1.0
 renderBase = "draw_twirl_trail"
-textureName = "flame2.tga"
+textureName = "fire.tga" //"flame2.tga"
 textureBlend = "one one modulate"
 startColor = "255 130 0 128"
 finishColor = "200 0 0 0"
 startRadius = 6.0
 finishRadius = 1.0
-animateTime = 2
+animateTime = 1.0
 rotationRate = 10.0
 emitDelay = 0.05
 emitVelocity = "0.0 5.0 0.0"
 emitVariance = "5.0 5.0 5.0"
 emitLife = 1.0
+BottomInteractsWithTerrain = false
 
 [Chunks]
 simulateBase = "sim_ember"
@@ -94,10 +103,12 @@ finishColor = "255 50 10 200"
 startRadius = 0.5
 finishRadius = 0.4
 animateTime = 3.0
+rotationRate = 3.0
+BottomInteractsWithTerrain = false
 
 [Ring]
 simulateBase = "sim_null"
-lifeTime = 10.0
+lifeTime = 5.0 // 10.0
 renderBase = "draw_planar"
 textureName = "crater3b.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
@@ -105,24 +116,68 @@ startColor = "20 20 20 255"
 finishColor = "0 0 0 0"
 startRadius = 8.0
 finishRadius = 8.0
-animateTime = 10.0
+animateTime = 5.0 //10.0
+useTerrainColor = 0.9
 
 [Flame]
-simulateBase = "sim_smoke"
+simulateBase = "sim_spray"
 lifeTime = 1.2
 renderBase = "draw_twirl_trail"
-textureName = "flame2.tga"
+textureName = "fire.tga" //"flame2.tga"
 textureBlend = "one one modulate"
-startColor = "255 170 100 200"
-finishColor = "255 80 0 0"
+startColor = "255 255 200 200" //"255 170 100 200"
+finishColor = "255 200 127 0" //"255 80 0 0"
 startRadius = 2.5
 finishRadius = 0.2
-animateTime = 1.0
+animateTime = 0.9
 rotationRate = 10.0
 emitDelay = 0.03
 emitVelocity = "0.0 3.0 0.0"
-emitVariance = "2.0 3.0 2.0"
+emitVariance = "2.0 1.0 2.0"
+emitPosVariance = "10.0 0.0 10.0"
 emitLife = 0.9
+BottomInteractsWithTerrain = false
+
+[Smoke]
+simulateBase = "sim_spray"
+lifeTime = 1.2
+renderBase = "draw_twirl_trail"
+emitDelay = 0.03
+emitDelayVar = 0.01
+emitVelocity = "0.0 8.0 0.0"
+emitVariance = "4.0 4.0 4.0"
+emitPosVariance = "10.0 0.0 10.0"
+emitLife = 1.5
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 127"
+finishColor = "31 31 31 0"
+startRadius = 3.0
+finishRadius = 4.0
+animateTime = 1.5
+rotationRate = 1.0
+BottomInteractsWithTerrain = false
+
+[Sparks]
+simulateBase = "sim_spray"
+lifeTime = 1.2
+renderBase = "draw_twirl_trail"
+emitDelay = 0.02
+emitDelayVar = 0.01
+emitVelocity = "0.0 8.0 0.0"
+emitVariance = "4.0 2.0 4.0"
+emitPosVariance = "10.0 0.0 10.0"
+emitLife = 1.2
+textureName = "spark3.tga"
+textureBlend = "one one modulate"
+startColor = "255 145 38 255"
+finishColor = "255 145 38 0"
+startRadius = 0.2
+finishRadius = 0.2
+animateTime = 1.2
+rotationRate = 3.0
+BottomInteractsWithTerrain = false
+
 
 [Thrust]
 simulateBase = "sim_null"
@@ -177,6 +232,9 @@ finishColor = "220 100 0 0"
 startRadius = 6.0
 finishRadius = 15.0
 animateTime = 1.5
+rotationRate = 3.0
+BottomInteractsWithTerrain = false
+useTerrainColor = 0.9
 
 [char2] // Was achar2, never worked in FE. -GBD
 simulateBase = "sim_null"
@@ -190,15 +248,38 @@ startRadius = 2.0
 finishRadius = 20.0
 animateTime = 1.0
 
-[trail]
+[Trail]
 simulateBase = "sim_ember"
 lifeTime = 3.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xfbbld_c.trailflare"
+renderName2 = "xfbbld_c.trailemit"
+
+[TrailFlare]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 127 255"
+finishColor = "255 127 63 0"
+startRadius = 0.5
+finishRadius = 0.5
+animateTime = 3.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[TrailEmit]
+simulateBase = "sim_smoke" //ember"
+lifeTime = 3.0
 renderBase = "draw_trail"
+textureName = "trail.tga"
 textureBlend = "one one modulate"
 startColor = "255 127 0 200"
 finishColor = "255 0 0 0"
 startRadius = 0.05
 finishRadius = 0.0
-trailTime = 2.0
-segmentTime = 0.5
-animateTime = 3.0
+//trailTime = 2.0
+segmentTime = 0.5 //animateTime = 3.0
+textureRate = 0.1

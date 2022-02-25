@@ -20,7 +20,7 @@ kickRadius = 15.0
 kickOmega = 0.2
 kickVeloc = 1.0
 
-particleTypes = 4
+particleTypes = 6
 
 particleClass1 = "xdragbcar_c.splat"
 particleCount1 = 1
@@ -33,6 +33,22 @@ particleVeloc2 = "0.0 1.0 0.0"
 particleClass3 = "xdragbcar_c.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xdragbcar_c.chunks"
+particleCount4 = 10
+particleVeloc4 = "10.0 10.0 10.0"
+particleBias4 = "0.0 3.0 0.0"
+particlePosVar4 = "2.0 2.0 2.0"
+particleInherit4 = "1.0 1.0 1.0"
+
+particleClass5 = "xdragbcar_c.smoke"
+particleCount5 = 1
+particleVeloc5 = "0.0 1.0 0.0"
+particleBias5 = "0.0 3.0 0.0"
+
+particleClass6 = "xdragbgnd_c.sphere"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0"
 
 
 [Splat]
@@ -58,7 +74,7 @@ startColor = "255 200 100 255"
 finishColor = "255 0 0 0"
 startRadius = 1.0
 finishRadius = 0.1
-animateTime = 0.4
+animateTime = 0.3
 rotationRate = 10.0
 emitDelay = 0.04
 emitVelocity = "0.0 2.0 0.0"
@@ -71,10 +87,41 @@ lifeTime = 0.5
 renderBase = "draw_light"
 startColor = "255 200 0 555"
 finishColor = "255 0 0 0"
-startRadius = 4.0
-finishRadius = 1.0
+startRadius = 10.0
+finishRadius = 5.0
 animateTime = 0.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
+
+[Chunks]
+simulateBase = "sim_ember"
+lifeTime = 1.0
+renderBase = "draw_twirl" //sprite
+textureName = "dirt.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 220 0 255"
+finishColor = "150 0 0 0"
+startRadius = 0.5
+finishRadius = 0.2
+animateTime = 1.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_twirl_trail"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 100 0 100"
+finishColor = "127 127 127 0"
+startRadius = 1.0
+finishRadius = 5.0
+animateTime = 1.4
+rotationRate = 10.0
+emitDelay = 0.1
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "3.0 3.0 3.0"
+emitLife = 1.4

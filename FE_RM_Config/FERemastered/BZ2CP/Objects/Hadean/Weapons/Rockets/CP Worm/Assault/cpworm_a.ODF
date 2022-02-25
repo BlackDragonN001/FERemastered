@@ -1,7 +1,7 @@
 [OrdnanceClass]
 classLabel = "thermalmissile"
 
-shotGeometry = "sgmloc00.fbx" //"forckt01.xsi"
+shotGeometry = NULL //"sgmloc00.fbx" //"forckt01.xsi"
 shotSound = "wormord.wav"
 
 renderName = "cpworm_a.render"
@@ -38,16 +38,16 @@ renderName4 = "cpworm_a.light"
 
 [Smoke]
 renderBase = "draw_twirl_trail"
-emitDelay = 0.01
-emitDelayVar = 0.02
+emitDelay = 0.0075
+emitDelayVar = 0.01
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "1.0 1.0 1.0"
 //emitInherit = "1.5 1.5 1.0"
 emitLife = 1.2
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "0 0 50 128"
-finishColor = "0 0 10 5"
+startColor = "0 0 50 127"
+finishColor = "0 0 10 0"
 startRadius = 1.5
 finishRadius = 0.2
 animateTime = 1.2
@@ -55,12 +55,12 @@ rotationRate = 1.0
 
 [Flame]
 renderBase = "draw_twirl_trail"
-emitDelay = 0.01
-emitDelayVar = 0.05
+emitDelay = 0.0075
+emitDelayVar = 0.01
 emitVelocity = "0.5 0.0 0.5"
 emitVariance = "1.2 1.2 1.2"
 emitLife = 0.6
-textureName = "blast.tga"
+textureName = "flame.tga" //"blast.tga"
 textureBlend = "one one modulate"
 startColor = "255 200 255 128"
 finishColor = "255 0 180 0"
@@ -71,8 +71,6 @@ rotationRate = 1.0
 BottomInteractsWithTerrain = false
 
 [trailer]
-simulateBase = "sim_dust"//dust
-lifeTime = 1.3 //2.5
 renderBase = "draw_trail"
 textureName = "heat2.tga"
 textureBlend = "one one modulate"
@@ -81,8 +79,7 @@ startColor = "255 200 255 150"
 finishColor = "200 100 200 0"
 startRadius = 1.2
 finishRadius = 0.1
-segmentTime = 1.3
-animateTime = 1.3
+segmentTime = 1.3 //animateTime = 1.3
 
 [Light]
 renderBase = "draw_light"

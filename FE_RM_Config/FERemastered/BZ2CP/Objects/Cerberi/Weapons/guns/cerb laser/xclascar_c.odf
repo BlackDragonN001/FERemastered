@@ -16,14 +16,17 @@ damageValue(S) = 5 // standard
 damageValue(D) = 0 // deflection
 damageValue(A) = 0 // absorbtion
 
-particleTypes = 5
+particleTypes = 6
+
 particleClass1 = "xclascar_c.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+particleInherit1 = "0.5 0.5 0.5"
 
 particleClass2 = "xclascar_c.puff"
-particleCount2 = 4
+particleCount2 = 2
 particleVeloc2 = "7.0 7.0 7.0"
+particleInherit2 = "1.0 1.0 1.0"
 
 particleClass3 = "xclascar_c.light"
 particleCount3 = 1
@@ -36,10 +39,18 @@ particleVeloc4 = "0.0 0.0 0.0"
 particleClass5 = "xclascar_c.splat"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
+particleInherit5 = "0.5 0.5 0.5"
+
+particleClass6 = "xclascar_c.chunks"
+particleCount6 = 1
+particleVeloc6 = "5.0 5.0 5.0"
+particleBias6 = "0.0 0.0 0.0"
+particlePosVar6 = "0.5 0.5 0.5"
+particleInherit6 = "1.0 1.0 1.0"
 
 [Core]
 simulateBase = "sim_null"
-lifeTime = 1.0
+lifeTime = 0.5
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
@@ -64,13 +75,13 @@ rotationRate = 0.3
 
 [Light]
 simulateBase = "sim_null"
-lifeTime = 0.7
+lifeTime = 0.2
 renderBase = "draw_light"
 startColor = "149 120 255 555"
 finishColor = "80 60 155 0"
-startRadius = 0.1
-finishRadius = 0.05
-animateTime = 0.4
+startRadius = 10.0
+finishRadius = 0.0
+animateTime = 0.2
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
@@ -86,13 +97,13 @@ startColor = "150 139 255 190"
 finishColor = "0 0 255 0" 
 startRadius = 0.1
 finishRadius = 1.0
-animateTime = 0.06
+animateTime = 0.2
 latitudeBands = 6
 longitudeSegments = 12
 
 [Splat]
 simulateBase = "sim_null"
-lifeTime = 0.4
+lifeTime = 0.2
 renderBase = "draw_twirl"
 textureName = "ring.tga"
 textureBlend = "one one modulate"
@@ -101,3 +112,19 @@ finishColor = "40 0 255 0"
 startRadius = 0.1
 finishRadius = 1.0
 animateTime = 0.2
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Chunks]
+simulateBase = "sim_ember"
+lifeTime = 1.5
+renderBase = "draw_twirl" //sprite
+textureName = "dirt.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "120 100 255 255"
+finishColor = "255 125 0 0"
+startRadius = 0.4
+finishRadius = 0.3
+animateTime = 1.5
+rotationRate = 5.0
+BottomInteractsWithTerrain = false

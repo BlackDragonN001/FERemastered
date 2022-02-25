@@ -4,17 +4,51 @@
 
 [ExplosionClass]
 classLabel = "explosion"
+StartUpright = true
 
-particleTypes = 3
+particleTypes = 8
+
 particleClass1 = "xsprinkacar.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
-particleClass2 = "xsprinkacar.shock"
+particleInherit1 = "0.8 0.8 0.8"
+
+particleClass2 = "xsprinkcar.flame"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
-particleClass3 = "xsprinkacar.light"
+particleBias2 = "0.0 0.0 0.0"
+particleInherit2 = "0.8 0.8 0.8"
+
+particleClass3 = "xsprinkcar.smoke"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
+particleBias3 = "0.0 0.0 0.0"
+particleInherit3 = "0.8 0.8 0.8"
+
+particleClass4 = "xsprinkacar.shock"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "xsprinkacar.shock2"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+particleClass6 = "xsprinkacar.light"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0"
+particleInherit6 = "0.8 0.8 0.8"
+
+particleClass7 = "xsprinkcar.trail"
+particleCount7 = 5
+particleVeloc7 = "15.0 15.0 15.0"
+particleBias7 = "0.0 5.0 0.0"
+particleInherit7 = "0.5 0.5 0.5"
+
+particleClass8 = "xsprinkcar.chunk"
+particleCount8 = 5
+particleVeloc8 = "30.0 30.0 30.0"
+particleBias8 = "0.0 0.0 0.0"
+particleInherit8 = "0.5 0.5 0.5"
 
 explSound = "xmv1.wav"
 damageRadius = 10.0
@@ -32,16 +66,54 @@ kickOmega = 2.0
 kickVeloc = 2.5
 
 [Core]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 1.5
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 63 220"
+startColor = "255 200 63 220"
 finishColor = "200 0 0 0"
 startRadius = 3.0
 finishRadius = 10.0
 animateTime = 1.5
+rotationRate = 2.0
+bottomInteractsWithTerrain = false
+
+[Flame]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl_trail"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 170 100 150"
+finishColor = "255 80 0 0"
+startRadius = 1.5
+finishRadius = 0.5
+animateTime = 0.5
+rotationRate = 10.0
+emitDelay = 0.05
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitPosVariance = "5.0 5.0 5.0"
+emitLife = 0.5
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl_trail"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 31 31 127"
+finishColor = "63 63 63 0"
+startRadius = 1.5
+finishRadius = 2.0
+animateTime = 0.75
+rotationRate = 10.0
+emitDelay = 0.05
+emitVelocity = "0.0 5.0 0.0"
+emitVariance = "3.0 3.0 3.0"
+emitPosVariance = "5.0 5.0 5.0"
+emitLife = 0.75
 
 [Shock]
 simulateBase = "sim_null"
@@ -49,16 +121,42 @@ lifeTime = 1.0
 renderBase = "draw_sphere"
 textureName = "sprinks.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 63 250"
+startColor = "255 255 63 125"
 finishColor = "200 0 0 0"
 startRadius = 1.0
 finishRadius = 5.0
 animateTime = 1.0
 latitudeBands = 8
 longitudeSegments = 16
+InitialRoll = 0
+InitialYaw = 0
+InitialPitch = 0
+AddRoll = 10
+AddYaw = 10
+AddPitch = 10
+
+[Shock2]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_sphere"
+textureName = "sprinks.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 125"
+finishColor = "200 0 0 0"
+startRadius = 1.0
+finishRadius = 5.0
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16
+InitialRoll = 90
+InitialYaw = 0
+InitialPitch = 90
+AddRoll = -10
+AddYaw = -10
+AddPitch = -10
 
 [Light]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 1.5
 renderBase = "draw_light"
 startColor = "255 150 63 1050"

@@ -1,0 +1,68 @@
+[OrdnanceClass]
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = "xcpengnd_a"
+xplVehicle = "xcpencar_a"
+xplBuilding = "xcpenbld_a"
+
+renderName = "cpen_a.render"
+
+ammoCost = 16
+lifeSpan = 100e-6 // 100m
+shotSpeed = 1e6
+
+damageValue(N) = 15 // none // 600/sec
+damageValue(L) = 10 // light // 500/sec
+damageValue(H) = 5 // heavy // 400/sec
+
+damageValue(S) = 45 // standard // 450
+damageValue(D) = 45 // deflection // 600
+damageValue(A) = 45 // absorbtion // 300
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "cpen_a.core"
+renderName2 = "cpen_a.fringe"
+renderName3 = "cpen_a.sparkle"
+
+[Core]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 555"
+finishColor = "255 255 255 0"
+startRadius = 0.2
+finishRadius = 0.0
+segmentLength = 5.0
+segmentTime = 0.2
+textureRate = 1.0
+textureSpeed = 2.0
+
+[Fringe]
+renderBase = "draw_trail"
+textureName = "penbeam.tga"
+textureBlend = "one one modulate"
+startColor = "127 200 255 255"
+finishColor = "0 63 255 0"
+startRadius = 0.3 //0.3
+finishRadius = 0.0 //1.5
+segmentLength = 5.0
+segmentTime = 0.3
+textureRate = 0.075
+textureSpeed = -1.0
+
+[Sparkle]
+renderBase = "draw_twirl_trail"
+textureName = "ring.tga"
+textureblend = "one one modulate"
+startColor = "0 133 159 255"
+finishColor = "154 217 227 234"
+startRadius = 0.45
+finishRadius = 0.01
+animateTime = 1.0
+emitDelay = 0.005
+emitDelayVar = 0.01
+emitVariance = "2.0 2.0 2.0"
+emitLife = 1.0

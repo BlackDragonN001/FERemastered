@@ -6,12 +6,20 @@ scrapCost = 0
 scrapValue = 0
 maxHealth = 150
 maxHeat = 0
-maxAmmo = 1000
+maxAmmo = 1 //1000 // firing 1000 ordnance all at one time causes lag, or worse. -GBD
 unitName = "Neutron Bomb"
+canInteract = false
+explosionName = "xneutxpl"
 
 [SprayBuildingClass]
 payloadName = "neutron"
-fireSound = "smort02.wav"
+fireSound = NULL //"smort02.wav"
 triggerDelay = 0.0
 setAltitude = 3.0
-anglePitch = 0.3
+liftSpring = 16.0
+anglePitch = 0.0 //3
+//shotDelay = 0.0f
+//omegaSpin = 0.0f
+
+//shotDelay = 0.012 //0.0416
+//omegaSpin = 45.0 //41.252944 //30.0 //15.0

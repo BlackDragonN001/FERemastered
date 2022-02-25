@@ -4,7 +4,7 @@ classLabel = "bullet"
 shotGeometry = NULL
 shotSound = "igtow04.wav"
 xplGround = "xcplasgnd_c"
-xplVehicle = "xcplasbld_c"
+xplVehicle = "xcplascar_c"
 xplBuilding = "xcplasbld_c"
 
 renderName = "cplasma_c.render"
@@ -23,9 +23,14 @@ damageValue(A) = 60 // absorbtion // 200 + 50
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 6
 renderName1 = "cplasma_c.light"
-renderName2 = "cplasma_c.flame"
+renderName2 = "cplasma_c.core"
+renderName3 = "cplasma_c.sparks"
+renderName4 = "cplasma_c.bolts"
+renderName5 = "cplasma_c.bolts"
+renderName6 = "cplasma_c.bolts"
+//renderName7 = "cplasma_c.flame" // original renderName2. -GBD
 
 [Light]
 renderBase = "draw_light"
@@ -39,6 +44,34 @@ attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 1
 
+[Core]
+renderBase = "draw_twirl_trail"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "63 200 255 150"
+finishColor = "0 0 255 0"
+startRadius = 0.5
+finishRadius = 0.05
+animateTime = 0.03
+rotationRate = 10.0
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.03
+bottomInteractsWithTerrain = false
+
+[Core2]
+renderBase = "draw_tracer"
+textureName = "cerbbolt.tga"
+textureBlend = "one one modulate"
+//startColor = "255 255 255 255"
+//finishColor = "255 255 255 255"
+startColor = "255 0 0 255"
+finishColor = "255 0 0 255"
+startRadius = 0.6
+finishRadius = 0.6
+tracerLength = 1.2
+
 [Flame]
 renderBase = "draw_twirl_trail"
 //textureName = "particle.tga"
@@ -49,9 +82,51 @@ finishColor = "0 0 255 0"
 startRadius = 0.3
 finishRadius = 0.05
 animateTime = 0.05
-rotationRate = 10
+rotationRate = 10.0
 emitDelay = 0.001
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "0.0 0.0 0.0"
 emitLife = 0.03
+bottomInteractsWithTerrain = false
 
+[Sparks]
+renderBase = "draw_twirl_trail"
+textureName = "particle.tga"
+textureblend = "one one modulate"
+startColor = "63 200 255 200"
+finishColor = "0 0 255 0"
+startRadius = 0.1
+finishRadius = 0.1
+animateTime = 0.2
+rotationRate = 10.0
+emitDelay = 0.0025
+emitVariance = "15.0 15.0 0.0"
+emitPosVariance = "0.75 0.75 0.0"
+emitInherit = "0.5 0.5 0.5"
+emitLife = 0.2
+bottomInteractsWithTerrain = false
+
+[Bolts]
+renderBase = "draw_emit"
+emitName = "cplasma_c.boltsemit"
+emitVariance = "0.0 0.0 0.0"
+emitPosVariance = "0.0 0.0 0.0"
+emitInherit = "1.0 1.0 1.0"
+emitDelay = 0.01
+emitLife = 0.0 //this is important for draw_bolt to animate.
+
+[BoltsEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.03
+renderBase = "draw_bolt"
+textureName = "dragbolt.tga"
+textureBlend = "one one modulate"
+startColor = "80 255 255 150"
+finishColor = "0 0 255 10"
+startRadius = 0.25
+finishRadius = 0.0
+segmentLength = 0.1
+segmentVariance = "0.35 0.35 0.0"
+animateTime = 0.03
+textureRate = 5.0
+textureSpeed = 0.8

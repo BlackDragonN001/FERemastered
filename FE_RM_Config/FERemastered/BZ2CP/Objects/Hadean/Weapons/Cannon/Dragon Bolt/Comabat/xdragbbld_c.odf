@@ -1,0 +1,53 @@
+// ===============
+// dragon bolt_c VEHICLE HIT
+// ===============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "baz01.wav"
+damageRadius = 0.0
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 16.7 // 25 c18 // heavy
+
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+
+kickRadius = 15.0
+kickOmega = 0.2
+kickVeloc = 1.0
+
+particleTypes = 6
+
+particleClass1 = "xdragbcar_c.splat"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleInherit1 = "0.5 0.5 0.5"
+
+particleClass2 = "xdragbcar_c.flame"
+particleCount2 = 1
+particleVeloc2 = "0.0 1.0 0.0"
+particleInherit2 = "0.5 0.5 0.5"
+
+particleClass3 = "xdragbcar_c.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+particleInherit3 = "0.5 0.5 0.5"
+
+particleClass4 = "xdragbcar_c.chunks"
+particleCount4 = 10
+particleVeloc4 = "10.0 10.0 10.0"
+particleBias4 = "0.0 3.0 0.0"
+particlePosVar4 = "2.0 2.0 2.0"
+
+particleClass5 = "xdragbcar_c.smoke"
+particleCount5 = 1
+particleVeloc5 = "0.0 1.0 0.0"
+particleBias5 = "0.0 3.0 0.0"
+
+particleClass6 = "xdragbgnd_c.sphere"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0"

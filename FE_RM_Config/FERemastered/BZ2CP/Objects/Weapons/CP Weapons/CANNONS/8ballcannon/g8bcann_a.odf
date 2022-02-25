@@ -16,63 +16,70 @@ deltaRate = 0.0
 startVolume = 40.0
 deltaVolume = 0.0
 
-ordnanceCount = 7
+ordnanceCount = 8
 
 shotDelay1 = 0.0
-salvoCount1 = 1
+salvoCount1 = 0
 salvoDelay1 = 0
-shotVariance1 = 0.01
-fireSound1 = "8bcannshote.wav"
-ordName1 = "8bcann_a"
+shotVariance1 = 0.0
+fireSound1 = NULL //"8bcannshote.wav"
+ordName1 = NULL //"8bcann_a"
 wpnReticle1 = "gmaggun.0"
 
-shotDelay2 = 0.5
-salvoCount2 = 2
-salvoDelay2 = 0.25
+shotDelay2 = 0.25
+salvoCount2 = 1
+salvoDelay2 = 0
 shotVariance2 = 0.01
-fireSound2 = "8bcannshot2.wav"
+fireSound2 = "8bcannshote.wav"
 ordName2 = "8bcann_a"
-wpnReticle2 = "gmaggun.1"
+wpnReticle2 = "gmaggun.0"
 
-shotDelay3 = 1.0
-salvoCount3 = 3
+shotDelay3 = 0.5
+salvoCount3 = 2
 salvoDelay3 = 0.25
 shotVariance3 = 0.01
-fireSound3 = "8bcannshot3.wav"
+fireSound3 = "8bcannshot2.wav"
 ordName3 = "8bcann_a"
-wpnReticle3 = "gmaggun.2"
+wpnReticle3 = "gmaggun.1"
 
-shotDelay4 = 1.5
-salvoCount4 = 4
+shotDelay4 = 1.0
+salvoCount4 = 3
 salvoDelay4 = 0.25
 shotVariance4 = 0.01
-fireSound4 = "8bcannshot4.wav"
+fireSound4 = "8bcannshot3.wav"
 ordName4 = "8bcann_a"
-wpnReticle4 = "gmaggun.3"
+wpnReticle4 = "gmaggun.2"
 
-shotDelay5 = 2.0
-salvoCount5 = 5
+shotDelay5 = 1.5
+salvoCount5 = 4
 salvoDelay5 = 0.25
 shotVariance5 = 0.01
-fireSound5 = "8bcannshot5.wav"
+fireSound5 = "8bcannshot4.wav"
 ordName5 = "8bcann_a"
-wpnReticle5 = "gmaggun.4"
+wpnReticle5 = "gmaggun.3"
 
-shotDelay6 = 2.5
-salvoCount6 = 6
+shotDelay6 = 2.0
+salvoCount6 = 5
 salvoDelay6 = 0.25
 shotVariance6 = 0.01
-fireSound6 = "8bcannshot6.wav"
+fireSound6 = "8bcannshot5.wav"
 ordName6 = "8bcann_a"
-wpnReticle6 = "gmaggun.5"
+wpnReticle6 = "gmaggun.4"
 
-shotDelay7 = 3.5
-salvoCount7 = 8
+shotDelay7 = 2.5
+salvoCount7 = 6
 salvoDelay7 = 0.25
 shotVariance7 = 0.01
-fireSound7 = "8bcannshot8.wav"
+fireSound7 = "8bcannshot6.wav"
 ordName7 = "8bcann_a"
-wpnReticle7 = "gmaggun.6"
+wpnReticle7 = "gmaggun.5"
 
+shotDelay8 = 3.5
+salvoCount8 = 8
+salvoDelay8 = 0.25
+shotVariance8 = 0.01
+fireSound8 = "8bcannshot8.wav"
+ordName8 = "8bcann_a"
+wpnReticle8 = "gmaggun.6"
 
 holdRate = 100.0

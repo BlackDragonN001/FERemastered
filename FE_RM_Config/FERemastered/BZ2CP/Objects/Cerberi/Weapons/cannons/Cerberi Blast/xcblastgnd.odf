@@ -14,17 +14,17 @@ damageValue(S) = 0
 damageValue(D) = 0
 damageValue(A) = 0
 
-particleTypes = 5
+particleTypes = 8
 
 particleClass1 = "xcblastgnd.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
-particleClass2 = "xcblastgnd.ring"
+particleClass2 = "xcblastgnd.char"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
 
-particleClass3 = "xcblastgnd.char"
+particleClass3 = "xcblastgnd.ring"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
@@ -36,6 +36,19 @@ particleClass5 = "xcblastgnd.flame"
 particleCount5 = 1
 particleVeloc5 = "0.0 1.0 0.0"
 particleBias5 = "0.0 0.0 0.0"
+
+particleClass6 = "xcblastgnd.energypuffa"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0"
+
+particleClass7 = "xcblastgnd.sparkTrails"
+particleCount7 = 4
+particleVeloc7 = "26.0 60.0 26.0"
+particleBias7 = "0.0 0.0 0.0"
+
+particleClass8 = "xcblastgnd.light"
+particleCount8 = 1
+particleVeloc8 = "0.0 0.0 0.0"
 
 
 [Core]
@@ -50,7 +63,7 @@ startRadius = 0.5
 finishRadius = 5.0
 animateTime = 0.5
 
-[Ring]
+[Char]
 simulateBase = "sim_null"
 lifeTime = 10.0
 renderBase = "draw_planar"
@@ -62,19 +75,19 @@ startRadius = 5.0
 finishRadius = 5.0
 animateTime = 10.0
 
-[Char]
+[Ring]
 simulateBase = "sim_null"
 lifeTime = 3.0
 renderBase = "draw_planar"
 textureName = "blast.tga"
 textureBlend = "one one modulate"
-startColor = " 0 100 255 255"
+startColor = "0 100 255 255"
 finishColor = "0 0 255 0"
 startRadius = 7.0
 finishRadius = 0.5
 animateTime = 3.0
 
-[cloud]
+[Cloud]
 simulateBase = "sim_dust"
 lifeTime = 2.0
 renderBase = "draw_emit"
@@ -82,8 +95,9 @@ emitName = "xblastgnd.cloudemit"
 emitDelay = 0.25
 emitVelocity = "0.0 1.5 0.0"
 emitVariance = "1.0 0.0 1.0"
+emitPosVariance = "0.5 0.0 0.5"
 
-[cloudemit]
+[CloudEmit]
 simulateBase = "sim_smoke"
 lifeTime = 3.0
 renderBase = "draw_twirl"
@@ -94,14 +108,15 @@ finishColor = "200 200 200 0"
 startRadius = 1.5 // 0.2
 finishRadius = 0.1 // 2.0
 animateTime = 3.0
+useTerrainColor = 0.9
 
 [Flame]
 simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_twirl_trail"
-textureName = "flame2.tga"
+textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = "200 200 255 128"
+startColor = "200 200 255 127"
 finishColor = "0 100 255 0"
 startRadius = 0.5
 finishRadius = 0.1
@@ -111,3 +126,57 @@ emitDelay = 0.03
 emitVelocity = "0.0 2.0 0.0"
 emitVariance = "2.0 2.0 2.0"
 emitLife = 2.0
+
+[EnergyPuffA]
+simulateBase = "sim_smoke"
+lifeTime = 0.15
+renderBase = "draw_emit"
+emitName = "xblastcar.EnergyPuffB"
+emitVariance = "30.0 30.0 30.0"
+emitDelay = 0.03
+emitInherit = "1.0 1.0 1.0"
+emitLife = 0
+
+	[EnergyPuffB]
+	simulateBase = "sim_smoke"
+	lifeTime = 0.3
+	renderBase = "draw_bolt"
+	textureName = "trail2.tga"
+	textureBlend = "one one modulate"
+	textureRate = 0.8
+	texturespeed = -16.0
+	startColor = "100 100 255 255"
+	finishColor = "0 0 255 0"
+	startRadius = 0.05
+	finishRadius = 0.008
+	segmentLength = 0.4
+	segmentVariance = "1.4 1.4 1.4"
+	animateTime = 0.3
+	
+[SparkTrails]
+simulateBase = "sim_ember"
+lifeTime = 2.0
+renderBase = "draw_trail"
+textureName = "spark2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.3
+startColor = "100 255 255 255"
+finishColor = "0 100 255 0"
+startRadius = 0.1
+finishRadius = 0.0
+segmentTime = 0.15
+segmentLength = 0.3
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 0.7
+renderBase = "draw_light"
+startColor = "100 255 255 855"
+finishColor = "0 100 255 0"
+startRadius = 20.0
+finishRadius = 10.0
+animateTime = 0.7
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

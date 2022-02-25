@@ -1,0 +1,82 @@
+// ===============
+// SONIC CANNON CAR HIT
+// ===============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xfire1.wav"
+damageRadius = 5.0
+
+damageValue(N) = 75 // none
+damageValue(L) = 50 // light
+damageValue(H) = 25 // heavy
+
+damageValue(S) = 50 // standard
+damageValue(D) = 75 // deflection
+damageValue(A) = 25 // absorbtion
+
+kickRadius = 20.0
+kickOmega = 2.0
+kickVeloc = 10.0
+
+particleTypes = 4
+
+particleClass1 = "xcslamcar_c.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xcslamcar_c.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xcslamcar_c.puff"
+particleCount3 = 10
+particleVeloc3 = "15.0 15.0 15.0"
+
+particleClass4 = "xcslamgnd_c.light2"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "flame.tga" //wasplat
+textureBlend = "one one modulate"
+startColor = "255 63 255 200"
+finishColor = "100 0 100 0"
+startRadius = 0.8
+finishRadius = 4.8
+animateTime = 2.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.4
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255" 
+finishColor = "150 0 155 0" 
+startRadius = 0.2
+finishRadius = 2.8
+animateTime = 0.4
+latitudeBands = 8
+longitudeSegments = 16
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 0.3
+renderBase = "draw_twirl"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 255 200"
+finishColor = "255 230 230 0"
+startRadius = 0.0
+finishRadius = 5.0
+animateTime = 0.3
+rotationrate = 20.0
+bottomInteractsWithTerrain = false

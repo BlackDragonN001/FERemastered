@@ -1,0 +1,131 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotRadius = 3.0
+
+xplGround = "xcpengnd_c"
+xplVehicle = "xcpencar_c"
+xplBuilding = "xcpenbld_c"
+
+ammoCost = 1.5
+lifeSpan = 0.5 // 100m
+shotSpeed = 200.0
+
+damageValue(N) = 6 // none
+damageValue(L) = 4 // light
+damageValue(H) = 1 // heavy
+
+damageValue(S) = 20 // standard
+damageValue(D) = 20 // deflection
+damageValue(A) = 20 // absorbtion
+
+renderName = "cpen_c.render"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 7
+renderName1 = "cpen_c.light"
+renderName2 = "cpen_c.spinA"
+renderName3 = "cpen_c.spinB"
+renderName4 = "cpen_c.spinC"
+renderName5 = "cpen_c.spinD"
+renderName6 = "cpen_c.core"
+renderName7 = "cpen_c.sparkle"
+
+[Core]
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "penshot2.tga"
+startColor = "255 127 190 255"
+finishColor = "255 127 190 255"
+startRadius = 1.0 //0.04
+finishRadius = 1.0 //0.01
+tracerLength = 3.0 //0.15
+
+[Light]
+renderBase = "draw_light"
+startColor = "80 100 250 255"
+finishColor = "80 100 250 255"
+startRadius = 10.0
+finishRadius = 10.0
+animateTime = 0.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+[SpinA]
+renderBase = "draw_twirl" //_trail"
+textureName = "deflect.tga" //"penshot.tga"
+textureBlend = "one one modulate"
+startColor = "190 127 255 255" //"127 255 255 255"
+finishColor = "190 127 255 255" //"127 255 255 255"
+startRadius = 1.0
+finishRadius = 1.0
+rotationrate = 10.0
+bottomInteractsWithTerrain = false
+
+[SpinB]
+renderBase = "draw_twirl" //_trail"
+textureName = "plasma.tga" //"penshot.tga"
+textureBlend = "one one modulate"
+startColor = "127 255 255 255"
+finishColor = "127 255 255 255"
+startRadius = 1.0
+finishRadius = 1.0
+rotationrate = 10.0
+bottomInteractsWithTerrain = false
+
+[SpinC]
+renderBase = "draw_twirl"
+textureName = "elecsphere.tga"
+textureBlend = "one one modulate"
+startColor = "127 127 255 355"
+finishColor = "127 127 255 355"
+startRadius = 0.8
+finishRadius = 0.8
+rotationrate = 10.0
+bottomInteractsWithTerrain = false
+
+[SpinD]
+renderBase = "draw_twirl"
+textureName = "penshot3.tga"
+textureBlend = "one one modulate"
+startColor = "127 190 255 255"
+finishColor = "127 190 255 255"
+startRadius = 0.6
+finishRadius = 0.6
+rotationrate = 10.0
+bottomInteractsWithTerrain = false
+
+[Sparkle]
+renderBase = "draw_twirl_trail"
+textureName = "flare.tga"
+textureblend = "one one modulate"
+startColor = "0 133 159 255"
+finishColor = "154 217 227 234"
+startRadius = 0.45
+finishRadius = 0.0
+animateTime = 1.0
+emitDelay = 0.025
+emitDelayVar = 0.05
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 1.0
+
+
+[SpinE]
+renderBase = "draw_twirl" //_trail"
+textureName = "penshot2.tga"
+textureBlend = "one one modulate"
+startColor = "55 200 200 255" 
+finishColor = "55 200 200 255" 
+startRadius = 2.0
+finishRadius = 1.0
+animateTime = 0.043
+emitDelay = 0.006
+emitLife = 0.02
+rotationRate = 10.0
+bottomInteractsWithTerrain = false
+

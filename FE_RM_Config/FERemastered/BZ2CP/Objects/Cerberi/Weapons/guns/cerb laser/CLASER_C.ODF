@@ -1,9 +1,11 @@
 [OrdnanceClass]
 classLabel = "bullet"
 shotGeometry = NULL
+
 xplGround = "xclasgnd_c"
-xplVehicle = "xclasgnd_c"
-xplBuilding = "xclasgnd_c"
+xplVehicle = "xclascar_c"
+xplBuilding = "xclasbld_c"
+
 renderName = "claser_c.render"
 
 ammoCost = 1
@@ -19,10 +21,29 @@ damageValue(D) = 30 // deflection
 damageValue(A) = 10 // absorbtion
 
 [Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "claser_c.core"
+renderName2 = "claser_c.trail"
+
+[Core]
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "cerbullet.tga"
+startColor = "120 100 255 255"
+finishColor = "120 100 255 255"
+startRadius = 0.75 //0.04
+finishRadius = 0.75 //0.01
+tracerLength = 2.5 //0.15
+
+[Trail]
 renderBase = "draw_trail"
 textureBlend = "one one modulate"
-startColor = "120 100 255 200"
-finishColor = "0 0 200 20"
-startRadius = 0.04
-finishRadius = 0.01
+textureName = "trail2.tga"
+startColor = "120 100 255 0"
+finishColor = "0 0 200 555"
+startRadius = 0.4
+finishRadius = 0.0
 segmentTime = 0.15
+textureRate = 0.05
+textureSpeed = -1.0

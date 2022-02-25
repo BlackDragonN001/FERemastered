@@ -20,13 +20,13 @@ kickRadius = 0.5
 kickOmega = 0.0
 kickVeloc = 0.3
 
-particleTypes = 4
+particleTypes = 9
 
-particleClass1 = "xdragbgnd_c.splat"
+particleClass1 = "xdragbgnd_c.char"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
-particleClass2 = "xdragbgnd_c.ring"
+particleClass2 = "xdragbgnd_c.splat"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
 
@@ -34,9 +34,34 @@ particleClass3 = "xdragbgnd_c.flame"
 particleCount3 = 1
 particleVeloc3 = "0.0 1.0 0.0"
 
-particleClass4 = "xdragbgnd_c.light"
+particleClass4 = "xdragbgnd_c.cloud"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "xdragbgnd_c.light"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+particleClass6 = "xdragbgnd_c.chunks"
+particleCount6 = 6
+particleVeloc6 = "25.0 5.0 25.0"
+particleBias6 = "0.0 7.0 0.0"
+particlePosVar6 = "2.0 0.0 2.0"
+
+particleClass7 = "xdragbgnd_c.dirtkickup"
+particleCount7 = 6
+particleVeloc7 = "6.0 10.0 6.0"
+particleBias7 = "0.0 6.0 0.0"
+particlePosVar7 = "3.0 0.0 3.0"
+
+particleClass8 = "xdragbgnd_c.sphere"
+particleCount8 = 1
+particleVeloc8 = "0.0 0.0 0.0"
+
+particleClass9 = "xdragbgnd_c.FlameSmoke"
+particleCount9 = 5
+particleVeloc9 = "4.0 12.0 4.0"
+particleBias9 = "0.0 8.0 0.0"
 
 
 [Splat]
@@ -51,7 +76,7 @@ startRadius = 0.2
 finishRadius = 4.0
 animateTime = 0.3
 
-[Ring]
+[Char]
 simulateBase = "sim_null"
 lifeTime = 5.0
 renderBase = "draw_planar"
@@ -80,16 +105,97 @@ emitVelocity = "0.0 2.0 0.0"
 emitVariance = "2.0 2.0 2.0"
 emitLife = 0.4
 
+[Cloud]
+simulateBase = "sim_dust"
+lifeTime = 0.5
+renderBase = "draw_emit"
+emitName = "xdragbgnd_c.cloudemit"
+emitDelay = 0.05
+emitVelocity = "0.0 2.0 0.0"
+emitVariance = "1.0 0.0 1.0"
+emitPosVariance = "1.0 0.0 1.0"
+
+[CloudEmit]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "200 200 200 100"
+finishColor = "127 127 127 0"
+startRadius = 0.5
+finishRadius = 1.0
+animateTime = 1.0
+useTerrainColor = 0.9
+
+[Chunks]
+simulateBase = "sim_chunk"
+lifeTime = 2.4
+renderBase = "draw_twirl"
+textureName = "dirt.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "40 40 40 255"
+finishColor = "40 40 40 0"
+startRadius = 0.4
+finishRadius = 0.4
+animateTime = 2.4
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+useTerrainColor = 0.9
+
+[DirtKickup]
+simulateBase = "sim_chunk"
+lifeTime = 1.2
+renderBase = "draw_twirl"
+textureName = "dirtcloud.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "90 90 90 255"
+finishColor = "90 90 90 0"
+startRadius = 1.5
+finishRadius = 3.0
+animateTime = 1.2
+rotationRate = 10.0
+BottomInteractsWithTerrain = false
+useTerrainColor = 0.9
+
+[FlameSmoke]
+simulateBase = "sim_ember"
+lifeTime = 1.8
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 87"
+finishColor = "28 28 28 0"
+startRadius = 1.5
+finishRadius = 4.0
+animateTime = 1.8
+rotationRate = 1.6
+BottomInteractsWithTerrain = false
+
 [Light]
 simulateBase = "sim_null"
 lifeTime = 0.5
 renderBase = "draw_light"
 startColor = "255 200 0 555"
 finishColor = "255 0 0 0"
-startRadius = 4.0
-finishRadius = 1.0
+startRadius = 20.0
+finishRadius = 10.0
 animateTime = 0.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
+
+[Sphere]
+simulateBase = "sim_null"
+lifeTime = 0.15
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "127 63 31 255"
+finishColor = "127 96 63 0"
+startRadius = 0.1
+finishRadius = 4.0
+animateTime = 0.15
+latitudeBands = 8
+longitudeSegments = 16

@@ -1,9 +1,11 @@
 [OrdnanceClass]
 classLabel = "beam"
+
 shotGeometry = NULL
-xplGround = "xblastgnd"
-xplVehicle = "xblastcar"
-xplBuilding = "xblastbld"
+
+xplGround = "xcblastgnd"
+xplVehicle = "xcblastcar"
+xplBuilding = "xcblastbld"
 
 renderName = "cerblast.render"
 
@@ -21,36 +23,41 @@ damageValue(A) = 300 // absorbtion // 150
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
-renderName1 = "cerblast.beam"
-renderName2 = "cerblast.fringe"
-renderName3 = "cerblast.sparkle"
+renderCount = 6
+renderName1 = "cblast_c.light"
+renderName2 = "cerblast.beam" //"cblast_c.beam"
+renderName3 = "cerblast.fringe"
+//renderName4 = "cblast_c.bolts"
+//renderName5 = "cblast_c.bolts"
+//renderName6 = "cblast_c.bolts"
+renderName4 = "cblast_c.sparkle"
+
 
 [Beam]
-renderBase = "draw_bolt"
-textureName = NULL //"trail2.tga"
+renderBase = "draw_trail" //bolt"
+textureName = "trail2.tga"
 textureBlend = "one one modulate"
-startColor = "200 255 200 255"
-finishColor = "0 255 0 255"
+startColor = "200 200 255 255"
+finishColor = "0 0 255 255"
 startRadius = 0.15
 finishRadius = 0.05
 segmentLength = 5.0
-segmentVariance = "0.0 0.0 0.0"
-animateTime = 1.0
-textureRate = 0.01
+segmentTime = 1.0
+textureRate = 1.0
+textureSpeed = -5.0
 
 [Fringe]
-renderBase = "draw_bolt"
-textureName = NULL //"trail2.tga"
+renderBase = "draw_trail" //bolt"
+textureName = "dragbolt.tga"
 textureBlend = "one one modulate"
 startColor = "0 0 255 255"
 finishColor = "50 180 50 0"
 startRadius = 0.05
 finishRadius = 0.5
 segmentLength = 5.0
-segmentVariance = "0.0 0.0 0.0"
-animateTime = 1.0
-textureRate = 0.01
+segmentTime = 1.0
+textureRate = 1.0
+textureSpeed = -1.0
 
 [Sparkle]
 renderBase = "draw_twirl_trail"

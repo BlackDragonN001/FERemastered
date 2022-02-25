@@ -3,7 +3,7 @@ classLabel = "bullet"
 
 shotGeometry = NULL
 shotSound = "gflas00.wav"
-xplGround = "xeplas_a"
+xplGround = "xeplasgnd_a"
 xplVehicle = "xeplas_a"
 xplBuilding = "xeplas_a"
 
@@ -29,10 +29,10 @@ renderName2 = "eplas_a.flame"
 
 [Light]
 renderBase = "draw_light"
-startColor = "255 255 255 555"
-finishColor = "255 255 255 550"
-startRadius = 30.0
-finishRadius = 30.0
+startColor = "1000 1000 1000 555" //"255 255 255 555"
+finishColor = "1000 1000 1000 555" //"255 255 255 555"
+startRadius = 150.0 //30.0
+finishRadius = 150.0 //30.0
 animateTime = 2.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0

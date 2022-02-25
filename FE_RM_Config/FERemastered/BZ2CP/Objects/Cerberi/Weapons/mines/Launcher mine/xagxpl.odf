@@ -5,8 +5,13 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-
 explSound = "shipxpl.wav"
+
+particleTypes = 1
+
+particleClass1 = "xagxpl.shock"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
 
 damageRadius = 40.0
 
@@ -21,15 +26,6 @@ damageValue(A) = 10
 kickRadius = 40.0
 kickOmega = 50.0
 kickVeloc = 30.0
-
-
-particleTypes = 1
-
-
-particleClass1 = "xagxpl.shock"
-particleCount1 = 1
-particleVeloc1 = "0.0 0.0 0.0"
-
 
 [Shock]
 simulateBase = "sim_null"

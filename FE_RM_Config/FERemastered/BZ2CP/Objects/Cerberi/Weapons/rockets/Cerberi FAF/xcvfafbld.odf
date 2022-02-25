@@ -1,0 +1,68 @@
+// ===================
+// FUN MISSILE VEHICLE HIT
+// ===================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 9
+
+particleClass1 = "xcvfafcar.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xcvfafcar.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xcvfafcar.flame"
+particleCount3 = 1
+particleVeloc3 = "0.0 1.0 0.0"
+particleBias3 = "0.0 2.0 0.0"
+
+particleClass4 = "xcvfafcar.smoke"
+particleCount4 = 1
+particleVeloc4 = "0.0 4.0 0.0"
+particleBias4 = "0.0 5.0 0.0"
+
+particleClass5 = "xcvfafcar.light"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+particleClass6 = "xcvfafcar.chunks"
+particleCount6 = 5
+particleVeloc6 = "10.0 10.0 10.0"
+particleBias6 = "0.0 0.0 0.0"
+particlePosVar6 = "2.0 2.0 2.0"
+
+particleClass7 = "xcvfafcar.trail"
+particleCount7 = 5
+particleVeloc7 = "10.0 10.0 10.0"
+particleBias7 = "0.0 5.0 0.0"
+particlePosVar7 = "2.0 2.0 2.0"
+
+particleClass8 = "xcvfafgnd.Flames"
+particleCount8 = 8
+particleVeloc8 = "6.0 10.0 6.0"
+particleBias8 = "0.0 5.0 0.0"
+particlePosVar8 = "3.0 0.0 3.0"
+
+particleClass9 = "xcvfafgnd.FlameHeat"
+particleCount9 = 3
+particleVeloc9 = "5.0 3.0 5.0"
+particleBias9 = "0.0 5.5 0.0"
+particlePosVar9 = "3.0 0.0 3.0"
+
+explSound = "xsv2.wav"
+
+damageRadius = 10.0
+
+damageValue(N) = 100 // none
+damageValue(L) = 70 // light
+damageValue(H) = 40 // heavy
+
+damageValue(S) = 70 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 40 // absorbtion
+
+

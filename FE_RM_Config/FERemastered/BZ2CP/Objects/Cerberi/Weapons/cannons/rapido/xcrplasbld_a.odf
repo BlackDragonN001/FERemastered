@@ -1,0 +1,55 @@
+// ===============
+// PLASMA VEHICLE HIT
+// ===============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xfire1.wav"
+
+damageRadius = 5.0
+
+///// DAMAGE /////////////////////////
+
+damageValue(N) = 50 // none
+damageValue(L) = 25 // light
+damageValue(H) = 5 // heavy
+
+damageValue(S) = 25 // standard
+damageValue(D) = 50 // deflection
+damageValue(A) = 5 // absorbtion
+
+/////////////////////////////////////
+
+particleTypes = 7
+
+particleClass1 = "xcrplascar_a.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xcrplascar_a.puff"
+particleCount2 = 4
+particleVeloc2 = "7.0 7.0 7.0"
+
+particleClass3 = "xcrplascar_a.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xcrplascar_a.shock"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "xcrplascar_a.splat"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+particleClass6 = "xcrplascar_a.chunks"
+particleCount6 = 10
+particleVeloc6 = "10.0 10.0 10.0"
+particleBias6 = "0.0 0.0 0.0"
+particlePosVar6 = "2.0 2.0 2.0"
+
+particleClass7 = "xcrplascar_a.smoke"
+particleCount7 = 5
+particleVeloc7 = "5.0 7.0 5.0"
+particleBias7 = "0.0 5.0 0.0"

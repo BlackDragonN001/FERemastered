@@ -34,6 +34,7 @@ startRadius = 0.7
 finishRadius = 3.1
 animateTime = 2.0
 rotationRate = 2.0
+BottomInteractsWithTerrain = false
 
 [FlameEmitter]
 renderBase = "draw_twirl_trail"
@@ -51,23 +52,26 @@ startRadius = 1.0
 finishRadius = 0.5
 animateTime = 1.0
 rotationRate = 10.0
+BottomInteractsWithTerrain = false
 
 [SparkEmitter]
 renderBase = "draw_twirl_trail"
 emitDelay = 0.02
 emitDelayVar = 0.01
-emitVelocity = "3.0 5.0 3.0"
+emitVelocity = "0.0 5.0 0.0"
 emitVariance = "19.0 19.0 19.0"
-emitInherit = "1.0 1.0 1.0"
+emitPosVariance = "5.0 5.0 5.0"
+emitInherit = "0.8 0.8 0.8"
 emitLife = 1.6
-textureName = "spark.tga"
+textureName = "spark3.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 0 255"
-finishColor = "255 0 0 0"
-startRadius = 0.5
-finishRadius = 0.4
+startColor = "255 255 63 255"
+finishColor = "255 127 31 0"
+startRadius = 0.3
+finishRadius = 0.1
 animateTime = 1.6
 rotationRate = 30.0
+BottomInteractsWithTerrain = false
 
 [light]
 simulateBase = "sim_smoke"

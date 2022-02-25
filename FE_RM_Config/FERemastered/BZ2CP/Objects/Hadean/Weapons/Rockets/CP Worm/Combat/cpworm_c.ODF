@@ -1,7 +1,7 @@
 [OrdnanceClass]
 classLabel = "thermalmissile"
 
-shotGeometry = "sgmloc00.fbx" //"forckt01.xsi"
+shotGeometry = NULL //"sgmloc00.fbx" //"forckt01.xsi"
 shotSound = "satord.wav"
 
 renderName = "cpworm_c.render"
@@ -30,50 +30,99 @@ coneAngle = 0.4
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 4
+renderCount = 6
 renderName1 = "cpworm_c.light"
 renderName2 = "cpworm_c.flare"
-renderName3 = "cpworm_c.sparkle"
-renderName4 = "cpworm_c.trailer"
+renderName3 = "cpworm_c.core"
+renderName4 = "cpworm_c.flame"
+renderName5 = "cpworm_c.smoke"
+renderName6 = "cpworm_c.sparkle"
+//renderName7 = "cpworm_c.trailer"
 
 [Light]
 renderBase = "draw_light"
 startColor = "100 55 250 400"
 finishColor = "100 55 250 400"
-startRadius = 8.0
-finishRadius = 8.0
-animateTime = 0.3
+startRadius = 15.0
+finishRadius = 15.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 1
 
 [Flare]
-renderBase = "draw_sprite"
+renderBase = "draw_twirl"
 textureName = "lightflare.tga"
 textureBlend = "one one modulate"
 startColor = "100 55 255 255"
 finishColor = "100 55 255 255"
 startRadius = 2.5
 finishRadius = 2.5
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[Core]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 255 250"
+finishColor = "100 90 100 0"
+startRadius = 0.4
+finishRadius = 0.0
+segmentTime = 1.0
+textureRate = 0.1
+textureSpeed = 0.5
+
+[Flame]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.005
+emitDelayVar = 0.0025
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.5 1.5 0.0"
+//emitInherit = "1.5 1.5 1.5"
+emitLife = 1.0
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "200 31 255 127"
+finishColor = "190 0 255 0"
+startRadius = 0.3
+finishRadius = 1.2
+animateTime = 1.0
+rotationRate = 8.0
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.0075
+emitDelayVar = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+//emitInherit = "1.5 1.5 1.0"
+emitLife = 1.0
+textureName = "flame.tga" //"smoke2.tga"
+textureBlend = "one one modulate" //"srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 255 127"
+finishColor = "0 0 255 0"
+startRadius = 0.4
+finishRadius = 1.6
+animateTime = 1.0
+rotationRate = 8.0
 
 [Sparkle]
 renderBase = "draw_twirl_trail"
 textureName = "plasma.tga" // flame
 textureblend = "one one modulate"
-startColor = "10 10 200 600"
-finishColor = "0 0 100 100"
+startColor = "25 25 200 600"
+finishColor = "0 0 100 0"
 startRadius = 0.3
 finishRadius = 0.1
-animateTime = 1.5
+animateTime = 2.0
+rotationRate = 10.0
 emitDelay = 0.005
 emitVariance = "3.0 3.0 3.0"
-emitLife = 2.5
+emitLife = 2.0
 BottomInteractsWithTerrain = false
 
 [trailer]
-simulateBase = "sim_dust"//dust
-lifeTime = 1.5 //2.5
 renderBase = "draw_trail"
 textureName = "heat2.tga"
 textureBlend = "one one modulate"
@@ -82,5 +131,4 @@ startColor = "255 255 255 250"
 finishColor = "100 100 100 0"
 startRadius = 0.2
 finishRadius = 1.5
-segmentTime = 1.0
-animateTime = 2.5
+segmentTime = 1.0 //animateTime = 2.5

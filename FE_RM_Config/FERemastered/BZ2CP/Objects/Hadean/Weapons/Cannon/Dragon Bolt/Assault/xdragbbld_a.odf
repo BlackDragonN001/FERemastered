@@ -5,18 +5,30 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 3
+particleTypes = 5
+
 particleClass1 = "xdragbbld_a.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
-particleClass2 = "xdragbbld_a.cloud"
+particleClass2 = "xdragbbld_a.smoke"
 particleCount2 = 1
-particleVeloc2 = "0.0 10.0 0.0"
+particleVeloc2 = "0.0 0.0 0.0"
 
 particleClass3 = "xdragbbld_a.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xdragbcar_a.chunks"
+particleCount4 = 15
+particleVeloc4 = "15.0 15.0 15.0"
+particleBias4 = "0.0 3.0 0.0"
+particlePosVar4 = "2.0 2.0 2.0"
+particleInherit4 = "1.0 1.0 1.0"
+
+particleClass5 = "xdragbgnd_a.sphere"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
 
 explSound = "lhit.wav"
 
@@ -36,27 +48,28 @@ kickVeloc = 3.0
 
 [Core]
 simulateBase = "sim_null"
-lifeTime = 0.5
+lifeTime = 0.3
 renderBase = "draw_twirl"
 textureName = "firering.tga"
 textureBlend = "one one modulate"
 startColor = "255 220 0 255"
 finishColor = "255 200 0 0"
 startRadius = 2.0
-finishRadius = 10.0
-animateTime = 0.5
+finishRadius = 8.0
+animateTime = 0.3
 BottomInteractsWithTerrain = false
 
-[cloud]
-simulateBase = "sim_dust"
+[smoke]
+simulateBase = "sim_smoke"
 lifeTime = 2.5
 renderBase = "draw_emit"
-emitName = "xdragbbld_a.cloudemit"
+emitName = "xdragbbld_a.smokeemit"
 emitDelay = 0.25
 emitVelocity = "0.0 1.5 0.0"
-emitVariance = "2.0 2.0 2.0"
+emitVariance = "2.0 0.5 2.0"
+emitPosVariance = "2.0 0.0 2.0"
 
-[cloudemit]
+[smokeemit]
 simulateBase = "sim_smoke"
 lifeTime = 2.5
 renderBase = "draw_twirl"
@@ -65,7 +78,7 @@ textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "20 20 20 155"
 finishColor = "50 50 50 0"
 startRadius = 2.0
-finishRadius = 10.0
+finishRadius = 8.0
 animateTime = 2.5
 
 [Light]

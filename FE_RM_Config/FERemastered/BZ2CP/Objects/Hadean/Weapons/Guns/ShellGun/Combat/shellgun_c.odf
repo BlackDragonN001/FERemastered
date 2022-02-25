@@ -28,39 +28,35 @@ damageValue(A) = 21 // 18 FEA-B // absorbtion // 271
 
 [render]
 renderBase = "draw_multi"
-renderCount = 3
-renderName1 = "shellgun_c.e1"
-renderName2 = "shellgun_c.e2"
-renderName3 = "shellgun_c.e4"
+renderCount = 2
+renderName1 = "shellgun_c.core"
+renderName2 = "shellgun_c.trail"
 //renderName4 = "shellgun_c.e3" // wass "xshellgun_c", never worked. -GBD
 
-[e1]
-//simulateBase = "sim_null"
-//lifeTime = 0.1 //.1
-renderBase = "draw_trail"
+[Core]
+renderBase = "draw_tracer"
 textureBlend = "one one modulate"
-textureName = "trail.tga"
+textureName = "hadbullet.tga"
 startColor = "255 90 0 250"
-finishColor = "200 0 0 80"
-startRadius = 0.05 //.05
-finishRadius = 0.04 // .05
-segmentTime = 0.05 //.1
-animateTime = 0.1 //.1
+finishColor = "255 90 0 250"
+startRadius = 0.3 //0.05 //.05
+finishRadius = 0.3 //0.04 // .05
+tracerLength = 3.0
 
-[e2]
-//simulateBase = "sim_null"
-//lifeTime = 1.2
-renderBase = "draw_sprite"
-textureName = "lightflare.tga"//lightflare.tga
+[Trail]
+renderBase = "draw_trail"
+textureName = "trail4.tga"
 textureBlend = "one one modulate"
-startColor = "255 130 0 255"
-finishColor = "255 130 0 255"
-startRadius = 0.1
-finishRadius = 0.1
+startColor = "255 100 0 30"
+finishColor = "255 255 255 0"
+startRadius = 0.0
+finishRadius = 0.6
+segmentLength = 5.0
+segmentTime = 0.5 //3.0 //animateTime = 0.01
+textureRate = 0.1
+textureSpeed = 0.0
 
 [e3]
-//simulateBase = "sim_smoke"
-//lifeTime = 1.0
 renderBase = "draw_emit"
 emitName = "shellgun_c.trail2"
 emitDelay = 0.005
@@ -73,22 +69,9 @@ lifeTime = 1.5 //2.5
 renderBase = "draw_trail"
 textureName = "trail2.tga"
 textureBlend = "one one modulate"
-textureRate = 0.5
 startColor = "255 100 0 255"
 finishColor = "255 0 0 0"
 startRadius = 0.05
 finishRadius = 0.5
-segmentTime = 1.0
-animateTime = 1.5
-
-[e4]
-renderBase = "draw_trail"
-textureName = "trail2.tga"
-textureBlend = "one one modulate"
-textureRate = 0.1
-startColor = "255 100 0 30"
-finishColor = "255 255 255 0"
-startRadius = 0.1
-finishRadius = 0.6
-segmentTime = 0.5 //3.0
-animateTime = 0.01
+segmentTime = 1.0 //animateTime = 1.5
+textureRate = 0.5

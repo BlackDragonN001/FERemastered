@@ -28,20 +28,21 @@ renderName2 = "slicer_c.fringe"
 renderName3 = "slicer_c.fringeA"
 
 [Core]
-renderBase = "draw_bolt"
-textureName = NULL
+renderBase = "draw_trail" //bolt"
+textureName = "blastenergy.tga"
 textureBlend = "one one modulate"
-startColor = "149 156 255 255"
-finishColor = "0 17 255 0"
+startColor = "1490 1560 2550 255" //"149 156 255 255"
+finishColor = "0 170 2550 0" //"0 17 255 0"
 startRadius = 0.1
-finishRadius = 0.05
+finishRadius = 0.1
 segmentLength = 5.0
-segmentVariance = "0.0 0.0 0.0"
-animateTime = 0.2
-textureRate = 0.01
+segmentTime = 0.2 //animateTime = 0.2
+//segmentVariance = "0.0 0.0 0.0"
+textureRate = 0.25
+textureSpeed = -5.0
 
 [Fringe]
-renderBase = "draw_bolt"
+renderBase = "draw_trail" //bolt"
 textureName = "slicer.tga"
 textureBlend = "one one modulate"
 startColor = "0 17 255 255"
@@ -49,21 +50,21 @@ finishColor = "190 23 196 0"
 startRadius = 0.1
 finishRadius = 0.05
 segmentLength = 5.0
-segmentVariance = "0.0 0.0 0.0"
-animateTime = 0.3
-textureRate = 0.02
+segmentTime = 0.3 //animateTime = 0.3
+//segmentVariance = "0.0 0.0 0.0"
+textureRate = 0.25
 textureSpeed = -5.0
 
 [FringeA]
-renderBase = "draw_bolt"
+renderBase = "draw_trail" //bolt"
 textureName = "slicerA.tga"
 textureBlend = "one one modulate"
-startColor = "0 17 255 255"
-finishColor = "190 23 196 0"
+startColor = "0 170 2550 255" //"0 17 255 255"
+finishColor = "1900 230 1960 0" //"190 23 196 0"
 startRadius = 0.1
 finishRadius = 0.1
 segmentLength = 7.5
-segmentVariance = "0.0 0.0 0.0"
-animateTime = 0.3
-textureRate = 0.02
+segmentTime = 0.3 //animateTime = 0.3
+//segmentVariance = "0.0 0.0 0.0"
+textureRate = 0.25
 textureSpeed = -5.0

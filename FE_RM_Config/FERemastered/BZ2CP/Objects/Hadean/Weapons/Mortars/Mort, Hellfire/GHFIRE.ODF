@@ -2,7 +2,7 @@
 classLabel = "mortar"
 ordName = "hfire"
 wpnName = "Hellfire"
-fireSound = "mort01.wav"
+fireSound = "fbshot.wav"
 wpnReticle = "ghartil"
 wpnLadder = "gmortar.L0"
 wpnPriority = 2
@@ -11,4 +11,4 @@ aiRange = 325
 isAssault = 0
 
 [CannonClass]
-shotDelay = 4.0
+shotDelay = 6.0

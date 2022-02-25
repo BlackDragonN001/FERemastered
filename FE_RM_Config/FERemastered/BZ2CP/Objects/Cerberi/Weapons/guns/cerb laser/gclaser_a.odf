@@ -7,17 +7,16 @@ fireSound = "claser.wav"
 wpnReticle = "gminigun"
 wpnCategory = "GUN"
 isAssault = 0
-flashName = "gclaser_c.flash"
+flashName = "gclaser_a.flash"
 aiRange = 120
 
 [CannonClass]
 shotDelay = 0.10
 shotVariance = 0.01
 
-
 [Flash]
 renderBase = "draw_geom"
-textureName = "sflash.tga"
+textureName = "cflash.tga"
 textureBlend = "one one modulate"
 startColor = "200 200 255 255"
 finishColor = "200 200 255 0"

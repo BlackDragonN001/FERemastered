@@ -5,9 +5,11 @@ shotSound = "gblas00.wav.wav"
 
 shotGeometry = NULL
 shotRadius = 1.0
-xplGround = "xcslamgnd_c"
+
+xplGround = "xcslamgnde_c"
 xplVehicle = "xcslamcar_c"
-xplBuilding = "xcslamcar_c"
+xplBuilding = "xcslamblde_c"
+xplExpire = "xcslamemit_c"
 
 renderName = "slamblast.render"
 
@@ -35,39 +37,48 @@ ordDrag = 2.0
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
-renderName1 = "slamblast.Core"
-renderName2 = "slamblast.Flare"
-renderName3 = "slamblast.sparkle"
+renderCount = 4
+renderName1 = "slamblast.light"
+renderName2 = "slamblast.Core"
+renderName3 = "slamblast.Flare"
+renderName4 = "slamblast.sparkle"
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 50 255 500"
+finishColor = "255 50 255 500"
+startRadius = 50.0
+finishRadius = 50.0
+animateTime = 0.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
 
 [Core]
-renderBase = "draw_twirl_trail"
+renderBase = "draw_twirl"
 textureName = "plasma.tga"
 textureBlend = "one one modulate"
-startColor = "100 10 100 255" 
-finishColor = "180 0 180 255" 
-startRadius = 3.0
-finishRadius = 3.0
+startColor = "100 10 100 2555"
+finishColor = "180 0 180 2555"
+startRadius = 4.0
+finishRadius = 4.0
+animateTime = 1.2
 rotationRate = 20.0
-animateTime = 0.02
-emitDelay = 0.001
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "0.0 0.0 0.0"
-emitLife = 0.005
+bottomInteractsWithTerrain = false
 
 [Flare]
 renderBase = "draw_twirl_trail"
 textureName = "cslam.tga"
 textureBlend = "one one modulate"
-startColor = "50 10 80 180" 
-finishColor = "80 5 120 0" 
+startColor = "50 10 80 180"
+finishColor = "80 5 120 0"
 startRadius = 1.5
 finishRadius = 7.5
 animateTime = 0.7
 emitDelay = 0.01
 emitLife = 0.7
-rotationrate = 40
-
+rotationRate = 40.0
 
 [Sparkle]
 renderBase = "draw_twirl_trail"
@@ -78,7 +89,7 @@ finishColor = "154 217 227 234"
 startRadius = 0.45
 finishRadius = 0.01
 animateTime = 1.0
-emitDelay = 0.007
+emitDelay = 0.005
 emitVariance = "2.0 2.0 2.0"
-emitLife = 2.3
-rotationrate = 40
+emitLife = 1.0 //2.3
+rotationRate = 40.0

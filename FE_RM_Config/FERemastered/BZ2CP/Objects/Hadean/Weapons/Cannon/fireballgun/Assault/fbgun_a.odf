@@ -29,11 +29,27 @@ xplPulse = "xfbemit_a"
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
-renderName1 = "fbgun_a.smoke"
-renderName2 = "fbgun_a.flame"
-renderName3 = "fbgun_a.light"
-renderName4 = "fbgun_a.twirl" // Never existed? supposed to be trailer? -GBD
+renderCount = 7
+renderName1 = "fbgun_a.core"
+renderName2 = "fbgun_a.core"
+renderName3 = "fbgun_a.smoke"
+renderName4 = "fbgun_a.flame"
+renderName5 = "fbgun_a.light"
+renderName6 = "fbgun_a.sparks"
+renderName7 = "fbgun_a.smoke2"
+//renderName8 = "fbgun_a.twirl" // Never existed? supposed to be trailer? -GBD
+
+[Core]
+renderBase = "draw_twirl"
+textureName = "crackle.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 127 255"
+finishColor = "255 127 0 255"
+startRadius = 3.0
+finishRadius = 3.0
+animateTime = 3.0
+rotationRate = 8.0
+BottomInteractsWithTerrain = false
 
 [Smoke]
 renderBase = "draw_twirl_trail"
@@ -42,7 +58,7 @@ emitDelayVar = 0.02
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "1.0 1.0 1.0"
 //emitInherit = "1.5 1.5 1.0"
-emitLife = 1.2
+emitLife = 0.7
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "0 0 0 128"
@@ -60,7 +76,7 @@ emitDelayVar = 0.01
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "1.0 1.0 1.0"
 //emitInherit = "1.5 1.5 1.5"
-emitLife = 0.6
+emitLife = 0.7
 textureName = "fire.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 200 128"
@@ -70,6 +86,55 @@ finishRadius = 0.2
 animateTime = 0.7
 rotationRate = 8.0
 BottomInteractsWithTerrain = false
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 150 0 800"
+finishColor = "199 0 0 800"
+startRadius = 40.0
+finishRadius = 40.0
+animateTime = 3.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Sparks]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.01
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "10.0 10.0 10.0"
+emitPosVariance = "4.0 4.0 4.0"
+emitInherit = "0.5 0.5 0.5"
+emitLife = 1.0
+textureName = "spark3.tga"
+textureBlend = "one one modulate"
+startColor = "255 145 38 255"
+finishColor = "255 145 38 0"
+startRadius = 0.2
+finishRadius = 0.2
+animateTime = 1.0
+rotationRate = 2.0
+BottomInteractsWithTerrain = false
+
+[Smoke2]
+renderBase = "draw_twirl_trail"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 63"
+finishColor = "127 127 127 0"
+startRadius = 1.5
+finishRadius = 3.0
+rotationRate = 2.0
+animateTime = 1.0
+emitDelay = 0.05 //0.04
+emitVelocity = "0.0 1.5 0.0"
+emitVariance = "3.0 1.0 3.0"
+emitPosVariance = "1.0 0.0 1.0"
+emitInherit = "0.3 0.3 0.3"
+emitLife = 1.0
+BottomInteractsWithTerrain = false
+
 
 [trailer]
 simulateBase = "sim_dust"//dust
@@ -82,17 +147,4 @@ startColor = "255 255 255 150"
 finishColor = "200 100 100 0"
 startRadius = 0.4
 finishRadius = 2.0
-segmentTime = 1.1
-animateTime = 1.4
-
-[Light]
-renderBase = "draw_light"
-startColor = "255 150 0 800"
-finishColor = "199 0 0 800"
-startRadius = 40.0
-finishRadius = 40.0
-animateTime = 0.5
-attenuateConstant = 1.0
-attenuateLinear = 0.0
-attenuateQuadratic = 15.0
-lensFlare = 0
+segmentTime = 1.1 //animateTime = 1.4

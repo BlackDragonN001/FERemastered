@@ -1,14 +1,23 @@
 // ===========================
-// BATONIC STREAM BUILDING HIT
+// RAPIER BUILDING HIT
 // ===========================
 
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 1
+particleTypes = 3
+
 particleClass1 = "xrapierbld_c.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xrapiergnd_c.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xrapiergnd_c.sparkle"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
 
 explSound = "xsv2.wav"
 damageRadius = 0.0
@@ -30,3 +39,6 @@ finishColor = "190 23 196 0"
 startRadius = 0.2
 finishRadius = 2.0
 animateTime = 0.5
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+

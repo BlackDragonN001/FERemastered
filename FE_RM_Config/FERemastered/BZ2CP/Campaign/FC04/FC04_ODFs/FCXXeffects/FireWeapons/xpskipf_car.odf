@@ -1,7 +1,8 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 5
+particleTypes = 6
+
 particleClass1 = "xpskipf_car.light"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
@@ -23,8 +24,13 @@ particleBias4 = "2.0 5.0 -2.0"
 
 particleClass5 = "xpskipf_car.chunks4"
 particleCount5 = 4
-particleVeloc5 = "1.0 2.0 1.0"
-particleBias5 = "0.0 3.0 0.0"
+particleVeloc5 = "2.0 1.0 2.0"
+particleBias5 = "-2.0 5.0 2.0"
+
+particleClass6 = "xpskipf_car.smoke"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0"
+particleBias6 = "0.0 0.0 0.0"
 
 explSound = "fmiss03.wav" //"xmag05.wav"
 
@@ -44,13 +50,13 @@ kickVeloc = 0.2
 
 [Light]
 simulateBase = "sim_null"
-lifeTime = .8
+lifeTime = 0.8
 renderBase = "draw_light"
 startColor = "255 255 0 850"
 finishColor = "255 0 0 255"
 startRadius = 60.0
-finishRadius = 1.0
-animateTime = .8
+finishRadius = 0.0
+animateTime = 0.8
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
@@ -59,47 +65,71 @@ lensFlare = 0
 [Chunks]
 simulateBase = "sim_ember"
 lifeTime = 1.5
-renderBase = "draw_sprite"
+renderBase = "draw_twirl"
 textureName = "flame2.tga"
 textureBlend = "one one modulate"
-startColor = "255 140 0 255" 
-finishColor = "255 70 0 0"
-startRadius = 1
+startColor = "255 255 255 255" 
+finishColor = "255 255 255 0"
+startRadius = 1.0
 finishRadius = 3.5
 animateTime = 1.5
+rotationRate = 5.0
 
 [Chunks2]
 simulateBase = "sim_ember"
 lifeTime = 1.5
-renderBase = "draw_sprite"
+renderBase = "draw_twirl"
 textureName = "flame2.tga"
 textureBlend = "one one modulate"
-startColor = "255 150 0 255" 
-finishColor = "255 100 0 0"
-startRadius = 1
+startColor = "255 200 200 255" 
+finishColor = "255 200 200 0"
+startRadius = 1.0
 finishRadius = 3.8
 animateTime = 1.5
+rotationRate = 5.0
 
 [Chunks3]
 simulateBase = "sim_ember"
 lifeTime = 1.5
-renderBase = "draw_sprite"
+renderBase = "draw_twirl"
 textureName = "flame2.tga"
 textureBlend = "one one modulate"
-startColor = "255 120 0 255" 
-finishColor = "255 90 0 0"
-startRadius = 1
+startColor = "255 200 150 255" 
+finishColor = "255 200 150 0"
+startRadius = 1.0
 finishRadius = 4.0
 animateTime = 1.5
+rotationRate = 5.0
 
 [Chunks4]
 simulateBase = "sim_ember"
 lifeTime = 1.5
-renderBase = "draw_sprite"
+renderBase = "draw_twirl"
 textureName = "flame2.tga"
 textureBlend = "one one modulate"
-startColor = "255 130 0 255" 
-finishColor = "255 130 0 0"
-startRadius = 1
+startColor = "255 230 200 255" 
+finishColor = "255 230 200 0"
+startRadius = 1.0
 finishRadius = 3.0
 animateTime = 1.5
+rotationRate = 5.0
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 1.2
+renderBase = "draw_twirl_trail"
+emitDelay = 0.03
+emitDelayVar = 0.01
+emitVelocity = "0.0 8.0 0.0"
+emitVariance = "4.0 4.0 4.0"
+emitPosVariance = "5.0 0.0 5.0"
+emitLife = 1.5
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 127"
+finishColor = "31 31 31 0"
+startRadius = 3.0
+finishRadius = 4.0
+animateTime = 1.5
+rotationRate = 1.0
+BottomInteractsWithTerrain = false

@@ -1,14 +1,14 @@
 [OrdnanceClass]
 classLabel = "thermalmissile"
 
-shotGeometry = "iorckt00.xsi"
+shotGeometry = NULL //"iorckt00.xsi" //Make me? -GBD
 shotSound = "cerbfaf.wav"
 
 renderName = "cvfaf_c.render"
 
 xplGround = "xcvfafgnd"
 xplVehicle = "xcvfafcar"
-xplBuilding = "xcvfafcar"
+xplBuilding = "xcvfafbld"
 
 ammoCost = 20
 lifeSpan = 1.2 // 120m
@@ -30,40 +30,104 @@ coneAngle = 0.4
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
-renderName1 = "cvfaf_c.flare"
-renderName2 = "cvfaf_c.light"
-renderName3 = "cvfaf_c.flame"
+renderCount = 7
+renderName1 = "cvfaf_c.core"
+renderName2 = "cvfaf_c.elec"
+renderName3 = "cvfaf_c.light"
+renderName4 = "cvfaf_c.trail"
+renderName5 = "cvfaf_c.trail2"
+renderName6 = "cvfaf_c.smoke"
+renderName7 = "cvfaf_c.flame"
 
-[Flare]
-renderBase = "draw_sprite"
-textureName = "lightflare.tga"
+[Core]
+renderBase = "draw_twirl"
+textureName = "deflect.tga" //"lightflare.tga"
 textureBlend = "one one modulate"
-startColor = "252 254 6 255"
-finishColor = "252 254 6 255"
+startColor = "127 127 255 55"
+finishColor = "127 127 255 55"
 startRadius = 1.0
-finishRadius = 0.5
+finishRadius = 1.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
 
-[Light]
-renderBase = "draw_sprite"
-textureName = "lightflare.tga"
+[Elec]
+renderBase = "draw_twirl"
+textureName = "elecsphere.tga"
 textureBlend = "one one modulate"
-startColor = "254 254 150 355"
-finishColor = "252 254 50 0"
-startRadius = 2.0
-finishRadius = 2.0 
+startColor = "255 255 255 155"
+finishColor = "255 255 255 155"
+startRadius = 0.5
+finishRadius = 0.5
+rotationRate = 10.0
+bottomInteractsWithTerrain = false
 
 [Flame]
 renderBase = "draw_twirl_trail"
-textureName = "flame.tga"
-textureBlend = "one one modulate"
-startColor = "154 78 1 255"
-finishColor = "254 158 6 0"
+textureName = "flame6.tga"
+textureBlend = "invsrc invsrc modulatealpha" //"srcalpha invsrcalpha modulatealpha" //
+startColor = "63 15 127 255"
+finishColor = "0 0 0 0"
 startRadius = 0.3
-finishRadius = 0.02
+finishRadius = 0.01
 animateTime = 0.15
-emitDelay = 0.001
+emitDelay = 0.002
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "2.0 2.0 2.0"
 emitLife = 0.15
+rotationRate = 1.0
+bottomInteractsWithTerrain = false
 
+[Smoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.01
+emitDelayVar = 0.02
+emitVelocity = "0.0 0.5 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 0.3
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "15 0 31 63"
+finishColor = "5 5 5 0"
+startRadius = 0.35
+finishRadius = 1.0
+animateTime = 0.3
+rotationRate = 1.0
+bottomInteractsWithTerrain = false
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "wispytrail.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 127"
+finishColor = "0 0 0 0"
+startRadius = 0.3
+finishRadius = 1.0
+segmentLength = 1.0
+segmentTime = 0.8
+textureRate = 1.0
+textureSpeed = 0.5
+
+[Trail2]
+renderBase = "draw_trail"
+textureName = "trail3.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 127"
+finishColor = "0 0 0 0"
+startRadius = 0.3
+finishRadius = 0.0
+segmentLength = 1.0
+segmentTime = 0.8
+textureRate = 0.5
+textureSpeed = 0.0
+
+[Light]
+renderBase = "draw_light"
+startColor = "127 63 255 400"
+finishColor = "127 63 255 400"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1

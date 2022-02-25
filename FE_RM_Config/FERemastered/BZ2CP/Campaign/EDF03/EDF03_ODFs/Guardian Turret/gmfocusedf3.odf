@@ -7,21 +7,7 @@ wpnReticle = "gflashgn"
 wpnCategory = "CANN"
 isAssault = 0
 aiRange = 400
-flashName = "gmfocusedf3.flash"
+flashName = "gmfocus.flash"
 
 [CannonClass]
 shotDelay = 0.05
-
-[Flash]
-simulateBase = "sim_null"
-lifeTime = 0.05
-renderBase = "draw_light"
-startColor = "255 255 0 1000"
-finishColor = "255 200 0 1000"
-startRadius = 25.0
-finishRadius = 25.0
-animateTime = 0.12
-attenuateConstant = 1.0
-attenuateLinear = 0.0
-attenuateQuadratic = 15.0
-lensFlare = 1

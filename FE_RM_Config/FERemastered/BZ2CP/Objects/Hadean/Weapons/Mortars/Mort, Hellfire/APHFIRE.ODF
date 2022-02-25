@@ -1,7 +1,11 @@
 [GameObjectClass]
 baseName = "aphfire"
 classLabel = "apmortar"
-scrapCost = 20
+scrapCost = 40
+
+requireCount = 1
+requireName1 = "ebtcen"
+requireText1 = "Build Xyr Tower"
 
 lightName1 = "omnibrwn-ap"
 

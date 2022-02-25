@@ -5,18 +5,33 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 3
+particleTypes = 5
+
 particleClass1 = "xdragbcar_a.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+particleBias1 = "0.0 0.5 0.0"
 
-particleClass2 = "xdragbcar_a.cloud"
+particleClass2 = "xdragbcar_a.smoke"
 particleCount2 = 1
-particleVeloc2 = "0.0 10.0 0.0"
+particleVeloc2 = "0.0 0.0 0.0"
+particleInherit2 = "1.0 1.0 1.0"
 
 particleClass3 = "xdragbcar_a.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
+particleInherit3 = "0.75 0.75 0.75"
+
+particleClass4 = "xdragbcar_a.chunks"
+particleCount4 = 10
+particleVeloc4 = "10.0 10.0 10.0"
+particleBias4 = "0.0 3.0 0.0"
+particlePosVar4 = "2.0 2.0 2.0"
+particleInherit4 = "1.0 1.0 1.0"
+
+particleClass5 = "xdragbgnd_a.sphere"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
 
 explSound = "lhit.wav"
 
@@ -36,47 +51,63 @@ kickVeloc = 3.0
 
 [Core]
 simulateBase = "sim_smoke"
-lifeTime = 0.5
+lifeTime = 0.3
 renderBase = "draw_twirl"
 textureName = "firering.tga"
 textureBlend = "one one modulate"
 startColor = "255 220 0 255"
 finishColor = "255 200 0 0"
 startRadius = 2.0
-finishRadius = 10.0
-animateTime = 0.5
+finishRadius = 8.0
+animateTime = 0.3
 BottomInteractsWithTerrain = false
 
-[cloud]
-simulateBase = "sim_dust"
-lifeTime = 2.5
-renderBase = "draw_emit"
-emitName = "xdragbcar_a.cloudemit"
-emitDelay = 0.25
-emitVelocity = "0.0 1.5 0.0"
-emitVariance = "2.0 2.0 2.0"
-
-[cloudemit]
+[Smoke]
 simulateBase = "sim_smoke"
-lifeTime = 2.5
+lifeTime = 1.0
+renderBase = "draw_emit"
+emitName = "xdragbcar_a.smokeemit"
+emitDelay = 0.2
+emitVelocity = "0.0 2.5 0.0"
+emitVariance = "2.0 1.0 2.0"
+emitPosVariance = "2.0 0.0 2.0"
+emitInherit = "0.5 0.5 0.5"
+
+[SmokeEmit]
+simulateBase = "sim_smoke"
+lifeTime = 1.5
 renderBase = "draw_twirl"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "20 20 20 155"
 finishColor = "50 50 50 0"
 startRadius = 2.0
-finishRadius = 10.0
+finishRadius = 8.0
+animateTime = 1.5
+
+[Chunks]
+simulateBase = "sim_ember"
+lifeTime = 2.5
+renderBase = "draw_twirl" //sprite
+textureName = "dirt.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 220 0 255"
+finishColor = "150 0 0 0"
+startRadius = 0.8
+finishRadius = 0.6
 animateTime = 2.5
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
 
 [Light]
 simulateBase = "sim_smoke"
-lifeTime = 1.0
+lifeTime = 0.5
 renderBase = "draw_light"
 startColor = "255 100 20 555"
 finishColor = "255 0 0 50"
 startRadius = 70.0
 finishRadius = 70.0
-animateTime = 1.0
+animateTime = 0.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0

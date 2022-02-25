@@ -1,0 +1,63 @@
+// ===============
+// SONIC CANNON GROUND HIT
+// ===============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "sonic02.wav"
+damageRadius = 10.0
+
+damageValue(N) = 150 // none
+damageValue(L) = 100 // light
+damageValue(H) = 50 // heavy
+
+damageValue(S) = 100 // standard
+damageValue(D) = 150 // deflection
+damageValue(A) = 50 // absorbtion
+
+kickRadius = 20.0
+kickOmega = 2.0
+kickVeloc = -15.0
+
+particleTypes = 2
+
+particleClass1 = "xcslamemit_c.pulse"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xcslamemit_c.light1"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+[Pulse]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_twirl_trail"
+textureName = "cslam.tga"
+textureBlend = "one one modulate"
+startColor = "50 10 80 180"
+finishColor = "80 5 120 0"
+startRadius = 7.5
+finishRadius = 0.0
+animateTime = 0.5
+rotationRate = 40.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitPosVariance = "0.0 0.0 0.0"
+emitLife = 0.5
+
+[Light1]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_light"
+startColor = "255 50 255 500"
+finishColor = "155 0 155 500"
+startRadius = 30.0
+finishRadius = 0.0
+animateTime = 0.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

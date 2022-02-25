@@ -10,11 +10,10 @@ maxAmmo = 120
 unitName = "Fireball"
 aiName = "TorpedoProcess"
 aiName2 = "TorpedoProcess"
-//renderName = "fball1a.flow"
+explosionName = "xfbseeke"
+
 effectHard1 = "Fireball"
 effectName1 = "fball2c.render"
-explosionName = "xfbseeke"
-xplExpire = "xfbseeke"
 
 heatSignature = 20.0
 imageSignature = 2.5
@@ -46,72 +45,72 @@ soundThrust = "flame01.wav"
 renderBase = "draw_multi"
 renderCount = 3 //8 // 8? Where are the other 3 lol. -GBD
 renderName1 = "fball2c.flame"
-renderName2 = "fball2c.trailer"
+renderName2 = "fball2c.smoke"
 renderName3 = "fball2c.light"
+renderName4 = "fball2c.trailer"
 // Never worked, was "xfball..." -GBD
-renderName4 = "xfball2c.smoke"
 renderName5 = "xfball1a.trailer2"
-
-[Smoke]
-renderBase = "draw_twirl_trail"
-emitDelay = 0.01
-emitDelayVar = 0.02
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "1.0 1.0 1.0"
-//emitInherit = "1.5 1.5 1.0"
-emitLife = 1.2
-textureName = "smoke.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "0 0 0 128"
-finishColor = "0 0 0 0"
-startRadius = 0.1
-finishRadius = 0.4
-animateTime = 1.0
-rotationRate = 1.0
 
 [Flame]
 renderBase = "draw_twirl_trail"
 emitDelay = 0.02
 emitDelayVar = 0.01
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "1.0 1.0 1.0"
+emitVelocity = "0.0 0.5 0.0"
+emitVariance = "1.5 1.5 0.0"
 //emitInherit = "1.5 1.5 1.5"
-emitLife = 0.8
+emitLife = 1.3
 textureName = "fire.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 200 128"
-finishColor = "255 0 0 0"
-startRadius = 0.4
-finishRadius = 0.02
-animateTime = 0.8
+startColor = "255 255 200 127"
+finishColor = "255 100 100 0"
+startRadius = 0.3
+finishRadius = 2.0
+animateTime = 1.3
 rotationRate = 8.0
 
+[Smoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.02
+emitDelayVar = 0.01
+emitVelocity = "0.0 1.0 0.0"
+emitVariance = "2.0 2.0 1.0"
+emitPosVariance = "0.5 0.5 0.0"
+//emitInherit = "1.5 1.5 1.5"
+emitLife = 1.6
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 31 31 127"
+finishColor = "63 63 63 0"
+startRadius = 0.3
+finishRadius = 3.0
+animateTime = 1.6
+rotationRate = 8.0
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 150 0 500"
+finishColor = "199 0 0 500"
+startRadius = 20.0
+finishRadius = 20.0
+animateTime = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+
 [trailer]
-simulateBase = "sim_dust"//dust
-lifeTime = 3.5 //2.5
+//simulateBase = "sim_dust" //dust
+//lifeTime = 3.5 //2.5
 renderBase = "draw_trail"
-textureName = "heat.tga"
+textureName = "flametrail2.tga" //"heat.tga"
 textureBlend = "one one modulate"
 textureRate = 0.08
 startColor = "255 255 255 150"
 finishColor = "200 100 100 0"
 startRadius = 0.4
 finishRadius = 2.0
-segmentTime = 1.3
-animateTime = 3.5
-
-[Light]
-//lifeTime = 1.0
-renderBase = "draw_light"
-startColor = "255 150 0 500"
-finishColor = "199 0 0 500"
-startRadius = 20.0
-finishRadius = 20.0
-animateTime = 0.5
-attenuateConstant = 1.0
-attenuateLinear = 0.0
-attenuateQuadratic = 15.0
-lensFlare = 0
+segmentTime = 1.3 //animateTime = 3.5
 
 [trailer2]
 simulateBase = "sim_dust"//dust
@@ -124,5 +123,4 @@ startColor = "200 0 0 150"
 finishColor = "200 0 0 0"
 startRadius = 0.05
 finishRadius = 4.0
-segmentTime = 2.5
-animateTime = 8.8
+segmentTime = 2.5 //animateTime = 8.8

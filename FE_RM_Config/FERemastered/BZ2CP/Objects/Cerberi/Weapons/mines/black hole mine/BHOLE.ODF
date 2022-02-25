@@ -1,5 +1,5 @@
 [GameObjectClass]
-geometryName = "igmcur00.fbx" //"igmcur00.xsi"
+geometryName = NULL //"igmcur00.fbx" //"igmcur00.xsi"
 //geometryScale = 2.5
 classLabel = "magnet"
 scrapCost = 0
@@ -9,6 +9,8 @@ maxAmmo = 300
 unitName = "Black Hole Mine"
 effectHard1 = "Black Hole Mine"
 effectName1 = "bhole.render"
+canInteract = false
+explosionName = "xbhole"
 
 [MineClass]
 lifeSpan = 20.0
@@ -25,13 +27,15 @@ ordDrag = 1.0
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 4
-renderName1 = "bhole.field"
+renderCount = 5
+renderName1 = "bhole.field1"
 renderName2 = "bhole.swirl1"
 renderName3 = "bhole.swirl2"
 renderName4 = "bhole.particle"
+renderName5 = "bhole.static"
+renderName6 = "bhole.field2"
 
-[Field]
+[Field1]
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "invsrc invsrc modulate"
@@ -42,10 +46,22 @@ finishRadius = 8.0
 animateTime = 0.8
 latitudeBands = 8
 longitudeSegments = 16
+addYaw = 20.0
+
+[Field2]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "invsrc invsrc modulate"
+startColor = "5 5 5 255"
+finishColor = "5 5 5 250"
+startRadius = 1.0
+finishRadius = 8.0
+animateTime = 0.8
+latitudeBands = 8
+longitudeSegments = 16
+addYaw = -20.0
 
 [Swirl1]
-simulateBase = "sim_null"
-lifeTime = 30.0
 renderBase = "draw_planar"
 textureName = "bhole.tga"
 textureBlend = "one one modulate"
@@ -53,11 +69,10 @@ startColor = "240 100 255 125"
 finishColor = "240 150 255 200"
 startRadius = 35.0
 finishRadius = 15.0
-animateTime = 30.0
+animateTime = 20.0
+rotationBias = 5.0
 
 [Swirl2]
-simulateBase = "sim_null"
-lifeTime = 30.0
 renderBase = "draw_planar"
 textureName = "bhole2.tga"
 textureBlend = "one one modulate"
@@ -65,7 +80,8 @@ startColor = "100 100 255 200"
 finishColor = "200 100 255 125"
 startRadius = 15.0
 finishRadius = 30.0
-animateTime = 30.0
+animateTime = 20.0
+rotationBias = 5.0
 
 [Particle]
 renderBase = "draw_twirl_trail"
@@ -74,8 +90,24 @@ textureblend = "one one modulate"
 startColor = "250 100 255 255"
 finishColor = "255 100 150 200"
 startRadius = 0.6
-finishRadius = 0.2
-animateTime = 3.0
+finishRadius = 0.0
+animateTime = 3.5
 emitDelay = 0.01
 emitVariance = "15.0 15.0 15.0"
-emitLife = 3.0
+emitLife = 3.5
+
+[Static]
+simulateBase = "sim_null"
+startDelay = 2.0
+renderBase = "draw_static"
+textureName = "ground.tga"
+textureBlend = "invsrc invsrc modulate"
+startColor = "5 0 10 255"
+finishColor = "0 0 0 0"
+startRadius = 1.0 //0.1
+finishRadius = 0.0 //0.15
+emitDelay = 0.01 // 0.005
+emitDelayVar = 0.01
+innerRadius = 8.0
+outerRadius = 20.0
+segmentTime = 0.5

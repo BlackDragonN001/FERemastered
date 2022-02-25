@@ -1,0 +1,26 @@
+// ===========================
+// BATONIC STREAM BUILDING HIT
+// ===========================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 2
+
+particleClass1 = "xcpencar_c.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xcpencar_c.ripple"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+explSound = "xsv2.wav"
+damageRadius = 0.0
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+

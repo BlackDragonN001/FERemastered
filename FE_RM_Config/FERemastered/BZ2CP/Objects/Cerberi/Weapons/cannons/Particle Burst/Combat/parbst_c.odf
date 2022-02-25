@@ -1,11 +1,11 @@
 [OrdnanceClass]
 classLabel = "bullet"
-//shotGeometry = "gspstab.xsi"
+shotGeometry = NULL //"gspstab.xsi"
 shotSound = "misord2.wav"
 
 xplGround = "xparbstgnd_c"
 xplVehicle = "xparbstcar_c"
-xplBuilding = "xparbstcar_c"
+xplBuilding = "xparbstbld_c"
 
 renderName = "parbst_c.render"
 
@@ -24,41 +24,60 @@ damageValue(A) = 60 // absorbtion // 300
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
-renderName1 = "parbst_c.trail"
-renderName2 = "parbst_c.sparkle"
-renderName3 = "parbst_c.light"
+renderCount = 4
+renderName1 = "parbst_c.core"
+renderName2 = "parbst_c.trail"
+renderName3 = "parbst_c.sparkle"
+renderName4 = "parbst_c.light"
 
-
-[Trail]
-renderBase = "draw_trail"
-textureName = "grndchar.tga" // shadow
-textureBlend = "srcalpha invsrcalpha modulatealpha" //"one one modulate"
-startColor = "255 223 29 255"
-finishColor = "255 0 0 0" //"65 0 0 0"
-textureRate = 0.004
-startRadius = 0.5
-finishRadius = 0.01
-segmentTime = 0.4
- 
-[Sparkle]
-renderBase = "draw_twirl_trail"
-textureName = "cplaser01.tga"
-textureBlend = "one one modulate"
-startColor = "251 223 29 255"
-finishColor = "255 0 0 0"
-startRadius = 0.03
-finishRadius = 0.3
-animateTime = 0.5
-emitDelay = 0.002
-emitVariance = "0.5 0.5 0.5"
-emitLife = 0.5
-
-[Light]
-renderBase = "draw_sprite"
-textureName = "lightflare.tga"
+[Core]
+renderBase = "draw_twirl"
+textureName = "flare.tga" //"lightflare.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 23 400"
 finishColor = "255 0 0 255"
-startRadius = 1.5 
-finishRadius = 1.5 
+startRadius = 0.8 //1.5
+finishRadius = 0.8 //1.5
+animateTime = 0.75
+rotationRate = 10.0
+bottomInteractsWithTerrain = false
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "wispytrail.tga" //"grndchar.tga" // shadow
+textureBlend = "srcalpha invsrcalpha modulatealpha" //"one one modulate"
+startColor = "255 223 29 255"
+finishColor = "255 0 0 0" //"65 0 0 0"
+startRadius = 0.3 //0.5
+finishRadius = 0.0
+segmentTime = 0.4
+//segmentLength = 5.0
+textureRate = 0.01
+textureSpeed = -5.0
+ 
+[Sparkle]
+renderBase = "draw_twirl_trail"
+textureName = "pburst.tga"
+textureBlend = "one one modulate"
+startColor = "251 223 29 255"
+finishColor = "255 0 0 0"
+startRadius = 0.15
+finishRadius = 0.3
+animateTime = 0.4
+rotationRate = 10.0
+emitDelay = 0.0015
+emitVariance = "0.5 0.5 0.5"
+emitPosVariance = "0.25 0.25 0.0"
+emitLife = 0.4
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 255 23 750"
+finishColor = "255 0 0 255"
+startRadius = 10.0
+finishRadius = 10.0
+animateTime = 0.75
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

@@ -5,32 +5,44 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 6
+particleTypes = 7
+
 particleClass1 = "xfblaunch.char"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xfblaunch.flame"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.1 0.0"
+
 particleClass3 = "xfblaunch.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
+
 particleClass4 = "xfblaunch.chunks"
 particleCount4 = 20
 particleVeloc4 = "30.0 50.0 30.0"
+
 particleClass5 = "xfblaunch.ring"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
+
 particleClass6 = "xfblaunch.shock"
 particleCount6 = 1
 particleVeloc6 = "0.0 0.0 0.0"
-// Never worked, "axfblaunch". -GBD
-particleClass7 = "xfblaunch.core"
+
+particleClass7 = "xfblaunch.smoke"
 particleCount7 = 1
-particleVeloc7 = "0.0 0.0 0.0"
-particleClass8 = "xfblaunch.puff"
-particleCount8 = 30
-particleVeloc8 = "90.0 90.0 90.0"
+particleVeloc7 = "0.0 0.1 0.0"
+
+// Never worked, were "axfblaunch". -GBD
+particleClass8 = "xfblaunch.core"
+particleCount8 = 1
+particleVeloc8 = "0.0 0.0 0.0"
+
+particleClass9 = "xfblaunch.puff"
+particleCount9 = 30
+particleVeloc9 = "90.0 90.0 90.0"
 
 explSound = "fbshot.wav"
 damageRadius = 0.0
@@ -47,11 +59,13 @@ lifeTime = 1.0
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = "255 155 0 255"
-finishColor = "255 0 0 0"
+startColor = "255 155 127 255"
+finishColor = "255 127 100 0"
 startRadius = 1.0
 finishRadius = 10.0
 animateTime = 1.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
 
 [Puff]
 simulateBase = "sim_smoke"
@@ -64,45 +78,69 @@ finishColor = "255 0 0 0"
 startRadius = 2.0
 finishRadius = 1.0
 animateTime = 1.5
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
 
-[char]
+[Char]
 simulateBase = "sim_null"
-lifeTime = 1.5
+lifeTime = 10.0
 renderBase = "draw_planar"
-textureName = "fbchar.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 100 100 0"
-startRadius = 0.5
-finishRadius = 6.4
-animateTime = 1.5
+textureName = "grndchar.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "10 10 10 255"
+finishColor = "10 10 10 0"
+startRadius = 4.0
+finishRadius = 4.0
+animateTime = 5.0
+useTerrainColor = 0.9
 
 [Flame]
 simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_twirl_trail"
-textureName = "flame2.tga"
+textureName = "fire.tga" //"flame2.tga"
 textureBlend = "one one modulate"
-startColor = "255 130 0 128"
-finishColor = "200 0 0 0"
+startColor = "255 200 127 127" //"255 130 0 128"
+finishColor = "255 190 127 0" //"200 0 0 0"
 startRadius = 1.0
 finishRadius = 0.1
-animateTime = 2
+animateTime = 1.0
 rotationRate = 10.0
 emitDelay = 0.03
 emitVelocity = "0.0 2.0 0.0"
 emitVariance = "2.0 2.0 2.0"
 emitLife = 1.0
+BottomInteractsWithTerrain = false
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 0.8
+renderBase = "draw_twirl_trail"
+emitDelay = 0.03
+emitDelayVar = 0.01
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitPosVariance = "5.0 0.0 5.0"
+emitLife = 1.0
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 127"
+finishColor = "31 31 31 0"
+startRadius = 1.0
+finishRadius = 2.0
+animateTime = 1.0
+rotationRate = 1.0
+BottomInteractsWithTerrain = false
 
 [Light]
 simulateBase = "sim_null"
-lifeTime = 2.5
+lifeTime = 2.0
 renderBase = "draw_light"
 startColor = "255 150 0 1055"
 finishColor = "200 0 0 0"
 startRadius = 30
 finishRadius = 5
-animateTime = 2.5
+animateTime = 2.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
@@ -119,22 +157,24 @@ finishColor = "200 0 0 150"
 startRadius = 0.3
 finishRadius = 0.3
 animateTime = 4.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
 
-[ring]
+[Ring]
 simulateBase = "sim_null"
-lifeTime = 10.0
+lifeTime = 1.0
 renderBase = "draw_planar"
-textureName = "grndchar.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "10 10 10 255"
-finishColor = "10 10 10 0"
-startRadius = 4.0
-finishRadius = 4.0
-animateTime = 5.0
+textureName = "fbchar.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 100 100 0"
+startRadius = 0.5
+finishRadius = 6.5
+animateTime = 1.0
 
 [Shock]
 simulateBase = "sim_null"
-lifeTime = 1.5
+lifeTime = 1.0
 renderBase = "draw_sphere"
 textureName = "ring2.tga"
 textureBlend = "one one modulate"
@@ -142,6 +182,6 @@ startColor = "255 255 255 190"
 finishColor = "255 200 200 0" 
 startRadius = 0.5
 finishRadius = 6.5
-animateTime = 1.5
+animateTime = 1.0
 latitudeBands = 8
 longitudeSegments = 16

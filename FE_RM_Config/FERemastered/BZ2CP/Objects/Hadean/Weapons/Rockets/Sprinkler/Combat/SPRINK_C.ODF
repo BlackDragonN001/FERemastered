@@ -36,6 +36,7 @@ renderCount = 3
 renderName1 = "sprink_c.light"
 renderName2 = "sprink_c.sprite"
 renderName3 = "sprink_c.trail"
+
 // were "xsprink_c", never worked. -GBD
 //renderName4 = "sprink_c.trail"
 //renderName5 = "sprink_c.sprite"
@@ -43,33 +44,32 @@ renderName3 = "sprink_c.trail"
 [Light]
 renderBase = "draw_light"
 startColor = "250 180 55 400"
-finishColor = "250 80 55 400"
-startRadius = 10.0
-finishRadius = 10.0
-animateTime = 0.3
+finishColor = "250 180 55 400"
+startRadius = 20.0
+finishRadius = 20.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 1
 
 [sprite]
-renderBase = "draw_sprite"
+renderBase = "draw_twirl"
 textureName = "lightflare.tga"
 textureBlend = "one one modulate"
 startColor = "255 160 0 255"
 finishColor = "255 160 0 255"
 startRadius = 3.0
-finishRadius = 0.0
+finishRadius = 3.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
 
 [Trail]
 renderBase = "draw_trail"
 textureName = "sprinkt.tga"
 textureBlend = "one one modulate"
-textureRate = 0.05
 startColor =  "255 255 255 200"// "100 0 0 100" 
 finishColor =  "100 100 100 0" // "100 100 100 0"
 startRadius = 0.5
 finishRadius = 3.0
-segmentTime = 1.0
-animateTime = 3.5
-
+segmentTime = 1.0 //animateTime = 3.5
+textureRate = 0.05 //0.05

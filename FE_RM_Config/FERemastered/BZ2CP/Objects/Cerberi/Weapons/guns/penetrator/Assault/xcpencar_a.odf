@@ -1,0 +1,80 @@
+// ==========================
+// BATONIC STREAM VEHICLE HIT
+// ==========================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 4
+
+particleClass1 = "xcpencar_a.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleInherit1 = "0.8 0.8 0.8"
+
+particleClass2 = "xcpencar_a.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleInherit2 = "0.8 0.8 0.8"
+
+particleClass3 = "xcpencar_a.sparkTrails"
+particleCount3 = 2 //4
+particleVeloc3 = "26.0 60.0 26.0"
+particleBias3 = "0.0 0.0 0.0"
+particleInherit3 = "0.8 0.8 0.8"
+
+particleClass4 = "xcpencar_c.elec"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+particleInherit4 = "0.8 0.8 0.8"
+
+explSound = "xehit1.wav"
+damageRadius = 0.0
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+[Core]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_twirl"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 255 255"
+finishColor = "127 127 255 0"
+startRadius = 0.2
+finishRadius = 2.0
+animateTime = 0.5
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 0.7
+renderBase = "draw_light"
+startColor = "100 180 255 855"
+finishColor = "50 140 255 0"
+startRadius = 10.0
+finishRadius = 0.0
+animateTime = 0.7
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+
+[SparkTrails]
+simulateBase = "sim_ember"
+lifeTime = 2.0
+renderBase = "draw_trail"
+textureName = "spark2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.3
+startColor = "63 255 255 255"
+finishColor = "0 200 255 0"
+startRadius = 0.1
+finishRadius = 0.0
+segmentTime = 0.15
+segmentLength = 0.3
+

@@ -1,0 +1,31 @@
+[WeaponClass]
+baseName = "gatstab"
+altName = "gcpen_a"
+classLabel = "machinegun"
+ordName = "cpen_c"
+wpnName = "Penetrator Gun"
+fireSound = "cgpen01.wav" // fire sound by Lord-Rad-X.
+wpnReticle = "gion"
+wpnCategory = "GUN"
+isAssault = 0
+aiRange = 100
+flashName = "gcpen_c.flash"
+
+[CannonClass]
+shotDelay = 0.1
+shotVariance = 0.02
+//soundPerShot = 0 // 0 = Looping, 1 = 1 Sound per shot, 2 = 1 sound per shot, and cutoff old sound
+
+[Flash]
+simulateBase = "sim_null"
+lifeTime = 0.15
+renderBase = "draw_light"
+startColor = "200 127 255 300"
+finishColor = "127 127 255 300"
+startRadius = 10.0
+finishRadius = 10.0
+animateTime = 0.15
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1

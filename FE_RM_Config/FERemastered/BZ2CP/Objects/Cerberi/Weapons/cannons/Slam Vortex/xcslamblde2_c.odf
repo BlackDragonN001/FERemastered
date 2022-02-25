@@ -1,0 +1,22 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+//shotSound = NULL
+
+xplGround = NULL
+xplVehicle = NULL
+xplBuilding = NULL
+xplExpire = "xcslambld_c"
+
+ammoCost = 0
+lifeSpan = 0.6
+shotSpeed = 0.0001
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion

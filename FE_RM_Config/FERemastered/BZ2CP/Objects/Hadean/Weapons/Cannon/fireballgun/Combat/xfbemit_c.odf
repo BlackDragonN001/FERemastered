@@ -35,9 +35,9 @@ particleVeloc3 = "0.0 8.0 0.0"
 particleInherit3 = "0.75 0.75 0.75"
 
 [Shock]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.2
-renderBase = "draw_sprite"
+renderBase = "draw_twirl"
 textureName = "fire.tga"
 textureBlend = "one one modulate"
 startColor = "255 127 0 200"
@@ -45,21 +45,25 @@ finishColor = "255 127 0 0"
 startRadius = 0.1
 finishRadius = 6.0
 animateTime = 0.2
+rotationRate = 1.0
+BottomInteractsWithTerrain = false
 
 [Flame]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.3
-renderBase = "draw_sprite"
+renderBase = "draw_twirl"
 textureName = "fire.tga"
 textureBlend = "one one modulate"
 startColor = "255 155 100 10"
 finishColor = "90 60 0 180"
 startRadius = 4.0 
 finishRadius = 0.1
-animateTime = 0.3 // .4 
+animateTime = 0.3 // .4
+rotationRate = 1.0
+BottomInteractsWithTerrain = false
 
 [FlameDark]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.3
 renderBase = "draw_sprite"
 textureName = "smoke.tga"
@@ -69,4 +73,5 @@ finishColor = "90 60 0 30"
 startRadius = 0.1 
 finishRadius = 6.0
 animateTime = 0.3 // .4
+BottomInteractsWithTerrain = false
 

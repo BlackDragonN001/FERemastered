@@ -1,0 +1,64 @@
+// ====================
+// MISSILE BUILDING HIT
+// ====================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+
+explSound = "xms2.wav"
+
+damageRadius = 10.0
+
+damageValue(N) = 100 // none
+damageValue(L) = 70 // light
+damageValue(H) = 30 // heavy
+
+damageValue(S) = 70 // standard
+damageValue(D) = 100 // deflections
+damageValue(A) = 30 // absorbtion
+
+particleTypes = 10
+
+particleClass1 = "xhavocgnd_c.ShockSphere"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xhavocgnd_c.LightFlash"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xhavocgnd_c.LightFlare"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xhavocgnd_c.Ash"
+particleCount4 = 7
+particleVeloc4 = "30.0 30.0 30.0"
+
+particleClass5 = "xhavocgnd_c.blackChunks"
+particleCount5 = 6
+particleVeloc5 = "30.0 30.0 30.0"
+
+particleClass6 = "xhavocgnd_c.Trails"
+particleCount6 = 8
+particleVeloc6 = "30.0 30.0 30.0"
+
+particleClass7 = "xhavocgnd_c.FlameHeat"
+particleCount7 = 4
+particleVeloc7 = "5.0 5.0 5.0"
+particlePosVar7 = "2.0 2.0 2.0"
+
+particleClass8 = "xhavocgnd_c.Flames"
+particleCount8 = 11
+particleVeloc8 = "8.7 8.7.0 8.7"
+particlePosVar8 = "2.0 2.0 2.0"
+
+particleClass9 = "xhavocgnd_c.ExplodeSprites"
+particleCount9 = 4
+particleVeloc9 = "2.7 2.7 2.7"
+particlePosVar9 = "2.0 2.0 2.0"
+
+particleClass10 = "xhavocgnd_c.SmokePuffCloud"
+particleCount10 = 4
+particleVeloc10 = "20.0 20.0 20.0"

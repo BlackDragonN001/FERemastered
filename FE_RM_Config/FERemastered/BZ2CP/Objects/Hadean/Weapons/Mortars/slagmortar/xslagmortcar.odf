@@ -1,0 +1,120 @@
+// =============
+// SLAG MORTAR GROUND EXPLOSION
+// =============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+///////////////////////////////
+
+particleTypes = 5
+
+particleClass1 = "xslagmortcar.shock"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xslagcar.cloud"
+particleCount2 = 1
+particleVeloc2 = "0.0 10.0 0.0"
+particleBias2 = "0.0 3.0 0.0"
+particleInherit2 = "0.5 0.5 0.5"
+
+particleClass3 = "xslagcar.flame"
+particleCount3 = 2
+particleVeloc3 = "0.0 10.0 0.0"
+particleBias3 = "0.0 3.0 0.0"
+particleInherit3 = "0.5 0.5 0.5"
+
+particleClass4 = "xslagcar.light"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+particleInherit4 = "0.5 0.5 0.5"
+
+particleClass5 = "xslaggnd.ember"
+particleCount5 = 10
+particleVeloc5 = "25.0 25.0 25.0"
+particleBias5 = "0.0 0.0 0.0"
+particlePosVar5 = "2.0 0.0 2.0"
+particleInherit5 = "0.5 0.5 0.5"
+
+///////////////////////////////
+
+explSound = "xslaggnd.wav"
+
+damageRadius = 15.0
+
+damageValue(N) = 100 // none
+damageValue(L) = 80 // light
+damageValue(H) = 50 // heavy
+
+damageValue(S) = 70 // standard
+damageValue(D) = 30 // deflection
+damageValue(A) = 100 // absorbtion
+
+///////////////////////////////
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_sphere"
+textureName = "sprinks.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 200"
+finishColor = "255 255 255 0"
+startRadius = 1.0
+finishRadius = 6.0
+animateTime = 0.3
+latitudeBands = 8
+longitudeSegments = 16
+
+[cloud]
+simulateBase = "sim_dust"
+lifeTime = 0.3
+renderBase = "draw_emit"
+emitName = "xslagmortcar.cloudemit"
+emitDelay = 0.8
+emitVelocity = "0.0 2.0 0.0"
+emitVariance = "0.0 1.0 0.0"
+emitPosVariance = "5.0 0.0 5.0"
+
+[cloudemit]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "70 30 10 255"
+finishColor = "100 100 70 0"
+startRadius = 1.0
+finishRadius = 2.2
+animateTime = 1.0
+rotationRate = 5.0
+useTerrainColor = 0.9
+BottomInteractsWithTerrain = false
+
+[Flame]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_twirl"
+textureName = "fire.tga" //"flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 200 200"
+finishColor = "255 127 0 0"
+startRadius = 0.0
+finishRadius = 6.0
+animateTime = 0.5
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "32 32 32 255"
+finishColor = "127 127 127 0"
+startRadius = 1.0
+finishRadius = 8.0
+animateTime = 1.5
+rotationRate = 2.0

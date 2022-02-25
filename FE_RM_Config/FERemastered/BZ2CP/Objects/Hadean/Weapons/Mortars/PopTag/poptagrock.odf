@@ -4,7 +4,7 @@ classLabel = "thermalmissile"
 shotGeometry = "ioartl00.xsi"
 shotSound = "Ordin_c.wav"
 
-xplGround = "xpoptagxpl"
+xplGround = "xpoptaggnd"
 xplVehicle = "xpoptagxpl"
 xplBuilding = "xpoptagxpl"
 
@@ -31,11 +31,10 @@ renderName3 = "poptagrock.smoke"
 
 [Light]
 renderBase = "draw_light"
-startColor = "225 200 125 255"
-finishColor = "225 100 50 255"
+startColor = "225 100 50 700"
+finishColor = "225 100 50 700"
 startRadius = 8.0
-finishRadius = 2.0
-animateTime = 0.4
+finishRadius = 8.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
@@ -47,11 +46,11 @@ textureName = "blast.tga"
 textureBlend = "one one modulate"
 startColor = "255 120 0 155"
 finishColor = "183 57 0 0"
-startRadius = 0.20
+startRadius = 0.2
 finishRadius = 0.01
 animateTime = 0.6
 rotationRate = 10.0
-emitDelay = 0.001
+emitDelay = 0.0015
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "0.0 0.5 0.0"
 emitLife = 0.6
@@ -59,17 +58,17 @@ BottomInteractsWithTerrain = false
 
 [Smoke]
 renderBase = "draw_twirl_trail"
-emitDelay = 0.01
+emitDelay = 0.005
 emitDelayVar = 0.02
-emitVelocity = "0.0 0.0 0.0"
+emitVelocity = "0.0 0.5 0.0"
 emitVariance = "1.0 1.0 1.0"
 //emitInherit = "1.5 1.5 1.0"
 emitLife = 0.6
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "50 20 20 128"
-finishColor = "5 5 5 5"
+startColor = "127 63 63 127"
+finishColor = "5 5 5 0"
 startRadius = 0.25
-finishRadius = 0.1
+finishRadius = 0.75
 animateTime = 0.6
 rotationRate = 1.0

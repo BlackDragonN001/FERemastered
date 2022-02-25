@@ -9,7 +9,6 @@ explSound = "xsv2.wav"
 
 damageRadius = 10.0
 
-
 damageValue(N) = 5
 damageValue(L) = 5
 damageValue(H) = 5
@@ -23,7 +22,7 @@ kickVeloc = 1.0
 
 particleTypes = 6
 
-particleClass1 = "xcplascara.puff"
+particleClass1 = "xcplascara.core"
 particleCount1 = 5
 particleVeloc1 = "4.0 4.0 4.0"
 
@@ -42,14 +41,14 @@ particleBias4 = "0.0 0.0 0.0"
 
 particleClass5 = "xcplascara.chunks"
 particleCount5 = 20
-particleVeloc5 = "10.0 10.0.0 10.0"
-particleBias5 = "3.0 3.0 3.0"
+particleVeloc5 = "10.0 10.0 10.0"
+particleBias5 = "0.0 3.0 0.0"
 particlePosVar5 = "2.0 2.0 2.0"
 particleInherit5 = "1.0 1.0 1.0"
 
-particleClass6 = "xcplascara.puff2"
+particleClass6 = "xcplascara.puff"
 particleCount6 = 20
-particleVeloc6 = "30.0 30.0.0 30.0"
+particleVeloc6 = "30.0 30.0 30.0"
 particleBias6 = "0.0 3.0 0.0"
 particleInherit6 = "0.5 0.5 0.5"
 

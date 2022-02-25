@@ -1,0 +1,39 @@
+// ==============
+// PARTICLE SHREDDER CAR HIT
+// ==============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "wmgr1.wav"
+
+damageRadius = 0.0
+
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+particleTypes = 4
+
+particleClass1 = "xparbstcar_c.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 2.0 0.0"
+particleBias1 = "0.0 1.0 0.0"
+
+particleClass2 = "xparbstcar_c.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xparbstcar_c.spark"
+particleCount3 = 4
+particleVeloc3 = "25.0 25.0 25.0"
+particleBias3 = "0.0 5.0 0.0"
+
+particleClass4 = "xparbstcar_c.smoke"
+particleCount4 = 1
+particleVeloc4 = "0.0 5.0 0.0"
+particleBias4 = "0.0 3.0 0.0"
+

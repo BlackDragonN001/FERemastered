@@ -7,17 +7,21 @@ classLabel = "explosion"
 
 explSound = "xemt2.wav"
 
-damageRadius = 10.0
-damageValue(N) = 0
-damageValue(L) = 0
-damageValue(H) = 0
-damageValue(S) = 0
-damageValue(D) = 0
-damageValue(A) = 0
+damageRadius = 4.0
+damageValue(N) = 5
+damageValue(L) = 5
+damageValue(H) = 5
+damageValue(S) = 5
+damageValue(D) = 5
+damageValue(A) = 5
 
-particleTypes = 8
+kickRadius = 2.0
+kickOmega = 1.0
+kickVeloc = 1.0
 
-particleClass1 = "xcplasgnd.core"
+particleTypes = 10
+
+particleClass1 = "xcplasgnd.char"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
@@ -25,13 +29,13 @@ particleClass2 = "xcplasgnd.ring"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
 
-particleClass3 = "xcplasgnd.char"
+particleClass3 = "xcplasgnd.core"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
 particleClass4 = "xcplasgnd.cloud"
 particleCount4 = 1
-particleVeloc4 = "0.0 10.0 0.0"
+particleVeloc4 = "0.0 0.0 0.0"
 
 particleClass5 = "xcplasgnd.flame"
 particleCount5 = 1
@@ -39,21 +43,32 @@ particleVeloc5 = "0.0 1.0 0.0"
 particleBias5 = "0.0 0.0 0.0"
 
 particleClass6 = "xcplasgnd.chunks"
-particleCount6 = 20
+particleCount6 = 15
 particleVeloc6 = "8.0 8.0.0 8.0"
 particleBias6 = "0.0 8.0 0.0"
 particlePosVar6 = "2.0 0.0 2.0"
 
 particleClass7 = "xcplasgnd.light"
 particleCount7 = 1
-particleVeloc7 = "8.0 8.0.0 8.0"
-particleBias7 = "0.0 8.0 0.0"
+particleVeloc7 = "0.0 1.0.0 0.0"
+particleBias7 = "0.0 1.0 0.0"
 
 particleClass8 = "xcplasgnd.sphere"
 particleCount8 = 1
 particleVeloc8 = "0.0 0.0 0.0"
 
-[Core]
+particleClass9 = "xcplasgnd.DirtKickup"
+particleCount9 = 3
+particleVeloc9 = "3.0 10.0 3.0"
+particleBias9 = "0.0 6.0 0.0"
+particlePosVar9 = "2.0 0.0 2.0"
+
+particleClass10 = "xcplasgnd.FlameSmoke"
+particleCount10 = 5
+particleVeloc10 = "4.0 12.0 4.0"
+particleBias10 = "0.0 8.0 0.0"
+
+[Ring]
 simulateBase = "sim_null"
 lifeTime = 1.0
 renderBase = "draw_planar"
@@ -65,7 +80,7 @@ startRadius = 0.5
 finishRadius = 5.5
 animateTime = 1.0
 
-[Ring]
+[Char]
 simulateBase = "sim_null"
 lifeTime = 10.0
 renderBase = "draw_planar"
@@ -77,7 +92,7 @@ startRadius = 3.5
 finishRadius = 3.5
 animateTime = 10.0
 
-[Char]
+[Core]
 simulateBase = "sim_null"
 lifeTime = 1.5
 renderBase = "draw_planar"
@@ -89,7 +104,7 @@ startRadius = 5.0
 finishRadius = 0.5
 animateTime = 1.5
 
-[cloud]
+[Cloud]
 simulateBase = "sim_dust"
 lifeTime = 2.0
 renderBase = "draw_emit"
@@ -97,8 +112,9 @@ emitName = "xcplasgnd.cloudemit"
 emitDelay = 0.25
 emitVelocity = "0.0 2.0 0.0"
 emitVariance = "1.0 0.0 1.0"
+emitPosVariance = "1.0 0.0 1.0"
 
-[cloudemit]
+[CloudEmit]
 simulateBase = "sim_smoke"
 lifeTime = 3.0
 renderBase = "draw_twirl"
@@ -140,17 +156,19 @@ finishColor = "127 127 127 0"
 startRadius = 0.4
 finishRadius = 0.2
 animateTime = 2.0
+rotationRate = 5.0
 useTerrainColor = 0.9
+BottomInteractsWithTerrain = false
 
 [Light]
-simulateBase = "sim_null"
-lifeTime = 0.5
+simulateBase = "sim_smoke"
+lifeTime = 1.0
 renderBase = "draw_light"
 startColor = "220 180 30 900"
 finishColor = "220 180 30 0"
 startRadius = 20.0
 finishRadius = 20.0
-animateTime = 0.5
+animateTime = 1.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
@@ -169,3 +187,32 @@ finishRadius = 4.0
 animateTime = 0.2
 latitudeBands = 8
 longitudeSegments = 16
+
+[DirtKickup]
+simulateBase = "sim_ember"
+lifeTime = 1.2
+renderBase = "draw_twirl"
+textureName = "dirtcloud.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "136 154 65 255"
+finishColor = "45 50 40 0"
+startRadius = 1.7
+finishRadius = 5.9
+animateTime = 1.2
+rotationRate = 1.7
+useTerrainColor = 0.9
+BottomInteractsWithTerrain = false
+
+[FlameSmoke]
+simulateBase = "sim_ember"
+lifeTime = 1.8
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 87"
+finishColor = "28 28 28 0"
+startRadius = 1.5
+finishRadius = 4.0
+animateTime = 1.8
+rotationRate = 1.6
+BottomInteractsWithTerrain = false

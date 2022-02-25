@@ -34,10 +34,11 @@ soundThrust = "cerbcomet.wav"
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 4
 renderName1 = "cvcomet_a.flame"
 renderName2 = "cvcomet_a.light"
-renderName3 = "cvcomet_a.smoke" // was "xxcvcomet_a", never worked. -GBD
+renderName3 = "cvcomet_a.trail"
+renderName4 = "cvcomet_a.smoke"
 
 [Light]
 renderBase = "draw_light"
@@ -73,12 +74,25 @@ emitDelayVar = 0.02
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "1.0 1.0 1.0"
 //emitInherit = "1.5 1.5 1.0"
-emitLife = 1.2
+emitLife = 1.0
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "10 0 90 128"
-finishColor = "5 5 5 5"
+startColor = "10 0 90 127"
+finishColor = "5 5 5 0"
 startRadius = 0.50
 finishRadius = 0.1
-animateTime = 1.2
+animateTime = 1.0
 rotationRate = 1.0
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "wispytrail.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 255"
+finishColor = "0 0 0 0"
+startRadius = 0.5
+finishRadius = 1.5
+segmentLength = 1.0
+segmentTime = 2.0
+textureRate = 0.5
+textureSpeed = 0.5

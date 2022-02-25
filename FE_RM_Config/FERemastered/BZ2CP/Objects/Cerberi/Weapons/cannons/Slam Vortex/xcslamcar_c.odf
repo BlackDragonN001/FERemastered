@@ -18,34 +18,42 @@ damageValue(A) = 50 // absorbtion
 
 kickRadius = 20.0
 kickOmega = 2.0
-kickVeloc = 1.0
+kickVeloc = 10.0
 
-particleTypes = 3
+particleTypes = 4
 
 particleClass1 = "xcslamcar_c.core"
 particleCount1 = 1
-particleVeloc1 = "0.0 0.0 0.0"
+particleVeloc1 = "0.0 0.5 0.0"
+particleInherit1 = "0.5 0.5 0.5"
 
 particleClass2 = "xcslamcar_c.shock"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
 
 particleClass3 = "xcslamcar_c.puff"
-particleCount3 = 3
-particleVeloc3 = "10.0 10.0 10.0"
+particleCount3 = 10
+particleVeloc3 = "15.0 15.0 15.0"
+particleInherit3 = "0.5 0.5 0.5"
 
+particleClass4 = "xcslamgnde_c.pulse"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+particleInherit4 = "0.5 0.5 0.5"
 
 [Core]
-simulateBase = "sim_null"
-lifeTime = 1.9
+simulateBase = "sim_smoke"
+lifeTime = 2.0
 renderBase = "draw_twirl"
-textureName = "flame.tga" //wasplat
+textureName = "flame.tga" //wasplat.tga
 textureBlend = "one one modulate"
-startColor = "255 255 63 200"
-finishColor = "100 100 100 0"
+startColor = "255 63 255 200"
+finishColor = "100 0 100 0"
 startRadius = 0.8
 finishRadius = 4.8
-animateTime = 1.9
+animateTime = 2.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
 
 [Shock]
 simulateBase = "sim_null"
@@ -54,9 +62,9 @@ renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 255" 
-finishColor = "150 155 0 0" 
+finishColor = "150 0 155 0" 
 startRadius = 0.2
-finishRadius = 2.8
+finishRadius = 6.0
 animateTime = 0.4
 latitudeBands = 8
 longitudeSegments = 16
@@ -67,9 +75,9 @@ lifeTime = 0.3
 renderBase = "draw_twirl"
 textureName = "particle.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 0 200"
+startColor = "255 0 255 200"
 finishColor = "255 230 230 0"
-startRadius = 0.01
+startRadius = 0.0
 finishRadius = 5.0
 animateTime = 0.3
 rotationrate = 20

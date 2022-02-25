@@ -1,0 +1,90 @@
+// ==========================
+// BATONIC STREAM VEHICLE HIT
+// ==========================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 3
+
+particleClass1 = "xcpencar_c.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleInherit1 = "0.8 0.8 0.8"
+
+particleClass2 = "xcpencar_c.ripple"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleInherit2 = "0.8 0.8 0.8"
+
+particleClass3 = "xcpencar_c.elec"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+particleInherit3 = "0.8 0.8 0.8"
+
+explSound = "ashield01.wav"
+
+damageRadius = 0.0
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+[Core]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_twirl"
+textureName = "absorb.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 255 255"
+finishColor = "127 127 255 0"
+startRadius = 0.2
+finishRadius = 2.0
+animateTime = 0.5
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Ripple]
+simulateBase = "sim_smoke"
+lifeTime = 0.4
+renderBase = "draw_twirl_trail"
+textureName = "elecsphere.tga"
+textureBlend = "one one modulate"
+startColor = "62 255 255 180" 
+finishColor = "62 255 255 80" 
+startRadius = 3.0
+finishRadius = 0.0
+rotationRate = 10.0
+animateTime = 0.4
+BottomInteractsWithTerrain = false
+emitDelay = 0.2
+emitLife = 0.4
+emitinherit = "1.0 1.0 1.0"
+
+[Elec]
+simulateBase = "sim_smoke"
+lifeTime = 0.2
+renderBase = "draw_emit"
+emitName = "xcpencar_c.elecemit"
+emitVariance = "30.0 30.0 30.0"
+emitVelocity = "0.0 0.0 0.0"
+emitDelay = 0.05
+//emitInherit = "1.0 1.0 1.0"
+
+[ElecEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.3
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "0 127 255 255"
+finishColor = "0 127 255 1"
+startRadius = 0.05
+finishRadius = 0.008
+segmentLength = 0.3
+segmentVariance = "1.0 1.0 1.0"
+textureRate = 2.0
+texturespeed = -16.0
+animateTime = 0.3

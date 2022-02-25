@@ -2,9 +2,10 @@
 classLabel = "beam"
 
 shotGeometry = NULL
-xplGround = "xflagnd"
-xplVehicle = "xflacar"
-xplBuilding = "xflabld"
+
+xplGround = "xelcgnd"
+xplVehicle = "xelccar"
+xplBuilding = "xelcbld"
 
 renderName = "ELC_c.render"
 
@@ -25,22 +26,36 @@ renderBase = "draw_multi"
 renderCount = 2
 renderName1 = "ELC_c.core"
 renderName2 = "ELC_c.fringe"
+renderName3 = "ELC_c.light"
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 50 255 500"
+finishColor = "255 50 255 500"
+startRadius = 30.0
+finishRadius = 30.0
+animateTime = 0.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
 
 [Core]
-renderBase = "draw_bolt"
-textureName = NULL
+renderBase = "draw_trail" //bolt"
+textureName = "blastenergy.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 255"
 finishColor = "255 0 255 0"
 startRadius = 0.09
 finishRadius = 0.03
 segmentLength = 5.0
-segmentVariance = "0.0 0.0 0.0"
-animateTime = 0.2
-textureRate = 0.01
+//segmentVariance = "0.0 0.0 0.0"
+segmentTime = 0.11
+textureRate = 0.5
+textureSpeed = -5.0
 
 [Fringe]
-renderBase = "draw_bolt"
+renderBase = "draw_trail" //bolt"
 textureName = "trail2.tga"
 textureBlend = "one one modulate"
 startColor = "255 0 255 255"
@@ -48,7 +63,7 @@ finishColor = "0 0 255 0"
 startRadius = 0.09
 finishRadius = 0.8
 segmentLength = 5.0
-segmentVariance = "0.0 0.0 0.0"
-animateTime = 0.3
-textureRate = 0.02
-textureSpeed = -5.0
+//segmentVariance = "0.0 0.0 0.0"
+segmentTime = 0.2
+textureRate = 0.05
+textureSpeed = -7.0

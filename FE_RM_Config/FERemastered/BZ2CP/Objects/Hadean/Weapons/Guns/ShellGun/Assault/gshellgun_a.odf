@@ -14,17 +14,40 @@ aiRange = 150
 shotDelay = 0.14
 shotVariance = 0.01
 
-[flash]
+[Flash]
 renderBase = "draw_multi"
-renderCount = 8
-renderName1 = "gshellgun_a.e1"
-renderName2 = "gshellgun_a.e2"
-renderName3 = "gshellgun_c.e3"
-renderName4 = "gshellgun_c.e4"
-renderName5 = "gshellgun_c.e5"
-renderName6 = "gshellgun_a.e6"
-renderName7 = "gshellgun_a.e7"
-renderName8 = "gshellgun_c.e8"
+renderCount = 6
+renderName1 = "gshellgun_a.muzcone"
+renderName2 = "gshellgun_a.muzflash"
+renderName3 = "gshellgun_c.shell"
+renderName4 = "gshellgun_c.smoke"
+renderName5 = "gshellgun_c.spark"
+renderName6 = "gshellgun_c.light"
+//renderName7 = "gshellgun_a.e1"
+//renderName8 = "gshellgun_a.e7"
+
+[MuzCone]
+renderBase = "draw_geom"
+textureName = "muz2.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 100 255"
+finishColor = "255 150 0 0"
+startRadius = 2.0
+finishRadius = 1.3
+animateTime = 0.13
+geomName = "g_fflash.xsi"//sflash
+
+[MuzFlash]
+renderBase = "draw_geom"
+textureName = "muzfir.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 150 0 0"
+startRadius = 2.0
+finishRadius = 1.3
+animateTime = 0.11
+geomName = "g_sflash.xsi"//sflash
+
 
 [e1]
 renderBase = "draw_geom"
@@ -36,28 +59,6 @@ startRadius = 1.5
 finishRadius = 1.0
 animateTime = 0.1
 geomName = "g_fflash.xsi"//sflash
-
-[e2]
-renderBase = "draw_geom"
-textureName = "muz2.tga"
-textureBlend = "one one modulate"
-startColor = "255 150 100 255"
-finishColor = "255 150 0 255"
-startRadius = 2.0
-finishRadius = 1.3
-animateTime = 0.13
-geomName = "g_fflash.xsi"//sflash
-
-[e6]
-renderBase = "draw_geom"
-textureName = "muzfir.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 150 0 100"
-startRadius = 2.0
-finishRadius = 1.3
-animateTime = 0.1
-geomName = "g_sflash.xsi"//sflash
 
 [e7]
 renderBase = "draw_geom"

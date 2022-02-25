@@ -7,6 +7,7 @@ xplVehicle = "xleadcar"
 xplBuilding = "xleadbld"
 
 renderName = "lead_tmk1_c.Render"
+restoreFXLockstep = true
 
 ammoCost = 1
 lifeSpan = 1.75 // 150mFEA-B
@@ -25,24 +26,24 @@ stickTime = 5.0
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 3
 renderName1 = "lead_tmk1_c.Halo"
 renderName2 = "lead_tmk1_c.Trail"
+renderName3 = "lead_tmk1_c.blink"
 
 [Trail]
 renderBase = "draw_trail"
 textureName = "smoke.tga" // trail2
 textureBlend = "srcalpha invsrcalpha modulatealpha" // "one one modulate"
-textureRate = 0.001
+textureRate = 0.1 //0.001
 startColor =  "255 100 100 90"// "100 0 0 100" 
 finishColor =  "255 100 100 0" // "100 100 100 0"
-startRadius = 0.35
-finishRadius = 0.1
-segmentTime = 0.6
-animateTime = 0.6
+startRadius = 0.1 //0.35
+finishRadius = 0.0 //0.1
+segmentTime = 0.6 //animateTime = 0.6
 
 [Halo]
-renderBase = "draw_sprite"
+renderBase = "draw_twirl" //sprite"
 textureName = "lighthalo.tga"
 textureBlend = "one one modulate"
 startColor = "50 50 255 50" //64
@@ -51,7 +52,31 @@ startRadius = 0.4
 finishRadius = 0.4
 rotationRate = 10.0
 animateTime = 10.0
-emitDelay = 0.001
+BottomInteractsWithTerrain = false
+
+[Blink]
+simulateBase = "sim_smoke"
+lifeTime = 10.0
+renderBase = "draw_emit"
+emitName = "lead_tmk1_c.blinkemit"
+emitDelay = 0.1
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "0.0 0.0 0.0"
-emitLife = 1.0
+emitInherit = "1.0 1.0 1.0"
+emitLife = 0.05
+
+[BlinkEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.05
+renderBase = "draw_twirl" //_trail"
+emitDelay = 0.1  //1.0
+emitLife = 0.05  //0.5
+textureName = "particle.tga"  //"plasma.tga"
+textureBlend = "one one modulate"
+startColor = "200 20 20 255"
+finishColor = "200 20 20 100"
+startRadius = 2.0
+finishRadius = 0.4
+animateTime = 0.05
+//emitinherit = "1.0 1.0 1.0"
+BottomInteractsWithTerrain = false

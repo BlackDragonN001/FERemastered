@@ -52,6 +52,7 @@ finishColor = "255 50 10 200"
 startRadius = 0.3
 finishRadius = 0.1
 animateTime = 2.0
+rotationRate = 5.0
 
 [Flame]
 simulateBase = "sim_smoke"
@@ -84,15 +85,38 @@ attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
 
-[trail]
+[Trail]
 simulateBase = "sim_ember"
 lifeTime = 3.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xfbseeke.trailflare"
+renderName2 = "xfbseeke.trailemit"
+
+[TrailFlare]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 127 255"
+finishColor = "255 127 63 0"
+startRadius = 0.5
+finishRadius = 0.5
+animateTime = 3.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[TrailEmit]
+simulateBase = "sim_smoke" //ember"
+lifeTime = 3.0
 renderBase = "draw_trail"
+textureName = "trail.tga"
 textureBlend = "one one modulate"
 startColor = "255 127 0 200"
 finishColor = "255 0 0 0"
 startRadius = 0.03
 finishRadius = 0.0
-trailTime = 2.0
-segmentTime = 0.5
-animateTime = 3.0
+//trailTime = 2.0
+segmentTime = 0.5 //animateTime = 3.0
+textureRate = 0.1

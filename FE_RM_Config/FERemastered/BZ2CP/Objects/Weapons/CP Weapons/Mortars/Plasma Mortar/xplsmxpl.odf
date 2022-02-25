@@ -17,7 +17,7 @@ particleClass2 = "xplsmxpl.light"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
 
-particleClass3 = "xplsmxpl.flame"
+particleClass3 = "xplsmxpl.wave"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
@@ -35,14 +35,15 @@ damageValue(D) = 35 // deflection
 damageValue(A) = 60 // absorbtion
 
 ///////////////////////////////
+
 [Core]
 simulateBase = "sim_null"
 lifeTime = 1.5
 renderBase = "draw_sphere"
-textureName = "bolt.tga"
+textureName = "vsmoke.tga" //"bolt.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "0 0 255 128"
+startColor = "190 255 255 255"
+finishColor = "0 0 255 0"
 startRadius = 5.0
 finishRadius = 100.0
 animateTime = 1.5
@@ -51,29 +52,31 @@ longitudeSegments = 16
 
 [Light]
 simulateBase = "sim_null"
-lifeTime = .5
+lifeTime = 0.5
 renderBase = "draw_light"
-textureName = "flash.tga"
-startColor = "255 128 0 255"
-finishColor = "255 255 255 128"
-startRadius = 100.0
-finishRadius = 250.0
-animateTime = .5
+startColor = "255 255 255 2000"
+finishColor = "0 127 255 0"
+startRadius = 150.0
+finishRadius = 0.0
+animateTime = 0.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
-lensFlare = 0
+lensFlare = 1
 
-[flame]
+[Wave]
 simulateBase = "sim_smoke"
-lifeTime = 2
-renderBase = "draw_emit"
-startColor = "128 128 255 255"
-finishColor = "255 255 128 128"
-startRadius = 150.0
-finishRadius = 225.0
-animateTime = 2
-
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-
+lifeTime = 1.5
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "63 127 255 240" 
+finishColor = "0 127 255 0" 
+startRadius = 5.0
+finishRadius = 100.0
+animateTime = 1.5
+waveAngle = 3.14159265359
+waveDepth = 1.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 64

@@ -17,11 +17,12 @@ kickRadius = 10.0
 kickOmega = 4.0
 kickVeloc = 2.0
 
-particleTypes = 3
+particleTypes = 6
 
 particleClass1 = "xcblastcar.puff"
 particleCount1 = 5
 particleVeloc1 = "4.0 4.0 4.0"
+particleInherit1 = "0.5 0.5 0.5"
 
 particleClass2 = "xcblastcar.light"
 particleCount2 = 1
@@ -30,6 +31,21 @@ particleVeloc2 = "0.0 0.0 0.0"
 particleClass3 = "xcblastcar.splat"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xcblastcar.energypuffa"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "xcblastcar.sparkTrails"
+particleCount5 = 4
+particleVeloc5 = "36.0 30.0 36.0"
+particleBias5 = "0.0 8.0 0.0"
+particleInherit5 = "0.5 0.5 0.5"
+
+particleClass6 = "xcblastcar.Smoke"
+particleCount6 = 5 //7
+particleVeloc6 = "2.2 3.5 2.2"
+particleInherit6 = "0.5 0.5 0.5"
 
 
 [Puff]
@@ -43,6 +59,7 @@ finishColor = "0 0 255 0"
 startRadius = 0.2
 finishRadius = 4.0
 animateTime = 2.0
+bottomInteractsWithTerrain = false
 
 [Light]
 simulateBase = "sim_null"
@@ -69,3 +86,55 @@ finishColor = "0 0 0 255"
 startRadius = 0.1
 finishRadius = 2.0
 animateTime = 0.75
+
+[EnergyPuffA]
+simulateBase = "sim_smoke"
+lifeTime = 0.15
+renderBase = "draw_emit"
+emitName = "xblastcar.EnergyPuffB"
+emitVariance = "30.0 30.0 30.0"
+emitDelay = 0.03
+emitInherit = "1.0 1.0 1.0"
+
+	[EnergyPuffB]
+	simulateBase = "sim_smoke"
+	lifeTime = 0.3
+	renderBase = "draw_bolt"
+	textureName = "trail2.tga"
+	textureBlend = "one one modulate"
+	textureRate = 0.8
+	texturespeed = -16.0
+	startColor = "100 255 255 255"
+	finishColor = "0 100 255 0"
+	startRadius = 0.05
+	finishRadius = 0.008
+	segmentLength = 0.4
+	segmentVariance = "1.4 1.4 1.4"
+	animateTime = 0.3
+	
+[SparkTrails]
+simulateBase = "sim_ember"
+lifeTime = 2.0
+renderBase = "draw_trail"
+textureName = "spark2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.3
+startColor = "100 255 255 255"
+finishColor = "0 100 255 0"
+startRadius = 0.1
+finishRadius = 0.0
+segmentTime = 0.15
+segmentLength = 0.3
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 90"
+finishColor = "20 20 20 0"
+startRadius = 1.1
+finishRadius = 2.3
+animateTime = 2.0
+rotationRate = 4.0

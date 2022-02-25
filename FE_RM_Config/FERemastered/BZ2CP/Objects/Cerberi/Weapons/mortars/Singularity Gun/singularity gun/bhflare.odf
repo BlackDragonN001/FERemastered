@@ -3,11 +3,14 @@ classLabel = "FXMine"
 
 explosionName = "xbhxpl"
 
+effectHard1 = " "
+effectName1 = "bhflare.render"
+
 [MineClass]
 lifeSpan = 4.0
 
 [FlareMineClass]
-payloadName = "bhflare2"
+payloadName = NULL //"bhflare2"
 triggerDelay = 0.1
 shotDelay = 10
 shotVariance = 0.01
@@ -31,3 +34,125 @@ kickOmega = 1.5
 //ordPushEdge = 0.0
 //ordDrag = 2.0
 
+
+[render]
+renderBase = "draw_multi"
+renderCount = 6
+renderName1 = "bhflare.sphere"
+renderName2 = "bhflare.light"
+renderName3 = "bhflare.light2"
+renderName4 = "bhflare.ring"
+renderName5 = "bhflare.ring2"
+renderName6 = "bhflare.ground"
+//renderName7 = "bhflare.dome"
+
+[Sphere]
+simulateBase = "sim_smoke"
+lifeTime = 4.0
+renderBase = "draw_emit"
+emitName = "bhflare2.sphereemit"
+emitDelay = 4.2
+emitVelocity = "0.0 0.1 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[SphereEmit]
+simulateBase = "sim_smoke"
+lifeTime = 4.2
+renderBase = "draw_sphere"
+textureName = "bhsphere.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha" // "one one modulate"
+startColor = "240 200 250 0"
+finishColor = "0 0 40 230"
+startRadius = 65.0
+finishRadius = 1.0
+animateTime = 4.2
+latitudeBands = 8
+longitudeSegments = 16
+
+[Light]
+renderBase = "draw_light"
+startColor = "220 200 255 3050"
+finishColor = "0 0 255 800"
+startRadius = 120.0
+finishRadius = 70.0
+animateTime = 4.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Light2]
+simulateBase = "sim_smoke"
+lifeTime = 4.0
+renderBase = "draw_emit"
+emitName = "bhflare2.lightemit2"
+emitDelay = 4.2
+emitVelocity = "0.0 150.0 0.0"
+emitVariance = "875.0 875.0 875.0"
+
+[LightEmit2]
+simulateBase = "sim_null"
+lifeTime = 7.0
+renderBase = "draw_light"
+startColor = "250 100 255 2050"
+finishColor = "200 100 255 100"
+startRadius = 100.0
+finishRadius = 100.0
+animateTime = 7.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
+
+[Ring]
+renderBase = "draw_planar"
+textureName = "xbhchar3.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 255 0"
+finishColor = "255 255 255 25"
+startRadius = 255.0
+finishRadius = 10.0
+animateTime = 4.0
+
+[Ring2]
+renderBase = "draw_planar"
+textureName = "xbhchar2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 255 25"
+finishColor = "255 255 255 0"
+startRadius = 255.0
+finishRadius = 20.0
+animateTime = 4.0
+
+[Ground]
+renderBase = "draw_planar"
+textureName = "ano2.pic" // was "dome.pic", texture missing. -GBD
+textureBlend =  "srcalpha invsrcalpha modulatealpha" // "one one modulate" //
+startColor = "0 0 0 50"
+finishColor = "0 0 0 180"
+startRadius = 225.0
+finishRadius = 240.0
+animateTime = 4.0
+
+[dome]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_emit"
+emitName = "bhflare2.domeemit"
+emitDelay = 3.0
+emitVelocity = "0.0 0.1 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[domeemit]
+simulateBase = "sim_smoke"
+lifeTime = 4.0
+renderBase = "draw_sphere"
+textureName = "dome.pic" // Texture missing. -GBD
+textureBlend = "srcalpha invsrcalpha modulatealpha" // "one one modulate"
+startColor = "0 0 0 50"
+finishColor = "0 0 0 150"
+startRadius = 240.0
+finishRadius = 240.0
+animateTime = 4.0
+latitudeBands = 8
+longitudeSegments = 16

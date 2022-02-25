@@ -1,0 +1,107 @@
+// =======================
+// TURBO LASER VEHICLE HIT
+// =======================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xfire1.wav"
+damageRadius = 20.0
+
+damageValue(N) = 70 // none
+damageValue(L) = 60 // light
+damageValue(H) = 40 // heavy
+
+damageValue(S) = 30 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 10 // absorbtion
+
+kickRadius = 30.0
+kickOmega = 2.0
+kickVeloc = 3.0
+
+particleTypes = 5
+particleClass1 = "xeplas_c.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xeplas_c.puff"
+particleCount2 = 4
+particleVeloc2 = "7.0 7.0 7.0"
+
+particleClass3 = "xeplas_c.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xeplas_c.shock"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "xeplasgnd_c.splat"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 555"
+finishColor = "255 255 255 555"
+startRadius = 5.0
+finishRadius = 15.1
+animateTime = 4.0
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 0.7
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "250 255 255 500" 
+finishColor = "255 255 255 500" 
+startRadius = 0.5
+finishRadius = 3.0
+animateTime = 2.7
+rotationRate = 0.3
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_light"
+startColor = "255 255 255 555"
+finishColor = "255 255 255 555"
+startRadius = 2.2
+finishRadius = 10.1
+animateTime = 3.7
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 5--" 
+finishColor = "255 255 255 500" 
+startRadius = 1.5
+finishRadius = 10.0
+animateTime = 3.2
+latitudeBands = 8
+longitudeSegments = 16
+
+[Splat]
+simulateBase = "sim_null"
+lifeTime = 2.4
+renderBase = "draw_planar"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.1
+finishRadius = 1.0
+animateTime = 0.4

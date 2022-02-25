@@ -1,7 +1,7 @@
 [WeaponClass]
 classLabel = "dispenser"
 ordName = NULL		// <-- this is important!
-wpnName = "Wasp"
+wpnName = "Fireball"
 fireSound = "gsand00.wav"
 wpnReticle = "gmlock_a"
 wpnCategory = "CANN"
@@ -17,24 +17,23 @@ objectClass = "fball2c"
 renderBase = "draw_multi"
 renderCount = 3
 renderName1 = "fball2b.flame"
-renderName2 = "fball2b.trailer"
+renderName2 = "fball2b.smoke"
 renderName3 = "fball2b.light"
 // Never worked. "xfball2b". -GBD
-renderName4 = "xfball2b.smoke"
 renderName5 = "xfball1b.trailer2"
 
 [Smoke]
 renderBase = "draw_twirl_trail"
 emitDelay = 0.01
 emitDelayVar = 0.02
-emitVelocity = "0.0 0.0 0.0"
+emitVelocity = "0.0 7.0 0.0"
 emitVariance = "1.0 1.0 1.0"
 //emitInherit = "1.5 1.5 1.0"
 emitLife = 1.2
-textureName = "smoke.tga"
+textureName = "smoke2.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "0 0 0 128"
-finishColor = "0 0 0 0"
+startColor = "0 0 0 127"
+finishColor = "63 63 63 0"
 startRadius = 0.2
 finishRadius = 0.5
 animateTime = 1.2
@@ -44,7 +43,7 @@ rotationRate = 1.0
 renderBase = "draw_twirl_trail"
 emitDelay = 0.02
 emitDelayVar = 0.01
-emitVelocity = "0.0 0.0 0.0"
+emitVelocity = "0.0 6.0 0.0"
 emitVariance = "1.0 1.0 1.0"
 //emitInherit = "1.5 1.5 1.5"
 emitLife = 0.8
@@ -57,6 +56,19 @@ finishRadius = 0.02
 animateTime = 0.8
 rotationRate = 8.0
 
+[Light]
+renderBase = "draw_light"
+startColor = "255 150 0 1900"
+finishColor = "199 150 0 0"
+startRadius = 80.0
+finishRadius = 0.0
+animateTime = 0.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+
 [trailer]
 simulateBase = "sim_dust"//dust
 lifeTime = 2.4 //2.5
@@ -68,17 +80,4 @@ startColor = "255 255 255 150"
 finishColor = "200 100 100 0"
 startRadius = 0.4
 finishRadius = 2.0
-segmentTime = 1.3
-animateTime = 2.4
-
-[Light]
-renderBase = "draw_light"
-startColor = "255 150 0 1900"
-finishColor = "199 0 0 1900"
-startRadius = 80.0
-finishRadius = 80.0
-animateTime = 0.5
-attenuateConstant = 1.0
-attenuateLinear = 0.0
-attenuateQuadratic = 15.0
-lensFlare = 0
+segmentTime = 1.3 //animateTime = 2.4

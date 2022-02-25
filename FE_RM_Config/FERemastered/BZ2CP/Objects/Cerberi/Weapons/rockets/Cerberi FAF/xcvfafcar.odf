@@ -5,20 +5,60 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 4
+particleTypes = 9
 
 particleClass1 = "xcvfafcar.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
-particleClass2 = "xcvfafcar.puff"
-particleCount2 = 4
-particleVeloc2 = "4.5 4.5 4.5"
-particleClass3 = "xcvfafcar.light"
+
+particleClass2 = "xcvfafcar.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xcvfafcar.flame"
 particleCount3 = 1
-particleVeloc3 = "0.0 0.0 0.0"
-particleClass4 = "xcvfafcar.Shock"
+particleVeloc3 = "0.0 1.0 0.0"
+particleBias3 = "0.0 2.0 0.0"
+particleInherit3 = "0.5 0.5 0.5"
+
+particleClass4 = "xcvfafcar.smoke"
 particleCount4 = 1
-particleVeloc4 = "0.0 0.0 0.0"
+particleVeloc4 = "0.0 4.0 0.0"
+particleBias4 = "0.0 5.0 0.0"
+particleInherit4 = "0.5 0.5 0.5"
+
+particleClass5 = "xcvfafcar.light"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+particleInherit5 = "0.5 0.5 0.5"
+
+particleClass6 = "xcvfafcar.chunks"
+particleCount6 = 5
+particleVeloc6 = "10.0 10.0 10.0"
+particleBias6 = "0.0 0.0 0.0"
+particlePosVar6 = "2.0 2.0 2.0"
+particleInherit6 = "1.0 1.0 1.0"
+
+particleClass7 = "xcvfafcar.trail"
+particleCount7 = 5
+particleVeloc7 = "10.0 10.0 10.0"
+particleBias7 = "0.0 5.0 0.0"
+particlePosVar7 = "2.0 2.0 2.0"
+particleInherit7 = "1.0 1.0 1.0"
+
+particleClass8 = "xcvfafgnd.Flames"
+particleCount8 = 8
+particleVeloc8 = "6.0 10.0 6.0"
+particleBias8 = "0.0 5.0 0.0"
+particlePosVar8 = "3.0 0.0 3.0"
+particleInherit8 = "0.8 0.8 0.8"
+
+particleClass9 = "xcvfafgnd.FlameHeat"
+particleCount9 = 3
+particleVeloc9 = "5.0 3.0 5.0"
+particleBias9 = "0.0 5.5 0.0"
+particlePosVar9 = "3.0 0.0 3.0"
+particleInherit9 = "0.8 0.8 0.8"
 
 explSound = "xsv2.wav"
 
@@ -34,52 +74,119 @@ damageValue(A) = 40 // absorbtion
 
 [Core]
 simulateBase = "sim_null"
-lifeTime = 1.0
+lifeTime = 0.3
+renderBase = "draw_twirl"
+textureName = "deflect.tga"
+textureBlend = "one one modulate"
+startColor = "127 127 255 55"
+finishColor = "127 127 255 0"
+startRadius = 3.0
+finishRadius = 15.0
+animateTime = 0.3
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "200 200 255 127"
+finishColor = "127 63 255 0"
+startRadius = 1.0
+finishRadius = 5.0
+animateTime = 0.2
+latitudeBands = 8
+longitudeSegments = 16
+
+[Flame]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = "252 254 6 255"
-finishColor = "255 0 0 0"
-startRadius = 0.5
-finishRadius = 1.0
-animateTime = 1.0
+startColor = "190 127 255 255"
+finishColor = "63 0 255 0"
+startRadius = 0.0
+finishRadius = 4.0
+animateTime = 0.5
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
 
-[Puff]
+[Smoke]
 simulateBase = "sim_smoke"
-lifeTime = 1.0
+lifeTime = 0.8
 renderBase = "draw_twirl"
-textureName = "smoke.tga"
+textureName = "smoke2.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "10 10 10 125"
+startColor = "10 10 10 255"
 finishColor = "100 100 100 0"
-startRadius = 0.5
-finishRadius = 2.5
-animateTime = 1.0
+startRadius = 1.0
+finishRadius = 5.0
+animateTime = 0.8
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
 
 [Light]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.5
 renderBase = "draw_light"
-startColor = "252 254 6 765"
-finishColor = "255 0 0 0"
-startRadius = 10.0
-finishRadius = 10.0
+startColor = "127 63 255 355"
+finishColor = "127 63 255 0"
+startRadius = 60.0
+finishRadius = 0.0
 animateTime = 0.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
 
-[Shock]
-simulateBase = "sim_null"
-lifeTime = 0.4
-renderBase = "draw_sphere"
-textureName = "vsmoke.tga"
+[Chunks]
+simulateBase = "sim_ember"
+lifeTime = 2.5
+renderBase = "draw_twirl" //sprite
+textureName = "dirt.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "63 63 63 255"
+finishColor = "0 0 0 0"
+startRadius = 0.4
+finishRadius = 0.3
+animateTime = 2.5
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[Trail]
+simulateBase = "sim_ember"
+lifeTime = 3.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xcvfafcar.trailflare"
+renderName2 = "xcvfafcar.trailemit"
+
+[TrailFlare]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 63 200"
-finishColor = "255 0 0 0"
-startRadius = 0.1
-finishRadius = 1.0
-animateTime = 0.4
-latitudeBands = 8
-longitudeSegments = 16
+startColor = "127 127 255 255"
+finishColor = "127 63 255 0"
+startRadius = 0.3
+finishRadius = 0.3
+animateTime = 3.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[TrailEmit]
+simulateBase = "sim_smoke" //ember"
+lifeTime = 3.0
+renderBase = "draw_trail"
+textureName = "trail.tga"
+textureBlend = "one one modulate"
+startColor = "127 127 255 255"
+finishColor = "127 63 255 0"
+startRadius = 0.025
+finishRadius = 0.0
+segmentTime = 0.5
+textureRate = 0.1

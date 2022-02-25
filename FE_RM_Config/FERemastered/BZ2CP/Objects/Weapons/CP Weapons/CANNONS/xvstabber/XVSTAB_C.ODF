@@ -43,7 +43,6 @@ finishColor = "255 255 255 255"
 startRadius = 3.0
 finishRadius = 0.5
 
-
 [smoke]
 renderBase = "draw_twirl_trail"
 textureName = "smoke.tga"
@@ -52,8 +51,8 @@ startColor = "164 164 164 64"
 finishColor = "180 180 180 0"
 startRadius = 0.1
 finishRadius = 1.0
-animateTime = 1.0
+animateTime = 0.5 //1.0
 emitDelay = 0.01
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "1.0 1.0 1.0"
-emitLife = .5
+emitLife = 0.5

@@ -1,14 +1,23 @@
 // =========================
-// BATONIC STREAM GROUND HIT
+// RAPIER GROUND HIT
 // =========================
 
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 1
+particleTypes = 3
+
 particleClass1 = "xrapiergnd_c.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xrapiergnd_c.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xrapiergnd_c.sparkle"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
 
 explSound = "xsv2.wav"
 damageRadius = 0.0
@@ -30,3 +39,32 @@ finishColor = "190 23 196 0"
 startRadius = 0.2
 finishRadius = 2.0
 animateTime = 0.5
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_light"
+startColor = "255 127 255 555"
+finishColor = "155 0 155 0"
+startRadius = 10.0
+finishRadius = 0.0
+animateTime = 0.2
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Sparkle]
+simulateBase = "sim_null"
+lifeTime = 0.1
+renderBase = "draw_twirl_trail"
+textureName = "particle.tga" // "icerflame2.tga"//"iceshockflame2.tga"
+textureblend = "one one modulate"
+startColor = "20 50 255 255"
+finishColor = "0 200 200 255"
+startRadius = 0.3 // 0.15
+finishRadius = 0.01 // 0.01
+animateTime = 0.6 // 1.0
+emitDelay = 0.003 // 0.002
+emitVariance = "5.0 5.0 5.0"//"2.0 2.0 2.0"
+emitLife = 0.6 //1.3

@@ -23,7 +23,7 @@ kickVeloc = 1.0
 
 particleTypes = 8
 
-particleClass1 = "xcplasblda.smoke"
+particleClass1 = "xcplasblda.core"
 particleCount1 = 5
 particleVeloc1 = "4.0 4.0 4.0"
 particlePosVar1 = "1.0 0.0 1.0"
@@ -44,14 +44,14 @@ particleBias4 = "0.0 0.0 0.0"
 
 particleClass5 = "xcplasblda.chunks"
 particleCount5 = 20
-particleVeloc5 = "10.0 10.0.0 10.0"
-particleBias5 = "3.0 3.0 3.0"
+particleVeloc5 = "10.0 10.0 10.0"
+particleBias5 = "0.0 3.0 0.0"
 particlePosVar5 = "2.0 2.0 2.0"
 particleInherit5 = "1.0 1.0 1.0"
 
 particleClass6 = "xcplasblda.puff"
 particleCount6 = 20
-particleVeloc6 = "30.0 30.0.0 30.0"
+particleVeloc6 = "30.0 30.0 30.0"
 particleBias6 = "0.0 3.0 0.0"
 particleInherit6 = "0.5 0.5 0.5"
 
@@ -63,7 +63,7 @@ particleClass8 = "xcplasgnda.sphere"
 particleCount8 = 1
 particleVeloc8 = "0.0 0.0 0.0"
 
-[Smoke]
+[Core]
 simulateBase = "sim_smoke"
 lifeTime = 2.5
 renderBase = "draw_twirl"
@@ -132,6 +132,7 @@ finishColor = "150 0 0 0"
 startRadius = 0.6
 finishRadius = 0.4
 animateTime = 2.5
+rotationRate = 5.0
 BottomInteractsWithTerrain = false
 
 [Puff]

@@ -1,10 +1,10 @@
 [OrdnanceClass]
 classLabel = "thermalmissile"
 
-shotGeometry = "iorckt00.xsi"
+shotGeometry = NULL //"iorckt00.xsi"
 shotSound = "cerbfaf.wav"
 
-renderName = "cvfafxx_c.render"
+renderName = "cvfaf_c.render"
 
 xplGround = "xcvfafgnd"
 xplVehicle = "xcvfafcar"
@@ -27,43 +27,4 @@ omegaTurn = 1.0
 
 [ThermalMissileClass]
 coneAngle = 0.4
-
-[Render]
-renderBase = "draw_multi"
-renderCount = 3
-renderName1 = "cvfafxx_c.flare"
-renderName2 = "cvfafxx_c.light"
-renderName3 = "cvfafxx_c.flame"
-
-[Flare]
-renderBase = "draw_sprite"
-textureName = "lightflare.tga"
-textureBlend = "one one modulate"
-startColor = "252 254 6 255"
-finishColor = "252 254 6 255"
-startRadius = 1.0
-finishRadius = 0.5
-
-[Light]
-renderBase = "draw_sprite"
-textureName = "lightflare.tga"
-textureBlend = "one one modulate"
-startColor = "254 254 150 355"
-finishColor = "252 254 50 0"
-startRadius = 2.0
-finishRadius = 2.0 
-
-[Flame]
-renderBase = "draw_twirl_trail"
-textureName = "flame.tga"
-textureBlend = "one one modulate"
-startColor = "154 78 1 255"
-finishColor = "254 158 6 0"
-startRadius = 0.3
-finishRadius = 0.02
-animateTime = 0.15
-emitDelay = 0.001
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "2.0 2.0 2.0"
-emitLife = 0.15
 

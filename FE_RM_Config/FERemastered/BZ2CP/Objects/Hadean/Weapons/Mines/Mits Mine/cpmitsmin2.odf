@@ -7,6 +7,7 @@ scrapValue = 0
 maxHealth = 150
 maxAmmo = 0
 unitName = "MFF"
+
 effectHard1 = "MFF"
 effectName1 = "cpmitsmin2.Field"
 
@@ -32,13 +33,43 @@ damageValue(D) = 10 // deflection
 damageValue(A) = 5 // absorbtion
 
 [Field]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "cpmitsmin2.fielda"
+renderName2 = "cpmitsmin2.fieldb"
+
+[FieldA]
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
-startColor = "255 127 0 255"
-finishColor = "255 0 31"
+startColor = "255 127 0 127"
+finishColor = "255 63 0 15"
 startRadius = 1.0
 finishRadius = 20.0
 animateTime = 0.2
 latitudeBands = 8
 longitudeSegments = 16
+InitialPitch = 0.0
+InitialYaw = 0.0
+InitialRoll = 0.0
+AddPitch = 20.0
+AddYaw = 20.0
+AddRoll = 20.0
+
+[FieldB]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 0 127"
+finishColor = "255 63 0 15"
+startRadius = 1.0
+finishRadius = 20.0
+animateTime = 0.2
+latitudeBands = 8
+longitudeSegments = 16
+InitialPitch = 0.0
+InitialYaw = 0.0
+InitialRoll = 0.0
+AddPitch = -20.0
+AddYaw = -20.0
+AddRoll = -20.0

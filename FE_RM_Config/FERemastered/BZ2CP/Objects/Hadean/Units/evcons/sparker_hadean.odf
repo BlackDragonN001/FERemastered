@@ -1,11 +1,19 @@
-[sparker_hadean]
+[Sparker_Hadean]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "sparker_hadean.smoke"
+renderName2 = "sparker_hadean.light"
+
+renderName3 = "sparker_hadean.wave"
+
+[smoke]
 renderBase = "draw_emit"
-emitName = "sparker_hadean.spark"
+emitName = "sparker_hadean.smokeemit"
 emitDelay = 0.05
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "2.0 0.0 2.0"
 
-[Spark]
+[SmokeEmit]
 simulateBase = "sim_smoke"
 lifeTime = 4.0
 renderBase = "draw_twirl"
@@ -17,3 +25,17 @@ startRadius = 2.0
 finishRadius = 0.1
 animateTime = 4.0
 rotationRate = 5.0
+
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 1.0 //11.0
+renderBase = "draw_light"
+startColor = "204 153 101 255"
+finishColor = "204 153 101 0"
+startRadius = 30.0
+finishRadius = 30.0
+animateTime = 1.0 //11.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

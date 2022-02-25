@@ -34,21 +34,36 @@ xplPulse = "xfbemit_c"
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
-renderName1 = "fbgun_c.smoke"
-renderName2 = "fbgun_c.flame"
-renderName3 = "fbgun_c.light"
+renderCount = 7
+renderName1 = "fbgun_c.core"
+renderName2 = "fbgun_c.core"
+renderName3 = "fbgun_c.smoke"
+renderName4 = "fbgun_c.flame"
+renderName5 = "fbgun_c.light"
+renderName6 = "fbgun_c.sparks"
+renderName7 = "fbgun_c.smoke2"
+
+[Core]
+renderBase = "draw_twirl"
+textureName = "crackle.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 2.0
+finishRadius = 2.0
+rotationRate = 8.0
+BottomInteractsWithTerrain = false
 
 [Smoke]
 renderBase = "draw_twirl_trail"
 emitDelay = 0.02
-emitDelayVar = .01 
+emitDelayVar = 0.01 
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "1.0 1.0 1.0"
 emitLife = 0.7 
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "0 0 0 128"
+startColor = "0 0 0 127"
 finishColor = "0 0 0 0"
 startRadius = 1.0
 finishRadius = 0.10
@@ -69,7 +84,7 @@ startColor = "255 255 200 128"
 finishColor = "255 0 0 0"
 startRadius = 1.0 
 finishRadius = 0.1
-animateTime = 0.6 
+animateTime = 0.6
 rotationRate = 8.0
 BottomInteractsWithTerrain = false
 
@@ -83,3 +98,39 @@ attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
+
+[Sparks]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.02
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "10.0 10.0 10.0"
+emitPosVariance = "4.0 4.0 4.0"
+emitInherit = "0.5 0.5 0.5"
+emitLife = 1.0
+textureName = "spark3.tga"
+textureBlend = "one one modulate"
+startColor = "255 145 38 255"
+finishColor = "255 145 38 0"
+startRadius = 0.2
+finishRadius = 0.2
+animateTime = 1.0
+rotationRate = 2.0
+BottomInteractsWithTerrain = false
+
+[Smoke2]
+renderBase = "draw_twirl_trail"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 63"
+finishColor = "127 127 127 0"
+startRadius = 1.5
+finishRadius = 3.0
+rotationRate = 2.0
+animateTime = 0.8
+emitDelay = 0.05 //0.04
+emitVelocity = "0.0 1.5 0.0"
+emitVariance = "3.0 1.0 3.0"
+emitPosVariance = "1.0 0.0 1.0"
+emitInherit = "0.3 0.3 0.3"
+emitLife = 0.8
+BottomInteractsWithTerrain = false

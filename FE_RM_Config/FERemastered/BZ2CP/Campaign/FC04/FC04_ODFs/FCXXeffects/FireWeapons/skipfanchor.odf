@@ -15,12 +15,13 @@ armorClass = N
 canCollide = 1
 canDetect = 1 
 canInteract = 0
+explosionName = ""
 
 weaponHard1 = "hp_weapon_1"
 weaponName1 = "skipfjack"
 
 [MineClass]
-lifeSpan = .51 
+lifeSpan = 0.51 
 
 [WeaponMineClass]
 searchRadius = 150.0

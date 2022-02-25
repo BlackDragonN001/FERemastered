@@ -14,10 +14,9 @@ aiRange = 120
 shotDelay = 0.10
 shotVariance = 0.01
 
-
 [Flash]
 renderBase = "draw_geom"
-textureName = "sflash.tga"
+textureName = "cflash.tga"
 textureBlend = "one one modulate"
 startColor = "200 100 255 255"
 finishColor = "200 100 255 0"

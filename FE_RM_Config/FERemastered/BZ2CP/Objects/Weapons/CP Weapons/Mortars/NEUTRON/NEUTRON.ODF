@@ -2,6 +2,7 @@
 classLabel = "snipershell"
 
 shotGeometry = NULL
+shotRadius = 10.0
 // geometryScale = 0.1
 shotSound = "baz03.wav"
 
@@ -12,7 +13,7 @@ xplBuilding = NULL
 //renderName = "neutron.render"
 
 ammoCost = 1
-lifeSpan = 0.1
+lifeSpan = 0.1 // 50m radius
 shotSpeed = 500.0
 
 damageValue(N) = 0 // none
@@ -27,15 +28,16 @@ damageValue(A) = 0 // absorbtion
 killRadius = 50.0
 killLength = 50.0
 
-// [Render]
-// renderBase = "draw_twirl_trail"
-// textureName = "plasma.tga" // flame
-// textureblend = "one one modulate"
-// startColor = "255 255 100 255"
-// finishColor = "100 255 200 200"
-// startRadius = 0.3
-// finishRadius = 0.1
-// animateTime = 1.0
-// emitDelay = 0.005
-// emitVariance = "10.0 10.0 10.0"
-// emitLife = 2.0
+[Render]
+renderBase = "draw_trail" //twirl_trail"
+textureName = "trail.tga" //"plasma.tga" // flame
+textureblend = "one one modulate"
+startColor = "255 255 100 255"
+finishColor = "100 255 200 200"
+startRadius = 0.1
+finishRadius = 0.1
+segmentLength = 0.5
+segmentTime = 1.0
+//emitDelay = 0.005
+//emitVariance = "10.0 10.0 10.0"
+//emitLife = 2.0
