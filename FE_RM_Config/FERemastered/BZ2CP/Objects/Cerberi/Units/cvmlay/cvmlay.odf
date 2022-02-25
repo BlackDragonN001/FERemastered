@@ -110,3 +110,11 @@ rollSteer = 0.08 //rolls while steering []
 soundThrust = "evmsljmp.wav"
 soundTurbo = "evmsleng.wav"
 
+[MineLayerClass]
+mineCount = 15 // # of mines to drop. // BZ1.5 values.
+radius = 48.0f //60.0f // Initial radius 
+radiusInc = 48.0f //60.0f // Amount radius grows by each drop 
+angleInc = 72.0f //72.0f*radiusInc/radius // Initial angle increment per drop (in DEGREES) 
+angleDec = 0.0f // Amount angle increment decreases by each drop (in DEGREES) 
+timeout = 15.0f // Timeout (seconds) in getting to next drop point. Will give up if exceeded. 
+ringPattern = true // Use BZ1 style.
