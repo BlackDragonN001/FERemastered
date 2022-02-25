@@ -217,7 +217,7 @@ function HandleMainState(R, STATE)
 		CameraReady();
 		Advance(R);
 	elseif STATE == 3 then
-		Move2(M.DropshipFlying, 0.0, 30.0, TerrainFloor(Position3));
+		Move(M.DropshipFlying, 0.0, 30.0, TerrainFloor(Position3));
 		if CameraPath("CamPath", 5500, 3200, M.DropshipFlying) 
 		or CameraCancelled() then
 			CameraFinish();
@@ -500,6 +500,7 @@ function CheckStuffIsAlive()
 	end
 end
 
+--[[ Works fine now?? -GBD
 --work around for flickering caused by calling Move() on a building that was spawned off map (for dropship cutscene)
 function Move2(h, r, v, dest)
 	local oldTransform = GetTransform(h);
@@ -520,3 +521,4 @@ function Move2(h, r, v, dest)
 		return false;
 	end
 end
+--]]
