@@ -436,7 +436,7 @@ function HandleSurvivorPickup(R, STATE)	--Routine5
 				--player's henchman picks up the pilot
 				M.SabresRemaining = M.SabresRemaining + 1;
 				RemoveObject(survivor);
-				h = ReplaceObject2(h, "ivtank_e01", GetLabel(h));
+				h = ReplaceObject(h, "ivtank_e01");
 				M.Survivors[M.SurvivorIndex1] = h;
 				AudioMessage("ivtank03.wav");	--Tank:"I've got 'em"
 				SetObjectiveName(h, string.format("Has survivor %i", M.SurvivorIndex1));
@@ -469,7 +469,7 @@ function HandleSurvivorDropoff(R, STATE)
 	if GetCfg(h) == "ivtank_e01" and GetDistance(h, "SafeNav") < 60 then	--85
 		M.SabresRemaining = M.SabresRemaining + 1;
 		M.Survivors[M.SurvivorIndex2] = M.Dropship;
-		h = ReplaceObject2(h, "ivtank", GetLabel(h));
+		h = ReplaceObject(h, "ivtank");
 		Stop(h, 0);
 		SetGroup(h, 0);
 		M.SurvivorsRescued = M.SurvivorsRescued + 1;
@@ -620,7 +620,7 @@ function CheckTanksRemaining(R, STATE)
 		Advance(R);
 	end
 end
-
+--[[ No longer crashes?? -GBD
 --work around for crash when ReplaceObject() is called on unit told to go to nav by player 
 function ReplaceObject2(h, odf, label)
 	local team = GetTeamNum(h);
@@ -631,3 +631,4 @@ function ReplaceObject2(h, odf, label)
 	SetCurHealth(h, health);
 	return h;
 end
+--]]
