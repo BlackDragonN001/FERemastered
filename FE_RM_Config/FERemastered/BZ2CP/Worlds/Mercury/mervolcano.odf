@@ -14,11 +14,14 @@ canDetect = 0
 canInteract = 0
 canSnipe = 0
 ownsTerrain = 1
+isTerrain = 1
 canCollide = 0
+AllowUndergroundSpawn = true
+hitType = "G" // use Ground explosion.
 
 AlignToTerrain = true
 
 [BuildingClass]
-bldEdge = "wwww"
+justTerrain = 1
 
 
