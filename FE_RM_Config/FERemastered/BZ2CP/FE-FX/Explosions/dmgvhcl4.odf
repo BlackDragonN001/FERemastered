@@ -73,9 +73,9 @@ animateTime = 1.6
 rotationRate = 30.0
 BottomInteractsWithTerrain = false
 
-[light]
-simulateBase = "sim_smoke"
-lifeTime = 0.1
+[Light]
+//simulateBase = "sim_smoke"
+//lifeTime = 0.1
 renderBase = "draw_emit"
 emitName = "dmgvhcl4.lightemit"
 emitDelay = 0.1
@@ -83,7 +83,7 @@ emitVelocity = "0.1 0.1 0.1"
 emitVariance = "0.1 0.1 0.1"
 emitDelayVar = 0.02
 
-[lightemit]
+[LightEmit]
 simulateBase = "sim_smoke"
 lifeTime = 0.1
 renderBase = "draw_light"
@@ -101,9 +101,9 @@ attenuateQuadratic = 15.0
 lensFlare = 0
 //emitDelayVar = 3.9
 
-[embers]
-simulateBase = "sim_smoke"
-lifeTime = 100
+[Embers]
+//simulateBase = "sim_smoke"
+//lifeTime = 100
 renderBase = "draw_emit"
 emitName = "dmgvhcl4.embersemit"
 emitDelay = 0.6
@@ -111,7 +111,7 @@ emitDelayVar = 0.7
 emitVelocity = "2.0 2.0 2.0"
 emitVariance = "9.0 9.0 9.0"
 
-[embersemit]
+[EmbersEmit]
 simulateBase = "sim_ember"
 lifeTime = 2.0
 renderBase = "draw_trail"
@@ -132,17 +132,17 @@ rotationRate = 40.0
 trailTime = 0.2
 segmentTime = 0.2
 
-[bang]
-simulateBase = "sim_smoke"
-lifeTime = 1000
+[Bang]
+//simulateBase = "sim_smoke"
+//lifeTime = 1000
 renderBase = "draw_emit"
 emitName = "dmgvhcl4.bangemit"
-emitDelay = 1000
+emitDelay = 1e6
 //emitDelayVar = 0.2
 emitVelocity = "2.0 2.0 2.0"
 emitVariance = "19.0 19.0 19.0"
 
-[bangemit]
+[BangEmit]
 simulateBase = "sim_ember"
 lifeTime = 1.5
 renderBase = "draw_twirl_trail"
@@ -161,17 +161,17 @@ finishRadius = 0.01
 animateTime = 1.5
 rotationRate = 10.0
 
-[banglight]
-simulateBase = "sim_smoke"
-lifeTime = 1000
+[BangLight]
+//simulateBase = "sim_smoke"
+//lifeTime = 1000
 renderBase = "draw_emit"
 emitName = "dmgvhcl4.banglemit"
-emitDelay = 1000
+emitDelay = 1e6
 //emitDelayVar = 0.7
 emitVelocity = "0.1 0.1 0.1"
 emitVariance = "1.0 1.0 1.0"
 
-[banglemit]
+[BangLEmit]
 simulateBase = "sim_smoke"
 lifeTime = 0.5
 renderBase = "draw_light"
@@ -187,9 +187,9 @@ attenuateQuadratic = 15.0
 lensFlare = false
 //emitDelayVar = 3.9
 
-[bolt]
-simulateBase = "sim_smoke"
-lifeTime = 10
+[Bolt]
+//simulateBase = "sim_smoke"
+//lifeTime = 10
 renderBase = "draw_emit"
 emitName = "dmgvhcl4.boltemit"
 emitDelay = 0.03
@@ -197,7 +197,7 @@ emitDelay = 0.03
 emitVelocity = "13.0 13.0 13.0"
 emitVariance = "30.0 30.0 -30.0"
 
-[boltemit]
+[BoltEmit]
 simulateBase = "sim_smoke"
 lifeTime = 0.2
 renderBase = "draw_bolt"

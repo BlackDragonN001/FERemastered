@@ -4,7 +4,7 @@
 
 [DmgVhcl1]
 renderBase = "draw_multi"
-renderCount = 6 //5
+renderCount = 5 //5
 renderName1 = "DmgVhcl1.smokeemitter"
 renderName2 = "DmgVhcl1.sparkemitter"
 renderName3 = "DmgVhcl1.puff"
@@ -49,17 +49,17 @@ animateTime = 1.0
 rotationRate = 3.0
 BottomInteractsWithTerrain = false
 
-[puff]
-simulateBase = "sim_smoke"
-lifeTime = 1000
+[Puff]
+//simulateBase = "sim_smoke"
+//lifeTime = 0.1
 renderBase = "draw_emit"
 emitName = "dmgvhcl1.puffemit"
-emitDelay = 1000
+emitDelay = 1e6
 //emitDelayVar = 0.2
 emitVelocity = "0.0 1.0 0.0"
 emitVariance = "1.0 1.0 1.0"
 
-[puffemit]
+[PuffEmit]
 simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_twirl_trail"
@@ -78,17 +78,17 @@ finishRadius = 3.0
 animateTime = 1.0 //.5
 rotationRate = 2.0
 
-[puff2]
-simulateBase = "sim_smoke"
-lifeTime = 1000
+[Puff2]
+//simulateBase = "sim_smoke"
+//lifeTime = 1000
 renderBase = "draw_emit"
 emitName = "dmgvhcl1.puff2emit"
-emitDelay = 1000
+emitDelay = 1e6
 //emitDelayVar = 0.2
 emitVelocity = "0.0 0.2 0.0"
 emitVariance = "1.0 1.0 1.0"
 
-[puff2emit]
+[Puff2Emit]
 simulateBase = "sim_smoke"
 lifeTime = 0.5
 renderBase = "draw_twirl_trail"
@@ -107,17 +107,17 @@ finishRadius = 0.2
 animateTime = 0.5
 rotationRate = 10.0
 
-[light]
-simulateBase = "sim_smoke"
-lifeTime = 1000
+[Light]
+//simulateBase = "sim_smoke"
+//lifeTime = 1000
 renderBase = "draw_emit"
 emitName = "dmgvhcl1.lightemit"
-emitDelay = 1000
+emitDelay = 1e6
 //emitDelayVar = 0.2
 emitVelocity = "0.0 0.2 0.0"
 emitVariance = "1.0 1.0 1.0"
 
-[lightemit]
+[LightEmit]
 simulateBase = "sim_smoke"
 lifeTime = 0.3
 renderBase = "draw_light"
@@ -135,9 +135,9 @@ attenuateQuadratic = 15.0
 lensFlare = 0
 //emitDelayVar = 3.9
 
-[bolt]
-simulateBase = "sim_smoke"
-lifeTime = 10
+[Bolt]
+//simulateBase = "sim_smoke"
+//lifeTime = 10.0
 renderBase = "draw_emit"
 emitName = "dmgvhcl1.boltemit"
 emitDelay = 0.04
@@ -145,7 +145,7 @@ emitDelay = 0.04
 emitVelocity = "0.0 0.0 15.0"
 emitVariance = "0.0 0.0 -30.0"
 
-[boltemit]
+[BoltEmit]
 simulateBase = "sim_smoke"
 lifeTime = 0.15
 renderBase = "draw_bolt"
