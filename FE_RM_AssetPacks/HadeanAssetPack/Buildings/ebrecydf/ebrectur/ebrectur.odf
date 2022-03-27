@@ -1,0 +1,60 @@
+// Hadean rec turret
+[GameObjectClass]
+geometryName = "ebrectur00.xsi"
+classLabel = "turret"
+collisionRadius = 10.0
+scrapCost = 80
+scrapValue = 25
+maxHealth = 200000
+addHealth = 100
+maxAmmo = 20000 // 0 is *not* treated as infinite ammo!
+unitName = "Buster"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+powerCost = 0
+
+canInteract = 0
+
+isAssault = 0
+armorClass = H
+
+requireCount = 0
+provideCount = 1
+provideName1 = "ebrectur"
+
+weaponMask = 00011
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "gcptsnipeh"
+weaponAssault1 = 0
+
+lightHard1 = "hp_light_1"
+lightName1 = "cplasersite"
+
+turretCount = 4
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+turretName3 = "hp_eyepoint"
+turretName4 = "hp_light_1"
+
+[BuildingClass]
+soundAmbient = "igtow01.wav"
+
+[CraftClass]
+rangeScan = 200
+periodScan = 5.0
+velocJam = 0.0
+weaponPitch = 2.0
+steerFactor = 1.0
+engageRange = 120
+
+damageEffect1 = "dmgvhcl_e1"
+damageEffect2 = "dmgvhcl_e2"
+damageEffect3 = "dmgvhcl_e3"
+damageEffect4 = "dmgvhcl_e4"
+
+[TurretCraftClass]
+omegaTurret = 3.0
+detectRange = 150

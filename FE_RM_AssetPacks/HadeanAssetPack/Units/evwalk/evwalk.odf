@@ -1,0 +1,156 @@
+// BZ2CP Hadean Walker "Krahanos"
+// Created by Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
+
+[GameObjectClass]
+baseName = "evwalk"
+classLabel = "iv_walker"
+cockpitName = "evwalk_cockpit.fbx"
+geometryName = "evwalk_skel.fbx"
+geometryScale = 1.0
+animCount = 10
+animName1 = "idle"
+animFile1 = "evwalk_idle.fbx"
+animName2 = "idle2"
+animFile2 = "evwalk_idle2.fbx"
+animName3 = "idle3"
+animFile3 = "evwalk_idle3.fbx"
+animName4 = "sitdown"
+animFile4 = "evwalk_sit.fbx"
+animName5 = "walk"
+animFile5 = "evwalk_walk.fbx"
+animName6 = "turn"
+animFile6 = "evwalk_turn.fbx"
+animName7 = "death"
+animFile7 = "evwalk_death01.fbx"
+animName8 = "death2"
+animFile8 = "evwalk_death02.fbx"
+animName9 = "death3"
+animFile9 = "evwalk_death03.fbx"
+animName10 = "run"
+animFile10 = "evwalk_run.fbx"
+scrapValue = 30
+scrapCost = 100
+customCost = 115
+buildTime = 22.0
+customTime = 25.0
+maxHealth = 7500
+maxAmmo = 5000
+addAmmo = 22
+addHealth = 10
+unitName = "Krahanos"
+aiName = "GechProcess"
+heatSignature = 0.1
+imageSignature = 5.0
+radarSignature = 5.0
+collisionRadius = 4.0
+isAssault = 1
+
+armorClass = H
+
+/////// Requirements ///////////////////
+
+requireCount = 2
+requireName1 = "ebfact2"
+requireText1 = "Upgrade to Mega Xenomator"
+requireName2 = "ebtcen"
+requireText2 = "Build Xyr Tower"
+
+/////// Provides ///////////////////
+
+provideCount = 4
+provideName1 = "evwalk"
+provideName2 = "VIRTUAL_CLASS_WALKER"
+provideName3 = "assault"
+provideName4 = "DefendUnit"
+
+/////// Weapons ///////////////////
+
+weaponMask = 00011
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gcphlaser"
+weaponAssault1 = 0
+recoilName1 = "cannon_recoil_1"
+weaponHard2 = "HP_CANNON_2"
+weaponName2 = "gcphlaser"
+weaponAssault2 = 0
+recoilName2 = "cannon_recoil_2"
+weaponHard3 = "HP_ROCKET_1"
+weaponName3 = "gsprink_a"
+weaponAssault3 = 1
+recoilName3 = "msl_recoil_1"
+weaponHard4 = "HP_GUN_1"
+weaponName4 = "gshellgun"
+weaponAssault4 = 0
+recoilName4 = "gun_recoil_r"
+weaponHard5 = "HP_GUN_2"
+weaponName5 = "gshellgun"
+weaponAssault5 = 0
+recoilName5 = "gun_recoil_l"
+
+//////////////////////////////////
+
+[CraftClass]
+rangeScan = 300.0
+periodScan = 5.0
+velocJam = 0.0
+engageRange = 220
+
+damageEffect1 = "dmgvhcl_e1"
+damageEffect2 = "dmgvhcl_e2"
+damageEffect3 = "dmgvhcl_e3"
+damageEffect4 = "dmgvhcl_e4"
+
+selectWaitMsg = "evewalk01.wav"
+selectAttackMsg = "evewalk02.wav"
+selectFollowMsg = "evewalk03.wav"
+selectGoMsg = "evewalk04.wav"
+selectOtherMsg = "evewalk01.wav"
+
+goMsg = "evewalk05.wav"
+attackMsg = "evewalk06.wav"
+followMeMsg = "evewalk07.wav"
+followMsg = "evewalk08.wav"
+repairMsg = "evewalk09.wav"
+reloadMsg = ""
+rescueMsg = "evewalk07.wav"
+recycleMsg = "evewalk09.wav"
+otherMsg = "evewalk05.wav" 
+holdMsg = "evewalk10.wav"
+user1Msg = ""  
+killedMsg = "evewalk11.wav"
+diedMsg = ""
+
+// Angles are in degress
+[WalkerClass]
+headYawRate = 75.0 
+minHeadYaw = -75.0
+maxHeadYaw =  75.0
+minHeadPitch = -40.0
+maxHeadPitch = 30.0
+
+is13Walker = true //false // Set to false for a 1.2 style walker hierarchy. -GBD
+Walker12Type = 0 // -1 = auto, 0 = isdf style, 1 = fury style. -GBD
+
+alphaDamp = 5.0
+omegaTurn = 30.0
+omegaTurnAttenuation = 0.5f
+
+alphaSteer = 0.1
+velocJump = 0;
+alphaTrack = 20.0
+pitchPitch = 0.0
+pitchThrust = 0.0
+accelThrust = 8.0
+velocForward = 15.0
+velocReverse = 8.0
+
+headpiece = "head"
+rightfootpiece = "rfoot";
+leftfootpiece = "lfoot";
+
+jumpSound  = "avwalke2.wav"
+landSound  = "avwalke3.wav"
+stepSound  = "evwalkst.wav" //"iwalk02.wav"
+
+engineSound = "evwalken.wav" //"iatank01.wav"

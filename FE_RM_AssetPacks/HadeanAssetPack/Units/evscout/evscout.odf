@@ -1,0 +1,150 @@
+// (c) BZ2CP unit "Xypos"
+// Original Concept: Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
+
+[GameObjectClass]
+baseName = "evscout"
+geometryName = "evscout00.fbx"
+cockpitName = "evscout_cockpit.fbx"
+animCount = 3
+animName1 = "forward"
+animFile1 = "evscoutsf.fbx"
+animName2 = "neutral"
+animFile2 = "evscoutsn.fbx"
+animName3 = "reverse"
+animFile3 = "evscoutsr.fbx"
+animCountCockpit = 3
+animNameCockpit1 = "forward"
+animFileCockpit1 = "evscoutsf_cockpit.fbx"
+animNameCockpit2 = "neutral"
+animFileCockpit2 = "evscoutsn_cockpit.fbx"
+animNameCockpit3 = "reverse"
+animFileCockpit3 = "evscoutsr_cockpit.fbx"
+classLabel = "wingman"
+scrapValue = 20
+scrapCost = 40
+customCost = 45
+buildTime = 10.0
+customTime = 15.0
+maxHealth = 2200 //1800
+maxAmmo = 1700
+addAmmo = 5 // 1 - HM
+unitName = "Xypos"
+aiName = "ScoutFriend"
+aiName2 = "ScoutEnemy"
+
+heatSignature = 0.5
+imageSignature = 2.0
+radarSignature = 0.3
+
+isAssault = 0
+
+armorClass = N // L
+
+/////// Provides ///////////////////
+
+provideCount = 3
+provideName1 = "evscout"
+provideName2 = "VIRTUAL_CLASS_SCOUT"
+provideName3 = "DefendUnit"
+
+/////// Weapons ///////////////////
+
+weaponMask = 00011
+
+weaponHard1 = "HP_GUN_1"
+weaponName1 = "gcphcg_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_GUN_2"
+weaponName2 = "gcphcg_c"
+weaponAssault2 = 0
+weaponHard3 = "HP_SPECIAL_1"
+weaponName3 = "gmflamemin"
+weaponAssault3 = 0
+
+////////////////////////////////////
+
+// Dust fx.
+effectHard1 = "hp_com_1"
+effectName1 = "dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectFlags1 = 2147483135 // thrusting only.
+
+// Engine flame glow.
+effectHard2 = "flame_1"
+effectName2 = "engglow_e.small"
+effectFlags2 = 2147483135 // thrusting only.
+ 
+[CraftClass]
+rangeScan = 450.0f
+periodScan = 5.0f
+velocJam = 10.0f
+engageRange = 130
+
+damageEffect1 = "dmgvhcl_e1"
+damageEffect2 = "dmgvhcl_e2"
+damageEffect3 = "dmgvhcl_e3"
+damageEffect4 = "dmgvhcl_e4"
+
+braccelFactor = 0.03
+velFactor = 0.2
+steerFactor = 1.5
+omegaFactor = 0.2
+strafeFactor = 0.2
+
+avoidSpeed = 30;
+topSpeed = 40;
+
+selectWaitMsg = "evscout1.wav"		//"yes lord"
+selectAttackMsg = "evscout4.wav"	//"engaging the enemy"
+selectFollowMsg = "evscout2.wav"	//"supporting"
+selectGoMsg = "evscout1.wav"		//"yes lord"
+selectOtherMsg = "evscout1.wav"		//"yes lord"
+
+goMsg = "evscout1.wav"			//"yes lord"
+attackMsg = "evscout5.wav"		//"they will perish"
+followMeMsg = "evscout9.wav"		//"behind you"
+followMsg = "evscout2.wav"		//"supporting"
+repairMsg = "evscout8.wav"		//"I will return"
+reloadMsg = "evscout8.wav"		//"I will return"
+rescueMsg = "evscout6.wav"		//"as fast as I can"
+recycleMsg = "evscout8.wav"		//"I will return"
+//otherMsg = "evscout.wav" 		//Doesn't exist
+holdMsg = "evscout3.wav"		//"holding ground"
+//user1Msg = "evscout.wav"  		//Doesn't exist
+killedMsg = "evscout7.wav"		//"an eye for an eye"
+diedMsg = "evscout8.wav"		//"i will return"		
+
+[HoverCraftClass]
+velocForward = 40.5 // []
+velocReverse = 15.0 // []
+velocStrafe = 20.0 // []
+accelThrust = 28.0 //acceleration []
+accelDragStop = 6.0 //how fast it stops once hands are off controls []
+accelJump = 14.0 // []
+
+setAltitude = 1.0 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself []
+alphaDamp = 8.0 //shocks []
+
+pitchPitch = 0.25 //nose up []
+pitchThrust = 0.08 //nose down []
+
+rollStrafe = 0.10 //rolls while strafing []
+omegaSpin = 4.2 //spinning in place speed []
+omegaTurn = 4.0 //turning while moving speed []
+alphaSteer = 7.0 //how fast it responds to steering []
+rollSteer = 0.08 //rolls while steering []
+
+soundThrust = "xypos_idle.wav"
+soundTurbo = "xypos_acc.wav"
+
+[Lod1]
+//geometryName = "evscoutL1.xsi" ;geometry for lod1
+//distance = 50
+
+[Lod2]
+//geometryName = "evscoutL2.xsi" ;geometry for lod2
+//distance = 130                ;...distance over this many meters => switch to lod2

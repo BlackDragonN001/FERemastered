@@ -1,0 +1,123 @@
+// BZ2CP unit "Collector"
+// Original Concept by Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
+
+[GameObjectClass]
+baseName = "evscav"
+geometryName = "evscav00.fbx"
+cockpitName = "evscav_cockpit.fbx"
+animCount = 1
+animName1 = "deploy"
+animFile1 = "evscav00.fbx"
+classLabel = "scavenger"
+geometryScale = 1.0
+scrapValue = 10
+scrapCost = 20
+buildTime = 10.0
+maxHealth = 3000
+maxAmmo = 0
+unitName = "Collector"
+aiName = "ScavProcess"
+aiName2 = "ScavProcess"
+heatSignature = 5.0
+imageSignature = 3.0
+radarSignature = 2.0
+isAssault = 1
+armorClass = H
+
+/////// Requirements ///////////////
+
+requireCount = 0
+
+/////// Provides ///////////////////
+
+provideCount = 2
+provideName1 = "evscav"
+provideName2 = "VIRTUAL_CLASS_SCAVENGER"
+
+/////// Lights ///////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_emit_1"
+effectName1 = "dusttrail3"
+effectMinVelocity1 = 5.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_emit_2"
+effectName2 = "dusttrail3"
+effectMinVelocity2 = 5.0
+effectMaxVelocity2 = 500.0
+
+[CraftClass]
+rangeScan = 200.0
+periodScan = 0.0
+velocJam = 0.0
+
+damageEffect1 = "dmgvhcl_e1"
+damageEffect2 = "dmgvhcl_e2"
+damageEffect3 = "dmgvhcl_e3"
+damageEffect4 = "dmgvhcl_e4"
+
+braccelFactor = 0.09
+velFactor =	0.3
+steerFactor = 1.5
+omegaFactor = 0.1
+
+TeamTransferrable = true
+GotoTaskHasLeader = false
+
+selectWaitMsg = "evscav01.wav"
+selectGoMsg = "evscav02.wav"
+selectPickupMsg = "evscav05.wav"
+selectDropoffMsg = "evscav05.wav"
+selectOtherMsg = "evscav01.wav"
+selectFollowMsg = "evscav03.wav"
+holdMsg = "evscav11.wav"
+goMsg = "evscav04.wav"
+stopMsg = "evscav04.wav"
+followMsg = "evscav11.wav"
+followMeMsg = "evscav07.wav"
+rescueMsg = "evscav11.wav"
+repairMsg = "evscav08.wav"
+recycleMsg = "evscav10.wav"
+otherMsg = "evscav13.wav"
+
+[TrackedVehicleClass]
+velocForward = 15.0
+velocReverse = 10.0
+accelThrust = 50.0
+omegaSpin = 1.0		//2.0
+omegaTurn = 0.5
+
+TREAD_STATIC_FRICTION = 1.5
+
+engineSound = "evserven.wav"
+treadSound = "ebscav.wav" //"iscav01b.wav"
+
+[TrackedDeployableClass]
+timeDeploy = 5.0
+timeUndeploy = 5.0
+soundDeploy = "irecy03.wav"
+soundUndeploy = "trundepl.wav"
+
+[ScavengerClass]
+soundPickup = "suck.wav"
+scrapHold = 20
+deployClass = "ebscav"
+deployOffset = 3.25
+//scrapFirst = true
+
+BeamColor = "204 153 101 31"
+BuildSparkConfig = "sparker_hadean"
+LineFinishColor = "255 255 255 0"
+LineStartColor = "204 153 101 255"
+lineSolidColor = "204 153 101 255"
+
+[Lod1]
+//geometryName = "evscavl1.xsi" ;geometry for lod1
+//distance = 50                 ;...distance over this many meters => switch to lod2
+
+[Lod2]
+//geometryName = "evscavl2.xsi" ;geometry for lod2
+//distance = 135                 ;...distance over this many meters => switch to lod2

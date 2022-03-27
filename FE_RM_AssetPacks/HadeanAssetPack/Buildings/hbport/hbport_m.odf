@@ -1,0 +1,182 @@
+// BZ2CP Building "Hadean Portal"
+// Original Concept by Slaor and Pastell
+// FE Remastered Model and Texture: Jayden Hopkins
+
+[GameObjectClass]
+baseName = "hbport"
+geometryName = "hbport00.fbx"
+classLabel = "turret" // For login terminal.
+BZCClasslabel = "portal"
+RequirePowerMask = 0 // None. //2 // ISDF Power
+powerCost = 0
+scrapCost = 65
+scrapValue = 20
+maxHealth = 6000 // 5000
+addHealth = 25
+maxAmmo = 0  // zero = instant,anything greater will be set as the delay until ammo if full.
+addAmmo = 0  // DLL sets ammo as zero so unless maxammo = o then you'll need to add ammo to reactivate portal.
+unitName = "Portal"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 0.01
+isAssault = 1
+ownsTerrain = 1
+isLimited = 0
+needLimit = 0
+buildSupport = "F"
+buildRequire = "F"
+armorClass = H
+AlwaysShowAmmo = true
+
+PositionOffset1 = "0.000000 5.000000 0.000000" // Teleport Exit Location.
+PositionOffset2 = "0.000000 0.000000 50.000000" // Goto Destination after AI unit Exits.
+//PositionOffset3 = "0.000000 0.000000 0.000000" // Teleport FX Location.
+
+effectsMask = 0 // Start out OFF.
+effectHard1 = "hp_emit_1"
+effectName1 = "PortalFx_E0Start.render"
+effectHard2 = "hp_emit_1"
+effectName2 = "PortalFx_E0.render"
+effectHard3 = "hp_emit_1"
+effectName3 = "PortalFx_E0End.render"
+
+effectHard4 = "hp_emit_1"
+effectName4 = NULL //"PortalFx_E1Start.render"
+effectHard5 = "hp_emit_1"
+effectName5 = NULL //"PortalFx_E1.render"
+effectHard6 = "hp_emit_1"
+effectName6 = "PortalFx_E1End.render"
+
+effectHard7 = "hp_emit_1"
+effectName7 = NULL //"PortalFx_E2Start.render"
+effectHard8 = "hp_emit_1"
+effectName8 = NULL //"PortalFx_E2.render"
+effectHard9 = "hp_emit_1"
+effectName9 = "PortalFx_E2End.render"
+
+GameObjectClassServiceMask = 9
+GameObjectClassServiceMatch = 9
+GameObjectClassServiceProvides = 9
+
+limitClass1 = "hbport"
+limitClass1Count = 8
+limitClass1Text = "Max Portals Reached"
+
+requireCount = 2
+requireName1 = "ebcbun"
+requireText1 = "Build Eyes of Xyr"
+requireName2 = "ebsbay"
+requireText2 = "Build Repair Vat"
+
+provideCount = 4
+provideName1 = "hbport"
+provideName2 = "hbport_m"
+provideName3 = "base"
+provideName4 = "VIRTUAL_CLASS_TECHCENTER"
+
+weaponMask = 00000
+weaponHard1 = "hp_hand_1"
+weaponName1 = "gchannel1"
+weaponAssault1 = 1
+weaponGroup1 = 0
+weaponHard2 = hp_hand_1
+weaponName2 = "gchannel2"
+weaponAssault2 = 1
+weaponGroup2 = 1
+weaponHard3 = hp_hand_1
+weaponName3 = "gchannel3"
+weaponAssault3 = 1
+weaponGroup3 = 2
+weaponHard4 = hp_hand_1
+weaponName4 = "gchannel4"
+weaponAssault4 = 1
+weaponGroup4 = 3
+
+[PoweredBuildingClass]
+CanAlliesUse = false
+
+[BuildingClass]
+//soundAmbient = "ipgen01.wav"
+DeploySound = "hbport_loop.wav" // Custom sound by Gravey. -GBD
+DeploySoundLoop = true
+
+tunnelCount = 1
+bldEdge = "twtw"
+tunnel01X0 = 1
+tunnel01Z0 = 1
+tunnel01DX = 2
+tunnel01DZ = 2
+tunnel01Edge = "twtw"
+
+candemolish = false
+
+[TeleportalClass]
+soundActivate = "teleport.wav"
+//soundDeactivate = NULL
+
+// EffectHard#'s for Portal Fx.
+InEffect = 4 //1
+OutEffect = 7 //2
+OnEffect = 1 //0
+
+// Effect ODF Mine for Vehicle Fx.
+PortalEffect = "PortalFx_E" // Effect # is added to the end, as well as a Start and End versions.
+VehInEffect = 1
+VehOutEffect = 2
+
+TeleporterChannel = 1
+ShowChannel = true
+CanEnter = true
+CanExit = true
+MatchType = 1 // 0 = Closest, 1 = Cycle, 2 = Random.
+MatchTypeUsesChannels = true
+ContinuousFx = true //false
+ContinuousFxRange = 0.0
+FxOnVehicle = false
+TeleportColorFade = "0 127 255 255"
+TeleportFilter = 3
+// Teleport Filter options: 
+// All         = 0
+// Craft       = 1
+// Pilots      = 2
+// Powerups    = 4
+// Weapons     = 8 (Torpedoes, Mines)
+// Other       = 16
+ExitForwardOnly = false
+ExitVelocity = 0
+ExitKickAI = true
+EnterGotoIsExit = false // If true, AI ordered to goto this portal will goto the exit position offset instead of the object.
+ExitUsesCenter = true
+EnterRange = 14.0f
+TeleportTeamFilter = 0
+DestinationMinRange = 0.0
+DestinationMaxRange = 0.0
+DestinationTeamFilter = 3
+// 0 = All Teams, 1 = same team only, 2 = allies only, 3 = Same Team + Allies, 4 = Enemies only, 5 = Same Team + Enemies, 6 = Allies + Enemies.
+// Team Filter options: 
+// All Teams        = 0
+// Same Team Only   = 1
+// Allies           = 2
+// Enemies          = 4
+// 
+// Add the values to get the desired result. Same Team + Allies is 3, Enemies + Allies is 6.
+
+[CraftClass]
+rangeScan = 210.0
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 1.5
+steerFactor = 1.0
+engageRange = 210
+
+damageEffect1 = "dmgvhcl_e1"
+damageEffect2 = "dmgvhcl_e2"
+damageEffect3 = "dmgvhcl_e3"
+damageEffect4 = "dmgvhcl_e4"
+
+[TurretCraftClass]
+omegaTurret = 0.0
+detectRange = 500
