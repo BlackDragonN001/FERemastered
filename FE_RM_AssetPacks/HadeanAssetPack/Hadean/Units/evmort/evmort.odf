@@ -46,10 +46,11 @@ requireText1 = "Build Eyes of Xyr"
 
 /////// Provides ///////////////////
 
-provideCount = 3
+provideCount = 4
 provideName1 = "evmort"
 provideName2 = "VIRTUAL_CLASS_MORTARBIKE"
-provideName3 = "DefendUnit"
+provideName3 = "VIRTUAL_CLASS_SENTRY"
+provideName4 = "DefendUnit"
 
 /////// Weapons ///////////////////
 
@@ -101,6 +102,7 @@ topSpeed = 32;
 
 attackTask = "MortarBikeAttack"
 subAttackTask = "MortarBikeSubAttack"
+subAttackClass = "ANS"
 
 selectWaitMsg = "evmort01.wav"
 selectAttackMsg = "evmort02.wav"

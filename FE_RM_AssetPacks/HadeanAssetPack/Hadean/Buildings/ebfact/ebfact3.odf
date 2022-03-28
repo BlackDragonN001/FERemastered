@@ -16,8 +16,8 @@ RunAnimIsLooped = true
 classLabel = "factory"
 collisionRadius = 4.0
 scrapCost = 10
-scrapValue = 40
-maxHealth = 8000
+scrapValue = 30
+maxHealth = 6500
 maxAmmo = 0
 unitName = "Xenomator"
 aiName = "BuildingProcess"
@@ -34,9 +34,12 @@ requireCount = 0
 
 /////// Provides ///////////////////
 
-provideCount = 2
+provideCount = 5
 provideName1 = "ebfact"
-provideName2 = "base"
+provideName2 = "ebfact2"
+provideName3 = "ebfact3"
+provideName4 = "VIRTUAL_CLASS_FACTORY"
+provideName5 = "base"
 
 /////// Lights and effects ///////////////////
 

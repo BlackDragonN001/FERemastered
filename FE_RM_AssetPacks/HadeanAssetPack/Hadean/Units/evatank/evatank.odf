@@ -139,10 +139,10 @@ pitchMax = 0.9
 recoilName1 = "recoil_1"
 laserName1 = "recoil_1"
 
-[Lod1]
-geometryName = "evatankl1.xsi" ;geometry for lod1
-distance = 50                 ;...distance over this many meters => switch to lod2
+//[Lod1]
+//geometryName = "evatankl1.xsi" ;geometry for lod1
+//distance = 50                 ;...distance over this many meters => switch to lod2
 
-[Lod2]
-geometryName = "evatankl2.xsi" ;geometry for lod2
-distance = 135                 ;...distance over this many meters => switch to lod2
+//[Lod2]
+//geometryName = "evatankl2.xsi" ;geometry for lod2
+//distance = 135                 ;...distance over this many meters => switch to lod2

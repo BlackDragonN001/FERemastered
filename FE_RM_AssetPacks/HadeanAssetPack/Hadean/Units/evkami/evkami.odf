@@ -15,6 +15,7 @@ animName3 = "reverse"
 animFile3 = "evkamisr.fbx"
 classLabel = "wingman"
 explosionName = "kamixpl"
+useVehicleCrashOnDeath = false // it's incinnerated in the explosion.
 canSnipe = 0
 //needPilot = 0
 scrapValue = 20
@@ -53,6 +54,7 @@ weaponMask = 00011
 weaponHard1 = "HP_SPECIAL_1"
 weaponName1 = "gkamimin"
 weaponAssault1 = 0
+AcceptPowerupMask = 32 //SERVICE only
 
 ////////////////////////////////////
 
@@ -72,12 +74,14 @@ effectFlags2 = 2147483135 // thrusting only.
 rangeScan = 220.0f
 periodScan = 5.0f
 velocJam = 10.0f
-engageRange = 55
+engageRange = 55.0
 
 damageEffect1 = "dmgvhcl_e1"
 damageEffect2 = "dmgvhcl_e2"
 damageEffect3 = "dmgvhcl_e3"
 damageEffect4 = "dmgvhcl_e4"
+
+//useAssaultSpecials = true
 
 braccelFactor = 0.03
 velFactor = 0.2

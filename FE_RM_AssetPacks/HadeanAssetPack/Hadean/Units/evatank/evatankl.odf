@@ -1,7 +1,6 @@
 [GameObjectClass]
 classLabel = "evatank"
 scrapCost = 60
-maxHealth = 4200
 unitName = "Hedoux LS"
 	
 /////// Requirements ///////////////
@@ -13,15 +12,9 @@ requireText1 = "Build Repair Vat"
 /////// Weapons ///////////////////
 
 weaponMask = 00001
-weaponHard1 = "HP_CANNON_1"
 weaponName1 = "gcphlaser"
-weaponAssault1 = 1
-weaponHard2 = "HP_GUN_1"
 weaponName2 = "gcphcg_a"
-weaponAssault2 = 0
-weaponHard3 = "HP_GUN_2"
 weaponName3 = "gcphcg_a"
-weaponAssault3 = 0
 
 ////////////////////////////////////
 

@@ -159,10 +159,10 @@ rollSteer = 0.08 //rolls while steering []
 soundThrust = "evtanken.wav"
 soundTurbo = "evtanku.wav"
 
-[Lod1]
-geometryName = "evtankL1.xsi" ;geometry for lod1
-distance = 50                 ;...distance over this many meters => switch to lod2
+//[Lod1]
+//geometryName = "evtankL1.xsi" ;geometry for lod1
+//distance = 50                 ;...distance over this many meters => switch to lod2
 
-[Lod2]
-geometryName = "evtankL2.xsi" ;geometry for lod2
-distance = 135                 ;...distance over this many meters => switch to lod2
+//[Lod2]
+//geometryName = "evtankL2.xsi" ;geometry for lod2
+//distance = 135                 ;...distance over this many meters => switch to lod2

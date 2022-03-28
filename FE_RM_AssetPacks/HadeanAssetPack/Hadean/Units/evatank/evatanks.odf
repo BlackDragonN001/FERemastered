@@ -12,27 +12,19 @@ addAmmo = 8
 unitName = "Hedoux FBS"
 
 unitStatus = "wire_evatanku.tga"
-	
+
 /////// Requirements ///////////////
 
 requireCount = 2
 requireName1 = "ebtcen"
 requireText1 = "Build Xyr Tower"
-requireName2 = "ebsbay"
-requireText2 = "Build Repair Vat"
 
 /////// Weapons ///////////////////
 
 weaponMask = 00001
-weaponHard1 = "HP_CANNON_1"
 weaponName1 = "gfbgun_a"
-weaponAssault1 = 1
-weaponHard2 = "HP_GUN_1"
 weaponName2 = "gslicer"
-weaponAssault2 = 0
-weaponHard3 = "HP_GUN_2"
 weaponName3 = "gslicer"
-weaponAssault3 = 0
 
 ////////////////////////////////////
 

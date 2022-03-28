@@ -1,5 +1,5 @@
 [GameObjectClass]
-baseName = "mitsmin2"
+baseName = "cpmitsmin1"
 geometryName = "igmits00.fbx"
 classLabel = "magnet"
 scrapCost = 0
@@ -7,6 +7,7 @@ scrapValue = 0
 maxHealth = 150
 maxAmmo = 0
 unitName = "MFF"
+isAssault = 0
 
 effectHard1 = "MFF"
 effectName1 = "cpmitsmin2.Field"

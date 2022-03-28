@@ -45,9 +45,8 @@ detectRange = 100
 soundBuild = "ibrecy02.wav"
 soundFinish = "iapc04.wav"
 
-reloadMsg = "ivrecy12.wav"
-rescueMsg = "ivrecy13.wav"
-
+reloadMsg = "evrecy12.wav" //"ivrecy12.wav"
+rescueMsg = "evrecy13.wav" //"ivrecy13.wav"
 
 [ArmoryGroup1]
 buildLabel = "Guns"
@@ -68,8 +67,8 @@ buildLabel = "Rockets"
 buildItem1 = "aptagcr"
 buildItem2 = "apcpworm"
 buildItem3 = "apsprink"
-buildItem4 = "apcombo1"
-buildItem5 = "apcombo2"
+//buildItem4 = "apcombo1" // "Worm/Sprink" would only give "worm".
+//buildItem5 = "apcombo2" // "Sprink/Worm" would only give "sprink".
 
 [ArmoryGroup4]
 buildLabel = "Mortars"

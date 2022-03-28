@@ -10,7 +10,7 @@ xplBuilding = "xshellcar"
 renderName = "eburst_c.render"
 
 ammoCost = 3.0  // 4.5 // 5FE
-lifeSpan = .30 // 0.35FE // 105m
+lifeSpan = 0.30 // 0.35FE // 105m
 shotSpeed = 300.0
 
 damageValue(N) = 18 // 15FE // none
@@ -20,7 +20,6 @@ damageValue(H) = 15 // 20FE // heavy
 damageValue(S) = 13 // standard
 damageValue(D) = 9 // 5FE // deflection
 damageValue(A) = 25 // absorbtion
-
 
 //burst fires 10 shots once per second, pummel fires 10 per half second
 

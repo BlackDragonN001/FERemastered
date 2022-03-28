@@ -55,7 +55,7 @@ provideName3 = "DefendUnit"
 
 /////// Weapons ///////////////////
 
-weaponMask = 00001
+weaponMask = 00011
 weaponHard1 = "HP_ROCKET_1"
 weaponName1 = "gcpworm_c"
 weaponAssault1 = 0
@@ -149,10 +149,10 @@ rollSteer = 0.08 //rolls while steering []
 soundThrust = "evmsljmp.wav"
 soundTurbo = "evmsleng.wav"
 
-[Lod1]
-geometryName = "evmislL1.xsi" ;geometry for lod1
-distance = 50
+//[Lod1]
+//geometryName = "evmislL1.xsi" ;geometry for lod1
+//distance = 50
 
-[Lod2]
-geometryName = "evmislL2.xsi" ;geometry for lod2
-distance = 130                ;...distance over this many meters => switch to lod2
+//[Lod2]
+//geometryName = "evmislL2.xsi" ;geometry for lod2
+//distance = 130                ;...distance over this many meters => switch to lod2
