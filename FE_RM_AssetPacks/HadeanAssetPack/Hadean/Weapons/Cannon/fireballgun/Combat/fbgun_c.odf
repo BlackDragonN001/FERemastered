@@ -34,21 +34,21 @@ xplPulse = "xfbemit_c"
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 7
-renderName1 = "fbgun_c.core"
-renderName2 = "fbgun_c.core"
-renderName3 = "fbgun_c.smoke"
-renderName4 = "fbgun_c.flame"
-renderName5 = "fbgun_c.light"
-renderName6 = "fbgun_c.sparks"
-renderName7 = "fbgun_c.smoke2"
+renderCount = 6
+renderName1 = "fbgun_c.smoke"
+renderName2 = "fbgun_c.flame"
+renderName3 = "fbgun_c.light"
+renderName4 = "fbgun_c.sparks"
+renderName5 = "fbgun_c.smoke2"
+renderName6 = "fbgun_c.core"
+renderName7 = "fbgun_c.core"
 
 [Core]
 renderBase = "draw_twirl"
 textureName = "crackle.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 255 255 255"
+startColor = "255 200 127 255"
+finishColor = "255 200 127 255"
 startRadius = 2.0
 finishRadius = 2.0
 rotationRate = 8.0

@@ -29,14 +29,14 @@ xplPulse = "xfbemit_a"
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 7
-renderName1 = "fbgun_a.core"
-renderName2 = "fbgun_a.core"
-renderName3 = "fbgun_a.smoke"
-renderName4 = "fbgun_a.flame"
-renderName5 = "fbgun_a.light"
-renderName6 = "fbgun_a.sparks"
-renderName7 = "fbgun_a.smoke2"
+renderCount = 6
+renderName1 = "fbgun_a.smoke"
+renderName2 = "fbgun_a.flame"
+renderName3 = "fbgun_a.light"
+renderName4 = "fbgun_a.sparks"
+renderName5 = "fbgun_a.smoke2"
+renderName6 = "fbgun_a.core"
+renderName7 = "fbgun_a.core"
 //renderName8 = "fbgun_a.twirl" // Never existed? supposed to be trailer? -GBD
 
 [Core]
