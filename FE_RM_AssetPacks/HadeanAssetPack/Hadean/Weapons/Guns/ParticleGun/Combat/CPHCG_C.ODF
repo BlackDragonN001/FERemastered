@@ -30,12 +30,12 @@ renderName3 = "cphcg_c.bullettrail"
 
 [Core]
 renderBase = "draw_twirl"
-textureName = "particle.tga" //lightflare.tga
+textureName = "lightflare.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 255"
 finishColor = "255 255 255 0"
-startRadius = 0.5 //0.8
-finishRadius = 0.5 //0.8
+startRadius = 0.8
+finishRadius = 0.8
 rotationRate = 10.0
 BottomInteractsWithTerrain = false
 
