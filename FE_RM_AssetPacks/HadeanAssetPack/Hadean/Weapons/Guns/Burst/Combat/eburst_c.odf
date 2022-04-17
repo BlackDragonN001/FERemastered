@@ -26,6 +26,27 @@ damageValue(A) = 25 // absorbtion
 [Render]
 renderBase = "draw_multi"
 renderCount = 2
-renderName1 = "cphcg_c.core"
-renderName2 = "cphcg_c.bullettrail"
-//renderName3 = "cphcg_c.trail"
+renderName1 = "eburst_c.core"
+renderName2 = "eburst_c.trail"
+
+[Core]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 127 255"
+finishColor = "255 200 127 0"
+startRadius = 0.5 //0.8
+finishRadius = 0.5 //0.8
+rotationRate = 10.0
+BottomInteractsWithTerrain = false
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "wispytrail.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "63 31 5 127"
+finishColor = "0 0 0 0"
+startRadius = 0.15
+finishRadius = 0.025
+textureRate = 0.3
+segmentTime = 0.1 //0.3
