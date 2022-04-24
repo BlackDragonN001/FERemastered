@@ -24,24 +24,24 @@ damageValue(A) = 400 // absorbtion
 renderBase = "draw_multi"
 renderCount = 6
 renderName1 = "dragb_a.beam"
-//renderName2 = "dragb_a.fringe"
 renderName2 = "dragb_a.core"
-renderName3 = "dragb_a.light"
-renderName4 = "dragb_a.bolts"
+renderName3 = "dragb_a.flare"
+renderName4 = "dragb_a.light"
 renderName5 = "dragb_a.bolts"
-renderName6 = "dragb_a.flare"
+renderName6 = "dragb_a.bolts"
+//renderName7 = "dragb_a.fringe"
 
 [Beam]
 renderBase = "draw_trail" //bolt"
 textureName = "dragbeam.tga" //"flametrail.tga"
 textureBlend = "one one modulate"
-startColor = "255 180 0 255" //"255 250 0 255"
-finishColor = "255 127 0 0" //"255 220 0 160"
+startColor = "255 100 0 255" //"255 250 0 255"
+finishColor = "255 150 0 0" //"255 220 0 160"
 startRadius = 0.1 //0.25
-finishRadius = 1.5 //0.15
+finishRadius = 2.0 //0.15
 segmentLength = 5.0
 segmentTime = 0.5 //animateTime = 0.65
-textureRate = 0.3
+textureRate = 0.25
 textureSpeed = -0.75
 
 [Fringe]
@@ -61,14 +61,15 @@ textureSpeed = -0.4
 renderBase = "draw_twirl_trail"
 textureName = "flame.tga"
 textureblend = "one one modulate"
-startColor = "255 220 0 63" //255"
+startColor = "255 220 0 200" //255"
 finishColor = "255 180 0 0"
 startRadius = 1.2
 finishRadius = 0.7
 animateTime = 0.8
-emitDelay = 0.002
+emitDelay = 0.0015
 emitVariance = "2.0 2.0 0.0"
 emitVelocity = "0.0 1.0 0.0"
+//emitInherit = "0.1 0.1 0.1"
 emitLife = 0.8
 BottomInteractsWithTerrain = false
 
@@ -99,7 +100,7 @@ lensFlare = 0
 //emitVariance = "0.0 0.0 0.0"
 //emitPosVariance = "0.5 0.5 0.0"
 //emitInherit = "1.0 1.0 1.0"
-//emitDelay = 0.01
+//emitDelay = 0.05 //0.01
 //emitLife = 0.0
 
 [Bolts] //Emit]
@@ -108,12 +109,12 @@ lifeTime = 0.05
 renderBase = "draw_bolt"
 textureName = "dragbolt.tga"
 textureBlend = "one one modulate"
-startColor = "255 200 100 200"
+startColor = "255 200 100 127"
 finishColor = "255 127 0 10" //127 0 0"
 startRadius = 0.25
 finishRadius = 0.0
 segmentLength = 1.0
-segmentVariance = "0.75 0.75 0.0"
+segmentVariance = "0.4 0.4 0.0"
 animateTime = 0.05
 textureRate = 0.75
 textureSpeed = -0.5
