@@ -1,4 +1,5 @@
 [GameObjectClass]
+baseName = "cvcomet"
 geometryName = "cvcomet00.xsi"
 geometryScale = 0.5
 classLabel = "torpedo"
@@ -33,10 +34,11 @@ soundThrust = "cerbcomet.wav"
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
+renderCount = 4
 renderName1 = "cpfol.flame"
 renderName2 = "cpfol.light"
 renderName3 = "cpfol.smoke"
+renderName4 = "cpfol.smoke"
 
 [Light]
 renderBase = "draw_light"
@@ -62,8 +64,22 @@ animateTime = 0.5
 rotationRate = 3.0
 emitDelay = 0.001
 emitVelocity = "0.0 0.0 0.0"
-emitVariance = "0.0 0.5 0.0"
+emitVariance = "0.5 0.5 0.0"
 emitLife = 0.5
+bottomInteractsWithTerrain = false
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "wispytrail.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 255"
+finishColor = "0 0 0 0"
+startRadius = 0.5
+finishRadius = 1.5
+segmentLength = 1.0
+segmentTime = 2.0
+textureRate = 0.5
+textureSpeed = 0.5
 
 [Smoke]
 renderBase = "draw_twirl_trail"
@@ -72,12 +88,13 @@ emitDelayVar = 0.02
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "1.0 1.0 1.0"
 //emitInherit = "1.5 1.5 1.0"
-emitLife = 1.2
+emitLife = 1.0
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "10 0 90 128"
-finishColor = "5 5 5 5"
-startRadius = 0.50
+startColor = "10 0 90 127"
+finishColor = "5 5 5 0"
+startRadius = 0.5
 finishRadius = 0.1
-animateTime = 1.2
+animateTime = 1.0
 rotationRate = 1.0
+bottomInteractsWithTerrain = false
