@@ -23,14 +23,17 @@ particleTypes = 3
 particleClass1 = "xfbemit_a.shock"
 particleCount1 = 1
 particleVeloc1 = "0.0 12.0 0.0"
+particleInherit1 = "0.75 0.75 0.75"
 
 particleClass2 = "xfbemit_a.flame"
 particleCount2 = 1
 particleVeloc2 = "0.0 10.0 0.0"
+particleInherit2 = "0.75 0.75 0.75"
 
 particleClass3 = "xfbemit_a.flamedark"
 particleCount3 = 1
 particleVeloc3 = "0.0 8.0 0.0"
+particleInherit3 = "0.75 0.75 0.75"
 
 [Shock]
 simulateBase = "sim_smoke"
@@ -44,6 +47,7 @@ startRadius = 0.1
 finishRadius = 8.0
 animateTime = 0.2
 rotationRate = 5.0
+BottomInteractsWithTerrain = false
 
 [Flame]
 simulateBase = "sim_smoke"
@@ -57,6 +61,7 @@ startRadius = 6.0
 finishRadius = 0.1
 animateTime = 0.4 
 rotationRate = 5.0
+BottomInteractsWithTerrain = false
 
 [FlameDark]
 simulateBase = "sim_smoke"
@@ -72,4 +77,5 @@ startRadius = 0.1
 finishRadius = 7.0
 animateTime = 0.4
 rotationRate = 5.0
+BottomInteractsWithTerrain = false
 

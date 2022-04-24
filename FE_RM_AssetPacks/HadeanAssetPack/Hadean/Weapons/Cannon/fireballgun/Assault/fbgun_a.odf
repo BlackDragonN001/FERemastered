@@ -36,19 +36,18 @@ renderName3 = "fbgun_a.light"
 renderName4 = "fbgun_a.sparks"
 renderName5 = "fbgun_a.smoke2"
 renderName6 = "fbgun_a.core"
-renderName7 = "fbgun_a.core"
-//renderName8 = "fbgun_a.twirl" // Never existed? supposed to be trailer? -GBD
+//renderName7 = "fbgun_a.twirl" // Never existed? supposed to be trailer? -GBD
 
 [Core]
 renderBase = "draw_twirl"
-textureName = "crackle.tga"
+textureName = "blast.tga"
 textureBlend = "one one modulate"
-startColor = "255 200 127 255"
-finishColor = "255 127 0 255"
-startRadius = 3.0
-finishRadius = 3.0
+startColor = "255 127 63 255"
+finishColor = "255 127 63 255"
+startRadius = 1.0
+finishRadius = 1.0
 animateTime = 3.0
-rotationRate = 8.0
+rotationRate = 2.0
 BottomInteractsWithTerrain = false
 
 [Smoke]
@@ -71,7 +70,7 @@ BottomInteractsWithTerrain = false
 
 [Flame]
 renderBase = "draw_twirl_trail"
-emitDelay = 0.02
+emitDelay = 0.015
 emitDelayVar = 0.01
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "1.0 1.0 1.0"

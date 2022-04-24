@@ -41,17 +41,16 @@ renderName3 = "fbgun_c.light"
 renderName4 = "fbgun_c.sparks"
 renderName5 = "fbgun_c.smoke2"
 renderName6 = "fbgun_c.core"
-renderName7 = "fbgun_c.core"
 
 [Core]
 renderBase = "draw_twirl"
-textureName = "crackle.tga"
+textureName = "blast.tga"
 textureBlend = "one one modulate"
-startColor = "255 200 127 255"
-finishColor = "255 200 127 255"
-startRadius = 2.0
-finishRadius = 2.0
-rotationRate = 8.0
+startColor = "255 127 63 255"
+finishColor = "255 127 63 255"
+startRadius = 1.0
+finishRadius = 1.0
+rotationRate = 2.0
 BottomInteractsWithTerrain = false
 
 [Smoke]
@@ -73,7 +72,7 @@ BottomInteractsWithTerrain = false
 
 [Flame]
 renderBase = "draw_twirl_trail"
-emitDelay = 0.025 
+emitDelay = 0.02
 emitDelayVar = 0.01
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "1.0 1.0 1.0"
