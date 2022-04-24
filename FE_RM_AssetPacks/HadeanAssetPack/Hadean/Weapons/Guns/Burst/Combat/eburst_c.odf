@@ -30,23 +30,34 @@ renderName1 = "eburst_c.core"
 renderName2 = "eburst_c.trail"
 
 [Core]
-renderBase = "draw_twirl"
-textureName = "lightflare.tga"
+renderBase = "draw_tracer"
 textureBlend = "one one modulate"
-startColor = "255 200 127 190"
-finishColor = "255 200 127 127"
-startRadius = 0.5 //0.8
-finishRadius = 0.5 //0.8
-rotationRate = 10.0
-BottomInteractsWithTerrain = false
+textureName = "hadbullet.tga"
+startColor = "200 100 31 255"
+finishColor = "150 63 31 127"
+startRadius = 0.3 //1
+finishRadius = 0.3 //1
+tracerLength = 1.5 //5.6
+animateTime = 0.3
+
+//renderBase = "draw_twirl"
+//textureName = "lightflare.tga"
+//textureBlend = "one one modulate"
+//startColor = "200 100 63 255"
+//finishColor = "200 63 31 127"
+//startRadius = 0.5 //0.8
+//finishRadius = 0.5 //0.8
+//rotationRate = 10.0
+//animateTime = 0.3
+//BottomInteractsWithTerrain = false
 
 [Trail]
 renderBase = "draw_trail"
 textureName = "wispytrail.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "63 31 5 127"
+startColor = "127 63 31 127"
 finishColor = "0 0 0 0"
-startRadius = 0.15
-finishRadius = 0.025
-textureRate = 0.3
+startRadius = 0.1
+finishRadius = 0.0
+textureRate = 0.2
 segmentTime = 0.1 //0.3
