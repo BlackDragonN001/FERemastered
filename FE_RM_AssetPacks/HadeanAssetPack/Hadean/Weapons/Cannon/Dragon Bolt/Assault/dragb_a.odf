@@ -22,21 +22,21 @@ damageValue(A) = 400 // absorbtion
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 6
+renderCount = 7
 renderName1 = "dragb_a.beam"
 renderName2 = "dragb_a.core"
 renderName3 = "dragb_a.flare"
 renderName4 = "dragb_a.light"
 renderName5 = "dragb_a.bolts"
 renderName6 = "dragb_a.bolts"
-//renderName7 = "dragb_a.fringe"
+renderName7 = "dragb_a.fringe"
 
 [Beam]
 renderBase = "draw_trail" //bolt"
 textureName = "dragbeam.tga" //"flametrail.tga"
 textureBlend = "one one modulate"
-startColor = "255 100 0 255" //"255 250 0 255"
-finishColor = "255 150 0 0" //"255 220 0 160"
+startColor = "255 127 0 255" //"255 250 0 255"
+finishColor = "255 163 0 0" //"255 220 0 160"
 startRadius = 0.1 //0.25
 finishRadius = 2.0 //0.15
 segmentLength = 5.0
