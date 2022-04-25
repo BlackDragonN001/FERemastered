@@ -2,8 +2,8 @@
 classLabel = "cannon"
 altName = "geburst_c"
 ordName = "eburst_a"
-wpnName = "Burst Gun ex"
-flashName = "gpummel_a.flash"
+wpnName = "Burst Gun EX"
+flashName = "geburst_a.flash"
 fireSound = "ebursta.wav"
 wpnReticle = "gpummel"
 wpnCategory = "GUN"
@@ -17,12 +17,18 @@ salvoDelay = 0.1
 shotVariance = 0.1
 
 [Flash]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "geburst_a.flash2"
+renderName2 = "geburst_c.smoke"
+
+[Flash2]
 renderBase = "draw_geom"
 textureName = "sflash.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 255"
-finishColor = "255 255 255 255"
-startRadius = 8.0
+finishColor = "255 255 255 0"
+startRadius = 6.0
 finishRadius = 2.0
 animateTime = 0.1
 geomName = "g_sflash.xsi"
