@@ -19,7 +19,7 @@ kickRadius = 25.0
 kickOmega = 5.0
 kickVeloc = 5.0
 
-particleTypes = 9
+particleTypes = 10
 
 particleClass1 = "xfbcar_a.fire"
 particleCount1 = 1
@@ -64,7 +64,7 @@ particleClass10 = "xfbcar_a.sparks"
 particleCount10 = 1
 particleVeloc10 = "0.0 0.0 0.0"
 
-particleClass11 = "axfbcar_a.ring"
+particleClass11 = "xfbcar_a.ring" // was axfbcar_a, never worked in FE. -GBD
 particleCount11 = 1
 particleVeloc11 = "0.0 0.0 0.0"
 
@@ -105,18 +105,6 @@ finishRadius = 0.4
 animateTime = 3.0
 rotationRate = 3.0
 BottomInteractsWithTerrain = false
-
-[Ring]
-simulateBase = "sim_null"
-lifeTime = 10.0
-renderBase = "draw_planar"
-textureName = "crater3b.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "20 20 20 255"
-finishColor = "0 0 0 0"
-startRadius = 8.0
-finishRadius = 8.0
-animateTime = 10.0
 
 [Flame]
 simulateBase = "sim_spray"
@@ -176,20 +164,6 @@ finishRadius = 0.2
 animateTime = 1.2
 rotationRate = 3.0
 BottomInteractsWithTerrain = false
-
-[Thrust]
-simulateBase = "sim_null"
-lifeTime = 1.2
-renderBase = "draw_sprite"
-spriteCenter.x = 0.0
-spriteCenter.y = 1.0
-textureName = "ground.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "255 150 100 200"
-finishColor = "255 100 0 0"
-startRadius = 2.0
-finishRadius = 8.0
-animateTime = 1.2
 
 [Light]
 simulateBase = "sim_null"
@@ -269,8 +243,7 @@ finishRadius = 0.0
 segmentTime = 0.5 //animateTime = 3.0
 textureRate = 0.1
 
-
-[char2] // Was named achar2, never worked in FE. -GBD
+[Char2] // Was named achar2, never worked in FE. -GBD
 simulateBase = "sim_null"
 lifeTime = 1.0
 renderBase = "draw_planar"
@@ -281,3 +254,30 @@ finishColor = "200 100 100 0"
 startRadius = 2.0
 finishRadius = 20.0
 animateTime = 1.0
+
+
+[Ring]
+simulateBase = "sim_null"
+lifeTime = 10.0
+renderBase = "draw_planar"
+textureName = "crater3b.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "20 20 20 255"
+finishColor = "0 0 0 0"
+startRadius = 8.0
+finishRadius = 8.0
+animateTime = 10.0
+
+[Thrust]
+simulateBase = "sim_null"
+lifeTime = 1.2
+renderBase = "draw_sprite"
+spriteCenter.x = 0.0
+spriteCenter.y = 1.0
+textureName = "ground.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 150 100 200"
+finishColor = "255 100 0 0"
+startRadius = 2.0
+finishRadius = 8.0
+animateTime = 1.2

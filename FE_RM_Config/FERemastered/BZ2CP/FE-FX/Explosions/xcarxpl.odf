@@ -5,7 +5,7 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 8
+particleTypes = 9
 
 particleClass1 = "xcarxpl.light"
 particleCount1 = 1
@@ -18,31 +18,47 @@ particleVeloc2 = "0.0 0.0 0.0"
 particleClass3 = "xcarxpl.sparks"
 particleCount3 = 40
 particleVeloc3 = "150.0 150.0 150.0"
+particleInherit3 = "0.5 0.5 0.5"
 
 particleClass4 = "xcarxpl.flame"
 particleCount4 = 4
 particleVeloc4 = "0.0 10.0 0.0"
+particleBias4 = "0.0 5.0 0.0"
+particlePosVar4 = "5.0 0.0 5.0"
+particleInherit4 = "0.5 0.5 0.5"
 
-particleClass5 = "xcarxpl.trail"
-particleCount5 = 20
-particleVeloc5 = "50.0 80.0 50.0"
-particleBias5 = "0.0 0.0 0.0"
+particleClass5 = "xcarxpl.smoke"
+particleCount5 = 4
+particleVeloc5 = "0.0 5.0 0.0"
+particleBias5 = "0.0 10.0 0.0"
+particlePosVar5 = "5.0 0.0 5.0"
+particleInherit4 = "0.5 0.5 0.5"
 
-particleClass6 = "xcarxpl.bangemit"
-particleCount6 = 10
-particleVeloc6 = "10.0 20.0 10.0"
+particleClass6 = "xcarxpl.trail"
+particleCount6 = 20
+particleVeloc6 = "50.0 50.0 50.0"
+particleBias6 = "0.0 20.0 0.0"
+particleInherit6 = "0.5 0.5 0.5"
 
-particleClass7 = "xcarxpl.puff"
-particleCount7 = 50
-particleVeloc7 = "80.0 80.0 80.0"
+particleClass7 = "xcarxpl.bang"
+particleCount7 = 10
+particleVeloc7 = "10.0 10.0 10.0"
+particleBias7 = "0.0 10.0 0.0"
+particleInherit7 = "0.5 0.5 0.5"
 
-particleClass8 = "xcarxpl.ring2" // was xxcarxpl.ring2, so it never worked? -GBD
-particleCount8 = 1
-particleVeloc8 = "0.0 1.0 0.0"
+particleClass8 = "xcarxpl.puff"
+particleCount8 = 50
+particleVeloc8 = "80.0 80.0 80.0"
+particleBias8 = "0.0 20.0 0.0"
+particleInherit8 = "0.5 0.5 0.5"
 
-//particleClass9 = "xcarxpl.shock"
-//particleCount9 = 1
-//particleVeloc9 = "0.0 0.0 0.0"
+particleClass9 = "xcarxpl.ring2" // was xxcarxpl.ring2, so it never worked? -GBD
+particleCount9 = 1
+particleVeloc9 = "0.0 1.0 0.0"
+
+//particleClass10 = "xcarxpl.shock"
+//particleCount10 = 1
+//particleVeloc10 = "0.0 0.0 0.0"
 
 explSound = "xcar.wav"
 damageRadius = 20.0
@@ -55,7 +71,6 @@ damageValue(A) = 50
 kickRadius = 30.0
 kickOmega = 1.0
 kickVeloc = 1.0
-
 
 [Light]
 simulateBase = "sim_null"
@@ -71,9 +86,9 @@ attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
 
-[ring]
+[Ring]
 simulateBase = "sim_null"
-lifeTime = 2.0
+lifeTime = 1.0
 renderBase = "draw_planar"
 textureName = "fbchar.tga"
 textureBlend = "one one modulate"
@@ -81,9 +96,23 @@ startColor = "255 255 255 150"
 finishColor = "250 250 250 0"
 startRadius = 5.0
 finishRadius = 40.0
-animateTime = 2.0
+animateTime = 1.0
 
-[sparks]
+[Ring2]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_sphere"
+textureName = "ring2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 160"
+finishColor = "255 255 255 0"
+startRadius = 5.0
+finishRadius = 40.0
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16
+
+[Sparks]
 simulateBase = "sim_ember"
 lifeTime = 3.0
 renderBase = "draw_twirl"
@@ -96,51 +125,71 @@ finishRadius = 0.2
 animateTime = 3.0
 rotationRate = 40.0
 
-[flame]
-simulateBase = "sim_smoke"
-lifeTime = 0.1
-renderBase = "draw_emit"
-emitName = "xcarxpl.flameemit"
-emitDelay = 0.1
-emitVelocity = "7.0 7.0 7.0"
-emitVariance = "0.0 0.0 0.0"
-
-[flameemit]
+[Flame]
 simulateBase = "sim_smoke"
 lifeTime = 0.8
 renderBase = "draw_twirl"
 textureName = "fire.tga" // flame2
 textureBlend = "one one modulate"
-startColor = " 255 180 0 200"
+startColor = "255 180 0 200"
 finishColor = "255 0 0 0"
 startRadius = 2.0
 finishRadius = 4.0
 animateTime = 0.8
 rotationRate = 5.0
+BottomInteractsWithTerrain = false
 
-[trail]
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 2.5
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 100 0 100"
+finishColor = "127 127 127 0"
+startRadius = 3.0
+finishRadius = 20.0
+animateTime = 2.5
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[Trail]
 simulateBase = "sim_ember"
 lifeTime = 3.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xbldxpl.trailflare"
+renderName2 = "xbldxpl.trailemit"
+
+[TrailFlare]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 127 255"
+finishColor = "255 127 63 0"
+startRadius = 0.6
+finishRadius = 0.6
+animateTime = 3.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[TrailEmit]
+simulateBase = "sim_smoke" //ember"
+lifeTime = 3.0
 renderBase = "draw_trail"
+textureName = "trail.tga"
 textureBlend = "one one modulate"
 startColor = "255 127 0 200"
 finishColor = "255 0 0 0"
 startRadius = 0.06
 finishRadius = 0.0
-trailTime = 2.0
-segmentTime = 0.5
+//trailTime = 2.0
+segmentTime = 0.5 //animateTime = 3.0
+textureRate = 0.1
 
-[bang]
-simulateBase = "sim_smoke"
-lifeTime = 1000
-renderBase = "draw_emit"
-emitName = "dmgvhcl3.bangemit"
-emitDelay = 1000
-//emitDelayVar = 0.2
-emitVelocity = "20.0 20.0 20.0"
-emitVariance = "19.0 19.0 19.0"
-
-[bangemit]
+[Bang]
 simulateBase = "sim_ember"
 lifeTime = 1.5
 renderBase = "draw_twirl_trail"
@@ -149,7 +198,7 @@ emitDelay = 0.1
 emitVelocity = "2.0 3.0 2.0"
 emitVariance = "15.0 15.0 15.0"
 emitInherit = "0.0 0.0 0.0"
-emitLife = 0.6
+emitLife = 1.5
 textureName = "fire.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 200 128"
@@ -160,7 +209,7 @@ animateTime = 1.5
 rotationRate = 10.0
 
 [Puff]
-simulateBase = "sim_smoke"
+simulateBase = "sim_ember"
 lifeTime = 4.0
 renderBase = "draw_twirl"
 textureName = "flame.tga"
@@ -170,17 +219,3 @@ finishColor = "200 0 0 0"
 startRadius = 0.3
 finishRadius = 0.1
 animateTime = 4.0
-
-[ring2]
-simulateBase = "sim_null"
-lifeTime = 0.7
-renderBase = "draw_sphere"
-textureName = "ring2.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 255 160"
-finishColor = "255 255 255 0"
-startRadius = 3.0
-finishRadius = 30.0
-animateTime = 0.7
-latitudeBands = 8
-longitudeSegments = 16

@@ -6,17 +6,22 @@
 classLabel = "explosion"
 
 particleTypes = 3
+
 particleClass1 = "xsecxpl.light"
 particleCount1 = 1
-particleVeloc1 = "2.0 3.0 2.0"
+particleVeloc1 = "0.0 0.0 0.0"
 
 particleClass2 = "xsecxpl.core"
-particleCount2 = 2
+particleCount2 = 1
 particleVeloc2 = "2.0 5.0 2.0"
+particleBias2 = "0.0 2.0 0.0"
+particleInherit2 = "0.5 0.5 0.5"
 
 particleClass3 = "xsecxpl.puff"
-particleCount3 = 20
+particleCount3 = 10
 particleVeloc3 = "20.0 20.0 20.0"
+particleBias3 = "0.0 10.0 0.0"
+particleInherit3 = "0.5 0.5 0.5"
 
 explSound = NULL
 damageRadius = 3.0
@@ -29,20 +34,20 @@ damageValue(A) = 20
 
 [Light]
 simulateBase = "sim_null"
-lifeTime = 1.1
+lifeTime = 1.0
 renderBase = "draw_light"
 startColor = "255 100 0 1200"
 finishColor = "200 0 0 0"
-startRadius = 50
-finishRadius = 50
-animateTime = 1.1
+startRadius = 50.0
+finishRadius = 50.0
+animateTime = 1.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
-lensFlare = 1
+lensFlare = 0
 
 [Core]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 1.5
 renderBase = "draw_twirl"
 textureName = "flame.tga"
@@ -54,7 +59,7 @@ finishRadius = 4.0
 animateTime = 1.5
 
 [Puff]
-simulateBase = "sim_smoke"
+simulateBase = "sim_ember"
 lifeTime = 2.5
 renderBase = "draw_twirl"
 textureName = "flame.tga"

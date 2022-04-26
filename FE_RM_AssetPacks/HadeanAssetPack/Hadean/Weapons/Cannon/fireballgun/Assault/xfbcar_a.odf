@@ -105,18 +105,6 @@ animateTime = 3.0
 rotationRate = 3.0
 BottomInteractsWithTerrain = false
 
-[Ring]
-simulateBase = "sim_null"
-lifeTime = 10.0
-renderBase = "draw_planar"
-textureName = "crater3b.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "20 20 20 255"
-finishColor = "0 0 0 0"
-startRadius = 8.0
-finishRadius = 8.0
-animateTime = 10.0
-
 [Flame]
 simulateBase = "sim_spray"
 lifeTime = 1.2
@@ -212,18 +200,6 @@ animateTime = 1.5
 rotationRate = 3.0
 BottomInteractsWithTerrain = false
 
-[char2] // Was named achar2, never worked in FE. -GBD
-simulateBase = "sim_null"
-lifeTime = 1.0
-renderBase = "draw_planar"
-textureName = "fbchar.tga"
-textureBlend = "one one modulate"
-startColor = "255 200 200 150"
-finishColor = "200 100 100 0"
-startRadius = 2.0
-finishRadius = 20.0
-animateTime = 1.0
-
 [Trail]
 simulateBase = "sim_ember"
 lifeTime = 3.0
@@ -259,3 +235,28 @@ finishRadius = 0.0
 //trailTime = 2.0
 segmentTime = 0.5 //animateTime = 3.0
 textureRate = 0.1
+
+
+[Ring]
+simulateBase = "sim_null"
+lifeTime = 10.0
+renderBase = "draw_planar"
+textureName = "crater3b.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "20 20 20 255"
+finishColor = "0 0 0 0"
+startRadius = 8.0
+finishRadius = 8.0
+animateTime = 10.0
+
+[char2] // Was named achar2, never worked in FE. -GBD
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_planar"
+textureName = "fbchar.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 200 150"
+finishColor = "200 100 100 0"
+startRadius = 2.0
+finishRadius = 20.0
+animateTime = 1.0

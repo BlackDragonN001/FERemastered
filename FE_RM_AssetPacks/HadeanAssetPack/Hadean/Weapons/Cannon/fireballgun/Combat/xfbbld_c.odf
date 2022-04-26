@@ -73,25 +73,6 @@ particleClass12 = "xfbbld_c.fire"
 particleCount12 = 1
 particleVeloc12 = "0.0 0.0 0.0"
 
-
-[Fire]
-simulateBase = "sim_null"
-lifeTime = 1.0
-renderBase = "draw_twirl_trail"
-textureName = "fire.tga" //"flame2.tga"
-textureBlend = "one one modulate"
-startColor = "255 130 0 128"
-finishColor = "200 0 0 0"
-startRadius = 6.0
-finishRadius = 1.0
-animateTime = 1.0
-rotationRate = 10.0
-emitDelay = 0.05
-emitVelocity = "0.0 5.0 0.0"
-emitVariance = "5.0 5.0 5.0"
-emitLife = 1.0
-BottomInteractsWithTerrain = false
-
 [Chunks]
 simulateBase = "sim_ember"
 lifeTime = 3.0
@@ -178,21 +159,6 @@ animateTime = 1.2
 rotationRate = 3.0
 BottomInteractsWithTerrain = false
 
-
-[Thrust]
-simulateBase = "sim_null"
-lifeTime = 1.2
-renderBase = "draw_sprite"
-spriteCenter.x = 0.0
-spriteCenter.y = 1.0
-textureName = "ground.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "255 150 100 200"
-finishColor = "255 100 0 0"
-startRadius = 2.0
-finishRadius = 5.0
-animateTime = 1.2
-
 [Light]
 simulateBase = "sim_null"
 lifeTime = 2.5
@@ -236,18 +202,6 @@ rotationRate = 3.0
 BottomInteractsWithTerrain = false
 useTerrainColor = 0.9
 
-[char2] // Was achar2, never worked in FE. -GBD
-simulateBase = "sim_null"
-lifeTime = 1.0
-renderBase = "draw_planar"
-textureName = "fbchar.tga"
-textureBlend = "one one modulate"
-startColor = "255 200 200 150"
-finishColor = "200 100 100 0"
-startRadius = 2.0
-finishRadius = 20.0
-animateTime = 1.0
-
 [Trail]
 simulateBase = "sim_ember"
 lifeTime = 3.0
@@ -283,3 +237,47 @@ finishRadius = 0.0
 //trailTime = 2.0
 segmentTime = 0.5 //animateTime = 3.0
 textureRate = 0.1
+
+[Fire]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl_trail"
+textureName = "fire.tga" //"flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 130 0 128"
+finishColor = "200 0 0 0"
+startRadius = 6.0
+finishRadius = 1.0
+animateTime = 1.0
+rotationRate = 10.0
+emitDelay = 0.05
+emitVelocity = "0.0 5.0 0.0"
+emitVariance = "5.0 5.0 5.0"
+emitLife = 1.0
+BottomInteractsWithTerrain = false
+
+[Char2] // Was achar2, never worked in FE. -GBD
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_planar"
+textureName = "fbchar.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 200 150"
+finishColor = "200 100 100 0"
+startRadius = 2.0
+finishRadius = 20.0
+animateTime = 1.0
+
+[Thrust]
+simulateBase = "sim_null"
+lifeTime = 1.2
+renderBase = "draw_sprite"
+spriteCenter.x = 0.0
+spriteCenter.y = 1.0
+textureName = "ground.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 150 100 200"
+finishColor = "255 100 0 0"
+startRadius = 2.0
+finishRadius = 5.0
+animateTime = 1.2

@@ -229,17 +229,17 @@ rotationRate = 3.0
 BottomInteractsWithTerrain = false
 useTerrainColor = 0.9
 
-[char2]
+[Char2]
 simulateBase = "sim_null"
-lifeTime = 1.0
+lifeTime = 0.5 //1.0
 renderBase = "draw_planar"
 textureName = "fbchar.tga"
 textureBlend = "one one modulate"
 startColor = "255 200 200 150"
 finishColor = "200 100 100 0"
 startRadius = 2.0
-finishRadius = 16.0
-animateTime = 1.0
+finishRadius = 20.0 //16.0
+animateTime = 0.5 //1.0
 
 [Trail]
 simulateBase = "sim_ember"
