@@ -6,18 +6,23 @@
 classLabel = "explosion"
 
 particleTypes = 5
+
 particleClass1 = "xdaywreck2.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xdaywreck2.light"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
+
 particleClass3 = "xdaywreck2.flame"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
+
 particleClass4 = "xdaywreck2.flameemit"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
+
 particleClass5 = "xdaywreck2.posroll"
 particleCount5 = 30
 particleVeloc5 = "15.0 0.0 5.0"
@@ -48,7 +53,7 @@ startColor = "150 50 50 50"
 finishColor = "200 5 50 50"
 startRadius = 70.0
 finishRadius = 30.0
-animateTime = 3.0
+animateTime = 2.0
 latitudeBands = 8
 longitudeSegments = 16
 
@@ -85,18 +90,18 @@ startColor = " 255 255 200 255"
 finishColor = "255 0 0 0"
 startRadius = 10
 finishRadius = 50
-animateTime = 5.0
+animateTime = 4.0
 rotationRate = 3.21
 
 [posroll]
 simulateBase = "sim_dust"
-lifeTime = 30
+lifeTime = 15.0
 renderBase = "draw_twirl"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "32 32 32 255"
 finishColor = "127 127 127 0"
-startRadius = 30
-finishRadius = 90
-animateTime = 15
-rotationRate = 2
+startRadius = 30.0
+finishRadius = 90.0
+animateTime = 15.0
+rotationRate = 2.0

@@ -5,7 +5,8 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 3
+particleTypes = 1
+
 particleClass1 = "xarmrad_ccar.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
@@ -30,5 +31,5 @@ textureBlend = "one one modulate"
 startColor = "255 0 0 255"
 finishColor = "0 255 50 0"
 startRadius = 0.1
-finishRadius = .5
+finishRadius = 0.5
 animateTime = 0.8

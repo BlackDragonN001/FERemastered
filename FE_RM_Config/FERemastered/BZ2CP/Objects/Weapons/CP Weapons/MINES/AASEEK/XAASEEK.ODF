@@ -6,9 +6,11 @@
 classLabel = "explosion"
 
 particleTypes = 2
+
 particleClass1 = "xaaseek.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xaaseek.puff"
 particleCount2 = 70
 particleVeloc2 = "40.0 40.0 40.0"
@@ -36,6 +38,7 @@ finishColor = "255 0 0 0"
 startRadius = 5.0
 finishRadius = 50.0
 animateTime = 1.0
+bottomInteractsWithTerrain = false
 
 [Puff]
 simulateBase = "sim_smoke"

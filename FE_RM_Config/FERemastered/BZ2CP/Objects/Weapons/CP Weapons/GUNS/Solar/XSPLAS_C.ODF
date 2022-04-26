@@ -17,6 +17,7 @@ damageValue(D) = 5 // deflection
 damageValue(A) = 5 // absorbtion
 
 particleTypes = 4
+
 particleClass1 = "xsplascar_c.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
@@ -48,6 +49,7 @@ finishColor = "255 100 0 0"
 startRadius = 1.0
 finishRadius = 0.1
 animateTime = 1.0
+bottomInteractsWithTerrain = false
 
 [Puff]
 simulateBase = "sim_smoke"
@@ -75,7 +77,7 @@ attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
 
-[Shock]
+//[Shock]
 //simulateBase = "sim_null"
 //lifeTime = 0.4
 //renderBase = "draw_sphere"

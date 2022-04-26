@@ -6,13 +6,16 @@
 classLabel = "explosion"
 
 particleTypes = 3
-particleClass1 = "xpopgnd.ring"
+
+particleClass1 = "xpopgnd.char"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xpopgnd.chunks"
 particleCount2 = 6
 particleVeloc2 = "5.0 5.0 5.0"
 particleBias2 = "0.0 5.0 0.0"
+
 particleClass3 = "xpopgnd.puff"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
@@ -30,7 +33,7 @@ damageValue(S) = 60 // standard
 damageValue(D) = 100 // deflection
 damageValue(A) = 20 // absorbtion
 
-[Ring]
+[Char]
 simulateBase = "sim_null"
 lifeTime = 10.0
 renderBase = "draw_planar"

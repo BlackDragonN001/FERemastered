@@ -6,12 +6,15 @@
 classLabel = "explosion"
 
 particleTypes = 3
+
 particleClass1 = "xpopcar.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xpopcar.puff"
 particleCount2 = 20
 particleVeloc2 = "15.0 15.0 15.0"
+
 particleClass3 = "xpopcar.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
@@ -39,6 +42,7 @@ finishColor = "255 0 0 0"
 startRadius = 1.0
 finishRadius = 10.0
 animateTime = 1.0
+bottomInteractsWithTerrain = false
 
 [Puff]
 simulateBase = "sim_smoke"

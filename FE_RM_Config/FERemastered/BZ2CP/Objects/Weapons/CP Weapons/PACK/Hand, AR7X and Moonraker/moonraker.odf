@@ -2,9 +2,11 @@
 classLabel = "snipershell"
 
 shotGeometry = NULL
+
 xplGround = "xlgtgnd"
 xplVehicle = "xlgtcar"
 xplBuilding = "xlgtbld"
+
 renderName = "moonraker.render"
 
 ammoCost = 10
@@ -38,6 +40,7 @@ startColor = "63 255 255 255"
 finishColor = "63 255 255 255"
 startRadius = 0.5
 finishRadius = 0.25
+bottomInteractsWithTerrain = false
 
 [Halo]
 renderBase = "draw_twirl"
@@ -48,6 +51,7 @@ finishColor = "63 255 255 250"
 startRadius = 0.5
 finishRadius = 0.25
 rotationRate = 10.0
+bottomInteractsWithTerrain = false
 
 [Trail]
 renderBase = "draw_trail"

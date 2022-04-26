@@ -6,6 +6,7 @@
 classLabel = "explosion"
 
 particleTypes = 1
+
 particleClass1 = "xbatonbld_a.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
@@ -30,3 +31,4 @@ finishColor = "190 23 196 0"
 startRadius = 0.2
 finishRadius = 2.0
 animateTime = 0.5
+bottomInteractsWithTerrain = false

@@ -6,6 +6,7 @@
 classLabel = "explosion"
 
 particleTypes = 1
+
 particleClass1 = "xgaugnd.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
@@ -32,3 +33,4 @@ finishColor = "143 133 153 0"
 startRadius = 3.0
 finishRadius = 0.5
 animateTime = 1.0
+useTerrainColor = 0.9

@@ -2,9 +2,11 @@
 classLabel = "bullet"
 
 shotGeometry = NULL
+
 xplGround = "xbulgnd"
 xplVehicle = "xbulcar"
 xplBuilding = "xbulbld"
+
 renderName = "sar7.render"
 
 ammoCost = .5
@@ -16,7 +18,7 @@ damageValue(L) = 2
 damageValue(H) = 0
 
 damageValue(S) = 2
-damageValue(D) = .5
+damageValue(D) = 0.5
 damageValue(A) = 2
 
 [Render]
@@ -34,6 +36,7 @@ startColor = "63 255 255 255"
 finishColor = "63 255 255 255"
 startRadius = 0.25
 finishRadius = 0.2
+bottomInteractsWithTerrain = false
 
 [Halo]
 renderBase = "draw_twirl"
@@ -44,6 +47,7 @@ finishColor = "100 10 0 63"
 startRadius = 0.2
 finishRadius = 0.2
 rotationRate = 10.0
+bottomInteractsWithTerrain = false
 
 [Trail]
 renderBase = "draw_trail"

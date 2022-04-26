@@ -124,6 +124,7 @@ finishColor = "80 80 80 0"
 startRadius = 1.0
 finishRadius = 5.0
 animateTime = 1.5
+useTerrainColor = 0.9
 
 [Light]
 simulateBase = "sim_null"
@@ -131,8 +132,8 @@ lifeTime = 1.5
 renderBase = "draw_light"
 startColor = "255 255 0 555"
 finishColor = "155 155 0 0"
-startRadius = 0.4
-finishRadius = 0.1
+startRadius = 10.0
+finishRadius = 0.0
 animateTime = 1.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0

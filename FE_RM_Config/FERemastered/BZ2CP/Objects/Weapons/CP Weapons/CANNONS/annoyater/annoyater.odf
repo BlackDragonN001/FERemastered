@@ -31,17 +31,18 @@ alphaDrag = 15.0
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
+renderCount = 4
 renderName1 = "annoyater.smoke"
 renderName2 = "annoyater.flame"
 renderName3 = "annoyater.sparkle"
+renderName4 = "annoyater.light"
 
 [Smoke]
 renderBase = "draw_twirl_trail"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "127 127 127 127"
-finishColor = "163 163 163 0"
+startColor = "63 63 63 127"
+finishColor = "127 127 127 0"
 startRadius = 0.5
 finishRadius = 2.0
 animateTime = 1.0
@@ -76,3 +77,15 @@ animateTime = 1.0
 emitDelay = 0.002
 emitVariance = "2.0 2.0 2.0"
 emitLife = 1.0
+
+[Light]
+renderBase = "draw_light"
+startColor = "0 127 255 255"
+finishColor = "0 127 255 255"
+startRadius = 20.0
+finishRadius = 20.0
+animateTime = 1.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

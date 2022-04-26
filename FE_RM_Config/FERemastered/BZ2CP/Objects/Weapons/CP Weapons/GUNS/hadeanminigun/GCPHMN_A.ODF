@@ -1,26 +1,26 @@
 [WeaponClass]
-classLabel="machinegun"
-altName="gcphmn_c"
-ordName="cphmn_a"
-wpnName="Hadean Minigun"
-fireSound="hadminia.wav"
-wpnReticle="gminigun"
-wpnCategory="GUN"
-isAssault=1
-flashName="gcphmn_a.flash"
-aiRange=105
+classLabel = "machinegun"
+altName = "gcphmn_c"
+ordName = "cphmn_a"
+wpnName = "Hadean Minigun"
+fireSound = "hadminia.wav"
+wpnReticle = "gminigun"
+wpnCategory = "GUN"
+isAssault = 1
+flashName = "gcphmn_a.flash"
+aiRange = 105
 
 [CannonClass]
-shotDelay=0.1
+shotDelay = 0.1
 shotvariance = 0.01
 
 [Flash]
-renderBase="draw_geom"
-textureName="sflash.tga"
-textureBlend="one one modulate"
-startColor="30 33 180 255"
-finishColor="25 27 155 150"
-startRadius=1.0
-finishRadius=2.0
-animateTime=0.1
-geomName="g_sflash.xsi"
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "30 33 180 255"
+finishColor = "25 27 155 150"
+startRadius = 1.0
+finishRadius = 2.0
+animateTime = 0.1
+geomName = "g_sflash.xsi"

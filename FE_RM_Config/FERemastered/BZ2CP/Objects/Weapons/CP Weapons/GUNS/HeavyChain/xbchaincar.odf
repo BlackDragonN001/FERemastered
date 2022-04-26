@@ -6,18 +6,24 @@
 classLabel = "explosion"
 
 particleTypes = 3
+
 particleClass1 = "xbchaincar.core"
-particleClass2 = "xbchaincar.spark"
-particleClass3 = "xbchaincar.trail"
 particleCount1 = 2
-particleCount2 = 4
-particleCount3 = 2
 particleVeloc1 = "0.0 0.0 0.0"
-particleVeloc2 = "5.0 5.0 5.0"
-particleVeloc3 = "5.0 5.0 5.0"
 particleBias1 = "0.0 0.0 0.0"
+particleInherit1 = "0.8 0.8 0.8"
+
+particleClass2 = "xbchaincar.spark"
+particleCount2 = 4
+particleVeloc2 = "5.0 5.0 5.0"
 particleBias2 = "0.0 1.0 0.0"
+particleInherit2 = "0.8 0.8 0.8"
+
+particleClass3 = "xbchaincar.trail"
+particleCount3 = 2
+particleVeloc3 = "5.0 5.0 5.0"
 particleBias3 = "0.0 1.0 0.0"
+particleInherit3 = "0.8 0.8 0.8"
 
 explSound = "cbullhitcar.wav"
 damageRadius = 0.0
@@ -29,7 +35,7 @@ damageValue(D) = 0
 damageValue(A) = 0
 
 [Core]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.5
 renderBase = "draw_twirl"
 textureName = "plasma.tga"
@@ -38,7 +44,8 @@ startColor = "200 120 0 255"
 finishColor = "255 120 0 0"
 startRadius = 0.1
 finishRadius = 3.0
-animateTime = 0.4
+animateTime = 0.5
+bottomInteractsWithTerrain = false
 
 [Spark]
 simulateBase = "sim_ember"
@@ -50,7 +57,7 @@ startColor = "255 255 0 255"
 finishColor = "255 0 0 0"
 startRadius = 0.02
 finishRadius = 0.02
-animateTime = 0.3
+animateTime = 0.5
 rotationRate = 20.0
 
 [Trail]

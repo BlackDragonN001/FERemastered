@@ -6,17 +6,20 @@
 classLabel = "explosion"
 
 particleTypes = 3
+
 particleClass1 = "xbzipcar.core"
-particleClass2 = "xbzipcar.spark"
-particleClass3 = "xbzipcar.trail"
 particleCount1 = 1
-particleCount2 = 3
-particleCount3 = 1
 particleVeloc1 = "0.0 0.0 0.0"
-particleVeloc2 = "5.0 5.0 5.0"
-particleVeloc3 = "5.0 5.0 5.0"
 particleBias1 = "0.0 0.0 0.0"
+
+particleClass2 = "xbzipcar.spark"
+particleCount2 = 3
+particleVeloc2 = "5.0 5.0 5.0"
 particleBias2 = "0.0 1.0 0.0"
+
+particleClass3 = "xbzipcar.trail"
+particleCount3 = 1
+particleVeloc3 = "5.0 5.0 5.0"
 particleBias3 = "0.0 1.0 0.0"
 
 explSound = "cbullhitcar.wav"
@@ -39,6 +42,7 @@ finishColor = "255 120 0 0"
 startRadius = 0.1
 finishRadius = 3.0
 animateTime = 0.4
+bottomInteractsWithTerrain = false
 
 [Spark]
 simulateBase = "sim_ember"

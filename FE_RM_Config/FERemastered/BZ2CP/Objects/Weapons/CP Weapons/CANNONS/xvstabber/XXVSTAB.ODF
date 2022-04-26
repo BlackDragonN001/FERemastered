@@ -6,12 +6,15 @@
 classLabel = "explosion"
 
 particleTypes = 3
+
 particleClass1 = "xxvstab.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xxvstab.shock"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
+
 particleClass3 = "xxvstab.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
@@ -65,8 +68,8 @@ renderBase = "draw_light"
 startColor = "255 255 100 2550"
 finishColor = "255 60 60 0"
 startRadius = 20.0
-finishRadius = 20.0
-animateTime = 0.5
+finishRadius = 0.0
+animateTime = 1.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0

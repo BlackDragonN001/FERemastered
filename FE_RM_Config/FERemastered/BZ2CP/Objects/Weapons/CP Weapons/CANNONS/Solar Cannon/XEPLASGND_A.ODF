@@ -51,7 +51,8 @@ startColor = "255 255 255 555"
 finishColor = "255 255 255 500"
 startRadius = 5.0
 finishRadius = 15.1
-animateTime = 6.0
+animateTime = 5.0
+bottomInteractsWithTerrain = false
 
 [Puff]
 simulateBase = "sim_smoke"
@@ -63,8 +64,9 @@ startColor = "255 255 250 500"
 finishColor = "255 255 250 550" 
 startRadius = 0.5
 finishRadius = 5.0
-animateTime = 2.9
+animateTime = 2.7
 rotationRate = 0.3
+bottomInteractsWithTerrain = false
 
 [Light]
 simulateBase = "sim_null"
@@ -104,4 +106,4 @@ startColor = "255 255 255 255"
 finishColor = "255 255 255 555"
 startRadius = 3.1
 finishRadius = 40.0
-animateTime = 4.4
+animateTime = 3.4

@@ -80,6 +80,7 @@ finishColor = "165 178 64 0"
 startRadius = 0.3
 finishRadius = 0.3
 animateTime = 4.0
+useTerrainColor = 0.9
 
 [Ring]
 simulateBase = "sim_null"
@@ -123,6 +124,7 @@ finishColor = "165 178 64 0"
 startRadius = 1.0
 finishRadius = 5.0
 animateTime = 1.5
+useTerrainColor = 0.9
 
 [Light]
 simulateBase = "sim_null"

@@ -5,8 +5,8 @@ shotGeometry = "ioartl00.xsi"
 shotSound = "8bcannord"
 
 xplGround = "xslaggnd"
-xplVehicle = "xslaggnd"
-xplBuilding = "xslaggnd"
+xplVehicle = "xslagcar"
+xplBuilding = "xslagbld"
 
 renderName = "8bcann_c.render"
 
@@ -22,7 +22,6 @@ damageValue(H) = 180 // heavy
 damageValue(S) = 200 // standard
 damageValue(D) = 150 // deflection
 damageValue(A) = 220 // absorbtion
-
 
 [Render]
 renderBase = "draw_multi"

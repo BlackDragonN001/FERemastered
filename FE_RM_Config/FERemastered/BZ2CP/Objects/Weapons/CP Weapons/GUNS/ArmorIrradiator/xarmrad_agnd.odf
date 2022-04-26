@@ -6,10 +6,14 @@
 classLabel = "explosion"
 
 particleTypes = 2
+
 particleClass1 = "xarmrad_cgnd.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xarmrad_cgnd.ring"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
 
 explSound = "wmgr2.wav"
 damageRadius = 0.0
@@ -33,6 +37,7 @@ finishColor = "153 100 100 0"
 startRadius = 0.2
 finishRadius = 2.0
 animateTime = 1.0
+useTerrainColor = 0.9
 
 [Ring]
 simulateBase = "sim_null"

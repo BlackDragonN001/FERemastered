@@ -5,8 +5,8 @@ shotGeometry = "ioartl00.xsi"
 shotSound = "8bcannord"
 
 xplGround = "xslaggnd"
-xplVehicle = "xslaggnd"
-xplBuilding = "xslaggnd"
+xplVehicle = "xslagcar"
+xplBuilding = "xslagbld"
 
 renderName = "8bcann_a.render"
 
@@ -30,7 +30,6 @@ renderCount = 3
 renderName1 = "8bcann_a.flames"
 renderName2 = "8bcann_a.smoke"
 renderName3 = "8bcann_a.sparks"
-
 
 [Flames]
 renderBase = "draw_twirl_trail"

@@ -6,17 +6,20 @@
 classLabel = "explosion"
 
 particleTypes = 3
+
 particleClass1 = "xgaucar.core"
-particleClass2 = "xgaucar.spark"
-particleClass3 = "xgaucar.trail"
 particleCount1 = 1
-particleCount2 = 2
-particleCount3 = 1
 particleVeloc1 = "0.0 0.0 0.0"
-particleVeloc2 = "5.0 5.0 5.0"
-particleVeloc3 = "5.0 5.0 5.0"
 particleBias1 = "0.0 0.0 0.0"
+
+particleClass2 = "xgaucar.spark"
+particleCount2 = 2
+particleVeloc2 = "5.0 5.0 5.0"
 particleBias2 = "0.0 1.0 0.0"
+
+particleClass3 = "xgaucar.trail"
+particleCount3 = 1
+particleVeloc3 = "5.0 5.0 5.0"
 particleBias3 = "0.0 1.0 0.0"
 
 explSound = "wmgr1.wav"
@@ -38,7 +41,8 @@ startColor = "255 255 63 255"
 finishColor = "255 0 0 0"
 startRadius = 0.05
 finishRadius = 1.5
-animateTime = 2.2
+animateTime = 2.5
+bottomInteractsWithTerrain = false
 
 [Spark]
 simulateBase = "sim_ember"
@@ -50,7 +54,7 @@ startColor = "255 255 0 255"
 finishColor = "255 0 0 0"
 startRadius = 0.5
 finishRadius = 0.05
-animateTime = 2.0
+animateTime = 1.0
 rotationRate = 20.0
 
 [Trail]

@@ -6,9 +6,11 @@
 classLabel = "explosion"
 
 particleTypes = 2
+
 particleClass1 = "xfootminexpl.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xfootminexpl.puff"
 particleCount2 = 70
 particleVeloc2 = "90.0 90.0 90.0"

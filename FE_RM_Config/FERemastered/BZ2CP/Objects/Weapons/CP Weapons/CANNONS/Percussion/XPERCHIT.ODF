@@ -49,8 +49,8 @@ textureBlend = "one one modulate"
 startColor = "198 203 44 230"
 finishColor = "222 253 22 30"
 startRadius = 3.0
-finishRadius = 100.0
-animateTime = 4.0
+finishRadius = 230.0
+animateTime = 2.0
 latitudeBands = 2
 longitudeSegments = 16
 
@@ -83,13 +83,13 @@ animateTime = 2.5
 
 [posroll]
 simulateBase = "sim_dust"
-lifeTime = 1
+lifeTime = 1.0
 renderBase = "draw_twirl"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "32 32 32 255"
 finishColor = "127 127 127 0"
-startRadius = 2
-finishRadius = 1
-animateTime = 1
-rotationRate = 2
+startRadius = 2.0
+finishRadius = 1.0
+animateTime = 1.0
+rotationRate = 2.0

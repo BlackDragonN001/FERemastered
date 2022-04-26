@@ -1,13 +1,15 @@
 [OrdnanceClass]
 classLabel = "bullet"
 shotGeometry = NULL
+
 xplGround = "xbulgnd"
 xplVehicle = "xhmncar"
 xplBuilding = "xhmnbld"
+
 renderName = "cphmn_a.render"
 
 ammoCost = 2
-lifeSpan = .5 // 150m
+lifeSpan = 0.5 // 150m
 shotSpeed = 300.0
 
 damageValue(N) = 15 // none // 
@@ -20,16 +22,17 @@ damageValue(A) = 15 // absorbtion //
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 3
 renderName1 = "cphmn_a.core"
-renderName2 = "cphmn_a.trail"
+renderName2 = "cphmn_c.trail"
+renderName3 = "cphmn_c.bullettrail"
 
 [Core]
 renderBase = "draw_twirl"
 textureName = "lightflare.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 255"
-finishColor = "255 255 255 0"
+finishColor = "255 255 255 127"
 startRadius = 0.5
 finishRadius = 0.5
 

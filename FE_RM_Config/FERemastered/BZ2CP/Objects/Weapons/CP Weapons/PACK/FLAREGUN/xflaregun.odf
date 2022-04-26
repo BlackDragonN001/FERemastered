@@ -35,7 +35,6 @@ damageValue(S) = 20 // standard
 damageValue(D) = 15 // deflection
 damageValue(A) = 15 // absorbtion
 
-
 [Core]
 simulateBase = "sim_null"
 lifeTime = 1.5

@@ -5,8 +5,8 @@ shotGeometry = "ioartl00.xsi"
 shotSound = "8bcannord"
 
 xplGround = "xslaggnd"
-xplVehicle = "xsupercar" //"xslagcar" // Doesn't exist? -GBD
-xplBuilding = "xsupercar" //"xslagbld" // Doesn't exist? -GBD
+xplVehicle = "xslagcar"
+xplBuilding = "xslagbld"
 
 renderName = "8bcann.render"
 
@@ -28,8 +28,7 @@ damageValue(A) = 160 // absorbtion
 renderBase = "draw_multi"
 renderCount = 2
 renderName1 = "8bcann.flames"
-renderName2 = "8bcann.smoke""
-
+renderName2 = "8bcann.smoke"
 
 [flames]
 renderBase = "draw_twirl_trail"

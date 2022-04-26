@@ -38,7 +38,7 @@ kickVeloc = 5.0
 
 [Shock]
 simulateBase = "sim_null"
-lifeTime = .8
+lifeTime = 0.8
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"

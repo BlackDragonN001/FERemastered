@@ -65,7 +65,7 @@ longitudeSegments = 16
 
 [cloud]
 simulateBase = "sim_dust"
-lifeTime = 7
+lifeTime = 7.0
 renderBase = "draw_emit"
 emitName = "xperchit2.cloudemit"
 emitDelay = 0.01
@@ -74,15 +74,15 @@ emitVariance = "0.0 1.0 0.0"
 
 [cloudemit]
 simulateBase = "sim_smoke"
-lifeTime = 7
+lifeTime = 7.0
 renderBase = "draw_twirl"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "0 0 0 255"
 finishColor = "0 0 0 0"
-startRadius = 3
-finishRadius = 187
-animateTime = 7
+startRadius = 3.0
+finishRadius = 187.0
+animateTime = 7.0
 
 [flame]
 simulateBase = "sim_smoke"
@@ -101,8 +101,8 @@ textureName = "flame2.tga"
 textureBlend = "one one modulate"
 startColor = " 255 255 200 255"
 finishColor = "255 0 0 0"
-startRadius = 1
-finishRadius = 132
+startRadius = 1.0
+finishRadius = 132.0
 animateTime = 6.5
 rotationRate = 3.21
 
@@ -122,7 +122,7 @@ lensFlare = 0
 
 [ring]
 simulateBase = "sim_null"
-lifeTime = 10
+lifeTime = 10.0
 renderBase = "draw_planar"
 textureName = "grndchar.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
@@ -130,17 +130,17 @@ startColor = "10 10 10 255"
 finishColor = "10 10 10 0"
 startRadius = 1.0
 finishRadius = 230.0
-animateTime = 8
+animateTime = 8.0
 
 [posroll]
 simulateBase = "sim_dust"
-lifeTime = 3
+lifeTime = 3.0
 renderBase = "draw_twirl"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "32 32 32 255"
 finishColor = "127 127 127 0"
-startRadius = 2
-finishRadius = 1
-animateTime = 3
-rotationRate = 2
+startRadius = 2.0
+finishRadius = 1.0
+animateTime = 3.0
+rotationRate = 2.0
