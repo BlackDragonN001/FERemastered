@@ -32,7 +32,7 @@ particleCount5 = 4
 particleVeloc5 = "0.0 5.0 0.0"
 particleBias5 = "0.0 10.0 0.0"
 particlePosVar5 = "5.0 0.0 5.0"
-particleInherit4 = "0.5 0.5 0.5"
+particleInherit5 = "0.5 0.5 0.5"
 
 particleClass6 = "xcarxpl.trail"
 particleCount6 = 20
@@ -62,15 +62,15 @@ particleVeloc10 = "0.0 0.0 0.0"
 
 explSound = "xcar.wav"
 damageRadius = 20.0
-damageValue(N) = 0
-damageValue(L) = 50
-damageValue(H) = 50
-damageValue(S) = 50
+damageValue(N) = 50
+damageValue(L) = 30
+damageValue(H) = 10
+damageValue(S) = 30
 damageValue(D) = 50
-damageValue(A) = 50
+damageValue(A) = 10
 kickRadius = 30.0
-kickOmega = 1.0
-kickVeloc = 1.0
+kickOmega = 2.0
+kickVeloc = 3.0
 
 [Shock]
 simulateBase = "sim_null"

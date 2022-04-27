@@ -25,12 +25,12 @@ particleInherit3 = "0.5 0.5 0.5"
 
 explSound = NULL
 damageRadius = 3.0
-damageValue(N) = 0
-damageValue(L) = 20
-damageValue(H) = 20
-damageValue(S) = 20
+damageValue(N) = 20
+damageValue(L) = 10
+damageValue(H) = 5
+damageValue(S) = 10
 damageValue(D) = 20
-damageValue(A) = 20
+damageValue(A) = 5
 
 [Light]
 simulateBase = "sim_null"

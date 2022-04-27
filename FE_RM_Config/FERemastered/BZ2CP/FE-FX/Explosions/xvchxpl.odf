@@ -61,15 +61,15 @@ particleVeloc9 = "0.0 0.1 0.0"
 
 explSound = "xcar.wav"
 damageRadius = 10.0
-damageValue(N) = 0
-damageValue(L) = 30
-damageValue(H) = 30
-damageValue(S) = 30
+damageValue(N) = 30
+damageValue(L) = 20
+damageValue(H) = 10
+damageValue(S) = 20
 damageValue(D) = 30
-damageValue(A) = 30
+damageValue(A) = 10
 kickRadius = 30.0
 kickOmega = 1.0
-kickVeloc = 1.0
+kickVeloc = 2.0
 
 [Lines]
 simulateBase = "sim_smoke"

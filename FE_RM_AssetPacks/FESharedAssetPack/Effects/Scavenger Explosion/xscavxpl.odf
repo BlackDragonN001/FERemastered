@@ -65,16 +65,16 @@ particleVeloc13 = "10.0 10.0 10.0"
 //particleVeloc14 = "0.0 0.0 0.0"
 
 explSound = "scavxpl.wav"
-damageRadius = 20.0
-damageValue(N) = 0
-damageValue(L) = 50
-damageValue(H) = 50
-damageValue(S) = 50
-damageValue(D) = 50
-damageValue(A) = 50
-kickRadius = 50.0
-kickOmega = 7.0
-kickVeloc = 7.0
+damageRadius = 30.0
+damageValue(N) = 100
+damageValue(L) = 70
+damageValue(H) = 40
+damageValue(S) = 70
+damageValue(D) = 100
+damageValue(A) = 25
+kickRadius = 60.0
+kickOmega = 3.0
+kickVeloc = 5.0
 
 [Light]
 simulateBase = "sim_null"
