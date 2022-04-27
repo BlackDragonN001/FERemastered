@@ -1,11 +1,11 @@
 // =================
-// VEHICLE EXPLOSION
+// CRASH EXPLOSION
 // =================
 
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 8
+particleTypes = 9
 
 particleClass1 = "xvchxpl.lines"
 particleCount1 = 1
@@ -45,16 +45,16 @@ particleCount7 = 1
 particleVeloc7 = "0.0 0.0 0.0"
 
 particleClass8 = "xvchxpl.puff"
-particleCount8 = 40
+particleCount8 = 20
 particleVeloc8 = "80.0 80.0 80.0"
 particleBias8 = "0.0 10.0 0.0"
 particleInherit8 = "0.5 0.5 0.5"
 
-// Never called in FE. -GBD
-//particleClass9 = "xvchxpl.shock"
-//particleCount9 = 1
-//particleVeloc9 = "0.0 0.1 0.0"
+particleClass9 = "xvchxpl.shock"
+particleCount9 = 1
+particleVeloc9 = "0.0 0.1 0.0"
 
+// Never called in FE. -GBD
 //particleClass10 = "xvchxpl.trail"
 //particleCount10 = 20
 //particleVeloc10 = "60.0 80.0 60.0"
@@ -211,20 +211,20 @@ startRadius = 0.3
 finishRadius = 0.1
 animateTime = 4.0
 
-
 [Shock]
 simulateBase = "sim_null"
-lifeTime = 0.6
+lifeTime = 0.2
 renderBase = "draw_sphere"
-textureName = "carsphere.tga" // "vsmoke.tga"
+textureName = "vsmoke.tga" //"carsphere.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 100"
-finishColor = "255 255 255 0"
+startColor = "255 190 63 63"
+finishColor = "255 127 0 0"
 startRadius = 5.0
 finishRadius = 30.0
-animateTime = 0.6
-latitudeBands = 8
-longitudeSegments = 16
+animateTime = 0.2
+latitudeBands = 16
+longitudeSegments = 32
+
 
 [trail]
 simulateBase = "sim_ember"

@@ -1,48 +1,71 @@
 // =================
-// VEHICLE EXPLOSION
+// FE:Remastered BUILDING COLLAPSE EXPLOSION
 // =================
 
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 8
+particleTypes = 12
 
-particleClass1 = "collapse.light"
+particleClass1 = "collapse.flash"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
-particleClass2 = "collapse.ring" //"callape.ring", so never worked in FE. -GBD
-particleCount2 = 1
-particleVeloc2 = "0.0 0.0 0.0"
+particleClass2 = "collapse.bang"
+particleCount2 = 15
+particleVeloc2 = "50.0 30.0 50.0"
+particleBias2 = "0.0 10.0 0.0"
+particlePosVar2 = "5.0 10.0 5.0"
 
-particleClass3 = "collapse.sparks"
-particleCount3 = 40
-particleVeloc3 = "150.0 150.0 150.0"
+particleClass3 = "collapse.explode"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
 
-particleClass4 = "collapse.flame"
-particleCount4 = 4
-particleVeloc4 = "0.0 10.0 0.0"
+particleClass4 = "collapse.dustring"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
 
-particleClass5 = "collapse.trail"
-particleCount5 = 20
-particleVeloc5 = "50.0 80.0 50.0"
-particleBias5 = "0.0 0.0 0.0"
+particleClass5 = "collapse.fire"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
 
-particleClass6 = "collapse.bangemit"
-particleCount6 = 10
-particleVeloc6 = "10.0 20.0 10.0"
+// Main explosion Fx.
 
-particleClass7 = "collapse.puff"
-particleCount7 = 50
-particleVeloc7 = "80.0 80.0 80.0"
+particleClass6 = "collapse.core"
+particleCount6 = 1
+particleVeloc6 = "0.0 2.0 0.0"
+particleBias6 = "0.0 3.0 0.0"
 
-particleClass8 = "collapse.ring2"
-particleCount8 = 1
-particleVeloc8 = "0.0 1.0 0.0"
+particleClass7 = "collapse.smoke"
+particleCount7 = 3
+particleVeloc7 = "7.0 10.0 7.0"
+particleBias7 = "0.0 25.0 0.0"
+particlePosVar7 = "15.0 0.0 15.0"
 
-//particleClass9 = "collapse.shock"
-//particleCount9 = 1
-//particleVeloc9 = "0.0 0.0 0.0"
+particleClass8 = "collapse.flame"
+particleCount8 = 5
+particleVeloc8 = "7.0 7.0 7.0"
+particleBias8 = "0.0 15.0 0.0"
+particlePosVar8 = "15.0 0.0 15.0"
+
+particleClass9 = "collapse.sparks"
+particleCount9 = 20
+particleVeloc9 = "150.0 150.0 150.0"
+particleBias9 = "0.0 0.0 0.0"
+
+particleClass10 = "collapse.trail"
+particleCount10 = 25
+particleVeloc10 = "50.0 50.0 50.0"
+particleBias10 = "0.0 10.0 0.0"
+
+particleClass11 = "collapse.puff"
+particleCount11 = 30
+particleVeloc11 = "80.0 80.0 80.0"
+particleBias11 = "0.0 20.0 0.0"
+
+particleClass12 = "collapse.firesecondary"
+particleCount12 = 1
+particleVeloc12 = "0.0 0.0 0.0"
 
 explSound = "xcar.wav"
 damageRadius = 20.0
@@ -56,34 +79,530 @@ kickRadius = 80.0
 kickOmega = 10.0
 kickVeloc = 15.0
 
+/////////// Initial Blast, Flash and Wave /////////////
 
-[Light]
+[Flash]
 simulateBase = "sim_null"
-lifeTime = 2.0
-renderBase = "draw_light"
-startColor = "255 150 0 3055"
-finishColor = "255 0 0 0"
-startRadius = 60.0
+lifeTime = 1.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "collapse.flashlight"
+renderName2 = "collapse.flashwave"
+//renderName3 = "collapse.flashtexture"
+
+[FlashWave]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_wave"
+textureName = "wave2.tga"
+textureBlend = "one one modulate"
+startColor = "255 225 196 240"
+finishColor = "255 127 0 0"
+startRadius = 5.0
 finishRadius = 60.0
-animateTime = 2.0
+animateTime = 0.5
+waveAngle = 3.14159265359
+waveDepth = 1.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 64
+
+[FlashLight]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_light"
+startColor = "2550 2550 2550 1000"
+finishColor = "255 200 127 255"
+startRadius = 120.0
+finishRadius = 0.0
+animateTime = 0.3
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+//[FlashTexture]
+//simulateBase = "sim_null"
+//lifeTime = 0.2
+//renderBase = "draw_sprite"
+//textureName = "lightflare2.tga"
+//textureBlend = "one one modulate"
+//startColor = "555 555 555 255"
+//finishColor = "255 255 255 0"
+//startRadius = 0.0
+//finishRadius = 120.0
+//animateTime = 0.2
+
+/////////////// Initial Bang Flame offshoots /////////////////////
+
+[Bang]
+simulateBase = "sim_ember"
+lifeTime = 5.0 // how long they last
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "collapse.bangfire"
+renderName2 = "collapse.bangsmoke"
+renderName3 = "collapse.bangsparks"
+renderName4 = "collapse.banglight"
+
+[BangFire]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.1
+emitVelocity = "0.0 3.5 0.0"
+emitVariance = "1.5 1.5 1.5"
+emitLife = 1.0
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 200 127"
+finishColor = "255 100 100 0"
+startRadius = 0.75
+finishRadius = 0.0
+animateTime = 1.0
+rotationRate = 8.0
+BottomInteractsWithTerrain = false
+
+[BangSmoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.1
+emitVelocity = "0.0 6.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitPosVariance = "0.5 0.5 0.5"
+emitLife = 1.0
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 31 31 127"
+finishColor = "63 63 63 0"
+startRadius = 0.8
+finishRadius = 2.0
+animateTime = 1.0
+rotationRate = 8.0
+BottomInteractsWithTerrain = false
+
+[BangSparks]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.02
+emitVelocity = "0.0 4.0 0.0"
+emitVariance = "10.0 10.0 10.0"
+emitPosVariance = "4.0 4.0 4.0"
+emitLife = 0.8
+textureName = "spark3.tga"
+textureBlend = "one one modulate"
+startColor = "255 145 38 255"
+finishColor = "255 145 38 0"
+startRadius = 0.15
+finishRadius = 0.15
+animateTime = 0.8
+rotationRate = 3.0
+BottomInteractsWithTerrain = false
+
+[BangLight]
+renderBase = "draw_light"
+startColor = "255 150 0 500"
+finishColor = "255 150 0 255"
+startRadius = 15.0
+finishRadius = 5.0
+animateTime = 5.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+
+/////////// Main Explosion /////////////////////
+
+[Explode]
+simulateBase = "sim_dust" // start on the ground.
+lifeTime = 3.0
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "collapse.explodesphere"
+renderName2 = "collapse.explodelight"
+renderName3 = "collapse.explodering"
+renderName4 = "collapse.explodering2"
+
+[ExplodeSphere]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "127 63 31 127"
+finishColor = "127 96 63 0"
+startRadius = 1.0
+finishRadius = 60.0
+animateTime = 0.5
+latitudeBands = 8
+longitudeSegments = 16
+
+[ExplodeLight]
+renderBase = "draw_light"
+startColor = "255 200 0 255"
+finishColor = "255 127 0 255"
+startRadius = 100.0
+finishRadius = 0.0
+animateTime = 3.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
 
-[ring]
-simulateBase = "sim_null"
-lifeTime = 2.0
+[ExplodeRing]
 renderBase = "draw_planar"
 textureName = "fbchar.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 150"
+startColor = "255 255 255 250"
 finishColor = "250 250 250 0"
-startRadius = 15.0
+startRadius = 10.0
 finishRadius = 50.0
-animateTime = 2.0
+animateTime = 1.0
 
-[sparks]
+[ExplodeRing2]
+renderBase = "draw_sphere"
+textureName = "ring2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 250"
+finishColor = "255 255 255 0"
+startRadius = 10.0
+finishRadius = 50.0
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16
+
+/////////// Fire Smolders around ground /////////////
+
+[Fire]
+simulateBase = "sim_null"
+lifeTime = 2.0 // How long fire lasts...
+renderBase = "draw_emit"
+emitName = "collapse.fire2"
+emitDelay = 0.005
+emitDelayVar = 0.01
+//emitVelocity = "0.0 6.0 0.0"
+//emitVariance = "1.0 1.0 1.0"
+emitPosVariance = "50.0 0.0 50.0"
+
+//[Fire2]
+//simulateBase = "sim_dust" // Put the fire on the ground...
+//lifeTime = 1.0
+//renderBase = "draw_emit"
+//emitName = "collapse.fire3"
+//emitDelay = 1.1
+
+[Fire2]
+simulateBase = "sim_dust" //spray" // Now put the fire on top of collisions :)
+lifeTime = 0.1
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "collapse.fireflame"
+renderName2 = "collapse.firesmoke"
+renderName3 = "collapse.firesparks"
+
+[FireFlame]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.1
+emitVelocity = "0.0 3.5 0.0"
+emitVariance = "1.5 1.5 1.5"
+emitLife = 1.0 // How long each flame puff lasts...
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 200 127"
+finishColor = "255 100 100 0"
+startRadius = 2.0
+finishRadius = 0.0
+animateTime = 1.0 // must match emitLife
+rotationRate = 8.0
+BottomInteractsWithTerrain = false
+
+[FireSmoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.1
+emitVelocity = "0.0 6.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitPosVariance = "0.5 0.5 0.5"
+emitLife = 1.0 // How long each smoke puff lasts...
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 31 31 127"
+finishColor = "63 63 63 0"
+startRadius = 1.0
+finishRadius = 3.0
+animateTime = 1.0 // must match emitLife
+rotationRate = 8.0
+BottomInteractsWithTerrain = false
+
+[FireSparks]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.02
+emitVelocity = "0.0 4.0 0.0"
+emitVariance = "10.0 10.0 10.0"
+emitPosVariance = "4.0 4.0 4.0"
+emitLife = 0.8 // How long each spark lasts...
+textureName = "spark3.tga"
+textureBlend = "one one modulate"
+startColor = "255 145 38 255"
+finishColor = "255 145 38 0"
+startRadius = 0.2
+finishRadius = 0.2
+animateTime = 0.8 // must match emitLife
+rotationRate = 3.0
+BottomInteractsWithTerrain = false
+
+[FireSecondary]
+simulateBase = "sim_dust"
+lifeTime = 2.0
+startDelay = 0.25
+renderBase = "draw_emit"
+emitDelay = 0.2
+emitName = "collapse.firesecond"
+emitVariance = "3.0 3.0 3.0"
+emitVelocity = "0.0 0.0 0.0"
+emitInherit = "1.0 1.0 1.0"
+[FireSecond]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "collapse.flameemit"
+renderName2 = "collapse.smokeemit"
+
+////////////////////// Trails //////////////////////////
+
+[Trail]
+simulateBase = "sim_ember"
+lifeTime = 5.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "collapse.trailflare"
+renderName2 = "collapse.trailemit"
+
+[TrailFlare]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 127 255"
+finishColor = "255 127 63 0"
+startRadius = 0.75
+finishRadius = 0.75
+animateTime = 5.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[TrailEmit]
+renderBase = "draw_trail"
+textureName = "trail.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 0 200"
+finishColor = "255 0 0 0"
+startRadius = 0.1
+finishRadius = 0.0
+//trailTime = 2.0
+segmentTime = 0.5 //animateTime = 3.0
+textureRate = 0.1
+
+//////////////////////// Dust Ring //////////////////////////
+
+[DustRing]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_multi"
+renderCount = 16
+renderName1 = "collapse.dustpuff1"
+renderName2 = "collapse.dustpuff2"
+renderName3 = "collapse.dustpuff3"
+renderName4 = "collapse.dustpuff4"
+renderName5 = "collapse.dustpuff5"
+renderName6 = "collapse.dustpuff6"
+renderName7 = "collapse.dustpuff7"
+renderName8 = "collapse.dustpuff8"
+renderName9 = "collapse.dustpuff9"
+renderName10 = "collapse.dustpuff10"
+renderName11 = "collapse.dustpuff11"
+renderName12 = "collapse.dustpuff12"
+renderName13 = "collapse.dustpuff13"
+renderName14 = "collapse.dustpuff14"
+renderName15 = "collapse.dustpuff15"
+renderName16 = "collapse.dustpuff16"
+
+[DustPuff1] // E
+renderBase = "draw_emit"
+emitName = "collapse.posroll"
+emitDelay = 1e6
+emitVelocity = "25.0 0.0 0.0"
+
+[DustPuff2] // W
+renderBase = "draw_emit"
+emitName = "collapse.posroll"
+emitDelay = 1e6
+emitVelocity = "-25.0 0.0 0.0"
+
+[DustPuff3] // N
+renderBase = "draw_emit"
+emitName = "collapse.posroll"
+emitDelay = 1e6
+emitVelocity = "0.0 0.0 25.0"
+
+[DustPuff4] // S
+renderBase = "draw_emit"
+emitName = "collapse.posroll"
+emitDelay = 1e6
+emitVelocity = "0.0 0.0 -25.0"
+
+[DustPuff5] // NE
+renderBase = "draw_emit"
+emitName = "collapse.posroll"
+emitDelay = 1e6
+emitVelocity = "16.678 0.0 16.678"
+
+[DustPuff6] // NW
+renderBase = "draw_emit"
+emitName = "collapse.posroll"
+emitDelay = 1e6
+emitVelocity = "-16.678 0.0 16.678"
+
+[DustPuff7] // SE
+renderBase = "draw_emit"
+emitName = "collapse.posroll"
+emitDelay = 1e6
+emitVelocity = "16.678 0.0 -16.678"
+
+[DustPuff8] // SW
+renderBase = "draw_emit"
+emitName = "collapse.posroll"
+emitDelay = 1e6
+emitVelocity = "-16.678 0.0 -16.678"
+
+[DustPuff9] // N-NE
+renderBase = "draw_emit"
+emitName = "collapse.posroll"
+emitDelay = 1e6
+emitVelocity = "9.567 0.0 23.097"
+
+[DustPuff10] // N-NW
+renderBase = "draw_emit"
+emitName = "collapse.posroll"
+emitDelay = 1e6
+emitVelocity = "-9.567 0.0 23.097"
+
+[DustPuff11] // N-SE
+renderBase = "draw_emit"
+emitName = "collapse.posroll"
+emitDelay = 1e6
+emitVelocity = "9.567 0.0 -23.097"
+
+[DustPuff12] // N-SW
+renderBase = "draw_emit"
+emitName = "collapse.posroll"
+emitDelay = 1e6
+emitVelocity = "-9.567 0.0 -23.097"
+
+[DustPuff13] // S-NE
+renderBase = "draw_emit"
+emitName = "collapse.posroll"
+emitDelay = 1e6
+emitVelocity = "23.097 0.0 9.567"
+
+[DustPuff14] // S-NW
+renderBase = "draw_emit"
+emitName = "collapse.posroll"
+emitDelay = 1e6
+emitVelocity = "-23.097 0.0 9.567"
+
+[DustPuff15] // S-SE
+renderBase = "draw_emit"
+emitName = "collapse.posroll"
+emitDelay = 1e6
+emitVelocity = "23.097 0.0 -9.567"
+
+[DustPuff16] // S-SW
+renderBase = "draw_emit"
+emitName = "collapse.posroll"
+emitDelay = 1e6
+emitVelocity = "-23.097 0.0 -9.567"
+
+[Posroll]
+simulateBase = "sim_dust"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 255 255"
+finishColor = "127 127 127 0"
+startRadius = 4.0
+finishRadius = 10.0
+animateTime = 3.0
+rotationRate = 5.0
+useTerrainColor = 0.9
+BottomInteractsWithTerrain = false
+
+////////////////// Main Explosion Fx //////////////////////////////
+
+[Core]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "xplcore.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 200"
+finishColor = "255 200 200 0"
+startRadius = 10.0
+finishRadius = 25.0
+animateTime = 1.0
+rotationRate = 2.0
+BottomInteractsWithTerrain = false
+
+[SmokeEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "collapse.smoke"
+emitDelay = 1e6
+emitVelocity = "0.0 12.0 0.0"
+emitVariance = "5.0 5.0 5.0"
+emitPosVariance = "8.0 0.0 8.0"
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 5.0
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 100 0 100"
+finishColor = "127 127 127 0"
+startRadius = 10.0
+finishRadius = 40.0
+animateTime = 5.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[FlameEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "collapse.flame"
+emitDelay = 1e6
+emitVelocity = "0.0 8.0 0.0"
+emitVariance = "5.0 5.0 5.0"
+emitPosVariance = "8.0 0.0 8.0"
+[Flame]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "fire.tga" // flame2
+textureBlend = "one one modulate"
+startColor = "255 180 0 200"
+finishColor = "255 0 0 0"
+startRadius = 5.0
+finishRadius = 10.0
+animateTime = 1.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[Sparks]
 simulateBase = "sim_ember"
 lifeTime = 3.0
 renderBase = "draw_twirl"
@@ -91,96 +610,19 @@ textureName = "spark.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 0 255"
 finishColor = "255 0 0 0"
-startRadius = 0.4
-finishRadius = 0.4
+startRadius = 0.1
+finishRadius = 0.1
 animateTime = 3.0
 rotationRate = 40.0
 
-[flame]
-simulateBase = "sim_smoke"
-lifeTime = 0.2
-renderBase = "draw_emit"
-emitName = "collapse.flameemit"
-emitDelay = 0.2
-emitVelocity = "7.0 7.0 7.0"
-emitVariance = "0.0 0.0 0.0"
-
-[flameemit]
-simulateBase = "sim_smoke"
-lifeTime = 1.0
-renderBase = "draw_twirl"
-textureName = "fire.tga" // flame2
-textureBlend = "one one modulate"
-startColor = " 255 180 0 200"
-finishColor = "255 0 0 0"
-startRadius = 2.0
-finishRadius = 4.0
-animateTime = 1.0
-rotationRate = 5.0
-
-[trail]
-simulateBase = "sim_ember"
-lifeTime = 3.0
-renderBase = "draw_trail"
-textureBlend = "one one modulate"
-startColor = "255 127 0 200"
-finishColor = "255 0 0 0"
-startRadius = 0.1
-finishRadius = 0.0
-trailTime = 2.0
-segmentTime = 0.5
-
-[bang]
-simulateBase = "sim_smoke"
-lifeTime = 1000
-renderBase = "draw_emit"
-emitName = "collapse.bangemit"
-emitDelay = 1000
-//emitDelayVar = 0.2
-emitVelocity = "20.0 20.0 20.0"
-emitVariance = "19.0 19.0 19.0"
-
-[bangemit]
-simulateBase = "sim_ember"
-lifeTime = 1.5
-renderBase = "draw_twirl_trail"
-emitDelay = 0.1
-//emitDelayVar = 0.02
-emitVelocity = "2.0 3.0 2.0"
-emitVariance = "15.0 15.0 15.0"
-emitInherit = "0.0 0.0 0.0"
-emitLife = 0.6
-textureName = "fire.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 200 128"
-finishColor = "255 0 0 0"
-startRadius = 0.1
-finishRadius = 0.02
-animateTime = 1.5
-rotationRate = 10.0
-
 [Puff]
-simulateBase = "sim_smoke"
+simulateBase = "sim_ember"
 lifeTime = 4.0
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
 startColor = "255 150 0 255"
 finishColor = "200 0 0 0"
-startRadius = 1.0
+startRadius = 0.5
 finishRadius = 0.1
 animateTime = 4.0
-
-[ring2]
-simulateBase = "sim_null"
-lifeTime = 0.7
-renderBase = "draw_sphere"
-textureName = "ring2.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 255 160"
-finishColor = "255 255 255 0"
-startRadius = 10.0
-finishRadius = 50.0
-animateTime = 0.7
-latitudeBands = 8
-longitudeSegments = 16

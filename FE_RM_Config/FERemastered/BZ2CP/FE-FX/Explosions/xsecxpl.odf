@@ -1,5 +1,5 @@
 // ===================
-// SECONDARY EXPLOSION
+// CHUNK EXPLOSION
 // ===================
 
 [ExplosionClass]
@@ -18,7 +18,7 @@ particleBias2 = "0.0 2.0 0.0"
 particleInherit2 = "0.5 0.5 0.5"
 
 particleClass3 = "xsecxpl.puff"
-particleCount3 = 10
+particleCount3 = 5
 particleVeloc3 = "20.0 20.0 20.0"
 particleBias3 = "0.0 10.0 0.0"
 particleInherit3 = "0.5 0.5 0.5"

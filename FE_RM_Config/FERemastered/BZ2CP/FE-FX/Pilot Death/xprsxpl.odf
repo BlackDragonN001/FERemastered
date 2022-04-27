@@ -6,18 +6,25 @@
 classLabel = "explosion"
 
 particleTypes = 2
+
 particleClass1 = "xprsxpl.puddle"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xprsxpl.chunk1"
 particleCount2 = 10
 particleVeloc2 = "6.0 6.0 6.0"
 particleBias2 = "0.0 1.2 0.0"
+particlePosVar2 = "2.0 0.0 2.0"
+particleInherit2 = "0.8 0.8 0.8"
+
 // Chunks2 didn't exist in FE. -GBD
 //particleClass3 = "xprsxpl.chunk2"
 //particleCount3 = 5
 //particleVeloc3 = "3.0 3.0 3.0"
 //particleBias3 = "0.0 1.0 0.0"
+//particlePosVar3 = "2.0 0.0 2.0"
+//particleInherit3 = "0.8 0.8 0.8"
 
 explSound = NULL
 damageRadius = 0.0
@@ -51,10 +58,10 @@ finishColor = "255 0 0 0"
 startRadius = 0.1
 finishRadius = 0.1
 animateTime = 2.0
-latitudeBands = 4 //2
-longitudeSegments = 8 //4
+latitudeBands = 8
+longitudeSegments = 16
 
-[puddle]
+[Puddle]
 simulateBase = "sim_null"
 lifeTime = 10.0
 renderBase = "draw_planar"
