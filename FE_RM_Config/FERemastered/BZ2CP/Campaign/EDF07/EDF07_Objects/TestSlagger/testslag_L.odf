@@ -6,12 +6,12 @@ shotSound = "TestSlag.wav"
 
 xplGround = "xslaggnd"
 xplVehicle = "xslagcar"
-xplBuilding = "xslagcar"
+xplBuilding = "xslagbld"
 
 renderName = "slagstab_c.render"
 
 ammoCost = 15
-lifeSpan = 4 // 300 m
+lifeSpan = 4.0 // 300 m
 shotSpeed = 75.0		//had been 80
 
 damageValue(N) = 2000 // none
@@ -21,38 +21,3 @@ damageValue(H) = 2000 // heavy
 damageValue(S) = 2000 // standard
 damageValue(D) = 2000 // deflection
 damageValue(A) = 2000 // absorbtion
-
-
-[Render]
-renderBase = "draw_multi"
-renderCount = 2
-renderName1 = "slagstab_c.flames"
-renderName2 = "slagstab_c.smoke""
-
-
-[flames]
-renderBase = "draw_twirl_trail"
-textureName = "fire.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "200 0 0 0"
-startRadius = 0.1
-finishRadius = 0.6
-animateTime = 0.2
-emitDelay = 0.01
-emitVariance = ".5 .5 1.0"	//1, 1, 1
-emitLife = 0.2
-
-[smoke]
-renderBase = "draw_twirl_trail"
-textureName = "smoke.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "0 0 255 150"
-finishColor = "0 0 100 5"
-startRadius = 0.2
-finishRadius = 1.5
-animateTime = 0.4
-emitDelay = 0.005
-emitVelocity = "1.5 1.5 1.5"
-emitVariance = "2.0 1.0 2.0"	//1,1,1
-emitLife = 0.4
