@@ -5,7 +5,7 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 6
+particleTypes = 7
 
 particleClass1 = "xhmortxp.light"
 particleCount1 = 1
@@ -15,7 +15,7 @@ particleInherit1 = "0.5 0.5 0.5"
 particleClass2 = "xhmortxp.spark"
 particleCount2 = 10
 particleVeloc2 = "20.5 20.5 20.5"
-particleBias2 = "0.0 3.0 0.0"
+particleBias2 = "0.0 7.0 0.0"
 particleInherit2 = "0.5 0.5 0.5"
 
 particleClass3 = "xhmortxp.core"
@@ -23,19 +23,27 @@ particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 particleInherit3 = "0.5 0.5 0.5"
 
-particleClass4 = "xhmortxp.smoke"
+particleClass4 = "xhmortxp.flame"
 particleCount4 = 1
-particleVeloc4 = "0.0 3.0 0.0"
-particleBias4 = "0.0 12.0 0.0"
+particleVeloc4 = "2.0 2.0 2.0"
+particleBias4 = "0.0 3.0 0.0"
+particlePosVar4 = "5.0 5.0 5.0"
 particleInherit4 = "0.5 0.5 0.5"
 
-particleClass5 = "xhmortxp.shock"
-particleCount5 = 1
-particleVeloc5 = "0.0 0.0 0.0"
+particleClass5 = "xhmortxp.smoke"
+particleCount5 = 2
+particleVeloc5 = "5.0 3.0 5.0"
+particleBias5 = "0.0 12.0 0.0"
+particlePosVar5 = "5.0 5.0 5.0"
+particleInherit5 = "0.5 0.5 0.5"
 
-particleClass6 = "xhmortxp.sphere"
+particleClass6 = "xhmortxp.shock"
 particleCount6 = 1
 particleVeloc6 = "0.0 0.0 0.0"
+
+particleClass7 = "xhmortxp.sphere"
+particleCount7 = 1
+particleVeloc7 = "0.0 0.0 0.0"
 
 explSound = "xmv1.wav"
 damageRadius = 50.0
@@ -52,12 +60,26 @@ damageValue(A) = 50 // absorbtion
 simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_twirl"
+textureName = "xplcore.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 100 120 0"
+startRadius = 1.0
+finishRadius = 8.0
+animateTime = 1.0
+rotationRate = 2.0
+BottomInteractsWithTerrain = false
+
+[Flame]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
 startColor = "243 100 2 250"
 finishColor = "155 50 5 0"
 startRadius = 1.0
-finishRadius = 15.0
+finishRadius = 10.0
 animateTime = 1.0
 rotationRate = 5.0
 BottomInteractsWithTerrain = false
@@ -71,7 +93,7 @@ textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "63 63 63 250"
 finishColor = "127 127 127 0"
 startRadius = 2.0
-finishRadius = 18.0
+finishRadius = 15.0
 animateTime = 1.3
 rotationRate = 5.0
 BottomInteractsWithTerrain = false

@@ -5,7 +5,7 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 10
+particleTypes = 14
 
 particleClass1 = "xcarxpl.light"
 particleCount1 = 1
@@ -28,10 +28,10 @@ particlePosVar4 = "5.0 0.0 5.0"
 particleInherit4 = "0.5 0.5 0.5"
 
 particleClass5 = "xcarxpl.smoke"
-particleCount5 = 4
-particleVeloc5 = "0.0 5.0 0.0"
-particleBias5 = "0.0 10.0 0.0"
-particlePosVar5 = "5.0 0.0 5.0"
+particleCount5 = 12
+particleVeloc5 = "22.5 16.5 22.5"
+particleBias5 = "0.0 0.0 0.0"
+particlePosVar5 = "10.0 0.0 10.0"
 particleInherit5 = "0.5 0.5 0.5"
 
 particleClass6 = "xcarxpl.trail"
@@ -60,6 +60,28 @@ particleClass10 = "xcarxpl.shock"
 particleCount10 = 1
 particleVeloc10 = "0.0 0.0 0.0"
 
+particleClass11 = "xcarxpl.core"
+particleCount11 = 1
+particleVeloc11 = "0.0 0.0 0.0"
+
+particleClass12 = "xcarxpl.sootemit"
+particleCount12 = 6 //8
+particleVeloc12 = "10.0 20 10.0"
+particleBias12 = "0.0 0.0 0.0"
+particleInherit12 = "0.5 0.5 0.5"
+
+particleClass13 = "xcarxpl.smokeplume"
+particleCount13 = 2
+particleVeloc13 = "7.0 8.0 7.0"
+particleBias13 = "0.0 12.0 0.0"
+particlePosVar13 = "5.0 0.0 5.0"
+
+particleClass14 = "xcarxpl.flame2"
+particleCount14 = 5
+particleVeloc14 = "5.0 0.5 5.0"
+particleBias14 = "0.0 5.0 0.0"
+//particleInherit14 = "0.5 0.5 0.5"
+
 explSound = "xcar.wav"
 damageRadius = 20.0
 damageValue(N) = 50
@@ -71,6 +93,34 @@ damageValue(A) = 10
 kickRadius = 30.0
 kickOmega = 2.0
 kickVeloc = 3.0
+
+[Core]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_sprite" //"draw_twirl"
+textureName = "xplcore.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 100 120 0"
+startRadius = 1.0
+finishRadius = 6.0
+animateTime = 1.0
+//rotationRate = 0.0
+//BottomInteractsWithTerrain = false
+
+[Flame2]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_sprite" //"draw_twirl"
+textureName = "xplcore.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 100 120 0"
+startRadius = 6.0
+finishRadius = 0.0
+animateTime = 1.0
+//rotationRate = 0.0
+//BottomInteractsWithTerrain = false
 
 [Shock]
 simulateBase = "sim_null"
@@ -153,7 +203,7 @@ animateTime = 0.8
 rotationRate = 5.0
 BottomInteractsWithTerrain = false
 
-[Smoke]
+[SmokePlume]
 simulateBase = "sim_smoke"
 lifeTime = 2.5
 renderBase = "draw_twirl"
@@ -164,6 +214,20 @@ finishColor = "127 127 127 0"
 startRadius = 3.0
 finishRadius = 20.0
 animateTime = 2.5
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 5.0
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = " 50 50 50 255"
+finishColor = "30 15 5 0"
+startRadius = 3.0
+finishRadius = 6.0
+animateTime = 5.0
 rotationRate = 5.0
 BottomInteractsWithTerrain = false
 
@@ -233,3 +297,29 @@ finishColor = "200 0 0 0"
 startRadius = 0.3
 finishRadius = 0.1
 animateTime = 4.0
+
+[SootEmit]
+simulateBase = "sim_dust"
+lifeTime = 0.5
+renderBase = "draw_emit"
+emitName = "xcarxpl.sootrail"
+emitDelay = 0.2
+emitVelocity = "15.0 5.0 15.0"
+emitVariance = "100.0 20.0 100.0"
+
+[Sootrail]
+simulateBase = "sim_ember"
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "50 50 50 255"
+finishColor = "5 5 5 0"
+startRadius = 0.3
+finishRadius = 0.6
+rotationRate = 15.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "4.0 4.0 4.0"
+emitLife = 0.4
+animateTime = 0.4
+useTerrainColor = 0.8

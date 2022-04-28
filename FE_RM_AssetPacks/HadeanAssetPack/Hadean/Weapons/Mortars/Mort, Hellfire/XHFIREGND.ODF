@@ -1,0 +1,72 @@
+// =============
+// SCION ARTIL GROUND EXPLOSION
+// =============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+///////////////////////////////
+
+particleTypes = 10
+
+particleClass1 = "xhfire.shock"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xhfire.cloud"
+particleCount2 = 1
+particleVeloc2 = "0.0 6.0 0.0"
+particleBias2 = "0.0 8.0 0.0"
+particleInherit2 = "0.5 0.5 0.5"
+
+particleClass3 = "xhfire.flame"
+particleCount3 = 1
+particleVeloc3 = "0.0 4.0 0.0"
+particleBias3 = "0.0 6.0 0.0"
+particleInherit3 = "0.5 0.5 0.5"
+
+particleClass4 = "xhfire.light"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+particleInherit4 = "0.5 0.5 0.5"
+
+particleClass5 = "xhfire.char"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+particleClass6 = "xhfire.posroll"
+particleCount6 = 8
+particleVeloc6 = "5.0 0.0 5.0"
+particlePosVar6 = "10.0 0.0 10.0"
+
+particleClass7 = "xhfire.puff"
+particleCount7 = 20
+particleVeloc7 = "15.0 15.0 15.0"
+particleInherit7 = "0.5 0.5 0.5"
+
+particleClass8 = "xhfire.core"
+particleCount8 = 1
+particleVeloc8 = "0.0 0.0 0.0"
+
+particleClass9 = "xhfire.ring"
+particleCount9 = 1
+particleVeloc9 = "0.0 0.0 0.0"
+
+particleClass10 = "xhfire.ring2"
+particleCount10 = 1
+particleVeloc10 = "0.0 0.0 0.0"
+
+///////////////////////////////
+
+explSound = "xmv1.wav"
+damageRadius = 75.0
+
+damageValue(N) = 70 // none
+damageValue(L) = 50 // light
+damageValue(H) = 10 // heavy
+
+damageValue(S) = 50 // standard
+damageValue(D) = 70 // deflection
+damageValue(A) = 20 // absorbtion
+
+///////////////////////////////

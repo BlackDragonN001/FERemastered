@@ -4,7 +4,7 @@ classLabel = "spraybomb" //"grenade"
 shotGeometry = NULL //"ioartl00.xsi"
 shotSound = "crckt02.wav"
 
-xplGround = "xhfire"
+xplGround = "xhfiregnd"
 xplVehicle = "xhfire" //"xhfirecar"
 xplBuilding = "xhfire"
 xplExpire = "xhfire"
@@ -33,14 +33,14 @@ explodeOnHit = true
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 6
+renderCount = 5
 renderName1 = "hfire.flare"
 renderName2 = "hfire.flame" //trail"
 renderName3 = "hfire.smoke"
 renderName4 = "hfire.light"
-renderName5 = "hfire.elec"
+renderName5 = "hfire.core"
 renderName6 = "hfire.elec"
-renderName7 = "hfire.sparkle"
+renderName7 = "hfire.elec"
 
 [Flare]
 renderBase = "draw_twirl"
@@ -50,7 +50,7 @@ startColor = "180 150 130 250"
 finishColor = "180 100 30 250"
 startRadius = 2.0
 finishRadius = 2.0
-rotationRate = 5.0
+rotationRate = 20.0
 BottomInteractsWithTerrain = false
 
 [Light]
@@ -62,7 +62,7 @@ finishRadius = 40.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
-lensFlare = 0
+lensFlare = 1
 
 [Flame]
 renderBase = "draw_twirl_trail"
@@ -99,6 +99,17 @@ finishRadius = 6.0
 animateTime = 2.0
 rotationRate = 8.0
 
+[Core]
+renderBase = "draw_twirl"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 127 255"
+finishColor = "255 255 127 255"
+startRadius = 1.2
+finishRadius = 1.2
+rotationRate = 20.0
+BottomInteractsWithTerrain = false
+
 [Elec]
 renderBase = "draw_twirl"
 textureName = "elec.tga"
@@ -122,17 +133,3 @@ finishRadius = 4.0
 segmentTime = 1.5 //2.5 //animateTime = 8.8
 textureRate = 0.05
 textureSpeed = 0.5
-
-[Sparkle]
-renderBase = "draw_twirl_trail"
-textureName = "plasma.tga" // flame
-textureblend = "one one modulate"
-startColor = "120 70 0 50"
-finishColor = "120 70 0 200"
-startRadius = 0.75
-finishRadius = 0.0
-animateTime = 2.5
-emitDelay = 0.005
-emitVariance = "3.0 3.0 3.0"
-emitLife = 2.5
-BottomInteractsWithTerrain = false

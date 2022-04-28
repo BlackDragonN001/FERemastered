@@ -7,7 +7,7 @@ classLabel = "explosion"
 
 ///////////////////////////////
 
-particleTypes = 7
+particleTypes = 10
 
 particleClass1 = "xhfire.shock"
 particleCount1 = 1
@@ -30,7 +30,7 @@ particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
 particleInherit4 = "0.5 0.5 0.5"
 
-particleClass5 = "xhfire.ring"
+particleClass5 = "xhfire.char"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
 
@@ -43,6 +43,22 @@ particleClass7 = "xhfire.puff"
 particleCount7 = 20
 particleVeloc7 = "15.0 15.0 15.0"
 particleInherit7 = "0.5 0.5 0.5"
+
+particleClass8 = "xhfire.core"
+particleCount8 = 1
+particleVeloc8 = "0.0 0.0 0.0"
+
+particleClass9 = "xhfire.ring"
+particleCount9 = 1
+particleVeloc9 = "0.0 0.0 0.0"
+
+//particleClass10 = "xhfire.ring2"
+//particleCount10 = 1
+//particleVeloc10 = "0.0 0.0 0.0"
+
+particleClass10 = "xhfire.ring3"
+particleCount10 = 1
+particleVeloc10 = "0.0 0.0 0.0"
 
 ///////////////////////////////
 
@@ -61,15 +77,15 @@ damageValue(A) = 20 // absorbtion
 
 [Shock]
 simulateBase = "sim_null"
-lifeTime = 0.5
+lifeTime = 0.25
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
-startColor = "255 120 0 250"
-finishColor = "255 120 0 0"
+startColor = "127 63 31 255"
+finishColor = "127 96 63 0"
 startRadius = 5.0
 finishRadius = 60.0
-animateTime = 0.5
+animateTime = 0.25
 latitudeBands = 8
 longitudeSegments = 16
 
@@ -85,6 +101,20 @@ startRadius = 3.0
 finishRadius = 6.0
 animateTime = 2.0
 rotationRate = 2.0
+
+[Core]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "xplcore.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 100 120 0"
+startRadius = 1.0
+finishRadius = 15.0
+animateTime = 1.0
+rotationRate = 2.0
+BottomInteractsWithTerrain = false
 
 [Flame]
 simulateBase = "sim_smoke"
@@ -113,7 +143,7 @@ attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
 
-[Ring]
+[Char]
 simulateBase = "sim_null"
 lifeTime = 5.0
 renderBase = "draw_planar"
@@ -126,7 +156,7 @@ finishRadius = 6.0
 animateTime = 5.0
 useTerrainColor = 0.9
 
-[posroll]
+[Posroll]
 simulateBase = "sim_dust"
 lifeTime = 3.0
 renderBase = "draw_twirl"
@@ -151,3 +181,46 @@ finishColor = "255 120 200 50"
 startRadius = 0.5
 finishRadius = 0.0
 animateTime = 3.0
+
+[Ring]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_sphere"
+textureName = "ring2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 160"
+finishColor = "255 255 255 0"
+startRadius = 4.0
+finishRadius = 40.0
+animateTime = 0.5
+latitudeBands = 8
+longitudeSegments = 16
+
+[Ring2]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_planar"
+textureName = "fbchar.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 150"
+finishColor = "250 250 250 0"
+startRadius = 4.0
+finishRadius = 40.0
+animateTime = 0.5
+
+[Ring3]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_wave"
+textureName = "fbcharwave.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 150"
+finishColor = "250 250 250 0"
+startRadius = 4.0
+finishRadius = 26.0
+animateTime = 0.5
+waveAngle = 3.14159265359
+waveDepth = 1.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 64

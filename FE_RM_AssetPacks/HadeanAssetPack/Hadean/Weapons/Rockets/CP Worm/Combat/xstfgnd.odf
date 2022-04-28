@@ -61,7 +61,7 @@ damageValue(A) = 0
 
 [Ring]
 simulateBase = "sim_null"
-lifeTime = 1.5
+lifeTime = 0.75
 renderBase = "draw_planar"
 textureName = "ring.tga"
 textureBlend = "one one modulate"
@@ -69,7 +69,7 @@ startColor = "100 80 250 240"
 finishColor = "50 50 100 0"
 startRadius = 1.0
 finishRadius = 4.0
-animateTime = 1.5
+animateTime = 0.75
 
 [Chunks]
 simulateBase = "sim_ember"

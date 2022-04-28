@@ -74,12 +74,13 @@ BottomInteractsWithTerrain = false
 renderBase = "draw_trail"
 textureName = "heat2.tga"
 textureBlend = "one one modulate"
-textureRate = 0.1
 startColor = "255 200 255 150"
 finishColor = "200 100 200 0"
 startRadius = 1.2
 finishRadius = 0.1
 segmentTime = 1.3 //animateTime = 1.3
+textureRate = 0.1
+textureSpeed = 0.0
 
 [Light]
 renderBase = "draw_light"

@@ -36,7 +36,7 @@ particleCount3 = 50
 particleVeloc3 = "100.0 130.0 100.0"
 particleBias3 = "0.0 50.0 0.0"
 particlePosVar3 = "10.0 0.0 10.0"
-particleInherit3 = "0.8 0.8 0.8"
+particleInherit3 = "0.5 0.5 0.5"
 
 particleClass4 = "kamixpl.posroll"
 particleCount4 = 32
@@ -48,14 +48,14 @@ particleCount5 = 10
 particleVeloc5 = "7.0 7.0 7.0"
 particleBias5 = "0.0 10.0 0.0"
 particlePosVar5 = "15.0 0.0 15.0"
-particleInherit5 = "0.8 0.8 0.8"
+particleInherit5 = "0.5 0.5 0.5"
 
 particleClass6 = "kamixpl.smoke"
 particleCount6 = 10
 particleVeloc6 = "10.0 20.0 10.0"
 particleBias6 = "0.0 20.0 0.0"
 particlePosVar6 = "15.0 0.0 15.0"
-particleInherit6 = "0.8 0.8 0.8"
+particleInherit6 = "0.5 0.5 0.5"
 
 particleClass7 = "kamixpl.char"
 particleCount7 = 1
@@ -90,7 +90,7 @@ particleCount12 = 2
 particleVeloc12 = "0.0 2.0 0.0"
 particleBias12 = "0.0 3.0 0.0"
 particlePosVar12 = "5.0 0.0 5.0"
-particleInherit12 = "0.8 0.8 0.8"
+particleInherit12 = "0.5 0.5 0.5"
 
 particleClass13 = "kamixpl.groundring"
 particleCount13 = 1
@@ -305,7 +305,7 @@ animateTime = 0.8
 [Core]
 simulateBase = "sim_smoke"
 lifeTime = 1.2
-renderBase = "draw_twirl"
+renderBase = "draw_sprite" //twirl"
 textureName = "xplcore.tga" // flame2
 textureBlend = "one one modulate"
 startColor = "255 255 255 255"
@@ -313,8 +313,8 @@ finishColor = "255 255 255 0"
 startRadius = 5.0
 finishRadius = 40.0
 animateTime = 1.2
-rotationRate = 2.0
-BottomInteractsWithTerrain = false
+//rotationRate = 2.0
+//BottomInteractsWithTerrain = false
 
 [Ring1]
 simulateBase = "sim_null"
