@@ -357,7 +357,7 @@ function Routine1(R, STATE)
 		Advance(R);
 	elseif STATE == 2 then	--LOC_101
 		if GetDistance(M.Attacker1, M.ScionRecy) < 200 then 
-			--Goto(M.HadeanTech, M.Jammer, 1);		--have Kranios keep following player for now, otherwise he fails to path through the tunnel!
+			Goto(M.HadeanTech, M.Jammer, 1);
 			M.Attacker2 = BuildObject("evsc_IH", 3, M.Position4);
 			Attack(M.Attacker2, M.ScionRecy, 1);
 			Defend2(M.Sentry1, M.ScionRecy, 1);
