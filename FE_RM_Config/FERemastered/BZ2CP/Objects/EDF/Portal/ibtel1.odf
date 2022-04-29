@@ -1,6 +1,11 @@
 [GameObjectClass]
 baseName = "ibtele"
 geometryName = "ibtele00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ibtele00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
 classLabel = "teleportal"
 BZCClasslabel = "portal"
 scrapCost = 8
@@ -19,28 +24,57 @@ requireName1 = "ibtcen"
 
 PositionOffset1 = "0.000000 5.000000 0.000000" // Teleport Exit Location.
 PositionOffset2 = "0.000000 0.000000 50.000000" // Goto Destination after AI unit Exits.
-PositionOffset3 = "0.000000 5.000000 0.000000" // Fx Location.
+
+// Note: Effect#'s point to the first "start" effect, code assumes an On and End effect follow.
+// Each effect is essentially a "Start, on, end" cycle. Vehicle Enter/Exit only use the End Fx.
+// Portal On Effect.
+effectsMask = 0 // Start out OFF.
+effectHard1 = "hp_emit_1"
+effectName1 = "PortalFx_I0Start.render"
+effectHard2 = "hp_emit_1"
+effectName2 = "PortalFx_I0.render"
+effectHard3 = "hp_emit_1"
+effectName3 = "PortalFx_I0End.render"
+
+// Vehicle Enter Effect
+effectHard4 = "hp_emit_1"
+effectName4 = NULL //"PortalFx_I1Start.render"
+effectHard5 = "hp_emit_1"
+effectName5 = NULL //"PortalFx_I1.render"
+effectHard6 = "hp_emit_1"
+effectName6 = "PortalFx_I1End.render"
+
+// Vehicle Exit Effect
+effectHard7 = "hp_emit_1"
+effectName7 = NULL //"PortalFx_I2Start.render"
+effectHard8 = "hp_emit_1"
+effectName8 = NULL //"PortalFx_I2.render"
+effectHard9 = "hp_emit_1"
+effectName9 = "PortalFx_I2End.render"
 
 [BuildingClass]
-
 
 [TeleportalClass]
 soundActivate = "portalx.wav"
 soundDeactivate = NULL
 
 PortalEffect = "PortalFx_I" // Effect # is added to the end, as well as a Start and End versions.
-InEffect = 1
-OutEffect = 0
-OnEffect = 0
+InEffect = 4
+OutEffect = 7
+OnEffect = 1
 
-TeleporterChannel = 3 //0
+VehInEffect = 1
+VehOutEffect = 2
+
+TeleporterChannel = 1 //0
 ShowChannel = true
 CanEnter = true
 CanExit = true
 ContinuousFx = true
-ContinuousFxRange = 200.0f
+ContinuousFxRange = 0.0f
 MatchType = 0 // 0 = Closest, 1 = Cycle, 2 = Random.
 MatchTypeUsesChannels = true
+FxOnVehicle = false
 TeleportColorFade = "0 127 255 255"
 TeleportFilter = 3 // Pilots + Craft
 // Teleport Filter options: 

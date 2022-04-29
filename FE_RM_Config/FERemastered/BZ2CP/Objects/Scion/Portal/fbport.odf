@@ -31,9 +31,9 @@ buildRequire = "F"
 AlwaysShowAmmo = true
 
 PositionOffset1 = "0.000000 16.000000 0.000000" // Teleport Exit Location.
-RotationOffset1 = "0.0 0.0 45.0" // Teleporter Exit Location.
+//RotationOffset1 = "0.0 0.0 0.0" // Teleporter Exit Location.
 PositionOffset2 = "-50.000000 0.000000 50.000000" // Goto Destination after AI unit Exits.
-PositionOffset3 = "0.000000 32.000000 0.000000" // Fx Location.
+//PositionOffset3 = "0.000000 32.000000 0.000000" // Fx Location.
 
 GameObjectClassServiceMask = 9
 GameObjectClassServiceMatch = 9
@@ -74,63 +74,69 @@ weaponName4 = "gchannel4"
 weaponAssault4 = 1
 weaponGroup4 = 3
 
+// Portal Fx.
+effectsMask = 65520 // Start out OFF.
+EffectHard1 = "hp_hand_1"
+EffectName1 = "PortalFx_F0Start.render"
+EffectHard2 = "hp_hand_1"
+EffectName2 = "PortalFx_F0.render"
+EffectHard3 = "hp_hand_1"
+EffectName3 = "PortalFx_F0End.render"
+EffectHard4 = "hp_hand_1"
+EffectName4 = "PortalFx_F1End.render"
+
 // Tower 1.
-EffectHard1 = "hp_light_1"
-EffectName1 = "fbport.OmniLightYellow"
-EffectHard2 = "hp_light_2"
-EffectName2 = "fbport.OmniLightYellow"
-EffectHard3 = "hp_light_3"
-EffectName3 = "fbport.OmniLightYellow"
-EffectHard4 = "hp_light_4"
-EffectName4 = "fbport.OmniLightYellow"
-EffectHard5 = "hp_light_5"
+EffectHard5 = "hp_light_1"
 EffectName5 = "fbport.OmniLightYellow"
-EffectHard6 = "hp_light_6"
+EffectHard6 = "hp_light_2"
 EffectName6 = "fbport.OmniLightYellow"
+EffectHard7 = "hp_light_3"
+EffectName7 = "fbport.OmniLightYellow"
+EffectHard8 = "hp_light_4"
+EffectName8 = "fbport.OmniLightYellow"
+EffectHard9 = "hp_light_5"
+EffectName9 = "fbport.OmniLightYellow"
+EffectHard10 = "hp_light_6"
+EffectName10 = "fbport.OmniLightYellow"
 
 // Tower 2.
-EffectHard7 = "hp_light_9"
-EffectName7 = "fbport.OmniLightYellow"
-EffectHard8 = "hp_light_10"
-EffectName8 = "fbport.OmniLightYellow"
-EffectHard9 = "hp_light_11"
-EffectName9 = "fbport.OmniLightYellow"
-EffectHard10 = "hp_light_12"
-EffectName10 = "fbport.OmniLightYellow"
-EffectHard11 = "hp_light_13"
+EffectHard11 = "hp_light_9"
 EffectName11 = "fbport.OmniLightYellow"
-EffectHard12 = "hp_light_14"
+EffectHard12 = "hp_light_10"
 EffectName12 = "fbport.OmniLightYellow"
-
-EffectHard13 = "hp_light_7"
+EffectHard13 = "hp_light_11"
 EffectName13 = "fbport.OmniLightYellow"
-EffectHard14 = "hp_light_8"
+EffectHard14 = "hp_light_12"
 EffectName14 = "fbport.OmniLightYellow"
-EffectHard15 = "hp_light_15"
+EffectHard15 = "hp_light_13"
 EffectName15 = "fbport.OmniLightYellow"
-EffectHard16 = "hp_light_16"
+EffectHard16 = "hp_light_14"
 EffectName16 = "fbport.OmniLightYellow"
 
 // Real Lights.
-//lightHard1 = "hp_light_7"
-//lightName1 = "spotyellow"
-//lightHard2 = "hp_light_8"
-//lightName2 = "spotyellow"
-//lightHard3 = "hp_light_15"
-//lightName3 = "spotyellow"
-//lightHard4 = "hp_light_16"
-//lightName4 = "spotyellow"
-lightHard1 = "hp_light_17"
-lightName1 = "o_yellow_nf"
+lightHard1 = "hp_light_7"
+lightName1 = "spotyellow"
+lightHard2 = "hp_light_8"
+lightName2 = "spotyellow"
+lightHard3 = "hp_light_15"
+lightName3 = "spotyellow"
+lightHard4 = "hp_light_16"
+lightName4 = "spotyellow"
+lightHard5 = "hp_light_17"
+lightName5 = "o_yellow_nf"
+
 
 [TeleportalClass]
 soundActivate = "portalx.wav"
 soundDectivate = NULL
 
 PortalEffect = "PortalFx_F" // Effect # is added to the end, as well as a Start and End versions.
-InEffect = 1
-OutEffect = 1
-OnEffect = 0
+InEffect = 2
+OutEffect = 2
+OnEffect = 1
+
+VehInEffect = 1
+VehOutEffect = 1
 
 TeleporterChannel = 2
 ShowChannel = true
@@ -138,6 +144,7 @@ CanEnter = true
 CanExit = true
 MatchType = 0 // 0 = Closest, 1 = Cycle, 2 = Random.
 MatchTypeUsesChannels = true
+FxOnVehicle = false
 TeleportColorFade = "0 255 127 255"
 ContinuousFx = true
 ContinuousFxRange = 200.0f

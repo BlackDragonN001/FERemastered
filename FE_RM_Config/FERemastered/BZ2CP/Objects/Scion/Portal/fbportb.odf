@@ -11,23 +11,28 @@ maxAmmo = 0  // zero = instant,anything greater will be set as the delay until a
 addAmmo = 0  // DLL sets ammo as zero so unless maxammo = o then you'll need to add ammo to reactivate portal.
 
 [TeleportalClass]
-//soundActivate = "portalx.wav"  // not used.... the sound effect is made by the portalEffect's explosion, though it's sometimes quite soft :-/
+soundActivate = "portalx.wav"
+soundDectivate = NULL
 
 PortalEffect = "PortalFx_F" // Effect # is added to the end, as well as a Start and End versions.
-InEffect = 1
-OutEffect = 1
-OnEffect = 0
+InEffect = 2
+OutEffect = 2
+OnEffect = 1
+
+VehInEffect = 1
+VehOutEffect = 1
 
 TeleporterChannel = 2
-ShowChannel = false
+ShowChannel = true
 CanEnter = true
 CanExit = true
 MatchType = 0 // 0 = Closest, 1 = Cycle, 2 = Random.
 MatchTypeUsesChannels = true
-ContinuousFx = false
-ContinuousFxRange = 0.0
-TeleportColorFade = "0 127 255 255"
-TeleportFilter = 3
+FxOnVehicle = false
+TeleportColorFade = "0 255 127 255"
+ContinuousFx = true
+ContinuousFxRange = 200.0f
+TeleportFilter = 3 // Pilots + Craft
 // Teleport Filter options: 
 // All         = 0
 // Craft       = 1
@@ -37,10 +42,13 @@ TeleportFilter = 3
 // Other       = 16
 ExitForwardOnly = false
 ExitVelocity = 0
-EnterGotoIsExit = false // If true, AI ordered to goto this portal will goto the exit position offset instead of the object.
+ExitKickAI = true
 ExitUsesCenter = true
-PortalTargetRange = 20.0f
+EnterGotoIsExit = false // If true, AI ordered to goto this portal will goto the exit position offset instead of the object.
+EnterRange = 31.0f
 TeleportTeamFilter = 0
+DestinationMinRange = 0.0
+DestinationMaxRange = 0.0
 DestinationTeamFilter = 3
 // 0 = All Teams, 1 = same team only, 2 = allies only, 3 = Same Team + Allies, 4 = Enemies only, 5 = Same Team + Enemies, 6 = Allies + Enemies.
 // Team Filter options: 
@@ -50,7 +58,6 @@ DestinationTeamFilter = 3
 // Enemies          = 4
 // 
 // Add the values to get the desired result. Same Team + Allies is 3, Enemies + Allies is 6.
-
 
 [PoweredBuildingClass]
 PoweredByTaps = false

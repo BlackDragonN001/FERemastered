@@ -1,4 +1,4 @@
-[GameObjectClass] // Portal Vehicle Enter: ISDF
+[GameObjectClass] // Portal Vehicle Exit: ISDF
 classLabel = "PortalFX"
 
 effectName1 = "PortalFx_I1End.render"
@@ -56,8 +56,8 @@ textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
 startColor = "0 100 255 0"
 finishColor = "255 255 255 255"
-startRadius = 25.0
-finishRadius = 3.0
+startRadius = 3.0
+finishRadius = 25.0
 animateTime = 1.0
 latitudeBands = 32
 longitudeSegments = 64
