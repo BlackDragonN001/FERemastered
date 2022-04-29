@@ -376,8 +376,9 @@ function Routine1(R, STATE)
 			Advance(R, 10.0);
 		end
 	elseif STATE == 5 then
+		local pos = GetPosition(M.Jammer); -- save position before it is destroyed. -GBD
 		Damage(M.Jammer, 100000); --SetCurHealth(M.Jammer, 1);
-		BuildObject("poolmine", 2, GetPosition(M.Jammer));
+		BuildObject("poolmine", 2, pos);
 		Goto(M.HadeanTech, M.ScionRecy, 1);
 		Advance(R);
 	elseif STATE == 6 then	--LOC_117
