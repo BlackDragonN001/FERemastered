@@ -26,12 +26,12 @@ particleBias1 = "0.0 0.0 0.0"
 particleInherit1 = "0.5 0.5 0.5"
 
 particleClass2 = "xvehxpl.flame2"
-particleCount2 = 15 //30
+particleCount2 = 10
 particleVeloc2 = "20.0 10.0 20.0"
 particleInherit2 = "0.5 0.5 0.5"
 
 particleClass3 = "xvehxpl.smoke"
-particleCount3 = 20 //30
+particleCount3 = 20
 particleVeloc3 = "32.0 16.0 32.0"
 particleInherit3 = "0.5 0.5 0.5"
 
@@ -41,7 +41,7 @@ particleVeloc4 = "0.0 1.0 0.0"
 particleInherit4 = "0.5 0.5 0.5"
 
 particleClass5 = "xvehxpl.spark"
-particleCount5 = 10 //20
+particleCount5 = 10
 particleVeloc5 = "110.0 60.0 110.0"
 particleBias5 = "0.0 10.0 0.0"
 particlePosVar5 = "5.0 0.0 5.0"
@@ -58,14 +58,14 @@ particleVeloc7 = "0.0 0.0 0.0"
 //particleInherit7 = "0.5 0.5 0.5"
 
 particleClass8 = "xvehxpl.sparkcore"
-particleCount8 = 3 //5
+particleCount8 = 3
 particleBias8 = "0.0 1.0 0.0"
 particleVeloc8 = "0.6 0.6 0.6"
 particlePosVar8 = "3.0 0.0 3.0"
 particleInherit8 = "0.5 0.5 0.5"
 
 particleClass9 = "xvehxpl.sparktrails"
-particleCount9 = 10 //15
+particleCount9 = 10
 particleVeloc9 = "100.0 140.0 100.0"
 particlePosVar9 = "5.0 0.0 5.0"
 particleInherit9 = "0.5 0.5 0.5"
@@ -77,19 +77,21 @@ particleBias10 = "0.0 5.0 0.0"
 particleInherit10 = "0.5 0.5 0.5"
 
 particleClass11 = "xvehxpl.sootemit"
-particleCount11 = 6 //8
+particleCount11 = 6
 particleVeloc11 = "10.0 20 10.0"
 particleBias11 = "0.0 0.0 0.0"
 particleInherit11 = "0.5 0.5 0.5"
 
 particleClass12 = "xvehxpl.flame"
 particleCount12 = 1
-particleVeloc12 = "0.0 30.0 0.0"
+particleVeloc12 = "0.0 10.0 0.0"
+particleBias12 = "0.0 5.0 0.0"
 particleInherit12 = "0.5 0.5 0.5"
 
 particleClass13 = "xvehxpl.cloud"
 particleCount13 = 1
-particleVeloc13 = "0.0 30.0 0.0"
+particleVeloc13 = "0.0 10.0 0.0"
+particleBias13 = "0.0 5.0 0.0"
 particleInherit13 = "0.5 0.5 0.5"
 
 particleClass14 = "xvehxpl.Secondary"
@@ -229,6 +231,28 @@ BottomInteractsWithTerrain = false
 [SparkTrails]
 simulateBase = "sim_ember"
 lifeTime = 3.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xvehxpl.sparktrailflare"
+renderName2 = "xvehxpl.sparktrailemit"
+
+[SparkTrailFlare]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 127 255"
+finishColor = "255 127 63 0"
+startRadius = 1.2
+finishRadius = 1.2
+animateTime = 3.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[SparkTrailEmit]
+simulateBase = "sim_ember"
+lifeTime = 3.0
 renderBase = "draw_trail"
 textureName = "trail2.tga"
 textureBlend = "one one modulate"
@@ -282,16 +306,16 @@ useTerrainColor = 0.8
 
 [Flame]
 simulateBase = "sim_smoke"
-lifeTime = 1.5
+lifeTime = 1.0
 renderBase = "draw_emit"
 emitName = "xvehxpl.flameemit"
-emitDelay = 0.03
+emitDelay = 0.05
 emitVelocity = "2.0 5.0 2.0"
-emitVariance = "40.0 40.0 40.0"
+emitVariance = "30.0 30.0 30.0"
 
 [FlameEmit]
 simulateBase = "sim_smoke"
-lifeTime = 1.5
+lifeTime = 1.0
 renderBase = "draw_twirl"
 textureName = "flame.tga" // flame2
 textureBlend = "one one modulate"
@@ -304,16 +328,16 @@ rotationRate = 5.0
 
 [Cloud]
 simulateBase = "sim_smoke"
-lifeTime = 1.5
+lifeTime = 1.0
 renderBase = "draw_emit"
 emitName = "xvehxpl.cloudemit"
-emitDelay = 0.04
+emitDelay = 0.06
 emitVelocity = "2.0 5.0 2.0"
-emitVariance = "40.0 40.0 40.0"
+emitVariance = "30.0 30.0 30.0"
 
 [CloudEmit]
 simulateBase = "sim_smoke"
-lifeTime = 1.5
+lifeTime = 1.0
 renderBase = "draw_twirl"
 textureName = "smoke2.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
