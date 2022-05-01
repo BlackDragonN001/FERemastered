@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
--- FE edf02.lua Mission - Version 1.0 
--- Date Modified: 11/01/2021
+-- FE edf02.lua Mission - Version 1.1 
+-- Date Modified: 4/30/2022
 -- Summary: Mission script for the EDF02 Forgotten Enemies Mission.
 ----------------------------------------------------------------
 
@@ -374,14 +374,11 @@ function HandleMainState(R, STATE)
 	elseif STATE == 6 then	
 	
 		SpawnDelaySTATE = 1;
-		
-		
-		
 		SetSkill(BuildObjectAndLabel("evscout_e02", 5, "Enemy1", "Hadean Scout 1"), 3);
 		SetSkill(BuildObjectAndLabel("evscout_e02", 5, "Enemy2", "Hadean Scout 2"), 3);
 		
 		Advance(R, 3.0);
-	elseif STATE == 5 then
+	elseif STATE == 7 then
 		AudioMessage("edf02_02.wav");	--Stewart:"Good landing under the circumstances..."
 		Goto(M.Recycler, "RecyclerPath", 1);
 		M.InvestigateNav = BuildObjectAndLabel("ibnav", 1, "NavSpawn", "Investigate Nav");
@@ -390,23 +387,23 @@ function HandleMainState(R, STATE)
 		ClearObjectives();
 		AddObjective("edf0201.otf", "white");
 		Advance(R, 30.0);
-	elseif STATE == 6 then
+	elseif STATE == 8 then
 		AudioMessage("edf02_03.wav");	--Stewart:"Our scanners just picked up a huge energy spike..."
 		Advance(R, 220.0);
-	elseif STATE == 7 then
+	elseif STATE == 9 then
 		AudioMessage("edf02_04.wav");	--Stewart:"You've got enemy units in the canyon..."
 		Advance(R, 5.0);
-	elseif STATE == 8 then
+	elseif STATE == 10 then
 		Patrol(BuildObjectAndLabel("evscout_e02", 5, "Spawn2", "Hadean Scout 3"), "Patrol2", 0);
 		Advance(R, 5.0);
-	elseif STATE == 9 then	--LOC_43
+	elseif STATE == 11 then	--LOC_43
 		if GetTime() > 780 then
 			Goto(BuildObjectAndLabel("evtank", 5, "Spawn1", "Hadean Xares 1"), "Patrol1", 0);
 			Advance(R, 27.0);
 		else
 			Advance(R);
 		end
-	elseif STATE == 10 then	--LOC_48
+	elseif STATE == 12 then	--LOC_48
 		Goto(BuildObjectAndLabel("evscout_e02", 5, "Spawn1", "Hadean Scout 4"), "Patrol1", 0);
 		SetState(R, STATE-1, 48.0);--to LOC_43
 	end
