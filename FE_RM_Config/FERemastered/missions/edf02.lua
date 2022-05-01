@@ -588,6 +588,7 @@ function OnPortalDist(portal, h)
 			SetObjectiveOff(M.Portals[1]);
 			M.BaseNav = BuildObjectAndLabel("ibnav", 1, Position4, "Base Location");
 			SetObjectiveName(M.BaseNav, "Deploy Base");
+			SetBestGroup(M.Recycler);
 			SetObjectiveOn(M.BaseNav);
 			Teleport(h, M.Portals[2], 30);
 			ClearObjectives();
