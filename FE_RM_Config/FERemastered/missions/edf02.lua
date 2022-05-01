@@ -14,8 +14,13 @@ local NUM_ATTACKERS = 8;
 local Position2 = SetVector( -450, -120, -1460 );	--flying dropship start position
 local Position3 = SetVector( -590, -155, -1190 );	--flying dropship end position
 local Position4 = SetVector( 420, 0, 920 );	--deploy base location
-
+local RecyDropshipPositionStart = SetVector(-1045, -178, -450); --start position recydrop
+local RecyDropshipPositionStartAdjust = SetVector(-1500, -120, -860); -- facing inward
+local RecyDropshipPositionEnd = SetVector(-845, -178, -840); --end position recydrop
+local RecyDropshipSpawnRecy = SetVector(-835, -180, -837); --spawn inside dropship
+local dropoff = SetVector(0, 60, -5); --dropoff recy
 local Routines = {};
+local SpawnDelaySTATE = 0;
 
 local M = {
 --Mission State
@@ -27,6 +32,10 @@ local M = {
 	RecyTeleported = false,
 	ScavTeleported = false,
 	PlayerTeleported = false,
+	StartLanding = false,
+	LandingFinished = false,
+	TroopGoto = false,
+	StateSetup = false,
 -- Floats
 	StewartNextNagTime = 0.0,
 -- Handles
@@ -40,17 +49,26 @@ local M = {
 	ScrapPool = nil,
 	HadeanScav = nil,
 	DropshipFlying = nil,
+	DropshipFlyingNorm = nil,
 	DropshipLanded = nil,
+	RecyDropShip = nil,
 	Attackers = {},
 	Dino1 = nil,
 	Dino2 = nil,
+	smoke = nil,
+	escort1 = nil, 
+	escort2 = nil,
+	escort3 = nil,
+	escort4 = nil,
+	
 -- Ints
 	TPS = 10,
 	StewartNagCounter = 0,
 	GunTowersBuilt = 0,
 	AttackWave = 0,	--hadean attack wave counter
 	AttackIndex = 0,
-	endme = 0
+	maxFrames =0,
+	curFrame =0
 };
 
 function DefineRoutine(routineID, func, activeOnStart)
@@ -93,8 +111,85 @@ function DefineRoutines()
 	DefineRoutine(4, HandleHadeanAttack, true);
 	DefineRoutine(5, HandleStewartNag, false);
 end
-
-
+function DropLand()
+	if (M.StartLanding == false and M.StateSetup == false)
+	then
+		M.RecyDropShip = BuildObjectAndLabel("ivdrop_land", 1, RecyDropshipPositionStart, "RecyDropShip");
+		StartEmitter(M.RecyDropShip, 1);
+		StartEmitter(M.RecyDropShip, 2);
+		SetAngle(M.RecyDropShip, 90.0);
+		StartSoundEffect("droptoff.wav", M.RecyDropShip);
+		StartAnimation(M.RecyDropShip);
+		SetAnimation(M.RecyDropShip, "land", 1);
+		M.maxFrames = SetAnimation(M.RecyDropShip, "land",1);
+		M.StartLanding = true;
+	
+	elseif(M.StartLanding == true and M.StateSetup == false and M.TroopGoto == false) 
+	then		
+		M.curFrame = GetAnimationFrame(M.RecyDropShip, "land");
+		if (M.curFrame == 1 and M.TroopGoto == false) 
+		then
+			Goto(M.escort1, "Escort1", 0);
+			Goto(M.escort2, "Escort2", 0);
+			Goto(M.escort3, "Escort3", 0);
+			Goto(M.escort4, "Escort4", 0);
+			M.TroopGoto = true;
+			end
+	
+	elseif(M.StartLanding == true and M.StateSetup == false and M.StateSetup == false)
+	then
+		M.curFrame = GetAnimationFrame(M.RecyDropShip, "land");	
+		if (M.curFrame >= M.maxFrames-24 and M.StateSetup == false and M.LandingFinished == false) --model has an animation bug and must be cut early.
+		then
+			M.RecyDropShip = ReplaceObject(M.RecyDropShip, "ivdrop_tunnel");
+			StartEmitter(M.RecyDropShip, 1);
+			StartEmitter(M.RecyDropShip, 2);
+			M.maxFrames = SetAnimation(M.RecyDropShip, "deploy", 1);
+			local RecySpawn = RecyDropshipSpawnRecy;
+			RecySpawn.y = RecySpawn.y - 10;
+			M.Recycler = BuildObjectAndLabel("ivrecy",1,RecySpawn, "Recycler");  
+			SetAngle(M.Recycler, 90.0);
+			SetGroup(M.Recycler, 10);
+			StartAnimation(M.RecyDropShip);
+			M.LandingFinished = true;
+			end	
+	end	
+	if(M.LandingFinished == true and M.StateSetup == false)
+	then
+		M.curFrame = GetAnimationFrame(M.RecyDropShip, "deploy");
+		if(M.curFrame == 15)
+		then
+			StartSoundEffect("dropdoor.wav", M.RecyDropShip);
+			end	
+		if(M.curFrame >= 60)
+		then
+			Goto(M.Recycler, "RecyDropoff", 1);
+			local escort1 = GetHandle("Tank 1"); --Removed BuildObjectandLabel and instead had them prebuilt in the dropship. - Gravey
+			local escort2 = GetHandle("Scout 1");
+			local escort3 = GetHandle("Scout 2");
+			local escort4 = GetHandle("Scout 3");
+			
+			Follow(escort1, M.Recycler, 0);
+			Follow(escort2, M.Recycler, 0);
+			Follow(escort3, M.Recycler, 0);
+			Follow(escort4, M.Recycler, 0);
+			M.StateSetup = true;
+			end
+		
+	end
+end
+function DropLeave()
+	M.maxFrames = SetAnimation(M.RecyDropShip, "takeoff",1);
+	M.curFrame = GetAnimationFrame(M.RecyDropShip, "takeoff");
+	SetAnimation(M.RecyDropShip,"takeoff",1);
+	StartSoundEffect("dropdoor.wav",M.RecyDropShip);
+	StartSoundEffect("dropleav.wav", M.RecyDropShip);
+	StartAnimation(M.RecyDropShip);
+		if(M.maxFrames - 1 <= M.curFrame)
+		then
+		RemoveObject(M.RecyDropShip);
+		end
+end
 function InitialSetup()
 
 	_FECore.InitialSetup();
@@ -110,7 +205,8 @@ function InitialSetup()
 		"evscav",
 		"evmislu",
 		"evtanku",
-		"evmort"
+		"evmort",
+		"ivrecy"
 	};
 	local preloadAudio = {
 		"edf02_01.wav",
@@ -155,8 +251,8 @@ function Start()
 
 	_FECore.Start();
 	
-	M.Recycler = GetHandleOrDie("Recycler");
-	M.DropshipLanded = GetHandleOrDie("DropShip");
+	--M.Recycler = GetHandleOrDie("Recycler"); --commented out due to intro scene change moved into HandleMainState check
+	M.DropshipLanded = GetHandleOrDie("DropShip"); --original dropship -Gravey
 	M.Portals[1] = GetHandleOrDie("Portal1");	--first portal in canyon
 	M.Portals[2] = GetHandleOrDie("Portal2");	--recycler portal east of deploy zone
 	M.Portals[3] = GetHandleOrDie("Portal3");	--portal beside scrap pool
@@ -183,6 +279,11 @@ function AddObject(h)
 	elseif GetCfg(h) == "ibrecy" then
 		RemoveObject(M.BaseNav);
 	end
+	
+	if GetCfg(h) == "ivrecy" then
+		SetPosition(h, RecyDropshipSpawnRecy);
+		end
+	--update recy position here.
 end
 
 function Update()
@@ -202,11 +303,20 @@ end
 --Main mission state
 function HandleMainState(R, STATE)
 	if STATE == 0 then
+		M.escort1 = GetHandle("Tank 1"); --Removed BuildObjectandLabel and instead had them prebuilt in the dropship. - Gravey
+		M.escort2 = GetHandle("Scout 1");
+		M.escort3 = GetHandle("Scout 2");
+		M.escort4 = GetHandle("Scout 3");
+		SetGroup(M.escort1, 2);	
+		SetGroup(M.escort2, 1);	
+		SetGroup(M.escort3, 1);
+		SetGroup(M.escort4, 1);
 		M.StayPut = BuildObjectAndLabel("stayput", 0, GetTransform(M.Player), "Stayput 1");
-		Stop(M.Recycler, 1);
+		--Stop(M.Recycler, 1);
 		StartEarthQuake(10.0);
-		M.DropshipFlying = BuildObjectAndLabel("ivdrop_fly", 0, Position2, "Dropship Flying");
+		M.DropshipFlying = BuildObjectAndLabel("ivdrop_sh", 0, Position2, "Dropship Flying");
 		-- SetObjectiveName(BuildObjectAndLabel("ibnav", 1, Position2), "Position2"); - Not sure why this is needed? - AI_Unit
+		SetAnimation(M.DropshipFlying, "Shake", 0);
 		Advance(R, 7.0);
 	elseif STATE == 1 then
 		AudioMessage("edf02_01.wav");	--Pilot:"That blast came awfully close..."
@@ -217,7 +327,7 @@ function HandleMainState(R, STATE)
 		CameraReady();
 		Advance(R);
 	elseif STATE == 3 then
-		Move(M.DropshipFlying, 0.0, 30.0, TerrainFloor(Position3));
+		Move2(M.DropshipFlying, 0.0, 30.0, TerrainFloor(Position3));
 		if CameraPath("CamPath", 5500, 3200, M.DropshipFlying) 
 		or CameraCancelled() then
 			CameraFinish();
@@ -225,29 +335,51 @@ function HandleMainState(R, STATE)
 		end
 	elseif STATE == 4 then
 		AudioMessage("xemt2.wav");
+		
 		StopEarthQuake();
+		
 		RemoveObject(M.DropshipFlying);
+		
 		RemoveObject(M.StayPut);
-		SetPosition(M.Recycler, "RecyclerPath");
-		SetVelocity(M.Recycler, SetVector(0, 0, 15));
+		
 		SetPosition(M.Player, "PlacePlayer");
 		SetVelocity(M.Player, SetVector(0, 0, 40));
-		local escort1 = BuildObjectAndLabel("ivtank", 1, "Escort1", "Tank 1");
-		local escort2 = BuildObjectAndLabel("ivscout", 1, "Escort2", "Scout 1");
-		local escort3 = BuildObjectAndLabel("ivscout", 1, "Escort3", "Scout 2");
-		local escort4 = BuildObjectAndLabel("ivscout", 1, "Escort4", "Scout 3");
-		Follow(escort1, M.Recycler, 0);
-		Follow(escort2, M.Recycler, 0);
-		Follow(escort3, M.Recycler, 0);
-		Follow(escort4, M.Recycler, 0);
-		SetBestGroup(escort1);
-		SetBestGroup(escort2);	
-		SetBestGroup(escort3);
-		SetBestGroup(escort4);
+		
+		local escort1 = GetHandle("Tank 1"); --Removed BuildObjectandLabel and instead had them prebuilt in the dropship. - Gravey
+		local escort2 = GetHandle("Scout 1");
+		local escort3 = GetHandle("Scout 2");
+		local escort4 = GetHandle("Scout 3");
+		
+		SetPosition(escort1, "PlacePlayer"); --need to make these more distributed? - Gravey
+		SetVelocity(escort1, SetVector(10, 0, 40));
+		SetPosition(escort2, "PlacePlayer");
+		SetVelocity(escort2, SetVector(5, 0, 40));
+		SetPosition(escort3, "PlacePlayer");
+		SetVelocity(escort3, SetVector(15, 0, 40));
+		SetPosition(escort4, "PlacePlayer");
+		SetVelocity(escort4, SetVector(13, 0, 40));
+		
+		Advance(R,1.0);
+		
+	elseif STATE == 5 then
+		DropLand();
+		SetScrap(1, 30);
+			
+		if(GetDistance(M.Recycler, RecyDropshipPositionEnd) > 70.0 and M.LandingFinished  == true)
+		then
+		DropLeave();
+		Advance(R,10.0);
+		end
+			
+	elseif STATE == 6 then	
+	
+		SpawnDelaySTATE = 1;
+		
+		
+		
 		SetSkill(BuildObjectAndLabel("evscout_e02", 5, "Enemy1", "Hadean Scout 1"), 3);
 		SetSkill(BuildObjectAndLabel("evscout_e02", 5, "Enemy2", "Hadean Scout 2"), 3);
-		SetBestGroup(M.Recycler);
-		SetScrap(1, 30);
+		
 		Advance(R, 3.0);
 	elseif STATE == 5 then
 		AudioMessage("edf02_02.wav");	--Stewart:"Good landing under the circumstances..."
@@ -490,17 +622,18 @@ end
 
 function CheckStuffIsAlive()
 	if not M.MissionOver then
-		if not IsAround(M.Recycler) then
-			AudioMessage("edf02_11.wav");	--Stewart:"You lost the recycler..."
-			ClearObjectives();
-			AddObjective("edf0202.otf", "red");
-			FailMission(GetTime() + 12, "edf02L1.txt");
-			M.MissionOver = true;
+		if SpawnDelaySTATE > 0 then --updated to not fail on start
+			if not IsAround(M.Recycler) then
+				AudioMessage("edf02_11.wav");	--Stewart:"You lost the recycler..."
+				ClearObjectives();
+				AddObjective("edf0202.otf", "red");
+				FailMission(GetTime() + 12, "edf02L1.txt");
+				M.MissionOver = true;
+			end
 		end
 	end
 end
 
---[[ Works fine now?? -GBD
 --work around for flickering caused by calling Move() on a building that was spawned off map (for dropship cutscene)
 function Move2(h, r, v, dest)
 	local oldTransform = GetTransform(h);
@@ -521,4 +654,3 @@ function Move2(h, r, v, dest)
 		return false;
 	end
 end
---]]
