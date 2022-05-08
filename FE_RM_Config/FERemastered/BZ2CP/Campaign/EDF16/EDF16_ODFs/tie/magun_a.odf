@@ -6,7 +6,7 @@ xplGround = "xgungnd"
 xplVehicle = "xguncar"
 xplBuilding = "xguncar"
 
-//renderName = "magun_a.render" // was "/magun_a.render"...Okay who the hell...that does not work. -GBD
+renderName = "magun_a.render"
 
 ammoCost = 3.0
 lifeSpan = 0.35 // 105m  135 GEC
@@ -23,9 +23,11 @@ damageValue(A) = 20 // absorbtion // 120
 [Render]
 renderBase = "draw_trail"
 textureBlend = "one one modulate"
-textureName = "trail.tga"
-startColor = "255 100 0 250"
-finishColor = "255 0 0 100"
+textureName = "trail2.tga"
+startColor = "255 100 0 63"
+finishColor = "255 0 0 0"
 startRadius = 0.03
 finishRadius = 0.15
 segmentTime = 0.05
+textureRate = 0.1
+textureSpeed = -0.25

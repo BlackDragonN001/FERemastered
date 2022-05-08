@@ -27,7 +27,7 @@ particleClass1 = "xshellgnd.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
-particleClass2 = "xshellgnd.ring"
+particleClass2 = "xshellgnd.char"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
 
@@ -40,7 +40,7 @@ particleCount4 = 2
 particleVeloc4 = "4.5 7.5 4.5"
 particleBias4 = "0.0 5.0 0.5"
 
-particleClass5 = "xchaingnd_c.Smoke"
+particleClass5 = "xshellgnd.Smoke"
 particleCount5 = 1 //3
 particleVeloc5 = "6.0 7.0 6.0"
 particleBias5 = "0.0 2.0 0.0"
@@ -60,7 +60,7 @@ finishRadius = 0.8
 animateTime = 0.8
 useTerrainColor = 0.9
 
-[Ring]
+[Char]
 simulateBase = "sim_null"
 lifeTime = 1.0
 renderBase = "draw_planar"

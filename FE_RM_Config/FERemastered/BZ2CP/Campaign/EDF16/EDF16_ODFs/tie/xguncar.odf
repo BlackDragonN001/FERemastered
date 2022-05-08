@@ -16,17 +16,20 @@ damageValue(S) = 0 // standard
 damageValue(D) = 0 // deflection
 damageValue(A) = 0 // absorbtion
 
-
-particleTypes = 6
+particleTypes = 7
 
 particleClass1 = "xguncar.spark"
-particleCount1 = 3
-particleVeloc1 = "20.0 25.0 15.0"
+particleCount1 = 1
+particleVeloc1 = "20.0 25.0 20.0"
 particleBias1 = "0.0 1.0 0.0"
+particleInherit1 = "0.5 0.5 0.5"
+
 particleClass2 = "xguncar.trail"
 particleCount2 = 1
-particleVeloc2 = "15.0 20.0 10.0"
-particleBias2 = "0.0 1.0 0.0"
+particleVeloc2 = "15.0 20.0 15.0"
+particleBias2 = "0.0 3.0 0.0"
+particleInherit2 = "0.8 0.8 0.8"
+
 ///////////
 particleClass3 = "xguncar.shock"
 particleCount3 = 1
@@ -35,28 +38,33 @@ particleVeloc3 = "0.0 0.0 0.0"
 particleClass4 = "xguncar.flame"
 particleCount4 = 2
 particleVeloc4 = "0.0 0.0 0.0"
+particlePosVar4 = "0.5 0.0 0.5"
+particleInherit4 = "0.5 0.5 0.5"
 
 particleClass5 = "xguncar.puff"
-particleCount5 = 5
+particleCount5 = 2 //5
 particleVeloc5 = "6.0 6.0 6.0"
+particleBias5 = "0.0 1.0 0.0"
+particlePosVar5 = "0.5 0.0 0.5"
+particleInherit5 = "0.5 0.5 0.5"
 
 particleClass6 = "xguncar.spark2"
-particleCount6 = 30
+particleCount6 = 10 //30
 particleVeloc6 = "35.0 35.0 35.0"
+particleInherit6 = "0.5 0.5 0.5"
 
-particleClass7 = "xguncar.core" // was "axguncar", never worked. -GBD
+particleClass7 = "xguncar.light" // was "axguncar", never worked. -GBD
 particleCount7 = 1
 particleVeloc7 = "0.0 0.0 0.0"
-particleBias7 = "0.0 0.0 0.0"
 
-particleClass8 = "xguncar.light" // was "axguncar", never worked. -GBD
+particleClass8 = "xguncar.core" // was "axguncar", never worked. -GBD
 particleCount8 = 1
 particleVeloc8 = "0.0 0.0 0.0"
+particleBias8 = "0.0 0.0 0.0"
 
 
-////////////
 [Core]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.2
 renderBase = "draw_twirl"
 textureName = "bulhit.tga"
@@ -64,8 +72,9 @@ textureBlend = "one one modulate"
 startColor = "255 255 63 255"
 finishColor = "255 0 0 0"
 startRadius = 0.05
-finishRadius = .5
+finishRadius = 0.5
 animateTime = 0.2
+bottomInteractsWithTerrain = false
 
 [Spark]
 simulateBase = "sim_ember"
@@ -74,23 +83,47 @@ renderBase = "draw_twirl"
 textureName = "spark.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 0 255"
-finishColor = "255 0 0 250"
-startRadius = 0.4
-finishRadius = 0.3
+finishColor = "255 0 0 0"
+startRadius = 0.1
+finishRadius = 0.05
 animateTime = 2.0
 rotationRate = 90.0
 
 [Trail]
 simulateBase = "sim_ember"
-lifeTime = 5.0
+lifeTime = 3.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xguncar.trailflare"
+renderName2 = "xguncar.trailemit"
+
+[TrailFlare]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 127 255"
+finishColor = "255 127 63 0"
+startRadius = 0.4
+finishRadius = 0.4
+animateTime = 3.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[TrailEmit]
+simulateBase = "sim_ember"
+lifeTime = 3.0
 renderBase = "draw_trail"
+textureName = "trail.tga"
 textureBlend = "one one modulate"
 startColor = "255 80 0 255"
 finishColor = "255 30 0 200"
 startRadius = 0.04
 finishRadius = 0.0
-trailTime = 5.0
 segmentTime = 0.1
+textureRate = 0.2
+
 //////////////////
 
 
@@ -100,7 +133,7 @@ lifeTime = 0.2
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
-startColor = "255 155 0 255"
+startColor = "255 155 0 127"
 finishColor = "255 0 0 0"
 startRadius = 0.5
 finishRadius = 2.0
@@ -108,7 +141,7 @@ animateTime = 0.2
 latitudeBands = 8
 longitudeSegments = 16
 
-[flame]
+[Flame]
 simulateBase = "sim_smoke"
 lifeTime = 0.2
 renderBase = "draw_emit"
@@ -117,18 +150,19 @@ emitDelay = 0.1
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "0.0 0.0 0.0"
 
-[flameemit]
+[FlameEmit]
 simulateBase = "sim_smoke"
 lifeTime = 0.5
 renderBase = "draw_twirl"
 textureName = "bulhit.tga" // flame2
 textureBlend = "one one modulate"
 startColor = " 255 155 0 255"
-finishColor = "255 0 0 0" //
+finishColor = "255 0 0 0"
 startRadius = 0.5
 finishRadius = 4.0
 animateTime = 0.5
 rotationRate = 0.5
+bottomInteractsWithTerrain = false
 
 [Light]
 simulateBase = "sim_null"
@@ -136,14 +170,13 @@ lifeTime = 0.2
 renderBase = "draw_light"
 startColor = "255 255 63 150"
 finishColor = "255 0 0 0"
-startRadius = 5.0
-finishRadius = 5.0
+startRadius = 15.0
+finishRadius = 0.0
 animateTime = 0.2
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
-
 
 [Puff]
 simulateBase = "sim_smoke"
@@ -151,13 +184,14 @@ lifeTime = 1.2
 renderBase = "draw_twirl"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "30 10 10 250"
-finishColor = "50 20 20 0"
+startColor = "10 10 10 250"
+finishColor = "20 20 20 0"
 startRadius = 0.5
 finishRadius = 2.9
 animateTime = 1.2
+bottomInteractsWithTerrain = false
 
-[spark2]
+[Spark2]
 simulateBase = "sim_smoke"
 lifeTime = 0.6
 renderBase = "draw_twirl"
@@ -165,6 +199,8 @@ textureName = "particle.tga" // flame
 textureBlend = "one one modulate"
 startColor = "255 255 200 255"
 finishColor = "255 255 0 0"
-startRadius = 0.3
+startRadius = 0.2
 finishRadius = 0.1
 animateTime = 0.6
+rotationRate = 5.0
+bottomInteractsWithTerrain = false

@@ -1,13 +1,13 @@
 [WeaponClass]
 classLabel = "machinegun"
-altName = "ggntfaf_c"
+//altName = "ggntfaf_c"
 ordName = "magun_a"
 wpnName = "Gatling Gun"
 fireSound = "magun.wav"
 wpnReticle = "gchain"
 wpnCategory = "GUN"
 isAssault = 1
-//flashName = "gmagun_c.flash" // was "/gmaggun_c.flash", didn't work. -GBD
+flashName = "gmagun_a.flash" // was "/gmaggun_c.flash", didn't work. -GBD
 aiRange = 180
 
 [CannonClass]
@@ -16,14 +16,102 @@ shotVariance = 0.033
 shotAlternate = 1
 
 [Flash]
-simulateBase = "sim_null"
-lifeTime = 0.1
+renderBase = "draw_multi"
+renderCount = 5
+renderName1 = "gmagun_a.muzflash"
+renderName2 = "gmagun_a.muzcone"
+renderName3 = "gmagun_a.light"
+renderName4 = "gmagun_a.smoke"
+renderName5 = "gmagun_a.spark"
+renderName6 = "gmagun_a.shell"
+
+[MuzCone]
+renderBase = "draw_geom"
+textureName = "muz2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 120 0 0"
+startRadius = 1.2
+finishRadius = 0.7
+animateTime = 0.06
+geomName = "g_fflash.xsi"//sflash
+
+[MuzFlash]
+renderBase = "draw_geom"
+textureName = "muzfir.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 150 0 0"
+startRadius = 1.6
+finishRadius = 1.1
+animateTime = 0.06
+geomName = "g_sflash.xsi"//sflash
+
+[Shell]
+renderBase = "draw_emit"
+emitName = "gmagun_a.shellemit"
+emitDelay = 0.06
+emitVelocity = "2.0 3.0 0.0"//.4 0 0
+emitVariance = "1.5 2.0 0.0"// .5 .5 .5
+[ShellEmit]
+simulateBase = "sim_ember"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "shell.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.11
+finishRadius = 0.11
+animateTime = 2.0
+rotationRate = 0.1
+
+[Smoke]
+renderBase = "draw_emit"
+emitName = "gmagun_a.smokeemit"
+emitDelay = 0.5
+emitVelocity = "0.0 1.0 0.0"
+emitVariance = "0.1 1.0 0.1"
+[SmokeEmit]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "50 50 50 250"
+finishColor = "60 60 60 0"
+startRadius = 0.1
+finishRadius = 0.3
+animateTime = 2.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[Spark]
+renderBase = "draw_emit"
+emitName = "gmagun_a.sparkemit"
+emitDelay = 0.06
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "10.0 10.0 2.0"
+[SparkEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.4
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 50"
+startRadius = 0.05
+finishRadius = 0.0
+animateTime = 0.4
+rotationRate = 1.0
+BottomInteractsWithTerrain = false
+
+[Light]
 renderBase = "draw_light"
-startColor = "255 255 0 300"
-finishColor = "255 0 0 300"
-startRadius = 2.0
-finishRadius = 6.0
-animateTime = 0.1
+startColor = "255 180 127 100"
+finishColor = "255 180 127 100"
+startRadius = 15.0
+finishRadius = 15.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0

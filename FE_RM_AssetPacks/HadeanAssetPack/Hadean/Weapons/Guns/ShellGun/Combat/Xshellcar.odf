@@ -57,6 +57,7 @@ finishColor = "255 127 0 0"
 startRadius = 0.2
 finishRadius = 2.0 //3.0
 animateTime = 0.5
+bottomInteractsWithTerrain = false
 
 [Spark]
 simulateBase = "sim_ember"
@@ -132,8 +133,9 @@ finishColor = "50 50 50 0"
 startRadius = 0.2
 finishRadius = 0.8
 animateTime = 1.0
+bottomInteractsWithTerrain = false
 
-[spark2]
+[Spark2]
 simulateBase = "sim_smoke"
 lifeTime = 0.6
 renderBase = "draw_twirl"
@@ -144,3 +146,4 @@ finishColor = "255 255 0 0"
 startRadius = 0.1
 finishRadius = 0.01
 animateTime = 0.6
+bottomInteractsWithTerrain = false
