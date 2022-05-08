@@ -144,20 +144,6 @@ animateTime = 1.5
 rotationRate = 1.0
 BottomInteractsWithTerrain = false
 
-[Thrust]
-simulateBase = "sim_null"
-lifeTime = 1.2
-renderBase = "draw_sprite"
-spriteCenter.x = 0.0
-spriteCenter.y = 1.0
-textureName = "ground.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "255 150 100 200"
-finishColor = "255 100 0 0"
-startRadius = 2.0
-finishRadius = 8.0
-animateTime = 1.2
-
 [Light]
 simulateBase = "sim_null"
 lifeTime = 2.5
@@ -234,7 +220,19 @@ startRadius = 0.05
 finishRadius = 0.0
 //trailTime = 2.0
 segmentTime = 0.5 //animateTime = 3.0
-textureRate = 0.1
+textureRate = 0.2
+
+[Char2]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_planar"
+textureName = "fbchar.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 200 150"
+finishColor = "200 100 100 0"
+startRadius = 2.0
+finishRadius = 20.0
+animateTime = 1.0
 
 
 [Ring]
@@ -249,14 +247,16 @@ startRadius = 8.0
 finishRadius = 8.0
 animateTime = 10.0
 
-[char2] // Was named achar2, never worked in FE. -GBD
+[Thrust]
 simulateBase = "sim_null"
-lifeTime = 1.0
-renderBase = "draw_planar"
-textureName = "fbchar.tga"
-textureBlend = "one one modulate"
-startColor = "255 200 200 150"
-finishColor = "200 100 100 0"
+lifeTime = 1.2
+renderBase = "draw_sprite"
+spriteCenter.x = 0.0
+spriteCenter.y = 1.0
+textureName = "ground.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 150 100 200"
+finishColor = "255 100 0 0"
 startRadius = 2.0
-finishRadius = 20.0
-animateTime = 1.0
+finishRadius = 8.0
+animateTime = 1.2
