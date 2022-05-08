@@ -1,0 +1,137 @@
+//================================
+// Dust Circle: Large. 3.0 Lifespan.
+// Used in: Building Explosion
+//================================
+
+[FEDustRingLarge]
+simulateBase = "sim_dust"
+lifeTime = 0.1
+renderBase = "draw_multi"
+renderCount = 16
+renderName1 = "FEDustRingLarge.puff1"
+renderName2 = "FEDustRingLarge.puff2"
+renderName3 = "FEDustRingLarge.puff3"
+renderName4 = "FEDustRingLarge.puff4"
+renderName5 = "FEDustRingLarge.puff5"
+renderName6 = "FEDustRingLarge.puff6"
+renderName7 = "FEDustRingLarge.puff7"
+renderName8 = "FEDustRingLarge.puff8"
+renderName9 = "FEDustRingLarge.puff9"
+renderName10 = "FEDustRingLarge.puff10"
+renderName11 = "FEDustRingLarge.puff11"
+renderName12 = "FEDustRingLarge.puff12"
+renderName13 = "FEDustRingLarge.puff13"
+renderName14 = "FEDustRingLarge.puff14"
+renderName15 = "FEDustRingLarge.puff15"
+renderName16 = "FEDustRingLarge.puff16"
+
+[Puff1] // E
+renderBase = "draw_emit"
+emitName = "FEDustRingLarge.smokeemit"
+emitDelay = 1e6
+emitVelocity = "25.0 0.0 0.0"
+
+[Puff2] // W
+renderBase = "draw_emit"
+emitName = "FEDustRingLarge.smokeemit"
+emitDelay = 1e6
+emitVelocity = "-25.0 0.0 0.0"
+
+[Puff3] // N
+renderBase = "draw_emit"
+emitName = "FEDustRingLarge.smokeemit"
+emitDelay = 1e6
+emitVelocity = "0.0 0.0 25.0"
+
+[Puff4] // S
+renderBase = "draw_emit"
+emitName = "FEDustRingLarge.smokeemit"
+emitDelay = 1e6
+emitVelocity = "0.0 0.0 -25.0"
+
+[Puff5] // NE
+renderBase = "draw_emit"
+emitName = "FEDustRingLarge.smokeemit"
+emitDelay = 1e6
+emitVelocity = "16.678 0.0 16.678"
+
+[Puff6] // NW
+renderBase = "draw_emit"
+emitName = "FEDustRingLarge.smokeemit"
+emitDelay = 1e6
+emitVelocity = "-16.678 0.0 16.678"
+
+[Puff7] // SE
+renderBase = "draw_emit"
+emitName = "FEDustRingLarge.smokeemit"
+emitDelay = 1e6
+emitVelocity = "16.678 0.0 -16.678"
+
+[Puff8] // SW
+renderBase = "draw_emit"
+emitName = "FEDustRingLarge.smokeemit"
+emitDelay = 1e6
+emitVelocity = "-16.678 0.0 -16.678"
+
+[Puff9] // N-NE
+renderBase = "draw_emit"
+emitName = "FEDustRingLarge.smokeemit"
+emitDelay = 1e6
+emitVelocity = "9.567 0.0 23.097"
+
+[Puff10] // N-NW
+renderBase = "draw_emit"
+emitName = "FEDustRingLarge.smokeemit"
+emitDelay = 1e6
+emitVelocity = "-9.567 0.0 23.097"
+
+[Puff11] // N-SE
+renderBase = "draw_emit"
+emitName = "FEDustRingLarge.smokeemit"
+emitDelay = 1e6
+emitVelocity = "9.567 0.0 -23.097"
+
+[Puff12] // N-SW
+renderBase = "draw_emit"
+emitName = "FEDustRingLarge.smokeemit"
+emitDelay = 1e6
+emitVelocity = "-9.567 0.0 -23.097"
+
+[Puff13] // S-NE
+renderBase = "draw_emit"
+emitName = "FEDustRingLarge.smokeemit"
+emitDelay = 1e6
+emitVelocity = "23.097 0.0 9.567"
+
+[Puff14] // S-NW
+renderBase = "draw_emit"
+emitName = "FEDustRingLarge.smokeemit"
+emitDelay = 1e6
+emitVelocity = "-23.097 0.0 9.567"
+
+[Puff15] // S-SE
+renderBase = "draw_emit"
+emitName = "FEDustRingLarge.smokeemit"
+emitDelay = 1e6
+emitVelocity = "23.097 0.0 -9.567"
+
+[Puff16] // S-SW
+renderBase = "draw_emit"
+emitName = "FEDustRingLarge.smokeemit"
+emitDelay = 1e6
+emitVelocity = "-23.097 0.0 -9.567"
+
+[SmokeEmit]
+simulateBase = "sim_dust"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "200 200 200 200"
+finishColor = "127 127 127 0"
+startRadius = 4.0
+finishRadius = 10.0
+animateTime = 3.0
+rotationRate = 5.0
+useTerrainColor = 0.9
+BottomInteractsWithTerrain = false

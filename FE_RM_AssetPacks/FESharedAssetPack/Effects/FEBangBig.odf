@@ -1,0 +1,79 @@
+//================================
+// Bang Fire Fx: Large. 5.0 Lifespan. w/ Light.
+// Used in: Collapse Explosion
+//================================
+
+[FEBangBig]
+simulateBase = "sim_ember"
+lifeTime = 5.0 // how long they last
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "FEBangBig.bangfire"
+renderName2 = "FEBangBig.bangsmoke"
+renderName3 = "FEBangBig.bangsparks"
+renderName4 = "FEBangBig.banglight"
+
+[BangFire]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.1
+emitVelocity = "0.0 3.5 0.0"
+emitVariance = "1.5 1.5 1.5"
+emitLife = 1.0
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 200 127"
+finishColor = "255 100 100 0"
+startRadius = 0.75
+finishRadius = 0.0
+animateTime = 1.0
+rotationRate = 8.0
+BottomInteractsWithTerrain = false
+
+[BangSmoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.1
+emitVelocity = "0.0 6.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitPosVariance = "0.5 0.5 0.5"
+emitLife = 1.0
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 31 31 127"
+finishColor = "63 63 63 0"
+startRadius = 0.8
+finishRadius = 2.0
+animateTime = 1.0
+rotationRate = 8.0
+BottomInteractsWithTerrain = false
+
+[BangSparks]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.02
+emitVelocity = "0.0 4.0 0.0"
+emitVariance = "10.0 10.0 10.0"
+emitPosVariance = "4.0 4.0 4.0"
+emitLife = 0.8
+textureName = "spark3.tga"
+textureBlend = "one one modulate"
+startColor = "255 145 38 255"
+finishColor = "255 145 38 0"
+startRadius = 0.15
+finishRadius = 0.15
+animateTime = 0.8
+rotationRate = 3.0
+BottomInteractsWithTerrain = false
+
+[BangLight]
+renderBase = "draw_light"
+startColor = "255 150 0 500"
+finishColor = "255 150 0 255"
+startRadius = 15.0
+finishRadius = 5.0
+animateTime = 5.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1

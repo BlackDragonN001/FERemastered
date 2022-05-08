@@ -1,0 +1,66 @@
+//================================
+// Bang Fire Fx: Tiny. 1.5 Lifespan. w/o Light.
+// Used in: Damage Fx
+//================================
+
+[FEBangTiny]
+simulateBase = "sim_ember"
+lifeTime = 1.5 // how long they last
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "FEBangTiny.bangfire"
+renderName2 = "FEBangTiny.bangsmoke"
+renderName3 = "FEBangTiny.bangsparks"
+
+[BangFire]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.02
+emitDelayVar = 0.01
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitLife = 0.6
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 200 127"
+finishColor = "255 100 100 0"
+startRadius = 0.1
+finishRadius = 0.0
+animateTime = 0.6
+rotationRate = 8.0
+BottomInteractsWithTerrain = false
+
+[BangSmoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.03
+emitDelayVar = 0.015
+emitVelocity = "0.0 4.0 0.0"
+emitVariance = "1.5 1.5 1.5"
+emitPosVariance = "0.25 0.25 0.25"
+emitLife = 0.8
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 31 31 127"
+finishColor = "63 63 63 0"
+startRadius = 0.2
+finishRadius = 1.0
+animateTime = 0.8
+rotationRate = 8.0
+BottomInteractsWithTerrain = false
+
+[BangSparks]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.02
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "4.0 4.0 4.0"
+emitPosVariance = "2.0 2.0 2.0"
+emitLife = 0.4
+textureName = "spark3.tga"
+textureBlend = "one one modulate"
+startColor = "255 145 38 255"
+finishColor = "255 145 38 0"
+startRadius = 0.05
+finishRadius = 0.05
+animateTime = 0.4
+rotationRate = 3.0
+BottomInteractsWithTerrain = false

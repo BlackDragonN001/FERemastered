@@ -3,65 +3,65 @@
 // Used in: HadPortalOpenFx
 //================================
 
-[FEDustRing]
+[FEDustRingMedium]
 simulateBase = "sim_null"
 lifeTime = 3.0
 renderBase = "draw_multi"
 renderCount = 16
-renderName1 = "FEDustRing.puff1"
-renderName2 = "FEDustRing.puff2"
-renderName3 = "FEDustRing.puff3"
-renderName4 = "FEDustRing.puff4"
-renderName5 = "FEDustRing.puff5"
-renderName6 = "FEDustRing.puff6"
-renderName7 = "FEDustRing.puff7"
-renderName8 = "FEDustRing.puff8"
-renderName9 = "FEDustRing.puff9"
-renderName10 = "FEDustRing.puff10"
-renderName11 = "FEDustRing.puff11"
-renderName12 = "FEDustRing.puff12"
-renderName13 = "FEDustRing.puff13"
-renderName14 = "FEDustRing.puff14"
-renderName15 = "FEDustRing.puff15"
-renderName16 = "FEDustRing.puff16"
+renderName1 = "FEDustRingMedium.puff1"
+renderName2 = "FEDustRingMedium.puff2"
+renderName3 = "FEDustRingMedium.puff3"
+renderName4 = "FEDustRingMedium.puff4"
+renderName5 = "FEDustRingMedium.puff5"
+renderName6 = "FEDustRingMedium.puff6"
+renderName7 = "FEDustRingMedium.puff7"
+renderName8 = "FEDustRingMedium.puff8"
+renderName9 = "FEDustRingMedium.puff9"
+renderName10 = "FEDustRingMedium.puff10"
+renderName11 = "FEDustRingMedium.puff11"
+renderName12 = "FEDustRingMedium.puff12"
+renderName13 = "FEDustRingMedium.puff13"
+renderName14 = "FEDustRingMedium.puff14"
+renderName15 = "FEDustRingMedium.puff15"
+renderName16 = "FEDustRingMedium.puff16"
 
 // 4 main directions
 
-[puff1]
+[Puff1]
 simulateBase = "sim_dust"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "FEDustRing.smokeemit"
+emitName = "FEDustRingMedium.smokeemit"
 emitDelay = 1e6 //3.1 //2.48
 emitVelocity = "12.0 0.0 0.0"
 emitVariance = "2.0 1.0 2.0"
 emitInherit = "1.0 1.0 1.0"
 
-[puff2]
+[Puff2]
 simulateBase = "sim_dust"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "FEDustRing.smokeemit"
+emitName = "FEDustRingMedium.smokeemit"
 emitDelay = 1e6 //3.1 //2.48
 emitVelocity = "0.0 0.0 12.0"
 emitVariance = "2.0 1.0 2.0"
 emitInherit = "1.0 1.0 1.0"
 
-[puff3]
+[Puff3]
 simulateBase = "sim_dust"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "FEDustRing.smokeemit"
+emitName = "FEDustRingMedium.smokeemit"
 emitDelay = 1e6 //3.1 //2.48
 emitVelocity = "-12.0 0.0 0.0"
 emitVariance = "2.0 1.0 2.0"
 emitInherit = "1.0 1.0 1.0"
 
-[puff4]
+[Puff4]
 simulateBase = "sim_dust"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "FEDustRing.smokeemit"
+emitName = "FEDustRingMedium.smokeemit"
 emitDelay = 1e6 //3.1 //2.48
 emitVelocity = "0.0 0.0 -12.0"
 emitVariance = "2.0 1.0 2.0"
@@ -69,41 +69,41 @@ emitInherit = "1.0 1.0 1.0"
 
 // 4 diagonal directions.
 
-[puff5]
+[Puff5]
 simulateBase = "sim_dust"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "FEDustRing.smokeemit"
+emitName = "FEDustRingMedium.smokeemit"
 emitDelay = 1e6 //3.1 //2.48
 emitVelocity = "8.0 0.0 8.0"
 emitVariance = "2.0 1.0 2.0"
 emitInherit = "1.0 1.0 1.0"
 
-[puff6]
+[Puff6]
 simulateBase = "sim_dust"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "FEDustRing.smokeemit"
+emitName = "FEDustRingMedium.smokeemit"
 emitDelay = 1e6 //3.1 //2.48
 emitVelocity = "-8.0 0.0 8.0"
 emitVariance = "2.0 1.0 2.0"
 emitInherit = "1.0 1.0 1.0"
 
-[puff7]
+[Puff7]
 simulateBase = "sim_dust"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "FEDustRing.smokeemit"
+emitName = "FEDustRingMedium.smokeemit"
 emitDelay = 1e6 //3.1 //2.48
 emitVelocity = "8.0 0.0 -8.0"
 emitVariance = "2.0 1.0 2.0"
 emitInherit = "1.0 1.0 1.0"
 
-[puff8]
+[Puff8]
 simulateBase = "sim_dust"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "FEDustRing.smokeemit"
+emitName = "FEDustRingMedium.smokeemit"
 emitDelay = 1e6 //3.1 //2.48
 emitVelocity = "-8.0 0.0 -8.0"
 emitVariance = "2.0 1.0 2.0"
@@ -111,81 +111,81 @@ emitInherit = "1.0 1.0 1.0"
 
 // 8 inbetween directions.
 
-[puff9]
+[Puff9]
 simulateBase = "sim_dust"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "FEDustRing.smokeemit"
+emitName = "FEDustRingMedium.smokeemit"
 emitDelay = 1e6 //3.1 //2.48
 emitVelocity = "10.0 0.0 6.0"
 emitVariance = "2.0 1.0 2.0"
 emitInherit = "1.0 1.0 1.0"
 
-[puff10]
+[Puff10]
 simulateBase = "sim_dust"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "FEDustRing.smokeemit"
+emitName = "FEDustRingMedium.smokeemit"
 emitDelay = 1e6 //3.1 //2.48
 emitVelocity = "10.0 0.0 -6.0"
 emitVariance = "2.0 1.0 2.0"
 emitInherit = "1.0 1.0 1.0"
 
-[puff11]
+[Puff11]
 simulateBase = "sim_dust"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "FEDustRing.smokeemit"
+emitName = "FEDustRingMedium.smokeemit"
 emitDelay = 1e6 //3.1 //2.48
 emitVelocity = "6.0 0.0 10.0"
 emitVariance = "2.0 1.0 2.0"
 emitInherit = "1.0 1.0 1.0"
 
-[puff12]
+[Puff12]
 simulateBase = "sim_dust"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "FEDustRing.smokeemit"
+emitName = "FEDustRingMedium.smokeemit"
 emitDelay = 1e6 //3.1 //2.48
 emitVelocity = "-6.0 0.0 10.0"
 emitVariance = "2.0 1.0 2.0"
 emitInherit = "1.0 1.0 1.0"
 
-[puff13]
+[Puff13]
 simulateBase = "sim_dust"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "FEDustRing.smokeemit"
+emitName = "FEDustRingMedium.smokeemit"
 emitDelay = 1e6 //3.1 //2.48
 emitVelocity = "-10.0 0.0 6.0"
 emitVariance = "2.0 1.0 2.0"
 emitInherit = "1.0 1.0 1.0"
 
-[puff14]
+[Puff14]
 simulateBase = "sim_dust"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "FEDustRing.smokeemit"
+emitName = "FEDustRingMedium.smokeemit"
 emitDelay = 1e6 //3.1 //2.48
 emitVelocity = "-10.0 0.0 -6.0"
 emitVariance = "2.0 1.0 2.0"
 emitInherit = "1.0 1.0 1.0"
 
-[puff15]
+[Puff15]
 simulateBase = "sim_dust"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "FEDustRing.smokeemit"
+emitName = "FEDustRingMedium.smokeemit"
 emitDelay = 1e6 //3.1 //2.48
 emitVelocity = "6.0 0.0 -10.0"
 emitVariance = "2.0 1.0 2.0"
 emitInherit = "1.0 1.0 1.0"
 
-[puff16]
+[Puff16]
 simulateBase = "sim_dust"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "FEDustRing.smokeemit"
+emitName = "FEDustRingMedium.smokeemit"
 emitDelay = 1e6 //3.1 //2.48
 emitVelocity = "-6.0 0.0 -10.0"
 emitVariance = "2.0 1.0 2.0"
@@ -193,7 +193,7 @@ emitInherit = "1.0 1.0 1.0"
 
 
 // this is what actually appears.
-[smokeemit]
+[SmokeEmit]
 simulateBase = "sim_dust"
 lifeTime = 2.0
 renderBase = "draw_twirl"

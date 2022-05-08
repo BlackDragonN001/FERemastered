@@ -19,8 +19,6 @@ renderName11 = "dmgvhcl3.banglight"
 renderName12 = "dmgvhcl3.bolt"
 renderName13 = "dmgvhcl3.puff"
 
-
-
 [SmokeEmitter]
 renderBase = "draw_twirl_trail"
 emitDelay = 0.05
@@ -62,7 +60,7 @@ emitDelayVar = 0.01
 emitVelocity = "0.0 3.0 0.0"
 emitVariance = "9.0 9.0 9.0"
 emitPosVariance = "4.0 4.0 4.0"
-emitInherit = "0.8 0.8 0.8"
+emitInherit = "0.5 0.5 0.5"
 emitLife = 1.2
 textureName = "spark3.tga"
 textureBlend = "one one modulate"
@@ -80,7 +78,7 @@ BottomInteractsWithTerrain = false
 renderBase = "draw_emit"
 emitName = "dmgvhcl3.lightemit"
 emitDelay = 0.1
-emitVelocity = "0.1 0.1 0.1"
+emitVelocity = "0.0 0.1 0.0"
 emitVariance = "0.1 0.1 0.1"
 emitDelayVar = 0.2
 
@@ -90,7 +88,7 @@ lifeTime = 0.1
 renderBase = "draw_light"
 //textureName = "fire.tga" // flame2
 //textureBlend = "one one modulate"
-startColor = " 255 150 0 150"
+startColor = "255 150 0 150"
 finishColor = "255 0 0 150"
 startRadius = 60.0
 finishRadius = 60.0
@@ -109,28 +107,39 @@ renderBase = "draw_emit"
 emitName = "dmgvhcl3.embersemit"
 emitDelay = 0.5
 emitDelayVar = 0.7
-emitVelocity = "2.0 2.0 2.0"
+emitVelocity = "0.0 2.0 0.0"
 emitVariance = "9.0 9.0 9.0"
 
 [EmbersEmit]
 simulateBase = "sim_ember"
 lifeTime = 2.0
-renderBase = "draw_trail" //draw_twirl_trail"
-//emitDelay = 0.05
-//emitDelayVar = 0.9
-//emitVelocity = "7.0 10.0 7.0"
-//emitVariance = "9.0 9.0 9.0"
-//emitInherit = "3.0 3.0 3.0"
-//emitLife = 2.5
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "dmgvhcl3.trailflare"
+renderName2 = "dmgvhcl3.trailemit"
+
+[TrailFlare]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 63 255"
+finishColor = "255 0 0 0"
+startRadius = 0.75
+finishRadius = 0.75
+animateTime = 2.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[TrailEmit]
+simulateBase = "sim_ember"
+lifeTime = 2.0
+renderBase = "draw_trail"
 textureName = "trail.tga" //"spark.tga" // "spark.tga"
 textureBlend = "one one modulate"
 startColor = "255 180 0 255"
 finishColor = "255 0 0 0"
-startRadius = 0.09
-finishRadius = 0.05
-//animateTime = 2.0
-//rotationRate = 40.0
-//trailTime = 0.2
+startRadius = 0.05
+finishRadius = 0.01
 segmentTime = 0.2
 textureRate = 0.1
 
@@ -138,10 +147,10 @@ textureRate = 0.1
 //simulateBase = "sim_smoke"
 //lifeTime = 1000
 renderBase = "draw_emit"
-emitName = "dmgvhcl3.bangemit"
+emitName = "FEBangTiny" //"dmgvhcl3.bangemit"
 emitDelay = 1e6
 //emitDelayVar = 0.2
-emitVelocity = "2.0 2.0 2.0"
+emitVelocity = "0.0 2.0 0.0"
 emitVariance = "15.0 15.0 15.0"
 emitInherit = "0.0 0.0 0.0"
 
@@ -171,7 +180,7 @@ renderBase = "draw_emit"
 emitName = "dmgvhcl3.banglemit"
 emitDelay = 1e6
 //emitDelayVar = 0.7
-emitVelocity = "0.1 0.1 0.1"
+emitVelocity = "0.0 0.1 0.0"
 emitVariance = "1.0 1.0 1.0"
 
 [BangLEmit]

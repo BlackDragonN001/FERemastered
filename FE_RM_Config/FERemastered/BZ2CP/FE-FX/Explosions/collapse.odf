@@ -11,7 +11,7 @@ particleClass1 = "collapse.flash"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
-particleClass2 = "collapse.bang"
+particleClass2 = "FEBangBig"
 particleCount2 = 15
 particleVeloc2 = "50.0 30.0 50.0"
 particleBias2 = "0.0 10.0 0.0"
@@ -21,11 +21,11 @@ particleClass3 = "collapse.explode"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
-particleClass4 = "collapse.dustring"
+particleClass4 = "FEDustRingLarge"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
 
-particleClass5 = "collapse.fire"
+particleClass5 = "FEFireMedium"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
 
@@ -63,7 +63,7 @@ particleCount11 = 30
 particleVeloc11 = "80.0 80.0 80.0"
 particleBias11 = "0.0 20.0 0.0"
 
-particleClass12 = "collapse.firesecondary"
+particleClass12 = "collapse.secondary"
 particleCount12 = 1
 particleVeloc12 = "0.0 0.0 0.0"
 
@@ -133,84 +133,6 @@ lensFlare = 1
 //finishRadius = 120.0
 //animateTime = 0.2
 
-/////////////// Initial Bang Flame offshoots /////////////////////
-
-[Bang]
-simulateBase = "sim_ember"
-lifeTime = 5.0 // how long they last
-renderBase = "draw_multi"
-renderCount = 4
-renderName1 = "collapse.bangfire"
-renderName2 = "collapse.bangsmoke"
-renderName3 = "collapse.bangsparks"
-renderName4 = "collapse.banglight"
-
-[BangFire]
-renderBase = "draw_twirl_trail"
-emitDelay = 0.05
-emitDelayVar = 0.1
-emitVelocity = "0.0 3.5 0.0"
-emitVariance = "1.5 1.5 1.5"
-emitLife = 1.0
-textureName = "fire.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 200 127"
-finishColor = "255 100 100 0"
-startRadius = 0.75
-finishRadius = 0.0
-animateTime = 1.0
-rotationRate = 8.0
-BottomInteractsWithTerrain = false
-
-[BangSmoke]
-renderBase = "draw_twirl_trail"
-emitDelay = 0.05
-emitDelayVar = 0.1
-emitVelocity = "0.0 6.0 0.0"
-emitVariance = "2.0 2.0 2.0"
-emitPosVariance = "0.5 0.5 0.5"
-emitLife = 1.0
-textureName = "smoke2.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "31 31 31 127"
-finishColor = "63 63 63 0"
-startRadius = 0.8
-finishRadius = 2.0
-animateTime = 1.0
-rotationRate = 8.0
-BottomInteractsWithTerrain = false
-
-[BangSparks]
-renderBase = "draw_twirl_trail"
-emitDelay = 0.05
-emitDelayVar = 0.02
-emitVelocity = "0.0 4.0 0.0"
-emitVariance = "10.0 10.0 10.0"
-emitPosVariance = "4.0 4.0 4.0"
-emitLife = 0.8
-textureName = "spark3.tga"
-textureBlend = "one one modulate"
-startColor = "255 145 38 255"
-finishColor = "255 145 38 0"
-startRadius = 0.15
-finishRadius = 0.15
-animateTime = 0.8
-rotationRate = 3.0
-BottomInteractsWithTerrain = false
-
-[BangLight]
-renderBase = "draw_light"
-startColor = "255 150 0 500"
-finishColor = "255 150 0 255"
-startRadius = 15.0
-finishRadius = 5.0
-animateTime = 5.0
-attenuateConstant = 1.0
-attenuateLinear = 0.0
-attenuateQuadratic = 15.0
-lensFlare = 1
-
-
 /////////// Main Explosion /////////////////////
 
 [Explode]
@@ -271,99 +193,19 @@ animateTime = 1.0
 latitudeBands = 8
 longitudeSegments = 16
 
-/////////// Fire Smolders around ground /////////////
+/////////// Secondary Core Explosion /////////////
 
-[Fire]
-simulateBase = "sim_null"
-lifeTime = 2.0 // How long fire lasts...
-renderBase = "draw_emit"
-emitName = "collapse.fire2"
-emitDelay = 0.005
-emitDelayVar = 0.01
-//emitVelocity = "0.0 6.0 0.0"
-//emitVariance = "1.0 1.0 1.0"
-emitPosVariance = "50.0 0.0 50.0"
-
-//[Fire2]
-//simulateBase = "sim_dust" // Put the fire on the ground...
-//lifeTime = 1.0
-//renderBase = "draw_emit"
-//emitName = "collapse.fire3"
-//emitDelay = 1.1
-
-[Fire2]
-simulateBase = "sim_dust" //spray" // Now put the fire on top of collisions :)
-lifeTime = 0.1
-renderBase = "draw_multi"
-renderCount = 3
-renderName1 = "collapse.fireflame"
-renderName2 = "collapse.firesmoke"
-renderName3 = "collapse.firesparks"
-
-[FireFlame]
-renderBase = "draw_twirl_trail"
-emitDelay = 0.05
-emitDelayVar = 0.1
-emitVelocity = "0.0 3.5 0.0"
-emitVariance = "1.5 1.5 1.5"
-emitLife = 1.0 // How long each flame puff lasts...
-textureName = "fire.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 200 127"
-finishColor = "255 100 100 0"
-startRadius = 2.0
-finishRadius = 0.0
-animateTime = 1.0 // must match emitLife
-rotationRate = 8.0
-BottomInteractsWithTerrain = false
-
-[FireSmoke]
-renderBase = "draw_twirl_trail"
-emitDelay = 0.05
-emitDelayVar = 0.1
-emitVelocity = "0.0 6.0 0.0"
-emitVariance = "2.0 2.0 2.0"
-emitPosVariance = "0.5 0.5 0.5"
-emitLife = 1.0 // How long each smoke puff lasts...
-textureName = "smoke2.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "31 31 31 127"
-finishColor = "63 63 63 0"
-startRadius = 1.0
-finishRadius = 3.0
-animateTime = 1.0 // must match emitLife
-rotationRate = 8.0
-BottomInteractsWithTerrain = false
-
-[FireSparks]
-renderBase = "draw_twirl_trail"
-emitDelay = 0.05
-emitDelayVar = 0.02
-emitVelocity = "0.0 4.0 0.0"
-emitVariance = "10.0 10.0 10.0"
-emitPosVariance = "4.0 4.0 4.0"
-emitLife = 0.8 // How long each spark lasts...
-textureName = "spark3.tga"
-textureBlend = "one one modulate"
-startColor = "255 145 38 255"
-finishColor = "255 145 38 0"
-startRadius = 0.2
-finishRadius = 0.2
-animateTime = 0.8 // must match emitLife
-rotationRate = 3.0
-BottomInteractsWithTerrain = false
-
-[FireSecondary]
+[Secondary]
 simulateBase = "sim_dust"
 lifeTime = 2.0
 startDelay = 0.25
 renderBase = "draw_emit"
 emitDelay = 0.2
-emitName = "collapse.firesecond"
+emitName = "collapse.second"
 emitVariance = "3.0 3.0 3.0"
 emitVelocity = "0.0 0.0 0.0"
 emitInherit = "1.0 1.0 1.0"
-[FireSecond]
+[Second]
 simulateBase = "sim_smoke"
 lifeTime = 3.0
 renderBase = "draw_multi"
@@ -404,141 +246,6 @@ finishRadius = 0.0
 //trailTime = 2.0
 segmentTime = 0.5 //animateTime = 3.0
 textureRate = 0.1
-
-//////////////////////// Dust Ring //////////////////////////
-
-[DustRing]
-simulateBase = "sim_dust"
-lifeTime = 0.1
-renderBase = "draw_multi"
-renderCount = 16
-renderName1 = "collapse.dustpuff1"
-renderName2 = "collapse.dustpuff2"
-renderName3 = "collapse.dustpuff3"
-renderName4 = "collapse.dustpuff4"
-renderName5 = "collapse.dustpuff5"
-renderName6 = "collapse.dustpuff6"
-renderName7 = "collapse.dustpuff7"
-renderName8 = "collapse.dustpuff8"
-renderName9 = "collapse.dustpuff9"
-renderName10 = "collapse.dustpuff10"
-renderName11 = "collapse.dustpuff11"
-renderName12 = "collapse.dustpuff12"
-renderName13 = "collapse.dustpuff13"
-renderName14 = "collapse.dustpuff14"
-renderName15 = "collapse.dustpuff15"
-renderName16 = "collapse.dustpuff16"
-
-[DustPuff1] // E
-renderBase = "draw_emit"
-emitName = "collapse.posroll"
-emitDelay = 1e6
-emitVelocity = "25.0 0.0 0.0"
-
-[DustPuff2] // W
-renderBase = "draw_emit"
-emitName = "collapse.posroll"
-emitDelay = 1e6
-emitVelocity = "-25.0 0.0 0.0"
-
-[DustPuff3] // N
-renderBase = "draw_emit"
-emitName = "collapse.posroll"
-emitDelay = 1e6
-emitVelocity = "0.0 0.0 25.0"
-
-[DustPuff4] // S
-renderBase = "draw_emit"
-emitName = "collapse.posroll"
-emitDelay = 1e6
-emitVelocity = "0.0 0.0 -25.0"
-
-[DustPuff5] // NE
-renderBase = "draw_emit"
-emitName = "collapse.posroll"
-emitDelay = 1e6
-emitVelocity = "16.678 0.0 16.678"
-
-[DustPuff6] // NW
-renderBase = "draw_emit"
-emitName = "collapse.posroll"
-emitDelay = 1e6
-emitVelocity = "-16.678 0.0 16.678"
-
-[DustPuff7] // SE
-renderBase = "draw_emit"
-emitName = "collapse.posroll"
-emitDelay = 1e6
-emitVelocity = "16.678 0.0 -16.678"
-
-[DustPuff8] // SW
-renderBase = "draw_emit"
-emitName = "collapse.posroll"
-emitDelay = 1e6
-emitVelocity = "-16.678 0.0 -16.678"
-
-[DustPuff9] // N-NE
-renderBase = "draw_emit"
-emitName = "collapse.posroll"
-emitDelay = 1e6
-emitVelocity = "9.567 0.0 23.097"
-
-[DustPuff10] // N-NW
-renderBase = "draw_emit"
-emitName = "collapse.posroll"
-emitDelay = 1e6
-emitVelocity = "-9.567 0.0 23.097"
-
-[DustPuff11] // N-SE
-renderBase = "draw_emit"
-emitName = "collapse.posroll"
-emitDelay = 1e6
-emitVelocity = "9.567 0.0 -23.097"
-
-[DustPuff12] // N-SW
-renderBase = "draw_emit"
-emitName = "collapse.posroll"
-emitDelay = 1e6
-emitVelocity = "-9.567 0.0 -23.097"
-
-[DustPuff13] // S-NE
-renderBase = "draw_emit"
-emitName = "collapse.posroll"
-emitDelay = 1e6
-emitVelocity = "23.097 0.0 9.567"
-
-[DustPuff14] // S-NW
-renderBase = "draw_emit"
-emitName = "collapse.posroll"
-emitDelay = 1e6
-emitVelocity = "-23.097 0.0 9.567"
-
-[DustPuff15] // S-SE
-renderBase = "draw_emit"
-emitName = "collapse.posroll"
-emitDelay = 1e6
-emitVelocity = "23.097 0.0 -9.567"
-
-[DustPuff16] // S-SW
-renderBase = "draw_emit"
-emitName = "collapse.posroll"
-emitDelay = 1e6
-emitVelocity = "-23.097 0.0 -9.567"
-
-[Posroll]
-simulateBase = "sim_dust"
-lifeTime = 3.0
-renderBase = "draw_twirl"
-textureName = "smoke.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "255 255 255 255"
-finishColor = "127 127 127 0"
-startRadius = 4.0
-finishRadius = 10.0
-animateTime = 3.0
-rotationRate = 5.0
-useTerrainColor = 0.9
-BottomInteractsWithTerrain = false
 
 ////////////////// Main Explosion Fx //////////////////////////////
 

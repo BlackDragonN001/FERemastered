@@ -40,7 +40,7 @@ particleVeloc6 = "50.0 50.0 50.0"
 particleBias6 = "0.0 20.0 0.0"
 particleInherit6 = "0.5 0.5 0.5"
 
-particleClass7 = "xcarxpl.bang"
+particleClass7 = "FEBangSmall"
 particleCount7 = 10
 particleVeloc7 = "10.0 10.0 10.0"
 particleBias7 = "0.0 10.0 0.0"
@@ -266,25 +266,6 @@ finishRadius = 0.0
 //trailTime = 2.0
 segmentTime = 0.5 //animateTime = 3.0
 textureRate = 0.1
-
-[Bang]
-simulateBase = "sim_ember"
-lifeTime = 1.5
-renderBase = "draw_twirl_trail"
-emitDelay = 0.1
-//emitDelayVar = 0.02
-emitVelocity = "2.0 3.0 2.0"
-emitVariance = "15.0 15.0 15.0"
-emitInherit = "0.0 0.0 0.0"
-emitLife = 1.5
-textureName = "fire.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 200 128"
-finishColor = "255 0 0 0"
-startRadius = 0.1
-finishRadius = 0.02
-animateTime = 1.5
-rotationRate = 10.0
 
 [Puff]
 simulateBase = "sim_ember"

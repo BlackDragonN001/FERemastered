@@ -61,7 +61,7 @@ emitDelayVar = 0.01
 emitVelocity = "0.0 5.0 0.0"
 emitVariance = "19.0 19.0 19.0"
 emitPosVariance = "5.0 5.0 5.0"
-emitInherit = "0.8 0.8 0.8"
+emitInherit = "0.5 0.5 0.5"
 emitLife = 1.6
 textureName = "spark3.tga"
 textureBlend = "one one modulate"
@@ -79,7 +79,7 @@ BottomInteractsWithTerrain = false
 renderBase = "draw_emit"
 emitName = "dmgvhcl4.lightemit"
 emitDelay = 0.1
-emitVelocity = "0.1 0.1 0.1"
+emitVelocity = "0.0 0.1 0.0"
 emitVariance = "0.1 0.1 0.1"
 emitDelayVar = 0.02
 
@@ -108,7 +108,7 @@ renderBase = "draw_emit"
 emitName = "dmgvhcl4.embersemit"
 emitDelay = 0.6
 emitDelayVar = 0.7
-emitVelocity = "2.0 2.0 2.0"
+emitVelocity = "0.0 2.0 0.0"
 emitVariance = "9.0 9.0 9.0"
 
 [EmbersEmit]
@@ -137,10 +137,10 @@ textureRate = 0.3
 //simulateBase = "sim_smoke"
 //lifeTime = 1000
 renderBase = "draw_emit"
-emitName = "dmgvhcl4.bangemit"
+emitName = "FEBangTiny" //"dmgvhcl4.bangemit"
 emitDelay = 1e6
 //emitDelayVar = 0.2
-emitVelocity = "2.0 2.0 2.0"
+emitVelocity = "0.0 2.0 0.0"
 emitVariance = "19.0 19.0 19.0"
 
 [BangEmit]
@@ -169,7 +169,7 @@ renderBase = "draw_emit"
 emitName = "dmgvhcl4.banglemit"
 emitDelay = 1e6
 //emitDelayVar = 0.7
-emitVelocity = "0.1 0.1 0.1"
+emitVelocity = "0.0 0.1 0.0"
 emitVariance = "1.0 1.0 1.0"
 
 [BangLEmit]
@@ -195,7 +195,7 @@ renderBase = "draw_emit"
 emitName = "dmgvhcl4.boltemit"
 emitDelay = 0.03
 //emitDelayVar = 0.2
-emitVelocity = "13.0 13.0 13.0"
+emitVelocity = "0.0 0.0 12.0"
 emitVariance = "30.0 30.0 -30.0"
 
 [BoltEmit]

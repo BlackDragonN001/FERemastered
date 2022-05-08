@@ -17,11 +17,11 @@ kickRadius = 60.0
 kickOmega = 3.0
 kickVeloc = 5.0
 
-particleTypes = 15
+particleTypes = 13
 
 particleClass1 = "xvehxpl.flame1"
-particleCount1 = 3
-particleVeloc1 = "0.1 0.1 0.1"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
 particleBias1 = "0.0 0.0 0.0"
 particleInherit1 = "0.5 0.5 0.5"
 
@@ -33,6 +33,7 @@ particleInherit2 = "0.5 0.5 0.5"
 particleClass3 = "xvehxpl.smoke"
 particleCount3 = 20
 particleVeloc3 = "32.0 16.0 32.0"
+particlePosVar3 = "5.0 0.0 5.0"
 particleInherit3 = "0.5 0.5 0.5"
 
 particleClass4 = "xvehxpl.light"
@@ -43,7 +44,7 @@ particleInherit4 = "0.5 0.5 0.5"
 particleClass5 = "xvehxpl.spark"
 particleCount5 = 10
 particleVeloc5 = "110.0 60.0 110.0"
-particleBias5 = "0.0 10.0 0.0"
+particleBias5 = "0.0 20.0 0.0"
 particlePosVar5 = "5.0 0.0 5.0"
 particleInherit5 = "0.8 0.8 0.8"
 
@@ -52,10 +53,11 @@ particleCount6 = 1
 particleVeloc6 = "0.0 0.0 0.0"
 //particleInherit6 = "0.5 0.5 0.5"
 
-particleClass7 = "xvehxpl.ring"
-particleCount7 = 1
-particleVeloc7 = "0.0 0.0 0.0"
-//particleInherit7 = "0.5 0.5 0.5"
+particleClass7 = "xvehxpl.flame3"
+particleCount7 = 5
+particleVeloc7 = "5.0 0.5 5.0"
+particleBias7 = "0.0 5.0 0.0"
+particleInherit7 = "0.5 0.5 0.5"
 
 particleClass8 = "xvehxpl.sparkcore"
 particleCount8 = 3
@@ -66,43 +68,35 @@ particleInherit8 = "0.5 0.5 0.5"
 
 particleClass9 = "xvehxpl.sparktrails"
 particleCount9 = 10
-particleVeloc9 = "100.0 140.0 100.0"
+particleVeloc9 = "100.0 100.0 100.0"
+particleBias9 = "0.0 20.0 0.0"
 particlePosVar9 = "5.0 0.0 5.0"
 particleInherit9 = "0.5 0.5 0.5"
 
-particleClass10 = "xvehxpl.flame3"
-particleCount10 = 5
-particleVeloc10 = "5.0 0.5 5.0"
-particleBias10 = "0.0 5.0 0.0"
+particleClass10 = "xvehxpl.sootemit"
+particleCount10 = 6
+particleVeloc10 = "10.0 20 10.0"
+particleBias10 = "0.0 0.0 0.0"
 particleInherit10 = "0.5 0.5 0.5"
 
-particleClass11 = "xvehxpl.sootemit"
-particleCount11 = 6
-particleVeloc11 = "10.0 20 10.0"
-particleBias11 = "0.0 0.0 0.0"
+particleClass11 = "xvehxpl.flame"
+particleCount11 = 1
+particleVeloc11 = "0.0 10.0 0.0"
+particleBias11 = "0.0 5.0 0.0"
 particleInherit11 = "0.5 0.5 0.5"
 
-particleClass12 = "xvehxpl.flame"
+particleClass12 = "xvehxpl.cloud"
 particleCount12 = 1
 particleVeloc12 = "0.0 10.0 0.0"
 particleBias12 = "0.0 5.0 0.0"
 particleInherit12 = "0.5 0.5 0.5"
 
-particleClass13 = "xvehxpl.cloud"
-particleCount13 = 1
-particleVeloc13 = "0.0 10.0 0.0"
-particleBias13 = "0.0 5.0 0.0"
+particleClass13 = "xvehxpl.Secondary"
+particleCount13 = 2
+particleVeloc13 = "10.0 50.0 10.0"
+particleBias13 = "0.0 10.0 0.0"
+particlePosVar13 = "5.0 0.0 5.0"
 particleInherit13 = "0.5 0.5 0.5"
-
-particleClass14 = "xvehxpl.Secondary"
-particleCount14 = 2
-particleVeloc14 = "10.0 50.0 10.0"
-particleInherit14 = "0.5 0.5 0.5"
-
-particleClass15 = "xvehxpl.ring2"
-particleCount15 = 1
-particleVeloc15 = "0.0 0.0 0.0"
-//particleInherit15 = "0.5 0.5 0.5"
 
 
 [Flame1]
@@ -111,7 +105,7 @@ lifeTime = 1.0
 renderBase = "draw_sprite" //"draw_twirl"
 textureName = "xplcore.tga"
 textureBlend = "one one modulate"
-startColor = " 255 255 255 255"
+startColor = "255 255 255 255"
 finishColor = "255 100 120 0"
 startRadius = 1.0
 finishRadius = 12.0
@@ -125,13 +119,12 @@ lifeTime = 1.2
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = " 255 143 60 255"
+startColor = "255 143 60 255"
 finishColor = "255 72 10 0"
 startRadius = 10.3
 finishRadius = 6.0
 animateTime = 1.2
 rotationRate = 6.0
-
 
 [Smoke]
 simulateBase = "sim_smoke"
@@ -139,7 +132,7 @@ lifeTime = 5.0
 renderBase = "draw_twirl"
 textureName = "smoke2.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = " 40 40 40 255"
+startColor = "40 40 40 255"
 finishColor = "30 15 5 0"
 startRadius = 4.0
 finishRadius = 5.5
@@ -174,6 +167,15 @@ trailTime = 0.2
 segmentTime = 0.2
 
 [Shock]
+simulateBase = "sim_ember"
+lifeTime = 1.0
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "xvehxpl.shockemit"
+renderName2 = "xvehxpl.ring"
+renderName3 = "xvehxpl.ring2"
+
+[ShockEmit]
 simulateBase = "sim_null"
 lifeTime = 0.2
 renderBase = "draw_sphere"
@@ -260,14 +262,13 @@ startColor = "255 200 25 255"
 finishColor = "220 50 5 0"
 startRadius = 0.15
 finishRadius = 0.4
-trailTime = 20.5
-textureRate = 1.0
+textureRate = 0.2
 segmentTime = 0.5
 
 [Flame3]
 simulateBase = "sim_smoke"
 lifeTime = 1.0
-renderBase = "draw_sprite" //"draw_twirl"
+renderBase = "draw_twirl"
 textureName = "xplcore.tga"
 textureBlend = "one one modulate"
 startColor = " 255 255 255 255"
@@ -275,8 +276,8 @@ finishColor = "255 100 120 0"
 startRadius = 10.0
 finishRadius = 0.0
 animateTime = 1.0
-//rotationRate = 0.0
-//BottomInteractsWithTerrain = false
+rotationRate = 2.0
+BottomInteractsWithTerrain = false
 
 [SootEmit]
 simulateBase = "sim_dust"
