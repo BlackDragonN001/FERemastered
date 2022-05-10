@@ -1,7 +1,5 @@
-//scion rec turret
-
 [GameObjectClass]
-geometryName = "fbdturr00.XSI"
+geometryName = "fbdturr00.fbx"
 classLabel = "turret"
 baseName = "fbrecturr"
 collisionRadius = 1.0
@@ -39,10 +37,9 @@ weaponAssault1 = 1
 //lightHard2 = "hp_light_2"
 //lightName2 = "lasersite"
 
-turretCount = 3
+turretCount = 2
 turretName1 = "turret_y"
 turretName2 = "turret_x"
-turretName3 = "hp_eyepoint"
 
 [BuildingClass]
 soundAmbient = "igtow01.wav"
