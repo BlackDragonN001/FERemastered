@@ -20,10 +20,10 @@ kickRadius = 20.0
 kickOmega = 5.0
 kickVeloc = 5.0
 
-particleTypes = 9
+particleTypes = 10
 
 particleClass1 = "xfbseek.chunks"
-particleCount1 = 35
+particleCount1 = 20 //35
 particleVeloc1 = "17.0 17.0 17.0"
 particleBias1 = "0.0 5.0 0.0"
 //particleInherit1 = "0.5 0.5 0.5"
@@ -55,8 +55,9 @@ particleCount6 = 1
 particleVeloc6 = "0.0 0.0 0.0"
 
 particleClass7 = "xfbseek.trail"
-particleCount7 = 30
+particleCount7 = 20 //30
 particleVeloc7 = "30.0 30.0 30.0"
+particleBias7 = "0.0 5.0 0.0"
 //particleInherit7 = "0.5 0.5 0.5"
 
 particleClass8 = "xfbseek.flamesmoke"
@@ -64,9 +65,15 @@ particleCount8 = 11
 particleVeloc8 = "7.0 17.0 7.0"
 particleBias8 = "0.0 12.0 0.0"
 
-particleClass9 = "xfbseek.ring"
-particleCount9 = 1
-particleVeloc9 = "0.0 0.0 0.0"
+particleClass9 = "xfbseek.flame2"
+particleCount9 = 5
+particleVeloc9 = "3.0 3.0 3.0"
+particleBias9 = "0.0 0.0 -8.0"
+particlePosVar9 = "3.0 3.0 0.0"
+
+particleClass10 = "xfbseek.ring"
+particleCount10 = 1
+particleVeloc10 = "0.0 0.0 0.0"
 
 [Chunks]
 simulateBase = "sim_ember"
@@ -86,10 +93,10 @@ BottomInteractsWithTerrain = false
 simulateBase = "sim_smoke"
 lifeTime = 0.8
 renderBase = "draw_twirl_trail"
-textureName = "flame2.tga"
+textureName = "fire.tga" //"flame2.tga"
 textureBlend = "one one modulate"
 startColor = "255 170 100 200"
-finishColor = "255 127 100 0"
+finishColor = "255 127 63 0"
 startRadius = 2.5
 finishRadius = 0.2
 animateTime = 0.8
@@ -201,7 +208,7 @@ longitudeSegments = 16
 
 [Ring]
 simulateBase = "sim_null"
-lifeTime = 0.5
+lifeTime = 0.3
 renderBase = "draw_sphere"
 textureName = "ring2.tga"
 textureBlend = "one one modulate"
@@ -209,9 +216,23 @@ startColor = "255 255 255 190"
 finishColor = "255 200 200 0" 
 startRadius = 2.0
 finishRadius = 10.0
-animateTime = 0.5
+animateTime = 0.3
 latitudeBands = 8
 longitudeSegments = 16
+
+[Flame2]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 200 127"
+finishColor = "127 127 127 0"
+startRadius = 3.0
+finishRadius = 0.0
+animateTime = 1.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
 
 [FlameSmoke]
 simulateBase = "sim_ember"
