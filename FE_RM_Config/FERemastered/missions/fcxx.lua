@@ -345,20 +345,28 @@ function Routine1(R, STATE)
 		M.CheckMatriarch = true;--RunSpeed,_Routine8,1,false
 		M.CerbTalon1 = BuildObject("cvtalon02", 2, M.Position2);
 		Patrol(M.CerbTalon1, "patrol", 1);
-		Goto(BuildObject("evta_IH", 3, "attack"), "attack", 1);
-		Goto(BuildObject("evta_IH", 3, "attack"), "attack", 1);
+		local TempH = BuildObject("evta_IH", 3, "attack");
+		SetEjectRatio(TempH, 0.0);
+		-- Give some Cerberi weapons? -GBD
+		Goto(TempH, "attack", 1);
+		TempH = BuildObject("evta_IH", 3, "attack");
+		SetEjectRatio(TempH, 0.0);
+		-- Give some Cerberi weapons? -GBD
+		Goto(TempH, "attack", 1);
 		ClearObjectives();
 		AddObjective("fcxx01.otf", "white");
 		AudioMessage("fcxx_01.wav");	--Kranios:"Lead me to the Scion Procreator..."
 		Advance(R, 15.0);	--5.0
 	elseif STATE == 1 then
 		M.Attacker1 = BuildObject("evsc_IH", 3, M.Position4);
+		SetEjectRatio(M.Attacker1, 0.0);
 		Attack(M.Attacker1, M.ScionRecy, 1);
 		Advance(R);
 	elseif STATE == 2 then	--LOC_101
 		if GetDistance(M.Attacker1, M.ScionRecy) < 200 then 
 			Goto(M.HadeanTech, M.Jammer, 1);
 			M.Attacker2 = BuildObject("evsc_IH", 3, M.Position4);
+			SetEjectRatio(M.Attacker2, 0.0);
 			Attack(M.Attacker2, M.ScionRecy, 1);
 			Defend2(M.Sentry1, M.ScionRecy, 1);
 			Defend2(M.Sentry2, M.ScionRecy, 1);
@@ -642,9 +650,15 @@ end
 function Routine3(R, STATE)
 	if STATE == 0 then	--LOC_363
 		if not IsAround(M.Scav1) then
-			Goto(BuildObject("evta_IH", 3, "attack"), "attack", 1);
-			Goto(BuildObject("evta_IH", 3, "attack"), "attack", 1);
-			Goto(BuildObject("evta_IH", 3, "attack"), "attack", 1);
+			local TempH = BuildObject("evta_IH", 3, "attack");
+			SetEjectRatio(TempH, 0.0); -- Give cerberi weapons? -GBD
+			Goto(TempH, "attack", 1);
+			TempH = BuildObject("evta_IH", 3, "attack");
+			SetEjectRatio(TempH, 0.0); -- Give cerberi weapons? -GBD
+			Goto(TempH, "attack", 1);
+			TempH = BuildObject("evta_IH", 3, "attack");
+			SetEjectRatio(TempH, 0.0); -- Give cerberi weapons? -GBD
+			Goto(TempH, "attack", 1);
 			Advance(R);
 		end
 	end
@@ -655,8 +669,13 @@ function Routine4(R, STATE)
 	if STATE == 0 then	--LOC_372
 		if not IsAround(M.Scav2) then
 			local leader = BuildObject("evmi_IH", 3, "attack");
+			SetEjectRatio(leader, 0.0); -- Give cerberi weapons? -GBD
 			Goto(leader, "attack", 1);
-			Follow(BuildObject("evmi_IH", 3, "attack"), leader, 1);
+			local TempH = BuildObject("evmi_IH", 3, "attack");
+			SetEjectRatio(TempH, 0.0); -- Give cerberi weapons? -GBD
+			Follow(TempH, leader, 1);
+			TempH = BuildObject("evta_IH", 3, "attack");
+			SetEjectRatio(TempH, 0.0); -- Give cerberi weapons? -GBD
 			Goto(BuildObject("evta_IH", 3, "attack"), "attack", 1);
 			Defend2(M.Sentry1, M.ScionRecy, 0);
 			Defend2(M.Sentry2, M.ScionRecy, 0);
@@ -680,10 +699,14 @@ end
 function Routine5(R, STATE)
 	if STATE == 0 then	--LOC_392
 		if not IsAround(M.Scav3) then
-			local leader = BuildObject("evwalk", 3, "attack");
+			local leader = BuildObject("evwalk", 3, "attack"); -- TODO make Imperial Walker? -GBD
 			Goto(leader, "attack", 1);
-			Follow(BuildObject("evta_IH", 3, "attack"), leader, 1);
-			Follow(BuildObject("evta_IH", 3, "attack"), leader, 1);
+			local TempH = BuildObject("evta_IH", 3, "attack");
+			SetEjectRatio(TempH, 0.0); -- Give cerberi weapons? -GBD
+			Follow(TempH, leader, 1);
+			TempH = BuildObject("evta_IH", 3, "attack");
+			SetEjectRatio(TempH, 0.0); -- Give cerberi weapons? -GBD
+			Follow(TempH, leader, 1);
 			local h = BuildObject("fvatank", 1, "scion");
 			Goto(h, "scion", 1);
 			SetUserTarget(h);
@@ -697,9 +720,14 @@ function Routine6(R, STATE)
 	if STATE == 0 then	--LOC_392
 		if not IsAround(M.Scav4) then
 			local leader = BuildObject("evatu_IH", 3, "attack");
+			SetEjectRatio(leader, 0.0); -- Give cerberi weapons? -GBD
 			Goto(leader, "attack", 1);
-			Follow(BuildObject("evta_IH", 3, "attack"), leader, 1);
-			Follow(BuildObject("evta_IH", 3, "attack"), leader, 1);
+			local TempH = BuildObject("evta_IH", 3, "attack");
+			SetEjectRatio(TempH, 0.0); -- Give cerberi weapons? -GBD
+			Follow(TempH, leader, 1);
+			TempH = BuildObject("evta_IH", 3, "attack");
+			SetEjectRatio(TempH, 0.0); -- Give cerberi weapons? -GBD
+			Follow(TempH, leader, 1);
 			Advance(R);
 		end
 	end
