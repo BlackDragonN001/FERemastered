@@ -1,0 +1,28 @@
+[GameObjectClass] // Special version of Procreator with Terminal. Created by Jayden Hopkins, modifed by Zorn.
+classLabel = "ebrecy"
+geometryName = "ebrecyT00.fbx"
+animCount = 2
+animName1 = "deploy"
+animFile1 = "ebrecy00.fbx"
+animName2 = "loop"
+animFile2 = "ebrecy00_loop.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+
+maxHealth = 14000
+
+[PoweredBuildingClass]
+
+[BuildingClass]
+
+[FactoryClass]
+soundBuild = "ibrecy02.wav"
+soundFinish = "iapc04.wav"
+
+buildItem4 = "evturrs"
+buildItem8 = "evscout_m"
+buildItem9 = "evscoutu"
+buildEmptyItem = 8
+
+[RecyclerClass]
+

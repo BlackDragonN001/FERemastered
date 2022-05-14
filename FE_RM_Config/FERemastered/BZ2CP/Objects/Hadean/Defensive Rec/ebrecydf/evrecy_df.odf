@@ -1,0 +1,19 @@
+[GameObjectClass]
+baseName = "evrecy"
+//geometryName = "evrecydf00.xsi" // Model uses stock Procreator vehicle now. -GBD
+//animCount = 1
+//animName1 = "deploy"
+//animFile1 = "evrecydf01.xsi"
+
+classLabel = "evrecy"
+
+[CraftClass]
+
+[TrackedVehicleClass]
+
+[TrackedDeployableClass]
+
+[DeployBuildingClass]
+deployName = "ebrecy_df"
+
+[RecyclerVehicleClass]

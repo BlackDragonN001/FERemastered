@@ -1,0 +1,22 @@
+[GameObjectClass]
+classLabel = "fvrecy"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 5
+provideName3 = "fvrecy_m"
+provideName4 = "VIRTUAL_CLASS_RECYCLER"
+provideName5 = "VIRTUAL_CLASS_RECYCLERVEHICLE"
+
+////////////////////////////////////
+
+[CraftClass]
+
+[TrackedVehicleClass]
+
+[TrackedDeployableClass]
+
+[DeployBuildingClass]
+deployName = "fbrecy_m"
+
+[RecyclerVehicleClass]

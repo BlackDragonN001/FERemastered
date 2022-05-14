@@ -1,0 +1,20 @@
+[GameObjectClass]
+baseName = "ivrecy"
+classLabel = "ivrecy"
+
+scrapValue = 100
+maxHealth = 6000
+
+[CraftClass]
+TeamTransferrable = false
+
+[TrackedVehicleClass]
+
+[TrackedDeployableClass]
+
+[DeployBuildingClass]
+deployName = "ibrecy_df"
+
+[RecyclerVehicleClass]
+
+[Lod1]

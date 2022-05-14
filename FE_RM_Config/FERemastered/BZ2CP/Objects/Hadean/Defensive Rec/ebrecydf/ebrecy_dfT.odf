@@ -1,0 +1,29 @@
+[GameObjectClass] // Hadean Defense Rec Procreator w/ Terminal. Created by Jayden Hopkins, modified by Zorn.
+baseName = "ebrecy"
+geometryName = "ebrecyDFT00.fbx"
+animCount = 2
+animName1 = "deploy"
+animFile1 = "ebrecy00.fbx"
+animName2 = "loop"
+animFile2 = "ebrecy00_loop.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+
+classLabel = "ebrecy"
+
+[PoweredBuildingClass]
+powerTap1 = "HP_TAP_1"
+powerTap2 = "HP_TAP_2"
+powerName = "ebrectur"
+
+detectRange = 300
+
+[BuildingClass]
+
+[FactoryClass]
+buildItem4 = "evturrs"
+buildItem8 = "evscout_m"
+buildItem9 = "evscoutu"
+buildEmptyItem = 8
+
+[RecyclerClass]
