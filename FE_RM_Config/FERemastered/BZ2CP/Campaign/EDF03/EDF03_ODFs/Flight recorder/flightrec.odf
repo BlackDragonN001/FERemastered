@@ -1,18 +1,64 @@
-[GameObjectClass]
-geometryName = "flightrec.xsi"
-geometryScale = 0.3
-classLabel = "i76building"
-scrapCost = 10	
+[GameObjectClass] // FE:R BlackBox. Model by Cygnus, Texture by SirBramley, Importing by Zorn.
+geometryName = "blackbox00.fbx"
+geometryScale = 0.7
+classLabel = "i76sign"
+scrapCost = 10
 scrapValue = 10
 maxHealth = 10000
 maxAmmo = 0
 unitName = "Flight Recorder"
-heatSignature = 0.8
-imageSignature = 8.0
-radarSignature = 20.0
-collisionRadius = 5.0
-ownsTerrain=0
+heatSignature = 1.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0
+ownsTerrain = 0
+
+effectHard1 = "hp_emit_1"
+effectName1 = "flightrec.render"
 
 [BuildingClass]
-//loadAsDummy=1
-//dummyVersion=1103
+
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "flightrec.smokeemitter"
+renderName2 = "flightrec.light"
+
+[SmokeEmitter]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.15
+emitDelayVar = 0.05
+emitVelocity = "-1.0 2.0 0.0"
+emitVariance = "2.0 1.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 2.0
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 63"
+finishColor = "0 0 0 0"
+startRadius = 0.75
+finishRadius = 2.0
+animateTime = 2.0
+rotationRate = 2.0
+bottomInteractsWithTerrain = false
+
+[Light]
+renderBase = "draw_emit"
+emitName = "flightrec.lightemit"
+emitDelay = 2.0
+emitLife = 1.0
+
+[LightEmit]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_light"
+startColor = "255 0 0 255"
+finishColor = "255 0 0 255"
+startRadius = 10.0
+finishRadius = 10.0
+animateTime = 1.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1

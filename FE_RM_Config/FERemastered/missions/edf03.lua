@@ -275,7 +275,7 @@ function HandleMainState(R, STATE)
 		AddObjective("edf0314.otf", "white");
 		AudioMessage("edf0307.wav");	--Stewart:"An APC went down. Get the flight recorder..."
 		BuildObjectAndLabel("peapc", 0, "bunker4", "APC");
-		M.FlightRecorder = BuildObjectAndLabel("gbag01", 0, "gtow7", "Flight Recorder");
+		M.FlightRecorder = BuildObjectAndLabel("flightrec", 0, "gtow7", "Flight Recorder");
 		SetObjectiveName(M.FlightRecorder, "Flight Recorder");
 		SetObjectiveOn(M.FlightRecorder);
 		Advance(R);
@@ -285,7 +285,7 @@ function HandleMainState(R, STATE)
 			Advance(R);
 		end
 	elseif STATE == 13 then	--LOC_81
-		if GetDistance(M.Player, M.FlightRecorder) < 5 then
+		if GetDistance(M.Player, M.FlightRecorder) < 1.0 then
 			RemoveObject(M.FlightRecorder);
 			AudioMessage("pickup01.wav");
 			ClearObjectives();
