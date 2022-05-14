@@ -72,23 +72,6 @@ startRadius = 0.6
 finishRadius = 0.6
 tracerLength = 1.2
 
-[Flame]
-renderBase = "draw_twirl_trail"
-//textureName = "particle.tga"
-textureName = "cerbbolt.tga"
-textureBlend = "one one modulate"
-startColor = "80 255 255 150"
-finishColor = "0 0 255 0"
-startRadius = 0.3
-finishRadius = 0.05
-animateTime = 0.05
-rotationRate = 10.0
-emitDelay = 0.001
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "0.0 0.0 0.0"
-emitLife = 0.03
-bottomInteractsWithTerrain = false
-
 [Sparks]
 renderBase = "draw_twirl_trail"
 textureName = "particle.tga"
@@ -130,3 +113,20 @@ segmentVariance = "0.35 0.35 0.0"
 animateTime = 0.03
 textureRate = 5.0
 textureSpeed = 0.8
+
+[Flame]
+renderBase = "draw_twirl_trail"
+//textureName = "particle.tga"
+textureName = "particle.tga" //"cerbbolt.tga" // Was cerbbolt, a tracer texture. -GBD
+textureBlend = "one one modulate"
+startColor = "80 255 255 150"
+finishColor = "0 0 255 0"
+startRadius = 0.3
+finishRadius = 0.05
+animateTime = 0.05
+rotationRate = 10.0
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.03
+bottomInteractsWithTerrain = false

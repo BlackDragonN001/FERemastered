@@ -1,0 +1,87 @@
+// ===================
+// FE:Remastered HADEAN CHUNK EXPLOSION
+// ===================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 3
+
+particleClass1 = "xsecxpl_e.light"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xsecxpl_e.core"
+particleCount2 = 1
+particleVeloc2 = "2.0 5.0 2.0"
+particleBias2 = "0.0 2.0 0.0"
+particleInherit2 = "0.5 0.5 0.5"
+
+particleClass3 = "xsecxpl_e.puff"
+particleCount3 = 5
+particleVeloc3 = "20.0 20.0 20.0"
+particleBias3 = "0.0 10.0 0.0"
+particleInherit3 = "0.5 0.5 0.5"
+
+explSound = NULL
+damageRadius = 3.0
+damageValue(N) = 20
+damageValue(L) = 10
+damageValue(H) = 5
+damageValue(S) = 10
+damageValue(D) = 20
+damageValue(A) = 5
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_light"
+startColor = "255 200 200 1200"
+finishColor = "200 127 0 0"
+startRadius = 50.0
+finishRadius = 0.0
+animateTime = 1.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Core]
+simulateBase = "sim_smoke"
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "xplcore.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 200 255"
+finishColor = "150 127 127 0"
+startRadius = 0.3
+finishRadius = 4.0
+animateTime = 1.5
+BottomInteractsWithTerrain = false
+
+[Puff]
+simulateBase = "sim_ember"
+lifeTime = 2.5
+renderBase = "draw_twirl"
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 200 255"
+finishColor = "200 127 63 0"
+startRadius = 0.2
+finishRadius = 0.2
+animateTime = 2.5
+BottomInteractsWithTerrain = false
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 5.0
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "50 50 50 255"
+finishColor = "30 15 5 0"
+startRadius = 3.0
+finishRadius = 6.0
+animateTime = 5.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
