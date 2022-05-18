@@ -1,6 +1,6 @@
 [Start]
 consClass = "cvcons02"
-scavClass = "cvscav02"
+scavClass = "cvscav"
 
 [Cheat]
 moneyAmount = 20
@@ -10,7 +10,7 @@ moneyDelay = 5
 [Plan1]
 planType = "buildminimums"
 planpriority = 200
-buildtype1 = "cvscav02"
+buildtype1 = "cvscav"
 buildcount1 = 2
 
 [plan2]

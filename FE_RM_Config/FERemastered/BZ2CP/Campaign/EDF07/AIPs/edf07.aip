@@ -1,7 +1,7 @@
 [Start]
 scrapCount = 100
 consClass = "cvcons02"
-scavClass = "cvscav02"
+scavClass = "cvscav"
 IdleAllCraft = false // Prevent Interrupting AI.
 
 [IdleDispatcher]
@@ -127,9 +127,9 @@ buildLoc3 = "CGTOW3"
 planType = "BuildMinimums"
 planPriority = 170
 planCondition = "NotExists"
-planConditionClass = "cvserv02"
+planConditionClass = "cvserv"
 planConditionCount = 2
-buildType1 = "cvserv02"
+buildType1 = "cvserv"
 buildCount1 = 2
 buildIfNoIdle = 1
 
@@ -174,12 +174,12 @@ serviceUnit = "Cbsbay"
 [Plan9]
 planType = "Service"
 planPriority = 110
-serviceUnit = "cvserv02"
+serviceUnit = "cvserv"
 unitType1 = "cbrecy02"
 unitType2 = "cbgtow"
 unitType3 = "cbsbay"
 unitType4 = "cbfact02"
-unitType5 = "cvturr02"
+unitType5 = "cvturr"
 buildIfNoIdle = 1
 
 [Plan10]

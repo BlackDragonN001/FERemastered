@@ -124,7 +124,7 @@ function InitialSetup()
 		"cvtank",
 		"cvwalk",
 		"cvscout",
-		"cvturr02",
+		"cvturr",
 		"cvrbomb",
 		"iveisen",
 		"scibomb",
@@ -628,19 +628,19 @@ function Routine2(R, STATE)
 		Patrol(M.CerbPatrol2, "patrol", 1);
 		Wait(R, 50.0);
 	elseif not IsAround(M.CerbTurr1) then
-		M.CerbTurr1 = BuildObject("cvturr02", 2, M.Position2);
+		M.CerbTurr1 = BuildObject("cvturr", 2, M.Position2);
 		Goto(M.CerbTurr1, "walk1", 1);
 		Wait(R, 50.0);
 	elseif not IsAround(M.CerbTurr2) then
-		M.CerbTurr2 = BuildObject("cvturr02", 2, M.Position2);
+		M.CerbTurr2 = BuildObject("cvturr", 2, M.Position2);
 		Goto(M.CerbTurr2, "walk2", 1);
 		Wait(R, 50.0);
 	elseif not IsAround(M.CerbTurr3) then
-		M.CerbTurr3 = BuildObject("cvturr02", 2, M.Position2);
+		M.CerbTurr3 = BuildObject("cvturr", 2, M.Position2);
 		Goto(M.CerbTurr3, "walk3", 1);
 		Wait(R, 50.0);
 	elseif not IsAround(M.CerbTurr4) then
-		M.CerbTurr4 = BuildObject("cvturr02", 2, M.Position2);
+		M.CerbTurr4 = BuildObject("cvturr", 2, M.Position2);
 		Goto(M.CerbTurr4, "walk4", 1);
 		Wait(R, 50.0);
 	end
