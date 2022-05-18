@@ -1,10 +1,13 @@
 [GameObjectClass]
 classLabel = "ibfact"
 
+scrapValue = 15
+
 [PoweredBuildingClass]
 
 [BuildingClass]
 
 [FactoryClass]
+WeaponConfig = "iweapon_r"
 
 [Lod1]
