@@ -73,8 +73,6 @@ rotationRate = 3.0
 BottomInteractsWithTerrain = false
 
 [Light]
-//simulateBase = "sim_smoke"
-//lifeTime = 0.1
 renderBase = "draw_emit"
 emitName = "dmgvhcl_e3.lightemit"
 emitDelay = 0.1
@@ -86,23 +84,17 @@ emitDelayVar = 0.2
 simulateBase = "sim_smoke"
 lifeTime = 0.1
 renderBase = "draw_light"
-//textureName = "fire.tga" // flame2
-//textureBlend = "one one modulate"
 startColor = " 255 150 0 150"
 finishColor = "255 0 0 150"
 startRadius = 60.0
 finishRadius = 60.0
 animateTime = 0.1
-//rotationRate = 5.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
-//emitDelayVar = 3.9
 
 [Embers]
-//simulateBase = "sim_smoke"
-//lifeTime = 100
 renderBase = "draw_emit"
 emitName = "dmgvhcl_e3.embersemit"
 emitDelay = 0.5
@@ -144,15 +136,13 @@ textureRate = 0.5
 textureSpeed = 0.0
 
 [Bang]
-//simulateBase = "sim_smoke"
-//lifeTime = 1000
 renderBase = "draw_emit"
 emitName = "FEBangTiny" //"dmgvhcl_e3.bangemit"
 emitDelay = 1e6
 //emitDelayVar = 0.2
 emitVelocity = "0.0 2.0 0.0"
 emitVariance = "15.0 15.0 15.0"
-emitInherit = "0.0 0.0 0.0"
+emitInherit = "0.8 0.8 0.8"
 
 [BangEmit]
 simulateBase = "sim_ember"
@@ -174,14 +164,13 @@ animateTime = 1.5
 rotationRate = 10.0
 
 [BangLight]
-//simulateBase = "sim_smoke"
-//lifeTime = 1000
 renderBase = "draw_emit"
 emitName = "dmgvhcl_e3.banglemit"
 emitDelay = 1e6
 //emitDelayVar = 0.7
 emitVelocity = "0.0 0.1 0.0"
 emitVariance = "1.0 1.0 1.0"
+emitInherit = "0.8 0.8 0.8"
 
 [BangLEmit]
 simulateBase = "sim_smoke"
@@ -200,8 +189,6 @@ lensFlare = false
 //emitDelayVar = 3.9
 
 [Bolt]
-//simulateBase = "sim_smoke"
-//lifeTime = 10
 renderBase = "draw_emit"
 emitName = "dmgvhcl_e3.boltemit"
 emitDelay = 0.02
@@ -226,8 +213,6 @@ animateTime = 0.1
 textureRate = 0.01
 
 [Puff]
-//simulateBase = "sim_smoke"
-//lifeTime = 1000
 renderBase = "draw_emit"
 emitName = "dmgvhcl_e3.puffemit"
 emitDelay = 1e6

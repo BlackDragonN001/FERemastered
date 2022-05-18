@@ -12,7 +12,7 @@ maxHealth = 8000
 addHealth = 10
 maxAmmo = 14000
 addAmmo = 50
-explosionName = "kamixpl"
+explosionName = "dcarxpl"
 unitName = "Demon"
 aiName = "TankFriend"
 aiName2 = "TankEnemy"
@@ -62,6 +62,8 @@ periodScan = 2.0
 velocJam = 2.0
 engageRange = 450
 
+xplCrash = "xcarxpl_c"
+
 braccelFactor = 0.03
 velFactor = 0.2
 steerFactor = 1.5
@@ -90,6 +92,11 @@ holdMsg = "ivtank12.wav"
 user1Msg = ""  
 killedMsg = "ivtank07.wav"
 diedMsg = ""
+
+damageEffect1 = "dmgvhcl_c1"
+damageEffect2 = "dmgvhcl_c2"
+damageEffect3 = "dmgvhcl_c3"
+damageEffect4 = "dmgvhcl_c4"
 
 [HoverCraftClass]
 setAltitude = 30.0
@@ -120,7 +127,7 @@ soundThrust = "carrier.wav"
 renderBase = "draw_twirl_trail"
 emitDelay = 0.005
 emitDelayVar = 0.0
-emitVelocity = "0.0 0.0 10.0"
+emitVelocity = "0.0 -10.0 0.0"
 emitVariance = "2.0 2.0 2.0"
 emitInherit = "0.2 0.2 0.2"
 emitLife = 0.2

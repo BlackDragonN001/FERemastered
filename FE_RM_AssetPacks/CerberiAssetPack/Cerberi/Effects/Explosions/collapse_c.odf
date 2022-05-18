@@ -1,5 +1,5 @@
 // =================
-// FE:Remastered HADEAN BUILDING COLLAPSE EXPLOSION
+// FE:Remastered CERBERI BUILDING COLLAPSE EXPLOSION
 // =================
 
 [ExplosionClass]
@@ -7,17 +7,15 @@ classLabel = "explosion"
 
 particleTypes = 12
 
-particleClass1 = "collapse_e.flash"
+particleClass1 = "collapse_c.flash"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
-particleClass2 = "FEBangBig"
+particleClass2 = "collapse_c.bolt"
 particleCount2 = 10
-particleVeloc2 = "50.0 30.0 50.0"
-particleBias2 = "0.0 10.0 0.0"
-particlePosVar2 = "5.0 10.0 5.0"
+particleVeloc2 = "0.0 0.0 0.0"
 
-particleClass3 = "collapse_e.explode"
+particleClass3 = "collapse_c.explode"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
@@ -25,45 +23,45 @@ particleClass4 = "FEDustRingLarge"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
 
-particleClass5 = "FEFireMedium"
+particleClass5 = "FEBFireMedium"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
 
 // Main explosion Fx.
 
-particleClass6 = "collapse_e.core"
+particleClass6 = "collapse_c.core"
 particleCount6 = 1
 particleVeloc6 = "0.0 2.0 0.0"
 particleBias6 = "0.0 3.0 0.0"
 
-particleClass7 = "collapse_e.smoke"
+particleClass7 = "collapse_c.smoke"
 particleCount7 = 3
 particleVeloc7 = "7.0 10.0 7.0"
 particleBias7 = "0.0 25.0 0.0"
 particlePosVar7 = "15.0 0.0 15.0"
 
-particleClass8 = "collapse_e.flame"
+particleClass8 = "collapse_c.flame"
 particleCount8 = 5
 particleVeloc8 = "7.0 7.0 7.0"
 particleBias8 = "0.0 15.0 0.0"
 particlePosVar8 = "15.0 0.0 15.0"
 
-particleClass9 = "collapse_e.sparks"
+particleClass9 = "collapse_c.sparks"
 particleCount9 = 20
 particleVeloc9 = "150.0 150.0 150.0"
 particleBias9 = "0.0 0.0 0.0"
 
-particleClass10 = "collapse_e.trail"
-particleCount10 = 20
+particleClass10 = "collapse_c.trail"
+particleCount10 = 25
 particleVeloc10 = "50.0 50.0 50.0"
 particleBias10 = "0.0 10.0 0.0"
 
-particleClass11 = "collapse_e.puff"
-particleCount11 = 20
+particleClass11 = "collapse_c.puff"
+particleCount11 = 30
 particleVeloc11 = "80.0 80.0 80.0"
 particleBias11 = "0.0 20.0 0.0"
 
-particleClass12 = "collapse_e.secondary"
+particleClass12 = "collapse_c.secondary"
 particleCount12 = 1
 particleVeloc12 = "0.0 0.0 0.0"
 
@@ -86,18 +84,18 @@ simulateBase = "sim_null"
 lifeTime = 1.0
 renderBase = "draw_multi"
 renderCount = 2
-renderName1 = "collapse_e.flashlight"
-renderName2 = "collapse_e.flashwave"
-//renderName3 = "collapse_e.flashtexture"
+renderName1 = "collapse_c.flashlight"
+renderName2 = "collapse_c.flashwave"
+//renderName3 = "collapse_c.flashtexture"
 
 [FlashWave]
 simulateBase = "sim_null"
 lifeTime = 0.5
 renderBase = "draw_wave"
-textureName = "wave2.tga"
+textureName = "cwave.tga" //"wave2.tga"
 textureBlend = "one one modulate"
-startColor = "255 225 196 240"
-finishColor = "255 127 0 0"
+startColor = "255 225 255 240"
+finishColor = "0 0 255 0"
 startRadius = 5.0
 finishRadius = 60.0
 animateTime = 0.5
@@ -112,7 +110,7 @@ simulateBase = "sim_null"
 lifeTime = 0.3
 renderBase = "draw_light"
 startColor = "2550 2550 2550 1000"
-finishColor = "255 200 127 255"
+finishColor = "127 200 255 255"
 startRadius = 120.0
 finishRadius = 0.0
 animateTime = 0.3
@@ -140,10 +138,10 @@ simulateBase = "sim_dust" // start on the ground.
 lifeTime = 3.0
 renderBase = "draw_multi"
 renderCount = 4
-renderName1 = "collapse_e.explodesphere"
-renderName2 = "collapse_e.explodelight"
-renderName3 = "collapse_e.explodering"
-renderName4 = "collapse_e.explodering2"
+renderName1 = "collapse_c.explodesphere"
+renderName2 = "collapse_c.explodelight"
+renderName3 = "collapse_c.explodering"
+renderName4 = "collapse_c.explodering2"
 
 [ExplodeSphere]
 simulateBase = "sim_null"
@@ -151,18 +149,18 @@ lifeTime = 0.5
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
-startColor = "127 63 31 127"
-finishColor = "127 96 63 0"
+startColor = "127 63 127 127"
+finishColor = "31 96 127 0"
 startRadius = 1.0
-finishRadius = 60.0
+finishRadius = 80.0
 animateTime = 0.5
 latitudeBands = 8
 longitudeSegments = 16
 
 [ExplodeLight]
 renderBase = "draw_light"
-startColor = "255 200 0 255"
-finishColor = "255 127 0 255"
+startColor = "0 200 255 255"
+finishColor = "0 127 255 255"
 startRadius = 100.0
 finishRadius = 0.0
 animateTime = 3.0
@@ -173,7 +171,7 @@ lensFlare = 0
 
 [ExplodeRing]
 renderBase = "draw_planar"
-textureName = "fbchar.tga"
+textureName = "cringa3.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 250"
 finishColor = "250 250 250 0"
@@ -183,7 +181,7 @@ animateTime = 1.0
 
 [ExplodeRing2]
 renderBase = "draw_sphere"
-textureName = "ring2.tga"
+textureName = "cring2.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 250"
 finishColor = "255 255 255 0"
@@ -201,7 +199,7 @@ lifeTime = 2.0
 startDelay = 0.25
 renderBase = "draw_emit"
 emitDelay = 0.2
-emitName = "collapse_e.second"
+emitName = "collapse_c.second"
 emitVariance = "3.0 3.0 3.0"
 emitVelocity = "0.0 0.0 0.0"
 emitInherit = "1.0 1.0 1.0"
@@ -210,8 +208,8 @@ simulateBase = "sim_smoke"
 lifeTime = 3.0
 renderBase = "draw_multi"
 renderCount = 2
-renderName1 = "collapse_e.flameemit"
-renderName2 = "collapse_e.smokeemit"
+renderName1 = "collapse_c.flameemit"
+renderName2 = "collapse_c.smokeemit"
 
 ////////////////////// Trails //////////////////////////
 
@@ -220,54 +218,77 @@ simulateBase = "sim_ember"
 lifeTime = 5.0
 renderBase = "draw_multi"
 renderCount = 2
-renderName1 = "collapse_e.trailflare"
-renderName2 = "collapse_e.trailemit"
+renderName1 = "collapse_c.trailflare"
+renderName2 = "collapse_c.trailemit"
 
 [TrailFlare]
 renderBase = "draw_twirl"
 textureName = "lightflare.tga"
 textureBlend = "one one modulate"
-startColor = "255 200 127 255"
-finishColor = "255 127 63 0"
-startRadius = 0.75
-finishRadius = 0.75
+startColor = "127 200 255 255"
+finishColor = "63 127 255 0"
+startRadius = 0.9
+finishRadius = 0.9
 animateTime = 5.0
 rotationRate = 5.0
 BottomInteractsWithTerrain = false
 
 [TrailEmit]
 renderBase = "draw_trail"
-textureName = "trail.tga"
+textureName = "arctrail.tga"
 textureBlend = "one one modulate"
-startColor = "255 127 0 200"
-finishColor = "255 0 0 0"
-startRadius = 0.1
-finishRadius = 0.0
+startColor = "0 127 255 200"
+finishColor = "0 0 255 0"
+startRadius = 0.25
+finishRadius = 0.25
 //trailTime = 2.0
 segmentTime = 0.5 //animateTime = 3.0
-textureRate = 0.2
+textureRate = 1.0
+textureSpeed = -2.0
 
 ////////////////// Main Explosion Fx //////////////////////////////
 
 [Core]
 simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "collapse_c.core1"
+renderName2 = "collapse_c.core2"
+
+[Core1]
+simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_twirl"
-textureName = "xplcore.tga"
+textureName = "xplcore2.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 200"
-finishColor = "255 200 200 0"
+startColor = "127 63 255 200"
+finishColor = "0 127 255 0"
 startRadius = 10.0
 finishRadius = 25.0
 animateTime = 1.0
 rotationRate = 2.0
 BottomInteractsWithTerrain = false
 
+[Core2]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "plascore2.tga"
+textureBlend = "one one modulate"
+startColor = "63 31 255 255"
+finishColor = "255 127 0 0"
+startRadius = 7.0
+finishRadius = 15.0
+animateTime = 1.0
+rotationRate = 3.0
+BottomInteractsWithTerrain = false
+
 [SmokeEmit]
 simulateBase = "sim_smoke"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "collapse_e.smoke"
+emitName = "collapse_c.smoke"
 emitDelay = 1e6
 emitVelocity = "0.0 12.0 0.0"
 emitVariance = "5.0 5.0 5.0"
@@ -278,7 +299,7 @@ lifeTime = 5.0
 renderBase = "draw_twirl"
 textureName = "smoke2.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "255 100 0 100"
+startColor = "63 63 127 100"
 finishColor = "127 127 127 0"
 startRadius = 10.0
 finishRadius = 40.0
@@ -290,7 +311,7 @@ BottomInteractsWithTerrain = false
 simulateBase = "sim_smoke"
 lifeTime = 0.1
 renderBase = "draw_emit"
-emitName = "collapse_e.flame"
+emitName = "collapse_c.flame"
 emitDelay = 1e6
 emitVelocity = "0.0 8.0 0.0"
 emitVariance = "5.0 5.0 5.0"
@@ -299,10 +320,10 @@ emitPosVariance = "8.0 0.0 8.0"
 simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_twirl"
-textureName = "fire.tga" // flame2
+textureName = "flame.tga" // flame2
 textureBlend = "one one modulate"
-startColor = "255 180 0 200"
-finishColor = "255 0 0 0"
+startColor = "63 31 255 200"
+finishColor = "255 127 0 0"
 startRadius = 5.0
 finishRadius = 10.0
 animateTime = 1.0
@@ -315,8 +336,8 @@ lifeTime = 3.0
 renderBase = "draw_twirl"
 textureName = "spark.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 0 255"
-finishColor = "255 0 0 0"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
 startRadius = 0.1
 finishRadius = 0.1
 animateTime = 3.0
@@ -328,8 +349,33 @@ lifeTime = 4.0
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = "255 150 0 255"
-finishColor = "200 0 0 0"
+startColor = "0 150 255 255"
+finishColor = "0 0 255 0"
 startRadius = 0.5
 finishRadius = 0.1
 animateTime = 4.0
+
+[Bolt]
+simulateBase = "sim_smoke"
+lifeTime = 0.3
+renderBase = "draw_emit"
+emitName = "collapse_c.boltemit"
+emitDelay = 0.025
+emitDelayVar = 0.02
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "300.0 300.0 300.0"
+
+[BoltEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_bolt"
+textureName = "bolt4.tga"
+textureBlend = "one one modulate"
+startColor = "63 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.1
+finishRadius = 0.25
+segmentLength = 0.5
+segmentVariance = "1.0 1.0 0.0"
+animateTime = 0.1
+textureRate = 0.01

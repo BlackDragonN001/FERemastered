@@ -69,14 +69,13 @@ rotationRate = 3.0
 BottomInteractsWithTerrain = false
 
 [Puff]
-//simulateBase = "sim_smoke"
-//lifeTime = 1000
 renderBase = "draw_emit"
 emitName = "dmgvhcl_e2.puffemit"
 emitDelay = 1e6
 //emitDelayVar = 0.2
 emitVelocity = "0.0 1.0 0.0"
 emitVariance = "1.0 1.0 1.0"
+emitInherit = "0.8 0.8 0.8"
 
 [PuffEmit]
 simulateBase = "sim_smoke"
@@ -98,14 +97,13 @@ animateTime = 1.0 //.5
 rotationRate = 2.0
 
 [Puff2]
-//simulateBase = "sim_smoke"
-//lifeTime = 1000
 renderBase = "draw_emit"
 emitName = "dmgvhcl_e2.puff2emit"
 emitDelay = 1e6
 //emitDelayVar = 0.2
 emitVelocity = "0.0 0.2 0.0"
 emitVariance = "1.0 1.0 1.0"
+emitInherit = "0.8 0.8 0.8"
 
 [Puff2Emit]
 simulateBase = "sim_smoke"
@@ -127,8 +125,6 @@ animateTime = 0.5
 rotationRate = 10.0
 
 [Light]
-//simulateBase = "sim_smoke"
-//lifeTime = 1000
 renderBase = "draw_emit"
 emitName = "dmgvhcl_e2.lightemit"
 emitDelay = 1e6
@@ -140,23 +136,17 @@ emitVariance = "1.0 1.0 1.0"
 simulateBase = "sim_smoke"
 lifeTime = 0.3
 renderBase = "draw_light"
-textureName = "fire.tga" // flame2
-textureBlend = "one one modulate"
 startColor = " 255 255 0 1050"
 finishColor = "255 0 0 30"
 startRadius = 20.0
 finishRadius = 20.0
 animateTime = 0.3
-rotationRate = 5.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = false
-//emitDelayVar = 3.9
 
 [LightFlash]
-//simulateBase = "sim_smoke"
-//lifeTime = 0.1
 renderBase = "draw_emit"
 emitName = "dmgvhcl_e2.lightemit2"
 emitDelay = 0.1
@@ -183,14 +173,13 @@ lensFlare = false
 //emitDelayVar = 3.9
 
 [Bolt]
-//simulateBase = "sim_smoke"
-//lifeTime = 10
 renderBase = "draw_emit"
 emitName = "dmgvhcl_e2.boltemit"
 emitDelay = 0.06
 //emitDelayVar = 0.2
 emitVelocity = "0.0 0.0 15.0"
 emitVariance = "0.0 0.0 -30.0"
+emitInherit = "1.0 1.0 1.0"
 
 [BoltEmit]
 simulateBase = "sim_smoke"

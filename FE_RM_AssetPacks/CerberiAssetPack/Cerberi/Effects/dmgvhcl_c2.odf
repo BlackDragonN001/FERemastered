@@ -1,0 +1,188 @@
+// ===================
+// CERBERI MEDIUM DAMAGE STATE
+// ===================
+
+[DmgVhcl_c2]
+renderBase = "draw_multi"
+renderCount = 6
+renderName1 = "dmgvhcl_c2.smokeemitter"
+renderName2 = "dmgvhcl_c2.flameemitter"
+renderName3 = "dmgvhcl_c2.sparkemitter"
+renderName4 = "dmgvhcl_c2.puff"
+renderName5 = "dmgvhcl_c2.light"
+renderName6 = "dmgvhcl_c2.bolt"
+
+[SmokeEmitter]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.03
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitPosVariance = "1.0 1.0 1.0"
+emitLife = 2.0
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "15 15 15 63"
+finishColor = "31 31 31 0"
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 2.0
+rotationRate = 2.0
+BottomInteractsWithTerrain = false
+
+[FlameEmitter]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.02
+emitDelayVar = 0.02
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.5 0.5 0.5"
+emitPosVariance = "1.5 1.5 1.5"
+emitLife = 0.8
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "0 127 255 178"
+finishColor = "255 127 0 0"
+startRadius = 1.0
+finishRadius = 0.2
+animateTime = 0.8
+rotationRate = 10.0
+BottomInteractsWithTerrain = false
+
+[SparkEmitter]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.04
+emitDelayVar = 0.02
+emitVelocity = "0.0 4.0 0.0"
+emitVariance = "10.0 10.0 10.0"
+emitPosVariance = "4.0 4.0 4.0"
+emitInherit = "0.8 0.8 0.8"
+emitLife = 1.2
+textureName = "spark3.tga"
+textureBlend = "one one modulate"
+startColor = "63 170 255 255"
+finishColor = "255 145 31 0"
+startRadius = 0.2
+finishRadius = 0.06
+animateTime = 1.2
+rotationRate = 3.0
+BottomInteractsWithTerrain = false
+
+[Puff]
+renderBase = "draw_emit"
+emitName = "dmgvhcl_c2.puffemit"
+emitDelay = 10.0
+emitDelayVar = 60.0
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitInherit = "0.8 0.8 0.8"
+
+[PuffEmit]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "dmgvhcl_c2.fireemit"
+renderName2 = "dmgvhcl_c2.smokeemit"
+renderName3 = "dmgvhcl_c2.lightemit"
+
+[FireEmit]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.015
+emitDelayVar = 0.02
+emitVelocity = "0.0 4.0 0.0"
+emitVariance = "2.0 3.0 2.0"
+emitInherit = "0.5 0.5 0.5"
+emitPosVariance = "2.5 2.5 2.5"
+emitLife = 1.0
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "63 63 255 178"
+finishColor = "255 127 0 0"
+startRadius = 1.2
+finishRadius = 0.3
+animateTime = 1.0
+rotationRate = 10.0
+BottomInteractsWithTerrain = false
+
+[SmokeEmit]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.1
+emitDelayVar = 0.05
+emitVelocity = "0.0 6.0 0.0"
+emitVariance = "6.0 4.0 6.0"
+emitInherit = "0.5 0.5 0.5"
+emitPosVariance = "3.5 3.5 3.5"
+emitLife = 1.75
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 127"
+finishColor = "0 0 0 0"
+startRadius = 1.5
+finishRadius = 4.0
+animateTime = 1.75
+rotationRate = 2.0
+BottomInteractsWithTerrain = false
+
+[LightEmit]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_light"
+startColor = "126 63 255 1050"
+finishColor = "0 127 255 30"
+startRadius = 50.0
+finishRadius = 0.0
+animateTime = 1.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
+
+[Light]
+renderBase = "draw_emit"
+emitName = "dmgvhcl_c2.lightemit2"
+emitDelay = 0.1
+//emitDelayVar = 0.02
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitInherit = "0.8 0.8 0.8"
+
+[LightEmit2]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_light"
+startColor = "0 150 255 255"
+finishColor = "0 0 255 255"
+startRadius = 25.0
+finishRadius = 25.0
+animateTime = 0.1
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
+
+[Bolt]
+renderBase = "draw_emit"
+emitName = "dmgvhcl_c2.boltemit"
+emitDelay = 0.1
+emitDelayVar = 0.5
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "40.0 40.0 40.0"
+emitInherit = "1.0 1.0 1.0"
+emitPosVariance = "3.0 3.0 3.0"
+
+[BoltEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.15
+renderBase = "draw_bolt"
+textureName = "bolt4.tga"
+textureBlend = "one one modulate"
+startColor = "63 127 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.05
+finishRadius = 0.05
+segmentLength = 0.6
+segmentVariance = "1.0 1.0 0.0"
+animateTime = 0.15
+textureRate = 0.01

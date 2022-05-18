@@ -15,7 +15,7 @@ heatSignature = 1.5
 imageSignature = 1.5
 radarSignature = 0.1
 isAssault = 0
-needPilot=0
+needPilot = 0
 armorClass = N
 
 /////// weapons ///////////////////
@@ -62,6 +62,11 @@ holdMsg = "ivtank12.wav"
 user1Msg = ""  
 killedMsg = "ivtank07.wav"
 diedMsg = ""
+
+damageEffect1 = "dmgvhcl_c1"
+damageEffect2 = "dmgvhcl_c2"
+damageEffect3 = "dmgvhcl_c3"
+damageEffect4 = "dmgvhcl_c4"
 
 [HoverCraftClass]
 velocForward = 48.5 // []

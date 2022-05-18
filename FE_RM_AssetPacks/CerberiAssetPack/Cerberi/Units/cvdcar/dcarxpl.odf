@@ -1,5 +1,5 @@
 // ==================
-// BAD ASS KAMI EXPLOSION by GRAY F/X MASTER, Remastered by GBD.
+// DEMON Explosion
 // ==================
 
 [ExplosionClass]
@@ -21,48 +21,63 @@ kickRadius = 90 // 100.0FE
 kickOmega = 7.0
 kickVeloc = 7.0
 
-particleTypes = 11
+particleTypes = 13
 
-particleClass1 = "kamixpl.light"
+particleClass1 = "dcarxpl.light"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
-particleClass2 = "kamixpl.shock"
+particleClass2 = "dcarxpl.shock"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
 
-particleClass3 = "kamixpl.chunks"
+particleClass3 = "dcarxpl.chunks"
 particleCount3 = 50
 particleVeloc3 = "100.0 130.0 100.0"
 particleBias3 = "0.0 50.0 0.0"
 particlePosVar3 = "10.0 0.0 10.0"
 particleInherit3 = "0.5 0.5 0.5"
 
-particleClass4 = "kamixpl.posroll"
-particleCount4 = 32
-particleVeloc4 = "75.0 0.0 75.0"
+particleClass4 = "dcarxpl.core"
+particleCount4 = 2
+particleVeloc4 = "0.0 2.0 0.0"
+particleBias4 = "0.0 3.0 0.0"
+particlePosVar4 = "5.0 0.0 5.0"
 particleInherit4 = "0.5 0.5 0.5"
 
-particleClass5 = "kamixpl.flame"
+particleClass5 = "dcarxpl.flame"
 particleCount5 = 10
 particleVeloc5 = "7.0 7.0 7.0"
 particleBias5 = "0.0 10.0 0.0"
 particlePosVar5 = "15.0 0.0 15.0"
 particleInherit5 = "0.5 0.5 0.5"
 
-particleClass6 = "kamixpl.smoke"
+particleClass6 = "dcarxpl.smoke"
 particleCount6 = 10
 particleVeloc6 = "10.0 20.0 10.0"
 particleBias6 = "0.0 20.0 0.0"
 particlePosVar6 = "15.0 0.0 15.0"
 particleInherit6 = "0.5 0.5 0.5"
 
-particleClass7 = "kamixpl.core"
-particleCount7 = 2
-particleVeloc7 = "0.0 2.0 0.0"
-particleBias7 = "0.0 3.0 0.0"
-particlePosVar7 = "5.0 0.0 5.0"
-particleInherit7 = "0.5 0.5 0.5"
+particleClass9 = "dcarxpl.thrust"
+particleCount9 = 1
+particleVeloc9 = "0.0 0.0 0.0"
+particleBias9 = "0.0 0.0 0.0"
+
+particleClass10 = "dcarxpl.trail"
+particleCount10 = 30
+particleVeloc10 = "90.0 90.0 90.0"
+particleBias10 = "0.0 0.0 0.0"
+particleInherit10 = "0.8 0.8 0.8"
+
+particleClass11 = "dcarxpl.puff"
+particleCount11 = 30
+particleVeloc11 = "50.0 50.0 50.0"
+particleBias11 = "0.0 25.0 0.0"
+particleInherit11 = "0.8 0.8 0.8"
+
+
+
 
 particleClass8 = "xcplasgnd.DirtKickup"
 particleCount8 = 5
@@ -71,29 +86,21 @@ particleBias8 = "0.0 10.0 0.0"
 particlePosVar8 = "10.0 0.0 10.0"
 particleInherit8 = "0.5 0.5 0.5"
 
-particleClass9 = "kamixpl.thrust"
-particleCount9 = 1
-particleVeloc9 = "0.0 0.0 0.0"
-particleBias9 = "0.0 0.0 0.0"
+particleClass14 = "dcarxpl.posroll"
+particleCount14 = 32
+particleVeloc14 = "75.0 0.0 75.0"
+particleInherit14 = "0.5 0.5 0.5"
 
-particleClass10 = "kamixpl.trail"
-particleCount10 = 30
-particleVeloc10 = "90.0 90.0 90.0"
-particleBias10 = "0.0 50.0 0.0"
-particleInherit10 = "0.8 0.8 0.8"
-
-particleClass11 = "kamixpl.puff"
-particleCount11 = 30
-particleVeloc11 = "50.0 50.0 50.0"
-particleBias11 = "0.0 25.0 0.0"
-particleInherit11 = "0.8 0.8 0.8"
+particleClass17 = "dcarxpl.char"
+particleCount17 = 1
+particleVeloc17 = "0.0 0.0 0.0"
 
 
-//particleClass17 = "kamixpl.ring4"
+//particleClass17 = "dcarxpl.ring4"
 //particleCount17 = 1
 //particleVeloc17 = "0.0 0.0 0.0"
 
-//particleClass18 = "kamixpl.shock"
+//particleClass18 = "dcarxpl.shock"
 //particleCount18 = 1
 //particleVeloc18 = "0.0 0.0 0.0"
 
@@ -102,8 +109,8 @@ particleInherit11 = "0.8 0.8 0.8"
 simulateBase = "sim_null"
 lifeTime = 3.0
 renderBase = "draw_light"
-startColor = "255 255 63 5550"
-finishColor = "255 0 0 0"
+startColor = "63 127 255 5550"
+finishColor = "0 0 255 0"
 startRadius = 150.0
 finishRadius = 150.0
 animateTime = 3.0
@@ -118,36 +125,21 @@ lifeTime = 3.0
 renderBase = "draw_twirl"
 textureName = "spark.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 0 255"
-finishColor = "255 0 0 0"
+startColor = "0 127 255 255"
+finishColor = "0 0 255 0"
 startRadius = 0.25
 finishRadius = 0.25
 animateTime = 3.0
 rotationRate = 40.0
 
-[Posroll]
-simulateBase = "sim_dust"
-lifeTime = 3.0
-renderBase = "draw_twirl"
-textureName = "smoke.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "63 63 63 255"
-finishColor = "127 127 127 0"
-startRadius = 5.0
-finishRadius = 10.0
-animateTime = 3.0
-rotationRate = 2.0
-useTerrainColor = 0.9
-BottomInteractsWithTerrain = false
-
 [Flame]
 simulateBase = "sim_smoke"
 lifeTime = 1.2
 renderBase = "draw_twirl"
-textureName = "fire.tga" // flame2
+textureName = "flame.tga" // flame2
 textureBlend = "one one modulate"
-startColor = "255 255 0 255"
-finishColor = "255 0 0 0"
+startColor = "0 63 255 255"
+finishColor = "255 127 0 0"
 startRadius = 3.0
 finishRadius = 15.0
 animateTime = 1.2
@@ -159,27 +151,12 @@ lifeTime = 2.5
 renderBase = "draw_twirl"
 textureName = "smoke2.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "255 100 0 100"
+startColor = "0 63 127 127"
 finishColor = "127 127 127 0"
 startRadius = 3.0
 finishRadius = 40.0
 animateTime = 2.5
 rotationRate = 5.0
-BottomInteractsWithTerrain = false
-
-[DirtKickup]
-simulateBase = "sim_ember"
-lifeTime = 1.8
-renderBase = "draw_twirl"
-textureName = "dirtcloud.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "136 154 65 255"
-finishColor = "45 50 40 0"
-startRadius = 5.0
-finishRadius = 15.0
-animateTime = 1.8
-rotationRate = 1.7
-useTerrainColor = 0.9
 BottomInteractsWithTerrain = false
 
 [Thrust]
@@ -190,30 +167,42 @@ spriteCenter.x = 0.0
 spriteCenter.y = 0.0
 textureName = "raindrop.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "255 155 0 60"
-finishColor = "255 0 0 0"
+startColor = "155 63 255 60"
+finishColor = "0 0 255 0"
 startRadius = 7.0
 finishRadius = 170.0
 animateTime = 1.2
+
+[Core]
+simulateBase = "sim_smoke"
+lifeTime = 1.2
+renderBase = twirl"
+textureName = "xplcore2.tga" // flame2
+textureBlend = "one one modulate"
+startColor = "127 63 255 255"
+finishColor = "0 0 255 0"
+startRadius = 5.0
+finishRadius = 40.0
+animateTime = 1.2
+rotationRate = 2.0
+BottomInteractsWithTerrain = false
 
 [Trail]
 simulateBase = "sim_ember"
 lifeTime = 4.0
 renderBase = "draw_multi"
 renderCount = 2
-renderName1 = "kamixpl.trailflare"
-renderName2 = "kamixpl.trailemit"
+renderName1 = "dcarxpl.trailflare"
+renderName2 = "dcarxpl.trailemit"
 
 [TrailFlare]
-simulateBase = "sim_smoke"
-lifeTime = 4.0
 renderBase = "draw_twirl"
 textureName = "lightflare.tga"
 textureBlend = "one one modulate"
-startColor = "255 200 127 255"
-finishColor = "255 127 63 0"
-startRadius = 0.6
-finishRadius = 0.6
+startColor = "63 200 255 255"
+finishColor = "0 127 255 0"
+startRadius = 1.0
+finishRadius = 1.0
 animateTime = 4.0
 rotationRate = 5.0
 BottomInteractsWithTerrain = false
@@ -222,54 +211,38 @@ BottomInteractsWithTerrain = false
 simulateBase = "sim_smoke" //ember"
 lifeTime = 4.0
 renderBase = "draw_trail"
-textureName = "trail.tga"
+textureName = "arctrail.tga"
 textureBlend = "one one modulate"
-startColor = "255 127 0 200"
-finishColor = "255 0 0 0"
-startRadius = 0.06
-finishRadius = 0.0
+startColor = "0 127 255 200"
+finishColor = "0 0 255 0"
+startRadius = 0.3
+finishRadius = 0.3
 //trailTime = 2.0
-segmentTime = 0.5 //animateTime = 3.0
-textureRate = 0.2
+segmentTime = 0.75 //animateTime = 3.0
+textureRate = 1.0
+textureSpeed = -2.0
 
 [Puff]
 simulateBase = "sim_ember"
 lifeTime = 5.0
 renderBase = "draw_twirl"
-textureName = "flame2.tga"
+textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 150 0 0"
+startColor = "127 63 255 255"
+finishColor = "255 127 0 0"
 startRadius = 0.6
 finishRadius = 0.4
 animateTime = 5.0
 
-[Core]
-simulateBase = "sim_smoke"
-lifeTime = 1.2
-renderBase = "draw_sprite" //twirl"
-textureName = "xplcore.tga" // flame2
-textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 255 255 0"
-startRadius = 5.0
-finishRadius = 40.0
-animateTime = 1.2
-//rotationRate = 2.0
-//BottomInteractsWithTerrain = false
-
-
 [Shock]
-simulateBase = "sim_ember"
+simulateBase = "sim_null"
 lifeTime = 2.1
 renderBase = "draw_multi"
-renderCount = 6
-renderName1 = "kamixpl.sphere"
-renderName2 = "kamixpl.groundring"
-renderName3 = "kamixpl.ring1"
-renderName4 = "kamixpl.ring2"
-renderName5 = "kamixpl.ring3"
-renderName6 = "kamixpl.char"
+renderCount = 4
+renderName1 = "dcarxpl.sphere"
+renderName2 = "dcarxpl.ring1"
+renderName3 = "dcarxpl.ring2"
+renderName4 = "dcarxpl.wave"
 
 [Sphere]
 simulateBase = "sim_null"
@@ -277,31 +250,19 @@ lifeTime = 0.5
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
-startColor = "127 63 31 255"
-finishColor = "127 96 63 0"
+startColor = "31 63 127 255"
+finishColor = "63 96 127 0"
 startRadius = 1.0
 finishRadius = 100.0
 animateTime = 0.5
 latitudeBands = 8
 longitudeSegments = 16
 
-[GroundRing]
-simulateBase = "sim_null"
-lifeTime = 0.8
-renderBase = "draw_planar"
-textureName = "fbchar.tga" //ring.tga
-textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 255 255 0"
-startRadius = 5.0
-finishRadius = 100.0
-animateTime = 0.8
-
 [Ring1]
 simulateBase = "sim_null"
 lifeTime = 0.8
 renderBase = "draw_sphere"
-textureName = "ring2.tga" //ring2
+textureName = "cring2.tga" //ring2
 textureBlend = "one one modulate"
 startColor = "255 255 255 210"
 finishColor = "255 255 255 0"
@@ -315,15 +276,35 @@ longitudeSegments = 16
 simulateBase = "sim_null"
 lifeTime = 1.5
 renderBase = "draw_sphere"
-textureName = "ring3.tga"
+textureName = "cringa3.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 210"
 finishColor = "255 255 255 0"
-startRadius = 3.0
+startRadius = 5.0
 finishRadius = 50.0
 animateTime = 1.5
 latitudeBands = 8
 longitudeSegments = 16
+
+[Wave]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_wave"
+textureName = "cwave.tga"
+textureBlend = "one one modulate"
+startColor = "255 225 255 255"
+finishColor = "0 127 255 0"
+startRadius = 5.0
+finishRadius = 120.0
+animateTime = 1.5
+waveAngle = 3.14159265359
+waveDepth = 1.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 64
+
+
+
 
 [Ring3]
 simulateBase = "sim_null"
@@ -338,20 +319,6 @@ finishRadius = 50.0
 animateTime = 2.1
 latitudeBands = 8
 longitudeSegments = 16
-
-[Char]
-simulateBase = "sim_null"
-lifeTime = 10.0
-renderBase = "draw_planar"
-textureName = "grndchar.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "10 10 10 255"
-finishColor = "10 10 10 0"
-startRadius = 50.0
-finishRadius = 50.0
-animateTime = 10.0
-
-
 
 [Ring4]
 simulateBase = "sim_null"
@@ -380,3 +347,45 @@ finishColor = "255 255 255 0"
 startRadius = 5.0
 finishRadius = 50.0 // 50
 animateTime = 3.0
+
+[Posroll]
+simulateBase = "sim_dust"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "63 63 63 255"
+finishColor = "127 127 127 0"
+startRadius = 5.0
+finishRadius = 10.0
+animateTime = 3.0
+rotationRate = 2.0
+useTerrainColor = 0.9
+BottomInteractsWithTerrain = false
+
+[Char]
+simulateBase = "sim_null"
+lifeTime = 10.0
+renderBase = "draw_planar"
+textureName = "grndchar.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "10 10 10 255"
+finishColor = "10 10 10 0"
+startRadius = 50.0
+finishRadius = 50.0
+animateTime = 10.0
+
+[DirtKickup]
+simulateBase = "sim_ember"
+lifeTime = 1.8
+renderBase = "draw_twirl"
+textureName = "dirtcloud.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "136 154 65 255"
+finishColor = "45 50 40 0"
+startRadius = 5.0
+finishRadius = 15.0
+animateTime = 1.8
+rotationRate = 1.7
+useTerrainColor = 0.9
+BottomInteractsWithTerrain = false

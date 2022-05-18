@@ -1,0 +1,195 @@
+// ==================
+// CERBERI DESTROYED DAMAGE STATE
+// ==================
+
+[DmgVhcl_c4]
+renderBase = "draw_multi"
+renderCount = 12
+renderName1 = "dmgvhcl_c4.smokeemitter"
+renderName2 = "dmgvhcl_c4.flameemitter"
+renderName3 = "dmgvhcl_c4.sparkemitter"
+renderName4 = "dmgvhcl_c4.light"
+renderName5 = "dmgvhcl_c4.embers"
+renderName6 = "dmgvhcl_c4.bang"
+renderName7 = "dmgvhcl_c4.bang"
+renderName8 = "dmgvhcl_c4.bang"
+renderName9 = "dmgvhcl_c4.bang"
+renderName10 = "dmgvhcl_c4.bang"
+renderName11 = "dmgvhcl_c4.banglight"
+renderName12 = "dmgvhcl_c4.bolt"
+
+[SmokeEmitter]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.03
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitPosVariance = "8.0 6.0 10.0"
+emitLife = 2.0
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 150"
+finishColor = "0 0 0 0"
+startRadius = 0.7
+finishRadius = 3.1
+animateTime = 2.0
+rotationRate = 2.0
+BottomInteractsWithTerrain = false
+
+[FlameEmitter]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.03
+emitDelayVar = 0.02
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.5 0.5 0.5"
+emitPosVariance = "8.0 6.0 10.0"
+emitLife = 1.0
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "127 63 255 255"
+finishColor = "255 127 0 0"
+startRadius = 1.5
+finishRadius = 0.5
+animateTime = 1.0
+rotationRate = 10.0
+BottomInteractsWithTerrain = false
+
+[SparkEmitter]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.02
+emitDelayVar = 0.01
+emitVelocity = "0.0 5.0 0.0"
+emitVariance = "16.0 16.0 16.0"
+emitPosVariance = "5.0 5.0 5.0"
+emitPosVariance = "8.0 6.0 8.0"
+emitInherit = "0.5 0.5 0.5"
+emitLife = 1.6
+textureName = "spark3.tga"
+textureBlend = "one one modulate"
+startColor = "0 127 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.3
+finishRadius = 0.15
+animateTime = 1.6
+rotationRate = 30.0
+BottomInteractsWithTerrain = false
+
+[Light]
+renderBase = "draw_emit"
+emitName = "dmgvhcl_c4.lightemit"
+emitDelay = 0.1
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+//emitDelayVar = 0.02
+
+[LightEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_light"
+startColor = "127 63 255 350"
+finishColor = "0 127 255 200" // 300
+startRadius = 50.0
+finishRadius = 50.0
+animateTime = 0.1
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Embers]
+renderBase = "draw_emit"
+emitName = "dmgvhcl_c4.embersemit"
+emitDelay = 0.6
+emitDelayVar = 0.7
+emitVelocity = "0.0 2.0 0.0"
+emitVariance = "9.0 9.0 9.0"
+
+[EmbersEmit]
+simulateBase = "sim_ember"
+lifeTime = 2.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "dmgvhcl_c4.trailflare"
+renderName2 = "dmgvhcl_c4.trailemit"
+
+[TrailFlare]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "63 127 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.75
+finishRadius = 0.75
+animateTime = 2.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[TrailEmit]
+renderBase = "draw_trail"
+textureName = "arctrail.tga" // "spark.tga"
+textureBlend = "one one modulate"
+startColor = "0 127 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.05
+finishRadius = 0.01
+segmentTime = 0.2 //animateTime = 2.0
+textureRate = 1.0
+textureSpeed = -1.0
+
+[Bang]
+renderBase = "draw_emit"
+emitName = "FEBBangTiny" //"dmgvhcl_c4.bangemit"
+emitDelay = 1e6
+//emitDelayVar = 0.2
+emitVelocity = "0.0 4.0 0.0"
+emitVariance = "20.0 20.0 20.0"
+
+[BangLight]
+renderBase = "draw_emit"
+emitName = "dmgvhcl_c4.banglemit"
+emitDelay = 1e6
+//emitDelayVar = 0.7
+emitVelocity = "0.0 0.1 0.0"
+emitVariance = "1.0 1.0 1.0"
+
+[BangLEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_light"
+startColor = "127 31 255 2200"
+finishColor = "0 0 255 0"
+startRadius = 100.0
+finishRadius = 0.0
+animateTime = 0.5
+rotationRate = 5.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
+
+[Bolt]
+renderBase = "draw_emit"
+emitName = "dmgvhcl_c4.boltemit"
+emitDelay = 0.025
+emitDelayVar = 0.2
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "70.0 70.0 70.0"
+emitPosVariance = "10.0 10.0 10.0"
+
+[BoltEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.15
+renderBase = "draw_bolt"
+textureName = "bolt4.tga"
+textureBlend = "one one modulate"
+startColor = "63 127 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.1
+finishRadius = 0.1
+segmentLength = 0.6
+segmentVariance = "1.3 1.3 0.0"
+animateTime = 0.15
+textureRate = 0.01
+

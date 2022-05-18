@@ -79,6 +79,11 @@ user1Msg = ""
 killedMsg = "ivscout07.wav"
 diedMsg = ""
 
+damageEffect1 = "dmgvhcl_c1"
+damageEffect2 = "dmgvhcl_c2"
+damageEffect3 = "dmgvhcl_c3"
+damageEffect4 = "dmgvhcl_c4"
+
 [HoverCraftClass]
 velocForward = 60.0 // [40]
 velocReverse = 20.0 // [10]

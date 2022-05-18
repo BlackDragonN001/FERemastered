@@ -40,7 +40,7 @@ particleClass6 = "xvchxpl_e.light"
 particleCount6 = 1
 particleVeloc6 = "0.0 0.0 0.0"
 
-particleClass7 = "xvchxpl_e.ring"
+particleClass7 = "xvchxpl_e.char"
 particleCount7 = 1
 particleVeloc7 = "0.0 0.0 0.0"
 
@@ -164,14 +164,14 @@ renderBase = "draw_light"
 startColor = "255 150 0 5355"
 finishColor = "255 0 0 0"
 startRadius = 100.0
-finishRadius = 100.0
+finishRadius = 0.0
 animateTime = 1.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
 
-[Ring]
+[Char]
 simulateBase = "sim_null"
 lifeTime = 5.0
 renderBase = "draw_planar"
