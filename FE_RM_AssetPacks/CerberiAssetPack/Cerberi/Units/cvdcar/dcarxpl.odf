@@ -176,7 +176,7 @@ animateTime = 1.2
 [Core]
 simulateBase = "sim_smoke"
 lifeTime = 1.2
-renderBase = twirl"
+renderBase = "draw_twirl"
 textureName = "xplcore2.tga" // flame2
 textureBlend = "one one modulate"
 startColor = "127 63 255 255"
