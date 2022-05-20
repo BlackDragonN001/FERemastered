@@ -1,6 +1,6 @@
 [Start]
 scrapCount = 100
-consClass = "cvcons02"
+consClass = "cvcons"
 scavClass = "cvscav"
 IdleAllCraft = false // Prevent Interrupting AI.
 
@@ -85,9 +85,9 @@ attackType27_1 = "cvtank"
 planType = "BuildMinimums"
 planPriority = 200
 planCondition = "NotExists"
-planConditionClass = "cvcons02"
+planConditionClass = "cvcons"
 planConditionCount = 1
-buildType1 = "cvcons02"
+buildType1 = "cvcons"
 buildCount1 = 1
 buildIfNoIdle = 1
 
@@ -138,9 +138,9 @@ buildIfNoIdle = 1
 planType = "BuildMinimums"
 planPriority = 160
 planCondition = "NotExists"
-planConditionClass = "cvcons02"
+planConditionClass = "cvcons"
 planConditionCount = 1
-buildType1 = "cvcons02"
+buildType1 = "cvcons"
 buildCount1 = 1
 maxLoops = 10
 
@@ -148,9 +148,9 @@ maxLoops = 10
 planType = "BaseBuildMinimums"
 planPriority = 150
 planCondition = "NotExists"
-planConditionClass = "CBFACT02"
+planConditionClass = "cbfact"
 planConditionCount = 1
-buildType1 = "CBFACT02"
+buildType1 = "cbfact"
 buildCount1 = 1
 buildLoc1 = "CFACT"
 
@@ -175,10 +175,10 @@ serviceUnit = "Cbsbay"
 planType = "Service"
 planPriority = 110
 serviceUnit = "cvserv"
-unitType1 = "cbrecy02"
+unitType1 = "cbrecy"
 unitType2 = "cbgtow"
 unitType3 = "cbsbay"
-unitType4 = "cbfact02"
+unitType4 = "cbfact"
 unitType5 = "cvturr"
 buildIfNoIdle = 1
 

@@ -1,6 +1,6 @@
 [Start]
 scrapCount = 40
-consClass = "cvcons02"
+consClass = "cvcons"
 scavClass = "cvscav"
 IdleAllCraft = false // Prevent Interrupting AI.
 
@@ -46,7 +46,7 @@ buildIfNoIdle = 1
 [Plan5]
 planType = "BuildMinimums"
 planPriority = 40
-buildType1 = "cvcons02"
+buildType1 = "cvcons"
 buildCount1 = 2
 
 [Plan6]

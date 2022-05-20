@@ -1,5 +1,5 @@
 [Start]
-consClass = "cvcons02"
+consClass = "cvcons"
 scavClass = "cvscav"
 
 [Cheat]
@@ -16,7 +16,7 @@ buildcount1 = 2
 [plan2]
 plantype = "buildminimums"
 planpriority = 195
-buildtype1 = "cvcons02"
+buildtype1 = "cvcons"
 buildcount1 = 1
 
 [plan3]
@@ -24,7 +24,7 @@ plantype = "basebuildminimums"
 planpriority = 190
 buildtype1 = "cbpgen"
 buildloc1 = "cpower1"
-buildtype2 = "cbfact02"
+buildtype2 = "cbfact"
 buildloc2 = "cfactory"
 buildtype3 = "cbcbun"
 buildloc3 = "cbunker"

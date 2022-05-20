@@ -3,7 +3,7 @@
 
 [Start]
 scrapCount = 40
-consClass = "cvcons02"
+consClass = "cvcons"
 scavClass = "cvscav"
 CheckProvides = true
 sendAllUnitsOnStartup = 0
@@ -77,7 +77,7 @@ ContinueEvenIfFail = 1
 [Plan6]
 planType = "BuildMinimums"
 planPriority = 950
-buildType1 = "cvcons02"
+buildType1 = "cvcons"
 buildCount1 = 1
 
 [Plan7]
@@ -174,7 +174,7 @@ planConditionCount = 1
 planCompare = ">="
 planConditionClassProvided = true 
 planConditionOr = false
-buildType1 = "cbfact02"
+buildType1 = "cbfact"
 buildCount1 = 1
 buildLoc1 = "eteam1_fact"
 
@@ -182,7 +182,7 @@ buildLoc1 = "eteam1_fact"
 planType = "BaseBuildMinimums"
 planPriority = 860
 planCondition = "Exists"
-planConditionClass = "cbfact02"
+planConditionClass = "cbfact"
 planConditionCount = 1
 planCompare = ">="
 planConditionClassProvided = true 
@@ -626,8 +626,8 @@ targetType = "VIRTUAL_CLASS_ARMORY"
 attackType1 = "cvscout"
 attackType2 = "cvscout"
 attackType3 = "cvwalk"
-attackType4 = "cvtalon02"
-attackType5 = "cvtalon02"
+attackType4 = "cvtalon"
+attackType5 = "cvtalon"
 maxAttacks = 0
 buildIfNoIdle = 1
 ContinueEvenIfFail = 1

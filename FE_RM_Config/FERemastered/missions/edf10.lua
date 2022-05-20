@@ -93,7 +93,7 @@ function InitialSetup()
 
 	PreloadODF("evtanku");
 	PreloadODF("cvtank");
-	PreloadODF("cvtalon02");
+	PreloadODF("cvtalon");
 	PreloadODF("cvrbomb");
 	PreloadODF("ivshul2");
 	

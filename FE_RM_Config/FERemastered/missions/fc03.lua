@@ -92,7 +92,7 @@ function InitialSetup()
 		"cvdcar",
 		"cvmlay03",
 		"cvatank2",
-		"cvtalon02"
+		"cvtalon"
 	};
 	for k,v in pairs(preloadOdf) do
 		PreloadODF(v);
@@ -563,7 +563,7 @@ function Routine5()
 			if M.ScionSpireCount > 4 then
 				M.Routine5State = 12;--to LOC_376
 			else
-				Patrol(TeleportIn("cvtalon02", 5, M.Portal1Aurora1, 0), "mine1", 0);
+				Patrol(TeleportIn("cvtalon", 5, M.Portal1Aurora1, 0), "mine1", 0);
 				M.Routine5State = M.Routine5State + 1;
 				M.Routine5Timer = GetTime() + 3;
 			end

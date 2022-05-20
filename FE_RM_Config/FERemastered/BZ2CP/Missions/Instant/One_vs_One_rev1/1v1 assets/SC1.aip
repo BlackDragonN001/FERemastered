@@ -111,7 +111,7 @@ buildcount2 = 2
 [plan16]
 plantype = "attacker"
 planpriority = 150
-targettype = "cbrecy03"
+targettype = "cbrecyP"
 attacktype1 = "fvrbomb"
 attacktype2 = "fvrbomb"
 
@@ -143,11 +143,11 @@ planpriority = 189
 
 [plan20]
 plancondition = "hisexists"
-planconditionclass = "cvcons031"
+planconditionclass = "cvconsP1"
 planconditioncount = 1
 plantype = "attacker"
 planpriority = 147
-targettype = "cvcons031"
+targettype = "cvconsP1"
 attacktype1 = "commandos"
 attacktype2 = "commandos"
 buildifnoidle = 1

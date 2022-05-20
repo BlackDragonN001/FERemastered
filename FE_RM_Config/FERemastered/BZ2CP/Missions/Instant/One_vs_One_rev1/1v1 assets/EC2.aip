@@ -118,11 +118,11 @@ planpriority = 188
 
 [plan16]
 plancondition = "HisExists"
-planconditionclass = "cvcons03"
+planconditionclass = "cvconsP"
 planconditioncount = 1
 planpriority = 154
 plantype = "attacker"
-targettype = "cvcons03"
+targettype = "cvconsP"
 attacktype1 = "ivmbike"
 attacktype2 = "ivmbike"
 buildifnoidle = 1
@@ -142,7 +142,7 @@ buildifnoidle = 151
 [plan18]
 plantype = "attacker"
 planpriority = 150
-targettype = "cbrecy03"
+targettype = "cbrecyP"
 attacktype1 = "ivtank13"
 attacktype2 = "ivtank13"
 buildifnoidle = 1

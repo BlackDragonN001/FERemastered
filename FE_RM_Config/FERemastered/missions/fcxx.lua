@@ -119,7 +119,7 @@ function InitialSetup()
 		"evmi_IH",
 		"evatu_IH",
 		"evwalk",
-		"cvtalon02",
+		"cvtalon",
 		"cvhatank",
 		"cvtank",
 		"cvwalk",
@@ -343,7 +343,7 @@ function Routine1(R, STATE)
 		ReplaceObject(GetObjectByTeamSlot(3, 2), "ebfa_IH");
 		M.CheckTech = true;--RunSpeed,_Routine11,1,false
 		M.CheckMatriarch = true;--RunSpeed,_Routine8,1,false
-		M.CerbTalon1 = BuildObject("cvtalon02", 2, M.Position2);
+		M.CerbTalon1 = BuildObject("cvtalon", 2, M.Position2);
 		Patrol(M.CerbTalon1, "patrol", 1);
 		local TempH = BuildObject("evta_IH", 3, "attack");
 		SetEjectRatio(TempH, 0.0);
@@ -547,9 +547,9 @@ function Routine1(R, STATE)
 		end
 	elseif STATE == 25 then
 		if Move(M.Player, 0, M.BeeLaunchSpeed, M.Position12) or GetDistance(M.Player, TerrainFloor(M.Position12)) < 10 then
-			M.CerbTalon2 = BuildObject("cvtalon02", 2, TerrainFloor(M.Position1));
-			M.CerbTalon3 = BuildObject("cvtalon02", 2, TerrainFloor(M.Position1));
-			M.CerbTalon4 = BuildObject("cvtalon02", 2, TerrainFloor(M.Position1));
+			M.CerbTalon2 = BuildObject("cvtalon", 2, TerrainFloor(M.Position1));
+			M.CerbTalon3 = BuildObject("cvtalon", 2, TerrainFloor(M.Position1));
+			M.CerbTalon4 = BuildObject("cvtalon", 2, TerrainFloor(M.Position1));
 			Patrol(M.CerbTalon2, "patrol2", 1);
 			Patrol(M.CerbTalon3, "patrol", 1);
 			SetPerceivedTeam(M.ScionDropship, 1);
@@ -582,7 +582,7 @@ function Routine1(R, STATE)
 			Attack(BuildObject("cvtank", 2, M.Position6), M.ScionDropship, 1);
 			Attack(BuildObject("cvtank", 2, M.Position14), M.ScionDropship, 1);
 			Attack(BuildObject("cvtank", 2, TerrainFloor(M.Position1)), M.ScionDropship, 1);
-			M.CerbTalon1 = BuildObject("cvtalon02", 2, M.Position14);
+			M.CerbTalon1 = BuildObject("cvtalon", 2, M.Position14);
 			Attack(M.CerbTalon1, M.Player, 1);
 			Advance(R, 4.0);
 		end

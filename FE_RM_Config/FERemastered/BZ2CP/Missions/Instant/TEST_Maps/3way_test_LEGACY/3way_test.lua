@@ -41,7 +41,7 @@ function InitialSetup()
 	PreloadODF("fvrecy");
 	PreloadODF("evrecy");
     PreloadODF("cvrecy02");
-    PreloadODF("cvrecy03");
+    PreloadODF("cvrecyP");
 
     PreloadODF("ivscout");
     PreloadODF("fvscout");
@@ -151,7 +151,7 @@ function Update()
                 M.PlayerRecy = BuildObject("evrecy", M.PlayerTeamNum, "Player");
                 M.PlayerRace = 'e';
             elseif (M.TWPlayerRace == 3) then
-                M.PlayerRecy = BuildObject("cvrecy03", M.PlayerTeamNum, "Player");
+                M.PlayerRecy = BuildObject("cvrecyP", M.PlayerTeamNum, "Player");
                 M.PlayerRace = 'c';
             end
 

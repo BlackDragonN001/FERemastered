@@ -25,7 +25,7 @@ needPilot = 0
 /////// Requirements ///////////////////
 
 requireCount = 1
-requireName1 = "cbfact02"
+requireName1 = "cbfact"
 requireText1 = "Build Factory"
 
 /////// Provides ///////////////////
@@ -58,20 +58,20 @@ weaponAssault5 = 0
 /////// Lights and Effects ///////////////////
 
 effectHard1 = "hp_emit_1"
-effectName1 = "cvtalon02.trail"
+effectName1 = "cvtalon.trail"
 effectHard2 = "hp_emit_2"
-effectName2 = "cvtalon02.trail"
+effectName2 = "cvtalon.trail"
 effectHard3 = "hp_emit_3"
-effectName3 = "cvtalon02.trail"
+effectName3 = "cvtalon.trail"
 effectHard4 = "hp_trail_1"
-effectName4 = "cvtalon02.flame"
+effectName4 = "cvtalon.flame"
 
 effectHard5 = "hp_light_1"
-effectName5 = "cvtalon02.light"
+effectName5 = "cvtalon.light"
 effectHard6 = "hp_light_2"
-effectName6 = "cvtalon02.light"
+effectName6 = "cvtalon.light"
 effectHard7 = "hp_light_3"
-effectName7 = "cvtalon02.light"
+effectName7 = "cvtalon.light"
 
 //lightHard1 = "hp_light_1"
 //lightName1 = "spotblue2"
@@ -150,9 +150,9 @@ soundTurbo = "enginetal.wav"
 [trail]
 renderBase = "draw_multi"
 renderCount = 3
-renderName1 = "cvtalon02.trailer"
-renderName2 = "cvtalon02.trailer2"
-renderName3 = "cvtalon02.flame"
+renderName1 = "cvtalon.trailer"
+renderName2 = "cvtalon.trailer2"
+renderName3 = "cvtalon.flame"
 
 [trailer]
 renderBase = "draw_trail"

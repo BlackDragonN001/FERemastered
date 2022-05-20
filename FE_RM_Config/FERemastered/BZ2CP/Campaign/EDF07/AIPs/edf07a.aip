@@ -1,6 +1,6 @@
 [Start]
 scrapCount = 100
-consClass = "cvcons02"
+consClass = "cvcons"
 scavClass = "cvscav"
 IdleAllCraft = false // Prevent Interrupting AI.
 
@@ -133,8 +133,8 @@ planCondition = "HisExists"
 planConditionClass = "ibsbay"
 planConditionCount = 1
 targetType = "ibsbay"
-attackType1 = "cvtalon02"
-attackType2 = "cvtalon02"
+attackType1 = "cvtalon"
+attackType2 = "cvtalon"
 maxAttacks = 10
 buildIfNoIdle = 1
 

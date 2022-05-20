@@ -1,28 +1,23 @@
 [GameObjectClass]
-geometryName = "Cbrecy02.xsi"
+geometryName = "Cbrecy00.xsi"
 classLabel = "cbrecy"
 
 /////// Lights and Effects ///////////////////
 
-lightHard1 = "hp_light_1"
-lightName1 = "o_white_nf"
-lightHard2 = "hp_light_2"
-lightName2 = "cerbpurple"
-lightHard3 = "hp_light_3"
-lightName3 = "cerbpurple"
-lightHard4 = "hp_light_4"
-lightName4 = "cerbpurple"
+lightHard1 = ""
+lightName1 = ""
+lightHard2 = ""
+lightName2 = ""
+lightHard3 = ""
+lightName3 = ""
+lightHard4 = ""
+lightName4 = ""
 
 [PoweredBuildingClass]
 
 [BuildingClass]
 
 [FactoryClass]
-buildItem1 = "cvscav"
-buildItem2 = "cvscout"
-buildItem3 = "cvturr"
 buildItem4 = "cvcons02"
-buildItem6 = "cvserv"
-buildItem7 = "apserv"
 
 [RecyclerClass]

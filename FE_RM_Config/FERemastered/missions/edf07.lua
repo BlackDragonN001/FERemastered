@@ -482,8 +482,8 @@ function Routine3()
 				M.Routine3Timer = GetTime() + 3;
 			end
 		elseif M.Routine3State == 14 then
-			-- M.Attacker15 = BuildObject("cvtalon02",5,"waterstart");
-			M.Attacker15 = BuildObject("cvtalon02",5,"bunker_talon_spawn"); -- Changed to this as the Talon was spawning right in front of the player which is bad. - AI_Unit
+			-- M.Attacker15 = BuildObject("cvtalon",5,"waterstart");
+			M.Attacker15 = BuildObject("cvtalon",5,"bunker_talon_spawn"); -- Changed to this as the Talon was spawning right in front of the player which is bad. - AI_Unit
 			Attack(M.Attacker15,M.HadeanCommBunk,1);
 			M.Routine3State = M.Routine3State + 1;
 			M.Routine3Timer = GetTime() + 2;
@@ -675,7 +675,7 @@ function Routine5()
 			M.Routine5Timer = GetTime() + 10;
 		elseif M.Routine5State == 23 then
 			Patrol(M.Attacker02, "convoy_1", 1);
-			M.Attacker03 = BuildObject("cvtalon02",5,"portalsouth");
+			M.Attacker03 = BuildObject("cvtalon",5,"portalsouth");
 			Goto(M.Attacker03, "convendpoint", 1);
 			M.Routine5State = M.Routine5State + 1;
 			M.Routine5Timer = GetTime() + 10;
@@ -733,7 +733,7 @@ function Routine6()
 		elseif M.Routine6State == 4 then	--LOC_271
 			if not IsAround(M.Attacker22) then
 				if math.random(1,2) == 1 then
-					--M.Attacker22 = BuildObject("cvtalon02",5,"hadconstart");	--was "cvtalon", but that doesn't exist!
+					--M.Attacker22 = BuildObject("cvtalon",5,"hadconstart");	--was "cvtalon", but that doesn't exist!
 					--Patrol(M.Attacker22, "conpatrol", 1);
 					M.Routine6State = 6;--to LOC_280
 				else
@@ -1259,7 +1259,7 @@ function Routine9()
 			AddObjective("edf0708.otf", "green");
 			M.Attacker18 = TeleportIn("cvdcar", 5, "islandstart", 10);
 			Patrol(M.Attacker18, "islandpath", 1);
-			M.Attacker19 = TeleportIn("cvtalon02", 5, "portalsouth", 10);
+			M.Attacker19 = TeleportIn("cvtalon", 5, "portalsouth", 10);
 			Goto(M.Attacker19, "waterstart2", 1);
 			AudioMessage("dronewow.wav");	--Random Dude:"Sir, this is scout patrol Gamma by the river. We just spotted some kind of huge hovercraft headed your way..."
 			M.Routine9State = M.Routine9State + 1;
@@ -1527,7 +1527,7 @@ function Routine10()
 				M.Routine10State = 0;--to LOC_751
 			end
 		elseif M.Routine10State == 7 then
-			M.Attacker21 = BuildObject("cvtalon02", 5, Position29);
+			M.Attacker21 = BuildObject("cvtalon", 5, Position29);
 			SetSkill(M.Attacker21, 1);
 			if math.random(1,2) == 1 then
 				Patrol(M.Attacker21, "westcratatk1", 1);
@@ -1697,7 +1697,7 @@ function Routine11()
 			M.NextWaypointNav = BuildObject("ibnav", 1, "patrolp2");
 			SetObjectiveName(M.NextWaypointNav, "Fourth Patrol Point");
 			SetObjectiveOn(M.NextWaypointNav);
-			M.Attacker08 = BuildObject("cvtalon02", 5, "BridEast");
+			M.Attacker08 = BuildObject("cvtalon", 5, "BridEast");
 			Goto(M.Attacker08, "patrolp2", 1);
 			M.Routine11State = M.Routine11State + 1;
 		elseif M.Routine11State == 7 then	--LOC_890
@@ -1719,7 +1719,7 @@ function Routine11()
 			Patrol(M.Attacker05, "westcratatk2", 1);
 			Patrol(M.Attacker06, "westcratatk2", 1);
 			M.Attacker01 = BuildObject("cvdcar",5,"islandstart");
-			M.Attacker02 = BuildObject("cvtalon02", 5, "islandstart");
+			M.Attacker02 = BuildObject("cvtalon", 5, "islandstart");
 			Patrol(M.Attacker01, "islandpath", 1);
 			Patrol(M.Attacker02, "islandpath", 1);
 			M.Routine9Counter = M.Routine9Counter + 1;
@@ -2118,9 +2118,9 @@ function Routine14()
 			--player planted the satchel
 			if GetCockpitTimer() == 28 then	
 				if GetDistance(M.Player, M.NextWaypointNav) < 100 then
-					M.Attacker05 = BuildObject("cvtalon02", 5, "CBAY");
+					M.Attacker05 = BuildObject("cvtalon", 5, "CBAY");
 					Attack(M.Attacker05, M.Player, 1);
-					M.Attacker06 = BuildObject("cvtalon02", 5, "CBAY");
+					M.Attacker06 = BuildObject("cvtalon", 5, "CBAY");
 					Attack(M.Attacker06, M.Player, 1);
 					M.Routine14State = M.Routine14State + 1;
 				else
@@ -2174,7 +2174,7 @@ function Routine14()
 		elseif M.Routine14State == 38 then	--LOC_1203
 			--at this point, this routine remains in this state until game is over.
 			if not IsAround(M.Attacker09) and GetTime() < M.TalonRespawnTimer then
-				M.Attacker09 = BuildObject("cvtalon02", 5, "bendstop");
+				M.Attacker09 = BuildObject("cvtalon", 5, "bendstop");
 				Goto(M.Attacker09, M.Player, 1);
 				M.TalonRespawnTimer = GetTime() + 150;	--bumped up from 140
 			end

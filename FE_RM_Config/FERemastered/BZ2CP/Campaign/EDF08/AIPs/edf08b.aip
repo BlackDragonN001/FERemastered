@@ -1,6 +1,6 @@
 [Start]
 scrapCount = 255
-consClass = "cvcons02"
+consClass = "cvcons"
 scavClass = "cvscav"
 IdleAllCraft = false // Prevent Interrupting AI.
 
@@ -89,9 +89,9 @@ ContinueEvenIfFail = 1
 planType = "BuildMinimums"
 planPriority = 100
 planCondition = "NotExists"
-planConditionClass = "cvcons02"
+planConditionClass = "cvcons"
 planConditionCount = 1
-buildType1 = "cvcons02"
+buildType1 = "cvcons"
 buildCount1 = 1
 ContinueEvenIfFail = 1
 
@@ -99,9 +99,9 @@ ContinueEvenIfFail = 1
 planType = "BaseBuildMinimums"
 planPriority = 90
 planCondition = "NotExists"
-planConditionClass = "cbfact02"
+planConditionClass = "cbfact"
 planConditionCount = 1
-buildType1 = "cbfact02"
+buildType1 = "cbfact"
 buildCount1 = 1
 buildLoc1 = "EFact"
 ContinueEvenIfFail = 1
