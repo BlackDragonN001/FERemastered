@@ -135,8 +135,8 @@ renderName1 = "xcvctaxpl.trailflare"
 renderName2 = "xcvctaxpl.trailemit"
 
 [TrailFlare]
-simulateBase = "sim_smoke"
-lifeTime = 3.0
+//simulateBase = "sim_smoke"
+//lifeTime = 3.0
 renderBase = "draw_twirl"
 textureName = "lightflare.tga"
 textureBlend = "one one modulate"
@@ -149,10 +149,10 @@ rotationRate = 5.0
 BottomInteractsWithTerrain = false
 
 [TrailEmit]
-simulateBase = "sim_ember"
-lifeTime = 1.5
-textureName = "trail.tga"
+//simulateBase = "sim_ember"
+//lifeTime = 1.5
 renderBase = "draw_trail"
+textureName = "trail.tga"
 textureBlend = "one one modulate"
 startColor = "198 0 250 255"
 finishColor = "250 0 250 0"

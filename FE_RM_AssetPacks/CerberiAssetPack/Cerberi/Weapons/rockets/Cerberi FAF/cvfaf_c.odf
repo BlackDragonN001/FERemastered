@@ -25,6 +25,8 @@ damageValue(A) = 50 // absorbtion
 [MissileClass]
 omegaTurn = 1.0
 
+TeamFilter = 3 // Enemies only.
+
 [ThermalMissileClass]
 coneAngle = 0.4
 
@@ -63,8 +65,12 @@ bottomInteractsWithTerrain = false
 
 [Flame]
 renderBase = "draw_twirl_trail"
+//textureName = "flame5.tga" //"flame6.tga"
+//textureBlend = "one one modulate" //"srcalpha invsrcalpha modulatealpha" //"invsrc invsrc modulatealpha"
+//startColor = "63 15 127 255" //"154 78 1 255"
+//finishColor = "254 158 6 0"
 textureName = "flame6.tga"
-textureBlend = "invsrc invsrc modulatealpha" //"srcalpha invsrcalpha modulatealpha" //
+textureBlend = "invsrc invsrc modulatealpha"
 startColor = "63 15 127 255"
 finishColor = "0 0 0 0"
 startRadius = 0.3
@@ -87,7 +93,7 @@ emitInherit = "0.2 0.2 0.2"
 emitLife = 0.3
 textureName = "smoke2.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "15 0 31 63"
+startColor = "15 0 31 63" //"31 0 15 63"
 finishColor = "5 5 5 0"
 startRadius = 0.35
 finishRadius = 1.0

@@ -22,11 +22,22 @@ damageValue(A) = 10 // absorbtion
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 3
 renderName1 = "claser_c.core"
-renderName2 = "claser_c.trail"
+renderName2 = "claser_c.tracer"
+renderName3 = "claser_c.trail"
+renderName4 = "claser_c.flame"
 
 [Core]
+renderBase = "draw_sprite"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "120 100 255 555"
+finishColor = "120 100 255 555"
+startRadius = 0.2
+finishRadius = 0.2
+
+[Tracer]
 renderBase = "draw_tracer"
 textureBlend = "one one modulate"
 textureName = "cerbullet.tga"
@@ -39,11 +50,26 @@ tracerLength = 2.5 //0.15
 [Trail]
 renderBase = "draw_trail"
 textureBlend = "one one modulate"
-textureName = "trail2.tga"
-startColor = "120 100 255 0"
-finishColor = "0 0 200 555"
-startRadius = 0.4
-finishRadius = 0.0
+textureName = "dragbolt.tga" //"trail4.tga"
+startColor = "120 100 255 255"
+finishColor = "0 0 200 0"
+startRadius = 0.3
+finishRadius = 0.3
 segmentTime = 0.15
-textureRate = 0.05
+textureRate = 0.5
 textureSpeed = -1.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "120 100 255 120" // "255 63 55 255"
+finishColor = "120 100 255 0" // "255 63 55 255"
+startRadius = 0.4
+finishRadius = 0.02
+rotationRate = 12.0
+animateTime = 0.02
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 0.0"
+emitLife = 0.02

@@ -22,11 +22,21 @@ damageValue(A) = 15 // absorbtion
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 3
 renderName1 = "claser_a.core"
-renderName2 = "claser_a.trail"
+renderName2 = "claser_a.tracer"
+renderName3 = "claser_a.trail"
 
 [Core]
+renderBase = "draw_sprite"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "120 100 255 555"
+finishColor = "120 100 255 555"
+startRadius = 0.2
+finishRadius = 0.2
+
+[Tracer]
 renderBase = "draw_tracer"
 textureBlend = "one one modulate"
 textureName = "cerbullet.tga"
@@ -39,11 +49,11 @@ tracerLength = 3.0 //0.15
 [Trail]
 renderBase = "draw_trail"
 textureBlend = "one one modulate"
-textureName = "trail2.tga"
+textureName = "dragbolt.tga"
 startColor = "120 100 255 0"
 finishColor = "0 0 200 255"
-startRadius = 0.5
-finishRadius = 0.0
+startRadius = 0.4
+finishRadius = 0.4
 segmentTime = 0.15
-textureRate = 0.1
+textureRate = 0.5
 textureSpeed = -1.0
