@@ -43,6 +43,10 @@ soundFinish = "iapc04.wav"
 reloadMsg = "ivrecy12.wav"
 rescueMsg = "ivrecy13.wav"
 
+[ArmoryClass]
+DropoffDX = 0
+DropoffDZ = 16
+
 [ArmoryGroup1]
 buildLabel = "Guns"
 buildItem1 = "apclaser"
