@@ -2,6 +2,7 @@
 baseName = "cvmdron"
 geometryName = "cvmdron00.xsi"
 classLabel = "wingman"
+BZCClasslabel = "drone"
 scrapValue = 0
 scrapCost = 0
 maxHealth = 900
@@ -17,6 +18,13 @@ radarSignature = 0.1
 isAssault = 0
 needPilot = 0
 armorClass = L
+
+canSelect = 0
+isGrouped = 0
+needGroup = 0
+isLimited = 0
+needLimit = 0
+DAMAGE_SCALE = 0
 
 /////// weapons ///////////////////
 weaponMask = 00001
@@ -90,3 +98,5 @@ rollSteer = 0.00 //rolls while steering []
 soundThrust = "mdron.wav"
 soundTurbo = "mdronth.wav"
 
+[DroneClass]
+RandomTargetRange = 0.0f // Range from the primary target, which it can choose a random target instead.

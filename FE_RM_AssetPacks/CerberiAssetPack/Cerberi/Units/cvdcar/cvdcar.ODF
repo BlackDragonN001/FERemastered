@@ -5,6 +5,7 @@
 baseName = "cvdcar"
 geometryName = "cvdcar00.xsi"
 classLabel = "wingman"
+BZCClasslabel = "carrier"
 scrapValue = 50
 scrapCost = 80
 buildTime = 15
@@ -38,16 +39,19 @@ provideName3 = "flier"
 
 /////// Weapons ///////////////////
 
-weaponMask = 00111
+weaponMask = 00011
 weaponHard1 = "HP_ROCKET_1"
 weaponAssault1 = 0
 weaponName1 = "gvmcar"
+weaponGroup1 = 0
 weaponHard2 = "HP_ROCKET_2"
 weaponAssault2 = 0
 weaponName2 = "gvgcar"
+weaponGroup2 = 1
 weaponHard3 = "HP_SHIELD_1"
 weaponAssault3 = 0
 weaponName3 = "gshield"
+weaponGroup3 = 2
 
 effectHard1 = "hp_trail_1"
 effectName1 = "cvdcar.trail"
@@ -63,6 +67,7 @@ velocJam = 2.0
 engageRange = 450
 
 xplCrash = "xcarxpl_c"
+useSelectWeapon = false
 
 braccelFactor = 0.03
 velFactor = 0.2
@@ -123,7 +128,14 @@ soundThrust = "carrier.wav"
 //soundDeploy = "avsave6.wav"
 //soundUndeploy = "avsave5.wav"
 
-[trail]
+[CarrierClass]
+controlRange = 0.0f // Range which Drones are limited to. Drones that get this far from a Carrier, will go dormant until another Carrier comes into range. If there are no Enemies within this range, (is > 0), the drones will be recalled back into the Carrier and need to be relaunched. (ammo is added back upon recall)
+maxDrones = 0 // Number of drones, if limited. Drones beyond this limit will be dormant.
+repairRange = 100.0f // Range within which it will repair drones under it's control. Servicing is done in Parellel.
+HealthRepairAmount = 0 // Amount of Health per second to give drones.
+AmmoRepairAmount = 0 // Amount of Ammo per second to give drones.
+
+[Trail]
 renderBase = "draw_twirl_trail"
 emitDelay = 0.005
 emitDelayVar = 0.0
