@@ -1,0 +1,56 @@
+[GameObjectClass]
+baseName = "mcsporminc"
+geometryName = NULL
+classLabel = "tripmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 300
+maxAmmo = 300
+//heatSignature = 0.1
+//imageSignature = 0.1
+//radarSignature = 0.1
+unitName = "Spore Mine"
+isAssault = 0
+
+effectHard1 = "Spire Mine"
+effectName1 = "mcspormin1a.render"
+
+[MineClass]
+lifeSpan = 30
+
+[TripMineClass]
+triggerRadius = 250.0
+suppressRadius = 10.0
+payloadName = "mcspormina"
+
+[render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "mcspormin1a.eff3"
+renderName2 = "mcspormin1a.eff4"
+
+[Eff3]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha" //"one one modulate"
+startColor = "0 255 255 100"
+finishColor = "0 0 255 180"
+startRadius = 0.5
+finishRadius = 2.5
+animateTime = 0.2
+latitudeBands = 8
+longitudeSegments = 16
+addYaw = 20
+
+[Eff4]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha" //"one one modulate"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.5
+finishRadius = 18.5
+animateTime = 0.2
+latitudeBands = 8
+longitudeSegments = 16
+addYaw = -20

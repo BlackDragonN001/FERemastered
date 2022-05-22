@@ -5,7 +5,6 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-
 explSound = "shipxpl.wav"
 
 damageRadius = 60.0
@@ -24,21 +23,21 @@ kickVeloc = 27.0
 
 particleTypes = 13
 
-particleClass1 = "sporexpl.ring"
+particleClass1 = "sporexpir.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
 particleClass2 = "sporexpl.chunks"
-particleCount2 = 70
+particleCount2 = 40
 particleVeloc2 = "150.0 170.0 130.0"
 particleBias2 = "0.0 0.0 0.0"
 
-particleClass3 = "sporexpl.thrust"
+particleClass3 = "sporexpir.thrust"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 particleBias3 = "0.0 0.0 0.0"
 
-particleClass4 = "sporexpl.shock"
+particleClass4 = "sporexpir.shock"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
 
@@ -46,17 +45,17 @@ particleClass5 = "sporexpl.trail"
 particleCount5 = 45
 particleVeloc5 = "140.0 160.0 130.0"
 
-particleClass6 = "sporexpl.lines"
+particleClass6 = "sporexpir.lines"
 particleCount6 = 1
-particleVeloc6 = "0.0 10.0 0.0"
+particleVeloc6 = "0.0 0.0 0.0"
 
 particleClass7 = "sporexpl.light"
 particleCount7 = 1
 particleVeloc7 = "0.0 0.0 0.0"
 
 particleClass8 = "sporexpl.posroll"
-particleCount8 = 8
-particleVeloc8 = "5.0 0.0 5.0"
+particleCount8 = 16
+particleVeloc8 = "70.0 0.0 70.0"
 
 particleClass9 = "sporexpl.puff"
 particleCount9 = 70
@@ -66,19 +65,19 @@ particleClass10 = "sporexpl.beams"
 particleCount10 = 1
 particleVeloc10 = "0.0 0.0 0.0"
 
-particleClass11 = "sporexpl.ring1"
+particleClass11 = "sporexpir.ring"
 particleCount11 = 1
 particleVeloc11 = "0.0 0.0 0.0"
 
-particleClass12 = "sporexpl.black"
+particleClass12 = "sporexpir.black"
 particleCount12 = 1
 particleVeloc12 = "0.0 0.0 0.0"
 
-particleClass13 = "sporexpl.dome"
+particleClass13 = "sporexpir.dome"
 particleCount13 = 1
 particleVeloc13 = "0.0 0.0 0.0"
 
-[Ring]
+[Core]
 simulateBase = "sim_null"
 lifeTime = 4.0
 renderBase = "draw_sprite"
@@ -91,20 +90,6 @@ finishColor = "200 200 255 0"
 startRadius = 4.0 //3.0
 finishRadius = 15.0 // 25.0
 animateTime = 4.0 //3.5
-
-[Chunks]
-simulateBase = "sim_ember"
-lifeTime = 3.0
-renderBase = "draw_twirl"
-textureName = "spark.tga"
-textureBlend = "one one modulate"
-startColor = "10 10 255 120"
-finishColor = "0 0 255 0"
-startRadius = 1.0
-finishRadius = 1.0
-animateTime = 3.0
-rotationRate = 40.0
-bottomInteractsWithTerrain = false
 
 [Thrust]
 simulateBase = "sim_null"
@@ -134,25 +119,13 @@ startRadius = 2.0
 finishRadius = 15.0 // 25
 animateTime = 1.0
 
-[Trail]
-simulateBase = "sim_ember"
-lifeTime = 5.0
-renderBase = "draw_trail"
-textureBlend = "one one modulate"
-startColor = "200 150 250 250"
-finishColor = "0 0 255 20"
-startRadius = 0.06
-finishRadius = 0.0
-//trailTime = 2.0
-segmentTime = 0.5
-
 [Lines]
 simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_emit"
 emitName = "sporexpir.linesemit"
 emitDelay = 0.05
-emitVelocity = "1.0 1.0 1.0"//.4 0 0
+emitVelocity = "0.0 0.0 0.0"//.4 0 0
 emitVariance = "240.0 240.0 240.0"// .5 .5 .5
 
 [LinesEmit]
@@ -192,105 +165,10 @@ segmentVariance = "0.0 0.0 0.0"
 animateTime = 0.7
 textureRate = 0.1 //.01
 
-//////////////////////////////////
-[Cloud]
-simulateBase = "sim_dust"
-lifeTime = 0.5
-renderBase = "draw_emit"
-emitName = "sporexpir.cloudemit"
-emitDelay = 0.5
-emitVelocity = "0.0 1.0 0.0"
-emitVariance = "0.0 1.0 0.0"
-
-[CloudEmit]
-simulateBase = "sim_smoke"
-lifeTime = 1.3
-renderBase = "draw_twirl"
-textureName = "smoke.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "110 50 50 255"
-finishColor = "100 100 100 0"
-startRadius = 1.0
-finishRadius = 2.0
-animateTime = 1.3
-bottomInteractsWithTerrain = false
-
-[Flame]
-simulateBase = "sim_smoke"
-lifeTime = 0.1
-renderBase = "draw_emit"
-emitName = "sporexpir.flameemit"
-emitDelay = 0.1
-emitVelocity = "7.0 7.0 7.0"
-emitVariance = "0.0 0.0 0.0"
-
-[FlameEmit]
-simulateBase = "sim_smoke"
-lifeTime = 0.8
-renderBase = "draw_twirl"
-textureName = "xbhchar3.tga" // flame2
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = " 220 200 255 255"
-finishColor = "0 0 255 0"
-startRadius = 2.0
-finishRadius = 7.0
-animateTime = 0.8
-rotationRate = 5.0
-bottomInteractsWithTerrain = false
-
-///////////////////////////////////////////
-
-[Light]
-simulateBase = "sim_smoke"
-lifeTime = 2.0
-renderBase = "draw_emit"
-emitName = "sporexpir.lightemit"
-emitDelay = 2.0
-emitVelocity = "0.0 150.0 0.0"
-emitVariance = "875.0 875.0 875.0"
-
-[LightEmit]
-simulateBase = "sim_null"
-lifeTime = 3.0
-renderBase = "draw_light"
-startColor = "250 210 255 50550"
-finishColor = "0 0 255 0"
-startRadius = 30.0 // 180
-finishRadius = 25.0 // 75
-animateTime = 3.0
-attenuateConstant = 1.0
-attenuateLinear = 0.0
-attenuateQuadratic = 15.0
-lensFlare = 0
 
 
-[Posroll]
-simulateBase = "sim_dust"
-lifeTime = 2.0
-renderBase = "draw_twirl"
-textureName = "smoke.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "32 32 32 255"
-finishColor = "127 127 127 0"
-startRadius = 1.0
-finishRadius = 0.5
-animateTime = 2.0
-rotationRate = 2.0
 
-[Puff]
-simulateBase = "sim_smoke"
-lifeTime = 4.0
-renderBase = "draw_twirl"
-textureName = "xbhchar3.tga"
-textureBlend = "one one modulate"
-startColor = "220 200 255 255"
-finishColor = "200 150 255 0"
-startRadius = 0.6
-finishRadius = 0.4
-animateTime = 4.0
-bottomInteractsWithTerrain = false
-
-[Ring1]
+[Ring]
 simulateBase = "sim_null"
 lifeTime = 1.0
 renderBase = "draw_sphere"
@@ -338,8 +216,8 @@ lifeTime = 2.0
 renderBase = "draw_emit"
 emitName = "sporexpir.blackemit"
 emitDelay = 0.5
-emitVelocity = "0.0 150.0 0.0"
-emitVariance = "875.0 875.0 875.0"
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
 
 [BlackEmit]
 simulateBase = "sim_null"
@@ -359,7 +237,7 @@ lifeTime = 3.0
 renderBase = "draw_emit"
 emitName = "sporexpir.domeemit"
 emitDelay = 3.0
-emitVelocity = "0.0 0.1 0.0"
+emitVelocity = "0.0 0.0 0.0"
 emitVariance = "0.0 0.0 0.0"
 
 //textureName = "vsmoke.tga"
