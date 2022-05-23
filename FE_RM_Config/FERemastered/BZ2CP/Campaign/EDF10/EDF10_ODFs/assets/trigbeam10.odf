@@ -29,7 +29,7 @@ renderName3 = "trigbeam10.sparkle" // Doesn't exist? -GBD
 
 [Beam]
 renderBase = "draw_bolt"
-textureName = NULL //"trail2.tga"
+textureName = "bolt4.tga" //"trail2.tga"
 textureBlend = "one one modulate"
 startColor = "200 255 200 255"
 finishColor = "0 200 0 200"
@@ -42,7 +42,7 @@ textureRate = 0.01
 
 [Fringe]
 renderBase = "draw_bolt"
-textureName = NULL //"trail2.tga"
+textureName = "bolt4.tga" //"trail2.tga"
 textureBlend = "one one modulate"
 startColor = "0 0 255 245"
 finishColor = "50 180 50 0"

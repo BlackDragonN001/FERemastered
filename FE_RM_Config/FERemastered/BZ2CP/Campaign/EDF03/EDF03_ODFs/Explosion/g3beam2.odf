@@ -5,14 +5,15 @@ shotGeometry = NULL
 xplGround = NULL //"defflarxpl"
 xplVehicle = "xflacar"
 xplBuilding = "xflabld"
+
 shotSound = "stap01.wav"
 renderName = "g3beam2.render"
 
 ammoCost = 0
-lifeSpan = 200e-6 // 100m
+lifeSpan = 500e-6 // 100m
 shotSpeed = 1e6
 
-damageValue(N) =  0 // none //350
+damageValue(N) = 0 // none //350
 damageValue(L) = 0 // light //250
 damageValue(H) = 0 // heavy //150
 
@@ -28,20 +29,23 @@ renderName2 = "g3beam2.fringe"
 renderName3 = "g3beam2.light"
 
 [Core]
-renderBase = "draw_bolt"
-textureName = NULL
+//renderBase = "draw_bolt"
+renderBase = "draw_trail"
+textureName = "bolt4.tga"
 textureBlend = "one one modulate"
 startColor = "255 200 0 255"
 finishColor = "255 150 0 0"
-startRadius = 5
-finishRadius = 10
+startRadius = 5.0
+finishRadius = 10.0
 segmentLength = 5.0
-segmentVariance = "0.0 0.0 0.0"
-animateTime = 0.2
+//segmentVariance = "0.0 0.0 0.0"
+//animateTime = 0.2
+segmentTime = 0.2
 textureRate = 0.01
+textureSpeed = 5.0
 
 [Fringe]
-renderBase = "draw_bolt"
+renderBase = "draw_trail" //bolt"
 textureName = "trail2.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 0 255"
@@ -49,10 +53,10 @@ finishColor = "200 40 40 0"
 startRadius = 11.2
 finishRadius = 12.8
 segmentLength = 5.0
-segmentVariance = "0.5 0.5 0.5"
-animateTime = 0.3
+//segmentVariance = "0.5 0.5 0.5"
+segmentTime = 0.3 //animateTime = 0.3
 textureRate = 0.02
-textureSpeed = -5.0
+textureSpeed = 5.0
 
 [Light]
 renderBase = "draw_light"
