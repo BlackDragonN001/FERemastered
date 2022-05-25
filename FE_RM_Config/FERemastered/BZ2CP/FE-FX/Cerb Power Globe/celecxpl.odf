@@ -31,7 +31,7 @@ particleCount2 = 30
 particleVeloc2 = 0.0 0.0 0.0"
 particleBias2 = "0.0 0.0 0.0"
 
-particleClass3 = "celecxpl.ring"
+particleClass3 = "celecxpl.char"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
@@ -60,16 +60,11 @@ particleClass9 = "celecxpl.fring"
 particleCount9 = 1
 particleVeloc9 = "0.0 0.0 0.0"
 
-particleClass10 = "xelecxpl.puff2" // was "xelecxpl", never worked. -GBD
-particleCount10 = 20
-particleVeloc10 = "80.0 50.0 80.0"
-
-
 [Splat]
 simulateBase = "sim_null"
 lifeTime = 1.0
 renderBase = "draw_sphere"
-textureName = "ring2.tga"
+textureName = "cring2.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 250"
 finishColor = "255 255 255 0"
@@ -88,29 +83,29 @@ emitDelay = 0.3
 emitVelocity = "0.0 0.0 0.0"//.4 0 0
 emitVariance = "35.0 35.0 35.0"// .5 .5 .5
 
-[chunksemit]
+[ChunksEmit]
 simulateBase = "sim_ember"
 lifeTime = 2.5
 renderBase = "draw_trail"
 textureBlend = "one one modulate"
-startColor = "255 127 0 250"
-finishColor = "255 0 0 0"
+startColor = "127 63 255 250"
+finishColor = "0 127 255 0"
 startRadius = 0.06
 finishRadius = 0.0
 trailTime = 2.0
 segmentTime = 0.5
 
-[Ring]
+[Char]
 simulateBase = "sim_null"
 lifeTime = 10.0
 renderBase = "draw_planar"
 textureName = "grndchar.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "20 0 0 255"
+startColor = "10 0 20 255"
 finishColor = "0 0 0 0"
 startRadius = 5.0
 finishRadius = 15.0
-animateTime = 10
+animateTime = 10.0
 
 [Flame]
 simulateBase = "sim_smoke"
@@ -118,8 +113,8 @@ lifeTime = 2.5
 renderBase = "draw_twirl_trail"
 textureName = "flame2.tga"
 textureBlend = "one one modulate"
-startColor = "255 100 100 128"
-finishColor = "255 100 0 0"
+startColor = "100 31 255 127"
+finishColor = "200 100 0 0"
 startRadius = 3.0
 finishRadius = 0.3
 animateTime = 0.5
@@ -137,20 +132,21 @@ spriteCenter.x = 0.0
 spriteCenter.y = 0.0
 textureName = "ground.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "255 100 100 200"
-finishColor = "100 80 80 0"
+startColor = "100 100 255 200"
+finishColor = "80 80 100 0"
 startRadius = 1.0
 finishRadius = 10.0
 animateTime = 1.5
+useTerrainColor = 0.9
 
 [Light]
 simulateBase = "sim_null"
 lifeTime = 1.5
 renderBase = "draw_light"
-startColor = "255 0 0 2855"
-finishColor = "200 0 0 0"
-startRadius = 20
-finishRadius = 20.0
+startColor = "63 0 255 2855"
+finishColor = "0 0 200 0"
+startRadius = 20.0
+finishRadius = 0.0
 animateTime = 1.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
@@ -163,8 +159,8 @@ lifeTime = 0.6
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
-startColor = "255 150 00 80" 
-finishColor = "255 0 0 0" 
+startColor = "127 31 255 80" 
+finishColor = "0 0 255 0" 
 startRadius = 1.0
 finishRadius = 20.0
 animateTime = 0.6
@@ -177,36 +173,20 @@ lifeTime = 1.5
 renderBase = "draw_twirl"
 textureName = "smoke.tga" // flame
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "120 0 0 170"
-finishColor = "100 10 10 0"
+startColor = "20 0 120 170"
+finishColor = "10 10 100 0"
 startRadius = 2.0
 finishRadius = 15.0
 animateTime = 1.5
 
-[fring]
+[FRing]
 simulateBase = "sim_null"
 lifeTime = 1.0
 renderBase = "draw_planar"
-textureName = "burn32b.tga"
+textureName = "cringa3.tga" //"burn32b.tga"
 textureBlend = "one one modulate" //"srcalpha invsrcalpha modulatealpha"
 startColor = "255 255 255 255"
 finishColor = "255 255 255 0"
 startRadius = 3.0
 finishRadius = 20.0
 animateTime = 1
-
-[Puff2]
-simulateBase = "sim_smoke"
-lifeTime = 2.0
-renderBase = "draw_light"
-startColor = "255 200 200 255"
-finishColor = "255 0 0 0"
-startRadius = 0.5
-finishRadius = 0.1
-animateTime = 2.0
-attenuateConstant = 1.0
-attenuateLinear = 0.0
-attenuateQuadratic = 15.0
-lensFlare = false
-
-

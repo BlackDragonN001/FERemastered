@@ -70,6 +70,9 @@ finishRadius = 2.5
 animateTime = 0.2
 latitudeBands = 8
 longitudeSegments = 16
+AddPitch = -20
+AddYaw = -20
+AddRoll = -20
 
 [Eff4]
 renderBase = "draw_sphere"
@@ -82,5 +85,7 @@ finishRadius = 25.0
 animateTime = 0.2
 latitudeBands = 8
 longitudeSegments = 16
-
+AddPitch = 20
+AddYaw = 20
+AddRoll = 20
 

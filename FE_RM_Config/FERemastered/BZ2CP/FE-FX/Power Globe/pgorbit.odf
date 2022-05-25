@@ -48,8 +48,6 @@ attenuateQuadratic = 15.0
 lensFlare = 1
 
 [sphere]
-simulateBase = "sim_null"
-lifeTime = 9000
 renderBase = "draw_sphere"
 textureName = "generator.tga"
 textureBlend = "one one modulate"

@@ -21,6 +21,7 @@ ammoScale = 0.2 //.2
 renderBase = "draw_multi"
 renderCount = 1
 renderName1 = "field2a.sphere"
+
 [render]
 renderBase = "draw_sphere"
 textureName = "cracks.tga"//vsmoke
@@ -32,3 +33,6 @@ finishRadius = 19.0
 animateTime = 5.0
 latitudeBands = 8
 longitudeSegments = 16
+addPitch = 20
+addYaw = 20
+addRoll = 20

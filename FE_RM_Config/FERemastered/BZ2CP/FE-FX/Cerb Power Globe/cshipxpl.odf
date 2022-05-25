@@ -21,61 +21,63 @@ kickRadius = 150.0
 kickOmega = 7.0
 kickVeloc = 7.0
 
-particleTypes = 13
+particleTypes = 12
 
-particleClass1 = "shipxpl.ring"
+particleClass1 = "cshipxpl.ring"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
-particleClass2 = "shipxpl.chunks"
+particleClass2 = "cshipxpl.chunks"
 particleCount2 = 50
 particleVeloc2 = "100.0 130.0 100.0"
 particleBias2 = "0.0 0.0 0.0"
 
-particleClass3 = "shipxpl.thrust"
+particleClass3 = "cshipxpl.thrust"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 particleBias3 = "0.0 0.0 0.0"
 
-particleClass4 = "shipxpl.shock"
+particleClass4 = "cshipxpl.shock"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
 
-particleClass5 = "shipxpl.trail"
+particleClass5 = "cshipxpl.trail"
 particleCount5 = 25
 particleVeloc5 = "90.0 140.0 90.0"
 
-particleClass6 = "shipxpl.flame"
+particleClass6 = "cshipxpl.flame"
 particleCount6 = 2
-particleVeloc6 = "0.0 10.0 0.0"
+particleVeloc6 = "7.0 4.0 7.0"
+particleBias6 = "0.0 5.0 0.0"
 
-particleClass7 = "shipxpl.light"
-particleCount7 = 1
-particleVeloc7 = "0.0 0.0 0.0"
+particleClass7 = "cshipxpl.smoke"
+particleCount7 = 2
+particleVeloc7 = "7.0 5.0 7.0"
+particleBias7 = "0.0 7.0 0.0"
 
-particleClass8 = "shipxpl.posroll"
-particleCount8 = 8
-particleVeloc8 = "5.0 0.0 5.0"
+particleClass8 = "cshipxpl.light"
+particleCount8 = 1
+particleVeloc8 = "0.0 0.0 0.0"
 
-particleClass9 = "shipxpl.puff"
-particleCount9 = 60
-particleVeloc9 = "50.0 50.0 50.0"
+particleClass9 = "cshipxpl.posroll"
+particleCount9 = 8
+particleVeloc9 = "5.0 0.0 5.0"
 
-particleClass10 = "shipxpl.puff2"
-particleCount10 = 0 //50 // Lights, probably meant to be attached to [Puff]. Disabled until VFX rewrite. -GBD
-particleVeloc10 = "70.0 70.0 70.0"
+particleClass10 = "cshipxpl.puff"
+particleCount10 = 60
+particleVeloc10 = "50.0 50.0 50.0"
 
-particleClass11 = "shipxpl.ring1"
+particleClass11 = "cshipxpl.ring1"
 particleCount11 = 1
 particleVeloc11 = "0.0 0.0 0.0"
-particleClass12 = "shipxpl.ring2"
+
+particleClass12 = "cshipxpl.ring2"
 particleCount12 = 1
 particleVeloc12 = "0.0 0.0 0.0"
-particleClass13 = "shipxpl.ring3"
+
+particleClass13 = "cshipxpl.ring3"
 particleCount13 = 1
 particleVeloc13 = "0.0 0.0 0.0"
-
-
 
 
 [Ring]
@@ -84,7 +86,7 @@ lifeTime = 4.0
 renderBase = "draw_sprite"
 spriteCenter.x = 0.0
 spriteCenter.y = 0.0
-textureName = "ringb2.tga"// ringb2
+textureName = "cringb2.tga"// ringb2
 textureBlend = "one one modulate" //"srcalpha invsrcalpha modulatealpha"
 startColor = "255 255 255 150"// 180
 finishColor = "255 100 100 0"
@@ -92,15 +94,14 @@ startRadius = 7.0 //5.0
 finishRadius = 50.0 // 50 
 animateTime = 4.0 //3.5
 
-
 [Chunks]
 simulateBase = "sim_ember"
 lifeTime = 3.0
 renderBase = "draw_twirl"
 textureName = "spark.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 0 255"
-finishColor = "255 0 0 0"
+startColor = "127 0 255 255"
+finishColor = "0 0 255 0"
 startRadius = 1.0
 finishRadius = 1.0
 animateTime = 3.0
@@ -108,17 +109,17 @@ rotationRate = 40.0
 
 [Thrust]
 simulateBase = "sim_null"
-lifeTime = 9
+lifeTime = 9.0
 renderBase = "draw_sprite"
 spriteCenter.x = 0.0
 spriteCenter.y = 0.0
 textureName = "raindrop.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "255 155 0 60"
-finishColor = "255 0 0 0"
+startColor = "155 0 255 60"
+finishColor = "0 0 255 0"
 startRadius = 7.0
 finishRadius = 170.0
-animateTime = 9
+animateTime = 9.0
 
 [Shock]
 simulateBase = "sim_null"
@@ -126,7 +127,7 @@ lifeTime = 3.0
 renderBase = "draw_sprite"
 spriteCenter.x = 0.0
 spriteCenter.y = 0.0
-textureName = "ringa3.tga" //ringa3
+textureName = "cringa3.tga" //ringa3
 textureBlend = "one one modulate" //"srcalpha invsrcalpha modulatealpha"
 startColor = "255 255 255 160"
 finishColor = "255 255 255 0"
@@ -134,78 +135,84 @@ startRadius = 5.0
 finishRadius = 50.0 // 50
 animateTime = 3.0
 
-[trail]
+[Trail]
 simulateBase = "sim_ember"
 lifeTime = 3.0
-renderBase = "draw_trail"
-textureBlend = "one one modulate"
-startColor = "255 127 0 200"
-finishColor = "255 0 0 0"
-startRadius = 0.06
-finishRadius = 0.0
-trailTime = 2.0
-segmentTime = 0.5
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "cshipxpl.trailflare"
+renderName2 = "cshipxpl.trailemit"
 
-
-//[cloud]
-//simulateBase = "sim_dust"
-//lifeTime = .5
-//renderBase = "draw_emit"
-//emitName = "shipxpl.cloudemit"
-//emitDelay = 0.5
-//emitVelocity = "0.0 1.0 0.0"
-//emitVariance = "0.0 1.0 0.0"
-
-//[cloudemit]
-//simulateBase = "sim_smoke"
-//lifeTime = 1.3
-//renderBase = "draw_twirl"
-//textureName = "smoke.tga"
-//textureBlend = "srcalpha invsrcalpha modulatealpha"
-//startColor = "110 50 50 255"
-//finishColor = "100 100 100 0"
-//startRadius = 1.0
-//finishRadius = 2.0
-//animateTime = 1.3
-
-[flame]
+[TrailFlare]
 simulateBase = "sim_smoke"
-lifeTime = 0.1
-renderBase = "draw_emit"
-emitName = "shipxpl.flameemit"
-emitDelay = 0.1
-emitVelocity = "7.0 7.0 7.0"
-emitVariance = "0.0 0.0 0.0"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "127 200 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.6
+finishRadius = 0.6
+animateTime = 3.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
 
-[flameemit]
+[TrailEmit]
+simulateBase = "sim_smoke" //ember"
+lifeTime = 3.0
+renderBase = "draw_trail"
+textureName = "arctrail.tga"
+textureBlend = "one one modulate"
+startColor = "63 127 255 200"
+finishColor = "0 0 255 0"
+startRadius = 0.2
+finishRadius = 0.2
+//trailTime = 2.0
+segmentTime = 0.5 //animateTime = 3.0
+textureRate = 1.0
+textureSpeed = -2.0
+
+[Flame]
 simulateBase = "sim_smoke"
 lifeTime = 0.8
 renderBase = "draw_twirl"
-textureName = "fire.tga" // flame2
+textureName = "flame.tga" // flame2
 textureBlend = "one one modulate"
-startColor = " 255 255 0 255"
-finishColor = "255 0 0 0"
+startColor = "255 63 255 255"
+finishColor = "255 127 0 0"
 startRadius = 3,0
 finishRadius = 14.0
 animateTime = 0.8
+rotationRate = 5.0
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "110 50 50 255"
+finishColor = "100 100 100 0"
+startRadius = 5.0
+finishRadius = 2.0
+animateTime = 1.5
 rotationRate = 5.0
 
 [Light]
 simulateBase = "sim_null"
 lifeTime = 3.0
 renderBase = "draw_light"
-startColor = "255 255 63 5550"
-finishColor = "255 0 0 0"
+startColor = "255 63 255 5550"
+finishColor = "0 127 255 0"
 startRadius = 150.0
-finishRadius = 150.0
+finishRadius = 0.0
 animateTime = 3.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = false
 
-
-[posroll]
+[Posroll]
 simulateBase = "sim_dust"
 lifeTime = 2.0
 renderBase = "draw_twirl"
@@ -224,31 +231,17 @@ lifeTime = 6.0
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 150 0 0"
+startColor = "255 63 255 255"
+finishColor = "0 127 255 0"
 startRadius = 0.6
 finishRadius = 0.4
 animateTime = 6.0
 
-[Puff2]
-simulateBase = "sim_smoke"
-lifeTime = 6.0
-renderBase = "draw_light"
-startColor = "255 255 255 255"
-finishColor = "255 150 0 0"
-startRadius = 4.0
-finishRadius = 1.0
-animateTime = 6.0
-attenuateConstant = 1.0
-attenuateLinear = 0.0
-attenuateQuadratic = 15.0
-lensFlare = false
-
-[ring1]
+[Ring1]
 simulateBase = "sim_null"
 lifeTime = 1.0
 renderBase = "draw_sphere"
-textureName = "ring2.tga" //ring2
+textureName = "cring2.tga" //ring2
 textureBlend = "one one modulate"
 startColor = "255 255 255 210"
 finishColor = "255 255 255 0"
@@ -258,11 +251,11 @@ animateTime = 1.0
 latitudeBands = 8
 longitudeSegments = 16
 
-[ring2]
+[Ring2]
 simulateBase = "sim_null"
 lifeTime = 1.5
 renderBase = "draw_sphere"
-textureName = "ring3.tga"
+textureName = "cringa3.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 210"
 finishColor = "255 255 255 0"
@@ -271,6 +264,8 @@ finishRadius = 50.0
 animateTime = 1.5
 latitudeBands = 8
 longitudeSegments = 16
+
+
 
 [ring3]
 simulateBase = "sim_null"
@@ -285,7 +280,3 @@ finishRadius = 50.0
 animateTime = 2.1
 latitudeBands = 8
 longitudeSegments = 16
-
-
-
-
