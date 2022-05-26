@@ -21,7 +21,7 @@ kickRadius = 150.0
 kickOmega = 7.0
 kickVeloc = 7.0
 
-particleTypes = 12
+particleTypes = 13
 
 particleClass1 = "cshipxpl.ring"
 particleCount1 = 1
@@ -78,7 +78,6 @@ particleVeloc12 = "0.0 0.0 0.0"
 particleClass13 = "cshipxpl.ring3"
 particleCount13 = 1
 particleVeloc13 = "0.0 0.0 0.0"
-
 
 [Ring]
 simulateBase = "sim_null"
@@ -265,13 +264,11 @@ animateTime = 1.5
 latitudeBands = 8
 longitudeSegments = 16
 
-
-
-[ring3]
+[Ring3]
 simulateBase = "sim_null"
 lifeTime = 2.1
 renderBase = "draw_sphere"
-textureName = "ring4.tga"
+textureName = "cring4.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 210"
 finishColor = "255 255 255 0"

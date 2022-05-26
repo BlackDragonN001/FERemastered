@@ -20,7 +20,7 @@ kickRadius = 120.0
 kickOmega = 9.0
 kickVeloc = 9.0
 
-particleTypes = 7
+particleTypes = 8
 
 particleClass1 = "mbfirexpl.splat"
 particleCount1 = 1
@@ -28,7 +28,7 @@ particleVeloc1 = "0.0 0.0 0.0"
 
 particleClass2 = "mbfirexpl.chunks"
 particleCount2 = 35
-particleVeloc2 = "10.0 10.0 30.0"
+particleVeloc2 = "10.0 10.0 10.0"
 particleBias2 = "0.0 10.0 0.0"
 
 particleClass3 = "mbfirexpl.ring"
@@ -37,24 +37,27 @@ particleVeloc3 = "0.0 0.0 0.0"
 
 particleClass4 = "mbfirexpl.flame"
 particleCount4 = 1
-particleVeloc4 = "0.0 2.0 0.0"
-particleBias4 = "0.0 0.0 0.0"
+particleVeloc4 = "0.0 0.0 0.0"
 
-particleClass5 = "mbfirexpl.thrust"
+particleClass5 = "mbfirexpl.smoke"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
 
-particleClass6 = "mbfirexpl.light"
+particleClass6 = "mbfirexpl.thrust"
 particleCount6 = 1
 particleVeloc6 = "0.0 0.0 0.0"
 
-particleClass7 = "mbfirexpl.core"
+particleClass7 = "mbfirexpl.light"
 particleCount7 = 1
 particleVeloc7 = "0.0 0.0 0.0"
 
-particleClass8 = "mbfirexpl.shock" // Header was named xShock. Never worked. -GBD
+particleClass8 = "mbfirexpl.core"
 particleCount8 = 1
 particleVeloc8 = "0.0 0.0 0.0"
+
+particleClass9 = "mbfirexpl.shock" // Header was named xShock. Never worked. -GBD
+particleCount9 = 1
+particleVeloc9 = "0.0 0.0 0.0"
 
 [Splat]
 simulateBase = "sim_null"
@@ -79,6 +82,7 @@ finishColor = "255 200 10 222"
 startRadius = 0.5
 finishRadius = 0.4
 animateTime = 3.0
+useTerrainColor = 0.9
 
 [Ring]
 simulateBase = "sim_null"
@@ -105,9 +109,29 @@ finishRadius = 0.2
 animateTime = 1.0
 rotationRate = 10.0
 emitDelay = 0.03
-emitVelocity = "2.0 3.0 2.0"
+emitVelocity = "0.0 3.0 0.0"
 emitVariance = "2.0 3.0 2.0"
 emitLife = 0.9
+BottomInteractsWithTerrain = false
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 1.2
+renderBase = "draw_twirl_trail"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "63 63 63 200"
+finishColor = "127 127 127 0"
+startRadius = 2.5
+finishRadius = 6.0
+animateTime = 1.0
+rotationRate = 10.0
+emitDelay = 0.05
+emitVelocity = "0.0 7.0 0.0"
+emitVariance = "2.0 3.0 2.0"
+emitPosVariance = "2.0 0.0 2.0"
+emitLife = 1.5
+BottomInteractsWithTerrain = false
 
 [Thrust]
 simulateBase = "sim_null"
@@ -122,6 +146,7 @@ finishColor = "255 100 0 0"
 startRadius = 2.0
 finishRadius = 8.0
 animateTime = 1.2
+useTerrainColor = 0.9
 
 [Light]
 simulateBase = "sim_null"
@@ -129,13 +154,27 @@ lifeTime = 1.5
 renderBase = "draw_light"
 startColor = "255 200 200 4500"
 finishColor = "255 50 0 100"
-startRadius = 60
-finishRadius = 60
+startRadius = 60.0
+finishRadius = 0.0
 animateTime = 1.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
+
+[Core]
+simulateBase = "sim_smoke" //null
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "smoke.tga" // flame
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 220 220 170"
+finishColor = "220 100 0 0"
+startRadius = 6.0
+finishRadius = 25.0
+animateTime = 1.5
+BottomInteractsWithTerrain = false
+
 
 [Shock] // was [xShock]. -GBD
 simulateBase = "sim_null"
@@ -150,15 +189,3 @@ finishRadius = 20.0
 animateTime = 0.5
 latitudeBands = 8
 longitudeSegments = 16
-
-[Core]
-simulateBase = "sim_smoke" //null
-lifeTime = 1.5
-renderBase = "draw_twirl"
-textureName = "smoke.tga" // flame
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "255 220 220 170"
-finishColor = "220 100 0 0"
-startRadius = 6.0
-finishRadius = 25.0
-animateTime = 1.5

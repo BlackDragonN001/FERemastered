@@ -157,8 +157,6 @@ renderName1 = "xbldxpl_e.trailflare"
 renderName2 = "xbldxpl_e.trailemit"
 
 [TrailFlare]
-simulateBase = "sim_smoke"
-lifeTime = 3.0
 renderBase = "draw_twirl"
 textureName = "lightflare.tga"
 textureBlend = "one one modulate"
@@ -171,8 +169,6 @@ rotationRate = 5.0
 BottomInteractsWithTerrain = false
 
 [TrailEmit]
-simulateBase = "sim_smoke" //ember"
-lifeTime = 3.0
 renderBase = "draw_trail"
 textureName = "trail.tga"
 textureBlend = "one one modulate"
