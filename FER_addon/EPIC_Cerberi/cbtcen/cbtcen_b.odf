@@ -1,0 +1,185 @@
+[GameObjectClass]
+geometryName = "cbagen_anim_10.xsi"
+//geometryScale = 2.0
+classLabel = "powerplant"
+animCount = 1
+animName1 = "loop"
+animFile1 = "cbagen_anim_10.xsi"
+powerCost = -18
+scrapCost = 80
+scrapReturn = 40
+scrapValue = 3
+maxHealth = 10000
+maxAmmo = 0
+unitName = "Core Matrix"
+heatSignature = 12.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0
+isAssault = 1
+ownsterrain = 1
+explosionName = "XBHXPL_b"
+issingle = 1
+//canCollide = 1
+
+LightingType = 1
+
+armorClass = H
+
+requireCount = 3
+requireName1 = "Cbcbun_b"
+requireText1 = "Build Slave Node"
+requireName2 = "Cbpgen_b"
+requireText2 = "Build Energy Node"
+requireName3 = "Cbarmo_b"
+requireText3 = "Build Catalyser"
+
+buildSupport = B
+buildRequire = F
+
+provideCount = 2
+provideName1 = "cbtcen_b"
+provideName2 = "tcen"
+
+
+effectHard1 = "hp_light_1"
+effectName1 = "cbtcen_b.light"
+effectHard2 = "hp_light_2"
+effectName2 = "cbtcen_b.light"
+effectHard3 = "hp_light_3"
+effectName3 = "cbtcen_b.light"
+
+effectHard4 = "hp_emit_1"
+effectName4 = "cbtcen_b.cables"
+effectHard5 = "hp_emit_2"
+effectName5 = "cbtcen_b.cables"
+
+
+[LightClass]
+classLabel="spotlight"
+lightColor.r=15.2
+lightColor.g=0.7
+lightColor.b=0.5
+lightColor.a=1.0
+lightRange=0.10
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+coneFalloff=1.0
+coneAngInner=0.5
+coneAngOuter=20.0
+
+
+[BuildingClass]
+
+[render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "cbtcen_b.sparkle"
+renderName2 = "cbtcen_b.light"
+
+
+[Sparkle]
+renderBase = "draw_twirl_trail"
+textureName = "arcloop1.tga"
+textureblend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "155 155 255 220"
+startRadius = 1.5
+finishRadius = 12
+animateTime = 0.3
+rotationRate = 2
+emitDelay = 0.07
+emitVariance = "24.0 24.0 24.0"
+//emitVelocity = "5 5 5"
+emitLife = 0.3
+
+[Light]
+simulateBase = "sim_null"
+renderBase = "draw_light"
+startColor = "180 100 255 2965"
+finishColor = "180 100 255 2965"
+startRadius = 40.0
+finishRadius = 40.0
+animateTime = 5.2
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+
+[cables]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "cbtcen_b.cables1"
+renderName2 = "cbtcen_b.cables2"
+renderName3 = "cbtcen_b.dark"
+
+
+[cables1]
+simulateBase = "sim_smoke"
+lifeTime = 5e30
+renderBase = "draw_emit"
+emitName = "cbtcen_b.cables1emit"
+emitDelay = 6
+emitVelocity = "0.0 0.0 0.0"//.4 0 0
+emitVariance = "80.0 0.0 80.0"// .5 .5 .5
+
+[cables1emit]
+simulateBase = "sim_ember"
+lifeTime = 1.68
+renderBase = "draw_trail"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+textureName = "cerbtail4.tga"
+//textureBlend = "one one modulate"
+textureRate = -1
+startColor = "65 65 65 35500"
+finishColor = "65 65 65 0"
+startRadius = 0.28
+finishRadius = 0.28
+segmentTime = 48
+//segmentVariance = "1 1 0"
+animateTime = 48
+
+[cables2]
+simulateBase = "sim_smoke"
+lifeTime = 5e30
+renderBase = "draw_emit"
+emitName = "cbtcen_b.cables2emit"
+emitDelay = 8
+emitVelocity = "0.0 0.0 0.0"//.4 0 0
+emitVariance = "60.0 0.0 60.0"// .5 .5 .5
+
+[cables2emit]
+simulateBase = "sim_ember"
+lifeTime = 1.68
+renderBase = "draw_trail"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+textureName = "cerbtail4.tga"
+//textureBlend = "one one modulate"
+textureRate = -1
+startColor = "55 55 55 35500"
+finishColor = "55 55 55 0"
+startRadius = 0.58
+finishRadius = 0.58
+segmentTime = 48
+//segmentVariance = "1 1 0"
+animateTime = 48
+
+[dark]
+simulateBase = "sim_null"
+lifeTime = 5e30
+renderBase = "draw_planar"
+textureName = "grndchar.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 225"
+finishColor = "0 0 0 225"
+startRadius = 40.0
+finishRadius = 40.0
+animateTime = 0.5
+
+
+soundAmbient = "ipgen01.wav"
+
+[PoweredBuildingClass]
+detectRange = 350
+
+

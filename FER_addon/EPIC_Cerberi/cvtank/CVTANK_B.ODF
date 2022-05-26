@@ -1,0 +1,251 @@
+// (c) BZ2 Epic unit "Reaper"
+// Model by Slaor
+
+[GameObjectClass]
+
+baseName = "cvtank_b"
+geometryName = "cvtank00_b.xsi"
+//geometryScale = 1.5
+glowTexture = "cvtanka0.pic"
+classLabel = "wingman"
+
+//powerCost = 1
+scrapValue = 10
+scrapCost = 55	
+scrapReturn = 25	
+customCost = 65
+buildTime = 15.0
+customTime = 25.0
+maxHealth = 3000
+maxAmmo = 3000
+addAmmo = 5
+unitName = "Reaper"
+//collisionRadius = 50.0
+needPilot = 1
+canSnipe = 0 // No?
+
+aiName = "RocketTankFriend"
+aiName2 = "RocketTankEnemy"
+SmartIsAirUnitCheck = false
+
+heatSignature = 1.5
+imageSignature = 1.5
+radarSignature = 0.3
+
+//explosionName = "xcerbxpld"//"xcerbsml_b"//"XCERBXPL"
+
+isAssault = 1
+isStealth = 1
+
+LightingType = 1
+
+armorClass = L
+
+provideCount = 2
+provideName1 = "cvtank_b"
+provideName2 = "tank"
+
+
+requireCount = 1
+
+requireName1 = "cbcbun_b"
+requireText1 = "Build Uplink"
+
+effectHard5 = "hp_emit_1"
+effectName5 = "cvtank_b.render"
+effectHard2 = "hp_light_1"
+effectName2 = "cvtank_b.soot" //light
+effectHard3 = "hp_emit_2"
+effectName3 = "cvtank_b.beams1"
+effectHard4 = "hp_emit_3"
+effectName4 = "cvtank_b.beams2"
+effectHard1 = "hp_emit_4"
+effectName1 = "cvtank_b.beams3"
+
+/////// weapons ///////////////////
+
+weaponMask = 11101
+
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = //"gparbst_cb"
+weaponAssault1 = 0
+
+weaponHard2 = "HP_ROCKET_1"
+weaponName2 = //"gparbst_ab"
+weaponAssault2 = 1
+
+weaponHard3 = "HP_gun_1"
+weaponName3 = //"gclaser_cb"
+weaponAssault3 = 0
+
+weaponHard4 = "HP_gun_2"
+weaponName4 = //"gclaser_cb"
+weaponAssault4 = 0
+
+//weaponHard5 = "HP_SHIELD_1"
+//weaponName5 = "gabsorb"
+//weaponAssault5 = 0
+
+////////////////////////////////////
+
+[CraftClass]
+canHunt = true
+//xplCrash = "xcerbxpl"
+rangeScan = 1500.0f
+periodScan = 3.0f
+velocJam = 5.0f
+engageRange = 700
+
+ejectratio = 0
+CanInteractWithTerminal = true
+
+attackTask = "ArcherAttack"
+subAttackTask = "ArcherSubAttack"
+subAttackClass = "NNS"
+
+//braccelFactor = 0.03
+//velFactor = 0.2
+//steerFactor = 1.5
+//omegaFactor = 0.2
+//strafeFactor = 0.2
+
+avoidSpeed = 60;
+topSpeed = 80;
+
+[HoverCraftClass]
+velocForward = 60.5 // []
+velocReverse = 30.0 // []
+velocStrafe = 35.0 // []
+accelThrust = 25.0 //acceleration []
+accelDragStop = 6.0 //how fast it stops once hands are off controls []
+accelJump = 50.0 // []
+
+setAltitude = 1.8 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself []
+alphaDamp = 8.0 //shocks []
+
+pitchPitch = 0.45 //nose up []
+pitchThrust = -0.08 //nose down []
+
+rollStrafe = 0.08 //rolls while strafing []
+omegaSpin = 6.0 //spinning in place speed []
+omegaTurn = 4.3 //turning while moving speed []
+alphaSteer = 7.0 //how fast it responds to steering []
+rollSteer = 0.08 //rolls while steering []
+
+soundThrust = "spider.wav"
+soundTurbo = "spider1.wav"
+
+[render]
+renderBase = "draw_multi"
+renderCount = 1
+//renderName1 = "cvtalon_b.trail"
+renderName2 = "cvtank_b.soot"
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1e30
+renderBase = "draw_light"
+startColor = "120 80 255 850"
+finishColor = "120 80 255 850"
+startRadius = 5.0
+finishRadius = 5.0
+animateTime = 1e30
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+
+
+[beams1]
+simulateBase = "sim_smoke"
+lifeTime = 1e30
+renderBase = "draw_emit"
+emitName = "cvtank_b.beams1emit"
+emitDelay = 2.3
+emitvar = 0.4
+emitVelocity = "0 -100 0"//"0.0 220.0 0.0"
+emitVariance = "500.0 40.0 500.0"
+emitInherit = "1.0 1.0 1.0"
+
+[beams1emit]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_bolt"
+textureName = "bolts.tga"
+textureBlend = "one one modulate"
+startColor = "120 180 255 255"
+finishColor = "100 120 255 0"
+startRadius = 0.1
+finishRadius = 0.5
+segmentLength = 2.5
+segmentVariance = "4.0 2.0 3.0"
+animateTime = 0.1
+textureRate = 0.1 //.01
+
+
+
+[beams2]
+simulateBase = "sim_smoke"
+lifeTime = 1e30
+renderBase = "draw_emit"
+emitName = "cvtank_b.beams2emit"
+emitDelay = 3.6
+emitvar = 0.6
+emitVelocity = "0 -200 0"//"0.0 220.0 0.0"
+emitVariance = "500.0 40.0 500.0"
+emitInherit = "1.0 1.0 1.0"
+
+[beams2emit]
+simulateBase = "sim_smoke"
+lifeTime = 0.25
+renderBase = "draw_bolt"
+textureName = "bolts.tga"
+textureBlend = "one one modulate"
+startColor = "120 180 255 250"
+finishColor = "100 120 255 0"
+startRadius = 0.1
+finishRadius = 0.5
+segmentLength = 2.5
+segmentVariance = "4.0 2.0 3.0"
+animateTime = 0.25
+textureRate = 0.1 //.01
+
+
+[beams3]
+simulateBase = "sim_smoke"
+lifeTime = 1e30
+renderBase = "draw_emit"
+emitName = "cvtank_b.beams3emit"
+emitDelay = 8.3
+delayVar = 0.5
+emitVelocity = "0 -500 0"//"0.0 220.0 0.0"
+emitVariance = "500.0 40.0 500.0"
+emitInherit = "1.0 1.0 1.0"
+
+[beams3emit]
+simulateBase = "sim_smoke"
+lifeTime = 0.15
+renderBase = "draw_bolt"
+textureName = "bolts.tga"
+textureBlend = "one one modulate"
+startColor = "120 180 255 250"
+finishColor = "100 120 255 0"
+startRadius = 0.1
+finishRadius = 0.5
+segmentLength = 2.5
+segmentVariance = "4.0 2.0 3.0"
+animateTime = 0.15
+textureRate = 0.1 //.01
+
+[soot]
+renderBase = "draw_trail"
+textureName = "sootrail.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"//"one one modulate"
+textureRate = 0.05
+startColor =   "0 0 0 180" //"153 153 153 128"
+finishColor = "100 100 100 0
+startRadius = 0.7
+finishRadius = 5.5
+animateTime = 2.2
+segmentTime = 1.2

@@ -1,0 +1,155 @@
+[GameObjectClass]
+baseName = "cvturr_b"
+geometryName = "cvturr01_skel_b.xsi"
+cockpitName = "fvturr_cockpit.xsi"
+//GeometryScale = 1.5
+classLabel = "turrettank"
+animCount = 1
+animName1 = "deploy"
+animFile1 = "cvturr01_deploy_b.xsi"
+
+//explosionName = "XCERBXPL"
+
+//powerCost = 1
+scrapCost = 60
+scrapReturn = 30
+customCost = 75
+scrapValue = 10
+buildTime = 20.0
+customTime = 30.0
+maxHealth = 2500
+maxAmmo = 3000
+addAmmo = 50
+unitName = "Manticore"
+aiName = "TurretTankFriend"
+aiName2 = "TurretTankEnemy"
+heatSignature = 0.1
+imageSignature = 1.0
+radarSignature = 0.1
+isAssault = 1
+isStealth = 1
+canSnipe = 0 // No?
+
+armorClass = L
+
+LightingType = 1
+
+requireCount = 1
+
+requireName1 = "cbcbun_b"
+requireText1 = "Build Uplink"
+
+provideCount = 2
+provideName1 = "cvturr_b"
+provideName2 = "turr"
+
+
+// Dig in Ground Char by GBD.
+EffectHard1 = "hp_com_1"
+EffectName1 = "cvturr_b.startchar"
+effectFlags1 = 495 // Only turn on when deployed. :)
+
+EffectHard2 = "hp_com_1"
+EffectName2 = "cvturr_b.endchar"
+effectFlags2 = 503 // Only turn on when deployed. :)
+
+
+/////// weapons ///////////////////
+
+weaponMask = 00011
+weaponHard1 = "HP_ROCKET_1"
+weaponName1 = //"gadder_ab"
+weaponAssault1 = 0
+weaponHard2 = "HP_ROCKET_2"
+weaponName2 = //"gadder_ab"
+weaponAssault2 = 0
+
+//////////////////////////////////  
+
+turretCount = 4
+turretName1 = "turret_y_1"
+turretName2 = "turret_x_1"
+turretName3 = "turret_x_2"
+turretName4 = "HP_eyepoint"
+
+[CraftClass]
+rangeScan = 800.0
+periodScan = 3.0
+velocJam = 1.0
+engageRange = 700
+detectRange = 450
+
+CanInteractWithTerminal = true
+
+[HoverCraftClass]
+setAltitude = 0.5
+accelDragStop = 20.0
+accelDragFull = 1.0
+alphaTrack = 10.0
+alphaDamp = 3.0
+pitchPitch = 0.5
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+
+velocForward = 45.0
+velocReverse = 20.0
+velocStrafe = 5.0
+accelThrust = 50.0
+accelBrake = 50.0
+omegaSpin = 4.0
+omegaTurn = 1.5
+alphaSteer = 10.0
+accelJump = 10.0
+
+soundThrust = "ssent01d.wav"
+soundSteer = "avturre8.wav"
+soundDeploy = "avturre4.wav"
+soundUndeploy = "avturre5.wav"
+
+
+[TurretTankClass]
+omegaTurret = 1.0
+alphaTurret = 2.0
+timeDeploy = 8.0
+timeUndeploy = 0.7
+
+[Lod1]
+geometryName = "iocmet00.xsi" ;geometry for lod1
+distance = 1000                 ;...distance over this many meters => switch to lod2
+
+
+//Because timedeploy/undeploy are lies, they're not read from [turrettankclass], they're read from [DeployableClass]. Engine defaults to 5.0 seconds. -GBD
+[StartChar]
+renderBase = "draw_planar"
+textureName = "grndchar.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "10 10 10 0"
+finishColor = "10 10 10 255"
+startRadius = 16.0
+finishRadius = 16.0
+animateTime = 3.0
+
+[EndChar]
+StartDelay = 5.1
+simulateBase = "sim_smoke"
+lifeTime = 5.0
+renderBase = "draw_emit"
+emitName = "cvturr_b.endcharemit"
+emitDelay = 1e6
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+//emitInherit = "1.0 1.0 1.0"
+
+[EndCharEmit]
+//StartDelay = 6.0
+simulateBase = "sim_null"
+lifeTime = 10.0
+renderBase = "draw_planar"
+textureName = "grndchar.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "10 10 10 255"
+finishColor = "10 10 10 0"
+startRadius = 16.0
+finishRadius = 16.0
+animateTime = 10.0

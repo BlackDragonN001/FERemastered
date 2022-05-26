@@ -1,0 +1,211 @@
+// (c) BZ2CP unit "Demon"
+// Model by Slaor and Pastell
+
+[GameObjectClass]
+geometryName = "cvdcar00_b.xsi"
+//geometryScale = 1.6
+glowTexture = "cvdcara0.pic"
+baseName = "cvdcar"
+classLabel = "wingman"
+scrapValue = 20
+scrapCost = 90
+maxHealth = 4000
+addHealth = 10
+maxAmmo = 10000
+addAmmo = 50
+//explosionName = "xcerbxpl"
+buildTime = 30.0
+customTime = 30.0
+//collisionRadius = 90.0
+//powerCost = 3
+isStealth = 1
+needPilot = 0
+isAssault = 1
+
+armorClass = H
+
+canSnipe = 0 // No?
+
+LightingType = 1
+
+requireCount = 0
+
+unitName = "Demon"
+
+//aiName = "RocketTankFriend"
+//aiName2 = "RocketTankEnemy"
+
+//aiName = "AttachOffensive"
+//aiName2 = "AttachOffensive"
+
+aiName = "AssaultTankProcess"
+aiName2 = "AssaultTankProcess"
+
+heatSignature = 5
+imageSignature = 5
+radarSignature = 5
+
+provideCount = 2
+provideName1 = "cvdcar_b"
+provideName2 = "air"
+
+weaponMask = 00111
+weaponHard1 = "HP_ROCKET"
+weaponAssault1 = 0
+weaponName1 = "gvmcar"
+weaponGroup1 = 0
+weaponHard2 = "HP_ROCKET1"
+weaponAssault2 = 0
+weaponName2 = "gvgcar"
+weaponGroup2 = 1
+\\weaponHard3 = "HP_SHIELD"
+\\weaponAssault3 = 0
+\\weaponName3 = "gshield"
+\\weaponGroup3 = 2
+
+effectHard1 = "hp_light_1"
+effectName1 = "cvdcar_b.light"
+effectHard2 = "hp_light_2"
+effectName2 = "cvdcar_b.light"
+effectHard3 = "hp_light_3"
+effectName3 = "cvdcar_b.light"
+
+[CraftClass]
+//xplChunk = "xcerbchunk"
+//xplCrash = "XBHXPL_b"
+rangeScan = 1500.0
+periodScan = 2.0
+velocJam = 2.0
+engageRange = 800
+
+ejectratio = 0
+
+UseSelectWeapon = false
+
+CanInteractWithTerminal = true
+
+//braccelFactor = 0.03
+//velFactor = 0.2
+//steerFactor = 1.5
+//omegaFactor = 0.2
+//strafeFactor = 0.2
+
+avoidSpeed = 30;
+topSpeed = 40;
+
+[HoverCraftClass]
+setAltitude = 35.0
+accelDragStop = 5.0
+alphaTrack = 20.0
+alphaDamp = 10.0
+pitchPitch = 0.10
+pitchThrust = 0.1
+rollStrafe = 0.0
+rollSteer = 0.0
+
+velocForward = 30.0
+velocReverse = 30.0
+velocStrafe = 20.0
+accelThrust = 30.0
+omegaSpin = 2.0
+omegaTurn = 1.0
+alphaSteer = 5.0
+accelJump = 90.0 //390.0
+soundThrust = "carrier.wav"
+
+//[SavClass]
+//flightAltitude = 150.0
+//soundDeploy = "avsave6.wav"
+//soundUndeploy = "avsave5.wav"
+
+
+
+[light]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "cvdcar_b.light1"
+renderName2 = "cvdcar_b.glow"
+renderName3 = "cvdcar_b.matter"
+
+[light1]
+simulateBase = "sim_null"
+lifeTime = 1e30
+renderBase = "draw_light"
+startColor = "120 80 255 2550"
+finishColor = "120 80 255 2550"
+startRadius = 15.0
+finishRadius = 15.0
+animateTime = 1e30
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+
+[glow]
+simulateBase = "sim_null"
+lifeTime = 10e30
+renderBase = "draw_planar"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"//"srcalpha invsrcalpha modulatealpha"
+startColor = "150 100 250 15"
+finishColor = "150 100 250 15"
+startRadius =  12.0
+finishRadius = 12.0
+animateTime = 1.2
+rotationrate = 0
+
+
+[trailer1]
+simulateBase = "sim_dust"
+lifeTime = 5e30
+renderBase = "draw_emit"
+emitName = "cvdcar_b.trailer1emit"
+emitdelay = 0.031
+delayVar = 0.1
+emitVelocity = "0.0 0 0.0"
+emitVariance = "26.0 0.0 26.0"
+
+[trailer1emit]
+simulateBase = "sim_dust"
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "sssmoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "150 135 120 45"
+finishColor = "180 170 160 0"
+startRadius =  0//1.8
+finishRadius = 4
+animateTime = 1.5
+rotationrate = 1
+
+[matter]
+simulateBase = "sim_smoke"
+lifeTime = 4.0
+renderBase = "draw_emit"
+emitName = "cvdcar_b.matteremit"
+emitDelay = 0.1
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[matteremit]
+simulateBase = "sim_smoke"
+lifeTime = .5
+renderBase = "draw_twirl"
+textureName = "sparksa.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 150"
+finishColor = "0 0 0 0"
+startRadius = 0.0
+finishRadius = 10.0
+animateTime = .5
+
+[dark]
+simulateBase = "sim_null"
+lifeTime = 5e30
+renderBase = "draw_planar"
+textureName = "grndchar.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 225"
+finishColor = "0 0 0 225"
+startRadius = 15.0
+finishRadius = 15.0
+animateTime = 0.5

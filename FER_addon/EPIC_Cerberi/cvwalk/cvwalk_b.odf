@@ -1,0 +1,136 @@
+[GameObjectClass]
+
+baseName = "cvwalk_b"
+
+classLabel = "iv_walker"
+geometryName = "ivcerb_skel_b.xsi"
+cockpitName = "fvwalk_cockpit.xsi"
+
+animCount = 10
+animName1 = "idle"
+animFile1 = "ivcerb_idle1_b.xsi"
+
+animName2 = "idle2"
+animFile2 = "ivcerb_idle2_b.xsi"
+
+animName3 = "idle3"
+animFile3 = "ivcerb_idle3_b.xsi"
+
+animName4 = "sitdown"
+animFile4 = "ivcerb_kneel_b.xsi"
+
+animName5 = "walk"
+animFile5 = "ivcerb_walk_b.xsi"
+
+animName6 = "turn"
+animFile6 = "ivcerb_walk_b.xsi"
+
+animName7 = "death"
+animFile7 = "ivcerb_death1_b.xsi"
+
+animName8 = "death2"
+animFile8 = "ivcerb_death2_b.xsi"
+
+animName9 = "death3"
+animFile9 = "ivcerb_death3_b.xsi"
+
+animName10 = "run"
+animFile10 = "ivcerb_walk_b.xsi"
+
+//geometryScale = 2.0
+
+scrapValue = 15
+scrapCost = 90
+scrapReturn = 45
+customCost = 100
+buildTime = 35.0
+customTime = 40.0
+maxHealth = 8000
+maxAmmo = 8000
+addAmmo = 20
+unitName = "Executioner"
+aiName = "GechProcess"
+aiName2 = "GechProcess"
+heatSignature = 1.0
+imageSignature = 5.0
+radarSignature = 5.0
+isAssault = 1
+//powerCost = 2
+needPilot = 1
+//collisionRadius = 60.0
+
+LightingType = 1
+
+armorClass = H
+
+provideCount = 2
+provideName1 = "cvwalk_b"
+provideName2 = "walk"
+
+//explosionName = "XCERBXPLb"
+
+
+requireCount = 4
+requireName1 = "cbarmo_b"
+requireText1 = "Build Catalyser"
+requireName2 = "cbcbun_b"
+requireText2 = "Build Uplink"
+requireName3 = "cbfact_b"
+requireText3 = "Build Crucible"
+requireName4 = "cbtcen_b"
+requireText4 = "Build Core Matrix"
+
+/////// weapons ///////////////////
+
+weaponMask = 11111
+weaponHard1 = "HP_CANNON_01"
+weaponName1 = //"gsguncb"
+weaponAssault1 = 0
+weaponHard2 = "HP_CANNON_02"
+weaponName2 = //"gsguncb"
+weaponAssault2 = 0
+
+////////////////////////////////////
+
+[CraftClass]
+rangeScan = 1200.0
+periodScan = 5.0
+velocJam = 20.0
+engageRange = 1000
+
+ejectratio = 0
+CanInteractWithTerminal = true
+
+topSpeed = 30
+avoidSpeed = 15
+
+[WalkerClass]
+is13Walker = false 
+Walker12Type = 1 // -1 = auto, 0 = isdf style, 1 = fury style
+weightInTons = 120
+headYawRate	= 100.0 
+minHeadYaw = -180.0
+maxHeadYaw =  180.0
+minHeadPitch = -40.0
+maxHeadPitch = 40.0
+
+alphaDamp = 5.0
+omegaTurn = 60.0
+omegaTurnAttenuation = 0.5f
+
+velocJump = 0;
+alphaTrack = 20.0
+pitchPitch = 0.0
+pitchThrust = 0.0
+accelThrust = 20.0
+velocForward = 40.0
+velocReverse = 30.0
+velocWalkFactor = 0.50
+
+headpiece = "midbody"
+rightfootpiece = "hp_rfoot";
+leftfootpiece = "hp_lfoot";
+engineSound	= "srecy01.wav"
+stepSound  = "fwstep01.wav"
+
+attackSpeed = 60

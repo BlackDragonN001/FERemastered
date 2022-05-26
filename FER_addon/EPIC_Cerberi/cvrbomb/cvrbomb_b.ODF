@@ -1,0 +1,218 @@
+// (c) BZ2CP Unit: Siren
+// Created by Slaor and Pastell
+
+[GameObjectClass]
+
+baseName = "cvrbomb_b"
+geometryName = "cvrbomb00_b.xsi"
+//geometryScale = 2
+
+classLabel = "wingman"
+//powerCost = 1
+scrapValue = 30
+scrapCost = 65
+customCost = 70
+buildTime = 20.0
+customTime = 25.0
+maxHealth = 3500	
+maxAmmo = 3500
+addAmmo = 20
+unitName = "Siren"
+aiName = "RocketTankFriend"
+aiName2 = "RocketTankEnemy"
+//aiName = "AssaultTankProcess"
+//aiName2 = "AssaultTankProcess"
+//collisionRadius = 50.0
+
+heatSignature = 1.5
+imageSignature = 1.5
+radarSignature = 0.3
+needPilot = 1
+canSnipe = 0 // No?
+
+//explosionName = "XCERBXPLd"
+
+//effectHard1 = "hp_emit_1"
+//effectName1 = "ivtank_b.trailer"
+
+
+isAssault = 1
+isStealth = 1
+
+LightingType = 1
+
+provideCount = 2
+provideName1 = "cvrbomb_b"
+provideName2 = "rbomb"
+
+armorClass = H
+
+requireCount = 2
+requireName1 = "cbcbun_b"
+requireText1 = "Build Uplink"
+requireName2 = "cbarmo_b"
+requireText2 = "Build Catalyser"
+
+/////// weapons ///////////////////
+
+weaponMask = 11111
+weaponHard1 = "HP_ROCKET_1"
+weaponName1 = //"gcaamiss"
+weaponAssault1 = 0
+
+weaponHard2 = "HP_ROCKET_4"
+weaponName2 = //"gcwasp_cb"
+weaponAssault2 = 0
+
+weaponHard3 = "HP_ROCKET_2"
+weaponName3 = //"gcwasp_ab"
+weaponAssault3 = 1
+
+\\weaponHard4 = "HP_SHIELD_1"
+\\weaponName4 = "gshield"
+\\weaponAssault4 = 0
+
+////////////////////////////////////
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2" 
+lightHard2 = "hp_light_2"
+lightName2 = "spotblue2"
+
+effectHard3 = "hp_emit_2"
+effectName3 = "cvrbomb_b.beams1"
+effectHard4 = "hp_emit_3"
+effectName4 = "cvrbomb_b.beams2"
+effectHard5 = "hp_emit_4"
+effectName5 = "cvrbomb_b.beams3"
+
+[CraftClass]
+canHunt = true
+//xplCrash = "XCERBXPLb"
+rangeScan = 1800.0f
+periodScan = 5.0f
+velocJam = 5.0f
+engageRange = 1550
+
+ejectratio = 0
+
+CanInteractWithTerminal = true
+
+attackTask = "ArcherAttack"
+subAttackTask = "ArcherSubAttack"
+subAttackClass = "ANS"
+
+//braccelFactor = 0.03
+//velFactor = 0.2
+//steerFactor = 1.5
+//omegaFactor = 0.2
+//strafeFactor = 0.2
+
+avoidSpeed = 40;
+topSpeed = 60;
+
+[HoverCraftClass]
+velocForward = 50.5 // []
+velocReverse = 30.0 // []
+velocStrafe = 10.0 // []
+accelThrust = 20.0 //acceleration []
+accelDragStop = 10.0 //how fast it stops once hands are off controls []
+accelJump = 20.0 // []
+
+setAltitude = 4.5 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself []
+alphaDamp = 8.0 //shocks []
+
+pitchPitch = 0.4 //nose up []
+pitchThrust = 0.1 //nose down []
+
+rollStrafe = 0.08 //rolls while strafing []
+omegaSpin = 3.5 //spinning in place speed []
+omegaTurn = 2.3 //turning while moving speed []
+alphaSteer = 7.0 //how fast it responds to steering []
+rollSteer = 0.08 //rolls while steering []
+
+soundThrust = "cvbomb.wav"
+soundTurbo = "cvbomb1.wav"
+
+[beams1]
+simulateBase = "sim_smoke"
+lifeTime = 1e30
+renderBase = "draw_emit"
+emitName = "cvtank_b.beams1emit"
+emitDelay = 4.7
+emitvar = 0.4
+emitVelocity = "0 -100 0"//"0.0 220.0 0.0"
+emitVariance = "500.0 40.0 500.0"
+emitInherit = "1.0 1.0 1.0"
+
+[beams1emit]
+simulateBase = "sim_smoke"
+lifeTime = 0.15
+renderBase = "draw_bolt"
+textureName = "bolts.tga"
+textureBlend = "one one modulate"
+startColor = "120 180 255 255"
+finishColor = "100 120 255 0"
+startRadius = 0.15
+finishRadius = 0.5
+segmentLength = 3.2
+segmentVariance = "4.0 2.0 3.0"
+animateTime = 0.15
+textureRate = 0.1 //.01
+
+[beams2]
+simulateBase = "sim_smoke"
+lifeTime = 1e30
+renderBase = "draw_emit"
+emitName = "cvrbomb_b.beams1emit"
+emitDelay = 2.9
+emitvar = 0.6
+emitVelocity = "0 -500 0"//"0.0 220.0 0.0"
+emitVariance = "500.0 40.0 500.0"
+emitInherit = "1.0 1.0 1.0"
+
+[beams2emit]
+simulateBase = "sim_smoke"
+lifeTime = 0.25
+renderBase = "draw_bolt"
+textureName = "bolts.tga"
+textureBlend = "one one modulate"
+startColor = "120 180 255 250"
+finishColor = "100 120 255 0"
+startRadius = 0.1
+finishRadius = 0.5
+segmentLength = 2.5
+segmentVariance = "4.0 2.0 3.0"
+animateTime = 0.25
+textureRate = 0.1 //.01
+
+[beams3]
+simulateBase = "sim_smoke"
+lifeTime = 1e30
+renderBase = "draw_emit"
+emitName = "cvrbomb_b.beams1emit"
+emitDelay = 7.7
+delayVar = 0.5
+emitVelocity = "0 -500 0"//"0.0 220.0 0.0"
+emitVariance = "500.0 40.0 500.0"
+emitInherit = "1.0 1.0 1.0"
+
+[beams3emit]
+simulateBase = "sim_smoke"
+lifeTime = 0.15
+renderBase = "draw_bolt"
+textureName = "bolts.tga"
+textureBlend = "one one modulate"
+startColor = "120 180 255 250"
+finishColor = "100 120 255 0"
+startRadius = 0.1
+finishRadius = 0.5
+segmentLength = 2.5
+segmentVariance = "4.0 2.0 3.0"
+animateTime = 0.15
+textureRate = 0.1 //.01
+
+
+ 
