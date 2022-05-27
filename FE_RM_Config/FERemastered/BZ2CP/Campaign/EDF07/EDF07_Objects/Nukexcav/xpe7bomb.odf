@@ -22,7 +22,7 @@ particleClass3 = "xpe7bomb.cloud" // Never worked. -GBD
 particleCount3 = 1
 particleVeloc3 = "0.0 10.0 0.0"
 
-particleClass4 = "xpe7bomb.flame"
+particleClass4 = "xpe7bomb.flame" // Never worked. -GBD
 particleCount4 = 2
 particleVeloc4 = "0.0 10.0 0.0"
 
@@ -43,17 +43,31 @@ damageValue(A) = 100 // absorbtion
 
 [Shock]
 simulateBase = "sim_null"
-lifeTime = 10
+lifeTime = 5.0
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
 startColor = "198 203 44 230"
-finishColor = "99 100 88 149"
+finishColor = "99 100 88 0"
 startRadius = 3.0
-finishRadius = 400.0
-animateTime = 10
+finishRadius = 350.0
+animateTime = 5.0
 latitudeBands = 8
 longitudeSegments = 16
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 5.0
+renderBase = "draw_light"
+startColor = "0 255 0 255"
+finishColor = "255 0 255 0"
+startRadius = 350.0
+finishRadius = 0.0
+animateTime = 5.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 [cloud]
 simulateBase = "sim_dust"
@@ -66,19 +80,19 @@ emitVariance = "0.0 1.0 0.0"
 
 [cloudemit]
 simulateBase = "sim_smoke"
-lifeTime = 10
+lifeTime = 10.0
 renderBase = "draw_twirl"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "0 0 0 255"
 finishColor = "0 0 0 0"
-startRadius = 15
-finishRadius = 1000
-animateTime = 10
+startRadius = 15.0
+finishRadius = 1000.0
+animateTime = 10.0
 
 [flame]
 simulateBase = "sim_smoke"
-lifeTime = 10
+lifeTime = 10.0
 renderBase = "draw_emit"
 emitName = "xperchit.flameemit"
 emitDelay = 0.01
@@ -87,27 +101,13 @@ emitVariance = "0.0 0.0 0.0"
 
 [flameemit]
 simulateBase = "sim_smoke"
-lifeTime = 10
+lifeTime = 10.0
 renderBase = "draw_twirl"
 textureName = "flame2.tga"
 textureBlend = "one one modulate"
 startColor = " 255 255 200 255"
 finishColor = "10 100 0 255"
-startRadius = 10
-finishRadius = 300
-animateTime = 10
+startRadius = 10.0
+finishRadius = 300.0
+animateTime = 10.0
 rotationRate = 3.21
-
-[Light]
-simulateBase = "sim_null"
-lifeTime = 10
-renderBase = "draw_light"
-startColor = "0 255 0 255"
-finishColor = "255 0 255 0"
-startRadius = 50.0
-finishRadius = 350.0
-animateTime = 10
-attenuateConstant = 1.0
-attenuateLinear = 0.0
-attenuateQuadratic = 15.0
-lensFlare = 0

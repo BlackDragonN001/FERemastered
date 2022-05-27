@@ -6,17 +6,18 @@
 classLabel = "explosion"
 
 particleTypes = 3
+
 particleClass1 = "xdabomb8.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xdabomb8.shock"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
+
 particleClass3 = "xdabomb8.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
-
-
 
 explSound = "dust01.wav"
 //also like benv, chaff, itug
@@ -30,7 +31,7 @@ damageValue(S) = 0
 damageValue(D) = 0
 damageValue(A) = 0
 
-kickRadius = 100
+kickRadius = 100.0
 kickOmega = 1.0
 kickVeloc = 5.0
 
@@ -41,24 +42,24 @@ renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
 startColor = "0 255 255 255"
-finishColor = "255 255 255 255"
+finishColor = "255 255 255 0"
 startRadius = 25.0
 finishRadius = 250.0
-animateTime = 2.0
+animateTime = 1.0
 latitudeBands = 8
 longitudeSegments = 16
 
 [Shock]
 simulateBase = "sim_null"
-lifeTime = 2
+lifeTime = 2.0
 renderBase = "draw_sphere"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
 startColor = "0 255 255 0"
-finishColor = "0 255 0 255"
+finishColor = "0 255 0 0"
 startRadius = 10.0
 finishRaius = 100.0
-animateTime = 1
+animateTime = 2.0
 
 [Light]
 simulateBase = "sim_null"
@@ -67,7 +68,7 @@ renderBase = "draw_light"
 startColor = "255 0 0 255"
 finishColor = "255 255 0 255"
 startRadius = 60.0
-finishRadius = 60.0
+finishRadius = 0.0
 animateTime = 1.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
