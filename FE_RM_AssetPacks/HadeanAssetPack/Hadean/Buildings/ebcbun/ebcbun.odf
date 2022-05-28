@@ -39,6 +39,10 @@ provideName3 = "base"
 lightHard1 = "hp_light_1"
 lightName1 = "omniyohad"
 
+effectHard1 = "hp_emit_1"
+effectName1 = "ebcbun.render"
+effectFlags1 = 2147483583 // only when powered.
+
 [BuildingClass]
 soundAmbient = "icomm01.wav"
 
@@ -63,3 +67,122 @@ detectRange = 300
 //geometryName = "ebcbunL1.xsi" ;geometry for lod1
 //distance = 100                   ;bsphere under 200 pixel => switch to lod1
 //dontShiftLOD = 1
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ebcbun.wave"
+renderName2 = "ebcbun.pulse" //beam"
+
+[Wave]
+renderBase = "draw_emit"
+emitName = "ebcbun.waveemit"
+emitDelay = 0.5
+emitVelocity = "0.0 5.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[Waveemit]
+simulateBase = "sim_smoke"
+lifeTime = 1.5
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "255 180 30 200"
+finishColor = "255 150 30 0"
+startRadius = 2.0
+finishRadius = 1.5
+animateTime = 1.5
+waveAngle = 3.14159265359
+waveDepth = 1.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 64
+maxCount = 256
+
+[Pulse]
+renderBase = "draw_emit"
+emitName = "ebcbun.pulseemit"
+emitDelay = 5.0
+emitVelocity = "0.0 100.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[PulseEmit]
+simulateBase = "sim_smoke"
+lifeTime = 10.0
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "ebcbun.pulsebeam"
+renderName2 = "ebcbun.pulseflare"
+renderName3 = "ebcbun.pulsetrail"
+renderName4 = "ebcbun.pulselight"
+
+[PulseBeam]
+renderBase = "draw_trail"
+textureName = "dragbolt.tga" //"trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.1 //0.01
+textureSpeed = -0.3
+startColor = "255 180 30 200"
+finishColor = "255 150 30 0"
+startRadius = 2.0
+finishRadius = 2.0
+segmentTime = 1.5
+
+[PulseFlare]
+renderBase = "draw_sprite"
+textureName = "lightflare2.tga" //"trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 180 30 255"
+finishColor = "255 150 30 255"
+startRadius = 5.0
+finishRadius = 5.0
+animateTime = 10.0
+
+[PulseTrail]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureblend = "one one modulate"
+startColor = "255 220 0 255"
+finishColor = "255 180 0 0"
+startRadius = 1.0
+finishRadius = 0.5
+animateTime = 1.0
+emitDelay = 0.005
+emitVariance = "0.0 0.0 0.0"
+emitVelocity = "0.0 0.0 0.0"
+emitLife = 1.0
+BottomInteractsWithTerrain = false
+
+[PulseLight]
+renderBase = "draw_light"
+startColor = "255 220 30 600"
+finishColor = "255 200 30 600"
+startRadius = 50.0
+finishRadius = 50.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+
+
+[Beam]
+renderBase = "draw_emit"
+emitName = "ebcbun.beamemit"
+emitDelay = 0.1
+emitVelocity = "0.0 1e5 0.0" // fixes bolt segment overflow //1e6"
+emitVariance = "0.0 0.0 0.0"
+
+[BeamEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_trail"
+textureName = "bolt4.tga"
+textureBlend = "one one modulate"
+startColor = "255 180 30 200"
+finishColor = "255 150 30 200"
+startRadius = 2.0
+finishRadius = 2.0
+segmentLength = 20.0
+segmentTime = 0.1
+textureRate = 0.1
