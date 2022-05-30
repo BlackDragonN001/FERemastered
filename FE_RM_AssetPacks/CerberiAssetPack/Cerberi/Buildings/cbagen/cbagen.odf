@@ -51,8 +51,13 @@ effectHard2 = "hp_emit_2"
 effectName2 = "cbagen.render"
 
 [BuildingClass]
+soundAmbient = "ipgen01.wav"
 
-[render]
+[PoweredBuildingClass]
+detectRange = 50
+
+
+[Render]
 renderBase = "draw_multi"
 renderCount = 1
 renderName1 = "cbagen.sparkle"
@@ -69,10 +74,3 @@ animateTime = 1.0
 emitDelay = 0.007
 emitVariance = "2.0 2.0 2.0"
 emitLife = 2.3
-
-soundAmbient = "ipgen01.wav"
-
-[PoweredBuildingClass]
-detectRange = 50
-
-
