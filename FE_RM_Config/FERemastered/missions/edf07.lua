@@ -301,7 +301,7 @@ function AddObject(h)
 		GiveWeapon(h, "igjetp");
 	elseif IsOdf(h, "ivcons") then
 		M.Constructor = h;
-	elseif (IsOdf(h, "cvturr")) then
+	elseif (IsOdf(h, "cvturr07")) then
 		SetSkill(h, 3); -- Added to make sure Cerberi Turrets shoot at you before shooting them. - AI_Unit.
 	end
 end
@@ -554,7 +554,7 @@ function Routine5()
 				Patrol(M.Attacker01, "conpatrol",1);
 				M.Attacker02 = BuildObject("cvscout",5,"hadconstart");
 				Patrol(M.Attacker02, "conpatrol",1);
-				Goto(BuildObject("cvturr", 5, "hadconstart"), "bendstop", 1);
+				Goto(BuildObject("cvturr07", 5, "hadconstart"), "bendstop", 1);
 				M.Routine5State = M.Routine5State + 1;
 				M.Routine5Timer = GetTime() + 10;
 			end
@@ -588,7 +588,7 @@ function Routine5()
 			Patrol(M.Attacker01, "conpatrol", 1);
 			M.Attacker02 = BuildObject("cvscout", 5, "hadconstart");
 			Patrol(M.Attacker02, "conpatrol2", 1);
-			M.Attacker03 = BuildObject("cvturr", 5, "hadconstart");
+			M.Attacker03 = BuildObject("cvturr07", 5, "hadconstart");
 			Goto(M.Attacker03, "BridWest", 1);
 			M.Routine5State = M.Routine5State + 1;
 			M.Routine5Timer = GetTime() + 10;
@@ -617,7 +617,7 @@ function Routine5()
 			M.Routine5Timer = GetTime() + (4 - M.JammerState) * 40;	--cerbs are more frequent if ECM jammer is dead or too far from recy
 		elseif M.Routine5State == 13 then
 			Patrol(BuildObject("cvtank", 5, "hadconstart"), "conpatrol", 1);
-			Goto(BuildObject("cvturr", 5, "hadconstart"), "patrolp3", 1);
+			Goto(BuildObject("cvturr07", 5, "hadconstart"), "patrolp3", 1);
 			M.Routine5State = M.Routine5State + 1;
 			M.Routine5Timer = GetTime() + 30;	
 		elseif M.Routine5State == 14 then
@@ -644,7 +644,7 @@ function Routine5()
 			Patrol(M.Attacker02,"cerbsault_1",1);
 			M.Attacker03 = BuildObject("cvrbomb", 5, "hadconstart");
 			Patrol(M.Attacker03, "cerbsault_1", 1);
-			M.Attacker04 = BuildObject("cvturr", 5, "hadconstart");
+			M.Attacker04 = BuildObject("cvturr07", 5, "hadconstart");
 			Goto(M.Attacker04, "BridWest", 1);
 			M.Routine5State = M.Routine5State + 1;
 			M.Routine5Timer = GetTime() + 35;
@@ -681,7 +681,7 @@ function Routine5()
 			M.Routine5Timer = GetTime() + 10;
 		elseif M.Routine5State == 24 then
 			Patrol(M.Attacker03, "convoy_1", 1);
-			M.Attacker04 = BuildObject("cvturr",5,"portalsouth");
+			M.Attacker04 = BuildObject("cvturr07",5,"portalsouth");
 			Goto(M.Attacker04, "convendpoint", 1);
 			M.Routine5State = M.Routine5State + 1;
 			M.Routine5Timer = GetTime() + 20;
@@ -726,7 +726,7 @@ function Routine6()
 				Patrol(M.Attacker20, "conpatrol2", 1);
 			end
 			if not IsAround(M.Attacker21) then
-				M.Attacker21 = BuildObject("cvturr", 5, "hadconstart");
+				M.Attacker21 = BuildObject("cvturr07", 5, "hadconstart");
 				Goto(M.Attacker21, "bendstop", 1);
 			end
 			M.Routine6State = 0;
@@ -1015,8 +1015,8 @@ function Routine8()
 			if M.Routine8Counter <= 2 then
 				M.Routine8State = 22;--to LOC_441
 			else
-				Goto(BuildObject("cvturr", 5, "portalsouth"), "recy_deploy1", 1);
-				Goto(BuildObject("cvturr", 5, "portalsouth"), "recy_deploy2", 1);
+				Goto(BuildObject("cvturr07", 5, "portalsouth"), "recy_deploy1", 1);
+				Goto(BuildObject("cvturr07", 5, "portalsouth"), "recy_deploy2", 1);
 				M.Routine8State = M.Routine8State + 1;
 				M.Routine8Timer = GetTime() + 3;
 			end	
@@ -1182,7 +1182,7 @@ function Routine9()
 			end
 			M.Routine9State = M.Routine9State + 1;
 		elseif M.Routine9State == 2 then	--LOC_558
-			M.Attacker14 = TeleportIn("cvatank2", 5, "portalsouth", 10);
+			M.Attacker14 = TeleportIn("cvatank07", 5, "portalsouth", 10);
 			--M.Attacker15 = BuildObject("cvtank", 5, "waterstart");	--"waterstart"/"watershort" is on other side of river. units get stuck and pile up!
 			Patrol(M.Attacker13, "waterportpath", 1);
 			Patrol(M.Attacker14, "portalsouthpath", 1);
@@ -1197,7 +1197,7 @@ function Routine9()
 				--Attack(M.Attacker15, M.Constructor, 1);
 			end			
 			M.Attacker16 = TeleportIn("cvscout", 5, "islandstart", 10);
-			M.Attacker17 = TeleportIn("cvturr", 5, "islandstart", 10);
+			M.Attacker17 = TeleportIn("cvturr07", 5, "islandstart", 10);
 			Patrol(M.Attacker16, "islandpath", 1);
 			Patrol(M.Attacker17, "islandpath", 1);
 			M.Routine9State = M.Routine9State + 1;
@@ -1460,7 +1460,7 @@ function Routine9()
 			M.Routine9State = M.Routine9State + 1;
 		elseif M.Routine9State == 47 then	--LOC_735
 			if IsAround(M.Attacker18) then
-				M.Attacker18 = BuildObject("cvatank2", 5, "islandstart");
+				M.Attacker18 = BuildObject("cvatank07", 5, "islandstart");
 				SetSkill(M.Attacker18, 3);
 				Patrol(M.Attacker18, "islandpath", 1);
 				M.Routine9State = M.Routine9State + 1;
@@ -1954,7 +1954,7 @@ function Routine14()
 			M.Attacker06 = BuildObject("cvtank", 5, "westcratatkout");
 			Patrol(M.Attacker05, "westcratatk2", 1);
 			Patrol(M.Attacker06, "westcratatk1", 1);
-			M.Attacker01 = BuildObject("cvatank2", 5, "islandstart");
+			M.Attacker01 = BuildObject("cvatank07", 5, "islandstart");
 			M.Attacker02 = BuildObject("cvscout", 5, "islandstart");
 			M.Routine14State = M.Routine14State + 1;
 			M.Routine14Timer = GetTime() + 10;
@@ -2024,7 +2024,7 @@ function Routine14()
 		elseif M.Routine14State == 17 then	--LOC_1106
 			M.Attacker01 = BuildObject("cvtank", 5, "MtnPass");
 			M.Attacker02 = BuildObject("cvscout", 5, "westcratatkin");
-			M.Attacker03 = BuildObject("cvturr", 5, "MtnPass");
+			M.Attacker03 = BuildObject("cvturr07", 5, "MtnPass");
 			--M.Attacker04 = BuildObject(" ", 5, "MtnPass");--???
 			M.Routine14State = M.Routine14State + 1;
 			M.Routine14Timer = GetTime() + 10;

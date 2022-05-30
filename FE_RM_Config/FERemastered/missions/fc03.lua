@@ -91,7 +91,7 @@ function InitialSetup()
 		"cvrbomb",
 		"cvdcar",
 		"cvmlay03",
-		"cvatank2",
+		"cvatank",
 		"cvtalon"
 	};
 	for k,v in pairs(preloadOdf) do
@@ -616,7 +616,7 @@ function Routine5()
 			M.Routine5Timer = GetTime() + 10;
 		elseif M.Routine5State == 8 then
 			local scionBuilder = GetHandle("unnamed_fvcons");
-			Attack(TeleportIn("cvatank2", 5, M.Portal2Aurora1, 0), scionBuilder, 0);
+			Attack(TeleportIn("cvatank", 5, M.Portal2Aurora1, 0), scionBuilder, 0);
 			M.Routine5State = M.Routine5State + 1;
 			M.Routine5Timer = GetTime() + 10;
 		elseif M.Routine5State == 9 then

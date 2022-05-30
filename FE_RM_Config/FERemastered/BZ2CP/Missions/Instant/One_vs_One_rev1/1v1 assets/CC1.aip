@@ -94,7 +94,7 @@ plantype = "buildminimums"
 planpriority = 145
 buildtype1 = "cvrbomb"
 buildcount1 = 1
-buildtype2 = "cvatank2"
+buildtype2 = "cvatank"
 buildcount2 = 1
 
 [plan13]
@@ -124,7 +124,7 @@ planconditionclass = "cvrbombP"
 plantype = "attacker"
 planpriority = 125
 targettype = "cvrbombP"
-attacktype1 = "cvatank2"
+attacktype1 = "cvatank"
 
 [plan17]
 plantype = "buildminimums"

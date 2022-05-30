@@ -189,11 +189,11 @@ function Routine1()
 			h = BuildObject("ivturr", 1, "TurrS");
 			SetGroup(h, 8);
 			Goto(h, "T2", 0);
-			BuildObject("cvturr", 5, "CST1");
-			BuildObject("cvturr", 5, "CST2");
-			BuildObject("cvturr", 5, "CST3");
-			BuildObject("cvturr", 5, "CST4");
-			BuildObject("cvturr", 5, "CST5");
+			BuildObject("cvturr07", 5, "CST1");
+			BuildObject("cvturr07", 5, "CST2");
+			BuildObject("cvturr07", 5, "CST3");
+			BuildObject("cvturr07", 5, "CST4");
+			BuildObject("cvturr07", 5, "CST5");
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 50;
 		elseif M.Routine1State == 4 then
@@ -355,7 +355,7 @@ function Routine1()
 			end
 		elseif M.Routine1State == 34 then
 			--final Cerb assault wave spawns after destruction of the Cerb base
-			local spawnOdfs = {"cvdcar", "cvdcar", "cvatank2", "cvatank2", "cvhatank", "cvwalk"};
+			local spawnOdfs = {"cvdcar", "cvdcar", "cvatank07", "cvatank07", "cvhatank", "cvwalk"};
 			for i = 1, #spawnOdfs do
 				M.FinalWave[i] = TeleportIn(spawnOdfs[i], 5, M.Portal, math.random(-40,40));
 				Attack(M.FinalWave[i], M.Recycler, 1);
