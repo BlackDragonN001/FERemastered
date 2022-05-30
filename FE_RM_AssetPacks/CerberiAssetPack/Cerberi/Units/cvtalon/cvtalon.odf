@@ -26,7 +26,7 @@ needPilot = 0
 
 requireCount = 1
 requireName1 = "cbfact"
-requireText1 = "Build Factory"
+requireText1 = "Build Crucible"
 
 /////// Provides ///////////////////
 
@@ -121,7 +121,7 @@ damageEffect3 = "dmgvhcl_c3"
 damageEffect4 = "dmgvhcl_c4"
 
 [HoverCraftClass]
-velocForward = 90 // []
+velocForward = 90.0 // []
 velocReverse = 50.0 // []
 velocStrafe = 50.0 // []
 accelThrust = 60.0 //acceleration []

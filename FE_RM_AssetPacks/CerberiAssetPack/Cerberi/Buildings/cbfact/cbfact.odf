@@ -21,13 +21,14 @@ AllowUndergroundSpawn = 1
 
 requireCount = 1
 requireName1 = "cbpgen"
-requireText1 = "Build Power"
+requireText1 = "Build Energy Node"
 
 /////// Provides ///////////////////
 
-provideCount = 2
+provideCount = 3
 provideName1 = "cbfact"
-provideName2 = "base"
+provideName2 = "VIRTUAL_CLASS_FACTORY"
+provideName3 = "base"
 
 /////// Lights and Effects ///////////////////
 
@@ -62,7 +63,7 @@ rescueMsg = "ivrecy13.wav"
 buildItem1 = "cvtank"
 buildItem2 = "cvmlay"
 buildItem3 = "cvrbomb"
-buildItem4 = "cvatank2"
+buildItem4 = "cvatank"
 buildItem5 = "cvhatank"
 buildItem6 = "cvtalon"
 buildItem7 = "cvdcar"

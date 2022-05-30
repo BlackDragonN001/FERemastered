@@ -26,9 +26,10 @@ requireText2 = "Build Uplink Array"
 
 /////// Provides ///////////////////
 
-provideCount = 2
+provideCount = 3
 provideName1 = "cbarmo"
-provideName2 = "base"
+provideName2 =  "VIRTUAL_CLASS_ARMORY"
+provideName3 = "base"
 
 [BuildingClass]
 soundAmbient = "iarm01.wav"

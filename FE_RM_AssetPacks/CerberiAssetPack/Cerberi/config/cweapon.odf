@@ -1,37 +1,32 @@
 [Gun]
-weaponCount = 4
-weaponName1 = "apshellgun"
-weaponName2 = "apcphcg"
-weaponName3 = "apslicer"
-weaponName4 = "apeburst"
+weaponCount = 3
+weaponName1 = "apclaser"
+weaponName2 = "apcrapier"
+weaponName3 = "apcpen"
 
 [Cannon]
-weaponCount = 4
-weaponName1 = "apdragb"
-weaponName2 = "apslagstab"
-weaponName3 = "apcphlas"
-weaponName4 = "apfbgun"
+weaponCount = 5
+weaponName1 = "apcblast"
+weaponName2 = "apcplasma"
+weaponName3 = "apparbst"
+weaponName4 = "apcslam"
+weaponName5 = "apcrplas"
 
 [Rocket]
 weaponCount = 3
-weaponName1 = "aptagcr"
-weaponName2 = "apcpworm"
-weaponName3 = "apsprink"
+weaponName1 = "apcvfafm"
+weaponName2 = "apcvcmet"
+weaponName3 = "apchavoc"
 
 [Mortar]
-weaponCount = 5
-weaponName1 = "aphfire"
-weaponName2 = "aphmort"
-weaponName3 = "apslagmort"
-weaponName4 = "aptagcr_c"
-weaponName5 = "aptagcr_a"
+weaponCount = 1
+weaponName1 = "apsing"
 
 [Special]
-weaponCount = 4
-weaponName1 = "approx"
-weaponName2 = "apflamemin"
-weaponName3 = "apcpmits"
-weaponName4 = "apcphan"
+weaponCount = 3
+weaponName1 = "apbhole"
+weaponName2 = "apmcspormin"
+weaponName3 = "apmcag"
 
 [Shield]
 weaponCount = 3
@@ -40,11 +35,7 @@ weaponName2 = "apdefl"
 weaponName3 = "apabso"
 
 [Hand]
-weaponCount = 2
-weaponName1 = "epsnip"
-weaponName2 = "epgren"
+weaponCount = 0
 
 [Pack]
-weaponCount = 2
-weaponName1 = "epjetp"
-weaponName2 = "epbazo"
+weaponCount = 0

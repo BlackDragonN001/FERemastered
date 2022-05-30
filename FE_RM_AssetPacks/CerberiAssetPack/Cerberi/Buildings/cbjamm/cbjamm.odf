@@ -29,11 +29,12 @@ requireText2 = "Build Uplink Array"
 
 /////// Provides ///////////////////
 
-provideCount = 1
+provideCount = 3
 provideName1 = "cbjamm"
+provideName2 = "VIRTUAL_CLASS_JAMMER"
+provideName3 = "base"
 
 [PoweredBuildingClass]
-powerCost = 0
 detectRange = 10
 
 [BuildingClass]

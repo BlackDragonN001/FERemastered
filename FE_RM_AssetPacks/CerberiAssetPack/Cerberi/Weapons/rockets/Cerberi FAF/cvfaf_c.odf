@@ -137,3 +137,45 @@ attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 1
+
+
+
+// OLD RENDER:
+[RenderOLD]
+renderBase="draw_multi"
+renderCount=3
+renderName1="cvfaf_c.flareOLD"
+renderName2="cvfaf_c.lightOLD"
+renderName3="cvfaf_c.flameOLD"
+
+[FlareOLD]
+renderBase="draw_sprite"
+textureName="lightflare.tga"
+textureBlend="one one modulate"
+startColor="252 254 6 255"
+finishColor="252 254 6 255"
+startRadius=1.0
+finishRadius=0.5
+
+[LightOLD]
+renderBase="draw_sprite"
+textureName="lightflare.tga"
+textureBlend="one one modulate"
+startColor="254 254 150 355"
+finishColor="252 254 50 0"
+startRadius=2.0
+finishRadius=2.0 
+
+[FlameOLD]
+renderBase="draw_twirl_trail"
+textureName="flame.tga"
+textureBlend="one one modulate"
+startColor="154 78 1 255"
+finishColor="254 158 6 0"
+startRadius=0.3
+finishRadius=0.02
+animateTime=0.15
+emitDelay=0.001
+emitVelocity="0.0 0.0 0.0"
+emitVariance="2.0 2.0 2.0"
+emitLife=0.15
