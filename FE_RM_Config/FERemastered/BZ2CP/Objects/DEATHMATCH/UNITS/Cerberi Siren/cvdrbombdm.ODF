@@ -2,8 +2,6 @@
 baseName = "cvdrbombdm"
 geometryName = "cvdrbomb00.xsi"
 
-
-
 classLabel = "cvrbomb"
 
 maxHealth = 3000	
@@ -20,6 +18,11 @@ armorClass = H
 rangeScan = 400.0f
 
 steerFactor = 1.0
+
+damageEffect1 = "dmgvhcl_c1"
+damageEffect2 = "dmgvhcl_c2"
+damageEffect3 = "dmgvhcl_c3"
+damageEffect4 = "dmgvhcl_c4"
 
 [HoverCraftClass]
 velocForward = 29.5 // []

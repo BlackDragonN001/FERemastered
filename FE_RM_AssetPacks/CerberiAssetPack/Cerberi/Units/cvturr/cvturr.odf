@@ -58,7 +58,9 @@ turretName6 = "HP_eyepoint"
 rangeScan = 300.0
 periodScan = 3.0
 velocJam = 1.0
-engageRange = 150
+engageRange = 150.0
+
+ejectRatio = 0.0f
 
 selectGoMsg = "fvturr06.wav"
 

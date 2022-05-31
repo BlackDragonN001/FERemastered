@@ -46,12 +46,15 @@ heatSignature = 1.0
 imageSignature = 2.0
 radarSignature = 2.0
 isAssault = 1
+needPilot = 0
 armorClass = H
 
 /////// REQUIREMENTS ///////////////
+
 requireCount = 0
 
 /////// PROVIDES ///////////////////
+
 provideCount = 2
 provideName1 = "cvcons"
 provideName2 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"

@@ -84,7 +84,9 @@ effectName7 = "cvtalon.light"
 rangeScan = 400.0f
 periodScan = 5.0f
 velocJam = 5.0f
-engageRange = 500
+engageRange = 500.0
+
+ejectRatio = 0.0f
 
 braccelFactor = 0.05
 velFactor = 0.3

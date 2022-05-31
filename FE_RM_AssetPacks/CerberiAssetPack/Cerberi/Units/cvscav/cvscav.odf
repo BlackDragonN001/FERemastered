@@ -42,7 +42,7 @@ lightHard2 = "hp_light_2"
 lightName2 = "spotblue2" 
 
 [CraftClass]
-EjectRatio = 0.0f // Don't eject pilots. -GBD
+ejectRatio = 0.0f // Don't eject pilots. -GBD
 
 rangeScan = 200.0
 periodScan = 0.0

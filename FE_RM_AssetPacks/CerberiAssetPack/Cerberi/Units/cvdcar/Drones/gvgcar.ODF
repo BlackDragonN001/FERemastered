@@ -7,6 +7,8 @@ wpnReticle = "gcomet.0"
 wpnCategory = "SPEC"
 aiRange = 450
 isAssault = 0
+needLOS = false
+AllowOffmapFiring = true
 
 [DispenserClass]
 shotDelay = 2.0

@@ -59,7 +59,9 @@ effectFlags1 = 2147483135
 rangeScan = 350.0f
 periodScan = 3.0f
 velocJam = 5.0f
-engageRange = 275
+engageRange = 275.0
+
+ejectRatio = 0.0f
 
 braccelFactor = 0.03
 velFactor = 0.2

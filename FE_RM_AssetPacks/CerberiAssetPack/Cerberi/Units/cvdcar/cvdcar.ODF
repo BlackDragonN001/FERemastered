@@ -64,10 +64,12 @@ effectName3 = "cvdcar.trail"
 rangeScan = 600.0
 periodScan = 2.0
 velocJam = 2.0
-engageRange = 450
+engageRange = 450.0
+blastDist = 200.0
 
 xplCrash = "xcarxpl_c"
 useSelectWeapon = false
+ejectRatio = 0.0f
 
 braccelFactor = 0.03
 velFactor = 0.2

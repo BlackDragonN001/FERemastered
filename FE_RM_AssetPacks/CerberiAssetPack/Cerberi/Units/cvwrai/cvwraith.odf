@@ -49,7 +49,9 @@ weaponAssault1 = 0
 rangeScan = 400.0f
 periodScan = 5.0f
 velocJam = 10.0f
-engageRange = 220
+engageRange = 220.0
+
+ejectRatio = 0.0f
 
 braccelFactor = 0.05
 velFactor = 0.2
