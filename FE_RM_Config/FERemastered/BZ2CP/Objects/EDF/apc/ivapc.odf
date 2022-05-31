@@ -65,6 +65,13 @@ effectMaxAltitude2 = 1e6
 //effectMaxVelocity2 = 1e6
 effectFlags2 = 2147483639
 
+// original FE fx.
+//effectHard1 = "hp_emit_1"
+//effectName1 = "ivapc.trailer"
+//effectHard3 = "hp_dust_1"
+//effectName3 = "ivapc.flame"
+//effectHard4 = "hp_dust_2" 
+//effectName4 = "ivapc.flame"
 
 //effectHard3 = "hp_dust_1"
 //effectName3 = "emit_aircraft1"
@@ -174,7 +181,7 @@ textureBlend = "one one modulate"
 textureRate = 0.05 //.05
 startColor = "255 255 255 255"
 finishColor = "255 255 255 0"
-startRadius = 1.0
-finishRadius = 1.0
+startRadius = 0.7
+finishRadius = 0.7
 segmentTime = 0.2 //.05
 animateTime = 0.05 //.05
