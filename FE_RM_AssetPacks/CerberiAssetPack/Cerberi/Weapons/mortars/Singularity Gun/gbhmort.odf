@@ -13,87 +13,75 @@ flashName = "gbhmort.render" // Never worked... -GBD
 [CannonClass]
 shotDelay = 3.0
 
-[render]
+[Render]
 renderBase = "draw_multi"
-renderCount = 10
+renderCount = 3
 renderName1 = "gbhmort.sphere"
-renderName2 = "gbhmort.bolt"
-renderName3 = "gbhmort.light"
+renderName2 = "gbhmort.light"
+renderName3 = "gbhmort.bolt"
 
-[sphere]
-simulateBase = "sim_smoke"
-lifeTime = 2.0
+[Sphere]
 renderBase = "draw_emit"
 emitName = "gbhmort.sphereemit"
-emitDelay = 1.0
-emitVelocity = "0.0 0.1 0.0"
+emitDelay = 1e6
+emitVelocity = "0.0 0.0 0.0"
 emitVariance = "0.0 0.0 0.0"
-textureName = "vsmoke.tga"
-textureBlend = "one one modulate"
-startColor = "255 150 150 0"
-finishColor = "0 0 255 255"
-startRadius = 35.0
-finishRadius = 10.0
-animateTime = 2
-latitudeBands = 8
-longitudeSegments = 16
+emitInherit = "1.0 1.0 1.0"
 
-[sphereemit]
+[SphereEmit]
 simulateBase = "sim_smoke"
-lifeTime = 2.2
+lifeTime = 0.25
 renderBase = "draw_sphere"
 textureName = "bhsphere.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha" // "one one modulate"
-startColor = "180 150 250 0"
-finishColor = "0 0 120 255"
-startRadius = 55.0
-finishRadius = 5.0
-animateTime = 2
+startColor = "180 150 250 255"
+finishColor = "0 0 120 0"
+startRadius = 2.0
+finishRadius = 10.0
+animateTime = 0.25
 latitudeBands = 8
 longitudeSegments = 16
 
-[bolt]
-simulateBase = "sim_smoke"
-lifeTime = 3.0
+[Bolt]
 renderBase = "draw_emit"
 emitName = "gbhmort.boltemit"
 emitDelay = 0.005
-emitVelocity = "0.0 150.0 0.0"
-emitVariance = "875.0 875.0 875.0"
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "300.0 300.0 300.0"
+emitInherit = "1.0 1.0 1.0"
 
-[boltemit]
+[BoltEmit]
 simulateBase = "sim_smoke"
-lifeTime = 3.0
+lifeTime = 0.1
 renderBase = "draw_bolt"
-textureName = "bhbolt.tga"
+textureName = "bolt4.tga"
 textureBlend = "one one modulate"
-startColor = "150 0 100 150"
+startColor = "127 0 255 150"
 finishColor = "0 0 255 0"
 startRadius = 0.2
 finishRadius = 0.05
 segmentLength = 1.0
 segmentVariance = "1.5 1.5 0.0"
-animateTime = 2.0
+animateTime = 0.25
 textureRate = 0.1 //.01
 
-[light]
-simulateBase = "sim_smoke"
-lifeTime = 2.4
+[Light]
 renderBase = "draw_emit"
 emitName = "gbhmort.lightemit"
-emitDelay = 0.01
-emitVelocity = "0.0 150.0 0.0"
-emitVariance = "875.0 875.0 875.0"
+emitDelay = 1e6
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitInherit = "1.0 1.0 1.0"
 
-[Lightemit]
-simulateBase = "sim_null"
-lifeTime = 2.4
+[LightEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.25
 renderBase = "draw_light"
 startColor = "200 180 255 2550"
 finishColor = "0 0 255 0"
-startRadius = 150.0
-finishRadius = 150.0
-animateTime = 3.0
+startRadius = 50.0
+finishRadius = 0.0
+animateTime = 0.20
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0

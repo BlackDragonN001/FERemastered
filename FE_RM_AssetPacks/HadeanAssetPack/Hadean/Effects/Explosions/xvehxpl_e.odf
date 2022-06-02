@@ -157,13 +157,14 @@ lensFlare = 0
 simulateBase = "sim_ember"
 lifeTime = 0.6
 renderBase = "draw_trail"
-textureName = "trail2.tga"
+textureName = "trail4.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 0 255"
 finishColor = "255 0 0 0"
 startRadius = 0.05
 finishRadius = 0.0
-trailTime = 0.2
+textureRate = 0.5
+//trailTime = 0.2
 segmentTime = 0.2
 
 [Shock]

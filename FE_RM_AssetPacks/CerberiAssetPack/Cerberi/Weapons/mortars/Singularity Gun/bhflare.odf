@@ -37,29 +37,20 @@ kickOmega = 1.5
 
 [render]
 renderBase = "draw_multi"
-renderCount = 6
+renderCount = 8
 renderName1 = "bhflare.sphere"
 renderName2 = "bhflare.light"
 renderName3 = "bhflare.light2"
 renderName4 = "bhflare.ring"
 renderName5 = "bhflare.ring2"
 renderName6 = "bhflare.ground"
+renderName7 = "bhflare.sphere2"
+renderName8 = "bhflare.sphere3"
 //renderName7 = "bhflare.dome"
 
 [Sphere]
-simulateBase = "sim_smoke"
-lifeTime = 4.0
-renderBase = "draw_emit"
-emitName = "bhflare.sphereemit"
-emitDelay = 4.2
-emitVelocity = "0.0 0.1 0.0"
-emitVariance = "0.0 0.0 0.0"
-
-[SphereEmit]
-simulateBase = "sim_smoke"
-lifeTime = 4.2
 renderBase = "draw_sphere"
-textureName = "bhsphere.tga"
+textureName = "vsmoke.tga" //"bhsphere.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha" // "one one modulate"
 startColor = "240 200 250 0"
 finishColor = "0 0 40 230"
@@ -68,6 +59,36 @@ finishRadius = 1.0
 animateTime = 4.2
 latitudeBands = 8
 longitudeSegments = 16
+
+[Sphere2]
+renderBase = "draw_sphere"
+textureName = "cracks.tga" //"bhsphere2.tga"
+textureBlend = "one one modulate" //"srcalpha invsrcalpha modulatealpha" // "one one modulate"
+startColor = "240 200 250 0"
+finishColor = "31 31 63 230"
+startRadius = 66.0
+finishRadius = 1.1
+animateTime = 4.2
+latitudeBands = 8
+longitudeSegments = 16
+addPitch = 50
+addRoll = 50
+addYaw = 50
+
+[Sphere3]
+renderBase = "draw_sphere"
+textureName = "cracks.tga" //"bhsphere2.tga"
+textureBlend = "one one modulate" //"srcalpha invsrcalpha modulatealpha" // "one one modulate"
+startColor = "240 200 250 0"
+finishColor = "31 31 63 230"
+startRadius = 66.0
+finishRadius = 1.1
+animateTime = 4.2
+latitudeBands = 8
+longitudeSegments = 16
+addPitch = -50
+addRoll = -50
+addYaw = -50
 
 [Light]
 renderBase = "draw_light"
@@ -82,8 +103,6 @@ attenuateQuadratic = 15.0
 lensFlare = 0
 
 [Light2]
-simulateBase = "sim_smoke"
-lifeTime = 4.0
 renderBase = "draw_emit"
 emitName = "bhflare.lightemit2"
 emitDelay = 4.2
@@ -135,8 +154,6 @@ finishRadius = 240.0
 animateTime = 4.0
 
 [dome]
-simulateBase = "sim_smoke"
-lifeTime = 3.0
 renderBase = "draw_emit"
 emitName = "bhflare.domeemit"
 emitDelay = 3.0

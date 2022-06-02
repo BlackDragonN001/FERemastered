@@ -24,7 +24,7 @@ damageValue(A) = 0 // absorbtion
 
 [Render]
 renderBase = "draw_trail"
-textureName = "trail2.tga"
+textureName = "trail4.tga"
 textureBlend = "invsrc invsrc modulate"// "one one modulate"
 startColor = "0 0 0 255 " //"160 50 0 80"
 finishColor = "0 0 0 0 " //"110 120 30 0"

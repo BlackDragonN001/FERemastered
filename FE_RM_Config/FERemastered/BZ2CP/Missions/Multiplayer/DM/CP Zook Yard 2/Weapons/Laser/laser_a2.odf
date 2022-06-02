@@ -31,7 +31,7 @@ renderName5 = "laser_a2.sparkle2"
 
 [Core]
 renderBase = "draw_bolt"
-textureName = "trail2.tga"  //NULL
+textureName = "trail4.tga"  //NULL
 textureBlend = "one one modulate"
 startColor = "150 0 255 50"
 finishColor = "180 80 255 255"
@@ -44,7 +44,7 @@ textureRate = 0.1 //0.01
 
 [Tail]
 renderBase = "draw_bolt"
-textureName = "trail2.tga" //NULL
+textureName = "trail4.tga" //NULL
 textureBlend = "one one modulate"
 startColor = "100 70 255 255"
 finishColor = "50 0 255 0"

@@ -29,7 +29,7 @@ particleClass4 = "xvchxpl_c.shock"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.1 0.0"
 
-particleClass5 = "xvchxpl_c.trail"
+particleClass5 = "xvchxpl_c.lines"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
 
@@ -146,7 +146,7 @@ animateTime = 0.2
 latitudeBands = 16
 longitudeSegments = 32
 
-[Trail]
+[Lines]
 simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_emit"

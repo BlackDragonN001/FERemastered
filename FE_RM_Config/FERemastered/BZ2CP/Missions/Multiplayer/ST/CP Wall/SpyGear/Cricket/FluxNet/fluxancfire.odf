@@ -7,9 +7,9 @@ xplVehicle = NULL
 xplBuilding = NULL
 rendername = "fluxancfire.render"
 
-ammoCost = 11 
-lifeSpan =  5
-shotSpeed = 60 
+ammoCost = 11
+lifeSpan = 5.0
+shotSpeed = 60.0
 
 damageValue(N) = 0
 damageValue(L) = 0
@@ -23,7 +23,7 @@ payloadName = "fluxanchor"
 
 [Render]
 renderBase = "draw_trail"
-textureName = "trail2.tga"
+textureName = "trail4.tga"
 textureBlend = "one one modulate"
 startColor = "150 50 20 255"
 finishColor = "100 50 20 0"

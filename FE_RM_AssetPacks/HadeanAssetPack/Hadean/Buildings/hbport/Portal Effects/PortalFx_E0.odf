@@ -87,7 +87,7 @@ emitInherit = "1.0 1.0 1.0"
 emitDelay = 0.5
 emitDelayVar = 1.0
 
-// Diagonal 45 deg
+// Diagonal -45 deg
 [BoltsC]
 renderBase = "draw_emit"
 emitName = "PortalFX_E0.boltemit"
@@ -107,7 +107,7 @@ emitInherit = "1.0 1.0 1.0"
 emitDelay = 0.5
 emitDelayVar = 1.0
 
-// Horizontal 10 deg
+// Horizontal -10 deg
 [BoltsE]
 renderBase = "draw_emit"
 emitName = "PortalFX_E0.boltemit"

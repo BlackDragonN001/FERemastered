@@ -54,13 +54,13 @@ renderName1 = "ivdactyl.contrail"
 
 [Contrail]
 renderBase = "draw_trail"
-textureName = "trail2.tga"
+textureName = "trail4.tga"
 textureBlend = "one one modulate"
 startColor = "120 110 140 110"
 finishColor = "100 100 140 0"
 startRadius = 2.0
 finishRadius = 0.8 
-segmentTime = .6 // 3.0  // time each segment animates
+segmentTime = 0.6 // 3.0  // time each segment animates
 segmentVariance = "0.1 0.1 0.1"
 animateTime = 0.3
 textureRate = 0.05

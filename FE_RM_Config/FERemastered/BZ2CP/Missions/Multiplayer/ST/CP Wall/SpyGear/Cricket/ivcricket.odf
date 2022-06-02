@@ -46,13 +46,13 @@ renderName1 = "ivcricket.tail"
 
 [Tail]
 renderBase = "draw_trail"
-textureName = "trail2.tga"
+textureName = "trail4.tga"
 textureBlend = "one one modulate"
 startColor = "50 50 90 150"
 finishColor = "50 50 80 0"
 startRadius = 0.6
 finishRadius = 0.2 
-segmentTime = .9 // time each segment animates
+segmentTime = 0.9 // time each segment animates
 segmentVariance = "0.1 0.1 0.1"
 animateTime = 0.3
 textureRate = 0.05

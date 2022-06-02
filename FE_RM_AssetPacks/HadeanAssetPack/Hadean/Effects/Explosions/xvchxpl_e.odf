@@ -89,8 +89,6 @@ renderName1 = "xvchxpl_e.linesflare"
 renderName2 = "xvchxpl_e.linesemit2"
 
 [LinesFlare]
-simulateBase = "sim_dust"
-lifeTime = 1.5
 renderBase = "draw_twirl"
 textureName = "lightflare.tga"
 textureBlend = "one one modulate"
@@ -103,10 +101,8 @@ rotationRate = 5.0
 BottomInteractsWithTerrain = false
 
 [LinesEmit2]
-simulateBase = "sim_dust"//dust
-lifeTime = 1.5 //2.5
 renderBase = "draw_trail"
-textureName = "trail2.tga"
+textureName = "trail4.tga"
 textureBlend = "one one modulate"
 startColor = "200 60 0 255"
 finishColor = "200 0 0 0"
@@ -230,7 +226,7 @@ longitudeSegments = 32
 simulateBase = "sim_ember"
 lifeTime = 2.8
 renderBase = "draw_trail"
-textureName = "trail2.tga"
+textureName = "trail4.tga"
 textureBlend = "one one modulate"
 textureRate = 0.1
 startColor = "255 170 0 170"

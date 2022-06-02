@@ -21,7 +21,7 @@ kickRadius = 50.0
 kickOmega = 77.0
 kickVeloc = 37.0
 
-particleTypes = 14
+particleTypes = 13
 
 particleClass1 = "xbhxpl.ring"
 particleCount1 = 1
@@ -29,8 +29,8 @@ particleVeloc1 = "0.0 0.0 0.0"
 
 particleClass2 = "xbhxpl.chunks"
 particleCount2 = 70
-particleVeloc2 = "150.0 170.0 130.0"
-particleBias2 = "0.0 0.0 0.0"
+particleVeloc2 = "150.0 150.0 150.0"
+particleBias2 = "0.0 20.0 0.0"
 
 particleClass3 = "xbhxpl.thrust"
 particleCount3 = 1
@@ -43,7 +43,8 @@ particleVeloc4 = "0.0 0.0 0.0"
 
 particleClass5 = "xbhxpl.trail"
 particleCount5 = 45
-particleVeloc5 = "140.0 160.0 130.0"
+particleVeloc5 = "140.0 100.0 140.0"
+particleBias5 = "0.0 20.0 0.0"
 
 particleClass6 = "xbhxpl.lines"
 particleCount6 = 1
@@ -53,35 +54,29 @@ particleClass7 = "xbhxpl.light"
 particleCount7 = 1
 particleVeloc7 = "0.0 0.0 0.0"
 
-particleClass8 = "xbhxpl.posroll"
-particleCount8 = 8
-particleVeloc8 = "5.0 0.0 5.0"
+particleClass8 = "FEDustRingLarge"
+particleCount8 = 1
+particleVeloc8 = "0.0 0.0 0.0"
 
 particleClass9 = "xbhxpl.puff"
 particleCount9 = 70
 particleVeloc9 = "80.0 80.0 80.0"
 
-particleClass10 = "xbhxpl.puff2"
-particleCount10 = 60
-particleVeloc10 = "90.0 70.0 100.0"
+particleClass10 = "xbhxpl.beams"
+particleCount10 = 1
+particleVeloc10 = "0.0 0.0 0.0"
 
-particleClass11 = "xbhxpl.beams"
+particleClass11 = "xbhxpl.ring1"
 particleCount11 = 1
 particleVeloc11 = "0.0 0.0 0.0"
 
-particleClass12 = "xbhxpl.ring1"
+particleClass12 = "xbhxpl.black"
 particleCount12 = 1
 particleVeloc12 = "0.0 0.0 0.0"
 
-particleClass13 = "xbhxpl.black"
+particleClass13 = "xbhxpl.dome"
 particleCount13 = 1
 particleVeloc13 = "0.0 0.0 0.0"
-
-particleClass14 = "xbhxpl.dome"
-particleCount14 = 1
-particleVeloc14 = "0.0 0.0 0.0"
-
-
 
 [Ring]
 simulateBase = "sim_null"
@@ -97,7 +92,6 @@ startRadius = 7.0 //5.0
 finishRadius = 30.0 // 50 
 animateTime = 4.0 //3.5
 
-
 [Chunks]
 simulateBase = "sim_ember"
 lifeTime = 3.0
@@ -106,8 +100,8 @@ textureName = "spark.tga"
 textureBlend = "one one modulate"
 startColor = "10 10 255 120"
 finishColor = "0 0 255 50"
-startRadius = 1.0
-finishRadius = 1.0
+startRadius = 0.5
+finishRadius = 0.5
 animateTime = 3.0
 rotationRate = 40.0
 bottomInteractsWithTerrain = false
@@ -143,13 +137,33 @@ animateTime = 1.0
 [Trail]
 simulateBase = "sim_ember"
 lifeTime = 5.0
-renderBase = "draw_trail"
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xbhxpl.trailflare"
+renderName2 = "xbhxpl.trailemit"
+
+[TrailFlare]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
 textureBlend = "one one modulate"
 startColor = "200 150 250 250"
-finishColor = "0 0 255 20"
+finishColor = "0 127 255 0"
+startRadius = 0.6
+finishRadius = 0.6
+animateTime = 3.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[TrailEmit]
+renderBase = "draw_trail"
+textureName = "trail.tga"
+textureBlend = "one one modulate"
+startColor = "200 150 250 250"
+finishColor = "0 0 255 0"
 startRadius = 0.06
-finishRadius = 0.0
-trailTime = 2.0
+finishRadius = 0.06
+textureRate = 0.5
+textureSpeed = -2.0
 segmentTime = 0.5
 
 [Lines]
@@ -162,8 +176,26 @@ emitVelocity = "1.0 1.0 1.0"//.4 0 0
 emitVariance = "240.0 240.0 240.0"// .5 .5 .5
 
 [LinesEmit]
-simulateBase = "sim_dust"//dust
-lifeTime = 2.0 //2.5
+simulateBase = "sim_dust"
+lifeTime = 2.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xbhxpl.linesflare"
+renderName2 = "xbhxpl.linesemit2"
+
+[LinesFlare]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "200 180 255 255"
+finishColor = "0 0 255 255"
+startRadius = 3.0
+finishRadius = 3.0
+animateTime = 2.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[LinesEmit2]
 renderBase = "draw_trail"
 textureName = "trail2.tga"
 textureBlend = "one one modulate"
@@ -266,20 +298,6 @@ attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = false
 
-
-[Posroll]
-simulateBase = "sim_dust"
-lifeTime = 2.0
-renderBase = "draw_twirl"
-textureName = "smoke.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "32 32 32 255"
-finishColor = "127 127 127 0"
-startRadius = 1.0
-finishRadius = 0.5
-animateTime = 2.0
-rotationRate = 2.0
-
 [Puff]
 simulateBase = "sim_smoke"
 lifeTime = 4.0
@@ -291,22 +309,6 @@ finishColor = "200 150 255 0"
 startRadius = 0.6
 finishRadius = 0.4
 animateTime = 4.0
-
-[Puff2]
-simulateBase = "sim_smoke"
-lifeTime = 4.0
-renderBase = "draw_light"
-textureName = "flame.tga"
-textureBlend = "one one modulate"
-startColor = "200 180 255 255"
-finishColor = "250 200 250 0"
-startRadius = 4.0
-finishRadius = 1.0
-animateTime = 4.0
-attenuateConstant = 1.0
-attenuateLinear = 0.0
-attenuateQuadratic = 15.0
-lensFlare = 0
 
 [Ring1]
 simulateBase = "sim_null"

@@ -28,7 +28,7 @@ renderName2 = "pointer.fringe"
 
 [Core]
 renderBase = "draw_bolt"
-textureName = NULL
+textureName = "trail2.tga"
 textureBlend = "one one modulate"
 startColor = "255 0 0 500"
 finishColor = "255 0 0 255"
@@ -41,7 +41,7 @@ textureRate = 0.01
 
 [Fringe]
 renderBase = "draw_bolt"
-textureName = "trail2.tga"
+textureName = "trail4.tga"
 textureBlend = "one one modulate"
 startColor = "255 0 0 500"
 finishColor = "255 0 0 255"
