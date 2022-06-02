@@ -133,7 +133,7 @@ rotationRate = 2.0
 BottomInteractsWithTerrain = false
 
 [Shock]
-simulateBase = "sim_ember"
+simulateBase = "sim_null"
 lifeTime = 3.0
 renderBase = "draw_multi"
 renderCount = 3
