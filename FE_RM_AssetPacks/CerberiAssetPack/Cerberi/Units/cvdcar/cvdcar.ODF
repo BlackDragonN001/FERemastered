@@ -138,18 +138,74 @@ HealthRepairAmount = 0 // Amount of Health per second to give drones.
 AmmoRepairAmount = 0 // Amount of Ammo per second to give drones.
 
 [Trail]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "cvdcar.light"
+renderName2 = "cvdcar.flame"
+renderName3 = "cvdcar.static"
+renderName4 = "cvdcar.spark"
+
+[Light]
+renderBase = "draw_light"
+startColor = "120 80 255 1550"
+finishColor = "120 80 255 1550"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+
+[Flame]
 renderBase = "draw_twirl_trail"
 emitDelay = 0.005
 emitDelayVar = 0.0
-emitVelocity = "0.0 -10.0 0.0"
+emitVelocity = "0.0 -15.0 0.0"
 emitVariance = "2.0 2.0 2.0"
-emitInherit = "0.2 0.2 0.2"
+emitInherit = "0.25 0.25 0.25"
 emitLife = 0.2
 textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = "0 50 255 127"
+startColor = "63 63 255 127"
 finishColor = "0 0 255 0"
 startRadius = 3.0
 finishRadius = 0.2
 animateTime = 0.2
 rotationRate = 1.0
+
+[Static]
+renderBase = "draw_static"
+textureName = "static.tga"
+textureBlend = "one one modulate"
+startColor = "0 127 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.05
+finishRadius = 0.1
+emitDelay = 0.01
+emitDelayVar = 0.0
+innerRadius = 0.5
+outerRadius = 2.5
+segmentTime = 0.3
+
+[Spark]
+renderBase = "draw_emit"
+emitName = "cvdcar.sparkemit"
+emitDelay = 0.02
+emitDelayVar = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "10.0 5.0 10.0"
+emitPosVariance = "3.0 0.0 3.0"
+emitInherit = "0.5 0.5 0.5"
+emitLife = 2.0
+
+[SparkEmit]
+simulateBase = "sim_ember"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "spark3.tga"
+textureBlend = "one one modulate"
+startColor = "63 31 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.3
+finishRadius = 0.15
+animateTime = 2.0
+rotationRate = 30.0
