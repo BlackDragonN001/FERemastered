@@ -72,6 +72,21 @@ lightName1 = "spotblue2"
 lightHard2 = "hp_light_2"
 lightName2 = "spotblue2"
 
+// Dust fx.
+effectHard1 = "hp_com_1"
+effectName1 = "dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectFlags1 = 2147483135 // thrusting only.
+
+// Engine flame glow.
+effectHard2 = "flame_1"
+effectName2 = "engglow_c.medium"
+effectFlags2 = 2147483135 // thrusting only.
+effectHard3 = "flame_2"
+effectName3 = "engglow_c.medium"
+effectFlags3 = 2147483135 // thrusting only.
+
 [CraftClass]
 rangeScan = 450.0f
 periodScan = 5.0f

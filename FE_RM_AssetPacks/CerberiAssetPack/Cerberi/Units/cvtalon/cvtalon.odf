@@ -31,7 +31,7 @@ requireText1 = "Build Crucible"
 /////// Provides ///////////////////
 
 provideCount = 3
-provideName1 = "cvserv"
+provideName1 = "cvtalon"
 provideName2 = "VIRTUAL_CLASS_TANK"
 provideName3 = "flier"
 
@@ -58,11 +58,12 @@ weaponAssault5 = 0
 /////// Lights and Effects ///////////////////
 
 effectHard1 = "hp_emit_1"
-effectName1 = "cvtalon.trail"
+effectName1 = "cvtalon.trailer"
 effectHard2 = "hp_emit_2"
-effectName2 = "cvtalon.trail"
+effectName2 = "cvtalon.trailer"
 effectHard3 = "hp_emit_3"
-effectName3 = "cvtalon.trail"
+effectName3 = "cvtalon.trailer"
+
 effectHard4 = "hp_trail_1"
 effectName4 = "cvtalon.flame"
 
@@ -72,6 +73,18 @@ effectHard6 = "hp_light_2"
 effectName6 = "cvtalon.light"
 effectHard7 = "hp_light_3"
 effectName7 = "cvtalon.light"
+
+// Engine flame glow.
+effectHard8 = "flame_1"
+effectName8 = "engglow_c.medium"
+effectFlags8 = 2147483135 // thrusting only.
+
+effectHard9 = "hp_emit_1"
+effectName9 = "cvtalon.trailer2"
+effectHard10 = "hp_emit_2"
+effectName10 = "cvtalon.trailer2"
+effectHard11 = "hp_emit_3"
+effectName11 = "cvtalon.trailer2"
 
 //lightHard1 = "hp_light_1"
 //lightName1 = "spotblue2"
@@ -149,63 +162,53 @@ soundTurbo = "enginetal.wav"
 
 ////////////////////////////
 
-[trail]
+[Trail]
 renderBase = "draw_multi"
-renderCount = 3
+renderCount = 2
 renderName1 = "cvtalon.trailer"
 renderName2 = "cvtalon.trailer2"
-renderName3 = "cvtalon.flame"
 
-[trailer]
+[Trailer]
 renderBase = "draw_trail"
-textureName = "trail2.tga"
+textureName = "trail4.tga"
 textureBlend = "one one modulate"
 textureRate = 0.05
-startColor = "110 100 255 180"
+startColor = "110 100 255 127"
 finishColor = "0 0 255 0"
-startRadius = .4  // 0.3
+startRadius = 0.4  // 0.3
 finishRadius = 1.0 // 0.7
-segmentTime = 2.0 // 3.0
-animateTime = 0.3
+segmentTime = 1.0 // 3.0
 
-[trailer2]
+[Trailer2]
 renderBase = "draw_trail"
 textureName = "trail.tga"
 textureBlend = "one one modulate"
 textureRate = 0.05
-startColor = "0 0 255 220"
+startColor = "0 0 255 127"
 finishColor = "255 0 0 0"
 startRadius = 0.3 // 0.3
 finishRadius = 0.5 // 0.7
-segmentTime = 0.8 // 3.0
-animateTime = 0.3
+segmentTime = 0.4 // 3.0
 
-[flame]
+[Flame]
 renderBase = "draw_trail"
-textureName = "tflame.tga"
+textureName = "heat2.tga" //"tflame.tga"
 textureBlend = "one one modulate"
 textureRate = 0.05 //.05
 startColor = "220 150 255 255"
 finishColor = "180 150 255 0"
 startRadius = 1.25 //1.0
 finishRadius = 1.25 //1.0
-segmentTime = .05 // 0.03
-animateTime = 0.05
+segmentLength = 0.1
+segmentTime = 0.1 // 0.03
 
-[light]
-simulateBase = "sim_null"
-lifeTime = 1e30
+[Light]
 renderBase = "draw_light"
 startColor = "20 20 255 850"
 finishColor = "20 20 255 850"
-startRadius = 45.0
-finishRadius = 45.0
-animateTime = 1e30
+startRadius = 35.0
+finishRadius = 35.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
-lensFlare = 0
-
-
-
-
+lensFlare = 1

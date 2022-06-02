@@ -1,0 +1,37 @@
+//================================
+// Cerberi Engine Glow Fx.
+// Created by General BlackDragon
+//================================
+
+[Small]
+renderBase = "draw_light"
+startColor = "127 63 255 255" // "Flame: Diffuse: 1.0, R: 0.5, G: 0.25, B: 1.0"
+finishColor = "127 63 255 255"
+startRadius = 5.0
+finishRadius = 5.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
+
+[Medium]
+renderBase = "draw_light"
+startColor = "127 63 255 255"
+finishColor = "127 63 255 255"
+startRadius = 10.0
+finishRadius = 10.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
+
+[Large]
+renderBase = "draw_light"
+startColor = "127 63 255 255"
+finishColor = "127 63 255 255"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false

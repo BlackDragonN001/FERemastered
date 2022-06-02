@@ -19,6 +19,7 @@ heatSignature = 0.08
 imageSignature = 0.1
 radarSignature = 0.09
 isAssault = 0
+needPilot = 0 // No pilots -GBD
 armorClass = N
 
 /////// Requirements ///////////////////
@@ -44,6 +45,18 @@ weaponName1 = "gELC_c"
 weaponAssault1 = 0
 
 //////////////////////////////////
+
+// Dust fx.
+effectHard1 = "hp_com_1"
+effectName1 = "dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectFlags1 = 2147483135 // thrusting only.
+
+// Engine flame glow.
+effectHard2 = "flame_1"
+effectName2 = "engglow_c.medium"
+effectFlags2 = 2147483135 // thrusting only.
 
 [CraftClass]
 rangeScan = 400.0f

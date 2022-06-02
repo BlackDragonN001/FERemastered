@@ -46,6 +46,18 @@ weaponAssault2 = 0
 
 //////////////////////////////////  
 
+// Dust fx.
+effectHard1 = "hp_com_1"
+effectName1 = "dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectFlags1 = 2147483127 // thrusting only when undeployed.
+
+// Engine flame glow.
+//effectHard2 = "flame_1"
+//effectName2 = "engglow_c.small"
+//effectFlags2 = 2147483127 // thrusting only when undeployed.
+
 turretCount = 6
 turretName1 = "turret_y_1"
 turretName2 = "turret_x_1"
