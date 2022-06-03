@@ -30,9 +30,21 @@ coneAngle = 0.5
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
-renderName1 = "8brock_a.flame"
-renderName2 = "8brock_a.smoke"
+renderCount = 3
+renderName1 = "8brock_a.light"
+renderName2 = "8brock_a.flame"
+renderName3 = "8brock_a.smoke"
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 127 63 255"
+finishColor = "255 127 63 255"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
 
 [Flame]
 renderBase = "draw_twirl_trail"
@@ -49,9 +61,9 @@ emitVelocity = "0.0 0.0 0.0"
 emitVariance = "0.0 0.5 0.0"
 emitLife = 0.06
 
-[smoke]
+[Smoke]
 renderBase = "draw_twirl_trail"
-textureName = "gunk.tga"
+textureName = "gunk2.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "200 200 200 150"
 finishColor = "80 80 80 0"
@@ -59,6 +71,6 @@ startRadius = 0.1
 finishRadius = 0.1
 animateTime = 1.0
 emitDelay = 0.005
-emitVelocity = "0.5 0.5 0.5"
+emitVelocity = "0.0 0.5 0.0"
 emitVariance = "1.0 1.0 1.0"
 emitLife = 1.5

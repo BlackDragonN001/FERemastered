@@ -10,77 +10,88 @@ isAssault = 0
 
 aiRange = 100
 
+[CannonClass]
+InitialShotDelay = 0.5
+
 [ChargeGunClass]
 startRate = 8000.0
 deltaRate = 0.0
 startVolume = 40.0
 deltaVolume = 0.0
 
-ordnanceCount = 8
+ordnanceCount = 9
 
 shotDelay1 = 0.0
-salvoCount1 = 1
+salvoCount1 = 0
 salvoDelay1 = 0
-shotVariance1 = 0.25
-fireSound1 = "8brockshot.wav"
-ordName1 = "8brock"
+shotVariance1 = 0.0
+fireSound1 = NULL
+ordName1 = NULL
 wpnReticle1 = "gmaggun.0"
 
-shotDelay2 = 0.5
-salvoCount2 = 2
-salvoDelay2 = 0.25
-shotVariance2 = 0.1
-fireSound2 = "8brockshot2.wav"
+shotDelay2 = 0.0
+salvoCount2 = 1
+salvoDelay2 = 0
+shotVariance2 = 0.25
+fireSound2 = "8brockshot.wav"
 ordName2 = "8brock"
-wpnReticle2 = "gmaggun.1"
+wpnReticle2 = "gmaggun.0"
 
-shotDelay3 = 1.0
-salvoCount3 = 3
+shotDelay3 = 0.5
+salvoCount3 = 2
 salvoDelay3 = 0.25
 shotVariance3 = 0.1
-fireSound3 = "8brockshot3.wav"
+fireSound3 = "8brockshot2.wav"
 ordName3 = "8brock"
-wpnReticle3 = "gmaggun.2"
+wpnReticle3 = "gmaggun.1"
 
-shotDelay4 = 1.5
-salvoCount4 = 4
+shotDelay4 = 1.0
+salvoCount4 = 3
 salvoDelay4 = 0.25
 shotVariance4 = 0.1
-fireSound4 = "8brockshot4.wav"
+fireSound4 = "8brockshot3.wav"
 ordName4 = "8brock"
-wpnReticle4 = "gmaggun.3"
+wpnReticle4 = "gmaggun.2"
 
-shotDelay5 = 2.0
-salvoCount5 = 5
+shotDelay5 = 1.5
+salvoCount5 = 4
 salvoDelay5 = 0.25
 shotVariance5 = 0.1
-fireSound5 = "8brockshot5.wav"
+fireSound5 = "8brockshot4.wav"
 ordName5 = "8brock"
-wpnReticle5 = "gmaggun.4"
+wpnReticle5 = "gmaggun.3"
 
-shotDelay6 = 2.5
-salvoCount6 = 6
+shotDelay6 = 2.0
+salvoCount6 = 5
 salvoDelay6 = 0.25
 shotVariance6 = 0.1
-fireSound6 = "8brockshot6.wav"
+fireSound6 = "8brockshot5.wav"
 ordName6 = "8brock"
-wpnReticle6 = "gmaggun.5"
+wpnReticle6 = "gmaggun.4"
 
-shotDelay7 = 3.0
-salvoCount7 = 7
+shotDelay7 = 2.5
+salvoCount7 = 6
 salvoDelay7 = 0.25
 shotVariance7 = 0.1
-fireSound7 = "8brockshot7.wav"
+fireSound7 = "8brockshot6.wav"
 ordName7 = "8brock"
-wpnReticle7 = "gmaggun.6"
+wpnReticle7 = "gmaggun.5"
 
-shotDelay8 = 3.5
-salvoCount8 = 8
+shotDelay8 = 3.0
+salvoCount8 = 7
 salvoDelay8 = 0.25
 shotVariance8 = 0.1
-fireSound8 = "8brockshot8.wav"
+fireSound8 = "8brockshot7.wav"
 ordName8 = "8brock"
-wpnReticle8 = "gmaggun.0"
+wpnReticle8 = "gmaggun.6"
+
+shotDelay9 = 3.5
+salvoCount9 = 8
+salvoDelay9 = 0.25
+shotVariance9 = 0.1
+fireSound9 = "8brockshot8.wav"
+ordName9 = "8brock"
+wpnReticle9 = "gmaggun.0"
 
 
 holdRate = 100.0
