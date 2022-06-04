@@ -1,0 +1,90 @@
+[GameObjectClass] // Special version of Xenomator with Terminal. Created by Jayden Hopkins, modifed by Zorn.
+baseName = "ebfact"
+geometryName = "ebfact00T.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ebfac00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+
+classLabel = "factory"
+collisionRadius = 4.0
+scrapCost = 55
+scrapValue = 30
+maxHealth = 6500
+maxAmmo = 0
+unitName = "Xenomator"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+armorClass = H
+
+/////// Requirements ///////////////////
+
+requireCount = 0
+
+/////// Provides ///////////////////
+
+provideCount = 3
+provideName1 = "ebfact"
+provideName2 = "VIRTUAL_CLASS_FACTORY"
+provideName3 = "base"
+
+/////// Lights and effects ///////////////////
+
+//lightHard1 = "hp_light_1"
+//lightName1 = "light_spin"
+
+lightHard1 = "hp_light_1"
+lightName1 = "omnipurple"
+lightHard2 = "hp_light_2"
+lightName2 = "spothadean" //"omniyohad"
+lightHard3 = "hp_light_3"
+lightName3 = "omniyohad"
+lightHard4 = "hp_light_4"
+lightName4 = "omniyohad"
+
+upgradeName = "ebfact2_t"
+
+[PoweredBuildingClass]
+detectRange = 200
+
+[BuildingClass]
+tunnelCount = 1
+tunnel01X0 = 2
+tunnel01Z0 = 3
+tunnel01DX = 4
+tunnel01DZ = 4
+tunnel01Edge = "wwtw"
+
+soundAmbient = "ibfact00.wav"
+
+// play ambient sound
+
+[FactoryClass]
+soundBuild = "ibrecy02.wav"
+soundFinish = "iapc04.wav"
+reloadMsg = "evrecy12.wav"
+rescueMsg = "evrecy13.wav"
+
+buildItem1 = "evmort"
+buildItem2 = "evmisl"
+buildItem3 = "evtank"
+buildItem4 = "evtanks"
+buildItem5 = "evatank"
+buildItem6 = "evatankl"
+buildItem7 = "evartl"
+
+BeamColor = "204 153 101 31"
+BuildSparkConfig = "sparker_hadean"
+LineFinishColor = "255 255 255 0"
+LineStartColor = "204 153 101 255"
+lineSolidColor = "204 153 101 255"
+
+//[Lod1]
+//geometryName = "ebfactL1.xsi" ;geometry for lod1
+//distance = 80
+//dontShiftLOD = 1
