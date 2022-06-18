@@ -332,10 +332,10 @@ function HandleMainState(R, STATE)
 		Advance(R);
 	elseif STATE == 6 then
 		--Attack() doesn't seem to work if called in the same tick as SetPerceivedTeam()	
-		if(IsAliveAndPilot(M.Hadean1) and (GetTeamNum(M.Hadean1) ~= 1) then
+		if(IsAliveAndPilot(M.Hadean1) and GetTeamNum(M.Hadean1) ~= 1) then
 			Attack(M.Hadean1, M.PlayerTanks[1], 0);
 		end
-		if(IsAliveAndPilot(M.Hadean2) and (GetTeamNum(M.Hadean2) ~= 1) then
+		if(IsAliveAndPilot(M.Hadean2) and GetTeamNum(M.Hadean2) ~= 1) then
 			Attack(M.Hadean2, M.PlayerTanks[2], 0);
 		end
 		Advance(R, 4.0);
