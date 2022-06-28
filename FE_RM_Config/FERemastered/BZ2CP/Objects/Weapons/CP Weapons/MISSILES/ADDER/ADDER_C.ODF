@@ -4,7 +4,7 @@ classLabel = "thermalmissile"
 shotGeometry = "sgstng00.xsi"
 shotSound = "adderord.wav"
 
-renderName = "laser_c.render"
+renderName = "adder_c.render"
 
 xplGround = "xbazgnd_c"
 xplVehicle = "xbazxpl_c"
@@ -29,6 +29,71 @@ omegaTurn = 1.5
 coneAngle = 0.25
 
 [Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "adder_c.core"
+renderName2 = "adder_c.tail"
+renderName3 = "adder_c.light"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = "blastenergy.tga"
+textureBlend = "one one modulate"
+startColor = "200 200 255 255"
+finishColor = "0 0 255 255"
+startRadius = 0.01
+finishRadius = 0.01
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.65
+textureRate = 0.1
+
+[Tail]
+renderBase = "draw_bolt"
+textureName = "trail4.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 255 255"
+finishColor = "80 80 100 0"
+startRadius = 0.005
+finishRadius = 0.2
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.5
+textureRate = 0.1
+
+[Light]
+renderBase = "draw_light"
+startColor = "127 127 255 255"
+finishColor = "127 127 255 255"
+startRadius = 20.0
+finishRadius = 20.0
+animateTime = 1.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+
+
+// BZCC strangely never bending trail render.
+[HotCore]
+renderBase = "draw_bolt"
+textureBlend = "one one modulate"
+textureName = "blastenergy.tga"
+textureRate = 0.5
+startColor = "190 190 255 255"
+finishColor = "50 50 50 0"
+startRadius = 0.1
+finishRadius = 0.02
+segmentTime = 0.15 // should be animate time, animateTime is likely defaulting to 0? or 1.0?
+textureSpeed = -32.0
+
+
+
+
+
+
+[Render_NEVERUSED]
 renderBase = "draw_multi"
 renderCount = 3
 renderName1 = "plasma_c.light"

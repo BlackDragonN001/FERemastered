@@ -80,6 +80,7 @@ finishColor = "165 178 64 0"
 startRadius = 0.3
 finishRadius = 0.3
 animateTime = 4.0
+rotationRate = 5.0
 useTerrainColor = 0.9
 
 [Ring]
@@ -109,7 +110,7 @@ rotationRate = 10.0
 emitDelay = 0.03
 emitVelocity = "0.0 2.0 0.0"
 emitVariance = "2.0 2.0 2.0"
-emitLife = 0.6
+emitLife = 0.5
 
 [Thrust]
 simulateBase = "sim_null"
@@ -165,3 +166,4 @@ finishColor = "165 178 64 0"
 startRadius = 2.0
 finishRadius = 8.0
 animateTime = 0.8
+bottomInteractsWithTerrain = false

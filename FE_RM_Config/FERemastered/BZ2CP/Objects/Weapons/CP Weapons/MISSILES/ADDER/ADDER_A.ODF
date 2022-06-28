@@ -3,7 +3,7 @@ classLabel = "bullet"
 shotGeometry = "iorckt00.xsi"
 shotSound = "imiss01a.wav"
 
-renderName = "adder.render"
+renderName = "adder_a.render"
 
 xplGround = "xplasgnd_c"
 xplVehicle = "xplascar_c"
@@ -24,9 +24,9 @@ damageValue(A) = 110 // absorbtion
 [Render]
 renderBase = "draw_multi"
 renderCount = 3
-renderName1 = "adder.flare"
-renderName2 = "adder.smoke"
-renderName3 = "adder.flame"
+renderName1 = "adder_a.flare"
+renderName2 = "adder_a.smoke"
+renderName3 = "adder_a.flame"
 
 [Flare]
 renderBase = "draw_sprite"
@@ -41,15 +41,15 @@ finishRadius = 2.5
 renderBase = "draw_twirl_trail"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor =   "70 70 70 108" //"153 153 153 128"
+startColor = "70 70 70 108" //"153 153 153 128"
 finishColor = "153 0 153 0"
 startRadius = 0.2
 finishRadius = 0.7
-animateTime = 2.0
+animateTime = 0.5
 emitDelay = 0.005
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "0.6 0.6 0.6"
-emitLife = .5
+emitLife = 0.5
 
 [Flame]
 renderBase = "draw_twirl_trail"
@@ -63,23 +63,4 @@ animateTime = 0.02
 emitDelay = 0.001
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "2.0 2.0 2.0"
-emitLife = .1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+emitLife = 0.02

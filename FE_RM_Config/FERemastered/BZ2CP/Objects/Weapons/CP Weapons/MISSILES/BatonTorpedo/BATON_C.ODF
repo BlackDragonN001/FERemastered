@@ -26,9 +26,10 @@ omegaTurn = 1.5
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 3
 renderName1 = "baton_c.spinB"
 renderName2 = "baton_c.spinC"
+renderName3 = "baton_c.light"
 
 [spinB]
 renderBase = "draw_twirl_trail"
@@ -41,7 +42,7 @@ finishRadius = 1.0
 animateTime = 0.044
 emitDelay = 0.006
 emitLife = 0.02
-rotationrate = 10
+rotationrate = 10.0
 
 [spinC]
 renderBase = "draw_twirl_trail"
@@ -49,9 +50,21 @@ textureName = "baton2.tga"
 textureBlend = "one one modulate"
 startColor = "55 0 0 255" 
 finishColor = "55 0 0 255" 
-startRadius = 2
-finishRadius = 1
+startRadius = 2.0
+finishRadius = 1.0
 animateTime = 0.043
 emitDelay = 0.006
 emitLife = 0.02
-rotationrate = 10
+rotationrate = 10.0
+
+[Light]
+renderBase = "draw_light"
+startColor = "55 0 255 2550"
+finishColor = "55 0 255 2550"
+startRadius = 20.0
+finishRadius = 20.0
+animateTime = 1.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
