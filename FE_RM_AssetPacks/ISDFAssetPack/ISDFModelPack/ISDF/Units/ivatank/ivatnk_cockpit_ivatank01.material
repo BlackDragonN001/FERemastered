@@ -1,0 +1,14 @@
+[solid]
+diffuse = 1.000000  1.000000  1.000000  1.000000
+specular = 0.501961  0.501961  0.501961  1.000000
+specularPower = 1024.000000
+emissive = 0.000000  0.000000  0.000000  1.000000
+ambient = 0.000000  0.000000  0.000000  1.000000
+
+
+[texture]
+diffuse = ivatank01.dds
+teamColor = ivatank01_c.dds
+emissive = ivatank01_e.dds
+normal = ivatank01_n.dds
+specular = ivatank01_s.dds
