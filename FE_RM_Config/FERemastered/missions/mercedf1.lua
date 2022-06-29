@@ -358,7 +358,6 @@ function Routine1()
 				FreeCamera();
 
 				IFace_Activate("INFO1");
-				IFace_Activate("Start1");
 
 				M.Routine1State = M.Routine1State + 1
 			end
@@ -370,7 +369,6 @@ function Routine1()
 				pos.y = pos.y + 3.0;
 				
 				SetCameraPosition(pos, ang);
-				IFace_Deactivate("Start1");
 				IFace_Activate("Message");
 				
 				M.Routine1State = M.Routine1State + 1;
