@@ -406,6 +406,9 @@ function Routine3()
 				IFace_Deactivate("Bar");
 				IFace_Deactivate("Rauschen");
 				IFace_Activate("EMAIL1");
+				IFace_Deactivate("EMAIL1.Send");
+				IFace_Deactivate("EMAIL1.ViewList");
+				IFace_Deactivate("EMAIL1.XSIView");
 				M.Routine3State = M.Routine3State + 1;
 				M.Routine3Timer = GetTime() + 5;
 			end
@@ -427,8 +430,8 @@ function Routine3()
 				IFace_Deactivate("Bar");
 				IFace_Deactivate("Bar.Bar7");
 				IFace_Deactivate("Bar.Blueprints");
-				IFace_Deactivate("EMAIL1");
-				IFace_Activate("EMAIL2");
+				IFace_Activate("EMAIL1.ViewList");
+				IFace_Activate("EMAIL1.XSIView");
 				M.Routine3State = M.Routine3State + 1;
 				M.Routine3Timer = GetTime() + 10;
 			end
@@ -437,12 +440,10 @@ function Routine3()
 			M.Routine3State = M.Routine3State + 1;
 			M.Routine3Timer = GetTime() + 10;
 		elseif M.Routine3State == 9 then
-			IFace_Activate("EMAIL3");
-			IFace_Deactivate("EMAIL2");
+			IFace_Activate("EMAIL1.Send");
 			M.Routine3State = M.Routine3State + 1;
 		elseif M.Routine3State == 10 then	--LOC_87
 			if IFace_GetInteger("script.end.count") ~= 0 then
-				IFace_Deactivate("EMAIL3");
 				IFace_Activate("Bar");
 				IFace_Deactivate("Bar.Decoding");
 				IFace_Deactivate("Bar.Blueprints");
@@ -460,11 +461,15 @@ function Routine3()
 				IFace_Deactivate("Bar");
 				IFace_Deactivate("Bar.Bar7");
 				IFace_Deactivate("Bar.Sending");
+				IFace_Deactivate("EMAIL1");
 				IFace_ExitMenuMode();
 				FreeFinish();
 				M.Routine3State = M.Routine3State + 1;
 			end
 		elseif M.Routine3State == 13 then
+			IFace_ConsoleCmd("control.satellite.exit"); -- Kick the user out asap.
+			M.Routine3State = M.Routine3State + 1;
+		elseif M.Routine3State == 14 then
 			if AtTerminal(M.Player) ~= M.HadeanCommBunk then
 				ClearObjectives();
 				AddObjective("edf0703.otf", "green");
@@ -481,21 +486,21 @@ function Routine3()
 				M.Routine3State = M.Routine3State + 1;
 				M.Routine3Timer = GetTime() + 3;
 			end
-		elseif M.Routine3State == 14 then
+		elseif M.Routine3State == 15 then
 			-- M.Attacker15 = BuildObject("cvtalon",5,"waterstart");
 			M.Attacker15 = BuildObject("cvtalon",5,"bunker_talon_spawn"); -- Changed to this as the Talon was spawning right in front of the player which is bad. - AI_Unit
 			Attack(M.Attacker15,M.HadeanCommBunk,1);
 			M.Routine3State = M.Routine3State + 1;
 			M.Routine3Timer = GetTime() + 2;
-		elseif M.Routine3State == 15 then
+		elseif M.Routine3State == 16 then
 			SetCurHealth(M.HadeanCommBunk,2500);
 			M.Routine3State = M.Routine3State + 1;
 			M.Routine3Timer = GetTime() + 2;
-		elseif M.Routine3State == 16 then
+		elseif M.Routine3State == 17 then
 			SetCurHealth(M.HadeanCommBunk,500);
 			M.Routine3State = M.Routine3State + 1;
 			M.Routine3Timer = GetTime() + 2;
-		elseif M.Routine3State == 17 then
+		elseif M.Routine3State == 18 then
 			Damage(M.HadeanCommBunk, 501);
 			M.Routine3State = M.Routine3State + 1;
 		end
