@@ -1646,6 +1646,9 @@ function Routine11()
 	if M.Routine11Active and M.Routine11Timer < GetTime() then
 		if M.Routine11State == 0 then
 			local h = GetObjectByTeamSlot(1,2);--player's factory
+			if(h == nil) then -- Player's factory got blown up..use Recy.
+				h = GetObjectByTeamSlot(1, 1); -- Recycler.
+			end
 			M.Position17 = GetPosition(h);
 			M.Position17.y = M.Position17.y + 30;
 			M.Routine11State = M.Routine11State + 1;
