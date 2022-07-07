@@ -2061,7 +2061,7 @@ function Routine14()
 			if GetDistance(M.HadeanBuilder, "BridWest") < 100 then
 				Stop(M.HadeanBuilder, 1);
 				LookAt(M.HadeanBuilder, M.Bridge1, 1);
-				SetAnimation(M.HadeanBuilder, "cons", 1);
+				Deploy(M.HadeanBuilder); --SetAnimation(M.HadeanBuilder, "cons", 1);
 				AudioMessage("evcons05.wav");
 				M.Routine14State = M.Routine14State + 1;
 				M.Routine14Timer = GetTime() + 1;
@@ -2073,7 +2073,8 @@ function Routine14()
 			M.Routine14State = M.Routine14State + 1;
 		elseif M.Routine14State == 22 then
 			if Move(M.RepairBomb, M.BombRotRate, M.BombDropSpeed, M.Position2) then
-				M.Bridge1 = ReplaceObject(M.Bridge1, "ibbseg1");
+				M.Bridge1 = ReplaceObject(M.Bridge1, "hbbseg07");
+				SetObjectiveName(M.Bridge1, "Heavy Bridge");
 				M.Routine14State = M.Routine14State + 1;
 				M.Routine14Timer = GetTime() + 3;
 			end
@@ -2084,7 +2085,7 @@ function Routine14()
 			M.Routine14State = M.Routine14State + 1;
 		elseif M.Routine14State == 24 then
 			if Move(M.RepairBomb, M.BombRotRate, M.BombDropSpeed, M.Position3) then
-				M.Bridge2 = ReplaceObject(M.Bridge2, "ibbseg1");
+				M.Bridge2 = ReplaceObject(M.Bridge2, "hbbseg07");
 				M.Routine14State = M.Routine14State + 1;
 				M.Routine14Timer = GetTime() + 3;
 			end
@@ -2095,10 +2096,11 @@ function Routine14()
 			M.Routine14State = M.Routine14State + 1;
 		elseif M.Routine14State == 26 then
 			if Move(M.RepairBomb, M.BombRotRate, M.BombDropSpeed, M.Position4) then
-				M.Bridge3 = ReplaceObject(M.Bridge3, "ibbseg1");
+				M.Bridge3 = ReplaceObject(M.Bridge3, "hbbseg07");
 				SetObjectiveOff(M.HadeanBuilder);
 				SetObjectiveOff(M.CatapultNavE);
 				SetObjectiveOff(M.CatapultNavW);
+				Deploy(M.HadeanBuilder); --undeploy
 				Stop(M.HadeanBuilder, 0);
 				SetGroup(M.HadeanBuilder, GetFirstEmptyGroup());
 				AudioMessage("rodwimp2.wav");	--Windex:"Mr. Corber, I have NOT authorized a rescue mission..."
