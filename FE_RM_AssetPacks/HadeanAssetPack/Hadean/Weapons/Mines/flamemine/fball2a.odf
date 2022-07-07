@@ -75,9 +75,9 @@ simulateBase = "sim_smoke"
 lifeTime = 1e6
 renderBase = "draw_emit"
 emitName = "fball2a.lightA"
-emitDelay = 0.5 //0.5 //0.4
+emitDelay = 0.5
 emitDelayVar = 0.6
-emitVelocity = "0 0 0" //0.0 0.0 0.0
+emitVelocity = "0.0 0.0 0.0"
 emitVariance = "0.0 0.0 0.0"
 
 [Light2]
@@ -86,9 +86,9 @@ simulateBase = "sim_smoke"
 lifeTime = 1e6
 renderBase = "draw_emit"
 emitName = "fball2a.lightB"
-emitDelay = 0.6 //0.6 //0.48
+emitDelay = 0.6
 emitDelayVar = 0.7
-emitVelocity = "0 0 0" //0.0 0.0 0.0
+emitVelocity = "0.0 0.0 0.0"
 emitVariance = "0.0 0.0 0.0"
 
 [LightA]
@@ -97,8 +97,8 @@ lifeTime = 0.25
 renderBase = "draw_light"
 startColor = "255 150 0 250" //"255 255 200 500"
 finishColor = "255 150 0 700" //"255 255 200 500"
-startRadius = 10
-finishRadius = 15
+startRadius = 10.0
+finishRadius = 15.0
 animateTime = 0.25
 attenuateConstant = 1.0
 attenuateLinear = 0.0
@@ -111,8 +111,8 @@ lifeTime = 0.3
 renderBase = "draw_light"
 startColor = "255 150 0 700"
 finishColor = "255 150 0 250"
-startRadius = 15
-finishRadius = 10
+startRadius = 15.0
+finishRadius = 10.0
 animateTime = 0.3
 attenuateConstant = 1.0
 attenuateLinear = 0.0
