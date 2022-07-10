@@ -61,6 +61,23 @@ function _FECore.AddObject(h)
 -- Call helper functions.
 
 	_PropHeightFix.AddObject(h);
+	
+	local Difficulty = IFace_GetInteger("options.play.difficulty");
+					
+	-- Setup Difficulty settings. Used in SP/IA only! (Individual mission scripts can override after BuildObject() call.
+	if not IsNetworkOn() then
+		local Team = GetTeamNum(h);
+		
+		if (Team > 0) then
+			if IsTeamAllied(GetTeamNum(h), 1) then -- Always max out player's units. -GBD
+				SetSkill(h, 3);
+			else -- Set Enemy based on Difficulty setting in Options. -GBD
+				SetSkill(h, Difficulty + 1);
+			end
+		end
+	end
+	
+	AddToDispatch(h, 15.0, false, 0, (Difficulty < 2)); -- Based on Difficulty, if Hard, AI can Cloak on their own, and doesn't Flee.
 
 end
 

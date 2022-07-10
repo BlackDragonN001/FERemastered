@@ -11,8 +11,8 @@ local _FECore = require('_FECore');
 local NUM_PORTALS = 5;
 local NUM_ATTACKERS = 8;
 
-local Position2 = SetVector( -450, -120, -1460 );	--flying dropship start position
-local Position3 = SetVector( -590, -155, -1190 );	--flying dropship end position
+local Position2 = SetVector( -425, -120, -1480 ); -- -450, -120, -1460 );	--flying dropship start position
+local Position3 = SetVector( -575, -155, -1200 ); -- -590, -155, -1190 );	--flying dropship end position
 local Position4 = SetVector( 420, 0, 920 );	--deploy base location
 local RecyDropshipPositionStart = SetVector(-1045, -178, -450); --start position recydrop
 local RecyDropshipPositionStartAdjust = SetVector(-1500, -120, -860); -- facing inward
@@ -111,85 +111,8 @@ function DefineRoutines()
 	DefineRoutine(4, HandleHadeanAttack, true);
 	DefineRoutine(5, HandleStewartNag, false);
 end
-function DropLand()
-	if (M.StartLanding == false and M.StateSetup == false)
-	then
-		M.RecyDropShip = BuildObjectAndLabel("ivdrop_land", 1, RecyDropshipPositionStart, "RecyDropShip");
-		StartEmitter(M.RecyDropShip, 1);
-		StartEmitter(M.RecyDropShip, 2);
-		SetAngle(M.RecyDropShip, 90.0);
-		StartSoundEffect("droptoff.wav", M.RecyDropShip);
-		StartAnimation(M.RecyDropShip);
-		SetAnimation(M.RecyDropShip, "land", 1);
-		M.maxFrames = SetAnimation(M.RecyDropShip, "land",1);
-		M.StartLanding = true;
-	
-	elseif(M.StartLanding == true and M.StateSetup == false and M.TroopGoto == false) 
-	then		
-		M.curFrame = GetAnimationFrame(M.RecyDropShip, "land");
-		if (M.curFrame == 1 and M.TroopGoto == false) 
-		then
-			Goto(M.escort1, "Escort1", 0);
-			Goto(M.escort2, "Escort2", 0);
-			Goto(M.escort3, "Escort3", 0);
-			Goto(M.escort4, "Escort4", 0);
-			M.TroopGoto = true;
-			end
-	
-	elseif(M.StartLanding == true and M.StateSetup == false and M.StateSetup == false)
-	then
-		M.curFrame = GetAnimationFrame(M.RecyDropShip, "land");	
-		if (M.curFrame >= M.maxFrames-24 and M.StateSetup == false and M.LandingFinished == false) --model has an animation bug and must be cut early.
-		then
-			M.RecyDropShip = ReplaceObject(M.RecyDropShip, "ivdrop_tunnel");
-			StartEmitter(M.RecyDropShip, 1);
-			StartEmitter(M.RecyDropShip, 2);
-			M.maxFrames = SetAnimation(M.RecyDropShip, "deploy", 1);
-			local RecySpawn = RecyDropshipSpawnRecy;
-			RecySpawn.y = RecySpawn.y - 10;
-			M.Recycler = BuildObjectAndLabel("ivrecy",1,RecySpawn, "Recycler");  
-			SetAngle(M.Recycler, 90.0);
-			SetGroup(M.Recycler, 10);
-			StartAnimation(M.RecyDropShip);
-			M.LandingFinished = true;
-			end	
-	end	
-	if(M.LandingFinished == true and M.StateSetup == false)
-	then
-		M.curFrame = GetAnimationFrame(M.RecyDropShip, "deploy");
-		if(M.curFrame == 15)
-		then
-			StartSoundEffect("dropdoor.wav", M.RecyDropShip);
-			end	
-		if(M.curFrame >= 60)
-		then
-			Goto(M.Recycler, "RecyDropoff", 1);
-			local escort1 = GetHandle("Tank 1"); --Removed BuildObjectandLabel and instead had them prebuilt in the dropship. - Gravey
-			local escort2 = GetHandle("Scout 1");
-			local escort3 = GetHandle("Scout 2");
-			local escort4 = GetHandle("Scout 3");
-			
-			Follow(escort1, M.Recycler, 0);
-			Follow(escort2, M.Recycler, 0);
-			Follow(escort3, M.Recycler, 0);
-			Follow(escort4, M.Recycler, 0);
-			M.StateSetup = true;
-			end
-		
-	end
-end
-function DropLeave()
-	M.maxFrames = SetAnimation(M.RecyDropShip, "takeoff",1);
-	M.curFrame = GetAnimationFrame(M.RecyDropShip, "takeoff");
-	SetAnimation(M.RecyDropShip,"takeoff",1);
-	StartSoundEffect("dropdoor.wav",M.RecyDropShip);
-	StartSoundEffect("dropleav.wav", M.RecyDropShip);
-	StartAnimation(M.RecyDropShip);
-		if(M.maxFrames - 1 <= M.curFrame)
-		then
-		RemoveObject(M.RecyDropShip);
-		end
-end
+
+
 function InitialSetup()
 
 	_FECore.InitialSetup();
@@ -259,10 +182,19 @@ function Start()
 	M.Portals[4] = GetHandleOrDie("Portal4");	--south east portal
 	M.Portals[5] = GetHandleOrDie("Portal5");	--player's portal (southern most one)
 	
+	--[[
 	for i = 1, 5 do
 		ClearPortalDest(M.Portals[i], true); -- Lock Portal to script only.
 		--M.Portals[i] = GetHandleOrDie(string.format("Portal%d", i));
 	end
+	--]]
+	
+	-- Setup initial portl destinations:
+	SetPortalDest(M.Portals[1], M.Portals[2]);
+	SetPortalDest(M.Portals[2], M.Portals[1]);
+	SetPortalDest(M.Portals[3], M.Portals[1]);
+	SetPortalDest(M.Portals[4], M.Portals[1]);
+	SetPortalDest(M.Portals[5], M.Portals[1]);
 	
 	M.ScrapPool = GetHandleOrDie("Pool1");
 	
@@ -282,7 +214,7 @@ function AddObject(h)
 	
 	if GetCfg(h) == "ivrecy" then
 		SetPosition(h, RecyDropshipSpawnRecy);
-		end
+	end
 	--update recy position here.
 end
 
@@ -296,7 +228,7 @@ function Update()
 			r(routineID, M.RoutineState[routineID]);
 		end
 	end
-	HandlePortals();
+	--HandlePortals();
 	CheckStuffIsAlive();
 end
 
@@ -314,10 +246,10 @@ function HandleMainState(R, STATE)
 		M.StayPut = BuildObjectAndLabel("stayput", 0, GetTransform(M.Player), "Stayput 1");
 		--Stop(M.Recycler, 1);
 		StartEarthQuake(10.0);
-		M.DropshipFlying = BuildObjectAndLabel("ivdrop_sh", 0, Position2, "Dropship Flying");
+		M.DropshipFlying = BuildObjectAndLabel("ivdrop_sh02", 0, Position2, "Dropship Flying");
 		-- SetObjectiveName(BuildObjectAndLabel("ibnav", 1, Position2), "Position2"); - Not sure why this is needed? - AI_Unit
 		SetAnimation(M.DropshipFlying, "Shake", 0);
-		Advance(R, 7.0);
+		Advance(R, 5.0);
 	elseif STATE == 1 then
 		AudioMessage("edf02_01.wav");	--Pilot:"That blast came awfully close..."
 		Advance(R, 3.0);
@@ -327,8 +259,8 @@ function HandleMainState(R, STATE)
 		CameraReady();
 		Advance(R);
 	elseif STATE == 3 then
-		Move2(M.DropshipFlying, 0.0, 30.0, TerrainFloor(Position3));
-		if CameraPath("CamPath", 5500, 3200, M.DropshipFlying) 
+		Move(M.DropshipFlying, 0.0, 30.0, TerrainFloor(Position3));
+		if CameraPath("CamPath", 12500, 3200, M.DropshipFlying) 
 		or CameraCancelled() then
 			CameraFinish();
 			Advance(R);
@@ -359,36 +291,55 @@ function HandleMainState(R, STATE)
 		SetPosition(escort4, "PlacePlayer");
 		SetVelocity(escort4, SetVector(13, 0, 40));
 		
-		Advance(R,1.0);
+		Advance(R, 1.0);
 		
 	elseif STATE == 5 then
+	
+		if not M.StartLanding then
+			AudioMessage("edf02_02.wav");	--Stewart:"Good landing under the circumstances..."
+		end
+		
 		DropLand();
 		SetScrap(1, 30);
 			
-		if(GetDistance(M.Recycler, RecyDropshipPositionEnd) > 70.0 and M.LandingFinished  == true)
-		then
-		DropLeave();
-		Advance(R,10.0);
+		if(GetDistance(M.Recycler, RecyDropshipPositionEnd) > 70.0 and M.LandingFinished  == true) then
+			DropLeave();
+			
+			local escort1 = GetHandle("Tank 1"); --Removed BuildObjectandLabel and instead had them prebuilt in the dropship. - Gravey
+			local escort2 = GetHandle("Scout 1");
+			local escort3 = GetHandle("Scout 2");
+			local escort4 = GetHandle("Scout 3");
+			
+			Follow(escort1, M.Recycler, 0);
+			Follow(escort2, M.Recycler, 0);
+			Follow(escort3, M.Recycler, 0);
+			Follow(escort4, M.Recycler, 0);
+			
+			ClearObjectives();
+			AddObjective("edf0201.otf", "white");
+			
+			Advance(R, 10.0);
 		end
 			
 	elseif STATE == 6 then	
 	
 		SpawnDelaySTATE = 1;
-		SetSkill(BuildObjectAndLabel("evscout_e02", 5, "Enemy1", "Hadean Scout 1"), 3);
-		SetSkill(BuildObjectAndLabel("evscout_e02", 5, "Enemy2", "Hadean Scout 2"), 3);
+		local Enemy = BuildObjectAndLabel("evscout_e02", 5, "Enemy1", "Hadean Scout 1");
+		SetSkill(Enemy, 3);
+		SetEjectRatio(Enemy, 0.0);
+		Enemy = BuildObjectAndLabel("evscout_e02", 5, "Enemy2", "Hadean Scout 2");
+		SetSkill(Enemy, 3);
+		SetEjectRatio(Enemy, 0.0);
 		
 		Advance(R, 3.0);
 	elseif STATE == 7 then
-		AudioMessage("edf02_02.wav");	--Stewart:"Good landing under the circumstances..."
 		Goto(M.Recycler, "RecyclerPath", 1);
-		M.InvestigateNav = BuildObjectAndLabel("ibnav", 1, "NavSpawn", "Investigate Nav");
-		SetObjectiveName(M.InvestigateNav, "Investigate");
-		SetObjectiveOn(M.InvestigateNav);
-		ClearObjectives();
-		AddObjective("edf0201.otf", "white");
 		Advance(R, 30.0);
 	elseif STATE == 8 then
 		AudioMessage("edf02_03.wav");	--Stewart:"Our scanners just picked up a huge energy spike..."
+		M.InvestigateNav = BuildObjectAndLabel("ibnav", 1, "NavSpawn", "Investigate Nav");
+		SetObjectiveName(M.InvestigateNav, "Investigate");
+		SetObjectiveOn(M.InvestigateNav);
 		Advance(R, 220.0);
 	elseif STATE == 9 then
 		AudioMessage("edf02_04.wav");	--Stewart:"You've got enemy units in the canyon..."
@@ -573,6 +524,7 @@ function HandleStewartNag(R, STATE)
 	end
 end
 
+--[[
 function HandlePortals()
 	for i = 1,NUM_PORTALS do
 		local h = GetNearestVehicle(M.Portals[i]);
@@ -581,29 +533,31 @@ function HandlePortals()
 		end
 	end
 end
+--]]
 
-function OnPortalDist(portal, h)
-	if GetCfg(h) == "ivrecy" then
+function PreTeleport(portal, h)
+	if GetCfg(h) == "ivrecy" and portal == M.Portals[1] then
 		if not M.RecyTeleported then
 			SetObjectiveOff(M.Portals[1]);
 			M.BaseNav = BuildObjectAndLabel("ibnav", 1, Position4, "Base Location");
 			SetObjectiveName(M.BaseNav, "Deploy Base");
 			SetBestGroup(M.Recycler);
 			SetObjectiveOn(M.BaseNav);
-			Teleport(h, M.Portals[2], 30);
+			SetPortalDest(portal, M.Portals[2]); --Teleport(h, M.Portals[2], 30);
 			ClearObjectives();
 			AddObjective("edf0204.otf", "white");
 			Goto(M.Recycler, M.BaseNav, 0);
 			M.RecyTeleported = true;
+			--return PRETELEPORT_ALLOW;
 		end
 	elseif portal == M.Portals[1] then
 		if IsPlayer(h) then
 			M.PlayerTeleported = true;
-			Teleport(h, M.Portals[4], 30);
-		elseif math.random(1,2) == 1 then
-			Teleport(h, M.Portals[3], 30);
+			SetPortalDest(portal, M.Portals[4]); --Teleport(h, M.Portals[4], 30);
+		elseif math.random(1, 2) == 1 then
+			SetPortalDest(portal, M.Portals[3]); --Teleport(h, M.Portals[3], 30);
 		else
-			Teleport(h, M.Portals[5], 30);
+			SetPortalDest(portal, M.Portals[5]); --Teleport(h, M.Portals[5], 30);
 		end
 
 		if not M.ScavTeleported and h == M.HadeanScav then
@@ -611,11 +565,13 @@ function OnPortalDist(portal, h)
 		elseif GetTeamNum(h) == 5 then
 			Goto(h, M.Recycler, 0);
 		end
-	else		
+	else
 		if IsPlayer(h) then
-			Teleport(h, M.Portals[1], 30);
+			SetPortalDest(portal, M.Portals[1]); --Teleport(h, M.Portals[1], 30);
 		end
 	end
+	
+	return PRETELEPORT_DEFAULT;
 end
 
 function CheckStuffIsAlive()
@@ -632,6 +588,78 @@ function CheckStuffIsAlive()
 	end
 end
 
+function DropLand()
+	if (M.StartLanding == false and M.StateSetup == false)
+	then
+		M.RecyDropShip = BuildObjectAndLabel("ivdrop_land02", 1, RecyDropshipPositionStart, "RecyDropShip");
+		StartEmitter(M.RecyDropShip, 1);
+		StartEmitter(M.RecyDropShip, 2);
+		SetAngle(M.RecyDropShip, 90.0);
+		StartSoundEffect("droptoff.wav", M.RecyDropShip);
+		StartAnimation(M.RecyDropShip);
+		SetAnimation(M.RecyDropShip, "land", 1);
+		M.maxFrames = SetAnimation(M.RecyDropShip, "land",1);
+		M.StartLanding = true;
+	
+	elseif(M.StartLanding == true and M.StateSetup == false and M.TroopGoto == false) 
+	then		
+		M.curFrame = GetAnimationFrame(M.RecyDropShip, "land");
+		if (M.curFrame == 1 and M.TroopGoto == false) 
+		then
+			Goto(M.escort1, "Escort1", 0);
+			Goto(M.escort2, "Escort2", 0);
+			Goto(M.escort3, "Escort3", 0);
+			Goto(M.escort4, "Escort4", 0);
+			M.TroopGoto = true;
+			end
+	
+	elseif(M.StartLanding == true and M.StateSetup == false and M.StateSetup == false)
+	then
+		M.curFrame = GetAnimationFrame(M.RecyDropShip, "land");	
+		if (M.curFrame >= M.maxFrames-1 and M.StateSetup == false and M.LandingFinished == false) --model has an animation bug and must be cut early.
+		then
+			M.RecyDropShip = ReplaceObject(M.RecyDropShip, "ivpdrop");
+			StartEmitter(M.RecyDropShip, 1);
+			StartEmitter(M.RecyDropShip, 2);
+			M.maxFrames = SetAnimation(M.RecyDropShip, "deploy", 1);
+			local RecySpawn = RecyDropshipSpawnRecy;
+			RecySpawn.y = RecySpawn.y - 10;
+			M.Recycler = BuildObjectAndLabel("ivrecy",1,RecySpawn, "Recycler");  
+			SetAngle(M.Recycler, 90.0);
+			SetGroup(M.Recycler, 10);
+			StartAnimation(M.RecyDropShip);
+			M.LandingFinished = true;
+			end	
+	end	
+	if(M.LandingFinished == true and M.StateSetup == false)
+	then
+		M.curFrame = GetAnimationFrame(M.RecyDropShip, "deploy");
+		if(M.curFrame == 15)
+		then
+			StartSoundEffect("dropdoor.wav", M.RecyDropShip);
+			end	
+		if(M.curFrame >= 60)
+		then
+			Goto(M.Recycler, "RecyDropoff", 1);
+			M.StateSetup = true;
+			end
+		
+	end
+end
+function DropLeave()
+	M.maxFrames = SetAnimation(M.RecyDropShip, "takeoff",1);
+	M.curFrame = GetAnimationFrame(M.RecyDropShip, "takeoff");
+	SetAnimation(M.RecyDropShip,"takeoff",1);
+	StartSoundEffect("dropdoor.wav",M.RecyDropShip);
+	StartSoundEffect("dropleav.wav", M.RecyDropShip);
+	StartAnimation(M.RecyDropShip);
+	
+	if(M.maxFrames - 1 <= M.curFrame) then
+		RemoveObject(M.RecyDropShip);
+	end
+end
+
+--[[
 --work around for flickering caused by calling Move() on a building that was spawned off map (for dropship cutscene)
 function Move2(h, r, v, dest)
 	local oldTransform = GetTransform(h);
@@ -652,3 +680,4 @@ function Move2(h, r, v, dest)
 		return false;
 	end
 end
+--]]

@@ -273,7 +273,7 @@ function Teleport(h, dest, offset)
 	
 	
 	
-	--[[-- Transport code from DLL. Offset based on matricies. Bit complex? Requires entrance portal position. -GBD
+	--[[-- Transport code from BZC DLL. Offset based on matricies. Bit complex? Requires entrance portal position. -GBD
 	local StartPortal = GetTransform(startportal);
 	local EndPortal = GetTransform(dest);
 	local ShipPosition = GetTransform(h);
@@ -284,9 +284,12 @@ function Teleport(h, dest, offset)
 	local Velocity = SetVector(0, 0, 0);
 	local ShipVelocity = GetVelocity(h);
 	
+	NewMatrix.right = Neg_Vector(NewMatrix.right); -- Flip the ship around to come out the opposite direction compared to portal front.
+	NewMatrix.front = Neg_Vector(NewMatrix.front); -- ^ ditto.
 	local InvStartPortal = Matrix_Inverse(StartPortal); -- Inverse Matrix.
 	Teleport = InvStartPortal * EndPortal; --Matrix_Multiply(InvStartPortal, EndPortal); -- Apply inverse angle to Destination Matrix.
-	--NewMatrix = Matrix_Multiply(ShipPosition, EndPortal);
+	NewMatrix = ShipPosition * Teleport; --Matrix_Multiply(ShipPosition, Teleport); // Apply Position offset to that.
+	Velocity = Vector_Rotate(Teleport, ShipVelocity); // Apply Velocity Rotation.
 
 	-- Off set Position.
 	local ShipOffset = Vector_TransformInv(ShipPosition, StartPortal.posit); -- Calculate position offset.
@@ -355,6 +358,7 @@ end
 function TeleportIn(odf, team, dest, offset, label)
 
 	local pos = nil;
+	local buildFx = true;
 	
 	if type(dest) == "string" then
 	
@@ -368,11 +372,18 @@ function TeleportIn(odf, team, dest, offset, label)
 		pos = GetTransform(dest);
 		pos.posit = pos.posit + pos.front * offset;
 		pos.posit.y = pos.posit.y + 5;
+		
+	--	if GetPortalDest(dest) ~= nil then -- If this portal has a destination set, it's FX are on, use them.
+			SetPortalEffectEnd(dest, 7, 0, false); -- HACK! assume we are using "hbport" out effect. I don't feel like opening and reading ODFs for this... -GBD
+			buildFx = false;
+	--	end
 	else
 		return nil;
 	end
 	
-	BuildObject("teleportin", 0, pos);
+	if buildFx then
+		BuildObject("teleportin", 0, pos);
+	end
 	local h = BuildObject(odf, team, pos);
 	
 	if (label ~= nil) then

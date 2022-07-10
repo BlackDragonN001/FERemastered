@@ -1,0 +1,48 @@
+[GameObjectClass]
+classLabel = "i76building"
+geometryName = "ivdrop00_land.fbx"
+animCount = 1
+animName1 = "land"
+animFile1 = "ivdrop00_land.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 10000
+maxAmmo = 0
+unitName = "Condor"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+ownsTerrain = 0
+canDetect = 0
+canInteract = 0
+canCollide = 0
+armorClass = L
+alwaysClip = 1
+
+/////////LIGHTS and EFFECTS/////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotred"
+lightHard2 = "hp_light_2"
+lightName2 = "spotred"
+lightHard3 = "hp_light_3"
+lightName3 = "spotred"
+lightHard4 = "hp_light_4"
+lightName4 = "spotred"
+lightHard5 = "hp_light_5"
+lightName5 = "spotred"
+lightHard6 = "hp_light_6"
+lightName6 = "spotred"
+lightHard7 = "dropcenter__h"
+lightName7 = "o_red_nf"
+//lightHard8 = "hp_light_7"  //nose spotlight (was hp_light_1)
+//lightName8 = "spotblue"
+//lightHard9 = "hp_light_8"  //nose spotlight (was hp_light_2)
+//lightName9 = "spotblue"
+
+effectHard1 = "hp_trail_1"
+effectName1 = "ivdrop_sh.trail"
+effectHard2 = "hp_trail_2"
+effectName2 = "ivdrop_sh.trail"
+
+[BuildingClass]
+soundAmbient = "sdrop01.wav"
