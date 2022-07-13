@@ -3,6 +3,7 @@ classLabel = "bullet"
 
 shotGeometry = NULL
 shotSound = "igtow04.wav"
+
 xplGround = "xelectgnd_c"
 xplVehicle = "xelectcar_c"
 xplBuilding = "xelectcar_c"
@@ -35,7 +36,6 @@ startColor = "150 30 0 180"
 finishColor = "150 30 0 180"
 startRadius = 20.0
 finishRadius = 20.0
-animateTime = 0.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0

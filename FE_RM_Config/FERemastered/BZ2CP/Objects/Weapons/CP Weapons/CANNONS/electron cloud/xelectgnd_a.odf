@@ -20,7 +20,7 @@ kickRadius = 15.0
 kickOmega = 1.0
 kickVeloc = 3.0
 
-particleTypes = 8
+particleTypes = 7
 
 particleClass1 = "xelectgnd_a.splat"
 particleCount1 = 2
@@ -128,8 +128,8 @@ lifeTime = 1.5
 renderBase = "draw_light"
 startColor = "255 70 70 555"
 finishColor = "155 45 45 0"
-startRadius = 0.4
-finishRadius = 0.1
+startRadius = 15.0
+finishRadius = 0.0
 animateTime = 1.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0

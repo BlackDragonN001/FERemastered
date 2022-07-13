@@ -67,7 +67,7 @@ animateTime = 0.3
 latitudeBands = 8
 longitudeSegments = 16
 
-[cloud]
+[Cloud]
 simulateBase = "sim_dust"
 lifeTime = 0.3
 renderBase = "draw_emit"
@@ -77,7 +77,7 @@ emitVelocity = "0.0 2.0 0.0"
 emitVariance = "0.0 1.0 0.0"
 emitPosVariance = "5.0 0.0 5.0"
 
-[cloudemit]
+[CloudEmit]
 simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_twirl"

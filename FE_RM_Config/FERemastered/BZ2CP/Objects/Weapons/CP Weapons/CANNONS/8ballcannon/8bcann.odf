@@ -26,11 +26,13 @@ damageValue(A) = 160 // absorbtion
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 4
 renderName1 = "8bcann.flames"
 renderName2 = "8bcann.smoke"
+renderName3 = "8bcann.light"
+renderName4 = "8bcann.ember"
 
-[flames]
+[Flames]
 renderBase = "draw_twirl_trail"
 //textureName = "particle.tga"
 textureName = "fire.tga"
@@ -40,21 +42,55 @@ startColor = "200 200 200 150"
 finishColor = "200 200 200 0"
 startRadius = 0.3
 finishRadius = 0.8
-animateTime = 0.4
+animateTime = 0.3
 emitDelay = 0.01
 emitVariance = "1.0 1.0 1.0"
 emitLife = 0.3
 
-[smoke]
+[Smoke]
 renderBase = "draw_twirl_trail"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "0 0 0 200"
-finishColor = "100 100 100 100"
+finishColor = "100 100 100 0"
 startRadius = 0.1
 finishRadius = 1.0
-animateTime = 1.0
+animateTime = 0.5
 emitDelay = 0.005
-emitVelocity = "1.5 1.5 1.5"
+emitVelocity = "0.0 0.0 1.5"
 emitVariance = "3.0 3.0 3.0"
-emitLife = .5
+emitLife = 0.5
+
+[Light]
+renderBase = "draw_light"
+startColor = "200 150 0 800"
+finishColor = "200 150 0 800"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Ember]
+renderBase = "draw_emit"
+emitName = "8bcann.emberemit"
+emitVelocity = "0.0 -1.5 0.0"
+emitVariance = "3.0 -0.5 0.0"
+emitPosVariance = "0.5 0.0 0.0"
+emitInherit = "0.5 0.0 0.5"
+emitDelay = 0.075
+emitDelayVar = 0.2
+//emitLife = 1.0
+
+[EmberEmit]
+simulateBase = "sim_ember"
+lifeTime = 2.0
+renderBase = "draw_sprite"
+textureName = "spark.tga"
+textureblend = "one one modulate"
+startColor = "255 180 127 255"
+finishColor = "255 127 63 0"
+startRadius = 0.1
+finishRadius = 0.1
+animateTime = 2.0

@@ -2,9 +2,11 @@
 classLabel = "bullet"
 shotGeometry = NULL
 shotSound = "igtow04.wav"
+
 xplGround = "xplasgnd_c"
 xplVehicle = "xplascar_c"
 xplBuilding = "xplasbld_c"
+
 renderName = "cphe1_a.render"
 
 ammoCost = 35
@@ -40,12 +42,15 @@ lensFlare = 1
 
 [Trail]
 renderBase = "draw_trail"
+textureName = "blastenergy.tga"
 textureBlend = "one one modulate"
 startColor = "60 85 255 60"
 finishColor = "60 85 255 0"
 startRadius = 0.10
 finishRadius = 0.20
 segmentTime = 0.5
+textureRate = 0.5
+textureSpeed = 0.0
 
 [Flame]
 renderBase = "draw_twirl_trail"

@@ -20,7 +20,7 @@ kickRadius = 15.0
 kickOmega = 1.0
 kickVeloc = 3.0
 
-particleTypes = 8
+particleTypes = 7
 
 particleClass1 = "xelectgnd_c.splat"
 particleCount1 = 2
@@ -47,6 +47,10 @@ particleClass6 = "xelectgnd_c.core"
 particleCount6 = 1
 particleVeloc6 = "0.0 0.0 0.0"
 
+particleClass7 = "xelectgnd_c.light"
+particleCount7 = 1
+particleVeloc7 = "0.0 0.0 0.0"
+
 
 [Splat]
 simulateBase = "sim_null"
@@ -67,7 +71,7 @@ renderBase = "draw_twirl" //sprite
 textureName = "dirt.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "80 170 255 255"
-finishColor = "40 85 130 222"
+finishColor = "40 85 130 0"
 startRadius = 0.3
 finishRadius = 0.3
 animateTime = 4.0
@@ -93,7 +97,7 @@ lifeTime = 0.6
 renderBase = "draw_twirl_trail"
 textureName = "flame2.tga"
 textureBlend = "one one modulate"
-startColor = "80 170 255 128"
+startColor = "80 170 255 127"
 finishColor = "40 85 130 0"
 startRadius = 0.7
 finishRadius = 0.1
@@ -157,3 +161,17 @@ finishColor = "100 100 100 0"
 startRadius = 2.0
 finishRadius = 8.0
 animateTime = 0.8
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_light"
+startColor = "80 170 255 3500"
+finishColor = "80 170 255 100"
+startRadius = 10.0
+finishRadius = 0.0
+animateTime = 1.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

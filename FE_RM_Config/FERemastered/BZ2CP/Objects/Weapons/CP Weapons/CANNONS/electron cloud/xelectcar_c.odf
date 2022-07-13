@@ -21,6 +21,7 @@ kickOmega = 2.0
 kickVeloc = 2.0
 
 particleTypes = 5
+
 particleClass1 = "xelectcar_c.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
@@ -36,6 +37,10 @@ particleVeloc3 = "0.0 0.0 0.0"
 particleClass4 = "xelectcar_c.shock"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "xelectcar_c.light"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
 
 [Core]
 simulateBase = "sim_null"
@@ -91,3 +96,17 @@ finishRadius = 3.0
 animateTime = 0.2
 latitudeBands = 8
 longitudeSegments = 16
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_light"
+startColor = "80 170 255 3500"
+finishColor = "80 170 255 100"
+startRadius = 10.0
+finishRadius = 0.0
+animateTime = 1.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

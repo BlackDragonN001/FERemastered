@@ -40,12 +40,15 @@ lensFlare = 1
 
 [Trail]
 renderBase = "draw_trail"
+textureName = "blastenergy.tga"
 textureBlend = "one one modulate"
 startColor = "60 85 255 60"
 finishColor = "60 85 255 0"
 startRadius = 0.20
 finishRadius = 0.40
 segmentTime = 0.5
+textureRate = 0.5
+textureSpeed = 0.0
 
 [Flame]
 renderBase = "draw_twirl_trail"
