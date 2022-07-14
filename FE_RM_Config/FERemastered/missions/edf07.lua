@@ -787,7 +787,7 @@ function Routine7()
 			M.Routine7Timer = GetTime() + 25;
 		elseif M.Routine7State == 2 then
 			if IsAround(M.Tug1) then
-				if not M.PlayerUsingCbunk then -- Pause while in the interface. Prevents a buildup of 25+ pods. -GBD
+				if M.PlayerUsingCbunk == 0 then -- Pause while in the interface. Prevents a buildup of 25+ pods. -GBD
 					local pos = GetPosition(M.Tug1);
 					M.ServicePod = BuildObject("apserv07", 1, pos);				
 					M.Position30 = SetVector(pos.x + 10, pos.y + 15, pos.z + 10);
@@ -806,7 +806,7 @@ function Routine7()
 			M.Routine7Timer = GetTime() + 25;
 		elseif M.Routine7State == 5 then
 			if IsAround(M.Tug2) then
-				if not M.PlayerUsingCbunk then  -- Pause while in the interface. Prevents a buildup of 25+ pods. -GBD
+				if M.PlayerUsingCbunk == 0 then  -- Pause while in the interface. Prevents a buildup of 25+ pods. -GBD
 					local pos = GetPosition(M.Tug2);
 					M.ServicePod = BuildObject("apserv07", 1, pos);				
 					M.Position30 = SetVector(pos.x + 10, pos.y + 15, pos.z + 10);
