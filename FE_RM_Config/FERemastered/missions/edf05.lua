@@ -532,7 +532,7 @@ end
 --spawns Hadean attack waves during intro battle
 function SpawnPlateauAttackers(R, STATE)
 	if STATE == 0 then
-		Advance(R, 30.0);
+		Advance(R, 45.0);
 	elseif STATE == 1 then
 		ClearObjectives();
 		AddObjective("edf0509.otf", "white");
@@ -541,7 +541,7 @@ function SpawnPlateauAttackers(R, STATE)
 		Goto(BuildObject("evscout", 2, "attackerspawn"), "walkpath", 1);
 		Goto(BuildObject("evscout", 2, "attackerspawn"), "mortpath", 1);
 		Goto(BuildObject("evwalk", 2, "attackerspawn"), "walkpath", 1);	--changed from "ivewalk"
-		Advance(R, 30.0);
+		Advance(R, 45.0);
 	elseif STATE == 2 then
 		Goto(BuildObject("evscout", 2, "attackerspawn"), "tankpath", 1);
 		Goto(BuildObject("evscout", 2, "attackerspawn"), "zeuspath", 1);
@@ -549,13 +549,13 @@ function SpawnPlateauAttackers(R, STATE)
 		Goto(BuildObject("evtank", 2, "attackerspawn"), "mortpath", 1);
 		Goto(BuildObject("evwalk", 2, "attackerspawn"), "walkpath", 1);	--changed from "ivewalk"
 		Goto(BuildObject("evscout", 2, "attackerspawn"), "tankpath", 1);
-		Advance(R, 30.0);
+		Advance(R, 45.0);
 	elseif STATE == 3 then
 		Goto(BuildObject("evtank", 2, "attackerspawn"), "tankpath", 1);
 		Goto(BuildObject("evtank", 2, "attackerspawn"), "tankpath", 1);
 		Goto(BuildObject("evmisl", 2, "attackerspawn"), "zeuspath", 1);
 		Goto(BuildObject("evmisl", 2, "attackerspawn"), "zeuspath", 1);
-		Advance(R, 30.0);
+		Advance(R, 45.0);
 	elseif STATE == 4 then
 		Goto(BuildObject("evwalk", 2, "attackerspawn"), "walkpath", 1);
 		Goto(BuildObject("evmisl", 2, "attackerspawn"), "zeuspath", 1);
