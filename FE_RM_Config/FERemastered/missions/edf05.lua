@@ -343,7 +343,7 @@ function HandleMainState(R, STATE)
 		Follow(M.Transport, M.Recycler, 1);
 		Advance(R);
 	elseif STATE == 8 then	--LOC_83
-		if GetDistance(M.Recycler, M.ExitPortal) < 200 then
+		if GetDistance(M.Recycler, M.ExitPortal) < 300 then
 			AudioMessage("edf0509.wav");	--O'Ryan:"This portal leads away from earth, if we can hold on a few minutes, i can reprogram it"
 			AudioMessage("edf0510.wav");	--Windex:"Corporal, we don't have a few minutes..."
 		--[[
