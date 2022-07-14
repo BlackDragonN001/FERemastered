@@ -174,6 +174,7 @@ function Start()
 	SetPortalDest(M.Portal1, M.Portal2);
 	SetPortalDest(M.Portal2, M.Portal1);
 	SetPortalDest(M.ExitPortal, M.Portal2);
+	SetObjectiveName(M.ExitPortal, "Star Portal");
 	--M.HadeanTrain = GetHandleOrDie("hadeantrain");
 	
 	--spawn player's starting forces
@@ -332,7 +333,6 @@ function HandleMainState(R, STATE)
 	elseif STATE == 6 then
 		SetObjectiveOff(M.HadTurr1);
 		SetObjectiveOff(M.HadTurr2);
-		SetObjectiveName(M.ExitPortal, "Star Portal");
 		SetObjectiveOn(M.ExitPortal);
 		AudioMessage("edf0508.wav");	--Windex:"There's the portal up ahead on radar..."
 		ClearObjectives();
@@ -402,7 +402,7 @@ function HandleRecyEscort(R, STATE)
 		Advance(R, 60.0);
 	elseif STATE == 2 then
 		BuildObject("slagb2", 2, "blockade");
-		SetPortalDest(M.Portal2, M.ExitPortal);	--ClearPortalDest(M.Portal2, true);
+		ClearPortalDest(M.Portal2, true);
 		RemoveObject(M.Portal1);
 		for i = 1, NUM_DEFENDERS do -- Portal's blown up, try to find another way.
 			if not IsPlayer(M.Defenders[i]) then
