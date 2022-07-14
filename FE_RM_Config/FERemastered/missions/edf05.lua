@@ -580,9 +580,7 @@ function PreTeleport(portal, h)
 				M.RecyclerState = 3;
 				return PRETELEPORT_ALLOW;
 			end
-		end
-		
-		if h == M.Recycler then
+		elseif h == M.Recycler then
 			AudioMessage("edf0502.wav");	--Windex:"We found a short range portal..."
 			ClearObjectives();
 			AddObjective("edf0502.otf", "white");
@@ -611,7 +609,7 @@ function PreTeleport(portal, h)
 	
 		if h == M.Recycler then
 			M.CheckRecy = false; --M.Variable3 = 1;
-			Teleport(M.Recycler, M.Portal2, -20);
+			--Teleport(M.Recycler, M.Portal2, -20);
 			DeleteAfterDelay(M.Recycler);
 			Goto(M.Transport, "recyclerexit", 1);
 			AudioMessage("edf05end.wav");	--Shultz:"Aw man, what are we getting into?"
@@ -619,7 +617,7 @@ function PreTeleport(portal, h)
 			return PRETELEPORT_ALLOW;
 		elseif h == M.Transport then
 			M.CheckTrans = false; --M.Variable4 = 1;
-			Teleport(M.Transport, M.Portal2, -20);
+			--Teleport(M.Transport, M.Portal2, -20);
 			DeleteAfterDelay(M.Transport);
 			Attack(TeleportIn("cvtank", 2, M.ExitPortal, 10), M.Player, 1);
 			return PRETELEPORT_ALLOW;
