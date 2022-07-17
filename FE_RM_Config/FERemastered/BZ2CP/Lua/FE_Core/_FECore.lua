@@ -75,9 +75,9 @@ function _FECore.AddObject(h)
 				SetSkill(h, Difficulty + 1);
 			end
 		end
+	else -- For MPI, Add Turrets to custom Dispatcher. Leave SP missions alone.
+		AddToDispatch(h, 15.0, false, 0, (Difficulty < 2)); -- Based on Difficulty, if Hard, AI can Cloak on their own, and doesn't Flee.
 	end
-	
-	AddToDispatch(h, 15.0, false, 0, (Difficulty < 2)); -- Based on Difficulty, if Hard, AI can Cloak on their own, and doesn't Flee.
 
 end
 
