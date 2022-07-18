@@ -257,6 +257,7 @@ function Start()
 	M.BombTrigger = GetHandleOrDie("trigger");
 	M.TunnelEntrance = GetHandleOrDie("unnamed_fpbones1");	--was "unnamed_fpbones", which didn't exist
 	M.Jammer = GetHandleOrDie("jammer");
+	SetMaxHealth(M.Jammer, 0);
 	M.MapSign = GetHandleOrDie("unnamed_mapsign3");
 	M.BomberBay = GetHandleOrDie("unnamed_ibbomb");
 	M.BomberPower = GetHandleOrDie("unnamed_ibpgen");
@@ -385,6 +386,7 @@ function Routine1(R, STATE)
 		end
 	elseif STATE == 5 then
 		local pos = GetPosition(M.Jammer); -- save position before it is destroyed. -GBD
+		SetMaxHealth(M.Jammer, 1000);
 		Damage(M.Jammer, 100000); --SetCurHealth(M.Jammer, 1);
 		BuildObject("poolmine", 2, pos);
 		Goto(M.HadeanTech, M.ScionRecy, 1);
