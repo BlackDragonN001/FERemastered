@@ -546,7 +546,6 @@ function PreTeleport(portal, h)
 			SetPortalDest(portal, M.Portals[2]); --Teleport(h, M.Portals[2], 30);
 			ClearObjectives();
 			AddObjective("edf0204.otf", "white");
-			Goto(M.Recycler, M.BaseNav, 0);
 			M.RecyTeleported = true;
 			--return PRETELEPORT_ALLOW;
 		end
@@ -562,8 +561,6 @@ function PreTeleport(portal, h)
 
 		if not M.ScavTeleported and h == M.HadeanScav then
 			M.ScavTeleported = true;
-		elseif GetTeamNum(h) == 5 then
-			Goto(h, M.Recycler, 0);
 		end
 	else
 		if IsPlayer(h) then
@@ -572,6 +569,21 @@ function PreTeleport(portal, h)
 	end
 	
 	return PRETELEPORT_DEFAULT;
+end
+
+function PostTeleport(portal, h)
+
+	if GetCfg(h) == "ivrecy" and portal == M.Portals[2] then
+		Goto(M.Recycler, M.BaseNav, 0);
+		
+		return POSTTELEPORT_OVERRIDE;
+	end
+	
+	if GetTeamNum(h) == 5 and portal ~= M.Portals[1] then
+		Goto(h, M.Recycler, 0);
+		
+		return POSTTELEPORT_OVERRIDE;
+	end
 end
 
 function CheckStuffIsAlive()

@@ -135,5 +135,8 @@ PRETELEPORT_DEFAULT = 0 -- Allow default behavior.
 PRETELEPORT_ALLOW = 1 -- Allow the teleport, reguardless.
 PRETELEPORT_DENY = 2 -- Deny the teleport.
 
+POSTTELEPORT_DEFAULT = 0 -- Default, does a Goto to the Portal exit point.
+POSTTELEPORT_OVERRIDE = 1 -- Override Goto from Teleporter exit.
+
 
 return _GlobalVariables;
