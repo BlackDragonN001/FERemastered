@@ -69,6 +69,14 @@ function Start()
 end
 
 function AddObject(h)
+-- Set enemy team pilot's to the "maniac" pilots.
+-- Change maniac%c.odf files to %cmaniac.odf to make internal game race code work correctly.
+
+	if IsCraftButNotPerson(h) and GetTeamNum(h) ~= 1 then 
+	
+	
+	end
+
     if (GetTeamNum(h) == M.PlayerTeamNum) then
         if (GetClassLabel(h) == "CLASS_SUPPLYDEPOT") then
             SetObjectiveOn(h);
@@ -233,14 +241,16 @@ function CheckIfStuffAlive()
         if not IsAround(M.EnemyTeam1Recy) and not IsAround(M.EnemyTeam2Recy) then
             AddObjective("Game Over - Player Wins");
 			DoGameover(10.0);
+			M.IsGameOver = true;
         elseif not IsAround(M.EnemyTeam2Recy) and not IsAround(M.PlayerRecy) then
 			AddObjective("Game Over - AI Team 1 Wins");
 			DoGameover(10.0);
+			M.IsGameOver = true;
         elseif not IsAround(M.EnemyTeam1Recy) and not IsAround(M.PlayerRecy) then
           	AddObjective("Game Over - AI Team 2 Wins");
 			DoGameover(10.0);
+			M.IsGameOver = true;
         end
-        M.IsGameOver = true;
     end
 end
 
@@ -250,27 +260,19 @@ function UpgradeUnitWeapons(handle)
 	-- Handle different upgrades per unit.
 	if (unit == "ivtank.odf") then
 		GiveWeapon(handle, "gspstab_c");
-	end
-
-	if (unit == "ivscout.odf") then
+	elseif (unit == "ivscout.odf") or (unit == "ivturr.odf") then
 		GiveWeapon(handle, "gchain_c");
-	end
-
-	if (unit == "ivatank.odf") then
-		GiveWeapon(handle, "gblast_a");
-	end
-
-	if (unit == "fvtank.odf" or unit == "fvscout.odf") then
-		GiveWeapon(handle, "garc_c");
+	elseif (unit == "ivatank.odf") then
+		--GiveWeapon(handle, "gblast_a");
+	elseif (unit == "fvtank.odf" or unit == "fvscout.odf") then
+		--GiveWeapon(handle, "garc_c");
 		GiveWeapon(handle, "gshield");
-	end
-
-	if (unit == "fvsent.odf") then
+	elseif (unit == "fvsent.odf") then
 		GiveWeapon(handle, "gdeflect");
-	end
-
-	if (unit == "fvarch.odf") then
+	elseif (unit == "fvarch.odf") then
 		GiveWeapon(handle, "gabsorb");
+	elseif (unit == "fvartl.odf") then
+		GiveWeapon(handle, "gpopgun");
 	end
 end
 
