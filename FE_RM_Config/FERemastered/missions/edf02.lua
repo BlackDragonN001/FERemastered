@@ -536,21 +536,23 @@ end
 --]]
 
 function PreTeleport(portal, h)
-	if GetCfg(h) == "ivrecy" and portal == M.Portals[1] then
-		if not M.RecyTeleported then
-			SetObjectiveOff(M.Portals[1]);
-			M.BaseNav = BuildObjectAndLabel("ibnav", 1, Position4, "Base Location");
-			SetObjectiveName(M.BaseNav, "Deploy Base");
-			SetBestGroup(M.Recycler);
-			SetObjectiveOn(M.BaseNav);
-			SetPortalDest(portal, M.Portals[2]); --Teleport(h, M.Portals[2], 30);
-			ClearObjectives();
-			AddObjective("edf0204.otf", "white");
-			M.RecyTeleported = true;
-			--return PRETELEPORT_ALLOW;
-		end
-	elseif portal == M.Portals[1] then
-		if IsPlayer(h) then
+	if portal == M.Portals[1] then
+		if GetCfg(h) == "ivrecy" then
+			if not M.RecyTeleported and portal == M.Portals[1] then
+				SetObjectiveOff(M.Portals[1]);
+				M.BaseNav = BuildObjectAndLabel("ibnav", 1, Position4, "Base Location");
+				SetObjectiveName(M.BaseNav, "Deploy Base");
+				SetBestGroup(M.Recycler);
+				SetObjectiveOn(M.BaseNav);
+				SetPortalDest(portal, M.Portals[2]); --Teleport(h, M.Portals[2], 30);
+				ClearObjectives();
+				AddObjective("edf0204.otf", "white");
+				M.RecyTeleported = true;
+				return PRETELEPORT_ALLOW;
+			else
+				return PRETELEPORT_DENY;
+			end
+		elseif IsPlayer(h) then
 			M.PlayerTeleported = true;
 			SetPortalDest(portal, M.Portals[4]); --Teleport(h, M.Portals[4], 30);
 		elseif math.random(1, 2) == 1 then
