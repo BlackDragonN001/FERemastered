@@ -297,8 +297,8 @@ end
 --Only Nadir1 and Nadir2 target the player -Gravey
 function UpdateNadirTarget()
 	if(M.ShipMaybeDestroyed == true and IsAround(M.Object_PlayerShip) == false and (IsAround(M.Object_Nadir1) or IsAround(M.Object_Nadir2))==true) then
-		NadirAttackUpdate = true
-		if(NadirAttackUpdate == true)then
+		M.NadirAttackUpdate = true
+		if(M.NadirAttackUpdate == true)then
 			if(IsAround(M.Object_Nadir1) == true) then--checks if alive
 				if(GetTarget(M.Object_Nadir1) == nil) then --checks if no target
 					Goto(M.Object_Nadir1, "convoy_halt", 1); --orders unit to go to location with friendlies to attack
@@ -311,7 +311,7 @@ function UpdateNadirTarget()
 				end
 			end
 		end
-		NadirAttackUpdate = false;
+		M.NadirAttackUpdate = false;
 		M.ShipMaybeDestroyed = false;
 	end
 end
