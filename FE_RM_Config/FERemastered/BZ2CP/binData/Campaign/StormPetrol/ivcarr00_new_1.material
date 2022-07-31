@@ -1,0 +1,14 @@
+[solid]
+diffuse = 1.000000  1.000000  1.000000  1.000000
+specular = 0.501961  0.501961  0.501961  1.000000
+specularPower = 1024.000000
+emissive = 0.000000  0.000000  0.000000  1.000000
+ambient = 0.000000  0.000000  0.000000  1.000000
+
+
+[texture]
+diffuse = ivcarr00.dds
+teamColor = ivcarr00_c.dds
+emissive = ivcarr00_e.dds
+normal = ivcarr00_n.dds
+specular = ivcarr00_s.dds
