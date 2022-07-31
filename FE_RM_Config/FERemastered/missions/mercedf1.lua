@@ -1101,20 +1101,29 @@ function Routine6()
 end
 --handles giving player scouts based on their arrival to "convoy_halt"
 function Routine7()  
-	if (M.Routine7Enable == true) then
-	
-		if(GetDistance(M.AIScouts[1], "convoy_halt") <= 100 and (GetDistance(M.AIScouts[2], "convoy_halt") <= 100) and M.Routine7State < 1) then --added condition so player cannot break their return path early --Gravey
-			SetTeamNum(M.AIScouts[1], 1);
-			SetTeamNum(M.AIScouts[2], 1);
-			SetGroup(M.AIScouts[1], 0);
-			SetGroup(M.AIScouts[2], 0);
-			Goto(M.AIScouts[2],"convoy_halt", 0);
-			Goto(M.AIScouts[1],"convoy_halt", 0);
-			M.Routine7State = M.Routine7State + 1;
-			M.ScoutsPassedToPlayer = true;
-		end
-		
-	end
+  if (M.Routine7Enable == true) then
+    local distCheck = {false, false};
+    if IsValid(M.AIScouts[1]) then
+      distCheck[1] = GetDistance(M.AIScouts[1], "convoy_halt") <= 100;
+    else
+      distCheck[1] = true;
+    end
+    if IsValid(M.AIScouts[2]) then
+      distCheck[2] = GetDistance(M.AIScouts[2], "convoy_halt") <= 100;
+    else
+      distCheck[2] = true;
+    end
+    if distCheck[1] and distCheck[2] and (M.Routine7State < 1) then --added condition so player cannot break their return path early --Gravey
+      SetTeamNum(M.AIScouts[1], 1);
+      SetTeamNum(M.AIScouts[2], 1);
+      SetGroup(M.AIScouts[1], 0);
+      SetGroup(M.AIScouts[2], 0);
+      Goto(M.AIScouts[2],"convoy_halt", 0);
+      Goto(M.AIScouts[1],"convoy_halt", 0);
+      M.Routine7State = M.Routine7State + 1;
+      M.ScoutsPassedToPlayer = true;
+    end
+  end
 end
 -- Prevent meteor damage to key structures until we need this to happen.
 function DamagePrevention()
