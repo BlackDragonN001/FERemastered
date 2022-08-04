@@ -129,7 +129,10 @@ function InitialSetup()
 		"evmislu",
 		"evtanku",
 		"evmort",
-		"ivrecy"
+		"ivrecy",
+		"ivdrop_sh02",
+		"ivdrop_land02",
+		"ivpdrop"
 	};
 	local preloadAudio = {
 		"edf02_01.wav",
@@ -586,6 +589,8 @@ function PostTeleport(portal, h)
 		
 		return POSTTELEPORT_OVERRIDE;
 	end
+	
+	return POSTTELEPORT_DEFAULT;
 end
 
 function CheckStuffIsAlive()
@@ -660,6 +665,7 @@ function DropLand()
 		
 	end
 end
+
 function DropLeave()
 	M.maxFrames = SetAnimation(M.RecyDropShip, "takeoff",1);
 	M.curFrame = GetAnimationFrame(M.RecyDropShip, "takeoff");
