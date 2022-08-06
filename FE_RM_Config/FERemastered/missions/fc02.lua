@@ -15,6 +15,7 @@ local M = {
 	Routine3Active = false,
 	Routine4Active = true,
 	Routine7Active = false,
+	CheckScionLeaderActive = false,
 -- Floats
 	Routine1Timer = 0.0,
 	Routine2Timer = 0.0,
@@ -169,8 +170,25 @@ function Update()
 	Routine4();
 	Routine6();
 	Routine7();
-	
+	CheckScionLeader();
 	CheckStuffIsAlive();
+end
+function CheckScionLeader()
+	if M.Routine1State >= 6 and M.CheckScionLeaderActive == true
+	then
+		if GetDistance(M.ScionLeader, M.Procreator) <= 200 and IsAround(M.ScionLeader) == true
+			then
+				M.Routine4Active = true;--RunSpeed,_Routine4,1,true
+				M.ScionLeaderAround = false;--RunSpeed,_Routine6,0,true
+				RemoveObject(M.Portal2Aurora1);
+				RemoveObject(M.Portal2Aurora2);
+				RemoveObject(M.Portal2Aurora3);
+				RemoveObject(M.Portal2Aurora4);
+				RemoveObject(M.ScionLeader);
+				M.Routine1State = 9;
+				M.Routine1Timer = GetTime() + 10;--25
+		end
+	end
 end
 
 --Main mission state. Spawns Scion convoy, handles escort, and Ark II Comlink pickup
@@ -237,6 +255,7 @@ function Routine1()
 			Goto(M.ScionLeader, "retreat", 1);
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 26;
+			M.CheckScionLeaderActive = true;
 		elseif M.Routine1State == 6 then	--LOC_56
 			M.Variable3 = M.Variable3 + 1;
 			if M.Variable3 > 10 then
@@ -260,17 +279,7 @@ function Routine1()
 			M.Routine1Timer = GetTime() + 10;
 		elseif M.Routine1State == 8 then	--LOC_69
 			if GetDistance(M.ScionLeader, M.Procreator) > 200 then
-				M.Routine1State = 6;--to LOC_56
-			else
-				M.Routine4Active = true;--RunSpeed,_Routine4,1,true
-				M.ScionLeaderAround = false;--RunSpeed,_Routine6,0,true
-				RemoveObject(M.Portal2Aurora1);
-				RemoveObject(M.Portal2Aurora2);
-				RemoveObject(M.Portal2Aurora3);
-				RemoveObject(M.Portal2Aurora4);
-				RemoveObject(M.ScionLeader);
-				M.Routine1State = M.Routine1State + 1;
-				M.Routine1Timer = GetTime() + 10;--25
+				M.Routine1State = 6;--to LOC_56	
 			end
 		elseif M.Routine1State == 9 then
 			ClearObjectives();
