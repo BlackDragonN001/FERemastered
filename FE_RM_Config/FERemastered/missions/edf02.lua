@@ -619,6 +619,7 @@ function DropLand()
 		SetAnimation(M.RecyDropShip, "land", 1);
 		M.maxFrames = SetAnimation(M.RecyDropShip, "land",1);
 		M.StartLanding = true;
+		AddObjective("edf0213.otf", "white");
 	
 	elseif(M.StartLanding == true and M.StateSetup == false and M.TroopGoto == false) 
 	then		
