@@ -442,6 +442,7 @@ function HandleMainState(R, STATE)
 	elseif STATE == 35 then
 		AudioMessage("edf0318.wav");	--Cervelli:"We're evacuating survivors. Take out the Hadean base..."
 		Advance(R);
+		AddObjective("edf0312.otf", "white");
 	elseif STATE == 36 then
 		if not IsAround(M.HadeanRecy) then
 			AudioMessage("edf0319.wav");	--Cervelli:"Good work commander..."
