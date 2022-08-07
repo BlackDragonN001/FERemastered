@@ -49,6 +49,7 @@ local M = {
 	BaseNav = nil,
 	FlightRecorder = nil,
 	MegaTurrets = {},
+	SatchelPack = nil,
 --Vectors
 	OldPlayerPos = nil,
 -- Ints
@@ -267,9 +268,9 @@ function HandleMainState(R, STATE)
 			Advance(R);
 		end
 	elseif STATE == 10 then	--LOC_67
-		if M.FactoryBuilt then
-			Advance(R, 200.0);
-		end
+		--if M.FactoryBuilt then
+			Advance(R, 600.0); --was 200 giving player generous time to amass units or stall out if not building the factory immediately.
+		--end
 	elseif STATE == 11 then
 		ClearObjectives();
 		AddObjective("edf0314.otf", "white");
@@ -307,10 +308,11 @@ function HandleMainState(R, STATE)
 		M.CanyonNav = BuildObjectAndLabel("ibnav", 1, Position12, "Canyon Nav");
 		SetObjectiveName(M.CanyonNav, "Canyon Blockage");
 		SetObjectiveOn(M.CanyonNav);
-		BuildObjectAndLabel("apsatc", 1, "satchelspawn3", "Satchel Pack");
+		M.SatchelPack = BuildObjectAndLabel("apsatc", 1, "satchelspawn3", "Satchel Pack");
 		M.SatchelPickupNav = BuildObjectAndLabel("ibnav", 1, "satchelspawn3", "Satchel Pack Nav");
-		SetObjectiveOn(M.SatchelPickupNav);
-		SetObjectiveName(M.SatchelPickupNav, "pack explosive");
+		SetObjectiveOn(M.SatchPack);
+		--SetObjectiveOn(M.SatchelPickupNav);
+		--SetObjectiveName(M.SatchelPickupNav, "pack explosive");
 		Advance(R);
 	elseif STATE == 17 then	--LOC_106
 		if GetDistance(M.Player, M.CanyonNav) < 100 then
