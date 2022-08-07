@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
--- FE edf03.lua Mission - Version 1.0 
--- Date Modified: 11/01/2021
+-- FE edf03.lua Mission - Version 1.1 
+-- Date Modified: 8/7/2022
 -- Summary: Mission script for the EDF03 Forgotten Enemies Mission.
 ----------------------------------------------------------------
 
@@ -9,7 +9,7 @@ local _FECore = require('_FECore');
 
 -- Variables Not saved. Constants that never change.
 local NUM_MEGATURRETS = 4;
-local NUM_BLOCKAGES = 7;
+local NUM_BLOCKAGES = 12;
 
 
 local Position8 = SetVector( -911, 76, -726 );	--Hadean scout spawn
