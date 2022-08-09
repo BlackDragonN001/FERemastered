@@ -354,7 +354,8 @@ function Routine1()
 			RemoveObject(M.Object13);
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 4 then	--LOC_22
-			if GetCurrentCommand(M.HadeanCommander) == 0 then
+			if GetDistance(M.HadeanCommander, M.Player) < 50 then
+				Stop(M.HadeanCommander);
 				LookAt(M.HadeanCommander, M.Player, 0);
 				AddObjective("fc0101.otf", "white");
 				AudioMessage("fc01_01.wav");	--Thanatos:"Welcome, Talon Corber..."
@@ -598,6 +599,7 @@ function Routine1()
 			if not IsAround(M.CerbDroneCarrier) then
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 3;
+				SetObjectiveOff(M.Object13);
 			end
 		elseif M.Routine1State == 40 then
 			RemoveObject(M.Object13);
@@ -707,11 +709,20 @@ end
 
 --Code for Miller's soldiers ambushing the Cerb drone carrier
 function Routine4()
-	if M.Routine4Active and M.Routine4Timer < GetTime() then
+	if M.Routine4Active and M.Routine4Timer < GetTime() then  --added so soldiers don't jump off 
+		if M.Routine4State < 3 then
+		for i = 0,NUM_SOLDIERS do
+				local h = GetHandle(string.format("Soldier%i", i));
+			if IsAround(h) then
+				Defend(h)
+			end
+		end
+	end
+	
 		if M.Routine4State == 0 then
 			if not IsAround(M.CerbDroneCarrier) then
 				M.Routine4State = 4;--to LOC_323
-			elseif GetWhoShotMe(M.CerbDroneCarrier) == M.Player then
+			elseif GetDistance(M.Player, M.CerbDroneCarrier) < 400 then --GetWhoShotMe(M.CerbDroneCarrier) == M.Player
 				SetIndependence(M.CerbDroneCarrier, 0);
 				FireAt(M.CerbDroneCarrier, nil);
 				Follow(M.CerbDroneCarrier, M.Player, 1);
@@ -762,19 +773,26 @@ function Routine4()
 			--M.Variable3 = 0;
 			M.Routine4State = M.Routine4State + 1;
 			M.Routine4Timer = GetTime() + 60;
-		elseif M.Routine4State == 6 then	--LOC_325
 			for i = 0,NUM_SOLDIERS do
 				local h = GetHandle(string.format("Soldier%i", i));
 				if IsAround(h) then
-					M.Variable13 = M.Variable13 + 1;
-					if M.Variable13 < 3 then
-						Goto(h, string.format("SoldierDest%i", M.Variable13), 0);
-					else
-						RemoveObject(h);
-					end
+							Attack(h, M.CerbDroneCarrier);
+				
 				end
 			end
-			M.Routine4State = M.Routine4State + 1;
+		--elseif M.Routine4State == 6 then	--LOC_325
+		--	for i = 0,NUM_SOLDIERS do
+			--	local h = GetHandle(string.format("Soldier%i", i));
+			--	if IsAround(h) then
+				--	M.Variable13 = M.Variable13 + 1;
+				--	if M.Variable13 < 3 then
+				--		Goto(h, string.format("SoldierDest%i", M.Variable13), 0);
+				--	else
+						--RemoveObject(h);
+				--	end
+			--	end
+			--end
+			--M.Routine4State = M.Routine4State + 1;
 		end
 	end
 end
