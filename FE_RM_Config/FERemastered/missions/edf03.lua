@@ -269,7 +269,7 @@ function HandleMainState(R, STATE)
 		end
 	elseif STATE == 10 then	--LOC_67
 		--if M.FactoryBuilt then
-			Advance(R, 600.0); --was 200 giving player generous time to amass units or stall out if not building the factory immediately.
+			Advance(R, 800.0); --was 200 giving player generous time to amass units or stall out if not building the factory immediately.
 		--end
 	elseif STATE == 11 then
 		ClearObjectives();
@@ -310,7 +310,7 @@ function HandleMainState(R, STATE)
 		SetObjectiveOn(M.CanyonNav);
 		M.SatchelPack = BuildObjectAndLabel("apsatc", 1, "satchelspawn3", "Satchel Pack");
 		M.SatchelPickupNav = BuildObjectAndLabel("ibnav", 1, "satchelspawn3", "Satchel Pack Nav");
-		SetObjectiveOn(M.SatchPack);
+		SetObjectiveOn(M.SatchelPack);
 		--SetObjectiveOn(M.SatchelPickupNav);
 		--SetObjectiveName(M.SatchelPickupNav, "pack explosive");
 		Advance(R);
