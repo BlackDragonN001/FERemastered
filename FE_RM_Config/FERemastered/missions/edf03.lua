@@ -512,7 +512,7 @@ function RemoveRocks(R, STATE)
 		for i = 1,NUM_BLOCKAGES do
 			RemoveObject(M.Rocks[i]);
 		end
-		IFace_ConsoleCmd("ai.calccliffs");
+		--IFace_ConsoleCmd("ai.calccliffs");
 		Advance(R);
 	end
 end
