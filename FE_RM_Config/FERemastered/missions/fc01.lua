@@ -69,6 +69,7 @@ local M = {
 	BasePatrol1 = nil,
 	BasePatrol2 = nil,
 	NewObjs = {},
+	Resourcers = {},
 
 -- Ints
 	TPS = 10,
@@ -204,11 +205,13 @@ end
 function AddObject(h)
 
 	_FECore.AddObject(h);
-
+		
 	if GetCfg(M.Procreator) == "ebrecy_m" and not IsPlayer(h) then
 		if GetCfg(h) == "ebscav" or GetCfg(h) == "ebscup" then
 			SetObjectiveName(h, "Defend Resourcer");
 			SetObjectiveOn(h);
+			table.insert(M.Resourcers, h);
+			
 		elseif GetCfg(h) == "evserv" then
 			M.Variable6 = M.Variable6 + 1;
 			SetTeamNum(h, 1);
@@ -320,7 +323,7 @@ function Update()
 	Routine11();
 	Routine14();
 	CheckStuffIsAlive();
-	
+	print(M.Routine1State);
 	for i=1,#M.NewObjs do
 		AddObjectDeferred(M.NewObjs[i]);
 	end
@@ -594,20 +597,21 @@ function Routine1()
 				SetScrap(3, 40);
 				M.Routine8Active = true;--RunSpeed,_Routine8,1,true
 				M.Routine1State = M.Routine1State + 1;
+				Patrol(M.HadeanCommander, "Patrol1", 0);
+				Patrol(M.HadeanEscort1, "Patrol1", 0); -- moved to an earlier state so they dont hump walls. 
+				Patrol(M.HadeanEscort2, "Patrol1", 0);
+				Patrol(M.HadeanEscort3, "Patrol1", 0);
+				Patrol(M.HadeanEscort4, "Patrol1", 0);
 			end
 		elseif M.Routine1State == 39 then	--LOC_193
 			if not IsAround(M.CerbDroneCarrier) then
-				M.Routine1State = M.Routine1State + 1;
+				M.Routine1State = M.Routine1State + 1; 
 				M.Routine1Timer = GetTime() + 3;
-				SetObjectiveOff(M.Object13);
+				
 			end
 		elseif M.Routine1State == 40 then
 			RemoveObject(M.Object13);
-			Patrol(M.HadeanCommander, "Patrol1", 0);
-			Patrol(M.HadeanEscort1, "Patrol1", 0);
-			Patrol(M.HadeanEscort2, "Patrol1", 0);
-			Patrol(M.HadeanEscort3, "Patrol1", 0);
-			Patrol(M.HadeanEscort4, "Patrol1", 0);
+			
 			AudioMessage("fc01_11.wav");	--Thanatos:"Excellent work, Talon Corber..."
 			M.Cerb1 = BuildObject("cvtank", 2, "Cerb1");
 			Goto(M.Cerb1, M.Procreator, 0);
@@ -619,7 +623,20 @@ function Routine1()
 			if not IsAround(M.Cerb1) and not IsAround(M.Cerb2) then
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 10;
+				Patrol(M.HadeanCommander, "Patrol1", 0);
+				Patrol(M.HadeanEscort1, "Patrol1", 0); -- moved to an earlier state so they dont hump walls. 
+				Patrol(M.HadeanEscort2, "Patrol1", 0);
+				Patrol(M.HadeanEscort3, "Patrol1", 0);
+				Patrol(M.HadeanEscort4, "Patrol1", 0);
+			elseif(GetDistance(M.Cerb1, M.Procreator) < 300 or GetDistance(M.Cerb2, M.Procreator) < 300) --added to help the player, otherwise this may end in failure early.
+			then
+			    Attack(M.HadeanCommander, M.Cerb1, 0);
+				Attack(M.HadeanEscort1, M.Cerb1, 0); -- moved to an earlier state so they dont hump walls. 
+				Attack(M.HadeanEscort2, M.Cerb2, 0);
+				Attack(M.HadeanEscort3, M.Cerb2, 0);
+				Attack(M.HadeanEscort4, M.Cerb2, 0);
 			end
+			
 		elseif M.Routine1State == 42 then
 			AudioMessage("fc01_11b.wav");	--SciWizard:"The Crucible guards a Research Node crucial to the Cerberi Weapons development program..."
 			ClearObjectives();
@@ -647,6 +664,11 @@ function Routine1()
 			AddObjective("fc0102.otf", "white");
 			M.Variable2 = GetTime() + 35;
 			M.Routine1State = M.Routine1State + 1;
+			for i = 1,3 do --at this point the player no longer needs to protect the resourcers.
+					if IsAround(M.Resourcers[i]) then
+						SetObjectiveOff(M.Resourcers[i]);
+					end
+				end
 		elseif M.Routine1State == 46 then
 			if GetDistance(M.Player, M.EnergyDisturbanceNav) < 60 then
 				ClearObjectives();
@@ -706,7 +728,6 @@ function Routine1()
 		end
 	end
 end
-
 --Code for Miller's soldiers ambushing the Cerb drone carrier
 function Routine4()
 	if M.Routine4Active and M.Routine4Timer < GetTime() then  --added so soldiers don't jump off 
@@ -744,11 +765,12 @@ function Routine4()
 		elseif M.Routine4State == 2 then
 			if not IsAround(M.CerbDroneCarrier) then
 				M.Routine4State = 4;--to LOC_323
-			elseif GetDistance(M.CerbDroneCarrier, "SoldierMeet") < 80 then
+			elseif GetDistance(M.CerbDroneCarrier, "SoldierMeet") < 30 then
 				FireAt(M.CerbDroneCarrier, nil);
 				--SetIndependence(M.CerbDroneCarrier, 1);
 				--Goto(M.CerbDroneCarrier, "SoldierMeet", 0);
 				M.Routine4State = M.Routine4State + 1;
+				SetObjectiveOff(M.Object13); --moved line to more accurate timing.
 			end
 		elseif M.Routine4State == 3 then	--LOC_313
 			if not IsAround(M.CerbDroneCarrier) then
@@ -759,6 +781,7 @@ function Routine4()
 				BuildObject("chainmin", 1, "Mine2");
 				BuildObject("chainmin", 1, "Mine3");
 				BuildObject("chainmin", 1, "Mine4");
+				Defend(M.CerbDroneCarrier);
 				M.Variable3 = M.Variable3 + 1;
 				if M.Variable3 == 1 then
 					FireAt(M.CerbDroneCarrier, nil);
