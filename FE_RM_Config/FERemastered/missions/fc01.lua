@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
--- FE fc01.lua Mission - Version 1.0
--- Date Modified: 11/01/2021
+-- FE fc01.lua Mission - Version 1.1
+-- Date Modified: 8/9/2022
 -- Summary: Mission script for the fc01 Forgotten Enemies Mission.
 ----------------------------------------------------------------
 
