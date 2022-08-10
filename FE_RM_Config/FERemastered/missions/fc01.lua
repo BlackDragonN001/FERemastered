@@ -722,7 +722,7 @@ function Routine4()
 		if M.Routine4State == 0 then
 			if not IsAround(M.CerbDroneCarrier) then
 				M.Routine4State = 4;--to LOC_323
-			elseif GetDistance(M.Player, M.CerbDroneCarrier) < 400 then --GetWhoShotMe(M.CerbDroneCarrier) == M.Player
+			elseif GetDistance(M.Player, M.CerbDroneCarrier) < 250 then --GetWhoShotMe(M.CerbDroneCarrier) == M.Player
 				SetIndependence(M.CerbDroneCarrier, 0);
 				FireAt(M.CerbDroneCarrier, nil);
 				Follow(M.CerbDroneCarrier, M.Player, 1);
