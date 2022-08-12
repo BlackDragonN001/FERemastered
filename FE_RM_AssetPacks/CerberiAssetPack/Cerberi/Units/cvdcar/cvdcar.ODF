@@ -61,11 +61,11 @@ effectHard3 = "hp_trail_3"
 effectName3 = "cvdcar.trail"
 
 [CraftClass]
-rangeScan = 600.0
+rangeScan = 450.0 //600
 periodScan = 2.0
 velocJam = 2.0
-engageRange = 450.0
-//blastDist = 200.0
+engageRange = 300.0 //450
+blastDist = 75.0
 
 subAttackClass = "ANS"
 
