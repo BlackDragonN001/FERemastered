@@ -29,12 +29,22 @@ ContinueEvenIfFail = 1
 planType = "BuildMinimums"
 planPriority = 120
 buildType1 = "cvtank"
-buildCount1 = 8
+buildCount1 = 4
 buildType2 = "cvscout"
-buildCount2 = 6
+buildCount2 = 3
 ContinueEvenIfFail = 1
 
 [Plan4]
+planType = "BuildMinimums"
+planPriority = 115
+buildType1 = "cvtank"
+buildCount1 = 4
+buildType2 = "cvscout"
+buildCount2 = 3
+ContinueEvenIfFail = 1
+UnitIdleSeconds = 60.0f
+
+[Plan5]
 planType = "Attacker"
 planPriority = 110
 targetType = "ibrecy_r"
@@ -42,8 +52,9 @@ attackType1 = "cvtank"
 attackType2 = "cvtank"
 attackType3 = "cvtank"
 ContinueEvenIfFail = 1
+UnitIdleSeconds = 60.0f
 
-[Plan5]
+[Plan6]
 planType = "Attacker"
 planPriority = 100
 planCondition = "NotHisExists"
@@ -53,8 +64,9 @@ targetType = "ivscav"
 attackType1 = "cvtank"
 attackType2 = "cvscout"
 ContinueEvenIfFail = 1
+UnitIdleSeconds = 30.0f
 
-[Plan6]
+[Plan7]
 planType = "Attacker"
 planPriority = 90
 planCondition = "HisExists"
@@ -65,7 +77,7 @@ attackType1 = "cvscout"
 attackType2 = "cvtank"
 ContinueEvenIfFail = 1
 
-[Plan7]
+[Plan8]
 planType = "Attacker"
 planPriority = 80
 targetType = "ivturr"
@@ -73,7 +85,7 @@ attackType1 = "cvscout"
 attackType2 = "cvscout"
 ContinueEvenIfFail = 1
 
-[Plan8]
+[Plan9]
 planType = "Attacker"
 planPriority = 70
 targetType = "ivturr"
@@ -81,7 +93,7 @@ attackType1 = "cvscout"
 attackType2 = "cvscout"
 ContinueEvenIfFail = 1
 
-[Plan9]
+[Plan10]
 planType = "Attacker"
 planPriority = 60
 planCondition = "HisExists"
@@ -92,7 +104,7 @@ attackType1 = "cvtank"
 attackType2 = "cvtank"
 ContinueEvenIfFail = 1
 
-[Plan10]
+[Plan11]
 planType = "Attacker"
 planPriority = 50
 planCondition = "NotHisExists"
@@ -103,7 +115,7 @@ attackType1 = "cvtank"
 attackType2 = "cvtank"
 ContinueEvenIfFail = 1
 
-[Plan11]
+[Plan12]
 planType = "Attacker"
 planPriority = 40
 targetType = "ibpgen"
@@ -111,14 +123,14 @@ attackType1 = "cvtank"
 attackType2 = "cvtank"
 ContinueEvenIfFail = 1
 
-[Plan12]
+[Plan13]
 planType = "BuildMinimums"
 planPriority = 30
 buildType1 = "cvmlay8"
 buildCount1 = 1
 ContinueEvenIfFail = 1
 
-[Plan13]
+[Plan14]
 planType = "CollectPool"
 planPriority = 20
 defendType1 = "cvscout"
@@ -126,7 +138,7 @@ defendCount1 = 1
 buildIfNoIdle = 1
 ContinueEvenIfFail = 1
 
-[Plan14]
+[Plan15]
 planType = "CollectField"
 planPriority = 10
 buildIfNoIdle = 1
