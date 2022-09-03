@@ -1,6 +1,9 @@
---[[ BZCC FE Instant Action Mission Script 
-Written by JJ (AI_Unit)
-Version 1.0 03/09/2022 --]]
+--[[ 
+	Summary: BZCC FE Instant Action Mission Script 
+	Author: JJ (AI_Unit)
+	Version: 1.0 
+	Last modified: 03/09/2022 
+--]]
 
 -- File find fix.
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
@@ -14,19 +17,18 @@ local VEHICLE_SPACING_DISTANCE = 20.0
 -- How high a player pilot should spawn above their Recycler.
 local RespawnPilotHeight = 200.0;
 
--- How long (in seconds) from noticing gameover, to the actual kicking
--- out back to the shell.
+-- How long (in seconds) from noticing gameover, to the actual kicking out back to the shell.
 local endDelta = 10.0;
 
 -- Game TPS.
 local m_GameTPS = 20;
 
 -- IA Starting Vehicle handles.
-local StartingVehicleODFs = 
+local StartingVehicleTable = 
 {
-    {"ivturr", "ivturr", "ivscav"},
-    {"ivturr", "ivturr", "ivscav", "ivtank", "ivscout", "ivscout"},
-    {"ivturr", "ivturr", "ivscav", "ivtank", "ivtank", "ivtank", "ivscout", "ivscout", "ivscout"},
+    {"vturr", "vturr", "vscav"},
+    {"vturr", "vturr", "vscav", "vtank", "vscout", "vscout"},
+    {"vturr", "vturr", "vscav", "vtank", "vtank", "vtank", "vscout", "vscout", "vscout"},
 }
 
 local Mission = 
@@ -34,17 +36,23 @@ local Mission =
     -- Human team.
     m_HumanTeamNum = 1,
 
+	-- CPU Race.
+	m_HumanRace = 'i',
+
     -- CPU team.
     m_CPUTeamNum = 6,
+
+	-- CPU Race.
+	m_CPURace = 'i',
 
     -- Chosen in IA shell.
     m_Difficulty = 0,
 
     -- Starting force size for humans.
-    m_HumanStartingForceSize = 0,
+    m_HumanStartingForceSize = 1,
 
     -- Start force size for CPU.
-    m_CPUStartingForceSize = 0,
+    m_CPUStartingForceSize = 1,
 
     -- Handle game over.
     m_GameOver = false,
@@ -134,7 +142,8 @@ end
 -- Runs on mission state.
 function Start()
 	-- Get our difficulty.
-	-- Mission.m_Difficulty = _FECore.GetDifficulty();
+	-- Mission.m_Difficulty = GetDifficulty();
+	Mission.m_Difficulty = IFace_GetInteger("shell.instant.difficulty");
 
     -- Remove any trace of old player vehicles left in the BZN.
 	local PlayerEntryH = GetPlayerHandle();
@@ -162,54 +171,51 @@ function Update()
 end
 
 -- Setup the player.
-function SetupPlayer(Team)
-	-- Return early.
-	if ((Team < 0) or (Team >= MAX_TEAMS)) then
-		return nil; -- Sanity check... do NOT proceed
-	end
-
-	local PlayerH = nil;
-	local spawnpointPosition = SetVector(0, 0, 0);
-
+function SetupPlayer()
 	-- Check player race selection.
-	local playerRace = LuaGetRaceChar(GetVarItemInt("options.instant.myraceidx"));
+	Mission.m_HumanRace = string.char(IFace_GetInteger("options.instant.myrace"));
+
+	-- Lua arrays start with an index of 1, not 0, so add + 1 for later use.
+	Mission.m_HumanStartingForceSize = IFace_GetInteger("options.instant.playerforce") + 1;
 
     -- This player is their own commander; set up their equipment.
     local spawnpointPosition = GetPosition("Recycler");
+	spawnpointPosition.y = TerrainFindFloor(spawnpointPosition.x, spawnpointPosition.z) + 2.5;
 
 	-- Create the player.
-    spawnpointPosition.y = TerrainFindFloor(spawnpointPosition.x, spawnpointPosition.z) + 2.5;
-	PlayerH = BuildObject(GetPlayerODF(Team), Team, spawnpointPosition);
+	local PlayerH = BuildObject(GetPlayerODF(Mission.m_HumanTeamNum), Mission.m_HumanTeamNum, spawnpointPosition, Mission.m_HumanStartingForceSize);
 
-	SetPilotClass(PlayerH, playerRace .. "spilo");
+	SetPilotClass(PlayerH, Mission.m_HumanRace .. "spilo");
 	SetRandomHeadingAngle(PlayerH);
 
 	-- Build recycler some distance away, if it's not preplaced on the map.
-	if (GetObjectByTeamSlot(Team, DLL_TEAM_SLOT_RECYCLER) == nil) then
-		spawnpointPosition = GetPositionNear(spawnpointPosition, VEHICLE_SPACING_DISTANCE, 2 * VEHICLE_SPACING_DISTANCE);
-		local VehicleH = BuildObject(GetInitialRecyclerODF(playerRace), Team, spawnpointPosition);
-		SetGroup(VehicleH, 0);
-	end
+	SpawnTeamRecycler(Mission.m_HumanTeamNum, Mission.m_HumanRace, spawnpointPosition);
+
+	-- Spawn extra Human vehicles.
+	SpawnTeamExtraVehicles(Mission.m_HumanTeamNum, Mission.m_HumanRace, spawnpointPosition, Mission.m_HumanStartingForceSize);
 
 	-- Give some scrap.
-	SetScrap(Team, 40);
+	SetScrap(Mission.m_HumanTeamNum, 40);
 
 	return PlayerH;
 end
 
 -- Setup the CPU.
 function SetupCPU(Team)
-	local cpuRace = LuaGetRaceChar(GetVarItemInt("options.instant.hisraceidx"));
+	-- Store the CPU team race.
+	Mission.m_CPURace = string.char(IFace_GetInteger("options.instant.hisrace"));
 
-	-- Get the CPU Spawnpoint.
+	-- Lua arrays start with an index of 1, not 0, so add + 1 for later use.
+	Mission.m_CPUStartingForceSize = IFace_GetInteger("options.instant.computerforce") + 1;
+
+	-- What's our spawn position?
 	local spawnpointPosition = GetPosition("RecyclerEnemy");
 
 	-- Build recycler some distance away, if it's not preplaced on the map.
-	if (GetObjectByTeamSlot(Team, DLL_TEAM_SLOT_RECYCLER) == nil) then
-		spawnpointPosition = GetPositionNear(spawnpointPosition, VEHICLE_SPACING_DISTANCE, 2 * VEHICLE_SPACING_DISTANCE);
-		local VehicleH = BuildObject(GetInitialRecyclerODF(cpuRace), Team, spawnpointPosition);
-		SetGroup(VehicleH, 0);
-	end
+	SpawnTeamRecycler(Mission.m_CPUTeamNum, Mission.m_CPURace, spawnpointPosition);
+
+	-- Spawn extra CPU vehicles.
+	SpawnTeamExtraVehicles(Mission.m_CPUTeamNum, Mission.m_CPURace, spawnpointPosition, Mission.m_CPUStartingForceSize);
 
 	-- Give some scrap.
 	SetScrap(Team, 40);
@@ -228,16 +234,18 @@ end
 
 -- TODO: Move to core to be used universally?
 function SetAIPlan(team)
-	local pContents = GetCheckedNetworkSvar(3, NETLIST_AIPS);
+	-- Check for the custom option first.
+	local planName = IFace_GetString("options.instant.string0");
 
-    -- If pContents is empty, default to stock AIPs.
-	if (pContents ~= nil) then
-		planNameBase = "stock13_";
+    -- If planName is empty, default to stock AIPs.
+	if (planName == nil) then
+		planName = "stock13_";
 	end
 
-	local planName = ("%s_%s%d.aip"):format(planNameBase, 'i', Mission.m_Difficulty);
+	-- Set our plan name.
+	planName = ("%s%s%d.aip"):format(planName, Mission.m_CPURace, Mission.m_Difficulty);
 
-	-- Ensure that at least one CPU unit has spawned before setting the AIP here -- AI_Unit.
+	-- Set the AIP Plans.
 	SetAIP(planName, team);
 end
 
@@ -256,14 +264,53 @@ function GetInitialRecyclerODF(Race);
 end
 
 -- TODO: Move to core to be used universally?
-function LuaGetRaceChar(var)
-	-- print("LuaGetRaceChar: Value var is " .. var);
+function SpawnTeamRecycler(Team, Race, Pos)
+	-- Return early.
+	if ((Team < 1) or (Team >= MAX_TEAMS)) then
+		return;
+	end
 
-	-- local raceChar = string.char(var);
-	
-	-- if (raceChar == nil) then
-		-- raceChar = 'i';
-	-- end
+	-- Return early.
+	if (Race == nil) then
+		return;
+	end
 
-	return 'i';
+	-- Build the team Recycler.
+	if (GetObjectByTeamSlot(Team, DLL_TEAM_SLOT_RECYCLER) == nil) then
+		local VehicleH = BuildObject(GetInitialRecyclerODF(Race), Team, GetPositionNear(Pos, VEHICLE_SPACING_DISTANCE, 2 * VEHICLE_SPACING_DISTANCE));
+		SetGroup(VehicleH, 0);
+	end
+end
+
+-- TODO: Move to core to be used universally?
+function SpawnTeamExtraVehicles(Team, Race, Pos, Force)
+	print("SpawnTeamExtraVehicles: Force param is " .. Force);
+
+	-- Get the correct amount of units to spawn based on Force parameter.
+	local vehicles = StartingVehicleTable[Force];
+
+	-- Loop through each unit to handle their placement.
+	for i, v in pairs (vehicles) do
+		-- Get each handle within the table.
+		local h = vehicles[i];
+
+		-- Don't continue if the handle isn't found.
+		if (h == nil) then
+			return;
+		end
+
+		-- Prepend the race to the ODF name.
+		h = Race .. h;
+
+		-- If the team is the CPU team, append _c to the ODF name.
+		if (Team == Mission.m_CPUTeamNum) then
+			h = h .."_c";
+		end
+
+		-- Generate a position around given Pos vector.
+		local pos = GetPositionNear(Pos, VEHICLE_SPACING_DISTANCE * 1.25, VEHICLE_SPACING_DISTANCE * 1.25);
+		
+		-- Finally, build it!
+		BuildObject(h, Team, pos);
+	end
 end
