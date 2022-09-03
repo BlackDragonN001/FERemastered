@@ -1,0 +1,32 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX = -2048.0
+MinZ = -2048.0
+Width = 4096.0
+Depth = 4096.0
+Height = 52.5
+Tile = 1
+Color = "255 255 255 255"
+
+[NormalView]
+DiffuseColor = "178.5 178.5 178.5"
+SpecularColor = "10 10 10"
+SpecularPower = 1024.0
+
+[World]
+MusicTrack1=7
+MusicTrack2=8
+MusicTrack3=9
+MusicTrack4=10
+
+[Texture]
+TileTexture1 = "dune1.tga"
+TileTexture2 = "dune2.tga"
+TileTexture3 = "dune3.tga"
+TileTexture4 = "dune4.tga"
+TileTexture5 = "dune5.tga"
+TileTexture6 = "dune6.tga"
+TileTexture7 = "dune7.tga"
+TileTexture8 = "dune8.tga"
+TileTexture9 = "dune9.tga"

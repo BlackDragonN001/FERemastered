@@ -1,6 +1,6 @@
---[[ BZCC FE 3way Mission Script 
+--[[ BZCC FE Instant Action Mission Script 
 Written by JJ (AI_Unit)
-Version 1.0 19/11/2019 --]]
+Version 1.0 03/09/2022 --]]
 
 -- File find fix.
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
@@ -33,22 +33,27 @@ local Mission =
 {
     -- Human team.
     m_HumanTeamNum = 1,
+
     -- CPU team.
     m_CPUTeamNum = 6,
+
     -- Chosen in IA shell.
     m_Difficulty = 0,
+
     -- Starting force size for humans.
     m_HumanStartingForceSize = 0,
+
     -- Start force size for CPU.
     m_CPUStartingForceSize = 0,
+
     -- Handle game over.
     m_GameOver = false,
+
     -- If the CPU has an armory.
     m_CPUArmoryPresent = false,
+
     -- If player respawn is enabled.
     m_PlayerRespawnEnabled = false,
-    -- Keep track of each team that is setup.
-    m_TeamIsSetUp = { },
 }
 
 -- Save game data.
@@ -99,6 +104,10 @@ function InitialSetup()
 
 	-- Do this for everyone as well.
 	CreateObjectives();
+
+	-- Preload some ODFs.
+	PreloadODF("ivrecy_c");
+	PreloadODF("ivrecy_t");
 end
 
 -- Handle when an object is added to the world.
@@ -110,19 +119,6 @@ function AddObject(h)
     local teamNum = GetTeamNum(h);
 	local ODFName = GetCfg(h);
 	local ObjClass = GetClassLabel(h);
-
-    -- Max out human vehicle skill.
-    if (IsVehicle(h)) then
-        if (teamNum == Mission.m_HumanTeamNum) then
-            SetSkill(h, 3);
-        elseif (teamNum == Mission.m_CPUTeamNum) then
-            SetSkill(h, Mission.m_Difficulty);
-
-            if (Mission.m_CPUArmoryPresent) then
-                -- Call method to upgrade weapons.
-            end
-        end
-    end
 
     -- Check for CPU Armory.
     if (teamNum == Mission.m_CPUTeamNum and ObjClass == "CLASS_ARMORY") then
@@ -137,16 +133,25 @@ end
 
 -- Runs on mission state.
 function Start()
+	-- Get our difficulty.
+	-- Mission.m_Difficulty = _FECore.GetDifficulty();
+
     -- Remove any trace of old player vehicles left in the BZN.
 	local PlayerEntryH = GetPlayerHandle();
+
 	if (PlayerEntryH ~= nil) then
 		RemoveObject(PlayerEntryH);
 	end
 
+	-- Spawn the CPU.
+	SetupCPU(Mission.m_CPUTeamNum);
+
     -- Rebuild the player.
 	local LocalTeamNum = GetLocalPlayerTeamNumber();
 	local PlayerH = SetupPlayer(LocalTeamNum);
+
 	SetAsUser(PlayerH, LocalTeamNum);
+
 	AddPilotByHandle(PlayerH);
 end
 
@@ -156,70 +161,61 @@ function Update()
     _FECore.Update();
 end
 
--- Setup any team that as per the number that is passed into this method.
-function SetupTeam(Team);
-	if ((Team < 1) or (Team >= MAX_TEAMS)) then
-		return;
-	end
-
-	if (Mission.m_TeamIsSetUp[Team]) then
-		return;
-	end
-
-	local TeamRace = GetRaceOfTeam(Team);
-	local spawnpointPosition = GetSafestspawnpoint();
-
-	-- Store position we created them at for later
-	Mission.m_TeamPos[Team] = spawnpointPosition;
-
-	-- Build recycler some distance away, if it's not preplaced on the map.
-	if (GetObjectByTeamSlot(Team, DLL_TEAM_SLOT_RECYCLER) == nil) then
-		spawnpointPosition = GetPositionNear(spawnpointPosition, VEHICLE_SPACING_DISTANCE, 2 * VEHICLE_SPACING_DISTANCE);
-		local VehicleH = BuildObject(GetInitialRecyclerODF(TeamRace), Team, spawnpointPosition);
-		SetRandomHeadingAngle(VehicleH);
-		Mission.m_RecyclerHandles[Team] = VehicleH;
-		SetGroup(VehicleH, 0);
-	end
-
-	-- Build all optional vehicles for this team.
-	spawnpointPosition = Mission.m_TeamPos[Team]; -- restore default after we modified this for recy above
-
-    -- Give the correct amount of scrap.
-	SetScrap(Team, 40);
-
-    -- If this is the CPU team, set an AIP.
-    if (Team == Mission.m_CPUTeamNum) then
-        SetAIPlan(Team);
-    end
-
-	Mission.m_TeamIsSetUp[Team] = true;
-end
-
 -- Setup the player.
-function SetupPlayer(Team);
-	local PlayerH = nil;
-	local spawnpointPosition = SetVector(0, 0, 0);
-
+function SetupPlayer(Team)
+	-- Return early.
 	if ((Team < 0) or (Team >= MAX_TEAMS)) then
 		return nil; -- Sanity check... do NOT proceed
 	end
 
+	local PlayerH = nil;
+	local spawnpointPosition = SetVector(0, 0, 0);
+
+	-- Check player race selection.
+	local playerRace = LuaGetRaceChar(GetVarItemInt("options.instant.myraceidx"));
+
     -- This player is their own commander; set up their equipment.
-    SetupTeam(Team);
+    local spawnpointPosition = GetPosition("Recycler");
 
-    -- Now put player near his recycler
-    spawnpointPosition = Mission.m_TeamPos[Team];
+	-- Create the player.
     spawnpointPosition.y = TerrainFindFloor(spawnpointPosition.x, spawnpointPosition.z) + 2.5;
-
 	PlayerH = BuildObject(GetPlayerODF(Team), Team, spawnpointPosition);
 
-	-- Added to make your starting pilot match respawning pilot. -GBD
-	local TempODFName = GetRaceOfTeam(Team) .. "spilo";
-
-	SetPilotClass(PlayerH, TempODFName);
+	SetPilotClass(PlayerH, playerRace .. "spilo");
 	SetRandomHeadingAngle(PlayerH);
 
+	-- Build recycler some distance away, if it's not preplaced on the map.
+	if (GetObjectByTeamSlot(Team, DLL_TEAM_SLOT_RECYCLER) == nil) then
+		spawnpointPosition = GetPositionNear(spawnpointPosition, VEHICLE_SPACING_DISTANCE, 2 * VEHICLE_SPACING_DISTANCE);
+		local VehicleH = BuildObject(GetInitialRecyclerODF(playerRace), Team, spawnpointPosition);
+		SetGroup(VehicleH, 0);
+	end
+
+	-- Give some scrap.
+	SetScrap(Team, 40);
+
 	return PlayerH;
+end
+
+-- Setup the CPU.
+function SetupCPU(Team)
+	local cpuRace = LuaGetRaceChar(GetVarItemInt("options.instant.hisraceidx"));
+
+	-- Get the CPU Spawnpoint.
+	local spawnpointPosition = GetPosition("RecyclerEnemy");
+
+	-- Build recycler some distance away, if it's not preplaced on the map.
+	if (GetObjectByTeamSlot(Team, DLL_TEAM_SLOT_RECYCLER) == nil) then
+		spawnpointPosition = GetPositionNear(spawnpointPosition, VEHICLE_SPACING_DISTANCE, 2 * VEHICLE_SPACING_DISTANCE);
+		local VehicleH = BuildObject(GetInitialRecyclerODF(cpuRace), Team, spawnpointPosition);
+		SetGroup(VehicleH, 0);
+	end
+
+	-- Give some scrap.
+	SetScrap(Team, 40);
+
+	-- Set a plan.
+	SetAIPlan(Team);
 end
 
 -- TODO: Move to core to be used universally?
@@ -239,8 +235,35 @@ function SetAIPlan(team)
 		planNameBase = "stock13_";
 	end
 
-	local planName = ("%s_%s%d.aip"):format(planNameBase, GetRaceOfTeam(team), CPU_DIFFICULTY);
+	local planName = ("%s_%s%d.aip"):format(planNameBase, 'i', Mission.m_Difficulty);
 
 	-- Ensure that at least one CPU unit has spawned before setting the AIP here -- AI_Unit.
 	SetAIP(planName, team);
+end
+
+-- TODO: Move to core to be used universally?
+function GetInitialRecyclerODF(Race);
+	local TempODFName = nil;
+	local pContents = GetCheckedNetworkSvar(5, NETLIST_Recyclers);
+
+	if ((pContents ~= nil) and (pContents ~= "")) then
+		TempODFName = Race .. string.sub(pContents, 2);
+	else
+		TempODFName = Race .. "vrecy_m";
+	end
+
+	return TempODFName;
+end
+
+-- TODO: Move to core to be used universally?
+function LuaGetRaceChar(var)
+	-- print("LuaGetRaceChar: Value var is " .. var);
+
+	-- local raceChar = string.char(var);
+	
+	-- if (raceChar == nil) then
+		-- raceChar = 'i';
+	-- end
+
+	return 'i';
 end

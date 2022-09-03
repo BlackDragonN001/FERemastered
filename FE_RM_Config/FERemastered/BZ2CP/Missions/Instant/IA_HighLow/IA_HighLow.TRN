@@ -1,0 +1,35 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX = 512.0
+MinZ = 512.0
+Width = 1024.0
+Depth = 1024.0
+Height = 200.0
+Tile = 6
+Color = "255 255 255 255"
+Alpha1 = 255
+
+[NormalView]
+DiffuseColor = "178.5 178.5 178.5"
+SpecularColor = "10 10 10"
+SpecularPower = 1024.0
+
+[World]
+MusicTrack1=8
+MusicTrack2=10
+MusicTrack3=6
+
+[Texture]
+TileTexture1 = "wasteland1.tga"
+TileTexture2 = "wasteland2.tga"
+TileTexture3 = "wasteland3.tga"
+TileTexture4 = "wasteland4.tga"
+TileTexture5 = "wasteland5.tga"
+TileTexture6 = "wasteland6.tga"
+TileTexture7 = "wasteland7.tga"
+TileTexture8 = "wasteland8.tga"
+
+
+
+
