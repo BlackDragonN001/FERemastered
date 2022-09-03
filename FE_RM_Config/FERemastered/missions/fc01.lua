@@ -323,7 +323,6 @@ function Update()
 	Routine11();
 	Routine14();
 	CheckStuffIsAlive();
-	print(M.Routine1State);
 	for i=1,#M.NewObjs do
 		AddObjectDeferred(M.NewObjs[i]);
 	end
