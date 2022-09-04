@@ -182,8 +182,11 @@ function Update()
 	Routine5();
 	Routine7();
 	
-	--keeps Schultz alive during cutscene
-	if M.SchultzInvincible then
+	-- Keep constructor alive.
+	SetCurHealth(M.Constructor, GetMaxHealth(M.Constructor));
+
+	-- Keep Schultz alive.
+	if (M.SchultzInvincible) then
 		SetCurHealth(M.Schultz, GetMaxHealth(M.Schultz));
 	end
 end
