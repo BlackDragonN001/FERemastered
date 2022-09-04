@@ -24,7 +24,7 @@ local M = {
 	Routine4Active = false,
 	Routine5Active = false,
 	Routine7Active = false,
-	SchultzInvincible = false,
+	SchultzInvincible = true,
 	
 -- Floats
 	Routine1Timer = 0.0,
@@ -184,7 +184,7 @@ function Update()
 	
 	--keeps Schultz alive during cutscene
 	if M.SchultzInvincible then
-		SetCurHealth(M.Constructor, GetMaxHealth(M.Constructor));
+		SetCurHealth(M.Schultz, GetMaxHealth(M.Schultz));
 	end
 end
 
@@ -195,7 +195,6 @@ function Routine1()
 			M.Player = ReplaceObject(M.Player, "ivtank");
 			GiveWeapon(M.Player, "gbchain_c");
 			AudioMessage("edf15a.wav");	--Eisenstein:"The Excluder Jammer seems to be working perfectly..."
-			M.SchultzInvincible = true;--RunSpeed,_Routine9,1,true
 			SetScrap(1, 40);
 			SetScrap(5, 40);
 
