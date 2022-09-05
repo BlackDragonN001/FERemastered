@@ -381,7 +381,7 @@ function Routine3()
 		elseif (M.EarthquakeStageProgressTracker == M.TriggerEQStage3) then
 			M.EarthquakeStage = 3;
 		elseif (M.EarthquakeStageProgressTracker == M.TriggerEQStage4) then
-			M.EarthquakeStage = 3;
+			M.EarthquakeStage = 4;
 		end
 
 		-- When done, set the cooldown.
