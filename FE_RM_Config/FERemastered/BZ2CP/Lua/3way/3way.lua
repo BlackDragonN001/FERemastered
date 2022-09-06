@@ -1,3 +1,7 @@
+--[[ BZCC FE 3way Mission Script 
+Written by JJ (AI_Unit)
+Version 1.0 19/11/2019 --]]
+
 local M = {
     Player = nil,
     PlayerRecy = nil,

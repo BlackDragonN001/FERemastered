@@ -1,0 +1,30 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX=-1024
+MinZ=-1024
+Width=1280
+Depth=1280
+Height=100
+Tile = 5
+Color = "255 255 255 255"
+
+[NormalView]
+DiffuseColor = "178.5 178.5 178.5"
+SpecularColor = "255 255 255"
+SpecularPower = 100.0
+
+[World]
+MusicTrack1=2
+MusicTrack2=7
+MusicTrack3=3
+
+[Texture]
+TileTexture1 = "mire.tga"
+TileTexture2 = "mire2.tga"
+TileTexture3 = "mire3.tga"
+TileTexture4 = "mire4.tga"
+TileTexture5 = "mire5.tga"
+TileTexture6 = "mire6.tga"
+TileTexture7 = "mire7.tga"
+TileTexture8 = "mbextf02.tga"
