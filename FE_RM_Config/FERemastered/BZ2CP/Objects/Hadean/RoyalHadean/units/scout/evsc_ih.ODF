@@ -17,15 +17,29 @@ customCost = 50
 maxHealth = 1800
 
 addAmmo = 1
-
 armorClass = L
 
-[CraftClass]
+/////// Weapons ///////////////////
 
+weaponMask = 00011
+
+weaponHard1 = "HP_GUN_1"
+weaponName1 = "gcrapier_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_GUN_2"
+weaponName2 = "gcrapier_c"
+weaponAssault2 = 0
+
+////////////////////////////////////
+
+[CraftClass]
 damageEffect1 = "dmgvhcl_e1"
 damageEffect2 = "dmgvhcl_e2"
 damageEffect3 = "dmgvhcl_e3"
 damageEffect4 = "dmgvhcl_e4"
+
+CanAIEject = false
+ejectRatio = 0
 
 [HoverCraftClass]
 

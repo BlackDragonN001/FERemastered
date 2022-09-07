@@ -12,12 +12,30 @@ classLabel = "evmisl"
 
 unitName = "Zeus"
 
-[CraftClass]
+/////// Weapons ///////////////////
 
+weaponMask = 00011
+weaponHard1 = "HP_ROCKET_1"
+weaponName1 = "gcvfaf_c"
+weaponAssault1 = 0
+recoilName1 = "recoil_01"
+recoilDist1 = 0.3f
+weaponHard2 = "HP_ROCKET_3"
+weaponName2 = "gcvfaf_c"
+weaponAssault2 = 0
+recoilName2 = "recoil_03"
+recoilDist2 = 0.3f
+
+////////////////////////////////////
+
+[CraftClass]
 damageEffect1 = "dmgvhcl_e1"
 damageEffect2 = "dmgvhcl_e2"
 damageEffect3 = "dmgvhcl_e3"
 damageEffect4 = "dmgvhcl_e4"
+
+CanAIEject = false
+ejectRatio = 0
 
 [HoverCraftClass]
 
