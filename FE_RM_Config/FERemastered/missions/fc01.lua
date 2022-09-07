@@ -18,7 +18,6 @@ local M = {
 -- Bools
 	MissionOver = false,
 	CanLoseShip = false,	--whether the player is allowed to lose their starting ship
-	CheckThanatos = false,
 	Routine4Active = false,
 	Routine8Active = false,
 	Routine9Active = false,
@@ -276,13 +275,21 @@ function AddObjectDeferred(h)
 end
 
 function ObjectKilled(deadObj, killerObj)
-	if GetTeamNum(h) == 3 and IsPlayer(killerObj) then
-		ClearObjectives();
-		AddObjective("fc0109.otf", "red");
-		M.Variable5 = M.Variable5 - 1;
-		M.Variable7 = M.Variable7 - 1;
-		M.Variable9 = M.Variable9 - 1;
-		AddScrap(3, -60);
+	if GetTeamNum(deadObj) == 3 and IsPlayer(killerObj) then
+		if (deadObj == M.HadeanCommander) then
+			--Player is a traitor and shot Thanatos
+			ClearObjectives();
+			AddObjective("fc0115.otf", "red");
+			FailMission(GetTime() + 10);	--TODO: write some text chastising the player
+			M.MissionOver = true;
+		else
+			ClearObjectives();
+			AddObjective("fc0109.otf", "red");
+			M.Variable5 = M.Variable5 - 1;
+			M.Variable7 = M.Variable7 - 1;
+			M.Variable9 = M.Variable9 - 1;
+			AddScrap(3, -60);
+		end
 	end
 	
 	return 0;
@@ -349,7 +356,6 @@ function Routine1()
 			SetObjectiveName(M.HadeanCommander, "Hadean Commander");
 			SetObjectiveOn(M.HadeanCommander);
 			Goto(M.HadeanCommander, "MeetPlayer", 0);
-			M.CheckThanatos = true;
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 4;
 		elseif M.Routine1State == 3 then
@@ -545,7 +551,6 @@ function Routine1()
 			AudioMessage("fc01_09.wav");	--Cerberi:"Return the procreator immediately and prepare to be liquidated..."
 			ClearObjectives();
 			AddObjective("fc0113.otf", "white");
-			M.CheckThanatos = false;	--added check to make sure player doesn't backstab Thanatos before this point
 			BuildObject("AuroraBolt", 2, "Bolt2");
 			BuildObject("AuroraBolt", 2, "Bolt3");
 			BuildObject("AuroraBolt", 2, "Bolt6");
@@ -1104,12 +1109,6 @@ function CheckStuffIsAlive()
 			ClearObjectives();
 			AddObjective("fc0106.otf", "red");
 			FailMission(GetTime() + 10, "FC01L2.txt");
-			M.MissionOver = true;
-		elseif M.CheckThanatos and not IsAlive(M.HadeanCommander) then
-			--Player is a traitor and shot Thanatos
-			ClearObjectives();
-			AddObjective("fc0115.otf", "red");
-			FailMission(GetTime() + 10);	--TODO: write some text chastising the player
 			M.MissionOver = true;
 		elseif not (IsAround(M.CerbGunTowers[1]) or IsAround(M.CerbGunTowers[2]) 
 				   or IsAround(M.CerbGunTowers[3]) or IsAround(M.CerbGunTowers[4]) 
