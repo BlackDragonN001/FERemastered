@@ -1,6 +1,6 @@
 [GameObjectClass]
 baseName="ivbomb"
-geometryName="fvbomber_xx.xsi" //"fvdrop_takeoff.xsi"
+geometryName="fvdrop_takeoff.xsi" //"fvdrop_takeoff.xsi"
 classLabel="bomber"
 scrapValue=0
 scrapCost=75
@@ -8,7 +8,7 @@ buildTime=10.0
 maxHealth=7000
 maxAmmo=8000
 weaponMask=00000
-unitName="Drop Ship"
+unitName="Dropship"
 aiName="BomberProcess"
 aiName2="BomberProcess"
 heatSignature=10.0
@@ -21,9 +21,9 @@ armorClass=L
 
 requireCount=2
 requireName1="ibfact"
-requireText1="Fabrik prod."
+requireText1="Build Factory"
 requireName2="ibbomb"
-requireText2="Bomb.-Hangar prod."
+requireText2="Build Bomber Bay"
 
 [CraftClass]
 rangeScan=400.0f

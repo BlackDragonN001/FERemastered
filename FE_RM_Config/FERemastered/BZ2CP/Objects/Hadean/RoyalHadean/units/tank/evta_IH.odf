@@ -11,8 +11,28 @@ animFile3 = "evtanksr.fbx"
 
 classLabel = "evtank"
 
-[CraftClass]
+CanAIEject = false
+ejectRatio = 0
 
+/////// Weapons ///////////////////
+
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gcplasma_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_GUN_1"
+weaponName2 = "gcrapier_c"
+weaponAssault2 = 0
+recoilName2 = "recoil_r"
+recoilDist2 = -0.3f
+weaponHard3 = "HP_GUN_2"
+weaponName3 = "gcrapier_c"
+weaponAssault3 = 0
+recoilName3 = "recoil_l"
+recoilDist3 = -0.3f
+
+////////////////////////////////////
+
+[CraftClass]
 damageEffect1 = "dmgvhcl_e1"
 damageEffect2 = "dmgvhcl_e2"
 damageEffect3 = "dmgvhcl_e3"
