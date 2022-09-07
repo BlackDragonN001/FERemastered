@@ -47,11 +47,11 @@ renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
 startColor = "198 203 44 230"
-finishColor = "222 253 22 30"
+finishColor = "222 253 22 0"
 startRadius = 3.0
 finishRadius = 230.0
 animateTime = 2.0
-latitudeBands = 2
+latitudeBands = 8
 longitudeSegments = 16
 
 
