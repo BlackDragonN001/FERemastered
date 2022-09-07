@@ -11,9 +11,6 @@ animFile3 = "evtanksr.fbx"
 
 classLabel = "evtank"
 
-CanAIEject = false
-ejectRatio = 0
-
 /////// Weapons ///////////////////
 
 weaponHard1 = "HP_CANNON_1"
@@ -37,6 +34,9 @@ damageEffect1 = "dmgvhcl_e1"
 damageEffect2 = "dmgvhcl_e2"
 damageEffect3 = "dmgvhcl_e3"
 damageEffect4 = "dmgvhcl_e4"
+
+CanAIEject = false
+ejectRatio = 0
 
 [HoverCraftClass]
 
