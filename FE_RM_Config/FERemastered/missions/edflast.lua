@@ -187,7 +187,6 @@ function Start()
 
 	_FECore.Start();
 	
-	GiveWeapon(GetPlayerHandle(), "gtytech");--DEBUG!
 	M.NexusHangar = GetHandleOrDie("nexhangar");
 	M.Recycler = BuildObject("ivrecy", 1, "Friend1");
 	M.ScrapRock01 = GetHandleOrDie("ScrapRock01");
