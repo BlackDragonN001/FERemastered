@@ -84,7 +84,7 @@ local M = {
 	Routine11State = 0,
 	Routine16State = 0,
 	
-	Variable2 = 80,	--nexus turn speed
+	Variable2 = 0.80,	--nexus turn speed
 	Variable3 = 30.0,	--nexus move speed
 	Variable6 = 9.0,	--Tartarus IV Bldg move speed
 	Variable9 = 0,		--Nexus state.0=Moving 1=Can build units 2=Repairing 3=Damaged, heading back to hangar
