@@ -268,15 +268,25 @@ function Start()
 end
 
 function AddObject(h)
-
-	-- TEMP: Remove EDF bomber that spawns with the EDF off-map Bomber Bay until we figure out a true solution. - AI_Unit.
-	if (GetCfg(h) == "ivbomb") then
-		RemoveObject(h);
-		print("Destroying Bomber...");
-	end
-
 	_FECore.AddObject(h);
 
+	local cfg = GetCfg(h);
+
+	-- TEMP: Remove EDF bomber that spawns with the EDF off-map Bomber Bay until we figure out a true solution. - AI_Unit.
+	-- Give Cerberi weapons to the Royal Hadeans.
+	if (cfg == "ivbomb") then
+		RemoveObject(h);
+	elseif (cfg == "evmi_IH") then
+		SetEjectRatio(h, 0);
+		GiveWeapon(h, "gcvfaf_c");
+	elseif (cfg == "evsc_IH") then
+		SetEjectRatio(h, 0);
+		GiveWeapon(h, "gcrapier_c");
+	elseif (cfg == "evta_IH" or cfg == "evatu_IH") then
+		SetEjectRatio(h, 0);
+		GiveWeapon(h, "gcplasma_c");
+		GiveWeapon(h, "gcrapier_c");
+	end
 end
 
 function DeleteObject(h)
