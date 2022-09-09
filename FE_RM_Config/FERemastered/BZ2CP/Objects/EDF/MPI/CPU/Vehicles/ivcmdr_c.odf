@@ -1,7 +1,5 @@
 [GameObjectClass]
-classLabel = "ivtank"
-maxHealth = 4000
-maxAmmo = 2600
+classLabel = "ivscout"
 addAmmo = 15
 aiName = "AttachWingman"
 aiName2 = "AttachWingman"
@@ -9,6 +7,7 @@ scrapCost = 0
 customCost = 0
 unitName = "Commander"
 armorClass = M
+
 ejectRatio = 1
 PilotConfig = "ispilo_c"
 
@@ -19,33 +18,15 @@ requireCount = 0
 provideCount = 4
 provideName4 = "ivcmdr_c"
 
-/////// WEAPONS ////////////////////
-weaponMask = 00111
-weaponHard1 = "HP_CANNON_1"
-weaponName1 = "gspstab_c"
-recoilName1 = "recoil"
-weaponAssault1 = 0
-weaponHard2 = "HP_GUN_1"
-weaponName2 = "gchain_c"
-weaponAssault2 = 0
-weaponHard3 = "HP_GUN_2"
-weaponName3 = "gchain_c"
-weaponAssault3 = 0
-weaponHard4 = "HP_MORTAR_1"
-weaponName4 = "gmortar"
-weaponAssault4 = 1
-
-/////////LIGHTS AND EFFECTS//////////////////
-lightHard1 = "hp_light_1"
-lightName1 = "spotred"
-lightHard2 = "hp_light_2"
-lightName2 = "spotred"
-
+[CraftClass]
+ClosestEnemyGoodEyes = true
+GotoTaskHasLeader = false
 LightsOnlyWhenPiloted = true
 
-[CraftClass]
-waitTask = "CircleTask"
-GotoTaskHasLeader = false
+evadeSightFactor3 = 40
+evadeOrdnanceFactor3 = 40
+evadeRandomFactor3 = 40
+filterFactor3 = 1
 
 [HoverCraftClass]
 
