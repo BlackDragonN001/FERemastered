@@ -62,6 +62,12 @@ local Mission =
 
     -- If player respawn is enabled.
     m_PlayerRespawnEnabled = false,
+
+	-- To help the CPU, this flag will send the first spawned CPU Scav to a pool before Recycler deployment.
+	m_SentFirstCPUScavToPool = false,
+
+	-- Keep track of the maps pools.
+	m_MapPools = {},
 }
 
 -- Save game data.
@@ -130,13 +136,27 @@ function AddObject(h)
 
     -- Check for CPU Armory.
     if (teamNum == Mission.m_CPUTeamNum and ObjClass == "CLASS_ARMORY") then
+		-- Mark the CPU Armory as present so we can do weapon upgrades.
         Mission.m_CPUArmoryPresent = true;
+
+		if (ODFName == "ivcmdr_c") then
+			-- Set Commander maximum skill to 3.
+			SetSkill(h, 3);
+		else 
+			-- Set the skill of all enemy units based on IA difficulty.
+			SetSkill(h, Mission.m_Difficulty + 1);
+		end
     end
 
     -- Per standard FE behaviour, highlight the Service Bay.
     if (teamNum == Mission.m_HumanTeamNum and ObjClass == "CLASS_SUPPLYDEPOT") then
         SetObjectiveOn(h);
     end
+
+	-- Keep track of the map pools.
+	if (teamNum == 0 and ObjClass == "CLASS_DEPOSIT") then
+		table.insert(Mission.m_MapPools, h);
+	end
 end
 
 -- Runs on mission state.
@@ -160,7 +180,6 @@ function Start()
 	local PlayerH = SetupPlayer(LocalTeamNum);
 
 	SetAsUser(PlayerH, LocalTeamNum);
-
 	AddPilotByHandle(PlayerH);
 end
 
@@ -214,12 +233,12 @@ function SetupCPU(Team)
 	-- Build recycler some distance away, if it's not preplaced on the map.
 	SpawnTeamRecycler(Mission.m_CPUTeamNum, Mission.m_CPURace, spawnpointPosition);
 
-	-- Spawn extra CPU vehicles.
-	SpawnTeamExtraVehicles(Mission.m_CPUTeamNum, Mission.m_CPURace, spawnpointPosition, Mission.m_CPUStartingForceSize);
-
 	-- Give some scrap.
 	SetScrap(Team, 40);
 
+	-- Spawn extra CPU vehicles.
+	SpawnTeamExtraVehicles(Mission.m_CPUTeamNum, Mission.m_CPURace, spawnpointPosition, Mission.m_CPUStartingForceSize);
+	
 	-- Set a plan.
 	SetAIPlan(Team);
 end
@@ -284,8 +303,6 @@ end
 
 -- TODO: Move to core to be used universally?
 function SpawnTeamExtraVehicles(Team, Race, Pos, Force)
-	print("SpawnTeamExtraVehicles: Force param is " .. Force);
-
 	-- Get the correct amount of units to spawn based on Force parameter.
 	local vehicles = StartingVehicleTable[Force];
 
@@ -302,15 +319,58 @@ function SpawnTeamExtraVehicles(Team, Race, Pos, Force)
 		-- Prepend the race to the ODF name.
 		h = Race .. h;
 
-		-- If the team is the CPU team, append _c to the ODF name.
-		if (Team == Mission.m_CPUTeamNum) then
-			h = h .."_c";
-		end
-
 		-- Generate a position around given Pos vector.
 		local pos = GetPositionNear(Pos, VEHICLE_SPACING_DISTANCE * 1.25, VEHICLE_SPACING_DISTANCE * 1.25);
 		
+		-- If the team is the CPU team, append _c to the ODF name.
+		if (Team == Mission.m_CPUTeamNum) then
+			if (i > 0 and i < 3) then
+				pos = GetPosition("turretEnemy" .. i);
+			end
+
+			-- Do not include Scavs in this modification otherwise it'll break the
+			if (h ~= Race .. "vscav") then
+				h = h .."_c";
+			end
+		end
+
 		-- Finally, build it!
-		BuildObject(h, Team, pos);
+		local vehicle = BuildObject(h, Team, pos);
+
+        -- For the CPU, send the first built Scavenger to the nearest pool.
+        if (not Mission.m_SentFirstCPUScavToPool and Team == Mission.m_CPUTeamNum and h ==  Race .. "vscav") then
+            -- Find the closest scrap pool to the CPU spawn.
+            local closestPool = GetClosestObjectToPath(Mission.m_MapPools, "RecyclerEnemy");
+
+            -- Sent the first Scav that's spawned in to the closest pool.
+            Goto(vehicle, closestPool, 1);
+
+            -- So we don't repeat, we only want to do it for the first Scavenger.
+            Mission.m_SentFirstCPUScavToPool = true;
+        end
 	end
+
+	-- If we're the CPU team, spawn turrets around the map based on difficulty.
+	if (Team == Mission.m_CPUTeamNum) then
+		for i = 1, Mission.m_Difficulty + 2 do
+			BuildObject(Race .. "vturr_c", Mission.m_CPUTeamNum, "hold" .. i);
+		end
+	end
+end
+
+-- TODO: Move to core to be used universally? 
+function GetClosestObjectToPath(listOfUnits, pathPoint)
+	local closestObject = nil;
+	local closestDistance = nil
+
+	for i, v in pairs (listOfUnits) do
+		local dist = GetDistance(v, pathPoint);
+
+		if (closestObject == nil or dist < closestDistance) then
+			closestObject = v;
+			closestDistance = dist;
+		end
+	end
+
+	return closestObject;
 end
