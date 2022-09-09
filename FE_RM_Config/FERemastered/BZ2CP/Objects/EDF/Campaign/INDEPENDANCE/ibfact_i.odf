@@ -1,0 +1,12 @@
+[GameObjectClass]
+classLabel = "ibfact"
+
+[PoweredBuildingClass]
+
+[BuildingClass]
+
+[FactoryClass]
+buildItem9 = "" // Hammer isn't introduced until the VENGEANCE.
+WeaponConfig = "iweapon_i.odf"
+
+[Lod1]
