@@ -23,6 +23,9 @@ local endDelta = 10.0;
 -- Game TPS.
 local m_GameTPS = 20;
 
+-- Halt the dispatcher until we're ready.
+local StopAddToDispatch = true;
+
 -- IA Starting Vehicle handles.
 local StartingVehicleTable = 
 {
@@ -56,9 +59,6 @@ local Mission =
 
     -- Handle game over.
     m_GameOver = false,
-
-    -- If the CPU has an armory.
-    m_CPUArmoryPresent = false,
 
     -- If player respawn is enabled.
     m_PlayerRespawnEnabled = false,
@@ -135,9 +135,11 @@ function AddObject(h)
 	local ObjClass = GetClassLabel(h);
 
     -- Check for CPU Armory.
-    if (teamNum == Mission.m_CPUTeamNum and ObjClass == "CLASS_ARMORY") then
-		-- Mark the CPU Armory as present so we can do weapon upgrades.
-        Mission.m_CPUArmoryPresent = true;
+    if (teamNum == Mission.m_CPUTeamNum) then
+		-- Add Dispatcher for CPU units.
+		if (not StopAddToDispatch) then
+			AddToDispatch(h, 5.0, false, 0, false, false, true, true);
+		end
 
 		if (ODFName == "ivcmdr_c") then
 			-- Set Commander maximum skill to 3.
@@ -244,14 +246,6 @@ function SetupCPU(Team)
 end
 
 -- TODO: Move to core to be used universally?
-function UpgradeCPUVehicleWeapons(h)
-end
-
--- TODO: Move to core to be used universally?
-function CheckCPUWeaponConditions(weaponHandle)
-end
-
--- TODO: Move to core to be used universally?
 function SetAIPlan(team)
 	-- Check for the custom option first.
 	local planName = IFace_GetString("options.instant.string0");
@@ -353,8 +347,14 @@ function SpawnTeamExtraVehicles(Team, Race, Pos, Force)
 	-- If we're the CPU team, spawn turrets around the map based on difficulty.
 	if (Team == Mission.m_CPUTeamNum) then
 		for i = 1, Mission.m_Difficulty + 2 do
-			BuildObject(Race .. "vturr_c", Mission.m_CPUTeamNum, "hold" .. i);
+			local h = BuildObject(Race .. "vturr_c", Mission.m_CPUTeamNum, "hold" .. i);
+
+			-- Set Label to stop dispatcher from doing stuff with these units.
+			SetLabel(h, "nodispatch");
 		end
+
+		-- Allow the dispatcher to continue...
+		StopAddToDispatch = false;
 	end
 end
 

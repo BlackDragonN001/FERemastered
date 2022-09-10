@@ -8,25 +8,46 @@ consClass = "ivcons_c"
 CheckProvides = true
 DLLCanSwitch = true
 baseLoc = "RecyclerEnemy"
+UnitsService = true
+Difficulty = 1 // 1=Easy, 2=Medium, 3=Hard, 4=Extreme
+
+[Cheat]
+moneyAmount = 3
+moneyDelay = 5
 
 [IdleDispatcher]
-ScavIdleSeconds = 10
+ScavIdleSeconds = 1
 UnitIdleSeconds = 60
 BomberIdleSeconds = 75
 MinAttackForce = 1
 CraftTeamIsPilotTeam = true
 
-[Match] // TODO
+MaxPatrolUnits = 3
+MaxHuntUnits = 2
+MaxEscortUnits = 4
+
+[Match]
+targetType1 = "VIRTUAL_CLASS_SCOUT"
+attackType1_1 = "ivscout_c"
+attackType1_2 = "ivscout_c"
+
+targetType2 = "VIRTUAL_CLASS_SCAVENGER"
+attackType2_1 = "ivscout_c"
+attackType2_2 = "ivscout_c"
+
+targetType3 = "VIRTUAL_CLASS_EXTRACTOR"
+attackType3_1 = "ivscout_c"
+attackType3_2 = "ivscout_c"
 
 [Plan1]
 planType = "BuildMinimums"
-planPriority = 1001
+planPriority = 1000
 buildType1 = "ivcmdr_c"
 buildCount1 = 1
 
 [Plan2] // Always have 2 active Scavengers for picking up loose scrap.
 planType = "BuildMinimums"
-planPriority = 1000
+planPriority = 990
 buildType1 = "ivscav_c"
 buildCount1 = 2
 planCondition = "Lua"
@@ -34,51 +55,86 @@ LuaFunction = "ScavengerBuildLoopCondition"
 
 [Plan3] // Try and collect pools that are free around the map.
 planType = "CollectPool"
-planPriority = 990
+planPriority = 980
 buildIfNoIdle = true
 planCondition = "Lua"
 LuaFunction = "CanCollectScrapPool"
 
 [Plan4] // Try and collect pools that are free around the map.
 planType = "CollectPool"
-planPriority = 980
+planPriority = 970
 buildIfNoIdle = true
 planCondition = "Lua"
 LuaFunction = "CanCollectScrapPool"
 
 [Plan5] // Try and collect any loose scrap that is free around the map.
 planType = "CollectField"
-planPriority = 970
+planPriority = 960
 planCondition = "Lua"
 LuaFunction = "CanCollectLooseScrap"
 
-[Plan6] // Send out a Scout to attack Player Scavengers/Extractors during early stage.
+[Plan6] // Build 2 turrets to be handled by the Dispatcher.
+planType = "BuildMinimums"
+planPriority = 950
+buildType1 = "ivturr_c"
+buildCount1 = 2
+planCondition = "Lua"
+LuaFunction = "TurretBuildLoopCondition"
+
+[Plan7] // Send out a Scout to attack Player Scavengers/Extractors during early stage.
 planType = "Attacker"
-planPriority = 960
-pickTargetType = 2
+planPriority = 940
 targetType1 = "VIRTUAL_CLASS_SCAVENGER"
 targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
 attackType1 = "ivscout_c"
+attackType2 = "ivscout_c"
 AttackAnything = true
 buildIfNoIdle = true
 planCondition = "Lua"
 LuaFunction = "CanSendEarlyScoutToAttackPlayerResources"
 
-[Plan7] // Send out a Scout to attack Player Scavengers/Extractors during early stage.
-planType = "Attacker"
-planPriority = 950
-pickTargetType = 2
-targetType1 = "VIRTUAL_CLASS_SCAVENGER"
-targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
-attackType1 = "ivcmdr_c"
-AttackAnything = true
-planCondition = "Lua"
-LuaFunction = "CanSendEarlyScoutToAttackPlayerResources"
-
 [Plan8] // Get our Constructors in the mix.
 planType = "BuildMinimums"
-planPriority = 940
+planPriority = 930
 buildType1 = "ivcons_c"
 buildCount1 = 1
 planCondition = "Lua"
 LuaFunction = "ConstructorBuildLoopCondition"
+
+[Plan9] // Get Gun Tower Constructors going.
+planType = "BuildMinimums"
+planPriority = 920
+buildType1 = "ivcons_g"
+buildCount1 = 2
+planCondition = "Lua"
+LuaFunction = "GunTowerConstructorBuildLoopCondition"
+
+[Plan10] // Get Gun Towers going.
+planType = "BaseBuildMinimums"
+planPriority = 910
+buildType1 = "ibgtow_c"
+buildCount1 = 1
+buildLoc1 = "gtow1"
+consClass = "ivcons_g"
+planCondition = "Lua"
+LuaFunction = "BuildGunTower1"
+ContinueEvenIfFail = true
+
+[Plan11] // Get Gun Towers going.
+planType = "BaseBuildMinimums"
+planPriority = 900
+buildType1 = "ibgtow_c"
+buildCount1 = 1
+buildLoc1 = "gtow2"
+consClass = "ivcons_g"
+planCondition = "Lua"
+LuaFunction = "BuildGunTower2"
+ContinueEvenIfFail = true
+
+[Plan12]
+planType = "BaseBuildLoop"
+planPriority = 890
+buildType1 = "ibpgen_c"
+buildCount1 = 1
+planCondition = "Lua"
+LuaFunction = "BuildPowerGenerator"
