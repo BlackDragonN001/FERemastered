@@ -155,7 +155,7 @@ function AddObject(h)
     if (teamNum == Mission.m_CPUTeamNum) then
 		-- Add Dispatcher for CPU units.
 		if (not StopAddToDispatch) then
-			AddToDispatch(h, 5.0, false, 0, false, false, true, true);
+			AddToDispatch(h, 15.0, false, 0, false, false, true, true);
 		end
 
 		if (ODFName == "ivcmdr_c") then

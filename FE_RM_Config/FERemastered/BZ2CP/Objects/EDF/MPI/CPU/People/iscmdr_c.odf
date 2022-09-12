@@ -1,23 +1,32 @@
 [GameObjectClass]
-classLabel = "ispilo"
+classLabel = "issold"
+
 canInteract = 1
+isSealth = 1
 isGrouped = 0
-needGroup = 0
 isLimited = 0
+
+needGroup = 0
 needLimit = 0
+
 canDetect = 1
-canTarget = 1
-needPilot = 0
-pilotCost = 1
+
 maxAmmo = 200
 addAmmo = 25
 aiAddAmmo = 30
-aiName = "PersonFriend"
-aiName2 = "PersonEnemy"
-isSealth = 1
+maxHealth = 400
+
+unitName = "Commander"
+
+aiName = "SoldierProcess"
+aiName2 = "SoldierProcess"
+
 heatSignature = 0.2
 imageSignature = 0.2
 radarSignature = 0.1
+
+weaponMask = 00101
+weaponName3 = "iggren"
 
 [CraftClass]
 OffensiveProcessIsDistractable = true
