@@ -1,12 +1,14 @@
 // File: fercpu_i0.aip
 // Author(s): AI_Unit
 // Summary: Easy AIP plan for the EDF faction for Instant Action or MPI.
+
 [Start]
 idleAllCraft = false
 scavClass = "ivscav_c"
 consClass = "ivcons_c"
 CheckProvides = true
 DLLCanSwitch = true
+baseDir = 3
 baseLoc = "RecyclerEnemy"
 UnitsService = true
 Difficulty = 1 // 1=Easy, 2=Medium, 3=Hard, 4=Extreme
@@ -38,6 +40,10 @@ attackType2_2 = "ivscout_c"
 targetType3 = "VIRTUAL_CLASS_EXTRACTOR"
 attackType3_1 = "ivscout_c"
 attackType3_2 = "ivscout_c"
+
+targetType4 = "VIRTUAL_CLASS_TURRET"
+attackType4_1 = "ivscout_c"
+attackType4_2 = "ivscout_c"
 
 [Plan1]
 planType = "BuildMinimums"
@@ -73,11 +79,11 @@ planPriority = 960
 planCondition = "Lua"
 LuaFunction = "CanCollectLooseScrap"
 
-[Plan6] // Build 2 turrets to be handled by the Dispatcher.
+[Plan6] // Build 4 turrets to be handled by the Dispatcher.
 planType = "BuildMinimums"
 planPriority = 950
 buildType1 = "ivturr_c"
-buildCount1 = 2
+buildCount1 = 4
 planCondition = "Lua"
 LuaFunction = "TurretBuildLoopCondition"
 
@@ -88,10 +94,11 @@ targetType1 = "VIRTUAL_CLASS_SCAVENGER"
 targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
 attackType1 = "ivscout_c"
 attackType2 = "ivscout_c"
+MaxAttacks = 5
 AttackAnything = true
 buildIfNoIdle = true
 planCondition = "Lua"
-LuaFunction = "CanSendEarlyScoutToAttackPlayerResources"
+LuaFunction = "SendEarlyScoutHarassment"
 
 [Plan8] // Get our Constructors in the mix.
 planType = "BuildMinimums"
@@ -132,9 +139,53 @@ LuaFunction = "BuildGunTower2"
 ContinueEvenIfFail = true
 
 [Plan12]
-planType = "BaseBuildLoop"
+planType = "BaseBuildMinimums"
 planPriority = 890
 buildType1 = "ibpgen_c"
 buildCount1 = 1
+buildLoc1 = "pgen1_edf"
 planCondition = "Lua"
 LuaFunction = "BuildPowerGenerator"
+pathpointsCanBeMissing = true
+
+[Plan13]
+planType = "BaseBuildMinimums"
+planPriority = 880
+buildType1 = "ibpgen_c"
+buildCount1 = 1
+buildLoc1 = "pgen2_edf"
+planCondition = "Lua"
+LuaFunction = "BuildPowerGenerator"
+pathpointsCanBeMissing = true
+
+[Plan14] // Send out a Scout to attack Player Utilities during early stage.
+planType = "Attacker"
+planPriority = 870
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "ivscout_c"
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendEarlyScoutHarassment"
+
+[Plan15]
+planType = "Upgrade"
+planPriority = 860
+unitType = "ibscav_c"
+consClass = "ivcons_g"
+planCondition = "Lua"
+LuaFunction = "UpgradeFirstExtractor"
+
+[Plan16]
+planType = "BaseBuildMinimums"
+planPriority = 850
+buildType1 = "ibfact_c"
+buildCount1 = 1
+buildLoc1 = "factory_edf"
+planCondition = "Lua"
+LuaFunction = "BuildFactory"
+pathpointsCanBeMissing = true

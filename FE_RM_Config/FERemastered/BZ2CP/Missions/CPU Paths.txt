@@ -1,0 +1,19 @@
+List of path points that the CPU will use to build, attack, and defend.
+These are not necessary for a map to work with FE IA/MPI, but will greatly improve the CPU experience.
+
+Defaults: 
+- hold1, hold2, hold3, hold4
+- gtow1, gtow2, gtow3, gtow4
+- RecyclerEnemy
+- TurretEnemy1, TurretEnemy2
+
+Custom:
+- pgen1_edf, pgen2_edf, pgen3_edf, pgen4_edf
+- factory_edf
+- armory_edf
+- bunker_edf
+- sbay_edf
+- base_gtow1_edf, base_gtow2_edf, base_gtow3_edf, base_gtow4_edf
+- training_edf
+- tech_edf
+- bomber_edf

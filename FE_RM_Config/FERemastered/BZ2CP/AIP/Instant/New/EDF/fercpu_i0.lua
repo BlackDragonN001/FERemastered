@@ -173,11 +173,8 @@ function BuildPowerGenerator(team, time)
     -- Count CPU constructors.
     local cpuConsCount = CountCPUConstructors(team, time);
 
-    -- Check our Power levels.
-    local powerCount = AIPUtil.GetPower(team, true);
-
     -- If the conditions above are true, let the AIP build a Power Plant.
-    if (myScrap >= 30 and cpuConsCount > 0 and powerCount <= 0) then
+    if (myScrap >= 30 and cpuConsCount > 0) then
         return true, "BuildPowerGenerator: Conditions met. Proceeding...";
     else
         return false, "BuildPowerGenerator: Conditions unmet. Halting plan.";
@@ -203,6 +200,27 @@ function BuildFactory(team, time)
         return true, "BuildFactory: Conditions met. Proceeding...";
     else
         return false, "BuildFactory: Conditions unmet. Halting plan.";
+    end
+end
+
+-- Allow the CPU to upgrade their first Extractor.
+function UpgradeFirstExtractor(team, time)
+    -- Get my scrap in a local variable.
+    local myScrap = AIPUtil.GetScrap(team, true);
+
+    -- Count CPU constructors.
+    local cpuConsCount = CountCPUConstructors(team, time);
+
+    -- Count CPU extractors.
+    local cpuExtractorCount = CountCPUExtractors(team, time);
+
+    -- Count CPU Upgraded extractors.
+    local cpuUpgradedExtractorCount = CountCPUUpgradedExtractors(team, time);
+
+    if (myScrap >= 60 and cpuConsCount >= 1 and cpuExtractorCount >= 1 and cpuUpgradedExtractorCount <= 0) then
+        return true, "UpgradeFirstExtractor: Conditions met. Proceeding...";
+    else
+        return false, "UpgradeFirstExtractor: Conditions unmet. Halting plan.";
     end
 end
 
@@ -244,6 +262,16 @@ function CountCPUConstructors(team, time)
     return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_CONSTRUCTIONRIG", 'sameteam', true);
 end
 
+-- Checks how many Extractors the CPU has.
+function CountCPUExtractors(team, time)
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_EXTRACTOR", 'sameteam', true);
+end
+
+-- Checks how many upgraded Extractors the CPU has.
+function CountCPUUpgradedExtractors(team, time)
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_EXTRACTOR_Upgraded", 'sameteam', true);
+end
+
 ----------------
 -- Human Checks
 ----------------
@@ -263,11 +291,16 @@ end
 ----------------
 
 -- Allow for early game harassment by the AI.
-function CanSendEarlyScoutToAttackPlayerResources(team, time)
+function SendEarlyScoutHarassment(team, time)
+    -- Check if Factory exists.
+    local factoryExists = DoesFactoryExist(team, time);
+
     -- Allow this attack if all of these conditions are met.
-    if ((DoesHumanHaveScavengers(team, time) or DoesHumanHaveExtractors(team, time))) then
-        return true, "CanSendEarlyScoutToAttackPlayerResources: Conditions met. Proceeding...";
+    if (not factoryExists) then
+        return true, "SendEarlyScoutHarassment: Conditions met. Proceeding...";
     else 
-        return false, "CanSendEarlyScoutToAttackPlayerResources: Conditions unmet. Halting plan. Time is " .. time;
+        return false, "SendEarlyScoutHarassment: Conditions unmet. Halting plan. Time is " .. time;
     end
 end
+
+-- Allow for early game harassment after the factory has been built by the AI.

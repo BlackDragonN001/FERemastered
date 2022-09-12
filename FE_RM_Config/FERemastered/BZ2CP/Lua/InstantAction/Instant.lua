@@ -2,7 +2,7 @@
 	Summary: BZCC FE Instant Action Mission Script 
 	Author: JJ (AI_Unit)
 	Version: 1.0 
-	Last modified: 03/09/2022 
+	Last modified: 11/09/2022 
 --]]
 
 -- File find fix.
@@ -34,6 +34,20 @@ local StartingVehicleTable =
     {"vturr", "vturr", "vscav", "vtank", "vtank", "vtank", "vscout", "vscout", "vscout"},
 }
 
+-- Let's spice things up with the AI kicking off if no base building paths are found.
+local NoPathsResponse = 
+{
+	"Hey, map maker, where are my paths man?!",
+	"Seriously?! I have to randomize my base?",
+	"What's a CPU gotta do to get some paths around here?",
+	"No base paths? Sure...",
+	"It was silly of me to expect any paths.",
+	"Don't blame me if my base looks bad.",
+	"I'm sensing some laziness.",
+	"If you're expecting well-placed buildings, don't.",
+	"What's the key combination for self-destruction?"
+}
+
 local Mission = 
 {
     -- Human team.
@@ -50,6 +64,9 @@ local Mission =
 
     -- Chosen in IA shell.
     m_Difficulty = 0,
+
+	-- Chosen in IA shell.
+	m_RespawnEnabled = 0,
 
     -- Starting force size for humans.
     m_HumanStartingForceSize = 1,
@@ -163,8 +180,11 @@ end
 
 -- Runs on mission state.
 function Start()
+	-- Teams for Stats...
+	SetTeamNameForStat(Mission.m_HumanTeamNum, "Humans");
+	SetTeamNameForStat(Mission.m_CPUTeamNum, "Computer");
+
 	-- Get our difficulty.
-	-- Mission.m_Difficulty = GetDifficulty();
 	Mission.m_Difficulty = IFace_GetInteger("shell.instant.difficulty");
 
     -- Remove any trace of old player vehicles left in the BZN.
@@ -183,6 +203,9 @@ function Start()
 
 	SetAsUser(PlayerH, LocalTeamNum);
 	AddPilotByHandle(PlayerH);
+
+	-- Be mean.
+	DoTaunt(1);
 end
 
 -- Called per tick.
@@ -373,4 +396,55 @@ function GetClosestObjectToPath(listOfUnits, pathPoint)
 	end
 
 	return closestObject;
+end
+
+-- Handle destroyed player...
+function PlayerDied(deadObjectHandle, sniped)
+	-- Player is dead.
+	if (not IsPerson(deadObjectHandle)) then
+		-- Craft died. If it wasn't a snipe, then just kick the pilot out.
+		if (not sniped) then
+			-- Be mean...
+			DoTaunt(TAUNTS_HumanShipDestroyed);
+
+			-- Return DoEjectPilot.
+			return DoEjectPilot;
+		end
+	end
+
+	-- Local player got killed (pilot or snipe). Do respawn as needed.
+	if (Mission.m_RespawnEnabled) then
+		-- Respawn them near their m_Recycler, up in the air.
+	else
+		-- User can't respawn. Game over, man
+		FailMission(GetTime() + 3);
+	end
+
+	-- Both cases of the above report that we handled things.
+	return DLLHandled;
+end
+
+-- Handle destroyed objects...
+function ObjectKilled(deadObjectHandle, killersHandle)
+	-- AI-controlled object is toast...
+	if (not IsPlayer(deadObjectHandle)) then
+		-- Should we eject a pilot instead?
+		if (not IsPerson(deadObjectHandle)) then
+			return DoEjectPilot; -- Return DoEjectPilot.
+		else
+			return DLLHandled; -- Return DLLHandled.
+		end
+	else
+		-- Handle player death.
+		return PlayerDied(deadObjectHandle, false);
+	end
+end
+
+-- Handle sniped objects...
+function ObjectSniped(deadObjectHandle, killersHandle)
+	if (not IsPlayer(deadObjectHandle)) then
+		return DLLHandled; -- AI-controlled object is toast...
+	else
+		return PlayerDied(deadObjectHandle, true); -- Player dead.
+	end
 end
