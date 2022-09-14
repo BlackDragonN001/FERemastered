@@ -5,13 +5,14 @@ print("Loading _FECore.lua");
 -- Links all the individual Lua Moduels together.
 --===================================================
 
--- Key Asset/Require Loader. -- Already in root ODFs.
---assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+-- Key Asset/Require Loader.
+assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 
 -- Helper Luas.
 require('_GlobalHandler');
 require('_GlobalVariables');
 require('_DLLUtils');
+local _Subtitles = require('_Subtitles');
 local _MapReloader = require('_MapReloader');
 local _PropHeightFix = require('_PropHeightFix');
 local _ObjectReplacer = require('_ObjectReplacer');
@@ -90,7 +91,12 @@ end
 function _FECore.Update()
 
 -- Call helper functions.
+	_Subtitles.Run();
 
+end
+
+function _FECore.ProcessAudio(clip)
+	_Subtitles.ProcessAudio(clip);
 end
 
 function PreOrdnanceHit(ShooterHandle, VictimHandle, OrdnanceTeam, OrdnanceODF)
