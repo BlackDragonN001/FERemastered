@@ -13,12 +13,6 @@ local subtitlesLoaded = false;
 -- Check to see if the subtitle panel is visible.
 local startSubtitles = false;
 
--- Is the subtitle variable present?
-local subtitleVariableCreated = false;
-
--- Subtitles variable.
-local subtitlesVar = 'script.subtitles';
-
 -- Chosen subtitle.
 local subtitleToUse = nil;
 
@@ -26,9 +20,9 @@ local subtitleToUse = nil;
 local audioClip = nil;
 
 -- Set the audioClip variable up so we can track when it's finished.
-function _Subtitles.ProcessAudio(clip)
+function _Subtitles.AudioWithSubtitles(clip)
 	-- We need this to load subtitles into the List Box.
-	local subtitleFileName = RemoveWavExtension(clip) .. "_subtitle.txt";
+	subtitleToUse = RemoveWavExtension(clip) .. "_subtitle.txt";
 
 	-- Set this global variable so we can keep track of the clip until it's finished.
 	audioClip = AudioMessage(clip);
@@ -47,12 +41,7 @@ function _Subtitles.Run()
 		end
 
 		-- Test.
-		if (not subtitleVariableCreated) then
-			IFace_CreateString(subtitlesVar, subtitleToUse);
-			subtitleVariableCreated = true;
-		else
-			IFace_SetString(subtitlesVar, subtitleToUse);
-		end
+		IFace_FillListBoxFromText("SubtitlesPanel", subtitleToUse)
 
 		-- Active the subtitle panel.
 		IFace_Activate("SubtitlesPanel");

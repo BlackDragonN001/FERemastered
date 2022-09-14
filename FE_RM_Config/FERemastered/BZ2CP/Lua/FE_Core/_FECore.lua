@@ -95,8 +95,8 @@ function _FECore.Update()
 
 end
 
-function _FECore.ProcessAudio(clip)
-	_Subtitles.ProcessAudio(clip);
+function _FECore.AudioWithSubtitles(clip)
+	_Subtitles.AudioWithSubtitles(clip);
 end
 
 function PreOrdnanceHit(ShooterHandle, VictimHandle, OrdnanceTeam, OrdnanceODF)
