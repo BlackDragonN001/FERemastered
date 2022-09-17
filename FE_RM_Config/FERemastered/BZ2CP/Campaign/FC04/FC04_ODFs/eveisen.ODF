@@ -1,0 +1,30 @@
+[GameObjectClass] // Hadean Tech in FC04 (FCXX). Originally named "iveisen" so a pilot could hop out of it in 1.2.
+//glowTexture = "iveisen.pic"
+geometryName = "eveisen00.fbx"
+animCount = 3
+animName1 = "forward"
+animFile1 = "evscoutsf.fbx"
+animName2 = "neutral"
+animFile2 = "evscoutsn.fbx"
+animName3 = "reverse"
+animFile3 = "evscoutsr.fbx"
+classLabel = "evscout"
+scrapValue = 25
+scrapCost = 45
+customCost = 50
+maxHealth = 1800
+addAmmo = 1
+unitName = "Xypos"
+canSnipe = 0
+armorClass = L
+
+[CraftClass]
+
+[HoverCraftClass]
+accelJump = 15.0
+
+pitchPitch = 0.27
+
+[Lod1]
+
+[Lod2]
