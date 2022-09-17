@@ -710,14 +710,14 @@ function Routine5()
 			end
 		elseif M.Routine5State == 10 then
 			--Nexus emerging from hangar
-			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1) then
+			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1, true) then
 				M.Position1.y = M.Position1.y + 125;
 				M.Variable3 = 40.0;--16.0
 				M.Routine5State = M.Routine5State + 1;
 			end
 		elseif M.Routine5State == 11 then
 			--Nexus rising up from hangar platform
-			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1) then
+			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1, true) then
 				M.Position1 = GetPosition(M.Nexus);
 				M.Nexus = ReplaceObject(M.Nexus, "evnexus01");
 				SetObjectiveName(M.Nexus, "Nexus");
@@ -728,7 +728,7 @@ function Routine5()
 			end	
 		elseif M.Routine5State == 12 then
 			--Nexus rising up, now damageable
-			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1) then
+			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1, true) then
 				AudioMessage("nexus1.wav");
 				M.Position1 = GetPosition(M.Nexus);
 				M.Position1.y = M.Position1.y + 135;
@@ -737,7 +737,7 @@ function Routine5()
 			end
 		elseif M.Routine5State == 13 then
 			--Nexus floating up even more
-			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1) then
+			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1, true) then
 				M.Position2 = GetPosition(M.Nexus);
 				M.Position2 = M.Position2 + SetVector(0, 30, 90);
 				StopEarthQuake();
@@ -767,14 +767,14 @@ function Routine5()
 			M.Routine5State = M.Routine5State + 1;
 		elseif M.Routine5State == 15 then
 			--Moving from Nexus Hangar to Mining Position
-			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1) then
+			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1, true) then
 				AddHealth(M.Nexus, 4000);
 				M.Position1.y = M.Position1.y - 185;
 				M.Routine5State = M.Routine5State + 1;
 			end
 		elseif M.Routine5State == 16 then
 			--Moving down to mining position
-			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1) then
+			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1, true) then
 				M.NexusBolt = BuildObject("nexusbolt", 5, M.Position2);
 				M.Position2 = M.Position2 + SetVector(16, -44, -16);
 				M.NexusTube = BuildObject("nexustube", 5, M.Position2);
@@ -783,7 +783,7 @@ function Routine5()
 				M.Routine5State = M.Routine5State + 1;
 			end
 		elseif M.Routine5State == 17 then
-			Move(M.Nexus, M.Variable2, M.NexusMoveTime);	--Rotating in place at mining position
+			Move(M.Nexus, M.Variable2, M.NexusMoveTime, true);	--Rotating in place at mining position
 			if M.NexusMoveTime < GetTime() then
 				RemoveObject(M.NexusTube);
 				RemoveObject(M.NexusBolt);
@@ -794,21 +794,21 @@ function Routine5()
 			end
 		elseif M.Routine5State == 18 then
 			--Moving up from mining position
-			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1) then
+			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1, true) then
 				M.Position1 = SetVector(-25, 350, 150);
 				M.Variable3 = 25.0;
 				M.Routine5State = M.Routine5State + 1;
 			end
 		elseif M.Routine5State == 19 then
 			--Moving to Nexus Hangar
-			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1) then
+			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1, true) then
 				M.Variable3 = 25.1;
 				M.Position1.y = M.Position1.y - 280;--165
 				M.Routine5State = M.Routine5State + 1;
 			end
 		elseif M.Routine5State == 20 then
 			--Moving down into Repair position
-			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1) then
+			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1, true) then
 				M.Variable9 = 2;
 				M.NexusMoveTime = GetTime() + 32000;--M.Variable3 = 32000;
 				M.Position2 = M.Position1;
@@ -817,7 +817,7 @@ function Routine5()
 				M.Routine5State = M.Routine5State + 1;
 			end
 		elseif M.Routine5State == 21 then
-			Move(M.Nexus, M.Variable2, M.NexusMoveTime);	--Rotating in place at repair position
+			Move(M.Nexus, M.Variable2, M.NexusMoveTime, true);	--Rotating in place at repair position
 			if M.NexusMoveTime < GetTime() then
 				RemoveObject(M.NexusBolt);
 				M.Variable3 = 15.0;
@@ -827,7 +827,7 @@ function Routine5()
 			end
 		elseif M.Routine5State == 22 then
 			--Moving up from repair position
-			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1) then
+			if Move(M.Nexus, M.Variable2, M.Variable3, M.Position1, true) then
 				AddHealth(M.Nexus, 4000);
 				M.Routine5State = 14;--to LOC_452
 			end
