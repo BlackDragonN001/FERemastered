@@ -1,14 +1,14 @@
 [GameObjectClass]
 baseName = "ivhack"
-geometryName = "ivhack00.xsi"
+geometryName = "ivhack00.fbx"
 cockpitName = "ivhack_cockpit.xsi"
 animCount = 3
 animName1 = "forward"
-animFile1 = "ivhacksf.xsi"
+animFile1 = "ivhacksf.fbx"
 animName2 = "neutral"
-animFile2 = "ivhacksn.xsi"
+animFile2 = "ivhacksn.fbx"
 animName3 = "reverse"
-animFile3 = "ivhacksr.xsi"
+animFile3 = "ivhacksr.fbx"
 classLabel = "wingman"
 scrapValue = 15
 scrapCost = 50
@@ -115,10 +115,10 @@ rollSteer = 0.1 // rolls while steering [.35]
 soundThrust = "ieng01b.wav"
 soundTurbo = "avtanke3.wav"
 
-[Lod1]
-geometryName = "ivhackL1.xsi" ;geometry for lod1
-distance = 30
+//[Lod1]
+//geometryName = "ivhackL1.xsi" ;geometry for lod1
+//distance = 30
 
-[Lod2]
-geometryName = "ivhackL2.xsi" ;geometry for lod2
-distance = 60                 ;...distance over this many meters  = > switch to lod2
+//[Lod2]
+//geometryName = "ivhackL2.xsi" ;geometry for lod2
+//distance = 60                 ;...distance over this many meters  = > switch to lod2
