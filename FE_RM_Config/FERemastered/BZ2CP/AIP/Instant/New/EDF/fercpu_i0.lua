@@ -196,7 +196,7 @@ function BuildPowerGenerator(team, time)
     local powerCount = CountCPUPower(team, time);
 
     -- If the conditions above are true, let the AIP build a Power Plant.
-    if (myScrap >= 30 and cpuConsCount > 0 and CountCPUPower <= 0) then
+    if (myScrap >= 30 and cpuConsCount > 0 and powerCount <= 0) then
         return true, "BuildPowerGenerator: Conditions met. Proceeding...";
     else
         return false, "BuildPowerGenerator: Conditions unmet. Halting plan.";

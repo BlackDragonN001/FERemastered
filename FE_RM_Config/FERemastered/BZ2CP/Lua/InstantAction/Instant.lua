@@ -132,7 +132,7 @@ end
 -- Function for creating and displaying generic objective.
 function CreateObjectives()
 	ClearObjectives();
-	AddObjective("mpobjective_st.otf", "WHITE", -1.0);
+	AddObjective("InstantAction.otf", "WHITE", 5.0);
 end
 
 -- Pre-game initial setup.
@@ -196,15 +196,9 @@ function AddObject(h)
 				local wepChance = math.floor(GetRandomFloat(1, #selectedWeaponsTable));
 				local packChance = math.floor(GetRandomFloat(1, #selectedPackTable));
 
-				print("wepChance variable is " .. wepChance);
-				print("packChance variable is " .. packChance);
-
 				local wep = selectedWeaponsTable[wepChance];
 				local pack = selectedPackTable[packChance];
 				
-				print("Wep variable is " .. wep);
-				print("Pack variable is " .. pack);
-
 				GiveWeapon(h, wep);
 				GiveWeapon(h, pack);
 			end
@@ -218,6 +212,12 @@ function AddObject(h)
 			end
 		end
     end
+
+	if (ODFName == "ibrecy_m") then
+		local pos = GetTransform(h);
+
+		print(pos);
+	end
 
     -- Per standard FE behaviour, highlight the Service Bay.
     if (teamNum == Mission.m_HumanTeamNum and ObjClass == "CLASS_SUPPLYDEPOT") then
