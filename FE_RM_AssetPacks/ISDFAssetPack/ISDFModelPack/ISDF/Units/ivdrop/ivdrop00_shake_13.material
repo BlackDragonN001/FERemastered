@@ -1,0 +1,12 @@
+[solid]
+diffuse = 1.000000  1.000000  1.000000  1.000000
+specular = 0.501961  0.501961  0.501961  1.000000
+specularPower = 1024.000000
+emissive = 0.000000  0.000000  0.000000  1.000000
+ambient = 0.000000  0.000000  0.000000  1.000000
+
+
+[texture]
+diffuse = ibstair00.dds
+normal = ibstair00_n.dds
+specular = ibstair00_s.dds
