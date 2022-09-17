@@ -192,8 +192,11 @@ function BuildPowerGenerator(team, time)
     -- Count CPU constructors.
     local cpuConsCount = CountCPUConstructors(team, time);
 
+    -- Count CPU Power.
+    local powerCount = CountCPUPower(team, time);
+
     -- If the conditions above are true, let the AIP build a Power Plant.
-    if (myScrap >= 30 and cpuConsCount > 0) then
+    if (myScrap >= 30 and cpuConsCount > 0 and CountCPUPower <= 0) then
         return true, "BuildPowerGenerator: Conditions met. Proceeding...";
     else
         return false, "BuildPowerGenerator: Conditions unmet. Halting plan.";
@@ -288,6 +291,28 @@ function BuildServiceBay(team, time)
     end
 end
 
+-- Allow the CPU to build a Service Bay
+function BuildTraningCenter(team, time)
+    -- Get my scrap in a local variable.
+    local myScrap = AIPUtil.GetScrap(team, true);
+
+    -- Count CPU constructors.
+    local cpuConsCount = CountCPUConstructors(team, time);
+
+    -- Check our Power levels.
+    local powerCount = AIPUtil.GetPower(team, true);
+
+    -- Check if Service Bay exists.
+    local trainingCenterExists = DoesTrainingCenterExist(team, time);
+
+    -- If the conditions above are true, let the AIP build a Power Plant.
+    if (myScrap >= 70 and cpuConsCount > 0 and powerCount > 0 and not trainingCenterExists) then
+        return true, "BuildTraningCenter: Conditions met. Proceeding...";
+    else
+        return false, "BuildTraningCenter: Conditions unmet. Halting plan.";
+    end
+end
+
 -- Allow the CPU to build a Gun Tower at base
 function BuildBaseGunTower(team, time)
     -- Get my scrap in a local variable.
@@ -352,6 +377,27 @@ function UpgradeSecondExtractor(team, time)
     end
 end
 
+-- All the CPU to upgrade their third Extractor.
+function UpgradeThirdExtractor(team, time)
+    -- Get my scrap in a local variable.
+    local myScrap = AIPUtil.GetScrap(team, true);
+
+    -- Count CPU constructors.
+    local cpuConsCount = CountCPUConstructors(team, time);
+
+    -- Count CPU extractors.
+    local cpuExtractorCount = CountCPUExtractors(team, time);
+
+    -- Count CPU Upgraded extractors.
+    local cpuUpgradedExtractorCount = CountCPUUpgradedExtractors(team, time);
+
+    if (myScrap >= 60 and cpuConsCount >= 1 and cpuExtractorCount >= 3 and cpuUpgradedExtractorCount <= 3) then
+        return true, "UpgradeThirdExtractor: Conditions met. Proceeding...";
+    else
+        return false, "UpgradeThirdExtractor: Conditions unmet. Halting plan.";
+    end
+end
+
 -- Condition for trying to collect pools.
 function CanCollectScrapPool(team, time)
     if (DoesRecyclerExist(team, time) and DoesVacantScrapPoolExist(team, time)) then
@@ -395,6 +441,11 @@ function DoesCommBunkerExist(team, time)
     return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_COMMBUNKER", 'sameteam', true) > 0;
 end
 
+-- Checks if the Service Bay exists.
+function DoesTrainingCenterExist(team, time)
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_BARRACKS", 'sameteam', true) > 0;
+end
+
 -- Checks how many Scavengers the CPU has.
 function CountCPUScavengers(team, time)
     return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_SCAVENGER", 'sameteam', true);
@@ -413,6 +464,11 @@ end
 -- Checks how many upgraded Extractors the CPU has.
 function CountCPUUpgradedExtractors(team, time)
     return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_EXTRACTOR_Upgraded", 'sameteam', true);
+end
+
+-- Returns the amount of power the CPU has available.
+function CountCPUPower(team, time)
+    return AIPUtil.GetPower(team, false);
 end
 
 ----------------
@@ -532,5 +588,21 @@ function SendGunTowerAttacks(team, time)
         return true, "SendGunTowerAttacks: Conditions met. Proceeding...";
     else 
         return false, "SendGunTowerAttacks: Conditions unmet. Halting plan. Time is " .. time;
+    end
+end
+
+-- APC attack.
+function SendAPCAttacks(team, time)
+    -- Check if Factory exists.
+    local factoryExists = DoesFactoryExist(team, time);
+
+    -- Check if the Training Center exists.
+    local trainingCenterExists = DoesTrainingCenterExist(team, time);
+
+    -- Allow this attack if all of these conditions are met.
+    if (factoryExists and trainingCenterExists) then
+        return true, "SendAPCAttacks: Conditions met. Proceeding...";
+    else 
+        return false, "SendAPCAttacks: Conditions unmet. Halting plan. Time is " .. time;
     end
 end

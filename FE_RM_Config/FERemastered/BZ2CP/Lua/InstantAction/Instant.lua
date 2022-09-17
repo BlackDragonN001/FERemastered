@@ -34,6 +34,22 @@ local StartingVehicleTable =
     {"vturr", "vturr", "vscav", "vtank", "vtank", "vtank", "vscout", "vscout", "vscout"},
 }
 
+-- Pilot weapon randomisation for the enemy Commander.
+local CommanderPilotWeapons = 
+{
+	["EDF"] = {"igbzka_c", "igshot_c", "igsnip_c"},
+	["Scion"] = {},
+	["Hadean"] = {}
+}
+
+-- Packs randomisation for the enemy Commander.
+local CommandPilotPacks = 
+{
+	["EDF"] = {"igjetp", "iggren"},
+	["Scion"] = {},
+	["Hadean"] = {}
+}
+
 -- Let's spice things up with the AI kicking off if no base building paths are found.
 local NoPathsResponse = 
 {
@@ -158,12 +174,48 @@ function AddObject(h)
 			AddToDispatch(h, 15.0, false, 0, false, false, true, true);
 		end
 
-		if (ODFName == "ivcmdr_c") then
+		if (ODFName == "ivcmdr_c" or ODFName == "iscmdr_c") then
 			-- Set Commander maximum skill to 3.
 			SetSkill(h, 3);
+
+			if (ODFName == "iscmdr_c") then
+				local selectedWeaponsTable;
+				local selectedPackTable;
+
+				if (Mission.m_CPURace == "e") then -- Enemy is Hadean?
+					selectedWeaponsTable = CommanderPilotWeapons["Hadean"];
+					selectedPackTable = CommandPilotPacks["Hadean"];
+				elseif (Mission.m_CPURace == "f") then -- Enemy is Scion?
+					selectedWeaponsTable = CommanderPilotWeapons["Scion"];
+					selectedPackTable = CommandPilotPacks["Scion"];
+				else -- Default to 'i'
+					selectedWeaponsTable = CommanderPilotWeapons["EDF"];
+					selectedPackTable = CommandPilotPacks["EDF"];
+				end
+
+				local wepChance = math.floor(GetRandomFloat(1, #selectedWeaponsTable));
+				local packChance = math.floor(GetRandomFloat(1, #selectedPackTable));
+
+				print("wepChance variable is " .. wepChance);
+				print("packChance variable is " .. packChance);
+
+				local wep = selectedWeaponsTable[wepChance];
+				local pack = selectedPackTable[packChance];
+				
+				print("Wep variable is " .. wep);
+				print("Pack variable is " .. pack);
+
+				GiveWeapon(h, wep);
+				GiveWeapon(h, pack);
+			end
 		else 
 			-- Set the skill of all enemy units based on IA difficulty.
 			SetSkill(h, Mission.m_Difficulty + 1);
+
+			-- Replace the CPU natural extractor as we're using a different ODF.
+			if (ODFName == "ibscav") then
+				ReplaceObject(h, "ibscav_c");
+			end
 		end
     end
 
