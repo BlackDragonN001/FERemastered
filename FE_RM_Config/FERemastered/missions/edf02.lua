@@ -32,8 +32,10 @@ local M = {
 	RecyTeleported = false,
 	ScavTeleported = false,
 	PlayerTeleported = false,
-	StartLanding = false,
+	LandingStarted = false,
 	LandingFinished = false,
+	TakeoffStarted = false,
+	TakeoffFinished = false,
 	TroopGoto = false,
 	StateSetup = false,
 -- Floats
@@ -67,8 +69,8 @@ local M = {
 	GunTowersBuilt = 0,
 	AttackWave = 0,	--hadean attack wave counter
 	AttackIndex = 0,
-	maxFrames =0,
-	curFrame =0
+	maxFrames = 0,
+	curFrame = 0
 };
 
 function DefineRoutine(routineID, func, activeOnStart)
@@ -132,7 +134,7 @@ function InitialSetup()
 		"ivrecy_i",
 		"ivdrop_sh02",
 		"ivdrop_land02",
-		"ivpdrop"
+		"ivdrop_takeoff02"
 	};
 	local preloadAudio = {
 		"edf02_01.wav",
@@ -233,6 +235,11 @@ function Update()
 	end
 	--HandlePortals();
 	CheckStuffIsAlive();
+	
+	-- Once started, handle the dropship takeoff...
+	if M.TakeoffStarted and not M.TakeoffFinished then
+		DropLeave();
+	end
 end
 
 --Main mission state
@@ -298,7 +305,7 @@ function HandleMainState(R, STATE)
 		
 	elseif STATE == 5 then
 	
-		if not M.StartLanding then
+		if not M.LandingStarted then
 			AudioMessage("edf02_02.wav");	--Stewart:"Good landing under the circumstances..."
 		end
 		
@@ -306,7 +313,7 @@ function HandleMainState(R, STATE)
 		SetScrap(1, 30);
 			
 		if(GetDistance(M.Recycler, RecyDropshipPositionEnd) > 70.0 and M.LandingFinished  == true) then
-			DropLeave();
+			DropLeave(); -- one time run to start takeoff sequence.
 			
 			local escort1 = GetHandle("Tank 1"); --Removed BuildObjectandLabel and instead had them prebuilt in the dropship. - Gravey
 			local escort2 = GetHandle("Scout 1");
@@ -608,7 +615,7 @@ function CheckStuffIsAlive()
 end
 
 function DropLand()
-	if (M.StartLanding == false and M.StateSetup == false)
+	if (M.LandingStarted == false and M.StateSetup == false)
 	then
 		M.RecyDropShip = BuildObjectAndLabel("ivdrop_land02", 1, RecyDropshipPositionStart, "RecyDropShip");
 		StartEmitter(M.RecyDropShip, 1);
@@ -618,10 +625,10 @@ function DropLand()
 		StartAnimation(M.RecyDropShip);
 		SetAnimation(M.RecyDropShip, "land", 1);
 		M.maxFrames = SetAnimation(M.RecyDropShip, "land",1);
-		M.StartLanding = true;
+		M.LandingStarted = true;
 		AddObjective("edf0213.otf", "white");
 	
-	elseif(M.StartLanding == true and M.StateSetup == false and M.TroopGoto == false) 
+	elseif(M.LandingStarted == true and M.StateSetup == false and M.TroopGoto == false) 
 	then		
 		M.curFrame = GetAnimationFrame(M.RecyDropShip, "land");
 		if (M.curFrame == 1 and M.TroopGoto == false) 
@@ -631,14 +638,14 @@ function DropLand()
 			Goto(M.escort3, "Escort3", 0);
 			Goto(M.escort4, "Escort4", 0);
 			M.TroopGoto = true;
-			end
+		end
 	
-	elseif(M.StartLanding == true and M.StateSetup == false and M.StateSetup == false)
+	elseif(M.LandingStarted == true and M.StateSetup == false and M.StateSetup == false)
 	then
 		M.curFrame = GetAnimationFrame(M.RecyDropShip, "land");	
 		if (M.curFrame >= M.maxFrames-1 and M.StateSetup == false and M.LandingFinished == false) --model has an animation bug and must be cut early.
 		then
-			M.RecyDropShip = ReplaceObject(M.RecyDropShip, "ivpdrop");
+			M.RecyDropShip = ReplaceObject(M.RecyDropShip, "ivdrop_takeoff02");
 			StartEmitter(M.RecyDropShip, 1);
 			StartEmitter(M.RecyDropShip, 2);
 			M.maxFrames = SetAnimation(M.RecyDropShip, "deploy", 1);
@@ -649,7 +656,7 @@ function DropLand()
 			SetGroup(M.Recycler, 10);
 			StartAnimation(M.RecyDropShip);
 			M.LandingFinished = true;
-			end	
+		end	
 	end	
 	if(M.LandingFinished == true and M.StateSetup == false)
 	then
@@ -657,26 +664,32 @@ function DropLand()
 		if(M.curFrame == 15)
 		then
 			StartSoundEffect("dropdoor.wav", M.RecyDropShip);
-			end	
+		end	
+		
 		if(M.curFrame >= 60)
 		then
 			Goto(M.Recycler, "RecyDropoff", 1);
 			M.StateSetup = true;
-			end
+		end
 		
 	end
 end
 
 function DropLeave()
-	M.maxFrames = SetAnimation(M.RecyDropShip, "takeoff",1);
-	M.curFrame = GetAnimationFrame(M.RecyDropShip, "takeoff");
-	SetAnimation(M.RecyDropShip,"takeoff",1);
-	StartSoundEffect("dropdoor.wav",M.RecyDropShip);
-	StartSoundEffect("dropleav.wav", M.RecyDropShip);
-	StartAnimation(M.RecyDropShip);
-	
-	if(M.maxFrames - 1 <= M.curFrame) then
-		RemoveObject(M.RecyDropShip);
+
+	if not M.TakeoffStarted then
+		M.maxFrames = SetAnimation(M.RecyDropShip, "takeoff",1);
+		M.curFrame = GetAnimationFrame(M.RecyDropShip, "takeoff");
+		SetAnimation(M.RecyDropShip,"takeoff",1);
+		StartSoundEffect("dropdoor.wav",M.RecyDropShip);
+		StartSoundEffect("dropleav.wav", M.RecyDropShip);
+		StartAnimation(M.RecyDropShip);
+		M.TakeoffStarted = true;
+	elseif not M.TakeoffFinished then
+		if(M.maxFrames - 1 <= M.curFrame) then
+			RemoveObject(M.RecyDropShip);
+			M.TakeoffFinished = true;
+		end
 	end
 end
 

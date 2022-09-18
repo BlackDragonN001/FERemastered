@@ -1,0 +1,90 @@
+[GameObjectClass]
+classLabel = "i76building"
+geometryName = "ivdrop00_takeoff2.fbx"
+animCount = 3
+animName1 = "deploy"
+animFile1 = "ivdrop00_open.fbx"
+animName2 = "shake"
+animFile2 = "ivdrop00_shake.fbx"
+animName3 = "takeoff"
+animFile3 = "ivdrop00_takeoff2.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 10000
+maxAmmo = 0
+unitName = "Condor"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+ownsTerrain = 1
+canDetect = 0
+canInteract = 0
+canCollide = 0
+armorClass = H
+collisionRadius = 0
+alwaysClip = 1
+
+/////////LIGHTS and EFFECTS/////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotred"
+lightHard2 = "hp_light_2"
+lightName2 = "spotred"
+lightHard3 = "hp_light_3"
+lightName3 = "spotred"
+lightHard4 = "hp_light_4"
+lightName4 = "spotred"
+lightHard5 = "hp_light_5"
+lightName5 = "spotred"
+lightHard6 = "hp_light_6"
+lightName6 = "spotred"
+lightHard7 = "dropcenter__h"
+lightName7 = "o_red_nf"
+//lightHard8 = "hp_light_7"  //nose spotlight (was hp_light_1)
+//lightName8 = "spotblue"
+//lightHard9 = "hp_light_8"  //nose spotlight (was hp_light_2)
+//lightName9 = "spotblue"
+
+effectHard1 = "hp_trail_1"
+effectName1 = "ivpdrop.trail"
+effectHard2 = "hp_trail_2"
+effectName2 = "ivpdrop.trail"
+
+effectHard3 = "hp_emit_1"
+effectName3 = "ivpdrop.posroll"
+
+[BuildingClass]
+justFlat = 1
+soundAmbient = "sdrop01.wav"
+
+[trail]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 10.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = .5
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "0 100 255 127"
+finishColor = "0 100 255 0"
+startRadius = 15
+finishRadius = 1
+animateTime = .5
+rotationRate = 2.0
+maxDist	= 2000.0f
+maxRadii = 2000.0f
+
+[posroll]
+simulateBase = "sim_dust"
+lifeTime = 3
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "32 32 32 255"
+finishColor = "127 127 127 0"
+startRadius = 2
+finishRadius = 1
+animateTime = 3
+rotationRate = 2
+
