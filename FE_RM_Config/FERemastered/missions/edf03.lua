@@ -9,8 +9,7 @@ local _FECore = require('_FECore');
 
 -- Variables Not saved. Constants that never change.
 local NUM_MEGATURRETS = 4;
-local NUM_BLOCKAGES = 12;
-
+local NUM_BLOCKAGES = 11;
 
 local Position8 = SetVector( -911, 76, -726 );	--Hadean scout spawn
 local Position9 = SetVector( -467, 40, -308 );	--Hadean scout spawn
@@ -98,9 +97,7 @@ function DefineRoutines()
 	DefineRoutine(5, TeleportPlayer, false);
 end
 
-
 function InitialSetup()
-
 	_FECore.InitialSetup();
 	
 	M.TPS = EnableHighTPS();
@@ -152,14 +149,11 @@ function InitialSetup()
 end
 
 function Save()
-
 	_FECore.Save();
-	
     return M
 end
 
 function Load(...)
-
 	_FECore.Load();
 	
     if select('#', ...) > 0 then
@@ -168,26 +162,24 @@ function Load(...)
 end
 
 function Start()
-
 	_FECore.Start();
 
 	Ally(2, 3);
 	M.Recycler = GetHandleOrDie("myrecycler");
-	--M.Player = GetHandleOrDie("player");
 	M.Dropship = GetHandleOrDie("dropship");
 	M.HadeanRecy = GetHandleOrDie("theirrecycler");
 	M.MegaPower = GetHandleOrDie("megapower");
+
 	for i = 1, NUM_MEGATURRETS do
 		M.MegaTurrets[i] = GetHandleOrDie(string.format("megaturr%d", i));
 	end
+
 	for i = 1, NUM_BLOCKAGES do
 		M.Rocks[i] = GetHandleOrDie(string.format("blockage%d", i));
 	end
 end
 
-
 function AddObject(h)
-
 	_FECore.AddObject(h);
 
 	--SetSkill(h, 3);
@@ -205,7 +197,6 @@ function AddObject(h)
 end
 
 function Update()
-
 	_FECore.Update();
 
 	M.Player = GetPlayerHandle();
@@ -260,7 +251,7 @@ function HandleMainState(R, STATE)
 		Attack(BuildObjectAndLabel("evscout", 2, "stage1", "Hadean Scout 6"), M.Recycler, 1);
 		Advance(R);
 	elseif STATE == 9 then	--LOC_61
-		if IsAround(M.Recycler) and GetCfg(M.Recycler) ~= "ivrecy" then
+		if IsAround(M.Recycler) and GetCfg(M.Recycler) ~= "ivrecy_i" then
 			SetObjectiveOff(M.BaseNav);
 			RemoveObject(M.BaseNav);
 			AudioMessage("edf0306.wav");	--Stewart:"Well done. We have a little breathing room now"
@@ -311,8 +302,6 @@ function HandleMainState(R, STATE)
 		M.SatchelPack = BuildObjectAndLabel("apsatc", 1, "satchelspawn3", "Satchel Pack");
 		M.SatchelPickupNav = BuildObjectAndLabel("ibnav", 1, "satchelspawn3", "Satchel Pack Nav");
 		SetObjectiveOn(M.SatchelPack);
-		--SetObjectiveOn(M.SatchelPickupNav);
-		--SetObjectiveName(M.SatchelPickupNav, "pack explosive");
 		Advance(R);
 	elseif STATE == 17 then	--LOC_106
 		if GetDistance(M.Player, M.CanyonNav) < 100 then
@@ -337,7 +326,6 @@ function HandleMainState(R, STATE)
 			RemoveObject(M.CityRuinsNav);
 			ClearObjectives();
 			AddObjective("edf0305.otf", "white");
-			--AudioMessage("edf0312.wav");	//missing?
 			Advance(R, 30.0);
 		end
 	elseif STATE == 20 then
@@ -357,7 +345,7 @@ function HandleMainState(R, STATE)
 			M.MegaPowerNav = BuildObjectAndLabel("ibnav", 1, Position13, "Mega Power Nav");
 			ClearObjectives();
 			AddObjective("edf0306.otf", "white");
-			SetObjectiveName(M.MegaPowerNav, "power disturbance");
+			SetObjectiveName(M.MegaPowerNav, "Power Disturbance");
 			SetObjectiveOn(M.MegaPowerNav);
 			Advance(R);
 		end
@@ -383,7 +371,8 @@ function HandleMainState(R, STATE)
 		AudioMessage("edf0332.wav");	--Cervelli:"The unknowns are interfering with our scans..."
 		Advance(R);
 	elseif STATE == 28 then
-		if GetDistance(M.EngineerTransport, M.MegaPower) < 150 then
+		if GetDistance(M.EngineerTransport, M.MegaPower) < 50 then
+			Stop(M.EngineerTransport, 1); -- Stop the transport from driving around when the Engineer Pilot is dispatched.
 			SetTeamNum(M.MegaPower, 1);
 			M.Engineer = BuildObjectAndLabel("ispilo", 1, GetPosition(M.EngineerTransport), "Engineer Pilot");
 			Goto(M.Engineer, M.MegaPower, 1);
@@ -509,10 +498,11 @@ function RemoveRocks(R, STATE)
 		Advance(R, 30.0);
 	elseif STATE == 1 then
 		BuildObjectAndLabel("satchelmine", 2, GetPosition(M.Rocks[5]), "Satchel Mine");
+
 		for i = 1,NUM_BLOCKAGES do
 			RemoveObject(M.Rocks[i]);
 		end
-		--IFace_ConsoleCmd("ai.calccliffs");
+
 		Advance(R);
 	end
 end

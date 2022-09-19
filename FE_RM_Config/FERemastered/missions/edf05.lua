@@ -25,6 +25,9 @@ local M = {
 	PlayerTeleportedOut = false, -- If the player exits the portal, setcolorfade.
 	RecyTeleported = false,	--recy went through 1st portal
 	TransportArrivedAtBase = false,	--transport reached "basedeploy"
+	HadTurr1Sniped = false,
+	HadTurr2Sniped = false,
+	HighlightTransport = false,
 -- Floats
 	
 -- Handles
@@ -48,9 +51,6 @@ local M = {
 -- Ints
 	TPS = 10,
 	RecyclerState = 0,	--recycler state (0:heading to Portal1,1:teleported through portal1,2:player met up with convoy,3:player went through portal1,4:Recycler is at "basedeploy")
-	--Variable3 = 0,	--recy teleported out
-	--Variable4 = 0,	--transport teleported out
-	--Variable5 = 0,	--transport reached "basedeploy"
 	Variable6 = 0,	--recy rendezvous timer
 	Variable7 = 0,	--player was left behind
 	PilotIndex = 0,	--for edf pilots capturing hadean ships
@@ -95,7 +95,6 @@ function DefineRoutines()
 	DefineRoutine(3, HandleRecyRetreat, true);
 	DefineRoutine(4, SpawnPlateauAttackers, true);
 end
-
 
 function InitialSetup()
 
@@ -149,14 +148,12 @@ function InitialSetup()
 end
 
 function Save()
-
 	_FECore.Save();
 
     return M
 end
 
 function Load(...)
-
 	_FECore.Load();
 
     if select('#', ...) > 0 then
@@ -246,25 +243,26 @@ function Start()
 			Patrol(BuildObject(birdOdfs[(i-1)*3 + j], 0, path), path, 1);
 		end
 	end
+
+	-- Very minor detail.
+	SetScrap(1, 40);
 end
 
-
 function AddObject(h)
-
 	_FECore.AddObject(h);
-
 end
 
 function Update()
-
 	_FECore.Update();
 
 	M.Player = GetPlayerHandle();
+
 	for routineID,r in pairs(Routines) do
 		if M.RoutineActive[routineID] and M.RoutineWakeTime[routineID] <= GetTime() then
 			r(routineID, M.RoutineState[routineID]);
 		end
 	end
+
 	CheckStuffIsAlive();
 end
 
@@ -316,14 +314,33 @@ function HandleMainState(R, STATE)
 		M.PilotIndex = 1;
 		Advance(R);
 	elseif STATE == 5 then
-		if GetDistance(M.Transport, "apcdeploy") < 100 then
-			if IsAround(M.EmptyShips[M.PilotIndex])
-			and not HasPilot(M.EmptyShips[M.PilotIndex]) then
+		if (not M.HadTurr1Sniped and not IsAliveAndPilot(M.HadTurr1)) then
+			SetObjectiveOff(M.HadTurr1);
+			M.HadTurr1Sniped = true;
+		end
+
+		if (not M.HadTurr2Sniped and not IsAliveAndPilot(M.HadTurr2)) then
+			SetObjectiveOff(M.HadTurr2);
+			M.HadTurr2Sniped = true;
+		end
+
+		if (M.HadTurr1Sniped and M.HadTurr2Sniped and not M.HighlightTransport) then
+			SetObjectiveOn(M.Transport);
+			ClearObjectives();
+			AddObjective("edf0505.otf", "GREEN");
+			AddObjective("edf0506.otf", "WHITE");
+			M.HighlightTransport = true;
+		end
+
+		if GetDistance(M.Transport, "apcdeploy") < 30 then
+			if IsAround(M.EmptyShips[M.PilotIndex]) and not HasPilot(M.EmptyShips[M.PilotIndex]) then
 				M.Pilots[M.PilotIndex] = BuildObject("ispilo", 1, "apcdeploy");
 				SetIndependence(M.Pilots[M.PilotIndex], 0);
 				Goto(M.Pilots[M.PilotIndex], M.EmptyShips[M.PilotIndex], 1);
 			end
+
 			M.PilotIndex = M.PilotIndex + 1;
+
 			if M.PilotIndex > NUM_PILOTS then
 				Advance(R, 1.0);
 			else
@@ -346,35 +363,14 @@ function HandleMainState(R, STATE)
 		if GetDistance(M.Recycler, M.ExitPortal) < 300 then
 			AudioMessage("edf0509.wav");	--O'Ryan:"This portal leads away from earth, if we can hold on a few minutes, i can reprogram it"
 			AudioMessage("edf0510.wav");	--Windex:"Corporal, we don't have a few minutes..."
-		--[[
-		if GetDistance(M.Recycler, M.ExitPortal) < 25 then
-			M.CheckRecy = false;--M.Variable3 = 1;
-			Teleport(M.Recycler, M.Portal2, -20);
-			RemoveObject(M.Recycler);
-			Goto(M.Transport, "recyclerexit", 1);
-			AudioMessage("edf05end.wav");	--Shultz:"Aw man, what are we getting into?"
-			Attack(TeleportIn("cvtank", 2, M.ExitPortal, 10), M.Player, 1);
-			--]]
 			Advance(R);
 		end
 	elseif STATE == 9 then	--LOC_93
 		if M.CheckRecy == false and M.CheckTrans == false then
-		--[[
-		if GetDistance(M.Transport, M.ExitPortal) < 25 then
-			M.CheckTrans = false;--M.Variable4 = 1;
-			Teleport(M.Transport, M.Portal2, -20);
-			RemoveObject(M.Transport);
-			Attack(TeleportIn("cvtank", 2, M.ExitPortal, 10), M.Player, 1);
-			--]]
 			Advance(R);
 		end
 	elseif STATE == 10 then	--LOC_102
 		if M.PlayerTeleportedOut == true then
-		--[[
-		if GetDistance(M.Player, M.ExitPortal) < 25 then
-			Teleport(M.Player, M.Portal2, -10);
-			SucceedMission(GetTime() + 2, "edf5win.des");
-			--]]
 			Advance(R);
 		end
 	elseif STATE == 11 then
@@ -393,6 +389,7 @@ function HandleRecyEscort(R, STATE)
 		AudioMessage("edf0503.wav");	--Windex:"My engineers have deactivated the heavy mines..."
 		ClearObjectives();
 		AddObjective("edf0503.otf", WHITE);
+		SetObjectiveOn(M.Portal1);
 		for i = 1, NUM_DEFENDERS do -- Any survivors, try to make it to the Portal.
 			if not IsPlayer(M.Defenders[i]) then
 				Goto(M.Defenders[i], "blockade", 1);
@@ -458,44 +455,16 @@ end
 function HandleRecyRetreat(R, STATE)
 	if STATE == 0 then	--LOC_142
 		if (M.RecyclerState == 1) then -- Recy is through
-		--[[
-		if GetDistance(M.Recycler, M.Portal1) < 25 then
-			AudioMessage("edf0502.wav");	--Windex:"We found a short range portal..."
-			ClearObjectives();
-			AddObjective("edf0502.otf", "white");
-			M.RecyclerState = 1;
-			Teleport(M.Recycler, M.Portal2, -30);
-			Stop(M.Recycler, 1);
-			Goto(M.Transport, "blockade", 1);
-		--]]
 			Advance(R);
 		end
 	elseif STATE == 1 then	--LOC_151
 		if M.UnitsTransported == 2 then -- Transport is through.
-		--[[
-		if GetDistance(M.Transport, "blockade") < 25 then
-			Teleport(M.Transport, M.Portal2, -20);
-			Stop(M.Transport, 1);
-			SetRoutineActive(2, true);--M.RecyRetreat = true;
-			Goto(M.ServiceTruck1, "blockade", 1);
-			Goto(M.ServiceTruck2, "blockade", 1);
-			-]]
 			Advance(R);
 		end
 	elseif STATE == 2 then	--LOC_158
 		if (M.UnitsTransported == 4) or 
 		((not IsAround(M.ServiceTruck1) or not IsAround(M.ServiceTruck2)) and M.UnitsTransported == 3) or
 		(not IsAround(M.ServiceTruck1) and not IsAround(M.ServiceTruck2) and M.UnitsTransported == 2) then -- recy, transport, and 2 service trucks are through, if they're alive.
-		--[[
-		if GetDistance(M.ServiceTruck1, "blockade") < 25
-		or GetDistance(M.ServiceTruck2, "blockade") < 25 
-		or not IsAround(M.ServiceTruck1)
-		or not IsAround(M.ServiceTruck2) then
-			Teleport(M.ServiceTruck1, M.Portal2, -20);
-			Defend2(M.ServiceTruck1, M.Transport, 1);
-			Teleport(M.ServiceTruck2, M.Portal2, -20);
-			Defend2(M.ServiceTruck2, M.Transport, 1);
-			--]]
 			M.Variable6 = GetTime() + 300;
 			Advance(R);
 		end
@@ -507,7 +476,7 @@ function HandleRecyRetreat(R, STATE)
 		SetGroup(M.ServiceTruck1, 0);
 		SetGroup(M.ServiceTruck2, 0);
 		Goto(M.Recycler, "recyclerpath1", 1);
-		Goto(M.Transport, "recyclerpath1", 1);
+		Follow(M.Transport, M.Recycler, 1);
 		Defend2(M.ServiceTruck1, M.Transport, 0);
 		Defend2(M.ServiceTruck2, M.Transport, 0);
 		M.RecyTeleported = true;
@@ -570,7 +539,6 @@ function SpawnPlateauAttackers(R, STATE)
 end
 
 function PreTeleport(portal, h)
-
 	if portal == M.Portal1 then
 		if h == M.Player then
 			if M.RecyclerState == 0 then
@@ -585,12 +553,10 @@ function PreTeleport(portal, h)
 			ClearObjectives();
 			AddObjective("edf0502.otf", "white");
 			M.RecyclerState = 1;
-			--Stop(M.Recycler, 1);
 			Goto(M.Transport, "blockade", 1);
 			M.UnitsTransported = M.UnitsTransported + 1;
 			return PRETELEPORT_ALLOW;
 		elseif h == M.Transport then
-			--Stop(M.Transport, 1);
 			SetRoutineActive(2, true);--M.RecyRetreat = true;
 			Goto(M.ServiceTruck1, "blockade", 1);
 			Goto(M.ServiceTruck2, "blockade", 1);
@@ -605,11 +571,9 @@ function PreTeleport(portal, h)
 			M.UnitsTransported = M.UnitsTransported + 1;
 			return PRETELEPORT_ALLOW;
 		end
-	elseif portal == M.ExitPortal then
-	
+	elseif portal == M.ExitPortal then	
 		if h == M.Recycler then
 			M.CheckRecy = false; --M.Variable3 = 1;
-			--Teleport(M.Recycler, M.Portal2, -20);
 			DeleteAfterDelay(M.Recycler);
 			Goto(M.Transport, "recyclerexit", 1);
 			AudioMessage("edf05end.wav");	--Shultz:"Aw man, what are we getting into?"
@@ -617,7 +581,6 @@ function PreTeleport(portal, h)
 			return PRETELEPORT_ALLOW;
 		elseif h == M.Transport then
 			M.CheckTrans = false; --M.Variable4 = 1;
-			--Teleport(M.Transport, M.Portal2, -20);
 			DeleteAfterDelay(M.Transport);
 			Attack(TeleportIn("cvtank", 2, M.ExitPortal, 10), M.Player, 1);
 			return PRETELEPORT_ALLOW;
@@ -636,10 +599,6 @@ function PreTeleport(portal, h)
 	
 	return PRETELEPORT_DENY; -- This mission's portals are strictly locked.
 end
-
---function PostTeleport(portal, h)
---	
---end
 
 function CheckStuffIsAlive()
 	if not M.MissionOver then

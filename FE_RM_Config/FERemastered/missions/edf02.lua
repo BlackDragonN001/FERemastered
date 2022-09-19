@@ -129,7 +129,7 @@ function InitialSetup()
 		"evmislu",
 		"evtanku",
 		"evmort",
-		"ivrecy",
+		"ivrecy_i",
 		"ivdrop_sh02",
 		"ivdrop_land02",
 		"ivpdrop"
@@ -211,11 +211,11 @@ function AddObject(h)
 	
 	if GetCfg(h) == "ibgtow" then
 		M.GunTowersBuilt = M.GunTowersBuilt + 1;
-	elseif GetCfg(h) == "ibrecy" then
+	elseif GetCfg(h) == "ibrecy_i" then
 		RemoveObject(M.BaseNav);
 	end
 	
-	if GetCfg(h) == "ivrecy" then
+	if GetCfg(h) == "ivrecy_i" then
 		SetPosition(h, RecyDropshipSpawnRecy);
 	end
 	--update recy position here.
@@ -540,7 +540,7 @@ end
 
 function PreTeleport(portal, h)
 	if portal == M.Portals[1] then
-		if GetCfg(h) == "ivrecy" then
+		if GetCfg(h) == "ivrecy_i" then
 			if not M.RecyTeleported and portal == M.Portals[1] then
 				SetObjectiveOff(M.Portals[1]);
 				M.BaseNav = BuildObjectAndLabel("ibnav", 1, Position4, "Base Location");
@@ -578,7 +578,7 @@ end
 
 function PostTeleport(portal, h)
 
-	if GetCfg(h) == "ivrecy" and portal == M.Portals[2] then
+	if GetCfg(h) == "ivrecy_i" and portal == M.Portals[2] then
 		Goto(M.Recycler, M.BaseNav, 0);
 		
 		return POSTTELEPORT_OVERRIDE;
@@ -644,7 +644,7 @@ function DropLand()
 			M.maxFrames = SetAnimation(M.RecyDropShip, "deploy", 1);
 			local RecySpawn = RecyDropshipSpawnRecy;
 			RecySpawn.y = RecySpawn.y - 10;
-			M.Recycler = BuildObjectAndLabel("ivrecy",1,RecySpawn, "Recycler");  
+			M.Recycler = BuildObjectAndLabel("ivrecy_i",1,RecySpawn, "Recycler");  
 			SetAngle(M.Recycler, 90.0);
 			SetGroup(M.Recycler, 10);
 			StartAnimation(M.RecyDropShip);

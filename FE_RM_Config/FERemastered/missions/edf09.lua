@@ -14,9 +14,16 @@ local Position7 = SetVector(-183,-12,55);	--mlight move target
 
 local M = {
 -- Bools
-	Routine4Active = false;
+	EarthquakeStarted = false,
+	SettleEarthquake = false,
+	SpawnFireEffects = false,
+	SpawnFirstMeteor = false,
+	SpawnSecondMeteor = false,
+	Routine4Active = false,
 
 -- Floats
+	EarthquakeCooldown = 0.0,
+
 	Routine1Timer = 0.0,
 	Routine2Timer = 0.0,
 	Routine3Timer = 0.0,
@@ -28,20 +35,20 @@ local M = {
 	Recycler = nil,	--Recycler (undeployed)
 	MLight = nil,
 	Portal = nil,
-	Factory = nil, 	--Player Fact
-	PowerGen = nil,	--Player Pgen
-	GunTower = nil,	--Player Gtow
-	Scavenger = nil,	--Player Scav
-	ServiceBay = nil, --Player sbay
-	RelayBunk = nil,	--Player CBun
-	Constructor = nil,	--Player Constructor
+	BuildingsToDamage = {},
 
 -- Ints
+	EarthquakeStage = 1,
+	EarthquakeStageProgressTracker = 0,
+
+	TriggerEQStage2 = 6,
+	TriggerEQStage3 = 10,
+	TriggerEQStage4 = 16, -- If the player hasn't undeplyed their Recycler, apply a critical amount of damage.
+
 	Routine1State = 0,
 	Routine2State = 0,
 	Routine3State = 0,
 	Routine4State = 0,
-	Variable1 = 0,	--routine3 counter
 	Variable2 = 40,	--mlight rotate rate
 	Variable3 = 100,	--mlight move speed
 
@@ -54,14 +61,12 @@ local M = {
 }
 
 function Save()
-
 	_FECore.Save();
 	
     return M
 end
 
 function Load(...)
-
 	_FECore.Load();
 	
     if select('#', ...) > 0 then
@@ -70,7 +75,6 @@ function Load(...)
 end
 
 function InitialSetup()
-
 	_FECore.InitialSetup();
 	
 	AllowRandomTracks(false);
@@ -99,38 +103,45 @@ function InitialSetup()
 end
 
 function Start()
-
 	_FECore.Start();
 	
 	M.Portal = GetHandle("unnamed_hbport");
-	--M.Recycler = GetHandle("unnamed_ivrecy091");
 	
 	GLOBAL_lock(_G);	--prevents script from accidentally creating new global variables.
 end
 
 
 function AddObject(h)
-
 	_FECore.AddObject(h);
 
 	if GetOdf(h) == "ivrecy09.odf" then	--GetCfg() sometimes returns the name with ":1" appended to it.
 		M.Recycler = h;
 	end
+
+	-- Added a check to store any 
+	local teamNum = GetTeamNum(h);
+	local isBuilding = (IsBuilding(h) or GetClassLabel(h) == "VIRTUAL_CLASS_GUNTOWER"); -- Gun Towers are classed as craft so need a special check.
+
+	if (teamNum > 0 and teamNum < MAX_TEAMS and IsBuilding(h)) then
+		table.insert(M.BuildingsToDamage, h);
+	end
 end
 
 function DeleteObject(h)
-
-	_FECore.DeleteObject(h);
-	
+	_FECore.DeleteObject(h);	
 end
 
 function Update()
-
 	_FECore.Update();
 
 	Routine1();
 	Routine2();
-	Routine3();
+
+	-- Only do this method when the initial Recycler has been built by the first routine.
+	if (M.Routine1State > 0) then
+		Routine3();
+	end
+
 	Routine4();
 	TeleportRoutine();
 end
@@ -169,6 +180,10 @@ function Routine1()
 				ClearObjectives();
 				AudioMessage("edf09b.wav");
 				AddObjective("edf0905.otf", "white");
+
+				-- Spawn Drone Carrier:
+				Attack(BuildObject("cvdcar", 5, Position3), M.Recycler, 0);
+
 				M.Routine1State = M.Routine1State + 1;
 			elseif not IsAround(M.RecyDeployed) then
 				M.Routine1State = 4;
@@ -281,6 +296,100 @@ end
 
 --slowly damages the player's base and handles earthquakes/meteors
 function Routine3()
+	-- Return early if the Recycler has undeployed.
+	if (not IsAround(M.RecyDeployed)) then
+		if (not M.SettleEarthquake) then
+			 -- This is set when the Recycler undeploys.
+			UpdateEarthQuake(6.0);
+			-- Do this only once.
+			M.SettleEarthquake = true;
+		end
+
+		-- Keep EQ stage at first stage. 
+		-- This is so we only apply minor damage to buildings when the Recycler undeploys.
+		-- As per the original routine, the EQ settles once Sgt. Wong starts moving towards the portal.
+		M.EarthquakeStage = 1; 
+	end;
+
+	local damageValues = {
+		{"400", "550"}, -- First stage min/max.
+		{"600", "1000"}, -- Second stage min/max.
+		{"1200", "2500"}, -- Third stage min/max.
+		{"3000", "5000"} -- Critical stage min/max.
+	};
+
+	if (M.EarthquakeCooldown < GetTime()) then
+		-- Start the EQ.
+		if (not M.EarthquakeStarted) then
+			StartEarthQuake(6.0);
+			M.EarthquakeStarted = true;
+		end
+
+		-- Keep track of our earthquake progress.
+		M.EarthquakeStageProgressTracker = M.EarthquakeStageProgressTracker + 1;
+
+		-- Choose our specific min/max range based on the stage of the EQ.
+		local minMaxValues = damageValues[M.EarthquakeStage];
+
+		-- Logic for damaging all buildings on the map per EQ stage.
+		for i, handle in pairs(M.BuildingsToDamage) do
+			-- minMaxValues[1] is the minimum value of the chosen range in minMaxValues.
+			-- minMaxValues[2] is the maximum value of the chosen range in minMaxValues.
+			local damageToApply = GetRandomFloat(minMaxValues[1], minMaxValues[2]);
+
+			-- Take the random damage number and round it down.
+			local flooredDamage = math.floor(damageToApply);
+
+			-- Apply the damage value to the handle.
+			Damage(handle, flooredDamage);
+		end
+
+		-- Specific logic per EQ stage.
+		if (M.EarthquakeStage == 2) then
+			-- Intensify the EQ.
+			UpdateEarthQuake(15.0);
+
+			-- Spawn a friendly Krul to meet us.
+			Attack(BuildObject("cvtank", 5, Position3), M.RecyDeployed, 0);
+
+			-- Spawn meteors.
+			if (not M.SpawnFirstMeteor) then
+				BuildObject("meteor", 5, "Deploy");
+				M.SpawnFirstMeteor = true;
+			end
+		elseif (M.EarthquakeStage == 3) then
+			-- Build some effects to show the planet is burning.
+			-- Added this boolean check so we don't flood the map with the same object in the same position.
+			if (not M.SpawnFireEffects) then
+				BuildObject("vfire", 5, "vol1");
+				BuildObject("vsmoke", 5, "vol1");
+				BuildObject("vfire", 5, "vol2");
+				BuildObject("vsmoke", 5, "vol2");
+				BuildObject("vfire", 5, Position4);
+				BuildObject("vsmoke", 5, Position4);
+				M.SpawnFireEffects = true;
+			end
+		elseif (M.EarthquakeStage == 4) then
+			if (not M.SpawnSecondMeteor) then
+				BuildObject("meteor", 5, "EGT1");
+			end
+		end
+
+		-- Up the intensity if the player decides to stick around.
+		if (M.EarthquakeStageProgressTracker == M.TriggerEQStage2) then
+			M.EarthquakeStage = 2;
+		elseif (M.EarthquakeStageProgressTracker == M.TriggerEQStage3) then
+			M.EarthquakeStage = 3;
+		elseif (M.EarthquakeStageProgressTracker == M.TriggerEQStage4) then
+			M.EarthquakeStage = 4;
+		end
+
+		-- When done, set the cooldown.
+		M.EarthquakeCooldown = GetTime() + 35;
+	end
+end
+
+--[[ function Routine3()
 	if M.Routine3Timer < GetTime() then
 		if M.Routine3State == 0 then
 			StartEarthQuake(6.0);
@@ -295,10 +404,12 @@ function Routine3()
 				M.Factory = GetHandle("unnamed_ibfact_s");
 				M.PowerGen = GetHandle("unnamed_ibpgen");
 				M.GunTower = GetHandle("unnamed_ibgtow");
-				M.Scavenger = GetHandle("unnamed_ibsbay");
-				M.ServiceBay = GetHandle("unnamed_ivscav1");
+				M.Scavenger = GetHandle("unnamed_ivscav");
+				M.ServiceBay = GetHandle("unnamed_ibsbay");
 				M.RelayBunk = GetHandle("unnamed_ibcbun");
 				M.Constructor = GetHandle("unnamed_ivcons_r");
+				M.Extractor = GetHandle("unnamed_ibscav");
+
 				UpdateEarthQuake(15.0);
 				Damage(M.RecyDeployed, 1000);
 				Damage(M.Factory, 1000);
@@ -308,6 +419,7 @@ function Routine3()
 				Damage(M.ServiceBay, 1000);
 				Damage(M.RelayBunk, 1000);
 				Damage(M.Constructor, 200);
+				Damage(M.Extractor, 1200);
 				M.Routine3State = M.Routine3State + 1;
 				M.Routine3Timer = GetTime() + 20;
 			end
@@ -315,6 +427,7 @@ function Routine3()
 			if IsAround(M.RecyDeployed) then
 				Damage(M.RecyDeployed, 300);
 				Damage(M.Scavenger, 500);
+				Damage(M.Extractor, 1200);
 				ClearObjectives();
 				AddObjective("edf0904.otf", "white");
 				UpdateEarthQuake(6.0);
@@ -379,7 +492,7 @@ function Routine3()
 			end
 		end
 	end
-end
+end --]]
 
 function Routine4()
 	if M.Routine4Active and M.Routine4Timer < GetTime() then

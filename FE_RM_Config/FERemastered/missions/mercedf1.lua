@@ -136,7 +136,7 @@ end
 function AddObject(h)
 	_FECore.AddObject(h);
 	
-	if(IsPerson(h) and M.Object_HardinPilot == nil and FindHardin) then
+	if (IsPerson(h) and M.Object_HardinPilot == nil and FindHardin) then
 		M.Object_HardinPilot = h;
 		SetIndependence(M.Object_HardinPilot, 0); -- Don't do anything. -GBD
 		Defend(M.Object_HardinPilot,1); -- Stay right there. -GBD
@@ -148,8 +148,13 @@ function AddObject(h)
 		M.StopWyndt = true;
 	end
 	
-	if(M.Object_Player ~= h and IsPerson(h)==true) then --flags when a user either jumps out or ejects
+	if (M.Object_Player ~= h and IsPerson(h) == true) then --flags when a user either jumps out or ejects
 		M.ShipMaybeDestroyed = true;
+	end
+
+	-- To stop Scouts from acting silly around bad terrain.
+	if (GetCfg(h) == SCOUTODF) then
+		SetSkill(h, 3);
 	end
 end
 

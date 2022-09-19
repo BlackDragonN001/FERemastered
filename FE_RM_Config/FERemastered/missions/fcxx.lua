@@ -126,7 +126,7 @@ function InitialSetup()
 		"cvscout",
 		"cvturr",
 		"cvrbomb",
-		"iveisen",
+		"eveisen",
 		"scibomb",
 		"poolmine",
 		"poolmine2"
@@ -268,15 +268,25 @@ function Start()
 end
 
 function AddObject(h)
-
-	-- TEMP: Remove EDF bomber that spawns with the EDF off-map Bomber Bay until we figure out a true solution. - AI_Unit.
-	if (GetCfg(h) == "ivbomb") then
-		RemoveObject(h);
-		print("Destroying Bomber...");
-	end
-
 	_FECore.AddObject(h);
 
+	local cfg = GetCfg(h);
+
+	-- TEMP: Remove EDF bomber that spawns with the EDF off-map Bomber Bay until we figure out a true solution. - AI_Unit.
+	-- Give Cerberi weapons to the Royal Hadeans.
+	if (cfg == "ivbomb") then
+		RemoveObject(h);
+	elseif (cfg == "evmi_IH") then
+		SetEjectRatio(h, 0);
+		GiveWeapon(h, "gcvfaf_c");
+	elseif (cfg == "evsc_IH") then
+		SetEjectRatio(h, 0);
+		GiveWeapon(h, "gcrapier_c");
+	elseif (cfg == "evta_IH" or cfg == "evatu_IH") then
+		SetEjectRatio(h, 0);
+		GiveWeapon(h, "gcplasma_c");
+		GiveWeapon(h, "gcrapier_c");
+	end
 end
 
 function DeleteObject(h)
@@ -305,7 +315,7 @@ function Routine1(R, STATE)
 		local pos = GetPosition(M.Player) + SetVector(0,450,0);
 		SetPosition(M.Player, pos);
 		pos = pos + SetVector(15,-20,15);
-		M.HadeanTech = BuildObject("iveisen", 1, pos);
+		M.HadeanTech = BuildObject("eveisen", 1, pos);
 		SetObjectiveName(M.HadeanTech, "SciWizard Kranios");
 		Follow(M.HadeanTech, M.Player, 1);
 		SetObjectiveOn(M.HadeanTech);
@@ -474,7 +484,7 @@ function Routine1(R, STATE)
 		Advance(R);
 	elseif STATE == 15 then	--LOC_187
 		if GetMaxScrap(1) > 119 then
-			M.HadeanTech = BuildObject("iveisen", 1, "scion");
+			M.HadeanTech = BuildObject("eveisen", 1, "scion");
 			Goto(M.HadeanTech, M.MapSign, 1);
 			SetObjectiveName(M.HadeanTech, "SciWizard Kranios");
 			M.Position13 = GetPosition(M.MapSign) + SetVector(0, 50, 0);
