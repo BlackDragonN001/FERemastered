@@ -30,13 +30,14 @@ coneAngle = 0.4
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 6
+renderCount = 7
 renderName1 = "gntfaf_c.light"
-renderName2 = "gntfaf_c.smoke"
-renderName3 = "gntfaf_c.flame"
-renderName4 = "gntfaf_c.trail"
-renderName5 = "gntfaf_c.trail2"
-renderName6 = "gntfaf_c.sparks"
+renderName2 = "gntfaf_c.flare"
+renderName3 = "gntfaf_c.smoke"
+renderName4 = "gntfaf_c.flame"
+renderName5 = "gntfaf_c.trail"
+renderName6 = "gntfaf_c.trail2"
+renderName7 = "gntfaf_c.sparks"
 
 [Light]
 renderBase = "draw_light"
@@ -47,7 +48,18 @@ finishRadius = 15.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
-lensFlare = 1
+lensFlare = 0
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "crackle.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 63 255"
+finishColor = "255 200 63 255"
+startRadius = 0.75
+finishRadius = 0.75
+rotationRate = 1.0
+bottomInteractsWithTerrain = false
 
 [Flame]
 renderBase = "draw_twirl_trail"
@@ -60,7 +72,7 @@ finishRadius = 0.01
 animateTime = 0.1
 emitDelay = 0.001
 emitVelocity = "0.0 0.1 0.0"
-emitVariance = "2.0 2.0 2.0"
+emitVariance = "2.5 1.0 2.5"
 emitLife = 0.1
 rotationRate = 1.0
 bottomInteractsWithTerrain = false
@@ -73,11 +85,11 @@ startColor = "0 0 0 15"
 finishColor = "31 31 31 0"
 startRadius = 0.22
 finishRadius = 0.5
-animateTime = 1.7
+animateTime = 1.5
 emitDelay = 0.002
 emitVelocity = "0.0 0.5 -5.0"
 emitVariance = "0.6 0.6 0.6"
-emitLife = 1.7
+emitLife = 1.5
 rotationRate = 2.0
 bottomInteractsWithTerrain = false
 
