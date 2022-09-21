@@ -118,9 +118,9 @@ ContinueEvenIfFail = true
 [Plan11]
 planType = "Upgrade"
 planPriority = 900
-unitType = "UpgradeKiln"
+unitType = "fbkiln_c"
 planCondition = "Lua"
-LuaFunction = "UpgradeFirstExtractor"
+LuaFunction = "UpgradeKiln"
 
 [Plan12] // Build a Gun Spire.
 planType = "BaseBuildMinimums"

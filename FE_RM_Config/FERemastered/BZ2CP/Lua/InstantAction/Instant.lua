@@ -2,7 +2,7 @@
 	Summary: BZCC FE Instant Action Mission Script 
 	Author: JJ (AI_Unit)
 	Version: 1.0 
-	Last modified: 11/09/2022 
+	Last modified: 21/09/2022 
 --]]
 
 -- File find fix.
@@ -22,7 +22,6 @@ local endDelta = 10.0;
 
 -- Game TPS.
 local m_GameTPS = 20;
-
 
 -- IA Starting Vehicle handles.
 local StartingVehicleTable = 
@@ -84,7 +83,7 @@ local Mission =
 	m_SetFirstAIP = false,     -- For SetPlan() taunts.
     m_PlayerRespawnEnabled = false,     -- If player respawn is enabled.
 	m_SentFirstCPUScavToPool = false, 	-- To help the CPU, this flag will send the first spawned CPU Scav to a pool before Recycler deployment.
-	StopAddToDispatch = true, 	-- Halt the dispatcher until we're ready. This must be Saved so things will work correctly on a Load.
+	m_StopAddToDispatch = true, 	-- Halt the dispatcher until we're ready. This must be Saved so things will work correctly on a Load.
 	m_EnemyRecycler = nil, -- CPU Recycler.
 	m_Recycler = nil, -- Human Recycler.
 	m_MapPools = {}, 	-- Keep track of the maps pools.
@@ -153,28 +152,27 @@ function AddObject(h)
 	local ObjClass = GetClassLabel(h);
 	
 	-- Add Dispatcher for CPU units. (Include even players units, in case an AI enemy pilot hops into an empty ship. -GBD)
-	if (not StopAddToDispatch) then
+	if (not Mission.m_StopAddToDispatch) then
 		AddToDispatch(h, 15.0, false, 0, false, false, true, true);
 	end
 
     -- Check CPU stuff.
-    if (teamNum == Mission.m_CPUTeamNum) then
-		
+    if (teamNum == Mission.m_CPUTeamNum) then		
 		--Spice things up.
 		if (ObjClass == "CLASS_RECYCLER") then
-		-- Be mean. (Moved to Recy deployment so Objectives don't hide it. -GBD
+			-- Be mean. (Moved to Recy deployment so Objectives don't hide it. -GBD
 			DoTaunt(TAUNTS_GameStart);
 		elseif(ObjClass == "CLASS_SCAVENGER") or (ObjClass == "CLASS_SCAVENGERH") then
 			DoTaunt(TAUNTS_Random);
 		end
 
 		-- CPU "Commander" pilots.
-		if (ODFName == "ivcmdr_c" or ODFName == "iscmdr_c") then
+		if (ODFName == (Mission.m_CPURace .. "vcmdr_c") or ODFName == (Mission.m_CPURace .. "scmdr_c")) then
 			SetSkill(h, 3); -- Set Commander maximum skill to 3.
 
 			-- TODO: Make the above check only for PARTIAL match, skip first RACE letter (only works for ISDF atm) -GBD
 			-- Also maybe just use a _config.odf?
-			if (ODFName == "iscmdr_c") then
+			if (ODFName == (Mission.m_CPURace .. "scmdr_c")) then
 				local selectedWeaponsTable;
 				local selectedPackTable;
 
@@ -260,19 +258,16 @@ function Update()
     _FECore.Update();
 	
 	-- Test win conditions.
-	TestGameOver();
+	-- TestGameOver();
 end
 
 -- Handle win conditions.
 function TestGameOver()
-	
-	if not Mission.m_GameOver then
-	
-		if (not IsAround(Mission.m_EnemyRecycler)) then
-		
+	if (not Mission.m_GameOver) then
+		if (not IsAround(Mission.m_EnemyRecycler)) then	
 			local tempH = GetObjectByTeamSlot(Mission.m_CPUTeamNum, DLL_TEAM_SLOT_RECYCLER);
 			
-			if(tempH ~= nil) then
+			if (tempH ~= nil) then
 				Mission.m_EnemyRecycler = tempH; -- Save it.
 			else
 				DoTaunt(TAUNTS_CPURecyDestroyed);
@@ -282,10 +277,9 @@ function TestGameOver()
 		end
 		
 		if (not IsAround(Mission.m_Recycler)) then
-
 			local tempH = GetObjectByTeamSlot(Mission.m_HumanTeamNum, DLL_TEAM_SLOT_RECYCLER);
 			
-			if(tempH ~= 0) then
+			if (tempH ~= 0) then
 				Mission.m_Recycler = tempH; -- Save it.
 			else
 				DoTaunt(TAUNTS_HumanRecyDestroyed);
@@ -294,7 +288,6 @@ function TestGameOver()
 			end
 		end
 	end
-	
 end
 
 -- Setup the player.
@@ -396,7 +389,7 @@ function SetAIPlan(team)
 	-- Set the AIP Plans.
 	SetAIP(planName, team);
 	
-	if(m_SetFirstAIP) then
+	if (m_SetFirstAIP) then
 		DoTaunt(TAUNTS_Random);
 	end
 	
@@ -498,7 +491,7 @@ function SpawnTeamExtraVehicles(Team, Race, Pos, Force)
 		end
 
 		-- Allow the dispatcher to continue...
-		StopAddToDispatch = false;
+		Mission.m_StopAddToDispatch = false;
 	end
 end
 
