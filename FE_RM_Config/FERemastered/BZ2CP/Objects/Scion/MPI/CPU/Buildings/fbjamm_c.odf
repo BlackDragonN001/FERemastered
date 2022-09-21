@@ -1,24 +1,21 @@
 [GameObjectClass]
-classLabel = "ibcbun"
-UseCollisionMeshForPathing = 1
+classLabel = "fbjamm"
 
 /////// REQUIREMENTS ///////////////
 
-requireName1 = "ibpgen_c"
+requireName1 = "fbover_c"
 
 ////////////////////////////////////
 
 /////// PROVIDES ///////////////////
 
 provideCount = 4
-provideName4 = "ibcbun_c"
+provideName4 = "fbjamm_c"
 
 ////////////////////////////////////
 
-[BuildingClass]
-
-[CommBunkerClass]
-
 [PoweredBuildingClass]
 
-[Lod1]
+[BuildingClass]
+
+[JammerTowerClass]

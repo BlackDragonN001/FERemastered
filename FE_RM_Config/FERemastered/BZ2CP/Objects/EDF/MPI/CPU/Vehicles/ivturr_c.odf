@@ -1,13 +1,16 @@
 [GameObjectClass]
 classLabel = "ivturr"
-ejectRatio = 1
 PilotConfig = "ispilo_c"
 
 /////// PROVIDES ///////////////////
+
 provideCount = 3
 provideName3 = "ivturr_c"
 
+////////////////////////////////////
+
 [CraftClass]
+ejectRatio = 1
 
 [HoverCraftClass]
 

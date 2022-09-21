@@ -1,17 +1,27 @@
 [GameObjectClass]
 classLabel = "ibgtow"
+UseCollisionMeshForPathing = 1
+
 powerCost = 0
+
 buildSupport = "A"
 buildRequire = "F"
+
 isLimited = 0
 needLimit = 0
 
 /////// REQUIRES ///////////////////
+
 requireCount = 0
 
+////////////////////////////////////
+
 /////// PROVIDES ///////////////////
+
 provideCount = 4
 provideName4 = "ibgtow_c"
+
+////////////////////////////////////
 
 [BuildingClass]
 

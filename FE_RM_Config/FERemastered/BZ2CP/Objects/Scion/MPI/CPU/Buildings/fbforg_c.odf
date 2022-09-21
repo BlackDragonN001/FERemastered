@@ -1,0 +1,30 @@
+[GameObjectClass]
+classLabel = "fbforg"
+
+/////// REQUIREMENTS ///////////////
+
+requireName1 = "fbkiln_c"
+
+////////////////////////////////////
+
+/////// PROVIDES ///////////////////
+
+provideCount = 7
+provideName6 = "fbkiln_c"
+provideName7 = "fbforg_c"
+
+////////////////////////////////////
+
+[PoweredBuildingClass]
+
+[BuildingClass]
+
+[FactoryClass]
+buildItem1 = "fvsent_c"
+buildItem2 = "fvarch_c"
+buildItem3 = "fvtank_c"
+buildItem4 = "fvartl_c"
+buildItem5 = "fvwalk_c"
+buildItem6 = "fvatank_c"
+
+[Lod1]

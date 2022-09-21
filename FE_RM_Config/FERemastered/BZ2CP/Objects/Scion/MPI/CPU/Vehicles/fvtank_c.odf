@@ -1,24 +1,25 @@
 [GameObjectClass]
-classLabel = "ibcbun"
-UseCollisionMeshForPathing = 1
+classLabel = "fvtank"
+PilotConfig = "fspilo_c"
 
 /////// REQUIREMENTS ///////////////
 
-requireName1 = "ibpgen_c"
+requireName1 = "fbforg_c"
 
 ////////////////////////////////////
 
 /////// PROVIDES ///////////////////
 
 provideCount = 4
-provideName4 = "ibcbun_c"
+provideName4 = "fvtank_c"
 
 ////////////////////////////////////
 
-[BuildingClass]
+[CraftClass]
+ejectRatio = 1
 
-[CommBunkerClass]
-
-[PoweredBuildingClass]
+[HoverCraftClass]
 
 [Lod1]
+
+[Lod2]

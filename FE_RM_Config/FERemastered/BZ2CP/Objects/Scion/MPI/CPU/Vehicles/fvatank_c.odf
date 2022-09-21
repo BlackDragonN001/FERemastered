@@ -1,19 +1,19 @@
 [GameObjectClass]
-classLabel = "ivatank"
-PilotConfig = "ispilo_c"
+classLabel = "fvatank"
+PilotConfig = "fspilo_c"
 
 /////// REQUIREMENTS ///////////////
 
-requireName1 = "ibfact_c"
-requireName2 = "ibcbun_c"
-requireName3 = "ibsbay_c"
+requireName1 = "fbforg_c"
+requireName2 = "fbover_c"
+requireName3 = "fbstro_c"
 
 ////////////////////////////////////
 
 /////// PROVIDES ///////////////////
 
 provideCount = 5
-provideName5 = "ivatank_c"
+provideName5 = "fvatank_c"
 
 ////////////////////////////////////
 

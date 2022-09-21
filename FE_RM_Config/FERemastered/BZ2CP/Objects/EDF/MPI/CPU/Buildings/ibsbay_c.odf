@@ -1,14 +1,19 @@
 [GameObjectClass]
 classLabel = "ibsbay"
+UseCollisionMeshForPathing = 1
 
 /////// REQUIREMENTS ///////////////
-requireCount = 1
+
 requireName1 = "ibfact_c"
-requireText1 = "Build Factory"
+
+////////////////////////////////////
 
 /////// PROVIDES ///////////////////
+
 provideCount = 4
 provideName1 = "ibsbay_c"
+
+////////////////////////////////////
 
 [PoweredBuildingClass]
 

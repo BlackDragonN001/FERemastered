@@ -1,26 +1,23 @@
 [GameObjectClass]
-classLabel = "ivapc"
-PilotConfig = "ispilo_c"
+classLabel = "fvwalk"
+PilotConfig = "fspilo_c"
 
 /////// REQUIREMENTS ///////////////
 
-requireName1 = "ibfact_c"
-requireName2 = "ibtrain_c"
+requireName1 = "fbforg_c"
+requireName2 = "fbdowe_c"
+requireName3 = "fbstro_c"
 
 ////////////////////////////////////
 
 /////// PROVIDES ///////////////////
 
-provideCount = 4
-provideName1 = "ivapc_c"
+provideCount = 5
+provideName1 = "fvwalk_c"
 
 ////////////////////////////////////
 
 [CraftClass]
 ejectRatio = 1
 
-[HoverCraftClass]
-
-[APCClass]
-
-[Lod1]
+[WalkerClass]

@@ -38,7 +38,7 @@ local StartingVehicleTable =
 local CommanderPilotWeapons = 
 {
 	["EDF"] = {"igbzka_c", "igshot_c", "igsnip_c"},
-	["Scion"] = {},
+	["Scion"] = {"fgbzka_c", "fgsnip_c"},
 	["Hadean"] = {}
 }
 
@@ -46,8 +46,16 @@ local CommanderPilotWeapons =
 local CommandPilotPacks = 
 {
 	["EDF"] = {"igjetp", "iggren"},
-	["Scion"] = {},
+	["Scion"] = {"fgjetp", "fggren"},
 	["Hadean"] = {}
+}
+
+-- CPU paths for base building.
+local CPUPaths = 
+{
+	"pgen1_edf", "pgen2_edf", "pgen3_edf", "pgen4_edf", "factory_edf", "armory_edf", "bunker_edf", "sbay_edf", "base_gtow1_edf", "base_gtow2_edf", "base_gtow3_edf", "base_gtow4_edf",
+	"training_edf", "tech_edf", "bomber_edf", "kiln_scion", "stro_scion", "dowe_scion", "jammer_scion", "base_spire1_scion", "base_spire2_scion", "base_spire3_scion", "base_spire4_scion",
+	"ante_scion"
 }
 
 -- Let's spice things up with the AI kicking off if no base building paths are found.
@@ -132,7 +140,7 @@ end
 -- Function for creating and displaying generic objective.
 function CreateObjectives()
 	ClearObjectives();
-	AddObjective("InstantAction.otf", "WHITE", 5.0);
+	AddObjective("InstantAction.otf", "WHITE", -1);
 end
 
 -- Pre-game initial setup.
@@ -153,8 +161,9 @@ function InitialSetup()
 	CreateObjectives();
 
 	-- Preload some ODFs.
-	PreloadODF("ivrecy_c");
-	PreloadODF("ivrecy_t");
+	PreloadODF("ivrecy_m");
+	PreloadODF("fvrecy_m");
+	PreloadODF("evrecy_m");
 end
 
 -- Handle when an object is added to the world.
@@ -174,11 +183,14 @@ function AddObject(h)
 			AddToDispatch(h, 15.0, false, 0, false, false, true, true);
 		end
 
-		if (ODFName == "ivcmdr_c" or ODFName == "iscmdr_c") then
+		if (ODFName == "ivcmdr_c" or ODFName == "iscmdr_c" 
+			or ODFName == "fvcmdr_c" or ODFName == "fscmdr_c"
+			or ODFName == "evcmdr_c" or ODFName == "escmdr_c"
+			or ODFName == "cvcmdr_c") then
 			-- Set Commander maximum skill to 3.
 			SetSkill(h, 3);
 
-			if (ODFName == "iscmdr_c") then
+			if (ODFName == "iscmdr_c" or ODFName == "fscmdr_c") then
 				local selectedWeaponsTable;
 				local selectedPackTable;
 
@@ -209,15 +221,11 @@ function AddObject(h)
 			-- Replace the CPU natural extractor as we're using a different ODF.
 			if (ODFName == "ibscav") then
 				ReplaceObject(h, "ibscav_c");
+			elseif (ODFName == "fbscav") then
+				ReplaceObject(h, "fbscav_c");
 			end
 		end
     end
-
-	if (ODFName == "ibrecy_m") then
-		local pos = GetTransform(h);
-
-		print(pos);
-	end
 
     -- Per standard FE behaviour, highlight the Service Bay.
     if (teamNum == Mission.m_HumanTeamNum and ObjClass == "CLASS_SUPPLYDEPOT") then
@@ -257,7 +265,7 @@ function Start()
 	AddPilotByHandle(PlayerH);
 
 	-- Be mean.
-	DoTaunt(1);
+	DoTaunt(TAUNTS_GameStart);
 end
 
 -- Called per tick.
@@ -318,6 +326,33 @@ function SetupCPU(Team)
 	
 	-- Set a plan.
 	SetAIPlan(Team);
+
+	-- Scold the map if there are no path points.
+	local paths = GetAiPaths();
+	local pathsExist = true;
+
+	-- Check if any of the paths listed 
+	for i = 1, #CPUPaths do
+		local path = CPUPaths[i];
+
+		if (path ~= nil) then
+			pathsExist = false;
+
+			for j = 1, #paths do
+				local aiPath = paths[j];
+	
+				if (aiPath == path) then
+					pathsExist = true;
+					break;
+				end
+			end
+		end
+	end
+
+	-- Post a message to the chat.
+	if (not pathsExist) then
+		AddToMessagesBox("Computer: " .. NoPathsResponse[math.floor(GetRandomFloat(1, #NoPathsResponse))]);
+	end
 end
 
 -- TODO: Move to core to be used universally?
@@ -340,7 +375,7 @@ end
 -- TODO: Move to core to be used universally?
 function GetInitialRecyclerODF(Race);
 	local TempODFName = nil;
-	local pContents = GetCheckedNetworkSvar(5, NETLIST_Recyclers);
+	local pContents = GetCheckedNetworkSvar(2, NETLIST_Recyclers);
 
 	if ((pContents ~= nil) and (pContents ~= "")) then
 		TempODFName = Race .. string.sub(pContents, 2);

@@ -1,18 +1,18 @@
 [GameObjectClass]
-classLabel = "ivapc"
-PilotConfig = "ispilo_c"
+classLabel = "fvartl"
+PilotConfig = "fspilo_c"
 
 /////// REQUIREMENTS ///////////////
 
-requireName1 = "ibfact_c"
-requireName2 = "ibtrain_c"
+requireName1 = "fbforg_c"
+requireName2 = "fbover_c"
 
 ////////////////////////////////////
 
 /////// PROVIDES ///////////////////
 
-provideCount = 4
-provideName1 = "ivapc_c"
+provideCount = 5
+provideName5 = "fvartl_c"
 
 ////////////////////////////////////
 
@@ -21,6 +21,6 @@ ejectRatio = 1
 
 [HoverCraftClass]
 
-[APCClass]
+[ArtilleryClass]
 
-[Lod1]
+[DeployableClass]

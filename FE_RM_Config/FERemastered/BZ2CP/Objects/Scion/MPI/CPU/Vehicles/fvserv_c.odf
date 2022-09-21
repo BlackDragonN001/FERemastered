@@ -1,26 +1,32 @@
 [GameObjectClass]
-classLabel = "ivapc"
-PilotConfig = "ispilo_c"
+classLabel = "fvserv"
 
 /////// REQUIREMENTS ///////////////
 
-requireName1 = "ibfact_c"
-requireName2 = "ibtrain_c"
+requireName1 = "fbdowe_c"
 
 ////////////////////////////////////
 
 /////// PROVIDES ///////////////////
 
 provideCount = 4
-provideName1 = "ivapc_c"
+provideName4 = "fvserv_c"
 
 ////////////////////////////////////
 
 [CraftClass]
-ejectRatio = 1
+engageRange = 75.0
 
-[HoverCraftClass]
+[TrackedVehicleClass]
 
-[APCClass]
+[ServiceTruck]
+serviceSTs = 1
+serviceBuildings = 1
+
+[Supply]
+
+[Halo]
+
+[Bolt]
 
 [Lod1]

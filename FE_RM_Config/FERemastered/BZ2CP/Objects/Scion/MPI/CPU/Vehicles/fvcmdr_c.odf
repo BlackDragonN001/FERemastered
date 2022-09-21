@@ -1,14 +1,13 @@
 [GameObjectClass]
-classLabel = "ivscout"
+classLabel = "fvsent"
+
 addAmmo = 15
-aiName = "SentryProcess"
-aiName2 = "SentryProcess"
 scrapCost = 0
 
-unitName = "Commander"
+unitName = "Admiral"
 armorClass = H
 
-PilotConfig = "iscmdr_c"
+PilotConfig = "fscmdr_c"
 
 /////// REQUIREMENTS ///////////////
 
@@ -19,7 +18,7 @@ requireCount = 0
 /////// PROVIDES ///////////////////
 
 provideCount = 4
-provideName4 = "ivcmdr_c"
+provideName4 = "fvcmdr_c"
 
 ////////////////////////////////////
 
@@ -33,10 +32,21 @@ evadeOrdnanceFactor3 = 40
 evadeRandomFactor3 = 40
 filterFactor3 = 1
 
+ejectRatio = 1
+
 AIOnly = true
+
+// COMBAT MODE /////////////////////
 
 [HoverCraftClass]
 
-[Lod1]
+////////////////////////////////////
 
-[Lod2]
+// ASSAULT MODE ////////////////////
+
+[MorphTankClass]
+unitName = "Admiral"
+
+////////////////////////////////////
+
+[DeployableClass]

@@ -1,13 +1,16 @@
 [GameObjectClass]
 classLabel = "ivscout"
-
 PilotConfig = "ispilo_c"
 
 /////// PROVIDES ///////////////////
+
 provideCount = 4
 provideName4 = "ivscout_c"
 
+////////////////////////////////////
+
 [CraftClass]
+ejectRatio = 1
 
 [HoverCraftClass]
 

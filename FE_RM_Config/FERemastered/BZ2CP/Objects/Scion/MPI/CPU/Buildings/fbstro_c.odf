@@ -1,23 +1,22 @@
 [GameObjectClass]
-classLabel = "ibarmo"
-UseCollisionMeshForPathing = 1
+classLabel = "fbstro"
 
 /////// REQUIREMENTS ///////////////
 
-requireName1 = "ibfact_c"
+requireName1 = "fbforg_c"
 
 ////////////////////////////////////
 
 /////// PROVIDES ///////////////////
 
-provideCount = 4
-provideName4 = "ibarmo_c"
+provideCount = 5
+provideName1 = "fbstro_c"
 
 ////////////////////////////////////
 
-[BuildingClass]
-
 [PoweredBuildingClass]
+
+[BuildingClass]
 
 [ArmoryClass]
 
@@ -35,4 +34,6 @@ provideName4 = "ibarmo_c"
 
 [ArmoryGroup7]
 
-[steam]
+[ArmoryGroup8]
+
+[Lod1]

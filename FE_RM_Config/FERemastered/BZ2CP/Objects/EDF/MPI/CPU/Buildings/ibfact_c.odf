@@ -3,13 +3,17 @@ classLabel = "ibfact"
 UseCollisionMeshForPathing = 1
 
 /////// REQUIREMENTS ///////////////
-requireCount = 1
+
 requireName1 = "ibpgen_c"
-requireText1 = "Build Power"
+
+////////////////////////////////////
 
 /////// PROVIDES ///////////////////
+
 provideCount = 3
 provideName3 = "ibfact_c"
+
+////////////////////////////////////
 
 [PoweredBuildingClass]
 

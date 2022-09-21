@@ -1,24 +1,23 @@
 [GameObjectClass]
-classLabel = "ibcbun"
-UseCollisionMeshForPathing = 1
+classLabel = "fbdowe"
 
 /////// REQUIREMENTS ///////////////
 
-requireName1 = "ibpgen_c"
+requireName1 = "fbkiln_c"
 
 ////////////////////////////////////
 
 /////// PROVIDES ///////////////////
 
-provideCount = 4
-provideName4 = "ibcbun_c"
+provideCount = 5
+provideName5 = "fbdowe_c"
 
 ////////////////////////////////////
 
 [BuildingClass]
 
-[CommBunkerClass]
-
 [PoweredBuildingClass]
+
+[SupplyDepotClass]
 
 [Lod1]

@@ -1,11 +1,11 @@
 [GameObjectClass]
-classLabel = "ivmisl"
-PilotConfig = "ispilo_c"
+classLabel = "fvturr"
+PilotConfig = "fspilo_c"
 
 /////// PROVIDES ///////////////////
 
-provideCount = 4
-provideName4 = "ivmisl_c"
+provideCount = 3
+provideName3 = "fvturr_c"
 
 ////////////////////////////////////
 
@@ -14,6 +14,6 @@ ejectRatio = 1
 
 [HoverCraftClass]
 
-[Lod1]
+[DeployableClass]
 
-[Lod2]
+[TurretTankClass]

@@ -1,20 +1,21 @@
 [GameObjectClass]
 classLabel = "ivrckt"
-ejectRatio = 1
 PilotConfig = "ispilo_c"
 
-/////// REQUIREMENTS ///////////////	
-requireCount = 3
+/////// REQUIREMENTS ///////////////
+
 requireName1 = "ibfact_c"
-requireText1 = "Build Factory"
 requireName2 = "ibcbun_c"
-requireText2 = "Build Relay Bunk"
 requireName3 = "ibarmo_c"
-requireText3 = "Build Armory"
+
+////////////////////////////////////
 
 /////// PROVIDES ///////////////////
+
 provideCount = 6
 provideName6 = "ivrckt_c"
+
+////////////////////////////////////
 
 [CraftClass]
 attackTask = "AssaultTankAttack"
@@ -30,6 +31,8 @@ SitAttackAllowIndependence = true
 SitAttackAllowCounterattack = true 
 LightsOnlyWhenPiloted = true
 GotoTaskHasLeader = false
+
+ejectRatio = 1
 
 [TrackedVehicleClass]
 

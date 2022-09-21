@@ -1,24 +1,24 @@
 [GameObjectClass]
-classLabel = "ibcbun"
-UseCollisionMeshForPathing = 1
+classLabel = "fbantm"
+upgradeName = "fbover_c"
 
 /////// REQUIREMENTS ///////////////
 
-requireName1 = "ibpgen_c"
+requireName1 = "fbkiln_c"
 
 ////////////////////////////////////
 
 /////// PROVIDES ///////////////////
 
-provideCount = 4
-provideName4 = "ibcbun_c"
+provideCount = 6
+provideName6 = "fbantm_c"
 
 ////////////////////////////////////
+
+[PoweredBuildingClass]
 
 [BuildingClass]
 
 [CommBunkerClass]
-
-[PoweredBuildingClass]
 
 [Lod1]

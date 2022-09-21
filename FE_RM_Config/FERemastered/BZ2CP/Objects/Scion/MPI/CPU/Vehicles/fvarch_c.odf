@@ -1,0 +1,35 @@
+[GameObjectClass]
+classLabel = "fvarch"
+PilotConfig = "fspilo_c"
+
+/////// REQUIREMENTS ///////////////
+
+requireCount = 2
+requireName1 = "fbkiln_c"
+requireName2 = "fbantm_c"
+
+////////////////////////////////////
+
+/////// PROVIDES ///////////////////
+
+provideCount = 5
+provideName5 = "fvarch_c"
+
+////////////////////////////////////
+
+[CraftClass]
+ejectRatio = 1
+
+// COMBAT MODE /////////////////////
+
+[HoverCraftClass]
+
+////////////////////////////////////
+
+// ASSAULT MODE /////////////////////
+
+[MorphTankClass]
+
+////////////////////////////////////
+
+[DeployableClass]

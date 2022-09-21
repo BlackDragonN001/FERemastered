@@ -1,0 +1,149 @@
+// File: fercpu_f0.aip
+// Author(s): AI_Unit
+// Summary: Easy AIP plan for the Scion faction for Instant Action or MPI.
+
+[Start]
+idleAllCraft = false
+scavClass = "fvscav_c"
+consClass = "fvcons_c"
+CheckProvides = true
+DLLCanSwitch = true
+baseDir = 3
+baseLoc = "RecyclerEnemy"
+UnitsService = true
+Difficulty = 1 // 1=Easy, 2=Medium, 3=Hard, 4=Extreme
+
+[Cheat]
+moneyAmount = 3
+moneyDelay = 5
+
+[IdleDispatcher]
+ScavIdleSeconds = 5
+UnitIdleSeconds = 60
+BomberIdleSeconds = 75
+MinAttackForce = 2
+CraftTeamIsPilotTeam = true
+
+MaxPatrolUnits = 3
+MaxHuntUnits = 2
+MaxEscortUnits = 4
+
+[Plan1]
+planType = "BuildMinimums"
+planPriority = 1000
+buildType1 = "fvcmdr_c"
+buildCount1 = 1
+
+[Plan2] // Always have 2 active Scavengers for picking up loose scrap.
+planType = "BuildMinimums"
+planPriority = 990
+buildType1 = "fvscav_c"
+buildCount1 = 2
+planCondition = "Lua"
+LuaFunction = "ScavengerBuildLoopCondition"
+
+[Plan3] // Try and collect pools that are free around the map.
+planType = "CollectPool"
+planPriority = 980
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "CanCollectScrapPool"
+
+[Plan4] // Try and collect pools that are free around the map.
+planType = "CollectPool"
+planPriority = 970
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "CanCollectScrapPool"
+
+[Plan5] // Try and collect any loose scrap that is free around the map.
+planType = "CollectField"
+planPriority = 960
+planCondition = "Lua"
+LuaFunction = "CanCollectLooseScrap"
+
+[Plan6] // Build 4 turrets to be handled by the Dispatcher.
+planType = "BuildMinimums"
+planPriority = 950
+buildType1 = "fvturr_c"
+buildCount1 = 4
+planCondition = "Lua"
+LuaFunction = "TurretBuildLoopCondition"
+
+[Plan7] // Send out Scouts to attack Player during early stage.
+planType = "Attacker"
+planPriority = 940
+targetType1 = "VIRTUAL_CLASS_TURRET"
+targetType2 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType3 = "DefendUnit"
+attackType1 = "fvscout_c"
+attackType2 = "fvscout_c"
+attackType3 = "fvscout_c"
+MaxAttacks = 5
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendEarlyScoutHarassment"
+
+[Plan8] // Get our Constructors in the mix.
+planType = "BuildMinimums"
+planPriority = 930
+buildType1 = "fvcons_c"
+buildCount1 = 2
+planCondition = "Lua"
+LuaFunction = "ConstructorBuildLoopCondition"
+
+[Plan9] // Build a Kiln.
+planType = "BaseBuildMinimums"
+planPriority = 920
+buildType1 = "fbkiln_c"
+buildCount1 = 1
+buildLoc1 = "kiln_scion"
+buildHeading = -2
+planCondition = "Lua"
+LuaFunction = "BuildKiln"
+ContinueEvenIfFail = true
+
+[Plan10] // Build a Gun Spire.
+planType = "BaseBuildMinimums"
+planPriority = 910
+buildType1 = "fbspir_c"
+buildCount1 = 1
+buildLoc1 = "base_spire1_scion"
+buildHeading = -2
+planCondition = "Lua"
+LuaFunction = "BuildBaseGunSpire"
+ContinueEvenIfFail = true
+
+[Plan11]
+planType = "Upgrade"
+planPriority = 900
+unitType = "UpgradeKiln"
+planCondition = "Lua"
+LuaFunction = "UpgradeFirstExtractor"
+
+[Plan12] // Build a Gun Spire.
+planType = "BaseBuildMinimums"
+planPriority = 890
+buildType1 = "fbspir_c"
+buildCount1 = 1
+buildLoc1 = "base_spire2_scion"
+buildHeading = -2
+planCondition = "Lua"
+LuaFunction = "BuildBaseGunSpire"
+ContinueEvenIfFail = true
+
+[Plan13]
+planType = "Attacker"
+planPriority = 880
+targetType1 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType2 = "VIRTUAL_CLASS_TURRET"
+targetType3 = "VIRTUAL_CLASS_RECYCLER"
+targetType4 = "DefendUnit"
+attackType1 = "fvsent_c"
+attackType2 = "fvsent_c"
+MaxAttacks = 6
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendMediumHarassment"
