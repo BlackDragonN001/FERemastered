@@ -1,6 +1,5 @@
 [GameObjectClass]
 classLabel = "ibrecy"
-UseCollisionMeshForPathing = 1
 
 /////// PROVIDES ///////////////////
 
@@ -18,11 +17,7 @@ soundBuild = "AVRECYE3.WAV"
 soundFinish = "AVRECYE5.WAV"
 
 buildItem1 = "ivscav_c"
-buildItem2 = "ivscout_c"
-buildItem3 = "ivturr_c"
 buildItem6 = "ivserv_c"
-buildItem8 = "ivscout_m"
-buildEmptyItem = 8
 
 [BuildGroup5]
 buildLabel = "Constructors"

@@ -200,6 +200,11 @@ function AddObject(h)
 			-- Set the skill of all enemy units based on IA difficulty.
 			SetSkill(h, Mission.m_Difficulty + 1);
 
+			-- Give the CPU a custom pilot config.
+			if (not IsBuilding(h)) then
+				SetPilotClass(h, Mission.m_CPURace .. "spilo_c");
+			end
+
 			-- Replace the CPU natural extractor as we're using a different ODF.
 			-- Remind me to poke this later... -GBD
 			if (ODFName == "ibscav") then
@@ -453,18 +458,6 @@ function SpawnTeamExtraVehicles(Team, Race, Pos, Force)
 		-- Generate a position around given Pos vector.
 		local pos = GetPositionNear(Pos, VEHICLE_SPACING_DISTANCE * 1.25, VEHICLE_SPACING_DISTANCE * 1.25);
 		
-		-- If the team is the CPU team, append _c to the ODF name.
-		if (Team == Mission.m_CPUTeamNum) then
-			if (i > 0 and i < 3) then
-				pos = GetPosition("turretEnemy" .. i);
-			end
-
-			-- Do not include Scavs in this modification otherwise it'll break the
-			if (h ~= Race .. "vscav") then
-				h = h .."_c";
-			end
-		end
-
 		-- Finally, build it!
 		local vehicle = BuildObject(h, Team, pos);
 
@@ -484,7 +477,7 @@ function SpawnTeamExtraVehicles(Team, Race, Pos, Force)
 	-- If we're the CPU team, spawn turrets around the map based on difficulty.
 	if (Team == Mission.m_CPUTeamNum) then
 		for i = 1, Mission.m_Difficulty + 2 do
-			local h = BuildObject(Race .. "vturr_c", Mission.m_CPUTeamNum, "hold" .. i);
+			local h = BuildObject(Race .. "vturr", Mission.m_CPUTeamNum, "hold" .. i);
 
 			-- Set Label to stop dispatcher from doing stuff with these units.
 			SetLabel(h, "nodispatch");
