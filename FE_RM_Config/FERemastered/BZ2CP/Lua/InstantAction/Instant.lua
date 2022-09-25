@@ -213,10 +213,6 @@ function AddObject(h)
 				ReplaceObject(h, "fbscav_c");
 			end
 		end
-    elseif (teamNum == Mission.m_HumanTeamNum) then
-		if (ObjClass == "CLASS_SUPPLYDEPOT") then -- Did original FE do this? -GBD
-			SetObjectiveOn(h);
-		end
 	elseif (teamNum == 0) then
 		-- Keep track of the map pools.
 		if (ObjClass == "CLASS_DEPOSIT") then
@@ -314,7 +310,10 @@ function SetupPlayer()
 	SetRandomHeadingAngle(PlayerH);
 
 	-- Build recycler some distance away, if it's not preplaced on the map.
-	Mission.m_Recycler = SpawnTeamRecycler(Mission.m_HumanTeamNum, Mission.m_HumanRace, spawnpointPosition);
+	local chosenPlayerRecy = IFace_GetString("options.instant.string1");
+	chosenPlayerRecy = Mission.m_HumanRace .. chosenPlayerRecy:sub(2);
+
+	Mission.m_Recycler = BuildObject(chosenPlayerRecy, Mission.m_HumanTeamNum, GetPositionNear(spawnpointPosition, VEHICLE_SPACING_DISTANCE * 1.25, VEHICLE_SPACING_DISTANCE * 1.25));
 	SetGroup(Mission.m_Recycler, 0);
 
 	-- Spawn extra Human vehicles.
@@ -338,7 +337,10 @@ function SetupCPU(Team)
 	local spawnpointPosition = GetPosition("RecyclerEnemy");
 
 	-- Build recycler some distance away, if it's not preplaced on the map.
-	Mission.m_EnemyRecycler = SpawnTeamRecycler(Mission.m_CPUTeamNum, Mission.m_CPURace, spawnpointPosition);
+	local chosenEnemyRecy = IFace_GetString("options.instant.string2");
+	chosenEnemyRecy = Mission.m_CPURace .. chosenEnemyRecy:sub(2);
+
+	Mission.m_EnemyRecycler = BuildObject(chosenEnemyRecy, Mission.m_CPUTeamNum, spawnpointPosition);
 	SetGroup(Mission.m_EnemyRecycler, 0);
 
 	-- Spawn extra CPU vehicles.
@@ -394,47 +396,11 @@ function SetAIPlan(team)
 	-- Set the AIP Plans.
 	SetAIP(planName, team);
 	
-	if (m_SetFirstAIP) then
+	if (not Mission.m_SetFirstAIP) then
 		DoTaunt(TAUNTS_Random);
 	end
 	
-	m_SetFirstAIP = true;
-end
-
--- TODO: Move to core to be used universally?
-function GetInitialRecyclerODF(Race);
-	local TempODFName = nil;
-	local pContents = GetCheckedNetworkSvar(2, NETLIST_Recyclers);
-
-	if ((pContents ~= nil) and (pContents ~= "")) then
-		TempODFName = Race .. string.sub(pContents, 2);
-	else
-		TempODFName = Race .. "vrecy_m";
-	end
-
-	return TempODFName;
-end
-
--- TODO: Move to core to be used universally?
-function SpawnTeamRecycler(Team, Race, Pos)
-	-- Return early.
-	if ((Team < 1) or (Team >= MAX_TEAMS)) then
-		return;
-	end
-
-	-- Return early.
-	if (Race == nil) then
-		return;
-	end
-	
-	local VehicleH = nil;
-
-	-- Build the team Recycler.
-	if (GetObjectByTeamSlot(Team, DLL_TEAM_SLOT_RECYCLER) == nil) then
-		VehicleH = BuildObject(GetInitialRecyclerODF(Race), Team, GetPositionNear(Pos, VEHICLE_SPACING_DISTANCE, 2 * VEHICLE_SPACING_DISTANCE));
-	end
-	
-	return VehicleH;
+	Mission.m_SetFirstAIP = true;
 end
 
 -- TODO: Move to core to be used universally?

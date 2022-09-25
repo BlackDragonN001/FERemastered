@@ -120,6 +120,28 @@ function GunTowerConstructorBuildLoopCondition(team, time)
     end
 end
 
+-- Condition for letting the CPU build a Bomber.
+function BomberBuildLoopCondition(team, time)
+    -- Get my scrap in a local variable.
+    local myScrap = AIPUtil.GetScrap(team, true);
+
+    -- Does the Recycler exist?
+    local factoryExists = DoesFactoryExist(team, time);
+
+    -- Does the Bomber Bay exist?
+    local bomberBayExists = DoesBomberBayExist(team, time);
+
+    -- Does a Bomber already exist?
+    local bomberExists = DoesBomberExist(team, time);
+
+    -- If the conditions above are true, let the AIP build a Turret.
+    if (myScrap >= 75 and factoryExists and bomberBayExists and not bomberExists) then
+        return true, "BomberBuildLoopCondition: Conditions met. Proceeding...";
+    else
+        return false, "BomberBuildLoopCondition: Conditions unmet. Halting plan.";
+    end
+end
+
 -- Allow the CPU to build a Gun Tower on the gtow1 path.
 function BuildGunTower1(team, time)
     -- Get my scrap in a local variable.
@@ -217,7 +239,7 @@ function BuildFactory(team, time)
     -- Check if Factory exists.
     local factoryExists = DoesFactoryExist(team, time);
 
-    -- If the conditions above are true, let the AIP build a Power Plant.
+    -- If the conditions above are true, let the AIP build a Factory.
     if (myScrap >= 55 and cpuConsCount > 0 and powerCount > 0 and not factoryExists) then
         return true, "BuildFactory: Conditions met. Proceeding...";
     else
@@ -236,10 +258,10 @@ function BuildArmory(team, time)
     -- Check our Power levels.
     local powerCount = AIPUtil.GetPower(team, true);
 
-    -- Check if Factory exists.
+    -- Check if Armory exists.
     local armoryExists = DoesArmoryExist(team, time);
 
-    -- If the conditions above are true, let the AIP build a Power Plant.
+    -- If the conditions above are true, let the AIP build an Armory.
     if (myScrap >= 60 and cpuConsCount > 0 and powerCount > 0 and not armoryExists) then
         return true, "BuildArmory: Conditions met. Proceeding...";
     else
@@ -261,7 +283,7 @@ function BuildCommBunker(team, time)
     -- Check if Comm Bunker exists.
     local commBunkerExists = DoesCommBunkerExist(team, time);
 
-    -- If the conditions above are true, let the AIP build a Power Plant.
+    -- If the conditions above are true, let the AIP build a Comm Bunker.
     if (myScrap >= 50 and cpuConsCount > 0 and powerCount > 0 and not commBunkerExists) then
         return true, "BuildCommBunker: Conditions met. Proceeding...";
     else
@@ -283,7 +305,7 @@ function BuildServiceBay(team, time)
     -- Check if Service Bay exists.
     local serviceBayExists = DoesServiceBayExist(team, time);
 
-    -- If the conditions above are true, let the AIP build a Power Plant.
+    -- If the conditions above are true, let the AIP build a Service Bay.
     if (myScrap >= 50 and cpuConsCount > 0 and powerCount > 0 and not serviceBayExists) then
         return true, "BuildServiceBay: Conditions met. Proceeding...";
     else
@@ -291,7 +313,7 @@ function BuildServiceBay(team, time)
     end
 end
 
--- Allow the CPU to build a Service Bay
+-- Allow the CPU to build a Training Center
 function BuildTraningCenter(team, time)
     -- Get my scrap in a local variable.
     local myScrap = AIPUtil.GetScrap(team, true);
@@ -302,14 +324,36 @@ function BuildTraningCenter(team, time)
     -- Check our Power levels.
     local powerCount = AIPUtil.GetPower(team, true);
 
-    -- Check if Service Bay exists.
+    -- Check if Training Center exists.
     local trainingCenterExists = DoesTrainingCenterExist(team, time);
 
-    -- If the conditions above are true, let the AIP build a Power Plant.
+    -- If the conditions above are true, let the AIP build a Training Center.
     if (myScrap >= 70 and cpuConsCount > 0 and powerCount > 0 and not trainingCenterExists) then
         return true, "BuildTraningCenter: Conditions met. Proceeding...";
     else
         return false, "BuildTraningCenter: Conditions unmet. Halting plan.";
+    end
+end
+
+-- Allow the CPU to build a Bomber Bay
+function BuildBomberBay(team, time)
+    -- Get my scrap in a local variable.
+    local myScrap = AIPUtil.GetScrap(team, true);
+
+    -- Count CPU constructors.
+    local cpuConsCount = CountCPUConstructors(team, time);
+
+    -- Check our Power levels.
+    local powerCount = AIPUtil.GetPower(team, true);
+
+    -- Check if Bomber Bay exists.
+    local bomberBayExists = DoesBomberBayExist(team, time);
+
+    -- If the conditions above are true, let the AIP build a Bomber Bay.
+    if (myScrap >= 100 and cpuConsCount > 0 and powerCount > 0 and not bomberBayExists) then
+        return true, "BuildBomberBay: Conditions met. Proceeding...";
+    else
+        return false, "BuildBomberBay: Conditions unmet. Halting plan.";
     end
 end
 
@@ -378,9 +422,19 @@ function DoesCommBunkerExist(team, time)
     return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_COMMBUNKER", 'sameteam', true) > 0;
 end
 
--- Checks if the Service Bay exists.
+-- Checks if the Training Center exists.
 function DoesTrainingCenterExist(team, time)
     return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_BARRACKS", 'sameteam', true) > 0;
+end
+
+-- Checks if the Bomber Bay exists.
+function DoesBomberBayExist(team, time)
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_BOMBERBAY", 'sameteam', true) > 0;
+end
+
+-- Checks if the Bomber exists.
+function DoesBomberExist(team, time)
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_BOMBER", 'sameteam', true) > 0;
 end
 
 -- Checks how many Scavengers the CPU has.
@@ -573,12 +627,13 @@ function SendGunTowerAttacks(team, time)
     -- Check if any of the following conditions are met before trying to attack Gun Towers.
     local tanksAvailable = SendTankHarassment(team, time);
     local assaultAvailable = SendAssaultHarassment(team, time);
+    local airAvailable = SendAPCAttacks(team, time);
 
     -- Check if the human team has any Gun Towers.
     local humanHasGunTowers = DoesHumanHaveGunTowers(team, time);
 
     -- Allow this attack if all of these conditions are met.
-    if ((tanksAvailable or assaultAvailable) and humanHasGunTowers) then
+    if ((tanksAvailable or assaultAvailable or airAvailable) and humanHasGunTowers) then
         return true, "SendGunTowerAttacks: Conditions met. Proceeding...";
     else 
         return false, "SendGunTowerAttacks: Conditions unmet. Halting plan. Time is " .. time;
@@ -598,5 +653,18 @@ function SendAPCAttacks(team, time)
         return true, "SendAPCAttacks: Conditions met. Proceeding...";
     else 
         return false, "SendAPCAttacks: Conditions unmet. Halting plan. Time is " .. time;
+    end
+end
+
+-- Bomber attack.
+function SendBomberAttacks(team, time)
+    -- Check if the Bomber exists.
+    local bomberExists = DoesBomberExist(team, time);
+
+    -- Allow this attack if all of these conditions are met.
+    if (bomberExists) then
+        return true, "SendBomberAttacks: Conditions met. Proceeding...";
+    else 
+        return false, "SendBomberAttacks: Conditions unmet. Halting plan. Time is " .. time;
     end
 end

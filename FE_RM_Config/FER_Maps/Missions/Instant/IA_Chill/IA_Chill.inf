@@ -37,7 +37,7 @@ ExtraOptions = "Default"
 
 options_instant_string0 = "fercpu_"  // Custom AIP base name, e.g. "stock_" .
 options_instant_string1 = "ivrecy_t"    // Human Starting recycler
-options_instant_string2 = "ivrecy_c" // CPU starting recycler
+options_instant_string2 = "ivrecycpu" // CPU starting recycler
 
 // Other values, stubbed in to show how to specify them.
 //options_instant_bool2 = truenet
