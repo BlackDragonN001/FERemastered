@@ -335,6 +335,28 @@ function BuildTraningCenter(team, time)
     end
 end
 
+-- Allow the CPU to build a Tech Center.
+function BuildTechCenter(team, time)
+    -- Get my scrap in a local variable.
+    local myScrap = AIPUtil.GetScrap(team, true);
+
+    -- Count CPU constructors.
+    local cpuConsCount = CountCPUConstructors(team, time);
+
+    -- Check our Power levels.
+    local powerCount = AIPUtil.GetPower(team, true);
+
+    -- Check if Training Center exists.
+    local techCenterExists = DoesTechCenterExist(team, time);
+
+    -- If the conditions above are true, let the AIP build a Training Center.
+    if (myScrap >= 80 and cpuConsCount > 0 and powerCount > 0 and not techCenterExists) then
+        return true, "BuildTechCenter: Conditions met. Proceeding...";
+    else
+        return false, "BuildTechCenter: Conditions unmet. Halting plan.";
+    end
+end
+
 -- Allow the CPU to build a Bomber Bay
 function BuildBomberBay(team, time)
     -- Get my scrap in a local variable.
@@ -425,6 +447,11 @@ end
 -- Checks if the Training Center exists.
 function DoesTrainingCenterExist(team, time)
     return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_BARRACKS", 'sameteam', true) > 0;
+end
+
+-- Checks if the Tech Center exists.
+function DoesTechCenterExist(team, time)
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_TECHCENTER", 'sameteam', true) > 0;
 end
 
 -- Checks if the Bomber Bay exists.
