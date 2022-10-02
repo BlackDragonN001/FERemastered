@@ -3,9 +3,10 @@ classLabel = "bullet"
 
 shotGeometry = NULL
 shotSound = "igtow04.wav"
-xplGround = "xproton"
-xplVehicle = "xproton"
-xplBuilding = "xproton"
+
+xplGround = "xprotongnd"
+xplVehicle = "xprotoncar"
+xplBuilding = "xprotoncar"
 
 renderName = "proton_c.render"
 
@@ -32,7 +33,7 @@ renderBase = "draw_light"
 startColor = "0 190 230 250"
 finishColor = "0 190 230 250"
 startRadius = 15.0
-finishRadius = 10.0
+finishRadius = 15.0
 animateTime = 0.9
 attenuateConstant = 1.0
 attenuateLinear = 0.0

@@ -1,9 +1,12 @@
 [OrdnanceClass]
 classLabel = "pulse"
+
 shotGeometry = "iorckt00.xsi"
 shotScale = 0.8
 shotSound = "Ordin_a.wav"
+
 renderName = "shockrock_a.render"
+
 xplGround = "xshockrock_a"
 xplVehicle = "xshockrock_a"
 xplBuilding = "xshockrock_a"
@@ -27,9 +30,10 @@ xplPulse = "xshockrockemit"
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 3
 renderName1 = "shockrock_a.flame"
-renderName2 = "shockrock_a.light"
+renderName2 = "shockrock_a.flare"
+renderName3 = "shockrock_a.light"
 
 [Flame]
 renderBase = "draw_twirl_trail"
@@ -46,7 +50,7 @@ emitVelocity = "0.0 0.0 0.0"
 emitVariance = "1.0 1.0 2.0"
 emitLife = 0.12
 
-[Light]
+[Flare]
 renderBase = "draw_twirl"
 textureName = "lightflare.tga"
 textureBlend = "one one modulate"
@@ -56,3 +60,14 @@ startRadius = 3.0
 finishRadius = 3.0
 rotationRate = 5.0
 bottomInteractsWithTerrain = false
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 255 255 555"
+finishColor = "255 255 255 555"
+startRadius = 20.0
+finishRadius = 20.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

@@ -6,15 +6,19 @@
 classLabel = "explosion"
 
 particleTypes = 4
+
 particleClass1 = "xtytech.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xtytech.puff"
 particleCount2 = 20
 particleVeloc2 = "30.0 30.0 30.0"
+
 particleClass3 = "xtytech.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
+
 particleClass4 = "xtytech.shock"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
@@ -67,7 +71,6 @@ finishRadius = 20.0
 animateTime = 0.8
 latitudeBands = 8
 longitudeSegments = 16
-
 
 [Light]
 simulateBase = "sim_null"

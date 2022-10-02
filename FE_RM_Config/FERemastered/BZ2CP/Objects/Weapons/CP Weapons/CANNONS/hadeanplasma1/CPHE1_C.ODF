@@ -3,9 +3,9 @@ classLabel = "bullet"
 shotGeometry = NULL
 shotSound = "igtow04.wav"
 
-xplGround = "xplasgnd_c"
-xplVehicle = "xplascar_c"
-xplBuilding = "xplasbld_c"
+xplGround = "xcphe1gnd_c"
+xplVehicle = "xcphe1car_c"
+xplBuilding = "xcphe1bld_c"
 
 renderName = "cphe1_c.render"
 
@@ -30,8 +30,8 @@ renderName3 = "cphe1_c.flame"
 
 [Light]
 renderBase = "draw_light"
-startColor = "255 255 255 155"
-finishColor = "100 100 100 155"
+startColor = "100 200 255 155"
+finishColor = "100 200 255 155"
 startRadius = 25.0
 finishRadius = 25.0
 animateTime = 0.5

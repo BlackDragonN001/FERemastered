@@ -1,65 +1,61 @@
-// =======================
-// TURBO LASER VEHICLE HIT
-// =======================
+// ================
+// TURBO LASER HIT
+// ================
 
 [ExplosionClass]
 classLabel = "explosion"
 
 explSound = "xfire1.wav"
-damageRadius = 20.0
+damageRadius = 30.0
 
-damageValue(N) = 70 // none
-damageValue(L) = 60 // light
-damageValue(H) = 40 // heavy
+damageValue(N) = 40 // none
+damageValue(L) = 30 // light
+damageValue(H) = 20 // heavy
 
 damageValue(S) = 30 // standard
-damageValue(D) = 100 // deflection
+damageValue(D) = 70 // deflection
 damageValue(A) = 10 // absorbtion
 
-kickRadius = 30.0
-kickOmega = 2.0
-kickVeloc = 3.0
+kickRadius = 15.0
+kickOmega = 10.0
+kickVeloc = 5.0
 
-particleTypes = 9
+particleTypes = 8
 
-particleClass1 = "xeplasgnd_c.core"
+particleClass1 = "xturbognd_c.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
-particleClass2 = "xeplasgnd_c.puff"
+particleClass2 = "xturbognd_c.puff"
 particleCount2 = 4
 particleVeloc2 = "7.0 7.0 7.0"
 
-particleClass3 = "xeplasgnd_c.light"
+particleClass3 = "xturbognd_c.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
-particleClass4 = "xeplasgnd_c.shock"
+particleClass4 = "xturbognd_c.shock"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
 
-particleClass5 = "xeplasgnd_c.splat"
+particleClass5 = "xturbognd_c.splat"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
 
-particleClass6 = "xeplasgnd_c.char"
-particleCount6 = 1
-particleVeloc6 = "0.0 0.0 0.0"
+particleClass6 = "xturbognd_c.chunks"
+particleCount6 = 5
+particleVeloc6 = "7.0 7.0 7.0"
+particleBias6 = "0.0 10.0 0.0"
 
-particleClass7 = "xeplasgnd_c.chunks"
-particleCount7 = 8
-particleVeloc7 = "7.0 7.0 7.0"
-particleBias7 = "0.0 10.0 0.0"
+particleClass7 = "xturbognd_c.smokekickup"
+particleCount7 = 3
+particleVeloc7 = "20.0 8.0 20.0"
+particleBias7 = "0.0 15.0 0.0"
 
-particleClass8 = "xeplasgnd_c.smokekickup"
-particleCount8 = 5
-particleVeloc8 = "20.0 8.0 20.0"
-particleBias8 = "0.0 15.0 0.0"
-
-particleClass9 = "xeplasgnd_c.dirtkickup"
-particleCount9 = 6
-particleVeloc9 = "15.0 7.0 15.0"
-particleBias9 = "0.0 12.0 0.0"
+particleClass8 = "xturbognd_c.dirtkickup"
+particleCount8 = 3
+particleVeloc8 = "15.0 7.0 15.0"
+particleBias8 = "0.0 12.0 0.0"
 
 [Core]
 simulateBase = "sim_null"
@@ -67,52 +63,52 @@ lifeTime = 1.0
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 500"
-finishColor = "255 255 255 0"
+startColor = "0 255 0 555"
+finishColor = "127 255 127 0"
 startRadius = 5.0
 finishRadius = 15.0
 animateTime = 1.0
+rotationRate = 2.0
 bottomInteractsWithTerrain = false
 
 [Puff]
 simulateBase = "sim_smoke"
-lifeTime = 0.7
+lifeTime = 1.7
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = "250 255 255 500" 
-finishColor = "255 255 255 0" 
+startColor = "255 255 250 500" 
+finishColor = "255 255 250 0" 
 startRadius = 0.5
-finishRadius = 3.0
-animateTime = 0.7
+finishRadius = 5.0
+animateTime = 1.7
 rotationRate = 0.3
-bottomInteractsWithTerrain = false
 
 [Light]
 simulateBase = "sim_null"
-lifeTime = 1.5
+lifeTime = 1.7
 renderBase = "draw_light"
-startColor = "255 255 255 555"
-finishColor = "255 255 255 0"
+startColor = "2 255 0 1555"
+finishColor = "2 255 0 0"
 startRadius = 30.0
 finishRadius = 0.0
-animateTime = 1.5
+animateTime = 1.7
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
-lensFlare = 0
+lensFlare = 1
 
 [Shock]
 simulateBase = "sim_null"
-lifeTime = 0.2
+lifeTime = 0.4
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 500" 
-finishColor = "255 255 255 0" 
+startColor = "2 255 0 255" 
+finishColor = "2 255 0 0" 
 startRadius = 1.5
-finishRadius = 30.0
-animateTime = 0.2
+finishRadius = 20.0
+animateTime = 0.4
 latitudeBands = 8
 longitudeSegments = 16
 
@@ -122,23 +118,11 @@ lifeTime = 0.4
 renderBase = "draw_planar"
 textureName = "ring.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 255 255 0"
-startRadius = 0.1
-finishRadius = 20.0
+startColor = "2 255 0 255"
+finishColor = "2 255 0 0"
+startRadius = 3.1
+finishRadius = 30.0
 animateTime = 0.4
-
-[Char]
-simulateBase = "sim_null"
-lifeTime = 3.0
-renderBase = "draw_planar"
-textureName = "plasma.tga"
-textureBlend = "one one modulate"
-startColor = "255 255 255 555"
-finishColor = "255 255 255 0"
-startRadius = 20.0
-finishRadius = 20.0
-animateTime = 3.0
 
 [Chunks]
 simulateBase = "sim_ember"
@@ -146,7 +130,7 @@ lifeTime = 4.0
 renderBase = "draw_twirl" //sprite
 textureName = "dirt.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "255 255 255 255"
+startColor = 0 255 0 255"
 finishColor = "30 30 30 0"
 startRadius = 0.3
 finishRadius = 0.3
@@ -160,7 +144,7 @@ lifeTime = 2.5
 renderBase = "draw_twirl"
 textureName = "smoke2.tga" // flame
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "255 255 255 63"
+startColor = "127 127 127 63"
 finishColor = "100 100 100 0"
 startRadius = 2.0
 finishRadius = 10.0
@@ -175,7 +159,7 @@ lifeTime = 1.8
 renderBase = "draw_twirl"
 textureName = "dirtcloud.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "136 154 65 255"
+startColor = "63 154 63 255"
 finishColor = "45 50 40 0"
 startRadius = 2.0
 finishRadius = 7.0

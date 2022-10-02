@@ -4,11 +4,11 @@ classLabel = "anchor"
 shotGeometry = "NULL"
 shotSound = "sonic03c.wav"
 
-xplGround = "xglockgnd_c"
-xplVehicle = "xglockcar_c"
-xplBuilding = "xglockcar_c"
+xplGround = "xioncgnd_a"
+xplVehicle = "xionccar_a"
+xplBuilding = "xionccar_a"
 
-renderName = "sonicblast.render"
+renderName = "ionc_a.render"
 
 ammoCost = 5
 lifeSpan = 0.25 // 100m
@@ -32,8 +32,8 @@ alphaDrag = 300.5
 [Render]
 renderBase = "draw_multi"
 renderCount = 1
-//renderName1 = "sonicblast.flare"
-renderName1 = "sonicblast.trail"
+//renderName1 = "ionc_a.flare"
+renderName1 = "ionc_a.trail"
 
 [Flare]
 renderBase = "draw_twirl_trail"
@@ -48,11 +48,12 @@ finishRadius = 1.0
 renderBase = "draw_twirl_trail"
 textureName = "wasplat.tga"
 textureBlend = "one one modulate"
-startColor = "0 255 0 255" 
-finishColor = "255 0 150 255" 
+startColor = "0 255 0 255"
+finishColor = "255 0 150 255"
 startRadius = 3.0
 finishRadius = 1.0
 animateTime = 1.7
 emitDelay = 0.02
 emitLife = 0.7
-rotationrate = 20
+emitInherit = "0.1 0.1 0.1"
+rotationrate = 20.0

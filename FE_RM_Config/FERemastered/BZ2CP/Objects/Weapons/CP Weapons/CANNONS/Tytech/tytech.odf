@@ -21,14 +21,15 @@ damageValue(A) = 200
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 4
+renderCount = 5
 renderName1 = "tytech.flare1"
 renderName2 = "tytech.flare2"
-renderName3 = "tytech.trailr"
-renderName4 = "tytech.trailb"
+renderName3 = "tytech.light"
+renderName4 = "tytech.trailr"
+renderName5 = "tytech.trailb"
 
 [Flare1]
-renderBase = "draw_sprite"
+renderBase = "draw_twirl"
 textureName = "plasma.tga"
 textureBlend = "one one modulate"
 startColor = "63 63 255 255"
@@ -36,16 +37,31 @@ finishColor = "63 63 255 255"
 startRadius = 5.0
 finishRadius = 5.0
 animateTime = 3.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
 
 [Flare2]
-renderBase = "draw_sprite"
+renderBase = "draw_twirl"
 textureName = "plasma.tga"
 textureBlend = "one one modulate"
 startColor = "50 50 255 255"
 finishColor = "50 50 255 255"
-startRadius = 3
-finishRadius = 3
+startRadius = 3.0
+finishRadius = 3.0
 animateTime = 3.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Light]
+renderBase = "draw_light"
+startColor = "100 100 200 255"
+finishColor = "100 100 200 255"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 [TrailR]
 renderBase = "draw_emit"
@@ -65,27 +81,31 @@ emitVariance = "10.0 10.0 10.0"
 simulateBase = "sim_smoke"
 lifeTime = 0.5
 renderBase = "draw_multi"
-renderCount = 3
+renderCount = 4
 renderName1 = "tytech.sparkflare2"
 renderName2 = "tytech.sparkflarer"
 renderName3 = "tytech.sparktrailr"
+renderName4 = "tytech.sparklightr"
 
 [SparkB]
 simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_multi"
-renderCount = 3
+renderCount = 4
 renderName1 = "tytech.sparkflare2"
 renderName2 = "tytech.sparkflareb"
 renderName3 = "tytech.sparktrailb"
+renderName4 = "tytech.sparklightb"
 
 [SparkFlare]
-renderBase = "draw_sprite"
+renderBase = "draw_twirl"
 textureName = "plasma.tga"
 textureBlend = "one one modulate"
 startRadius = 2.0
 finishRadius = 0.4
 animateTime = 1.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
 
 [SparkFlare2]
 renderBase = "draw_sprite"
@@ -109,11 +129,13 @@ finishColor = "0 0 255 0"
 
 [SparkTrail]
 renderBase = "draw_trail"
+textureName = "blastenergy.tga"
 textureBlend = "one one modulate"
 startRadius = 0.1
-finishRadius = 0.0
+finishRadius = 0.02
 segmentTime = 0.03
-trailTime = 0.2
+textureRate = 0.25
+textureSpeed = 0.0
 
 [SparkTrailR]
 renderBase = "tytech.sparktrail"
@@ -124,3 +146,25 @@ finishColor = "255 0 0 0"
 renderBase = "tytech.sparktrail"
 startColor = "63 255 255 255"
 finishColor = "0 0 255 0"
+
+[SparkLight]
+renderBase = "draw_light"
+startRadius = 10.0
+finishRadius = 10.0
+animateTime = 0.05
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[SparkLightR]
+renderBase = "tytech.sparklight"
+startColor = "255 255 63 255"
+finishColor = "255 255 63 255"
+
+[SparkLightB]
+renderBase = "tytech.sparklight"
+startColor = "63 255 255 255"
+finishColor = "63 255 255 255"
+
+

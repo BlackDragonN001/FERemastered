@@ -10,6 +10,10 @@ xplGround = "xshockrock_c"
 xplVehicle = "xshockrock_c"
 xplBuilding = "xshockrock_c"
 
+RestoreFxSavegame = true
+RestoreFxLockstep = true
+RestoreFxVisual = true
+
 ammoCost = 18.0
 lifeSpan = 1.5 // 120m
 shotSpeed = 70.0
@@ -31,16 +35,58 @@ alphaDrag = 0.5
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 1
-renderName1 = "shockrock_c.light"
+renderCount = 4
+renderName1 = "shockrock_c.flare"
+renderName2 = "shockrock_c.light"
+renderName3 = "shockrock_c.sphere"
+renderName4 = "shockrock_c.sphere2"
 
-[Light]
+[Flare]
 renderBase = "draw_twirl"
 textureName = "lightflare.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 255"
 finishColor = "255 255 255 255"
 startRadius = 3.0
-finishRadius = 0.5
+finishRadius = 3.0
 rotationRate = 5.0
 bottomInteractsWithTerrain = false
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 255 255 555"
+finishColor = "255 255 255 555"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Sphere]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 31"
+finishColor = "255 255 255 0"
+startRadius = 0.5
+finishRadius = 0.5
+addYaw = 50.0
+addRoll = 50.0
+addPitch = 50.0
+latitudeBands = 8
+longitudeSegments = 16
+
+[Sphere2]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 31"
+finishColor = "255 255 255 0"
+startRadius = 0.5
+finishRadius = 0.5
+addYaw = -50.0
+addRoll = -50.0
+addPitch = -50.0
+latitudeBands = 8
+longitudeSegments = 16

@@ -1,11 +1,9 @@
 [OrdnanceClass]
-classLabel = "bouncebomb"
-//classlabel = "grenade"
+classLabel = "bouncebomb" //"grenade"
 
 shotGeometry = "null"
 
-
-xplGround = "xxvstabcar"
+xplGround = "xxvstabgnd"
 xplVehicle = "xxvstabcar"
 xplBuilding = "xxvstabbld"
 xplExpire = "xxvstab"
@@ -30,20 +28,36 @@ soundBounce = "bbounce.wav"
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 5
 renderName1 = "xvstab_c.light"
-renderName2 = "xvstab_c.smoke"
+renderName2 = "xvstab_c.flare"
+renderName3 = "xvstab_c.smoke"
+renderName4 = "xvstab_c.sparks"
+renderName5 = "xvstab_c.hottrail"
 
 [Light]
-renderBase = "draw_sprite"
+renderBase = "draw_light"
+startColor = "255 220 200 2550"
+finishColor = "255 220 200 0"
+startRadius = 10.0
+finishRadius = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Flare]
+renderBase = "draw_twirl"
 textureName = "lightflare.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 255"
 finishColor = "255 255 255 255"
 startRadius = 3.0
 finishRadius = 0.5
+rotationRate = 2.0
+bottomInteractsWithTerrain = false
 
-[smoke]
+[Smoke]
 renderBase = "draw_twirl_trail"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
@@ -56,3 +70,30 @@ emitDelay = 0.01
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "1.0 1.0 1.0"
 emitLife = 0.5
+
+[Sparks]
+renderBase = "draw_twirl_trail"
+textureName = "spark.tga" // flame
+textureblend = "one one modulate"
+startColor = "255 140 10 255"
+finishColor = "255 60 0 0"
+startRadius = 0.1
+finishRadius = 0.1
+animateTime = 0.5
+emitDelay = 0.01
+emitDelayVar = 0.005
+emitVariance = "7.0 7.0 0.0"
+emitLife = 0.2
+
+[HotTrail]
+renderBase = "draw_trail"
+textureName = "firetrail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "220 255 255 0"
+startRadius = 0.30
+finishRadius = 0.05
+segmentLength = 2.4 //3.0
+segmentTime = 0.1
+textureRate = 0.25 //0.2
+textureSpeed = 0.5

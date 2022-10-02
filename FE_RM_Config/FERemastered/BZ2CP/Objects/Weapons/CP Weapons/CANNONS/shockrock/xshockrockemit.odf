@@ -5,7 +5,7 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 2
+particleTypes = 6
 
 particleClass1 = "xshockrockemit.shock"
 particleCount1 = 1
@@ -17,6 +17,28 @@ particleClass2 = "xshockrockemit.ring"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
 particleInherit2 = "1.0 1.0 1.0"
+
+particleClass3 = "xshockrockemit.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+particleInherit3 = "1.0 1.0 1.0"
+
+particleClass4 = "xshockrockemit.wave"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+particleInherit4 = "1.0 1.0 1.0"
+
+particleClass5 = "xshockrockemit.wave2"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+particleBias5 = "0.0 -15.0 0.0"
+particleInherit5 = "1.0 1.0 1.0"
+
+particleClass6 = "xshockrockemit.wave2"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0"
+particleBias6 = "0.0 15.0 0.0"
+particleInherit6 = "1.0 1.0 1.0"
 
 explSound = "xshockrock.wav"
 
@@ -48,7 +70,7 @@ animateTime = 0.3
 latitudeBands = 8
 longitudeSegments = 16
 
-[ring]
+[Ring]
 simulateBase = "sim_smoke"
 lifeTime = 0.3
 renderBase = "draw_planar"
@@ -59,3 +81,51 @@ finishColor = "255 255 255 63"
 startRadius = 5.0
 finishRadius = 5.0
 animateTime = 0.3
+
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_light"
+startColor = "255 255 255 555"
+finishColor = "255 255 255 0"
+startRadius = 40.0
+finishRadius = 0.0
+animateTime = 0.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Wave]
+simulateBase = "sim_smoke"
+lifeTime = 0.4
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "255 225 255 255"
+finishColor = "255 255 255 0"
+startRadius = 1.0
+finishRadius = 5.0
+animateTime = 0.4
+waveAngle = 3.14159265359
+waveDepth = 1.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 64
+
+[Wave2]
+simulateBase = "sim_smoke"
+lifeTime = 0.4
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "255 225 255 255"
+finishColor = "255 255 255 0"
+startRadius = 5.0
+finishRadius = 0.1
+animateTime = 0.4
+waveAngle = 3.14159265359
+waveDepth = 1.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 64

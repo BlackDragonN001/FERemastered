@@ -1,0 +1,147 @@
+// ===============
+// PLASMA VEHICLE HIT
+// ===============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xfire1.wav"
+damageRadius = 12.0
+
+damageValue(N) = 100 // none // 200
+damageValue(L) = 70 // light // 140
+damageValue(H) = 25 // heavy // 50
+
+damageValue(S) = 55 // standard    // 100
+damageValue(D) = 100 // deflection // 200
+damageValue(A) = 10 // absorbtion  // 0
+
+kickRadius = 7.0
+kickOmega = 1.0
+kickVeloc = 2.0
+
+particleTypes = 9
+
+particleClass1 = "xcphe1gnd_c.BigLightFlash"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xcphe1gnd_c.ShockSphere"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xcphe1car_c.LightTwirl"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xcphe1car_c.Smoke"
+particleCount4 = 3 //7
+particleVeloc4 = "2.2 3.5 2.2"
+particleInherit4 = "0.25 0.25 0.25"
+
+particleClass5 = "xcphe1gnd_c.BigSmoke"
+particleCount5 = 4 //9
+particleVeloc5 = "6.0 6.0 6.0"
+particleInherit5 = "0.15 0.15 0.15"
+
+particleClass6 = "xcphe1car_c.BigEnergy"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0" //"7.3 7.0 7.0"
+
+particleClass7 = "xcphe1gnd_c.Ash"
+particleCount7 = 5
+particleVeloc7 = "58.0 37.0 58.0"
+particleInherit7 = "0.8 0.8 0.8"
+
+particleClass8 = "xcphe1gnd_c.FlameChunks"
+particleCount8 = 6 //12
+particleVeloc8 = "10.0 10.0 10.0"
+particleBias8 = "0.0 0.0 0.0"
+particleInherit8 = "0.8 0.8 0.8"
+
+particleClass9 = "xcphe1car_c.lightflare"
+particleCount9 = 1
+particleVeloc9 = "0.0 0.0 0.0"
+
+particleClass10 = "xcphe1car_c.energypuffa"
+particleCount10 = 1
+particleVeloc10 = "0.0 0.0 0.0"
+particleBias10 = "0.0 0.0 0.0"
+
+[LightTwirl]
+simulateBase = "sim_null"
+lifeTime = 0.4
+renderBase = "draw_twirl"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "100 200 255 255"
+finishColor = "70 100 255 0"
+startRadius = 6.0
+finishRadius = 0.2
+animateTime = 0.4
+BottomInteractsWithTerrain = false
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 0.9
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 90"
+finishColor = "20 20 20 0"
+startRadius = 1.1
+finishRadius = 2.3
+animateTime = 0.9
+rotationRate = 4.0
+
+[BigEnergy]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_twirl"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "60 100 255 255"
+finishColor = "100 100 255 0"
+startRadius = 0.2
+finishRadius = 2.5
+animateTime = 0.3
+rotationRate = 10.0
+BottomInteractsWithTerrain = false
+
+[EnergyPuffA]
+simulateBase = "sim_smoke"
+lifeTime = 0.4
+renderBase = "draw_emit"
+emitName = "xcphe1car_c.EnergyPuffB"
+emitVariance = "20.0 20.0 20.0"
+emitVelocity = "1.0 1.0 1.0"
+emitDelay = 0.02
+//emitInherit = "1.0 1.0 1.0"
+
+	[EnergyPuffB]
+	simulateBase = "sim_smoke"
+	lifeTime = 0.2
+	renderBase = "draw_bolt"
+	textureName = "trail2.tga"
+	textureBlend = "one one modulate"
+	textureRate = 0.8
+	texturespeed = -16.0
+	startColor = "60 172 255 255"
+	finishColor = "20 130 255 0"
+	startRadius = 0.05
+	finishRadius = 0.008
+	segmentLength = 0.2
+	segmentVariance = "2.0 2.0 2.0"
+	animateTime = 0.1
+	
+[LightFlare]
+simulateBase = "sim_null"
+lifeTime = 0.6
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "60 127 255 255"
+finishColor = "80 127 255 0"
+startRadius = 6.5
+finishRadius = 0.5
+animateTime = 0.6
