@@ -88,6 +88,12 @@ soundDeploy = "irecy03.wav"
 [DeployBuildingClass]
 deployName = "cbrecy"
 
+BeamColor = "63 31 255 31"
+BuildSparkConfig = "sparker_cerberi"
+LineFinishColor = "127 31 255 0"
+LineStartColor = "63 31 255 255"
+lineSolidColor = "127 63 255 255"
+
 [RecyclerVehicleClass]
 scrapHold = 40
 
