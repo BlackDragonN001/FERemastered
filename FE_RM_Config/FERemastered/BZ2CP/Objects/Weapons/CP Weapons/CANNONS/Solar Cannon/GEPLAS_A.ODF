@@ -7,7 +7,7 @@ fireSound = "solarblast.wav"
 wpnReticle = "gplasma"
 wpnCategory = "CANN"
 isAssault = 1
-flashName = "gplasma_a.flash"
+flashName = "geplas_a.flash"
 aiRange = 240
 
 [CannonClass]
@@ -18,8 +18,8 @@ shotAlternate = 0
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 80 127"
-finishColor = "0 255 0 0"
+startColor = "255 255 255 127"
+finishColor = "255 255 255 0"
 startRadius = 3.0
 finishRadius = 1.0
 animateTime = 0.1

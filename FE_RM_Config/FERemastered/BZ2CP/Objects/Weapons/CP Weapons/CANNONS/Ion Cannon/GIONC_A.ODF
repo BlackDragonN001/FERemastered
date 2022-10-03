@@ -1,9 +1,9 @@
 [WeaponClass]
 classLabel = "machinegun"
-altName = "gionc_c"
+//altName = "gionc_c"
 ordName = "ionc_a"
 wpnName = "Ion Cannon"
-fireSound = "ION CANNON.wav"
+fireSound = "IONCANNON.wav"
 wpnReticle = "glock"
 wpnCategory = "CANN"
 isAssault = 1
@@ -15,4 +15,3 @@ salvoCount = 2
 salvoDelay = 0.25
 shotVariance = 0.075
 SoundPerShot = 1
-

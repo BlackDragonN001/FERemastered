@@ -1,44 +1,43 @@
-// =======================
-// TURBO LASER VEHICLE HIT
-// =======================
+// ===================
+// PLASMA BUILDING HIT
+// ===================
 
 [ExplosionClass]
 classLabel = "explosion"
 
 explSound = "xfire1.wav"
-damageRadius = 20.0
+damageRadius = 15.0
 
-damageValue(N) = 70 // none
-damageValue(L) = 60 // light
-damageValue(H) = 40 // heavy
+damageValue(N) = 100 // none // 200
+damageValue(L) = 70 // light // 140
+damageValue(H) = 25 // heavy // 50
 
-damageValue(S) = 30 // standard
-damageValue(D) = 100 // deflection
-damageValue(A) = 10 // absorbtion
+damageValue(S) = 50 // standard    // 100
+damageValue(D) = 100 // deflection // 200
+damageValue(A) = 10 // absorbtion  // 0
 
-kickRadius = 30.0
-kickOmega = 2.0
-kickVeloc = 3.0
+kickRadius = 20.0
+kickOmega = 1.0
+kickVeloc = 2.0
 
 particleTypes = 5
-
-particleClass1 = "xeplas_c.core"
+particleClass1 = "xcphe1bld_c.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
-particleClass2 = "xeplas_c.puff"
-particleCount2 = 4
+particleClass2 = "xcphe1bld_c.puff"
+particleCount2 = 2 //4
 particleVeloc2 = "7.0 7.0 7.0"
 
-particleClass3 = "xeplas_c.light"
+particleClass3 = "xcphe1bld_c.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
-particleClass4 = "xeplas_c.shock"
+particleClass4 = "xcphe1bld_c.shock"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
 
-particleClass5 = "xeplas_c.splat"
+particleClass5 = "xcphe1bld_c.splat"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
 
@@ -48,12 +47,11 @@ lifeTime = 1.0
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 555"
-finishColor = "255 255 255 0"
-startRadius = 5.0
-finishRadius = 15.0
+startColor = "0 120 255 255"
+finishColor = "100 100 255 0"
+startRadius = 1.0
+finishRadius = 0.1
 animateTime = 1.0
-bottomInteractsWithTerrain = false
 
 [Puff]
 simulateBase = "sim_smoke"
@@ -61,23 +59,22 @@ lifeTime = 0.7
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = "250 255 255 500" 
-finishColor = "255 255 255 0" 
+startColor = "50 70 255 200" 
+finishColor = "70 100 255 0" 
 startRadius = 0.5
-finishRadius = 3.0
+finishRadius = 2.0
 animateTime = 0.7
 rotationRate = 0.3
-bottomInteractsWithTerrain = false
 
 [Light]
 simulateBase = "sim_null"
-lifeTime = 1.5
+lifeTime = 0.7
 renderBase = "draw_light"
-startColor = "255 255 255 555"
-finishColor = "255 255 255 555"
-startRadius = 30.0
-finishRadius = 0.0
-animateTime = 1.5
+startColor = "100 200 255 555"
+finishColor = "100 200 255 0"
+startRadius = 0.2
+finishRadius = 0.1
+animateTime = 0.7
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
@@ -89,10 +86,10 @@ lifeTime = 0.2
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 500" 
-finishColor = "255 255 255 0" 
-startRadius = 1.5
-finishRadius = 30.0
+startColor = "50 60 255 190" 
+finishColor = "60 80 255 0" 
+startRadius = 0.5
+finishRadius = 3.0
 animateTime = 0.2
 latitudeBands = 8
 longitudeSegments = 16
@@ -103,9 +100,9 @@ lifeTime = 0.4
 renderBase = "draw_twirl"
 textureName = "ring.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 255 255 0"
+startColor = "100 190 255 255"
+finishColor = "60 80 255 0"
 startRadius = 0.1
-finishRadius = 20.0
+finishRadius = 1.0
 animateTime = 0.4
-bottomInteractsWithTerrain = false
+BottomInteractsWithTerrain = false

@@ -1,9 +1,12 @@
 [OrdnanceClass]
 classLabel = "bullet"
+
 shotGeometry = NULL
+
 xplGround = "xarmrad_cgnd"
 xplVehicle = "xarmrad_ccar"
 xplBuilding = "xarmrad_ccar"
+
 renderName = "armrad_c.render"
 
 ammoCost = 2.0

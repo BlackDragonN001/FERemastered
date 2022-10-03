@@ -47,11 +47,13 @@ effectMaxVelocity2 = 500.0
 rangeScan = 300.0
 periodScan = 5.0
 engageRange = 30
+
 braccelFactor = 0.09
 velFactor = 0.3
 steerFactor = 1.0
 omegaFactor = 0.2
 strafeFactor = 0.1
+
 TeamTransferrable = true
 GotoTaskHasLeader = false // if true, gotos will be done in a leader/follower model
 
@@ -95,12 +97,14 @@ supplyRate = 40.0
 supplySound = "mnu_empt.wav"
 supplyEffect = "ivserv.supply"
 supplyHard = "hp_special_1"
+
 // Individual classification tweakers
 serviceSTs = 0
 serviceCraft = 1
 serviceBuildings = 0
 servicePilots = 0
 serviceOther = 0
+
 objPush = 0.0f // Used while servicing. Factor based on distance from truck to target
 objDrag = 0.0f // Used while servicing. Factor based on target's velocity
 

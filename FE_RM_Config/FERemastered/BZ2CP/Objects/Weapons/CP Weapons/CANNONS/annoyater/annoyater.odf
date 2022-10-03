@@ -4,9 +4,9 @@ classLabel = "anchor"
 shotGeometry = "iorckt00.xsi"
 shotSound = "Ordin_b.wav"
 
-xplGround = "xsupergnd"
+xplGround = "xannoygnd"
 xplVehicle = "xannoycar"
-xplBuilding = "xsupercar"
+xplBuilding = "xannoycar"
 
 renderName = "annoyater.render"
 
@@ -41,7 +41,7 @@ renderName4 = "annoyater.light"
 renderBase = "draw_twirl_trail"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "63 63 63 127"
+startColor = "63 63 63 63"
 finishColor = "127 127 127 0"
 startRadius = 0.5
 finishRadius = 2.0
@@ -76,6 +76,7 @@ finishRadius = 0.0
 animateTime = 1.0
 emitDelay = 0.002
 emitVariance = "2.0 2.0 2.0"
+emitPosVariance = "0.25 0.25 0.0"
 emitLife = 1.0
 
 [Light]

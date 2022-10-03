@@ -1,13 +1,16 @@
 [OrdnanceClass]
 classLabel = "bullet"
+
 shotGeometry = NULL
+
 xplGround = "xarmrad_agnd"
 xplVehicle = "xarmrad_acar"
 xplBuilding = "xarmrad_acar"
+
 renderName = "armrad_a.render"
 
 ammoCost = 2.5
-lifeSpan = .35 // 105m
+lifeSpan = 0.35 // 105m
 shotSpeed = 300.0
 
 damageValue(N) = 12 // none

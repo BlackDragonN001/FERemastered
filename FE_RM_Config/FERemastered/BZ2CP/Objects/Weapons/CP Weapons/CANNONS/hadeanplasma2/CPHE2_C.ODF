@@ -1,10 +1,13 @@
 [OrdnanceClass]
 classLabel = "bullet"
+
 shotGeometry = NULL
 shotSound = "igtow04.wav"
-xplGround = "xplasgnd_c"
-xplVehicle = "xplascar_c"
-xplBuilding = "xplasbld_c"
+
+xplGround = "xcphe1gnd_c"
+xplVehicle = "xcphe1car_c"
+xplBuilding = "xcphe1bld_c"
+
 renderName = "cphe2_c.render"
 
 ammoCost = 40
