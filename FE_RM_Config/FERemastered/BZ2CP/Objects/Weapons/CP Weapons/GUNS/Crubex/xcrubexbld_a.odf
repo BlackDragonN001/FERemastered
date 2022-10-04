@@ -1,0 +1,65 @@
+// =====================
+// CHAIN GUN VEHICLE HIT
+// =====================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xchaincar_a.wav
+
+damageRadius = 0.0
+
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+particleTypes = 7
+
+particleClass1 = "xcrubexbld_a.minichar"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xcrubexcar_a.light"
+particleCount2 = 1
+particleVeloc2 = "0.1 0.1 0.1"
+particleBias2 = "0.0 0.0 0.0"
+
+particleClass3 = "xcrubexcar_a.sparkcore"
+particleCount3 = 1 //2
+particleVeloc3 = "0.3 0.3 0.3"
+particleBias3 = "0.0 0.0 0.0"
+
+particleClass4 = "xcrubexgnd_a.chunks"
+particleCount4 = 1
+particleVeloc4 = "25.0 25.0 25.0"
+particleBias4 = "0.0 15.0 0.0"
+
+particleClass5 = "xcrubexcar_a.sparktrails"
+particleCount5 = 1
+particleVeloc5 = "24.0 28.0 24.0"
+particleBias5 = "0.0 9.0 0.0"
+
+particleClass6 = "xcrubexcar_a.flamecore"
+particleCount6 = 1
+particleVeloc6 = "0.1 0.1 0.1"
+particleBias6 = "0.0 0.0 0.0"
+
+particleClass7 = "xcrubexcar_a.smoke"
+particleCount7 = 1 //2
+particleVeloc7 = "13.5 0.0 13.5"
+particleBias7 = "0.0 0.0 0.0"
+
+[MiniChar]
+simulateBase = "sim_null"
+lifeTime = 2.1
+renderBase = "draW_sprite"
+textureName = "grndchar.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 255 255"
+finishColor = "170 170 170 0"
+startRadius = 0.3
+finishRadius = 0.3
+animateTime = 2.1

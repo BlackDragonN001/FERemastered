@@ -5,13 +5,29 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 1
+particleTypes = 4
 
-particleClass1 = "xarmrad_ccar.core"
+particleClass1 = "xarmrad_acar.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 particleBias1 = "0.0 0.0 0.0"
 
+particleClass2 = "xarmrad_acar.sparks"
+particleCount2 = 2
+particleVeloc2 = "25.0 25.0 25.0"
+particleBias2 = "0.0 10.0 0.0"
+particleInherit2 = "1.0 1.0 1.0"
+
+particleClass3 = "xarmrad_acar.flamecore"
+particleCount3 = 1
+particleVeloc3 = "0.1 0.1 0.1"
+particleInherit3 = "1.0 1.0 1.0"
+
+particleClass4 = "xarmrad_acar.smoke"
+particleCount4 = 1
+particleVeloc4 = "5.5 0.0 5.5"
+particleBias4 = "0.0 2.0 0.0"
+particleInherit4 = "0.8 0.8 0.8"
 
 explSound = "wmgr1.wav"
 damageRadius = 0.0
@@ -33,3 +49,46 @@ finishColor = "0 255 50 0"
 startRadius = 0.1
 finishRadius = 0.5
 animateTime = 0.8
+rotationRate = 2.0
+bottomInteractsWithTerrain = false
+
+[Sparks]
+simulateBase = "sim_ember"
+lifeTime = 0.8
+renderBase = "draw_twirl"
+textureName = "spark.tga"
+textureBlend = "one one modulate"
+startColor = "215 123 83 255"
+finishColor = "253 167 90 0"
+startRadius = 0.08
+finishRadius = 0.03
+animateTime = 0.8
+rotationRate = 20.0
+BottomInteractsWithTerrain = false
+
+[FlameCore]
+simulateBase = "sim_smoke"
+lifeTime = 0.2
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 63 255"
+finishColor = "255 150 0 0"
+startRadius = 0.1
+finishRadius = 0.35
+animateTime = 0.2
+BottomInteractsWithTerrain = false
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "250 187 90 90"
+finishColor = "140 140 140 0"
+startRadius = 0.1
+finishRadius = 0.9
+animateTime = 0.5
+rotationRate = 17.0
+BottomInteractsWithTerrain = false

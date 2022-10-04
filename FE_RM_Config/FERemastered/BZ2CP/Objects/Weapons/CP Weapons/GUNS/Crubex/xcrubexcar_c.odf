@@ -1,0 +1,139 @@
+// =====================
+// CHAIN GUN VEHICLE HIT
+// =====================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xchaincar_c.wav"
+
+damageRadius = 0.0
+
+kickRadius = 1.0
+kickOmega = 0.6
+kickVeloc = 0.2
+
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+particleTypes = 6
+
+particleClass1 = "xcrubexcar_c.light"
+particleCount1 = 1
+particleVeloc1 = "0.1 0.1 0.1"
+particleInherit1 = "1.0 1.0 1.0"
+
+particleClass2 = "xcrubexcar_c.sparkcore"
+particleCount2 = 1 //2
+particleVeloc2 = "0.3 0.3 0.3"
+particleInherit2 = "1.0 1.0 1.0"
+
+particleClass3 = "xcrubexcar_c.sparks"
+particleCount3 = 2
+particleVeloc3 = "25.0 25.0 25.0"
+particleBias3 = "0.0 10.0 0.0"
+particleInherit3 = "1.0 1.0 1.0"
+
+particleClass4 = "xcrubexcar_c.sparktrails"
+particleCount4 = 1
+particleVeloc4 = "24.0 28.0 24.0"
+particleBias4 = "0.0 9.0 0.0"
+particleInherit4 = "1.0 1.0 1.0"
+
+particleClass5 = "xcrubexcar_c.flamecore"
+particleCount5 = 1
+particleVeloc5 = "0.1 0.1 0.1"
+particleInherit5 = "1.0 1.0 1.0"
+
+particleClass6 = "xcrubexcar_c.smoke"
+particleCount6 = 1 //2
+particleVeloc6 = "13.5 0.0 13.5"
+particleBias6 = "0.0 2.0 0.0"
+particleInherit6 = "0.8 0.8 0.8"
+
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_light"
+startColor = "0 249 249 450"
+finishColor = "0 0 249 0"
+startRadius = 30.0
+finishRadius = 0.0
+animateTime = 0.1
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[SparkCore]
+simulateBase = "sim_smoke"
+lifeTime = 0.2
+renderBase = "draw_twirl"
+textureName = "crackle.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 220"
+finishColor = "0 0 255 0"
+startRadius = 0.15
+finishRadius = 1.0
+animateTime = 0.2
+rotationRate = 15.0
+BottomInteractsWithTerrain = false
+
+[Sparks]
+simulateBase = "sim_ember"
+lifeTime = 0.8
+renderBase = "draw_twirl"
+textureName = "spark.tga"
+textureBlend = "one one modulate"
+startColor = "63 123 215 255"
+finishColor = "90 167 255 0"
+startRadius = 0.08
+finishRadius = 0.03
+animateTime = 0.8
+rotationRate = 20.0
+BottomInteractsWithTerrain = false
+
+[SparkTrails]
+simulateBase = "sim_ember"
+lifeTime = 0.8
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 2.5
+startColor = "55 127 255 255"
+finishColor = "40 130 220 0"
+startRadius = 0.02
+finishRadius = 0.0
+trailTime = 0.8
+segmentTime = 0.1
+
+[FlameCore]
+simulateBase = "sim_smoke"
+lifeTime = 0.2
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "63 200 255 255"
+finishColor = "0 150 255 0"
+startRadius = 0.2
+finishRadius = 1.0
+animateTime = 0.2
+BottomInteractsWithTerrain = false
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "90 187 250 90"
+finishColor = "140 140 140 0"
+startRadius = 0.3
+finishRadius = 2.2
+animateTime = 0.5
+rotationRate = 17.0
+BottomInteractsWithTerrain = false
