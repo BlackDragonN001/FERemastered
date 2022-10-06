@@ -7,11 +7,10 @@ classLabel = "explosion"
 
 particleTypes = 1
 
-particleClass1 = "xarmrad_acar.core"
+particleClass1 = "xarmrad_ccar.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 particleBias1 = "0.0 0.0 0.0"
-
 
 explSound = "wmgr1.wav"
 damageRadius = 0.0
@@ -33,3 +32,5 @@ finishColor = "0 0 255 60"
 startRadius = 0.2
 finishRadius = 1.5
 animateTime = 1.2
+rotationRate = 2.0
+bottomInteractsWithTerrain = false

@@ -19,15 +19,15 @@ damageValue(A) = 0 // absorbtion
 
 particleTypes = 3
 
-particleClass1 = "xbolter1.core"
+particleClass1 = "xboltergnd_a.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
-particleClass2 = "xbolter1.cloud"
+particleClass2 = "xboltergnd_a.cloud"
 particleCount2 = 1
 particleVeloc2 = "0.0 10.0 0.0"
 
-particleClass3 = "xbolter1.ring"
+particleClass3 = "xboltergnd_a.ring"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
@@ -46,25 +46,22 @@ animateTime = 0.5
 [cloud]
 simulateBase = "sim_dust"
 lifeTime = 2.0
-renderBase = "draw_emit"
-emitName = "xbolter1.cloudemit"
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 31 31 127"
+finishColor = "127 127 127 0"
+startRadius = 0.2
+finishRadius = 2.0
+animateTime = 1.5
+rotationRate = 2.0
+useTerrainColor = 0.9
 emitDelay = 0.25
 emitVelocity = "0.0 1.5 0.0"
 emitVariance = "0.0 2.0 0.0"
+emitLife = 1.5
 
-[cloudemit]
-simulateBase = "sim_smoke"
-lifeTime = 1.5
-renderBase = "draw_twirl"
-textureName = "smoke.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "70 70 70 155"
-finishColor = "200 200 200 0"
-startRadius = 0.2
-finishRadius = 2.0 //
-animateTime = 1.5
-
-[ring]
+[Ring]
 simulateBase = "sim_null"
 lifeTime = 2.5
 renderBase = "draw_planar"

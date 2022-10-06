@@ -2,9 +2,10 @@
 classLabel =  "bullet" //"beam"
 
 shotGeometry = NULL
-xplGround = "xbolter1"
-xplVehicle = "xbolter1"
-xplBuilding = "xbolter1"
+
+xplGround = "xboltergnd_a"
+xplVehicle = "xboltercar_a"
+xplBuilding = "xboltercar_a"
 
 renderName = "bolter_a.render"
 
@@ -36,4 +37,4 @@ finishRadius = 0.01
 segmentLength = 7.0 
 segmentVariance = "2.995 2.224 0.58"
 animateTime = 0.8 // 0.2
-textureRate = 0.01
+textureRate = 0.1
