@@ -513,10 +513,7 @@ function UpgradeFirstExtractor(team, time)
     -- Count CPU extractors.
     local cpuExtractorCount = CountCPUExtractors(team, time);
 
-    -- Count CPU Upgraded extractors.
-    local cpuUpgradedExtractorCount = CountCPUUpgradedExtractors(team, time);
-
-    if (myScrap >= 60 and cpuConsCount >= 1 and cpuExtractorCount >= 1 and cpuUpgradedExtractorCount <= 0) then
+    if (myScrap >= 60 and cpuConsCount >= 1 and cpuExtractorCount >= 1) then
         return true, "UpgradeFirstExtractor: Conditions met. Proceeding...";
     else
         return false, "UpgradeFirstExtractor: Conditions unmet. Halting plan.";
@@ -534,10 +531,7 @@ function UpgradeSecondExtractor(team, time)
     -- Count CPU extractors.
     local cpuExtractorCount = CountCPUExtractors(team, time);
 
-    -- Count CPU Upgraded extractors.
-    local cpuUpgradedExtractorCount = CountCPUUpgradedExtractors(team, time);
-
-    if (myScrap >= 60 and cpuConsCount >= 1 and cpuExtractorCount >= 2 and cpuUpgradedExtractorCount <= 2) then
+    if (myScrap >= 60 and cpuConsCount >= 1 and cpuExtractorCount >= 2) then
         return true, "UpgradeSecondExtractor: Conditions met. Proceeding...";
     else
         return false, "UpgradeSecondExtractor: Conditions unmet. Halting plan.";
@@ -555,13 +549,28 @@ function UpgradeThirdExtractor(team, time)
     -- Count CPU extractors.
     local cpuExtractorCount = CountCPUExtractors(team, time);
 
-    -- Count CPU Upgraded extractors.
-    local cpuUpgradedExtractorCount = CountCPUUpgradedExtractors(team, time);
-
-    if (myScrap >= 60 and cpuConsCount >= 1 and cpuExtractorCount >= 3 and cpuUpgradedExtractorCount <= 3) then
+    if (myScrap >= 60 and cpuConsCount >= 1 and cpuExtractorCount >= 3) then
         return true, "UpgradeThirdExtractor: Conditions met. Proceeding...";
     else
         return false, "UpgradeThirdExtractor: Conditions unmet. Halting plan.";
+    end
+end
+
+-- All the CPU to upgrade their fourth Extractor.
+function UpgradeFourthExtractor(team, time)
+    -- Get my scrap in a local variable.
+    local myScrap = AIPUtil.GetScrap(team, true);
+
+    -- Count CPU constructors.
+    local cpuConsCount = CountCPUConstructors(team, time);
+
+    -- Count CPU extractors.
+    local cpuExtractorCount = CountCPUExtractors(team, time);
+
+    if (myScrap >= 60 and cpuConsCount >= 1 and cpuExtractorCount >= 4) then
+        return true, "UpgradeFourthExtractor: Conditions met. Proceeding...";
+    else
+        return false, "UpgradeFourthExtractor: Conditions unmet. Halting plan.";
     end
 end
 
@@ -693,5 +702,21 @@ function SendBomberAttacks(team, time)
         return true, "SendBomberAttacks: Conditions met. Proceeding...";
     else 
         return false, "SendBomberAttacks: Conditions unmet. Halting plan. Time is " .. time;
+    end
+end
+
+-- Technical attack.
+function SendTechnicalAttacks(team, time)
+    -- Check if Factory exists.
+    local factoryExists = DoesFactoryExist(team, time);
+
+    -- Check if the Training Center exists.
+    local doesTechCenterExist = DoesTechCenterExist(team, time);
+
+    -- Allow this attack if all of these conditions are met.
+    if (factoryExists and doesTechCenterExist) then
+        return true, "SendTechnicalAttacks: Conditions met. Proceeding...";
+    else 
+        return false, "SendTechnicalAttacks: Conditions unmet. Halting plan. Time is " .. time;
     end
 end

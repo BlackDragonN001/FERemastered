@@ -341,7 +341,7 @@ planPriority = 720
 buildType1 = "ibsbay"
 buildCount1 = 1
 buildLoc1 = "sbay_edf"
-buildHeading = 2
+buildHeading = 1
 planCondition = "Lua"
 LuaFunction = "BuildServiceBay"
 pathpointsCanBeMissing = true
@@ -448,6 +448,7 @@ targetType4 = "VIRTUAL_CLASS_ARMORY"
 targetType5 = "VIRTUAL_CLASS_RECYCLER"
 attackType1 = "ivapc"
 attackType2 = "ivapc"
+attackType3 = "ivapc"
 AttackAnything = true
 buildIfNoIdle = true
 planCondition = "Lua"
@@ -474,9 +475,9 @@ LuaFunction = "BomberBuildLoopCondition"
 [Plan42]
 planType = "Attacker"
 planPriority = 590
-targetType1 = "VIRTUAL_CLASS_EXTRACTOR"
-targetType2 = "VIRTUAL_CLASS_POWERPLANT"
-targetType3 = "VIRTUAL_CLASS_GUNTOWER"
+targetType1 = "VIRTUAL_CLASS_FACTORY"
+targetType2 = "VIRTUAL_CLASS_GUNTOWER"
+targetType3 = "VIRTUAL_CLASS_POWERPLANT"
 targetType4 = "VIRTUAL_CLASS_COMMBUNKER"
 targetType5 = "VIRTUAL_CLASS_ARMORY"
 targetType6 = "VIRTUAL_CLASS_RECYCLER"
@@ -495,3 +496,90 @@ buildLoc1 = "tech_edf"
 planCondition = "Lua"
 LuaFunction = "BuildTechCenter"
 pathpointsCanBeMissing = true
+
+// All buildings should be constructed by this point so now we just send attacks to deal with the player.
+[Plan44]
+planType = "Attacker"
+planPriority = 590
+targetType1 = "VIRTUAL_CLASS_GUNTOWER"
+targetType2 = "VIRTUAL_CLASS_POWERPLANT"
+targetType3 = "VIRTUAL_CLASS_COMMBUNKER"
+targetType4 = "VIRTUAL_CLASS_FACTORY"
+targetType5 = "VIRTUAL_CLASS_ARMORY"
+targetType6 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "ivwalk"
+attackType2 = "ivwalk"
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendTechnicalAttacks"
+
+[Plan45]
+planType = "Attacker"
+planPriority = 580
+targetType1 = "VIRTUAL_CLASS_GUNTOWER"
+attackType1 = "ivatank"
+attackType2 = "ivatank"
+attackType3 = "ivatank"
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendGunTowerAttacks"
+
+[Plan46]
+planType = "Attacker"
+planPriority = 570
+targetType1 = "VIRTUAL_CLASS_RECYCLER"
+targetType2 = "VIRTUAL_CLASS_POWERPLANT"
+targetType3 = "VIRTUAL_CLASS_FACTORY"
+targetType4 = "VIRTUAL_CLASS_SUPPLYDEPOT"
+targetType5 = "VIRTUAL_CLASS_ARMORY"
+attackType1 = "ivtank"
+attackType2 = "ivtank"
+attackType3 = "ivtank"
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendTankHarassment"
+
+[Plan47]
+planType = "Attacker"
+planPriority = 560
+targetType1 = "VIRTUAL_CLASS_RECYCLER"
+targetType2 = "VIRTUAL_CLASS_POWERPLANT"
+targetType3 = "VIRTUAL_CLASS_FACTORY"
+targetType4 = "VIRTUAL_CLASS_SUPPLYDEPOT"
+targetType5 = "VIRTUAL_CLASS_ARMORY"
+attackType1 = "ivatank"
+attackType2 = "ivrckt_c"
+attackType3 = "ivwalk"
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendTechnicalAttacks"
+
+[Plan48]
+planType = "Attacker"
+planPriority = 550
+targetType1 = "VIRTUAL_CLASS_RECYCLER"
+targetType2 = "VIRTUAL_CLASS_POWERPLANT"
+targetType3 = "VIRTUAL_CLASS_FACTORY"
+targetType4 = "VIRTUAL_CLASS_SUPPLYDEPOT"
+targetType5 = "VIRTUAL_CLASS_ARMORY"
+attackType1 = "ivrbomb"
+attackType2 = "ivrbomb"
+attackType3 = "ivrbomb"
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendTechnicalAttacks"
+
+[Plan49]
+planType = "Attacker"
+planPriority = 540
+targetType1 = "VIRTUAL_CLASS_EXTRACTOR"
+attackType1 = "ivapc"
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendAPCAttacks"
