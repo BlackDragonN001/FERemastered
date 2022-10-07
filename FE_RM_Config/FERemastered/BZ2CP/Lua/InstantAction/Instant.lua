@@ -207,10 +207,8 @@ function AddObject(h)
 
 			-- Replace the CPU natural extractor as we're using a different ODF.
 			-- Remind me to poke this later... -GBD
-			if (ODFName == "ibscav") then
-				ReplaceObject(h, "ibscav_c");
-			elseif (ODFName == "fbscav") then
-				ReplaceObject(h, "fbscav_c");
+			if (ODFName == Mission.m_CPURace .. "bscav") then
+				ReplaceObject(h, Mission.m_CPURace .. "bscav_c");
 			end
 		end
 	elseif (teamNum == 0) then
