@@ -22,7 +22,7 @@ function DoesLooseScrapExist(team, time)
 end
 
 ----------------
--- CPU Checks
+-- Unit Checks
 ----------------
 
 -- Condition for letting the CPU build Scavengers.
@@ -30,20 +30,17 @@ function ScavengerBuildLoopCondition(team, time)
     -- Get my scrap in a local variable.
     local myScrap = AIPUtil.GetScrap(team, true);
 
-    -- Does the Recycler exist?
-    local recyclerExists = DoesRecyclerExist(team, time);
-
     -- Check if any pools exist that are currently unclaimed.
-    local poolsToClaim = DoesVacantScrapPoolExist(team, time);
+    local poolsToClaim = CanCollectScrapPool(team, time);
 
     -- Check if any loose scrap exists on the map.
-    local looseScrapToClaim = DoesLooseScrapExist(team, time);
+    local looseScrapToClaim = CanCollectLooseScrap(team, time);
 
     -- Keep track of the count of Scavengers we already have to stop overbuilding.
     local cpuScavCount = CountCPUScavengers(team, time);
 
     -- If the conditions above are true, let the AIP build a Scavenger for pools/scrap.
-    if (myScrap >= 20 and recyclerExists and (poolsToClaim or looseScrapToClaim) and cpuScavCount < 2) then
+    if (myScrap >= 20 and (poolsToClaim or looseScrapToClaim) and cpuScavCount < 2) then
         return true, "ScavengerBuildLoopCondition: Conditions met. Proceeding...";
     else
         return false, "ScavengerBuildLoopCondition: Conditions unmet. Halting plan.";
@@ -141,6 +138,10 @@ function BomberBuildLoopCondition(team, time)
         return false, "BomberBuildLoopCondition: Conditions unmet. Halting plan.";
     end
 end
+
+----------------
+-- Building Checks
+----------------
 
 -- Allow the CPU to build a Gun Tower on the gtow1 path.
 function BuildGunTower1(team, time)
@@ -401,6 +402,10 @@ function BuildBaseGunTower(team, time)
     end
 end
 
+----------------
+-- Exist Checks
+----------------
+
 -- Condition for trying to collect pools.
 function CanCollectScrapPool(team, time)
     if (DoesRecyclerExist(team, time) and DoesVacantScrapPoolExist(team, time)) then
@@ -463,6 +468,10 @@ end
 function DoesBomberExist(team, time)
     return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_BOMBER", 'sameteam', true) > 0;
 end
+
+----------------
+-- Counts
+----------------
 
 -- Checks how many Scavengers the CPU has.
 function CountCPUScavengers(team, time)

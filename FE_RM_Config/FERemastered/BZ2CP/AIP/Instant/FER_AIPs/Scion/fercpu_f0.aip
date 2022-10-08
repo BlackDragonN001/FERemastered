@@ -19,83 +19,93 @@ moneyDelay = 5
 
 [IdleDispatcher]
 ScavIdleSeconds = 5
-UnitIdleSeconds = 60
-BomberIdleSeconds = 75
-MinAttackForce = 2
+UnitIdleSeconds = 45
 CraftTeamIsPilotTeam = true
-
 MaxPatrolUnits = 3
 MaxHuntUnits = 2
 MaxEscortUnits = 4
 
-[Plan1]
-planType = "BuildMinimums"
+[Plan1] // Maintain keeping units healed where possible.
+planType = "Service"
 planPriority = 1000
+serviceUnit = "fvserv_c"
+unitType1 = "fbrecy_c"
+unitType2 = "fbkiln"
+unitType3 = "fbforg"
+unitType4 = "fbstro"
+unitType5 = "fbover"
+unitType6 = "fbantm"
+unitType7 = "fbjamm"
+unitType8 = "fbspir"
+unitType9 = "fblung"
+
+[Plan2]
+planType = "Recover"
+planPriority = 990
+serviceUnit = "fbdowe"
+unitType1 = "fvcmdr_c"
+unitType2 = "fvscout"
+unitType3 = "fvsent"
+unitType4 = "fvarch"
+unitType5 = "fvtank"
+unitType6 = "fvartl"
+unitType7 = "fvwalk"
+unitType8 = "fvatank"
+unitType9 = "fvrbomb"
+
+[Plan3]
+planType = "BuildMinimums"
+planPriority = 980
 buildType1 = "fvcmdr_c"
 buildCount1 = 1
 
-[Plan2] // Always have 2 active Scavengers for picking up loose scrap.
+[Plan4] // Always have 2 active Scavengers for picking up loose scrap.
 planType = "BuildMinimums"
-planPriority = 990
+planPriority = 970
 buildType1 = "fvscav_c"
 buildCount1 = 2
 planCondition = "Lua"
 LuaFunction = "ScavengerBuildLoopCondition"
 
-[Plan3] // Try and collect pools that are free around the map.
+[Plan5] // Try and collect pools that are free around the map.
 planType = "CollectPool"
-planPriority = 980
-buildIfNoIdle = true
-planCondition = "Lua"
-LuaFunction = "CanCollectScrapPool"
-
-[Plan4] // Try and collect pools that are free around the map.
-planType = "CollectPool"
-planPriority = 970
-buildIfNoIdle = true
-planCondition = "Lua"
-LuaFunction = "CanCollectScrapPool"
-
-[Plan5] // Try and collect any loose scrap that is free around the map.
-planType = "CollectField"
 planPriority = 960
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "CanCollectScrapPool"
+
+[Plan6] // Try and collect pools that are free around the map.
+planType = "CollectPool"
+planPriority = 950
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "CanCollectScrapPool"
+
+[Plan7] // Try and collect any loose scrap that is free around the map.
+planType = "CollectField"
+planPriority = 940
 planCondition = "Lua"
 LuaFunction = "CanCollectLooseScrap"
 
-[Plan6] // Build 4 turrets to be handled by the Dispatcher.
+[Plan8] // Build 4 turrets to be handled by the Dispatcher.
 planType = "BuildMinimums"
-planPriority = 950
+planPriority = 930
 buildType1 = "fvturr"
 buildCount1 = 4
 planCondition = "Lua"
 LuaFunction = "TurretBuildLoopCondition"
 
-[Plan7] // Send out Scouts to attack Player during early stage.
-planType = "Attacker"
-planPriority = 940
-targetType1 = "VIRTUAL_CLASS_TURRET"
-targetType2 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
-targetType3 = "DefendUnit"
-attackType1 = "fvscout"
-attackType2 = "fvscout"
-attackType3 = "fvscout"
-MaxAttacks = 5
-AttackAnything = true
-buildIfNoIdle = true
-planCondition = "Lua"
-LuaFunction = "SendEarlyScoutHarassment"
-
-[Plan8] // Get our Constructors in the mix.
+[Plan9] // Get our Constructors in the mix.
 planType = "BuildMinimums"
-planPriority = 930
+planPriority = 920
 buildType1 = "fvcons"
-buildCount1 = 2
+buildCount1 = 3
 planCondition = "Lua"
 LuaFunction = "ConstructorBuildLoopCondition"
 
-[Plan9] // Build a Kiln.
+[Plan10] // Build a Kiln.
 planType = "BaseBuildMinimums"
-planPriority = 920
+planPriority = 910
 buildType1 = "fbkiln"
 buildCount1 = 1
 buildLoc1 = "kiln_scion"
@@ -104,9 +114,9 @@ planCondition = "Lua"
 LuaFunction = "BuildKiln"
 ContinueEvenIfFail = true
 
-[Plan10] // Build a Gun Spire.
+[Plan11] // Build a Gun Spire.
 planType = "BaseBuildMinimums"
-planPriority = 910
+planPriority = 900
 buildType1 = "fbspir"
 buildCount1 = 1
 buildLoc1 = "base_spire1_scion"
@@ -114,34 +124,9 @@ planCondition = "Lua"
 LuaFunction = "BuildBaseGunSpire"
 ContinueEvenIfFail = true
 
-[Plan11]
+[Plan12]
 planType = "Upgrade"
-planPriority = 900
+planPriority = 890
 unitType = "fbkiln"
 planCondition = "Lua"
 LuaFunction = "UpgradeKiln"
-
-[Plan12] // Build a Gun Spire.
-planType = "BaseBuildMinimums"
-planPriority = 890
-buildType1 = "fbspir"
-buildCount1 = 1
-buildLoc1 = "base_spire2_scion"
-planCondition = "Lua"
-LuaFunction = "BuildBaseGunSpire"
-ContinueEvenIfFail = true
-
-[Plan13]
-planType = "Attacker"
-planPriority = 880
-targetType1 = "VIRTUAL_CLASS_EXTRACTOR"
-targetType2 = "VIRTUAL_CLASS_TURRET"
-targetType3 = "VIRTUAL_CLASS_RECYCLER"
-targetType4 = "DefendUnit"
-attackType1 = "fvsent"
-attackType2 = "fvsent"
-MaxAttacks = 6
-AttackAnything = true
-buildIfNoIdle = true
-planCondition = "Lua"
-LuaFunction = "SendMediumHarassment"

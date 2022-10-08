@@ -30,20 +30,17 @@ function ScavengerBuildLoopCondition(team, time)
     -- Get my scrap in a local variable.
     local myScrap = AIPUtil.GetScrap(team, true);
 
-    -- Does the Recycler exist?
-    local recyclerExists = DoesRecyclerExist(team, time);
-
     -- Check if any pools exist that are currently unclaimed.
-    local poolsToClaim = DoesVacantScrapPoolExist(team, time);
+    local poolsToClaim = CanCollectScrapPool(team, time);
 
     -- Check if any loose scrap exists on the map.
-    local looseScrapToClaim = DoesLooseScrapExist(team, time);
+    local looseScrapToClaim = CanCollectLooseScrap(team, time);
 
     -- Keep track of the count of Scavengers we already have to stop overbuilding.
     local cpuScavCount = CountCPUScavengers(team, time);
 
     -- If the conditions above are true, let the AIP build a Scavenger for pools/scrap.
-    if (myScrap >= 20 and recyclerExists and (poolsToClaim or looseScrapToClaim) and cpuScavCount < 2) then
+    if (myScrap >= 20 and (poolsToClaim or looseScrapToClaim) and cpuScavCount < 2) then
         return true, "ScavengerBuildLoopCondition: Conditions met. Proceeding...";
     else
         return false, "ScavengerBuildLoopCondition: Conditions unmet. Halting plan.";
@@ -62,7 +59,7 @@ function ConstructorBuildLoopCondition(team, time)
     local cpuConsCount = CountCPUConstructors(team, time);
 
     -- If the conditions above are true, let the AIP build a Constructor.
-    if (myScrap >= 40 and recyclerExists and cpuConsCount < 2) then
+    if (myScrap >= 40 and recyclerExists and cpuConsCount < 3) then
         return true, "ConstructorBuildLoopCondition: Conditions met. Proceeding...";
     else
         return false, "ConstructorBuildLoopCondition: Conditions unmet. Halting plan.";
@@ -85,26 +82,30 @@ function TurretBuildLoopCondition(team, time)
     end
 end
 
--- Condition for letting the CPU build Service Trucks.
-function ServiceTruckBuildLoopCondition(team, time)
+----------------
+-- Building Checks
+----------------
+
+-- Allow the CPU to build a Kiln.
+function BuildKiln(team, time)
     -- Get my scrap in a local variable.
     local myScrap = AIPUtil.GetScrap(team, true);
 
-    -- Does the Recycler exist?
-    local recyclerExists = DoesRecyclerExist(team, time);
+    -- Count CPU constructors.
+    local cpuConsCount = CountCPUConstructors(team, time);
 
-    -- Does the Service Bay exist?
-    local serviceBayExists = DoesServiceBayExist(team, time);
+    -- Check if Factory exists.
+    local factoryExists = DoesKilnExist(team, time);
 
-    -- If the conditions above are true, let the AIP build a Turret.
-    if (myScrap >= 50 and recyclerExists and serviceBayExists) then
-        return true, "ServiceTruckBuildLoopCondition: Conditions met. Proceeding...";
+    -- If the conditions above are true, let the AIP build a Factory.
+    if (myScrap >= 60 and cpuConsCount > 0 and not factoryExists) then
+        return true, "BuildKiln: Conditions met. Proceeding...";
     else
-        return false, "ServiceTruckBuildLoopCondition: Conditions unmet. Halting plan.";
+        return false, "BuildKiln: Conditions unmet. Halting plan.";
     end
 end
 
--- Allow the CPU to build a Gun Tower at base
+-- Allow the CPU to build a Gun Spire at base
 function BuildBaseGunSpire(team, time)
     -- Get my scrap in a local variable.
     local myScrap = AIPUtil.GetScrap(team, true);
@@ -120,88 +121,9 @@ function BuildBaseGunSpire(team, time)
     end
 end
 
--- Allow the CPU to build a Gun Spire on the gtow1 path.
-function BuildGunSpire1(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
-
-    -- Check to make sure the path exists first.
-    local gtow1Exists = AIPUtil.PathExists("gtow1");
-
-    -- If the conditions above are true, let the AIP build a Gun Tower on gtow1.
-    if (myScrap >= 75 and gtow1Exists) then
-        return true, "BuildGunSpire1: Conditions met. Proceeding...";
-    else
-        return false, "BuildGunSpire1: Conditions unmet. Halting plan.";
-    end
-end
-
--- Allow the CPU to build a Gun Spire on the gtow2 path.
-function BuildGunSpire2(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
-
-    -- Check to make sure the path exists first.
-    local gtow2Exists = AIPUtil.PathExists("gtow2");
-
-    -- If the conditions above are true, let the AIP build a Gun Tower on gtow2.
-    if (myScrap >= 75 and gtow2Exists) then
-        return true, "BuildGunSpire2: Conditions met. Proceeding...";
-    else
-        return false, "BuildGunSpire2: Conditions unmet. Halting plan.";
-    end
-end
-
--- Allow the CPU to build a Gun Spire on the gtow3 path.
-function BuildGunSpire3(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
-
-    -- Check to make sure the path exists first.
-    local gtow3Exists = AIPUtil.PathExists("gtow3");
-
-    -- If the conditions above are true, let the AIP build a Gun Tower on gtow3.
-    if (myScrap >= 75 and gtow3Exists) then
-        return true, "BuildGunSpire3: Conditions met. Proceeding...";
-    else
-        return false, "BuildGunSpire3: Conditions unmet. Halting plan.";
-    end
-end
-
--- Allow the CPU to build a Gun Spire on the gtow4 path.
-function BuildGunSpire4(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
-
-    -- Check to make sure the path exists first.
-    local gtow4Exists = AIPUtil.PathExists("gtow4");
-
-    -- If the conditions above are true, let the AIP build a Gun Tower on gtow4.
-    if (myScrap >= 75 and gtow4Exists) then
-        return true, "BuildGunSpire4: Conditions met. Proceeding...";
-    else
-        return false, "BuildGunSpire4: Conditions unmet. Halting plan.";
-    end
-end
-
--- Allow the CPU to build a Kiln.
-function BuildKiln(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
-
-    -- Count CPU Builders.
-    local cpuConsCount = CountCPUConstructors(team, time);
-
-    -- Check if Kiln exists.
-    local factoryExists = DoesKilnExist(team, time);
-
-    -- If the conditions above are true, let the AIP build a Kiln.
-    if (myScrap >= 60 and cpuConsCount > 0 and not factoryExists) then
-        return true, "BuildKiln: Conditions met. Proceeding...";
-    else
-        return false, "BuildKiln: Conditions unmet. Halting plan.";
-    end
-end
+----------------
+-- Exist Checks
+----------------
 
 -- Condition for trying to collect pools.
 function CanCollectScrapPool(team, time)
@@ -231,6 +153,10 @@ function DoesKilnExist(team, time)
     return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_FACTORY", 'sameteam', true) > 0;
 end
 
+----------------
+-- Counts
+----------------
+
 -- Checks how many Scavengers the CPU has.
 function CountCPUScavengers(team, time)
     return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_SCAVENGER", 'sameteam', true);
@@ -252,116 +178,32 @@ function CountCPUUpgradedExtractors(team, time)
 end
 
 ----------------
+-- Human Checks
+----------------
+
+-- Check if the player has any Gun Towers.
+function DoesHumanHaveGunTowers(team, time)
+    return AIPUtil.CountUnits(1, "VIRTUAL_CLASS_GUNTOWER", 'sameteam', true) > 0;
+end
+
+----------------
 -- Upgrade Checks
 ----------------
 
 -- Allow the CPU to upgrade their first Extractor.
-function UpgradeFirstExtractor(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
-
-    -- Count CPU constructors.
-    local cpuConsCount = CountCPUConstructors(team, time);
-
-    -- Count CPU extractors.
-    local cpuExtractorCount = CountCPUExtractors(team, time);
-
-    -- Count CPU Upgraded extractors.
-    local cpuUpgradedExtractorCount = CountCPUUpgradedExtractors(team, time);
-
-    if (myScrap >= 60 and cpuConsCount >= 1 and cpuExtractorCount >= 1 and cpuUpgradedExtractorCount <= 0) then
-        return true, "UpgradeFirstExtractor: Conditions met. Proceeding...";
-    else
-        return false, "UpgradeFirstExtractor: Conditions unmet. Halting plan.";
-    end
-end
-
--- Allow the CPU to upgrade their second Extractor.
-function UpgradeSecondExtractor(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
-
-    -- Count CPU constructors.
-    local cpuConsCount = CountCPUConstructors(team, time);
-
-    -- Count CPU extractors.
-    local cpuExtractorCount = CountCPUExtractors(team, time);
-
-    -- Count CPU Upgraded extractors.
-    local cpuUpgradedExtractorCount = CountCPUUpgradedExtractors(team, time);
-
-    if (myScrap >= 60 and cpuConsCount >= 1 and cpuExtractorCount >= 2 and cpuUpgradedExtractorCount <= 2) then
-        return true, "UpgradeSecondExtractor: Conditions met. Proceeding...";
-    else
-        return false, "UpgradeSecondExtractor: Conditions unmet. Halting plan.";
-    end
-end
-
--- Allow the CPU to upgrade their third Extractor.
-function UpgradeThirdExtractor(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
-
-    -- Count CPU constructors.
-    local cpuConsCount = CountCPUConstructors(team, time);
-
-    -- Count CPU extractors.
-    local cpuExtractorCount = CountCPUExtractors(team, time);
-
-    -- Count CPU Upgraded extractors.
-    local cpuUpgradedExtractorCount = CountCPUUpgradedExtractors(team, time);
-
-    if (myScrap >= 60 and cpuConsCount >= 1 and cpuExtractorCount >= 3 and cpuUpgradedExtractorCount <= 3) then
-        return true, "UpgradeThirdExtractor: Conditions met. Proceeding...";
-    else
-        return false, "UpgradeThirdExtractor: Conditions unmet. Halting plan.";
-    end
-end
-
--- Allow the CPU to upgrade their Kiln.
 function UpgradeKiln(team, time)
     -- Get my scrap in a local variable.
     local myScrap = AIPUtil.GetScrap(team, true);
-    
+
     -- Count CPU constructors.
     local cpuConsCount = CountCPUConstructors(team, time);
-   
-    -- Check if the Kiln exists.
-    local kilnExists = DoesKilnExist(team, time);
 
-    if (myScrap >= 60 and cpuConsCount >= 1 and kilnExists) then
+    -- Count CPU extractors.
+    local doesKilnExist = DoesKilnExist(team, time);
+
+    if (myScrap >= 60 and cpuConsCount >= 1 and doesKilnExist) then
         return true, "UpgradeKiln: Conditions met. Proceeding...";
     else
-        return false, "UpgradeKiln: Conditions met. Proceeding...";
-    end
-end
-
-----------------
--- Attack Checks
-----------------
-
--- Allow for early game harassment by the AI.
-function SendEarlyScoutHarassment(team, time)
-    -- Check if Factory exists.
-    local kilnExists = DoesKilnExist(team, time);
-
-    -- Allow this attack if all of these conditions are met.
-    if (not kilnExists) then
-        return true, "SendEarlyScoutHarassment: Conditions met. Proceeding...";
-    else 
-        return false, "SendEarlyScoutHarassment: Conditions unmet. Halting plan. Time is " .. time;
-    end
-end
-
--- Allow for medium game harassment by the AI.
-function SendMediumHarassment(team, time)
-    -- Check if Factory exists.
-    local kilnExists = DoesKilnExist(team, time);
-    
-    -- Allow this attack if all of these conditions are met.
-    if (kilnExists) then
-        return true, "SendMediumHarassment: Conditions met. Proceeding...";
-    else 
-        return false, "SendMediumHarassment: Conditions unmet. Halting plan. Time is " .. time;
+        return false, "UpgradeKiln: Conditions unmet. Halting plan.";
     end
 end
