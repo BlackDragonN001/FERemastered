@@ -1,0 +1,37 @@
+//================================
+// Scion Engine Glow Fx.
+// Created by General BlackDragon
+//================================
+
+[Small]
+renderBase = "draw_light"
+startColor = "204 133 0 255" // "Flame: Diffuse: 1.0, R: 0.8, G: 0.5, B: 0.0"
+finishColor = "204 133 0 255"
+startRadius = 5.0
+finishRadius = 5.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
+
+[Medium]
+renderBase = "draw_light"
+startColor = "204 133 0 255"
+finishColor = "204 133 0 255"
+startRadius = 10.0
+finishRadius = 10.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false
+
+[Large]
+renderBase = "draw_light"
+startColor = "204 133 0 255"
+finishColor = "204 133 0 255"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false

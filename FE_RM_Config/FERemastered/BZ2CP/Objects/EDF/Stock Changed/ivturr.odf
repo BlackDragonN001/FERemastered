@@ -62,6 +62,14 @@ effectMinAltitude1 = 0.0
 effectMaxAltitude1 = 5.0
 effectFlags1 = 2147483127
 
+// Engine flame glow.
+effectHard2 = "flame_1"
+effectName2 = "engglow_i.small"
+effectFlags2 = 2147483135 // thrusting only.
+effectHard3 = "flame_2"
+effectName3 = "engglow_i.small"
+effectFlags3 = 2147483135 // thrusting only.
+
 [CraftClass]
 rangeScan = 300.0
 periodScan = 3.0

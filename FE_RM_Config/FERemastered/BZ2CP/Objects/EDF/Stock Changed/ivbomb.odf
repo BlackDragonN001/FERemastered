@@ -65,6 +65,14 @@ effectMaxAltitude2 = 1e6
 //effectMaxVelocity2 = 1e6
 effectFlags2 = 2147483639
 
+// Engine flame glow.
+effectHard3 = "flame_1"
+effectName3 = "engglow_i.large"
+effectFlags3 = 2147483135 // thrusting only.
+effectHard4 = "flame_2"
+effectName4 = "engglow_i.large"
+effectFlags4 = 2147483135 // thrusting only.
+
 //effectHard3 = "hp_dust_1"
 //effectName3 = "emit_aircraft2"
 //effectMinAltitude3 = 25.0
