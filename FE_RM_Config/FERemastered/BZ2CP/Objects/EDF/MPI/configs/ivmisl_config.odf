@@ -1,4 +1,3 @@
-// Easy Difficulty
 [EasyWeaponSlot1]
 aiPatrolChance=0.1
 aiHuntChance=0.2
@@ -8,6 +7,7 @@ weaponName2="apshdw"
 weaponName3="apcpphoto"
 
 WeaponMask1=3
+WeaponMask2=7
 
 [EasyWeaponSlot2]
 weaponName1="aptagg"
@@ -20,7 +20,6 @@ weaponName2="apredf"
 weaponName3="apmits"
 weaponName4="apphan"
 
-// Medium Difficulty
 [MediumWeaponSlot1]
 aiPatrolChance=0.1
 aiHuntChance=0.2
@@ -31,6 +30,7 @@ weaponName3="apcpphoto"
 
 WeaponMask1=3
 WeaponMask2=7
+WeaponMask3=7
 
 [MediumWeaponSlot2]
 weaponName1="aptagg"
@@ -43,7 +43,6 @@ weaponName2="apredf"
 weaponName3="apmits"
 weaponName4="apphan"
 
-// Hard Difficulty
 [HardWeaponSlot1]
 aiPatrolChance=0.1
 aiHuntChance=0.2
@@ -51,18 +50,24 @@ aiHuntChance=0.2
 weaponName1="aptagg"
 weaponName2="apshdw"
 weaponName3="apcpphoto"
+weaponName4="aptagg"
+weaponName5="aptagg"
+weaponName6="apshdw"
 
-WeaponMask1=3
-WeaponMask2=7
-WeaponMask3=7
+WeaponMask1=7
 
 [HardWeaponSlot2]
 weaponName1="aptagg"
 weaponName2="apshdw"
 weaponName3="apcpphoto"
+weaponName4="aptagg"
+weaponName5="aptagg"
+weaponName6="apshdw"
 
 [HardWeaponSlot3]
-weaponName1="approx"
-weaponName2="apredf"
+weaponName1="apphan"
+weaponName2="approx"
 weaponName3="apmits"
-weaponName4="apphan"
+weaponName4="apredf"
+weaponName5="apphan"
+weaponName6="apphan"
