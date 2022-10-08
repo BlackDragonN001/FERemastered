@@ -10,7 +10,7 @@ addAmmo = 10
 unitName = "Speeder"
 aiName = "TankFriend"
 aiName2 = "TankEnemy"
-explosionName = "xmagcar5_a"
+explosionName = "xcarxpl_s"
 
 heatSignature = 0.1
 imageSignature = 0.1
@@ -20,9 +20,9 @@ isAssault = 0
 
 //needPilot = 0
 
+pilotClass = "issold"
+
 armorClass = N
-
-
 
 /////// weapons ///////////////////
 
@@ -35,6 +35,7 @@ weaponAssault1 = 0
 ////////////////////////////////////
  
 [CraftClass]
+ejectRatio = 1.0
 
 rangeScan = 250.0f
 periodScan = 2.0f
@@ -49,6 +50,15 @@ strafeFactor = 0.2
 
 avoidSpeed = 15;
 topSpeed = 20;
+
+StrafeTimeBase0 = 10 //0.5
+StrafeTimeBase1 = 20 //1.0
+StrafeTimeBase2 = 30 //3.0
+StrafeTimeBase3 = 60 //5.0
+StrafeTimeRandom0 = 5 //0.5
+StrafeTimeRandom1 = 10 //1.0
+StrafeTimeRandom2 = 15 //1.5
+StrafeTimeRandom3 = 30 //2.0
 
 selectWaitMsg = "ivtank05.wav"
 selectAttackMsg = "ivtank02.wav"
@@ -71,9 +81,9 @@ killedMsg = "ivtank07.wav"
 diedMsg = ""
 
 [HoverCraftClass]
-velocForward = 12.0 // []
+velocForward = 22.0 //12.0 // []
 velocReverse = 10.0 // []
-velocStrafe = 5.0 // []
+velocStrafe = 20.0 //5.0 // []
 accelThrust = 50.0 //acceleration []
 accelDragStop = 10.0 //how fast it stops once hands are off controls []
 accelJump = 20.0 // []
