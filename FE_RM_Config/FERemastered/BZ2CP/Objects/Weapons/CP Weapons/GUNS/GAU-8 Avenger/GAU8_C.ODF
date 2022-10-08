@@ -21,11 +21,29 @@ damageValue(D) = 3.40 // deflection // 160
 damageValue(A) = 8 // absorbtion // 320
 
 [Render]
-renderBase = "draw_trail"
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "gau8_c.BulletTrail"
+renderName2 = "gau8_c.SmokeyTrail"
+
+[BulletTrail]
+renderBase = "draw_tracer"
 textureBlend = "one one modulate"
-textureName = "trail.tga"
-startColor = "255 127 0 255"
-finishColor = "255 127 0 0"
-startRadius = 0.02
+textureName = "spark2.tga"
+startColor = "232 155 64 250"
+finishColor = "232 155 64 0"
+startRadius = 0.1
 finishRadius = 0.05
+tracerLength = 4.0
+
+[SmokeyTrail]
+renderBase = "draw_trail"
+textureName = "strail.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+textureRate = 0.3
+startColor = "255 127 63 15"
+finishColor = "105 105 107 0"
+startRadius = 0.2
+finishRadius = 0.03
 segmentTime = 0.05
+

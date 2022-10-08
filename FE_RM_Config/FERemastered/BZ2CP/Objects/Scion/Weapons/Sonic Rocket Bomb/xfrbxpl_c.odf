@@ -5,59 +5,63 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 8
+particleTypes = 10
 
-particleClass1 = "xgasgndcp.Shock"
+particleClass1 = "xfrbgnd_c.Shock"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 particleInherit1 = "0.5 0.5 0.5"
 
-particleClass2 = "xgasgndcp.SmokePlume"
-particleCount2 = 5 //10
+particleClass2 = "xfrbgnd_c.SmokePlume"
+particleCount2 = 5
 particleVeloc2 = "10.0 35.0 10.0"
 particlePosVar2 = "3.0 0.0 3.0"
 particleInherit2 = "0.5 0.5 0.5"
 
-particleClass3 = "xgasgndcp.Light"
+particleClass3 = "xfrbgnd_c.Light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 particleInherit3 = "0.5 0.5 0.5"
 
-particleClass4 = "xgasgndcp.FlameHeat"
-particleCount4 = 4 //6
+particleClass4 = "xfrbgnd_c.FlameHeat"
+particleCount4 = 4
 particleVeloc4 = "5.0 10.0 5.0" //"10.0 10.0 10.0"
 particleBias4 = "0.0 6.0 0.0"
 particlePosVar4 = "3.0 0.0 3.0"
 particleInherit4 = "0.5 0.5 0.5"
 
-particleClass5 = "xgasgndcp.Flames"
+particleClass5 = "xfrbgnd_c.Flames"
 particleCount5 = 6 //8
 particleVeloc5 = "6.0 19.0 6.0" //"19.0 19.0 19.0"
 particlePosVar5 = "3.0 0.0 3.0"
 particleInherit5 = "0.5 0.5 0.5"
 
-particleClass6 = "xgasxplcp.HullAsh"
+particleClass6 = "xfrbxpl_c.HullAsh"
 particleCount6 = 5 //10
 particleVeloc6 = "110.0 90.0 110.0"
 particleBias6 = "0.0 12.0 0.0"
 particlePosVar6 = "3.0 0.0 3.0"
 particleInherit6 = "0.5 0.5 0.5"
 
-particleClass7 = "xgasxplcp.Secondary"
-particleCount7 = 2
-particleVeloc7 = "50.0 50.0 50.0"
+particleClass7 = "xfrbxpl_c.Secondary"
+particleCount7 = 3
+particleVeloc7 = "35.0 35.0 35.0"
 particleInherit7 = "0.5 0.5 0.5"
 
-particleClass8 = "xgasxplcp.lightflare"
+particleClass8 = "xfrbxpl_c.lightflare"
 particleCount8 = 1
 particleVeloc8 = "0.0 0.0 0.0"
 particleInherit8 = "0.5 0.5 0.5"
 
-particleClass9 = "xgasxplcp.trails"
+particleClass9 = "xfrbxpl_c.trails"
 particleCount9 = 6
 particleVeloc9 = "110.0 90.0 110.0"
 particleBias9 = "0.0 1.0 0.0"
 particleInherit9 = "0.5 0.5 0.5"
+
+particleClass10 = "xfrbgnd_c.flamepuff"
+particleCount10 = 3
+particleVeloc10 = "5.0 5.0 5.0"
 
 explSound = "xmv1.wav"
 damageRadius = 25.0
@@ -78,7 +82,7 @@ startDelay = 0.25
 renderBase = "draw_emit"
 emitDelay = 0.2
 emitDelayVar = 0.05
-emitName = "xgasxplcp.SecondaryRender"
+emitName = "xfrbxpl_c.SecondaryRender"
 emitVariance = "3.0 3.0 3.0"
 emitVelocity = "0.0 0.0 0.0"
 
@@ -87,11 +91,11 @@ emitVelocity = "0.0 0.0 0.0"
 	lifeTime = 1.9
 	renderBase = "draw_multi"
 	renderCount = 5
-	renderName1 = "xgasxplcp.LightFlare"
-	renderName2 = "xgasgndcp.FlameHeat"
-	renderName3 = "xgasgndcp.Flames"
-	renderName4 = "xgasgndcp.Flames"
-	renderName5 = "xgasgndcp.smokeplume"
+	renderName1 = "xfrbxpl_c.LightFlare"
+	renderName2 = "xfrbgnd_c.FlameHeat"
+	renderName3 = "xfrbgnd_c.Flames"
+	renderName4 = "xfrbgnd_c.Flames"
+	renderName5 = "xfrbgnd_c.smokeplume"
 
 [LightFlare]
 simulateBase = "sim_smoke"
@@ -99,8 +103,8 @@ lifeTime = 0.2
 renderBase = "draw_twirl"
 textureName = "particle.tga"
 textureBlend = "one one modulate"
-startColor = "255 156 40 200"
-finishColor = "255 156 40 0"
+startColor = "156 255 40 200"
+finishColor = "127 255 40 0"
 startRadius = 10.0
 finishRadius = 2.0
 animateTime = 0.2
@@ -113,7 +117,7 @@ lifeTime = 6.0
 renderBase = "draw_twirl"
 textureName = "spark.tga"
 textureBlend = "one one modulate"
-startColor = "255 140 20 255"
+startColor = "127 255 20 255"
 finishColor = "255 90 20 0"
 startRadius = 0.2
 finishRadius = 0.2
@@ -124,10 +128,10 @@ BottomInteractsWithTerrain = false
 simulateBase = "sim_ember"
 lifeTime = 2.0
 renderBase = "draw_trail"
-textureName = "firetrail2.tga"
+textureName = "firetrail1.tga"
 textureBlend = "one one modulate"
-startColor = "255 83 16 255"
-finishColor = "255 83 16 0"
+startColor = "127 255 16 255"
+finishColor = "0 255 16 0"
 startRadius = 0.04
 finishRadius = 0.0
 segmentTime = 0.5

@@ -1,0 +1,152 @@
+// =============
+// Explosion for Scion rbomb
+// =============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 13
+
+particleClass1 = "xfrbgnd_a.shock"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xfrbgnd_a.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleInherit2 = "0.5 0.5 0.5"
+
+particleClass3 = "xfrbgnd_a.flamepuff"
+particleCount3 = 3
+particleVeloc3 = "5.0 5.0 5.0"
+particleBias3 = "0.0 15.0 0.0"
+particleInherit3 = "0.5 0.5 0.5"
+
+particleClass4 = "xfrbgnd_a.smoke"
+particleCount4 = 12
+particleVeloc4 = "25.0 5.0 25.0"
+particleBias4 = "0.0 12.0 0.0"
+particleInherit4 = "0.5 0.5 0.5"
+
+particleClass5 = "xfrbgnd_a.SmokePlume"
+particleCount5 = 10
+particleVeloc5 = "10.0 35.0 10.0"
+particlePosVar5 = "3.0 0.0 3.0"
+particleInherit5 = "0.5 0.5 0.5"
+
+particleClass6 = "xfrbxpl_a.BlackChunks"
+particleCount6 = 10
+particleVeloc6 = "75.0 65.0 75.0"
+particleBias6 = "0.0 0.0 0.0"
+particlePosVar6 = "3.0 0.0 3.0"
+particleInherit6 = "0.5 0.5 0.5"
+
+particleClass7 = "xfrbgnd_a.glow"
+particleCount7 = 1
+particleVeloc7 = "0.0 0.0 0.0"
+
+particleClass8 = "xfrbgnd_a.FlameHeat"
+particleCount8 = 6
+particleVeloc8 = "5.0 10.0 5.0"
+particlePosVar8 = "3.0 0.0 3.0"
+particleInherit8 = "0.5 0.5 0.5"
+
+particleClass9 = "xfrbgnd_a.Flames"
+particleCount9 = 12
+particleVeloc9 = "6.0 40.0 6.0"
+particlePosVar9 = "3.0 0.0 3.0"
+particleInherit9 = "0.8 0.8 0.8"
+
+particleClass10 = "xfrbgnd_a.sparks"
+particleCount10 = 6
+particleVeloc10 = "110.0 110.0 110.0"
+particlePosVar10 = "3.0 0.0 3.0"
+particleInherit10 = "0.8 0.8 0.8"
+
+particleClass11 = "xfrbxpl_a.wave"
+particleCount11 = 1
+particleVeloc11 = "0.0 0.0 0.0"
+particlePosVar11 = "5.0 5.0 5.0"
+particleInherit11 = "0.5 0.5 0.5"
+
+particleClass12 = "xfrbgnd_a.puff"
+particleCount12 = 15
+particleVeloc12 = "25.0 45.0 25.0"
+particlePosVar12 = "3.0 0.0 3.0"
+particleInherit12 = "0.8 0.8 0.8"
+
+particleClass13 = "xfrbxpl_a.Secondary"
+particleCount13 = 2
+particleVeloc13 = "10.0 10.0 10.0"
+particlePosVar13 = "15.0 15.0 15.0"
+particleInherit13 = "0.5 0.5 0.5"
+
+explSound = "xmv1.wav"
+damageRadius = 50.0
+
+damageValue(N) = 100 // none
+damageValue(L) = 150 // light
+damageValue(H) = 220 // heavy
+
+damageValue(S) = 130 // standard
+damageValue(D) = 220 // deflection
+damageValue(A) = 100 // absorbtion
+
+kickRadius = 20.0
+kickOmega = 12.0
+kickVeloc = 2.0
+
+[Secondary]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+startDelay = 0.25
+renderBase = "draw_emit"
+emitDelay = 0.2
+emitDelayVar = 0.05
+emitName = "xfrbxpl_a.SecondaryRender"
+emitVariance = "3.0 3.0 3.0"
+emitVelocity = "0.0 0.0 0.0"
+emitPosVariance = "5.0 5.0 5.0"
+
+	[SecondaryRender]
+	simulateBase = "sim_smoke"
+	lifeTime = 1.9
+	renderBase = "draw_multi"
+	renderCount = 6
+	renderName1 = "xfrbgnd_a.Light"
+	renderName2 = "xfrbgnd_a.FlameHeat"
+	renderName3 = "xfrbgnd_a.Flames"
+	renderName4 = "xfrbgnd_a.Flames"
+	renderName5 = "xfrbgnd_a.smokeplume"
+	renderName6 = "xfrbxpl_a.wave"
+
+[BlackChunks]
+simulateBase = "sim_ember"
+lifeTime = 1.9
+renderBase = "draw_twirl"
+textureName = "dirt.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "75 41 26 255"
+finishColor = "15 15 15 0"
+startRadius = 0.1
+finishRadius = 0.1
+animateTime = 1.9
+rotationRate = 1.5
+BottomInteractsWithTerrain = false
+
+[Wave]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "127 225 127 255"
+finishColor = "0 255 0 0"
+startRadius = 5.0
+finishRadius = 25.0
+animateTime = 0.5
+waveAngle = 3.14159265359
+waveDepth = 1.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 64
