@@ -1,22 +1,27 @@
 [GameObjectClass]
 classLabel = "ivscout"
 addAmmo = 15
-aiName = "AttachWingman"
-aiName2 = "AttachWingman"
+aiName = "SentryProcess"
+aiName2 = "SentryProcess"
 scrapCost = 0
-customCost = 0
-unitName = "Commander"
-armorClass = M
 
-ejectRatio = 1
-PilotConfig = "ispilo_c"
+unitName = "Commander"
+armorClass = H
+
+PilotConfig = "iscmdr_c"
 
 /////// REQUIREMENTS ///////////////
+
 requireCount = 0
 
+////////////////////////////////////
+
 /////// PROVIDES ///////////////////
+
 provideCount = 4
 provideName4 = "ivcmdr_c"
+
+////////////////////////////////////
 
 [CraftClass]
 ClosestEnemyGoodEyes = true
@@ -27,6 +32,8 @@ evadeSightFactor3 = 40
 evadeOrdnanceFactor3 = 40
 evadeRandomFactor3 = 40
 filterFactor3 = 1
+
+AIOnly = true
 
 [HoverCraftClass]
 

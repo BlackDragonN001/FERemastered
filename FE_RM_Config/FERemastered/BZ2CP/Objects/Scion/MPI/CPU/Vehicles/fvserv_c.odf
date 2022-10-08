@@ -1,0 +1,26 @@
+[GameObjectClass]
+classLabel = "fvserv"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 4
+provideName4 = "fvserv_c"
+
+////////////////////////////////////
+
+[CraftClass]
+engageRange = 75.0
+
+[TrackedVehicleClass]
+
+[ServiceTruck]
+serviceSTs = 1
+serviceBuildings = 1
+
+[Supply]
+
+[Halo]
+
+[Bolt]
+
+[Lod1]

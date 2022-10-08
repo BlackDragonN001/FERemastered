@@ -6,16 +6,16 @@ binarySave [1] =
 false
 msn_filename = IA_Ground4.bzn
 seq_count [1] =
-16344
+16399
 saveType [1] =
 0
 g_TerrainName = IA_Ground4
 size [1] =
-150
+149
 [GameObject]
-objClass = player
+objClass = ivscout
 seqno [1] =
-803ef8
+803fd8
 team [1] =
 17
 isUser [1] =
@@ -23,77 +23,77 @@ true
 objAddr = 00000001
 transform [1] =
   right.x [1] =
-7.85067677e-01
+-6.57504678e-01
   right.y [1] =
-3.65405437e-03
+1.71766516e-07
   right.z [1] =
--6.19392276e-01
+-7.53450513e-01
   up.x [1] =
--1.44376801e-02
+2.11554021e-03
   up.y [1] =
-9.99814510e-01
+9.99995708e-01
   up.z [1] =
--1.24011552e-02
+-1.84591918e-03
   front.x [1] =
-6.19232059e-01
+7.53447413e-01
   front.y [1] =
-1.86783336e-02
+-2.80770683e-03
   front.z [1] =
-7.84974813e-01
+-6.57501280e-01
   posit.x [1] =
--7.66655029e+02
+-7.40996521e+02
   posit.y [1] =
-3.09199036e+02
+3.08582214e+02
   posit.z [1] =
-7.03852234e+02
+7.36169434e+02
 abandoned [1] =
 0
 curAmmo [1] =
-1.18000000e+03
+1.50000000e+03
 maxAmmo [1] =
-1.20000000e+03
+1.50000000e+03
 addAmmo [1] =
-0.00000000e+00
+1.00000000e+00
 curPilot = ispilo
 illumination [1] =
 1.00000000e+00
 euler =
  mass [1] =
-1.30762100e+04
+5.72449658e+03
  mass_inv [1] =
-7.64747601e-05
+1.74687855e-04
  v_mag [1] =
-1.96726732e-02
+1.30560666e-05
  v_mag_inv [1] =
-5.08319321e+01
+7.65927500e+04
  I [1] =
-1.44904813e+05
+3.92424258e+04
  k_i [1] =
-6.90108209e-06
+2.54826246e-05
  v [1] =
   x [1] =
--7.36381975e-04
+2.78231571e-08
   y [1] =
-1.96458045e-02
+1.30560147e-05
   z [1] =
--7.17088813e-04
+-2.42765879e-08
  omega [1] =
   x [1] =
-0.00000000e+00
+-5.90381006e-08
   y [1] =
-0.00000000e+00
+-1.10231427e-04
   z [1] =
-0.00000000e+00
+5.47332036e-07
  Accel [1] =
   x [1] =
-4.07946249e-03
+4.03065092e-09
   y [1] =
--2.84304738e-01
+-1.90734863e-06
   z [1] =
-5.64341061e-03
-name = Tank
+-3.52784890e-09
+name = Scout
 saveFlags [1] =
-44
+108
 isVisible [1] =
 65535
 EffectsMask [1] =
@@ -101,11 +101,11 @@ EffectsMask [1] =
 isSeen [1] =
 2
 groupNumber [1] =
--1
+3
 undefaicmd =
 priority [1] =
 0
-what = 28000000
+what = 00000000
 who [1] =
 0
 where = 00000000
@@ -151,41 +151,6 @@ transform [1] =
 7.58992004e+02
 name = Spawn
 [GameObject]
-objClass = pspwn_1
-seqno [1] =
-800111
-team [1] =
-0
-isUser [1] =
-false
-objAddr = 00000003
-transform [1] =
-  right.x [1] =
-9.99995768e-01
-  right.y [1] =
-0.00000000e+00
-  right.z [1] =
-0.00000000e+00
-  up.x [1] =
-0.00000000e+00
-  up.y [1] =
-9.99995649e-01
-  up.z [1] =
-0.00000000e+00
-  front.x [1] =
-0.00000000e+00
-  front.y [1] =
-0.00000000e+00
-  front.z [1] =
-9.99991417e-01
-  posit.x [1] =
-7.47380005e+02
-  posit.y [1] =
-3.06799988e+02
-  posit.z [1] =
--8.04643982e+02
-name = Spawn
-[GameObject]
 objClass = bbdest02
 seqno [1] =
 803f16
@@ -193,7 +158,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000004
+objAddr = 00000003
 transform [1] =
   right.x [1] =
 0.00000000e+00
@@ -264,9 +229,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 curHealth [1] =
 4.86800000e+03
 maxHealth [1] =
@@ -294,7 +259,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000005
+objAddr = 00000004
 transform [1] =
   right.x [1] =
 -9.99995768e-01
@@ -365,9 +330,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -389,7 +354,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000006
+objAddr = 00000005
 transform [1] =
   right.x [1] =
 0.00000000e+00
@@ -460,9 +425,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -484,7 +449,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000007
+objAddr = 00000006
 transform [1] =
   right.x [1] =
 0.00000000e+00
@@ -555,9 +520,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -579,7 +544,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000008
+objAddr = 00000007
 transform [1] =
   right.x [1] =
 -9.99995768e-01
@@ -650,9 +615,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -674,7 +639,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000009
+objAddr = 00000008
 transform [1] =
   right.x [1] =
 0.00000000e+00
@@ -745,9 +710,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -769,7 +734,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000000A
+objAddr = 00000009
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -804,7 +769,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000000B
+objAddr = 0000000A
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -839,7 +804,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000000C
+objAddr = 0000000B
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -910,9 +875,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -934,7 +899,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000000D
+objAddr = 0000000C
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -1005,9 +970,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -1029,7 +994,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000000E
+objAddr = 0000000D
 transform [1] =
   right.x [1] =
 1.60152346e-01
@@ -1100,9 +1065,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+67
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -1124,14 +1089,14 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000000F
+objAddr = 0000000E
 transform [1] =
   right.x [1] =
 9.98280108e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--5.85526936e-02
+-5.85526973e-02
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -1139,7 +1104,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-5.85524403e-02
+5.85524440e-02
   front.y [1] =
 -0.00000000e+00
   front.z [1] =
@@ -1195,9 +1160,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+67
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -1219,7 +1184,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000010
+objAddr = 0000000F
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -1289,9 +1254,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -1313,7 +1278,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000011
+objAddr = 00000010
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -1383,9 +1348,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -1407,7 +1372,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000012
+objAddr = 00000011
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -1477,9 +1442,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -1501,7 +1466,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000013
+objAddr = 00000012
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -1571,9 +1536,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -1595,7 +1560,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000014
+objAddr = 00000013
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -1665,9 +1630,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -1689,7 +1654,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000015
+objAddr = 00000014
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -1759,9 +1724,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -1783,7 +1748,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000016
+objAddr = 00000015
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -1853,9 +1818,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -1877,7 +1842,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000017
+objAddr = 00000016
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -1947,9 +1912,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -1971,7 +1936,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000018
+objAddr = 00000017
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -2041,9 +2006,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -2065,7 +2030,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000019
+objAddr = 00000018
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -2135,9 +2100,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -2159,7 +2124,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000001A
+objAddr = 00000019
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -2229,9 +2194,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -2253,7 +2218,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000001B
+objAddr = 0000001A
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -2323,9 +2288,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -2347,7 +2312,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000001C
+objAddr = 0000001B
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -2417,9 +2382,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -2441,7 +2406,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000001D
+objAddr = 0000001C
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -2511,9 +2476,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -2535,7 +2500,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000001E
+objAddr = 0000001D
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -2605,9 +2570,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -2629,7 +2594,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000001F
+objAddr = 0000001E
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -2699,9 +2664,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -2723,7 +2688,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000020
+objAddr = 0000001F
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -2793,9 +2758,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -2817,7 +2782,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000021
+objAddr = 00000020
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -2887,9 +2852,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -2911,7 +2876,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000022
+objAddr = 00000021
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -2981,9 +2946,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -3005,7 +2970,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000023
+objAddr = 00000022
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -3075,9 +3040,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -3099,7 +3064,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000024
+objAddr = 00000023
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -3169,9 +3134,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -3193,7 +3158,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000025
+objAddr = 00000024
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -3263,9 +3228,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -3287,7 +3252,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000026
+objAddr = 00000025
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -3357,9 +3322,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+3
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -3381,7 +3346,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000027
+objAddr = 00000026
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -3451,9 +3416,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+3
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -3475,7 +3440,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000028
+objAddr = 00000027
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -3545,9 +3510,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+3
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -3569,7 +3534,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000029
+objAddr = 00000028
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -3639,9 +3604,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+3
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -3663,7 +3628,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000002A
+objAddr = 00000029
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -3733,9 +3698,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+3
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -3757,7 +3722,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000002B
+objAddr = 0000002A
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -3827,9 +3792,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+3
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -3851,7 +3816,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000002C
+objAddr = 0000002B
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -3921,9 +3886,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+3
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -3945,7 +3910,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000002D
+objAddr = 0000002C
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -4015,9 +3980,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+3
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -4039,7 +4004,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000002E
+objAddr = 0000002D
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -4109,9 +4074,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+67
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -4133,7 +4098,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000002F
+objAddr = 0000002E
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -4203,9 +4168,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+67
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -4227,7 +4192,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000030
+objAddr = 0000002F
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -4297,9 +4262,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+67
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -4321,7 +4286,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000031
+objAddr = 00000030
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -4391,9 +4356,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+67
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -4415,7 +4380,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000032
+objAddr = 00000031
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -4485,9 +4450,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+67
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -4509,7 +4474,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000033
+objAddr = 00000032
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -4579,9 +4544,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+67
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -4603,7 +4568,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000034
+objAddr = 00000033
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -4673,9 +4638,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+67
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -4697,7 +4662,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000035
+objAddr = 00000034
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -4767,9 +4732,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+67
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -4791,7 +4756,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000036
+objAddr = 00000035
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -4861,9 +4826,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+67
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -4885,7 +4850,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000037
+objAddr = 00000036
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -4955,9 +4920,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+67
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -4979,7 +4944,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000038
+objAddr = 00000037
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -5049,9 +5014,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -5073,7 +5038,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000039
+objAddr = 00000038
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -5143,9 +5108,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -5167,7 +5132,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000003A
+objAddr = 00000039
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -5237,9 +5202,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -5261,7 +5226,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000003B
+objAddr = 0000003A
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -5331,9 +5296,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -5355,7 +5320,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000003C
+objAddr = 0000003B
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -5425,9 +5390,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -5449,7 +5414,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000003D
+objAddr = 0000003C
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -5519,9 +5484,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -5543,7 +5508,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000003E
+objAddr = 0000003D
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -5613,9 +5578,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -5637,7 +5602,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000003F
+objAddr = 0000003E
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -5707,9 +5672,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -5731,7 +5696,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000040
+objAddr = 0000003F
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -5801,9 +5766,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -5825,7 +5790,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000041
+objAddr = 00000040
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -5895,9 +5860,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -5919,7 +5884,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000042
+objAddr = 00000041
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -5989,9 +5954,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -6013,7 +5978,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000043
+objAddr = 00000042
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -6083,9 +6048,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -6107,7 +6072,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000044
+objAddr = 00000043
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -6177,9 +6142,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -6201,7 +6166,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000045
+objAddr = 00000044
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -6271,9 +6236,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -6295,7 +6260,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000046
+objAddr = 00000045
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -6365,9 +6330,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -6389,7 +6354,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000047
+objAddr = 00000046
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -6459,9 +6424,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -6483,7 +6448,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000048
+objAddr = 00000047
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -6553,9 +6518,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -6577,7 +6542,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000049
+objAddr = 00000048
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -6647,9 +6612,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -6671,7 +6636,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000004A
+objAddr = 00000049
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -6741,9 +6706,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -6765,7 +6730,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000004B
+objAddr = 0000004A
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -6835,9 +6800,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -6859,7 +6824,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000004C
+objAddr = 0000004B
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -6929,9 +6894,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -6953,7 +6918,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000004D
+objAddr = 0000004C
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -7023,9 +6988,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -7047,7 +7012,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000004E
+objAddr = 0000004D
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -7117,9 +7082,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -7141,7 +7106,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000004F
+objAddr = 0000004E
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -7211,9 +7176,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -7235,7 +7200,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000050
+objAddr = 0000004F
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -7305,9 +7270,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -7329,7 +7294,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000051
+objAddr = 00000050
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -7399,9 +7364,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -7423,7 +7388,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000052
+objAddr = 00000051
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -7493,9 +7458,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -7517,7 +7482,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000053
+objAddr = 00000052
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -7587,9 +7552,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -7611,7 +7576,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000054
+objAddr = 00000053
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -7681,9 +7646,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -7705,7 +7670,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000055
+objAddr = 00000054
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -7775,9 +7740,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -7799,7 +7764,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000056
+objAddr = 00000055
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -7869,9 +7834,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-3
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -7893,7 +7858,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000057
+objAddr = 00000056
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -7963,9 +7928,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-3
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -7987,7 +7952,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000058
+objAddr = 00000057
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -8057,9 +8022,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-3
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -8081,7 +8046,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000059
+objAddr = 00000058
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -8151,9 +8116,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-3
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -8175,7 +8140,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000005A
+objAddr = 00000059
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -8245,9 +8210,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-3
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -8269,7 +8234,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000005B
+objAddr = 0000005A
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -8339,9 +8304,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-3
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -8363,7 +8328,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000005C
+objAddr = 0000005B
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -8433,9 +8398,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-3
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -8457,7 +8422,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000005D
+objAddr = 0000005C
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -8527,9 +8492,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-3
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -8551,7 +8516,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000005E
+objAddr = 0000005D
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -8621,9 +8586,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-3
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -8645,7 +8610,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000005F
+objAddr = 0000005E
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -8715,9 +8680,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-3
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -8739,7 +8704,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000060
+objAddr = 0000005F
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -8809,9 +8774,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -8833,7 +8798,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000061
+objAddr = 00000060
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -8903,9 +8868,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -8927,7 +8892,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000062
+objAddr = 00000061
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -8997,9 +8962,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -9021,7 +8986,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000063
+objAddr = 00000062
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -9091,9 +9056,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -9115,7 +9080,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000064
+objAddr = 00000063
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -9185,9 +9150,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -9209,7 +9174,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000065
+objAddr = 00000064
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -9279,9 +9244,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -9303,7 +9268,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000066
+objAddr = 00000065
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -9373,9 +9338,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -9397,7 +9362,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000067
+objAddr = 00000066
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -9467,9 +9432,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -9491,7 +9456,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000068
+objAddr = 00000067
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -9561,9 +9526,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -9585,7 +9550,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000069
+objAddr = 00000068
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -9655,9 +9620,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -9679,7 +9644,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000006A
+objAddr = 00000069
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -9749,9 +9714,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -9773,7 +9738,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000006B
+objAddr = 0000006A
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -9843,9 +9808,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -9867,7 +9832,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000006C
+objAddr = 0000006B
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -9937,9 +9902,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -9961,7 +9926,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000006D
+objAddr = 0000006C
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -10031,9 +9996,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -10055,7 +10020,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000006E
+objAddr = 0000006D
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -10125,9 +10090,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -10149,7 +10114,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000006F
+objAddr = 0000006E
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -10219,9 +10184,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -10243,7 +10208,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000070
+objAddr = 0000006F
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -10313,9 +10278,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -10337,7 +10302,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000071
+objAddr = 00000070
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -10407,9 +10372,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -10431,7 +10396,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000072
+objAddr = 00000071
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -10501,9 +10466,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -10525,7 +10490,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000073
+objAddr = 00000072
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -10595,9 +10560,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -10619,7 +10584,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000074
+objAddr = 00000073
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -10689,9 +10654,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -10713,7 +10678,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000075
+objAddr = 00000074
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -10783,9 +10748,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -10807,7 +10772,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000076
+objAddr = 00000075
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -10877,9 +10842,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -10901,7 +10866,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000077
+objAddr = 00000076
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -10971,9 +10936,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -10995,7 +10960,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000078
+objAddr = 00000077
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -11065,9 +11030,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -11089,7 +11054,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000079
+objAddr = 00000078
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -11159,9 +11124,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -11183,7 +11148,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000007A
+objAddr = 00000079
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -11253,9 +11218,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -11277,7 +11242,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000007B
+objAddr = 0000007A
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -11347,9 +11312,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -11371,7 +11336,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000007C
+objAddr = 0000007B
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -11441,9 +11406,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -11465,7 +11430,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000007D
+objAddr = 0000007C
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -11535,9 +11500,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -11559,7 +11524,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000007E
+objAddr = 0000007D
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -11629,9 +11594,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -11653,7 +11618,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000007F
+objAddr = 0000007E
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -11723,9 +11688,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -11747,7 +11712,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000080
+objAddr = 0000007F
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -11817,9 +11782,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -11841,7 +11806,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000081
+objAddr = 00000080
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -11911,9 +11876,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -11935,7 +11900,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000082
+objAddr = 00000081
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -12005,9 +11970,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -12029,7 +11994,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000083
+objAddr = 00000082
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -12099,9 +12064,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -12123,7 +12088,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000084
+objAddr = 00000083
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -12193,9 +12158,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -12217,7 +12182,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000085
+objAddr = 00000084
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -12287,9 +12252,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -12311,7 +12276,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000086
+objAddr = 00000085
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -12381,9 +12346,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -12405,7 +12370,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000087
+objAddr = 00000086
 transform [1] =
   right.x [1] =
 9.99995768e-01
@@ -12475,9 +12440,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -12499,7 +12464,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000088
+objAddr = 00000087
 transform [1] =
   right.x [1] =
 1.00000000e+00
@@ -12570,9 +12535,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -12594,7 +12559,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000089
+objAddr = 00000088
 transform [1] =
   right.x [1] =
 1.00000000e+00
@@ -12665,9 +12630,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -12689,7 +12654,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000008A
+objAddr = 00000089
 transform [1] =
   right.x [1] =
 1.00000000e+00
@@ -12760,9 +12725,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -12784,7 +12749,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000008B
+objAddr = 0000008A
 transform [1] =
   right.x [1] =
 1.00000000e+00
@@ -12855,9 +12820,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-3
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -12879,7 +12844,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000008C
+objAddr = 0000008B
 transform [1] =
   right.x [1] =
 1.00000000e+00
@@ -12950,9 +12915,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -12974,7 +12939,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000008D
+objAddr = 0000008C
 transform [1] =
   right.x [1] =
 1.00000000e+00
@@ -13045,9 +13010,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -13069,7 +13034,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000008E
+objAddr = 0000008D
 transform [1] =
   right.x [1] =
 1.00000000e+00
@@ -13140,9 +13105,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+67
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -13164,7 +13129,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 0000008F
+objAddr = 0000008E
 transform [1] =
   right.x [1] =
 1.00000000e+00
@@ -13235,9 +13200,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+67
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -13259,7 +13224,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000090
+objAddr = 0000008F
 transform [1] =
   right.x [1] =
 1.00000000e+00
@@ -13330,9 +13295,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+67
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -13354,7 +13319,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000091
+objAddr = 00000090
 transform [1] =
   right.x [1] =
 1.00000000e+00
@@ -13425,9 +13390,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -13449,7 +13414,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000092
+objAddr = 00000091
 transform [1] =
   right.x [1] =
 1.00000000e+00
@@ -13520,9 +13485,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -13544,7 +13509,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000093
+objAddr = 00000092
 transform [1] =
   right.x [1] =
 1.00000000e+00
@@ -13615,9 +13580,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -13639,14 +13604,14 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000094
+objAddr = 00000093
 transform [1] =
   right.x [1] =
-7.14173079e-01
+7.14173019e-01
   right.y [1] =
 -0.00000000e+00
   right.z [1] =
-6.99963033e-01
+6.99962974e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -13654,11 +13619,11 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
--6.99959993e-01
+-6.99959934e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
-7.14169979e-01
+7.14169919e-01
   posit.x [1] =
 7.33367996e+01
   posit.y [1] =
@@ -13710,9 +13675,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -13734,14 +13699,14 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000095
+objAddr = 00000094
 transform [1] =
   right.x [1] =
--7.31462598e-01
+-7.31462538e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--6.81875408e-01
+-6.81875288e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -13749,11 +13714,11 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-6.81872427e-01
+6.81872308e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--7.31459439e-01
+-7.31459379e-01
   posit.x [1] =
 -1.06582001e+02
   posit.y [1] =
@@ -13805,9 +13770,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -13829,7 +13794,7 @@ team [1] =
 0
 isUser [1] =
 false
-objAddr = 00000096
+objAddr = 00000095
 transform [1] =
   right.x [1] =
 1.00000000e+00
@@ -13900,9 +13865,9 @@ isVisible [1] =
 EffectsMask [1] =
 65535
 isSeen [1] =
-0
+2
 groupNumber [1] =
--1
+0
 undefaicmd =
 priority [1] =
 0
@@ -13924,9 +13889,9 @@ size [1] =
 0
 [AiPaths]
 count [1] =
-27
+42
 name = AiPath
-sObject = 00000097
+sObject = 00000096
 size [1] =
 12
 label = TurretEnemy2
@@ -13939,7 +13904,7 @@ points [1] =
 -6.68528503e+02
 pathType = 00000000
 name = AiPath
-sObject = 00000098
+sObject = 00000097
 size [1] =
 12
 label = TurretEnemy1
@@ -13952,7 +13917,7 @@ points [1] =
 -8.14431274e+02
 pathType = 00000000
 name = AiPath
-sObject = 00000099
+sObject = 00000098
 size [1] =
 5
 label = gtow4
@@ -13965,7 +13930,7 @@ points [1] =
 1.21516617e+02
 pathType = 00000000
 name = AiPath
-sObject = 0000009A
+sObject = 00000099
 size [1] =
 5
 label = hold3
@@ -13978,7 +13943,7 @@ points [1] =
 1.87013817e+01
 pathType = 00000000
 name = AiPath
-sObject = 0000009B
+sObject = 0000009A
 size [1] =
 5
 label = gtow1
@@ -13991,7 +13956,7 @@ points [1] =
 -6.42704956e+02
 pathType = 00000000
 name = AiPath
-sObject = 0000009C
+sObject = 0000009B
 size [1] =
 13
 label = RecyclerEnemy
@@ -14002,6 +13967,19 @@ points [1] =
 7.13892639e+02
   z [1] =
 -7.80860718e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000009C
+size [1] =
+6
+label = stage3
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+4.67700562e+02
+  z [1] =
+3.72973755e+02
 pathType = 00000000
 name = AiPath
 sObject = 0000009D
@@ -14019,6 +13997,19 @@ pathType = 00000000
 name = AiPath
 sObject = 0000009E
 size [1] =
+6
+label = power1
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+-1.86683624e+02
+  z [1] =
+-9.12123230e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000009F
+size [1] =
 10
 label = TankEnemy3
 pointCount [1] =
@@ -14030,7 +14021,7 @@ points [1] =
 -5.78146240e+02
 pathType = 00000000
 name = AiPath
-sObject = 0000009F
+sObject = 000000A0
 size [1] =
 6
 label = stage1
@@ -14043,7 +14034,7 @@ points [1] =
 -2.05269470e+01
 pathType = 00000000
 name = AiPath
-sObject = 000000A0
+sObject = 000000A1
 size [1] =
 10
 label = TankEnemy2
@@ -14056,7 +14047,7 @@ points [1] =
 -6.29793213e+02
 pathType = 00000000
 name = AiPath
-sObject = 000000A1
+sObject = 000000A2
 size [1] =
 5
 label = hold2
@@ -14069,7 +14060,7 @@ points [1] =
 6.98276520e+00
 pathType = 00000000
 name = AiPath
-sObject = 000000A2
+sObject = 000000A3
 size [1] =
 10
 label = TankEnemy1
@@ -14082,7 +14073,7 @@ points [1] =
 -6.94351990e+02
 pathType = 00000000
 name = AiPath
-sObject = 000000A3
+sObject = 000000A4
 size [1] =
 7
 label = path_17
@@ -14095,7 +14086,7 @@ points [1] =
 -1.02400000e+03
 pathType = 00000000
 name = AiPath
-sObject = 000000A4
+sObject = 000000A5
 size [1] =
 5
 label = gtow3
@@ -14108,30 +14099,17 @@ points [1] =
 -3.26727234e+02
 pathType = 00000000
 name = AiPath
-sObject = 000000A5
-size [1] =
-6
-label = stage3
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-4.67700562e+02
-  z [1] =
-3.72973755e+02
-pathType = 00000000
-name = AiPath
 sObject = 000000A6
 size [1] =
-6
-label = power1
+5
+label = hold4
 pointCount [1] =
 1
 points [1] =
   x [1] =
--1.86683624e+02
+-2.53993988e+01
   z [1] =
--9.12123230e+02
+7.51723755e+02
 pathType = 00000000
 name = AiPath
 sObject = 000000A7
@@ -14149,6 +14127,19 @@ pathType = 00000000
 name = AiPath
 sObject = 000000A8
 size [1] =
+5
+label = gtow5
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+-3.75681946e+02
+  z [1] =
+4.38614441e+02
+pathType = 00000000
+name = AiPath
+sObject = 000000A9
+size [1] =
 6
 label = power4
 pointCount [1] =
@@ -14160,7 +14151,20 @@ points [1] =
 -2.42732452e+02
 pathType = 00000000
 name = AiPath
-sObject = 000000A9
+sObject = 000000AA
+size [1] =
+5
+label = Tank3
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+-6.50402710e+02
+  z [1] =
+7.29578125e+02
+pathType = 00000000
+name = AiPath
+sObject = 000000AB
 size [1] =
 8
 label = Recycler
@@ -14173,7 +14177,7 @@ points [1] =
 7.36169189e+02
 pathType = 00000000
 name = AiPath
-sObject = 000000AA
+sObject = 000000AC
 size [1] =
 6
 label = stage2
@@ -14186,7 +14190,7 @@ points [1] =
 -4.55441010e+02
 pathType = 00000000
 name = AiPath
-sObject = 000000AB
+sObject = 000000AD
 size [1] =
 5
 label = Tank1
@@ -14199,7 +14203,7 @@ points [1] =
 6.52114563e+02
 pathType = 00000000
 name = AiPath
-sObject = 000000AC
+sObject = 000000AE
 size [1] =
 5
 label = gtow2
@@ -14212,7 +14216,7 @@ points [1] =
 4.62924316e+02
 pathType = 00000000
 name = AiPath
-sObject = 000000AD
+sObject = 000000AF
 size [1] =
 5
 label = Tank2
@@ -14225,7 +14229,7 @@ points [1] =
 6.87325256e+02
 pathType = 00000000
 name = AiPath
-sObject = 000000AE
+sObject = 000000B0
 size [1] =
 6
 label = power3
@@ -14238,43 +14242,199 @@ points [1] =
 9.18272278e+02
 pathType = 00000000
 name = AiPath
-sObject = 000000AF
-size [1] =
-5
-label = hold4
-pointCount [1] =
-1
-points [1] =
-  x [1] =
--2.53993988e+01
-  z [1] =
-7.51723755e+02
-pathType = 00000000
-name = AiPath
-sObject = 000000B0
-size [1] =
-5
-label = gtow5
-pointCount [1] =
-1
-points [1] =
-  x [1] =
--3.75681946e+02
-  z [1] =
-4.38614441e+02
-pathType = 00000000
-name = AiPath
 sObject = 000000B1
 size [1] =
-5
-label = Tank3
+8
+label = tech_edf
 pointCount [1] =
 1
 points [1] =
   x [1] =
--6.50402710e+02
+6.56990479e+02
   z [1] =
-7.29578125e+02
+-8.30772583e+02
+pathType = 00000000
+name = AiPath
+sObject = 000000B2
+size [1] =
+11
+label = factory_edf
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+7.04179871e+02
+  z [1] =
+-7.04425293e+02
+pathType = 00000000
+name = AiPath
+sObject = 000000B3
+size [1] =
+9
+label = pgen4_edf
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+6.87701050e+02
+  z [1] =
+-8.48375000e+02
+pathType = 00000000
+name = AiPath
+sObject = 000000B4
+size [1] =
+8
+label = sbay_edf
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+7.68222656e+02
+  z [1] =
+-7.04050781e+02
+pathType = 00000000
+name = AiPath
+sObject = 000000B5
+size [1] =
+10
+label = bomber_edf
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+7.68222656e+02
+  z [1] =
+-8.32270691e+02
+pathType = 00000000
+name = AiPath
+sObject = 000000B6
+size [1] =
+9
+label = pgen1_edf
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+6.86952026e+02
+  z [1] =
+-8.15657471e+02
+pathType = 00000000
+name = AiPath
+sObject = 000000B7
+size [1] =
+9
+label = pgen2_edf
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+7.19160645e+02
+  z [1] =
+-8.15282959e+02
+pathType = 00000000
+name = AiPath
+sObject = 000000B8
+size [1] =
+10
+label = armory_edf
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+6.56241455e+02
+  z [1] =
+-7.84197876e+02
+pathType = 00000000
+name = AiPath
+sObject = 000000B9
+size [1] =
+10
+label = bunker_edf
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+6.56615967e+02
+  z [1] =
+-7.51614685e+02
+pathType = 00000000
+name = AiPath
+sObject = 000000BA
+size [1] =
+12
+label = training_edf
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+8.16910156e+02
+  z [1] =
+-7.03061584e+02
+pathType = 00000000
+name = AiPath
+sObject = 000000BB
+size [1] =
+9
+label = pgen3_edf
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+7.19909668e+02
+  z [1] =
+-8.46876953e+02
+pathType = 00000000
+name = AiPath
+sObject = 000000BC
+size [1] =
+14
+label = base_gtow1_edf
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+6.24407349e+02
+  z [1] =
+-6.23663574e+02
+pathType = 00000000
+name = AiPath
+sObject = 000000BD
+size [1] =
+14
+label = base_gtow2_edf
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+5.60364563e+02
+  z [1] =
+-7.18791382e+02
+pathType = 00000000
+name = AiPath
+sObject = 000000BE
+size [1] =
+14
+label = base_gtow3_edf
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+8.17659180e+02
+  z [1] =
+-8.15417358e+02
+pathType = 00000000
+name = AiPath
+sObject = 000000BF
+size [1] =
+14
+label = base_gtow4_edf
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+7.84326965e+02
+  z [1] =
+-7.51374573e+02
 pathType = 00000000
 hasEntered [1] =
 false
@@ -14284,5 +14444,5 @@ ownerObj [1] =
 0
 ownerObj [1] =
 0
-PadData = 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+PadData = 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000050000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 PadData2 = 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000

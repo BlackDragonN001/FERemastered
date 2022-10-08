@@ -2,8 +2,11 @@
 classLabel = "ivcons"
 
 /////// PROVIDES ///////////////////
+
 provideCount = 3
 provideName3 = "ivcons_c"
+
+////////////////////////////////////
 
 [CraftClass]
 
@@ -12,13 +15,12 @@ provideName3 = "ivcons_c"
 [DeployableClass]
 
 [ConstructionRigClass]
-buildItem1 = "ibpgen_c"
+buildItem1 = "ibpgen"
 buildItem2 = "ibfact_c"
-buildItem3 = "ibcbun_c"
-buildItem4 = "ibarmo_c"
-buildItem5 = "ibsbay_c"
+buildItem3 = "ibcbun"
+buildItem4 = "ibarmo"
+buildItem5 = "ibsbay"
 buildItem6 = "ibgtow_c"
-buildItem7 = "ibtrain_c"
-buildItem8 = "ibtcen_c"
-buildItem9 = "ibbomb_c"
-
+buildItem7 = "ibtrain"
+buildItem8 = "ibtcen"
+buildItem9 = "ibbomb"

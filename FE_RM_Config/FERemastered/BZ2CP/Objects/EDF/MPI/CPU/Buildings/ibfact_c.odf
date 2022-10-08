@@ -1,28 +1,25 @@
 [GameObjectClass]
 classLabel = "ibfact"
-UseCollisionMeshForPathing = 1
-
-/////// REQUIREMENTS ///////////////
-requireCount = 1
-requireName1 = "ibpgen_c"
-requireText1 = "Build Power"
 
 /////// PROVIDES ///////////////////
+
 provideCount = 3
 provideName3 = "ibfact_c"
+
+////////////////////////////////////
 
 [PoweredBuildingClass]
 
 [BuildingClass]
 
 [FactoryClass]
-buildItem1 = "ivmbike_c"
-buildItem2 = "ivmisl_c"
+buildItem1 = "ivmbike"
+buildItem2 = "ivmisl"
 buildItem3 = "ivtank_c"
 buildItem4 = "ivrckt_c"
-buildItem5 = "ivatank_c"
-buildItem6 = "ivwalk_c"
-buildItem7 = "ivapc_c"
-buildItem8 = "ivbomb_c"
+buildItem5 = "ivatank"
+buildItem6 = "ivwalk"
+buildItem7 = "ivapc"
+buildItem8 = "ivbomb"
 
 [Lod1]

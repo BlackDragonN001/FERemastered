@@ -2,7 +2,7 @@
 	Summary: BZCC FE Instant Action Mission Script 
 	Author: JJ (AI_Unit)
 	Version: 1.0 
-	Last modified: 03/09/2022 
+	Last modified: 21/09/2022 
 --]]
 
 -- File find fix.
@@ -31,43 +31,62 @@ local StartingVehicleTable =
     {"vturr", "vturr", "vscav", "vtank", "vtank", "vtank", "vscout", "vscout", "vscout"},
 }
 
+-- Pilot weapon randomisation for the enemy Commander.
+local CommanderPilotWeapons = 
+{
+	["EDF"] = {"igbzka_c", "igshot_c", "igsnip_c"},
+	["Scion"] = {"fgbzka_c", "fgsnip_c"},
+	["Hadean"] = {}
+}
+
+-- Packs randomisation for the enemy Commander.
+local CommandPilotPacks = 
+{
+	["EDF"] = {"igjetp", "iggren"},
+	["Scion"] = {"fgjetp", "fggren"},
+	["Hadean"] = {}
+}
+
+-- CPU paths for base building.
+local CPUPaths = 
+{
+	"pgen1_edf", "pgen2_edf", "pgen3_edf", "pgen4_edf", "factory_edf", "armory_edf", "bunker_edf", "sbay_edf", "base_gtow1_edf", "base_gtow2_edf", "base_gtow3_edf", "base_gtow4_edf",
+	"training_edf", "tech_edf", "bomber_edf", "kiln_scion", "stro_scion", "dowe_scion", "jammer_scion", "base_spire1_scion", "base_spire2_scion", "base_spire3_scion", "base_spire4_scion",
+	"ante_scion"
+}
+
+-- Let's spice things up with the AI kicking off if no base building paths are found.
+local NoPathsResponse = 
+{
+	"Hey, map maker, where are my paths man?!",
+	"Seriously?! I have to randomize my base?",
+	"What's a CPU gotta do to get some paths around here?",
+	"No base paths? Sure...",
+	"It was silly of me to expect any paths.",
+	"Don't blame me if my base looks bad.",
+	"I'm sensing some laziness.",
+	"If you're expecting well-placed buildings, don't.",
+	"What's the key combination for self-destruction?"
+}
+
 local Mission = 
 {
-    -- Human team.
-    m_HumanTeamNum = 1,
-
-	-- CPU Race.
-	m_HumanRace = 'i',
-
-    -- CPU team.
-    m_CPUTeamNum = 6,
-
-	-- CPU Race.
-	m_CPURace = 'i',
-
-    -- Chosen in IA shell.
-    m_Difficulty = 0,
-
-    -- Starting force size for humans.
-    m_HumanStartingForceSize = 1,
-
-    -- Start force size for CPU.
-    m_CPUStartingForceSize = 1,
-
-    -- Handle game over.
-    m_GameOver = false,
-
-    -- If the CPU has an armory.
-    m_CPUArmoryPresent = false,
-
-    -- If player respawn is enabled.
-    m_PlayerRespawnEnabled = false,
-
-	-- To help the CPU, this flag will send the first spawned CPU Scav to a pool before Recycler deployment.
-	m_SentFirstCPUScavToPool = false,
-
-	-- Keep track of the maps pools.
-	m_MapPools = {},
+    m_HumanTeamNum = 1,     -- Human team.
+	m_HumanRace = 'i', 	-- CPU Race.
+    m_CPUTeamNum = 6,     -- CPU team.
+	m_CPURace = 'i', 	-- CPU Race.
+    m_Difficulty = 0,     -- Chosen in IA shell.
+	m_RespawnEnabled = 0, 	-- Chosen in IA shell.
+    m_HumanStartingForceSize = 1,     -- Starting force size for humans.
+    m_CPUStartingForceSize = 1,     -- Start force size for CPU.
+    m_GameOver = false,     -- Handle game over.
+	m_SetFirstAIP = false,     -- For SetPlan() taunts.
+    m_PlayerRespawnEnabled = false,     -- If player respawn is enabled.
+	m_SentFirstCPUScavToPool = false, 	-- To help the CPU, this flag will send the first spawned CPU Scav to a pool before Recycler deployment.
+	m_StopAddToDispatch = true, 	-- Halt the dispatcher until we're ready. This must be Saved so things will work correctly on a Load.
+	m_EnemyRecycler = nil, -- CPU Recycler.
+	m_Recycler = nil, -- Human Recycler.
+	m_MapPools = {}, 	-- Keep track of the maps pools.
 }
 
 -- Save game data.
@@ -83,7 +102,7 @@ function Load(FECoreData, MissionData)
     -- Don't auto group units.
 	SetAutoGroupUnits(false);
 
-	-- We're a 1.3 DLL.
+	-- Want to trigger ObjectKilled for AI units.
 	WantBotKillMessages();
 	
 	-- Load sub modules.
@@ -99,7 +118,7 @@ end
 -- Function for creating and displaying generic objective.
 function CreateObjectives()
 	ClearObjectives();
-	AddObjective("mpobjective_st.otf", "WHITE", -1.0);
+	AddObjective("InstantAction.otf", "WHITE", -1);
 end
 
 -- Pre-game initial setup.
@@ -113,15 +132,13 @@ function InitialSetup()
     -- Don't auto group units.
 	SetAutoGroupUnits(false);
 
-	-- We're a 1.3 DLL.
+	-- Want to trigger ObjectKilled for AI Units.
 	WantBotKillMessages();
 
-	-- Do this for everyone as well.
-	CreateObjectives();
-
 	-- Preload some ODFs.
-	PreloadODF("ivrecy_c");
-	PreloadODF("ivrecy_t");
+	PreloadODF("ivrecy_m");
+	PreloadODF("fvrecy_m");
+	PreloadODF("evrecy_m");
 end
 
 -- Handle when an object is added to the world.
@@ -133,36 +150,84 @@ function AddObject(h)
     local teamNum = GetTeamNum(h);
 	local ODFName = GetCfg(h);
 	local ObjClass = GetClassLabel(h);
+	
+	-- Add Dispatcher for CPU units. (Include even players units, in case an AI enemy pilot hops into an empty ship. -GBD)
+	if (not Mission.m_StopAddToDispatch) then
+		AddToDispatch(h, 15.0, false, 0, false, false, true, true);
+	end
 
-    -- Check for CPU Armory.
-    if (teamNum == Mission.m_CPUTeamNum and ObjClass == "CLASS_ARMORY") then
-		-- Mark the CPU Armory as present so we can do weapon upgrades.
-        Mission.m_CPUArmoryPresent = true;
+    -- Check CPU stuff.
+    if (teamNum == Mission.m_CPUTeamNum) then		
+		--Spice things up.
+		if (ObjClass == "CLASS_RECYCLER") then
+			-- Be mean. (Moved to Recy deployment so Objectives don't hide it. -GBD
+			DoTaunt(TAUNTS_GameStart);
+		elseif(ObjClass == "CLASS_SCAVENGER") or (ObjClass == "CLASS_SCAVENGERH") then
+			DoTaunt(TAUNTS_Random);
+		end
 
-		if (ODFName == "ivcmdr_c") then
-			-- Set Commander maximum skill to 3.
-			SetSkill(h, 3);
+		-- CPU "Commander" pilots.
+		if (ODFName == (Mission.m_CPURace .. "vcmdr_c") or ODFName == (Mission.m_CPURace .. "scmdr_c")) then
+			SetSkill(h, 3); -- Set Commander maximum skill to 3.
+
+			-- TODO: Make the above check only for PARTIAL match, skip first RACE letter (only works for ISDF atm) -GBD
+			-- Also maybe just use a _config.odf?
+			if (ODFName == (Mission.m_CPURace .. "scmdr_c")) then
+				local selectedWeaponsTable;
+				local selectedPackTable;
+
+				if (Mission.m_CPURace == "e") then -- Enemy is Hadean?
+					selectedWeaponsTable = CommanderPilotWeapons["Hadean"];
+					selectedPackTable = CommandPilotPacks["Hadean"];
+				elseif (Mission.m_CPURace == "f") then -- Enemy is Scion?
+					selectedWeaponsTable = CommanderPilotWeapons["Scion"];
+					selectedPackTable = CommandPilotPacks["Scion"];
+				else -- Default to 'i'
+					selectedWeaponsTable = CommanderPilotWeapons["EDF"];
+					selectedPackTable = CommandPilotPacks["EDF"];
+				end
+
+				local wepChance = math.floor(GetRandomFloat(1, #selectedWeaponsTable));
+				local packChance = math.floor(GetRandomFloat(1, #selectedPackTable));
+
+				local wep = selectedWeaponsTable[wepChance];
+				local pack = selectedPackTable[packChance];
+				
+				GiveWeapon(h, wep);
+				GiveWeapon(h, pack);
+			end
 		else 
 			-- Set the skill of all enemy units based on IA difficulty.
 			SetSkill(h, Mission.m_Difficulty + 1);
+
+			-- Give the CPU a custom pilot config.
+			if (not IsBuilding(h)) then
+				SetPilotClass(h, Mission.m_CPURace .. "spilo_c");
+			end
+
+			-- Replace the CPU natural extractor as we're using a different ODF.
+			-- Remind me to poke this later... -GBD
+			if (ODFName == Mission.m_CPURace .. "bscav") then
+				ReplaceObject(h, Mission.m_CPURace .. "bscav_c");
+			end
 		end
-    end
-
-    -- Per standard FE behaviour, highlight the Service Bay.
-    if (teamNum == Mission.m_HumanTeamNum and ObjClass == "CLASS_SUPPLYDEPOT") then
-        SetObjectiveOn(h);
-    end
-
-	-- Keep track of the map pools.
-	if (teamNum == 0 and ObjClass == "CLASS_DEPOSIT") then
-		table.insert(Mission.m_MapPools, h);
+	elseif (teamNum == 0) then
+		-- Keep track of the map pools.
+		if (ObjClass == "CLASS_DEPOSIT") then
+			table.insert(Mission.m_MapPools, h);
+		end
 	end
 end
 
 -- Runs on mission state.
 function Start()
+	-- Teams for Stats...
+	-- TODO? expose to Options? -GBD
+	SetTeamNameForStat(Mission.m_HumanTeamNum, "Humans");
+	SetTeamNameForStat(Mission.m_CPUTeamNum, "Computer");
+	-- SetTauntCPUName(""); -- To set the CPU Taunt team name to something custom. -GBD
+
 	-- Get our difficulty.
-	-- Mission.m_Difficulty = GetDifficulty();
 	Mission.m_Difficulty = IFace_GetInteger("shell.instant.difficulty");
 
     -- Remove any trace of old player vehicles left in the BZN.
@@ -172,21 +237,56 @@ function Start()
 		RemoveObject(PlayerEntryH);
 	end
 
-	-- Spawn the CPU.
-	SetupCPU(Mission.m_CPUTeamNum);
-
     -- Rebuild the player.
 	local LocalTeamNum = GetLocalPlayerTeamNumber();
 	local PlayerH = SetupPlayer(LocalTeamNum);
 
 	SetAsUser(PlayerH, LocalTeamNum);
 	AddPilotByHandle(PlayerH);
+	
+	-- Spawn the CPU.
+	SetupCPU(Mission.m_CPUTeamNum);
+	
+	-- Put up Objectives.
+	CreateObjectives();
 end
 
 -- Called per tick.
 function Update()
     -- Call core AddObject method.
     _FECore.Update();
+	
+	-- Test win conditions.
+	-- TestGameOver();
+end
+
+-- Handle win conditions.
+function TestGameOver()
+	if (not Mission.m_GameOver) then
+		if (not IsAround(Mission.m_EnemyRecycler)) then	
+			local tempH = GetObjectByTeamSlot(Mission.m_CPUTeamNum, DLL_TEAM_SLOT_RECYCLER);
+			
+			if (tempH ~= nil) then
+				Mission.m_EnemyRecycler = tempH; -- Save it.
+			else
+				DoTaunt(TAUNTS_CPURecyDestroyed);
+				SucceedMission(GetTime() + 5.0, "instantw.txt");
+				Mission.m_GameOver = true;
+			end
+		end
+		
+		if (not IsAround(Mission.m_Recycler)) then
+			local tempH = GetObjectByTeamSlot(Mission.m_HumanTeamNum, DLL_TEAM_SLOT_RECYCLER);
+			
+			if (tempH ~= 0) then
+				Mission.m_Recycler = tempH; -- Save it.
+			else
+				DoTaunt(TAUNTS_HumanRecyDestroyed);
+				FailMission(GetTime() + 5.0, "instantl.txt");
+				Mission.m_GameOver = true;
+			end
+		end
+	end
 end
 
 -- Setup the player.
@@ -202,13 +302,17 @@ function SetupPlayer()
 	spawnpointPosition.y = TerrainFindFloor(spawnpointPosition.x, spawnpointPosition.z) + 2.5;
 
 	-- Create the player.
-	local PlayerH = BuildObject(GetPlayerODF(Mission.m_HumanTeamNum), Mission.m_HumanTeamNum, spawnpointPosition, Mission.m_HumanStartingForceSize);
+	local PlayerH = BuildObject(Mission.m_HumanRace .. "vscout", Mission.m_HumanTeamNum, spawnpointPosition, Mission.m_HumanStartingForceSize);
 
 	SetPilotClass(PlayerH, Mission.m_HumanRace .. "spilo");
 	SetRandomHeadingAngle(PlayerH);
 
 	-- Build recycler some distance away, if it's not preplaced on the map.
-	SpawnTeamRecycler(Mission.m_HumanTeamNum, Mission.m_HumanRace, spawnpointPosition);
+	local chosenPlayerRecy = IFace_GetString("options.instant.string1");
+	chosenPlayerRecy = Mission.m_HumanRace .. chosenPlayerRecy:sub(2);
+
+	Mission.m_Recycler = BuildObject(chosenPlayerRecy, Mission.m_HumanTeamNum, GetPositionNear(spawnpointPosition, VEHICLE_SPACING_DISTANCE * 1.25, VEHICLE_SPACING_DISTANCE * 1.25));
+	SetGroup(Mission.m_Recycler, 0);
 
 	-- Spawn extra Human vehicles.
 	SpawnTeamExtraVehicles(Mission.m_HumanTeamNum, Mission.m_HumanRace, spawnpointPosition, Mission.m_HumanStartingForceSize);
@@ -231,24 +335,47 @@ function SetupCPU(Team)
 	local spawnpointPosition = GetPosition("RecyclerEnemy");
 
 	-- Build recycler some distance away, if it's not preplaced on the map.
-	SpawnTeamRecycler(Mission.m_CPUTeamNum, Mission.m_CPURace, spawnpointPosition);
+	local chosenEnemyRecy = IFace_GetString("options.instant.string2");
+	chosenEnemyRecy = Mission.m_CPURace .. chosenEnemyRecy:sub(2);
 
-	-- Give some scrap.
-	SetScrap(Team, 40);
+	Mission.m_EnemyRecycler = BuildObject(chosenEnemyRecy, Mission.m_CPUTeamNum, spawnpointPosition);
+	SetGroup(Mission.m_EnemyRecycler, 0);
 
 	-- Spawn extra CPU vehicles.
 	SpawnTeamExtraVehicles(Mission.m_CPUTeamNum, Mission.m_CPURace, spawnpointPosition, Mission.m_CPUStartingForceSize);
 	
+	-- Give some scrap.
+	SetScrap(Team, 40);
+	
 	-- Set a plan.
 	SetAIPlan(Team);
-end
 
--- TODO: Move to core to be used universally?
-function UpgradeCPUVehicleWeapons(h)
-end
+	-- Scold the map if there are no path points.
+	local paths = GetAiPaths();
+	local pathsExist = true;
 
--- TODO: Move to core to be used universally?
-function CheckCPUWeaponConditions(weaponHandle)
+	-- Check if any of the paths listed 
+	for i = 1, #CPUPaths do
+		local path = CPUPaths[i];
+
+		if (path ~= nil) then
+			pathsExist = false;
+
+			for j = 1, #paths do
+				local aiPath = paths[j];
+	
+				if (aiPath == path) then
+					pathsExist = true;
+					break;
+				end
+			end
+		end
+	end
+
+	-- Post a message to the chat.
+	if (not pathsExist) then
+		AddToMessagesBox("Computer: " .. NoPathsResponse[math.floor(GetRandomFloat(1, #NoPathsResponse))]);
+	end
 end
 
 -- TODO: Move to core to be used universally?
@@ -266,39 +393,12 @@ function SetAIPlan(team)
 
 	-- Set the AIP Plans.
 	SetAIP(planName, team);
-end
-
--- TODO: Move to core to be used universally?
-function GetInitialRecyclerODF(Race);
-	local TempODFName = nil;
-	local pContents = GetCheckedNetworkSvar(5, NETLIST_Recyclers);
-
-	if ((pContents ~= nil) and (pContents ~= "")) then
-		TempODFName = Race .. string.sub(pContents, 2);
-	else
-		TempODFName = Race .. "vrecy_m";
+	
+	if (not Mission.m_SetFirstAIP) then
+		DoTaunt(TAUNTS_Random);
 	end
-
-	return TempODFName;
-end
-
--- TODO: Move to core to be used universally?
-function SpawnTeamRecycler(Team, Race, Pos)
-	-- Return early.
-	if ((Team < 1) or (Team >= MAX_TEAMS)) then
-		return;
-	end
-
-	-- Return early.
-	if (Race == nil) then
-		return;
-	end
-
-	-- Build the team Recycler.
-	if (GetObjectByTeamSlot(Team, DLL_TEAM_SLOT_RECYCLER) == nil) then
-		local VehicleH = BuildObject(GetInitialRecyclerODF(Race), Team, GetPositionNear(Pos, VEHICLE_SPACING_DISTANCE, 2 * VEHICLE_SPACING_DISTANCE));
-		SetGroup(VehicleH, 0);
-	end
+	
+	Mission.m_SetFirstAIP = true;
 end
 
 -- TODO: Move to core to be used universally?
@@ -322,18 +422,6 @@ function SpawnTeamExtraVehicles(Team, Race, Pos, Force)
 		-- Generate a position around given Pos vector.
 		local pos = GetPositionNear(Pos, VEHICLE_SPACING_DISTANCE * 1.25, VEHICLE_SPACING_DISTANCE * 1.25);
 		
-		-- If the team is the CPU team, append _c to the ODF name.
-		if (Team == Mission.m_CPUTeamNum) then
-			if (i > 0 and i < 3) then
-				pos = GetPosition("turretEnemy" .. i);
-			end
-
-			-- Do not include Scavs in this modification otherwise it'll break the
-			if (h ~= Race .. "vscav") then
-				h = h .."_c";
-			end
-		end
-
 		-- Finally, build it!
 		local vehicle = BuildObject(h, Team, pos);
 
@@ -353,24 +441,81 @@ function SpawnTeamExtraVehicles(Team, Race, Pos, Force)
 	-- If we're the CPU team, spawn turrets around the map based on difficulty.
 	if (Team == Mission.m_CPUTeamNum) then
 		for i = 1, Mission.m_Difficulty + 2 do
-			BuildObject(Race .. "vturr_c", Mission.m_CPUTeamNum, "hold" .. i);
+			local h = BuildObject(Race .. "vturr", Mission.m_CPUTeamNum, "hold" .. i);
+
+			-- Set Label to stop dispatcher from doing stuff with these units.
+			SetLabel(h, "nodispatch");
 		end
+
+		-- Allow the dispatcher to continue...
+		Mission.m_StopAddToDispatch = false;
 	end
 end
 
 -- TODO: Move to core to be used universally? 
 function GetClosestObjectToPath(listOfUnits, pathPoint)
 	local closestObject = nil;
-	local closestDistance = nil
+	local closestDistance = 9999999999;
 
 	for i, v in pairs (listOfUnits) do
 		local dist = GetDistance(v, pathPoint);
 
-		if (closestObject == nil or dist < closestDistance) then
+		if (dist < closestDistance) then
 			closestObject = v;
 			closestDistance = dist;
 		end
 	end
 
 	return closestObject;
+end
+
+-- Handle destroyed player...
+function PlayerDied(deadObjectHandle, sniped)
+	-- Player is dead.
+	if (not IsPerson(deadObjectHandle)) then
+		-- Craft died. If it wasn't a snipe, then just kick the pilot out.
+		if (not sniped) then
+			-- Be mean...
+			DoTaunt(TAUNTS_HumanShipDestroyed);
+
+			-- Return DoEjectPilot.
+			return DoEjectPilot;
+		end
+	end
+
+	-- Local player got killed (pilot or snipe). Do respawn as needed.
+	if (Mission.m_RespawnEnabled) then
+		-- Respawn them near their m_Recycler, up in the air.
+	else
+		-- User can't respawn. Game over, man
+		FailMission(GetTime() + 3);
+	end
+
+	-- Both cases of the above report that we handled things.
+	return DLLHandled;
+end
+
+-- Handle destroyed objects...
+function ObjectKilled(deadObjectHandle, killersHandle)
+	-- AI-controlled object is toast...
+	if (not IsPlayer(deadObjectHandle)) then
+		-- Should we eject a pilot instead?
+		if (not IsPerson(deadObjectHandle)) then
+			return DoEjectPilot; -- Return DoEjectPilot.
+		else
+			return DLLHandled; -- Return DLLHandled.
+		end
+	else
+		-- Handle player death.
+		return PlayerDied(deadObjectHandle, false);
+	end
+end
+
+-- Handle sniped objects...
+function ObjectSniped(deadObjectHandle, killersHandle)
+	if (not IsPlayer(deadObjectHandle)) then
+		return DLLHandled; -- AI-controlled object is toast...
+	else
+		return PlayerDied(deadObjectHandle, true); -- Player dead.
+	end
 end
