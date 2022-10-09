@@ -31,7 +31,6 @@ function _FECore.InitialSetup()
 
 -- Call helper functions.
 
-	_MapReloader.InitialSetup();
 	_ObjectReplacer.InitialSetup();
 
 end
@@ -39,7 +38,7 @@ end
 function _FECore.Start()
 
 -- Call helper functions.
-
+	_MapReloader.Start();
 	_PropHeightFix.Start();
 
 end

@@ -41,9 +41,9 @@ function EndsWith(hay, needle)
 	return (string.sub(hay,-string.len(needle)) == needle);
 end
 
-function _MapReloader.InitialSetup()
+function _MapReloader.Start()
 
-	--print("MAPRELOADER_INITSETUP");
+	--print("MAPRELOADER_START");
 
 
 	ObjectList = GetAllGameObjectHandles();
