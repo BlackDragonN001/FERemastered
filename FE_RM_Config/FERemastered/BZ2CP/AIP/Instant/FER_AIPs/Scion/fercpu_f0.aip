@@ -103,9 +103,23 @@ buildCount1 = 3
 planCondition = "Lua"
 LuaFunction = "ConstructorBuildLoopCondition"
 
-[Plan10] // Build a Kiln.
-planType = "BaseBuildMinimums"
+[Plan10]
+planType = "Attacker"
 planPriority = 910
+targetType1 = "VIRTUAL_CLASS_SCAVENGER"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "fvscout"
+attackType2 = "fvscout"
+MaxAttacks = 3
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendEarlyScoutHarassment"
+
+[Plan11] // Build a Kiln.
+planType = "BaseBuildMinimums"
+planPriority = 900
 buildType1 = "fbkiln"
 buildCount1 = 1
 buildLoc1 = "kiln_scion"
@@ -114,9 +128,9 @@ planCondition = "Lua"
 LuaFunction = "BuildKiln"
 ContinueEvenIfFail = true
 
-[Plan11] // Build a Gun Spire.
+[Plan12] // Build a Gun Spire.
 planType = "BaseBuildMinimums"
-planPriority = 900
+planPriority = 890
 buildType1 = "fbspir"
 buildCount1 = 1
 buildLoc1 = "base_spire1_scion"
@@ -124,9 +138,86 @@ planCondition = "Lua"
 LuaFunction = "BuildBaseGunSpire"
 ContinueEvenIfFail = true
 
-[Plan12]
+[Plan13]
+planType = "BaseBuildMinimums"
+planPriority = 880
+buildType1 = "fbspir"
+buildCount1 = 1
+buildLoc1 = "gtow1"
+planCondition = "Lua"
+LuaFunction = "BuildGunSpire1"
+ContinueEvenIfFail = true
+
+[Plan14]
+planType = "Attacker"
+planPriority = 870
+targetType1 = "VIRTUAL_CLASS_SCAVENGER"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "fvscout"
+attackType2 = "fvscout"
+attackType3 = "fvsent"
+MaxAttacks = 4
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendEarlyScoutHarassment"
+
+[Plan15]
+planType = "BaseBuildMinimums"
+planPriority = 860
+buildType1 = "fbspir"
+buildCount1 = 1
+buildLoc1 = "gtow2"
+planCondition = "Lua"
+LuaFunction = "BuildGunSpire2"
+ContinueEvenIfFail = true
+
+[Plan16]
 planType = "Upgrade"
-planPriority = 890
+planPriority = 850
 unitType = "fbkiln"
 planCondition = "Lua"
 LuaFunction = "UpgradeKiln"
+
+[Plan17]
+planType = "Attacker"
+planPriority = 840
+targetType1 = "VIRTUAL_CLASS_RECYCLER"
+targetType2 = "VIRTUAL_CLASS_FACTORY"
+targetType3 = "VIRTUAL_CLASS_POWERPLANT"
+attackType1 = "fvsent"
+attackType2 = "fvtank"
+MaxAttacks = 5
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendMediumHarassment"
+
+[Plan18]
+planType = "Upgrade"
+planPriority = 830
+unitType = "fbscav_c"
+planCondition = "Lua"
+LuaFunction = "UpgradeFirstExtractor"
+
+[Plan19] // Build a Kiln.
+planType = "BaseBuildMinimums"
+planPriority = 820
+buildType1 = "fbdow"
+buildCount1 = 1
+buildLoc1 = "dowe_scion"
+buildHeading = -2
+planCondition = "Lua"
+LuaFunction = "BuildDower"
+ContinueEvenIfFail = true
+
+[Plan20] // Build a Gun Spire.
+planType = "BaseBuildMinimums"
+planPriority = 810
+buildType1 = "fbspir"
+buildCount1 = 1
+buildLoc1 = "base_spire2_scion"
+planCondition = "Lua"
+LuaFunction = "BuildBaseGunSpire"
+ContinueEvenIfFail = true
