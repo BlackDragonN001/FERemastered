@@ -92,6 +92,34 @@ function _FECore.Update()
 
 end
 
+-- Special logic for evkami, kamakazi unit. Don't let the Player eject.
+function _FECore.PlayerEjected(DeadObjectHandle)
+	
+	if not ShouldEjectPilot(DeadObjectHandle) then
+		return EjectKillRetCodes.EJECTKILLRETCODES_DLLHANDLED;
+	end
+	
+	return EjectKillRetCodes.EJECTKILLRETCODES_DOEJECTPILOT;
+end
+
+function _FECore.ObjectKilled(DeadObjectHandle, KillersHandle)
+
+	if not ShouldEjectPilot(DeadObjectHandle) then
+		return EjectKillRetCodes.EJECTKILLRETCODES_DLLHANDLED;
+	end
+	
+	return EjectKillRetCodes.EJECTKILLRETCODES_DOEJECTPILOT;
+end
+function ShouldEjectPilot(DeadObjectHandle)
+
+	if IsPlayer(DeadObjectHandle) and IsCraftButNotPerson(DeadObjectHandle) then
+		local CanPlayerEject = GetODFBool(DeadObjectHandle, "CraftClass", "CanPlayerEject", true);
+		return CanPlayerEject;
+	end
+	
+	return true;
+end
+
 function PreOrdnanceHit(ShooterHandle, VictimHandle, OrdnanceTeam, OrdnanceODF)
 
 -- Call helper functions.
