@@ -40,7 +40,7 @@ function ScavengerBuildLoopCondition(team, time)
     local cpuScavCount = CountCPUScavengers(team, time);
 
     -- If the conditions above are true, let the AIP build a Scavenger for pools/scrap.
-    if (myScrap >= 20 and (poolsToClaim or looseScrapToClaim) and cpuScavCount < 2) then
+    if (myScrap >= 20 and (poolsToClaim or looseScrapToClaim) and cpuScavCount < 3) then
         return true, "ScavengerBuildLoopCondition: Conditions met. Proceeding...";
     else
         return false, "ScavengerBuildLoopCondition: Conditions unmet. Halting plan.";
@@ -301,6 +301,19 @@ end
 ----------------
 -- Attack Checks
 ----------------
+
+-- Send Scouts to attack enemy Pools if we don't have enough.
+function SendExtractorAttacks(team, time)
+    -- Count CPU extractors.
+    local cpuExtractorCount = CountCPUExtractors(team, time);
+
+    -- Allow this attack if all of these conditions are met.
+    if (cpuExtractorCount < 3) then
+        return true, "SendExtractorAttacks: Conditions met. Proceeding...";
+    else 
+        return false, "SendExtractorAttacks: Conditions unmet. Halting plan. Time is " .. time;
+    end
+end
 
 -- Allow for early game harassment by the AI.
 function SendEarlyScoutHarassment(team, time)

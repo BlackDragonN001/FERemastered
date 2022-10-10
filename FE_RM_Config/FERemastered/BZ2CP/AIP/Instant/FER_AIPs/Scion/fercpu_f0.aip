@@ -59,11 +59,11 @@ planPriority = 980
 buildType1 = "fvcmdr_c"
 buildCount1 = 1
 
-[Plan4] // Always have 2 active Scavengers for picking up loose scrap.
+[Plan4] // Always have 3 active Scavengers for picking up loose scrap.
 planType = "BuildMinimums"
 planPriority = 970
 buildType1 = "fvscav_c"
-buildCount1 = 2
+buildCount1 = 3
 planCondition = "Lua"
 LuaFunction = "ScavengerBuildLoopCondition"
 
@@ -108,14 +108,13 @@ planType = "Attacker"
 planPriority = 910
 targetType1 = "VIRTUAL_CLASS_SCAVENGER"
 targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
-targetType3 = "VIRTUAL_CLASS_RECYCLER"
 attackType1 = "fvscout"
 attackType2 = "fvscout"
-MaxAttacks = 3
+attackType3 = "fvscout"
 AttackAnything = true
 buildIfNoIdle = true
 planCondition = "Lua"
-LuaFunction = "SendEarlyScoutHarassment"
+LuaFunction = "SendExtractorAttacks"
 
 [Plan11] // Build a Kiln.
 planType = "BaseBuildMinimums"
