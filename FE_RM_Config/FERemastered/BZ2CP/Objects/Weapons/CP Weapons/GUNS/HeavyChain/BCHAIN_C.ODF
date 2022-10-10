@@ -28,26 +28,26 @@ renderCount = 2
 renderName1 = "bchain_c.core"
 renderName2 = "bchain_c.tail"
 
-[core]
+[Core]
 renderBase = "draw_trail"
-textureBlend = "one one modulate"
 textureName = "trail.tga"
+textureBlend = "one one modulate"
 startColor = "255 255 255 50"
 finishColor = "255 255 255 100"
 startRadius = 0.02
 finishRadius = 0.02
 segmentTime = 0.05
 
-[tail]
+[Tail]
 renderBase = "draw_twirl_trail"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "255 255 190 10"
+startColor = "255 255 190 15"
 finishColor = "255 255 255 0"
 startRadius = 0.2
 finishRadius = 0.2
-animateTime = .25
+animateTime = 0.25
 emitDelay = 0.005
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "1.0 1.0 1.0"
-emitLife = .25
+emitLife = 0.25
