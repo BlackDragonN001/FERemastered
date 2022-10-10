@@ -5,12 +5,11 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 3
+particleTypes = 5
 
 particleClass1 = "xbchaincar.core"
 particleCount1 = 2
 particleVeloc1 = "0.0 0.0 0.0"
-particleBias1 = "0.0 0.0 0.0"
 particleInherit1 = "0.8 0.8 0.8"
 
 particleClass2 = "xbchaincar.spark"
@@ -24,6 +23,16 @@ particleCount3 = 2
 particleVeloc3 = "5.0 5.0 5.0"
 particleBias3 = "0.0 1.0 0.0"
 particleInherit3 = "0.8 0.8 0.8"
+
+particleClass4 = "xbchaincar.light"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+particleInherit4 = "0.8 0.8 0.8"
+
+particleClass5 = "xbchaincar.flame"
+particleCount5 = 1
+particleVeloc5 = "0.1 0.1 0.1"
+particleInherit5 = "1.0 1.0 1.0"
 
 explSound = "cbullhitcar.wav"
 damageRadius = 0.0
@@ -40,12 +49,26 @@ lifeTime = 0.5
 renderBase = "draw_twirl"
 textureName = "plasma.tga"
 textureBlend = "one one modulate"
-startColor = "200 120 0 255"
+startColor = "200 120 120 255"
 finishColor = "255 120 0 0"
 startRadius = 0.1
 finishRadius = 3.0
 animateTime = 0.5
 bottomInteractsWithTerrain = false
+
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 0.25
+renderBase = "draw_light"
+startColor = "255 208 147 450"
+finishColor = "255 127 0 0"
+startRadius = 15.0
+finishRadius = 0.0
+animateTime = 0.25
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 [Spark]
 simulateBase = "sim_ember"
@@ -55,8 +78,8 @@ textureName = "spark.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 0 255"
 finishColor = "255 0 0 0"
-startRadius = 0.02
-finishRadius = 0.02
+startRadius = 0.05
+finishRadius = 0.05
 animateTime = 0.5
 rotationRate = 20.0
 
@@ -64,10 +87,25 @@ rotationRate = 20.0
 simulateBase = "sim_ember"
 lifeTime = 1.0
 renderBase = "draw_trail"
+textureName = "trail4.tga"
 textureBlend = "one one modulate"
-startColor = "255 127 0 255"
-finishColor = "255 0 0 0"
+startColor = "255 127 63 255"
+finishColor = "255 63 0 0"
 startRadius = 0.02
 finishRadius = 0.02
-trailTime = 1.0
 segmentTime = 0.2
+textureRate = 0.1
+
+[Flame]
+simulateBase = "sim_smoke"
+lifeTime = 0.4
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 63 255"
+finishColor = "255 150 0 0"
+startRadius = 0.25
+finishRadius = 1.0
+animateTime = 0.4
+rotationRate = 2.0
+BottomInteractsWithTerrain = false

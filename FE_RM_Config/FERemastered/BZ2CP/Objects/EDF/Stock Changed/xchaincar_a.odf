@@ -1,62 +1,67 @@
-// ==============
-// AVENGER CAR HIT
-// ==============
+// =====================
+// CHAIN GUN VEHICLE HIT
+// =====================
 
 [ExplosionClass]
 classLabel = "explosion"
 
+explSound = "xchaincar_a.wav"
+
+damageRadius = 0.0
+
+kickRadius = 1.0
+kickOmega = 1.2
+kickVeloc = 0.4
+
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
 particleTypes = 6
 
-particleClass1 = "xgaucar.light"
+particleClass1 = "xchaincar_a.light"
 particleCount1 = 1
 particleVeloc1 = "0.1 0.1 0.1"
 particleInherit1 = "1.0 1.0 1.0"
 
-particleClass2 = "xgaucar.sparkcore"
-particleCount2 = 1
+particleClass2 = "xchaincar_a.sparkcore"
+particleCount2 = 2
 particleVeloc2 = "0.3 0.3 0.3"
 particleInherit2 = "1.0 1.0 1.0"
 
-particleClass3 = "xgaucar.sparks"
+particleClass3 = "xchaincar_a.sparks"
 particleCount3 = 2
 particleVeloc3 = "25.0 25.0 25.0"
 particleBias3 = "0.0 10.0 0.0"
 particleInherit3 = "1.0 1.0 1.0"
 
-particleClass4 = "xgaucar.sparktrails"
+particleClass4 = "xchaincar_a.sparktrails"
 particleCount4 = 1
 particleVeloc4 = "24.0 28.0 24.0"
 particleBias4 = "0.0 9.0 0.0"
 particleInherit4 = "1.0 1.0 1.0"
 
-particleClass5 = "xgaucar.flamecore"
+particleClass5 = "xchaincar_a.flamecore"
 particleCount5 = 1
 particleVeloc5 = "0.1 0.1 0.1"
 particleInherit5 = "1.0 1.0 1.0"
 
-particleClass6 = "xgaucar.smoke"
-particleCount6 = 1
-particleVeloc6 = "5.0 5.0 5.0"
-particleBias6 = "0.0 5.0 0.0"
+particleClass6 = "xchaincar_a.smoke"
+particleCount6 = 1 //2
+particleVeloc6 = "13.5 0.0 13.5"
 particleInherit6 = "0.8 0.8 0.8"
-
-explSound = "wmgr1.wav"
-damageRadius = 10.0
-damageValue(N) = 10
-damageValue(L) = 9
-damageValue(H) = 8
-damageValue(S) = 9
-damageValue(D) = 9
-damageValue(A) = 9
 
 [Light]
 simulateBase = "sim_smoke"
 lifeTime = 0.1
 renderBase = "draw_light"
-startColor = "255 208 47 450"
+startColor = "255 208 47 700"
 finishColor = "255 150 0 0"
 startRadius = 30.0
-finishRadius = 0.0
+finishRadius = 30.0
 animateTime = 0.1
 attenuateConstant = 1.0
 attenuateLinear = 0.0
@@ -65,68 +70,70 @@ lensFlare = 0
 
 [SparkCore]
 simulateBase = "sim_smoke"
-lifeTime = 0.4
+lifeTime = 0.2
 renderBase = "draw_twirl"
-textureName = "bulhit.tga"
+textureName = "crackle.tga"
 textureBlend = "one one modulate"
 startColor = "215 123 80 220"
 finishColor = "253 167 90 0"
-startRadius = 0.1
-finishRadius = 1.5
-animateTime = 0.4
+startRadius = 0.3
+finishRadius = 1.1
+animateTime = 0.2
+rotationRate = 15.0
 BottomInteractsWithTerrain = false
 
 [Sparks]
 simulateBase = "sim_ember"
-lifeTime = 0.8
+lifeTime = 1.0
 renderBase = "draw_twirl"
 textureName = "spark.tga"
 textureBlend = "one one modulate"
 startColor = "215 123 83 255"
 finishColor = "253 167 90 0"
-startRadius = 0.08
-finishRadius = 0.03
-animateTime = 0.8
+startRadius = 0.1
+finishRadius = 0.05
+animateTime = 1.0
 rotationRate = 20.0
 BottomInteractsWithTerrain = false
 
 [SparkTrails]
 simulateBase = "sim_ember"
-lifeTime = 0.8
+lifeTime = 1.0
 renderBase = "draw_trail"
 textureName = "trail2.tga"
 textureBlend = "one one modulate"
 textureRate = 2.5
 startColor = "255 127 55 255"
 finishColor = "220 130 40 0"
+animateTime = 1.0
 startRadius = 0.02
 finishRadius = 0.0
+trailTime = 1.0
 segmentTime = 0.1
 
 [FlameCore]
 simulateBase = "sim_smoke"
-lifeTime = 0.4
+lifeTime = 0.2
 renderBase = "draw_twirl"
-textureName = "flame.tga"
+textureName = "crackle.tga"
 textureBlend = "one one modulate"
 startColor = "255 200 63 255"
 finishColor = "255 150 0 0"
-startRadius = 0.25
-finishRadius = 1.5
-animateTime = 0.4
-rotationRate = 2.0
+startRadius = 0.2
+finishRadius = 0.5
+animateTime = 0.2
 BottomInteractsWithTerrain = false
 
 [Smoke]
 simulateBase = "sim_smoke"
-lifeTime = 0.5
+lifeTime = 0.6
 renderBase = "draw_twirl"
-textureName = "smoke2.tga"
+textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "250 187 90 90"
 finishColor = "140 140 140 0"
-startRadius = 0.8
-finishRadius = 2.0
-animateTime = 0.5
-rotationRate = 20.0
+startRadius = 0.2
+finishRadius = 1.2
+animateTime = 0.6
+rotationRate = 17.0
 BottomInteractsWithTerrain = false
