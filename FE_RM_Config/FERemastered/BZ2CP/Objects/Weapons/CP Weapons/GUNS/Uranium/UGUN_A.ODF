@@ -1,9 +1,11 @@
 [OrdnanceClass]
 classLabel = "bullet"
+
 shotGeometry = NULL
-xplGround = "xbazgnd_c"
-xplVehicle = "xbazxpl_c"
-xplBuilding = "xbazxpl_c"
+
+xplGround = "xugungnd_c"
+xplVehicle = "xugunxpl_c"
+xplBuilding = "xugunxpl_c"
 
 renderName = "ugun_a.render"
 
@@ -21,9 +23,12 @@ damageValue(A) = 40 // absorbtion
 
 [Render]
 renderBase = "draw_trail"
+textureName = "blastenergy.tga"
 textureBlend = "one one modulate"
 startColor = "0 127 255 127"
 finishColor = "0 0 255 15"
-startRadius = 0.03
-finishRadius = 0.01
+startRadius = 0.06 //0.03
+finishRadius = 0.02 //0.01
 segmentTime = 0.1
+textureRate = 0.2
+textureSpeed = 0.0

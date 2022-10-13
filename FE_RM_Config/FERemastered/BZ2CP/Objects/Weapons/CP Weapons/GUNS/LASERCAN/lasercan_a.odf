@@ -35,8 +35,8 @@ textureName = "lightflare.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 255"
 finishColor = "255 255 255 127"
-startRadius = 0.3
-finishRadius = 0.3
+startRadius = 0.35
+finishRadius = 0.35
 
 [BulletTrail] // original render
 renderBase = "draw_trail"

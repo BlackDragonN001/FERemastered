@@ -2,7 +2,7 @@
 classLabel = "bullet"
 shotGeometry = NULL
 
-xplGround = "xbulgnd"
+xplGround = "xbzipgnd"
 xplVehicle = "xbzipcar"
 xplBuilding = "xbzipcar"
 
@@ -29,3 +29,4 @@ finishColor = "255 127 0 0"
 startRadius = 0.03
 finishRadius = 0.1
 segmentTime = 0.05
+textureRate = 0.2
