@@ -2,7 +2,7 @@
 classLabel = "chargegun"
 altName = "glegion_c"
 ordName = NULL;
-wpnName = "Swarm Launcher"
+wpnName = "Legion Swarm"
 fireSound = "mag01.wav"
 wpnReticle = "gsting_a"
 wpnCategory = "ROCK"
@@ -18,11 +18,11 @@ deltaVolume = 20.0
 ordnanceCount = 8
 
 shotDelay1 = 0.0
-salvoCount1 = 0
+salvoCount1 = 1
 salvoDelay1 = 0.0
 shotVariance1 = 0.0
-fireSound1 = NULL
-ordName1 = NULL
+fireSound1 = "gmagg01.wav"
+ordName1 = "legion5"
 wpnReticle1 = "gmaggun.0"
 
 shotDelay2 = 0.25

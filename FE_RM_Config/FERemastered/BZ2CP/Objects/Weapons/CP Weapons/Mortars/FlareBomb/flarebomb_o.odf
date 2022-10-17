@@ -8,6 +8,7 @@ xplVehicle = "xflmhit"
 xplBuilding = "xflmhit"
 
 renderName = "flarebomb_o.render"
+
 ammoCost = 0.5
 lifeSpan = 1.0
 shotSpeed = 50.0
@@ -30,17 +31,19 @@ renderBase = "draw_twirl"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "255 155 155 195"
-finishColor = "255 200 0 134"
+finishColor = "255 200 0 0"
 startRadius = 0.5
 finishRadius = 10.0
-animateTime = 0.5
+animateTime = 1.0
 rotationRate = 2.0
+bottomInteractsWithTerrain = false
 
 [CloudEmit]
 renderBase = "draw_emit"
 emitName = "flarebomb_o.cloudpuff"
 emitDelay = 0.25
 emitVariance = "15.0 -5.0 15.0"
+emitLife = 20.0
 
 [CloudPuff]
 simulateBase = "sim_dust"
@@ -49,8 +52,9 @@ renderBase = "draw_twirl"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "255 155 155 242"
-finishColor = "255 200 0 141"
+finishColor = "255 200 0 0"
 startRadius = 10.0
 finishRadius = 40.0
 animateTime = 20.0
 rotationRate = 4.0
+bottomInteractsWithTerrain = false

@@ -1,10 +1,13 @@
 [OrdnanceClass]
 classLabel = "spraybomb"
+
 shotGeometry = "cball.xsi"
 shotSound = "baz03.wav"
+
 xplGround = NULL
 xplVehicle = NULL
 xplBuilding = NULL
+
 rendername = "flarebombbm.render"
 
 ammoCost = 140
@@ -30,7 +33,7 @@ startColor = "255 255 255 232"
 finishColor = "255 255 255 0"
 startRadius = 0.5
 finishRadius = 2.0
-animateTime = 3.556
+animateTime = 5.0
 emitDelay = 0.01
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "1.0 1.0 1.0"

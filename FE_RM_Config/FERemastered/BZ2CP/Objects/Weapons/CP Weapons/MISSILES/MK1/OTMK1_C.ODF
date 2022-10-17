@@ -3,6 +3,7 @@ classLabel = "missile"
 
 shotGeometry = NULL
 shotsound = "taglead.wav"
+
 xplGround = "xtaggnd_c"
 xplVehicle = "xtagcar_c"
 xplBuilding = "xtagbld_c"
@@ -28,10 +29,22 @@ rateWaver = 2.0
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
+renderCount = 4
 renderName1 = "otmk1_c.flame"
 renderName2 = "otmk1_c.halo"
 renderName3 = "otmk1_c.trail"
+renderName4 = "otmk1_c.light"
+
+[Light]
+renderBase = "draw_light"
+startColor = "200 200 127 200"
+finishColor = "200 200 127 200"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
 
 [Flame]
 renderBase = "draw_twirl_trail"
@@ -41,12 +54,12 @@ startColor = "200 200 0 255"
 finishColor = "255 255 255 0"
 startRadius = 0.15
 finishRadius = 0.02
-animateTime = 0.26
+animateTime = 0.25
 rotationRate = 10.0
-emitDelay = 0.002
+emitDelay = 0.0015
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "0.0 0.5 0.0"
-emitLife = 0.26
+emitLife = 0.25
 
 [Halo]
 renderBase = "draw_sprite"
@@ -58,10 +71,6 @@ startRadius = 1.0
 finishRadius = 1.0
 rotationRate = 10.0
 animateTime = 10.0
-emitDelay = 0.001
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "0.0 0.0 0.0"
-emitLife = 1.0
 
 [Trail]
 renderBase = "draw_trail"
@@ -73,5 +82,4 @@ finishColor =  "255 255 255 0" // "100 100 100 0"
 startRadius = 0.1
 finishRadius = 1.0
 segmentTime = 1.5
-animateTime = 1.4
 

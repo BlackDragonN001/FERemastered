@@ -1,14 +1,14 @@
 [OrdnanceClass]
 classLabel = "bullet"
 
-shotGeometry = "gatstab.xsi"
+shotGeometry = "iostba00.fbx" //"gatstab.xsi" // Needs new model -GBD
 shotSound = "Ordin_a.wav"
 
 renderName = "rburst_a.render"
 
-xplGround = "xstabgnd_c"
-xplVehicle = "xstabcar_c"
-xplBuilding = "xstabcar_c"
+xplGround = "xrburstgnd"
+xplVehicle = "xrburstcar"
+xplBuilding = "xrburstcar"
 
 ammoCost = 40
 lifeSpan = 3.4 // 195m
@@ -24,10 +24,22 @@ damageValue(A) = 300 // absorbtion // 300
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
+renderCount = 4
 renderName1 = "rburst_a.smoke"
 renderName2 = "rburst_a.flame"
-renderName3 = "rburst_a.Light"
+renderName3 = "rburst_a.light"
+renderName4 = "rburst_a.flare"
+
+[Light]
+renderBase = "draw_light"
+startColor = "150 55 200 255"
+finishColor = "150 55 200 255"
+startRadius = 25.0
+finishRadius = 25.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
 
 [Smoke]
 renderBase = "draw_twirl_trail"
@@ -59,11 +71,11 @@ emitVelocity = "0.0 0.0 0.0"
 emitVariance = "2.0 2.0 2.0"
 emitLife = 0.02
 
-[Light]
+[Flare]
 renderBase = "draw_sprite"
-textureName = "lightflare.tga"
+textureName = "darkflare.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "150 55 200 255"
 finishColor = "255 255 255 255"
-startRadius = 0.0
+startRadius = 3.0
 finishRadius = 3.0

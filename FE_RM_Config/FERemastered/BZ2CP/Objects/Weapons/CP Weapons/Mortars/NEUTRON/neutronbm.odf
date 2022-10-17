@@ -1,10 +1,13 @@
 [OrdnanceClass]
 classLabel = "spraybomb"
+
 shotGeometry = "iorckt00.xsi"
 shotSound = "baz03.wav"
+
 xplGround = "xneutxpl"
 xplVehicle = "xneutxpl"
 xplBuilding = "xneutxpl"
+
 rendername = "neutronbm.render"
 
 ammoCost = 1500
@@ -31,7 +34,7 @@ textureblend = "one one modulate"
 startColor = "255 255 100 255"
 finishColor = "100 255 200 200"
 startRadius = 0.3
-finishRadius = 0.1
+finishRadius = 0.0
 animateTime = 1.0
 emitDelay = 0.005
 emitVariance = "10.0 10.0 10.0"

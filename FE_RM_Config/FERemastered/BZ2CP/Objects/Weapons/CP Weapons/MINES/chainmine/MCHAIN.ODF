@@ -28,7 +28,7 @@ renderCount = 2
 renderName1 = "mchain.core"
 renderName2 = "mchain.tail"
 
-[core]
+[Core]
 renderBase = "draw_trail"
 textureBlend = "one one modulate"
 textureName = "trail.tga"
@@ -38,7 +38,7 @@ startRadius = 0.02
 finishRadius = 0.02
 segmentTime = 0.05
 
-[tail]
+[Tail]
 renderBase = "draw_twirl_trail"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"

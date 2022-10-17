@@ -7,26 +7,26 @@ classLabel = "explosion"
 
 particleTypes = 6
 
-particleClass1 = "xugunxpl_c.core"
+particleClass1 = "xugunxpl_a.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 particleInherit1 = "1.0 1.0 1.0"
 
-particleClass2 = "xugungnd_c.shock"
+particleClass2 = "xugungnd_a.shock"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
 
-particleClass3 = "xugungnd_c.light"
+particleClass3 = "xugungnd_a.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
-particleClass4 = "xugunxpl_c.sparktrails"
+particleClass4 = "xugunxpl_a.sparktrails"
 particleCount4 = 1
 particleVeloc4 = "24.0 28.0 24.0"
 particleBias4 = "0.0 9.0 0.0"
 particleInherit4 = "1.0 1.0 1.0"
 
-particleClass5 = "xugunxpl_c.sparks"
+particleClass5 = "xugunxpl_a.sparks"
 particleCount5 = 2
 particleVeloc5 = "25.0 25.0 25.0"
 particleBias5 = "0.0 10.0 0.0"
@@ -56,8 +56,8 @@ lifeTime = 0.5
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = "127 255 63 255"
-finishColor = "255 127 0 0"
+startColor = "63 127 255 255"
+finishColor = "255 127 63 0"
 startRadius = 1.0
 finishRadius = 5.0
 animateTime = 0.5
@@ -70,8 +70,8 @@ lifeTime = 0.8
 renderBase = "draw_twirl"
 textureName = "spark.tga"
 textureBlend = "one one modulate"
-startColor = "215 123 83 255"
-finishColor = "253 167 90 0"
+startColor = "90 123 215 255"
+finishColor = "0 167 253 0"
 startRadius = 0.1
 finishRadius = 0.05
 animateTime = 0.8
@@ -84,8 +84,8 @@ lifeTime = 0.8
 renderBase = "draw_trail"
 textureName = "trail2.tga"
 textureBlend = "one one modulate"
-startColor = "255 127 55 255"
-finishColor = "220 130 40 0"
+startColor = "55 127 255 255"
+finishColor = "40 130 240 0"
 startRadius = 0.04
 finishRadius = 0.0
 segmentTime = 0.1

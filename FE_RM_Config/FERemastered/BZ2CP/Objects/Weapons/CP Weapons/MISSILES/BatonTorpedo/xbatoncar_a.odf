@@ -5,11 +5,17 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 1
+particleTypes = 2
 
 particleClass1 = "xbatoncar_a.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+particleInherit1 = "1.0 1.0 1.0"
+
+particleClass2 = "xbatoncar_a.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleInherit2 = "1.0 1.0 1.0"
 
 explSound = "xsv2.wav"
 damageRadius = 0.0
@@ -21,7 +27,7 @@ damageValue(D) = 0
 damageValue(A) = 0
 
 [Core]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.5
 renderBase = "draw_twirl"
 textureName = "ring.tga"
@@ -33,3 +39,16 @@ finishRadius = 2.0
 animateTime = 0.5
 bottomInteractsWithTerrain = false
 
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_light"
+startColor = "0 127 255 255"
+finishColor = "255 0 255 0"
+startRadius = 10.0
+finishRadius = 0.0
+animateTime = 0.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

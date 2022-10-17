@@ -1,12 +1,12 @@
 [OrdnanceClass]
 classLabel = "thermalmissile"
 
-shotGeometry = "sgstng00.fbx" //"forckt01.xsi"
+shotGeometry = "forckt01.xsi"
 shotSound = "satord.wav"
 
 renderName = "saturn_c.render"
 
-xplGround = "xmslcar"
+xplGround = "xmslcar" // TODO: Make custom explosion, use XSATCAR.wav? -GBD
 xplVehicle = "xmslcar"
 xplBuilding = "xmslcar"
 
@@ -31,17 +31,19 @@ coneAngle = 0.4
 [Render]
 renderBase = "draw_multi"
 renderCount = 2
-renderName1 = "saturn_c.flare"
+renderName1 = "saturn_c.light"
 renderName2 = "saturn_c.smoke"
 
-[Flare]
-renderBase = "draw_sprite"
-textureName = "lightflare.tga"
-textureBlend = "one one modulate"
+[Light]
+renderBase = "draw_light"
 startColor = "255 255 255 255"
 finishColor = "255 255 255 255"
-startRadius = 0.5
-finishRadius = 0.5
+startRadius = 10.0
+finishRadius = 10.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
 
 [Smoke]
 renderBase = "draw_twirl_trail"
@@ -52,8 +54,8 @@ finishColor = "153 153 153 0"
 startRadius = 0.2
 finishRadius = 0.5
 animateTime = 0.7
-emitDelay = 0.01
-emitVelocity = "0.0 0.0 0.0"
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 -5.0"
 emitVariance = "0.6 0.6 0.6"
 emitLife = 0.7
 

@@ -5,15 +5,46 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 2
+particleTypes = 7
 
 particleClass1 = "xaaseek.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+particleInherit1 = "0.5 0.5 0.5"
 
 particleClass2 = "xaaseek.puff"
-particleCount2 = 70
-particleVeloc2 = "40.0 40.0 40.0"
+particleCount2 = 20 //40
+particleVeloc2 = "90.0 90.0 90.0"
+particlePosVar2 = "3.0 3.0 3.0"
+particleInherit2 = "0.5 0.5 0.5"
+
+particleClass3 = "xaaseek.DisperseSmoke"
+particleCount3 = 10
+particleVeloc3 = "50.0 50.0 50.0"
+particlePosVar3 = "3.0 3.0 3.0"
+particleInherit3 = "0.5 0.5 0.5"
+
+particleClass4 = "xaaseek.HullAsh"
+particleCount4 = 10 //20
+particleVeloc4 = "110.0 110.0 110.0"
+particlePosVar4 = "3.0 3.0 3.0"
+particleInherit4 = "0.5 0.5 0.5"
+
+particleClass5 = "xaaseek.ShockSphere"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+particleInherit5 = "0.5 0.5 0.5"
+
+particleClass6 = "xaaseek.LightFlare"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0"
+particleInherit6 = "0.5 0.5 0.5"
+
+particleClass7 = "xaaseek.trail"
+particleCount7 = 12
+particleVeloc7 = "60.0 60.0 60.0"
+particlePosVar7 = "3.0 3.0 3.0"
+particleInherit7 = "0.5 0.5 0.5"
 
 explSound = "xmv1.wav"
 
@@ -28,17 +59,16 @@ damageValue(D) = 300 // deflection
 damageValue(A) = 200 // absorbtion
 
 [Core]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_twirl"
-textureName = "flame.tga"
+textureName = "plascore.tga"
 textureBlend = "one one modulate"
-startColor = "255 200 63 255"
-finishColor = "255 0 0 0"
+startColor = "200 255 63 255"
+finishColor = "200 255 0 0"
 startRadius = 5.0
 finishRadius = 50.0
 animateTime = 1.0
-bottomInteractsWithTerrain = false
 
 [Puff]
 simulateBase = "sim_smoke"
@@ -46,8 +76,79 @@ lifeTime = 1.0
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
-startColor = "255 63 0 255"
+startColor = "255 255 63 100"
 finishColor = "255 0 0 0"
 startRadius = 10.0
 finishRadius = 1.0
 animateTime = 1.0
+rotationRate = 5.0
+
+[DisperseSmoke]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "20 25 20 160"
+finishColor = "26 21 20 0"
+startRadius = 8.4
+finishRadius = 10.8
+animateTime = 3.0
+rotationRate = 7.0
+BottomInteractsWithTerrain = false
+
+[HullAsh]
+simulateBase = "sim_ember"
+lifeTime = 4.0
+renderBase = "draw_twirl"
+textureName = "spark.tga"
+textureBlend = "one one modulate"
+startColor = "127 63 0 255"
+finishColor = "255 63 0 0"
+startRadius = 0.2
+finishRadius = 0.1
+animateTime = 4.0
+BottomInteractsWithTerrain = false
+
+
+[LightFlare]
+simulateBase = "sim_smoke"
+lifeTime = 0.2
+renderBase = "draw_twirl"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "241 170 73 255"
+finishColor = "244 224 143 0"
+startRadius = 60.0
+finishRadius = 2.0
+animateTime = 0.2
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[ShockSphere]
+simulateBase = "sim_smoke"
+lifeTime = 0.2
+renderBase = "draw_sphere"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "241 170 73 100"
+finishColor = "244 224 0 0"
+startRadius = 1.0
+finishRadius = 30.0
+animateTime = 0.2
+latitudeBands = 16
+longitudeSegments = 32
+
+[Trail]
+simulateBase = "sim_ember"
+lifeTime = 5.0
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureRate = 0.5
+textureBlend = "one one modulate"
+startColor = "255 200 60 255"
+finishColor = "255 100 10 0"
+startRadius = 0.04
+finishRadius = 0.0
+trailTime = 5.0
+segmentTime = 0.1

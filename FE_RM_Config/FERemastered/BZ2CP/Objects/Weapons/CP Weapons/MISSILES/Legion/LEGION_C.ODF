@@ -30,10 +30,22 @@ coneAngle = 0.55
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
+renderCount = 4
 renderName1 = "legion_c.flare"
 renderName2 = "legion_c.halo"
 renderName3 = "legion_c.trail"
+renderName4 = "legion_c.light"
+
+[Light]
+renderBase = "draw_light"
+startColor = "190 110 70 255"
+finishColor = "190 110 70 255"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
 
 [Flare]
 renderBase = "draw_sprite"
@@ -41,8 +53,8 @@ textureName = "lightflare.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 255"
 finishColor = "255 255 255 255"
-startRadius = 0.75
-finishRadius = 0.75
+startRadius = 1.0
+finishRadius = 1.0
 
 [Halo]
 renderBase = "draw_sprite"
@@ -50,8 +62,8 @@ textureName = "lighthalo.tga"
 textureBlend = "one one modulate"
 startColor = "190 110 70 255"
 finishColor = "190 110 70 255"
-startRadius = 0.5
-finishRadius = 0.5
+startRadius = 0.75
+finishRadius = 0.75
 
 [Trail]
 renderBase = "draw_trail"

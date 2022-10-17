@@ -1,10 +1,13 @@
 [OrdnanceClass]
 classLabel = "spraybomb"
+
 shotGeometry = "ioartl00.xsi"
 shotSound = "baz03.wav"
+
 xplGround = NULL
 xplVehicle = NULL
 xplBuilding = NULL
+
 rendername = "minfieldbm.render"
 
 ammoCost = 50

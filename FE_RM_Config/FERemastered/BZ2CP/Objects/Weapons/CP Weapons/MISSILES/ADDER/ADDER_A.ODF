@@ -1,13 +1,14 @@
 [OrdnanceClass]
 classLabel = "bullet"
+
 shotGeometry = "iorckt00.xsi"
 shotSound = "imiss01a.wav"
 
 renderName = "adder_a.render"
 
-xplGround = "xplasgnd_c"
-xplVehicle = "xplascar_c"
-xplBuilding = "xplasbld_c"
+xplGround = "xaddergnd_a"
+xplVehicle = "xaddercar_a"
+xplBuilding = "xadderbld_a"
 
 ammoCost = 30
 lifeSpan = 1.5 // 150m

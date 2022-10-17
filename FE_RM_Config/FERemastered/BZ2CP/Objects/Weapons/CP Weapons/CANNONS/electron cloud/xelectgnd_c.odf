@@ -51,7 +51,6 @@ particleClass7 = "xelectgnd_c.light"
 particleCount7 = 1
 particleVeloc7 = "0.0 0.0 0.0"
 
-
 [Splat]
 simulateBase = "sim_null"
 lifeTime = 0.4
@@ -95,10 +94,10 @@ animateTime = 10.0
 simulateBase = "sim_smoke"
 lifeTime = 0.6
 renderBase = "draw_twirl_trail"
-textureName = "flame2.tga"
+textureName = "flame.tga"
 textureBlend = "one one modulate"
 startColor = "80 170 255 127"
-finishColor = "40 85 130 0"
+finishColor = "240 185 30 0"
 startRadius = 0.7
 finishRadius = 0.1
 animateTime = 0.5

@@ -5,7 +5,7 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 5
+particleTypes = 4
 
 particleClass1 = "xdaywreck2.core"
 particleCount1 = 1
@@ -19,13 +19,10 @@ particleClass3 = "xdaywreck2.flame"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
-particleClass4 = "xdaywreck2.flameemit"
-particleCount4 = 1
-particleVeloc4 = "0.0 0.0 0.0"
-
-particleClass5 = "xdaywreck2.posroll"
-particleCount5 = 30
-particleVeloc5 = "15.0 0.0 5.0"
+particleClass4 = "xdaywreck2.posroll"
+particleCount4 = 30
+particleVeloc4 = "25.0 0.0 25.0"
+particlePosVar4 = "5.0 0.0 5.0"
 
 explSound = "daywreck.wav"
 
@@ -49,10 +46,10 @@ lifeTime = 2.0
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
-startColor = "150 50 50 50"
-finishColor = "200 5 50 50"
-startRadius = 70.0
-finishRadius = 30.0
+startColor = "150 50 50 127"
+finishColor = "200 5 50 0"
+startRadius = 450.0
+finishRadius = 70.0
 animateTime = 2.0
 latitudeBands = 8
 longitudeSegments = 16
@@ -61,7 +58,7 @@ longitudeSegments = 16
 simulateBase = "sim_null"
 lifeTime = 5.5
 renderBase = "draw_light"
-startColor = "255 255 63 255"
+startColor = "255 255 63 2255"
 finishColor = "255 0 0 0"
 startRadius = 260.0
 finishRadius = 260.0
@@ -71,29 +68,26 @@ attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
 
-[flame]
+[Flame]
 simulateBase = "sim_smoke"
 lifeTime = 7.0
-renderBase = "draw_emit"
-emitName = "xdaywreck2.flameemit"
+renderBase = "draw_twirl_trail"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 200 255"
+finishColor = "255 0 0 0"
+startRadius = 10.0
+finishRadius = 50.0
+animateTime = 4.0
+rotationRate = 3.21
+BottomInteractsWithTerrain = false
 emitDelay = 0.01
 emitVelocity = "0.0 3.0 0.0"
 emitVariance = "0.0 0.0 0.0"
+emitPosVariance = "10.0 0.0 10.0"
+emitLife = 4.0
 
-[flameemit]
-simulateBase = "sim_smoke"
-lifeTime = 4.0
-renderBase = "draw_twirl"
-textureName = "flame2.tga"
-textureBlend = "one one modulate"
-startColor = " 255 255 200 255"
-finishColor = "255 0 0 0"
-startRadius = 10
-finishRadius = 50
-animateTime = 4.0
-rotationRate = 3.21
-
-[posroll]
+[Posroll]
 simulateBase = "sim_dust"
 lifeTime = 15.0
 renderBase = "draw_twirl"
@@ -105,3 +99,4 @@ startRadius = 30.0
 finishRadius = 90.0
 animateTime = 15.0
 rotationRate = 2.0
+BottomInteractsWithTerrain = false
