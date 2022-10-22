@@ -13,7 +13,7 @@ g_TerrainName = isdf
 size [1] =
 87
 [GameObject]
-objClass = player
+objClass = ivtank
 seqno [1] =
 800001
 team [1] =
@@ -49,9 +49,9 @@ transform [1] =
 abandoned [1] =
 0
 curAmmo [1] =
-1.20000000e+03
+2.50000000e+03
 maxAmmo [1] =
-1.20000000e+03
+2.50000000e+03
 addAmmo [1] =
 5.00000000e+00
 curPilot = psuser
