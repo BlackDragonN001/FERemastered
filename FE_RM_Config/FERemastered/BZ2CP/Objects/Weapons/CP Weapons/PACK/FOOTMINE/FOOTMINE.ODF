@@ -16,13 +16,13 @@ canCollide = 1
 //collisionRadius = 3.0
 
 [MineClass]
-lifeSpan = 300
+lifeSpan = 300.0
 xplBlast = "xfootminexpl"
 
 [SeekerClass]
-searchRange = 50.0
+searchRange = 0.0
 floatVeloc = 0.0
-setAltitude = -1.0
+setAltitude = 0.0
 
 [Render]
 renderBase = "draw_light"

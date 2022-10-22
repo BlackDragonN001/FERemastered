@@ -22,7 +22,37 @@ damageValue(S) = 250 // standard
 damageValue(D) = 400 // deflection
 damageValue(A) = 50 // absorbtion
 
+
 [Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "mwreck.light"
+renderName2 = "mwreck.smoke"
+renderName3 = "mwreck.flare"
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "155 250 250 150"
+finishColor = "155 250 250 150"
+startRadius = 10.0
+finishRadius = 7.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Light]
+renderBase = "draw_light"
+startColor = "155 250 250 555"
+finishColor = "155 250 250 555"
+startRadius = 30.0
+finishRadius = 30.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+[Smoke]
 renderBase = "draw_twirl_trail"
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"

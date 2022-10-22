@@ -29,7 +29,6 @@ renderCount = 2
 renderName1 = "csnipe.twirl"
 renderName2 = "csnipe.beam"
 
-
 [Twirl]
 renderBase = "draw_twirl_trail"
 textureName = "plasma.tga"
@@ -42,6 +41,7 @@ animateTime = 1.0
 emitDelay = 0.004
 emitVariance = "2.0 2.0 2.0"
 emitLife = 1.0
+bottomInteractsWithTerrain = false
 
 [Beam]
 renderBase = "draw_bolt"

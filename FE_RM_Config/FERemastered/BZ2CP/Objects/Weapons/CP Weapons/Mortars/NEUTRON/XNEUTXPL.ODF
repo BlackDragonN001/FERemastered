@@ -5,19 +5,23 @@
 [ExplosionClass]
 classLabel = "quakeblast" //"explosion"
 
-particleTypes = 3
+particleTypes = 4
 
 particleClass1 = "xneutxpl.core" //sparkle" // sparkle doesn't exist, never worked. -GBD
 particleCount1 = 10
 particleVeloc1 = "2.0 2.0 2.0"
 
-particleClass2 = "xneutxpl.shock"
+particleClass2 = "xneutxpl.shock1"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
 
-particleClass3 = "xneutxpl.light"
+particleClass3 = "xneutxpl.shock2"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xneutxpl.light"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
 
 explSound = "xmv1.wav"
 damageRadius = 50.0
@@ -48,23 +52,43 @@ textureName = "plasma.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 70 255"
 finishColor = "0 255 100 0"
-startRadius = 3.0
+startRadius = 10.0
 finishRadius = 1.0
 animateTime = 1.5
 
-[Shock]
+[Shock1]
 simulateBase = "sim_null"
 lifeTime = 0.7
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 63 255"
+startColor = "255 255 63 127"
 finishColor = "0 200 100 0"
 startRadius = 3.0
 finishRadius = 60.0
 animateTime = 0.7
 latitudeBands = 8
 longitudeSegments = 16
+AddPitch = -50.0
+AddYaw = -50.0
+AddRoll = -50.0
+
+[Shock2]
+simulateBase = "sim_null"
+lifeTime = 0.7
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 127"
+finishColor = "0 200 100 0"
+startRadius = 3.0
+finishRadius = 60.0
+animateTime = 0.7
+latitudeBands = 8
+longitudeSegments = 16
+AddPitch = 50.0
+AddYaw = 50.0
+AddRoll = 50.0
 
 [Light]
 simulateBase = "sim_null"

@@ -1,13 +1,16 @@
 [OrdnanceClass]
 classLabel = "bullet"
+
 shotGeometry = NULL
+
 xplGround = "xbulgnd"
 xplVehicle = "xhmncar"
 xplBuilding = "xhmnbld"
+
 renderName = "cphmn_c.render"
 
 ammoCost = 5
-lifeSpan = .667 // 105m
+lifeSpan = 0.667 // 105m
 shotSpeed = 300.0
 
 damageValue(N) = 10 // none // 200

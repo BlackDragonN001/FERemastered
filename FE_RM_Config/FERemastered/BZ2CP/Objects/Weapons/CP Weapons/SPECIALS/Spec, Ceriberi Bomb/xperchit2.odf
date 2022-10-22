@@ -83,6 +83,7 @@ finishColor = "0 0 0 0"
 startRadius = 3.0
 finishRadius = 187.0
 animateTime = 7.0
+bottomInteractsWithTerrain = false
 
 [flame]
 simulateBase = "sim_smoke"
@@ -105,6 +106,7 @@ startRadius = 1.0
 finishRadius = 132.0
 animateTime = 6.5
 rotationRate = 3.21
+bottomInteractsWithTerrain = false
 
 [Light]
 simulateBase = "sim_null"
@@ -144,3 +146,4 @@ startRadius = 2.0
 finishRadius = 1.0
 animateTime = 3.0
 rotationRate = 2.0
+bottomInteractsWithTerrain = false

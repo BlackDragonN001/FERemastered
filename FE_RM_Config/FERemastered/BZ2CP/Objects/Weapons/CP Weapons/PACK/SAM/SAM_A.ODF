@@ -30,10 +30,11 @@ coneAngle = 2.5
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
+renderCount = 4
 renderName1 = "sam_a.flare"
 renderName2 = "sam_a.smoke"
 renderName3 = "sam_a.flame"
+renderName4 = "sam_a.light"
 
 [Flare]
 renderBase = "draw_sprite"
@@ -54,7 +55,7 @@ startRadius = 0.2
 finishRadius = 1.0
 animateTime = 1.0
 emitDelay = 0.01
-emitVelocity = "0.0 0.0 0.0"
+emitVelocity = "0.0 0.0 -5.0"
 emitVariance = "3.0 3.0 2.0"
 emitLife = 1.0
 
@@ -71,3 +72,14 @@ emitDelay = 0.003
 emitVelocity = "0.0 0.0 0.0"
 emitVariance = "3.0 3.0 2.0"
 emitLife = 0.1
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 180 63 555"
+finishColor = "255 180 63 0"
+startRadius = 30.0
+finishRadius = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
