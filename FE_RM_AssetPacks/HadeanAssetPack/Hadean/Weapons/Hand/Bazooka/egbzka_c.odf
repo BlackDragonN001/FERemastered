@@ -1,0 +1,51 @@
+[WeaponClass]
+classLabel = "cannon"
+geometryName = "egbazo_stand.xsi"
+geometryScale = 0.12
+animCount = 4
+animName1 = "stand"
+animFile1 = "egbazo_stand.xsi"
+animName2 = "walk"
+animFile2 = "egbazo_stand.xsi"
+animName3 = "crouch"
+animFile3 = "egbazo_stand.xsi"
+animName4 = "jump"
+animFile4 = "egbazo_stand.xsi"
+
+cockpitName = "ewbazo_cockpit_skel.xsi"
+cockpitScale = 0.12
+animCountCockpit = 4
+animNameCockpit1 = "stand"
+animFileCockpit1 = "ewbazo_cockpit_stand.xsi"
+animNameCockpit2 = "walk"
+animFileCockpit2 = "ewbazo_cockpit_run.xsi"
+animNameCockpit3 = "crouch"
+animFileCockpit3 = "ewbazo_cockpit_stand.xsi"
+animNameCockpit4 = "jump"
+animFileCockpit4 = "ewbazo_cockpit_stand.xsi"
+
+altName = "egbzka_a"
+ordName = "ebazooka_c"
+wpnName = "Rocket"
+fireSound = "dblast.wav"
+wpnReticle = "gshotgun"
+wpnCategory = "HAND"
+isAssault = 0
+isFlying = 0
+
+[CannonClass]
+shotDelay = 2.0
+salvoCount = 3
+salvoDelay = 0.33
+shotVariance = 0.0
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 0 0"
+startRadius = 3.0
+finishRadius = 1.0
+animateTime = 0.1
+geomName = "g_sflash.xsi"

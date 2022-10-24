@@ -1,0 +1,44 @@
+[WeaponClass]
+classLabel = "multilauncher" //"cannon"
+ordName = "ebazooka_a"
+wpnName = "Bazooka"
+fireSound = "dblast.wav"
+wpnReticle = "gmlock_c.0" //"gshotgun"
+wpnCategory = "HAND"
+isAssault = 1
+isFlying = 1
+altName = "egbzka_c"
+flashName = "egbzka_a.flash"
+
+//[CannonClass]
+//shotDelay = 0.25
+//salvoCount = 1
+//salvoDelay = 0.0
+//shotVariance = 0.05
+
+[LauncherClass]
+lockRange = 200.0
+shotDelay = 0.25
+lockDelay = 0.5
+coneAngle = 0.5
+lockingReticle = "gshadow.A"
+lockingSound = "lock01.wav"
+lockedReticle = "gshadow.B"
+lockedSound = "lock02.wav"
+targetCount = 3
+targetReticle = "gmlock_c.1"
+
+[MultiLauncherClass]
+targetCount = 20
+loseAngle = 1e6
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 175"
+finishColor = "255 0 0 0"
+startRadius = 4.0
+finishRadius = 1.0
+animateTime = 0.1
+geomName = "g_sflash.xsi"

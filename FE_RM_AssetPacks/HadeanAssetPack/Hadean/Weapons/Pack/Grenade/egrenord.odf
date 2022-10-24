@@ -1,0 +1,83 @@
+[OrdnanceClass]
+classLabel = "radarmissile" //"lasermissile"
+
+shotGeometry = "eogren.xsi"
+shotScale = 0.12
+shotSound = "Ordin_c.wav"
+
+xplGround = "xgasgnd"
+xplVehicle = "xgasxpl"
+xplBuilding = "xgasxpl"
+
+renderName = "egrenord.render"
+
+ammoCost = 0
+lifeSpan = 4.0 // 200m
+shotSpeed = 50.0
+
+damageValue(N) = 500 // none // 350 = 250
+damageValue(L) = 400 // light // 300 = 200
+damageValue(H) = 250 // heavy // 220 = 150
+
+damageValue(S) = 400 // standard // 300 = 200
+damageValue(D) = 500 // deflection // 305 = 203.3
+damageValue(A) = 250 // absortion // 275 = 183.3
+
+[MissileClass]
+omegaTurn = 10.25
+coneAngle = 3.14
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 5
+renderName1 = "egrenord.flare"
+renderName2 = "egrenord.flare"
+renderName3 = "egrenord.flame"
+renderName4 = "egrenord.light"
+renderName5 = "egrenord.trail"
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "flare.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 100 127"
+finishColor = "255 200 100 127"
+startRadius = 2.0
+finishRadius = 2.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 127"
+finishColor = "255 0 0 0"
+startRadius = 0.3
+finishRadius = 1.0
+animateTime = 0.5
+emitDelay = 0.005
+emitVariance = "3.0 3.0 0.0"
+emitLife = 0.5
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 200 100 555"
+finishColor = "255 200 100 555"
+startRadius = 20.0
+finishRadius = 20.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "firetrail2.tga"
+textureBlend = "one one modulate"
+startColor =  "255 255 255 200"
+finishColor =  "100 100 100 0"
+startRadius = 0.3
+finishRadius = 0.0
+segmentTime = 0.5
+textureRate = 0.05

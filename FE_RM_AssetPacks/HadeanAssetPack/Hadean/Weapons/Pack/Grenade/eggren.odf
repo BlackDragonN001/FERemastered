@@ -1,0 +1,17 @@
+[WeaponClass]
+classLabel = "mortar"
+geometryName = "eggren.xsi"
+geometryScale = 0.12
+ordName = "egrenpop"
+wpnName = "Grenade"
+wpnIcon = "wire_eggren%d.tga"
+fireSound = "baz02.wav"
+wpnReticle = "gmortar"
+wpnCategory = "PACK"
+localAmmo = 3
+canSelect = false
+
+[CannonClass]
+shotDelay = 1.5
+shotPitch = 1.5
+shotLead = 0
