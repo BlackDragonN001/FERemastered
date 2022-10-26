@@ -5,7 +5,7 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 11
+particleTypes = 12
 
 particleClass1 = "xbldxpl_c.light"
 particleCount1 = 1
@@ -59,10 +59,15 @@ particleClass11 = "FEBFireMedium"
 particleCount11 = 1
 particleVeloc11 = "0.0 0.0 0.0"
 
-//particleClass12 = "FEBangSmall"
-//particleCount12 = 10
-//particleVeloc12 = "10.0 10.0 10.0"
-//particleBias12 = "0.0 10.0 0.0"
+particleClass12 = "xbldxpl_c.heat"
+particleCount12 = 1
+particleVeloc12 = "0.0 0.0 0.0"
+particleBias12 = "0.0 1.5 0.0"
+
+//particleClass13 = "FEBangSmall"
+//particleCount13 = 10
+//particleVeloc13 = "10.0 10.0 10.0"
+//particleBias13 = "0.0 10.0 0.0"
 
 explSound = "xbuild.wav"
 damageRadius = 30.0
@@ -72,19 +77,20 @@ damageValue(H) = 40
 damageValue(S) = 70
 damageValue(D) = 100
 damageValue(A) = 40
+
 kickRadius = 60.0
 kickOmega = 5.0
 kickVeloc = 5.0
 
 [Light]
 simulateBase = "sim_null"
-lifeTime = 1.5
+lifeTime = 2.0
 renderBase = "draw_light"
 startColor = "127 63 255 3055"
 finishColor = "0 127 255 0"
 startRadius = 60.0
 finishRadius = 0.0
-animateTime = 1.5
+animateTime = 2.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
@@ -288,3 +294,17 @@ finishColor = "0 0 255 0"
 startRadius = 0.3
 finishRadius = 0.1
 animateTime = 4.0
+
+[Heat]
+simulateBase = "sim_smoke"
+lifeTime = 2.7
+renderBase = "draw_twirl"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "127 31 255 88"
+finishColor = "63 31 255 0"
+startRadius = 10.0
+finishRadius = 25.0
+animateTime = 2.7
+rotationRate = 2.0
+BottomInteractsWithTerrain = false

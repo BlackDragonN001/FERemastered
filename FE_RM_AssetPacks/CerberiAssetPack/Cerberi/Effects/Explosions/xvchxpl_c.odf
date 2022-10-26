@@ -5,7 +5,7 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 10
+particleTypes = 11
 
 particleClass1 = "xvchxpl_c.light"
 particleCount1 = 1
@@ -59,10 +59,15 @@ particleClass10 = "xvchxpl_c.bolt"
 particleCount10 = 10
 particleVeloc10 = "0.0 0.0 0.0"
 
+particleClass11 = "xcarxpl_c.heat"
+particleCount11 = 1
+particleVeloc11 = "0.0 0.0 0.0"
+particleBias11 = "0.0 1.0 0.0"
+
 // Never called in FE. -GBD
-//particleClass10 = "xvchxpl_c.trail"
-//particleCount10 = 20
-//particleVeloc10 = "60.0 80.0 60.0"
+//particleClass12 = "xvchxpl_c.trail"
+//particleCount12 = 20
+//particleVeloc12 = "60.0 80.0 60.0"
 
 explSound = "xcar.wav"
 damageRadius = 10.0
@@ -93,7 +98,7 @@ lensFlare = 0
 [Flame]
 startDelay = 0.3
 simulateBase = "sim_smoke"
-lifeTime = 1.5
+lifeTime = 1.8
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"

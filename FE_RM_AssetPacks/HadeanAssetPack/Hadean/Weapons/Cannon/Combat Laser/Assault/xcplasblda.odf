@@ -21,7 +21,7 @@ kickRadius = 2.0
 kickOmega = 1.0
 kickVeloc = 1.0
 
-particleTypes = 8
+particleTypes = 9
 
 particleClass1 = "xcplasblda.core"
 particleCount1 = 5
@@ -47,13 +47,11 @@ particleCount5 = 20
 particleVeloc5 = "10.0 10.0 10.0"
 particleBias5 = "0.0 3.0 0.0"
 particlePosVar5 = "2.0 2.0 2.0"
-particleInherit5 = "1.0 1.0 1.0"
 
 particleClass6 = "xcplasblda.puff"
 particleCount6 = 20
 particleVeloc6 = "30.0 30.0 30.0"
 particleBias6 = "0.0 3.0 0.0"
-particleInherit6 = "0.5 0.5 0.5"
 
 particleClass7 = "xcplasblda.light"
 particleCount7 = 1
@@ -62,6 +60,10 @@ particleVeloc7 = "0.0 0.0 0.0"
 particleClass8 = "xcplasgnda.sphere"
 particleCount8 = 1
 particleVeloc8 = "0.0 0.0 0.0"
+
+particleClass9 = "xcplascara.smoke"
+particleCount9 = 3
+particleVeloc9 = "2.0 2.0 2.0"
 
 [Core]
 simulateBase = "sim_smoke"

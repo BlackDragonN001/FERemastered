@@ -9,7 +9,6 @@ explSound = "xsv2.wav"
 
 damageRadius = 10.0
 
-
 damageValue(N) = 5
 damageValue(L) = 5
 damageValue(H) = 5
@@ -21,25 +20,29 @@ kickRadius = 2.0
 kickOmega = 1.0
 kickVeloc = 1.0
 
-particleTypes = 7
+particleTypes = 8
 
 particleClass1 = "xcplascar.core"
 particleCount1 = 5
 particleVeloc1 = "4.0 4.0 4.0"
 particleBias1 = "0.0 0.5 0.0"
+particleInherit1 = "0.8 0.8 0.8"
 
 particleClass2 = "xcplascar.light"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
+particleInherit2 = "0.8 0.8 0.8"
 
 particleClass3 = "xcplascar.splat"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
+particleInherit3 = "0.8 0.8 0.8"
 
 particleClass4 = "xcplascar.flame"
 particleCount4 = 1
 particleVeloc4 = "0.0 1.0 0.0"
 particleBias4 = "0.0 0.0 0.0"
+particleInherit4 = "0.8 0.8 0.8"
 
 particleClass5 = "xcplascar.chunks"
 particleCount5 = 10
@@ -52,11 +55,16 @@ particleClass6 = "xcplascar.puff"
 particleCount6 = 10
 particleVeloc6 = "30.0 30.0 30.0"
 particleBias6 = "0.0 3.0 0.0"
-particleInherit6 = "0.5 0.5 0.5"
+particleInherit6 = "0.8 0.8 0.8"
 
 particleClass7 = "xcplasgnd.sphere"
 particleCount7 = 1
 particleVeloc7 = "0.0 0.0 0.0"
+
+particleClass8 = "xcplascar.smoke"
+particleCount8 = 3
+particleVeloc8 = "2.0 2.0 2.0"
+particleInherit8 = "0.8 0.8 0.8"
 
 [Core]
 simulateBase = "sim_smoke"
@@ -139,3 +147,17 @@ finishColor = "255 0 0 0"
 startRadius = 0.2
 finishRadius = 0.1
 animateTime = 1.4
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 87"
+finishColor = "28 28 28 0"
+startRadius = 1.5
+finishRadius = 5.0
+animateTime = 3.0
+rotationRate = 1.6
+BottomInteractsWithTerrain = false

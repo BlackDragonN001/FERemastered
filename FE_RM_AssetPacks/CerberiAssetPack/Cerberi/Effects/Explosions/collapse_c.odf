@@ -5,7 +5,7 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 12
+particleTypes = 13
 
 particleClass1 = "collapse_c.flash"
 particleCount1 = 1
@@ -64,6 +64,11 @@ particleBias11 = "0.0 20.0 0.0"
 particleClass12 = "collapse_c.secondary"
 particleCount12 = 1
 particleVeloc12 = "0.0 0.0 0.0"
+
+particleClass13 = "collapse_c.heat"
+particleCount13 = 1
+particleVeloc13 = "0.0 0.0 0.0"
+particleBias13 = "0.0 1.5 0.0"
 
 explSound = "xcar.wav"
 damageRadius = 20.0
@@ -379,3 +384,17 @@ segmentLength = 0.5
 segmentVariance = "1.0 1.0 0.0"
 animateTime = 0.1
 textureRate = 0.01
+
+[Heat]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "127 31 255 88"
+finishColor = "63 31 255 0"
+startRadius = 20.0
+finishRadius = 35.0
+animateTime = 3.0
+rotationRate = 2.0
+BottomInteractsWithTerrain = false

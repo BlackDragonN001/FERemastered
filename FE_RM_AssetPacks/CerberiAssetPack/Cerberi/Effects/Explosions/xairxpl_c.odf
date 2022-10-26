@@ -5,7 +5,7 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 12
+particleTypes = 13
 
 particleClass1 = "xcarxpl_c.light"
 particleCount1 = 1
@@ -71,10 +71,15 @@ particleClass12 = "FEDustRingMedium"
 particleCount12 = 1
 particleVeloc12 = "0.0 0.0 0.0"
 
-particleClass13 = "xcarxpl_c.sparks"
-particleCount13 = 20 //40
-particleVeloc13 = "150.0 150.0 150.0"
-particleInherit13 = "0.5 0.5 0.5"
+particleClass13 = "xcarxpl_c.heat"
+particleCount13 = 1
+particleVeloc13 = "0.0 0.0 0.0"
+particleBias13 = "0.0 1.0 0.0"
+
+particleClass14 = "xcarxpl_c.sparks"
+particleCount14 = 20 //40
+particleVeloc14 = "150.0 150.0 150.0"
+particleInherit14 = "0.5 0.5 0.5"
 
 explSound = "xcar.wav"
 damageRadius = 20.0
@@ -375,5 +380,17 @@ finishRadius = 0.1
 animateTime = 3.0
 rotationRate = 40.0
 
-
+[Heat]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "127 31 255 88"
+finishColor = "63 31 255 0"
+startRadius = 6.0
+finishRadius = 16.0
+animateTime = 2.0
+rotationRate = 2.0
+BottomInteractsWithTerrain = false
 

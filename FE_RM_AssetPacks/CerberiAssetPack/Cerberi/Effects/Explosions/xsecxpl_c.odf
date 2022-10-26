@@ -5,7 +5,7 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 4
+particleTypes = 5
 
 particleClass1 = "xsecxpl_c.light"
 particleCount1 = 1
@@ -13,14 +13,14 @@ particleVeloc1 = "0.0 0.0 0.0"
 
 particleClass2 = "xsecxpl_c.core"
 particleCount2 = 1
-particleVeloc2 = "2.0 5.0 2.0"
-particleBias2 = "0.0 2.0 0.0"
+particleVeloc2 = "2.0 2.0 2.0"
+particleBias2 = "0.0 1.0 0.0"
 particleInherit2 = "0.5 0.5 0.5"
 
 particleClass3 = "xsecxpl_c.smoke"
 particleCount3 = 1
 particleVeloc3 = "5.0 3.0 5.0"
-particleBias3 = "0.0 3.0 0.0"
+particleBias3 = "0.0 1.5 0.0"
 particleInherit3 = "0.5 0.5 0.5"
 
 particleClass4 = "xsecxpl_c.puff"
@@ -28,6 +28,11 @@ particleCount4 = 3
 particleVeloc4 = "20.0 20.0 20.0"
 particleBias4 = "0.0 10.0 0.0"
 particleInherit4 = "0.5 0.5 0.5"
+
+particleClass5 = "xsecxpl_c.heat"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+particleBias5 = "0.0 1.0 0.0"
 
 explSound = NULL
 damageRadius = 3.0
@@ -90,4 +95,18 @@ startRadius = 1.0
 finishRadius = 4.0
 animateTime = 2.0
 rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[Heat]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "63 31 255 88"
+finishColor = "31 0 255 0"
+startRadius = 1.5
+finishRadius = 3.0
+animateTime = 1.0
+rotationRate = 2.0
 BottomInteractsWithTerrain = false

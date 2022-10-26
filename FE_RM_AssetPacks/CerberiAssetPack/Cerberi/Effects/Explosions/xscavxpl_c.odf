@@ -5,7 +5,7 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 15
+particleTypes = 16
 
 particleClass1 = "xscavxpl_c.light"
 particleCount1 = 1
@@ -78,6 +78,11 @@ particleClass15 = "xscavxpl_c.steam"
 particleCount15 = 5
 particleVeloc15 = "0.0 0.0 0.0"
 //particlePosVar15 = "3.0 0.0 3.0"
+
+particleClass16 = "xcarxpl_c.heat"
+particleCount16 = 1
+particleVeloc16 = "0.0 0.0 0.0"
+particleBias16 = "0.0 1.0 0.0"
 
 explSound = "scavxpl.wav"
 damageRadius = 30.0
