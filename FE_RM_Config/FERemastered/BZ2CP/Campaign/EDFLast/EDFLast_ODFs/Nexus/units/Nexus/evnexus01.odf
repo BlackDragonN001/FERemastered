@@ -69,13 +69,13 @@ alphaSteer = 0.5
 accelJump = 0.0
 soundThrust = "nexus1.wav"
 
-[effect]
+[Effect]
 renderBase = "draw_multi"
 renderCount = 2
 renderName1 = "evnexus01.emmit"
 renderName2 = "evnexus01.light"
 
-[light]
+[Light]
 renderBase = "draw_light"
 startColor = "250 80 0 1500"
 finishColor = "250 80 0 1500"
@@ -86,8 +86,7 @@ attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
 
-
-[emmit]
+[Emmit]
 renderBase = "draw_twirl_trail"
 emitDelay = 0.01
 emitDelayVar = 0.0
