@@ -12,7 +12,7 @@ shotSound = ""
 //renderName = "mbrocks2.render" // was "xmdmgun", never worked. -GBD
 
 ammoCost = 1
-lifeSpan = 60 // 1e30
+lifeSpan = 60.0 // 1e30
 shotSpeed = 50.0
 
 damageValue(N) = 0

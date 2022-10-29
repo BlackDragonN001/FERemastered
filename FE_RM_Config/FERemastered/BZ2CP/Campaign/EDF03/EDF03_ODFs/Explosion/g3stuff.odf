@@ -1,6 +1,6 @@
 [OrdnanceClass]
 classLabel = "spraybomb"
-shotGeometry = "ioartl00.xsi"
+shotGeometry = "ioartl00.xsi" // Need a rock model. -GBD
 shotSound = "slagord.wav"
 xplGround = NULL
 xplVehicle = NULL
@@ -25,7 +25,7 @@ payloadName = "slagb2"
 renderBase = "draw_multi"
 renderCount = 2
 renderName1 = "g3stuff.flames"
-//renderName2 = "g3stuff.smoke""
+//renderName2 = "g3stuff.smoke"
 
 
 [flames]

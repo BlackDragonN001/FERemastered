@@ -1,6 +1,9 @@
 [GameObjectClass]
 classLabel = "FXMine"
 
+EffectHard1 = " "
+EffectName1 = "mbbeam.render"
+
 [MineClass]
 lifeSpan = 3.1
 
@@ -12,3 +15,22 @@ shotDelay = 0.05 //0.02
 kickRadius = 80.0
 kickVeloc = 3.0
 kickOmega = 3.0
+
+[Render]
+renderBase = "draw_emit"
+emitName = "mbbeam.ring"
+emitDelay = 0.1
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[Ring]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_planar"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "255 230 0 255"
+finishColor = "200 50 50 0"
+startRadius = 8.0
+finishRadius = 40.0
+animateTime = 0.5

@@ -20,7 +20,7 @@ kickRadius = 5.0
 kickOmega = 2.0
 kickVeloc = 1.0
 
-particleTypes = 6
+particleTypes = 7
 
 particleClass1 = "xcplascara.core"
 particleCount1 = 5
@@ -51,6 +51,11 @@ particleCount6 = 20
 particleVeloc6 = "30.0 30.0 30.0"
 particleBias6 = "0.0 3.0 0.0"
 particleInherit6 = "0.5 0.5 0.5"
+
+particleClass7 = "xcplascara.smoke"
+particleCount7 = 3
+particleVeloc7 = "2.0 2.0 2.0"
+particleInherit7 = "0.8 0.8 0.8"
 
 [Light]
 simulateBase = "sim_null"

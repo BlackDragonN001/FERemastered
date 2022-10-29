@@ -127,6 +127,12 @@ emitDelayVar = 0.2
 [EmberEmit]
 simulateBase = "sim_ember"
 lifeTime = 1.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "slagstab_a.embersmoke"
+renderName2 = "slagstab_a.emberflare"
+
+[EmberFlare]
 renderBase = "draw_sprite"
 textureName = "spark.tga"
 textureblend = "one one modulate"
@@ -135,3 +141,17 @@ finishColor = "255 127 63 0"
 startRadius = 0.1
 finishRadius = 0.1
 animateTime = 1.0
+
+[EmberSmoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "50 50 50 31"
+finishColor = "150 150 150 0"
+startRadius = 0.05
+finishRadius = 0.1
+animateTime = 0.4
+emitDelay = 0.005
+emitVelocity = "0.0 1.5 0.0"
+emitVariance = "1.5 1.5 0.0"
+emitLife = 0.4
