@@ -8,7 +8,7 @@ classLabel = "explosion"
 particleTypes = 5
 
 particleClass1 = "xcpcruxpl_c.core"
-particleCount1 = 1
+particleCount1 = 2
 particleVeloc1 = "0.0 0.0 0.0"
 
 particleClass2 = "xcpcruxpl_c.shock"
@@ -46,13 +46,14 @@ damageValue(A) = 80 // absorbion
 simulateBase = "sim_null"
 lifeTime = 1.0
 renderBase = "draw_twirl"
-textureName = "flame.tga"
+textureName = "plascore2.tga"
 textureBlend = "one one modulate"
-startColor = "130 190 42 155"
+startColor = "130 190 42 255"
 finishColor = "45 60 25 0"
-startRadius = 1.0
-finishRadius = 6.0
+startRadius = 4.0
+finishRadius = 10.0
 animateTime = 1.0
+BottomInteractsWithTerrain = false
 
 [Shock]
 simulateBase = "sim_null"

@@ -1,6 +1,6 @@
 [OrdnanceClass]
 classLabel = "missile"
-shotGeometry = "cpcruise00.xsi"
+shotGeometry = "cpcruise00.fbx"
 shotSound = "wormord2.wav"
 
 xplGround = "xcpcruxpl_a"
@@ -30,10 +30,14 @@ omegaTurn = 2.5
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
+renderCount = 7
 renderName1 = "cpcruise_a.flame"
 renderName2 = "cpcruise_a.light"
 renderName3 = "cpcruise_a.smoke"
+renderName4 = "cpcruise_a.halo"
+renderName5 = "cpcruise_a.trail"
+renderName6 = "cpcruise_a.engine1"
+renderName7 = "cpcruise_a.engine2"
 
 [Light]
 renderBase = "draw_light"
@@ -45,7 +49,7 @@ animateTime = 8.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
-lensFlare = 1
+lensFlare = 0
 
 [Flame]
 renderBase = "draw_twirl_trail"
@@ -53,7 +57,7 @@ textureName = "blast.tga"
 textureBlend = "one one modulate"
 startColor = "170 255 100 255"
 finishColor = "65 120 20 0"
-startRadius = 0.45
+startRadius = 0.5
 finishRadius = 0.0
 animateTime = 0.5
 rotationRate = 10.0
@@ -74,34 +78,65 @@ textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "50 70 20 127"
 finishColor = "5 5 5 0"
-startRadius = 0.55
+startRadius = 0.6
 finishRadius = 0.1
 animateTime = 0.5
 rotationRate = 1.0
 
-
 [Halo]
-renderBase = "draw_sprite"
+renderBase = "draw_twirl"
 textureName = "lighthalo.tga"
 textureBlend = "one one modulate"
-startColor = "255 200 70 63"
-finishColor = "255 100 70 0"
-startRadius = 0.4
-finishRadius = 0.4
+startColor = "255 200 170 127"
+finishColor = "255 200 170 127"
+startRadius = 1.25
+finishRadius = 1.25
 rotationRate = 10.0
-animateTime = 10.0
-emitDelay = 0.001
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "0.0 0.0 0.0"
-emitLife = 10.0
+bottomInteractsWithTerrain = false
 
 [Trail]
 renderBase = "draw_trail"
-textureName = "smoke.tga" // trail2
+textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha" // "one one modulate"
 textureRate = 0.004
-startColor =  "250 200 200 90"// "100 0 0 100" 
+startColor =  "200 250 200 90"// "100 0 0 100" 
 finishColor =  "10 10 10 0" // "100 100 100 0"
-startRadius = 0.008
+startRadius = 0.1
 finishRadius = 1.0
 segmentTime = 1.4 //animateTime = 0.5
+
+[Engine1]
+renderBase = "draw_geom"
+textureName = "crystal.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.65
+finishRadius = 0.65
+geomName = "cpcruise00_flame.fbx"
+ForceDrawTransparent = false
+ForceDraw2Sided = true
+InitialRoll = 0.0f
+InitialPitch = 0.0f
+InitialYaw = 0.0f
+AddRoll = 1000.0f
+AddYaw = 0.0f
+AddPitch = 0.0f
+
+[Engine2]
+renderBase = "draw_geom"
+textureName = "crystal.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.65
+finishRadius = 0.65
+geomName = "cpcruise00_flame.fbx"
+ForceDrawTransparent = false
+ForceDraw2Sided = true
+InitialRoll = 0.0f
+InitialPitch = 0.0f
+InitialYaw = 0.0f
+AddRoll = -1000.0f
+AddYaw = 0.0f
+AddPitch = 0.0f
