@@ -19,17 +19,17 @@ damageValue(A) = 0 // absorbtion
 
 particleTypes = 3
 
-particleClass1 = "xionccar_c.elec"
+particleClass1 = "xionccar_a.elec"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 particleInherit1 = "1.0 1.0 1.0"
 
-particleClass2 = "xionccar_c.core"
+particleClass2 = "xionccar_a.core"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
 particleInherit2 = "1.0 1.0 1.0"
 
-particleClass3 = "xionccar_c.trail"
+particleClass3 = "xionccar_a.trail"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 particleInherit3 = "1.0 1.0 1.0"
