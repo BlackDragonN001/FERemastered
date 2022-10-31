@@ -5,7 +5,7 @@ Version 1.0 2-10-2019 --]]
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
 
-local MAX_FLOAT    =   3.4028e+38;
+local MAX_FLOAT    =  3.4028e+38;
 
 local MAX_AI_UNITS = 256;
 local MAX_ANIMALS = 8;
@@ -82,7 +82,7 @@ local Mission =
 	m_MissionType = 0,
 	m_RespawnType = 0,
 	m_NumVehiclesTracked = 0, 
-	m_SpawnedAtTime = { },
+	m_SpawnedAtTime = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 
 	-- How long a "spawn" kill lasts, in tenth of second ticks. If the
 	-- time since they were spawned to current is less than this, it's a
@@ -144,12 +144,12 @@ local Mission =
 	m_Carrier2 = nil,
 	m_Base1 = nil,
 	m_Base2 = nil,
-	m_EmptyVehicles = { },
+	m_EmptyVehicles = { }, -- Index is 0 based.
 	--m_SpawnPointHandles[MAX_TEAMS] = nil, -- Used during race
-	m_AICraftHandles = { },
+	m_AICraftHandles = { }, -- Index is 0 based.
 	m_AITargetHandles = { }, -- Whom each of those is aiming at.
 	m_LastPlayerCraftHandle = { }, -- for ShipOnly mode
-	m_AnimalHandles = { },
+	m_AnimalHandles = { }, -- Index is 0 based.
 	m_RabbitTargetHandle = nil,
 	m_RabbitShooterHandle = nil,
 }
@@ -465,7 +465,7 @@ function FindGoodAITarget(index)
 		if(not Mission.m_HumansVsBots)
 		then
 			-- Scan botlist..
-			for i = 1, Mission.m_NumAIUnits-1
+			for i = 0, Mission.m_NumAIUnits-1
 			do
 				local Skip = false;
 				-- Can't attack self.
@@ -694,7 +694,7 @@ function SetNewRabbit(h)
 	end
 
 	-- Reset targets for all bots
-	for i = 1, Mission.m_NumAIUnits-1
+	for i = 0, Mission.m_NumAIUnits-1
 	do
 		if(Mission.m_AICraftHandles[i] ~= h) then
 			FindGoodAITarget(i);
@@ -812,7 +812,7 @@ end
 function CrunchEmptyVehicleList()
 
 	local j = 0;
-	for i = 1, MAX_VEHICLES_TRACKED-1
+	for i = 0, MAX_VEHICLES_TRACKED-1
 	do
 		if(Mission.m_EmptyVehicles[i] ~= nil)
 		then
@@ -841,7 +841,7 @@ function UpdateEmptyVehicles()
 	end
 
 	local anyChanges = false;
-	for i = 1, MAX_VEHICLES_TRACKED-1
+	for i = 0, MAX_VEHICLES_TRACKED-1
 	do
 		if(Mission.m_EmptyVehicles[i] ~= nil)
 		then
@@ -902,10 +902,10 @@ function AddEmptyVehicle(NewCraft)
 		UpdateEmptyVehicles();
 
 		-- Kill oldest one, NOW.
-		if(Mission.m_EmptyVehicles[1])
+		if(Mission.m_EmptyVehicles[0])
 		then
 			SelfDamage(Mission.m_EmptyVehicles[0], 1e+20);
-			Mission.m_EmptyVehicles[1] = nil; -- forget about this craft, as it better not exist anymore
+			Mission.m_EmptyVehicles[0] = nil; -- forget about this craft, as it better not exist anymore
 			CrunchEmptyVehicleList();
 		end
 	end
@@ -980,7 +980,7 @@ function Start()
 		Mission.m_AIUnitSkill = 3;
 	end
 
-	Mission.m_HumansVsBots = (bool)GetVarItemInt("network.session.ivar16");
+	Mission.m_HumansVsBots = GetVarItemInt("network.session.ivar16");
 
 	-- If it's vs bots, make all humans allied (but not with animals
 	-- (team 13))
@@ -998,10 +998,10 @@ function Start()
 		end
 	end
 
-	Mission.m_RabbitMode = (bool)GetVarItemInt("network.session.ivar23");
+	Mission.m_RabbitMode = GetVarItemInt("network.session.ivar23");
 
-	Mission.m_WeenieMode = (bool)GetVarItemInt("network.session.ivar19");
-	Mission.m_ShipOnlyMode = (bool)GetVarItemInt("network.session.ivar25");
+	Mission.m_WeenieMode = GetVarItemInt("network.session.ivar19");
+	Mission.m_ShipOnlyMode = GetVarItemInt("network.session.ivar25");
 
 	Mission.m_NumAnimals = 0;
 	Mission.m_MaxAnimals = GetVarItemInt("network.session.ivar27");
@@ -1372,12 +1372,12 @@ function ExecuteWeenie()
 			-- self-fire doesn't count (and possibly friendly fire doesn't either)
 			local h = GetWhoShotMe(p);
 			if (h ~= nil and (h ~= p) and ((GetLastEnemyShot(p) >= 0.0) or Mission.m_bIsFriendlyFireOn)) then
-				DamageF(p, MAX_FLOAT);
+				Damage(p, MAX_FLOAT);
 			end
 		end
 	end
 
-	for i = 1, Mission.m_NumAIUnits-1
+	for i = 0, Mission.m_NumAIUnits-1
 	do
 		local p = Mission.m_AICraftHandles[i];
 		if(p ~= nil)
@@ -1385,12 +1385,12 @@ function ExecuteWeenie()
 			-- self-fire doesn't count (and possibly friendly fire doesn't either)
 			local h = GetWhoShotMe(p);
 			if (h ~= nil and (h ~= p) and ((GetLastEnemyShot(p) >= 0.0) or Mission.m_bIsFriendlyFireOn)) then
-				DamageF(p, MAX_FLOAT);
+				Damage(p, MAX_FLOAT);
 			end
 		end
 	end
 
-	for i = 1, Mission.m_NumAnimals-1
+	for i = 0, Mission.m_NumAnimals-1
 	do
 		local p = Mission.m_AnimalHandles[i];
 		if(p ~= nil)
@@ -1398,12 +1398,12 @@ function ExecuteWeenie()
 			-- self-fire doesn't count (and possibly friendly fire doesn't either)
 			local h = GetWhoShotMe(p);
 			if (h ~= nil and (h ~= p) and ((GetLastEnemyShot(p) >= 0.0) or Mission.m_bIsFriendlyFireOn)) then
-				DamageF(p, MAX_FLOAT);
+				Damage(p, MAX_FLOAT);
 			end
 		end
 	end
 
-	for i = 1, Mission.m_NumVehiclesTracked-1
+	for i = 0, Mission.m_NumVehiclesTracked-1
 	do
 		local p = Mission.m_EmptyVehicles[i];
 		if(p ~= nil)
@@ -1411,7 +1411,7 @@ function ExecuteWeenie()
 			-- self-fire doesn't count (and possibly friendly fire doesn't either)
 			local h = GetWhoShotMe(p);
 			if (h ~= nil and (h ~= p) and ((GetLastEnemyShot(p) >= 0.0) or Mission.m_bIsFriendlyFireOn)) then
-				DamageF(p, MAX_FLOAT);
+				Damage(p, MAX_FLOAT);
 			end
 		end
 	end
@@ -1561,7 +1561,7 @@ function UpdateAIUnits()
 			BuildBotCraft(Mission.m_NumAIUnits);
 			Mission.m_NumAIUnits = Mission.m_NumAIUnits + 1;
 		else
-			for i = 1, Mission.m_NumAIUnits-1
+			for i = 0, Mission.m_NumAIUnits-1
 			do
 				-- Fix for mantis #400 - if a bot craft is sniped,
 				-- 'forget' about it and build another in its slot.
@@ -1585,7 +1585,7 @@ function UpdateAIUnits()
 	--
 --	local GameTime = ((float)Mission.m_ElapsedGameTime) / m_GameTPS;
 
-	for i = 1, Mission.m_NumAIUnits-1
+	for i = 0, Mission.m_NumAIUnits-1
 	do
 		if(bit32.band((Mission.m_ElapsedGameTime + i), 0x1F) == 0)
 		then
@@ -1657,7 +1657,7 @@ function UpdateAnimals()
 
 	-- Have to manually check on animals; they won't trigger a call to
 	-- DeadObject(). If any died, note that.
-	for i = 1, Mission.m_NumAnimals-1
+	for i = 0, Mission.m_NumAnimals-1
 	do
 		if(Mission.m_AnimalHandles[i] ~= nil)
 		then
@@ -1680,7 +1680,7 @@ function UpdateAnimals()
 			Mission.m_NumAnimals = Mission.m_NumAnimals + 1;
 		else
 			-- 'Full' set of animals. Do respawns as needed.
-			for i = 1, Mission.m_NumAnimals-1
+			for i = 0, Mission.m_NumAnimals-1
 			do
 				if(Mission.m_AnimalHandles[i] == nil)
 				then
@@ -2049,7 +2049,7 @@ function DeadObject(DeadObjectHandle, KillersHandle, WasDeadPerson, WasDeadAI)
 	then
 		local bFoundAI = false;
 
-		for i = 1, Mission.m_NumAIUnits-1
+		for i = 0, Mission.m_NumAIUnits-1
 		do
 			if(DeadObjectHandle == Mission.m_AICraftHandles[i])
 			then
@@ -2064,7 +2064,7 @@ function DeadObject(DeadObjectHandle, KillersHandle, WasDeadPerson, WasDeadAI)
 			end
 		end
 
-		for i = 1, Mission.m_NumAnimals-1
+		for i = 0, Mission.m_NumAnimals-1
 		do
 			if(DeadObjectHandle == Mission.m_AnimalHandles[i])
 			then
