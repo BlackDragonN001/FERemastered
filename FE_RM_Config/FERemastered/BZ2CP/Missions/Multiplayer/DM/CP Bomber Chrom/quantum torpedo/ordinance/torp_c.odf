@@ -5,6 +5,7 @@ shotSound = "torp3.wav"
 
 shotGeometry = NULL
 shotRadius = 1.8
+
 xplGround = "xtorpgnd_c"
 xplVehicle = "xtorpcar_c"
 xplBuilding = "xtorpcar_c"
@@ -13,7 +14,7 @@ xplExpire = "xtorpcar_c"
 renderName = "torp_c.render"
 
 ammoCost = 75 //200
-lifeSpan = 6 // 150m
+lifeSpan = 6.0 // 150m
 shotSpeed = 100.0
 
 damageValue(N) = 600 // none
@@ -24,11 +25,11 @@ damageValue(S) = 500 // standard
 damageValue(D) = 600 // deflection
 damageValue(A) = 300 // absorbtion
 
-kickRadius = 10
+kickRadius = 10.0
 kickOmega = 20.0
 
 [MissileClass]
-omegaTurn = .3
+omegaTurn = 0.3
 
 [ThermalMissileClass]
 coneAngle = 0.3
@@ -47,15 +48,10 @@ renderName6 = "torp_c.TrailR"
 renderBase = "draw_sprite"
 textureName = "flash.tga"
 textureBlend = "one one modulate"
-startColor = "255 12 4 255" 
-finishColor = "255 12 4 255" 
+startColor = "255 112 4 255" 
+finishColor = "255 112 4 255" 
 startRadius = 1.5
 finishRadius = 1.5
-animateTime = 0.02
-emitDelay = 0.001
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "0.0 0.0 0.0"
-emitLife = 0.005
 
 [Flare]
 renderBase = "draw_twirl_trail"
@@ -63,12 +59,16 @@ textureName = "torp.tga"
 textureBlend = "one one modulate"
 startColor = "255 12 4 245" 
 finishColor = "255 12 4 0" 
-startRadius = 2
-finishRadius = 2
-animateTime = 0.04
+startRadius = 2.0
+finishRadius = 2.0
+animateTime = 0.02
 emitDelay = 0.006
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitInherit = "1.0 1.0 1.0"
 emitLife = 0.02
-rotationrate = 10
+rotationrate = 10.0
+bottomInteractsWithTerrain = false
 
 [Flare2]
 renderBase = "draw_twirl_trail"
@@ -76,12 +76,15 @@ textureName = "torp.tga"
 textureBlend = "one one modulate"
 startColor = "255 12 4 245" 
 finishColor = "255 12 4 0" 
-startRadius = 2
-finishRadius = 2
-animateTime = 0.7
+startRadius = 2.0
+finishRadius = 2.0
+animateTime = 0.01
 emitDelay = 0.006
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitInherit = "1.0 1.0 1.0"
 emitLife = 0.01
-rotationrate = -10
+rotationrate = -10.0
 
 [Flare3]
 renderBase = "draw_twirl_trail"
@@ -89,12 +92,15 @@ textureName = "torp.tga"
 textureBlend = "one one modulate"
 startColor = "255 12 4 100"
 finishColor = "255 12 4 0" 
-startRadius = 3
-finishRadius = 3
-animateTime = 0.7
+startRadius = 3.0
+finishRadius = 3.0
+animateTime = 0.01
 emitDelay = 0.006
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitInherit = "1.0 1.0 1.0"
 emitLife = 0.01
-rotationrate = 10
+rotationrate = 10.0
 
 [Light]
 renderBase = "draw_light"
@@ -102,23 +108,22 @@ startColor = "255 12 4 1200"
 finishColor = "255 12 4 1200"
 startRadius = 25.0
 finishRadius = 25.0
-animateTime = 0.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
-lensFlare = false
+lensFlare = 1
 
 [TrailR]
 renderBase = "draw_twirl_trail"
 textureName = "plasma.tga"
 textureBlend = "one one modulate"
-startColor = "255 12 4 255" // "255 63 55 255"
+startColor = "255 112 4 255" // "255 63 55 255"
 finishColor = "255 12 4 0" // "255 63 55 255"
 startRadius = 0.2
-finishRadius = 0.001
+finishRadius = 0.0
 rotationRate = 0.6
 animateTime = 0.6
 emitDelay = 0.08
-emitVelocity = "0.1 0.1 0.0"
+emitVelocity = "0.0 0.1 0.0"
 emitVariance = "15.0 15.0 0.0"
 emitLife = 0.6

@@ -5,6 +5,7 @@ shotSound = "torp3.wav"
 
 shotGeometry = NULL
 shotRadius = 1.8
+
 xplGround = "xtorpgnd_a"
 xplVehicle = "xtorpcar_a"
 xplBuilding = "xtorpcar_a"
@@ -25,83 +26,93 @@ damageValue(D) = 750 // deflection
 damageValue(A) = 450 // absorbtion
 
 [MissileClass]
-omegaTurn = .3
+omegaTurn = 0.3
 
 [ThermalMissileClass]
 coneAngle = 0.3
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 5
+renderCount = 6
 renderName1 = "torp_a.Core"
 renderName2 = "torp_a.Flare"
 renderName3 = "torp_a.Flare2"
-renderName4 = "torp_a.Light"
-renderName5 = "torp_a.TrailR"
+renderName4 = "torp_a.Flare3"
+renderName5 = "torp_a.Light"
+renderName6 = "torp_a.TrailR"
 
 [Core]
 renderBase = "draw_sprite"
 textureName = "flash.tga"
 textureBlend = "one one modulate"
-startColor = "0 255 255 255" 
-finishColor = "0 255 255 255" 
+startColor = "0 127 255 255" 
+finishColor = "0 127 255 255" 
 startRadius = 1.5
 finishRadius = 1.5
-animateTime = 0.02
-emitDelay = 0.001
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "0.0 0.0 0.0"
-emitLife = 0.005
 
 [Flare]
 renderBase = "draw_twirl_trail"
 textureName = "torp.tga"
 textureBlend = "one one modulate"
 startColor = "0 255 255 245" 
-finishColor = "0 255 255 0" 
-startRadius = 2
-finishRadius = 2
-animateTime = 0.04
+finishColor = "0 0 255 0" 
+startRadius = 2.0
+finishRadius = 2.0
+animateTime = 0.02
 emitDelay = 0.006
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitInherit = "1.0 1.0 1.0"
 emitLife = 0.02
-rotationrate = 20
+rotationrate = 20.0
 
 [Flare2]
 renderBase = "draw_twirl_trail"
 textureName = "torp.tga"
 textureBlend = "one one modulate"
 startColor = "0 255 255 200" 
-finishColor = "0 255 255 0" 
-startRadius = 3//2
-finishRadius = 3//2
-animateTime = 0.7
+finishColor = "0 0 255 0" 
+startRadius = 3.0 //2.0
+finishRadius = 3.0 //2.0
+animateTime = 0.02
 emitDelay = 0.006
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitInherit = "1.0 1.0 1.0"
 emitLife = 0.02
-rotationrate = -20
+rotationrate = -20.0
+
+[Flare3]
+renderBase = "draw_sprite"
+textureName = "lightflare2.tga"
+textureBlend = "one one modulate"
+startColor = "63 127 255 255" 
+finishColor = "63 127 255 255" 
+startRadius = 8.0
+finishRadius = 8.0
 
 [Light]
 renderBase = "draw_light"
-startColor = "0 255 255 2000"
-finishColor = "0 255 255 2000"
+startColor = "0 127 255 2000"
+finishColor = "0 127 255 2000"
 startRadius = 25.0
 finishRadius = 25.0
-animateTime = 0.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
-lensFlare = false
+lensFlare = 1
 
 [TrailR]
 renderBase = "draw_twirl_trail"
 textureName = "plasma.tga"
 textureBlend = "one one modulate"
 startColor = "0 255 255 255" // "255 63 55 255"
-finishColor = "0 255 255 0" // "255 63 55 255"
+finishColor = "0 0 255 0" // "255 63 55 255"
 startRadius = 0.2
 finishRadius = 0.001
 rotationRate = 0.6
 animateTime = 0.6
 emitDelay = 0.08
-emitVelocity = "0.1 0.1 0.0"
+emitVelocity = "0.0 0.1 0.0"
 emitVariance = "15.0 15.0 0.0"
 emitLife = 0.6
