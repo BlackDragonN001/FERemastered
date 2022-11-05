@@ -980,7 +980,7 @@ function Start()
 		Mission.m_AIUnitSkill = 3;
 	end
 
-	Mission.m_HumansVsBots = GetVarItemInt("network.session.ivar16");
+	Mission.m_HumansVsBots = (GetVarItemInt("network.session.ivar16") ~= 0);
 
 	-- If it's vs bots, make all humans allied (but not with animals
 	-- (team 13))
@@ -998,10 +998,10 @@ function Start()
 		end
 	end
 
-	Mission.m_RabbitMode = GetVarItemInt("network.session.ivar23");
+	Mission.m_RabbitMode = (GetVarItemInt("network.session.ivar23") ~= 0);
 
-	Mission.m_WeenieMode = GetVarItemInt("network.session.ivar19");
-	Mission.m_ShipOnlyMode = GetVarItemInt("network.session.ivar25");
+	Mission.m_WeenieMode = (GetVarItemInt("network.session.ivar19") ~= 0);
+	Mission.m_ShipOnlyMode = (GetVarItemInt("network.session.ivar25") ~= 0);
 
 	Mission.m_NumAnimals = 0;
 	Mission.m_MaxAnimals = GetVarItemInt("network.session.ivar27");
