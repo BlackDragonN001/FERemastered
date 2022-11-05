@@ -58,25 +58,25 @@ local Mission =
 	m_TurretAISkill = 0, -- ivar17
 	m_NonTurretAISkill = 0, -- ivar18
 	m_StartingVehiclesMask = 0, -- ivar7
-	m_SpawnedAtTime = { },
+	m_SpawnedAtTime = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 	m_RecyInvulnerabilityTime = 0, -- ivar25, if >0, this is currently active
-	m_AllyTeams = { }, -- New alliance var setting. Yay! -GBD
+	m_AllyTeams = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, -- New alliance var setting. Yay! -GBD
 	m_IsMPI = 0, -- ivar12
 		
 --locals
 	m_DidInit = false,
 	m_HadMultipleFunctioningTeams = false,
-	m_TeamIsSetUp = { },
-	m_NotedRecyclerLocation = { }, -- of deployed recycler
+	m_TeamIsSetUp = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false},
+	m_NotedRecyclerLocation = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }, -- of deployed recycler
 	m_GameOver = false,
 	m_CreatingStartingVehicles = false,
 	m_RespawnAtLowAltitude = false,
 	m_bIsFriendlyFireOn = false,
-	m_HasAllies = { },
+	m_HasAllies = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
 -- Vector For Spawn positions.
 	m_TeamPos = { },
 -- Handles
-	m_RecyclerHandles = { }
+	m_RecyclerHandles = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil }
 }
 
 function InitialSetup()
