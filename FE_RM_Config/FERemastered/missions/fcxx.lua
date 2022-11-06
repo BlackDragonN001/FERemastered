@@ -31,6 +31,7 @@ local M = {
 	Sentry1 = nil,
 	Sentry2 = nil,
 	Sentry3 = nil,
+	Sentry4 = nil,
 	Scav1 = nil,
 	Scav2 = nil,
 	Scav3 = nil,
@@ -701,7 +702,9 @@ function Routine4(R, STATE)
 	elseif STATE == 1 then	--LOC_387
 		if GetDistance(M.Sentry2, M.ScionRecy) < 100 then
 			Defend2(M.Sentry1, M.ScionRecy, 0);
+			SetBestGroup(M.Sentry1);
 			Defend2(M.Sentry2, M.ScionRecy, 0);
+			SetBestGroup(M.Sentry2);
 			Advance(R);
 		end
 	end
@@ -719,9 +722,15 @@ function Routine5(R, STATE)
 			TempH = BuildObject("evta_IH", 3, "attack");
 			SetEjectRatio(TempH, 0.0); -- Give cerberi weapons? -GBD
 			Follow(TempH, leader, 1);
-			local h = BuildObject("fvatank", 1, "scion");
-			Goto(h, "scion", 1);
-			SetUserTarget(h);
+			M.Sentry4 = BuildObject("fvatank", 1, "scion");
+			Goto(M.Sentry4, "scion", 1);
+			SetUserTarget(M.Sentry4);
+			Advance(R);
+		end
+	elseif STATE == 1 then
+		if GetDistance(M.Sentry4, "scion", 0) < 10 then
+			Stop(M.Sentry4, 0);
+			SetBestGroup(M.Sentry4);
 			Advance(R);
 		end
 	end
