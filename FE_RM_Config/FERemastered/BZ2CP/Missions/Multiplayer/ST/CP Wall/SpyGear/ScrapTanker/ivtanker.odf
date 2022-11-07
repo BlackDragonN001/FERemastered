@@ -21,6 +21,12 @@ needPilot = 1
 isAssault = 1
 canSnipe = 1
 
+effectHard1 = "hp_trail_1"
+effectName1 = "ivtanker.trail"
+effectHard2 = "hp_trail_2"
+effectName2 = "ivtanker.trail"
+effectHard3 = "hp_trail_3"
+effectName3 = "ivtanker.trail"
 
 [CraftClass]
 rangeScan = 300.0 
@@ -56,6 +62,62 @@ omegaTurn = 0.8
 alphaSteer = 1.5 
 accelJump = 0.0
 
-
 soundThrust = "iengf.wav"
 soundTurbo = "avrckte1.wav"
+
+[Trail]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 10.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 0.5
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "0 100 255 127"
+finishColor = "0 100 255 0"
+startRadius = 10.0
+finishRadius = 1.0
+animateTime = 0.5
+rotationRate = 2.0
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ivtanker.smokeemitter"
+renderName2 = "ivtanker.flameemitter"
+
+[SmokeEmitter]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.03
+emitVelocity = "-5.0 5.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 2.0
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 128"
+finishColor = "0 0 0 0"
+startRadius = 3.0
+finishRadius = 6.0
+animateTime = 2.0
+rotationRate = 2.0
+
+[FlameEmitter]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.03
+emitDelayVar = 0.02
+emitVelocity = "-5.0 5.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.5 0.5 0.5"
+emitLife = 1.0
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 200 128"
+finishColor = "255 0 0 0"
+startRadius = 3.0
+finishRadius = 0.5
+animateTime = 1.0
+rotationRate = 10.0

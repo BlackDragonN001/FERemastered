@@ -18,6 +18,7 @@ damageValue(D) = 0 // deflection
 damageValue(A) = 0 // absorbtion
 
 particleTypes = 1
+
 particleClass1 = "xzempcar_a.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
@@ -33,3 +34,5 @@ finishColor = "255 150 100 0"
 startRadius = 0.7
 finishRadius = 3.5
 animateTime = 0.2
+rotationRate = 5.0
+bottomInteractsWithTerrain = false

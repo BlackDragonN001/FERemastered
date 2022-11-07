@@ -14,7 +14,6 @@ canCollide = 0
 canDetect = 1
 canInteract = 0
 
-
 //collisionRadius = 1.0
 
 shotSound = "rhin08.wav"
@@ -28,7 +27,7 @@ xplBlast = "xplrover"
 
 [SeekerClass]
 searchRange = 800.0
-floatVeloc = 12 // 10.0
+floatVeloc = 12.0 // 10.0
 setAltitude = 4.5
 
 xplExpire = "xplrover"

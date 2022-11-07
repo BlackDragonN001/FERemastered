@@ -16,14 +16,13 @@ canDetect = 1
 canInteract = 1 
 ownsTerrain = 0
 
-
 [MineClass]
-lifeSpan = .16
+lifeSpan = 0.16
 
 
 [FlareMineClass]
 payloadName = "firechaff"
 fireSound = "flame01.wav"
-triggerDelay = .01
-shotDelay = .01
+triggerDelay = 0.01
+shotDelay = 0.01
 shotVariance = 2.5 

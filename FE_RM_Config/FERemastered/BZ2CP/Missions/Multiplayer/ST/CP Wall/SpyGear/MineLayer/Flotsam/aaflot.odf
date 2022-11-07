@@ -1,15 +1,18 @@
 [OrdnanceClass]
 classLabel = "spraybomb"
+
 shotGeometry = "ioartl00.xsi"
 shotSound = "baz03.wav"
+
 xplGround = NULL
 xplVehicle = NULL
 xplBuilding = NULL
+
 rendername = "aaflot.render"
 
 ammoCost = 1 // 50
 lifeSpan = 1e30
-shotSpeed = 35 // 22.0
+shotSpeed = 35.0 // 22.0
 
 damageValue(N) = 0
 damageValue(L) = 0

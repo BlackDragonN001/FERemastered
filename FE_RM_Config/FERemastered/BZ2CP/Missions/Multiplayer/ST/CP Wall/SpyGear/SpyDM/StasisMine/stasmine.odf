@@ -1,6 +1,6 @@
 [GameObjectClass]
 geometryName = "techsensor2.xsi"
-//geometryScale = .5
+//geometryScale = 0.5
 classLabel = "flare"
 scrapCost = 0
 scrapValue = 0
@@ -8,7 +8,7 @@ maxHealth = 0
 maxAmmo = 1
 unitName = "Stasis Unit"
 addAmmo = 1
-addHealth = .5
+addHealth = 0.5
 
 fireSound = NULL // "gmasg00.wav"
 
@@ -26,5 +26,5 @@ lifeSpan = 32000
 [FlareMineClass]
 payloadName = "stasflak"
 triggerDelay = 0.0
-shotDelay = .8
+shotDelay = 0.8
 shotVariance = 0.00

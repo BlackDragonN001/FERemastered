@@ -41,8 +41,8 @@ textureName = "wasplat.tga"
 textureBlend = "one one modulate"
 startColor = "255 200 60 127" 
 finishColor = "255 220 0 0" 
-startRadius = .6 // 1.5
-finishRadius = .2 // 1.0
+startRadius = 0.6 // 1.5
+finishRadius = 0.2 // 1.0
 
 [Trail]
 renderBase = "draw_twirl_trail"
@@ -50,7 +50,7 @@ textureName = "wasplat.tga"
 textureBlend = "one one modulate"
 startColor = "255 180 60 127" 
 finishColor = "255 220 0 0" 
-startRadius = .6 // 1.0
+startRadius = 0.6 // 1.0
 finishRadius = 0.001
 animateTime = 0.7
 emitDelay = 0.02

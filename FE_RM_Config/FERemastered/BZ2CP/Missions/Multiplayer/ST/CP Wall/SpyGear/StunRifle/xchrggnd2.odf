@@ -41,6 +41,7 @@ finishColor = "240 170 50 0"
 startRadius = 1.5
 finishRadius = 0.5
 animateTime = 1.0
+bottomInteractsWithTerrain = false
 
 [Puff]
 simulateBase = "sim_smoke"
@@ -67,6 +68,7 @@ finishColor = "240 170 50 0"
 startRadius = 0.1
 finishRadius = 1.2
 animateTime = 1.5
+useTerrainColor = 0.9
 
 [Splat]
 simulateBase = "sim_null"

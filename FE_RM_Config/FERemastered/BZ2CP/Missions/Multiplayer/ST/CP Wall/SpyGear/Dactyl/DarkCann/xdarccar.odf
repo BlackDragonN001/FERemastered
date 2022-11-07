@@ -2,12 +2,16 @@
 classLabel = "explosion"
 
 particleTypes = 2
+
 particleClass1 = "xdarccar.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+particleInherit1 = "1.0 1.0 1.0"
+
 particleClass2 = "xdarccar.dark"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
+particleInherit2 = "1.0 1.0 1.0"
 
 explSound = "lhit.wav"
 
@@ -21,12 +25,12 @@ damageValue(S) = 2 // standard
 damageValue(D) = 4 // deflection
 damageValue(A) = 1 // absorbtion
 
-kickRadius = 8
+kickRadius = 8.0
 kickOmega = 3.0
 kickVeloc = -2.0
 
 [Core]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 0.8
 renderBase = "draw_twirl"
 textureName = "ring.tga"
@@ -38,7 +42,7 @@ finishRadius = 7.0
 animateTime = 0.8
 
 [Dark]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 2.0
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"

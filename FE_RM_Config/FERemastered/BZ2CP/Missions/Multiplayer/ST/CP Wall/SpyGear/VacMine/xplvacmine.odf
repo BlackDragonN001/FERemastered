@@ -2,12 +2,15 @@
 classLabel = "explosion"
 
 particleTypes = 2
+
 particleClass1 = "xplvacmine.shock"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 //particleClass2 = "xplvacmine.light"
 //particleCount2 = 1
 //particleVeloc2 = "0.0 0.0 0.0"
+
 particleClass2 = "xplvacmine.center"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
@@ -48,7 +51,7 @@ startColor = "255 255 63 0"
 finishColor = "255 0 0 2550"
 startRadius = 50.0
 finishRadius = 50.0
-animateTime = .20
+animateTime = 0.20
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0

@@ -15,7 +15,7 @@ aiRange = 125
 [MagnetGunClass]
 ammoCost = 8.5 // 11
 activeSound = "stap01.wav" //"ssent01c.wav"//"mag01.wav"
-coneAngle = .08 // 1.0
+coneAngle = 0.08 // 1.0
 fieldRadius = 140 //20.0
 objPushCenter = 45 // 38 // 100.0
 objPushEdge = -140 // 40.0
@@ -23,7 +23,6 @@ objDrag = 7.8 // 0.2
 ordPushCenter = 300 // 700.0
 ordPushEdge = 150 //300 // 200.0
 ordDrag = 3.0 //2.5 
-
 
 [Flash]
 renderBase = "draw_multi"
@@ -42,8 +41,8 @@ finishColor = "100 0 20 255"
 startRadius = 130.0 
 finishRadius = 1.0 
 animateTime = 0.4 // 0.2
-waveAngle = .07 // 
-waveDepth = .3 //0.8
+waveAngle = 0.07 // 
+waveDepth = 0.3 //0.8
 waveSegments = 6 //8 across width, gradations
 
 [FlashWave2]
@@ -55,8 +54,8 @@ finishColor = "0 0 255 255"
 startRadius = 1.0 
 finishRadius = 130.0 
 animateTime = 0.4 // 0.2
-waveAngle = .07 // 
-waveDepth = .3 //0.8
+waveAngle = 0.07 // 
+waveDepth = 0.3 //0.8
 waveSegments = 6 //8 across width, gradations
 
 [Field]
@@ -67,7 +66,7 @@ startColor = "0 0 255 10"
 finishColor = "100 0 0 180" 
 startRadius = 1.7
 finishRadius = 2.0
-animateTime = .4
+animateTime = 0.4
 latitudeBands = 12
 longitudeSegments = 18
 
@@ -79,6 +78,6 @@ startColor = "0 0 255 200"
 finishColor = "100 0 0 10" 
 startRadius = 2.0
 finishRadius = 1.7
-animateTime = .4
+animateTime = 0.4
 latitudeBands = 12
 longitudeSegments = 18

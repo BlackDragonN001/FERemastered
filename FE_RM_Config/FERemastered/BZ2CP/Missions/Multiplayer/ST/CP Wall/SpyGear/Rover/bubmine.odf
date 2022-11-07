@@ -16,13 +16,12 @@ canDetect = 0
 canInteract = 1 
 ownsTerrain = 0
 
-
 [MineClass]
 lifeSpan = 600 // -trigger * shotdelay for count
 
 [FlareMineClass]
 payloadName = "bubminebub"
 fireSound = "baice1b.wav" // "rmort01.wav"
-triggerDelay = 6
+triggerDelay = 6.0
 shotDelay = 30.0 
 shotVariance = 2.5

@@ -1,6 +1,6 @@
 [GameObjectClass]
 geometryName = "igflar00.fbx"
-//geometryScale = .5
+//geometryScale = 0.5
 classLabel = "flare"
 scrapCost = 0
 scrapValue = 0
@@ -8,7 +8,7 @@ maxHealth = 3000
 maxAmmo = 1
 unitName = "AA Launcher"
 addAmmo = 1
-addHealth = .5
+addHealth = 0.5
 
 fireSound = "gmasg00.wav"
 

@@ -33,12 +33,12 @@ xplBuilding = "xplfluxnet"
 
 [Flash]
 renderBase = "draw_bolt"
-textureName =  "trail2.tga"//"plasma.tga" //"trail2.tga"
+textureName =  "trail2.tga" //"plasma.tga" //"trail2.tga"
 textureBlend = "invsrc invsrc modulate" // "one one modulate"
 startColor = "200 100 0 255"
 finishColor = "30 60 0 0"
-startRadius = .15 // 0.15
-finishRadius = .5 // 0.4
+startRadius = 0.15 // 0.15
+finishRadius = 0.5 // 0.4
 segmentLength = 2.0
 segmentVariance = "2.5 2.5 2.5"
 animateTime = 0.8

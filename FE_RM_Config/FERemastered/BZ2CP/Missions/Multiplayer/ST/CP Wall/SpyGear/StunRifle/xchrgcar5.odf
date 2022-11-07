@@ -51,6 +51,7 @@ finishColor = "255 90 0 0"
 startRadius = 1.5
 finishRadius = 0.2
 animateTime = 1.0
+bottomInteractsWithTerrain = false
 
 [Puff]
 simulateBase = "sim_smoke"

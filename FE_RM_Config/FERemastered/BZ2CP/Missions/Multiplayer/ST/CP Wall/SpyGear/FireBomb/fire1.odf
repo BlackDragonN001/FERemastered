@@ -3,11 +3,13 @@ classLabel = "bullet"
 
 shotGeometry = NULL
 shotRadius = 3.0
+
 xplGround = NULL // "xflmhit"
 xplVehicle = NULL // "xflmhit"
 xplBuilding = NULL // "xflmhit"
 
-renderName = "fire1.puff"
+renderName = "fire1.render"
+
 ammoCost = 0 //1
 lifeSpan = 1.5
 shotSpeed = 15 // 50.0
@@ -19,6 +21,12 @@ damageValue(S) = 100
 damageValue(D) = 200
 damageValue(A) = 15
 
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "fire1.puff"
+renderName2 = "fire1.smoke"
+
 [Puff]
 renderBase = "draw_twirl"
 textureName = "flame2.tga"
@@ -28,4 +36,16 @@ finishColor = "255 155 0 0"
 startRadius = 1.5
 finishRadius = 6.0
 animateTime = 1.5
+
+[Smoke]
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 31 31 127"
+finishColor = "63 63 63 0"
+startRadius = 2.0
+finishRadius = 8.0
+animateTime = 1.5
+rotationRate = 8.0
+bottomInteractsWithTerrain = false
 

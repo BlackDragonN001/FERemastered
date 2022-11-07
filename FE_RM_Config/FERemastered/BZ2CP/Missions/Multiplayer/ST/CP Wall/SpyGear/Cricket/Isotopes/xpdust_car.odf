@@ -1,11 +1,19 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 1
-particleClass1 = "xpdust_car.shock"
+particleTypes = 2
+
+particleClass1 = "xpdust_gnd.shock"
 particleCount1 = 5
-particleVeloc1 = "10.0 10.0 5.0"
-particleBias1 = "0.0 0.0 15.0"
+particleVeloc1 = "10.0 10.0 10.0"
+particleBias1 = "0.0 0.0 0.0"
+particleInherit1 = "0.8 0.8 0.8"
+
+particleClass2 = "xpdust_gnd.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleBias2 = "0.0 0.0 0.0"
+particleInherit2 = "0.8 0.8 0.8"
 
 explSound = "xmag05.wav"
 
@@ -22,15 +30,3 @@ damageValue(A) = 5
 kickRadius = 1.5
 kickOmega = 3.0
 kickVeloc = -4.0
-
-[Shock]
-simulateBase = "sim_null"
-lifeTime = 1.0
-renderBase = "draw_twirl"
-textureName = "plasma.tga"
-textureBlend = "one one modulate"
-startColor = "255 150 70 255" 
-finishColor = "255 150 0 0"
-startRadius = 0.8
-finishRadius = 3.0
-animateTime = 0.6

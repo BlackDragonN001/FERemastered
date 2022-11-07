@@ -38,7 +38,7 @@ startRadius = 0.2
 finishRadius = 0.8
 animateTime = 1.0
 
-[Centerhalo]
+[CenterHalo]
 renderBase = "draw_sprite"
 textureName = "flame2.tga"
 textureBlend = "one one modulate"
@@ -51,7 +51,7 @@ animateTime = 1.0
 [Sparks]
 renderBase = "draw_emit"
 emitName = "firechaff.sparker"
-emitDelay = .04 // 0.2 // 0.5
+emitDelay = 0.04 // 0.2 // 0.5
 emitVelocity = "0.3 0.3 0.2"
 emitVariance = "4.0 4.0 6.0"
 
@@ -59,11 +59,12 @@ emitVariance = "4.0 4.0 6.0"
 simulateBase = "sim_smoke"
 lifeTime = 1.5
 renderBase = "draw_multi"
-renderCount = 1
+renderCount = 2
 renderName1 = "firechaff.flame"
+renderName2 = "firechaff.smoke"
 
 [Flame]
-renderBase = "draw_sprite"
+renderBase = "draw_twirl"
 textureName = "flame2.tga"
 textureBlend = "one one modulate"
 startColor = "255 150 50 155"
@@ -71,3 +72,17 @@ finishColor = "190 50 0 0"
 startRadius = 0.5
 finishRadius = 3.0
 animateTime = 1.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Smoke]
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 31 31 127"
+finishColor = "63 63 63 0"
+startRadius = 0.8
+finishRadius = 4.0
+animateTime = 1.5
+rotationRate = 8.0
+bottomInteractsWithTerrain = false

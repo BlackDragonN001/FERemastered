@@ -1,5 +1,5 @@
 [GameObjectClass]
-geometryName = "igflar00.fbx"//NULL //"launcher00.xsi"// "igflar00.xsi"
+geometryName = "igflar00.fbx" //NULL //"launcher00.xsi"// "igflar00.xsi"
 classLabel = "flare"
 scrapCost = 0
 scrapValue = 0
@@ -15,7 +15,6 @@ canCollide = 1
 canDetect = 1 
 canInteract = 1 
 ownsTerrain = 0
-
 
 [MineClass]
 lifeSpan = 5.5 // 3.7 // -trigger * shotdelay for count

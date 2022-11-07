@@ -2,16 +2,14 @@
 classLabel = "explosion"
 
 particleTypes = 1
+
 particleClass1 = "xpldark.dark"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
 explSound = NULL // "gmagg05.wav"
-damageRadius = 150.0
-kickRadius = 150.0
-kickOmega = 0.3 
-kickVeloc = 0.0
 
+damageRadius = 150.0
 damageValue(N) = 1
 damageValue(L) = 1
 damageValue(H) = 1
@@ -20,9 +18,13 @@ damageValue(S) = 1
 damageValue(D) = 1
 damageValue(A) = 1
 
+kickRadius = 150.0
+kickOmega = 0.3 
+kickVeloc = 0.0
+
 [Dark]
 simulateBase = "sim_null"
-lifeTime = 10
+lifeTime = 10.0
 renderBase = "draw_sphere"
 textureName = NULL //"vsmoke.tga"
 textureBlend = "invsrc invsrc modulate"//"one one modulate"

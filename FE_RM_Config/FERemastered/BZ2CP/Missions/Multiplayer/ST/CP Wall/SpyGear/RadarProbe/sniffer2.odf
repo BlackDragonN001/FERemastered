@@ -24,10 +24,10 @@ damageValue(A) = 1 // absorbtion
 
 
 [MissileClass]
-omegaTurn = 50 //45 // 30.0
+omegaTurn = 50.0 //45 // 30.0
 
 [ThermalMissileClass]
-coneAngle = 18 // 10
+coneAngle = 18.0 // 10
 
 [Render]
 renderBase = "draw_bolt"

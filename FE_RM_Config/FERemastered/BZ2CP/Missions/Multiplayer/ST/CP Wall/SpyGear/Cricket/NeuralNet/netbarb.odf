@@ -2,7 +2,7 @@
 classLabel = "anchor"
 
 shotGeometry = "netbarb.xsi" //"ioartl00.xsi"
-geometryScale = 100
+//geometryScale = 100
 shotSound = "gshad02.wav"
 
 xplGround = NULL
@@ -15,7 +15,7 @@ xplBuilding = "xplneural"
 renderName = "netbarb.render"
 
 ammoCost = 1
-lifeSpan = .67 // 100m
+lifeSpan = 0.67 // 100m
 shotSpeed = 150.0
 
 damageValue(N) = 0 // none
@@ -31,7 +31,7 @@ stickTime = 1.6 // 1.55 //2.0
 
 [AnchorRocketClass]
 accelDrag = 6.0 // 5.75  // 8.0
-alphaDrag = .3 // 0.5
+alphaDrag = 0.3 // 0.5
 
 [Render]
 renderBase = "draw_bolt"
@@ -41,7 +41,7 @@ startColor = "150 150 150 255"
 finishColor = "150 150 180 255"
 startRadius = 0.04
 finishRadius = 0.04
-segmentLength = .5 // 1.0
+segmentLength = 0.5 // 1.0
 segmentVariance = "0.0 0.0 0.0"
 animateTime = 1.5 // 3.0 //0.5
 textureRate = 0.01

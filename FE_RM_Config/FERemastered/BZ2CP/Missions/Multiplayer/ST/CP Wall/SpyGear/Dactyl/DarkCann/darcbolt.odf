@@ -2,6 +2,7 @@
 classLabel =  "thermalmissile"
 
 shotGeometry = NULL
+
 xplGround = "xdarcgnd"
 xplVehicle = "xdarccar"
 xplBuilding = "xdarccar"
@@ -9,8 +10,8 @@ xplBuilding = "xdarccar"
 renderName = "darcbolt.render"
 
 ammoCost = 2.75 // 3
-lifeSpan = .466 // 140m
-shotSpeed = 300 //
+lifeSpan = 0.466 // 140m
+shotSpeed = 300.0 //
 
 damageValue(N) = 50 // 30 // none 
 damageValue(L) = 30 // 20 // light 
@@ -21,10 +22,10 @@ damageValue(D) = 50 // deflection
 damageValue(A) = 20 // absorbtion
 
 [MissileClass]
-omegaTurn = 50 
+omegaTurn = 50.0
 
 [ThermalMissileClass]
-coneAngle = 3 // 10
+coneAngle = 3.0 // 10
 
 [Render]
 renderBase = "draw_bolt"

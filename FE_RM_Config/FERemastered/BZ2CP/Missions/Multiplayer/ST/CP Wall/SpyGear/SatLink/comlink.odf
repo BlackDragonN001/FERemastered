@@ -1,6 +1,6 @@
 [GameObjectClass]
 geometryName = "comlink.xsi"
-//geometryScale = .5
+//geometryScale = 0.5
 classLabel = "commbunker"
 collisionRadius = 1.0
 scrapCost = 0
@@ -24,8 +24,8 @@ requireCount = 0
 soundAmbient = "icomm01.wav"
 
 [CommBunkerClass]
-rangeScan = 300
+rangeScan = 300.0
 periodScan = 0.0
 
 [PoweredBuildingClass]
-detectRange = 300
+detectRange = 300.0

@@ -1,6 +1,6 @@
 [GameObjectClass]
 classLabel = "seeker"
-geometryName = "roversph.xsi"//"rover.xsi"
+geometryName = "roversph.xsi" //"rover.xsi"
 //geometryScale = 2.0
 scrapCost = 0
 scrapValue = 0
@@ -13,7 +13,6 @@ radarSignature = 10.0
 canCollide = 1
 canDetect = 1
 canInteract = 1
-
 
 collisionRadius = 0.3
 
@@ -28,7 +27,7 @@ xplBlast = "xplrover"
 
 [SeekerClass]
 searchRange = 800.0
-floatVeloc = 17 // 10.0
+floatVeloc = 17.0 // 10.0
 setAltitude = 4.7
 
 xplExpire = "xplrover"
@@ -50,7 +49,7 @@ startColor = "255 255 255 10"
 finishColor = "50 50 50 180" 
 startRadius = 0.5
 finishRadius = 6.0
-animateTime = .1 // 15.0
+animateTime = 0.1 // 15.0
 latitudeBands = 18
 longitudeSegments = 24
 
@@ -62,6 +61,6 @@ startColor = "255 255 255 0"
 finishColor = "50 50 50 140"  
 startRadius = 0.5
 finishRadius = 6.0
-animateTime = .1 //15.0
+animateTime = 0.1 //15.0
 latitudeBands = 18
 longitudeSegments = 24

@@ -16,62 +16,70 @@ deltaRate = 4000.0
 startVolume = 40.0
 deltaVolume = 20.0
 
-ordnanceCount = 7
+ordnanceCount = 8
 
 shotDelay1 = 0.0
-salvoCount1 = 1
+salvoCount1 = 0
 salvoDelay1 = 0
 shotVariance1 = 0.0
-fireSound1 = "xmag02.wav"
-ordName1 = "charge_g"
+fireSound1 = NULL
+ordName1 = NULL
 wpnReticle1 = "gmaggun.0"
 
-shotDelay2 = 0.75
-salvoCount2 = 2
-salvoDelay2 = 0.3
+shotDelay2 = 0.25
+salvoCount2 = 1
+salvoDelay2 = 0
 shotVariance2 = 0.0
-fireSound2 = "xmag03.wav"
-ordName2 = "charge1_g"
-wpnReticle2 = "gmaggun.1"
+fireSound2 = "xmag02.wav"
+ordName2 = "charge_g"
+wpnReticle2 = "gmaggun.0"
 
-shotDelay3 = 1.5
-salvoCount3 = 3
+shotDelay3 = 0.75
+salvoCount3 = 2
 salvoDelay3 = 0.3
 shotVariance3 = 0.0
-fireSound3 = "xmag04.wav"
-ordName3 = "charge2_g"
-wpnReticle3 = "gmaggun.2"
+fireSound3 = "xmag03.wav"
+ordName3 = "charge1_g"
+wpnReticle3 = "gmaggun.1"
 
-shotDelay4 = 3.0
-salvoCount4 = 4
+shotDelay4 = 1.5
+salvoCount4 = 3
 salvoDelay4 = 0.3
 shotVariance4 = 0.0
-fireSound4 = "xmag05.wav"
-ordName4 = "charge3_g"
-wpnReticle4 = "gmaggun.3"
+fireSound4 = "xmag04.wav"
+ordName4 = "charge2_g"
+wpnReticle4 = "gmaggun.2"
 
-shotDelay5 = 4.0
-salvoCount5 = 5
-salvoDelay5 = 0.2
+shotDelay5 = 3.0
+salvoCount5 = 4
+salvoDelay5 = 0.3
 shotVariance5 = 0.0
-fireSound5 = "xmag06.wav"
-ordName5 = "charge4_g"
-wpnReticle5 = "gmaggun.4"
+fireSound5 = "xmag05.wav"
+ordName5 = "charge3_g"
+wpnReticle5 = "gmaggun.3"
 
-shotDelay6 = 5.0
-salvoCount6 = 6
-salvoDelay6 = 0.15
+shotDelay6 = 4.0
+salvoCount6 = 5
+salvoDelay6 = 0.2
 shotVariance6 = 0.0
-fireSound6 = "xmag07.wav"
-ordName6 = "charge6_g"
-wpnReticle6 = "gmaggun.5"
+fireSound6 = "xmag06.wav"
+ordName6 = "charge4_g"
+wpnReticle6 = "gmaggun.4"
 
-shotDelay7 = 7.5
-salvoCount7 = 7
-salvoDelay7 = 0.1
+shotDelay7 = 5.0
+salvoCount7 = 6
+salvoDelay7 = 0.15
 shotVariance7 = 0.0
-fireSound7 = "xmag08.wav"
+fireSound7 = "xmag07.wav"
 ordName7 = "charge6_g"
-wpnReticle7 = "gmaggun.6"
+wpnReticle7 = "gmaggun.5"
+
+shotDelay8 = 7.5
+salvoCount8 = 7
+salvoDelay8 = 0.1
+shotVariance8 = 0.0
+fireSound8 = "xmag08.wav"
+ordName8 = "charge6_g"
+wpnReticle8 = "gmaggun.6"
 
 holdRate = 20 // 100.0

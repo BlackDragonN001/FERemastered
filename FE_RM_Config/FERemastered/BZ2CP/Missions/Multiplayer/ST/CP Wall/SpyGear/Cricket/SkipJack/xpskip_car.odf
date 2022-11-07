@@ -1,11 +1,19 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 1
+particleTypes = 2
+
 particleClass1 = "xpskip_car.shock"
-particleCount1 = 2//5
-particleVeloc1 = "10.0 10.0 5.0"
-particleBias1 = "0.0 0.0 15.0"
+particleCount1 = 2 //5
+particleVeloc1 = "10.0 10.0 10.0"
+particleBias1 = "0.0 0.0 0.0"
+particleInherit1 = "0.8 0.8 0.8"
+
+particleClass2 = "xpskip_car.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleBias2 = "0.0 0.0 0.0"
+particleInherit2 = "0.8 0.8 0.8"
 
 explSound = "xmag05.wav"
 
@@ -24,7 +32,7 @@ kickOmega = -10.0
 kickVeloc = 0.0
 
 [Shock]
-simulateBase = "sim_null"
+simulateBase = "sim_smoke"
 lifeTime = 1.0
 renderBase = "draw_twirl"
 textureName = "plasma.tga"
@@ -34,3 +42,17 @@ finishColor = "0 0 150 0"
 startRadius = 1.0
 finishRadius = 10.0
 animateTime = 0.6
+
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_light"
+startColor = "20 150 255 155"
+finishColor = "20 150 255 0"
+startRadius = 10.0
+finishRadius = 10.0
+animateTime = 0.6
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

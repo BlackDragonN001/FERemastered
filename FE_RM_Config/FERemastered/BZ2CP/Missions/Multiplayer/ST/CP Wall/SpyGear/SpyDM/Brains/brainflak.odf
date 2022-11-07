@@ -1,15 +1,17 @@
 [OrdnanceClass]
-classLabel = "bullet" 
+classLabel = "bullet"
+
 shotGeometry = NULL
+shotSound = NULL
+
 xplGround = NULL
 xplVehicle = NULL
 xplBuilding = NULL
 xplExpire = "xplbrain_xpr"
-shotSound = NULL
 
 ammoCost = 0
-lifeSpan = .0001
-shotSpeed = 10
+lifeSpan = 0.0001
+shotSpeed = 10.0
 
 damageValue(N) = 1
 damageValue(L) = 0

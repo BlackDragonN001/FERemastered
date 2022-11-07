@@ -17,6 +17,7 @@ canInteract = 1
 ownsTerrain = 0
 powercost = 0
 collisionRadius = 3.0
+explosionName = "xplflot"
 
 lightHard1 = "hp_light_1"
 lightName1 = "omnired"
@@ -25,20 +26,21 @@ effectHard1 = "hp_emit_1"
 effectName1 = "flotbits.render"
 
 [MineClass]
-lifeSpan = 30 // 
+lifeSpan = 30.0 
 xplBlast = "xplflot"
-xplExpire = "xplflot"
+detonateExpire = true
 
 [SeekerClass]
 searchRange = 100.0
-floatVeloc = 65 
-setAltitude = 75
+floatVeloc = 65.0
+setAltitude = 75.0
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 3
 renderName1 = "flotbits.tail"
 renderName2 = "flotbits.poof"
+renderName3 = "flotbits.light"
 
 [Tail]
 renderBase = "draw_trail"
@@ -48,7 +50,7 @@ startColor = "100 140 0 90"
 finishColor = "255 0 0 0"
 startRadius = 0.5
 finishRadius = 1.0 
-segmentTime = .8 // 2.5  // time each segment animates
+segmentTime = 0.8 // 2.5  // time each segment animates
 segmentVariance = "0.1 0.1 0.1"
 animateTime = 0.3
 textureRate = 0.05
@@ -64,3 +66,13 @@ startRadius = 0.7
 finishRadius = 0.7 
 animateTime = 28.0 
 rotationRate = 5.0 // 1.0
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 150 63 2550"
+finishColor = "255 150 63 0"
+startRadius = 50.0
+finishRadius = 50.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0

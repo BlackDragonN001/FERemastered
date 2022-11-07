@@ -36,9 +36,10 @@ setAltitude = 25.3
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 3
 renderName1 = "sporebits.tail"
 renderName2 = "sporebits.poof"
+renderName3 = "sporebits.light"
 
 [Tail]
 renderBase = "draw_trail"
@@ -49,18 +50,29 @@ finishColor = "0 0 255 0"
 startRadius = 0.5
 finishRadius = 1.0 
 segmentTime = 2.5  // time each segment animates
-segmentVariance = "0.1 0.1 0.1"
-animateTime = 0.3
+//segmentVariance = "0.1 0.1 0.1"
+//animateTime = 0.3
 textureRate = 0.05
 
 [Poof]
 renderBase = "draw_twirl"
-lifeTime = 7.0
 textureName = "lighthalo.tga"
 textureBlend = "one one modulate"
 startColor = "80 0 0 255"
 finishColor = "0 0 150 60"
 startRadius = 3.5 
 finishRadius = 2.0 
-animateTime = 4.0 
+animateTime = 4.0
 rotationRate = 5.0 // 1.0
+
+[Light]
+renderBase = "draw_light"
+startColor = "80 0 0 2550"
+finishColor = "0 0 150 2550"
+startRadius = 25.0
+finishRadius = 25.0
+animateTime = 4.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false

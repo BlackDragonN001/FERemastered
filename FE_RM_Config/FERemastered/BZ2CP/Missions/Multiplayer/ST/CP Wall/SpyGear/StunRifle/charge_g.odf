@@ -1,8 +1,9 @@
 [OrdnanceClass]
-classLabel = "anchor"//"bullet"
+classLabel = "anchor" //"bullet"
 
 shotGeometry = "iorckt00.xsi" // NULL
 shotRadius = 0.5
+
 xplGround = "xchrggnd1"
 xplVehicle = "xchrgcar1"
 xplBuilding = "xchrgcar1"
@@ -30,10 +31,11 @@ alphaDrag = 2.5 // 0.5
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
+renderCount = 4
 renderName1 = "charge_g.flare"
 renderName2 = "charge_g.halo"
 renderName3 = "charge_g.trail"
+renderName4 = "charge_g.light"
 
 [Flare]
 renderBase = "draw_sprite"
@@ -55,13 +57,24 @@ finishRadius = 0.5
 
 [Trail]
 renderBase = "draw_trail"
-textureName = "boltline.tga"
+textureName = "bolt4.tga"
 textureBlend = "one one modulate"
 startColor = "200 200 0 255"
 finishColor = "200 200 0 0"
 startRadius = 0.1    //0.3
 finishRadius = 0.01  //0.05
 segmentTime = 0.9  // time each segment animates
-segmentVariance = "0.001 0.001 0.001 "
-animateTime = 0.2 
+//segmentVariance = "0.001 0.001 0.001"
+//animateTime = 0.2 
 textureRate = 0.01
+
+[Light]
+renderBase = "draw_light"
+startColor = "150 160 50 155"
+finishColor = "150 160 50 155"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

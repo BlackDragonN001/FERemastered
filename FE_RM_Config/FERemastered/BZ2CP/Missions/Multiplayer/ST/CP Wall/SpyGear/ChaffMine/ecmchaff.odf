@@ -1,15 +1,18 @@
 [OrdnanceClass]
 classLabel = "spraybomb"
+
 shotGeometry = "ioartl00.xsi"
 shotSound = "baz03.wav"
+
 xplGround = NULL
 xplVehicle = NULL
 xplBuilding = NULL
+
 rendername = "ecmchaff.render"
 
 ammoCost = 1 // 50
 lifeSpan = 1e30
-shotSpeed = 35 // 22.0
+shotSpeed = 35.0 // 22.0
 
 damageValue(N) = 0
 damageValue(L) = 0
@@ -30,6 +33,6 @@ finishColor = "140 140 140 0"
 startRadius = 0.4
 finishRadius = 0.8 
 segmentTime = 2.0  // time each segment animates
-segmentVariance = "0.1 0.1 0.1"
-animateTime = 0.3
+//segmentVariance = "0.1 0.1 0.1"
+//animateTime = 0.3
 textureRate = 0.05

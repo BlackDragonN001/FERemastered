@@ -1,10 +1,13 @@
 [OrdnanceClass]
 classLabel = "spraybomb"
+
 shotGeometry = "gravanchor.xsi" //"ioartl00.xsi"
 shotSound = "fmiss02.wav"
+
 xplGround = NULL
 xplVehicle = NULL
 xplBuilding = NULL
+
 rendername = "fluxancfire.render"
 
 ammoCost = 11
@@ -30,6 +33,6 @@ finishColor = "100 50 20 0"
 startRadius = 0.05
 finishRadius = 0.1 
 segmentTime = 1.8  // time each segment animates
-segmentVariance = "0.05 0.05 0.05"
-animateTime = 0.8
+//segmentVariance = "0.05 0.05 0.05"
+//animateTime = 0.8
 textureRate = 0.05

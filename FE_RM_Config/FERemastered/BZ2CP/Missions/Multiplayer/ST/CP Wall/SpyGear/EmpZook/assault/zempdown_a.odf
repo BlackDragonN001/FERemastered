@@ -1,7 +1,7 @@
 [OrdnanceClass]
 classLabel = "lockdown"
 
-shotGeometry = "NULL"
+shotGeometry = NULL
 shotSound = NULL // "sandbag.wav"
 
 xplGround = "xzempgnd_a"
@@ -10,8 +10,8 @@ xplBuilding = "xzempcar_a"
 
 renderName = "zempdown_a.render"
 
-ammoCost = .63
-lifeSpan = .9 
+ammoCost = 0.63
+lifeSpan = 0.9 
 shotSpeed = 200.0
 
 damageValue(N) = 0 // none

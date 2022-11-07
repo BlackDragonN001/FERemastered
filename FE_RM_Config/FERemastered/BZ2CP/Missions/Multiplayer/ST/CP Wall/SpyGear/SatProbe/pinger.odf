@@ -28,7 +28,7 @@ SoundAmbientDist = 0.9  // no affect?
 //rangeScan = 240.0
 
 [CommBunkerClass]
-rangeScan = 275
+rangeScan = 275.0
 periodScan = 2.0 // 0.0
 
 //[PoweredBuildingClass]

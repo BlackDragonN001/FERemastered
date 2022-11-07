@@ -3,11 +3,13 @@ classLabel = "bullet"
 
 shotGeometry = NULL
 shotRadius = 2.0
+
 xplGround = NULL 
 xplVehicle = NULL
 xplBuilding = NULL
 
 renderName = "timerflash.render"
+
 ammoCost = 1e-6 
 lifeSpan = 2.0
 shotSpeed = 0.001
@@ -35,7 +37,7 @@ startColor = "255 155 0 0"
 finishColor = "255 155 10 230"
 startRadius = 4.0
 finishRadius = 0.4
-animateTime = .1
+animateTime = 0.1
 latitudeBands = 4 
 longitudeSegments = 8 
 

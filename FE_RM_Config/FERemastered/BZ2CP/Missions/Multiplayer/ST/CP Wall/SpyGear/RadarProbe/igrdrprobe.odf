@@ -6,8 +6,8 @@ wpnName = "Radar Probe"
 ordName = NULL
 isassault = 1
 
-wpnIcon = "wire_igrdrprobe.tga"
-fireSound = "unitenabled.wav"// "mdmort02.wav" //"mmine01.wav"
+wpnIcon = "wire_igrdrprobe%d.tga"
+fireSound = "unitenabled.wav" // "mdmort02.wav" //"mmine01.wav"
 wpnReticle = "gproxmin"
 wpnLadder = "gmortar.L0"
 wpnPriority = 3

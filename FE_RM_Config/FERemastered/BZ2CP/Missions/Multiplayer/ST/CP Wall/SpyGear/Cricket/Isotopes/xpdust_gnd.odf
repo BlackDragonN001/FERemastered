@@ -5,11 +5,17 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 1
-particleClass1 = "xpdust_car.shock"
+particleTypes = 2
+
+particleClass1 = "xpdust_gnd.shock"
 particleCount1 = 5
-particleVeloc1 = "10.0 10.0 5.0"
-particleBias1 = "0.0 0.0 15.0"
+particleVeloc1 = "10.0 10.0 10.0"
+particleBias1 = "0.0 0.0 0.0"
+
+particleClass2 = "xpdust_gnd.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleBias2 = "0.0 0.0 0.0"
 
 explSound = NULL // "xmag05.wav"
 
@@ -28,8 +34,8 @@ kickOmega = 2.0
 kickVeloc = -2.0
 
 [Shock]
-simulateBase = "sim_null"
-lifeTime = 1.0
+simulateBase = "sim_smoke"
+lifeTime = 0.6 //1.0
 renderBase = "draw_twirl"
 textureName = "plasma.tga"
 textureBlend = "one one modulate"
@@ -38,3 +44,19 @@ finishColor = "255 150 0 0"
 startRadius = 0.8
 finishRadius = 3.0
 animateTime = 0.6
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 0.6
+renderBase = "draw_light"
+startColor = "255 150 63 255"
+finishColor = "255 150 63 0"
+startRadius = 35.0
+finishRadius = 0.0
+animateTime = 0.6
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

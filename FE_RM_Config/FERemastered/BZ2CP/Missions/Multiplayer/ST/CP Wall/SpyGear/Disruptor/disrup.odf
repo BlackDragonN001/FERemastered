@@ -1,7 +1,9 @@
 [OrdnanceClass]
 classLabel = "bullet"
+
 shotGeometry = NULL
-shotSound = "flash01.wav" 
+shotSound = "flash01.wav"
+
 renderName = "disrup.render"
 
 xplGround = "xdisrupgnd"
@@ -9,18 +11,19 @@ xplVehicle = "xdisrupcar"
 xplBuilding = "xdisrupcar"
 xplExpire = "xdisrupxpr"
 
-ammoCost = .55 //
+ammoCost = 0.55 //
 lifeSpan = 1.3 // 130m
 shotSpeed = 100 //
 
-damageRadius = 1.0
-kickRadius = 1.0
-kickOmega = 1.5 
-kickVeloc = -1.8
+// These don't work in bullets... -GBD
+//damageRadius = 1.0
+//kickRadius = 1.0
+//kickOmega = 1.5 
+//kickVeloc = -1.8
 
 damageValue(N) = 2.0 // 1.5
 damageValue(L) = 5.5 //
-damageValue(H) = .5 //
+damageValue(H) = 0.5 //
 
 damageValue(S) = 1 //
 damageValue(D) = 2 // 
@@ -32,6 +35,7 @@ renderCount = 3
 renderName1 = "disrup.flare"
 renderName2 = "disrup.halo"
 renderName3 = "disrup.trail"
+renderName4 = "disrup.light"
 
 [Flare]
 renderBase = "draw_sprite"
@@ -60,6 +64,17 @@ finishColor = "100 30 30 0"
 startRadius = 0.1    //0.3
 finishRadius = 0.01  //0.05
 segmentLength = 2.0  //3.0 
-segmentVariance = "0.2 0.2 0.2 "
-animateTime = 1.5 
+segmentVariance = "0.2 0.2 0.2"
+animateTime = 1.2
 textureRate = 0.01
+
+[Light]
+renderBase = "draw_light"
+startColor = "200 150 0 155"
+finishColor = "200 150 0 155"
+startRadius = 10.0
+finishRadius = 10.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1

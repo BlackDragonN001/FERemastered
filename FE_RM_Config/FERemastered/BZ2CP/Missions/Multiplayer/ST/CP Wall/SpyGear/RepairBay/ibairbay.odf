@@ -22,22 +22,22 @@ effectName1 = "repairmine.render"
 
 [SupplyDepotClass]
 supplyRange = 16.0 // 32.0
-supplyRate = 60  //  150.0
+supplyRate = 60.0  //  150.0
 supplySound = "mnu_empt.wav"
 
 [render]
 renderBase = "draw_twirl_trail"
-emitDelay = .07 // 0.05
+emitDelay = 0.07 // 0.05
 emitDelayVar = 0.03
 emitVelocity = "0.0 0.0 10.0"
 emitVariance = "2.0 2.0 2.0"
 emitInherit = "0.2 0.2 0.2"
-emitLife = .5 //.5
+emitLife = 0.5 //.5
 textureName = "flame.tga"
 textureBlend = "one one modulate"
 startColor = "0 50 155 80"
 finishColor = "0 50 155 0"
-startRadius = 8 // 15
-finishRadius = 1
-animateTime = .5 // .5
+startRadius = 8.0 // 15
+finishRadius = 1.0
+animateTime = 0.5 // .5
 rotationRate = 2.0

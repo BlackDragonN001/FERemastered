@@ -2,9 +2,11 @@
 classLabel = "explosion"
 
 particleTypes = 2
+
 particleClass1 = "xplvac_car.shock"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xplvac_car.light"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
@@ -45,7 +47,7 @@ startColor = "255 255 63 0"
 finishColor = "255 0 0 255"
 startRadius = 20.0
 finishRadius = 20.0
-animateTime = .15
+animateTime = 0.15
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
