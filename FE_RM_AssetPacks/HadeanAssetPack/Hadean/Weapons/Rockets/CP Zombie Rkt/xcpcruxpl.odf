@@ -59,6 +59,12 @@ BottomInteractsWithTerrain = false
 [Shock]
 simulateBase = "sim_null"
 lifeTime = 1.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xcpcruxpl.shockA"
+renderName2 = "xcpcruxpl.shockB"
+
+[ShockA]
 renderBase = "draw_sphere"
 textureName = "shell1.tga"
 textureBlend = "one one modulate"
@@ -69,6 +75,24 @@ finishRadius = 18.0
 animateTime = 1.0
 latitudeBands = 8
 longitudeSegments = 16
+AddPitch = 50
+AddYaw = 50
+AddRoll = 50
+
+[ShockB]
+renderBase = "draw_sphere"
+textureName = "shell1.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 100"
+finishColor = "100 100 100 0"
+startRadius = 5.0
+finishRadius = 18.0
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16
+AddPitch = -50
+AddYaw = -50
+AddRoll = -50
 
 [Light]
 simulateBase = "sim_null"

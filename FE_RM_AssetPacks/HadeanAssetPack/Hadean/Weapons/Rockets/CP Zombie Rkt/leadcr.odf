@@ -1,6 +1,13 @@
 [OrdnanceClass]
 classLabel = "leader"
-shotGeometry = "iorckt00.xsi"
+
+shotGeometry = "cpcruise_L00.fbx" //"iorckt00.xsi"
+shotScale = 0.25
+
+RestoreFxSavegame = true
+RestoreFxLockstep = true
+RestoreFxVisual = true
+
 xplGround = "xbulgnd"
 xplVehicle = "xleadcar"
 xplBuilding = "xleadbld"
@@ -24,9 +31,13 @@ stickTime = 12.0
 
 [render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 6
 renderName1 = "leadcr.trail"
 renderName2 = "leadcr.light"
+renderName3 = "leadcr.sphere1"
+renderName4 = "leadcr.sphere2"
+renderName5 = "leadcr.core"
+renderName6 = "leadcr.core"
 
 [Trail]
 renderBase = "draw_trail"
@@ -43,9 +54,48 @@ textureRate = 0.5
 renderBase = "draw_light"
 startColor = "60 150 0 260"
 finishColor = "20 90 0 260"
-startRadius = 10
-finishRadius = 10
+startRadius = 10.0
+finishRadius = 10.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
-lensFlare = 1
+lensFlare = 0
+
+[Core]
+renderBase = "draw_twirl"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 63 555"
+finishColor = "255 127 63 555"
+startRadius = 0.25
+finishRadius = 0.25
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Sphere1]
+renderBase = "draw_sphere"
+textureName = "crystal.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.1
+finishRadius = 0.1
+latitudeBands = 8
+longitudeSegments = 16
+AddPitch = 50
+Addyaw = 50
+AddRoll = 50
+
+[Sphere2]
+renderBase = "draw_sphere"
+textureName = "crystal.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.1
+finishRadius = 0.1
+latitudeBands = 8
+longitudeSegments = 16
+AddPitch = -50
+Addyaw = -50
+AddRoll = -50

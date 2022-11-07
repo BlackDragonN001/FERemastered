@@ -1,7 +1,14 @@
 [OrdnanceClass]
 classLabel = "leader"
-shotGeometry = "iorckt00.xsi"
+
+shotGeometry = "cpcruise_L00.fbx" //"iorckt00.xsi"
+shotScale = 0.25
 shotRadius = 0.8 // Upped to increase the players chances of hitting ~DF
+
+RestoreFxSavegame = true
+RestoreFxLockstep = true
+RestoreFxVisual = true
+
 xplGround = "xbulgnd"
 xplVehicle = "xleadcar"
 xplBuilding = "xleadbld"
@@ -25,9 +32,13 @@ stickTime = 5.0
 
 [render]
 renderBase = "draw_multi"
-renderCount = 2
+renderCount = 6
 renderName1 = "leadcr_a.trail"
 renderName2 = "leadcr_a.light"
+renderName3 = "leadcr_a.sphere1"
+renderName4 = "leadcr_a.sphere2"
+renderName5 = "leadcr_a.core"
+renderName6 = "leadcr_a.core"
 
 [Trail]
 renderBase = "draw_trail"
@@ -42,12 +53,51 @@ textureRate = 0.5
 
 [Light]
 renderBase = "draw_light"
-startColor = "60 150 0 260"
-finishColor = "20 90 0 260"
+startColor = "60 150 0 255"
+finishColor = "20 90 0 255"
 startRadius = 10.0
 finishRadius = 10.0
 animateTime = 1.64
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
-lensFlare = 1
+lensFlare = 0
+
+[Core]
+renderBase = "draw_twirl"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 63 555"
+finishColor = "255 127 63 555"
+startRadius = 0.25
+finishRadius = 0.25
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Sphere1]
+renderBase = "draw_sphere"
+textureName = "crystal.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.1
+finishRadius = 0.1
+latitudeBands = 8
+longitudeSegments = 16
+AddPitch = 50
+Addyaw = 50
+AddRoll = 50
+
+[Sphere2]
+renderBase = "draw_sphere"
+textureName = "crystal.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.1
+finishRadius = 0.1
+latitudeBands = 8
+longitudeSegments = 16
+AddPitch = -50
+Addyaw = -50
+AddRoll = -50
