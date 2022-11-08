@@ -32,14 +32,14 @@ wpnName = "Phaser TKR"
 fireSound = "sonic03c.wav"//"glock02.wav"//"cornrclk.wav"
 wpnReticle = "gshotgun" 
 wpnCategory = "HAND"
-isAssault = 0
+isAssault = 1
 isFlying = 0
 altName = "gphaser_c"
 
 [CannonClass]
 shotDelay = 3.5
 salvoCount = 30 //15
-salvoDelay = .06 
+salvoDelay = 0.06
 shotVariance = 0.08 // 0.01 
 
 [Flash]

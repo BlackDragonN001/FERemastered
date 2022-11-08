@@ -2,6 +2,7 @@
 classLabel = "explosion"
 
 particleTypes = 1
+
 particleClass1 = "xplblack.dark"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
@@ -22,7 +23,7 @@ damageValue(A) = 0
 
 [Dark]
 simulateBase = "sim_null"
-lifeTime = 5
+lifeTime = 5.0
 renderBase = "draw_sphere"
 textureName = NULL //"vsmoke.tga"
 textureBlend = "invsrc invsrc modulate"//"one one modulate"

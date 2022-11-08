@@ -1,8 +1,10 @@
 [OrdnanceClass]
 classLabel = "grenade"
+
 shotGeometry = NULL //"igproj00.xsi" // Missing XSI. -GBD
-geometryScale = 0.12
+//geometryScale = 0.12
 shotSound = "baz03.wav"
+
 xplGround = "xhandgnd2"
 xplVehicle = "xhandcar2"
 xplBuilding = "xhandbld2"
@@ -10,8 +12,8 @@ xplBuilding = "xhandbld2"
 renderName = "grenade2.render"
 
 ammoCost = 19
-lifeSpan = 60
-shotSpeed = 49 // 50.0
+lifeSpan = 60.0
+shotSpeed = 49.0 // 50.0
 
 damageValue(N) = 35 // none
 damageValue(L) = 50 // light

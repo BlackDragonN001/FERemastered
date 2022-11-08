@@ -1,7 +1,9 @@
 [OrdnanceClass]
 classLabel = "bullet"
+
 shotGeometry = NULL
 shotSound = "flash01.wav" 
+
 renderName = "phaser_c.render"
 
 xplGround = "xphasgnd_c"
@@ -9,7 +11,7 @@ xplVehicle = "xphascar_c"
 xplBuilding = "xphascar_c"
 xplExpire = "xphasxpr"
 
-ammoCost = .50 //
+ammoCost = 0.50 //
 lifeSpan = 1.6 // 160m
 shotSpeed = 100 //
 
@@ -59,4 +61,4 @@ startColor = "255 127 0 90"
 finishColor = "255 0 0 0"
 startRadius = 0.5
 finishRadius = 0.0
-segmentTime = .05 //0.3
+segmentTime = 0.05 //0.3

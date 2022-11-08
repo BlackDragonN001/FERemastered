@@ -6,12 +6,15 @@
 classLabel = "explosion"
 
 particleTypes = 3
+
 particleClass1 = "xflakhawk.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+
 particleClass2 = "xflakhawk.shock"
 particleCount2 = 1
 particleVeloc2 = "0.0 0.0 0.0"
+
 particleClass3 = "xflakhawk.light"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"

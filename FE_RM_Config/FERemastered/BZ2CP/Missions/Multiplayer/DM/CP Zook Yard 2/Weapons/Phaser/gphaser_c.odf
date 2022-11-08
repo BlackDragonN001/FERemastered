@@ -39,7 +39,7 @@ altName = "gphaser_a"
 [CannonClass]
 shotDelay = 0.8
 salvoCount = 30 //15
-salvoDelay = .03 //0.002
+salvoDelay = 0.03 //0.002
 shotVariance = 0.01 //0.2
 
 [Flash]

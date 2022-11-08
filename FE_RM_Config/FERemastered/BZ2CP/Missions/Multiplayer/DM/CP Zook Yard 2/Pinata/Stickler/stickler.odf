@@ -1,6 +1,8 @@
 [OrdnanceClass]
 classLabel = "anchor"
+
 shotGeometry = NULL
+
 xplGround = "xlasegnd2"
 xplVehicle = "xlasecar2"
 xplBuilding = NULL // "xlasebld2"
@@ -24,7 +26,7 @@ stickTime = 6.0
 
 [AnchorRocketClass]
 accelDrag = 4.0 //  // 8.0
-alphaDrag = .45 // 0.5
+alphaDrag = 0.45 // 0.5
 
 [Render]
 renderBase = "draw_multi"
@@ -44,7 +46,7 @@ finishRadius = 0.01
 segmentLength = 5.0
 segmentVariance = "0.0 0.0 0.0"
 animateTime = 0.3
-textureRate = .01
+textureRate = 0.01
 
 [Core2]
 renderBase = "draw_bolt"
@@ -57,7 +59,7 @@ finishRadius = 0.003
 segmentLength = 2.0
 segmentVariance = "0.0 0.0 0.0"
 animateTime = 0.1
-textureRate = .01
+textureRate = 0.01
 
 [Tail]
 renderBase = "draw_bolt"
@@ -66,8 +68,8 @@ textureBlend = "one one modulate"
 startColor = "80 0 255 255"
 finishColor = "50 0 255 0"
 startRadius = 0.005
-finishRadius = .3  //0.1
+finishRadius = 0.3  //0.1
 segmentLength = 3.0
 segmentVariance = "0.0 0.0 0.0"
 animateTime = 0.4
-textureRate = .01
+textureRate = 0.01

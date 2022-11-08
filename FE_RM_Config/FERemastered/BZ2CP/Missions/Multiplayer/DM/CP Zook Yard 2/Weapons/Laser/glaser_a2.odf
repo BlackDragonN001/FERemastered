@@ -29,7 +29,7 @@ shotDelay = 2.5   //2.5
 
 [Flash]
 simulateBase = "sim_null"
-lifeTime = .9
+lifeTime = 0.9
 renderBase = "draw_light"
 startColor = "60 30 255 700"
 finishColor = "0 0 255 0"

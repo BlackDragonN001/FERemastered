@@ -4,7 +4,9 @@
 
 [OrdnanceClass]
 classLabel = "bullet"
+
 shotGeometry = NULL
+
 xplGround = NULL
 xplVehicle = NULL
 xplBuilding = NULL
@@ -12,7 +14,7 @@ xplExpire = "xflakhawk"
 
 //renderName = "flakhawk.render"
 
-ammoCost = .1
+ammoCost = 0.1
 lifeSpan = 1
 shotSpeed = 1000
 

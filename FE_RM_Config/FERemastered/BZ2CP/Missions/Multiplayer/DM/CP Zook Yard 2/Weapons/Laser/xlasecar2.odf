@@ -6,6 +6,7 @@
 classLabel = "explosion"
 
 particleTypes = 1
+
 particleClass1 = "xlasecar2.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
@@ -30,3 +31,4 @@ finishColor = "200 40 50 0"
 startRadius = 0.2  // 0.2
 finishRadius = 1.7 // 1.5
 animateTime = 0.3  // 0.3
+bottomInteractsWithTerrain = false

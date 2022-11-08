@@ -1,6 +1,8 @@
 [OrdnanceClass]
 classLabel = "beam"
+
 shotGeometry = NULL
+
 xplGround = "xlasegnd2"
 xplVehicle = "xlasecar2"
 xplBuilding = "xlasebld2"
@@ -37,7 +39,7 @@ finishRadius = 0.01
 segmentLength = 2.0
 segmentVariance = "0.0 0.0 0.0"
 animateTime = 0.3
-textureRate = .01
+textureRate = 0.01
 
 [Core2]
 renderBase = "draw_bolt"
@@ -50,7 +52,7 @@ finishRadius = 0.003
 segmentLength = 2.0
 segmentVariance = "0.0 0.0 0.0"
 animateTime = 0.1
-textureRate = .01
+textureRate = 0.01
 
 [Tail]
 renderBase = "draw_bolt"
@@ -59,8 +61,8 @@ textureBlend = "one one modulate"
 startColor = "100 0 255 255"
 finishColor = "50 0 255 0"
 startRadius = 0.005
-finishRadius = .3  //0.1
+finishRadius = 0.3  //0.1
 segmentLength = 3.0
 segmentVariance = "0.0 0.0 0.0"
 animateTime = 0.4
-textureRate = .01
+textureRate = 0.01

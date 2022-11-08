@@ -6,6 +6,7 @@
 classLabel = "explosion"
 
 particleTypes = 2
+
 particleClass1 = "xphasgnd_c.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
@@ -51,6 +52,6 @@ textureName = "lightflare.tga"
 textureBlend = "one one modulate"
 startColor = " 255 80 30 255"
 finishColor = "155 0 0 0"
-startRadius = .8
+startRadius = 0.8
 finishRadius = 0.05
 animateTime = 2.0

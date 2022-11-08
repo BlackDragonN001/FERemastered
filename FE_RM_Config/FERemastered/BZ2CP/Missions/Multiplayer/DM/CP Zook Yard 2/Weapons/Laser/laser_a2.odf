@@ -2,6 +2,7 @@
 classLabel = "beam"
 
 shotGeometry = NULL
+
 xplGround = "xlasegnd3"
 xplVehicle = "xlasecar3"
 xplBuilding = "xlasebld3"
@@ -52,7 +53,7 @@ startRadius = 0.005
 finishRadius = 2.0 //1.0   //.2
 segmentLength = 5.0
 segmentVariance = "0.0 0.0 0.0"  // "0.0 0.0 0.0"
-animateTime = .6 
+animateTime = 0.6 
 textureRate = 0.1 //0.01
 
 [Tail2]
@@ -62,10 +63,10 @@ textureBlend = "one one modulate"
 startColor = "90 40 255 150"
 finishColor = "0 0 100 0"
 startRadius = 5.0 //3
-finishRadius = .01      //.2
+finishRadius = 0.01      //.2
 segmentLength = 5.0
 segmentVariance = "0.0 0.0 0.0"  // "0.0 0.0 0.0"
-animateTime = .2 
+animateTime = 0.2 
 textureRate = 0.01
 
 [Sparkle]

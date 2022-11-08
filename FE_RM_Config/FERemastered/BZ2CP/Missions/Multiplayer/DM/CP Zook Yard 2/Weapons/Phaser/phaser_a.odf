@@ -1,7 +1,9 @@
 [OrdnanceClass]
 classLabel = "thermalmissile"
+
 shotGeometry = NULL
 shotSound = "flash01.wav"
+
 renderName = "phaser_a.render"
 
 xplGround = "xphasgnd_c"
@@ -31,7 +33,7 @@ damageValue(A) = 1 //
 omegaTurn = 10 // 20.0
 
 [ThermalMissileClass]
-coneAngle = .5
+coneAngle = 0.5
 
 [Render]
 renderBase = "draw_multi"
@@ -66,4 +68,4 @@ startColor = "255 150 0 90"
 finishColor = "255 90 0 0"
 startRadius = 0.5
 finishRadius = 0.0
-segmentTime = .1 //0.3
+segmentTime = 0.1 //0.3

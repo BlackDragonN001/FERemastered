@@ -33,9 +33,10 @@ textureName = "ring.tga"
 textureBlend = "one one modulate"
 startColor = "100 30 255 255"
 finishColor = "50 0 255 0"
-startRadius =  .3   //0.2
+startRadius =  0.3   //0.2
 finishRadius = 4.0  //2.0
 animateTime = 0.6   //0.5
+bottomInteractsWithTerrain = false
 
 [Flame]
 simulateBase = "sim_smoke"

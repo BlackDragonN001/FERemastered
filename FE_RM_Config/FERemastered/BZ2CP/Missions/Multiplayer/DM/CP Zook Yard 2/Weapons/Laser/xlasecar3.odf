@@ -15,6 +15,7 @@ damageValue(D) = 0
 damageValue(A) = 0
 
 particleTypes = 3
+
 particleClass1 = "xlasecar3.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
@@ -29,7 +30,7 @@ particleVeloc3 = "0.0 0.0 0.0"
 
 [Core]
 simulateBase = "sim_null"
-lifeTime = .9  // .3
+lifeTime = 0.9  // .3
 renderBase = "draw_twirl"
 textureName = "blast.tga"
 textureBlend = "one one modulate"
@@ -37,8 +38,8 @@ startColor = "255 40 0 255"
 finishColor = "255 20 0 0"
 startRadius = 0.4  // .2
 finishRadius = 2.5 //1.5
-animateTime = .9  // .3
-
+animateTime = 0.9  // .3
+bottomInteractsWithTerrain = false
 
 [Puff]
 simulateBase = "sim_smoke"
@@ -51,7 +52,7 @@ finishColor = "60 10 0 0"
 startRadius = 0.5
 finishRadius = 3.5
 animateTime = 2.0
-rotaionRate = 10
+rotaionRate = 10.0
 
 [Splat]
 simulateBase = "sim_null"

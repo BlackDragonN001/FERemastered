@@ -1,6 +1,7 @@
 [OrdnanceClass]
 classLabel = "bullet"
 shotGeometry = NULL
+
 xplGround = NULL
 xplVehicle = "xplblack"
 xplBuilding = NULL
@@ -10,7 +11,7 @@ shotSound = "gmdmg00.wav"
 
 renderName = "blackness.render"
 
-ammoCost = .1
+ammoCost = 0.1
 lifeSpan = 11
 shotSpeed = 20
 

@@ -6,6 +6,7 @@
 classLabel = "explosion"
 
 particleTypes = 1
+
 particleClass1 = "xshock_car.shock"
 particleCount1 = 5
 particleVeloc1 = "20.0 20.0 5.0"
@@ -35,7 +36,7 @@ textureName = "trail4.tga"
 textureBlend = "one one modulate"
 startColor = "255 100 40 255"
 finishColor = "255 50 20 0"
-startRadius = .3 //0.03
+startRadius = 0.3 //0.03
 finishRadius = 0.005
 segmentLength = 0.3 
 segmentVariance = "0.5 0.5 0.5"

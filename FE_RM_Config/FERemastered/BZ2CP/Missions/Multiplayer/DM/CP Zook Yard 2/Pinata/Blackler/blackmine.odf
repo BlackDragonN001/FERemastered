@@ -1,6 +1,6 @@
 [GameObjectClass]
 geometryName = "igflar00.fbx"
-//geometryScale = .5
+//geometryScale = 0.5
 classLabel = "flare"
 scrapCost = 0
 scrapValue = 0
@@ -8,7 +8,7 @@ maxHealth = 250
 maxAmmo = 200
 unitName = "Blackler"
 addAmmo = 1
-addHealth = .5
+addHealth = 0.5
 
 fireSound = "gmasg00.wav"
 
@@ -21,7 +21,7 @@ canCollide = 1
 armorClass = L 
 
 [MineClass]
-lifeSpan = 30
+lifeSpan = 30.0
 
 [FlareMineClass]
 payloadName = "blackness"
