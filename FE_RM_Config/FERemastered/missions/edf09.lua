@@ -12,6 +12,14 @@ local Position3 = SetVector(-80,30,700);	--cerb attacker spawn
 local Position4 = SetVector(315,-15,-525);	--debris spawn
 local Position7 = SetVector(-183,-12,55);	--mlight move target
 
+-- EarthQuake Damage Value Ratios. (Ratio of MaxHealth to damage, min and max randomized)
+local damageValues = {
+	{"0.05", "0.1"}, -- First stage min/max.
+	{"0.1", "0.2"}, -- Second stage min/max.
+	{"0.2", "0.3"}, -- Third stage min/max.
+	{"0.3", "0.4"} -- Critical stage min/max.
+};
+
 local M = {
 -- Bools
 	EarthquakeStarted = false,
@@ -311,13 +319,6 @@ function Routine3()
 		M.EarthquakeStage = 1; 
 	end;
 
-	local damageValues = {
-		{"400", "550"}, -- First stage min/max.
-		{"600", "1000"}, -- Second stage min/max.
-		{"1200", "2500"}, -- Third stage min/max.
-		{"3000", "5000"} -- Critical stage min/max.
-	};
-
 	if (M.EarthquakeCooldown < GetTime()) then
 		-- Start the EQ.
 		if (not M.EarthquakeStarted) then
@@ -333,15 +334,19 @@ function Routine3()
 
 		-- Logic for damaging all buildings on the map per EQ stage.
 		for i, handle in pairs(M.BuildingsToDamage) do
-			-- minMaxValues[1] is the minimum value of the chosen range in minMaxValues.
-			-- minMaxValues[2] is the maximum value of the chosen range in minMaxValues.
-			local damageToApply = GetRandomFloat(minMaxValues[1], minMaxValues[2]);
+			-- Check if building is still alive....
+			if(IsAround(handle)) then
 
-			-- Take the random damage number and round it down.
-			local flooredDamage = math.floor(damageToApply);
+				-- minMaxValues[1] is the minimum value of the chosen range in minMaxValues.
+				-- minMaxValues[2] is the maximum value of the chosen range in minMaxValues.
+				local damageToApply = GetRandomFloat(minMaxValues[1], minMaxValues[2]);
 
-			-- Apply the damage value to the handle.
-			Damage(handle, flooredDamage);
+				-- Take the random damage number and round it down.
+				local flooredDamage = math.floor(GetMaxHealth(handle) * damageToApply);
+
+				-- Apply the damage value to the handle.
+				Damage(handle, flooredDamage);
+			end
 		end
 
 		-- Specific logic per EQ stage.
@@ -385,7 +390,7 @@ function Routine3()
 		end
 
 		-- When done, set the cooldown.
-		M.EarthquakeCooldown = GetTime() + 35;
+		M.EarthquakeCooldown = GetTime() + GetRandomFloat(30.0, 40.0);
 	end
 end
 
