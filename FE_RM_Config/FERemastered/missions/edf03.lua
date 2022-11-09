@@ -474,15 +474,15 @@ function HandleDinos(R, STATE)
 		Patrol(BuildObjectAndLabel("raptor01", 9, "dino1", "Raptor 2"), "dino1", 1);
 		--changed Cerb units from team 2 to team 3, since they
 		--were driving across the map and attacking player's base!
-		Patrol(BuildObjectAndLabel("cvhtank", 3, "cerberi1", "Cerberi 1"), "cerberi1", 1);
-		Patrol(BuildObjectAndLabel("cvhtank", 3, "cerberi1", "Cerberi 2"), "cerberi1", 1);
-		Patrol(BuildObjectAndLabel("cvhscout", 3, "cerberi1", "Cerberi 3"), "cerberi1", 1);
+		Patrol(BuildObjectAndLabel("cvhtank", 3, "cerberi1", "Cerberi 1"), "cerberi1", 0);
+		Patrol(BuildObjectAndLabel("cvhtank", 3, "cerberi1", "Cerberi 2"), "cerberi1", 0);
+		Patrol(BuildObjectAndLabel("cvhscout", 3, "cerberi1", "Cerberi 3"), "cerberi1", 0);
 		Advance(R, 2.0);
 	elseif STATE == 4 then
-		Patrol(BuildObjectAndLabel("cvhscout", 3, "cerberi1", "Cerberi 4"), "cerberi1", 1);
+		Patrol(BuildObjectAndLabel("cvhscout", 3, "cerberi1", "Cerberi 4"), "cerberi1", 0);
 		Advance(R, 2.0);
 	elseif STATE == 5 then
-		Patrol(BuildObjectAndLabel("cvhscout", 3, "cerberi1", "Cerberi 5"), "cerberi1", 1);
+		Patrol(BuildObjectAndLabel("cvhscout", 3, "cerberi1", "Cerberi 5"), "cerberi1", 0);
 		Advance(R);
 	elseif STATE == 6 then
 		if GetCurrentCommand(M.Recycler) == 0 then
