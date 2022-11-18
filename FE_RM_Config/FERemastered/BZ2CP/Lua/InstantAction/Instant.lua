@@ -23,6 +23,9 @@ local endDelta = 10.0;
 -- Game TPS.
 local m_GameTPS = 20;
 
+-- Debug.
+local debug = true;
+
 -- IA Starting Vehicle handles.
 local StartingVehicleTable = 
 {
@@ -319,6 +322,12 @@ function SetupPlayer()
 
 	-- Give some scrap.
 	SetScrap(Mission.m_HumanTeamNum, 40);
+
+	-- DEBUG
+	if (debug) then
+		BuildObject("ibpgen", Mission.m_HumanTeamNum, "debug_p");
+		BuildObject("ibcbun", Mission.m_HumanTeamNum, "debug_b");
+	end
 
 	return PlayerH;
 end

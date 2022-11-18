@@ -60,11 +60,11 @@ planPriority = 980
 buildType1 = "ivcmdr_c"
 buildCount1 = 1
 
-[Plan4] // Always have 2 active Scavengers for picking up loose scrap.
+[Plan4] // Always have 3 active Scavengers for picking up loose scrap.
 planType = "BuildMinimums"
 planPriority = 970
 buildType1 = "ivscav_c"
-buildCount1 = 2
+buildCount1 = 3
 planCondition = "Lua"
 LuaFunction = "ScavengerBuildLoopCondition"
 
@@ -96,19 +96,17 @@ buildCount1 = 4
 planCondition = "Lua"
 LuaFunction = "TurretBuildLoopCondition"
 
-[Plan9] // Send out a Scout to attack Player Scavengers/Extractors during early stage.
+[Plan9] // Send out a Scout to attack Player Scavengers/Extractors.
 planType = "Attacker"
 planPriority = 920
 targetType1 = "VIRTUAL_CLASS_SCAVENGER"
 targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
-targetType3 = "VIRTUAL_CLASS_RECYCLER"
 attackType1 = "ivscout"
 attackType2 = "ivscout"
-MaxAttacks = 5
 AttackAnything = true
 buildIfNoIdle = true
 planCondition = "Lua"
-LuaFunction = "SendEarlyScoutHarassment"
+LuaFunction = "SendExtractorAttacks"
 
 [Plan10] // Get our Constructors in the mix.
 planType = "BuildMinimums"
