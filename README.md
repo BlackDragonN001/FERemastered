@@ -9,7 +9,7 @@
 1. Following the setup instructions for BZRMM - open `BZRModManager.exe` and select the `Settings` tab. Make sure to set the install location for your version of BZCC (either GOG or Steam) and set the `My Docs/My Games` folder location<br/>
 ![](docs/BZRMM_Settings.PNG)
 
-1. On the BZCC tab, paste the github url for FER (https://github.com/BlackDragonN001/FERemastered) into the `Mod URL` field and click download. When the `Branch Select` window pops up make sure `master` is selected and click `Select`<br/>
+1. On the BZCC tab, paste the github url for FER (https://github.com/BlackDragonN001/FERemastered.git) into the `Mod URL` field and click download. When the `Branch Select` window pops up make sure `master` is selected and click `Select`<br/>
 (The FE:R suite is large and this can take a long time to download. See the `Tasks` tab to watch the current progress)<br/>
 ![](docs/BZRMM_branch.png)
 
