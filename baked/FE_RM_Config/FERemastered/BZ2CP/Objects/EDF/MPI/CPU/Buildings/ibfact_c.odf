@@ -1,0 +1,25 @@
+[GameObjectClass]
+classLabel = "ibfact"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 3
+provideName3 = "ibfact_c"
+
+////////////////////////////////////
+
+[PoweredBuildingClass]
+
+[BuildingClass]
+
+[FactoryClass]
+buildItem1 = "ivmbike"
+buildItem2 = "ivmisl"
+buildItem3 = "ivtank_c"
+buildItem4 = "ivrckt_c"
+buildItem5 = "ivatank"
+buildItem6 = "ivwalk"
+buildItem7 = "ivapc"
+buildItem8 = "ivbomb"
+
+[Lod1]

@@ -1,0 +1,21 @@
+[GameObjectClass]
+baseName = "issold"
+classLabel = "ispilo"
+
+scrapValue = 0
+maxHealth = 250
+maxAmmo = 100
+addAmmo = 10
+unitName = "Soldier"
+aiName = "SoldierProcess"
+
+weaponName1 = "igbzka_c"
+weaponName2 = "igbzka_a"
+
+MaxChromeDistance = 80
+
+[CraftClass]
+DoBlastUsesFields = false
+
+[PersonClass]
+SpawnInvincibleTime = 0.01f

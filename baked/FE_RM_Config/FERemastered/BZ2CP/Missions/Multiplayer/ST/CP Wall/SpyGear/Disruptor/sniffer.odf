@@ -1,0 +1,44 @@
+[OrdnanceClass]
+classLabel = "thermalmissile"
+
+shotGeometry = "sgstng00.xsi"
+shotSound = "ashield01.wav"
+
+renderName = "sniffer.render"
+
+xplGround = "xsniffer_gnd"
+xplVehicle = "xsniffer_car"
+xplBuilding = "xsniffer_gnd"
+
+ammoCost = 3
+lifeSpan = 4.5 
+shotSpeed = 50.0
+
+damageValue(N) = 2.0 // none
+damageValue(L) = 5 // light
+damageValue(H) = 1 // heavy
+
+damageValue(S) = 1 // standard
+damageValue(D) = 1 // deflection
+damageValue(A) = 1 // absorbtion
+
+
+[MissileClass]
+omegaTurn = 50 //45 // 30.0
+
+[ThermalMissileClass]
+coneAngle = 18 // 10
+
+[Render]
+renderBase = "draw_bolt"
+textureName = "plasma.tga" //"trail2.tga"
+textureBlend = "one one modulate"
+startColor = "230 100 0 140"  //100 alpha
+finishColor = "100 90 80 0"
+startRadius = 0.2    //0.3
+finishRadius = 0.03  //0.05
+segmentLength = 2.0  //3.0 
+segmentVariance = "0.2 0.2 0.2"
+animateTime = 2.5 //3
+textureRate = 0.01
+

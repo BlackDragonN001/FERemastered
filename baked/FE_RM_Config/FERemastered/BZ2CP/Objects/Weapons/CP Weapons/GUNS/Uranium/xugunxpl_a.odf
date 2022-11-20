@@ -1,0 +1,93 @@
+// =============
+// URANIUM EXPLOSION
+// =============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 6
+
+particleClass1 = "xugunxpl_a.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleInherit1 = "1.0 1.0 1.0"
+
+particleClass2 = "xugungnd_a.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xugungnd_a.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xugunxpl_a.sparktrails"
+particleCount4 = 1
+particleVeloc4 = "24.0 28.0 24.0"
+particleBias4 = "0.0 9.0 0.0"
+particleInherit4 = "1.0 1.0 1.0"
+
+particleClass5 = "xugunxpl_a.sparks"
+particleCount5 = 2
+particleVeloc5 = "25.0 25.0 25.0"
+particleBias5 = "0.0 10.0 0.0"
+particleInherit5 = "1.0 1.0 1.0"
+
+particleClass6 = "xugungnd_c.FlameHeat"
+particleCount6 = 2
+particleVeloc6 = "3.5 2.0 3.5"
+particleBias6 = "0.0 1.0 0.0"
+particleInherit6 = "1.0 1.0 1.0"
+
+explSound = "baz02.wav"
+
+damageRadius = 20.0
+
+damageValue(N) = 100 // none
+damageValue(L) = 50 // light
+damageValue(H) = 5 // heavy
+
+damageValue(S) = 50 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 5 // absorbtion
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "63 127 255 255"
+finishColor = "255 127 63 0"
+startRadius = 1.0
+finishRadius = 5.0
+animateTime = 0.5
+rotationRate = 2.0
+bottomInteractsWithTerrain = false
+
+[Sparks]
+simulateBase = "sim_ember"
+lifeTime = 0.8
+renderBase = "draw_twirl"
+textureName = "spark.tga"
+textureBlend = "one one modulate"
+startColor = "90 123 215 255"
+finishColor = "0 167 253 0"
+startRadius = 0.1
+finishRadius = 0.05
+animateTime = 0.8
+rotationRate = 20.0
+BottomInteractsWithTerrain = false
+
+[SparkTrails]
+simulateBase = "sim_ember"
+lifeTime = 0.8
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "55 127 255 255"
+finishColor = "40 130 240 0"
+startRadius = 0.04
+finishRadius = 0.0
+segmentTime = 0.1
+textureRate = 2.5
+textureSpeed = 0.0

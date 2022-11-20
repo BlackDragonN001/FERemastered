@@ -1,0 +1,30 @@
+[WeaponClass]
+classLabel = "cannon" //"multilauncher"
+altName = "gfrbomb_a"
+ordName = "frbomb_c"
+wpnName = "Scion Rocket"
+fireSound = "gpopp00.wav"
+wpnReticle = "grktbomb"
+wpnCategory = "ROCK"
+isAssault = 0
+aiRange = 150
+
+[CannonClass]
+shotDelay = 1.5
+shotAlternate = 1
+
+[LauncherClass]
+lockRange = 150.0
+shotDelay = 1.3
+lockDelay = 2.0
+coneAngle = 0.05
+lockingReticle = "gshadow.A"
+lockingSound = "lock01.wav"
+lockedReticle = "gshadow.B"
+lockedSound = "lock02.wav"
+targetCount = 3
+targetReticle = "gmlock_c.1"
+
+[MultiLauncherClass]
+targetCount = 2
+loseAngle = 0.2

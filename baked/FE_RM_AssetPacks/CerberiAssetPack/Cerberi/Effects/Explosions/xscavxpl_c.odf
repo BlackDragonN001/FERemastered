@@ -1,0 +1,404 @@
+// =================
+// CERBERI EXTRACTOR EXPLOSION
+// =================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 16
+
+particleClass1 = "xscavxpl_c.light"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xscavxpl_c.core"
+particleCount2 = 2
+particleVeloc2 = "3.0 3.0 3.0"
+particleBias2 = "0.0 3.0 0.0"
+
+particleClass3 = "xbldxpl_c.bolt"
+particleCount3 = 10
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xscavxpl_c.sparks"
+particleCount4 = 20
+particleVeloc4 = "150.0 150.0 150.0"
+particleBias4 = "0.0 20.0 0.0"
+
+particleClass5 = "xscavxpl_c.flame"
+particleCount5 = 3
+particleVeloc5 = "7.0 5.0 7.0"
+particleBias5 = "0.0 8.0 0.0"
+particlePosVar5 = "2.0 0.0 2.0"
+
+particleClass6 = "xscavxpl_c.smoke"
+particleCount6 = 3
+particleVeloc6 = "8.0 3.0 8.0"
+particleBias6 = "0.0 12.0 0.0"
+particlePosVar6 = "2.0 0.0 2.0"
+
+particleClass7 = "xscavxpl_c.trail"
+particleCount7 = 10
+particleVeloc7 = "50.0 50.0 50.0"
+particleBias7 = "0.0 20.0 0.0"
+
+particleClass8 = "xscavxpl_c.shock"
+particleCount8 = 1
+particleVeloc8 = "0.0 0.0 0.0"
+
+particleClass9 = "xscavxpl_c.puff"
+particleCount9 = 20
+particleVeloc9 = "80.0 80.0 80.0"
+particleBias9 = "0.0 20.0 0.0"
+
+particleClass10 = "xscavxpl_c.cloud"
+particleCount10 = 1
+particleVeloc10 = "0.0 5.0 0.0"
+
+particleClass11 = "FEDustRingLarge"
+particleCount11 = 1
+particleVeloc11 = "0.0 0.1 0.0"
+
+particleClass12 = "xscavxpl_c.flashwave"
+particleCount12 = 1
+particleVeloc12 = "0.0 0.0 0.0"
+particlePosBias12 = "0.0 5.0 0.0"
+particlePosVar12 = "0.0 15.0 0.0"
+
+// Scavenger Pool Fx.
+particleClass13 = "xscavxpl_c.flame2"
+particleCount13 = 1
+particleVeloc13 = "0.0 5.0 0.0"
+
+particleClass14 = "xscavxpl_c.steampuff"
+particleCount14 = 20
+particleVeloc14 = "80.0 80.0 80.0"
+
+particleClass15 = "xscavxpl_c.steam"
+particleCount15 = 5
+particleVeloc15 = "0.0 0.0 0.0"
+//particlePosVar15 = "3.0 0.0 3.0"
+
+particleClass16 = "xcarxpl_c.heat"
+particleCount16 = 1
+particleVeloc16 = "0.0 0.0 0.0"
+particleBias16 = "0.0 1.0 0.0"
+
+explSound = "scavxpl.wav"
+damageRadius = 30.0
+damageValue(N) = 100
+damageValue(L) = 70
+damageValue(H) = 40
+damageValue(S) = 70
+damageValue(D) = 100
+damageValue(A) = 25
+kickRadius = 60.0
+kickOmega = 3.0
+kickVeloc = 5.0
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 2.0
+renderBase = "draw_light"
+startColor = "127 63 255 7055"
+finishColor = "0 127 255 0"
+startRadius = 120.0
+finishRadius = 0.0
+animateTime = 2.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Core]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xscavxpl_c.core1"
+renderName2 = "xscavxpl_c.core2"
+
+[Core1]
+renderBase = "draw_twirl"
+textureName = "plascore2.tga"
+textureBlend = "one one modulate"
+startColor = "63 31 255 255"
+finishColor = "255 127 0 0"
+startRadius = 5.0
+finishRadius = 10.0
+animateTime = 1.0
+rotationRate = 3.0
+BottomInteractsWithTerrain = false
+
+[Core2]
+renderBase = "draw_twirl"
+textureName = "xplcore2.tga"
+textureBlend = "one one modulate"
+startColor = "63 127 255 255"
+finishColor = "255 127 0 0"
+startRadius = 8.0
+finishRadius = 15.0
+animateTime = 1.0
+rotationRate = 2.0
+BottomInteractsWithTerrain = false
+
+[Bolt]
+simulateBase = "sim_smoke"
+lifeTime = 0.3
+renderBase = "draw_emit"
+emitName = "xscavxpl_c.boltemit"
+emitDelay = 0.025
+emitDelayVar = 0.02
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "300.0 300.0 300.0"
+
+[BoltEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_bolt"
+textureName = "bolt4.tga"
+textureBlend = "one one modulate"
+startColor = "63 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.1
+finishRadius = 0.25
+segmentLength = 0.5
+segmentVariance = "1.0 1.0 0.0"
+animateTime = 0.1
+textureRate = 0.01
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "xscavxpl_c.shockemit"
+renderName2 = "xscavxpl_c.ring"
+renderName3 = "xscavxpl_c.ring2"
+//renderName4 = "xscavxpl_c.flashwave"
+
+[ShockEmit]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "127 63 255 63"
+finishColor = "0 63 255 0"
+startRadius = 5.0
+finishRadius = 60.0
+animateTime = 0.2
+latitudeBands = 16
+longitudeSegments = 32
+
+[Ring]
+simulateBase = "sim_null"
+lifeTime = 0.7 //2.0
+renderBase = "draw_planar"
+textureName = "cringa3.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 160"
+finishColor = "250 250 250 0"
+startRadius = 5.0 //15.0
+finishRadius = 40.0 //70.0
+animateTime = 0.7 //2.0
+
+[Ring2]
+simulateBase = "sim_null"
+lifeTime = 0.7
+renderBase = "draw_sphere"
+textureName = "cring2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 160"
+finishColor = "255 255 255 0"
+startRadius = 3.0
+finishRadius = 30.0
+animateTime = 0.7
+latitudeBands = 8
+longitudeSegments = 16
+
+[FlashWave]
+simulateBase = "sim_null"
+lifeTime = 0.75
+renderBase = "draw_wave"
+textureName = "cwave.tga"
+textureBlend = "one one modulate"
+startColor = "255 225 255 255"
+finishColor = "0 127 255 0"
+startRadius = 5.0
+finishRadius = 60.0
+animateTime = 0.75
+waveAngle = 3.14159265359
+waveDepth = 1.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 64
+
+[Sparks]
+simulateBase = "sim_ember"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "spark.tga"
+textureBlend = "one one modulate"
+startColor = "127 63 255 255"
+finishColor = "0 127 255 0"
+startRadius = 0.25
+finishRadius = 0.25
+animateTime = 3.0
+rotationRate = 40.0
+
+[Flame]
+simulateBase = "sim_smoke"
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = " 63 31 255 255"
+finishColor = "255 127 0 0"
+startRadius = 7.0
+finishRadius = 11.0
+animateTime = 1.5
+rotationRate = 2.0
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 2.5
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "63 63 63 255"
+finishColor = "127 127 127 0"
+startRadius = 10.0
+finishRadius = 15.0
+animateTime = 2.5
+
+[Trail]
+simulateBase = "sim_ember"
+lifeTime = 4.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xscavxpl_c.trailflare"
+renderName2 = "xscavxpl_c.trailemit"
+
+[TrailFlare]
+simulateBase = "sim_smoke"
+lifeTime = 4.0
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "63 200 255 255"
+finishColor = "0 127 255 0"
+startRadius = 2.0
+finishRadius = 2.0
+animateTime = 4.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[TrailEmit]
+simulateBase = "sim_ember"
+lifeTime = 4.0
+renderBase = "draw_trail"
+textureName = "arctrail.tga"
+textureBlend = "one one modulate"
+startColor = "0 127 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.3
+finishRadius = 0.3
+textureRate = 1.0
+textureSpeed = -2.0
+segmentTime = 1.5
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "0 127 255 255"
+finishColor = "0 0 255 0"
+startRadius = 1.0
+finishRadius = 0.5
+animateTime = 3.0
+bottomInteractsWithTerrain = false
+
+[Cloud]
+simulateBase = "sim_dust"
+lifeTime = 2.0
+renderBase = "draw_emit"
+emitName = "xscavxpl_c.cloudemit"
+emitDelay = 0.5
+emitVelocity = "0.0 5.0 0.0"
+emitVariance = "5.0 2.0 5.0"
+emitPosVariance = "5.0 0.0 5.0"
+
+[CloudEmit]
+simulateBase = "sim_smoke"
+lifeTime = 2.5
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "63 50 100 255"
+finishColor = "50 50 50 0"
+startRadius = 6.0
+finishRadius = 12.0
+animateTime = 2.5
+
+[Flame2]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "xscavxpl_c.flame2emit"
+emitDelay = 0.03
+emitVelocity = "0.0 2.0 0.0"
+emitVariance = "3.0 1.0 3.0"
+emitPosVariance = "3.0 0.0 3.0"
+
+[Flame2Emit]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "127 63 255 220"
+finishColor = "127 127 200 0"
+startRadius = 6.0
+finishRadius = 15.0
+animateTime = 2.0
+rotationRate = 3.0
+
+[SteamPuff]
+simulateBase = "sim_smoke"
+lifeTime = 4.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "200 200 200 0"
+startRadius = 0.3
+finishRadius = 0.1
+animateTime = 4.0
+
+[Steam]
+startDelay = 0.5
+simulateBase = "sim_dust"
+lifeTime = 2.5
+renderBase = "draw_emit"
+emitName = "xscavxpl_c.steamemit"
+emitDelay = 0.25
+emitVelocity = "0.0 12.0 0.0"
+emitVariance = "12.0 5.0 12.0"
+emitPosVariance = "5.0 0.0 5.0"
+
+[SteamEmit]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "flame.tga" //"smoke3.tga"
+textureBlend = "one one modulate" //"srcalpha invsrcalpha modulatealpha"
+startColor = "153 153 153 150" //"250 250 250 255"
+finishColor = "76 76 76 0" //"200 200 200 0"
+startRadius = 5.0
+finishRadius = 12.0
+animateTime = 3.0
+rotationRate = 2.0
+bottomInteractsWithTerrain = false

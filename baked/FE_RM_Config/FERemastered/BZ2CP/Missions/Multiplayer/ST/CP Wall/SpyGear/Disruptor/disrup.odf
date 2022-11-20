@@ -1,0 +1,80 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotSound = "flash01.wav"
+
+renderName = "disrup.render"
+
+xplGround = "xdisrupgnd"
+xplVehicle = "xdisrupcar"
+xplBuilding = "xdisrupcar"
+xplExpire = "xdisrupxpr"
+
+ammoCost = 0.55 //
+lifeSpan = 1.3 // 130m
+shotSpeed = 100 //
+
+// These don't work in bullets... -GBD
+//damageRadius = 1.0
+//kickRadius = 1.0
+//kickOmega = 1.5 
+//kickVeloc = -1.8
+
+damageValue(N) = 2.0 // 1.5
+damageValue(L) = 5.5 //
+damageValue(H) = 0.5 //
+
+damageValue(S) = 1 //
+damageValue(D) = 2 // 
+damageValue(A) = 1 //
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "disrup.flare"
+renderName2 = "disrup.halo"
+renderName3 = "disrup.trail"
+renderName4 = "disrup.light"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 60 0 120"
+finishColor = "255 30 0 120"
+startRadius = 1.4
+finishRadius = 1.4
+
+[Halo]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "200 80 0 127"
+finishColor = "255 30 0 127"
+startRadius = 0.2
+finishRadius = 0.2
+
+[Trail]
+renderBase = "draw_bolt"
+textureName = "plasma.tga" 
+textureBlend = "one one modulate"
+startColor = "150 30 0 100"  //100 alpha
+finishColor = "100 30 30 0"
+startRadius = 0.1    //0.3
+finishRadius = 0.01  //0.05
+segmentLength = 2.0  //3.0 
+segmentVariance = "0.2 0.2 0.2"
+animateTime = 1.2
+textureRate = 0.01
+
+[Light]
+renderBase = "draw_light"
+startColor = "200 150 0 155"
+finishColor = "200 150 0 155"
+startRadius = 10.0
+finishRadius = 10.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1

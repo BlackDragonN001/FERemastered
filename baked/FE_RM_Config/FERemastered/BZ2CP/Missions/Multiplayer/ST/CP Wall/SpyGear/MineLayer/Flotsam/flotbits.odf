@@ -1,0 +1,78 @@
+[GameObjectClass]
+geometryName = "goober.xsi"
+classLabel = "seeker" 
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 1
+unitName = "flotsam"
+heatSignature = 0.01
+imageSignature = 0.01
+radarSignature = 2.0
+isAssault = 1
+armorClass = N
+canCollide = 1
+canDetect = 1 
+canInteract = 1 
+ownsTerrain = 0
+powercost = 0
+collisionRadius = 3.0
+explosionName = "xplflot"
+
+lightHard1 = "hp_light_1"
+lightName1 = "omnired"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "flotbits.render"
+
+[MineClass]
+lifeSpan = 30.0 
+xplBlast = "xplflot"
+detonateExpire = true
+
+[SeekerClass]
+searchRange = 100.0
+floatVeloc = 65.0
+setAltitude = 75.0
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "flotbits.tail"
+renderName2 = "flotbits.poof"
+renderName3 = "flotbits.light"
+
+[Tail]
+renderBase = "draw_trail"
+textureName = "trail4.tga"
+textureBlend = "one one modulate"
+startColor = "100 140 0 90"
+finishColor = "255 0 0 0"
+startRadius = 0.5
+finishRadius = 1.0 
+segmentTime = 0.8 // 2.5  // time each segment animates
+segmentVariance = "0.1 0.1 0.1"
+animateTime = 0.3
+textureRate = 0.05
+
+[Poof]
+renderBase = "draw_sphere"
+lifeTime = 40.0
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "40 0 0 40000"
+finishColor = "120 0 0 255"
+startRadius = 0.7 
+finishRadius = 0.7 
+animateTime = 28.0 
+rotationRate = 5.0 // 1.0
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 150 63 2550"
+finishColor = "255 150 63 0"
+startRadius = 50.0
+finishRadius = 50.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0

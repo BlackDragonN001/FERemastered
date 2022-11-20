@@ -1,0 +1,180 @@
+// =================
+// ZOMBIE EXPLOSION
+// =================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 5
+
+particleClass1 = "xcpcruxpl_c.core"
+particleCount1 = 2
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xcpcruxpl_c.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xcpcruxpl_c.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xcpcruxpl_c.trail"
+particleCount4 = 10
+particleVeloc4 = "30.0 40.0 30.0"
+particleBias4 = "0.0 0.0 0.0"
+
+particleClass5 = "xcpcruxpl_c.trail2"
+particleCount5 = 10
+particleVeloc5 = "30.0 40.0 30.0"
+
+explSound = "xmv1.wav"
+damageRadius = 15.0
+kickRadius = 5.0
+kickOmega = 2.0
+kickVeloc = 1.5
+
+damageValue(N) = 70 // none
+damageValue(L) = 50 // light
+damageValue(H) = 20 // heavy
+
+damageValue(S) = 50 // standard
+damageValue(D) = 20 // deflection
+damageValue(A) = 80 // absorbion
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "plascore2.tga"
+textureBlend = "one one modulate"
+startColor = "130 190 42 255"
+finishColor = "45 60 25 0"
+startRadius = 4.0
+finishRadius = 10.0
+animateTime = 1.0
+BottomInteractsWithTerrain = false
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xcpcruxpl_c.shockA"
+renderName2 = "xcpcruxpl_c.shockB"
+
+[ShockA]
+renderBase = "draw_sphere"
+textureName = "shell1.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 200"
+finishColor = "100 100 100 0"
+startRadius = 2.0
+finishRadius = 6.0
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16
+AddPitch = 50
+AddYaw = 50
+AddRoll = 50
+
+[ShockB]
+renderBase = "draw_sphere"
+textureName = "shell1.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 200"
+finishColor = "100 100 100 0"
+startRadius = 2.0
+finishRadius = 6.0
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16
+AddPitch = -50
+AddYaw = -50
+AddRoll = -50
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_light"
+startColor = "218 255 123 900"
+finishColor = "100 200 60 0"
+startRadius = 50.0
+finishRadius = 0.0
+animateTime = 1.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Trail]
+simulateBase = "sim_ember"
+lifeTime = 1.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xcpcruxpl_c.trailflare"
+renderName2 = "xcpcruxpl_c.trailemit"
+
+[TrailFlare]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "127 255 127 255"
+finishColor = "63 255 63 0"
+startRadius = 0.5
+finishRadius = 0.5
+animateTime = 1.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[TrailEmit]
+simulateBase = "sim_ember"
+lifeTime = 1.0
+renderBase = "draw_trail"
+textureName = "blastenergy.tga"
+textureBlend = "one one modulate"
+startColor = "213 255 63 200"
+finishColor = "0 100 0 0"
+startRadius = 0.05
+finishRadius = 0.0
+//trailTime = 1.0
+segmentTime = 0.5
+textureRate = 0.5
+
+[Trail2]
+simulateBase = "sim_ember"
+lifeTime = 1.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xcpcruxpl_c.trail2flare"
+renderName2 = "xcpcruxpl_c.trail2emit"
+
+[Trail2Flare]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "127 255 127 255"
+finishColor = "63 255 63 0"
+startRadius = 0.5
+finishRadius = 0.5
+animateTime = 1.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[Trail2Emit]
+simulateBase = "sim_smoke" //ember"
+lifeTime = 1.0
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "120 170 43 100"
+finishColor = "0 50 0 0"
+startRadius = 0.05 /0.3
+finishRadius = 0.1 //1.0
+segmentTime = 0.8 // 1.0 //animateTime = 1.0
+//trailTime = 0.8
+textureRate = 0.2

@@ -1,0 +1,37 @@
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 1
+
+particleClass1 = "xpldark.dark"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+explSound = NULL // "gmagg05.wav"
+
+damageRadius = 150.0
+damageValue(N) = 1
+damageValue(L) = 1
+damageValue(H) = 1
+
+damageValue(S) = 1
+damageValue(D) = 1
+damageValue(A) = 1
+
+kickRadius = 150.0
+kickOmega = 0.3 
+kickVeloc = 0.0
+
+[Dark]
+simulateBase = "sim_null"
+lifeTime = 10.0
+renderBase = "draw_sphere"
+textureName = NULL //"vsmoke.tga"
+textureBlend = "invsrc invsrc modulate"//"one one modulate"
+startColor = "0 0 0 255"
+finishColor = "0 0 0 0" 
+startRadius = 10.0
+finishRadius = 250.0 //20
+animateTime = 10.0
+latitudeBands = 12
+longitudeSegments = 18

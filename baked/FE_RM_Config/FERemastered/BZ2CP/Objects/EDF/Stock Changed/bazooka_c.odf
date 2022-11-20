@@ -1,0 +1,114 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = "iomslv00.fbx" //"iorckt00.xsi"
+shotScale = 0.25
+shotSound = "fmiss02.wav"
+
+renderName = "bazooka_c.render"
+
+xplGround = "xbazgnd_c"
+xplVehicle = "xbazxpl_c"
+xplBuilding = "xbazxpl_c"
+
+ammoCost = 20
+
+lifeSpan = 2.5 // 150m
+shotSpeed = 60.0
+
+damageValue(N) = 130 //100
+damageValue(L) = 100 //75
+damageValue(H) = 66 //50
+
+damageValue(S) = 100 //75
+damageValue(D) = 66 //50
+damageValue(A) = 130 //100
+
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 6
+renderName1 = "bazooka_c.light"
+renderName2 = "bazooka_c.flare"
+renderName3 = "bazooka_c.smoke"
+renderName4 = "bazooka_c.flame"
+renderName5 = "bazooka_c.sparks"
+renderName6 = "bazooka_c.flametrail"
+
+[Light]
+renderBase = "draw_light"
+startColor = "167 64 0 380"
+finishColor = "167 64 0 380"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "particle.tga" //"lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "240 184 79 127"
+finishColor = "240 184 79 127"
+startRadius = 2.0 //1.0
+finishRadius = 2.0 //1.0
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "70 70 70 31"
+finishColor = "70 70 70 0"
+startRadius = 0.2
+finishRadius = 0.5
+animateTime = 1.0
+emitDelay = 0.004
+emitVelocity = "0.0 0.1 -5.0"
+emitVariance = "1.0 1.0 0.5"
+emitLife = 1.0
+BottomInteractsWithTerrain = false
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 0.2
+finishRadius = 0.02
+animateTime = 0.1
+rotationRate = 2.0
+emitDelay = 0.002
+emitVelocity = "0.0 0.0 -5.0"
+emitVariance = "1.0 1.0 0.5"
+emitInherit = "1.0 1.0 1.0"
+emitLife = 0.1
+
+[Sparks]
+renderBase = "draw_twirl_trail"
+textureName = "spark2.tga"
+textureBlend = "one one modulate"
+startColor = "242 147 77 255"
+finishColor = "237 233 82 0"
+startRadius = 0.1
+finishRadius = 0.05
+animateTime = 0.1
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 -2.5"
+emitVariance = "10.9 10.9 10.9"
+emitLife = 0.1
+BottomInteractsWithTerrain = false
+a
+[FlameTrail]
+renderBase = "draw_trail"
+textureName = "firetrail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "216 180 103 0"
+startRadius = 0.2
+finishRadius = 0.02
+segmentTime = 0.1
+segmentLength = 0.35
+TextureSpeed = 8.0
+textureRate = 0.1

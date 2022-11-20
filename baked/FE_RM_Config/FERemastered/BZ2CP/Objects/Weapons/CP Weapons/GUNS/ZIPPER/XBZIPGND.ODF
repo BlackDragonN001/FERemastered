@@ -1,0 +1,150 @@
+// =================
+// BULLET GROUND HIT
+// =================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 7
+
+particleClass1 = "xbzipgnd.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xbzipgnd.char"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xbzipgnd.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+particleBias3 = "0.0 0.1 0.0"
+
+particleClass4 = "xbzipgnd.chunks"
+particleCount4 = 1
+particleVeloc4 = "12.5 16.5 12.5"
+particleBias4 = "0.0 8.0 0.0"
+
+particleClass5 = "xbzipgnd.smoke"
+particleCount5 = 1
+particleVeloc5 = "5.0 5.0 5.0"
+particleBias5 = "0.0 6.0 0.0"
+
+particleClass6 = "xbzipgnd.DirtKickup"
+particleCount6 = 1
+particleVeloc6 = "3.0 3.0 3.0"
+particleBias6 = "0.0 4.0 0.0"
+particlePosVar6 = "2.5 0.0 2.5"
+
+particleClass7 = "xbzipgnd.SparkSprite"
+particleCount7 = 1
+particleVeloc7 = "0.3 0.3 0.3"
+
+explSound = "cbullhitgnd.wav"
+damageRadius = 0.0
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_sprite"
+spriteCenter.x = 0.0
+spriteCenter.y = 1.0
+textureName = "ground.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 200 63 255"
+finishColor = "255 153 153 0"
+startRadius = 0.0
+finishRadius = 1.5
+animateTime = 0.2
+useTerrainColor = 0.9
+
+[Char]
+simulateBase = "sim_null"
+lifeTime = 2.0
+renderBase = "draW_planar"
+textureName = "grndchar.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 255 255"
+finishColor = "170 170 170 0"
+startRadius = 0.25
+finishRadius = 0.25
+animateTime = 2.0
+useTerrainColor = 0.9
+
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_light"
+startColor = "255 200 127 350"
+finishColor = "255 127 0 0"
+startRadius = 10.0
+finishRadius = 0.0
+animateTime = 0.1
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Chunks]
+simulateBase = "sim_chunk"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "dirt.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 200 20 255"
+finishColor = "255 20 20 0"
+startRadius = 0.05
+finishRadius = 0.05
+animateTime = 3.0
+useTerrainColor = 0.9
+BottomInteractsWithTerrain = false
+
+[Smoke]
+simulateBase = "sim_ember"
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "63 31 15 63"
+finishColor = "28 28 28 0"
+startRadius = 1.0
+finishRadius = 2.5
+animateTime = 1.5
+rotationRate = 3.0
+useTerrainColor = 0.9
+BottomInteractsWithTerrain = false
+
+[DirtKickup]
+simulateBase = "sim_ember"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "dirtcloud.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "186 154 65 255"
+finishColor = "50 45 40 0"
+startRadius = 0.25
+finishRadius = 2.0
+animateTime = 1.0
+rotationRate = 1.7
+useTerrainColor = 0.9
+BottomInteractsWithTerrain = false
+
+[SparkSprite]
+simulateBase = "sim_smoke"
+lifeTime = 0.25
+renderBase = "draw_twirl"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 63 200"
+finishColor = "255 120 31 0"
+startRadius = 0.7
+finishRadius = 1.4
+animateTime = 0.25
+rotationRate = 12.0
+BottomInteractsWithTerrain = false

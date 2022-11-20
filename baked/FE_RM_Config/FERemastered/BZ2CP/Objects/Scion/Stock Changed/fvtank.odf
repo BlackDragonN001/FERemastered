@@ -1,0 +1,198 @@
+[GameObjectClass]
+baseName = "fvtank"
+geometryName = "fvtank_skel.fbx"
+cockpitName = "fvtank_cockpit.fbx"
+classLabel = "morphtank"
+animCount = 7
+animName1 = "forward"
+animFile1 = "fvtank_ASF.fbx"
+animName2 = "neutral"
+animFile2 = "fvtank_ASN.fbx"
+animName3 = "reverse"
+animFile3 = "fvtank_ASR.fbx"
+animName4 = "deploy"
+animFile4 = "fvtank_MORPH.fbx"
+animName5 = "forward2"
+animFile5 = "fvtank_MSF.fbx"
+animName6 = "neutral2"
+animFile6 = "fvtank_MSN.fbx"
+animName7 = "reverse2"
+animFile7 = "fvtank_MSR.fbx"
+scrapValue = 15
+scrapCost = 55
+customCost = 65 // 60FEB
+buildTime = 15.0
+customTime = 15.0
+maxHealth = 3500
+maxAmmo = 3200 //3000
+addAmmo = 5.0
+addhealth = 0.0
+
+unitName = "Warrior"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+
+heatSignature = 2.0
+imageSignature = 2.5
+radarSignature = 0.5
+
+isAssault = 0
+
+armorClass = N
+
+/////// REQUIREMENTS ///////////////
+
+requireCount = 1
+requireName1 = "fbforg"
+requireText1 = "Build Forge"
+
+////////////////////////////////////
+
+
+/////// PROVIDES ///////////////////
+
+provideCount = 4
+provideName1 = "fvtank"
+provideName2 = "VIRTUAL_CLASS_MORPHTANK
+provideName3 = "VIRTUAL_CLASS_TANK"
+provideName4 = "DefendUnit"
+
+////////////////////////////////////
+
+
+/////// weapons ////////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_CANNON_3"
+weaponName1 = "gsplasma_c"
+weaponAssault1 = 0
+
+weaponHard2 = "HP_GUN_1"
+weaponName2 = "giongn_c"
+RecoilName2 = "recoil_1"
+weaponAssault2 = 0
+
+weaponHard3 = "HP_GUN_2"
+weaponName3 = "giongn_c"
+RecoilName3 = "recoil_2"
+weaponAssault3 = 0
+
+weaponHard4 = "HP_SPECIAL_1"
+weaponName4 = "gproxmin"
+weaponAssault4 = 0
+
+weaponHard5 = "HP_SHIELD"
+weaponName5 = ""
+weaponAssault5 = 0
+
+////////////////////////////////////
+
+effectHard1 = "hp_com_1"
+effectName1 = "dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0  
+effectFlags1 = 2147483135
+
+// Engine flame glow.
+effectHard2 = "flame_1"
+effectName2 = "engglow_f.medium"
+effectFlags2 = 2147483135 // thrusting only.
+
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 5.0f
+velocJam = 5.0f
+engageRange = 120
+
+selectWaitMsg = "fvtank04.wav"
+selectAttackMsg = "fvtank01.wav"
+selectFollowMsg = "fvtank03.wav"
+selectGoMsg = "fvtank02.wav"
+selectOtherMsg = "fvtank04.wav"
+holdMsg = "fvtank12.wav"
+goMsg = "fvtank05.wav"
+attackMsg = "fvtank06.wav"
+followMeMsg = "fvtank08.wav"
+followMsg = "fvtank03.wav"
+repairMsg = "fvtank09.wav"
+reloadMsg = "fvtank09.wav"
+rescueMsg = "fvtank10.wav"
+recycleMsg = "fvtank11.wav"
+otherMsg = "fvtank05.wav" 
+
+user1Msg = ""  
+killedMsg = "fvtank07.wav"
+diedMsg = ""
+
+// COMBAT MODE /////////////////////
+
+[HoverCraftClass]
+velocForward = 32.0 //30.0
+velocReverse = 18.0 // 
+velocStrafe = 14.0 // 
+accelThrust = 24.0 //acceleration 
+accelBrake = 75.0 //braking 
+accelDragStop = 5.8 //how fast it stops once hands are off controls 
+accelJump = 15.0
+
+setAltitude = 1.0 // how high off the ground
+
+alphaTrack = 22.0 //springs speed it rights itself 
+alphaDamp = 8.0 //shocks 
+
+pitchPitch = 0.19 //nose up 
+pitchThrust = 0.09 //nose down 
+
+rollStrafe = 0.01 //rolls while strafing 
+omegaSpin = 6.0 //spinning in place speed 
+omegaTurn = 2.0 //turning while moving speed 
+alphaSteer = 4.5 //how fast it responds to steering 
+rollSteer = 0.1 //rolls while steering 
+
+soundThrust = "ssent01j.wav"
+
+// ASSAULT MODE ////////////////////
+
+[MorphTankClass]
+maxHealth = 3000 //2500
+maxAmmo = 3500 //3000
+addAmmo = 0.0
+addhealth = 9.0
+engageRange = 100
+isAssault = 0
+switchMask = 00111
+
+unitName = "Warrior"
+
+rangeScan = 250.0f
+periodScan = 5.0f
+velocJam = 5.0f
+
+velocForward = 25.0 //20.0 // 
+velocReverse = 12.0 //10.0 // 
+velocStrafe = 20.0 // 
+accelThrust = 16.0 //acceleration 
+accelBrake = 75.0 //braking 
+accelDragStop = 9.0 //how fast it stops once hands are off controls 
+accelJump = 15.0
+
+setAltitude = 1.0 // how high off the ground
+
+alphaTrack = 24.0 //springs speed it rights itself 
+alphaDamp = 9.0 //shocks 
+
+pitchPitch = 0.19 //nose up 
+pitchThrust = 0.09 //nose down 
+
+rollStrafe = 0.01 //rolls while strafing 
+omegaSpin = 5.5 //spinning in place speed 
+omegaTurn = 1.3 //turning while moving speed 
+alphaSteer = 3.5 //how fast it responds to steering 
+rollSteer = 0.13 //rolls while steering 
+
+// hovercraft sounds
+soundThrust = "ssent01j.wav"
+
+[DeployableClass]
+soundDeploy = "morph01.wav"
+soundUndeploy = "morph01b.wav"

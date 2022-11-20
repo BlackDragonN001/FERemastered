@@ -1,0 +1,46 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+
+xplGround = "xbulgnd"
+xplVehicle = "xhmncar"
+xplBuilding = "xhmnbld"
+
+renderName = "cphmn_c.render"
+
+ammoCost = 5
+lifeSpan = 0.667 // 105m
+shotSpeed = 300.0
+
+damageValue(N) = 10 // none // 200
+damageValue(L) = 6 // light // 160
+damageValue(H) = 1 // heavy // 100
+
+damageValue(S) = 6 // standard // 160
+damageValue(D) = 6 // deflection // 100
+damageValue(A) = 10 // absorbtion // 200
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "cphmn_c.core"
+renderName2 = "cphmn_c.trail"
+
+[Core]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 0"
+startRadius = 0.5
+finishRadius = 0.5
+
+[Trail]
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+startColor = "60 85 255 60"
+finishColor = "60 85 255 0"
+startRadius = 0.04
+finishRadius = 0.02
+segmentTime = 0.1

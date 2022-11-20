@@ -1,0 +1,49 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+
+xplGround = "xgaugnd"
+xplVehicle = "xgaucar"
+xplBuilding = "xgaucar"
+
+renderName = "gau8_c.render"
+
+ammoCost = 0.15
+lifeSpan = 0.95 // 105m  135 GEC
+shotSpeed = 300.0
+
+damageValue(N) = 4.3 // none // 320
+damageValue(L) = 2.75 // light // 320
+damageValue(H) = 1.9 // heavy // 240
+
+damageValue(S) = 3.75 // standard // 300
+damageValue(D) = 3.40 // deflection // 160
+damageValue(A) = 8 // absorbtion // 320
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "gau8_c.BulletTrail"
+renderName2 = "gau8_c.SmokeyTrail"
+
+[BulletTrail]
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "spark2.tga"
+startColor = "232 155 64 250"
+finishColor = "232 155 64 0"
+startRadius = 0.1
+finishRadius = 0.1
+tracerLength = 4.0
+
+[SmokeyTrail]
+renderBase = "draw_trail"
+textureName = "strail.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+textureRate = 0.3
+startColor = "255 127 63 15"
+finishColor = "105 105 107 0"
+startRadius = 0.2
+finishRadius = 0.03
+segmentTime = 0.05
+

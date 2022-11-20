@@ -1,0 +1,27 @@
+[GameObjectClass]
+geometryName = "igmits00.fbx" //"launcher02.xsi"
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 3000
+maxAmmo = 1
+unitName = "Flotsam Generator"
+heatSignature = 1.01
+imageSignature = 1.01
+radarSignature = 1.0
+//isAssault = 0
+armorClass = N
+canCollide = 1
+canDetect = 1 
+canInteract = 1 
+ownsTerrain = 0
+
+[MineClass]
+lifeSpan = 300 // 3.7 // -trigger * shotdelay for count
+
+[FlareMineClass]
+payloadName = "flotgen1"
+fireSound = NULL//"quill01.wav"
+triggerDelay = 3.0
+shotDelay = 25.0
+shotVariance = 3.0 

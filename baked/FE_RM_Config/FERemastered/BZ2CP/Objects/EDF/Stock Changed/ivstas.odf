@@ -1,0 +1,109 @@
+[GameObjectClass]
+baseName = "ivstas"
+geometryName = "ivstas00.fbx"
+cockpitName = "ivstas_cockpit.fbx"
+classLabel = "wingman"
+animCount = 3
+animName1 = "forward"
+animFile1 = "ivstassf.fbx"
+animName2 = "neutral"
+animFile2 = "ivstassn.fbx"
+animName3 = "reverse"
+animFile3 = "ivstassr.fbx"
+scrapValue = 30
+scrapCost = 50
+buildTime = 10.0
+maxHealth = 4500
+maxAmmo = 2000
+unitName = "Stasis Truck"
+aiName = "TugFriend"
+aiName2 = "TugFriend"
+heatSignature = 0.5
+imageSignature = 2.5
+radarSignature = 0.1
+provideCount = 1
+provideName1 = "ivstas"
+armorClass = L
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectFlags1 = 2147483135
+
+// Engine flame glow.
+effectHard2 = "flame_1"
+effectName2 = "engglow_i.medium"
+effectFlags2 = 2147483135 // thrusting only.
+effectHard3 = "flame_2"
+effectName3 = "engglow_i.medium"
+effectFlags3 = 2147483135 // thrusting only.
+effectHard4 = "flame_3"
+effectName4 = "engglow_i.small"
+effectFlags4 = 2147483135 // thrusting only.
+effectHard5 = "flame_4"
+effectName5 = "engglow_i.small"
+effectFlags5 = 2147483135 // thrusting only.
+effectHard6 = "flame_5"
+effectName6 = "engglow_i.small"
+effectFlags6 = 2147483135 // thrusting only.
+effectHard7 = "flame_6"
+effectName7 = "engglow_i.small"
+effectFlags7 = 2147483135 // thrusting only.
+
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 5.0f
+velocJam = 5.0f
+braccelFactor = 0.05
+strafeFactor = 0.1
+steerFactor = 1.0
+omegaFactor = 0.2
+velFactor = 0.2
+avoidSpeed = 20
+topSpeed = 30
+
+selectAttackMsg = "avrcktv0.wav"
+selectGoMsg = "avrcktvk.wav"
+selectFollowMsg = "avrcktvg.wav"
+selectOtherMsg = "avrcktvm.wav"
+goMsg = "avrcktv1.wav"
+goObjectMsg = "avrcktvf.wav"
+attackMsg = "avrcktv2.wav"
+followMeMsg = "avrcktv4.wav"
+followMsg = "avrcktvb.wav"
+repairMsg = "avrcktv8.wav"
+reloadMsg = "avrcktv9.wav"
+rescueMsg = "avrcktvc.wav"
+recycleMsg = "avrcktvd.wav"
+user1Msg = "avrcktva.wav"
+killedMsg = "avrcktv3.wav"
+diedMsg = "abetty3.wav"
+
+[HoverCraftClass]
+setAltitude = 1.0
+accelDragFull = 1.0
+accelDragStop = 15.0 
+alphaTrack = 30.0
+alphaDamp = 10.0
+pitchPitch = 0.25
+pitchThrust = 0.05
+rollStrafe = 0.05
+rollSteer = 0.05
+velocForward = 50.0
+velocReverse = 30.0
+velocStrafe = 40.0
+accelThrust = 30.0
+accelBrake = 50.0
+omegaSpin = 1.5
+omegaTurn = 1.0
+alphaSteer = 3.0
+accelJump = 10.0
+
+soundThrust = "avrckte0.wav"
+soundTurbo = "avrckte1.wav"

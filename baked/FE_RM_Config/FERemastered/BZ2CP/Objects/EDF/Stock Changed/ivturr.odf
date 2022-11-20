@@ -1,0 +1,127 @@
+[GameObjectClass]
+baseName = "ivturr"
+geometryName = "ivturr00.fbx"
+cockpitName = "ivturr_cockpit.fbx"
+animCount = 4
+animName1 = "deploy"
+animFile1 = "ivturr00.fbx"
+animName2 = "forward"
+animFile2 = "ivturrsf.fbx"
+animName3 = "neutral"
+animFile3 = "ivturrsn.fbx"
+animName4 = "reverse"
+animFile4 = "ivturrsr.fbx"
+classLabel = "turrettank"
+scrapCost = 40
+customCost = 45
+scrapValue = 10
+buildTime = 10.0
+customTime = 10.0
+maxHealth = 2500
+maxAmmo = 3000
+addAmmo = 4
+unitName = "Turret"
+aiName = "TurretTankFriend"
+aiName2 = "TurretTankEnemy"
+heatSignature = 0.1
+imageSignature = 1.0
+radarSignature = 0.1
+isAssault = 0
+armorClass = L
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "ivturr"
+provideName2 = "VIRTUAL_CLASS_TURRET"
+
+/////// weapons ////////////////////
+weaponMask = 00011
+weaponHard1 = "HP_GUN_1"
+weaponName1 = "gminigun_a"
+recoilName1 = "muzzl" //"recoil1"
+weaponAssault1 = 1
+weaponHard2 = "HP_GUN_2"
+weaponName2 = "gminigun_a"
+recoilName2 = "muzzr" //"recoil2"
+weaponAssault2 = 1
+
+////////////////////////////////////
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectFlags1 = 2147483127
+
+// Engine flame glow.
+effectHard2 = "flame_1"
+effectName2 = "engglow_i.small"
+effectFlags2 = 2147483135 // thrusting only.
+effectHard3 = "flame_2"
+effectName3 = "engglow_i.small"
+effectFlags3 = 2147483135 // thrusting only.
+
+[CraftClass]
+rangeScan = 300.0
+periodScan = 3.0
+velocJam = 1.0
+engageRange = 150
+weaponPitch = 1.0
+
+selectGoMsg = "ivturr01.wav"
+selectAttackMsg = "ivturr03.wav"
+selectDeployMsg = "ivturr04.wav"
+selectOtherMsg = "ivturr03.wav"
+holdMsg = "ivturr12.wav"
+goMsg = "ivturr05.wav"
+followMeMsg = "ivturr08.wav"
+reloadMsg = "ivturr09.wav"
+repairMsg = "ivturr09.wav"
+rescueMsg = "ivturr10.wav"
+recycleMsg = "ivturr11.wav"
+otherMsg = "ivturr11.wav"
+attackMsg = "ivturr06.wav"
+deployedMsg = "ivturr14.wav"
+killedMsg = "ivturr07.wav"
+
+[HoverCraftClass]
+setAltitude = 1.0
+accelDragStop = 20.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.1
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+velocForward = 20.0
+velocReverse = 15.0
+velocStrafe = 15.0
+accelThrust = 50.0
+accelBrake = 50.0
+omegaSpin = 4.0
+omegaTurn = 1.5
+alphaSteer = 10.0
+accelJump = 15.0
+
+soundThrust = "ienge.wav"
+soundSteer = "avturre8.wav"
+
+[DeployableClass]
+timeDeploy = 8.0
+timeUndeploy = 3.0
+heightDeploy = -0.55
+soundDeploy = "avturre4.wav"
+soundUndeploy = "avturre5.wav"
+
+[TurretTankClass]
+omegaTurret = 1.25
+alphaTurret = 5.0

@@ -1,0 +1,67 @@
+[OrdnanceClass]
+classLabel = "grenade"
+
+shotGeometry = "ioartl00.xsi"
+shotSound = "baz03.wav"
+
+xplGround = "xdaywreck"
+xplVehicle = "xdaywreck"
+xplBuilding = "xdaywreck"
+
+renderName = "mwreck.render"
+
+ammoCost = 250
+lifeSpan = 1e30
+shotSpeed = 50.0
+
+damageValue(N) = 300 // none
+damageValue(L) = 250 // light
+damageValue(H) = 100 // heavy
+
+damageValue(S) = 250 // standard
+damageValue(D) = 400 // deflection
+damageValue(A) = 50 // absorbtion
+
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "mwreck.light"
+renderName2 = "mwreck.smoke"
+renderName3 = "mwreck.flare"
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "155 250 250 150"
+finishColor = "155 250 250 150"
+startRadius = 10.0
+finishRadius = 7.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Light]
+renderBase = "draw_light"
+startColor = "155 250 250 555"
+finishColor = "155 250 250 555"
+startRadius = 30.0
+finishRadius = 30.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 255 255 255"
+finishColor = "0 250 255 0"
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 4.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 4.0

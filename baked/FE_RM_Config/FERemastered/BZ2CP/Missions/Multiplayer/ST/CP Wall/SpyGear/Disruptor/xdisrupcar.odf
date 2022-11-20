@@ -1,0 +1,72 @@
+// ===============
+// DISRUPTOR CAR HIT
+// ===============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "avapce1.wav"
+
+damageRadius = 1.0
+kickRadius = 0.8
+kickOmega = 2.0 
+kickVeloc = -4.0
+
+damageValue(N) = 2 // none
+damageValue(L) = 10 // light
+damageValue(H) = 1 // heavy
+
+damageValue(S) = 2 // standard
+damageValue(D) = 3 // deflection
+damageValue(A) = 1 // absorbtion
+
+particleTypes = 3
+
+particleClass1 = "xdisrupcar.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xdisrupcar.puff"
+particleCount2 = 4
+particleVeloc2 = "3.0 4.0 4.0" 
+
+particleClass3 = "xdisrupcar.splat"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "200 0 0 255"
+finishColor = "145 20 10 0"
+startRadius = 0.4
+finishRadius = 0.1
+animateTime = 0.8
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "70 10 0 255"
+finishColor = "30 0 0 0"
+startRadius = 0.3
+finishRadius = 0.9
+animateTime = 0.8
+rotaionRate = 10
+
+[Splat]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_twirl"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "90 20 10 255"
+finishColor = "60 10 0 0"
+startRadius = 0.1
+finishRadius = 0.75
+animateTime = 0.5

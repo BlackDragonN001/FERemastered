@@ -1,0 +1,37 @@
+[OrdnanceClass]
+classLabel = "grenade"
+
+shotGeometry = "ioartl00.xsi"
+shotSound = "baz03.wav"
+
+xplGround = "xdaywreck2"
+xplVehicle = "xdaywreck2"
+xplBuilding = "xdaywreck2"
+
+renderName = "omirv2.render"
+
+ammoCost = 1
+lifeSpan = 60.0 // 30 // RESTORE in later version > 2.0.185. -GBD
+shotSpeed = 10.0 //5.0 // RESTORE in later version > 2.0.185. -GBD
+
+damageValue(N) = 400 // none
+damageValue(L) = 350 // light
+damageValue(H) = 300 // heavy
+
+damageValue(S) = 350 // standard
+damageValue(D) = 300 // deflection
+damageValue(A) = 400 // absorbtion
+
+[Render]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "164 164 164 64"
+finishColor = "180 180 180 0"
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 3.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 3.0

@@ -1,0 +1,73 @@
+// ==============
+// DM MINE EXPLOSION
+// ==============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 13
+
+particleClass1 = "xminfield.planar"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xminfield.shockplanar"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xminfield.shock"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xminfield.cloud"
+particleCount4 = 1
+particleVeloc4 = "0.0 10.0 0.0"
+
+particleClass5 = "xminfield.light"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+particleClass6 = "xminfield.GroundSmoke"
+particleCount6 = 15
+particleVeloc6 = "35.0 35.0 35.0"
+particlePosVar6 = "5.0 0.0 5.0"
+
+particleClass7 = "xminfield.SmokePlume"
+particleCount7 = 15
+particleVeloc7 = "20.0 65.0 20.0"
+particlePosVar7 = "5.0 0.0 5.0"
+
+particleClass8 = "xminfield.trail"
+particleCount8 = 8
+particleVeloc8 = "60.0 50.0 60.0"
+particleBias8 = "0.0 1.0 0.0"
+
+particleClass9 = "xminfield.DirtKickup"
+particleCount9 = 7
+particleVeloc9 = "10.0 22.0 10.0"
+
+particleClass10 = "xminfield.Chunks"
+particleCount10 = 15
+particleVeloc10 = "75.0 65.0 75.0"
+particlePosVar10 = "5.0 0.0 5.0"
+
+particleClass11 = "xminfield.glow"
+particleCount11 = 1
+particleVeloc11 = "0.0 0.0 0.0"
+
+particleClass12 = "xminfield.FlameHeat"
+particleCount12 = 6
+particleVeloc12 = "10.0 10.0 10.0"
+
+particleClass13 = "xminfield.Flames"
+particleCount13 = 12
+particleVeloc13 = "22.0 67.0 22.0"
+
+explSound = "xmv1.wav"
+damageRadius = 10.0
+damageValue(N) = 500
+damageValue(L) = 400
+damageValue(H) = 200
+damageValue(S) = 400
+damageValue(D) = 500
+damageValue(A) = 200

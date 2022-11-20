@@ -1,0 +1,112 @@
+// =======
+// BARNEY!
+// =======
+
+[ExplosionClass]
+classLabel = "explosion"
+explSound = "annoying.wav"
+
+damageRadius = 0.0
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+
+
+particleTypes = 10
+
+particleClass1 = "xannoycar.HeatTwirl"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xannoygnd.Light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.7 0.0"
+particleBias2 = "0.0 0.5 0.0"
+
+particleClass3 = "xannoygnd.ShockSphere"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xannoycar.LightFlare"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "xannoygnd.SmokeKickup"
+particleCount5 = 7
+particleVeloc5 = "7.0 7.0 7.0"
+particleBias5 = "0.0 0.5 0.0"
+particleInherit5 = "0.5 0.5 0.5"
+
+particleClass6 = "xannoycar.HotHullChunks"
+particleCount6 = 3
+particleVeloc6 = "25.0 15.0 25.0"
+particleBias6 = "0.0 8.0 0.0"
+particleInherit6 = "0.8 0.8 0.8"
+
+particleClass7 = "xannoygnd.ExplosionFlares"
+particleCOunt7 = 3
+particleVeloc7 = "0.0 0.0 0.0"
+particleBias7 = "0.0 0 0.0"
+
+particleClass8 = "xannoygnd.ExplosionSprites"
+particleCount8 = 3
+particleVeloc8 = "2.3 3.5 2.3"
+particleBias8 = "0.0 1.2 0.0"
+
+particleClass9 = "xannoygnd.FlameChunks"
+particleCount9 = 7
+particleVeloc9 = "7.0 7.0 7.0"
+particleBias9 = "0.0 0.0 0.0"
+
+particleClass10 = "xannoygnd.FireSparks"
+particleCount10 = 4
+particleVeloc10 = "36.0 30.0 36.0"
+particleBias10 = "0.0 8.0 0.0"
+particleInherit10 = "0.8 0.8 0.8"
+
+[HeatTwirl]
+simulateBase = "sim_null"
+lifeTime = 0.4
+renderBase = "draw_twirl"
+textureName = "bulhit.tga"
+textureBlend = "one one modulate"
+startColor = "0 120 255 255"
+finishColor = "0 80 255 0"
+startRadius = 0.2
+finishRadius = 2.8
+animateTime = 0.4
+rotationRate = 0.0
+BottomInteractsWithTerrain = false
+
+[LightFlare]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "30 155 255 255"
+finishColor = "30 120 255 0"
+startRadius = 6.5
+finishRadius = 0.0
+animateTime = 0.3
+rotationRate = 1.0
+BottomInteractsWithTerrain = false
+
+[HotHullChunks]
+simulateBase = "sim_chunk"
+lifeTime = 2.4
+renderBase = "draw_twirl"
+textureName = "dirt.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "155 155 185 255"
+finishColor = "155 155 155 0"
+startRadius = 0.12
+finishRadius = 0.12
+animateTime = 2.4
+rotationRate = 5.0
+BottomInteractsWithTerrain = false

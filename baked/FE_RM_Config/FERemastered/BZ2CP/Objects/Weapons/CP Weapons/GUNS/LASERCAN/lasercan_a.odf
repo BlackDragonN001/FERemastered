@@ -1,0 +1,61 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotSound = "laserorda.wav"
+
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+
+renderName = "lasercan_a.render"
+
+ammoCost = 7
+lifeSpan = 1.00
+shotSpeed = 200.0
+
+damageValue(N) = 25 // none
+damageValue(L) = 15 // light
+damageValue(H) = 7 // heavy
+
+damageValue(S) = 15 // standard
+damageValue(D) = 25 // deflection
+damageValue(A) = 7 // absorbtion
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "lasercan_a.core"
+renderName2 = "lasercan_a.bullettrail"
+renderName3 = "lasercan_a.trail"
+
+[Core]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 127"
+startRadius = 0.35
+finishRadius = 0.35
+
+[BulletTrail] // original render
+renderBase = "draw_trail"
+textureName = "blastenergy.tga" // NULL
+textureBlend = "one one modulate"
+startColor = "255 70 0 255"
+finishColor = "100 30 0 0"
+startRadius = 0.15 //0.1
+finishRadius = 0.15 //0.1
+segmentTime = 0.2
+textureRate = 0.3
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "63 31 31 127"
+finishColor = "63 63 63 0"
+startRadius = 0.2
+finishRadius = 0.2
+textureRate = 0.3
+segmentTime = 0.25 //0.3

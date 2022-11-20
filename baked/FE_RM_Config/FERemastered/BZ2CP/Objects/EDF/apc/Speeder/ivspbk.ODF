@@ -1,0 +1,107 @@
+[GameObjectClass]
+baseName = "ivspbk"
+geometryName = "ivspbk00.xsi"
+classLabel = "wingman"
+scrapValue = 0
+scrapCost = 0
+maxHealth = 400
+maxAmmo = 1000
+addAmmo = 10
+unitName = "Speeder"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+explosionName = "xcarxpl_s"
+
+heatSignature = 0.1
+imageSignature = 0.1
+radarSignature = 0.1
+
+isAssault = 0
+
+//needPilot = 0
+
+pilotClass = "issold"
+
+armorClass = N
+
+/////// weapons ///////////////////
+
+weaponMask = 00001
+
+
+weaponHard1 = "HP_ROCKET_1"
+weaponName1 = "gspbk_c"
+weaponAssault1 = 0
+////////////////////////////////////
+ 
+[CraftClass]
+ejectRatio = 1.0
+
+rangeScan = 250.0f
+periodScan = 2.0f
+velocJam = 2.0f
+engageRange = 120
+
+braccelFactor = 0.03
+velFactor = 0.2
+steerFactor = 1.5
+omegaFactor = 0.2
+strafeFactor = 0.2
+
+avoidSpeed = 15;
+topSpeed = 20;
+
+StrafeTimeBase0 = 10 //0.5
+StrafeTimeBase1 = 20 //1.0
+StrafeTimeBase2 = 30 //3.0
+StrafeTimeBase3 = 60 //5.0
+StrafeTimeRandom0 = 5 //0.5
+StrafeTimeRandom1 = 10 //1.0
+StrafeTimeRandom2 = 15 //1.5
+StrafeTimeRandom3 = 30 //2.0
+
+selectWaitMsg = "ivtank05.wav"
+selectAttackMsg = "ivtank02.wav"
+selectFollowMsg = "ivtank04.wav"
+selectGoMsg = "ivtank04.wav"
+selectOtherMsg = "ivtank05.wav"
+
+goMsg = "ivtank04.wav"
+attackMsg = "ivtank06.wav"
+followMeMsg = "ivtank08.wav"
+followMsg = "ivtank03.wav"
+repairMsg = "ivtank09.wav"
+reloadMsg = "ivtank09.wav"
+rescueMsg = "ivtank10.wav"
+recycleMsg = "ivtank11.wav"
+otherMsg = "ivtank05.wav" 
+holdMsg = "ivtank12.wav"
+user1Msg = ""  
+killedMsg = "ivtank07.wav"
+diedMsg = ""
+
+[HoverCraftClass]
+velocForward = 22.0 //12.0 // []
+velocReverse = 10.0 // []
+velocStrafe = 20.0 //5.0 // []
+accelThrust = 50.0 //acceleration []
+accelDragStop = 10.0 //how fast it stops once hands are off controls []
+accelJump = 20.0 // []
+
+setAltitude = 0.5 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself []
+alphaDamp = 8.0 //shocks []
+
+pitchPitch = 0.05 //nose up []
+pitchThrust = 0.02 //nose down []
+
+rollStrafe = 0.2 //rolls while strafing []
+omegaSpin = 3.0 //spinning in place speed []
+omegaTurn = 3.3 //turning while moving speed []
+alphaSteer = 7.0 //how fast it responds to steering []
+rollSteer = 0.2 //rolls while steering []
+
+soundThrust = "mdron.wav"
+soundTurbo = "mdronth.wav"
+

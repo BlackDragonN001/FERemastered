@@ -1,0 +1,66 @@
+[GameObjectClass]
+classLabel = "seeker"
+geometryName = "roversph.xsi"
+//geometryScale = 2.0
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 1
+unitName = "Rover" 
+heatSignature = 10.0
+imageSignature = 10.0
+radarSignature = 10.0
+canCollide = 0
+canDetect = 1
+canInteract = 0
+
+//collisionRadius = 1.0
+
+shotSound = "rhin08.wav"
+
+//effectHard1 = "hp_emit_1"
+//effectName1 = "rover2.render"
+
+[MineClass]
+lifeSpan = 120 // 2 mins
+xplBlast = "xplrover"
+
+[SeekerClass]
+searchRange = 800.0
+floatVeloc = 12.0 // 10.0
+setAltitude = 4.5
+
+xplExpire = "xplrover"
+
+[BuildingClass]
+SoundAmbient = "rhin08.wav"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "rover2.smoke"
+renderName2 = "rover2.sphere"
+
+[Smoke]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 10"
+finishColor = "50 50 50 180"  
+startRadius = 0.2
+finishRadius = 6.0
+animateTime = 0.1
+latitudeBands = 18
+longitudeSegments = 24
+
+[Sphere]
+renderBase = "draw_sphere"
+textureName = NULL // "vsmoke.tga"
+textureBlend = "invsrc invsrc modulate"// "one one modulate"
+startColor = "255 255 255 0"
+finishColor = "50 50 50 150"  
+startRadius = 0.2
+finishRadius = 6.0
+animateTime = 0.1
+latitudeBands = 18
+longitudeSegments = 24

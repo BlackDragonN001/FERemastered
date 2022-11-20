@@ -1,0 +1,27 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "geplas_c"
+ordName = "eplas_a"
+wpnName = "Solar Blast"
+fireSound = "solarblast.wav"
+wpnReticle = "gplasma"
+wpnCategory = "CANN"
+isAssault = 1
+flashName = "geplas_a.flash"
+aiRange = 240
+
+[CannonClass]
+shotDelay = 2.5 // 1/2sec
+shotAlternate = 0
+
+[Flash]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 127"
+finishColor = "255 255 255 0"
+startRadius = 3.0
+finishRadius = 1.0
+animateTime = 0.1
+latitudeBands = 8
+longitudeSegments = 16

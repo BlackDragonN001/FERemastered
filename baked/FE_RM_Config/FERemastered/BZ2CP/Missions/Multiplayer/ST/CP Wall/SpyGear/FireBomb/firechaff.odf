@@ -1,0 +1,88 @@
+[OrdnanceClass]
+classLabel = "spraybomb"
+shotGeometry = NULL
+shotSound = "flame01.wav"
+xplGround = NULL
+xplVehicle = NULL
+xplBuilding = NULL
+rendername = "firechaff.render"
+
+ammoCost = 0 // 1
+lifeSpan = 1e30
+shotSpeed = 22
+
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+[SprayBombClass]
+payloadName = "firebits"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "firechaff.sparks"
+renderName2 = "firechaff.center"
+renderName3 = "firechaff.centerhalo"
+
+[Center]
+renderBase = "draw_sprite"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "190 120 0 185"
+finishColor = "190 80 0 100"
+startRadius = 0.2
+finishRadius = 0.8
+animateTime = 1.0
+
+[CenterHalo]
+renderBase = "draw_sprite"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "190 150 0 155"
+finishColor = "190 150 0 80"
+startRadius = 0.5
+finishRadius = 1.0
+animateTime = 1.0
+
+[Sparks]
+renderBase = "draw_emit"
+emitName = "firechaff.sparker"
+emitDelay = 0.04 // 0.2 // 0.5
+emitVelocity = "0.3 0.3 0.2"
+emitVariance = "4.0 4.0 6.0"
+
+[Sparker]
+simulateBase = "sim_smoke"
+lifeTime = 1.5
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "firechaff.flame"
+renderName2 = "firechaff.smoke"
+
+[Flame]
+renderBase = "draw_twirl"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 50 155"
+finishColor = "190 50 0 0"
+startRadius = 0.5
+finishRadius = 3.0
+animateTime = 1.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Smoke]
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 31 31 127"
+finishColor = "63 63 63 0"
+startRadius = 0.8
+finishRadius = 4.0
+animateTime = 1.5
+rotationRate = 8.0
+bottomInteractsWithTerrain = false

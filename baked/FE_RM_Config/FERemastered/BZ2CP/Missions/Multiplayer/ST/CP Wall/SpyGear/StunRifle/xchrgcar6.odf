@@ -1,0 +1,104 @@
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "wcbl.wav" // "xsv2.wav"
+
+damageRadius = 0.0
+
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+kickRadius = 6.0
+kickOmega = -15.0
+kickVeloc = -7.0
+
+particleTypes = 5
+
+particleClass1 = "xchrgcar6.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xchrgcar6.core2"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xchrgcar6.puff"
+particleCount3 = 4
+particleVeloc3 = "5.0 5.0 5.0"
+
+particleClass4 = "xchrgcar6.splat"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "xchrgcar6.light"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "blast.tga" // flame
+textureBlend = "one one modulate"
+startColor = "255 20 0 255"
+finishColor = "255 20 0 0"
+startRadius = 0.5
+finishRadius = 0.1
+animateTime = 1.0
+bottomInteractsWithTerrain = false
+
+[Core2]
+simulateBase = "sim_null"
+lifeTime = 1.2
+renderBase = "draw_twirl"
+textureName = "flare.tga" // flame
+textureBlend = "one one modulate"
+startColor = "255 40 0 255"
+finishColor = "255 40 0 0"
+startRadius = 0.3
+finishRadius = 0.3
+animateTime = 1.2
+bottomInteractsWithTerrain = false
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 1.3
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 0 255"
+finishColor = "255 0 0 0"
+startRadius = 0.5
+finishRadius = 2.5
+animateTime = 1.3
+rotaionRate = 10.0
+
+[Splat]
+simulateBase = "sim_null"
+lifeTime = 0.75
+renderBase = "draw_twirl"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "255 10 0 255"
+finishColor = "255 10 0 0"
+startRadius = 0.2
+finishRadius = 1.0
+animateTime = 0.75
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_light"
+startColor = "255 200 200 500"
+finishColor = "255 200 200 0"
+startRadius = 0.2
+finishRadius = 0.1
+animateTime = 0.3
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false

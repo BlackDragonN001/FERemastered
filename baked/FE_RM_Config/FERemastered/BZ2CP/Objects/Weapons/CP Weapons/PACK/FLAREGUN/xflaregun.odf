@@ -1,0 +1,172 @@
+// =============
+// FLARE EXPLOSION
+// =============
+
+[ExplosionClass]
+classLabel = "explosion"
+StartUpright = true
+
+particleTypes = 4
+
+particleClass1 = "xflaregun.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xflaregun.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xflaregun.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+particleBias3 = "0.0 -3.0 0.0"
+
+particleClass4 = "xflaregun.streamer"
+particleCount4 = 10
+particleVeloc4 = "30.0 5.0 30.0"
+particleBias4 = "0.0 0.2 0.0"
+
+explSound = "xmv1.wav"
+damageRadius = 50.0
+
+damageValue(N) = 30 // none
+damageValue(L) = 20 // light
+damageValue(H) = 10 // heavy
+
+damageValue(S) = 20 // standard
+damageValue(D) = 15 // deflection
+damageValue(A) = 15 // absorbtion
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 3.0
+finishRadius = 30.0
+animateTime = 1.5
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 127"
+finishColor = "255 0 0 0"
+startRadius = 3.0
+finishRadius = 60.0
+animateTime = 0.3
+latitudeBands = 8
+longitudeSegments = 16
+
+[Streamer]
+simulateBase = "sim_ember"
+lifeTime = 4.0
+renderBase = "draw_trail"
+textureName = "trail4.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 0 255"
+finishColor = "255 0 0 100"
+startRadius = 0.1
+finishRadius = 0.02
+segmentTime = 0.5
+textureRate = 0.1
+
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 10.0
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "xflaregun.smoke"
+renderName2 = "xflaregun.lightemit"
+renderName3 = "xflaregun.spray"
+
+[LightEmit]
+renderBase = "draw_light"
+startColor = "255 180 63 3500"
+finishColor = "255 100 0 0"
+startRadius = 180.0
+finishRadius = 0.0
+animateTime = 10.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "127 100 163 127" // "50 20 0 200"
+finishColor = "180 170 160 0" // "255 127 0 0"
+startRadius = 0.5
+finishRadius = 1.0
+animateTime = 0.5
+rotationRate = 10.0
+emitDelay = 0.01
+emitVelocity = "0.0 5.0 0.0"
+emitVariance = "5.0 2.0 5.0"
+emitLife = 0.5
+
+[Spray]
+renderBase = "draw_emit"
+emitName = "xflaregun.sprayemit"
+emitDelay = 0.4
+emitDelayVar = 0.8
+emitVelocity = "0.0 5 0.0"
+emitVariance = "15.0 1.0 15.0"
+
+[SprayEmit]
+simulateBase = "sim_ember"
+lifeTime = 2.0
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "xflaregun.sprayflare"
+renderName2 = "xflaregun.spraysmoke"
+renderName3 = "xflaregun.spraytrail"
+
+[SprayFlare]
+renderBase = "draw_twirl"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 200 127"
+finishColor = "255 200 200 0"
+startRadius = 1.0
+finishRadius = 1.0
+animateTime = 2.0
+rotationRate = 8.0
+BottomInteractsWithTerrain = false
+
+[SpraySmoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.01
+emitVelocity = "0.0 1.0 0.0"
+emitVariance = "1.5 1.5 1.0"
+emitPosVariance = "0.5 0.5 0.0"
+emitLife = 1.3
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "131 131 131 127"
+finishColor = "63 63 63 0"
+startRadius = 0.1
+finishRadius = 0.5
+animateTime = 1.3
+rotationRate = 8.0
+BottomInteractsWithTerrain = false
+
+[SprayTrail]
+renderBase = "draw_trail"
+textureName = "trail4.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 127 255"
+finishColor = "255 200 127 100"
+startRadius = 0.05
+finishRadius = 0.01
+segmentTime = 0.5
+textureRate = 0.1
+

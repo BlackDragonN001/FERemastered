@@ -1,0 +1,142 @@
+// =============
+// MORTAR HITTING BUILDING OR VEHICLE EXPLOSION
+// =============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+///////////////////////////////
+
+particleTypes = 2
+
+particleClass1 = "xplsmxpl.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xplsmxpl.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+///////////////////////////////
+
+explSound = "plasexpl.wav"		//"sonic02.wav"
+damageRadius = 75.0
+
+damageValue(N) = 50 // none
+damageValue(L) = 380 // light
+damageValue(H) = 400 // heavy
+
+damageValue(S) = 40 // standard
+damageValue(D) = 35 // deflection
+damageValue(A) = 60 // absorbtion
+
+///////////////////////////////
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "xplsmxpl.core1"
+renderName2 = "xplsmxpl.core2"
+renderName3 = "xplsmxpl.light"
+
+[Core1]
+renderBase = "draw_twirl"
+textureName = "plascore2.tga"
+textureBlend = "one one modulate"
+startColor = "127 255 255 255"
+finishColor = "0 127 255 0"
+startRadius = 10.0
+finishRadius = 150.0
+animateTime = 1.5
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[Core2]
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "127 255 255 255"
+finishColor = "0 127 255 0"
+startRadius = 10.0
+finishRadius = 150.0
+animateTime = 1.5
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_light"
+startColor = "255 255 255 2550"
+finishColor = "0 127 255 0"
+startRadius = 150.0
+finishRadius = 0.0
+animateTime = 1.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "xplsmxpl.shock1"
+renderName2 = "xplsmxpl.shock2"
+renderName3 = "xplsmxpl.wave"
+
+[Shock1]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga" //"bolt.tga"
+textureBlend = "one one modulate"
+startColor = "190 255 255 127"
+finishColor = "0 0 255 0"
+startRadius = 5.0
+finishRadius = 100.0
+animateTime = 1.5
+latitudeBands = 8
+longitudeSegments = 16
+InitialPitch = 0.0
+InitialYaw = 0.0
+InitialRoll = 0.0
+AddPitch = 50.0
+AddYaw = 50.0
+AddRoll = 50.0
+
+[Shock2]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga" //"bolt.tga"
+textureBlend = "one one modulate"
+startColor = "190 255 255 127"
+finishColor = "0 0 255 0"
+startRadius = 5.0
+finishRadius = 100.0
+animateTime = 1.5
+latitudeBands = 8
+longitudeSegments = 16
+InitialPitch = 0.0
+InitialYaw = 0.0
+InitialRoll = 0.0
+AddPitch = -50.0
+AddYaw = -50.0
+AddRoll = -50.0
+
+[Wave]
+simulateBase = "sim_smoke"
+lifeTime = 1.5
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "63 127 255 240" 
+finishColor = "0 127 255 0" 
+startRadius = 5.0
+finishRadius = 100.0
+animateTime = 1.5
+waveAngle = 3.14159265359
+waveDepth = 1.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 64

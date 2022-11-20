@@ -1,0 +1,32 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+
+xplGround = "xbzipgnd"
+xplVehicle = "xbzipcar"
+xplBuilding = "xbzipcar"
+
+renderName = "burst_c.render"
+
+ammoCost = 0.5
+lifeSpan = 0.35
+shotSpeed = 300.0
+
+damageValue(N) = 3
+damageValue(L) = 3 
+damageValue(H) = 2 
+
+damageValue(S) = 2
+damageValue(D) = 2 
+damageValue(A) = 3
+
+[Render]
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+textureName = "trail.tga"
+startColor = "255 100 100 255"
+finishColor = "255 100 100 0"
+startRadius = 0.01
+finishRadius = 0.03
+segmentTime = 0.02
+textureRate = 0.2

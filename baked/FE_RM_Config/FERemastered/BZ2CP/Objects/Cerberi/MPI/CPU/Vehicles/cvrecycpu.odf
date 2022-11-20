@@ -1,0 +1,20 @@
+[GameObjectClass]
+classLabel = "cvrecy02"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 5
+provideName5 = "cvrecy_c"
+
+////////////////////////////////////
+
+[CraftClass]
+
+[TrackedVehicleClass]
+
+[TrackedDeployableClass]
+
+[DeployBuildingClass]
+deployName = "cbrecy_c"
+
+[RecyclerVehicleClass]

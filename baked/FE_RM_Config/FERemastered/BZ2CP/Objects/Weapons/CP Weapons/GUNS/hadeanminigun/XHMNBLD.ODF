@@ -1,0 +1,49 @@
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 5
+
+particleClass1 = "xhmnbld.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xhmncar.Smoke"
+particleCount2 = 1
+particleVeloc2 = "4.3 4.5 4.3"
+particleBias2 = "0.0 2.0 0.0"
+
+particleClass3 = "xbulgnd.ShardSprite"
+particleCount3 = 1
+particleVeloc3 = "0.3 0.3 0.3"
+particleBias3 = "0.0 0.1 0.0"
+
+particleClass4 = "xbulgnd.Light"
+particleCount4 = 1
+particleVeloc4 = "0.3 0.3 0.3"
+particleBias4 = "0.0 0.1 0.0"
+
+particleClass5 = "xhmncar.trail"
+particleCount5 = 2
+particleVeloc5 = "3.0 3.0 3.0"
+
+explSound = "wmgr1.wav"
+damageRadius = 0.0
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_twirl"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 100"
+finishColor = "25 27 155 0"
+startRadius = 0.1
+finishRadius = 1.5
+animateTime = 0.5
+bottomInteractsWithTerrain = false

@@ -1,0 +1,177 @@
+// ===================
+// AT-STABBER VEHICLE HIT
+// ===================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "atstab02.wav"
+damageRadius = 0.0
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+
+particleTypes = 8
+
+particleClass1 = "xrburstcar.Light"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.7 0.0"
+particleBias1 = "0.0 0.5 0.0"
+//particleInherit1 = "0.5 0.5 0.5"
+
+particleClass2 = "xrburstcar.ShockSphere"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xrburstcar.LightSprite"
+particleCount3 = 2
+particleVeloc3 = "0.4 0.4 0.4"
+
+particleClass4 = "xrburstcar.SmokeKickup"
+particleCount4 = 5
+particleVeloc4 = "6.0 3.0 6.0"
+particleBias4 = "0.0 2.5 0.0"
+
+particleClass5 = "xrburstcar.HullChunks"
+particleCount5 = 3
+particleVeloc5 = "25.0 18.0 25.0"
+particleBias5 = "0.0 10.0 0.0"
+particlePosVar5 = "2.0 2.0 2.0"
+particleInherit5 = "1.0 1.0 1.0"
+
+particleClass6 = "xrburstcar.ExplosionSprites"
+particleCount6 = 3
+particleVeloc6 = "2.3 1.5 2.3"
+particleBias6 = "0.0 0.6 0.0"
+particleInherit6 = "0.5 0.5 0.5"
+
+particleClass7 = "xrburstcar.SparkTrails"
+particleCount7 = 3
+particleVeloc7 = "30.0 30.0 30.0"
+particleBias7 = "0.0 8.0 0.0"
+particlePosVar7 = "2.0 2.0 2.0"
+particleInherit7 = "0.5 0.5 0.5"
+
+particleClass8 = "xrburstcar.FireSparks"
+particleCount8 = 4
+particleVeloc8 = "36.0 30.0 36.0"
+particleBias8 = "0.0 8.0 0.0"
+particlePosVar8 = "2.0 2.0 2.0"
+particleInherit8 = "0.5 0.5 0.5"
+
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 0.2
+renderBase = "draw_light"
+startColor = "150 55 200 255"
+finishColor = "150 55 200 0"
+startRadius = 25.0
+finishRadius = 10.0
+animateTime = 0.2
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+[ShockSphere]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_sphere"
+textureName = "vsmoke_interface.tga"
+textureBlend = "one one modulate"
+startColor = "50 20 60 255"
+finishColor = "40 30 73 0"
+startRadius = 0.1
+finishRadius = 3.0
+animateTime = 0.3
+latitudeBands = 8
+longitudeSegments = 16
+
+[LightSprite]
+simulateBase = "sim_smoke"
+lifeTime = 0.3
+renderBase = "draw_twirl"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "110 50 230 255"
+finishColor = "150 40 130 0"
+startRadius = 4.5
+finishRadius = 1.0
+animateTime = 0.3
+BottomInteractsWithTerrain = false
+
+[SmokeKickup]
+simulateBase = "sim_smoke"
+lifeTime = 2.4
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "60 60 60 80"
+finishColor = "80 80 80 0"
+startRadius = 1.3
+finishRadius = 3.0
+animateTime = 2.4
+rotationRate = 15.0
+BottomInteractsWithTerrain = false
+
+[HullChunks]
+simulateBase = "sim_chunk"
+lifeTime = 2.4
+renderBase = "draw_twirl"
+textureName = "dirt.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "127 127 127 255"
+finishColor = "127 127 127 0"
+startRadius = 0.12
+finishRadius = 0.12
+animateTime = 2.4
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[SparkTrails]
+simulateBase = "sim_ember"
+lifeTime = 3.0
+renderBase = "draw_trail"
+textureName = "firetrail1.tga"
+textureBlend = "one one modulate"
+textureRate = 0.2
+startColor = "255 136 254 255"
+finishColor = "203 180 216 0"
+startRadius = 0.04
+finishRadius = 0.005
+animateTime = 3.0
+segmentTime = 0.1
+segmentLength = 0.3
+
+[FireSparks]
+simulateBase = "sim_ember"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "crackle.tga"
+textureBlend = "one one modulate"
+startColor = "254 55 255 255"
+finishColor = "216 100 183 0"
+startRadius = 0.09
+finishRadius = 0.09
+animateTime = 3.0
+rotationRate = 10.0
+BottomInteractsWithTerrain = false
+
+[ExplosionSprites]
+simulateBase = "sim_smoke"
+lifeTime = 0.2
+renderBase = "draw_twirl"
+textureName = "xplcore2.tga"
+textureBlend = "one one modulate"
+startColor = "197 85 174 255"
+finishColor = "197 75 174 0"
+startRadius = 0.3
+finishRadius = 5.0
+animateTime = 0.2
+rotationRate = 10.0
+BottomInteractsWithTerrain = false

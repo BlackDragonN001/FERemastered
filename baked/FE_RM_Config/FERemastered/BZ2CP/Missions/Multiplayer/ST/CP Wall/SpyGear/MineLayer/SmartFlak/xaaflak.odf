@@ -1,0 +1,57 @@
+// =============
+// AA Flak EXPLOSION
+// =============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 2
+
+particleClass1 = "xaaflak.shock"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xaaflak.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+explSound = "gmagg05.wav"
+damageRadius = 350.0
+kickRadius = 200.0
+kickOmega = 0.7 
+kickVeloc = 3.0
+
+damageValue(N) = 15
+damageValue(L) = 250
+damageValue(H) = 30
+
+damageValue(S) = 40
+damageValue(D) = 20
+damageValue(A) = 60
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 127"
+finishColor = "255 0 0 0"
+startRadius = 3.0
+finishRadius = 200.0
+animateTime = 0.5
+latitudeBands = 8
+longitudeSegments = 16
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_light"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 300.0
+finishRadius = 300.0
+animateTime = 1.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0

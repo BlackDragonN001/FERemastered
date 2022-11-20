@@ -1,0 +1,77 @@
+// =================
+// IRRADIATOR GROUND HIT
+// =================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 4
+
+particleClass1 = "xarmrad_agnd.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xarmrad_agnd.ring"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xarmrad_agnd.smoke"
+particleCount3 = 2
+particleVeloc3 = "4.0 6.0 4.0"
+particleBias3 = "0.0 2.0 0.0"
+
+particleClass4 = "xarmrad_cgnd.chunks"
+particleCount4 = 2
+particleVeloc4 = "12.5 16.0 12.5"
+particleBias4 = "0.0 8.0 0.0"
+
+explSound = "wmgr2.wav"
+damageRadius = 0.0
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_sprite"
+spriteCenter.x = 0.0
+spriteCenter.y = 1.0
+textureName = "ground.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "100 153 100 255"
+finishColor = "153 100 100 0"
+startRadius = 0.2
+finishRadius = 2.0
+animateTime = 1.0
+useTerrainColor = 0.9
+
+[Ring]
+simulateBase = "sim_null"
+lifetime = 1.5
+renderBase = "draw_planar"
+textureName = "grndchar.tga"
+textureBlend = "onealpha onealpha modulatealpha"
+startColor = "0 255 0 200"
+finishColor = "255 0 0 0"
+startRadius = 0.5
+finishRadius = 1.5
+animateTime = 1.5
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 230 63 120"
+finishColor = "140 63 31 0"
+startRadius = 0.2
+finishRadius = 1.3
+animateTime = 0.5
+rotationRate = 7.0
+useTerrainColor = 0.9
+BottomInteractsWithTerrain = false

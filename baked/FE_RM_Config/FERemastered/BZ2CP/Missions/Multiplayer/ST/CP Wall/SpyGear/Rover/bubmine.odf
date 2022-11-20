@@ -1,0 +1,27 @@
+[GameObjectClass]
+geometryName = "techsensor2.xsi"
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 1000
+maxAmmo = 1
+unitName = "Bubbler"
+heatSignature = 0.001
+imageSignature = 0.00
+radarSignature = 0.00
+//isAssault = 0
+armorClass = L
+canCollide = 1
+canDetect = 0 
+canInteract = 1 
+ownsTerrain = 0
+
+[MineClass]
+lifeSpan = 600 // -trigger * shotdelay for count
+
+[FlareMineClass]
+payloadName = "bubminebub"
+fireSound = "baice1b.wav" // "rmort01.wav"
+triggerDelay = 6.0
+shotDelay = 30.0 
+shotVariance = 2.5

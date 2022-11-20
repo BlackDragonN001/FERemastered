@@ -1,0 +1,140 @@
+[GameObjectClass]
+
+baseName = "ivrbomb"
+geometryName = "ivrbomb00.xsi"
+
+animCount = 3
+animName1 = "forward"
+animFile1 = "ivrbombsf.xsi"
+animName2 = "neutral"
+animFile2 = "ivrbombsn.xsi"
+animName3 = "reverse"
+animFile3 = "ivrbombsr.xsi"
+
+classLabel = "wingman"
+scrapValue = 30
+scrapCost = 75
+customCost = 85
+buildTime = 30.0
+customTime = 35.0
+maxHealth = 3300
+maxAmmo = 2500
+addAmmo = 0
+unitName = "Hammer"
+aiName = "AssaultTankProcess"
+aiName2 = "AssaultTankProcess"
+
+heatSignature = 1.5
+imageSignature = 2.5
+radarSignature = 1.3
+
+canSnipe = 0
+
+isAssault = 1
+
+armorClass = H
+
+requireCount = 2
+requireName1 = "ibfact"
+requireText1 = "Build Factory"
+requireName2 = "ibtcen"
+requireText2 = "Build Tech Cen"
+
+
+/////// weapons ///////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_ROCKET_1"
+weaponName1 = "gshadow_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_ROCKET_2"
+weaponName2 = "gshadow_c"
+weaponAssault2 = 0
+weaponHard3 = "HP_ROCKET_4"
+weaponName3 = "gcpphoton"
+weaponAssault3 = 1
+weaponHard4 = "HP_SPECIAL_1"
+weaponName4 = "gsitecam"
+weaponAssault4 = 0
+
+////////////////////////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2" 
+lightHard2 = "hp_light_2"
+lightName2 = "spotblue2"
+
+// Dust trail
+effectHard1 = "hp_com_1"
+effectName1 = "dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0  
+effectFlags1 = 2147483135
+
+// Engine flame glow.
+effectHard2 = "flame_1"
+effectName2 = "engglow_i.medium"
+effectFlags2 = 2147483135 // thrusting only.
+effectHard3 = "flame_2"
+effectName3 = "engglow_i.medium"
+effectFlags3 = 2147483135 // thrusting only.
+
+[CraftClass]
+rangeScan = 350.0f
+periodScan = 3.0f
+velocJam = 3.0f
+engageRange = 210
+
+braccelFactor = 0.03
+velFactor = 0.2
+steerFactor = 1.0
+omegaFactor = 0.2
+strafeFactor = 0.2
+
+avoidSpeed = 20;
+topSpeed = 30;
+
+selectAttackMsg = "avhrazvd.wav"
+selectWaitMsg = "avhrazvf.wav"
+selectFollowMsg = "avhrazvh.wav"
+selectGoMsg = "avhrazvg.wav"
+selectOtherMsg = "avhrazvj.wav"
+
+goMsg = "avhrazv0.wav"
+goObjectMsg = "avhrazvg.wav"
+attackMsg = "avhrazv2.wav"
+followMsg = "avhrazv7.wav"
+followMeMsg = "avhrazv3.wav"
+repairMsg = "avhrazv4.wav"
+reloadMsg = "avhrazv5.wav"
+rescueMsg = "avhrazv8.wav"
+recycleMsg = "avhrazv9.wav"
+otherMsg = "avhrazvi.wav"
+
+user1Msg = "avhrazv6.wav"
+killedMsg = "avhrazvk.wav"
+diedMsg = "abetty3.wav"
+
+[HoverCraftClass]
+velocForward = 28.0 // []
+velocReverse = 15.0 // []
+velocStrafe = 15.0 // []
+accelThrust = 10.0 //acceleration []
+accelDragStop = 6.0 //how fast it stops once hands are off controls []
+accelJump = 15.0 // []
+
+setAltitude = 2.0 // how high off the ground
+
+alphaTrack = 15.0 //springs speed it rights itself []
+alphaDamp = 8.0 //shocks []
+
+pitchPitch = 0.25 //nose up []
+pitchThrust = 0.1 //nose down []
+
+rollStrafe = 0.12 //rolls while strafing []
+omegaSpin = 2.0 //spinning in place speed []
+omegaTurn = 1.5 //turning while moving speed []
+alphaSteer = 2.6 //how fast it responds to steering []
+rollSteer = 0.1 //rolls while steering []
+
+soundThrust = "avhraze0.wav"
+soundTurbo = "avhraze3.wav"

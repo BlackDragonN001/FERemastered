@@ -1,0 +1,59 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+
+renderName = "sar7.render"
+
+ammoCost = 0.5
+lifeSpan = 0.5 // 150m
+shotSpeed = 200.0
+
+damageValue(N) = 3
+damageValue(L) = 2
+damageValue(H) = 0
+
+damageValue(S) = 2
+damageValue(D) = 0.5
+damageValue(A) = 2
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "sar7.core"
+renderName2 = "sar7.halo"
+//renderName3 = "pulse.trail"
+
+[Core]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "63 255 255 255"
+finishColor = "63 255 255 255"
+startRadius = 0.25
+finishRadius = 0.2
+bottomInteractsWithTerrain = false
+
+[Halo]
+renderBase = "draw_twirl"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "100 10 0 63"
+finishColor = "100 10 0 63"
+startRadius = 0.2
+finishRadius = 0.2
+rotationRate = 10.0
+bottomInteractsWithTerrain = false
+
+[Trail]
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+startColor = "63 255 255 255"
+finishColor = "100 255 255 255"
+startRadius = 0.05
+finishRadius = 0.0
+segmentTime = 0.5

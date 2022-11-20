@@ -1,0 +1,14 @@
+[WeaponClass]
+classLabel = "cannon" //"machinegun"
+altName = "gicer_a"
+ordName = "icer_c"
+wpnName = "Ice Blast"
+fireSound = "spstab01.wav"
+wpnReticle = "gplstab"
+wpnCategory = "CANN"
+isAssault = 1
+aiRange = 50
+
+[CannonClass]
+shotDelay = 0.6
+shotAlternate = 1

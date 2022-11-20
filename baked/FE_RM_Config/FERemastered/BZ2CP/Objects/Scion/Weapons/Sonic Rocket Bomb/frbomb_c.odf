@@ -1,0 +1,122 @@
+[OrdnanceClass]
+classLabel = "bullet"//"imagemissile"
+
+shotGeometry = "iorckt00.xsi"
+shotSound = "crckt02.wav"
+
+renderName = "frbomb_c.render"
+
+xplGround = "xfrbgnd_c"
+xplVehicle = "xfrbxpl_c"
+xplBuilding = "xfrbxpl_c"
+
+ammoCost = 40
+lifeSpan = 3.4
+shotSpeed = 50.0
+
+damageValue(N) = 180
+damageValue(L) = 140
+damageValue(H) = 100
+damageValue(S) = 100
+damageValue(D) = 180
+damageValue(A) = 90
+
+[MissileClass]
+omegaTurn = 0.6
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 6
+renderName1 = "frbomb_c.light"
+renderName2 = "frbomb_c.flare"
+renderName3 = "frbomb_c.flareglow"
+renderName4 = "frbomb_c.trail"
+renderName5 = "frbomb_c.flame"
+renderName6 = "frbomb_c.flametrail"
+
+[Light]
+renderBase = "draw_light"
+startColor = "63 255 63 380"
+finishColor = "63 255 63 380"
+startRadius = 40.0
+finishRadius = 40.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = true
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "0 100 0 255"
+finishColor = "0 80 0 200"
+startRadius = 5.0
+finishRadius = 5.0
+rotationRate = 20.0
+bottomInteractsWithTerrain = false
+
+[FlareGlow]
+renderBase = "draw_twirl"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "0 100 0 255"
+finishColor = "0 75 0 255"
+startRadius = 6.0
+finishRadius = 6.0
+rotationRate = 2.0
+bottomInteractsWithTerrain = false
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 153 0 127"
+finishColor = "0 153 0 0"
+startRadius = 0.8
+finishRadius = 2.5
+animateTime = 1.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 -5.0"
+emitVariance = "3.0 3.0 0.0"
+emitLife = 1.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 255"
+finishColor = "63 63 0 0"
+startRadius = 0.3
+finishRadius = 0.1
+animateTime = 0.1
+emitDelay = 0.002
+emitVelocity = "0.0 0.0 -5.0"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 0.1
+
+[FlameTrail]
+renderBase = "draw_trail"
+textureName = "firetrail1.tga"
+textureBlend = "one one modulate"
+startColor = "127 255 0 255"
+finishColor = "0 180 0 0"
+startRadius = 0.5
+finishRadius = 0.2
+segmentTime = 0.4
+segmentLength = 0.7
+textureSpeed = 2.0
+textureRate = 0.1
+
+[Trail]
+lifetime = 1.0
+renderBase = "draw_trail"
+textureName = "frbombt.tga"
+textureBlend = "one one modulate"
+startColor =  "255 255 255 255"
+finishColor =  "150 100 100 0"
+startRadius = 0.5
+finishRadius = 1.3
+segmentTime = 0.9
+textureSpeed = -0.5
+textureRate = 0.08

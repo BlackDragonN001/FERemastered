@@ -1,0 +1,44 @@
+///////////////////////////
+// Shock exlosion car hit
+///////////////////////////
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 1
+
+particleClass1 = "xshock_car.shock"
+particleCount1 = 5
+particleVeloc1 = "20.0 20.0 5.0"
+particleBias1 = "0.0 0.0 15.0"
+
+explSound = "gbolt00.wav" //"gtagg00.wav"
+
+damageRadius = 0.0
+
+damageValue(N) = 0 // 5
+damageValue(L) = 0
+damageValue(H) = 0
+
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+kickRadius = 6.0
+kickOmega = 1.5
+kickVeloc = -2.0
+
+[Shock]
+simulateBase = "ember"
+lifeTime = 0.5
+renderBase = "draw_bolt"
+textureName = "trail4.tga"
+textureBlend = "one one modulate"
+startColor = "255 100 40 255"
+finishColor = "255 50 20 0"
+startRadius = 0.3 //0.03
+finishRadius = 0.005
+segmentLength = 0.3 
+segmentVariance = "0.5 0.5 0.5"
+animateTime = 0.8
+textureRate = 0.01

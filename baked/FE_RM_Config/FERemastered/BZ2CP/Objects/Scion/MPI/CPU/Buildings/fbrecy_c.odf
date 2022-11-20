@@ -1,0 +1,21 @@
+[GameObjectClass]
+classLabel = "fbrecy"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 7
+provideName7 = "fbrecy_c"
+
+////////////////////////////////////
+
+[PoweredBuildingClass]
+
+[BuildingClass]
+
+[FactoryClass]
+buildItem1 = "fvscav_c"
+buildItem6 = "fvserv_c"
+
+[RecyclerClass]
+
+[Lod1]

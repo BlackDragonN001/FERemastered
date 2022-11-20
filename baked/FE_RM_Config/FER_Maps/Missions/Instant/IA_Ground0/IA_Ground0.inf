@@ -1,0 +1,46 @@
+[DESCRIPTION]
+missionName = "IA: Ground Zero"
+mapTga = "ground0.bmp"
+mapDesc = "InstantGround0.des"
+mySide = 0
+
+Aware_v13 = true
+
+// Default Race(s) for team. If lines are commented out, last choice
+// is used instead. It's recommended to have some stock values in
+// here, in case some custom map just set the values to really weird
+// values
+RaceHuman = 102 // 105 = ascii 'i' for ISDF, 102 = 'f' for Scion
+RaceCPU = 105 // 105 = ascii 'i' for ISDF, 102 = 'f' for Scion
+
+// Items below are stubs. Uncomment the lines (remove the leading //)
+// for them to take effect.
+
+// If specified, it takes this string, and looks for bzshell_instant_xo_<string>.cfg
+ExtraOptions = "Default"
+
+// If the Lock params are true, the user is prevented from changing
+// the choice. Default is false if commented out
+
+//LockRaceHuman = false
+//LockRaceCPU = false
+
+//ClearInstantVarbs = true // to 0/empty if not specified below
+
+// Shove things in options.instant.*, samples below. The number
+// suffixes are from 0..31 for each category. Note: these values set
+// are *NOT* saved to disk for a savegame. If a DLL wants to refer to
+// it later, it should copy off the value into its own memory.
+
+// Refer to the vars.txt included in the DLL source distributon for
+// the authoritative documentation 
+
+options_instant_string0 = "fercpu_"  // Custom AIP base name, e.g. "stock_" .
+options_instant_string1 = "ivrecy_t"    // Human Starting recycler
+options_instant_string2 = "ivrecycpu" // CPU starting recycler
+
+// Other values, stubbed in to show how to specify them.
+//options_instant_bool2 = truenet
+//options_instant_int3 = 17
+//options_instant_float4 = 3.141592657
+//options_instant_string5 = "GSH was here"

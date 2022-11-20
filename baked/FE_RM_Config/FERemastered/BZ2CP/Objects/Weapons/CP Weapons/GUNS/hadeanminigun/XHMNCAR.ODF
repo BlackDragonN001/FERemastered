@@ -1,0 +1,96 @@
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 5
+
+particleClass1 = "xhmncar.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleInherit1 = "1.0 1.0 1.0"
+
+particleClass2 = "xhmncar.Smoke"
+particleCount2 = 1
+particleVeloc2 = "4.3 4.5 4.3"
+particleBias2 = "0.0 2.0 0.0"
+particleInherit2 = "0.5 0.5 0.5"
+
+particleClass3 = "xbulgnd.ShardSprite"
+particleCount3 = 1
+particleVeloc3 = "0.3 0.3 0.3"
+particleBias3 = "0.0 0.1 0.0"
+particleInherit3 = "1.0 1.0 1.0"
+
+particleClass4 = "xbulgnd.Light"
+particleCount4 = 1
+particleVeloc4 = "0.3 0.3 0.3"
+particleBias4 = "0.0 0.1 0.0"
+particleInherit4 = "1.0 1.0 1.0"
+
+particleClass5 = "xhmncar.trail"
+particleCount5 = 2
+particleVeloc5 = "3.0 3.0 3.0"
+particleInherit5 = "1.0 1.0 1.0"
+
+explSound = "wmgr1.wav"
+damageRadius = 0.0
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_twirl"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 100"
+finishColor = "25 27 155 0"
+startRadius = 0.2
+finishRadius = 0.5
+animateTime = 0.3
+bottomInteractsWithTerrain = false
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "110 120 130 127"
+finishColor = "127 127 127 0"
+startRadius = 0.2
+finishRadius = 1.3
+animateTime = 0.5
+rotationRate = 7.0
+BottomInteractsWithTerrain = false
+
+[Trail]
+simulateBase = "sim_ember"
+lifeTime = 1.0
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "127 127 255 255"
+finishColor = "0 127 255 0"
+startRadius = 0.01
+finishRadius = 0.0
+segmentTime = 0.1
+textureRate = 0.1
+textureSpeed = -0.1
+
+
+[Spark]
+simulateBase = "sim_ember"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "spark.tga"
+textureBlend = "one one modulate"
+startColor = "127 127 255 255"
+finishColor = "63 127 255 0"
+startRadius = 0.1
+finishRadius = 0.05
+animateTime = 1.0
+rotationRate = 20.0

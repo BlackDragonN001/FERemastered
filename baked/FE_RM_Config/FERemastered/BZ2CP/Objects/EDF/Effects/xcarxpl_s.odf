@@ -1,0 +1,281 @@
+// =================
+// VEHICLE EXPLOSION SMALL
+// =================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xcar.wav"
+
+damageRadius = 20.0
+
+damageValue(N) = 300 // none
+damageValue(L) = 150 // light
+damageValue(H) = 50 // heavy
+ 
+damageValue(S) = 150 // standard
+damageValue(D) = 300 // deflection
+damageValue(A) = 50 // absorbtion
+
+kickRadius = 20.0
+kickOmega = 2.0
+kickVeloc = 4.0
+
+particleTypes = 12
+
+particleClass1 = "xcarxpl.flame1"
+particleCount1 = 1
+particleVeloc1 = "0.1 0.1 0.1"
+particleBias1 = "0.0 0.0 0.0"
+//particleInherit1 = "0.5 0.5 0.5"
+
+particleClass2 = "xcarxpl.flame2"
+particleCount2 = 15 //20
+particleVeloc2 = "30.0 2.0 30.0"
+particleInherit2 = "0.5 0.5 0.5"
+
+particleClass3 = "xcarxpl.smoke"
+particleCount3 = 12
+particleVeloc3 = "22.0 16.0 22.0"
+particleInherit3 = "0.5 0.5 0.5"
+particlePosVar3 = "10.0 0.0 10.0"
+
+particleClass4 = "xcarxpl.light"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+//particleInherit4 = "0.5 0.5 0.5"
+
+particleClass5 = "xcarxpl.spark"
+particleCount5 = 10 //20
+particleVeloc5 = "100.0 50.0 100.0"
+particleBias5 = "0.0 10.0 0.0"
+particleInherit5 = "0.8 0.8 0.8"
+particlePosVar5 = "5.0 0.0 5.0"
+
+particleClass6 = "xcarxpl.shock"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0"
+//particleInherit6 = "0.5 0.5 0.5"
+
+particleClass7 = "xcarxpl.ring"
+particleCount7 = 1
+particleVeloc7 = "0.0 0.0 0.0"
+//particleInherit7 = "0.5 0.5 0.5"
+
+particleClass8 = "xcarxpl.sparkcore"
+particleCount8 = 3 //5
+particleBias8 = "0.0 2.0 0.0"
+particleVeloc8 = "0.6 0.6 0.6"
+particlePosVar8 = "3.0 0.0 3.0"
+//particleInherit8 = "0.5 0.5 0.5"
+
+particleClass9 = "xcarxpl.sparktrails"
+particleCount9 = 10
+particleVeloc9 = "50.0 80.0 50.0"
+particlePosVar9 = "5.0 0.0 5.0"
+particleInherit9 = "0.8 0.8 0.8"
+
+particleClass10 = "xcarxpl.flame3"
+particleCount10 = 5
+particleVeloc10 = "5.0 0.5 5.0"
+particleBias10 = "0.0 5.0 0.0"
+//particleInherit10 = "0.5 0.5 0.5"
+
+particleClass11 = "xcarxpl.sootemit"
+particleCount11 = 6 //8
+particleVeloc11 = "10.0 20 10.0"
+particleBias11 = "0.0 0.0 0.0"
+particleInherit11 = "0.5 0.5 0.5"
+
+particleClass12 = "xcarxpl.flame"
+particleCount12 = 1
+particleVeloc12 = "0.0 10.0 0.0"
+particleInherit12 = "0.5 0.5 0.5"
+
+
+
+[Flame1]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_sprite" //"draw_twirl"
+textureName = "xplcore.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 100 120 0"
+startRadius = 1.0
+finishRadius = 6.0
+animateTime = 1.0
+//rotationRate = 0.0
+//BottomInteractsWithTerrain = false
+
+[Flame2]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 60 255"
+finishColor = "255 10 50 0"
+startRadius = 2.3
+finishRadius = 1.0
+animateTime = 1.0
+rotationRate = 2.0
+
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 5.0
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = " 50 50 50 255"
+finishColor = "30 15 5 0"
+startRadius = 4.0
+finishRadius = 5.5
+animateTime = 5.0
+rotationRate = 1.0
+
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_light"
+startColor = "255 140 20 2500"
+finishColor = "255 0 0 0"
+startRadius = 100.0
+finishRadius = 20.0
+animateTime = 2.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Spark]
+simulateBase = "sim_ember"
+lifeTime = 0.2
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 255"
+finishColor = "255 0 0 0"
+startRadius = 0.05
+finishRadius = 0.0
+trailTime = 0.2
+segmentTime = 0.2
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 0 63"
+finishColor = "255 0 0 0"
+startRadius = 3.0
+finishRadius = 30.0
+animateTime = 0.2
+latitudeBands = 16
+longitudeSegments = 32
+
+[Ring]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_planar"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "255 100 0 127"
+finishColor = "255 5 40 0"
+startRadius = 2.0
+finishRadius = 30.0
+animateTime = 0.5
+
+[SparkCore]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+startDelay = 0.5
+renderBase = "draw_twirl"
+textureName = "crackle.tga"
+textureBlend = "one one modulate"
+startColor = "90 255 255 255"
+finishColor = "152 90 190 0"
+startRadius = 6.0
+finishRadius = 0.5
+animateTime = 1.0
+rotationRate = 15.0
+BottomInteractsWithTerrain = false
+
+[SparkTrails]
+simulateBase = "sim_ember"
+lifeTime = 3.0
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 1.0
+startColor = "255 200 25 255"
+finishColor = "220 50 5 0"
+startRadius = 0.15
+finishRadius = 0.4
+trailTime = 20.5
+segmentTime = 0.5
+
+[Flame3]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_sprite" //"draw_twirl"
+textureName = "xplcore.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 100 120 0"
+startRadius = 6.0
+finishRadius = 0.0
+animateTime = 1.0
+//rotationRate = 0.0
+//BottomInteractsWithTerrain = false
+
+[sootemit]
+simulateBase = "sim_dust"
+lifeTime = 0.5
+renderBase = "draw_emit"
+emitName = "xcarxpl.sootrail"
+emitDelay = 0.2
+emitVelocity = "15.0 5.0 15.0"
+emitVariance = "100.0 20.0 100.0"
+
+[sootrail]
+simulateBase = "sim_ember"
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "50 50 50 255"
+finishColor = "5 5 5 0"
+startRadius = 0.3
+finishRadius = 0.6
+rotationRate = 15.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "4.0 4.0 4.0"
+emitLife = 0.4
+animateTime = 0.4
+useTerrainColor = 0.8
+
+[flame]
+simulateBase = "sim_smoke"
+lifeTime = 0.8
+renderBase = "draw_emit"
+emitName = "xcarxpl.flameemit"
+emitDelay = 0.1
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "10.0 10.0 10.0"
+emitInherit = "1.0 1.0 1.0"
+
+[flameemit]
+simulateBase = "sim_smoke"
+lifeTime = 0.8
+renderBase = "draw_twirl"
+textureName = "fire.tga" // flame2
+textureBlend = "one one modulate"
+startColor = "255 180 0 200"
+finishColor = "255 0 0 0"
+startRadius = 3.5
+finishRadius = 0.0
+animateTime = 0.8
+rotationRate = 5.0

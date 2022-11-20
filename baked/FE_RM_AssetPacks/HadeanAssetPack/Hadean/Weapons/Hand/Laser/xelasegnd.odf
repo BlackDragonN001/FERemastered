@@ -1,0 +1,165 @@
+// ================
+// FLASH GROUND HIT
+// ================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xemt2.wav"
+damageRadius = 0.0
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+
+particleTypes = 8
+
+particleClass1 = "xelasegnd.MiniChar"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xelasegnd.Light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleBias2 = "0.0 0.0 0.0"
+
+particleClass3 = "xelasegnd.GroundFlare"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xelasegnd.Flare"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+particleBias4 = "0.0 0.0 0.0"
+
+particleClass5 = "xelasegnd.WarpSmoke"
+particleCount5 = 1
+particleVeloc5 = "1.0 3.0 1.0"
+particleBias5 = "0.0 2.0 0.0"
+
+particleClass6 = "xelasegnd.DistortSphere"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0"
+
+particleClass7 = "xelasegnd.Chunks"
+particleCount7 = 2 //3
+particleVeloc7 = "5.0 9.0 7.0"
+particleBias7 = "0.0 9.0 0.0"
+
+particleClass8 = "xelasegnd.sparkTrails"
+particleCount8 = 2 //4
+particleVeloc8 = "26.0 60.0 26.0"
+particleBias8 = "0.0 0.0 0.0"
+
+
+[MiniChar]
+simulateBase = "sim_null"
+lifeTime = 3.0 //5.5
+renderBase = "draw_planar"
+textureName = "grndchar.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "10 10 10 255"
+finishColor = "10 10 10 0"
+startRadius = 1.0
+finishRadius = 1.0
+animateTime = 3.0 //5.5
+useTerrainColor = 0.9
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_light"
+startColor = "255 120 100 800"
+finishColor = "255 10 10 0"
+startRadius = 48.0
+finishRadius = 32.0
+animateTime = 0.5
+lensFlare = 0
+
+[GroundFlare]
+simulateBase = "sim_null"
+lifeTime = 2.0 //3.0
+renderBase = "draw_planar"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 50 50 255"
+finishColor = "255 50 50 0"
+startRadius = 1.0
+finishRadius = 0.1
+animateTime = 2.0 //3.0
+
+[Flare]
+simulateBase = "sim_smoke"
+lifeTime = 0.4
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 220 200 255"
+finishColor = "255 50 50 0"
+startRadius = 3.0
+finishRadius = 0.2
+rotationRate = 10.0
+animateTime = 0.4
+BottomInteractsWithTerrain = false
+
+[Chunks]
+simulateBase = "sim_ember"
+lifeTime = 1.3
+renderBase = "draw_twirl"
+textureName = "spark2.tga"
+textureBlend = "one one modulate"
+startColor = "255 120 50 255"
+finishColor = "255 140 10 0"
+startRadius = 0.17
+finishRadius = 0.08
+animateTime = 1.3
+rotationRate = 20.0
+
+[DistortSphere]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_sphere"
+textureName = "vsmoke3.tga"
+textureBlend = "one one modulate"
+startColor = "209 154 109 255"
+finishColor = "146 114 79 0"
+startRadius = 0.3
+finishRadius = 0.9
+animateTime = 0.3
+latitudeBands = 8
+longitudeSegments = 16
+
+[WarpSmoke]
+simulateBase = "sim_smoke"
+lifeTime = 0.3
+renderBase = "draw_twirl_trail"
+textureName = "smoke2.tga"
+textureBlend = "one one modulate"
+startColor = "209 50 50 90"
+finishColor = "119 86 44 0"
+startRadius = 0.3
+finishRadius = 0.6
+rotationRate = 20.0
+animateTime = 0.4
+emitDelay = 0.03
+emitVariance = "0.5 0.5 0.5"
+emitLife = 0.4
+BottomInteractsWithTerrain = false
+
+[SparkTrails]
+simulateBase = "sim_ember"
+lifeTime = 2.0
+renderBase = "draw_trail"
+textureName = "spark2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.3
+startColor = "255 30 10 255"
+finishColor = "255 60 10 0"
+startRadius = 0.1
+finishRadius = 0.005
+animateTime = 2.0
+segmentTime = 0.15
+segmentLength = 0.3

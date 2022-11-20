@@ -1,0 +1,18 @@
+[GameObjectClass]
+classLabel = "ibscav"
+unitName = "Extractor I"
+
+upgradeName = "ibscup_c"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 6
+provideName1 = "ibscav_c"
+
+////////////////////////////////////
+
+[steam]
+
+[BuildingClass]
+
+[ExtractorClass]

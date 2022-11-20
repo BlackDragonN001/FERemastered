@@ -1,0 +1,14 @@
+[GameObjectClass]
+classLabel = "fbscav"
+unitName = "Extractor I"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 6
+provideName1 = "fbscav_c"
+
+////////////////////////////////////
+
+[BuildingClass]
+
+[ExtractorClass]

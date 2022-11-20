@@ -1,0 +1,99 @@
+[GameObjectClass]
+geometryName = "iggren00.fbx"
+classLabel = "flare"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 1500
+maxAmmo = 0
+unitName = "Smoke Grenade"
+effectHard1 = "Smoke Grenade"
+effectName1 = "smokeb2.render"
+canInteract = 0
+
+[MineClass]
+lifeSpan = 40.0
+
+[FlareMineClass]
+payloadName = NULL
+fireSound = "smine01.wav"
+
+triggerDelay = 1.0
+
+shotDelay = 1e30
+
+shotVariance = 0.0
+
+damageRadius = 0.0
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+
+kickRadius = 0.0
+kickVeloc = 0.0
+kickOmega = 0.0
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "smokeb2.core"
+renderName2 = "smokeb2.cloudemit"
+renderName3 = "smokeb2.flash"
+
+[Core]
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 31 31 127"
+finishColor = "63 63 63 0"
+startRadius = 0.5
+finishRadius = 10.0
+animateTime = 1.0
+rotationRate = 2.0
+bottomInteractsWithTerrain = false
+
+[CloudEmit]
+renderBase = "draw_emit"
+emitName = "smokeb2.cloudpuff"
+emitDelay = 0.25
+emitVariance = "10.0 -5.0 10.0" //"15.0 -5.0 15.0"
+emitPosVariance = "5.0 0.0 5.0"
+
+[CloudPuff]
+//startDelay = 15.0
+simulateBase = "sim_dust"
+lifeTime = 40.0 //20.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "63 63 63 220"
+finishColor = "63 63 63 0" //140"
+startRadius = 10.0
+finishRadius = 40.0
+animateTime = 40.0 //20.0
+rotationRate = 4.0
+bottomInteractsWithTerrain = false
+
+[Flash]
+renderBase = "draw_emit"
+emitName = "smokeb2.lightemit"
+emitDelay = 1e6
+emitVariance = "0.0 0.0 0.0"
+
+[LightEmit]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_light"
+startColor = "255 255 255 2500"
+finishColor = "255 200 127 0"
+startRadius = 50.0
+finishRadius = 0.0
+animateTime = 0.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1

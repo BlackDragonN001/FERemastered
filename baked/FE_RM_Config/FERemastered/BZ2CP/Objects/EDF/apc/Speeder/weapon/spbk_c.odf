@@ -1,0 +1,24 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = "iorckt00.xsi"
+shotSound = "fmiss02.wav"
+
+renderName = "bazooka_c.render"
+
+xplGround = "xbazgnd_c"
+xplVehicle = "xbazxpl_c"
+xplBuilding = "xbazxpl_c"
+
+ammoCost = 10
+
+lifeSpan = 2.0 // 160m
+shotSpeed = 80.0
+
+damageValue(N) = 150
+damageValue(L) = 120
+damageValue(H) = 80
+
+damageValue(S) = 120
+damageValue(D) = 80
+damageValue(A) = 150

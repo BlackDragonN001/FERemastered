@@ -1,0 +1,83 @@
+// =================
+// SATCHEL EXPLOSION
+// =================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 3
+
+particleClass1 = "xdmsatxpl.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xdmsatxpl.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xdmsatxpl.flame"
+particleCount3 = 2
+particleVeloc3 = "0.0 10.0 0.0"
+
+
+explSound = "xmv1.wav"
+damageRadius = 70.0
+damageValue(N) = 250
+damageValue(L) = 3000
+damageValue(H) = 3000
+damageValue(S) = 3000
+damageValue(D) = 3000
+damageValue(A) = 3000
+
+kickRadius = 70.0
+kickOmega = 6.0
+kickVeloc = 25.0
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 150 255"
+finishColor = "255 50 0 0"
+startRadius = 3.0
+finishRadius = 50.0
+animateTime = 1.5
+bottomInteractsWithTerrain = false
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.4
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 80 255 150"
+finishColor = "120 0 255 0"
+startRadius = 3.0
+finishRadius = 60.0
+animateTime = 0.4
+latitudeBands = 8
+longitudeSegments = 16
+
+[flame]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "xdmsatxpl.flameemit" // Was "xdmsatcxpl", never worked. -GBD
+emitDelay = 0.1
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[flameemit]
+simulateBase = "sim_smoke"
+lifeTime = 0.6
+renderBase = "draw_twirl"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = " 255 170 50 255"
+finishColor = "255 120 0 0"
+startRadius = 0.001
+finishRadius = 30 //4
+animateTime = 0.6
+rotationRate = 5

@@ -1,0 +1,116 @@
+[OrdnanceClass]
+classLabel = "MagnetShell"
+
+shotGeometry = "iorckt00.xsi"
+shotSound = "crckt02.wav"
+
+renderName = "frbomb_a.render"
+
+xplGround = "xfrbgnd_a"
+xplVehicle = "xfrbxpl_a"
+xplBuilding = "xfrbxpl_a"
+
+ammoCost = 100
+lifeSpan = 5.75
+shotSpeed = 40.0
+
+damageValue(N) = 700 // TODO? Balance for armor type? -GBD
+damageValue(L) = 700
+damageValue(H) = 700
+damageValue(S) = 700
+damageValue(D) = 700
+damageValue(A) = 700
+
+[MagnetShellClass]
+triggerDelay = 0.0
+fieldRadius = 8.0
+objPushCenter = 30.0
+objPushEdge = 1.0
+objDrag = 0.1
+ordPushCenter = 125.0
+ordPushEdge = 100.0
+ordDrag = 0.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 6
+renderName1 = "frbomb_a.light"
+renderName2 = "frbomb_a.flare"
+renderName3 = "frbomb_a.flareglow"
+renderName4 = "frbomb_a.rings"
+renderName5 = "frbomb_a.flame"
+renderName6 = "frbomb_a.flametrail"
+
+[Light]
+renderBase = "draw_light"
+startColor = "63 255 63 380"
+finishColor = "63 255 63 380"
+startRadius = 60.0
+finishRadius = 60.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = true
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "0 100 0 255"
+finishColor = "0 75 0 255"
+startRadius = 8.0
+finishRadius = 8.0
+rotationRate = 20.0
+bottomInteractsWithTerrain = false
+
+[FlareGlow]
+renderBase = "draw_twirl"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "0 100 0 255"
+finishColor = "0 75 0 255"
+startRadius = 10.0
+finishRadius = 10.0
+rotationRate = 2.0
+bottomInteractsWithTerrain = false
+
+[Rings]
+renderBase = "draw_twirl_trail"
+textureName = "raindrop.tga"
+textureBlend = "one one modulate"
+startColor = "0 80 0 255"
+finishColor = "0 55 0 0"
+startRadius = 0.8
+finishRadius = 1.3
+animateTime = 1.8 //1.3
+emitDelay = 0.08
+emitLife = 1.8 //0.9
+rotationrate = 20.0
+bottomInteractsWithTerrain = false
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "127 255 0 255"
+finishColor = "63 63 0 255"
+startRadius = 0.5
+finishRadius = 0.2
+animateTime = 0.2
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "4.0 4.0 2.0"
+emitLife = 0.2
+
+[FlameTrail]
+renderBase = "draw_trail"
+textureName = "firetrail1.tga"
+textureBlend = "one one modulate"
+startColor = "127 255 0 255"
+finishColor = "0 63 0 0"
+startRadius = 0.6
+finishRadius = 0.3
+segmentTime = 0.6
+segmentLength = 1.0
+textureSpeed = 2.0
+textureRate = 0.05

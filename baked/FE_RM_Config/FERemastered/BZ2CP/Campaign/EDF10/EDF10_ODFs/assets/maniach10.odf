@@ -1,0 +1,30 @@
+[GameObjectClass]
+baseName = "espilo"
+classLabel = "espilo"
+
+maxHealth = 200
+
+aiName = "RocketTankFriend"
+aiName2 = "RocketTankEnemy"
+
+WeaponMask = 11111
+
+weaponName1 = "hbazook_c10"
+weaponName2 = ""
+weaponName3 = "hgjet10"
+
+[PersonClass]
+
+// running mode
+velocForwardRun  = 15.0
+velocReverseRun  = 10.0
+velocStrafeRun   = 5.0
+accelThrustRun   = 30.0
+velocJumpRun     = 15.0
+
+// flying mode
+velocForwardFly   = 45.0
+velocReverseFly   = 20.0
+velocStrafeFly    = 20.0
+accelThrustFly    = 15.0
+velocJumpFly      = 10.0

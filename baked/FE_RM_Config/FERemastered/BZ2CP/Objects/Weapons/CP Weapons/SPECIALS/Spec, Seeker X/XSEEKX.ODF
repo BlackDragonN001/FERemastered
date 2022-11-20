@@ -1,0 +1,92 @@
+// ==============
+// MINE EXPLOSION
+// ==============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 4
+
+particleClass1 = "xseekx.core"
+particleCount1 = 2
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xseekx.puff"
+particleCount2 = 70
+particleVeloc2 = "90.0 90.0 90.0"
+
+particleClass3 = "xseekx.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xseekx.shock"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+explSound = "xmv1.wav"
+
+damageRadius = 60.0
+
+damageValue(N) = 250 // none
+damageValue(L) = 150 // light
+damageValue(H) = 50 // heavy
+
+damageValue(S) = 150 // standard
+damageValue(D) = 250 // deflection
+damageValue(A) = 50 // absorbtion
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 5.0
+renderBase = "draw_twirl"
+textureName = "plascore.tga" //"flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 0 255"
+finishColor = "255 0 0 0"
+startRadius = 5.0
+finishRadius = 150.0
+animateTime = 5.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 5.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 31 0 255"
+finishColor = "255 0 0 0"
+startRadius = 10.0
+finishRadius = 15.0
+animateTime = 5.0
+rotationRate = 2.0
+bottomInteractsWithTerrain = false
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 5.0
+renderBase = "draw_light"
+startColor = "255 127 0 2255"
+finishColor = "255 0 0 0"
+startRadius = 60.0
+finishRadius = 0.0
+animateTime = 5.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 0 230"
+finishColor = "255 0 0 0"
+startRadius = 3.0
+finishRadius = 60.0
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16

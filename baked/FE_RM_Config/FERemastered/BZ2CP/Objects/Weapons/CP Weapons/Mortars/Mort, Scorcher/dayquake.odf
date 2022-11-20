@@ -1,0 +1,81 @@
+[OrdnanceClass]
+classLabel = "seismic"
+
+shotSound = "gquak01.wav"
+
+renderName = "dayquake.render"
+
+ammoCost = 1000
+lifeSpan = 10.0
+shotSpeed = 20.0
+
+damageValue(N) = 250
+damageValue(L) = 200
+damageValue(H) = 150
+damageValue(S) = 200
+damageValue(D) = 150
+damageValue(A) = 250
+
+[SeismicWaveClass]
+waveRadius = 50.0
+waveHeight = 6.0
+waveFrontFrequency = 0.5
+rampUpTime = 5.0
+rampDownTime = 2.0
+sweepOmega = 50.0
+sweepVeloc = 30.0
+shakeFrequency = 30.0
+shakeOmega = 20.0
+shakeVeloc = 50.0
+dampOmega = 1.0
+levelOmega = 1.0
+buildingScale = 1.0
+
+[Render]
+renderBase = "draw_emit"
+emitName = "dayquake.cloudemit"
+emitDelay = 0.01
+emitDelayVar = 0.015
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "12.0 1.0 12.0"
+emitInherit = "1.0 1.0 1.5"
+emitPosVariance = "100.0 0.0 50.0"
+
+//[Render]
+//renderBase = "draw_multi"
+//renderCount = 2
+//renderName1 = "thumper.cloudL"
+//renderName2 = "thumper.cloudR"
+
+[CloudL]
+renderBase = "draw_emit"
+emitName = "thumper.cloudemit"
+emitDelay = 0.05 //0.07
+emitVelocity = "0.0 2.0 0.0"
+emitVariance = "5.0 1.0 5.0"
+emitInherit = "1.0 1.0 1.5"
+emitPosVariance = "100.0 0.0 50.0"
+
+[CloudR]
+renderBase = "draw_emit"
+emitName = "thumper.cloudemit"
+emitDelay = 0.05 //0.07
+emitVelocity = "0.0 2.0 0.0"
+emitVariance = "5.0 1.0 5.0"
+emitInherit = "1.0 1.0 1.5"
+emitPosVariance = "100.0 0.0 50.0"
+
+[CloudEmit]
+simulateBase = "sim_smoke" //"sim_dust"
+lifeTime = 3.5
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "200 200 200 64"
+finishColor = "200 200 200 0"
+startRadius = 4.0
+finishRadius = 8.0
+animateTime = 3.5
+useTerrainColor = 0.9
+BottomInteractsWithTerrain = false
+maxCount = 512

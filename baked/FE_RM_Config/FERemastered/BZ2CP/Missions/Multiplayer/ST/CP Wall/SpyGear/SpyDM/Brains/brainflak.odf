@@ -1,0 +1,21 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotSound = NULL
+
+xplGround = NULL
+xplVehicle = NULL
+xplBuilding = NULL
+xplExpire = "xplbrain_xpr"
+
+ammoCost = 0
+lifeSpan = 0.0001
+shotSpeed = 10.0
+
+damageValue(N) = 1
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0

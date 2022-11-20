@@ -1,0 +1,166 @@
+[GameObjectClass]
+baseName = "ivbomb"
+geometryName = "ivbomb00.fbx"
+animCount = 1
+animName1 = "deploy"
+animFile1 = "ivbomb00.fbx"
+classLabel = "bomber"
+scrapValue = 0
+scrapCost = 75
+buildTime = 10.0
+maxHealth = 2000
+maxAmmo = 5000
+weaponMask = 00000
+unitName = "Bomber"
+aiName = "BomberProcess"
+aiName2 = "BomberProcess"
+heatSignature = 10.0
+imageSignature = 0.5
+radarSignature = 0.0
+isAssault = 1
+boxCollide = 1
+canSnipe = false
+
+armorClass = L
+
+/////// REQUIREMENTS ///////////////
+
+requireCount = 2
+requireName1 = "ibfact"
+requireText1 = "Build Factory
+requireName2 = "ibbomb"
+requireText2 = "Build Bomb Bay"
+
+////////////////////////////////////
+
+
+/////// PROVIDES ///////////////////
+
+provideCount = 3
+provideName1 = "ivbomb"
+provideName2 = "VIRTUAL_CLASS_BOMBER"
+provideName3 = "flier"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+lightHard2 = "hp_light_2"
+lightName2 = "spotblue2"
+lightHard3 = "hp_light_3"
+lightName3 = "spotblue2"  
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "emit_contrail1"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 1e6
+//effectMinVelocity1 = 0.1
+//effectMaxVelocity1 = 1e6
+effectFlags1 = 2147483639
+effectHard2 = "hp_dust_2" 
+effectName2 = "emit_contrail1"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 1e6
+//effectMinVelocity2 = 0.1
+//effectMaxVelocity2 = 1e6
+effectFlags2 = 2147483639
+
+// Engine flame glow.
+effectHard3 = "flame_1"
+effectName3 = "engglow_i.large"
+effectFlags3 = 2147483135 // thrusting only.
+effectHard4 = "flame_2"
+effectName4 = "engglow_i.large"
+effectFlags4 = 2147483135 // thrusting only.
+
+//effectHard3 = "hp_dust_1"
+//effectName3 = "emit_aircraft2"
+//effectMinAltitude3 = 25.0
+//effectMaxAltitude3 = 200.0
+//effectMinVelocity3 = 2.0
+//effectMaxVelocity3 = 500.0
+//effectHard4 = "hp_dust_2" 
+//effectName4 = "emit_aircraft2"
+//effectMinAltitude4 = 25.0
+//effectMaxAltitude4 = 200.0
+//effectMinVelocity4 = 2.0
+//effectMaxVelocity4 = 500.0
+//effectHard5 = "hp_dust_1"
+//effectName5 = "emit_aircraft2"
+//effectMinAltitude5 = 25.0
+//effectMaxAltitude5 = 200.0
+//effectMinVelocity5 = 2.0
+//effectMaxVelocity5 = 500.0
+//effectHard6 = "hp_dust_2" 
+//effectName6 = "emit_aircraft2"
+//effectMinAltitude6 = 25.0
+//effectMaxAltitude6 = 200.0
+//effectMinVelocity6 = 2.0
+//effectMaxVelocity6 = 500.0
+//effectHard7 = "hp_emit_1"
+//effectName7 = "emit_cyanstay"
+//effectHard8 = "hp_emit_2"
+//effectName8 = "emit_cyanstay"  
+
+[CraftClass]
+rangeScan = 400.0f
+periodScan = 5.0f
+velocJam = 5.0f
+
+TeamTransferrable = false
+
+braccelFactor = 0.05f;
+strafeFactor = 0.1f;
+steerFactor = 1.0f;
+omegaFactor = 0.2f;
+velFactor = 0.2f;
+
+selectWaitMsg = "bombgen07.wav"
+selectAttackMsg = "bombgen05.wav"
+selectFollowMsg = ""
+selectGoMsg = ""
+selectOtherMsg = "bombgen07.wav"
+
+goMsg = "bombgen06.wav"
+attackMsg = "bombgen01.wav"
+followMeMsg = "bombgen03.wav"
+followMsg = "bombgen03.wav"
+repairMsg = "bombgen03.wav"
+reloadMsg = "bombgen03.wav"
+rescueMsg = "bombgen03.wav"
+recycleMsg = "bombgen03.wav"
+otherMsg = ""
+
+user1Msg = ""
+killedMsg = "bombgen02.wav"
+
+
+[HoverCraftClass]
+setAltitude = 6.0
+accelDragStop = 0.0
+accelDragFull = 0.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.25
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+
+velocForward = 30.0
+velocReverse = 2.0
+velocStrafe = 15.0
+accelThrust = 20.0
+accelBrake = 2.0
+omegaSpin = 1.0
+omegaTurn = 1.0
+alphaSteer = 15.0
+accelJump = 300.0
+
+soundThrust = "ibomb.wav"
+soundTurbo = "avtanke3.wav"
+
+[BomberClass]
+flightAltitude = 85.0
+reloadTime = 10
+TargetEngageRange = 50 // radius around target it'll route thru
+bombName = "apwrck" // default loadout

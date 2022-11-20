@@ -1,0 +1,95 @@
+// ====================
+// LOCK DOWN GROUND HIT
+// ====================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "sonic02.wav"
+
+damageRadius = 0.0
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion
+
+kickRadius = 15.0
+kickOmega = 1.0
+kickVeloc = -15.0
+
+particleTypes = 3
+
+particleClass1 = "xioncgnd_a.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xioncgnd_a.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xioncgnd_a.ripple"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+[Core]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_planar"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 0 80"
+finishColor = "0 255 0 180"
+startRadius = 15.0
+finishRadius = 0.0
+animateTime = 0.5
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_sphere"
+textureName = "elecsphere.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 0 255" 
+finishColor = "0 255 0 255"
+startRadius = 5.0
+finishRadius = 0.0
+animateTime = 0.5
+addYaw = 50
+latitudeBands = 8
+longitudeSegments = 16
+
+[Ripple]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_twirl_trail"
+emitLife = 0.5
+animateTime = 0.5
+emitDelay = 0.2
+textureName = "sonicboom.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 0 180"  //"62 255 255 180"
+finishColor = "255 0 150 0"  //"62 255 255 80"
+startRadius = 5.0
+finishRadius = 20.0
+rotationRate = 10.0
+BottomInteractsWithTerrain = false
+
+[Trail]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_twirl_trail"
+emitLife = 0.05
+animateTime = 0.05
+emitDelay = 0.02
+textureName = "wasplat.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 0 180"
+finishColor = "255 0 150 0"
+startRadius = 3.0 //15.0
+finishRadius = 10.0 //0.0
+rotationRate = 20.0 //10.0
+BottomInteractsWithTerrain = false

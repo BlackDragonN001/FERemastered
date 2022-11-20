@@ -1,0 +1,75 @@
+[OrdnanceClass]
+classLabel = "thermalmissile"
+
+shotGeometry = NULL
+shotSound = "crckt02.wav"
+
+renderName = "sprink_c.render"
+
+xplGround = "xsprinkgnd"
+xplVehicle = "xsprinkcar"
+xplBuilding = "xsprinkcar"
+
+ammoCost = 15
+lifeSpan = 2.51 // 201m
+shotSpeed = 80.0
+
+damageValue(N) = 60 // none // 390
+damageValue(L) = 50 // light // 210
+damageValue(H) = 40 // heavy // 45
+
+damageValue(S) = 50 // standard // 210
+damageValue(D) = 60 // deflection // 180
+damageValue(A) = 30 // absorbtion // 255
+
+[MissileClass]
+omegaTurn = 2.5
+omegaWaver = 0.5
+rateWaver = 6.0
+
+[ThermalMissileClass]
+coneAngle = 0.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "sprink_c.light"
+renderName2 = "sprink_c.sprite"
+renderName3 = "sprink_c.trail"
+
+// were "xsprink_c", never worked. -GBD
+//renderName4 = "sprink_c.trail"
+//renderName5 = "sprink_c.sprite"
+
+[Light]
+renderBase = "draw_light"
+startColor = "250 180 55 400"
+finishColor = "250 180 55 400"
+startRadius = 20.0
+finishRadius = 20.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+[Sprite]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 160 0 255"
+finishColor = "255 160 0 255"
+startRadius = 3.0
+finishRadius = 3.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "sprinkt.tga"
+textureBlend = "one one modulate"
+startColor =  "255 255 255 200"// "100 0 0 100" 
+finishColor =  "100 100 100 0" // "100 100 100 0"
+startRadius = 0.5
+finishRadius = 3.0
+segmentTime = 1.0 //animateTime = 3.5
+textureRate = 0.05 //0.05

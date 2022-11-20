@@ -1,0 +1,40 @@
+// ===============
+// PLASMA BUILDING HIT
+// ===============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xfire1.wav"
+damageRadius = 5.0
+
+damageValue(N) = 75 // none
+damageValue(L) = 30 // light
+damageValue(H) = 0 // heavy
+
+damageValue(S) = 30 // standard
+damageValue(D) = 75 // deflection
+damageValue(A) = 0 // absorbtion
+
+particleTypes = 5
+
+particleClass1 = "xaddercar_a.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xaddercar_a.puff"
+particleCount2 = 4
+particleVeloc2 = "7.0 7.0 7.0"
+
+particleClass3 = "xaddercar_a.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xaddercar_a.shock"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "xaddercar_a.splat"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+

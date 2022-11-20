@@ -1,0 +1,73 @@
+[OrdnanceClass]
+classLabel = "imagemissile" //"bullet"
+
+renderName = "ebazooka_a.render"
+
+xplGround = "xebazgnd_a"
+xplVehicle = "xebazxpl_a"
+xplBuilding = "xebazxpl_a"
+
+ammoCost = 5
+lifeSpan = 2.5 //1.5 //300m
+shotSpeed = 120.0
+
+damageValue(N) = 50
+damageValue(L) = 40
+damageValue(H) = 30
+
+damageValue(S) = 40
+damageValue(D) = 50
+damageValue(A) = 30
+
+[MissileClass]
+omegaTurn = 1.0
+omegaWaver = 0.0
+rateWaver = 0.0
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "ebazooka_a.light"
+renderName2 = "ebazooka_a.flame"
+renderName3 = "ebazooka_a.smoke"
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 200 80 555"
+finishColor = "255 200 80 555"
+startRadius = 10.0
+finishRadius = 10.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+lenseFlare = 1
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 230 80 196"
+finishColor = "255 80 0 127"
+startRadius = 0.4
+finishRadius = 0.0
+animateTime = 0.3
+rotationRate = 10.0
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.5 0.5 0.0"
+//emitInherit = "0.5 0.5 0.5"
+emitLife = 0.3
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "63 31 31 31"
+finishColor = "63 63 31 0"
+startRadius = 0.4
+finishRadius = 0.6
+animateTime = 0.5
+emitDelay = 0.0075
+emitVelocity = "0.0 1.0 0.0"
+emitVariance = "1.0 1.0 0.5"
+emitLife = 0.5

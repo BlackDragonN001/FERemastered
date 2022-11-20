@@ -1,0 +1,287 @@
+[Sparker_Cerberi]
+renderBase = "draw_multi"
+renderCount = 8
+renderName1 = "sparker_cerberi.smoke"
+renderName2 = "sparker_cerberi.light"
+renderName3 = "sparker_cerberi.bolt"
+renderName4 = "sparker_cerberi.spark"
+renderName5 = "sparker_cerberi.sparkle"
+renderName6 = "sparker_cerberi.static"
+renderName7 = "sparker_cerberi.wave"
+renderName8 = "sparker_cerberi.steam"
+
+[Smoke]
+renderBase = "draw_emit"
+emitName = "sparker_cerberi.smokeemit"
+emitDelay = 0.05
+emitVelocity = "0.0 2.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+
+[SmokeEmit]
+simulateBase = "sim_smoke"
+lifeTime = 4.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "63 63 255 200" //"204 153 101 63"
+finishColor = "100 100 100 0" //"204 153 101 0"
+startRadius = 3.0
+finishRadius = 0.1
+animateTime = 4.0
+rotationRate = 5.0
+
+[Steam]
+renderBase = "draw_emit"
+emitName = "sparker_cerberi.steamemit"
+emitDelay = 0.1
+emitDelayVar = 0.05
+emitVelocity = "0.0 5.0 0.0"
+emitVariance = "10.0 0.0 10.0"
+emitPosVariance = "8.0 3.0 8.0"
+
+[SteamEmit]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "smoke3.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "127 127 255 200"
+finishColor = "255 255 255 0"
+startRadius = 2.5
+finishRadius = 5.0
+animateTime = 2.0
+rotationRate = 10.0
+
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 1.0 //11.0
+renderBase = "draw_light"
+startColor = "63 31 255 255"
+finishColor = "63 31 255 0"
+startRadius = 30.0
+finishRadius = 30.0
+animateTime = 1.0 //11.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Wave]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "sparker_cerberi.waveemit"
+emitDelay = 0.1
+emitVelocity = "0.0 -0.1 0.0"//.4 0 0
+emitVariance = "0.0 0.0 0.0"// .5 .5 .5
+
+[WaveEmit]
+simulateBase = "sim_smoke"
+lifeTime = 1.0 //4.0
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "63 63 255 240" 
+finishColor = "63 0 255 0" 
+startRadius = 3.0
+finishRadius = 8.0
+animateTime = 1.0
+waveAngle = 3.14159265359
+waveDepth = 0.5 //.5
+//waveColorCenter = "255 255 255 255"
+//waveColorEdge = "255 255 255 255"
+waveSegments = 32
+
+[Spark]
+renderBase = "draw_emit"
+emitName = "sparker_cerberi.sparkemit"
+emitDelay = 0.05
+emitDelayVar = 0.04
+emitVelocity = "0.0 10.0 0.0" //"2.0 3.0 1.0"
+emitVariance = "30.0 12.0 30.0" //"1.5 2.0 0.5"
+
+[SparkEmit]
+simulateBase = "sim_ember"
+lifeTime = 2.5
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "sparker_cerberi.sparkflare"
+renderName2 = "sparker_cerberi.sparktrail"
+
+[SparkFlare]
+renderBase = "draw_twirl"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "63 127 255 255"
+finishColor = "127 0 255 0"
+startRadius = 0.3
+finishRadius = 0.3
+animateTime = 2.5
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
+
+[SparkTrail]
+renderBase = "draw_trail"
+textureName = "trail.tga"
+textureBlend = "one one modulate"
+startColor = "63 127 255 255"
+finishColor = "127 0 255 0"
+startRadius = 0.04
+finishRadius = 0.0
+segmentTime = 0.15
+textureRate = 1.0
+textureSpeed = 0.0
+
+[Bolt]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_emit"
+emitName = "sparker_cerberi.boltemit"
+emitDelay = 0.025
+emitVelocity = "0.0 10.0 0.0" //.4 0 0
+emitVariance = "100.0 100.0 100.0" // .5 .5 .5
+
+[BoltEmit]
+simulateBase = "sim_ember" //dust
+lifeTime = 0.25
+renderBase = "draw_bolt"
+textureName = "bolt4.tga"
+textureBlend = "one one modulate"
+startColor = "31 63 255 255"
+finishColor = "0 255 255 0"
+startRadius = 0.1
+finishRadius = 0.25
+segmentLength = 1.0
+segmentVariance = "2.0 2.0 1.0"
+animateTime = 0.25
+textureRate = 0.01
+
+[Sparkle]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_twirl_trail"
+textureName = "particle.tga"
+textureblend = "one one modulate"
+startColor = "0 255 255 255"
+finishColor = "127 63 200 255"
+startRadius = 0.3
+finishRadius = 0.01
+animateTime = 0.6
+emitDelay = 0.003
+emitVelocity = "0.0 1.0 0.0"
+emitVariance = "10.0 10.0 10.0"
+emitPosVariance = "5.0 0.0 5.0"
+emitLife = 0.6
+
+[Static]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "sparker_cerberi.staticemit"
+emitDelay = 0.1
+emitVelocity = "0.0 0.0 0.0"//.4 0 0
+emitVariance = "2.5 2.5 2.5"// .5 .5 .5
+
+[StaticEmit]
+simulateBase = "sim_smoke" //dust"
+lifeTime = 0.3
+renderBase = "draw_static"
+textureName = "static.tga"
+textureBlend = "one one modulate"
+startColor = "63 31 255 200"
+finishColor = "0 127 255 0"
+startRadius = 0.05
+finishRadius = 0.3
+emitDelay = 0.05 //.01
+emitDelayVar = 0.0
+innerRadius = 2.0
+outerRadius = 5.0
+segmentTime = 0.5 //0.4
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Trail]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_emit"
+emitName = "sparker.trailemit"
+emitDelay = 0.2 //.1
+emitVelocity = "0.0 0.0 0.0"//.4 0 0
+emitVariance = "20.0 0.0 20.0"// .5 .5 .5
+
+[TrailEmit]
+simulateBase = "sim_dust" //dust
+lifeTime = 2.5 //2.5
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.05
+startColor = "10 10 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.1
+finishRadius = 0.5
+segmentTime = 2.0 //animateTime = 2.5
+
+
+
+
+
+[Ember]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_emit"
+emitName = "sparker.emberemit"
+emitDelay = 0.1
+emitVelocity = "0.0 15.0 0.0"
+emitVariance = "20.0 20.0 10.0"
+
+[EmberEmit]
+simulateBase = "sim_ember" //dust
+lifeTime = 0.5 //2.5
+renderBase = "draw_bolt" //"draw_spark" // draw_spark doesn't exist in BZ2. -GBD
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.05
+startColor = "255 200 0 255"
+finishColor = "0 0 255 0"
+startRadius = 0.1
+finishRadius = 0.4
+segmentTime = 3.0
+animateTime = 0.5
+
+[Bolt2]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_emit"
+emitName = "sparker.bolt2emit"
+emitDelay = 0.05
+emitVelocity = "0.0 -20.0 0.0"//.4 0 0
+emitVariance = "50.0 -50.0 50.0"// .5 .5 .5
+
+[Bolt2Emit]
+simulateBase = "sim_ember"//dust
+lifeTime = 0.5 //2.5
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "200 50 0 255"
+finishColor = "0 0 255 0"
+startRadius = 0.15
+finishRadius = 0.05
+segmentLength = 1.5
+segmentVariance = "2.0 2.0 1.0"
+animateTime = 1.0 // 0.2
+textureRate = 0.05 //.1
+
+
+

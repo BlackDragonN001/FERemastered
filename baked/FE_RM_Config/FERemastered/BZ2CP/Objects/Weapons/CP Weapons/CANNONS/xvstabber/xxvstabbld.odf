@@ -1,0 +1,64 @@
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 10
+
+particleClass1 = "xxvstabcar.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 5.0 0.0"
+particleBias1 = "0.0 5.0 0.0"
+
+particleClass2 = "xxvstabcar.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xxvstabcar.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xxvstabcar.SmokePlume"
+particleCount4 = 10
+particleVeloc4 = "15.0 25.0 15.0"
+particlePosVar4 = "5.0 0.0 5.0"
+
+particleClass5 = "xxvstabcar.puff"
+particleCount5 = 15
+particleVeloc5 = "20.0 35.0 20.0"
+particlePosVar5 = "3.0 0.0 3.0"
+
+particleClass6 = "xxvstabcar.glow"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0"
+
+particleClass7 = "xxvstabcar.FlameHeat"
+particleCount7 = 6
+particleVeloc7 = "5.0 10.0 5.0"
+particlePosVar7 = "5.0 0.0 5.0"
+
+particleClass8 = "xxvstabcar.Flames"
+particleCount8 = 10
+particleVeloc8 = "10.0 10.0 10.0"
+particlePosVar8 = "5.0 0.0 5.0"
+
+particleClass9 = "xxvstabcar.sparks"
+particleCount9 = 6
+particleVeloc9 = "110.0 90.0 110.0"
+particleBias9 = "0.0 1.0 0.0"
+particlePosVar9 = "3.0 0.0 3.0"
+
+particleClass10 = "xxvstabcar.ring"
+particleCount10 = 1
+particleVeloc10 = "0.0 0.0 0.0"
+
+explSound = "xxvstabbld.wav"
+damageRadius = 20.0
+kickRadius = 5.0
+kickOmega = 2.0
+kickVeloc = 2.0
+
+damageValue(N) = 50
+damageValue(L) = 40
+damageValue(H) = 30
+damageValue(S) = 40
+damageValue(D) = 50
+damageValue(A) = 20

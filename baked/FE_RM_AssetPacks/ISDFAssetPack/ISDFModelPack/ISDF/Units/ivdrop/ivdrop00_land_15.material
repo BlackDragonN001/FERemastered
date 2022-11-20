@@ -1,0 +1,13 @@
+[solid]
+diffuse = 1.000000  1.000000  1.000000  1.000000
+specular = 0.494118  0.494118  0.494118  1.000000
+specularPower = 1024.000000
+emissive = 0.000000  0.000000  0.000000  1.000000
+ambient = 0.000000  0.000000  0.000000  1.000000
+
+
+[texture]
+diffuse = ivdrop04.dds
+emissive = ivdrop04_e.dds
+normal = ivdrop04_n.dds
+specular = ivdrop04_s.dds

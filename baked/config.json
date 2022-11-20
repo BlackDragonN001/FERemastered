@@ -1,0 +1,27 @@
+{
+    "mods":[
+        {
+            "name":"Forgotten Enemies: Remastered - Temp BZ2 Terrain",
+            "folder":"FER_TempBZ2Terrain",
+			"workshopid":"TempBZ2Terrain"
+        },
+        {
+            "name":"Forgotten Enemies: Remastered - addon",
+            "folder":"FER_addon",
+			"workshopid":"FERAddon"
+        },
+        {
+            "name":"Forgotten Enemies: Remastered - Asset Packs",
+            "folder":"FE_RM_AssetPacks",
+			"workshopid":"FE_RM_AssetPacks"
+        },
+        {
+            "name":"Forgotten Enemies: Remastered",
+            "folder":"FE_RM_Config",
+            "image":"logo.png",
+			"workshopid":"FE_RM_Config",
+            "desc":"desc.txt",
+            "version":"v0.0.1"
+        }
+    ]
+}

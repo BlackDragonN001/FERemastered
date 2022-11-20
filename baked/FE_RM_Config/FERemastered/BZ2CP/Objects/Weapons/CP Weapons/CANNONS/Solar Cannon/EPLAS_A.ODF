@@ -1,0 +1,57 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotSound = "gflas00.wav"
+
+xplGround = "xeplasgnd_a"
+xplVehicle = "xeplas_a"
+xplBuilding = "xeplas_a"
+
+renderName = "eplas_a.render"
+
+ammoCost = 450
+lifeSpan = 6.0 // ? meters
+shotSpeed = 30.0
+
+damageValue(N) = 3000 // none // 350
+damageValue(L) = 2000 // light // 250
+damageValue(H) = 900 // heavy // 150
+
+damageValue(S) = 2700 // standard // 250
+damageValue(D) = 4500 // deflection // 350
+damageValue(A) = 1000 // absorbtion // 100
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "eplas_a.light"
+renderName2 = "eplas_a.flame"
+
+[Light]
+renderBase = "draw_light"
+startColor = "1000 1000 1000 555" //"255 255 255 555"
+finishColor = "1000 1000 1000 555" //"255 255 255 555"
+startRadius = 150.0 //30.0
+finishRadius = 150.0 //30.0
+animateTime = 2.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+[Flame]
+renderBase = "draw_twirl_trail"
+//textureName = "particle.tga"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 250 555"
+finishColor = "255 255 250 655"
+startRadius = 1.5
+finishRadius = 0.3
+animateTime = 0.5
+rotationRate = 10.0
+emitDelay = 0.002
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 6.0

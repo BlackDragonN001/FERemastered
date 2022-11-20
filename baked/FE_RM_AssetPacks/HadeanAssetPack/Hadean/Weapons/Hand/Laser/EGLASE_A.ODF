@@ -1,0 +1,92 @@
+[WeaponClass]
+classLabel = "chargegun"
+
+// don't need any geometry
+// (hgsnip_c already has it)
+
+altName = "eglase_c"
+ordName = NULL
+wpnName = "Laser"
+fireSound = "mag01.wav"
+wpnReticle = "gmaggun.0"
+wpnCategory = "HAND"
+isAssault = 1
+isFlying = 0
+
+[ChargeGunClass]
+startRate = 11025.0
+deltaRate = 4000.0
+startVolume = 40.0
+deltaVolume = 20.0
+
+ordnanceCount = 7
+
+shotDelay1 = 0.0
+salvoCount1 = 0
+salvoDelay1 = 0
+shotVariance1 = 0.0
+fireSound1 = NULL
+ordName1 = NULL
+wpnReticle1 = "gmaggun.0"
+
+shotDelay2 = 0.5
+salvoCount2 = 1
+salvoDelay2 = 0.1
+shotVariance2 = 0.0
+fireSound2 = "xmag03.wav"
+ordName2 = "elase_a"
+wpnReticle2 = "gmaggun.1"
+
+shotDelay3 = 1.0
+salvoCount3 = 2
+salvoDelay3 = 0.1
+shotVariance3 = 0.0
+fireSound3 = "xmag04.wav"
+ordName3 = "elase_a"
+wpnReticle3 = "gmaggun.2"
+
+shotDelay4 = 1.5
+salvoCount4 = 3
+salvoDelay4 = 0.1
+shotVariance4 = 0.0
+fireSound4 = "xmag05.wav"
+ordName4 = "elase_a"
+wpnReticle4 = "gmaggun.3"
+
+shotDelay5 = 2.0
+salvoCount5 = 4
+salvoDelay5 = 0.1
+shotVariance5 = 0.0
+fireSound5 = "xmag06.wav"
+ordName5 = "elase_a"
+wpnReticle5 = "gmaggun.4"
+
+shotDelay6 = 2.5
+salvoCount6 = 5
+salvoDelay6 = 0.1
+shotVariance6 = 0.0
+fireSound6 = "xmag07.wav"
+ordName6 = "elase_a"
+wpnReticle6 = "gmaggun.5"
+
+shotDelay7 = 3.0
+salvoCount7 = 6
+salvoDelay7 = 0.1
+shotVariance7 = 0.0
+fireSound7 = "xmag07.wav"
+ordName7 = "elase_a"
+wpnReticle7 = "gmaggun.6"
+
+holdRate = 0.0
+
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 100 255"
+finishColor = "255 255 0 255"
+startRadius = 3.0
+finishRadius = 1
+animateTime = 0.1
+geomName = "g_sflash.xsi"

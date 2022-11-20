@@ -1,0 +1,39 @@
+[OrdnanceClass]
+classLabel = "spraybomb"
+
+shotGeometry = "ioartl00.xsi"
+shotSound = "baz03.wav"
+
+xplGround = NULL
+xplVehicle = NULL
+xplBuilding = NULL
+
+rendername = "minfieldbm.render"
+
+ammoCost = 50
+lifeSpan = 1e30
+shotSpeed = 45.0
+
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+[SprayBombClass]
+payloadName = "minfield"
+
+[Render]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "100 180 255 63"
+finishColor = "100 200 180 0"
+startRadius = 0.5
+finishRadius = 	1.0
+animateTime = 0.3
+emitDelay = 0.015
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 0.3

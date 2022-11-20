@@ -1,0 +1,83 @@
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "wcbl.wav" // "xbombf.wav"
+damageRadius = 2.0
+
+damageValue(N) = 20
+damageValue(L) = 15
+damageValue(H) = 1
+
+damageValue(S) = 10
+damageValue(D) = 5
+damageValue(A) = 1
+
+particleTypes = 4
+
+particleClass1 = "xchrggnd4.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xchrggnd4.puff"
+particleCount2 = 4
+particleVeloc2 = "4.0 4.0 4.0"
+
+particleClass3 = "xchrggnd4.shock"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xchrggnd4.splat"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "blast.tga" // flame
+textureBlend = "one one modulate"
+startColor = "255 120 50 255"
+finishColor = "255 120 50 0"
+startRadius = 1.5
+finishRadius = 0.5
+animateTime = 1.0
+bottomInteractsWithTerrain = false
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 1.5
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 120 50 255"
+finishColor = "255 120 50 0"
+startRadius = 0.5
+finishRadius = 2.5
+animateTime = 1.5
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_sprite"
+spriteCenter.x = 0.0
+spriteCenter.y = 1.0
+textureName = "ground.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 120 50 255"
+finishColor = "255 120 50 0"
+startRadius = 0.1
+finishRadius = 1.2
+animateTime = 1.5
+useTerrainColor = 0.9
+
+[Splat]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_planar"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "255 120 50 255"
+finishColor = "255 120 50 0"
+startRadius = 0.1
+finishRadius = 2.0
+animateTime = 0.5

@@ -1,0 +1,48 @@
+[OrdnanceClass]
+classLabel = "beam"
+
+shotGeometry = NULL
+
+xplGround = "xelasegnd"
+xplVehicle = "xelasecar"
+xplBuilding = "xelasebld"
+
+renderName = "elase_c.render"
+
+ammoCost = 5
+lifeSpan = 0.667 // 200.1m
+shotSpeed = 300.0
+
+damageValue(N) = 50
+damageValue(L) = 33
+damageValue(H) = 25
+
+damageValue(S) = 33
+damageValue(D) = 50
+damageValue(A) = 25
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "elase_c.flare"
+renderName2 = "elase_c.dull"
+
+[Flare]
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+textureName = "trail.tga"
+startColor = "255 100 0 255"
+finishColor = "255 0 0 100"
+startRadius = 0.02
+finishRadius = 0.05
+segmentTime = 0.09
+
+[Dull]
+renderBase = "draw_trail"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+textureName = "strail.tga"
+startColor = "0 0 0 64"
+finishColor = "10 10 10 0"
+startRadius = 0.04
+finishRadius = 0.1
+segmentTime = 0.09

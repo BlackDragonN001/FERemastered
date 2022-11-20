@@ -1,0 +1,78 @@
+[GameObjectClass]
+geometryName = "sporebits.xsi" //"goober.xsi"
+classLabel = "seeker" 
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 1
+unitName = "spore"
+heatSignature = 0.01
+imageSignature = 0.01
+radarSignature = 2.0
+isAssault = 1
+armorClass = N
+canCollide = 1
+canDetect = 1 
+canInteract = 1 
+ownsTerrain = 0
+powercost = 0
+collisionRadius = 3.0
+
+lightHard1 = "hp_light_1"
+lightName1 = "omniblue"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "sporebits.render"
+
+[MineClass]
+lifeSpan = 25 // 
+xplBlast = "xplspore"
+xplExpire = "xplspore"
+
+[SeekerClass]
+searchRange = 90.0
+floatVeloc = 60 
+setAltitude = 25.3
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "sporebits.tail"
+renderName2 = "sporebits.poof"
+renderName3 = "sporebits.light"
+
+[Tail]
+renderBase = "draw_trail"
+textureName = "trail4.tga"
+textureBlend = "one one modulate"
+startColor = "100 140 0 90"
+finishColor = "0 0 255 0"
+startRadius = 0.5
+finishRadius = 1.0 
+segmentTime = 2.5  // time each segment animates
+//segmentVariance = "0.1 0.1 0.1"
+//animateTime = 0.3
+textureRate = 0.05
+
+[Poof]
+renderBase = "draw_twirl"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "80 0 0 255"
+finishColor = "0 0 150 60"
+startRadius = 3.5 
+finishRadius = 2.0 
+animateTime = 4.0
+rotationRate = 5.0 // 1.0
+
+[Light]
+renderBase = "draw_light"
+startColor = "80 0 0 2550"
+finishColor = "0 0 150 2550"
+startRadius = 25.0
+finishRadius = 25.0
+animateTime = 4.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = false

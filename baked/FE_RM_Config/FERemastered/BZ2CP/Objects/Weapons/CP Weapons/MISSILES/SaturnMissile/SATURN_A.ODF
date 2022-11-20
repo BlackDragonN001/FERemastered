@@ -1,0 +1,61 @@
+[OrdnanceClass]
+classLabel = "thermalmissile"
+
+shotGeometry = "forckt01.xsi"
+shotSound = "satord.wav"
+
+renderName = "saturn_a.render"
+
+xplGround = "xmslcar"
+xplVehicle = "xmslcar"
+xplBuilding = "xmslcar"
+
+ammoCost = 115
+lifeSpan = 4.0
+shotSpeed = 60.0
+
+damageValue(N) = 500// none
+damageValue(L) = 400 // light
+damageValue(H) = 350 // heavy
+
+damageValue(S) = 450 // standard
+damageValue(D) = 400 // deflection
+damageValue(A) = 500 // absorbtion
+
+[MissileClass]
+omegaTurn = 0.5
+
+[ThermalMissileClass]
+coneAngle = 0.2
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "saturn_a.light"
+renderName2 = "saturn_a.smoke"
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 255 255 555"
+finishColor = "255 255 255 555"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "153 153 153 127"
+finishColor = "153 153 153 0"
+startRadius = 0.2
+finishRadius = 1.5
+animateTime = 1.5
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 -5.0"
+emitVariance = "0.6 0.6 0.6"
+emitLife = 1.5
+

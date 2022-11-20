@@ -1,0 +1,76 @@
+[OrdnanceClass]
+classLabel = "thermalmissile"
+
+shotGeometry = NULL
+shotSound = "clustord.wav"
+
+renderName = "cluster_c.render"
+
+xplGround = "xmslcar"
+xplVehicle = "xmslcar"
+xplBuilding = "xmslcar"
+
+ammoCost = 10
+lifeSpan = 2.5
+shotSpeed = 80.0
+
+damageValue(N) = 120
+damageValue(L) = 80
+damageValue(H) = 60
+
+damageValue(S) = 90
+damageValue(D) = 60
+damageValue(A) = 120
+
+[MissileClass]
+omegaTurn = 5.0
+
+[ThermalMissileClass]
+coneAngle = 0.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "cluster_c.light"
+renderName2 = "cluster_c.flame"
+renderName3 = "cluster_c.smoke"
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 90 31 255"
+finishColor = "255 90 31 255"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "180 70 0 180"
+finishColor = "60 30 0 100"
+startRadius = 0.1
+finishRadius = 0.02
+animateTime = 0.06
+rotationRate = 1.0
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.5 0.0"
+emitLife = 0.06
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "gunk2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "15 15 15 127"
+finishColor = "15 15 15 0"
+startRadius = 0.1
+finishRadius = 0.1
+animateTime = 1.0
+emitDelay = 0.004 //5
+emitVelocity = "0.5 0.5 0.5"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 1.0

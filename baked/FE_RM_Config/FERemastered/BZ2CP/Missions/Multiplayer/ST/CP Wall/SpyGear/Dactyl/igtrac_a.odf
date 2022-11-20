@@ -1,0 +1,83 @@
+[WeaponClass]
+classLabel = "magnetgun"
+ordName = NULL
+altName = NULL // "gsonic_c"
+wpnName = "Tractor Beam"
+fireSound = ""
+wpnReticle = "gsonic_a"
+wpnCategory = "ROCK"
+flashName = "igtrac_a.flash"
+flashTime = 0.4
+isAssault = 1 // 1 so dactyl doesn"t use in combat
+
+aiRange = 125
+
+[MagnetGunClass]
+ammoCost = 8.5 // 11
+activeSound = "stap01.wav" //"ssent01c.wav"//"mag01.wav"
+coneAngle = 0.08 // 1.0
+fieldRadius = 140 //20.0
+objPushCenter = 45 // 38 // 100.0
+objPushEdge = -140 // 40.0
+objDrag = 7.8 // 0.2
+ordPushCenter = 300 // 700.0
+ordPushEdge = 150 //300 // 200.0
+ordDrag = 3.0 //2.5 
+
+[Flash]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "igtrac_a.flashwave"
+renderName2 = "igtrac_a.flashwave2"
+renderName3 = "igtrac_a.field"
+renderName4 = "igtrac_a.field2"
+
+[FlashWave]
+renderBase = "draw_wave"
+textureName =  NULL //"wave.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 255 255" 
+finishColor = "100 0 20 255" 
+startRadius = 130.0 
+finishRadius = 1.0 
+animateTime = 0.4 // 0.2
+waveAngle = 0.07 // 
+waveDepth = 0.3 //0.8
+waveSegments = 6 //8 across width, gradations
+
+[FlashWave2]
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "100 0 0 255" 
+finishColor = "0 0 255 255" 
+startRadius = 1.0 
+finishRadius = 130.0 
+animateTime = 0.4 // 0.2
+waveAngle = 0.07 // 
+waveDepth = 0.3 //0.8
+waveSegments = 6 //8 across width, gradations
+
+[Field]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 255 10"
+finishColor = "100 0 0 180" 
+startRadius = 1.7
+finishRadius = 2.0
+animateTime = 0.4
+latitudeBands = 12
+longitudeSegments = 18
+
+[Field2]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 255 200"
+finishColor = "100 0 0 10" 
+startRadius = 2.0
+finishRadius = 1.7
+animateTime = 0.4
+latitudeBands = 12
+longitudeSegments = 18

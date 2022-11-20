@@ -1,0 +1,15 @@
+[GameObjectClass]
+baseName = "apesnip"
+classLabel = "aphand"
+scrapCost = 10 // 20FEB // 30 FE R
+
+requireCount = 1
+requireName1 = "ebtrain"
+requireText1 = "Build Believers Vat"
+
+lightName1 = "omnired-ap"
+
+[PowerUpClass]
+
+[WeaponPowerupClass]
+weaponName = "egsnip_c"

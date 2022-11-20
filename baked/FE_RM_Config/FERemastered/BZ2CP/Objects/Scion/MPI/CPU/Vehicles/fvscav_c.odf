@@ -1,0 +1,23 @@
+[GameObjectClass]
+classLabel = "fvscav"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 4
+provideName4 = "fvscav_c"
+
+////////////////////////////////////
+
+[CraftClass]
+ejectRatio = 1
+
+[TrackedVehicleClass]
+
+[TrackedDeployableClass]
+
+[ScavengerClass]
+deployClass = "fbscav_c"
+
+[Lod1]
+
+[Lod2]

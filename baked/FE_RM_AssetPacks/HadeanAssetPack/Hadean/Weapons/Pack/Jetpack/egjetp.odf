@@ -1,0 +1,66 @@
+[WeaponClass]
+classLabel = "jetpack"
+geometryName = "espilo_pack.xsi"
+geometryScale = 0.12
+ordName = NULL
+wpnName = "Booster"
+wpnIcon = "wire_igjetp%d.tga"
+fireSound = "whcan.wav"
+flashName = "egjetp.render"
+wpnReticle = "gphantom.0"
+wpnPriority = 0
+wpnCategory = "PACK"
+localAmmo = 1
+
+[JetPackClass]
+ammoCost = 1
+burnTime = 3.0
+accelThrust = 30.0
+activeSound = "jpack01.wav"
+expireSound = "jpack02.wav"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "egjetp.light"
+renderName2 = "egjetp.smoke"
+renderName3 = "egjetp.flame"
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 200 100 255"
+finishColor = "255 200 100 255"
+startRadius = 10.0
+finishRadius = 10.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "127 100 63 63"
+finishColor = "31 31 31 0"
+startRadius = 0.5
+finishRadius = 5.0
+animateTime = 3.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 3.0"
+emitLife = 3.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "plascore.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 63 255"
+finishColor = "255 31 0 0"
+startRadius = 0.3
+finishRadius = 0.03
+animateTime = 0.1
+emitDelay = 0.002
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 3.0"
+emitLife = 0.1

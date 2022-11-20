@@ -1,0 +1,98 @@
+[GameObjectClass]
+baseName = "ebarmo"
+geometryName = "ebarmo00.fbx"
+classLabel = "armory"
+collisionRadius = 1.0
+scrapCost = 60
+scrapValue = 3
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Arsenal"
+aiName = "ArmoryProcess"
+aiName2 = "ArmoryProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+armorClass = H
+
+/////// Requirements ///////////////////
+
+requireCount = 2
+requireName1 = "ebfact"
+requireText1 = "Build Xenomator"
+requireName2 = "ebcbun"
+requireText2 = "Build Eyes of Xyr"
+
+/////// Provides ///////////////////
+
+provideCount = 2
+provideName1 = "ebarmo"
+provideName2 = "base"
+
+/////// Lights and effects ///////////////////
+
+lightHard1 = "hp_light_1"
+lightName1 = "spothadean"
+lightHard2 = "hp_light_1"
+lightName2 = "omnihadean"
+
+[BuildingClass]
+soundAmbient = "iarm01.wav"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[FactoryClass]
+soundBuild = "ibrecy02.wav"
+soundFinish = "iapc04.wav"
+
+reloadMsg = "evrecy12.wav" //"ivrecy12.wav"
+rescueMsg = "evrecy13.wav" //"ivrecy13.wav"
+
+[ArmoryGroup1]
+buildLabel = "Guns"
+buildItem1 = "apshellgun"
+buildItem2 = "apcphcg"
+buildItem3 = "apslicer"
+buildItem4 = "apeburst"
+
+[ArmoryGroup2]
+buildLabel = "Cannons"
+buildItem1 = "apdragb"
+buildItem2 = "apslagstab"
+buildItem3 = "apcphlas"
+buildItem4 = "apfbgun"
+
+[ArmoryGroup3]
+buildLabel = "Rockets"
+buildItem1 = "aptagcr"
+buildItem2 = "apcpworm"
+buildItem3 = "apsprink"
+//buildItem4 = "apcombo1" // "Worm/Sprink" would only give "worm".
+//buildItem5 = "apcombo2" // "Sprink/Worm" would only give "sprink".
+
+[ArmoryGroup4]
+buildLabel = "Mortars"
+buildItem1 = "aphfire"
+buildItem2 = "aphmort"
+buildItem3 = "apslagmort"
+buildItem4 = "aptagcr_c"
+buildItem5 = "aptagcr_a"
+
+[ArmoryGroup5]
+buildLabel = "Mines"
+buildItem1 = "approx"
+buildItem2 = "apflamemin"
+
+[ArmoryGroup6]
+buildLabel = "Specials"
+buildItem1 = "apcpmits"
+buildItem2 = "apcphan"
+
+[ArmoryGroup7]
+buildLabel = "Pilot"
+buildItem1 = "apesnip"
+buildItem2 = "apejetp"
+
+

@@ -1,0 +1,26 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = NULL
+ordName = "annoyater"
+wpnName = "Annoyater"
+fireSound = "barney.wav"
+wpnReticle = "gspstab"
+wpnCategory = "CANN"
+isAssault = 0
+flashName = "gannoy.flash"
+aiRange = 130
+
+[CannonClass]
+shotDelay = 1.0 // 5/3 sec
+shotAlternate = 1
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "0 127 255 255"
+finishColor = "0 155 255 255"
+startRadius = 5.0 //15.0
+finishRadius = 1.0
+animateTime = 0.1
+geomName = "g_sflash.xsi"

@@ -1,0 +1,70 @@
+// =================================
+// MADMASTER's DAY WRECKER EXPLOSION
+// =================================
+
+[ExplosionClass]
+classLabel = "quakeblast"
+
+particleTypes = 2
+
+particleClass1 = "xdaywreck.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xdaywreck.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+explSound = "daywreck.wav"
+
+damageRadius = 60.0
+
+damageValue(N) = 2000
+damageValue(L) = 1000
+damageValue(H) = 500
+
+damageValue(S) = 1500
+damageValue(D) = 3000
+damageValue(A) = 450
+
+kickRadius = 1015.0
+kickOmega = 19.0
+kickVeloc = 19.0
+
+[QuakeBlastClass]
+quakeCount = 16
+quakeClass = "dayquake"
+pitchVariance = 0.0f
+yawVariance = 0.0f
+initialPitch = 0.0f
+initialYaw = 0.0f
+quakeMagnitude = 5.0f
+quakeTime = 3.0f
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 2.85
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "200 155 0 255"
+finishColor = "205 155 0 0"
+startRadius = 70.0
+finishRadius = 0.0
+animateTime = 2.85
+latitudeBands = 8
+longitudeSegments = 16
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 2.85
+renderBase = "draw_light"
+startColor = "150 255 255 2255"
+finishColor = "150 255 255 0"
+startRadius = 80.0
+finishRadius = 80.0
+animateTime = 2.85
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

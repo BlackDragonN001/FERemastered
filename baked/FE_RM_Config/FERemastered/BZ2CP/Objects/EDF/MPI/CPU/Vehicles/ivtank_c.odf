@@ -1,0 +1,24 @@
+[GameObjectClass]
+classLabel = "ivtank"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 4
+provideName4 = "ivtank_c"
+
+////////////////////////////////////
+
+/////// WEAPONS ////////////////////
+
+weaponAssault4 = 1
+
+////////////////////////////////////
+
+[CraftClass]
+ejectRatio = 1
+
+[HoverCraftClass]
+
+[Lod1]
+
+[Lod2]

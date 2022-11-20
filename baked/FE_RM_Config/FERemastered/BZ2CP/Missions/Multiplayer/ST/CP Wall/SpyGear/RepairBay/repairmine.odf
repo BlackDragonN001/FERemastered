@@ -1,0 +1,48 @@
+[GameObjectClass]
+baseName = "ibairbay"
+geometryName = "ibairbay00.xsi"//"servpad.xsi"
+//geometryScale = 0.33
+classLabel = "supplydepot"
+collisionRadius = 0.01
+scrapCost = 0
+scrapValue = 0
+maxHealth = 8000
+maxAmmo = 1
+addHealth = 1
+unitName = "Service Field"
+powerCost = 0
+heatSignature = 1.0
+imageSignature = 1.0
+radarSignature = 1.0
+canCollide = 0
+isAssault = 1
+armorClass = H
+ownsTerrain = 0
+
+provideCount = 1
+provideName1 = "ibsbay"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "repairmine.render"
+
+[SupplyDepotClass]
+supplyRange = 12.0 // 32.0
+supplyRate = 100.0  //  150.0
+supplySound = "mnu_empt.wav"
+
+[render]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.07 // 0.05
+emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 10.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 0.5 //.5
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "0 50 155 80"
+finishColor = "0 50 155 0"
+startRadius = 8.0 // 15
+finishRadius = 1.0
+animateTime = 0.5 // .5
+rotationRate = 2.0

@@ -1,0 +1,99 @@
+[OrdnanceClass]
+classLabel = "bouncebomb" //"grenade"
+
+shotGeometry = "null"
+
+xplGround = "xxvstabgnd"
+xplVehicle = "xxvstabcar"
+xplBuilding = "xxvstabbld"
+xplExpire = "xxvstab"
+
+shotSound = "xvstabord.wav"
+
+renderName = "xvstab_c.render"
+
+ammoCost = 15.0
+lifeSpan = 1.33
+shotSpeed = 150.0
+
+damageValue(N) = 200
+damageValue(L) = 180
+damageValue(H) = 150
+damageValue(S) = 170
+damageValue(D) = 120
+damageValue(A) = 200
+
+[BounceBombClass]
+soundBounce = "bbounce.wav"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 5
+renderName1 = "xvstab_c.light"
+renderName2 = "xvstab_c.flare"
+renderName3 = "xvstab_c.smoke"
+renderName4 = "xvstab_c.sparks"
+renderName5 = "xvstab_c.hottrail"
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 220 200 2550"
+finishColor = "255 220 200 0"
+startRadius = 10.0
+finishRadius = 0.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 3.0
+finishRadius = 0.5
+rotationRate = 2.0
+bottomInteractsWithTerrain = false
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "164 164 164 64"
+finishColor = "180 180 180 0"
+startRadius = 0.1
+finishRadius = 1.0
+animateTime = 0.5 //1.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 0.5
+
+[Sparks]
+renderBase = "draw_twirl_trail"
+textureName = "spark.tga" // flame
+textureblend = "one one modulate"
+startColor = "255 140 10 255"
+finishColor = "255 60 0 0"
+startRadius = 0.1
+finishRadius = 0.1
+animateTime = 0.5
+emitDelay = 0.01
+emitDelayVar = 0.005
+emitVariance = "7.0 7.0 0.0"
+emitLife = 0.2
+
+[HotTrail]
+renderBase = "draw_trail"
+textureName = "firetrail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "220 255 255 0"
+startRadius = 0.30
+finishRadius = 0.05
+segmentLength = 2.4 //3.0
+segmentTime = 0.1
+textureRate = 0.25 //0.2
+textureSpeed = 0.5

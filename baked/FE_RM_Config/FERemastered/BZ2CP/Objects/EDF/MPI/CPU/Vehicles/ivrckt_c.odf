@@ -1,0 +1,30 @@
+[GameObjectClass]
+classLabel = "ivrckt"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 6
+provideName6 = "ivrckt_c"
+
+////////////////////////////////////
+
+[CraftClass]
+attackTask = "AssaultTankAttack"
+subAttackTask = "AssaultTankAttack"
+subAttackClass = "ANS"
+// subAttackClass uses 3 letters.
+// 1st letter is either A or N.     A is include Air targets.         N is attack ground only.
+// 2nd letter is either D or N.     D is to deploy before attacking.  N for regular attack.
+// 3rd letter is either S or N.     S is to use Weapon Range.         N is use the Engage Range to attack. 
+
+ClosestEnemyGoodEyes = true
+SitAttackAllowIndependence = true
+SitAttackAllowCounterattack = true 
+LightsOnlyWhenPiloted = true
+GotoTaskHasLeader = false
+
+ejectRatio = 1
+
+[TrackedVehicleClass]
+
+[AssaultTankClass]

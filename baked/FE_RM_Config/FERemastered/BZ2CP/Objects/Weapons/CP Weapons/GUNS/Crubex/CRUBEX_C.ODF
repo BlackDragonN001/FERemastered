@@ -1,0 +1,72 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+
+xplGround = "xcrubexgnd_c"
+xplVehicle = "xcrubexcar_c"
+xplBuilding = "xcrubexbld_c"
+
+renderName = "crubex_c.render"
+
+ammoCost = 3.1
+lifeSpan = 0.57 // 170 GEC
+shotSpeed = 300.0
+
+damageValue(N) = 30 // none // 320
+damageValue(L) = 30 // light // 320
+damageValue(H) = 25 // heavy // 240
+
+damageValue(S) = 30 // standard // 300
+damageValue(D) = 23 // deflection // 160
+damageValue(A) = 30 // absorbtion // 320
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "crubex_c.BulletTrail"
+renderName2 = "crubex_c.SmokeyTrail"
+renderName3 = "crubex_c.light"
+renderName4 = "crubex_c.trail"
+
+[BulletTrail]
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "spark2.tga"
+startColor = "0 249 249 127" //"0 62 249 255"
+finishColor = "0 249 249 127" //"46 249 0 0"
+startRadius = 0.35
+finishRadius = 0.30
+tracerLength = 5.0
+
+[Trail]
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+textureName = "trail.tga"
+startColor = "0 62 249 555" //"0 249 249 127"
+finishColor = "46 249 0 0" //"0 249 249 127"
+startRadius = 0.1
+finishRadius = 0.05
+segmentTime = 0.05
+textureRate = 0.2
+
+[SmokeyTrail]
+renderBase = "draw_trail"
+textureName = "strail.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+textureRate = 0.3
+startColor = "63 127 255 31"
+finishColor = "105 105 107 0"
+startRadius = 0.2
+finishRadius = 0.03
+segmentTime = 0.3
+
+[Light]
+renderBase = "draw_light"
+startColor = "0 127 127 255"
+finishColor = "0 127 127 255"
+startRadius = 10.0
+finishRadius = 10.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1
