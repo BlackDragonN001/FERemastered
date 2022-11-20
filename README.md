@@ -1,5 +1,25 @@
 # Forgotten Enemies: Remastered
 
+## BZRMM Installation Instructions:
+1. If you do not have Git installed download and install it from [git-scm.com](https://git-scm.com/download/win) using the default options.<br/>
+(This may need to be run as an administrator to allow the installer to register git as a program that BZRMM can find)
+
+1. Download and extract the latest release of the [Battlezone Redux Mod Manager](https://github.com/Nielk1/Battlezone-Redux-Mod-Manager/releases)
+
+1. Following the setup instructions for BZRMM - open `BZRModManager.exe` and select the `Settings` tab. Make sure to set the install location for your version of BZCC (either GOG or Steam) and set the `My Docs/My Games` folder location<br/>
+![](docs/BZRMM_Settings.PNG)
+
+1. On the BZCC tab, paste the github url for FER (https://github.com/BlackDragonN001/FERemastered) into the `Mod URL` field and click download. When the `Branch Select` window pops up make sure `master` is selected and click `Select`<br/>
+(The FE:R suite is large and this can take a long time to download. See the `Tasks` tab to watch the current progress)<br/>
+![](docs/BZRMM_branch.png)
+
+1. Once `Busy Tasks` is 0 in the status at the bottom of BZRMM, select all FE:R Mods and choose either `Install GOG` or `Install Steam` in the right-click menu<br/>
+![](docs/BZRMM_Install.PNG)
+
+1. Start Battlezone and activate `Forgotten Enemies: Remastered` from the mods menu
+
+1. Have fun!
+
 ## Manual Installation Instructions:
 
 1. Install the following:
