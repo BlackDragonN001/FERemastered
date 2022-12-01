@@ -29,14 +29,15 @@ xplPulse = "xfbemit_a"
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 6
+renderCount = 7
 renderName1 = "fbgun_a.smoke"
 renderName2 = "fbgun_a.flame"
 renderName3 = "fbgun_a.light"
 renderName4 = "fbgun_a.sparks"
 renderName5 = "fbgun_a.smoke2"
 renderName6 = "fbgun_a.core"
-//renderName7 = "fbgun_a.twirl" // Never existed? supposed to be trailer? -GBD
+renderName7 = "fbgun_a.ball"
+//renderName8 = "fbgun_a.twirl" // Never existed? supposed to be trailer? -GBD
 
 [Core]
 renderBase = "draw_twirl"
@@ -133,6 +134,24 @@ emitPosVariance = "1.0 0.0 1.0"
 emitInherit = "0.3 0.3 0.3"
 emitLife = 1.0
 BottomInteractsWithTerrain = false
+
+[Ball]
+renderBase = "draw_geom"
+textureName = "tech.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.1
+finishRadius = 0.1
+geomName = "fireballORD.fbx"
+ForceDrawTransparent = false
+//ForceDraw2Sided = true
+InitialRoll = 0.0f
+InitialPitch = 0.0f
+InitialYaw = 0.0f
+AddRoll = 0.0f
+AddYaw = 0.0f
+AddPitch = 400.0f
 
 
 [trailer]
