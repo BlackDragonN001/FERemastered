@@ -1,0 +1,23 @@
+[GameObjectClass]
+classLabel = "fvcons"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 3
+provideName3 = "fvcons_g"
+
+////////////////////////////////////
+
+[CraftClass]
+
+[HoverCraftClass]
+
+[DeployableClass]
+
+[ConstructionRigClass]
+buildItem1 = ""
+buildItem2 = "fbspir"
+buildItem3 = ""
+buildItem4 = ""
+buildItem5 = ""
+buildItem6 = ""

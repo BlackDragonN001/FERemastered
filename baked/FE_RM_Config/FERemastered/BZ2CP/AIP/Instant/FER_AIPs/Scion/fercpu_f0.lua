@@ -1,10 +1,25 @@
 -- File: fercpu_i0.lua
--- Author(s): AI_Unit
+-- Author(s): ScarleTomato
 -- Summary: Lua conditions for the Scion easy AIP.
 
 -- Initiate AIP Lua Conditions.
 function InitAIPLua(team)
     AIPUtil.print(team, "Running AIP Lua Condition Script for CPU Team: " .. team);
+end
+
+function validate(planName, conditions)
+  msg = ''
+  go = true
+  for k, v in pairs(conditions) do
+    msg = msg .. k .. ':' .. tostring(v) .. ' '
+    go = go and v
+  end
+
+  if (go) then
+      return true, planName .. ": " .. msg .. ". Proceeding...";
+  else
+      return false, planName .. ": " .. msg .. ". Halting plan.";
+  end
 end
 
 ----------------
@@ -27,59 +42,36 @@ end
 
 -- Condition for letting the CPU build Scavengers.
 function ScavengerBuildLoopCondition(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
-
-    -- Check if any pools exist that are currently unclaimed.
-    local poolsToClaim = CanCollectScrapPool(team, time);
-
-    -- Check if any loose scrap exists on the map.
-    local looseScrapToClaim = CanCollectLooseScrap(team, time);
-
-    -- Keep track of the count of Scavengers we already have to stop overbuilding.
-    local cpuScavCount = CountCPUScavengers(team, time);
-
-    -- If the conditions above are true, let the AIP build a Scavenger for pools/scrap.
-    if (myScrap >= 20 and (poolsToClaim or looseScrapToClaim) and cpuScavCount < 3) then
-        return true, "ScavengerBuildLoopCondition: Conditions met. Proceeding...";
-    else
-        return false, "ScavengerBuildLoopCondition: Conditions unmet. Halting plan.";
-    end
+  return validate('ScavengerBuildLoopCondition', {
+    has20Scrap = AIPUtil.GetScrap(team, true) >= 20,
+    poolOrFieldExists = CanCollectScrapPool(team, time)
+                     or CanCollectLooseScrap(team, time),
+    lacks3Scavs = CountCPUScavengers(team, time) < 3
+  })
 end
 
 -- Condition for letting the CPU build Constructors.
 function ConstructorBuildLoopCondition(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
-
-    -- Does the Recycler exist?
-    local recyclerExists = DoesRecyclerExist(team, time);
-
-    -- Keep track of the count of Scavengers we already have to stop overbuilding.
-    local cpuConsCount = CountCPUConstructors(team, time);
-
-    -- If the conditions above are true, let the AIP build a Constructor.
-    if (myScrap >= 40 and recyclerExists and cpuConsCount < 3) then
-        return true, "ConstructorBuildLoopCondition: Conditions met. Proceeding...";
-    else
-        return false, "ConstructorBuildLoopCondition: Conditions unmet. Halting plan.";
-    end
+  return validate('ConstructorBuildLoopCondition', {
+    has40Scrap = AIPUtil.GetScrap(team, true) >= 40,
+    recyclerExists = DoesRecyclerExist(team, time)
+  })
 end
 
 -- Condition for letting the CPU build Turrets.
 function TurretBuildLoopCondition(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
+  return validate('TurretBuildLoopCondition', {
+    scrapOver45 = AIPUtil.GetScrap(team, true) >= 45,
+    recyclerExists = DoesRecyclerExist(team, time)
+  })
+end
 
-    -- Does the Recycler exist?
-    local recyclerExists = DoesRecyclerExist(team, time);
-
-    -- If the conditions above are true, let the AIP build a Turret.
-    if (myScrap >= 40 and recyclerExists) then
-        return true, "TurretBuildLoopCondition: Conditions met. Proceeding...";
-    else
-        return false, "TurretBuildLoopCondition: Conditions unmet. Halting plan.";
-    end
+function ServiceTruckBuildLoopCondition(team, time)
+  return validate('ServiceTruckBuildLoopCondition', {
+    hasScrap = AIPUtil.GetScrap(team, true) >= 50,
+    recyExists = DoesRecyclerExist(team, time),
+    sbayExists = DoesDowerExist(team, time)
+  })
 end
 
 ----------------
@@ -88,91 +80,86 @@ end
 
 -- Allow the CPU to build a Kiln.
 function BuildKiln(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
+  return validate('BuildKiln', {
+    scrapOver60 = AIPUtil.GetScrap(team, true) >= 60,
+    hasCons = CountCPUConstructors(team, time) > 0,
+    lacksKiln = not DoesKilnExist(team, time)
+  })
+end
 
-    -- Count CPU constructors.
-    local cpuConsCount = CountCPUConstructors(team, time);
+-- Allow the CPU to build an Antenna.
+function BuildAntenna(team, time)
+  return validate('BuildAntenna', {
+    scrapOver60 = AIPUtil.GetScrap(team, true) >= 60,
+    recyclerExists = DoesRecyclerExist(team, time),
+    consExist = CountCPUConstructors(team, time) > 0,
+    factoryExists = DoesKilnExist(team, time),
+    noAntennaExists = not DoesAntennaExist(team, time)
+  })
+end
 
-    -- Check if Factory exists.
-    local factoryExists = DoesKilnExist(team, time);
+-- Allow the CPU to build a Stronghold.
+function BuildStronghold(team, time)
+  return validate('BuildStronghold', {
+    scrapOver70 = AIPUtil.GetScrap(team, true) >= 70,
+    consExist = CountCPUConstructors(team, time) > 0,
+    forgeExists = DoesForgeExist(team, time),
+    lacksStronghold = not DoesStrongholdExist(team, time)
+  })
+end
 
-    -- If the conditions above are true, let the AIP build a Factory.
-    if (myScrap >= 60 and cpuConsCount > 0 and not factoryExists) then
-        return true, "BuildKiln: Conditions met. Proceeding...";
-    else
-        return false, "BuildKiln: Conditions unmet. Halting plan.";
-    end
+-- Allow the CPU to build a Jammer.
+function BuildJammer(team, time)
+  return validate('BuildJammer', {
+    scrapOver50 = AIPUtil.GetScrap(team, true) >= 50,
+    consExist = CountCPUConstructors(team, time) > 0,
+    overseerExists = DoesOverseerExist(team, time),
+    lacksJammer = DoesJammerExist(team, time)
+  })
 end
 
 -- Allow the CPU to build a Dower.
 function BuildDower(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
-
-    -- Count CPU constructors.
-    local cpuConsCount = CountCPUConstructors(team, time);
-
-    -- Check if Factory exists.
-    local forgeExists = DoesForgeExist(team, time);
-
-    -- Make sure the Dower doesn't exist.
-    local dowerExists = DoesDowerExist(team, time);
-
-    -- If the conditions above are true, let the AIP build a Factory.
-    if (myScrap >= 60 and cpuConsCount > 0 and forgeExists and not dowerExists) then
-        return true, "BuildDower: Conditions met. Proceeding...";
-    else
-        return false, "BuildDower: Conditions unmet. Halting plan.";
-    end
+  return validate('BuildDower', {
+    scrapOver60 = AIPUtil.GetScrap(team, true) >= 60,
+    consExist = CountCPUConstructors(team, time) > 0,
+    hasForge = DoesForgeExist(team, time),
+    lacksDower = not DoesDowerExist(team, time)
+  })
 end
 
 -- Allow the CPU to build a Gun Spire at base
 function BuildBaseGunSpire(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
-
-    -- Count CPU constructors.
-    local cpuConsCount = CountCPUConstructors(team, time);
-
-    -- If the conditions above are true, let the AIP build a Power Plant.
-    if (myScrap >= 75 and cpuConsCount > 0) then
-        return true, "BuildBaseGunSpire: Conditions met. Proceeding...";
-    else
-        return false, "BuildBaseGunSpire: Conditions unmet. Halting plan.";
-    end
+  return validate('BuildBaseGunSpire', {
+    scrapOver75 = AIPUtil.GetScrap(team, true) >= 75,
+    consExist = CountCPUConstructors(team, time) > 0
+  })
 end
 
 -- Allow the CPU to build a Gun Spire on the gtow1 path.
 function BuildGunSpire1(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
-
-    -- Check to make sure the path exists first.
-    local gtow1Exists = AIPUtil.PathExists("gtow1");
-
-    -- If the conditions above are true, let the AIP build a Gun Tower on gtow1.
-    if (myScrap >= 75 and gtow1Exists) then
-        return true, "BuildGunSpire1: Conditions met. Proceeding...";
-    else
-        return false, "BuildGunSpire1: Conditions unmet. Halting plan.";
-    end
+  return validate('BuildGunSpire1', {
+    hasScrap = AIPUtil.GetScrap(team, true) >= 75,
+    gtow1Exists = AIPUtil.PathExists("gtow1")
+  })
 end
-
--- Allow the CPU to build a Gun Spire on the gtow1 path.
 function BuildGunSpire2(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
-
-    -- Check to make sure the path exists first.
-    local gtow2Exists = AIPUtil.PathExists("gtow2");
-
-    -- If the conditions above are true, let the AIP build a Gun Tower on gtow1.
-    if (myScrap >= 75 and gtow2Exists) then
-        return true, "BuildGunSpire2: Conditions met. Proceeding...";
-    else
-        return false, "BuildGunSpire2: Conditions unmet. Halting plan.";
-    end
+  return validate('BuildGunSpire2', {
+    hasScrap = AIPUtil.GetScrap(team, true) >= 75,
+    gtow1Exists = AIPUtil.PathExists("gtow2")
+  })
+end
+function BuildGunSpire3(team, time)
+  return validate('BuildGunSpire3', {
+    hasScrap = AIPUtil.GetScrap(team, true) >= 75,
+    gtow1Exists = AIPUtil.PathExists("gtow3")
+  })
+end
+function BuildGunSpire4(team, time)
+  return validate('BuildGunSpire4', {
+    hasScrap = AIPUtil.GetScrap(team, true) >= 75,
+    gtow1Exists = AIPUtil.PathExists("gtow4")
+  })
 end
 
 ----------------
@@ -213,8 +200,28 @@ function DoesForgeExist(team, time)
 end
 
 -- Checks if the Forge exists.
+function DoesStrongholdExist(team, time)
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_ARMORY", 'sameteam', true) > 0;
+end
+
+-- Checks if the Kiln exists.
+function DoesAntennaExist(team, time)
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_COMMBUNKER", 'sameteam', true) > 0;
+end
+
+-- Checks if the Forge exists.
+function DoesOverseerExist(team, time)
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_COMMBUNKER_U", 'sameteam', true) > 0;
+end
+
+-- Checks if the Forge exists.
 function DoesDowerExist(team, time)
     return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_SUPPLYDEPOT", 'sameteam', true) > 0;
+end
+
+-- Checks if the Forge exists.
+function DoesJammerExist(team, time)
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_JAMMER", 'sameteam', true) > 0;
 end
 
 ----------------
@@ -238,12 +245,12 @@ end
 
 -- Checks how many upgraded Extractors the CPU has.
 function CountCPUUpgradedExtractors(team, time)
-    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_EXTRACTOR_Upgraded", 'sameteam', true);
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_EXTRACTOR_UPGRADED", 'sameteam', true);
 end
 
--- Check if the player has any Gun Towers.
+-- Checks how many Gun Towers the CPU has.
 function CountCPUGunSpires(team, time)
-    return AIPUtil.CountUnits(1, "VIRTUAL_CLASS_GUNTOWER", 'sameteam', true) > 0;
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_GUNTOWER", 'sameteam', true);
 end
 
 ----------------
@@ -259,43 +266,59 @@ end
 -- Upgrade Checks
 ----------------
 
--- Allow the CPU to upgrade their first Extractor.
+-- Allow the CPU to upgrade their Kiln.
 function UpgradeKiln(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
+  return validate('UpgradeKiln', {
+    hasScrap = AIPUtil.GetScrap(team, true) >= 60,
+    cpuConsCount = CountCPUConstructors(team, time) >= 1,
+    gunSpireCount = CountCPUGunSpires(team, time) >= 2,
+    doesKilnExist = DoesKilnExist(team, time),
+    noForgeExist = not DoesForgeExist(team, time)
+  })
+end
 
-    -- Count CPU constructors.
-    local cpuConsCount = CountCPUConstructors(team, time);
-
-    -- Count CPU extractors.
-    local doesKilnExist = DoesKilnExist(team, time);
-
-    -- Count CPU Gun Spires.
-    local gunSpireCount = CountCPUGunSpires(team, time);
-
-    if (myScrap >= 60 and cpuConsCount >= 1 and gunSpireCount >= 2 and doesKilnExist) then
-        return true, "UpgradeKiln: Conditions met. Proceeding...";
-    else
-        return false, "UpgradeKiln: Conditions unmet. Halting plan.";
-    end
+-- Allow the CPU to upgrade their Antenna.
+function UpgradeAntenna(team, time)
+  return validate('UpgradeAntenna', {
+    hasScrap = AIPUtil.GetScrap(team, true) >= 80,
+    cpuConsCount = CountCPUConstructors(team, time) >= 1,
+    doesAntennaExist = DoesAntennaExist(team, time),
+    noOverseerExist = not DoesOverseerExist(team, time)
+  })
 end
 
 -- Allow the CPU to upgrade their first Extractor.
 function UpgradeFirstExtractor(team, time)
-    -- Get my scrap in a local variable.
-    local myScrap = AIPUtil.GetScrap(team, true);
-
-    -- Count CPU constructors.
-    local cpuConsCount = CountCPUConstructors(team, time);
-
-    -- Count CPU extractors.
-    local cpuExtractorCount = CountCPUExtractors(team, time);
-
-    if (myScrap >= 60 and cpuConsCount >= 1 and cpuExtractorCount >= 1) then
-        return true, "UpgradeFirstExtractor: Conditions met. Proceeding...";
-    else
-        return false, "UpgradeFirstExtractor: Conditions unmet. Halting plan.";
-    end
+  return validate('UpgradeFirstExtractor', {
+    hasScrap = AIPUtil.GetScrap(team, true) >= 60,
+    cpuConsCount = CountCPUConstructors(team, time) >= 1,
+    has1Extractors = CountCPUExtractors(team, time) >= 1,
+    lacks1Upgraded = CountCPUUpgradedExtractors(team, time) < 1
+  })
+end
+function UpgradeSecondExtractor(team, time)
+  return validate('UpgradeSecondExtractor', {
+    hasScrap = AIPUtil.GetScrap(team, true) >= 60,
+    cpuConsCount = CountCPUConstructors(team, time) >= 1,
+    has2Extractors = CountCPUExtractors(team, time) >= 2,
+    lacks2Upgraded = CountCPUUpgradedExtractors(team, time) < 2
+  })
+end
+function UpgradeThirdExtractor(team, time)
+  return validate('UpgradeThirdExtractor', {
+    hasScrap = AIPUtil.GetScrap(team, true) >= 60,
+    cpuConsCount = CountCPUConstructors(team, time) >= 1,
+    has3Extractors = CountCPUExtractors(team, time) >= 3,
+    lacks3Upgraded = CountCPUUpgradedExtractors(team, time) < 3
+  })
+end
+function UpgradeFourthExtractor(team, time)
+  return validate('UpgradeFourthExtractor', {
+    hasScrap = AIPUtil.GetScrap(team, true) >= 60,
+    cpuConsCount = CountCPUConstructors(team, time) >= 1,
+    has4Extractors = CountCPUExtractors(team, time) >= 4,
+    lacks4Upgraded = CountCPUUpgradedExtractors(team, time) < 4
+  })
 end
 
 ----------------
@@ -331,15 +354,59 @@ function SendEarlyScoutHarassment(team, time)
     end
 end
 
+-- Allow for harassment after the Factory and Antenna has been built.
+function SendLancerHarassment(team, time)
+  return validate('SendLancerHarassment', {
+    kilnExists = DoesKilnExist(team, time),
+    antennaExists = DoesAntennaExist(team, time)
+  })
+end
+
 -- Allow for harassment after the Factory has been built.
 function SendMediumHarassment(team, time)
-    -- Check if Factory exists.
-    local forgeExists = DoesForgeExist(team, time);
-    
-    -- Allow this attack if all of these conditions are met.
-    if (forgeExists) then
-        return true, "SendMediumHarassment: Conditions met. Proceeding...";
-    else 
-        return false, "SendMediumHarassment: Conditions unmet. Halting plan. Time is " .. time;
-    end
+  return validate('SendMediumHarassment', {
+    kilnExists = DoesKilnExist(team, time)
+  })
+end
+
+-- Allow for harassment after the Factory has been built.
+function SendTankHarassment(team, time)
+  return validate('SendTankHarassment', {
+    forgeExists = DoesForgeExist(team, time)
+  })
+end
+
+-- Can I attack with tanks, lancers or walkers?
+function SendAssaultHarassment(team, time)
+  return validate('SendAssaultHarassment', {
+    kilnExists = DoesKilnExist(team, time),
+    antOrForgeExists = DoesAntennaExist(team, time)
+                    or DoesForgeExist(team, time)
+  })
+end
+
+-- Can I attack with tanks, lancers or walkers?
+function SendArcherAttacks(team, time)
+  return validate('SendArcherAttacks', {
+    forgeExists = DoesKilnExist(team, time),
+    overseerExists = DoesOverseerExist(team, time)
+  })
+end
+
+-- Anti Gun Tower attack.
+function SendGunTowerAttacks(team, time)
+  return validate('SendGunTowerAttacks', {
+    unitsAvailable = SendTankHarassment(team, time)
+                  or SendAssaultHarassment(team, time)
+                  or SendArcherAttacks(team, time),
+    humanHasGunTowers = DoesHumanHaveGunTowers(team, time)
+  })
+end
+
+-- End game units are available
+function SendTechnicalAttacks(team, time)
+  return validate('SendTechnicalAttacks', {
+    forgeExists = DoesForgeExist(team, time),
+    OverseerExists = DoesOverseerExist(team, time)
+  })
 end
