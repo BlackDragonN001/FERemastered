@@ -79,6 +79,7 @@ local AIVehicles = {
 ]]
 
 function _MPI.AddObject(h)
+	-- print(tostring(GetCfg(h)) .. "-" .. tostring(GetTeamNum(h)))
 	local ObjBaseClass = GetBase(h);
 	local ODFName = GetCfg(h);
 	local ObjClass = GetClassLabel(h);
@@ -126,35 +127,38 @@ end
 
 function _MPI.SpawnAITeams()
 	-- Start at Team 6, as 1 - 5 are players.
-	for team = 6, 6 do
-		if (team < 6) then
+	for team = 6, 8 do
+		if (team < 6 or 0 == IFace_GetInteger("network.session.ivar8" .. team)) then
 			return;
 		end
 
+		local AITeamRace = string.char(IFace_GetInteger("network.session.ivar8" .. team));
+
 		-- If Debugging is enabled, we should print all available data related to the AI team
 		if (DEBUG) then
-			print("Current Race of AI Team: (" .. GetRaceOfTeam(team) .. ")");
+			print("Current AITeamRace: (" .. AITeamRace .. ")");
 			--Ally(1, team);
 		end
 
-		local AITeamRace = GetRaceOfTeam(team);
-		local chosenPoint = GetSafestSpawnpoint();
-
 		-- If the AI Recycler does not exist, build one for each team.
 		if (GetObjectByTeamSlot(team, DLL_TEAM_SLOT_RECYCLER) == nil) then
-			AISpawnPosition = GetPositionNear(chosenPoint, VEHICLE_SPACING_DISTANCE, 2 * VEHICLE_SPACING_DISTANCE);
-			AIVehicles.AIRecycler = BuildObject("ivrecy_m", team, AISpawnPosition);
+			AIVehicles.AIRecycler = BuildObject(AITeamRace .. "vrecy_m", team, "Recycler_" .. team);
 			SetRandomHeadingAngle(AIVehicles.AIRecycler);
 		end
 
-		-- We could consider a variable here for AI starting forces, and build vehicles based on that.
-		local AIStartingUnits = GetVarItemInt("network.session.ivar72");
+    for i = 1, 3 do
+      BuildObject(("%svturr"):format(AITeamRace), team, "TurretEnemy" .. i .. "_" .. tostring(team));
+      BuildObject(("%svtank"):format(AITeamRace), team, "TankEnemy" .. i .. "_" .. tostring(team));
+    end
 
-		if (AIStartingUnits == 0) then
-			_MPI.SpawnAdditionalAIUnits("turrets", team);
-		else
-			_MPI.SpawnAdditionalAIUnits("towers", team);
-		end
+		-- We could consider a variable here for AI starting forces, and build vehicles based on that.
+		-- local AIStartingUnits = GetVarItemInt("network.session.ivar72");
+
+		-- if (AIStartingUnits == 0) then
+		-- 	_MPI.SpawnAdditionalAIUnits("turrets", team);
+		-- else
+		-- 	_MPI.SpawnAdditionalAIUnits("towers", team);
+		-- end
 
 		table.insert(TOTAL_AI_TEAMS, team);
 
@@ -163,7 +167,7 @@ function _MPI.SpawnAITeams()
 
 		-- For each active AI team, insert their team number into a table for later use.
 		-- Lastly, create the plan for the AI team.
-		_MPI.SetAIPlan(team);
+		_MPI.SetAIPlan(team, AITeamRace);
 	end
 
 	-- We should handle setting any customised options here in methods. Make sure the options are enabled for them -- AI_Unit.
@@ -171,29 +175,31 @@ end
 
 function _MPI.SpawnAdditionalAIUnits(choice, team) 
 	local chosenUnit = nil;
+	local race = string.char(IFace_GetInteger("network.session.ivar8" .. team));
 
 	if (choice == "turrets") then
-		chosenUnit = ("%svturr"):format(GetRaceOfTeam(team));
+		chosenUnit = ("%svturr"):format(race);
 	else
 		-- We need to handle specific Gun Tower ODFs here based on the CPU Race -- AI_Unit.
-		chosenUnit = ("%sbgtow"):format(GetRaceOfTeam(team));
+		chosenUnit = ("%sbgtow"):format(race);
 	end
 
 	-- Spawn Extra Enemy units. We could probably do this based on difficulty -- AI_Unit.
 	local CPUSpawnCount = {2, 4, 6, 8};
 
 	for i = 1, CPUSpawnCount[CPU_DIFFICULTY + 1] do
-		BuildObject(chosenUnit, team, "hold" .. i);
-		BuildObject(chosenUnit, team, "gtow" .. i);
+		BuildObject(chosenUnit, team, "hold" .. i .. "_" .. tostring(team));
+		BuildObject(chosenUnit, team, "gtow" .. i .. "_" .. tostring(team));
 	end
 end
 
-function _MPI.SetAIPlan(team)
+function _MPI.SetAIPlan(team, race)
 	local planName = nil;
 	local planNameBase = "stock13_";
+	local race = string.char(IFace_GetInteger("network.session.ivar8" .. team));
 
 	if (DEBUG) then
-		planNameBase = 'fermpi';
+		planNameBase = 'fercpu';
 	end
 
 	--local pContents = GetCheckedNetworkSvar(3, NETLIST_AIPS);
@@ -203,7 +209,7 @@ function _MPI.SetAIPlan(team)
 
 	-- Based on a difficulty IVAR, we can set the difficulty of the AI. ivar70 will need to be changed when this is set up -- AI_Unit.
 	-- Edited to be dynamic for multiple teams. Each team will use the same difficulty -- AI_Unit.
-	planName = ("%s_%s%d.aip"):format(planNameBase, GetRaceOfTeam(team), CPU_DIFFICULTY);
+	planName = ("%s_%s%d_%d.aip"):format(planNameBase, race, CPU_DIFFICULTY, team);
 
 	-- Ensure that at least one CPU unit has spawned before setting the AIP here -- AI_Unit.
 	SetAIP(planName, team);
