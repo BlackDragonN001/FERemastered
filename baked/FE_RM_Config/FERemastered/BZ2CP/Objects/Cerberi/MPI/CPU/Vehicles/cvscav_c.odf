@@ -1,0 +1,22 @@
+[GameObjectClass]
+classLabel = "cvscav"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 4
+provideName4 = "cvscav_c"
+
+////////////////////////////////////
+
+[CraftClass]
+
+[TrackedVehicleClass]
+
+[TrackedDeployableClass]
+
+[ScavengerClass]
+deployClass = "cbscav_c"
+
+[Lod1]
+
+[Lod2]
