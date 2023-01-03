@@ -1,0 +1,605 @@
+[Start]
+idleAllCraft = false
+scavClass = "evscav_c"
+consClass = "evcons"
+CheckProvides = true
+DLLCanSwitch = true
+baseDir = 2
+baseLoc = "Recycler_8"
+UnitsService = true
+Difficulty = 1
+
+[Cheat]
+moneyAmount = 3
+moneyDelay = 5
+
+[IdleDispatcher]
+ScavIdleSeconds = 5
+UnitIdleSeconds = 45
+BomberIdleSeconds = 75
+CraftTeamIsPilotTeam = true
+MaxPatrolUnits = 3
+MaxHuntUnits = 2
+MaxEscortUnits = 4
+
+[Plan1]
+planType = "Service"
+planPriority = 570
+serviceUnit = "evserv"
+unitType1 = "ebrecy"
+unitType2 = "ebfact"
+unitType3 = "ebfact2"
+unitType4 = "ebarmo"
+unitType5 = "ebcbun"
+unitType6 = "ebsbay"
+unitType7 = "ebtrain"
+unitType8 = "ebtcen"
+unitType9 = "ebspir"
+unitType10 = "ebpgen"
+unitType11 = "ebgt2g"
+unitType12 = "ebgt4g"
+unitType13 = "ebscav"
+unitType14 = "ebscup"
+
+[Plan2]
+planType = "Recover"
+planPriority = 560
+serviceUnit = "ebsbay"
+unitType1 = "evscout"
+unitType2 = "evturret"
+unitType3 = "evmort"
+unitType4 = "evmisl"
+unitType5 = "evtank"
+unitType6 = "evtanks"
+unitType7 = "evatank"
+unitType8 = "evatankl"
+unitType9 = "evartl"
+unitType10 = "evtanku"
+unitType11 = "evtankf"
+unitType12 = "evmislu"
+unitType13 = "evmislw"
+unitType14 = "evatanku"
+unitType15 = "evatanks"
+unitType16 = "evkami"
+unitType17 = "evartl2"
+unitType18 = "evwalk"
+
+[Plan3]
+planType = "BuildMinimums"
+planPriority = 550
+buildType1 = "evcmdr_c"
+buildCount1 = 1
+
+[Plan4]
+planType = "BuildMinimums"
+planPriority = 540
+buildType1 = "evscav_c"
+buildCount1 = 3
+planCondition = "Lua"
+LuaFunction = "validatePlan4"
+
+[Plan5]
+planType = "CollectPool"
+planPriority = 530
+buildIfNoIdle = True
+planCondition = "Lua"
+LuaFunction = "validatePlan5"
+
+[Plan6]
+planType = "CollectPool"
+planPriority = 520
+buildIfNoIdle = True
+planCondition = "Lua"
+LuaFunction = "validatePlan6"
+
+[Plan7]
+planType = "CollectField"
+planPriority = 510
+buildIfNoIdle = True
+planCondition = "Lua"
+LuaFunction = "validatePlan7"
+
+[Plan8]
+planType = "BuildMinimums"
+planPriority = 500
+buildType1 = "evturr"
+buildCount1 = 4
+planCondition = "Lua"
+LuaFunction = "validatePlan8"
+
+[Plan9]
+planType = "Attacker"
+planPriority = 490
+buildIfNoIdle = true
+AttackAnything = true
+MaxAttacks = 1
+targetType1 = "VIRTUAL_CLASS_SCAVENGER"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+attackType1 = "evscout"
+attackType2 = "evscout"
+
+[Plan10]
+planType = "BuildMinimums"
+planPriority = 480
+buildType1 = "evserv"
+buildCount1 = 3
+planCondition = "Lua"
+LuaFunction = "validatePlan10"
+
+[Plan11]
+planType = "BuildMinimums"
+planPriority = 470
+buildType1 = "evcons"
+buildCount1 = 1
+
+[Plan12]
+planType = "BuildMinimums"
+planPriority = 460
+buildType1 = "evcons_g"
+buildCount1 = 2
+
+[Plan13]
+planType = "BaseBuildMinimums"
+planPriority = 450
+buildType1 = "ebgt2g"
+buildCount1 = 1
+buildLoc1 = "gtow1_8"
+ContinueEvenIfFail = true
+buildIfNoIdle = False
+planCondition = "Lua"
+LuaFunction = "validatePlan13"
+
+[Plan14]
+planType = "BaseBuildMinimums"
+planPriority = 440
+buildType1 = "ebgt2g"
+buildCount1 = 1
+buildLoc1 = "gtow2_8"
+ContinueEvenIfFail = true
+buildIfNoIdle = False
+planCondition = "Lua"
+LuaFunction = "validatePlan14"
+
+[Plan15]
+planType = "BaseBuildMinimums"
+planPriority = 430
+buildType1 = "ebpgen"
+buildCount1 = 1
+buildLoc1 = "ebpgen1_8"
+ContinueEvenIfFail = true
+buildIfNoIdle = False
+planCondition = "Lua"
+LuaFunction = "validatePlan15"
+
+[Plan16]
+planType = "BaseBuildMinimums"
+planPriority = 420
+buildType1 = "ebpgen"
+buildCount1 = 1
+buildLoc1 = "ebpgen2_8"
+ContinueEvenIfFail = true
+buildIfNoIdle = False
+planCondition = "Lua"
+LuaFunction = "validatePlan16"
+
+[Plan17]
+planType = "Attacker"
+planPriority = 410
+buildIfNoIdle = true
+AttackAnything = true
+MaxAttacks = 1
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "evscout"
+attackType2 = "evscout"
+
+[Plan18]
+planType = "Upgrade"
+planPriority = 400
+unitType ="ebscav"
+planCondition = "Lua"
+LuaFunction = "validatePlan18"
+
+[Plan19]
+planType = "BaseBuildMinimums"
+planPriority = 390
+buildType1 = "ebfact"
+buildCount1 = 1
+buildLoc1 = "ebfact_8"
+ContinueEvenIfFail = true
+buildIfNoIdle = False
+planCondition = "Lua"
+LuaFunction = "validatePlan19"
+
+[Plan20]
+planType = "Attacker"
+planPriority = 380
+buildIfNoIdle = true
+AttackAnything = true
+MaxAttacks = 1
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+targetType6 = "VIRTUAL_CLASS_SCAVENGER"
+attackType1 = "evscout"
+attackType2 = "evscout"
+attackType3 = "evtank"
+
+[Plan21]
+planType = "BaseBuildMinimums"
+planPriority = 370
+buildType1 = "ebcbun"
+buildCount1 = 1
+buildLoc1 = "ebcbun_8"
+ContinueEvenIfFail = true
+buildIfNoIdle = False
+planCondition = "Lua"
+LuaFunction = "validatePlan21"
+
+[Plan22]
+planType = "Attacker"
+planPriority = 360
+buildIfNoIdle = true
+AttackAnything = true
+MaxAttacks = 1
+targetType1 = "VIRTUAL_CLASS_SCAVENGER"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+attackType1 = "evmort"
+attackType2 = "evmort"
+
+[Plan23]
+planType = "Attacker"
+planPriority = 350
+buildIfNoIdle = true
+AttackAnything = true
+MaxAttacks = 1
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+targetType6 = "VIRTUAL_CLASS_SCAVENGER"
+attackType1 = "evmort"
+attackType2 = "evmisl"
+attackType3 = "evtank"
+
+[Plan24]
+planType = "BaseBuildMinimums"
+planPriority = 340
+buildType1 = "ebgt2g"
+buildCount1 = 1
+buildLoc1 = "gtow3_8"
+ContinueEvenIfFail = true
+buildIfNoIdle = False
+planCondition = "Lua"
+LuaFunction = "validatePlan24"
+
+[Plan25]
+planType = "BaseBuildMinimums"
+planPriority = 330
+buildType1 = "ebgt2g"
+buildCount1 = 1
+buildLoc1 = "gtow4_8"
+ContinueEvenIfFail = true
+buildIfNoIdle = False
+planCondition = "Lua"
+LuaFunction = "validatePlan25"
+
+[Plan26]
+planType = "Upgrade"
+planPriority = 320
+unitType ="ebscav"
+planCondition = "Lua"
+LuaFunction = "validatePlan26"
+
+[Plan27]
+planType = "BaseBuildMinimums"
+planPriority = 310
+buildType1 = "ebarmo"
+buildCount1 = 1
+buildLoc1 = "ebarmo_8"
+ContinueEvenIfFail = true
+buildIfNoIdle = False
+planCondition = "Lua"
+LuaFunction = "validatePlan27"
+
+[Plan28]
+planType = "Attacker"
+planPriority = 300
+buildIfNoIdle = true
+AttackAnything = true
+MaxAttacks = 1
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+targetType6 = "VIRTUAL_CLASS_SCAVENGER"
+attackType1 = "evtanks"
+attackType2 = "evtanks"
+attackType3 = "evtanks"
+
+[Plan29]
+planType = "Attacker"
+planPriority = 290
+buildIfNoIdle = true
+AttackAnything = true
+MaxAttacks = 1
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "evartl"
+attackType2 = "evartl"
+
+[Plan30]
+planType = "Upgrade"
+planPriority = 280
+unitType ="ebfact"
+planCondition = "Lua"
+LuaFunction = "validatePlan30"
+
+[Plan31]
+planType = "Attacker"
+planPriority = 270
+buildIfNoIdle = true
+AttackAnything = true
+MaxAttacks = 1
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "evtanku"
+attackType2 = "evtanku"
+attackType3 = "evmislu"
+
+[Plan32]
+planType = "Attacker"
+planPriority = 260
+buildIfNoIdle = true
+AttackAnything = true
+MaxAttacks = 1
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "evartl2"
+attackType2 = "evartl2"
+
+[Plan33]
+planType = "BaseBuildMinimums"
+planPriority = 250
+buildType1 = "ebpgen"
+buildCount1 = 1
+buildLoc1 = "ebpgen3_8"
+ContinueEvenIfFail = true
+buildIfNoIdle = False
+planCondition = "Lua"
+LuaFunction = "validatePlan33"
+
+[Plan34]
+planType = "BaseBuildMinimums"
+planPriority = 240
+buildType1 = "ebsbay"
+buildCount1 = 1
+buildLoc1 = "ebsbay_8"
+ContinueEvenIfFail = true
+buildIfNoIdle = False
+planCondition = "Lua"
+LuaFunction = "validatePlan34"
+
+[Plan35]
+planType = "Attacker"
+planPriority = 230
+buildIfNoIdle = true
+AttackAnything = true
+MaxAttacks = 1
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "evatanku"
+attackType2 = "evmislw"
+attackType3 = "evmislw"
+
+[Plan36]
+planType = "BaseBuildMinimums"
+planPriority = 220
+buildType1 = "ebgt4g"
+buildCount1 = 1
+buildLoc1 = "base_gtow1_had_8"
+ContinueEvenIfFail = true
+buildIfNoIdle = False
+planCondition = "Lua"
+LuaFunction = "validatePlan36"
+
+[Plan37]
+planType = "BaseBuildMinimums"
+planPriority = 210
+buildType1 = "ebgt4g"
+buildCount1 = 1
+buildLoc1 = "base_gtow2_had_8"
+ContinueEvenIfFail = true
+buildIfNoIdle = False
+planCondition = "Lua"
+LuaFunction = "validatePlan37"
+
+[Plan38]
+planType = "Attacker"
+planPriority = 200
+buildIfNoIdle = true
+AttackAnything = true
+MaxAttacks = 1
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "evatank"
+attackType2 = "evatanks"
+attackType3 = "evatanks"
+attackType4 = "evmislu"
+
+[Plan39]
+planType = "Upgrade"
+planPriority = 190
+unitType ="ebscav"
+planCondition = "Lua"
+LuaFunction = "validatePlan39"
+
+[Plan40]
+planType = "BaseBuildMinimums"
+planPriority = 180
+buildType1 = "ebtrain"
+buildCount1 = 1
+buildLoc1 = "ebtrain_8"
+ContinueEvenIfFail = true
+buildIfNoIdle = False
+planCondition = "Lua"
+LuaFunction = "validatePlan40"
+
+[Plan41]
+planType = "Attacker"
+planPriority = 170
+buildIfNoIdle = true
+AttackAnything = true
+MaxAttacks = 1
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+targetType6 = "VIRTUAL_CLASS_SCAVENGER"
+attackType1 = "evtankf"
+attackType2 = "evtankf"
+attackType3 = "evmislw"
+
+[Plan42]
+planType = "Attacker"
+planPriority = 160
+buildIfNoIdle = true
+AttackAnything = true
+MaxAttacks = 1
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "evkami"
+attackType2 = "evkami"
+attackType3 = "evkami"
+
+[Plan43]
+planType = "BaseBuildMinimums"
+planPriority = 150
+buildType1 = "ebpgen"
+buildCount1 = 1
+buildLoc1 = "ebpgen4_8"
+ContinueEvenIfFail = true
+buildIfNoIdle = False
+planCondition = "Lua"
+LuaFunction = "validatePlan43"
+
+[Plan44]
+planType = "BaseBuildMinimums"
+planPriority = 140
+buildType1 = "ebtcen"
+buildCount1 = 1
+buildLoc1 = "ebtcen_8"
+ContinueEvenIfFail = true
+buildIfNoIdle = False
+planCondition = "Lua"
+LuaFunction = "validatePlan44"
+
+[Plan45]
+planType = "Attacker"
+planPriority = 130
+buildIfNoIdle = true
+AttackAnything = true
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "evwalk"
+attackType2 = "evwalk"
+
+[Plan46]
+planType = "Attacker"
+planPriority = 120
+buildIfNoIdle = true
+AttackAnything = true
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "evatanks"
+attackType2 = "evatanks"
+
+[Plan47]
+planType = "Attacker"
+planPriority = 110
+buildIfNoIdle = true
+AttackAnything = true
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+targetType6 = "VIRTUAL_CLASS_SCAVENGER"
+attackType1 = "evtankf"
+attackType2 = "evtankf"
+attackType3 = "evmislw"
+
+[Plan48]
+planType = "Attacker"
+planPriority = 100
+buildIfNoIdle = true
+AttackAnything = true
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "evkami"
+attackType2 = "evkami"
+attackType3 = "evkami"
+
+[Plan49]
+planType = "Attacker"
+planPriority = 90
+buildIfNoIdle = true
+AttackAnything = true
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "evartl2"
+attackType2 = "evartl2"
+
+[Plan50]
+planType = "Attacker"
+planPriority = 80
+buildIfNoIdle = true
+AttackAnything = true
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+targetType3 = "VIRTUAL_CLASS_SCOUT"
+targetType4 = "VIRTUAL_CLASS_POWERPLANT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+targetType6 = "VIRTUAL_CLASS_SCAVENGER"
+attackType1 = "evtanku"
+attackType2 = "evtanku"
+attackType3 = "evmislu"
+
