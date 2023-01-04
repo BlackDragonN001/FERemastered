@@ -1,0 +1,18 @@
+[GameObjectClass]
+classLabel = "ebscav"
+unitName = "Extractor I"
+
+upgradeName = "ebscup_c"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 6
+provideName1 = "ebscav_c"
+
+////////////////////////////////////
+
+[steam]
+
+[BuildingClass]
+
+[ExtractorClass]

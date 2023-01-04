@@ -1,0 +1,23 @@
+[GameObjectClass]
+classLabel = "evscav"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 4
+provideName4 = "evscav_c"
+
+////////////////////////////////////
+
+[CraftClass]
+ejectRatio = 1
+
+[TrackedVehicleClass]
+
+[TrackedDeployableClass]
+
+[ScavengerClass]
+deployClass = "ebscav_c"
+
+[Lod1]
+
+[Lod2]

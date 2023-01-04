@@ -1,0 +1,31 @@
+[GameObjectClass]
+classLabel = "ebgt2g"
+
+powerCost = 0
+
+buildSupport = "A"
+buildRequire = "F"
+
+isLimited = 0
+needLimit = 0
+
+/////// REQUIRES ///////////////////
+
+requireCount = 0
+
+////////////////////////////////////
+
+/////// PROVIDES ///////////////////
+
+provideCount = 4
+provideName4 = "ebgt2g_c"
+
+////////////////////////////////////
+
+[BuildingClass]
+
+[CraftClass]
+
+[TurretCraftClass]
+
+[Lod1]

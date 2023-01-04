@@ -1,0 +1,42 @@
+[GameObjectClass]
+classLabel = "evscout"
+addAmmo = 15
+aiName = "SentryProcess"
+aiName2 = "SentryProcess"
+scrapCost = 0
+
+unitName = "Commander"
+armorClass = H
+
+PilotConfig = "escmdr_c"
+
+/////// REQUIREMENTS ///////////////
+
+requireCount = 0
+
+////////////////////////////////////
+
+/////// PROVIDES ///////////////////
+
+provideCount = 4
+provideName4 = "evcmdr_c"
+
+////////////////////////////////////
+
+[CraftClass]
+ClosestEnemyGoodEyes = true
+GotoTaskHasLeader = false
+LightsOnlyWhenPiloted = true
+
+evadeSightFactor3 = 40
+evadeOrdnanceFactor3 = 40
+evadeRandomFactor3 = 40
+filterFactor3 = 1
+
+AIOnly = true
+
+[HoverCraftClass]
+
+[Lod1]
+
+[Lod2]
