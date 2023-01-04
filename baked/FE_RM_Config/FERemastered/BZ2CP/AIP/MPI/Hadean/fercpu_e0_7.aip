@@ -34,19 +34,18 @@ unitType5 = "ebcbun"
 unitType6 = "ebsbay"
 unitType7 = "ebtrain"
 unitType8 = "ebtcen"
-unitType9 = "ebspir"
-unitType10 = "ebpgen"
-unitType11 = "ebgt2g"
-unitType12 = "ebgt4g"
-unitType13 = "ebscav"
-unitType14 = "ebscup"
+unitType9 = "ebpgen"
+unitType10 = "ebgt2g_c"
+unitType11 = "ebgt4g"
+unitType12 = "ebscav_c"
+unitType13 = "ebscup_c"
 
 [Plan2]
 planType = "Recover"
 planPriority = 560
 serviceUnit = "ebsbay"
 unitType1 = "evscout"
-unitType2 = "evturret"
+unitType2 = "evturr"
 unitType3 = "evmort"
 unitType4 = "evmisl"
 unitType5 = "evtank"
@@ -141,8 +140,9 @@ buildCount1 = 2
 [Plan13]
 planType = "BaseBuildMinimums"
 planPriority = 450
-buildType1 = "ebgt2g"
+buildType1 = "ebgt2g_c"
 buildCount1 = 1
+consClass = "evcons_g"
 buildLoc1 = "gtow1_7"
 ContinueEvenIfFail = true
 buildIfNoIdle = False
@@ -152,8 +152,9 @@ LuaFunction = "validatePlan13"
 [Plan14]
 planType = "BaseBuildMinimums"
 planPriority = 440
-buildType1 = "ebgt2g"
+buildType1 = "ebgt2g_c"
 buildCount1 = 1
+consClass = "evcons_g"
 buildLoc1 = "gtow2_7"
 ContinueEvenIfFail = true
 buildIfNoIdle = False
@@ -199,7 +200,8 @@ attackType2 = "evscout"
 [Plan18]
 planType = "Upgrade"
 planPriority = 400
-unitType ="ebscav"
+unitType ="ebscav_c"
+consClass = "evcons_g"
 planCondition = "Lua"
 LuaFunction = "validatePlan18"
 
@@ -271,8 +273,9 @@ attackType3 = "evtank"
 [Plan24]
 planType = "BaseBuildMinimums"
 planPriority = 340
-buildType1 = "ebgt2g"
+buildType1 = "ebgt2g_c"
 buildCount1 = 1
+consClass = "evcons_g"
 buildLoc1 = "gtow3_7"
 ContinueEvenIfFail = true
 buildIfNoIdle = False
@@ -282,8 +285,9 @@ LuaFunction = "validatePlan24"
 [Plan25]
 planType = "BaseBuildMinimums"
 planPriority = 330
-buildType1 = "ebgt2g"
+buildType1 = "ebgt2g_c"
 buildCount1 = 1
+consClass = "evcons_g"
 buildLoc1 = "gtow4_7"
 ContinueEvenIfFail = true
 buildIfNoIdle = False
@@ -293,7 +297,8 @@ LuaFunction = "validatePlan25"
 [Plan26]
 planType = "Upgrade"
 planPriority = 320
-unitType ="ebscav"
+unitType ="ebscav_c"
+consClass = "evcons_g"
 planCondition = "Lua"
 LuaFunction = "validatePlan26"
 
@@ -452,7 +457,8 @@ attackType4 = "evmislu"
 [Plan39]
 planType = "Upgrade"
 planPriority = 190
-unitType ="ebscav"
+unitType ="ebscav_c"
+consClass = "evcons_g"
 planCondition = "Lua"
 LuaFunction = "validatePlan39"
 
