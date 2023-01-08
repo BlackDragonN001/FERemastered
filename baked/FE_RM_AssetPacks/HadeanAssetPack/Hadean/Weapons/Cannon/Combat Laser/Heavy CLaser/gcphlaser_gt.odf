@@ -1,7 +1,8 @@
-[WeaponClass] // 0 ammo cost version for Gun Towers, to prevent Healers from "healing" guntower. DELETE ME LATER! -GBD
+[WeaponClass] // Special Dual Heavy Laser for Defender w/ 4 guns. 0 ammo cost version for Gun Towers, to prevent Healers from "healing" guntower.
 classLabel = "gcphlaser"
 ordName = "heavylaser_gt"
 
 [CannonClass]
+shotDelay = 1.2
 
 [Flash]
