@@ -134,7 +134,7 @@ lensFlare = 0
 
 [Char]
 simulateBase = "sim_null"
-lifeTime = 2.0
+lifeTime = 2.5
 renderBase = "draw_planar"
 textureName = "grndchar.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
@@ -142,7 +142,7 @@ startColor = "10 10 10 255"
 finishColor = "10 10 10 0"
 startRadius = 5.0
 finishRadius = 5.0
-animateTime = 2.0
+animateTime = 2.5
 useTerrainColor = 0.9
 
 [FlameSmoke]
