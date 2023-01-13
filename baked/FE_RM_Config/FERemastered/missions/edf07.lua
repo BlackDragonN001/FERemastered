@@ -535,7 +535,7 @@ end
 
 --spawns attackers during the escort part of the mission.
 function Routine5()
-	if M.Routine5Active and M.Routine5Timer < GetTime() then
+	if M.Routine5Active and M.Routine5Timer < GetTime() and M.PlayerUsingCbunk ~= 1 then
 		if M.Routine5State == 0 then
 			M.Routine5State = M.Routine5State + 1;
 			M.Routine5Timer = GetTime() + 75;
@@ -584,10 +584,8 @@ function Routine5()
 			M.Routine5Counter = 0;
 			M.Routine5State = M.Routine5State + 1;
 		elseif M.Routine5State == 7 then	--LOC_170
-			if M.PlayerUsingCbunk ~= 1 then
-				M.Routine5State = M.Routine5State + 1;
-				M.Routine5Timer = GetTime() + (4 - M.JammerState) * 25;	--cerbs are more frequent if ECM jammer is dead or too far from recy
-			end	
+			M.Routine5State = M.Routine5State + 1;
+			M.Routine5Timer = GetTime() + (4 - M.JammerState) * 25;	--cerbs are more frequent if ECM jammer is dead or too far from recy
 		elseif M.Routine5State == 8 then
 			M.Attacker01 = BuildObject("cvrbomb", 5, "hadconstart");
 			Patrol(M.Attacker01, "conpatrol", 1);
@@ -787,7 +785,7 @@ function Routine7()
 			M.Routine7Timer = GetTime() + 25;
 		elseif M.Routine7State == 2 then
 			if IsAround(M.Tug1) then
-				if M.PlayerUsingCbunk == 0 then -- Pause while in the interface. Prevents a buildup of 25+ pods. -GBD
+				if M.PlayerUsingCbunk ~= 1 then -- Pause while in the interface. Prevents a buildup of 25+ pods. -GBD
 					local pos = GetPosition(M.Tug1);
 					M.ServicePod = BuildObject("apserv07", 1, pos);				
 					M.Position30 = SetVector(pos.x + 10, pos.y + 15, pos.z + 10);
@@ -806,7 +804,7 @@ function Routine7()
 			M.Routine7Timer = GetTime() + 25;
 		elseif M.Routine7State == 5 then
 			if IsAround(M.Tug2) then
-				if M.PlayerUsingCbunk == 0 then  -- Pause while in the interface. Prevents a buildup of 25+ pods. -GBD
+				if M.PlayerUsingCbunk ~= 1 then  -- Pause while in the interface. Prevents a buildup of 25+ pods. -GBD
 					local pos = GetPosition(M.Tug2);
 					M.ServicePod = BuildObject("apserv07", 1, pos);				
 					M.Position30 = SetVector(pos.x + 10, pos.y + 15, pos.z + 10);
