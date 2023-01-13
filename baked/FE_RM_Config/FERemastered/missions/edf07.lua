@@ -402,7 +402,7 @@ function Routine3()
 			--M.Routine3Timer = GetTime() + 15;
 		elseif M.Routine3State == 4 then
 			if not M.Routine4Active then
-				IFace_Deactivate("Bar.Bar7");
+				--IFace_Deactivate("Bar.BarGauge");
 				IFace_Deactivate("Bar");
 				IFace_Deactivate("Rauschen");
 				IFace_Activate("EMAIL1");
@@ -428,7 +428,7 @@ function Routine3()
 		elseif M.Routine3State == 7 then
 			if not M.Routine4Active then
 				IFace_Deactivate("Bar");
-				IFace_Deactivate("Bar.Bar7");
+				--IFace_Deactivate("Bar.BarGauge");
 				IFace_Deactivate("Bar.Blueprints");
 				IFace_Activate("EMAIL1.ViewList");
 				IFace_Activate("EMAIL1.XSIView");
@@ -459,7 +459,7 @@ function Routine3()
 		elseif M.Routine3State == 12 then
 			if not M.Routine4Active then
 				IFace_Deactivate("Bar");
-				IFace_Deactivate("Bar.Bar7");
+				--IFace_Deactivate("Bar.BarGauge");
 				IFace_Deactivate("Bar.Sending");
 				IFace_Deactivate("EMAIL1");
 				IFace_ExitMenuMode();
@@ -511,20 +511,13 @@ end
 function Routine4()
 	if M.Routine4Timer < GetTime() and M.Routine4Active then
 		if M.Routine4State == 0 then
-			IFace_Activate("Bar.Bar1");
-			IFace_Deactivate("Bar.Bar2");
-			IFace_Deactivate("Bar.Bar3");
-			IFace_Deactivate("Bar.Bar4");
-			IFace_Deactivate("Bar.Bar5");
-			IFace_Deactivate("Bar.Bar6");
-			IFace_Deactivate("Bar.Bar7");
+			IFace_Activate("Bar.BarGauge");
+			IFace_SetFloat("script.bar.count", 0.0);
 			M.Routine4State = M.Routine4State + 1;
 			M.Routine4Timer = GetTime() + 2;
-		elseif M.Routine4State < 7 then
-			IFace_Activate("Bar.Bar"..tostring(M.Routine4State + 1));
-			IFace_Deactivate("Bar.Bar"..tostring(M.Routine4State));
+		elseif M.Routine4State <= SecondsToTurns(6.0) + 1 then
+			IFace_SetFloat("script.bar.count", (M.Routine4State - 1) / SecondsToTurns(6.0));
 			M.Routine4State = M.Routine4State + 1;
-			M.Routine4Timer = GetTime() + 1;
 		else
 			M.Routine4Active = false;
 			M.Routine4State = 0;
