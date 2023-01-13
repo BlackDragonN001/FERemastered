@@ -186,8 +186,8 @@ function Update()
 	SetCurHealth(M.Constructor, GetMaxHealth(M.Constructor));
 
 	-- Keep Schultz alive.
-	if (M.SchultzInvincible) then
-		SetCurHealth(M.Schultz, GetMaxHealth(M.Schultz));
+	if (M.SchultzInvincible) and IsAround(M.Schultz) then
+		SetHealth(M.Schultz, 1.0);
 	end
 end
 
