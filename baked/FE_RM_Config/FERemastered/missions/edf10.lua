@@ -308,14 +308,14 @@ function Routine1()
 			RemoveObject(M.HadeanAlly1);
 			RemoveObject(M.HadeanAlly2);
 			ClearObjectives();
-			AddObjective("edf1006.otf", "green");
+			AddObjective("edf1006.otf", "white");
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 10;
 		elseif M.Routine1State == 16 then
 			AudioMessage("edf10e.wav");	--Hardin:"Once you've secured our new base, I'll need you to take control over the island's scrap pools..."
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 17 then
-			if CountUnitsNearObject(M.Portal2, 300, 1, "ibscav") > 1 then
+			if CountUnitsNearObject(M.Portal2, 300.0, 1, "ibscav") + CountUnitsNearObject(M.Portal2, 300.0, 1, "ibscup") > 1 then
 				SetObjectiveOff(M.ScrapyardNav);
 				ClearObjectives();
 				AddObjective("edf1007.otf", "white");
