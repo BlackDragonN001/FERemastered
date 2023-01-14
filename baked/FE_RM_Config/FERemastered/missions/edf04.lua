@@ -27,24 +27,24 @@ local M = {
 -- Floats
 	
 -- Handles
-	MegaGun,
-	MegaGuard1,
-	MegaGuard2,
+	MegaGun = nil,
+	MegaGuard1 = nil,
+	MegaGuard2 = nil,
 	Portals = {},
-	CutsceneTarget,	--"stick" in final megagun cutscene
-	Recycler,
-	Player,
-	EngineerTransport,
-	Dropship,
-	Engineer,
+	CutsceneTarget = nil,	--"stick" in final megagun cutscene
+	Recycler = nil,
+	Player = nil,
+	EngineerTransport = nil,
+	Dropship = nil,
+	Engineer = nil,
 	Turrets1 = {},
 	Turrets2 = {},
 	Kruls = {},
 	HadeanGuardianTurrets = {}, --hadean base guardian turrets
-	BaseNav,
-	MegaGunNav,
-	HadeanBaseNav,
-	NavDelta,
+	BaseNav = nil,
+	MegaGunNav = nil,
+	HadeanBaseNav = nil,
+	NavDelta = nil,
 -- Ints
 	TPS = 10,
 	MegaGuardIndex = 0,

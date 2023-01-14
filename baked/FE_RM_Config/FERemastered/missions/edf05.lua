@@ -47,7 +47,7 @@ local M = {
 	EmptyShips = {},	--empty ships at Hadean supply outpost
 	HadTurr1 = nil,
 	HadTurr2 = nil,
-	HangGliderPickup,
+	HangGliderPickup = nil,
 -- Ints
 	TPS = 10,
 	RecyclerState = 0,	--recycler state (0:heading to Portal1,1:teleported through portal1,2:player met up with convoy,3:player went through portal1,4:Recycler is at "basedeploy")
