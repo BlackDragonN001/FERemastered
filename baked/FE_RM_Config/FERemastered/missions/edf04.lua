@@ -530,11 +530,10 @@ end
 --packs up the Recycler and moves it to nav Delta once player gets within range
 function HandleRecyclerRetreat(R, STATE)
 	if STATE == 0 then
-		M.Recycler = ReplaceObject(M.Recycler, "ivrecy");
+		M.Recycler = ReplaceObject(M.Recycler, "ivrecy", 2, 0.0, 0);
 		SetObjectiveOn(M.Recycler);	--added objective marker to the recycler
-		SetTeamNum(M.Recycler, 2);
 		SetAIP("edf04e.aip", 6);
-		Advance(R);
+		Advance(R, 1.0);
 	elseif STATE == 1 then 
 		if GetDistance(M.Recycler, M.Player) < 75 then
 			Goto(M.Recycler, M.NavDelta, 1);
