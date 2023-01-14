@@ -535,7 +535,7 @@ function HandleRecyclerRetreat(R, STATE)
 		SetAIP("edf04e.aip", 6);
 		Advance(R, 1.0);
 	elseif STATE == 1 then 
-		if GetDistance(M.Recycler, M.Player) < 75 then
+		if IsAround(M.NavDelta) and GetDistance(M.Recycler, M.Player) < 75 then
 			Goto(M.Recycler, M.NavDelta, 1);
 			Advance(R);
 		end
