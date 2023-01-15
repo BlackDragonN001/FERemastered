@@ -10,6 +10,8 @@ maxHealth = 300
 maxAmmo = 0
 unitName = "Pulverizer"
 aiName = "PowerUpProcess"
+canInteract = false
+
 //there had been a "require count=1, and requireunit=armory" part here...
 [DayWreckerClass]
 xplBlast = "xdabomb7"   //"xbmbxpl"

@@ -1,5 +1,5 @@
 // ===============
-// FIREBALL CAR HIT
+// FIREBALL BUILDING HIT
 // ===============
 
 [ExplosionClass]
@@ -253,10 +253,11 @@ rotationRate = 10.0
 emitDelay = 0.05
 emitVelocity = "0.0 5.0 0.0"
 emitVariance = "5.0 5.0 5.0"
+emitPosVariance = "10.0 0.0 10.0"
 emitLife = 1.0
 BottomInteractsWithTerrain = false
 
-[Char2] // Was achar2, never worked in FE. -GBD
+[Char2] // Was named achar2, never worked in FE. -GBD
 simulateBase = "sim_null"
 lifeTime = 1.0
 renderBase = "draw_planar"
