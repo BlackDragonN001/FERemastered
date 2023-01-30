@@ -134,7 +134,7 @@ function AddObject(h)
 	_FECore.AddObject(h);
 
 	-- Add MPI Support - AI_Unit
-	if (Mission.m_IsMPI) then
+	if (Mission.m_IsMPI == 1) then
 		_MPI.AddObject(h);
 	end
 
@@ -282,7 +282,7 @@ function Start()
 	SetAsUser(PlayerH, LocalTeamNum);
 	AddPilotByHandle(PlayerH);
 
-	if (Mission.m_IsMPI) then
+	if (Mission.m_IsMPI == 1) then
 		_MPI.Start();
 	end
 end
@@ -291,7 +291,7 @@ function Update()
 
 	_FECore.Update();
 
-	if (Mission.m_IsMPI) then
+	if (Mission.m_IsMPI == 1) then
 		_MPI.CustomUpdate();
 	end
 
