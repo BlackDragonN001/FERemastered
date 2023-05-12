@@ -1113,7 +1113,7 @@ function Routine8()
 				SetObjectiveName(M.SchultzDeployNav, "Schultz's Alternate Point");
 				SetObjectiveOn(M.SchultzDeployNav);
 				ClearObjectives();
-				AddObjective("edf0707.otf", "red");
+				AddObjective("edf0707.otf", "yellow");
 				M.Routine8State = M.Routine8State + 1;
 				M.Routine8Timer = GetTime() + 30;
 			else
