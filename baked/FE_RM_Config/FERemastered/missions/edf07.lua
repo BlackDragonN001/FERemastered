@@ -1104,6 +1104,7 @@ function Routine8()
 		elseif M.Routine8State == 36 then
 			if GetDistance(M.Recycler, "convendpoint") < 100 then
 				Stop(M.Recycler, 0);
+				SetBestGroup(M.Recycler);
 				AudioMessage("e7deploy1.wav");	--Shultz:"Major Windt-Essex, this deployment point seems awfully prone to assault..."
 				M.WindexDeployNav = BuildObject("ibnav", 1, "recy_deploy1");
 				SetObjectiveName(M.WindexDeployNav, "Wyndt-Essex's Deploy Point");
