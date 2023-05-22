@@ -103,6 +103,9 @@ maxHeadYaw =  120.0
 minHeadPitch = -30.0
 maxHeadPitch = 30.0
 
+is13Walker = false
+Walker12Type = 0 // -1 = auto, 0 = isdf style, 1 = fury style
+
 alphaDamp = 10.0
 omegaTurn = 30.0
 omegaTurnAttenuation = 0.5f
