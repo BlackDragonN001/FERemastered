@@ -37,11 +37,12 @@ requireCount  =  0
 
 /////// weapons ///////////////////
 
-weaponMask = 00011
+weaponMask = 00111
 
 weaponHard1 = "HP_CANNON_1"
 weaponName1 = "gsplasma_c"
 weaponAssault1 = 0
+weaponRecoil1 = "recoil"
 weaponHard2 = "HP_GUN_1"
 weaponName2 = "giongn_c"
 weaponAssault2 = 0
