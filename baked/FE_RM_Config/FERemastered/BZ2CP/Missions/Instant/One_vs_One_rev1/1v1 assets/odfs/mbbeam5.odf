@@ -28,29 +28,30 @@ renderName2 = "mbbeam5.fringe"
 renderName3 = "mbbeam5.light"
 
 [Core]
-renderBase = "draw_bolt"
-textureName = NULL
+renderBase = "draw_trail" //bolt"
+textureName = "dragbolt.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "255 110 0 0"
-startRadius = 0.55
-finishRadius = 0.3
+startColor = "255 230 127 255"
+finishColor = "200 40 40 0"
+startRadius = 6.0 //0.3 //0.55
+finishRadius = 6.0 //0.3
 segmentLength = 5.0
-segmentVariance = "0.1 0.1 0.1"
-animateTime = 0.2
-textureRate = 0.01
+//segmentVariance = "0.1 0.1 0.1"
+segmentTime = 0.2
+textureRate = 0.02
+textureSpeed = 3.0
 
 [Fringe]
-renderBase = "draw_bolt"
+renderBase = "draw_trail" //bolt"
 textureName = "trail2.tga"
 textureBlend = "one one modulate"
 startColor = "255 230 0 255"
 finishColor = "200 40 40 0"
-startRadius = 1.2
+startRadius = 6.0 //1.2
 finishRadius = 6.0
 segmentLength = 5.0
-segmentVariance = "0.9 0.9 0.9"
-animateTime = 0.3
+//segmentVariance = "0.9 0.9 0.9"
+segmentTime = 0.3
 textureRate = 0.02
 textureSpeed = 3.0
 
