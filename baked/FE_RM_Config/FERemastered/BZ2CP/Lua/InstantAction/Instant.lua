@@ -143,9 +143,13 @@ function InitialSetup()
 	WantBotKillMessages();
 
 	-- Preload some ODFs.
-	PreloadODF("ivrecy_m");
-	PreloadODF("fvrecy_m");
 	PreloadODF("evrecy_m");
+	PreloadODF("fvrecy_m");
+	PreloadODF("ivrecy_m");
+	PreloadODF("cvrecycpu");
+	PreloadODF("ivrecycpu");
+	PreloadODF("evrecycpu");
+	PreloadODF("fvrecycpu");
 end
 
 -- Handle when an object is added to the world.
@@ -208,7 +212,7 @@ function AddObject(h)
 			SetSkill(h, Mission.m_Difficulty + 1);
 
 			-- Give the CPU a custom pilot config.
-			if (not IsBuilding(h)) then
+			if (not IsBuilding(h) and Mission.m_CPURace ~= "c") then
 				SetPilotClass(h, Mission.m_CPURace .. "spilo_c");
 			end
 

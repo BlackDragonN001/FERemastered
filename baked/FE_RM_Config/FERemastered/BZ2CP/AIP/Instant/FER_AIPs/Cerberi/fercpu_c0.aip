@@ -1,0 +1,136 @@
+// File: fercpu_c0.aip
+// Author(s): AI_Unit
+// Summary: Easy AIP plan for the Cerberi faction for Instant Action or MPI.
+
+[Start]
+idleAllCraft = false
+scavClass = "cvscav_c"
+consClass = "cvcons_c"
+CheckProvides = true
+DLLCanSwitch = true
+baseDir = 3
+baseLoc = "RecyclerEnemy"
+UnitsService = true
+Difficulty = 1 // 1=Easy, 2=Medium, 3=Hard, 4=Extreme
+
+[Cheat]
+moneyAmount = 3
+moneyDelay = 5
+
+[IdleDispatcher]
+ScavIdleSeconds = 5
+UnitIdleSeconds = 45
+BomberIdleSeconds = 75
+CraftTeamIsPilotTeam = true
+MaxPatrolUnits = 3
+MaxHuntUnits = 2
+MaxEscortUnits = 4
+
+[Plan1] // Maintain keeping units healed where possible.
+planType = "Service"
+planPriority = 1000
+serviceUnit = "cvserv_c"
+unitType1 = "cbrecy_c"
+unitType2 = "cbpgen"
+unitType3 = "cbfact"
+unitType4 = "cbcbun"
+unitType5 = "cbarmo"
+unitType6 = "cbgtow_c"
+unitType7 = "cbagen"
+unitType8 = "cbtcen"
+unitType9 = "cbjamm"
+
+[Plan2]
+planType = "Recover"
+planPriority = 990
+serviceUnit = "cbsbay"
+unitType1 = "cvcmdr_c"
+unitType2 = "cvscout"
+unitType3 = "cvatank"
+unitType4 = "cvdcar"
+unitType5 = "cvtank"
+unitType6 = "cvmlay"
+unitType7 = "cvrbomb"
+unitType8 = "cvtalon"
+unitType9 = "cvwalk"
+
+[Plan3]
+planType = "BuildMinimums"
+planPriority = 980
+buildType1 = "cvcmdr_c"
+buildCount1 = 1
+
+[Plan4] // Always have 3 active Scavengers for picking up loose scrap.
+planType = "BuildMinimums"
+planPriority = 970
+buildType1 = "cvscav_c"
+buildCount1 = 3
+planCondition = "Lua"
+LuaFunction = "ScavengerBuildLoopCondition"
+
+[Plan5] // Try and collect pools that are free around the map.
+planType = "CollectPool"
+planPriority = 960
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "CanCollectScrapPool"
+
+[Plan6] // Try and collect pools that are free around the map.
+planType = "CollectPool"
+planPriority = 950
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "CanCollectScrapPool"
+
+[Plan7] // Try and collect any loose scrap that is free around the map.
+planType = "CollectField"
+planPriority = 940
+planCondition = "Lua"
+LuaFunction = "CanCollectLooseScrap"
+
+[Plan8] // Build 4 turrets to be handled by the Dispatcher.
+planType = "BuildMinimums"
+planPriority = 930
+buildType1 = "cvturr"
+buildCount1 = 4
+planCondition = "Lua"
+LuaFunction = "TurretBuildLoopCondition"
+
+[Plan9] // Send out a Scout to attack Player Scavengers/Extractors.
+planType = "Attacker"
+planPriority = 920
+targetType1 = "VIRTUAL_CLASS_SCAVENGER"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+attackType1 = "cvscout"
+attackType2 = "cvscout"
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendExtractorAttacks"
+
+[Plan10] // Get our Constructors in the mix.
+planType = "BuildMinimums"
+planPriority = 910
+buildType1 = "cvcons_c"
+buildCount1 = 1
+planCondition = "Lua"
+LuaFunction = "ConstructorBuildLoopCondition"
+
+[Plan11] // Get Gun Tower Constructors going.
+planType = "BuildMinimums"
+planPriority = 900
+buildType1 = "cvcons_g"
+buildCount1 = 2
+planCondition = "Lua"
+LuaFunction = "GunTowerConstructorBuildLoopCondition"
+
+[Plan12] // Get Gun Towers going.
+planType = "BaseBuildMinimums"
+planPriority = 890
+buildType1 = "cbgtow_c"
+buildCount1 = 1
+buildLoc1 = "gtow1"
+consClass = "cvcons_g"
+planCondition = "Lua"
+LuaFunction = "BuildGunTower1"
+ContinueEvenIfFail = true
