@@ -308,17 +308,17 @@ function Routine1()
 			RemoveObject(M.HadeanAlly1);
 			RemoveObject(M.HadeanAlly2);
 			ClearObjectives();
-			AddObjective("edf1006.otf", "green");
+			AddObjective("edf1006.otf", "white");
 			M.Routine1State = M.Routine1State + 1;
 			M.Routine1Timer = GetTime() + 10;
 		elseif M.Routine1State == 16 then
 			AudioMessage("edf10e.wav");	--Hardin:"Once you've secured our new base, I'll need you to take control over the island's scrap pools..."
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 17 then
-			if CountUnitsNearObject(M.Portal2, 300, 1, "ibscav") > 1 then
+			if CountUnitsNearObject(M.Portal2, 300.0, 1, "ibscav") + CountUnitsNearObject(M.Portal2, 300.0, 1, "ibscup") > 1 then
 				SetObjectiveOff(M.ScrapyardNav);
 				ClearObjectives();
-				AddObjective("edf1007.otf", "white");
+				AddObjective("edf1007.otf", "green");
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 20;
 			end
@@ -337,6 +337,7 @@ function Routine1()
 			M.CerbGuard = BuildObject("cvrbomb", 4, Position6);
 			Defend2(M.CerbGuard, M.Schultz, 0);
 			M.CheckSchultz = true; --RunSpeed,_Routine4,1,true
+			ClearObjectives();
 			AddObjective("edf1008.otf", "white");
 			M.Routine1State = M.Routine1State + 1;
 		elseif M.Routine1State == 20 then
@@ -376,7 +377,7 @@ function Routine1()
 		elseif M.Routine1State == 26 then
 			AudioMessage("edf10g2.wav");	--Hardin:"You've got to destroy that base as quick as you can..."
 			ClearObjectives();
-			AddObjective("edf1009.otf", "green");
+			AddObjective("edf1009.otf", "white");
 			SetObjectiveOn(M.WorldPortal);
 			SetObjectiveName(M.WorldPortal, "WorldPortal");
 			M.Routine5Active = false;--RunSpeed,_Routine5,0,true

@@ -388,7 +388,7 @@ function Routine1()
 			if not IsAround(M.CerbPowerGen) then
 				UnAlly(6, 5);
 				RemoveObject(M.MatriarchHolder);
-				M.Matriarch = ReplaceObject(M.Matriarch, "fvrecy");
+				M.Matriarch = ReplaceObject(M.Matriarch, "fvrecy", -1, 0.0, 0);
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 2;
 			end

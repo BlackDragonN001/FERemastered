@@ -1097,6 +1097,8 @@ function ExecuteRabbit()
 			-- Unobjectify the old craft.
 			--				SetObjectiveOff(RabbitH);
 			SetNewRabbit(GetPlayerHandle(Mission.m_RabbitTeam));
+			
+			print("Set Rabbit to Player on Rabbit Team, Rabbit Changed Teams");
 		end
 	else
 		Mission.m_RabbitMissingTurns = Mission.m_RabbitMissingTurns + 1;
@@ -1119,6 +1121,8 @@ function ExecuteRabbit()
 			then
 				-- Move to current vehicle on that team.
 				SetNewRabbit(GetPlayerHandle(Mission.m_RabbitTeam));
+				
+				print("Set Rabbit to Player on Rabbit Team, no rabbit was around");
 			end
 		end
 
@@ -1130,6 +1134,8 @@ function ExecuteRabbit()
 			if(IsAround(RabbitH))
 			then
 				SetNewRabbit(Mission.m_RabbitShooterHandle);
+				
+				print("Set Rabbit to Last Rabbit Shooter");
 			else
 				-- Gone, no known shooter. Pick a semi-random human to take
 				-- over. The timestep at which this occurrs should be fairly
@@ -1144,6 +1150,8 @@ function ExecuteRabbit()
 						SetNewRabbit(PlayerH);
 						foundNewRabbit = true;
 						Mission.m_ForbidRabbitTeam = 0;
+						
+						print("Set Rabbit to Random Player");
 						break; -- out of this for loop
 					end
 				end
@@ -1159,6 +1167,8 @@ function ExecuteRabbit()
 							SetNewRabbit(Mission.m_AICraftHandles[index2]);
 							foundNewRabbit = true;
 							Mission.m_ForbidRabbitTeam = 0;
+							
+							print("Set Rabbit to Random AI");
 							break; -- out of this for loop
 						end
 					end -- i loop over MAX_AI_UNITS
@@ -1921,10 +1931,14 @@ function DeadObject(DeadObjectHandle, KillersHandle, WasDeadPerson, WasDeadAI)
 			local RabbitH = KillersHandle;
 			if(IsAlive(RabbitH)) then
 				SetNewRabbit(RabbitH); -- Update for everyone
+				
+				print("DeadObject: Set Rabbit to RabbitH, Rabbit Was Killer.");
 			else
 				RabbitH = Mission.m_RabbitShooterHandle;
 				if(IsAlive(RabbitH)) then
 					SetNewRabbit(RabbitH); -- Update for everyone
+					
+					print("DeadObject: Set Rabbit to RabbitH, Rabbit Was Shooter.");
 				end
 			end
 		end
@@ -2209,8 +2223,10 @@ function Load(FECoreData, MissionData)
 	then
 		-- Clear, 
 		local OrigRabbit = Mission.m_RabbitTargetHandle;
-		SetNewRabbit(0); -- Clear.
+		SetNewRabbit(nil); -- Clear.
+		print("LOAD Clearing Rabbit");
 		SetNewRabbit(OrigRabbit); -- re-aim everyone
+		print("LOAD Rabbit reset to saved handle.");
 	end	
 end
 

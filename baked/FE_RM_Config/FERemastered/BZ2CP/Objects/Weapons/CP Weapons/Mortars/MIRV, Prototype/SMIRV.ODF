@@ -6,6 +6,7 @@ scrapValue = 0
 maxHealth = 150
 maxAmmo = 5
 unitName = "Trident"
+canInteract = false
 
 [SprayBuildingClass]
 payloadName = "omirv2"

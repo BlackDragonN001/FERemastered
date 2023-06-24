@@ -63,32 +63,38 @@ renderName1 = "ebtcen.beam"
 renderName2 = "ebtcen.wave"
 renderName3 = "ebtcen.bolt"
 
-// Won't move without being attached to an emitter. :( -GBD
-// Need a new render type for a static cross plane, like Tracer, but with scrolling UV coordinates.
+// Only valid for BZCC version higher then 2.0.185
 //[Beam]
-//renderBase = "draw_bolt"
-//textureName = "trail2.tga" //"arctrail2" 
+//renderBase = "draw_billboard"
+//textureName = "arctrail2.tga"
 //textureBlend = "one one modulate"
-//textureRate = 0.1
-//textureSpeed = -0.3
 //startColor = "255 180 30 200"
 //finishColor = "255 150 30 200"
 //startRadius = 2.0
 //finishRadius = 2.0
-//segmentLength = 5.0
-//segmentVariance = "0.0 0.0 0.0"
+//startHeight = 5.0
+//finishHeight = 5.0
+//textureRateX = 1.0
+//textureRateY = 1.0
+//textureSpeedX = 0.0
+//textureSpeedY = -0.5
+//spriteCenter.X = 0.0
+//spriteCenter.Y = 1.0
+//followCamera = true
+//textureHorizontal = true
 //maxCount = 128
 
+// Won't move without being attached to an emitter. :( -GBD
 [Beam]
 renderBase = "draw_emit"
 emitName = "ebtcen.beamemit"
-emitDelay = 0.2 // Lower delays cause twitchy position interpolation. -GBD
+emitDelay = 0.1 // Lower delays cause twitchy position interpolation. -GBD
 emitVelocity = "0.0 100 0.0"
 
 [BeamEmit]
 simulateBase = "sim_smoke"
-lifeTime = 0.21
-renderBase = "draw_trail"
+lifeTime = 0.11
+renderBase = "draw_bolt" //trail"
 textureName = "arctrail2.tga" //"trail2.tga"
 textureBlend = "one one modulate"
 textureRate = 0.1 //0.01
@@ -97,7 +103,9 @@ startColor = "255 180 30 200"
 finishColor = "255 150 30 200"
 startRadius = 2.0
 finishRadius = 2.0
-segmentTime = 0.21
+animateTime = 0.11 //segmentTime = 0.21
+segmentLength = 1.0
+segmentVariance = "0.0 0.0 0.0"
 maxCount = 128
 
 
@@ -112,7 +120,7 @@ emitPosVariance = "2.0 0.0 2.0"
 
 [BoltEmit]
 simulateBase = "sim_smoke"
-lifeTime = 0.2
+lifeTime = 0.15 //2
 renderBase = "draw_multi"
 renderCount = 2
 renderName1 = "ebtcen.lightemit"
@@ -120,13 +128,13 @@ renderName2 = "ebtcen.boltrender"
 
 [LightEmit]
 simulateBase = "sim_smoke"
-lifeTime = 0.2
+lifeTime = 0.125 //2
 renderBase = "draw_light"
 startColor = "255 255 255 1000"
 finishColor = "255 100 0 0"
 startRadius = 0.0
 finishRadius = 60.0
-animateTime = 0.2
+animateTime = 0.125 //2
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
@@ -159,7 +167,7 @@ emitVariance = "0.0 0.0 0.0"
 
 [Waveemit]
 simulateBase = "sim_smoke"
-lifeTime = 0.5
+lifeTime = 0.3 //5
 renderBase = "draw_wave"
 textureName = "wave.tga"
 textureBlend = "one one modulate"
@@ -167,7 +175,7 @@ startColor = "255 180 30 200"
 finishColor = "255 150 30 200"
 startRadius = 1.0
 finishRadius = 1.0
-animateTime = 0.5
+animateTime = 0.3 //5
 waveAngle = 3.14159265359
 waveDepth = 1.0
 waveColorCenter = "255 255 255 255"

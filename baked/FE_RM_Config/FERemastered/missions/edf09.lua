@@ -14,10 +14,10 @@ local Position7 = SetVector(-183,-12,55);	--mlight move target
 
 -- EarthQuake Damage Value Ratios. (Ratio of MaxHealth to damage, min and max randomized)
 local damageValues = {
-	{"0.05", "0.1"}, -- First stage min/max.
-	{"0.1", "0.2"}, -- Second stage min/max.
-	{"0.2", "0.3"}, -- Third stage min/max.
-	{"0.3", "0.4"} -- Critical stage min/max.
+	{"0.05", "0.10"}, -- First stage min/max.
+	{"0.10", "0.15"}, -- Second stage min/max.
+	{"0.15", "0.20"}, -- Third stage min/max.
+	{"0.20", "0.30"} -- Critical stage min/max.
 };
 
 local M = {
@@ -322,7 +322,7 @@ function Routine3()
 	if (M.EarthquakeCooldown < GetTime()) then
 		-- Start the EQ.
 		if (not M.EarthquakeStarted) then
-			StartEarthQuake(6.0);
+			StartEarthQuake(5.0);
 			M.EarthquakeStarted = true;
 		end
 
@@ -351,8 +351,6 @@ function Routine3()
 
 		-- Specific logic per EQ stage.
 		if (M.EarthquakeStage == 2) then
-			-- Intensify the EQ.
-			UpdateEarthQuake(15.0);
 
 			-- Spawn a friendly Krul to meet us.
 			Attack(BuildObject("cvtank", 5, Position3), M.RecyDeployed, 0);
@@ -361,6 +359,9 @@ function Routine3()
 			if (not M.SpawnFirstMeteor) then
 				BuildObject("meteor", 5, "Deploy");
 				M.SpawnFirstMeteor = true;
+				
+				-- Intensify the EQ.
+				UpdateEarthQuake(10.0);
 			end
 		elseif (M.EarthquakeStage == 3) then
 			-- Build some effects to show the planet is burning.
@@ -373,10 +374,15 @@ function Routine3()
 				BuildObject("vfire", 5, Position4);
 				BuildObject("vsmoke", 5, Position4);
 				M.SpawnFireEffects = true;
+				
+				-- Intensify the EQ.
+				UpdateEarthQuake(15.0);
 			end
 		elseif (M.EarthquakeStage == 4) then
 			if (not M.SpawnSecondMeteor) then
 				BuildObject("meteor", 5, "EGT1");
+				-- Intensify the EQ.
+				UpdateEarthQuake(20.0);
 			end
 		end
 

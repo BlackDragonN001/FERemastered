@@ -1,5 +1,5 @@
 [GameObjectClass]
-mrmFactor = 0
+baseName = "cbturr01"
 geometryName = "cbturr03z.xsi"
 //geometryScale = 0.09
 animCount = 1
@@ -18,6 +18,7 @@ aiName2 = "GunTowerEnemy"
 heatSignature = 2.0
 imageSignature = 1.0
 radarSignature = 1.0
+AllowUndergroundSpawn = true
 isAssault = 0
 ownsTerrain = 1
 

@@ -240,6 +240,7 @@ function GetDifficulty()
 	end
 end
 
+-- Phase out in place of internal DLL teleportation code, using PreTeleport and PostTeleport callbacks? (DLL driven VFX for Portals) -GBD
 -- Teleports Handle h to Handle dest, with optional offset.
 function Teleport(h, dest, offset)
 	if not IsAround(h) then 
@@ -384,6 +385,9 @@ function TeleportIn(odf, team, dest, offset, label)
 	if buildFx then
 		BuildObject("teleportin", 0, pos);
 	end
+	
+	-- FX has been placed in center of portal. Now add some spread so multiple units don't get clumped up together... -GBD
+	pos = GetPositionNear(pos, 3.0, 5.0);
 	local h = BuildObject(odf, team, pos);
 	
 	if (label ~= nil) then

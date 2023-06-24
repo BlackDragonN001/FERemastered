@@ -1,0 +1,21 @@
+[GameObjectClass]
+baseName = "seeker_fd"
+geometryName = "sgseek00.fbx"
+geometryScale = 1.2
+classLabel = "tripmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 70
+maxAmmo = 100
+heatSignature = 10.0
+imageSignature = 10.0
+radarSignature = 10.0
+unitName = "Seeker X"
+
+[MineClass]
+lifeSpan = 20
+
+[TripMineClass]
+triggerRadius = 125.0
+suppressRadius = 10.0
+payloadName = "Xseeker"
