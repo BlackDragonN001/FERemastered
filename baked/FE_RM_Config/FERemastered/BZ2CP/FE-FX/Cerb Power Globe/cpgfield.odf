@@ -1,4 +1,5 @@
 [GameObjectClass]
+baseName = "pgfield"
 geometryName = NULL //"defflarmin.xsi"
 classLabel = "magnet"
 scrapCost = 5
@@ -11,7 +12,6 @@ effectName1 = "cpgfield.field"
 explosionName = "cglobexpl"
 canDetect = 1
 canInteract = 1
-canSnipe = 0
 
 [MineClass]
 lifeSpan = 90000

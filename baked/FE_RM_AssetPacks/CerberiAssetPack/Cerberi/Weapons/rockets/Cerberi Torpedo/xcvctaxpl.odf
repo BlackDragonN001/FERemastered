@@ -7,7 +7,7 @@ classLabel = "explosion"
 
 ///////////////////////////////
 
-particleTypes = 7
+particleTypes = 8
 
 particleClass1 = "xcvctaxpl.light"
 particleCount1 = 1
@@ -41,6 +41,10 @@ particleCount7 = 3
 particleVeloc7 = "10.0 3.0 10.0"
 particleBias7 = "0.0 10.0 0.0"
 particlePosVar7 = "2.0 0.0 2.0"
+
+particleClass8 = "xcvctaxpl.core2"
+particleCount8 = 1
+particleVeloc8 = "0.0 0.0 0.0"
 
 
 ///////////////////////////////
@@ -161,6 +165,20 @@ finishRadius = 0.0
 segmentTime = 1.5
 textureRate = 0.5
 textureSpeed = 0.0
+
+[Core2]
+simulateBase = "sim_smoke"
+lifeTime = 1.2
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "225 96 255 255"
+finishColor = "127 55 200 0"
+startRadius = 1.0
+finishRadius = 20.0
+animateTime = 1.2
+rotationRate = 1.0
+bottomInteractsWithTerrain = false
 
 
 [trail2]

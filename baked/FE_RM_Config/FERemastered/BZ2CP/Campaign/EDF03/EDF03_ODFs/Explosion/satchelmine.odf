@@ -6,6 +6,7 @@ scrapValue = 0
 maxHealth = 150
 maxAmmo = 200
 unitName = "Prox Mine"
+canInteract = false
 
 [MineClass]
 lifeSpan = 1

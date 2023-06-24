@@ -7,7 +7,7 @@ classLabel = "explosion"
 
 ///////////////////////////////
 
-particleTypes = 5
+particleTypes = 8
 
 particleClass1 = "xcvctcxpl.light"
 particleCount1 = 1
@@ -15,12 +15,12 @@ particleVeloc1 = "0.0 0.0 0.0"
 
 particleClass2 = "xcvctcxpl.trail"
 particleCount2 = 10
-particleVeloc2 = "30.0 40.0 30.0"
+particleVeloc2 = "20.0 30.0 20.0"
 particleBias2 = "0.0 0.0 0.0"
 
-particleClass3 = "xcvctcxpl.trail2"
+particleClass3 = "xcvctcxpl.trail"
 particleCount3 = 10
-particleVeloc3 = "30.0 40.0 30.0"
+particleVeloc3 = "20.0 30.0 20.0"
 
 particleClass4 = "xcvctcxpl.core"
 particleCount4 = 1
@@ -30,31 +30,75 @@ particleClass5 = "xcvctcxpl.shock"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
 
+particleClass6 = "xcvctcxpl.flame"
+particleCount6 = 1
+particleVeloc6 = "0.0 1.0 0.0"
+particleBias6 = "0.0 2.0 0.0"
+
+particleClass7 = "xcvctcxpl.smoke"
+particleCount7 = 3
+particleVeloc7 = "8.0 2.5 8.0"
+particleBias7 = "0.0 8.0 0.0"
+particlePosVar7 = "2.0 0.0 2.0"
+
+particleClass8 = "xcvctcxpl.core2"
+particleCount8 = 1
+particleVeloc8 = "0.0 0.0 0.0"
 
 ///////////////////////////////
 
 explSound = "xmv1.wav"
-damageRadius = 10.0
-damageValue(N) = 300
-damageValue(L) = 200
-damageValue(H) = 100
-damageValue(S) = 200
-damageValue(D) = 200
-damageValue(A) = 200
+damageRadius = 25.0 //50.0
+damageValue(N) = 600
+damageValue(L) = 500
+damageValue(H) = 400
+damageValue(S) = 500
+damageValue(D) = 400
+damageValue(A) = 600
 
 ///////////////////////////////
 
 [Core]
 simulateBase = "sim_null"
+lifeTime = 1.3
+renderBase = "draw_twirl"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 255 250"
+finishColor = "127 63 127 0"
+startRadius = 1.0
+finishRadius = 20.0
+animateTime = 1.3
+rotationRate = 1.0
+bottomInteractsWithTerrain = false
+
+[Flame]
+simulateBase = "sim_smoke"
 lifeTime = 1.9
 renderBase = "draw_twirl"
 textureName = "flame.tga"
 textureBlend = "one one modulate"
 startColor = "225 123 249 250"
-finishColor = "127 55 165 10"
+finishColor = "127 55 165 0"
 startRadius = 1.0
-finishRadius = 35.0
+finishRadius = 25.0
 animateTime = 1.9
+rotationRate = 1.0
+//bottomInteractsWithTerrain = false
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "10 10 10 255"
+finishColor = "63 63 63 0"
+startRadius = 5.0
+finishRadius = 20.0
+animateTime = 3.0
+rotationRate = 5.0
+bottomInteractsWithTerrain = false
 
 [Shock]
 simulateBase = "sim_null"
@@ -65,7 +109,7 @@ textureBlend = "one one modulate"
 startColor = "255 255 255 255"
 finishColor = "100 100 100 0"
 startRadius = 2.0
-finishRadius = 35.0
+finishRadius = 25.0
 animateTime = 1.3
 latitudeBands = 8
 longitudeSegments = 16
@@ -76,25 +120,64 @@ lifeTime = 1.8
 renderBase = "draw_light"
 startColor = "255 255 100 500"
 finishColor = "111 111 0 500"
-startRadius = 100.0
-finishRadius = 1.0
+startRadius = 50.0
+finishRadius = 0.0
 animateTime = 1.8
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
 
-[trail]
+[Trail]
 simulateBase = "sim_ember"
-lifeTime = 1.5
-renderBase = "draw_trail"
+lifeTime = 3.0
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "xcvctaxpl.trailflare"
+renderName2 = "xcvctaxpl.trailemit"
+
+[TrailFlare]
+//simulateBase = "sim_smoke"
+//lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
 textureBlend = "one one modulate"
-startColor = "198 0 250 200"
+startColor = "198 0 250 255"
 finishColor = "250 0 250 0"
-startRadius = 0.1
+startRadius = 0.5
+finishRadius = 0.5
+animateTime = 3.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[TrailEmit]
+//simulateBase = "sim_ember"
+//lifeTime = 1.5
+renderBase = "draw_trail"
+textureName = "trail.tga"
+textureBlend = "one one modulate"
+startColor = "198 0 250 255"
+finishColor = "250 0 250 0"
+startRadius = 0.075
 finishRadius = 0.0
-trailTime = 1.5
 segmentTime = 1.5
+textureRate = 0.5
+textureSpeed = 0.0
+
+[Core2]
+simulateBase = "sim_smoke"
+lifeTime = 1.2
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "225 96 255 255"
+finishColor = "127 55 200 0"
+startRadius = 1.0
+finishRadius = 15.0
+animateTime = 1.2
+rotationRate = 1.0
+bottomInteractsWithTerrain = false
+
 
 [trail2]
 simulateBase = "sim_ember"
@@ -102,11 +185,10 @@ lifeTime = 1.6
 renderBase = "draw_trail"
 textureName = "trail2.tga"
 textureBlend = "one one modulate"
-textureRate = 0.1
 startColor = "250 4 198 200"
 finishColor = "250 0 250 0"
 startRadius = 0.05 /0.3
 finishRadius = 0.2 //1.0
 segmentTime = 1.2 // 1.0
-animateTime = 1.6
-trailTime = 1.2
+//trailTime = 1.2
+textureRate = 0.1

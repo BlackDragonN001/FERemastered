@@ -153,7 +153,7 @@ function InitialSetup()
 	};
 	local preloadAudio = {
 		"edflast_01.wav",
-		"edflast_01a.wav",
+		"edflast_1a.wav",
 		"edflast_02.wav",
 		"edflast_03.wav",
 		"edflast_04.wav",

@@ -402,7 +402,7 @@ function Routine3()
 			--M.Routine3Timer = GetTime() + 15;
 		elseif M.Routine3State == 4 then
 			if not M.Routine4Active then
-				IFace_Deactivate("Bar.Bar7");
+				--IFace_Deactivate("Bar.BarGauge");
 				IFace_Deactivate("Bar");
 				IFace_Deactivate("Rauschen");
 				IFace_Activate("EMAIL1");
@@ -428,7 +428,7 @@ function Routine3()
 		elseif M.Routine3State == 7 then
 			if not M.Routine4Active then
 				IFace_Deactivate("Bar");
-				IFace_Deactivate("Bar.Bar7");
+				--IFace_Deactivate("Bar.BarGauge");
 				IFace_Deactivate("Bar.Blueprints");
 				IFace_Activate("EMAIL1.ViewList");
 				IFace_Activate("EMAIL1.XSIView");
@@ -459,7 +459,7 @@ function Routine3()
 		elseif M.Routine3State == 12 then
 			if not M.Routine4Active then
 				IFace_Deactivate("Bar");
-				IFace_Deactivate("Bar.Bar7");
+				--IFace_Deactivate("Bar.BarGauge");
 				IFace_Deactivate("Bar.Sending");
 				IFace_Deactivate("EMAIL1");
 				IFace_ExitMenuMode();
@@ -511,20 +511,13 @@ end
 function Routine4()
 	if M.Routine4Timer < GetTime() and M.Routine4Active then
 		if M.Routine4State == 0 then
-			IFace_Activate("Bar.Bar1");
-			IFace_Deactivate("Bar.Bar2");
-			IFace_Deactivate("Bar.Bar3");
-			IFace_Deactivate("Bar.Bar4");
-			IFace_Deactivate("Bar.Bar5");
-			IFace_Deactivate("Bar.Bar6");
-			IFace_Deactivate("Bar.Bar7");
+			IFace_Activate("Bar.BarGauge");
+			IFace_SetFloat("script.bar.count", 0.0);
 			M.Routine4State = M.Routine4State + 1;
 			M.Routine4Timer = GetTime() + 2;
-		elseif M.Routine4State < 7 then
-			IFace_Activate("Bar.Bar"..tostring(M.Routine4State + 1));
-			IFace_Deactivate("Bar.Bar"..tostring(M.Routine4State));
+		elseif M.Routine4State <= SecondsToTurns(6.0) + 1 then
+			IFace_SetFloat("script.bar.count", (M.Routine4State - 1) / SecondsToTurns(6.0));
 			M.Routine4State = M.Routine4State + 1;
-			M.Routine4Timer = GetTime() + 1;
 		else
 			M.Routine4Active = false;
 			M.Routine4State = 0;
@@ -535,7 +528,7 @@ end
 
 --spawns attackers during the escort part of the mission.
 function Routine5()
-	if M.Routine5Active and M.Routine5Timer < GetTime() then
+	if M.Routine5Active and M.Routine5Timer < GetTime() and M.PlayerUsingCbunk ~= 1 then
 		if M.Routine5State == 0 then
 			M.Routine5State = M.Routine5State + 1;
 			M.Routine5Timer = GetTime() + 75;
@@ -584,10 +577,8 @@ function Routine5()
 			M.Routine5Counter = 0;
 			M.Routine5State = M.Routine5State + 1;
 		elseif M.Routine5State == 7 then	--LOC_170
-			if M.PlayerUsingCbunk ~= 1 then
-				M.Routine5State = M.Routine5State + 1;
-				M.Routine5Timer = GetTime() + (4 - M.JammerState) * 25;	--cerbs are more frequent if ECM jammer is dead or too far from recy
-			end	
+			M.Routine5State = M.Routine5State + 1;
+			M.Routine5Timer = GetTime() + (4 - M.JammerState) * 25;	--cerbs are more frequent if ECM jammer is dead or too far from recy
 		elseif M.Routine5State == 8 then
 			M.Attacker01 = BuildObject("cvrbomb", 5, "hadconstart");
 			Patrol(M.Attacker01, "conpatrol", 1);
@@ -787,7 +778,7 @@ function Routine7()
 			M.Routine7Timer = GetTime() + 25;
 		elseif M.Routine7State == 2 then
 			if IsAround(M.Tug1) then
-				if M.PlayerUsingCbunk == 0 then -- Pause while in the interface. Prevents a buildup of 25+ pods. -GBD
+				if M.PlayerUsingCbunk ~= 1 then -- Pause while in the interface. Prevents a buildup of 25+ pods. -GBD
 					local pos = GetPosition(M.Tug1);
 					M.ServicePod = BuildObject("apserv07", 1, pos);				
 					M.Position30 = SetVector(pos.x + 10, pos.y + 15, pos.z + 10);
@@ -806,7 +797,7 @@ function Routine7()
 			M.Routine7Timer = GetTime() + 25;
 		elseif M.Routine7State == 5 then
 			if IsAround(M.Tug2) then
-				if M.PlayerUsingCbunk == 0 then  -- Pause while in the interface. Prevents a buildup of 25+ pods. -GBD
+				if M.PlayerUsingCbunk ~= 1 then  -- Pause while in the interface. Prevents a buildup of 25+ pods. -GBD
 					local pos = GetPosition(M.Tug2);
 					M.ServicePod = BuildObject("apserv07", 1, pos);				
 					M.Position30 = SetVector(pos.x + 10, pos.y + 15, pos.z + 10);
@@ -1113,6 +1104,7 @@ function Routine8()
 		elseif M.Routine8State == 36 then
 			if GetDistance(M.Recycler, "convendpoint") < 100 then
 				Stop(M.Recycler, 0);
+				SetBestGroup(M.Recycler);
 				AudioMessage("e7deploy1.wav");	--Shultz:"Major Windt-Essex, this deployment point seems awfully prone to assault..."
 				M.WindexDeployNav = BuildObject("ibnav", 1, "recy_deploy1");
 				SetObjectiveName(M.WindexDeployNav, "Wyndt-Essex's Deploy Point");
@@ -1121,7 +1113,7 @@ function Routine8()
 				SetObjectiveName(M.SchultzDeployNav, "Schultz's Alternate Point");
 				SetObjectiveOn(M.SchultzDeployNav);
 				ClearObjectives();
-				AddObjective("edf0707.otf", "red");
+				AddObjective("edf0707.otf", "yellow");
 				M.Routine8State = M.Routine8State + 1;
 				M.Routine8Timer = GetTime() + 30;
 			else

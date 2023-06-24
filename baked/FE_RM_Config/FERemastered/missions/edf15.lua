@@ -183,10 +183,12 @@ function Update()
 	Routine7();
 	
 	-- Keep constructor alive.
-	SetCurHealth(M.Constructor, GetMaxHealth(M.Constructor));
+	if (M.Routine1State < 11) and (IsAround(M.Constructor)) then 
+		SetCurHealth(M.Constructor, GetMaxHealth(M.Constructor));
+	end
 
 	-- Keep Schultz alive.
-	if (M.SchultzInvincible) then
+	if (M.SchultzInvincible) and IsAround(M.Schultz) then
 		SetCurHealth(M.Schultz, GetMaxHealth(M.Schultz));
 	end
 end

@@ -26,15 +26,19 @@ explosionName = "xbldxpl"
 weaponHard1 = "HP_CANNON_1"
 weaponAssault1 = 0
 weaponName1 = "gtytech"
+weaponGroup1 = 0
 weaponHard2 = "HP_CANNON_2"
 weaponAssault2 = 0
 weaponName2 = ""
+weaponGroup2 = 1
 weaponHard3 = "HP_ROCKET_1"
 weaponAssault3 = 1
 weaponName3 = "gsavrkt"
+weaponGroup3 = 2
 weaponHard4 = ""
 weaponAssault4 = 0
 weaponName4 = "gshield"
+weaponGroup4 = 3
 weaponMask = 00111
 
 [CraftClass]
