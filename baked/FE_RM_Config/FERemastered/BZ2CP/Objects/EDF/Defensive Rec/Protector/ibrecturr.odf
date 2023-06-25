@@ -1,7 +1,15 @@
-// Unit created by Dutch Boy
+// Forgotten Enemies: Remastered
+// Recycler Defense Turret
+// Created by Zorn
+// Original Unit created by Dutch Boy
 
 [GameObjectClass]
-geometryName = "ibrecturr00.XSI"
+geometryName = "ibrecturr00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ibrecturr00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
 classLabel = "turret"
 baseName = "ibrecturr"
 collisionRadius = 1.0
@@ -35,17 +43,13 @@ weaponAssault1 = 1
 /////////////////////////////////
 
 lightHard1 = "hp_light_1"
-lightName1 = "spotwhite"
+lightName1 = "lasersite"
 lightHard2 = "hp_light_2"
-lightName2 = "lasersite"
+lightName2 = "spotwhite"
 
-turretCount = 4
-turretName1 = "turret_y_1"
-turretName2 = "turret_x_1"
-turretName3 = "turret_x_2"
-turretName4 = "hp_eyepoint"
-
-
+turretCount = 2
+turretName1 = "hp_turret_1"
+turretName2 = "hp_turret_2"
 
 [BuildingClass]
 soundAmbient = "igtow01.wav"

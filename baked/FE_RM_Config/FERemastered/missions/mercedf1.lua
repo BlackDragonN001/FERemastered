@@ -445,7 +445,8 @@ function Routine1()
 			end
 		elseif (M.Routine1State == 11) then
 			if (GetTime() >= M.convoyWaitTillTime) then
-				AudioMessage("mercury_02.wav");
+				-- AudioMessage("mercury_02.wav");
+				_FECore.AudioWithSubtitles("mercury_02.wav");
 
 				M.convoyWaitTillTime = GetTime() + 9;
 
@@ -515,7 +516,8 @@ function Routine1()
 				SetPerceivedTeam(M.Object_Nadir1, 1);
 				--Attack(M.Object_Nadir1, M.Object_Cargo2, 1); moved to line 338
 
-				AudioMessage("mercury_02a.wav");
+				-- AudioMessage("mercury_02a.wav");
+				_FECore.AudioWithSubtitles("mercury_02a.wav");
 
 				M.convoyWaitTillTime = GetTime() + 13;
 
@@ -532,13 +534,13 @@ function Routine1()
 					end
 				end	
 				if (GetDistance(M.Object_Cargo2, "convoy_halt") <= 20) then
-				
-					AudioMessage("mercury_03.wav");
-				Stop(M.Object_WyndtEssex,1); -- added stop line for Wyndt.
-				
-				M.convoyWaitTillTime = GetTime() + 19;
+					--AudioMessage("mercury_03.wav");
+					_FECore.AudioWithSubtitles("mercury_03.wav");
 
-				M.Routine1State = M.Routine1State + 1;
+					Stop(M.Object_WyndtEssex,1); -- added stop line for Wyndt.
+				
+					M.convoyWaitTillTime = GetTime() + 19;
+					M.Routine1State = M.Routine1State + 1;
 				end
 				
 			end
@@ -572,7 +574,8 @@ function Routine1()
 			end
 		elseif (M.Routine1State == 18) then 
 			if (GetTime() >= M.convoyWaitTillTime and GetDistance(M.Object_WyndtEssex, "convoy_halt") <= 100) then --added logic to wait for wyndt to play audio message. 
-				AudioMessage("mercury_07.wav");
+				-- AudioMessage("mercury_07.wav");
+				_FECore.AudioWithSubtitles("mercury_07.wav");
 				
 				AddObjective("mercedf111.otf", "white");
 
@@ -636,7 +639,8 @@ function Routine1()
 				ClearObjectives();
 				LookAt(M.Object_Hardin, M.Object_Player, 1);
 				AddObjective("mercedf106.otf", "white");
-				AudioMessage("mercury_08.wav");
+				-- AudioMessage("mercury_08.wav");
+				_FECore.AudioWithSubtitles("mercury_08.wav");
 				SetObjectiveName(M.Object_Corbernav, "Enter StormPetrel here");
 				
 				SetTeamNum(M.Object_Gun1, 0);
@@ -681,7 +685,8 @@ function Routine1()
 				ClearObjectives();
 				AddObjective("mercedf105.otf", "green");
 
-				AudioMessage("mercury_08a.wav");
+				-- AudioMessage("mercury_08a.wav");
+				_FECore.AudioWithSubtitles("mercury_08a.wav");
 
 				HopOut(M.AIScouts[1]);
 				HopOut(M.AIScouts[2]);
@@ -720,7 +725,8 @@ function Routine1()
 			end
 		elseif (M.Routine1State == 28) then
 			if (GetTime() >= M.convoyWaitTillTime) then
-				AudioMessage("mercury_09.wav");
+				-- AudioMessage("mercury_09.wav");
+				_FECore.AudioWithSubtitles("mercury_09.wav");
 
 				M.convoyWaitTillTime = GetTime() + 12;
 
@@ -818,7 +824,8 @@ function Routine3()
 			SetObjectiveOn(M.Object_WyndtEssex);
 			LookAt(M.Object_WyndtEssex, M.Object_Player, 1);
 			
-			AudioMessage("mercury_04.wav");
+			-- AudioMessage("mercury_04.wav");
+			_FECore.AudioWithSubtitles("mercury_04.wav");
 			
 			M.Object_Nadir1 = BuildObjectAndLabel(DRONEODF, 2, Position12, "Nadir 1");
 			
@@ -835,7 +842,8 @@ function Routine3()
 			if (GetDistance(M.Object_WyndtEssex, "blue_goto_power_1") <= 20 and GetDistance(M.Object_Player, M.Object_WyndtEssex) <= 100) then
 				LookAt(M.Object_WyndtEssex, M.Object_Player, 1);
 				SetCurHealth(M.Object_Gun10, 3000); --cleanup -Gravey
-				AudioMessage("mercury_05.wav");
+				-- AudioMessage("mercury_05.wav");
+				_FECore.AudioWithSubtitles("mercury_05.wav");
 
 				M.Routine3Timer = GetTime() + 1;
 
@@ -868,7 +876,8 @@ function Routine3()
 			end
 		elseif (M.Routine3State == 4) then
 			if (M.MessagePlayed == false and not IsAround(M.Object_Power3) and not IsAround(M.Object_Power4) and not IsAround(M.Object_Gun10) ) then --Updated VO logic.
-					AudioMessage("mercury_06.wav"); --moved for logical order and player attention to go to wynd --Gravey
+					-- AudioMessage("mercury_06.wav"); --moved for logical order and player attention to go to wynd --Gravey
+					_FECore.AudioWithSubtitles("mercury_06.wav");
 					M.MessagePlayed = true;
 				end
 			
@@ -1081,7 +1090,8 @@ function Routine6()
 				--M.Routine6State = M.Routine6State + 1;
 			else
 				if (GetWhoShotMe(M.Object_CerbUnit) == M.Object_Player) then
-					AudioMessage("mercury_07a.wav");
+					-- AudioMessage("mercury_07a.wav");
+					_FECore.AudioWithSubtitles("mercury_07a.wav");
 					M.Routine6State = M.Routine6State + 1;
 				end
 			end

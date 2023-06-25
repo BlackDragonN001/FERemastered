@@ -232,7 +232,8 @@ function HandleIntro(R, STATE)
 		SetObjectiveOn(M.ShultzTank);
 		Advance(R, 4.0);
 	elseif STATE == 1 then
-		AudioMessage("edf01_01.wav");	--Shultz:"Looks like these Hadeans ain't all they're cracked up to be..."
+		-- AudioMessage("edf01_01.wav");	--Shultz:"Looks like these Hadeans ain't all they're cracked up to be..."
+		_FECore.AudioWithSubtitles("edf01_01.wav");
 		Goto(M.APC1, "APCDest", 1);
 		Goto(M.APC2, "APCDest", 1);
 		Advance(R, 17.0);
@@ -240,7 +241,8 @@ function HandleIntro(R, STATE)
 		EjectPilot(M.ShultzTank);
 		Advance(R, 3.0);
 	elseif STATE == 3 then
-		AudioMessage("edf01_02.wav");	--Shultz:"Piece of junk just blew up on me..."
+		--AudioMessage("edf01_02.wav");	--Shultz:"Piece of junk just blew up on me..."
+		_FECore.AudioWithSubtitles("edf01_02.wav");
 		Goto(M.ShultzPilot, M.Dropship, 1);
 		CameraReady();
 		M.CameraEndTime = GetTime() + 18;
@@ -256,7 +258,8 @@ function HandleIntro(R, STATE)
 		Advance(R);
 	elseif STATE == 6 then
 		AddObjective("edf0101.otf", "white");
-		AudioMessage("edf01_03.wav");	--Stewart:"Bravo Leader, scan those power sources..."
+		-- AudioMessage("edf01_03.wav");	--Stewart:"Bravo Leader, scan those power sources..."
+		_FECore.AudioWithSubtitles("edf01_03.wav");
 		Advance(R, 3.0);
 	elseif STATE == 7 then	--LOC_49
 		Goto(M.PlayerTanks[1], string.format("Nav%iA", M.PowerScanned), 1);
@@ -322,7 +325,8 @@ function HandleMainState(R, STATE)
 			Advance(R, 4.0);
 		end
 	elseif STATE == 5 then	--LOC_150
-		AudioMessage("edf01_04.wav");	--Stewart:"Heads up, 2 hostiles closing in"
+		-- AudioMessage("edf01_04.wav");	--Stewart:"Heads up, 2 hostiles closing in"
+		_FECore.AudioWithSubtitles("edf01_04.wav");
 		SetPerceivedTeam(M.Player, 1);
 		for i = 1,NUM_TANKS do
 			SetPerceivedTeam(M.PlayerTanks[i], 1);
@@ -356,7 +360,8 @@ function HandleMainState(R, STATE)
 			Advance(R, 7.0);
 		end
 	elseif STATE == 9 then
-		AudioMessage("edf01_05.wav");	--Lt. Minner:"Team Alpha's dropships were shot down, require assistance..."
+		-- AudioMessage("edf01_05.wav");	--Lt. Minner:"Team Alpha's dropships were shot down, require assistance..."
+		_FECore.AudioWithSubtitles("edf01_05.wav");
 		Advance(R, 8.0);
 	elseif STATE == 10 then
 		ClearObjectives();
@@ -364,7 +369,8 @@ function HandleMainState(R, STATE)
 		AddObjective("edf0104.otf", "white");
 		Advance(R, 6.0);
 	elseif STATE == 11 then
-		AudioMessage("edf01_05A.wav");	--Stewart: "Rescue the Alpha survivors..."
+		-- AudioMessage("edf01_05A.wav");	--Stewart: "Rescue the Alpha survivors..."
+		_FECore.AudioWithSubtitles("edf01_05A.wav");
 		M.SafeNav = BuildObjectAndLabel("ibnav", 1, "SafeNav", "Safe Nav");
 		SetObjectiveName(M.SafeNav, "Survivor Dropoff");
 		SetObjectiveOn(M.SafeNav);
@@ -388,7 +394,8 @@ function HandleMainState(R, STATE)
 			SetGroup(BuildObjectAndLabel("ivserv", 1, "Buddy4", "Service Truck 1"), 2);
 			SetGroup(BuildObjectAndLabel("ivserv", 1, "Buddy5", "Service Truck 2"), 3);
 			SetGroup(BuildObjectAndLabel("ivserv", 1, "Buddy6", "Service Truck 3"), 4);
-			AudioMessage("edf01_05B.wav");	--Stewart:"I've put some turrets and service trucks at your disposal..."
+			-- AudioMessage("edf01_05B.wav");	--Stewart:"I've put some turrets and service trucks at your disposal..."
+			_FECore.AudioWithSubtitles("edf01_05B.wav");
 			Advance(R);
 		end
 	end
@@ -411,7 +418,8 @@ function HandleSurvivorPickup(R, STATE)	--Routine5
 				--2 survivors died
 				ClearObjectives();
 				AddObjective("edf0107.otf", "red");
-				AudioMessage("edf01_07.wav");	--Stewart:"You just let another survivor die. It was Hardin..."
+				-- AudioMessage("edf01_07.wav");	--Stewart:"You just let another survivor die. It was Hardin..."
+				_FECore.AudioWithSubtitles("edf01_07.wav");
 				FailMission(GetTime() + 15, "edf01L2.txt");
 				SetRoutineActive(R, false);
 			elseif M.SurvivorsRescued >= NUM_SURVIVORS - 1 then
@@ -419,13 +427,15 @@ function HandleSurvivorPickup(R, STATE)	--Routine5
 				m_HandleSurvivorDropoff = false;
 				ClearObjectives();
 				AddObjective("edf0110.otf", "red");
-				AudioMessage("edf01_06a.wav");	--Stewart:"You've just lost a survivor..."
+				-- AudioMessage("edf01_06a.wav");	--Stewart:"You've just lost a survivor..."
+				_FECore.AudioWithSubtitles("edf01_06a.wav");
 				SetState(R, 199, 10.0);
 			else
 				--one died, rest still need rescue
 				ClearObjectives();
 				AddObjective("edf0110.otf", "red");
-				AudioMessage("edf01_06a.wav");	--Stewart:"You've just lost a survivor..."
+				-- AudioMessage("edf01_06a.wav");	--Stewart:"You've just lost a survivor..."
+				_FECore.AudioWithSubtitles("edf01_06a.wav");
 				Advance(R);
 			end
 			M.SurvivorsKilled = 1;
@@ -438,7 +448,8 @@ function HandleSurvivorPickup(R, STATE)	--Routine5
 				RemoveObject(survivor);
 				h = ReplaceObject(h, "ivtank_e01");
 				M.Survivors[M.SurvivorIndex1] = h;
-				AudioMessage("ivtank03.wav");	--Tank:"I've got 'em"
+				-- AudioMessage("ivtank03.wav");	--Tank:"I've got 'em"
+				_FECore.AudioWithSubtitles("ivtank03.wav");
 				SetObjectiveName(h, string.format("Has survivor %i", M.SurvivorIndex1));
 				SetObjectiveOn(h);
 				SetGroup(h, 9);
@@ -457,7 +468,8 @@ function HandleSurvivorPickup(R, STATE)	--Routine5
 	elseif STATE == 199 then
 		ClearObjectives();
 		AddObjective("edf0111.otf", "green");
-		AudioMessage("edf01_06.wav");	--Stewart:"Good work Corber. You may be surprised to hear Gen. Hardin was among the survivors..."
+		-- AudioMessage("edf01_06.wav");	--Stewart:"Good work Corber. You may be surprised to hear Gen. Hardin was among the survivors..."
+		_FECore.AudioWithSubtitles("edf01_06.wav");
 		SucceedMission(GetTime() + 16, "edf01W2.txt");--15
 		Advance(R);
 	end
@@ -472,6 +484,7 @@ function HandleSurvivorDropoff(R, STATE)
 		h = ReplaceObject(h, "ivtank");
 		Stop(h, 0);
 		SetGroup(h, 0);
+		SetObjectiveName(h, "Tank");
 		M.SurvivorsRescued = M.SurvivorsRescued + 1;
 		SetObjectiveName(M.SafeNav, string.format("Survivor Dropoff: %i safe", M.SurvivorsRescued));
 		if M.SurvivorsRescued == 3 
@@ -484,12 +497,14 @@ function HandleSurvivorDropoff(R, STATE)
 			--win - 1 survivor died
 			ClearObjectives();
 			AddObjective("edf0111.otf", "green");
-			AudioMessage("edf01_06.wav");
+			-- AudioMessage("edf01_06.wav");
+			_FECore.AudioWithSubtitles("edf01_06.wav");
 			SucceedMission(GetTime() + 15, "edf01W2.txt");
 			SetRoutineActive(R, false);
 		elseif M.SurvivorsRescued == 10 then	--LOC_372
 			--win - no survivors died
-			AudioMessage("edf01_06.wav");	--Stewart:"Good work Corber. You may be surprised to hear Gen. Hardin was among the survivors..."
+			-- AudioMessage("edf01_06.wav");	--Stewart:"Good work Corber. You may be surprised to hear Gen. Hardin was among the survivors..."
+			_FECore.AudioWithSubtitles("edf01_06.wav");
 			ClearObjectives();
 			AddObjective("edf0109.otf", "green");
 			SucceedMission(GetTime() + 16, "edf01W1.txt");--15
@@ -573,11 +588,13 @@ function CheckHadeanOverrun(R, STATE)
 		if M.HadeanUnitsCount > 24 and M.SurvivorsWaiting > 0 then
 			ClearObjectives();
 			AddObjective("edf0108.otf", "red");
-			AudioMessage("edf01_08.wav");	--Stewart:"You've taken too long! The Hadeans have control over the area." 
+			-- AudioMessage("edf01_08.wav");	--Stewart:"You've taken too long! The Hadeans have control over the area." 
+			_FECore.AudioWithSubtitles("edf01_08.wav");
 			Advance(R, 7.0);
 		end
 	elseif STATE == 1 then
-		AudioMessage("edf01_10.wav");	--Stewart:"You've really bungled this one..."
+		-- AudioMessage("edf01_10.wav");	--Stewart:"You've really bungled this one..."
+		_FECore.AudioWithSubtitles("edf01_10.wav");
 		FailMission(GetTime() + 14, "edf01L3.txt");
 		Advance(R);
 	end
@@ -611,11 +628,13 @@ function CheckTanksRemaining(R, STATE)
 		if M.SabresRemaining < 2 then
 			ClearObjectives();
 			AddObjective("edf0106.otf", "red");
-			AudioMessage("edf01_09.wav");	--Stewart:"Return to base, we've lost too many Sabres"
+			-- AudioMessage("edf01_09.wav");	--Stewart:"Return to base, we've lost too many Sabres"
+			_FECore.AudioWithSubtitles("edf01_09.wav");
 			Advance(R, 9.0);
 		end
 	elseif STATE == 1 then
-		AudioMessage("edf01_10.wav");	--Stewart:"You've really bungled this one..."
+		-- AudioMessage("edf01_10.wav");	--Stewart:"You've really bungled this one..."
+		_FECore.AudioWithSubtitles("edf01_10.wav");
 		FailMission(GetTime() + 14, "edf01L1.txt");
 		Advance(R);
 	end

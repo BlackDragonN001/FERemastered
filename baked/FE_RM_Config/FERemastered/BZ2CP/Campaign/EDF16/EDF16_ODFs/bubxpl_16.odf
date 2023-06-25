@@ -20,31 +20,33 @@ kickRadius = 0.0
 kickOmega = 5.0
 kickVeloc = 5.0
 
-particleTypes = 5
+particleTypes = 3
 
 particleClass1 = "bubxpl.bubble"
 particleCount1 = 1
 particleVeloc1 = "0.0 5.0 0.0"
 particleBias1 = "5.0 5.0 0.0"
 
-particleClass2 = "axfbseeke.flame"
-particleCount2 = 1
-particleVeloc2 = "0.0 2.0 0.0"
-particleBias2 = "0.0 0.0 0.0"
+particleClass2 = "bubxpl.puff"
+particleCount2 = 15
+particleVeloc2 = "20.0 20.0 20.0"
 
-particleClass3 = "bubxpl.puff"
-particleCount3 = 15
-particleVeloc3 = "20.0 20.0 20.0"
+particleClass3 = "bubxpl.chunks2"
+particleCount3 = 20
+particleVeloc3 = "8.0 8.0.0 8.0"
+particleBias3 = "0.0 8.0 0.0"
 
-particleClass4 = "xbubxpl.trail"
-particleCount4 = 10
-particleVeloc4 = "2.0 2.0 10.0"
-particleBias4 = "5.0 5.0 5.0"
+//particleClass4 = "bubxpl.flame"
+//particleCount4 = 1
+//particleVeloc4 = "0.0 2.0 0.0"
+//particleBias4 = "0.0 0.0 0.0"
 
-particleClass5 = "bubxpl.chunks2"
-particleCount5 = 20
-particleVeloc5 = "8.0 8.0.0 8.0"
-particleBias5 = "0.0 8.0 0.0"
+//particleClass5 = "bubxpl.trail"
+//particleCount5 = 10
+//particleVeloc5 = "2.0 2.0 10.0"
+//particleBias5 = "5.0 5.0 5.0"
+
+
 [bubble]
 lifeTime = 1.0
 renderBase = "draw_sphere"

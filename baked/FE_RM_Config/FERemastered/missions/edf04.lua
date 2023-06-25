@@ -27,24 +27,24 @@ local M = {
 -- Floats
 	
 -- Handles
-	MegaGun,
-	MegaGuard1,
-	MegaGuard2,
+	MegaGun = nil,
+	MegaGuard1 = nil,
+	MegaGuard2 = nil,
 	Portals = {},
-	CutsceneTarget,	--"stick" in final megagun cutscene
-	Recycler,
-	Player,
-	EngineerTransport,
-	Dropship,
-	Engineer,
+	CutsceneTarget = nil,	--"stick" in final megagun cutscene
+	Recycler = nil,
+	Player = nil,
+	EngineerTransport = nil,
+	Dropship = nil,
+	Engineer = nil,
 	Turrets1 = {},
 	Turrets2 = {},
 	Kruls = {},
 	HadeanGuardianTurrets = {}, --hadean base guardian turrets
-	BaseNav,
-	MegaGunNav,
-	HadeanBaseNav,
-	NavDelta,
+	BaseNav = nil,
+	MegaGunNav = nil,
+	HadeanBaseNav = nil,
+	NavDelta = nil,
 -- Ints
 	TPS = 10,
 	MegaGuardIndex = 0,
@@ -530,13 +530,12 @@ end
 --packs up the Recycler and moves it to nav Delta once player gets within range
 function HandleRecyclerRetreat(R, STATE)
 	if STATE == 0 then
-		M.Recycler = ReplaceObject(M.Recycler, "ivrecy");
+		M.Recycler = ReplaceObject(M.Recycler, "ivrecy", 2, 0.0, 0);
 		SetObjectiveOn(M.Recycler);	--added objective marker to the recycler
-		SetTeamNum(M.Recycler, 2);
 		SetAIP("edf04e.aip", 6);
-		Advance(R);
+		Advance(R, 1.0);
 	elseif STATE == 1 then 
-		if GetDistance(M.Recycler, M.Player) < 75 then
+		if IsAround(M.NavDelta) and GetDistance(M.Recycler, M.Player) < 75 then
 			Goto(M.Recycler, M.NavDelta, 1);
 			Advance(R);
 		end

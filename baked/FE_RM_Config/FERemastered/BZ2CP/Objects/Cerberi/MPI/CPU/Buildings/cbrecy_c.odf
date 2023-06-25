@@ -1,0 +1,29 @@
+[GameObjectClass]
+classLabel = "cbrecy"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 5
+provideName5 = "cbrecy_c"
+
+////////////////////////////////////
+
+[PoweredBuildingClass]
+
+[BuildingClass]
+
+[FactoryClass]
+soundBuild = "AVRECYE3.WAV"
+soundFinish = "AVRECYE5.WAV"
+
+buildItem1 = "cvscav_c"
+buildItem6 = "cvserv_c"
+
+[BuildGroup5]
+buildLabel = "Constructors"
+buildItem1 = "cvcons_c"
+buildItem2 = "cvcons_g"
+
+[RecyclerClass]
+
+[Lod1]

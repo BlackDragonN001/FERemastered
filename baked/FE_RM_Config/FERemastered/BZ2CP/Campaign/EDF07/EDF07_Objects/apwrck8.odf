@@ -8,6 +8,7 @@ maxHealth = 300
 maxAmmo = 0
 unitName = "Repair Module"
 aiName = "PowerUpProcess"
+canInteract = false
 
 [DayWreckerClass]
 xplBlast = "xdabomb8"   //"xbmbxpl"

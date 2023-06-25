@@ -97,11 +97,11 @@ function Save()
     return 
 		_FECore.Save(), 
 		_StartingVehicles.Save(), 
-		_MPI.Save(),
+		--_MPI.Save(), -- TODO: Write Me! -GBD
 		Mission;
 end
 
-function Load(FECoreData, StartingVehicleData, MPIData, MissionData)	
+function Load(FECoreData, StartingVehicleData, MissionData)	--MPIData
 
 	m_GameTPS = EnableHighTPS();
 	SetAutoGroupUnits(false);
@@ -112,7 +112,8 @@ function Load(FECoreData, StartingVehicleData, MPIData, MissionData)
 	-- Load sub moduels.
 	_FECore.Load(FECoreData);
 	_StartingVehicles.Load(StartingVehicleData);
-	_MPI.Load(MPIData);
+	--_MPI.Load(MPIData); -- TODO: Write Me! -GBD
+	
 	-- Load mission data.
 	Mission = MissionData;
 	

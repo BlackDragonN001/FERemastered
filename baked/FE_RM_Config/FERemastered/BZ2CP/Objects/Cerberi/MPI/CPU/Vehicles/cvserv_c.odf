@@ -1,0 +1,26 @@
+[GameObjectClass]
+classLabel = "cvserv"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 4
+provideName4 = "cvserv_c"
+
+////////////////////////////////////
+
+[CraftClass]
+engageRange = 75.0
+
+[TrackedVehicleClass]
+
+[ServiceTruck]
+serviceSTs = 1
+serviceBuildings = 1
+
+[Supply]
+
+[Halo]
+
+[Bolt]
+
+[Lod1]

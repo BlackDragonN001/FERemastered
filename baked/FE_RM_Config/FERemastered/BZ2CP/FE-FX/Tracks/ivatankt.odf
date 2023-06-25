@@ -1,6 +1,6 @@
 [GameObjectClass]
 baseName = "ivatank"
-geometryName = "ivatnk01.xsi"
+geometryName = "ivatnk00.fbx" //"ivatnk01.xsi"
 classLabel = "assaulttank"
 scrapValue = 40
 scrapCost = 70
@@ -19,9 +19,9 @@ radarSignature = 5.0
 isAssault = 1
 armorClass = H
 
-effectHard1 = "hp_emit_1"
+effectHard1 = "hp_dust_1"
 effectName1 = "ivatankt.render"
-effectHard2 = "hp_emit_2"
+effectHard2 = "hp_dust_2"
 effectName2 = "ivatankt.render"
 
 

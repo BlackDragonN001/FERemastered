@@ -1,5 +1,5 @@
 // ===============
-// FIREBALL CAR HIT
+// FIREBALL BUILDING HIT
 // ===============
 
 [ExplosionClass]
@@ -15,63 +15,63 @@ damageValue(H) = 50 // heavy
 damageValue(S) = 80 // standard
 damageValue(D) = 120 // deflection
 damageValue(A) = 50 // absorbtion
+
 kickRadius = 25.0
 kickOmega = 5.0
 kickVeloc = 5.0
 
 particleTypes = 10
 
-particleClass1 = "xfbcar_a.fire"
+particleClass1 = "xfbbld_a.fire"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
 
-particleClass2 = "xfbcar_a.chunks"
+particleClass2 = "xfbbld_a.chunks"
 particleCount2 = 35
 particleVeloc2 = "10.0 10.0 30.0"
 particleBias2 = "0.0 10.0 0.0"
 particlePosVar2 = "2.0 2.0 2.0"
 
-particleClass3 = "xfbcar_a.flame"
+particleClass3 = "xfbbld_a.flame"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 
-particleClass4 = "xfbcar_a.smoke"
+particleClass4 = "xfbbld_a.smoke"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
 
-particleClass5 = "xfbcar_a.light"
+particleClass5 = "xfbbld_a.light"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
 
-particleClass6 = "xfbcar_a.shock"
+particleClass6 = "xfbbld_a.shock"
 particleCount6 = 1
 particleVeloc6 = "0.0 0.0 0.0"
 
-particleClass7 = "xfbcar_a.core"
+particleClass7 = "xfbbld_a.core"
 particleCount7 = 1
 particleVeloc7 = "0.0 7.0 0.0"
 
-particleClass8 = "xfbcar_a.char2"
+particleClass8 = "xfbbld_a.char2"
 particleCount8 = 1
 particleVeloc8 = "0.0 0.0 0.0"
 
-particleClass9 = "xfbcar_a.trail"
+particleClass9 = "xfbbld_a.trail"
 particleCount9 = 20
 particleVeloc9 = "30.0 30.0 30.0"
 particlePosVar9 = "2.0 2.0 2.0"
 
-particleClass10 = "xfbcar_a.sparks"
+particleClass10 = "xfbbld_a.sparks"
 particleCount10 = 1
 particleVeloc10 = "0.0 0.0 0.0"
 
-particleClass11 = "xfbcar_a.ring" // was axfbcar_a, never worked in FE. -GBD
+particleClass11 = "xfbbld_a.ring" // was axfbbld_a, never worked in FE. -GBD
 particleCount11 = 1
 particleVeloc11 = "0.0 0.0 0.0"
 
-particleClass12 = "xfbcar_a.thrust"
+particleClass12 = "xfbbld_a.thrust"
 particleCount12 = 1
 particleVeloc12 = "0.0 0.0 0.0"
-
 
 [Fire]
 simulateBase = "sim_null"

@@ -4,7 +4,7 @@ classLabel = "cvrecy02"
 /////// PROVIDES ///////////////////
 
 provideCount = 5
-provideName5 = "cvrecy_c"
+provideName5 = "cvrecycpu"
 
 ////////////////////////////////////
 
@@ -15,6 +15,6 @@ provideName5 = "cvrecy_c"
 [TrackedDeployableClass]
 
 [DeployBuildingClass]
-deployName = "cbrecy_c"
+deployName = "cbrecycpu"
 
 [RecyclerVehicleClass]

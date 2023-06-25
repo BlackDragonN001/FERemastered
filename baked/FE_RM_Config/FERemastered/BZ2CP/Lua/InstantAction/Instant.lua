@@ -10,6 +10,7 @@ assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 
 -- Load the core files.
 local _FECore = require('_FECore');
+local _MegaBeam = require('_MegaBeamHelper');
 
 -- Spacing distance between each vehicle from the Recycler's spawn point.
 local VEHICLE_SPACING_DISTANCE = 20.0
@@ -54,8 +55,8 @@ local CommandPilotPacks =
 local CPUPaths = 
 {
 	"pgen1_edf", "pgen2_edf", "pgen3_edf", "pgen4_edf", "factory_edf", "armory_edf", "bunker_edf", "sbay_edf", "base_gtow1_edf", "base_gtow2_edf", "base_gtow3_edf", "base_gtow4_edf",
-	"training_edf", "tech_edf", "bomber_edf", "kiln_scion", "stro_scion", "dowe_scion", "jammer_scion", "base_spire1_scion", "base_spire2_scion", "base_spire3_scion", "base_spire4_scion",
-	"ante_scion"
+	"training_edf", "tech_edf", "bomber_edf", 
+	"kiln_scion", "stro_scion", "dowe_scion", "jammer_scion", "base_spire1_scion", "base_spire2_scion", "base_spire3_scion", "base_spire4_scion", "ante_scion"
 }
 
 -- Let's spice things up with the AI kicking off if no base building paths are found.
@@ -94,11 +95,11 @@ local Mission =
 
 -- Save game data.
 function Save()
-    return _FECore.Save(), Mission;
+    return _FECore.Save(), _MegaBeam.Save(), Mission;
 end
 
 -- Load game data.
-function Load(FECoreData, MissionData)
+function Load(FECoreData, MegaBeamData, MissionData)
     -- Enable high TPS.
 	m_GameTPS = EnableHighTPS();
 
@@ -110,6 +111,8 @@ function Load(FECoreData, MissionData)
 	
 	-- Load sub modules.
 	_FECore.Load(FECoreData);
+	
+	_MegaBeam.Load(MegaBeamData);
 
 	-- Load mission data.
 	Mission = MissionData;
@@ -131,6 +134,7 @@ function InitialSetup()
 
     -- Initiate sub modules.
     _FECore.InitialSetup();
+	_MegaBeam.InitialSetup();
 
     -- Don't auto group units.
 	SetAutoGroupUnits(false);
@@ -139,9 +143,13 @@ function InitialSetup()
 	WantBotKillMessages();
 
 	-- Preload some ODFs.
-	PreloadODF("ivrecy_m");
-	PreloadODF("fvrecy_m");
 	PreloadODF("evrecy_m");
+	PreloadODF("fvrecy_m");
+	PreloadODF("ivrecy_m");
+	PreloadODF("cvrecycpu");
+	PreloadODF("ivrecycpu");
+	PreloadODF("evrecycpu");
+	PreloadODF("fvrecycpu");
 end
 
 -- Handle when an object is added to the world.
@@ -204,7 +212,7 @@ function AddObject(h)
 			SetSkill(h, Mission.m_Difficulty + 1);
 
 			-- Give the CPU a custom pilot config.
-			if (not IsBuilding(h)) then
+			if (not IsBuilding(h) and Mission.m_CPURace ~= "c") then
 				SetPilotClass(h, Mission.m_CPURace .. "spilo_c");
 			end
 
@@ -258,9 +266,10 @@ end
 function Update()
     -- Call core AddObject method.
     _FECore.Update();
+	_MegaBeam.Update();
 	
 	-- Test win conditions.
-	-- TestGameOver();
+	TestGameOver();
 end
 
 -- Handle win conditions.

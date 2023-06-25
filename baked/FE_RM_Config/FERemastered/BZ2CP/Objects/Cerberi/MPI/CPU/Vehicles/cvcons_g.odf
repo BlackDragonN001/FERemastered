@@ -1,0 +1,26 @@
+[GameObjectClass]
+classLabel = "cvcons"
+
+/////// PROVIDES ///////////////////
+
+provideCount = 3
+provideName3 = "cvcons_g"
+
+////////////////////////////////////
+
+[CraftClass]
+
+[HoverCraftClass]
+
+[DeployableClass]
+
+[ConstructionRigClass]
+buildItem1 = ""
+buildItem2 = ""
+buildItem3 = ""
+buildItem4 = ""
+buildItem5 = ""
+buildItem6 = "cbgtow_c"
+buildItem7 = ""
+buildItem8 = ""
+buildItem9 = ""

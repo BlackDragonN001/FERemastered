@@ -1,0 +1,21 @@
+[GameObjectClass]
+classLabel = "evturr"
+
+provideCount = 4
+provideName4 = "evturr_st"
+
+[CraftClass]
+
+damageEffect1 = "dmgvhcl_e1"
+damageEffect2 = "dmgvhcl_e2"
+damageEffect3 = "dmgvhcl_e3"
+damageEffect4 = "dmgvhcl_e4"
+
+[HoverCraftClass]
+
+[DeployableClass]
+timeDeploy = 12.0
+timeUndeploy = 6.0
+
+[TurretTankClass]
+
