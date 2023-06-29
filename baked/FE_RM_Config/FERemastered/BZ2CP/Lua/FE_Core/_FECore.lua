@@ -94,8 +94,6 @@ function _FECore.Update()
 
 end
 
-end
-
 -- Special logic for evkami, kamakazi unit. Don't let the Player eject.
 function _FECore.PlayerEjected(DeadObjectHandle)
 	
