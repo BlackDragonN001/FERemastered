@@ -1,8 +1,8 @@
--------------------------------------------------------------------
+------------------------------------------------------------------
 -- FE edf01.lua Mission - Version 1.0 
 -- Date Modified: 11/01/2021
--- Summary: Mission script for the EDF01 Forgotten Enemies Mission.
--------------------------------------------------------------------
+-- Summary: Mission script for the EDF01 Forgotten Enemies Mission
+------------------------------------------------------------------
 
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
@@ -15,8 +15,6 @@ local Position1 = SetVector( -10, 50, -10);	--Camera offset
 
 local Routines = {};
 local RoutineToIDMap = {};
-
--- local TPS = GetTPS();
 
 local M = {
 --Mission State
@@ -106,9 +104,6 @@ end
 
 function InitialSetup()
 
-	_FECore.Start();
-	
-	-- M.TPS = EnableHighTPS(); -- LuaMission.dll automatically calls this function
 	AllowRandomTracks(false);
 	DefineRoutines();
 	--Preload to reduce lag spikes when resources are used for the first time.
