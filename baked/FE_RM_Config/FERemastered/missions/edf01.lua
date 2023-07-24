@@ -195,7 +195,7 @@ function Update()
 	_FECore.Update();
 
 	M.Player = GetPlayerHandle();
-	for routineID, r in pairs(Routines) do
+	for routineID, r in ipairs(Routines) do
 		if M.RoutineActive[routineID] and M.RoutineWakeTime[routineID] <= GetTime() then
 			r(routineID, M.RoutineState[routineID]);
 		end
