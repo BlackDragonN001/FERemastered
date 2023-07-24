@@ -93,7 +93,7 @@ avoidSpeed = 20;
 topSpeed = 30;
 
 canAIEject = false
-canPlayerEject = false // Special DLL driven behavior. -GBD
+CanUserBailout = false
 
 selectWaitMsg = "evkami01.wav"
 selectAttackMsg = "evkami02.wav"
