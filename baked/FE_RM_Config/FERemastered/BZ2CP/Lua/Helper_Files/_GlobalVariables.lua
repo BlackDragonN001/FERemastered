@@ -128,6 +128,15 @@ CTRL_FIRE = bit32.lshift(1, 8)
 
 MAX_FLOAT = 3.402823466e+38
 
+AIPType0 = 0
+AIPType1 = 1
+AIPType2 = 2
+AIPType3 = 3
+AIPTypeA = 4
+AIPTypeL = 5
+AIPTypeS = 6
+MAX_AIP_TYPE = 7
+AIPTypeExtensions = '0123als'
 
 --[[ FE Custom Constants ]]--
 
@@ -137,6 +146,11 @@ PRETELEPORT_DENY = 2 -- Deny the teleport.
 
 POSTTELEPORT_DEFAULT = 0 -- Default, does a Goto to the Portal exit point.
 POSTTELEPORT_OVERRIDE = 1 -- Override Goto from Teleporter exit.
+
+DIFFICULTY_EASY = 1
+DIFFICULTY_MEDIUM = 2
+DIFFICULTY_HARD = 3
+DIFFICULTY_INSANE  = 4
 
 
 return _GlobalVariables;

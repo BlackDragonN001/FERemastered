@@ -156,6 +156,10 @@ end
 function AddObject(h) 
     -- Call core AddObject method.
     _FECore.AddObject(h);
+	
+	-- Add units to custom AI dispatcher.
+	local Difficulty = IFace_GetInteger("options.play.difficulty");
+	AddToDispatch(h, 15.0, false, 0, (Difficulty < 2));
 
     -- Grab our important details.
     local teamNum = GetTeamNum(h);
