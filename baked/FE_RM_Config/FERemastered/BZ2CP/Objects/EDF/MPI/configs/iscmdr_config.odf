@@ -1,0 +1,53 @@
+[EasyWeaponSlot1]
+weaponName1 = "apbazo"
+weaponName2 = "apsnip"
+weaponName3 = "apsnip"
+weaponName4 = "apshot"
+
+SkipRequirements = true
+
+WeaponMask1 = 3
+WeaponMask2 = 7
+
+[EasyWeaponSlot2]
+weaponName1 = "apjetp"
+weaponName2 = "apgren"
+
+SkipRequirements = true
+
+[MediumWeaponSlot1]
+weaponName1 = "apbazo"
+weaponName2 = "apbazo"
+weaponName3 = "apsnip"
+weaponName4 = "apsnip"
+weaponName5 = "apshot"
+
+SkipRequirements = true
+WeaponMask1 = 3
+WeaponMask2 = 7
+WeaponMask3 = 7
+
+[MediumWeaponSlot2]
+weaponName1 = "apjetp"
+weaponName2 = "apgren"
+weaponName3 = "apgren"
+
+SkipRequirements = true
+
+[HardWeaponSlot1]
+weaponName1 = "apbazo"
+weaponName2 = "apbazo"
+weaponName3 = "apbazo"
+weaponName4 = "apsnip"
+weaponName5 = "apsnip"
+weaponName6 = "apshot"
+
+SkipRequirements = true
+WeaponMask1 = 7
+
+[HardWeaponSlot2]
+weaponName1 = "apjetp"
+weaponName2 = "apgren"
+weaponName3 = "apgren"
+
+SkipRequirements = true
