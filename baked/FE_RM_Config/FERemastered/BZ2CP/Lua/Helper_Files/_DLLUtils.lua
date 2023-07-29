@@ -403,4 +403,23 @@ function TeleportOut(h)
 	RemoveObject(h);
 end
 
+-- Spawns an object around a central position.
+function SpawnObjectAround(odf, team, where, minRadius, maxRadius)
+
+	local origin = SetVector(0, 0, 0);
+	
+	if type(where) == "string" then
+		origin = GetPosition("where", 0);
+	elseif IsAround(where) then
+		origin = GetPosition(handle);
+	else
+		origin = where;
+	end
+	
+	local pos = GetPositionNear(origin, minRadius, maxRadius);
+	pos.y = TerrainFindFloor(pos.x, pos.z);
+	
+	return BuildObject(odf, team, pos);
+end
+
 return _DLLUtils;

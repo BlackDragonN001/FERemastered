@@ -308,12 +308,16 @@ function Start()
 	if (Mission.m_IsMPI) then
 		_MPI.Start();
 		
+		Mission.m_CreatingStartingVehicles = true;
+		
 		for i = 6, MAX_TEAMS-1 do
 			Mission.m_RecyclerHandles[i] = _MPI.SetupAITeam(i);
 			if (Mission.m_RecyclerHandles[i]) ~= nil then
 				Mission.m_TeamIsSetUp[i] = true;
 			end
 		end
+		
+		Mission.m_CreatingStartingVehicles = false;
 	end
 end
 
@@ -332,7 +336,7 @@ function Update()
 	
 	-- MPI mode
 	if (Mission.m_IsMPI) then
-		_MPI.DoGenericStrategy(Mission.m_ElapsedGameTime);
+		_MPI.Update(Mission.m_ElapsedGameTime);
 	end
 
 end

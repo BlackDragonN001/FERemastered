@@ -1,30 +1,11 @@
 -- New MPI Files for FE 
--- Written by JJ (AI_Unit)
--- Version 1.0 - 19/11/2019
+-- Written by General BlackDragon
+-- Version 1.1 - 7-29-2023
 
---[[ TO DO Notes: -GBD
-
-Rewrite for dynamic spawning / function.
-
--SetupAITeam: pass in team number, and spawn using Enemy_# path points. (5 ... 1)
-
--Save/load to be called from ST. (setup like StartingVehicles does)
-
--Start function: read in vars and save them, setup / spawn AI team(s).
--- Iterate over AI, spawn them if they're set, and if the map supports / allows that many AI.
--- In AddObject Count how many Spawn points there are for total spawn areas.
--- For FFA, use Player Limit to deduct from total base areas. For teamplay, use ivar11 to determine how many spots to reserve for players.
--- Start AI at Team 15, and work backwards to 11. This way, 2 Teams of humans (Team 1-10) could be used vs multiple AI Teams if TeamPlay is on. (Team A vs Team B vs up to 5 AI) for a total support of 7 bases in Teamplay.
-
--Update function: Iterate over AI Teams, perform scrap cheat updates, taunts, and other options if enabled.
-
--AddObject: Call the AddToDispatch function for AI objects here, based on cpu difficulty. (read difficulty from [Start] section in AIP.)
---]]
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 
-local _FECore = require('_FECore');
-local _StartingVehicles = require('_StartingVehicles');
 local _CrateSpawnHelper = require('_CrateSpawnHelper');
+local _MegaBeam = require('_MegaBeamHelper');
 
 -- VARS
 local DEBUG = true;
@@ -32,7 +13,7 @@ local DEBUG = true;
 local CPU_START_TEAM = 6;
 local PLAYER_START_TEAM = 1;
 
-
+--[[
 local CPU_DIFFICULTY = 0;
 local CPU_COMMANDER_ENABLED = 0;
 local CPU_SUPER_UNITS = 0;
@@ -49,8 +30,18 @@ local SCRAP_SILOS = 0;
 
 local TOTAL_AI_TEAMS = {};
 local TOTAL_SPAWN_COUNT = 0;
+--]]
 
 local VEHICLE_SPACING_DISTANCE = 20.0;
+
+-- CPU paths for base building.
+-- TODO: Rename/export to separate file?
+local CPUPaths = 
+{
+	"pgen1_edf", "pgen2_edf", "pgen3_edf", "pgen4_edf", "factory_edf", "armory_edf", "bunker_edf", "sbay_edf", "base_gtow1_edf", "base_gtow2_edf", "base_gtow3_edf", "base_gtow4_edf",
+	"training_edf", "tech_edf", "bomber_edf", 
+	"kiln_scion", "stro_scion", "dowe_scion", "jammer_scion", "base_spire1_scion", "base_spire2_scion", "base_spire3_scion", "base_spire4_scion", "ante_scion"
+}
 
 -- TABLES
 local _MPI = {};
@@ -66,6 +57,9 @@ local MPIMission =
 	--HaveArmory = false, 
 	--IraqiMode = false, 
 	PastAIP0 = false, -- true when they've built a recyler building, or we get bored
+	
+	WeaponCrates = false,
+	MegaBeam = false,
 	
 	-- handles
 	--HumanRecycler = nil, 
@@ -92,9 +86,6 @@ local MPIMission =
 	CPUCommBunkerCount = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 	LastCPUPlan = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 
-
-
-
 	--New stuff...
 	m_Difficulty = 0,
 
@@ -111,16 +102,18 @@ function _MPI.Save()
 
     return 
 		_CrateSpawnHelper.Save(), 
+		_MegaBeam.Save(), 
 	--	RampageHelper.Save(), 
 	--	CaptureObject.Save(),
 		MPIMission;
 end
 
 -- Load
-function _MPI.Load(CrateSpawnerData, MPIMissionData)
+function _MPI.Load(CrateSpawnerData, MegaBeamData, MPIMissionData)
 
 	-- Load sub moduels.
 	_CrateSpawnHelper.Load(CrateSpawnerData);
+	_MegaBeam.Load(MegaBeamData);
 --	RampageHelper.Load(RampageData);
 --	CaptureObject.Load(CaptureObjectData);
 	
@@ -131,6 +124,90 @@ end
 -- Initial Setup.
 function _MPI.InitialSetup()
 
+	-- Pull vars from  Shell.
+	if IsNetworkOn() then
+	
+		-- For each team...
+		for Team = 1, MAX_TEAMS-1 do
+		
+			-- Setup Races...
+			if Team < CPU_START_TEAM then
+				MPIMission.TeamRace[Team] = GetRaceOfTeam(Team);
+			elseif (Team == CPU_START_TEAM) then
+				MPIMission.TeamRace[Team] = string.char(GetVarItemInt("network.session.ivar13"));
+			else
+				-- If an AI is set to spawn on this team...
+				local raceVar = IFace_GetInteger("network.session.ivar8" .. Team);
+				if (raceVar ~= 0) then
+					MPIMission.TeamRace[Team] = string.char(raceVar);
+				end
+			end
+		end
+
+		MPIMission.CPUTurretAISkill = GetVarItemInt("network.session.ivar21");
+		if (MPIMission.CPUTurretAISkill < 0) then
+			MPIMission.CPUTurretAISkill = 0;
+		elseif (MPIMission.CPUTurretAISkill > 3) then
+			MPIMission.CPUTurretAISkill = 3;
+		end
+
+		MPIMission.CPUNonTurretAISkill = GetVarItemInt("network.session.ivar22");
+		if (MPIMission.CPUNonTurretAISkill < 0) then
+			MPIMission.CPUNonTurretAISkill = 0;
+		elseif (MPIMission.CPUNonTurretAISkill > 3) then
+			MPIMission.CPUNonTurretAISkill = 3;
+		end
+
+		MPIMission.FirstAIPSwitchTime = GetVarItemInt("network.session.ivar26");
+		if (MPIMission.FirstAIPSwitchTime == 0) then
+			MPIMission.FirstAIPSwitchTime = SecondsToTurns(180);
+		elseif (MPIMission.FirstAIPSwitchTime > 0) then
+			MPIMission.FirstAIPSwitchTime = SecondsToTurns(MPIMission.FirstAIPSwitchTime);
+		end
+		
+		MPIMission.HumanForce = GetVarItemInt("network.session.ivar23");
+		if (MPIMission.HumanForce < 0) then
+			MPIMission.HumanForce = 0;
+		elseif (MPIMission.HumanForce > 3) then
+			MPIMission.HumanForce = 3;
+		end
+		
+		MPIMission.CPUForce = GetVarItemInt("network.session.ivar24");
+		if (MPIMission.CPUForce < 0) then
+			MPIMission.CPUForce = 0;
+		elseif (MPIMission.CPUForce > 3) then
+			MPIMission.CPUForce = 3;
+		end
+
+		MPIMission.NumHumans = CountPlayers();
+		
+		MPIMission.m_Difficulty = GetVarItemInt("network.session.ivar70");
+		
+		MPIMission.WeaponCrates = GetVarItemInt("network.session.ivar79");
+		
+		MPIMission.MegaBeam = GetVarItemInt("network.session.ivar72");
+
+		MPIMission.CPUReinforcementTime = SecondsToTurns(200);
+		MPIMission.HumanReinforcementTime = SecondsToTurns(250);
+	else
+	
+		MPIMission.m_Difficulty = IFace_GetInteger("options.play.difficulty");
+		
+		MPIMission.TeamRace[CPU_START_TEAM] = string.char(IFace_GetInteger("options.instant.hisrace"));
+		
+		MPIMission.CPUForce = IFace_GetInteger("options.instant.computerforce") + 1;
+		
+		MPIMission.CPUTurretAISkill = MPIMission.m_Difficulty + 1;
+		MPIMission.CPUNonTurretAISkill = MPIMission.m_Difficulty + 1;
+	
+	
+	end
+
+
+	if MPIMission.MegaBeam then
+		_MegaBeam.InitialSetup();
+	end
+
 	-- Preload some ODFs.
 	PreloadODF("evrecy_m");
 	PreloadODF("fvrecy_m");
@@ -139,8 +216,6 @@ function _MPI.InitialSetup()
 	PreloadODF("ivrecycpu");
 	PreloadODF("evrecycpu");
 	PreloadODF("fvrecycpu");
-
-	print("MPI InitialSetup");
 end
 
 --[[
@@ -156,7 +231,7 @@ end
 	
 	- ivar70 - AI Difficulty.
 	- ivar71 - AI Commander Spawning.
-	- ivar72 - Starting units choice. I'd like to add this for balance.
+	- ivar72 - Mega Beam
 	- ivar73 - AI Super Units.
 	- ivar74 - AI Reinforcements.
 	- ivar75 - AI Recycler Replacement.
@@ -172,73 +247,40 @@ function _MPI.Start()
 
 	SetAutoGroupUnits(false);
 	
-	-- AI Team info.
-		
-	-- Count how many AI we're spawning...
-	local NumAI = 1 - 1;
+	SetupExtraVehicles();
 	
-	-- For each team...
-	for Team = 1, MAX_TEAMS-1 do
+	-- Scold the map if there are no path points.
+	local paths = GetAiPaths();
+	local pathsExist = true;
 	
-		-- Setup Races...
-		if Team < CPU_START_TEAM then
-			MPIMission.TeamRace[Team] = GetRaceOfTeam(Team);
-		elseif (Team == CPU_START_TEAM) then
-			MPIMission.TeamRace[Team] = string.char(GetVarItemInt("network.session.ivar13"));
-		else
-			-- If an AI is set to spawn on this team...
-			local raceVar = IFace_GetInteger("network.session.ivar8" .. Team);
-			if (raceVar ~= 0) then
-				MPIMission.TeamRace[Team] = string.char(raceVar);
+	-- Check if any of the paths listed 
+	for i = 1, #CPUPaths do
+		local path = CPUPaths[i];
+
+		if (path ~= nil) then
+			pathsExist = false;
+
+			for j = 1, #paths do
+				local aiPath = paths[j];
+	
+				if (aiPath == path) then
+					pathsExist = true;
+					break;
+				end
 			end
 		end
 	end
-		
-	SetupExtraVehicles();
 
-	MPIMission.CPUTurretAISkill = GetVarItemInt("network.session.ivar21");
-	if (MPIMission.CPUTurretAISkill < 0) then
-		MPIMission.CPUTurretAISkill = 0;
-	elseif (MPIMission.CPUTurretAISkill > 3) then
-		MPIMission.CPUTurretAISkill = 3;
+	-- Post a message to the chat.
+	if (not pathsExist) then
+		DoTaunt(TAUNTS_NoPath);
 	end
-
-	MPIMission.CPUNonTurretAISkill = GetVarItemInt("network.session.ivar22");
-	if (MPIMission.CPUNonTurretAISkill < 0) then
-		MPIMission.CPUNonTurretAISkill = 0;
-	elseif (MPIMission.CPUNonTurretAISkill > 3) then
-		MPIMission.CPUNonTurretAISkill = 3;
-	end
-
-	MPIMission.FirstAIPSwitchTime = GetVarItemInt("network.session.ivar26");
-	if (MPIMission.FirstAIPSwitchTime == 0) then
-		MPIMission.FirstAIPSwitchTime = SecondsToTurns(180);
-	elseif (MPIMission.FirstAIPSwitchTime > 0) then
-		MPIMission.FirstAIPSwitchTime = SecondsToTurns(MPIMission.FirstAIPSwitchTime);
-	end
-	
-	MPIMission.HumanForce = GetVarItemInt("network.session.ivar23");
-	if (MPIMission.HumanForce < 0) then
-		MPIMission.HumanForce = 0;
-	elseif (MPIMission.HumanForce > 3) then
-		MPIMission.HumanForce = 3;
-	end
-	
-	MPIMission.CPUForce = GetVarItemInt("network.session.ivar24");
-	if (MPIMission.CPUForce < 0) then
-		MPIMission.CPUForce = 0;
-	elseif (MPIMission.CPUForce > 3) then
-		MPIMission.CPUForce = 3;
-	end
-
-	MPIMission.NumHumans = CountPlayers();
-	
-	m_Difficulty = GetVarItemInt("network.session.ivar70");
-
-	MPIMission.CPUReinforcementTime = SecondsToTurns(200);
-	MPIMission.HumanReinforcementTime = SecondsToTurns(250);
 	
 	DoTaunt(TAUNTS_GameStart);
+	
+	if MPIMission.WeaponCrates then
+		_CrateSpawnHelper.Start();
+	end
 
 end
 
@@ -248,7 +290,9 @@ function _MPI.AddObject(h, IsStartingVehicles, TurnCounter, ODFName, ObjClass)
 	local Team = GetTeamNum(h);
 	
 	-- Add to custom AI dispatcher.
-	AddToDispatch(h, 15.0, false, 0, false);
+	if (not IsStartingVehicles) then
+		AddToDispatch(h, 15.0, false, 0, (MPIMission.m_Difficulty < 2));
+	end
 
 	-- generic MPI stuff...
 	if (ObjClass == "CLASS_COMMBUNKER" or ObjClass == "CLASS_COMMTOWER") then
@@ -282,11 +326,10 @@ function _MPI.AddObject(h, IsStartingVehicles, TurnCounter, ODFName, ObjClass)
 			SetSkill(h, UseNonTurretSkill);
 		end
 		
-		--[[
 		if ((ObjClass == "CLASS_SCAVENGER") or (ObjClass == "CLASS_SCAVENGERH")) then
-			AddCPUScav(h);
+			--AddCPUScav(h);
+			DoTaunt(TAUNTS_Random);
 		end
-		--]]
 	elseif (Team >= PLAYER_START_TEAM) then
 		-- PLAYER Recycler deployed. (Commander or Thug recy) -GBD
 		if (ObjClass == "CLASS_RECYCLER") then
@@ -296,11 +339,11 @@ function _MPI.AddObject(h, IsStartingVehicles, TurnCounter, ODFName, ObjClass)
 				local stratchoice = TurnCounter % 2;
 
 				if (stratchoice == 0) then
-					SetCPUAIPlan(AIPType1);
+					SetCPUAIPlan(CPU_START_TEAM, AIPType1);
 				elseif (stratchoice == 1) then
-					SetCPUAIPlan(AIPType2);
+					SetCPUAIPlan(CPU_START_TEAM, AIPType2);
 				elseif (stratchoice == 2) then
-					SetCPUAIPlan(AIPType3);
+					SetCPUAIPlan(CPU_START_TEAM, AIPType3);
 				end
 			end
 			
@@ -317,11 +360,11 @@ function _MPI.AddObject(h, IsStartingVehicles, TurnCounter, ODFName, ObjClass)
 		local stratchoice = TurnCounter % 2;
 
 		if (stratchoice % 2 == 0) then
-			SetCPUAIPlan(AIPType1);
+			SetCPUAIPlan(CPU_START_TEAM, AIPType1);
 		elseif (stratchoice %2 == 1) then
-			SetCPUAIPlan(AIPType2);
+			SetCPUAIPlan(CPU_START_TEAM, AIPType2);
 		elseif (stratchoice %2 == 2) then
-			SetCPUAIPlan(AIPType3);
+			SetCPUAIPlan(CPU_START_TEAM, AIPType3);
 		end
 	end
 end
@@ -346,82 +389,6 @@ function _MPI.DeleteObject(h)
 	end
 end
 
--- Build Starting Vehicles (ODF1 or ODF2) at a specified location.
-function BuildStartingVehicle(aTeam, aRace, ODF1, ODF2, Where, aGrp)
-
-	local length = string.len(ODF1);
-	local TempODF = aRace .. string.sub(ODF1, 1, length);
-	
-	print("TempODF: " .. TempODF .. " ODF1: " .. ODF1 .. " Race: " .. aRace);
-
-	if (not DoesODFExist(TempODF)) then
-		-- doesn't exist, so fallback to ODF2
-		length = string.len(ODF2);
-		TempODF = aRace .. string.sub(ODF2, 1, length);
-	end
-
-	local h = BuildObject(TempODF, aTeam, Where);
-	
-	if (h ~= nil) then
-		--if (aGrp == -2) then
-			SetBestGroup(h); -- Set Best group instead. -GBD
-		--elseif (aGrp >= 0) then
-		--	SetGroup(h, aGrp);
-		--end
-	end
-	
-	return h;
-end
-
--- Set CPU AI Plan. Expanded to handle multiple teams and legacy AIPs. -GBD
-function SetCPUAIPlan(Team, Type)
-	if (not CheckedSVar3) then
-		CheckedSVar3 = true;
-
-		local pContents = GetCheckedNetworkSvar(3, NETLIST_AIPs);
-
-		if ((pContents == nil) or (pContents == "")) then
-			MPIMission.CustomAIPNameBase = "stock_";
-		else 
-			MPIMission.CustomAIPNameBase = pContents;
-		end
-	end
-
-	if ((Type < 0) or (Type >= MAX_AIP_TYPE)) then
-		Type = AIPType3;
-	end
-
-	if (((Type > AIPType3) and (MPIMission.CPUCommBunkerCount[Team] == 0)) and (MPIMission.LastCPUPlan[Team] <= AIPType3)) then
-		return;
-	end
-
-	-- TEST ME! -GBD
-	--[[
-	local AIPFile = ("%s%s%d.aip"):format(AIPFile, Mission.CPURace, Mission.Difficulty);
-	if not DoesFileExist(AIPFile) then
-		AIPFile = ("%s%s%%s%s.aip"):format(CustomAIPNameBase, MPIMission.TeamRace[Team], MPIMission.TeamRace[PLAYER_START_TEAM], string.sub(AIPTypeExtensions, Type + 1, Type + 1));
-	end
-	--]]
-	
-	-- Based on a difficulty IVAR, we can set the difficulty of the AI. ivar70 will need to be changed when this is set up -- AI_Unit.
-	-- Edited to be dynamic for multiple teams. Each team will use the same difficulty -- AI_Unit.
-	local AIPFile = ("%s_%s%d_%d.aip"):format(MPIMission.CustomAIPNameBase, MPIMission.TeamRace[Team], MPIMission.m_Difficulty, Team);
-	
-	if not DoesFileExist(AIPFile) then
-		AIPFile = MPIMission.CustomAIPNameBase .. MPIMission.TeamRace[Team] .. "_" ..  string.sub(AIPTypeExtensions, Type + 1, Type + 1) .. ".aip";
-		if not DoesFileExist(AIPFile) then
-			AIPFile = MPIMission.CustomAIPNameBase .. MPIMission.TeamRace[Team] .. MPIMission.TeamRace[PLAYER_START_TEAM] .. string.sub(AIPTypeExtensions, Type + 1, Type + 1) .. ".aip";
-		end
-		
-		MPIMission.LegacyAIPs = true;
-	end
-	
-	SetAIP(AIPFile, Team);
-
-	MPIMission.LastCPUPlan[Team] = Type;
-
-end
-
 -- Spawns an AI team. Called from Strategy.lua to flag Mission.m_TeamIsSetUp = true;
 function _MPI.SetupAITeam(Team)
 
@@ -429,7 +396,13 @@ function _MPI.SetupAITeam(Team)
 	 -- If there's no AI Recycler pre-placed on the map, and we are set to have an AI race here, spawn one. -GBD
 	if (RecyH == nil) and (MPIMission.TeamRace[Team] ~= 0) then
 		local startRecyODF = nil;
-		local pContents = GetCheckedNetworkSvar(12, NETLIST_Recyclers);
+		local pContents = nil;
+		
+		if (IsNetworkOn()) then
+			pContents = GetCheckedNetworkSvar(12, NETLIST_Recyclers);
+		else
+			pContents = IFace_GetString("options.instant.string2");
+		end
 
 		if ((pContents ~= nil) and (pContents ~= "")) then
 			startRecyODF = pContents;
@@ -484,9 +457,18 @@ function _MPI.SetupAITeam(Team)
 end
 
 -- Do generic strategy, from MPI code
-function _MPI.DoGenericStrategy(TurnCounter)
+function _MPI.Update(TurnCounter)
 
 	local GameTPS = SecondsToTurns(1.0);
+	
+	-- Call helper functions.
+	if MPIMission.WeaponCrates then
+		_CrateSpawnHelper.Update();
+	end
+	
+	if MPIMission.MegaBeam then
+		_MegaBeam.Update();
+	end
 	
 	-- This could be enhanced to add some dropship code that'll drop units for the CPU Team via a dropship. - AI_Unit
 	-- TODO Make TPS independent. -GBD
@@ -624,6 +606,81 @@ function _MPI.DoGenericStrategy(TurnCounter)
 			end
 		end
 	end
+end
+
+
+
+-- Build Starting Vehicles (ODF1 or ODF2) at a specified location.
+function BuildStartingVehicle(aTeam, aRace, ODF1, ODF2, Where, aGrp)
+
+	local length = string.len(ODF1);
+	local TempODF = aRace .. string.sub(ODF1, 1, length);
+
+	if (not DoesODFExist(TempODF)) then
+		-- doesn't exist, so fallback to ODF2
+		length = string.len(ODF2);
+		TempODF = aRace .. string.sub(ODF2, 1, length);
+	end
+
+	local h = BuildObject(TempODF, aTeam, Where);
+	
+	if (h ~= nil) then
+		--if (aGrp == -2) then
+			SetBestGroup(h); -- Set Best group instead. -GBD
+		--elseif (aGrp >= 0) then
+		--	SetGroup(h, aGrp);
+		--end
+	end
+	
+	return h;
+end
+
+-- Set CPU AI Plan. Expanded to handle multiple teams and legacy AIPs. -GBD
+function SetCPUAIPlan(Team, Type)
+	if (not CheckedSVar3) then
+		CheckedSVar3 = true;
+
+		local pContents = nil;
+		
+		if (IsNetworkOn()) then
+			pContents = GetCheckedNetworkSvar(3, NETLIST_AIPs);
+		else
+			pContents = IFace_GetString("options.instant.string0");
+		end
+
+		if ((pContents == nil) or (pContents == "")) then
+			MPIMission.CustomAIPNameBase = "stock_";
+		else 
+			MPIMission.CustomAIPNameBase = pContents;
+		end
+	end
+
+	if ((Type < 0) or (Type >= MAX_AIP_TYPE)) then
+		Type = AIPType3;
+	end
+
+	if (((Type > AIPType3) and (MPIMission.CPUCommBunkerCount[Team] == 0)) and (MPIMission.LastCPUPlan[Team] <= AIPType3)) then
+		return;
+	end
+
+	-- Based on a difficulty IVAR, we can set the difficulty of the AI. ivar70 will need to be changed when this is set up -- AI_Unit.
+	-- Edited to be dynamic for multiple teams. Each team will use the same difficulty -- AI_Unit.
+	local AIPFile = ("%s%s%d_%d.aip"):format(MPIMission.CustomAIPNameBase, MPIMission.TeamRace[Team], MPIMission.m_Difficulty, Team);
+	
+	if not DoesFileExist(AIPFile) then
+		AIPFile = ("%s%s_%s.aip"):format(MPIMission.CustomAIPNameBase, MPIMission.TeamRace[Team], string.sub(AIPTypeExtensions, Type + 1, Type + 1));
+		
+		if not DoesFileExist(AIPFile) then
+			AIPFile = ("%s%s%s%s.aip"):format(MPIMission.CustomAIPNameBase, MPIMission.TeamRace[Team], MPIMission.TeamRace[PLAYER_START_TEAM], string.sub(AIPTypeExtensions, Type + 1, Type + 1));
+		end
+		
+		MPIMission.LegacyAIPs = true;
+	end
+	
+	SetAIP(AIPFile, Team);
+
+	MPIMission.LastCPUPlan[Team] = Type;
+
 end
 
 -- TODO: If this is not used by default, change to work like IA BuildStartingVehicle, where it tries race specific versionof ODF1, if it doesn't exist, try race specific version of ODF2.
