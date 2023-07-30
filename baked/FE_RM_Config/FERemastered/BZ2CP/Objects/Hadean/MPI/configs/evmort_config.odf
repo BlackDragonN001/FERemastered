@@ -1,0 +1,53 @@
+// Easy Difficulty
+[EasyWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.2
+
+weaponName1 = "aptagcr_c"
+weaponName2 = "aptagcr_a"
+
+WeaponMask1 = 1
+WeaponMask2 = 3
+
+[EasyWeaponSlot2]
+weaponName1 = "approx"
+weaponName2 = "apflamemin"
+weaponName3 = "apcpmits"
+weaponName4 = "apcphan"
+weaponName5 = "apsnaremn"
+
+// Medium Difficulty
+[MediumWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.2
+
+weaponName1 = "aptagcr_c"
+weaponName2 = "aptagcr_a"
+
+WeaponMask1 = 1
+WeaponMask2 = 3
+
+[MediumWeaponSlot2]
+weaponName1 = "approx"
+weaponName2 = "apflamemin"
+weaponName3 = "apcpmits"
+weaponName4 = "apcphan"
+weaponName5 = "apsnaremn"
+
+// Hard Difficulty
+[HardWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.2
+
+weaponName1 = "aptagcr_c"
+weaponName2 = "aptagcr_a"
+
+WeaponMask1 = 1
+WeaponMask2 = 3
+
+[HardWeaponSlot2]
+weaponName1 = "approx"
+weaponName2 = "apflamemin"
+weaponName3 = "apcpmits"
+weaponName4 = "apcphan"
+weaponName5 = "apsnaremn"

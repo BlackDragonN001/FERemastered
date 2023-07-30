@@ -1,0 +1,38 @@
+// Easy Difficulty
+[EasyWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.2
+
+weaponName1 = "aphmort"
+weaponName2 = "aphmort"
+weaponName3 = "apslagmort"
+weaponName4 = "aphfire"
+
+WeaponMask1 = 1
+WeaponMask2 = 3
+
+// Medium Difficulty
+[MediumWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.2
+
+weaponName1 = "aphmort"
+weaponName2 = "aphmort"
+weaponName3 = "apslagmort"
+weaponName4 = "aphfire"
+
+WeaponMask1 = 1
+WeaponMask2 = 3
+
+// Hard Difficulty
+[HardWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.2
+
+weaponName1 = "aphmort"
+weaponName2 = "apslagmort"
+weaponName3 = "aphfire"
+weaponName4 = "aphfire"
+
+WeaponMask1 = 1
+WeaponMask2 = 3
