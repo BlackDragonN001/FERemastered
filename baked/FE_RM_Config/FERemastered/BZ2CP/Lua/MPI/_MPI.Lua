@@ -6,6 +6,11 @@ assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 
 local _CrateSpawnHelper = require('_CrateSpawnHelper');
 local _MegaBeam = require('_MegaBeamHelper');
+local _EasyPools = require('_EasyPoolHelper');
+local _RandomPools = require('_RandomPoolHelper');
+local _RampageUnits = require('_RampageHelper');
+local _CaptureObject = require('_CaptureObjectHelper');
+local _Monster = require('_MonsterHelper');
 
 -- VARS
 local DEBUG = true;
@@ -60,6 +65,10 @@ local MPIMission =
 	
 	WeaponCrates = false,
 	MegaBeam = false,
+	RandomPools = false,
+	EasyPools = false,
+	CaptureObject = false,
+	MonsterToggle = false,
 	
 	-- handles
 	--HumanRecycler = nil, 
@@ -103,19 +112,21 @@ function _MPI.Save()
     return 
 		_CrateSpawnHelper.Save(), 
 		_MegaBeam.Save(), 
-	--	RampageHelper.Save(), 
-	--	CaptureObject.Save(),
+		_RampageUnits.Save(),
+		_CaptureObject.Save(),
+		_Monster.Save(),
 		MPIMission;
 end
 
 -- Load
-function _MPI.Load(CrateSpawnerData, MegaBeamData, MPIMissionData)
+function _MPI.Load(CrateSpawnerData, MegaBeamData, RampageData, CaptureObjectData, MonsterData, MPIMissionData)
 
 	-- Load sub moduels.
 	_CrateSpawnHelper.Load(CrateSpawnerData);
 	_MegaBeam.Load(MegaBeamData);
---	RampageHelper.Load(RampageData);
---	CaptureObject.Load(CaptureObjectData);
+	_RampageUnits.Load(RampageData);
+	_CaptureObject.Load(CaptureObjectData);
+	_Monster.Load(MonsterData);
 	
 	-- Load our data.
 	MPIMission = MPIMissionData;
@@ -123,6 +134,8 @@ end
 
 -- Initial Setup.
 function _MPI.InitialSetup()
+
+	SetAutoGroupUnits(false);
 
 	-- Pull vars from  Shell.
 	if IsNetworkOn() then
@@ -184,8 +197,10 @@ function _MPI.InitialSetup()
 		MPIMission.m_Difficulty = GetVarItemInt("network.session.ivar70");
 		
 		MPIMission.WeaponCrates = GetVarItemInt("network.session.ivar79");
-		
 		MPIMission.MegaBeam = GetVarItemInt("network.session.ivar72");
+		MPIMission.CaptureObject = GetVarItemInt("network.session.ivar74");
+		MPIMission.MonsterToggle = GetVarItemInt("network.session.ivar38");
+
 
 		MPIMission.CPUReinforcementTime = SecondsToTurns(200);
 		MPIMission.HumanReinforcementTime = SecondsToTurns(250);
@@ -203,10 +218,15 @@ function _MPI.InitialSetup()
 	
 	end
 
-
 	if MPIMission.MegaBeam then
 		_MegaBeam.InitialSetup();
 	end
+	
+	if MPIMission.MonsterToggle then
+		_Monster.InitialSetup();
+	end
+	
+	_RampageUnits.InitialSetup();
 
 	-- Preload some ODFs.
 	PreloadODF("evrecy_m");
@@ -243,44 +263,25 @@ end
 ]]
 
 -- Start, find/save all vars from shell.
-function _MPI.Start()
-
-	SetAutoGroupUnits(false);
+function _MPI.Start()	
+	
+	if MPIMission.EasyPools then
+		_EasyPools.SetupEasyPools();
+	end
 	
 	SetupExtraVehicles();
-	
-	-- Scold the map if there are no path points.
-	local paths = GetAiPaths();
-	local pathsExist = true;
-	
-	-- Check if any of the paths listed 
-	for i = 1, #CPUPaths do
-		local path = CPUPaths[i];
-
-		if (path ~= nil) then
-			pathsExist = false;
-
-			for j = 1, #paths do
-				local aiPath = paths[j];
-	
-				if (aiPath == path) then
-					pathsExist = true;
-					break;
-				end
-			end
-		end
-	end
-
-	-- Post a message to the chat.
-	if (not pathsExist) then
-		DoTaunt(TAUNTS_NoPath);
-	end
 	
 	DoTaunt(TAUNTS_GameStart);
 	
 	if MPIMission.WeaponCrates then
 		_CrateSpawnHelper.Start();
 	end
+	
+	if MPIMission.CaptureObject then
+		_CaptureObject.Setup();
+	end
+	
+	_RampageUnits.Start();
 
 end
 
@@ -307,24 +308,33 @@ function _MPI.AddObject(h, IsStartingVehicles, TurnCounter, ODFName, ObjClass)
 	-- CPU Team.
 	if (Team >= CPU_START_TEAM) then
 		-- CPU Turrt/nonturret skill. Player skill set from Strategy.lua. -GBD
-		local UseTurretSkill = MPIMission.CPUTurretAISkill;
-		local UseNonTurretSkill = MPIMission.CPUNonTurretAISkill;
+		local SkillLevel = 0;
 		
-		if (IsStartingVehicles) then
-			if (UseTurretSkill > 0) then
-				UseTurretSkill = UseTurretSkill - 1;
-			end
-
-			if (UseNonTurretSkill > 0) then
-				UseNonTurretSkill = UseNonTurretSkill - 1;
-			end
-		end
-
 		if (ObjClass == "CLASS_TURRETTANK") then
-			SetSkill(h, UseTurretSkill);
+			SkillLevel = MPIMission.CPUTurretAISkill;
 		else
-			SetSkill(h, UseNonTurretSkill);
+			SkillLevel = MPIMission.CPUNonTurretAISkill;
 		end
+		
+		-- Drop skill by 1 while creating StartingVehicles
+		if (IsStartingVehicles) then
+			if (SkillLevel > 0) then
+				SkillLevel = SkillLevel - 1;
+			end
+		end
+		
+		-- Scale up difficulty
+		if MPIMission.NumHumans > 2 then
+			SkillLevel = 3; -- 3+ players, max skill.
+		elseif MPIMission.NumHumans > 1 then
+			SkillLevel = SkillLevel + 1;
+		end
+		
+		if SkillLevel > 3 then
+			SkillLevel = 3;
+		end
+		
+		SetSkill(h, SkillLevel);
 		
 		if ((ObjClass == "CLASS_SCAVENGER") or (ObjClass == "CLASS_SCAVENGERH")) then
 			--AddCPUScav(h);
@@ -440,6 +450,9 @@ function _MPI.SetupAITeam(Team)
 			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vtank", "vtank", GetPositionNear(RecPos, 20.0, 40.0)) --"tankEnemy2");
 			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vtank", "vtank", GetPositionNear(RecPos, 20.0, 40.0)) --"tankEnemy3");
 			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vsent", "vscout", GetPositionNear(RecPos, 20.0, 40.0)) --"SentryEnemy3");
+			
+			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "bjamm", "vturr", "jamm1");
+			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "bjamm", "vturr", "jamm2");
 		end
 
 		BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vscav", "vscav", GetPositionNear(RecPos, 20.0, 40.0)) --"ScavengerEnemy");
@@ -469,6 +482,17 @@ function _MPI.Update(TurnCounter)
 	if MPIMission.MegaBeam then
 		_MegaBeam.Update();
 	end
+	
+	if MPIMission.CaptureObject then
+		_CaptureObject.Update();
+	end
+	
+	if MPIMission.Monster then
+		_Monster.Update(TurnCounter, MPIMission.m_Difficulty, CPU_START_TEAM, PLAYER_START_TEAM);
+	end
+	
+	_RampageUnits.Update(TurnCounter, MPIMission.NumHumans, MPIMission.m_Difficulty, MPIMission.SiegeOn, MPIMission.LateGame);
+	
 	
 	-- This could be enhanced to add some dropship code that'll drop units for the CPU Team via a dropship. - AI_Unit
 	-- TODO Make TPS independent. -GBD
@@ -622,6 +646,13 @@ function BuildStartingVehicle(aTeam, aRace, ODF1, ODF2, Where, aGrp)
 		TempODF = aRace .. string.sub(ODF2, 1, length);
 	end
 
+	-- If we're using a path, make sure it exists.
+	if type(Where) == "string" then
+		if not DoesPathExist(Where) then
+			return;
+		end	
+	end
+	
 	local h = BuildObject(TempODF, aTeam, Where);
 	
 	if (h ~= nil) then
@@ -689,6 +720,10 @@ end
 function SetupExtraVehicles()
 	local pathNames = GetAiPaths();
 	local pathCount = #pathNames;
+	
+	if MPIMission.RandomPools then
+		_RandomPools.SetupRandomPools(pathNames);
+	end
 
 	local CPUTeamRace = MPIMission.TeamRace[CPU_START_TEAM];
 	local HumanTeamRace = MPIMission.TeamRace[PLAYER_START_TEAM];
@@ -702,8 +737,6 @@ function SetupExtraVehicles()
 			local ODF2 = nil;
 			local ODF3 = nil;
 			length = string.len(Label);
-			
-			print(Label);
 
 			local Underscore = string.find(Label, "_");
 
@@ -719,8 +752,6 @@ function SetupExtraVehicles()
 				ODF1 = string.sub(Label, Underscore + 1, Underscore2 - 1);
 			end
 			
-			print("ODF1 is: " .. ODF1);
-			
 			local Underscore3 = string.find(Label, "_", Underscore2 + 1);
 			
 			if (Underscore3 == nil) then
@@ -730,9 +761,6 @@ function SetupExtraVehicles()
 				
 				ODF3 = string.sub(Label, Underscore3 + 1, length);
 			end
-			
-			print("ODF2 is: " .. ODF2);
-			print("ODF3 is: " .. ODF3);
 
 			if (string.sub(Label, 1, 4) == "mpic") or (string.sub(Label, 1, 4) == "mpiC") then
 				if (string.sub(ODF1, 1, 1) == CPUTeamRace) then
@@ -757,6 +785,33 @@ function SetupExtraVehicles()
 			end
 		end
 	end
+
+	-- Scold the map if there are no path points.
+	local pathsExist = true;
+	
+	-- Check if any of the paths listed 
+	for i = 1, #CPUPaths do
+		local path = CPUPaths[i];
+
+		if (path ~= nil) then
+			pathsExist = false;
+
+			for j = 1, #pathNames do
+				local aiPath = pathNames[j];
+	
+				if (aiPath == path) then
+					pathsExist = true;
+					break;
+				end
+			end
+		end
+	end
+
+	-- Post a message to the chat.
+	if (not pathsExist) then
+		DoTaunt(TAUNTS_NoPath);
+	end
+	
 end
 
 

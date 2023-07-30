@@ -16,7 +16,7 @@ local BeamDirection = {
 }
 
 local _MegaBeam = {}
-	
+
 local MegaBeam = {
 	Handle = nil,
 	Timer = 0.0,
