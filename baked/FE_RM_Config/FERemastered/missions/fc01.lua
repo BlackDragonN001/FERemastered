@@ -291,8 +291,20 @@ function ObjectKilled(deadObj, killerObj)
 			AddScrap(3, -60);
 		end
 	end
-	
-	return 0;
+
+	local function ObjectKilled_EJECTKILLRETCODES(h)
+		local EjectRatio = GetEjectRatio(h) -- nil if cannot eject
+		if
+		 IsPlayer(h) -- player craft
+		 or 
+		 (EjectRatio and EjectRatio >= GetRandomFloat(1)) -- randomize in [0,1] interval for AI craft
+		 then
+			return 0 -- EJECTKILLRETCODES_DOEJECTPILOT -> force pilot ejection
+		else
+			return 2 -- EJECTKILLRETCODES_DLLHANDLED -> does not eject non-player pilot
+		end
+	end	
+	return ObjectKilled_EJECTKILLRETCODES(deadObj);
 end
 
 function DeleteObject(h)
