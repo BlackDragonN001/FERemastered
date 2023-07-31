@@ -357,7 +357,7 @@ function PlayerEjected(DeadObjectHandle)
 
 	local deadObjectTeam = GetTeamNum(DeadObjectHandle);
 	if(deadObjectTeam == 0) then
-		return DLLHandled; -- Invalid team. Do nothing
+		return EJECTKILLRETCODES_DLLHANDLED; -- Invalid team. Do nothing
 	end
 
 	-- Tweaked scoring - if a player bails out, no deaths/kills are registered.  But, their score should go down by the scrap cost of the vehicle they just left.
@@ -366,7 +366,7 @@ function PlayerEjected(DeadObjectHandle)
 		AddScore(DeadObjectHandle, -GetActualScrapCost(DeadObjectHandle));
 	end
 
-	return DoEjectPilot; -- Tell main code to allow the ejection
+	return EJECTKILLRETCODES_DOEJECTPILOT; -- Tell main code to allow the ejection
 	
 end
 
@@ -377,12 +377,12 @@ function ObjectKilled(DeadObjectHandle, KillersHandle)
 
 	-- Sanity check for multiworld
 	if(GetCurWorld() ~= 0) then
-		return DoEjectPilot;
+		return EJECTKILLRETCODES_DOEJECTPILOT;
 	end
 
 	local deadObjectTeam = GetTeamNum(DeadObjectHandle);
 	if(deadObjectTeam == 0) then
-		return DoEjectPilot; -- Someone on neutral team always gets default behavior
+		return EJECTKILLRETCODES_DOEJECTPILOT; -- Someone on neutral team always gets default behavior
 	end
 
 	-- If a person died, respawn them, etc
@@ -397,7 +397,7 @@ function ObjectSniped(DeadObjectHandle, KillersHandle)
 
 	if(GetCurWorld() ~= 0)
 	then
-		return DLLHandled;
+		return EJECTKILLRETCODES_DLLHANDLED;
 	end
 
 	-- Dead person means we must always respawn a new person
@@ -1002,7 +1002,7 @@ function RespawnPilot(DeadObjectHandle, Team);
 		MakeInert(NewPerson);
 	end
 
-	return DLLHandled;
+	return EJECTKILLRETCODES_DLLHANDLED;
 end
 
 -- Helper function for ObjectKilled/Sniped
@@ -1109,16 +1109,16 @@ function DeadObject(DeadObjectHandle, KillersHandle, isDeadPerson, isDeadAI)
 			DoGameover(10.0);
 		end
 	else
-		return DoEjectPilot; -- Someone on neutral team always gets default behavior
+		return EJECTKILLRETCODES_DOEJECTPILOT; -- Someone on neutral team always gets default behavior
 	end
 
 	if(isDeadAI)
 	then
 		-- Snipe?
 		if(isDeadPerson) then
-			return DLLHandled;
+			return EJECTKILLRETCODES_DLLHANDLED;
 		else -- Nope. Eject.
-			return DoEjectPilot;
+			return DoEjectRatio(DeadObjectHandle); --EJECTKILLRETCODES_DOEJECTPILOT;
 		end
 	else  -- Not DeadAI, i.e. a human!
 		-- If this was a dead pilot, we need to build another pilot back
@@ -1128,7 +1128,7 @@ function DeadObject(DeadObjectHandle, KillersHandle, isDeadPerson, isDeadAI)
 		if(isDeadPerson) then
 			return RespawnPilot(DeadObjectHandle, deadObjectTeam);
 		else 
-			return DoEjectPilot;
+			return EJECTKILLRETCODES_DOEJECTPILOT;
 		end
 	end
 end

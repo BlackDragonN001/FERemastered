@@ -200,6 +200,14 @@ end
 
 --[[-- FE Utils --]]--
 
+function DoEjectRatio(h)
+	if (GetRandomFloat(1.0) > GetEjectRatio(h))
+		return EJECTKILLRETCODES_DLLHANDLED;
+	else
+		return EJECTKILLRETCODES_DOEJECTPILOT;
+	end
+end
+
 --gets an object handle by label. If it doesn't exist, throws an error.
 function GetHandleOrDie(name)
 	return GetHandle(name) or error("Error: object '"..name.."' not found!");

@@ -275,7 +275,7 @@ function PlayerDied(deadObjectHandle, sniped)
 			DoTaunt(TAUNTS_HumanShipDestroyed);
 
 			-- Return DoEjectPilot.
-			return DoEjectPilot;
+			return EJECTKILLRETCODES_DOEJECTPILOT;
 		end
 	end
 
@@ -300,7 +300,7 @@ function PlayerDied(deadObjectHandle, sniped)
 	end
 
 	-- Both cases of the above report that we handled things.
-	return DLLHandled;
+	return EJECTKILLRETCODES_DLLHANDLED;
 end
 
 -- Handle destroyed objects...
@@ -309,9 +309,9 @@ function ObjectKilled(deadObjectHandle, killersHandle)
 	if (not IsPlayer(deadObjectHandle)) then
 		-- Should we eject a pilot instead?
 		if (not IsPerson(deadObjectHandle)) then
-			return DoEjectPilot; -- Return DoEjectPilot.
+			return DoEjectRatio(deadObjectHandle); --EJECTKILLRETCODES_DOEJECTPILOT; -- Return DoEjectPilot.
 		else
-			return DLLHandled; -- Return DLLHandled.
+			return EJECTKILLRETCODES_DLLHANDLED; -- Return DLLHandled.
 		end
 	else
 		-- Handle player death.
@@ -322,7 +322,7 @@ end
 -- Handle sniped objects...
 function ObjectSniped(deadObjectHandle, killersHandle)
 	if (not IsPlayer(deadObjectHandle)) then
-		return DLLHandled; -- AI-controlled object is toast...
+		return EJECTKILLRETCODES_DLLHANDLED; -- AI-controlled object is toast...
 	else
 		return PlayerDied(deadObjectHandle, true); -- Player dead.
 	end

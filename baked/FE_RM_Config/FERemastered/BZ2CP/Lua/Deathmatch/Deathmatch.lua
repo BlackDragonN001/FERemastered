@@ -1906,7 +1906,7 @@ function RespawnPilot(DeadObjectHandle, Team)
 		MakeInert(NewPerson);
 	end
 
-	return DLLHandled; -- Dead pilots get handled by DLL
+	return EJECTKILLRETCODES_DLLHANDLED; -- Dead pilots get handled by DLL
 end
 
 function DeadObject(DeadObjectHandle, KillersHandle, WasDeadPerson, WasDeadAI)
@@ -2056,7 +2056,7 @@ function DeadObject(DeadObjectHandle, KillersHandle, WasDeadPerson, WasDeadAI)
 		end
 	-- Get team number of who got waxed.
 	else
-		return DoEjectPilot; -- Someone on neutral team always gets default behavior
+		return EJECTKILLRETCODES_DOEJECTPILOT; -- Someone on neutral team always gets default behavior
 	end
 
 	if(WasDeadAI)
@@ -2090,10 +2090,10 @@ function DeadObject(DeadObjectHandle, KillersHandle, WasDeadPerson, WasDeadAI)
 
 		if(bFoundAI)
 		then
-			return DLLHandled;
+			return EJECTKILLRETCODES_DLLHANDLED;
 		else
-			return DLLHandled;
-			--			return DoEjectPilot;
+			return EJECTKILLRETCODES_DLLHANDLED;
+			--			return DoEjectRatio(DeadObjectHandle); --EJECTKILLRETCODES_DOEJECTPILOT;
 		end
 	else 
 		-- Not DeadAI, i.e. a humannot 
@@ -2106,7 +2106,7 @@ function DeadObject(DeadObjectHandle, KillersHandle, WasDeadPerson, WasDeadAI)
 		else
 			-- Don't build anything for them until they land.
 			Mission.m_Flying[DeadTeam] = true;
-			return DoEjectPilot;
+			return EJECTKILLRETCODES_DOEJECTPILOT;
 		end
 	end
 end
@@ -2117,7 +2117,7 @@ function PlayerEjected(DeadObjectHandle)
 
 	local DeadTeam = GetTeamNum(DeadObjectHandle);
 	if(DeadTeam == 0) then
-		return DLLHandled; -- Invalid team. Do nothing
+		return EJECTKILLRETCODES_DLLHANDLED; -- Invalid team. Do nothing
 	end
 
 	-- Update Deaths, Kills, Score for this player
@@ -2132,7 +2132,7 @@ function PlayerEjected(DeadObjectHandle)
 	then
 		-- Flags saying if they can eject or not
 		Mission.m_Flying[DeadTeam] = true; -- They're flying; create craft when they land
-		return DoEjectPilot; 
+		return EJECTKILLRETCODES_DOEJECTPILOT; 
 	else
 		-- Can't eject, so put back at base by forcing a insta-kill as pilot
 		return DeadObject(DeadObjectHandle, DeadObjectHandle, true, WasDeadAI);
@@ -2147,7 +2147,7 @@ function ObjectKilled(DeadObjectHandle, KillersHandle)
 	-- care about things in the lockstep world
 	if(GetCurWorld() ~= 0)
 	then
-		return DoEjectPilot;
+		return EJECTKILLRETCODES_DOEJECTPILOT;
 	end
 
 	local WasDeadPerson = IsPerson(DeadObjectHandle);
@@ -2166,7 +2166,7 @@ function ObjectSniped(DeadObjectHandle, KillersHandle)
 	-- care about things in the lockstep world
 	if(GetCurWorld() ~= 0)
 	then
-		return DoRespawnSafest;
+		return EJECTKILLRETCODES_DORESPAWNSAFEST;
 	end
 
 	-- Dead person means we must always respawn a new person

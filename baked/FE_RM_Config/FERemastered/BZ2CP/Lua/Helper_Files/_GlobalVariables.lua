@@ -53,10 +53,10 @@ PREPICKUPPOWERUP_ALLOW = 1 -- Allow the powerup to be picked up
 PRESNIPE_KILLPILOT = 0 -- Kill the pilot (1.0-1.3.6.4 default). Does still pass this to bullet hit code, where damage might also be applied
 PRESNIPE_ONLYBULLETHIT = 1 -- Do not kill the pilot. Does still pass this to bullet hit code, where damage might also be applied
 
-DoEjectPilot = 0 -- Do 'standard' eject
-DoRespawnSafest = 1 -- Respawn a 'PLAYER' at safest spawnpoint
-DLLHandled = 2 -- DLL handled actions. Do nothing ingame
-DoGameOver = 3 -- Game over, man.
+EJECTKILLRETCODES_DOEJECTPILOT = 0 -- Do 'standard' eject
+EJECTKILLRETCODES_DORESPAWNSAFEST = 1 -- Respawn a 'PLAYER' at safest spawnpoint
+EJECTKILLRETCODES_DLLHANDLED = 2 -- DLL handled actions. Do nothing ingame
+EJECTKILLRETCODES_DOGAMEOVER = 3 -- Game over, man.
 
 DMSubtype_Normal = 0
 DMSubtype_KOH = 1
