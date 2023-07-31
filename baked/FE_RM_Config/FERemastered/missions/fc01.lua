@@ -301,7 +301,7 @@ function ObjectKilled(deadObj, killerObj)
 		 then
 			return 0 -- EJECTKILLRETCODES_DOEJECTPILOT -> force pilot ejection
 		else
-			return 2 -- EJECTKILLRETCODES_DLLHANDLED -> does not eject non-player pilot
+			return 2 -- EJECTKILLRETCODES_DLLHANDLED -> do not eject the pilot
 		end
 	end	
 	return ObjectKilled_EJECTKILLRETCODES(deadObj);
