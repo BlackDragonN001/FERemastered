@@ -201,7 +201,8 @@ end
 --[[-- FE Utils --]]--
 
 function DoEjectRatio(h)
-	if (GetRandomFloat(1.0) > GetEjectRatio(h))
+	local ratio = GetEjectRatio(h);
+	if ((ratio ~= nil) and (GetRandomFloat(1.0) > ratio))
 		return EJECTKILLRETCODES_DLLHANDLED;
 	else
 		return EJECTKILLRETCODES_DOEJECTPILOT;
