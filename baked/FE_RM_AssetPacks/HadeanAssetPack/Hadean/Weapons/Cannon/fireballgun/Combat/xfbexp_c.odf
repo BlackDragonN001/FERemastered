@@ -1,5 +1,5 @@
 // ===============
-// FIREBALL CAR HIT
+// FIREBALL EXPIRE
 // ===============
 
 [ExplosionClass]
@@ -7,70 +7,57 @@ classLabel = "explosion"
 StartUpright = true
 
 explSound = "xfbseekcar.wav"
-damageRadius = 15.0
+damageRadius = 10 // 8 // 10.0
 
-damageValue(N) = 100 // 80 // none  // 200
-damageValue(L) = 100 // 50 // light // 140
-damageValue(H) = 100  // 30 // heavy // 50
+damageValue(N) = 300 
+damageValue(L) = 200 
+damageValue(H) = 20 // 30
 
-damageValue(S) = 100 // 50 // standard    // 100
-damageValue(D) = 60 // 80 // deflection  // 200
-damageValue(A) = 160  // 30 // absorbtion  // 0
+damageValue(S) = 250 
+damageValue(D) = 300 
+damageValue(A) = 200 
 
-kickRadius = 20.0 // 15
-kickOmega = 1.0   // 1
-kickVeloc = 2.0   // 1
+//kickRadius = 15.0
+//kickOmega = 0.5
+//kickVeloc = 1.0
 
 particleTypes = 7
 
-particleClass1 = "xfbcar_c.fire"
+particleClass1 = "xfbexp_c.fire"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
-particleInherit1 = "1.0 1.0 1.0"
+particleInherit1 = "0.5 0.5 0.5"
 
-particleClass2 = "xfbcar_c.chunks"
-particleCount2 = 16
-particleVeloc2 = "30.0 30.0 30.0"
-particleBias2 = "0.0 10.0 0.0"
-particlePosVar2 = "2.0 2.0 2.0"
-particleInherit2 = "1.0 1.0 1.0"
+particleClass2 = "xfbexp_c.chunks"
+particleCount2 = 10
+particleVeloc2 = "25.0 25.0 25.0"
+particleBias2 = "0.0 8.0 0.0"
+particlePosVar2 = "1.5 1.5 1.5"
+particleInherit2 = "0.5 0.5 0.5"
 
-particleClass3 = "xfbcar_c.flame"
+particleClass3 = "xfbexp_c.flame"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
 particleBias3 = "0.0 0.0 0.0"
-particleInherit3 = "1.0 1.0 1.0"
+particleInherit3 = "0.5 0.5 0.5"
 
-particleClass4 = "xfbcar_c.smoke"
+particleClass4 = "xfbexp_c.smoke"
 particleCount4 = 1
 particleVeloc4 = "0.0 0.0 0.0"
 particleBias4 = "0.0 0.0 0.0"
-particleInherit4 = "1.0 1.0 1.0"
+particleInherit4 = "0.5 0.5 0.5"
 
-particleClass5 = "xfbcar_c.light"
+particleClass5 = "xfbexp_c.light"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
 
-particleClass6 = "xfbcar_c.shock"
+particleClass6 = "xfbexp_c.shock"
 particleCount6 = 1
 particleVeloc6 = "0.0 0.0 0.0"
 
-particleClass7 = "xfbcar_c.core"
+particleClass7 = "xfbexp_c.core"
 particleCount7 = 1
 particleVeloc7 = "0.0 5.0 0.0"
-
-particleClass8 = "xfbcar_c.ring"
-particleCount8 = 1
-particleVeloc8 = "0.0 0.0 0.0"
-
-particleClass9 = "xfbcar_c.thrust"
-particleCount9 = 1
-particleVeloc9 = "0.0 0.0 0.0"
-
-particleClass10 = "xfbcar_c.char2"
-particleCount10 = 1
-particleVeloc10 = "0.0 0.0 0.0"
-
 
 [Fire]
 simulateBase = "sim_smoke"
@@ -80,7 +67,7 @@ textureName = "fire.tga" //"flame2.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 200 127" //"255 130 0 128"
 finishColor = "255 200 127 0" //"200 0 0 0"
-startRadius = 4.0
+startRadius = 3.0
 finishRadius = 1.0
 animateTime = 2.0
 rotationRate = 10.0
@@ -98,24 +85,11 @@ textureName = "flame2.tga"
 textureBlend = "one one modulate"
 startColor = "255 200 70 255" 
 finishColor = "155 80 0 0"
-startRadius = 1.5
-finishRadius = 6.0 //4.5
+startRadius = 1.0
+finishRadius = 4.0 //4.5
 animateTime = 0.7
 rotationRate = 3.0
 BottomInteractsWithTerrain = false
-
-[Ring]
-simulateBase = "sim_null"
-lifeTime = 5.0 //10.0
-renderBase = "draw_planar"
-textureName = "crater3b.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "20 20 20 255"
-finishColor = "0 0 0 0"
-startRadius = 8.0
-finishRadius = 8.0
-animateTime = 5.0 //10.0
-useTerrainColor = 0.9
 
 [Flame]
 simulateBase = "sim_spray" //smoke"
@@ -125,7 +99,7 @@ textureName = "fire.tga" //"flame2.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 200 200" //"255 170 100 200"
 finishColor = "255 200 127 0" //"255 80 0 0"
-startRadius = 2.5
+startRadius = 2.0
 finishRadius = 0.2
 animateTime = 0.9
 rotationRate = 10.0
@@ -150,25 +124,11 @@ textureName = "smoke2.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "0 0 0 127"
 finishColor = "31 31 31 0"
-startRadius = 3.0
-finishRadius = 4.0
+startRadius = 2.5
+finishRadius = 3.0
 animateTime = 1.5
 rotationRate = 1.0
 BottomInteractsWithTerrain = false
-
-[Thrust]
-simulateBase = "sim_null"
-lifeTime = 1.2
-renderBase = "draw_sprite"
-spriteCenter.x = 0.0
-spriteCenter.y = 1.0
-textureName = "ground.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "255 150 100 200"
-finishColor = "255 100 0 0"
-startRadius = 2.0
-finishRadius = 8.0
-animateTime = 1.2
 
 [Light]
 simulateBase = "sim_null"
@@ -176,7 +136,7 @@ lifeTime = 2.5
 renderBase = "draw_light"
 startColor = "255 100 50 2500"
 finishColor = "255 50 0 200"
-startRadius = 25.0
+startRadius = 20.0
 finishRadius = 0.0
 animateTime = 1.5
 attenuateConstant = 1.0
@@ -192,8 +152,8 @@ textureName = "ring2.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 255 190" 
 finishColor = "255 200 200 0" 
-startRadius = 2.0
-finishRadius = 20.0 // 5
+startRadius = 1.0
+finishRadius = 15.0 // 5
 animateTime = 1.0
 latitudeBands = 8
 longitudeSegments = 16
@@ -207,19 +167,7 @@ textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "255 220 220 170"
 finishColor = "220 100 0 0"
 startRadius = 1.0
-finishRadius = 5.0
+finishRadius = 4.0
 animateTime = 1.0
 rotationRate = 3.0
 BottomInteractsWithTerrain = false
-
-[Char2]
-simulateBase = "sim_null"
-lifeTime = 1.0
-renderBase = "draw_planar"
-textureName = "fbchar.tga"
-textureBlend = "one one modulate"
-startColor = "255 200 200 150"
-finishColor = "200 100 100 0"
-startRadius = 1.0
-finishRadius = 4.0
-animateTime = 1.0
