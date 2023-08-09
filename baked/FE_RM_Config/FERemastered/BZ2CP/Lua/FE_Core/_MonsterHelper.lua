@@ -34,7 +34,7 @@ function _Monster.InitialSetup()
 	end
 
 	local iShift = GetRandomFloat(Monster.Delay * 0.2);
-	Monster.Delay = ((Monster.Delay * 0.9) + iShift) * 10;
+	Monster.Delay = ((Monster.Delay * 0.9) + iShift) * SecondsToTurns(1);
 
 end
 

@@ -202,7 +202,7 @@ end
 
 function DoEjectRatio(h)
 	local ratio = GetEjectRatio(h);
-	if ((ratio ~= nil) and (GetRandomFloat(1.0) > ratio))
+	if ((ratio ~= nil) and (GetRandomFloat(1.0) > ratio)) then
 		return EJECTKILLRETCODES_DLLHANDLED;
 	else
 		return EJECTKILLRETCODES_DOEJECTPILOT;
@@ -420,7 +420,7 @@ function SpawnObjectAround(odf, team, where, minRadius, maxRadius)
 	if type(where) == "string" then
 		origin = GetPosition("where", 0);
 	elseif IsAround(where) then
-		origin = GetPosition(handle);
+		origin = GetPosition(where);
 	else
 		origin = where;
 	end

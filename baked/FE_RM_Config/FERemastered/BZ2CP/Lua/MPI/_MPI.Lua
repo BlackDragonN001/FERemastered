@@ -226,6 +226,10 @@ function _MPI.InitialSetup()
 		_Monster.InitialSetup();
 	end
 	
+	if MPIMission.WeaponCrates then
+		_CrateSpawnHelper.InitialSetup();
+	end
+	
 	_RampageUnits.InitialSetup();
 
 	-- Preload some ODFs.
@@ -272,10 +276,6 @@ function _MPI.Start()
 	SetupExtraVehicles();
 	
 	DoTaunt(TAUNTS_GameStart);
-	
-	if MPIMission.WeaponCrates then
-		_CrateSpawnHelper.Start();
-	end
 	
 	if MPIMission.CaptureObject then
 		_CaptureObject.Setup();
@@ -476,7 +476,7 @@ function _MPI.Update(TurnCounter)
 	
 	-- Call helper functions.
 	if MPIMission.WeaponCrates then
-		_CrateSpawnHelper.Update();
+		_CrateSpawnHelper.Update(MPIMission.m_Difficulty, MPIMission.LateGame);
 	end
 	
 	if MPIMission.MegaBeam then
@@ -608,6 +608,7 @@ function _MPI.Update(TurnCounter)
 			if (MPIMission.SiegeCounter > SiegeTime) then
 				MPIMission.SiegeOn = true;
 				SetCPUAIPlan(CPU_START_TEAM, AIPTypeS);
+--				_PortalUser.UpdateTimer(TurnCounter);
 			end
 		else
 			if (closestEnemy == 0) then
@@ -623,10 +624,12 @@ function _MPI.Update(TurnCounter)
 		if ((not MPIMission.LateGame) and (not MPIMission.SiegeOn) and (not MPIMission.AntiAssault) and (MPIMission.AssaultCounter > 2)) then
 			MPIMission.AntiAssault = true;
 			SetCPUAIPlan(CPU_START_TEAM, AIPTypeA);
+--			_PortalUser.UpdateTimer(TurnCounter);
 		else
 			if ((MPIMission.AntiAssault) and (MPIMission.AssaultCounter < 3)) then
 				MPIMission.AntiAssault = false;
 				SetCPUAIPlan(CPU_START_TEAM, AIPTypeL);
+--				_PortalUser.UpdateTimer(TurnCounter);
 			end
 		end
 	end

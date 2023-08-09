@@ -93,6 +93,7 @@ function _FECore.Update()
 
 end
 
+--[[
 -- Special logic for evkami, kamakazi unit. Don't let the Player eject.
 function _FECore.PlayerEjected(DeadObjectHandle)
 	
@@ -120,6 +121,7 @@ function ShouldEjectPilot(DeadObjectHandle)
 	
 	return true;
 end
+--]]
 
 function _FECore.AudioWithSubtitles(clip)
 	_Subtitles.AudioWithSubtitles(clip);
