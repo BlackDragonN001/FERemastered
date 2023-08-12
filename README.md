@@ -6,7 +6,7 @@
 
 	https://github.com/Nielk1/Battlezone-Redux-Mod-Manager/releases
 
-1. Following the setup instructions for BZRMM - open `BZRModManager.exe` and select the `Settings` tab. Make sure to set the install location for BZCC (either GOG or Steam) and set the `My Docs/My Games` folder location 
+1. Following the setup instructions for BZRMM - open `BZRModManager.exe` and select the `Settings` tab. Make sure to set the install location for BZCC (either GOG or Steam) and set the `My Docs/My Games` folder location. If you don't have Git installed, download it here. (https://git-scm.com/downloads) 
 ![](docs/BZRMM_Settings.PNG)
 
 1. On the BZCC tab, paste the github url for FER (https://github.com/BlackDragonN001/FERemastered.git) into the `Mod URL` field and click download. If a Branch Select window pops up, select "master". (This will take a long time to download, See the `Tasks` tab to watch the current progress)
