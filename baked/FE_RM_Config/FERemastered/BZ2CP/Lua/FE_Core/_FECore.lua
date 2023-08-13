@@ -27,6 +27,8 @@ local _ObjectReplacer = require('_ObjectReplacer');
 
 local _FECore = {}
 
+local KillEjectedPilot = nil -- boolean used by AddObject, ObjectKilled, PlayerEjected
+
 -- Core game functions.
 function _FECore.InitialSetup()
 
@@ -78,6 +80,11 @@ function _FECore.AddObject(h)
 --		AddToDispatch(h, 15.0, false, 0, (Difficulty < 2)); -- Based on Difficulty, if Hard, AI can Cloak on their own, and doesn't Flee.
 	end
 
+	-- Special logic for evkami, kill the ejected pilot
+	if KillEjectedPilot == true then
+		KillEjectedPilot = nil
+		SetLifeSpan(h, 1e-30)
+	end
 end
 
 function _FECore.DeleteObject(h)
@@ -93,35 +100,27 @@ function _FECore.Update()
 
 end
 
---[[
+
 -- Special logic for evkami, kamakazi unit. Don't let the Player eject.
 function _FECore.PlayerEjected(DeadObjectHandle)
-	
-	if not ShouldEjectPilot(DeadObjectHandle) then
-		return EjectKillRetCodes.EJECTKILLRETCODES_DLLHANDLED;
+	-- Special logic for evkami, kill the ejected pilot
+	if GetODFBool(DeadObjectHandle, "CraftClass", "killEjectedPilot", false) then
+		KillEjectedPilot = true -- AddObject checks this value
+		return 0 -- EJECTKILLRETCODES_DOEJECTPILOT; triggers AddObject on the ejected pilot's handle
+	else	
+		return nil
 	end
-	
-	return EjectKillRetCodes.EJECTKILLRETCODES_DOEJECTPILOT;
 end
 
 function _FECore.ObjectKilled(DeadObjectHandle, KillersHandle)
-
-	if not ShouldEjectPilot(DeadObjectHandle) then
-		return EjectKillRetCodes.EJECTKILLRETCODES_DLLHANDLED;
+	-- Special logic for evkami, kill the ejected pilot
+	if GetODFBool(DeadObjectHandle, "CraftClass", "killEjectedPilot", false) then
+		KillEjectedPilot = true -- AddObject checks this value
+		return 0 -- EJECTKILLRETCODES_DOEJECTPILOT; triggers AddObject on the ejected pilot's handle
+	else	
+		return nil
 	end
-	
-	return EjectKillRetCodes.EJECTKILLRETCODES_DOEJECTPILOT;
 end
-function ShouldEjectPilot(DeadObjectHandle)
-
-	if IsPlayer(DeadObjectHandle) and IsCraftButNotPerson(DeadObjectHandle) then
-		local CanPlayerEject = GetODFBool(DeadObjectHandle, "CraftClass", "CanPlayerEject", true);
-		return CanPlayerEject;
-	end
-	
-	return true;
-end
---]]
 
 function _FECore.AudioWithSubtitles(clip)
 	_Subtitles.AudioWithSubtitles(clip);
