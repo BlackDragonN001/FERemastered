@@ -3,11 +3,13 @@ classLabel = "bullet"
 
 shotGeometry = NULL
 shotRadius = 1.0
+
 xplGround = "xicehit"
 xplVehicle = "xicehit"
 xplBuilding = "xicehit"
 
 renderName = "icer_a.puff"
+
 ammoCost = 3
 lifeSpan = 0.5
 shotSpeed = 50.0

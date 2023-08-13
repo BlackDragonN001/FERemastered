@@ -1,100 +1,13 @@
 [GameObjectClass]
-baseName = "cvcomet"
-geometryName = "cvcomet00.xsi"
-geometryScale = 0.5
-classLabel = "torpedo"
-scrapValue = 0
-scrapCost = 0
-maxHealth = 200
-maxAmmo = 50
-unitName = "Mini-Comet"
-aiName = "TorpedoProcess"
-aiName2 = "TorpedoProcess"
-
-effectHard1 = "hp_trail_1"
-effectName1 = "cpfol.render"
+classLabel = "cvcomet_c"
 
 [CraftClass]
-rangeScan = 0.0f
-periodScan = 0.0f
-velocJam = 0.0f
 
 [TorpedoClass]
-setAltitude = 1.5
 alphaTrack = 30.0
 alphaDamp = 20.0
 velocForward = 80.0
-accelThrust = 50.0
 omegaTurn = 10.0
 alphaSteer = 10.0
-lifeSpan = 20.0
+
 xplBlast = "xcpfolxpl"
-
-soundThrust = "cerbcomet.wav"
-
-[Render]
-renderBase = "draw_multi"
-renderCount = 4
-renderName1 = "cpfol.flame"
-renderName2 = "cpfol.light"
-renderName3 = "cpfol.smoke"
-renderName4 = "cpfol.smoke"
-
-[Light]
-renderBase = "draw_light"
-startColor = "35 5 255 455"
-finishColor = "50 0 250 455"
-startRadius = 25.0
-finishRadius = 25.0
-animateTime = 0.5
-attenuateConstant = 1.0
-attenuateLinear = 0.0
-attenuateQuadratic = 15.0
-lensFlare = 0
-
-[Flame]
-renderBase = "draw_twirl_trail"
-textureName = "blast.tga"
-textureBlend = "one one modulate"
-startColor = "45 3 202 255"
-finishColor = "10 5 202 0"
-startRadius = 0.35
-finishRadius = 0.05
-animateTime = 0.5
-rotationRate = 3.0
-emitDelay = 0.001
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "0.5 0.5 0.0"
-emitLife = 0.5
-bottomInteractsWithTerrain = false
-
-[Trail]
-renderBase = "draw_trail"
-textureName = "wispytrail.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "0 0 0 255"
-finishColor = "0 0 0 0"
-startRadius = 0.5
-finishRadius = 1.5
-segmentLength = 1.0
-segmentTime = 2.0
-textureRate = 0.5
-textureSpeed = 0.5
-
-[Smoke]
-renderBase = "draw_twirl_trail"
-emitDelay = 0.01
-emitDelayVar = 0.02
-emitVelocity = "0.0 0.0 0.0"
-emitVariance = "1.0 1.0 1.0"
-//emitInherit = "1.5 1.5 1.0"
-emitLife = 1.0
-textureName = "smoke.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "10 0 90 127"
-finishColor = "5 5 5 0"
-startRadius = 0.5
-finishRadius = 0.1
-animateTime = 1.0
-rotationRate = 1.0
-bottomInteractsWithTerrain = false

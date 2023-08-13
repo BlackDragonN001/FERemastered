@@ -3,50 +3,8 @@
 // =============
 
 [ExplosionClass]
-classLabel = "explosion"
+classLabel = "xcvctaxpl"
 
-///////////////////////////////
-
-particleTypes = 7
-
-particleClass1 = "xcvctaxpl.light"
-particleCount1 = 1
-particleVeloc1 = "0.0 0.0 0.0"
-
-particleClass2 = "xcvctaxpl.trail"
-particleCount2 = 10
-particleVeloc2 = "30.0 40.0 30.0"
-particleBias2 = "0.0 0.0 0.0"
-
-particleClass3 = "xcvctaxpl.trail"
-particleCount3 = 10
-particleVeloc3 = "30.0 30.0 30.0"
-particleBias3 = "0.0 10.0 0.0"
-
-particleClass4 = "xcvctaxpl.core"
-particleCount4 = 1
-particleVeloc4 = "0.0 0.0 0.0"
-
-particleClass5 = "xcvctaxpl.shock"
-particleCount5 = 1
-particleVeloc5 = "0.0 0.0 0.0"
-
-particleClass6 = "xcvctaxpl.flame"
-particleCount6 = 1
-particleVeloc6 = "0.0 1.0 0.0"
-particleBias6 = "0.0 2.0 0.0"
-
-particleClass7 = "xcvctaxpl.smoke"
-particleCount7 = 3
-particleVeloc7 = "10.0 3.0 10.0"
-particleBias7 = "0.0 10.0 0.0"
-particlePosVar7 = "2.0 0.0 2.0"
-
-
-///////////////////////////////
-
-explSound = "xmv1.wav"
-damageRadius = 50.0
 damageValue(N) = 700
 damageValue(L) = 600
 damageValue(H) = 500
@@ -57,5 +15,3 @@ damageValue(A) = 500
 kickRadius = 50.0
 kickOmega = 3.0
 kickVeloc = 4.5
-
-///////////////////////////////
