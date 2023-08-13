@@ -16,7 +16,7 @@ local BeamDirection = {
 }
 
 local _MegaBeam = {}
-	
+
 local MegaBeam = {
 	Handle = nil,
 	Timer = 0.0,
@@ -39,7 +39,7 @@ function _MegaBeam.InitialSetup()
 
 	-- If the beam timer is <= 0, set a new timer.
 	if MegaBeam.Timer <= 0 then 
-		ResetTimer();
+		_MegaBeam.ResetTimer();
 	end
 
 end
@@ -109,7 +109,7 @@ function _MegaBeam.StartBeam(Target)
 	MegaBeam.Direction = Dir;
 	
 	-- Start the Beam.
-	--ResetTimer();
+	--_MegaBeam.ResetTimer();
 	StartEarthQuake(10.0);
 	MegaBeam.Handle = BuildObject("mbbeam3", 15, MegaBeam.Pos);
 	MegaBeam.Active = true;
@@ -126,14 +126,14 @@ function _MegaBeam.StopBeam()
 	
 	-- Reset things
 	StopEarthQuake();
-	ResetTimer();
+	_MegaBeam.ResetTimer();
 	MegaBeam.Active = false;
 
 end
 
-function ResetTimer()
+function _MegaBeam.ResetTimer()
 
-	MegaBeam.Timer = SecondsToTurns(60.0) + SecondsToTurns(GetRandomFloat(120)); -- Start the beam every 1-3 minutes. 
+	MegaBeam.Timer = SecondsToTurns(60.0 + GetRandomFloat(120)); -- Start the beam every 1-3 minutes. 
 end
 
 

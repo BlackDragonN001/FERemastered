@@ -1,8 +1,8 @@
-----------------------------------------------------------------
+------------------------------------------------------------------
 -- FE edf01.lua Mission - Version 1.0 
 -- Date Modified: 11/01/2021
--- Summary: Mission script for the EDF01 Forgotten Enemies Mission.
-----------------------------------------------------------------
+-- Summary: Mission script for the EDF01 Forgotten Enemies Mission
+------------------------------------------------------------------
 
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 local _FECore = require('_FECore');
@@ -43,7 +43,6 @@ local M = {
 	APC1 = nil,
 	APC2 = nil,
 -- Ints
-	TPS = 10,
 	ScanPercentage = 0,	--Cthonian power source scan percentage
 	PowerScanned = 0,	--# of power sources scanned
 	SurvivorIndex1 = 0,
@@ -57,7 +56,7 @@ local M = {
 };
 
 function DefineRoutine(routineID, func, activeOnStart)
-	if routineID == nil or Routines[routineID]~= nil then
+	if routineID == nil or Routines[routineID] ~= nil then
 		error("DefineRoutine: duplicate or invalid routineID: "..tostring(routineID));
 	elseif func == nil then
 		error("DefineRoutine: func is nil for id "..tostring(routineID), 2);
@@ -105,9 +104,8 @@ end
 
 function InitialSetup()
 
-	_FECore.Start();
-	
-	M.TPS = EnableHighTPS();
+	_FECore.InitialSetup();
+
 	AllowRandomTracks(false);
 	DefineRoutines();
 	--Preload to reduce lag spikes when resources are used for the first time.
@@ -137,10 +135,10 @@ function InitialSetup()
 		"edf01_09.wav",
 		"edf01_10.wav",
 	};
-	for k,v in pairs(preloadODFs) do
+	for k, v in ipairs(preloadODFs) do
 		PreloadODF(v);
 	end
-	for k,v in pairs(preloadAudio) do
+	for k, v in ipairs(preloadAudio) do
 		PreloadAudioMessage(v);
 	end
 end
@@ -197,7 +195,7 @@ function Update()
 	_FECore.Update();
 
 	M.Player = GetPlayerHandle();
-	for routineID,r in pairs(Routines) do
+	for routineID, r in ipairs(Routines) do
 		if M.RoutineActive[routineID] and M.RoutineWakeTime[routineID] <= GetTime() then
 			r(routineID, M.RoutineState[routineID]);
 		end

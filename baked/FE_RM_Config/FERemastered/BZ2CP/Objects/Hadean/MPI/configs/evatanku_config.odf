@@ -1,0 +1,93 @@
+// Easy Difficulty
+[EasyWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.2
+
+weaponName1 = "apdragb"
+weaponName2 = "apdragb"
+weaponName3 = "apslagstab"
+weaponName4 = "apcphlas"
+weaponName5 = "apfbgun"
+
+WeaponMask1 = 1
+WeaponMask2 = 7
+
+[EasyWeaponSlot2]
+weaponName1 = "apslicer"
+weaponName2 = "apslicer"
+weaponName3 = "apshellgun"
+weaponName4 = "apshellgun"
+weaponName5 = "apeburst"
+weaponName6 = "apcphcg"
+
+[EasyWeaponSlot3]
+weaponName1 = "apslicer"
+weaponName2 = "apslicer"
+weaponName3 = "apshellgun"
+weaponName4 = "apshellgun"
+weaponName5 = "apeburst"
+weaponName6 = "apcphcg"
+
+// Medium Difficulty
+[MediumWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.2
+
+weaponName1 = "apdragb"
+weaponName2 = "apslagstab"
+weaponName3 = "apcphlas"
+weaponName4 = "apfbgun"
+
+WeaponMask1 = 1
+WeaponMask2 = 7
+
+[MediumWeaponSlot2]
+weaponName1 = "apslicer"
+weaponName2 = "apslicer"
+weaponName3 = "apcphcg"
+weaponName4 = "apshellgun"
+weaponName5 = "apshellgun"
+//weaponName6 = "apeburst"
+
+[MediumWeaponSlot3]
+weaponName1 = "apslicer"
+weaponName2 = "apslicer"
+weaponName3 = "apcphcg"
+weaponName4 = "apshellgun"
+weaponName5 = "apshellgun"
+//weaponName4 = "apeburst"
+
+// Hard Difficulty
+[HardWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.2
+
+weaponName1 = "apdragb"
+weaponName2 = "apdragb"
+weaponName3 = "apslagstab"
+weaponName4 = "apslagstab"
+weaponName5 = "apcphlas"
+weaponName6 = "apfbgun"
+weaponName7 = "apfbgun"
+weaponName8 = "apfbgun"
+
+WeaponMask1 = 1
+WeaponMask2 = 7
+
+[HardWeaponSlot2]
+weaponName1 = "apslicer"
+weaponName2 = "apslicer"
+weaponName3 = "apshellgun"
+weaponName4 = "apshellgun"
+weaponName5 = "apshellgun"
+weaponName6 = "apcphcg"
+//weaponName7 = "apeburst"
+
+[HardWeaponSlot3]
+weaponName1 = "apslicer"
+weaponName2 = "apslicer"
+weaponName3 = "apshellgun"
+weaponName4 = "apshellgun"
+weaponName5 = "apshellgun"
+weaponName6 = "apcphcg"
+//weaponName7 = "apeburst"

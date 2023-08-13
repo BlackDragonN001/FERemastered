@@ -1,0 +1,133 @@
+// Easy Difficulty
+[EasyWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.2
+
+weaponName1 = "apcphlaser"
+weaponName2 = "apcphlaser"
+weaponName3 = "apdragb"
+weaponName4 = "apslagstab"
+weaponName5 = "apfbgun"
+
+WeaponMask1 = 3
+WeaponMask2 = 3
+WeaponMask3 = 7
+WeaponMask4 = 27
+WeaponMask5 = 31
+
+[EasyWeaponSlot2]
+weaponName1 = "apcphlaser"
+weaponName2 = "apcphlaser"
+weaponName3 = "apdragb"
+weaponName4 = "apslagstab"
+weaponName5 = "apfbgun"
+
+[EasyWeaponSlot3]
+weaponName1 = "apcpworm"
+weaponName2 = "apsprink"
+weaponName3 = "aptagcr"
+
+[EasyWeaponSlot4]
+weaponName1 = "apshellgun"
+weaponName2 = "apshellgun"
+weaponName3 = "apcphcg"
+weaponName4 = "apslicer"
+weaponName5 = "apeburst"
+
+[EasyWeaponSlot5]
+weaponName1 = "apshellgun"
+weaponName2 = "apshellgun"
+weaponName3 = "apcphcg"
+weaponName4 = "apslicer"
+weaponName5 = "apeburst"
+
+
+// Medium Difficulty
+[MediumWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.2
+
+weaponName1 = "apcphlaser"
+weaponName2 = "apdragb"
+weaponName3 = "apslagstab"
+weaponName4 = "apfbgun"
+
+WeaponMask1 = 3
+WeaponMask2 = 7
+WeaponMask3 = 27
+WeaponMask4 = 31
+
+[MediumWeaponSlot2]
+weaponName1 = "apcphlaser"
+weaponName2 = "apdragb"
+weaponName3 = "apslagstab"
+weaponName4 = "apfbgun"
+
+[MediumWeaponSlot3]
+weaponName1 = "apcpworm"
+weaponName2 = "apsprink"
+weaponName3 = "aptagcr"
+
+[MediumWeaponSlot4]
+weaponName1 = "apshellgun"
+weaponName2 = "apcphcg"
+weaponName3 = "apslicer"
+weaponName4 = "apeburst"
+
+[MediumWeaponSlot5]
+weaponName1 = "apshellgun"
+weaponName2 = "apcphcg"
+weaponName3 = "apslicer"
+weaponName4 = "apeburst"
+
+// Hard Difficulty
+[HardWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.2
+
+weaponName1 = "apcphlaser"
+weaponName2 = "apcphlaser"
+weaponName3 = "apdragb"
+weaponName4 = "apdragb"
+weaponName5 = "apslagstab"
+weaponName6 = "apslagstab"
+weaponName7 = "apfbgun"
+weaponName8 = "apfbgun"
+weaponName9 = "apfbgun"
+
+WeaponMask1 = 3
+WeaponMask2 = 7
+WeaponMask3 = 27
+WeaponMask4 = 31
+
+[HardWeaponSlot2]
+weaponName1 = "apcphlaser"
+weaponName2 = "apcphlaser"
+weaponName3 = "apdragb"
+weaponName4 = "apdragb"
+weaponName5 = "apslagstab"
+weaponName6 = "apslagstab"
+weaponName7 = "apfbgun"
+weaponName8 = "apfbgun"
+weaponName9 = "apfbgun"
+
+[HardWeaponSlot3]
+weaponName1 = "apcpworm"
+weaponName2 = "apsprink"
+weaponName3 = "aptagcr"
+
+[HardWeaponSlot4]
+weaponName1 = "apshellgun"
+weaponName2 = "apshellgun"
+weaponName3 = "apslicer"
+weaponName4 = "apslicer"
+weaponName5 = "apeburst"
+weaponName6 = "apcphcg"
+
+[HardWeaponSlot5]
+weaponName1 = "apshellgun"
+weaponName2 = "apshellgun"
+weaponName3 = "apslicer"
+weaponName4 = "apslicer"
+weaponName5 = "apeburst"
+weaponName6 = "apcphcg"

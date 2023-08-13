@@ -1,0 +1,116 @@
+// Easy Difficulty
+[EasyWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.2
+
+weaponName1 = "apslagstab"
+weaponName2 = "apslagstab"
+weaponName3 = "apdragb"
+weaponName4 = "apfbgun"
+weaponName5 = "apcphlas"
+
+WeaponMask1 = 1
+WeaponMask2 = 7
+
+[EasyWeaponSlot2]
+weaponName1 = "apshellgun"
+weaponName2 = "apshellgun"
+weaponName3 = "apslicer"
+weaponName4 = "apeburst"
+weaponName5 = "apcphcg"
+
+[EasyWeaponSlot3]
+weaponName1 = "apshellgun"
+weaponName2 = "apshellgun"
+weaponName3 = "apslicer"
+weaponName4 = "apeburst"
+weaponName5 = "apcphcg"
+
+[EasyWeaponSlot4]
+weaponName1 = "approx"
+weaponName2 = "apflamemin"
+weaponName3 = "apcpmits"
+weaponName4 = "apcphan"
+weaponName5 = "apsnaremn"
+
+
+// Medium Difficulty
+[MediumWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.2
+
+weaponName1 = "apslagstab"
+weaponName2 = "apdragb"
+weaponName3 = "apfbgun"
+weaponName4 = "apcphlas"
+
+WeaponMask1 = 1
+WeaponMask2 = 7
+WeaponMask3 = 15
+
+[MediumWeaponSlot2]
+weaponName1 = "apshellgun"
+weaponName2 = "apshellgun"
+weaponName3 = "apslicer"
+weaponName4 = "apslicer"
+weaponName5 = "apeburst"
+weaponName6 = "apcphcg"
+
+[MediumWeaponSlot3]
+weaponName1 = "apshellgun"
+weaponName2 = "apshellgun"
+weaponName3 = "apslicer"
+weaponName4 = "apslicer"
+weaponName5 = "apeburst"
+weaponName6 = "apcphcg"
+
+[MediumWeaponSlot4]
+weaponName1 = "approx"
+weaponName2 = "apflamemin"
+weaponName3 = "apcpmits"
+weaponName4 = "apcphan"
+weaponName5 = "apsnaremn"
+
+
+// Hard Difficulty
+[HardWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.2
+
+weaponName1 = "apslagstab"
+weaponName2 = "apslagstab"
+weaponName3 = "apdragb"
+weaponName4 = "apdragb"
+weaponName5 = "apdragb"
+weaponName6 = "apfbgun"
+weaponName7 = "apfbgun"
+weaponName8 = "apcphlas"
+
+WeaponMask1 = 1
+WeaponMask2 = 7
+WeaponMask3 = 15
+
+[HardWeaponSlot2]
+weaponName1 = "apshellgun"
+weaponName2 = "apshellgun"
+weaponName3 = "apslicer"
+weaponName4 = "apslicer"
+weaponName5 = "apslicer"
+weaponName6 = "apeburst"
+weaponName7 = "apcphcg"
+
+[HardWeaponSlot3]
+weaponName1 = "apshellgun"
+weaponName2 = "apshellgun"
+weaponName3 = "apslicer"
+weaponName4 = "apslicer"
+weaponName5 = "apslicer"
+weaponName6 = "apeburst"
+weaponName7 = "apcphcg"
+
+[HardWeaponSlot4]
+weaponName1 = "approx"
+weaponName2 = "apflamemin"
+weaponName3 = "apcpmits"
+weaponName4 = "apcphan"
+weaponName5 = "apsnaremn"

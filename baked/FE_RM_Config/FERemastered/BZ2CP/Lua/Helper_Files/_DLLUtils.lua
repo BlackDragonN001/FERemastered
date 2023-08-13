@@ -200,6 +200,15 @@ end
 
 --[[-- FE Utils --]]--
 
+function DoEjectRatio(h)
+	local ratio = GetEjectRatio(h);
+	if ((ratio ~= nil) and (GetRandomFloat(1.0) > ratio)) then
+		return EJECTKILLRETCODES_DLLHANDLED;
+	else
+		return EJECTKILLRETCODES_DOEJECTPILOT;
+	end
+end
+
 --gets an object handle by label. If it doesn't exist, throws an error.
 function GetHandleOrDie(name)
 	return GetHandle(name) or error("Error: object '"..name.."' not found!");
@@ -401,6 +410,25 @@ end
 function TeleportOut(h)
 	BuildObject("teleportout", 0, BuildDirectionalMatrix(GetPosition(h)));
 	RemoveObject(h);
+end
+
+-- Spawns an object around a central position.
+function SpawnObjectAround(odf, team, where, minRadius, maxRadius)
+
+	local origin = SetVector(0, 0, 0);
+	
+	if type(where) == "string" then
+		origin = GetPosition("where", 0);
+	elseif IsAround(where) then
+		origin = GetPosition(where);
+	else
+		origin = where;
+	end
+	
+	local pos = GetPositionNear(origin, minRadius, maxRadius);
+	pos.y = TerrainFindFloor(pos.x, pos.z);
+	
+	return BuildObject(odf, team, pos);
 end
 
 return _DLLUtils;

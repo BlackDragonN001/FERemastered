@@ -292,7 +292,11 @@ function ObjectKilled(deadObj, killerObj)
 		end
 	end
 	
-	return 0;
+	if IsPlayer(deadObj) then
+		return EJECTKILLRETCODES_DOEJECTPILOT;
+	else
+		return DoEjectRatio(deadObj);
+	end
 end
 
 function DeleteObject(h)

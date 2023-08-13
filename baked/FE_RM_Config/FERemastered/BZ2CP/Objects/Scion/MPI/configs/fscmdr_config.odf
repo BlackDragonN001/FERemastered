@@ -1,0 +1,50 @@
+[EasyWeaponSlot1]
+weaponName1 = "fpbazo"
+weaponName2 = "fpsnip"
+weaponName3 = "fpsnip"
+
+SkipRequirements = true
+WeaponMask1 = 3
+WeaponMask2 = 7
+
+[EasyWeaponSlot2]
+weaponName1 = "fpjetp"
+weaponName2 = "fpgren"
+
+SkipRequirements = true
+
+[MediumWeaponSlot1]
+weaponName1 = "fpbazo"
+weaponName2 = "fpbazo"
+weaponName3 = "fpsnip"
+weaponName4 = "fpsnip"
+weaponName5 = "fpsnip"
+
+SkipRequirements = true
+WeaponMask1 = 3
+WeaponMask2 = 7
+WeaponMask3 = 7
+
+[MediumWeaponSlot2]
+weaponName1 = "fpjetp"
+weaponName2 = "fpgren"
+weaponName3 = "fpgren"
+
+SkipRequirements = true
+
+[HardWeaponSlot1]
+weaponName1 = "fpbazo"
+weaponName2 = "fpbazo"
+weaponName3 = "fpbazo"
+weaponName4 = "fpsnip"
+weaponName5 = "fpsnip"
+
+SkipRequirements = true
+WeaponMask1 = 7
+
+[HardWeaponSlot2]
+weaponName1 = "fpjetp"
+weaponName2 = "fpgren"
+weaponName3 = "fpgren"
+
+SkipRequirements = true

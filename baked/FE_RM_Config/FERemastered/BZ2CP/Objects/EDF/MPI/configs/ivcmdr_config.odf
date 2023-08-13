@@ -1,97 +1,118 @@
 [EasyWeaponSlot1]
-aiPatrolChance=0.2
-aiHuntChance=0.2
-aiServiceChance=0.4
+aiPatrolChance = 0.2
+aiHuntChance = 0.2
+aiServiceChance = 0.4
 
-weaponName1="apchain"
-weaponName2="apchain"
-weaponName3="aplase"
-weaponName4="appumm"
+weaponName1 = "apchain"
+weaponName2 = "apchain"
+weaponName3 = "aplase"
+weaponName4 = "appumm"
 
-WeaponMask1=3
-WeaponMask2=7
+SkipRequirements = true
+WeaponMask1 = 3
+WeaponMask2 = 7
 
 [EasyWeaponSlot2]
-weaponName1="apchain"
-weaponName2="apchain"
-weaponName3="aplase"
-weaponName4="appumm"
+weaponName1 = "apchain"
+weaponName2 = "apchain"
+weaponName3 = "aplase"
+weaponName4 = "appumm"
+
+SkipRequirements = true
 
 [EasyWeaponSlot3]
-weaponName1="apfafm"
-weaponName2="aptagg"
-weaponName3="apshdw"
+weaponName1 = "apfafm"
+weaponName2 = "aptagg"
+weaponName3 = "apshdw"
+
+SkipRequirements = true
 
 [EasyWeaponSlot4]
-weaponName1="approx"
-weaponName2="apredf"
-weaponName3="apmits"
-weaponName4="apphan"
+weaponName1 = "approx"
+weaponName2 = "apredf"
+weaponName3 = "apmits"
+weaponName4 = "apphan"
+
+SkipRequirements = true
 
 [MediumWeaponSlot1]
-aiPatrolChance=0.2
-aiHuntChance=0.2
-aiServiceChance=0.6
+aiPatrolChance = 0.2
+aiHuntChance = 0.2
+aiServiceChance = 0.6
 
-weaponName1="apchain"
-weaponName2="apchain"
-weaponName3="aplase"
-weaponName4="appumm"
+weaponName1 = "apchain"
+weaponName2 = "apchain"
+weaponName3 = "aplase"
+weaponName4 = "appumm"
 
-WeaponMask1=3
-WeaponMask2=7
-WeaponMask3=7
+SkipRequirements = true
+WeaponMask1 = 3
+WeaponMask2 = 7
+WeaponMask3 = 7
 
 [MediumWeaponSlot2]
-weaponName1="apchain"
-weaponName2="apchain"
-weaponName3="aplase"
-weaponName4="appumm"
+weaponName1 = "apchain"
+weaponName2 = "apchain"
+weaponName3 = "aplase"
+weaponName4 = "appumm"
+
+SkipRequirements = true
 
 [MediumWeaponSlot3]
-weaponName1="apfafm"
-weaponName2="aptagg"
-weaponName3="apshdw"
+weaponName1 = "apfafm"
+weaponName2 = "aptagg"
+weaponName3 = "apshdw"
+
+SkipRequirements = true
 
 [MediumWeaponSlot4]
-weaponName1="approx"
-weaponName2="apredf"
-weaponName3="apmits"
-weaponName4="apphan"
+weaponName1 = "approx"
+weaponName2 = "apredf"
+weaponName3 = "apmits"
+weaponName4 = "apphan"
+
+SkipRequirements = true
 
 [HardWeaponSlot1]
-aiPatrolChance=0.2
-aiHuntChance=0.2
-aiServiceChance=0.8
+aiPatrolChance = 0.2
+aiHuntChance = 0.2
+aiServiceChance = 0.8
 
-weaponName1="apchain"
-weaponName2="apchain"
-weaponName3="aplase"
-weaponName4="appumm"
-weaponName5="apchain"
-weaponName6="aplase"
+weaponName1 = "apchain"
+weaponName2 = "apchain"
+weaponName3 = "aplase"
+weaponName4 = "appumm"
+weaponName5 = "apchain"
+weaponName6 = "aplase"
 
-WeaponMask1=7
+SkipRequirements = true
+WeaponMask1 = 7
 
 [HardWeaponSlot2]
-weaponName1="apchain"
-weaponName2="apchain"
-weaponName3="aplase"
-weaponName4="appumm"
-weaponName5="apchain"
-weaponName6="aplase"
+weaponName1 = "apchain"
+weaponName2 = "apchain"
+weaponName3 = "aplase"
+weaponName4 = "appumm"
+weaponName5 = "apchain"
+weaponName6 = "aplase"
+
+SkipRequirements = true
 
 [HardWeaponSlot3]
-weaponName1="apfafm"
-weaponName2="apshdw"
-weaponName3="aptagg"
-weaponName4="apfafm"
-weaponName5="apshdw"
+weaponName1 = "apfafm"
+weaponName2 = "apshdw"
+weaponName3 = "aptagg"
+weaponName4 = "apfafm"
+weaponName5 = "apshdw"
+
+SkipRequirements = true
 
 [HardWeaponSlot4]
-weaponName1="approx"
-weaponName2="apphan"
-weaponName3="apredf"
-weaponName4="apmits"
-weaponName5="approx"
-weaponName6="apphan"
+weaponName1 = "approx"
+weaponName2 = "apphan"
+weaponName3 = "apredf"
+weaponName4 = "apmits"
+weaponName5 = "approx"
+weaponName6 = "apphan"
+
+SkipRequirements = true

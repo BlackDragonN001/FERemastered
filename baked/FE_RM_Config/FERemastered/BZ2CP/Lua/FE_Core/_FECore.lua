@@ -64,10 +64,9 @@ function _FECore.AddObject(h)
 
 	_PropHeightFix.AddObject(h);
 	
-	local Difficulty = IFace_GetInteger("options.play.difficulty");
-					
 	-- Setup Difficulty settings. Used in SP/IA only! (Individual mission scripts can override after BuildObject() call.
 	if not IsNetworkOn() then
+		local Difficulty = IFace_GetInteger("options.play.difficulty");
 		local Team = GetTeamNum(h);
 		
 		if (Team > 0) then
@@ -77,8 +76,8 @@ function _FECore.AddObject(h)
 				SetSkill(h, Difficulty + 1);
 			end
 		end
-	else -- For MPI, Add Turrets to custom Dispatcher. Leave SP missions alone.
-		AddToDispatch(h, 15.0, false, 0, (Difficulty < 2)); -- Based on Difficulty, if Hard, AI can Cloak on their own, and doesn't Flee.
+--	else -- For MPI, Add Turrets to custom Dispatcher. Leave SP missions alone.
+--		AddToDispatch(h, 15.0, false, 0, (Difficulty < 2)); -- Based on Difficulty, if Hard, AI can Cloak on their own, and doesn't Flee.
 	end
 
 	-- Special logic for evkami, kill the ejected pilot
@@ -101,6 +100,8 @@ function _FECore.Update()
 
 end
 
+
+-- Special logic for evkami, kamakazi unit. Don't let the Player eject.
 function _FECore.PlayerEjected(DeadObjectHandle)
 	-- Special logic for evkami, kill the ejected pilot
 	if GetODFBool(DeadObjectHandle, "CraftClass", "killEjectedPilot", false) then

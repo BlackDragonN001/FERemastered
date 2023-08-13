@@ -89,6 +89,11 @@ function InitialSetup()
 	
 	-- Do this for everyone as well.
 	CreateObjectives();
+	
+	Mission.m_IsMPI = (GetVarItemInt("network.session.ivar12") ~= 0);
+	if (Mission.m_IsMPI) then
+		_MPI.InitialSetup();
+	end
 
 end
 
@@ -97,11 +102,11 @@ function Save()
     return 
 		_FECore.Save(), 
 		_StartingVehicles.Save(), 
-		--_MPI.Save(), -- TODO: Write Me! -GBD
+		_MPI.Save(),
 		Mission;
 end
 
-function Load(FECoreData, StartingVehicleData, MissionData)	--MPIData
+function Load(FECoreData, StartingVehicleData, MissionData, MPIData)
 
 	m_GameTPS = EnableHighTPS();
 	SetAutoGroupUnits(false);
@@ -112,7 +117,7 @@ function Load(FECoreData, StartingVehicleData, MissionData)	--MPIData
 	-- Load sub moduels.
 	_FECore.Load(FECoreData);
 	_StartingVehicles.Load(StartingVehicleData);
-	--_MPI.Load(MPIData); -- TODO: Write Me! -GBD
+	_MPI.Load(MPIData);
 	
 	-- Load mission data.
 	Mission = MissionData;
@@ -133,11 +138,6 @@ function AddObject(h)
 
 	_FECore.AddObject(h);
 
-	-- Add MPI Support - AI_Unit
-	if (Mission.m_IsMPI) then
-		_MPI.AddObject(h);
-	end
-
 	local ODFName = GetCfg(h);
 	local ObjClass = GetClassLabel(h);
 
@@ -145,7 +145,9 @@ function AddObject(h)
 	if (ObjClass == "CLASS_TURRETTANK")
 	then
 		SetSkill(h, Mission.m_TurretAISkill);
-		return;
+		if (not Mission.m_IsMPI) then
+			return;
+		end
 	else
 		-- Not a turret. Use regular skill level
 		SetSkill(h, Mission.m_NonTurretAISkill);
@@ -156,11 +158,31 @@ function AddObject(h)
 	then
 		local Team = GetTeamNum(h);
 		-- If we're not tracking a recycler vehicle for this team right now, store it.
-		if(Mission.m_RecyclerHandles[Team] == 0) then
+		if(Mission.m_RecyclerHandles[Team] == nil) then
 			Mission.m_RecyclerHandles[Team] = h;
 		end
+		
+		if (not Mission.m_IsMPI) then
+			return;
+		end
+	end
+	
+	if (ObjClass == "CLASS_BOMBERBAY") and not IsTeamAllied(GetTeamNum(h), GetLocalPlayerTeamNumber()) then
+		AddToMessagesBox2(GetBZCCLocalizedString("mission", "Intel report: Bomber Bay!"));
+	end
+	
+	-- Add MPI Support - AI_Unit
+	if (Mission.m_IsMPI) then
+		_MPI.AddObject(h, Mission.m_CreatingStartingVehicles, Mission.m_ElapsedGameTime, ODFName, ObjClass);
 	end
 
+end
+
+function DeleteObject(h)
+
+	if (Mission.m_IsMPI) then
+		_MPI.DeleteObject(h);
+	end
 end
 
 function Start()
@@ -282,18 +304,26 @@ function Start()
 	SetAsUser(PlayerH, LocalTeamNum);
 	AddPilotByHandle(PlayerH);
 
+	-- MPI mode.
 	if (Mission.m_IsMPI) then
 		_MPI.Start();
+		
+		Mission.m_CreatingStartingVehicles = true;
+		
+		for i = 6, MAX_TEAMS-1 do
+			Mission.m_RecyclerHandles[i] = _MPI.SetupAITeam(i);
+			if (Mission.m_RecyclerHandles[i]) ~= nil then
+				Mission.m_TeamIsSetUp[i] = true;
+			end
+		end
+		
+		Mission.m_CreatingStartingVehicles = false;
 	end
 end
 
 function Update()
 
 	_FECore.Update();
-
-	if (Mission.m_IsMPI) then
-		_MPI.CustomUpdate();
-	end
 
 	-- If Recycler invulnerability is on, then does the job of it.
 	ExecuteRecyInvulnerability();
@@ -303,6 +333,11 @@ function Update()
 
 	-- Do this as well...
 	UpdateGameTime();
+	
+	-- MPI mode
+	if (Mission.m_IsMPI) then
+		_MPI.Update(Mission.m_ElapsedGameTime);
+	end
 
 end
 
@@ -322,7 +357,7 @@ function PlayerEjected(DeadObjectHandle)
 
 	local deadObjectTeam = GetTeamNum(DeadObjectHandle);
 	if(deadObjectTeam == 0) then
-		return DLLHandled; -- Invalid team. Do nothing
+		return EJECTKILLRETCODES_DLLHANDLED; -- Invalid team. Do nothing
 	end
 
 	-- Tweaked scoring - if a player bails out, no deaths/kills are registered.  But, their score should go down by the scrap cost of the vehicle they just left.
@@ -331,7 +366,7 @@ function PlayerEjected(DeadObjectHandle)
 		AddScore(DeadObjectHandle, -GetActualScrapCost(DeadObjectHandle));
 	end
 
-	return DoEjectPilot; -- Tell main code to allow the ejection
+	return EJECTKILLRETCODES_DOEJECTPILOT; -- Tell main code to allow the ejection
 	
 end
 
@@ -342,12 +377,12 @@ function ObjectKilled(DeadObjectHandle, KillersHandle)
 
 	-- Sanity check for multiworld
 	if(GetCurWorld() ~= 0) then
-		return DoEjectPilot;
+		return EJECTKILLRETCODES_DOEJECTPILOT;
 	end
 
 	local deadObjectTeam = GetTeamNum(DeadObjectHandle);
 	if(deadObjectTeam == 0) then
-		return DoEjectPilot; -- Someone on neutral team always gets default behavior
+		return EJECTKILLRETCODES_DOEJECTPILOT; -- Someone on neutral team always gets default behavior
 	end
 
 	-- If a person died, respawn them, etc
@@ -362,7 +397,7 @@ function ObjectSniped(DeadObjectHandle, KillersHandle)
 
 	if(GetCurWorld() ~= 0)
 	then
-		return DLLHandled;
+		return EJECTKILLRETCODES_DLLHANDLED;
 	end
 
 	-- Dead person means we must always respawn a new person
@@ -967,7 +1002,7 @@ function RespawnPilot(DeadObjectHandle, Team);
 		MakeInert(NewPerson);
 	end
 
-	return DLLHandled;
+	return EJECTKILLRETCODES_DLLHANDLED;
 end
 
 -- Helper function for ObjectKilled/Sniped
@@ -1074,16 +1109,16 @@ function DeadObject(DeadObjectHandle, KillersHandle, isDeadPerson, isDeadAI)
 			DoGameover(10.0);
 		end
 	else
-		return DoEjectPilot; -- Someone on neutral team always gets default behavior
+		return EJECTKILLRETCODES_DOEJECTPILOT; -- Someone on neutral team always gets default behavior
 	end
 
 	if(isDeadAI)
 	then
 		-- Snipe?
 		if(isDeadPerson) then
-			return DLLHandled;
+			return EJECTKILLRETCODES_DLLHANDLED;
 		else -- Nope. Eject.
-			return DoEjectPilot;
+			return DoEjectRatio(DeadObjectHandle); --EJECTKILLRETCODES_DOEJECTPILOT;
 		end
 	else  -- Not DeadAI, i.e. a human!
 		-- If this was a dead pilot, we need to build another pilot back
@@ -1093,7 +1128,7 @@ function DeadObject(DeadObjectHandle, KillersHandle, isDeadPerson, isDeadAI)
 		if(isDeadPerson) then
 			return RespawnPilot(DeadObjectHandle, deadObjectTeam);
 		else 
-			return DoEjectPilot;
+			return EJECTKILLRETCODES_DOEJECTPILOT;
 		end
 	end
 end

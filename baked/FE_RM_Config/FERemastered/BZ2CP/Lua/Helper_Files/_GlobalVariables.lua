@@ -53,10 +53,10 @@ PREPICKUPPOWERUP_ALLOW = 1 -- Allow the powerup to be picked up
 PRESNIPE_KILLPILOT = 0 -- Kill the pilot (1.0-1.3.6.4 default). Does still pass this to bullet hit code, where damage might also be applied
 PRESNIPE_ONLYBULLETHIT = 1 -- Do not kill the pilot. Does still pass this to bullet hit code, where damage might also be applied
 
-DoEjectPilot = 0 -- Do 'standard' eject
-DoRespawnSafest = 1 -- Respawn a 'PLAYER' at safest spawnpoint
-DLLHandled = 2 -- DLL handled actions. Do nothing ingame
-DoGameOver = 3 -- Game over, man.
+EJECTKILLRETCODES_DOEJECTPILOT = 0 -- Do 'standard' eject
+EJECTKILLRETCODES_DORESPAWNSAFEST = 1 -- Respawn a 'PLAYER' at safest spawnpoint
+EJECTKILLRETCODES_DLLHANDLED = 2 -- DLL handled actions. Do nothing ingame
+EJECTKILLRETCODES_DOGAMEOVER = 3 -- Game over, man.
 
 DMSubtype_Normal = 0
 DMSubtype_KOH = 1
@@ -106,8 +106,8 @@ TAUNTS_HumanShipDestroyed = 3
 TAUNTS_HumanRecyDestroyed = 4
 TAUNTS_CPURecyDestroyed = 5
 TAUNTS_Random = 6
-TAUNTS_Category7 = 7 -- Custom taunts headers, not used yet, but code now expects a max of 16 types for modding via Taunt ODFs. -GBD
-TAUNTS_Category8 = 8
+TAUNTS_NoPath = 7
+TAUNTS_Category8 = 8 -- Custom taunts headers, not used yet, but code now expects a max of 16 types for modding via Taunt ODFs. -GBD
 TAUNTS_Category9 = 9
 TAUNTS_Category10 = 10
 TAUNTS_Category11 = 11
@@ -128,6 +128,15 @@ CTRL_FIRE = bit32.lshift(1, 8)
 
 MAX_FLOAT = 3.402823466e+38
 
+AIPType0 = 0
+AIPType1 = 1
+AIPType2 = 2
+AIPType3 = 3
+AIPTypeA = 4
+AIPTypeL = 5
+AIPTypeS = 6
+MAX_AIP_TYPE = 7
+AIPTypeExtensions = '0123als'
 
 --[[ FE Custom Constants ]]--
 
@@ -137,6 +146,11 @@ PRETELEPORT_DENY = 2 -- Deny the teleport.
 
 POSTTELEPORT_DEFAULT = 0 -- Default, does a Goto to the Portal exit point.
 POSTTELEPORT_OVERRIDE = 1 -- Override Goto from Teleporter exit.
+
+DIFFICULTY_EASY = 1
+DIFFICULTY_MEDIUM = 2
+DIFFICULTY_HARD = 3
+DIFFICULTY_INSANE  = 4
 
 
 return _GlobalVariables;
