@@ -67,7 +67,7 @@ function SpawnWeaponCrates(difficulty, late_game)
 		elseif (difficulty ~= DIFFICULTY_HARD) then
 			CrateSpawner.CrateHandle[1] = SpawnObjectAround("ap8brock", Team, handle, MinRadiusAway, MaxRadiusAway);
 			CrateSpawner.CrateHandle[2] = SpawnObjectAround("approton", Team, handle, MinRadiusAway, MaxRadiusAway);
-			CrateSpawner.CrateHandle[3] = SpawnObjectAround("aphfire2", Team, handle, MinRadiusAway, MaxRadiusAway);
+			CrateSpawner.CrateHandle[3] = SpawnObjectAround("aphfire", Team, handle, MinRadiusAway, MaxRadiusAway);
 		end
 	end
 
