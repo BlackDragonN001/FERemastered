@@ -57,9 +57,6 @@ turretCount = 2
 turretName1 = "turret_y"
 turretName2 = "turret_x"
 
-[EntityClass]
-AllowHQShadows = true
-
 [BuildingClass]
 soundAmbient = "sgtow01.wav"
 
@@ -72,6 +69,7 @@ steerFactor = 1.0
 engageRange = 210
 
 CanBailout = false
+CanUserBailout = false
 
 [TurretCraftClass]
 powerTap1 = "hp_tap_1"
