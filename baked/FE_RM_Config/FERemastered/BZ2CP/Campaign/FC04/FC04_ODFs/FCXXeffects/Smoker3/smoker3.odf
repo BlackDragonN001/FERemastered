@@ -1,23 +1,8 @@
 [GameObjectClass]
-geometryName = "gravanchor.xsi"
-//geometryScale = 0.8
-classLabel = "i76building"
-scrapCost = 0
-scrapValue = 0
-maxHealth = 0
-maxAmmo = 1E6
-unitName = "Smoker 3"
-heatSignature = 0.0
-imageSignature = 0.0
-radarSignature = 0.0
-isAssault = 1
-armorClass = N
-canCollide = 0
-scanTeamLimit = 3 
-canInteract = 0
-ownsTerrain = 0
+classLabel = "smoker1"
 
-effectHard1 = "hp_weapon_1"
+unitName = "Smoker 3"
+
 effectName1 = "smoker3.render"
 
 [render]
@@ -27,12 +12,13 @@ emitDelayVar = 0.03
 emitVelocity = "0.0 1.0 0.0" // "2.0 3.0 0.0"
 emitVariance = "4.0 4.0 4.0"
 emitInherit = "0.3 0.3 0.3"
+emitPosVariance = "5.0 0.0 5.0"
 emitLife = 10.0 // 10
 textureName = "smoke.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "0 0 0 90"
 finishColor = "0 0 0 0"
-startRadius = 2
+startRadius = 2.0
 finishRadius = 5.0
 animateTime = 10.0
 rotationRate = 3.0

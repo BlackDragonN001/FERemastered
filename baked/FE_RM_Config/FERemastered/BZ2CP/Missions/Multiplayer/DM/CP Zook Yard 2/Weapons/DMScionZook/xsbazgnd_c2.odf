@@ -5,15 +5,6 @@
 [ExplosionClass]
 classLabel = "explosion"
 
-particleTypes = 2
-particleClass1 = "xsbazgnd_c2.core"
-particleCount1 = 1
-particleVeloc1 = "0.0 0.0 0.0"
-
-particleClass2 = "xsbazgnd_c2.center"
-particleCount2 = 1
-particleVeloc2 = "0.0 0.0 0.0"
-
 explSound = "jax02b.wav"
 
 damageRadius = 0.5
@@ -26,30 +17,25 @@ damageValue(S) = 0
 damageValue(D) = 0
 damageValue(A) = 0
 
-[Core]
-simulateBase = "sim_null"
-lifeTime = 1.0
-renderBase = "draw_sprite"
-spriteCenter.x = 0.0
-spriteCenter.y = 1.0
-textureName = "ground.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "100 100 110 127"
-finishColor = "200 200 240 0"
-startRadius = 0.2
-finishRadius = 1.5
-animateTime = 1.0
+particleTypes = 5
 
-[Center]
-simulateBase = "sim_null"
-lifeTime = 1.0
-renderBase = "draw_sprite"
-spriteCenter.x = 0.0
-spriteCenter.y = 1.0
-textureName = "ground.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "0 100 200 255"
-finishColor = "153 153 153 0"
-startRadius = 0.05
-finishRadius = 0.8
-animateTime = 1.0
+particleClass1 = "xsbazgnd_c.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xsbazgnd_c.char"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xsbazgnd_c.cloud"
+particleCount3 = 1
+particleVeloc3 = "0.0 10.0 0.0"
+
+particleClass4 = "xsbazgnd_c.flame"
+particleCount4 = 1
+particleVeloc4 = "0.0 1.0 0.0"
+particleBias4 = "0.0 0.0 0.0"
+
+particleClass5 = "xsbazgnd_c.shock"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"

@@ -1,0 +1,93 @@
+// ==================
+// MISSILE GROUND HIT
+// ==================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 15
+
+particleClass1 = "xfafgnd.ShockWave"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xfafgnd.ShockSphere"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "xfafgnd.LightFlash"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "xfafgnd.GroundChar"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "xfafgnd.GroundFlash"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+particleClass6 = "xfafgnd.LightFlare"
+particleCount6 = 1
+particleVeloc6 = "0.0 0.0 0.0"
+
+particleClass7 = "xfafgnd.Ash"
+particleCount7 = 5 //7
+particleVeloc7 = "30.0 24.0 30.0"
+particleBias7 = "0.0 12.0 0.0"
+particlePosVar7 = "3.0 0.0 3.0"
+
+particleClass8 = "xfafgnd.BlackChunks"
+particleCount8 = 6
+particleVeloc8 = "30.0 24.0 30.0"
+particleBias8 = "0.0 10.0 0.0"
+
+particleClass9 = "xfafgnd.Trails"
+particleCount9 = 8
+particleVeloc9 = "30.0 24.0 30.0"
+particleBias9 = "0.0 12.0 0.0"
+
+particleClass10 = "xfafgnd.FlameHeat"
+particleCount10 = 4
+particleVeloc10 = "5.0 5.0 5.0"
+particleBias10 = "0.0 4.5 0.0"
+particlePosVar10 = "3.0 0.0 3.0"
+
+particleClass11 = "xfafgnd.Flames"
+particleCount11 = 6 //11
+particleVeloc11 = "6.7 12.0 6.7"
+particleBias11 = "0.0 5.5 0.0"
+particlePosVar11 = "3.0 0.0 3.0"
+
+particleClass12 = "xfafgnd.ExplodeSprites"
+particleCount12 = 4
+particleVeloc12 = "2.7 2.0 2.7"
+particleBias12 = "0.0 1.5 0.0"
+
+particleClass13 = "xfafgnd.SmokePuffCloud"
+particleCount13 = 6 //10
+particleVeloc13 = "20.0 2.0 20.0"
+
+particleClass14 = "xfafgnd.FlameSmoke"
+particleCount14 = 6 //11
+particleVeloc14 = "7.0 17.0 7.0"
+particleBias14 = "0.0 12.0 0.0"
+
+particleClass15 = "xfafgnd.DirtKickup"
+particleCount15 = 5
+particleVeloc15 = "7.0 15.0 7.0"
+particleBias15 = "0.0 6.0 0.0"
+particlePosVar15 = "3.0 0.0 3.0"
+
+
+explSound = "xms2.wav"
+
+damageRadius = 10.0
+
+damageValue(N) = 100 // none
+damageValue(L) = 50 // light
+damageValue(H) = 10 // heavy
+
+damageValue(S) = 50 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 10 // absorbtion

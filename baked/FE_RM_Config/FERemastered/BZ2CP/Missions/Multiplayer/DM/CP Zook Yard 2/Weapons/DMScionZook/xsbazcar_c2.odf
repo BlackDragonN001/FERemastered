@@ -16,53 +16,24 @@ damageValue(S) = 0 // standard
 damageValue(D) = 0 // deflection
 damageValue(A) = 0 // absorbtion
 
-particleTypes = 3
+particleTypes = 4
 
-particleClass1 = "xsbazcar_c2.core"
+particleClass1 = "xsbazcar_c.core"
 particleCount1 = 1
 particleVeloc1 = "0.0 0.0 0.0"
+particleInherit1 = "0.5 0.5 0.5"
 
-particleClass2 = "xsbazcar_c2.puff"
-particleCount2 = 4
+particleClass2 = "xsbazcar_c.puff"
+particleCount2 = 2 //4
 particleVeloc2 = "5.0 5.0 5.0"
+particleInherit2 = "0.5 0.5 0.5"
 
-particleClass3 = "xsbazcar_c2.splat"
+particleClass3 = "xsbazcar_c.splat"
 particleCount3 = 1
 particleVeloc3 = "0.0 0.0 0.0"
+particleInherit3 = "0.5 0.5 0.5"
 
-[Core]
-simulateBase = "sim_null"
-lifeTime = 1.0
-renderBase = "draw_twirl"
-textureName = "blast.tga" // flame
-textureBlend = "one one modulate"
-startColor = "255 255 255 255"
-finishColor = "155 150 19 0"
-startRadius = 0.5
-finishRadius = 0.1
-animateTime = 1.0
-
-[Puff]
-simulateBase = "sim_smoke"
-lifeTime = 1.0
-renderBase = "draw_twirl"
-textureName = "flame.tga"
-textureBlend = "one one modulate"
-startColor = "255 0 0 255"
-finishColor = "50 40 30 0"
-startRadius = 0.5
-finishRadius = 2.0
-animateTime = 1.0
-rotaionRate = 10
-
-[Splat]
-simulateBase = "sim_null"
-lifeTime = 0.5
-renderBase = "draw_twirl"
-textureName = "ring.tga"
-textureBlend = "one one modulate"
-startColor = "255 200 180 255"
-finishColor = "255 0 0 0"
-startRadius = 0.1
-finishRadius = 0.75
-animateTime = 0.5
+particleClass4 = "xsbazcar_c.shock"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+particleInherit4 = "0.5 0.5 0.5"

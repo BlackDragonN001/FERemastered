@@ -1,0 +1,70 @@
+// ====================
+// MISSILE BUILDING HIT
+// ====================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 10
+
+particleClass1 = "xfafgnd.ShockSphere"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleInherit1 = "0.5 0.5 0.5"
+
+particleClass2 = "xfafgnd.LightFlash"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleInherit2 = "0.5 0.5 0.5"
+
+particleClass3 = "xfafgnd.LightFlare"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+particleInherit3 = "0.5 0.5 0.5"
+
+particleClass4 = "xfafgnd.Ash"
+particleCount4 = 7
+particleVeloc4 = "30.0 30.0 30.0"
+particleInherit4 = "0.8 0.8 0.8"
+
+particleClass5 = "xfafgnd.blackChunks"
+particleCount5 = 6
+particleVeloc5 = "30.0 30.0 30.0"
+particleInherit5 = "0.8 0.8 0.8"
+
+particleClass6 = "xfafgnd.Trails"
+particleCount6 = 8
+particleVeloc6 = "30.0 30.0 30.0"
+particleInherit6 = "1.0 1.0 1.0"
+
+particleClass7 = "xfafgnd.FlameHeat"
+particleCount7 = 4
+particleVeloc7 = "5.0 5.0 5.0"
+particleInherit7 = "0.5 0.5 0.5"
+
+particleClass8 = "xfafgnd.Flames"
+particleCount8 = 11
+particleVeloc8 = "8.7 8.7.0 8.7"
+particleInherit8 = "0.5 0.5 0.5"
+
+particleClass9 = "xfafgnd.ExplodeSprites"
+particleCount9 = 4
+particleVeloc9 = "2.7 2.7 2.7"
+particleInherit9 = "0.5 0.5 0.5"
+
+particleClass10 = "xfafgnd.SmokePuffCloud"
+particleCount10 = 4
+particleVeloc10 = "20.0 20.0 20.0"
+particleInherit10 = "0.25 0.25 0.25"
+
+explSound = "xms2.wav"
+damageRadius = 10.0
+
+damageValue(N) = 100 // none
+damageValue(L) = 50 // light
+damageValue(H) = 10 // heavy
+
+damageValue(S) = 50 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 10 // absorbtion
+

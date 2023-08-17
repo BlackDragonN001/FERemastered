@@ -1,0 +1,46 @@
+[GameObjectClass]
+
+classLabel = "smoker1"
+
+unitName = "Smoker 4"
+
+effectName1 = "smoker5.render2"
+
+effectHard2 = "hp_weapon_1" //"hp_emit_1"
+effectName2 = "smoker5.render"
+
+[render]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.01 //0.15 // 0.05
+emitDelayVar = 0.003 //0.03
+emitVelocity = "0.0 3.0 0.0" // "2.0 3.0 0.0"
+emitVariance = "10.0 4.0 10.0"
+emitInherit = "0.3 0.3 0.3"
+emitPosVariance = "160.0 0.0 160.0"
+emitLife = 7.0 // 10
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "40 40 40 160"
+finishColor = "10 10 10 0"
+startRadius = 4.0
+finishRadius = 8.0 //5.0
+animateTime = 7.0  //10
+rotationRate = 3.0
+
+[render2]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05 //0.2 // 0.06 // 0.05
+emitDelayVar = 0.005 //0.05
+emitVelocity = "0.0 5.0 0.0" // "2.0 3.0 0.0"
+emitVariance = "16.0 6.0 16.0"
+emitInherit = "0.5 0.5 0.5"
+emitPosVariance = "100.0 0.0 100.0"
+emitLife = 9.0 // 10
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "30 30 30 160"
+finishColor = "10 10 10 0"
+startRadius = 4.0
+finishRadius = 12.0
+animateTime = 9.0
+rotationRate = 3.0
