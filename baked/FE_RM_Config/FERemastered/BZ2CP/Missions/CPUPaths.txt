@@ -24,3 +24,86 @@ Custom:
 - jammer_scion
 - base_spire1_scion, base_spire2_scion, base_spire3_scion, base_spire4_scion,
 - ante_scion
+
+----------------------------------------------
+
+New AIP Paths (generic multi-team version)
+
+#_ = Team#. 
+Ending # = location #.  
+Locaiton 1-2 = EDF/Hadean/Cerberi, interchangable with eachother for alternate locations in aip variations.
+Location 3 = Scion, not adjacency requirements.
+
+#_RecyclerEnemy
+#_hold1 ... #_hold4
+stage1 ... stage3 = stage points. +3 for each AI team, Team 6 uses 1-3, Team 7 uses 4-6, etc
+
+#_fact1 ... #_fact3 = Factory
+#_armo1 ... #_armo3 = Armory
+#_sbay1 ... #_sbay3 = Service Bay
+#_pgen1 ... #_pgen9 = Power Generators (EDF/Cerberi/Hadean)
+#_cbun1 ... #_cbun8 = Comm Bunkers (EDF, Pgens for Hadeans)
+#_gtow1 ... #_gtow15 = Gun Towers (3 per cbun cluster for EDF/Hadean? first few numbers around base, higher numbers used for Defenders for Hadean?)
+#_tcen1 ... #_tcen3 = Tech Center (EDF/Hadean/Cerberi)
+#_train1 ... #_train3 = Traiing Center (EDF/Hadean)
+#_bomb1 ... #_bomb2 = Bomber Bay (EDF, Atnenna for Scion, Antimatter Generator for Cerberi (2x2 building)
+#_jamm1 ... #_jamm3 = Jammer (Scion, Cerberi)
+
+DLL Driven paths (optional):
+#MLay# = Minelayer paths (Cerberi?)
+#Patrol# = Patrol paths.
+
+------------------------------------------------------
+
+OLD MPI PATH POINT CONVERSION LIST:
+
+RecyclerEnemy -> 6_RecyclerEnemy
+
+ipgen1 -> 6_pgen1 (epgen1)
+ipgen2 -> 6_pgen2 (epgen2)
+ipgen3 -> 6_pgen3
+ipgen4 -> 6_pgen4
+ipgen5 -> 6_pgen5
+ipgen6 -> 6_pgen6
+ipgen7 -> 6_pgen7
+ipgen8 -> 6_pgen8
+ipgen9 -> 6_pgen9
+
+pgen1 -> 6_cbun2
+pgen2 -> 6_cbun3
+pgen3 -> 6_cbun4
+pgen4 -> 6_cbun5
+pgen5 -> 6_cbun6
+pgen6 -> 6_cbun7
+pgen7 -> 6_cbun8
+
+patrolBase1 -> 6Patrol1
+patrolBase2 -> 6Patrol2
+
+spike1 -> 6_gtow1
+spike2 -> 6_gtow2
+spike3 -> 6_gtow3
+gt4 -> 6_gtow4 //1.2 AIPs: Hadean Defenders, EDF Gun Towers or Scion Gun Spires built by AIP
+gt5 -> 6_gtow5
+gt6 -> 6_gtow6
+gt7 -> 6_gtow7
+gt8 -> 6_gtow8 //1.2 AIPs: Hadean Spike, EDF Gun Tower or Scion Gun Spire built by AIP during siege
+def1 -> 6_gtow9 // 1.2 AIPs: Hadean Defenders, EDF Gun Towers or Scion Gun Spires built by AIP
+def2 -> 6_gtow10
+def3 -> 6_gtow11
+gt4a -> 6_gtow12 //1.2 AIPs: Hadean Defenders, EDF Gun Towers or Scion Gun Spires built by AIP
+
+fact -> 6_fact1 or 6_fact2
+armo -> 6_armo1 or 6_armo2
+cbun -> 6_cbun1
+sbay -> 6_sbay1 or 6_sbay2
+train -> 6_train1 or 6_train2
+tcen -> 6_tcen1 or 6_tcen2
+bbay -> 6_bomb1 or 6_bomb2
+
+kiln -> 6_fact3
+antm -> 6_bomb1
+dowe -> 6_sbay3
+stro -> 6_armo3
+jamm1 -> 6_jamm1
+jamm2 -> 6_jamm2
