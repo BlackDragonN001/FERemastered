@@ -19,13 +19,15 @@ aiName2 = "AssaultTankProcess"
 heatSignature = 1.5
 imageSignature = 1.5
 radarSignature = 0.3
-needPilot = 0
+canSnipe = 0
 isAssault = 1
 armorClass = H
 
 /////// Requirements ///////////////////
 
-requireCount = 0
+requireCount = 1
+requireName1 = "cbarmo"
+requireText1 = "Build Dispenser Node"
 
 /////// Provides ///////////////////
 

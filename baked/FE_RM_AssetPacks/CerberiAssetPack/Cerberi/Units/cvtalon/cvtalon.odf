@@ -20,13 +20,15 @@ imageSignature = 40.0
 radarSignature = 10.0
 isAssault = 0
 armorClass = N
-needPilot = 0
+canSnipe = 0
 
 /////// Requirements ///////////////////
 
-requireCount = 1
+requireCount = 2
 requireName1 = "cbfact"
 requireText1 = "Build Crucible"
+requireName2 = "cbtcen"
+requireText2 = "Build Research Node"
 
 /////// Provides ///////////////////
 

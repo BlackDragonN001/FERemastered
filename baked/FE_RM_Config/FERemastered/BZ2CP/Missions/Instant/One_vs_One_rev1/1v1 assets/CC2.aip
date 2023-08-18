@@ -119,10 +119,10 @@ buildloc1 = "cgtow3"
 [plan16]
 plancondition = "Hisexists"
 planconditioncount = 1
-planconditionclass = "cvrbombP"
+planconditionclass = "cvrbomb"
 plantype = "attacker"
 planpriority = 125
-targettype = "cvrbombP"
+targettype = "cvrbomb"
 attacktype1 = "cvatank"
 
 [plan17]
@@ -160,7 +160,7 @@ planpriority = 171
 [plan21]
 plantype = "attacker"
 planpriority = 100
-targettype = "cbrecyP"
+targettype = "cbrecy"
 attacktype1 = "cvtank"
 
 [plan22]

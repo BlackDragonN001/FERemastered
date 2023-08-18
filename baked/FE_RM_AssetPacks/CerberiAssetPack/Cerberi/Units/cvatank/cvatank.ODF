@@ -28,15 +28,16 @@ heatSignature = 1.5
 imageSignature = 1.5
 radarSignature = 0.3
 canSnipe = 0
-needPilot = 0
 isAssault = 1
 armorClass = H
 
 /////// Requirements ///////////////////
 
-requireCount = 1
+requireCount = 2
 requireName1 = "cbfact"
 requireText1 = "Build Crucible"
+requireName2 = "cbsbay"
+requireText2 = "Build Regenerator"
 
 /////// Provides ///////////////////
 

@@ -159,12 +159,7 @@ function Update()
 
             local PlayerEntryH = GetPlayerHandle();
             local Temp = ("%svscout"):format(M.PlayerRace)
-            if M.PlayerRace == 'c' then
-                Temp = "cvscoutP"
-                SetAsUser(BuildObject(Temp, M.PlayerTeamNum, GetPositionNear(GetPosition("Player"), 25.0, 25.0)), M.PlayerTeamNum);
-            else
-                SetAsUser(BuildObject(Temp, M.PlayerTeamNum, GetPositionNear(GetPosition("Player"), 25.0, 25.0)), M.PlayerTeamNum);
-            end
+            SetAsUser(BuildObject(Temp, M.PlayerTeamNum, GetPositionNear(GetPosition("Player"), 25.0, 25.0)), M.PlayerTeamNum);
 
             RemoveObject(PlayerEntryH);         
 

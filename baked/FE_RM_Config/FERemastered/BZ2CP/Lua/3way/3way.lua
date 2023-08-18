@@ -57,19 +57,18 @@ function InitialSetup()
 end
 
 function Start()
-    M.TWPlayerRace = IFace_GetInteger("3way.race");
+    M.PlayerRace = string.char(IFace_GetInteger("options.instant.myrace"));
 
-    M.TWPStartingForce = IFace_GetInteger("3way.startingforce");
+    M.TWPStartingForce = IFace_GetInteger("options.instant.playerforce");
 
-    M.TWEDFScrapCheat = IFace_GetInteger("3way.team1cheat");
-    M.TWScionScrapCheat = IFace_GetInteger("3way.team2cheat");
-    M.TWPlayerCheat = IFace_GetInteger("3way.playercheat");
+    M.TWPlayerCheat = IFace_GetInteger("options.instant.int1");
+    M.TWEnemyTeam1Cheat = IFace_GetInteger("options.instant.int2");
+    M.TWEnemyTeam2Cheat = IFace_GetInteger("options.instant.int3");
 
-    M.TWKeepBasePools = IFace_GetInteger("3way.keepbasepools");
-    M.KeepPool = IFace_GetInteger("3way.keeppools");
+    M.TWRemoveBasePools = IFace_GetInteger("options.instant.int4");
 
-    M.EnemyTeam1Race = IFace_GetInteger("3way.team1_race");
-    M.EnemyTeam2Race = IFace_GetInteger("3way.team2_race");
+    M.EnemyTeam1Race = string.char(IFace_GetInteger("options.instant.hisrace"));
+    M.EnemyTeam2Race = string.char(IFace_GetInteger("options.instant.int0"));
 end
 
 function AddObject(h)
@@ -134,76 +133,52 @@ function Update()
 
     -- Vars
     M.Player = GetPlayerHandle();
-    local playerStart = GetPositionNear(GetPosition("Player"), 25.0, 25.0);
 
     if (M.MissionTimer < GetTime()) then
         if (M.MissionState == 0) then
-		    -- Set Enemy Team Race Letter
-		    if (M.EnemyTeam1Race == 0) then
-		    	M.EnemyTeam1Race = "i";
-		    elseif (M.EnemyTeam1Race == 1) then
-				M.EnemyTeam1Race = "f";
-		    elseif (M.EnemyTeam1Race == 2) then
-				M.EnemyTeam1Race = "e";
-		    else
-				M.EnemyTeam1Race = "c";
-		    end
-
-		    if (M.EnemyTeam2Race == 0) then
-		    	M.EnemyTeam2Race = "i";
-		    elseif (M.EnemyTeam2Race == 1) then
-				M.EnemyTeam2Race = "f";
-		    elseif (M.EnemyTeam2Race == 2) then
-				M.EnemyTeam2Race = "e";
-		    else
-				M.EnemyTeam2Race = "c";
-		    end
-
-            if (M.TWPlayerRace == 0) then
-                M.PlayerRecy = BuildObject("ivrecy", M.PlayerTeamNum, "Player");
-                M.PlayerRace = 'i';
-            elseif (M.TWPlayerRace == 1) then
-                M.PlayerRecy = BuildObject("fvrecy", M.PlayerTeamNum, "Player");
-                M.PlayerRace = 'f';
-            elseif (M.TWPlayerRace == 2) then
-                M.PlayerRecy = BuildObject("evrecy", M.PlayerTeamNum, "Player");
-                M.PlayerRace = 'e';
-            elseif (M.TWPlayerRace == 3) then
-                M.PlayerRecy = BuildObject("cvrecyP", M.PlayerTeamNum, "Player");
-                M.PlayerRace = 'c';
-            end
-
+			
+			  local playerStart = GetPositionNear(GetPosition("Player"), 25.0, 25.0);
+			
+			-- Spawn Player Recycler.
+			local chosenPlayerRecy = IFace_GetString("options.instant.string1");
+			chosenPlayerRecy = M.PlayerRace .. chosenPlayerRecy:sub(2);
+			if (M.PlayerRace == "c") then
+				chosenPlayerRecy = "cvrecy02";
+			end
+			M.PlayerRecy = BuildObject(chosenPlayerRecy, M.PlayerTeamNum, "Player");
             SetGroup(M.PlayerRecy, 1);
-
+			SetScrap(M.PlayerTeamNum, 40);
+			
+			-- Spawn Player.
             local PlayerEntryH = GetPlayerHandle();
             local Temp = ("%svscout"):format(M.PlayerRace)
-            if M.PlayerRace == 'c' then
-                Temp = "cvscoutP"
-                SetAsUser(BuildObject(Temp, M.PlayerTeamNum, playerStart), M.PlayerTeamNum);
-            else
-                SetAsUser(BuildObject(Temp, M.PlayerTeamNum, playerStart), M.PlayerTeamNum);
-            end
-
+            SetAsUser(BuildObject(Temp, M.PlayerTeamNum, playerStart), M.PlayerTeamNum);
             RemoveObject(PlayerEntryH);         
 
+			-- Spawn CPU 1
+			local chosenEnemy1Recy = IFace_GetString("options.instant.string2");
+			chosenEnemy1Recy = M.EnemyTeam1Race .. chosenEnemy1Recy:sub(2);
             if (M.EnemyTeam1Race == "c") then
-                M.EnemyTeam1Recy = BuildObject("cvrecy02", M.EnemyTeam1, "EnemyTeam1");
-            else
-                local Temp = ("%svrecy"):format(M.EnemyTeam1Race)
-                M.EnemyTeam1Recy = BuildObject(Temp, M.EnemyTeam1, "EnemyTeam1");
-            end
-
-            if (M.EnemyTeam2Race == "c") then
-                M.EnemyTeam2Recy = BuildObject("cvrecy02", M.EnemyTeam2, "EnemyTeam2");
-            else
-                local Temp = ("%svrecy"):format(M.EnemyTeam2Race)
-                M.EnemyTeam2Recy = BuildObject(Temp, M.EnemyTeam2, "EnemyTeam2");
-            end
-            
-            SetScrap(M.PlayerTeamNum, 40);
+				chosenEnemy1Recy = "cvrecy02";
+			end
+            M.EnemyTeam1Recy = BuildObject(chosenEnemy1Recy, M.EnemyTeam1, "EnemyTeam1");
             SetScrap(M.EnemyTeam1, 40);
-            SetScrap(M.EnemyTeam2, 40);
-            
+			local AIPFile = ("%s_CPU_1.aip"):format(M.EnemyTeam1Race);
+            SetAIP(AIPFile, M.EnemyTeam1);
+			
+			-- Spawn CPU 2
+			if (M.EnemyTeam2Race ~= '') then
+				local chosenEnemy2Recy = IFace_GetString("options.instant.string2");
+				chosenEnemy2Recy = M.EnemyTeam2Race .. chosenEnemy2Recy:sub(2);
+				if (M.EnemyTeam2Race == "c") then
+					chosenEnemy2Recy = "cvrecy02";
+				end
+				M.EnemyTeam2Recy = BuildObject(chosenEnemy2Recy, M.EnemyTeam2, "EnemyTeam2");
+				SetScrap(M.EnemyTeam2, 40);	
+				AIPFile = ("%s_CPU_2.aip"):format(M.EnemyTeam2Race);
+				SetAIP(AIPFile, M.EnemyTeam2);
+			end
+			
             M.MissionState = M.MissionState + 1;
         elseif (M.MissionState == 1) then
             local turret = ("%svturr"):format(M.PlayerRace);
@@ -228,12 +203,6 @@ function Update()
                     SetGroup(BuildObject(scout, M.PlayerTeamNum, playerStart), 4);
                 end
             end
-
-            local AIPFile = ("%s_CPU_1.aip"):format(M.EnemyTeam1Race);
-            SetAIP(AIPFile, M.EnemyTeam1);
-
-            AIPFile = ("%s_CPU_2.aip"):format(M.EnemyTeam2Race);
-            SetAIP(AIPFile, M.EnemyTeam2);
 
             M.MissionState = M.MissionState + 1;
         end

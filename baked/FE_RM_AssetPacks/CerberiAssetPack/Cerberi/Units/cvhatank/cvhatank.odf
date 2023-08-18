@@ -20,13 +20,17 @@ radarSignature = 5.0
 isAssault = 1
 armorClass = H
 
-needPilot = 0
+canSnipe = 0
 	
 /////// Requirements ///////////////////
 
-requireCount = 1
+requireCount = 3
 requireName1 = "cbfact"
 requireText1 = "Build Crucible"
+requireName2 = "cbcbun"
+requireText2 = "Build Uplink Array"
+requireName3 = "cbsbay"
+requireText3 = "Build Regenerator"
 
 /////// Provides ///////////////////
 
