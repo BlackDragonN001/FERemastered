@@ -104,22 +104,26 @@ end
 -- Special logic for evkami, kamakazi unit. Don't let the Player eject.
 function _FECore.PlayerEjected(DeadObjectHandle)
 	-- Special logic for evkami, kill the ejected pilot
-	if GetODFBool(DeadObjectHandle, "CraftClass", "killEjectedPilot", false) then
-		KillEjectedPilot = true -- AddObject checks this value
-		return 0 -- EJECTKILLRETCODES_DOEJECTPILOT; triggers AddObject on the ejected pilot's handle
+	if ShouldEjectPilot(DeadObjectHandle) then
+		KillEjectedPilot = true; -- AddObject checks this value
+		return EJECTKILLRETCODES_DOEJECTPILOT; -- triggers AddObject on the ejected pilot's handle
 	else	
-		return nil
+		return nil;
 	end
 end
 
 function _FECore.ObjectKilled(DeadObjectHandle, KillersHandle)
 	-- Special logic for evkami, kill the ejected pilot
-	if GetODFBool(DeadObjectHandle, "CraftClass", "killEjectedPilot", false) then
-		KillEjectedPilot = true -- AddObject checks this value
-		return 0 -- EJECTKILLRETCODES_DOEJECTPILOT; triggers AddObject on the ejected pilot's handle
+	if ShouldEjectPilot(DeadObjectHandle) then
+		KillEjectedPilot = true; -- AddObject checks this value
+		return EJECTKILLRETCODES_DOEJECTPILOT; -- triggers AddObject on the ejected pilot's handle
 	else	
-		return nil
+		return nil;
 	end
+end
+
+function ShouldEjectPilot(h)
+	return GetODFBool(h, "CraftClass", "killEjectedPilot", false);
 end
 
 function _FECore.AudioWithSubtitles(clip)
