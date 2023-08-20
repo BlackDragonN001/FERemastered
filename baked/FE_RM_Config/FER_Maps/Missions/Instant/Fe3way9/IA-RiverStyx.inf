@@ -10,8 +10,11 @@ Aware_v13 = true
 // is used instead. It's recommended to have some stock values in
 // here, in case some custom map just set the values to really weird
 // values
-RaceHuman = 105 // 105 = ascii 'i' for ISDF, 102 = 'f' for Scion
-RaceCPU = 102 // 105 = ascii 'i' for ISDF, 102 = 'f' for Scion
+RaceHuman = 105 // 105 = ascii 'i' for ISDF, 102 = 'f' for Scion, 101 = 'e' for Hadean, 99 = 'c' for Cerberi
+RaceCPU = 102 // 105 = ascii 'i' for ISDF, 102 = 'f' for Scion, 101 = 'e' for Hadean, 99 = 'c' for Cerberi
+
+// 3rd AI Race identifier:
+options_instant_int0 = 0 // 105 = ascii 'i' for ISDF, 102 = 'f' for Scion, 101 = 'e' for Hadean, 99 = 'c' for Cerberi
 
 // Items below are stubs. Uncomment the lines (remove the leading //)
 // for them to take effect.
@@ -38,6 +41,8 @@ ExtraOptions = "3way"
 options_instant_string0 = "stock_"  // Custom AIP base name, e.g. "stock_" .
 options_instant_string1 = "ivrecy"    // Human Starting recycler
 options_instant_string2 = "ivrecycpu" // CPU starting recycler
+
+options_instant_int4 = 1 // Remove Base Pools: 0 = none (very easy start), 1 = Player only, 2 = All.
 
 // Other values, stubbed in to show how to specify them.
 //options_instant_bool2 = truenet
