@@ -202,19 +202,19 @@ function Start()
 	-- Skip ivar2-- player limit. Assume the netmgr takes care of that.
 	-- ivar4 (vehicle prefs 1) read elsewhere.
 	Mission.m_StartingVehiclesMask = GetVarItemInt("network.session.ivar7");
+	
+	Mission.m_IsMPI = (GetVarItemInt("network.session.ivar12") ~= 0);
 
 	Mission.m_bIsFriendlyFireOn = (GetVarItemInt("network.session.ivar32") ~= 0);
 
-	-- Override the bitfields set in the shell, so that you start with
-	-- 2 turrets, or nothing.
-	if(Mission.m_StartingVehiclesMask ~= 0) then
+	-- Override the bitfields set in the shell, so that you start with 2 turrets, or nothing.
+	if((not Mission.m_IsMPI) and (Mission.m_StartingVehiclesMask ~= 0)) then
 		Mission.m_StartingVehiclesMask = 3;
 	end
 
 	Mission.m_PointsForAIKill = (GetVarItemInt("network.session.ivar14") ~= 0);
 	Mission.m_KillForAIKill = (GetVarItemInt("network.session.ivar15") ~= 0);
 	Mission.m_RespawnWithSniper = (GetVarItemInt("network.session.ivar16") ~= 0);
-	Mission.m_IsMPI = (GetVarItemInt("network.session.ivar12") ~= 0);
 
 	Mission.m_TurretAISkill = GetVarItemInt("network.session.ivar17");
 	if(Mission.m_TurretAISkill < 0) then
@@ -310,7 +310,7 @@ function Start()
 		
 		Mission.m_CreatingStartingVehicles = true;
 		
-		for i = 6, MAX_TEAMS-1 do
+		for i = CPU_START_TEAM, MAX_TEAMS-1 do
 			Mission.m_RecyclerHandles[i] = _MPI.SetupAITeam(i);
 			if (Mission.m_RecyclerHandles[i]) ~= nil then
 				Mission.m_TeamIsSetUp[i] = true;
@@ -366,7 +366,7 @@ function PlayerEjected(DeadObjectHandle)
 		AddScore(DeadObjectHandle, -GetActualScrapCost(DeadObjectHandle));
 	end
 
-	return EJECTKILLRETCODES_DOEJECTPILOT; -- Tell main code to allow the ejection
+	return _FECore.PlayerEjected(DeadObjectHandle) or EJECTKILLRETCODES_DOEJECTPILOT; -- Tell main code to allow the ejection
 	
 end
 
@@ -1118,7 +1118,7 @@ function DeadObject(DeadObjectHandle, KillersHandle, isDeadPerson, isDeadAI)
 		if(isDeadPerson) then
 			return EJECTKILLRETCODES_DLLHANDLED;
 		else -- Nope. Eject.
-			return DoEjectRatio(DeadObjectHandle); --EJECTKILLRETCODES_DOEJECTPILOT;
+			return _FECore.ObjectKilled(deadObjectHandle, killersHandle) or DoEjectRatio(DeadObjectHandle); --EJECTKILLRETCODES_DOEJECTPILOT;
 		end
 	else  -- Not DeadAI, i.e. a human!
 		-- If this was a dead pilot, we need to build another pilot back
@@ -1128,7 +1128,7 @@ function DeadObject(DeadObjectHandle, KillersHandle, isDeadPerson, isDeadAI)
 		if(isDeadPerson) then
 			return RespawnPilot(DeadObjectHandle, deadObjectTeam);
 		else 
-			return EJECTKILLRETCODES_DOEJECTPILOT;
+			return _FECore.ObjectKilled(deadObjectHandle, killersHandle) or EJECTKILLRETCODES_DOEJECTPILOT;
 		end
 	end
 end

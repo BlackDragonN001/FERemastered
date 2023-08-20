@@ -55,19 +55,19 @@ function _RampageUnits.Start()
 
 end
 
-function _RampageUnits.Update(time_count, NumHumans, Difficulty, siege_on, late_game)
+function _RampageUnits.Update(NumHumans, Difficulty, siege_on, late_game)
 
 	if Rampage.UnitLimit <= 0 then
 		return;
 	end
 	
 	-- time to kick into gear and spawn some units
-	if (time_count == Rampage.Timer and (Rampage.UnitLimit > 0)) then
+	if (GetTurnCount() == Rampage.Timer and (Rampage.UnitLimit > 0)) then
 		-- Speed things up a bit
 		if (siege_on) then
-			Rampage.Timer = (time_count + SecondsToTurns(240)) - SecondsToTurns(((NumHumans - 1) * 40)) + ((time_count / SecondsToTurns(1)) % SecondsToTurns(60));
+			Rampage.Timer = (GetTurnCount() + SecondsToTurns(240)) - SecondsToTurns(((NumHumans - 1) * 40)) + ((GetTurnCount() / TPS) % SecondsToTurns(60));
 		else -- Set next normal spawn time
-			Rampage.Timer = (time_count + SecondsToTurns(540)) - SecondsToTurns(((NumHumans - 1) * 90)) + ((time_count / SecondsToTurns(1)) % SecondsToTurns(60));
+			Rampage.Timer = (GetTurnCount() + SecondsToTurns(540)) - SecondsToTurns(((NumHumans - 1) * 90)) + ((GetTurnCount() / TPS) % SecondsToTurns(60));
 		end
 
 		Rampage.SpawnTrigger = true;	-- Trigger spawning
@@ -109,7 +109,7 @@ function _RampageUnits.Update(time_count, NumHumans, Difficulty, siege_on, late_
 						SpawnRampage ("Rampage1", Rampage.UnitsSpawned);
 				end
 			end
-		elseif (time_count < SecondsToTurns(1800)) then -- less than 30 minutes in
+		elseif (GetTurnCount() < SecondsToTurns(1800)) then -- less than 30 minutes in
 			if (not late_game) then
 			
 				if Difficulty == DIFFICULTY_HARD then
@@ -125,7 +125,7 @@ function _RampageUnits.Update(time_count, NumHumans, Difficulty, siege_on, late_
 					SpawnRampage ("Rampage1", Rampage.UnitsSpawned);
 				end
 			end
-		elseif (time_count < SecondsToTurns(3600)) then -- less than 60 minutes in
+		elseif (GetTurnCount() < SecondsToTurns(3600)) then -- less than 60 minutes in
 		
 			if (not late_game) then
 			

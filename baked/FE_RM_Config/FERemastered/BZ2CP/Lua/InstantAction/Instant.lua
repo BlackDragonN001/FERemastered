@@ -35,9 +35,7 @@ local StartingVehicleTable =
 local Mission = 
 {
 	m_ElapsedGameTime = 0, -- turn counter.
-    m_HumanTeamNum = 1,     -- Human team.
 	m_HumanRace = 'i', 	-- CPU Race.
-    m_CPUTeamNum = 6,     -- CPU team.
 	--m_CPURace = 'i', 	-- CPU Race.
     --m_Difficulty = 0,     -- Chosen in IA shell.
 	m_RespawnEnabled = 0, 	-- Chosen in IA shell.
@@ -49,6 +47,7 @@ local Mission =
 	m_SentFirstCPUScavToPool = false, 	-- To help the CPU, this flag will send the first spawned CPU Scav to a pool before Recycler deployment.
 	m_BuildingStartingUnits = false, 	-- Halt the dispatcher until we're ready. This must be Saved so things will work correctly on a Load.
 	m_EnemyRecycler = nil, -- CPU Recycler.
+	m_EnemyRecycler2 = nil, -- If it's 3 way.
 	m_Recycler = nil, -- Human Recycler.
 	m_MapPools = {}, 	-- Keep track of the maps pools.
 }
@@ -111,10 +110,10 @@ function AddObject(h)
 	local ObjClass = GetClassLabel(h);
 
 	-- Player stuff.
-	if (teamNum == Mission.m_HumanTeamNum) then
+	if (teamNum == PLAYER_START_TEAM) then
 		SetSkill(h, 3);
     -- Check CPU stuff.
-    elseif (teamNum == Mission.m_CPUTeamNum) then		
+    elseif (teamNum >= CPU_START_TEAM) then
 
 		-- CPU "Commander" pilots.
 		if (string.sub(ODFName, 3, 9) == "cmdr_c") then
@@ -147,8 +146,9 @@ end
 function Start()
 	-- Teams for Stats...
 	-- TODO? expose to Options? -GBD
-	SetTeamNameForStat(Mission.m_HumanTeamNum, "Humans");
-	SetTeamNameForStat(Mission.m_CPUTeamNum, "Computer");
+	SetTeamNameForStat(PLAYER_START_TEAM, "Humans");
+	SetTeamNameForStat(CPU_START_TEAM, "Computer");
+	SetTeamNameForStat(CPU_START_TEAM + CPU2_TEAM_OFFSET, "Computer");
 	-- SetTauntCPUName(""); -- To set the CPU Taunt team name to something custom. -GBD
 
 	-- Get our difficulty.
@@ -164,10 +164,9 @@ function Start()
     -- Rebuild the player.
 	local LocalTeamNum = GetLocalPlayerTeamNumber();
 	local PlayerH = SetupPlayer(LocalTeamNum);
-
 	SetAsUser(PlayerH, LocalTeamNum);
 	AddPilotByHandle(PlayerH);
-		
+
 	-- Put up Objectives.
 	CreateObjectives();
 	
@@ -176,7 +175,12 @@ function Start()
 	
 	-- Spawn the CPU.
 	Mission.m_BuildingStartingUnits = true;
-	Mission.m_EnemyRecycler = _MPI.SetupAITeam(Mission.m_CPUTeamNum);
+	Mission.m_EnemyRecycler = _MPI.SetupAITeam(CPU_START_TEAM);
+	      
+	if (IFace_GetInteger("options.instant.int0") ~= 0) then
+		Mission.m_EnemyRecycler2 = _MPI.SetupAITeam(CPU_START_TEAM + CPU2_TEAM_OFFSET);
+	end
+	
 	Mission.m_BuildingStartingUnits = false;
 end
 
@@ -199,20 +203,56 @@ end
 -- Handle win conditions.
 function TestGameOver()
 	if (not Mission.m_GameOver) then
-		if (not IsAround(Mission.m_EnemyRecycler)) then	
-			local tempH = GetObjectByTeamSlot(Mission.m_CPUTeamNum, DLL_TEAM_SLOT_RECYCLER);
-			
-			if (tempH ~= nil) then
-				Mission.m_EnemyRecycler = tempH; -- Save it.
-			else
-				DoTaunt(TAUNTS_CPURecyDestroyed);
-				SucceedMission(GetTime() + 5.0, "instantw.txt");
-				Mission.m_GameOver = true;
+	
+		-- Loop over AI teams
+		local AITeamsAlive = false;
+		for i = CPU_START_TEAM, MAX_TEAMS-1 do
+			-- AI Team 1.
+			if i == CPU_START_TEAM then
+				if (Mission.m_EnemyRecycler ~= nil) then
+					if IsAround(Mission.m_EnemyRecycler) then
+						AITeamsAlive = true;
+						break;
+					else
+						local tempH = GetObjectByTeamSlot(i, DLL_TEAM_SLOT_RECYCLER);
+
+						if (tempH ~= nil) then
+							Mission.m_EnemyRecycler = tempH; -- Save it.
+							AITeamsAlive = true;
+							break;
+						else
+							DoTaunt(TAUNTS_CPURecyDestroyed);
+						end
+					end
+				end
+			-- AI Team 2
+			elseif i == CPU_START_TEAM + CPU2_TEAM_OFFSET then
+				if (Mission.m_EnemyRecycler2 ~= nil) then
+					 if IsAround(Mission.m_EnemyRecycler2) then	
+						AITeamsAlive = true;
+						break;
+					else
+						local tempH = GetObjectByTeamSlot(i, DLL_TEAM_SLOT_RECYCLER);
+
+						if (tempH ~= nil) then
+							Mission.m_EnemyRecycler2 = tempH; -- Save it.
+							AITeamsAlive = true;
+							break;
+						else
+							DoTaunt(TAUNTS_CPURecyDestroyed);
+						end
+					end
+				end
 			end
 		end
 		
+		if not AITeamsAlive then
+			SucceedMission(GetTime() + 5.0, "instantw.txt");
+			Mission.m_GameOver = true;
+		end
+		
 		if (not IsAround(Mission.m_Recycler)) then
-			local tempH = GetObjectByTeamSlot(Mission.m_HumanTeamNum, DLL_TEAM_SLOT_RECYCLER);
+			local tempH = GetObjectByTeamSlot(PLAYER_START_TEAM, DLL_TEAM_SLOT_RECYCLER);
 			
 			if (tempH ~= 0) then
 				Mission.m_Recycler = tempH; -- Save it.
@@ -238,7 +278,7 @@ function SetupPlayer()
 	spawnpointPosition.y = TerrainFindFloor(spawnpointPosition.x, spawnpointPosition.z) + 2.5;
 
 	-- Create the player.
-	local PlayerH = BuildObject(Mission.m_HumanRace .. "vscout", Mission.m_HumanTeamNum, spawnpointPosition);
+	local PlayerH = BuildObject(Mission.m_HumanRace .. "vscout", PLAYER_START_TEAM, spawnpointPosition);
 
 	SetPilotClass(PlayerH, Mission.m_HumanRace .. "spilo");
 	SetRandomHeadingAngle(PlayerH);
@@ -247,19 +287,19 @@ function SetupPlayer()
 	local chosenPlayerRecy = IFace_GetString("options.instant.string1");
 	chosenPlayerRecy = Mission.m_HumanRace .. chosenPlayerRecy:sub(2);
 
-	Mission.m_Recycler = BuildObject(chosenPlayerRecy, Mission.m_HumanTeamNum, GetPositionNear(spawnpointPosition, VEHICLE_SPACING_DISTANCE * 1.25, VEHICLE_SPACING_DISTANCE * 1.25));
+	Mission.m_Recycler = BuildObject(chosenPlayerRecy, PLAYER_START_TEAM, GetPositionNear(spawnpointPosition, VEHICLE_SPACING_DISTANCE * 1.25, VEHICLE_SPACING_DISTANCE * 1.25));
 	SetGroup(Mission.m_Recycler, 0);
 
 	-- Spawn extra Human vehicles.
-	SpawnTeamExtraVehicles(Mission.m_HumanTeamNum, Mission.m_HumanRace, spawnpointPosition, Mission.m_HumanStartingForceSize);
+	SpawnTeamExtraVehicles(PLAYER_START_TEAM, Mission.m_HumanRace, spawnpointPosition, Mission.m_HumanStartingForceSize);
 
 	-- Give some scrap.
-	SetScrap(Mission.m_HumanTeamNum, 40);
+	SetScrap(PLAYER_START_TEAM, 40);
 
 	-- DEBUG
 	if (debug) then
-		BuildObject("ibpgen", Mission.m_HumanTeamNum, "debug_p");
-		BuildObject("ibcbun", Mission.m_HumanTeamNum, "debug_b");
+		BuildObject("ibpgen", PLAYER_START_TEAM, "debug_p");
+		BuildObject("ibcbun", PLAYER_START_TEAM, "debug_b");
 	end
 
 	return PlayerH;
@@ -275,7 +315,7 @@ function PlayerDied(deadObjectHandle, sniped)
 			DoTaunt(TAUNTS_HumanShipDestroyed);
 
 			-- Return DoEjectPilot.
-			return EJECTKILLRETCODES_DOEJECTPILOT;
+			return _FECore.ObjectKilled(deadObjectHandle, killersHandle) or EJECTKILLRETCODES_DOEJECTPILOT;
 		end
 	end
 
@@ -309,7 +349,7 @@ function ObjectKilled(deadObjectHandle, killersHandle)
 	if (not IsPlayer(deadObjectHandle)) then
 		-- Should we eject a pilot instead?
 		if (not IsPerson(deadObjectHandle)) then
-			return DoEjectRatio(deadObjectHandle); --EJECTKILLRETCODES_DOEJECTPILOT; -- Return DoEjectPilot.
+			return _FECore.ObjectKilled(deadObjectHandle, killersHandle) or DoEjectRatio(deadObjectHandle); --EJECTKILLRETCODES_DOEJECTPILOT; -- Return DoEjectPilot.
 		else
 			return EJECTKILLRETCODES_DLLHANDLED; -- Return DLLHandled.
 		end
@@ -363,7 +403,7 @@ function SpawnTeamExtraVehicles(Team, Race, Pos, Force)
 		local vehicle = BuildObject(h, Team, pos);
 
         -- For the CPU, send the first built Scavenger to the nearest pool.
-        if (not Mission.m_SentFirstCPUScavToPool and Team == Mission.m_CPUTeamNum and h ==  Race .. "vscav") then
+        if (not Mission.m_SentFirstCPUScavToPool and Team >= CPU_START_TEAM and h ==  Race .. "vscav") then
             -- Find the closest scrap pool to the CPU spawn.
             local closestPool = GetClosestObjectToPath(Mission.m_MapPools, "RecyclerEnemy");
 
@@ -376,9 +416,9 @@ function SpawnTeamExtraVehicles(Team, Race, Pos, Force)
 	end
 
 	-- If we're the CPU team, spawn turrets around the map based on difficulty.
-	if (Team == Mission.m_CPUTeamNum) then
+	if (Team >= CPU_START_TEAM) then
 		for i = 1, Mission.m_Difficulty + 2 do
-			local h = BuildObject(Race .. "vturr", Mission.m_CPUTeamNum, "hold" .. i);
+			local h = BuildObject(Race .. "vturr", Team, "hold" .. i);
 		end
 
 		-- Allow the dispatcher to continue...

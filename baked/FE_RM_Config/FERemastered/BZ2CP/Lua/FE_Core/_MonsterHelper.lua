@@ -34,13 +34,13 @@ function _Monster.InitialSetup()
 	end
 
 	local iShift = GetRandomFloat(Monster.Delay * 0.2);
-	Monster.Delay = ((Monster.Delay * 0.9) + iShift) * SecondsToTurns(1);
+	Monster.Delay = ((Monster.Delay * 0.9) + iShift) * TPS;
 
 end
 
-function _Monster.Update(time_count, Difficulty, CPUTeam, HumanTeam)
+function _Monster.Update(Difficulty, CPUTeam, HumanTeam)
 
-	if Monster.Delay == time_count then
+	if Monster.Delay == GetTurnCount() then
 		local MonsterODF = GetVarItemStr("network.session.svar19");
 		if(MonsterODF == nil or MonsterODF == "") then
 			MonsterODF = "monster";
