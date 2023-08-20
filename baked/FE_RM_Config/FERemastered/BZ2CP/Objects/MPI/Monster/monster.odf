@@ -1,0 +1,102 @@
+[GameObjectClass]
+classLabel = "animal"
+//classLabel = "wingman"
+//classLabel = "iv_walker"
+geometryName = "monster_skel.xsi"
+
+unitName = "Insane Creature"
+//aiName = "LandAnimalProcess"
+//aiName = "TankFriend"
+//aiName2 = "TankEnemy"
+aiName = "GechProcess"
+//aiName2 = "GechProcess"
+
+animCount = 6
+animName1 = "idle"
+animFile1 = "monster_eat.xsi"
+
+animName2 = "walk"
+animFile2 = "monster_walk.xsi"
+
+animName3 = "run"
+animFile3 = "monster_walk.xsi"
+
+animName4 = "curious"
+animFile4 = "monster_growl.xsi"
+
+animName5 = "attack"
+animFile5 = "monster_eat.xsi"
+
+animName6 = "fall"
+animFile6 = "monster_fall01.xsi"
+
+geometryScale = 2.0
+scrapCost = 0
+scrapValue = 0
+pilotCost = 1
+
+maxHealth = 7000
+maxAmmo = 2500
+addAmmo = 500
+
+heatSignature = 0.0
+imageSignature = 10.3
+radarSignature = 10.0
+//collisionRadius = 4.0
+
+isAssault = 1
+
+armorClass = H
+
+/////// weapons ///////////////////
+
+weaponMask = 00001 //11111
+
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gCLicer_c" //"gicer_a" // "gicer_c" // "gcphlaser" //"gcrapier_c"
+weaponAssault1 = 0 // 1 = IS ASSUALT
+
+[CraftClass]
+rangeScan = 300.0
+periodScan = 5.0
+engageRange = 0.0 //220
+
+braccelFactor = 0.08
+velFactor = 0.4
+steerFactor = 1
+omegaFactor = 0.4
+strafeFactor = 0.1
+
+[PersonClass]
+painSound1 = "pain1.wav";
+painSound2 = "pain2.wav";
+painSound3 = "pain3.wav";
+painSound4 = "pain4.wav";
+painSound5 = "pain5.wav";
+painSound6 = "pain6.wav";
+burnSound1 = "lburn1.wav";
+burnSound2 = "lburn2.wav";
+dieSound1  = "death1.wav";
+dieSound2  = "death2.wav";
+dieSound3  = "death3.wav";
+dieSound4  = "death4.wav";
+dieSound5  = "death5.wav";
+crushSound = "squish.wav";
+jumpSound  = "jump.wav";
+landSound  = "land.wav";
+stepSound  = "running.wav"
+
+[LandCreature]
+animRate = 10.0
+velocJump = 2
+velocForward = 10.0
+//Asscelaration in Gravities
+accelThrust = 0.7
+
+// in degrees/sec
+alphaSteer = 20.0
+omegaSpin =  40.0 // 60.0
+omegaTurn = 100.0 // 150.0
+
+leftfootpiece = "lfoot";
+rightfootpiece = "rfoot";

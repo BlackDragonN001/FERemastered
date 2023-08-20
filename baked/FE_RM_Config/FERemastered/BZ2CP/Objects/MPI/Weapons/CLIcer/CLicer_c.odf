@@ -1,0 +1,22 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotRadius = 1.0
+xplGround = "xicehit"
+xplVehicle = "xicehit"
+xplBuilding = "xicehit"
+
+renderName = "icer_a.puff"
+
+ammoCost = 10
+lifeSpan = 1.0
+shotSpeed = 50.0
+
+damageValue(N) = 15 // none
+damageValue(L) = 12 // light
+damageValue(H) = 10 // heavy
+
+damageValue(S) = 10 // standard
+damageValue(D) = 9 // deflection
+damageValue(A) = 7 // assault

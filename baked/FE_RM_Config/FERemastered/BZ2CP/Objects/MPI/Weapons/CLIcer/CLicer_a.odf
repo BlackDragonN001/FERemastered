@@ -1,0 +1,24 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = "gatstab.xsi"
+shotSound = "Ordin_a.wav"
+
+renderName = "icer_c.render"
+
+xplGround = "xicergnd_c"
+xplVehicle = "xicercar_c"
+xplBuilding = "xicercar_c"
+
+ammoCost = 66
+lifeSpan = 5.5 // 100m
+shotSpeed = 100.0
+
+damageValue(N) = 330 // none // 260
+damageValue(L) = 320 // light // 240
+damageValue(H) = 300 // heavy // 200
+
+damageValue(S) = 320 // standard // 240
+damageValue(D) = 300 // deflection // 200
+damageValue(A) = 330 // absorbtion // 130
+

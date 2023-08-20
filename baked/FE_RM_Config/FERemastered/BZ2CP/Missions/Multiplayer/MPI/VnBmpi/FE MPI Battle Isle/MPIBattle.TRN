@@ -1,0 +1,79 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX = -2048.0
+MinZ = -2048.0
+Width = 2048.0
+Depth = 2048.0
+Height = 100.0
+Tile = 1
+Color = "51 125 20 255"
+
+[NormalView]
+
+FogColor="81 79 41 255"
+FogStart=150
+FogEnd=275
+VisibilityRange=275
+
+[World]
+
+
+[Light]
+SunPeriod = 24.0
+SunAngle = 9.0
+SunColor = "255 255 255 255"
+AmbientColor = "127 127 127 127"
+
+[Sky]
+SkyType= 0
+SkyHeight = 100
+SkyTexture = darksky.tga
+SkyColor = "133 139 108 255"
+SunTexture = sun.0
+SunColor = "0 0 0 0"
+
+[Water]
+WaterTexture1 = "water256.tga"
+WaterDiffuse1 = "60 80 64 127"
+WaterBlend1 = "srcalpha invsrcalpha modulatealpha"
+BumpTexture1 = "water256.tga"
+BumpDiffuse1 = "60 80 64 127"
+BumpBlend1 = "srcalpha invsrcalpha modulatealpha"
+
+[Texture]
+TileTexture1 = "mire.tga"
+TileTexture2 = "mire2.tga"
+TileTexture3 = "grass.tga"
+TileTexture4 = "street_1.tga"
+TileTexture5 = "street_2.tga"
+TileTexture6 = "street_3.tga"
+TileTexture7 = "street_4.tga"
+TileTexture8 = "street_5.tga"
+TileTexture9 = "dune3.tga"
+
+[LightningBolt]
+minDelay=10.0
+maxDelay=20.0
+Bolts=1
+Duration=.200
+Distance=120
+Width=0.3
+Sound=thunder.wav
+Sound2=thunder2.wav
+texture=bolt.tga
+
+[Rain]
+OnPeriod = 300.000
+OffPeriod = 300.000
+TranPeriod = 10.000
+ScaleFactor= 1.0
+
+
+[Mirror]
+Enabled    = 1
+UseTexture = 1
+Offset     = -.01
+
+[Shadows]
+Stencil = 1

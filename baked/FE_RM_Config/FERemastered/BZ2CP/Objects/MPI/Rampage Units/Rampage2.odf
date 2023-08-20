@@ -1,0 +1,37 @@
+[GameObjectClass]
+classLabel = "cvtalon"
+
+infoName = "rampage1.inf"
+
+scrapValue = 15
+
+maxHealth = 9000
+
+addAmmo = 1000
+unitName = "TalonX2"
+
+explosionName = "shipxpl2"
+
+heatSignature = 1.0
+imageSignature = 4.0
+radarSignature = 1.0
+isAssault = 1
+armorClass = H
+
+requireCount = 0
+
+canSnipe = 0
+
+weaponName1 = "gcrapier_a"
+weaponName2 = "gcrapier_a"
+weaponName3 = "gcvcomet_c"
+weaponAssault3 = 1
+weaponName4 = "gcvcomet_c"
+weaponAssault4 = 1
+weaponName5 = "gmcagmin"
+
+[CraftClass]
+engageRange = 500
+[HoverCraftClass]
+velocForward = 90 // []
+

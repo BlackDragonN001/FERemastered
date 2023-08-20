@@ -1,0 +1,20 @@
+[GameObjectClass] 
+classLabel = "cvdcar" 
+
+infoName = "rampage1.inf"
+
+scrapValue = 20  //50 - changed by Aegeis
+
+maxAmmo = 12000 // 7000 // 4000 // 14000 - changed by Aegeis - kicked up a bit by Centerline
+
+radarSignature = 0.1 // 0.0 - changed by Centerline
+
+canSnipe = 0
+
+requireCount = 0
+
+
+[CraftClass] 
+rangeScan = 450 //600.0 - Changed by Centerline
+
+[HoverCraftClass] 

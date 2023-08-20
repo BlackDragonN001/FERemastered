@@ -1,0 +1,81 @@
+// tweaks by tech.noid 2002
+
+[OrdnanceClass]
+classLabel = "thermalmissile"
+
+shotGeometry = "sgstng00.xsi"
+shotSound = "crckt02.wav"
+
+renderName = "rpodx1_a.render" // "stinger_c.render"
+
+xplGround = "xmslgndx1"
+xplVehicle = "xstingcar_c"
+xplBuilding = "xstingcar_c"
+
+ammoCost = 9
+lifeSpan = 8.0 // 400m
+shotSpeed = 400.0 // 50.0
+
+damageValue(N) = 80 // none // 390
+damageValue(L) = 50 // light // 210
+damageValue(H) = 20 // 10 // heavy // 45
+
+damageValue(S) = 50 // standard // 210
+damageValue(D) = 10 // deflection // 180
+damageValue(A) = 80 // absorbtion // 255
+
+[MissileClass]
+omegaTurn = 0.5 // 1.5 
+omegaWaver = 0.1 // 0.5
+rateWaver = 0.3 // 6.0
+
+[ThermalMissileClass]
+coneAngle = 1.3 // 0.3
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "rpodx1_a.flare" // "stinger_c.flare"
+renderName2 = "rpodx1_a.halo" // "stinger_c.halo"
+renderName3 = "rpodx1_a.flame" // "stinger_c.flame"
+renderName4 = "rpodx1_a.trail" // "stinger_c.trail"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.75
+finishRadius = 0.75
+
+[Halo]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 0 64"
+finishColor = "255 0 0 64" // "255 200 0 164"
+startRadius = 1.5 // 0.5
+finishRadius = 0.5
+
+[Flame]
+renderBase = "draw_trail"
+textureName = "flare.tga" // "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.004
+startColor = "0 0 255 255" // "255 255 100 255"
+finishColor = "255 0 0 64" // "255 200 0 0"
+startRadius = 1.5 // 0.5
+finishRadius = 0.02
+segmentTime = 0.1
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.004
+startColor =  "255 64 0 32" // "255 255 100 28" // "100 0 0 100" 
+finishColor =  "255 0 0 0" // "100 100 100 0"
+startRadius = 1.5 // 0.1
+finishRadius = 0.1 // 0.3
+segmentTime = 1.0

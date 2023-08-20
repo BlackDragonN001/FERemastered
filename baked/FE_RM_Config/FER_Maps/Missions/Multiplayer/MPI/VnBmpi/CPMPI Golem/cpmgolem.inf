@@ -1,0 +1,39 @@
+[DESCRIPTION]
+missionName = "CPMPI: Golem"
+mapTga = "cpmgolem.bmp"
+mapDesc = "cpmgolem.odf"
+mySide = 1
+
+
+[NetVars]
+// For master list of descriptions, see source\network\vars.txt
+ivar0 = 0 // Kill limit, 0= unlimited
+ivar1 = 0 // Time limit, 0= unlimited
+ivar2 = 4 // player limit. Commenting out this line means current setting not changed
+ivar3 = 1 // 1=Teamplay on, 0=Teamplay off
+ivar4 = 7 // Bitfields saying which vehicles out of mpvehicles.txt are allowable. 33= both scouts
+ivar5 = 2 // All=0, DM=1, Strat=2, all other values undefined (used in filters)
+ivar6 = 0 // Vehicles allowable II (if ever implemented)
+ivar7 = 2 // Strategy02.dll starting prefs: turrets at AI level 2, rest AI 0, default scrap, nothing extra [see vars.txt for gory details on bits]
+ivar8 = 1 // Sync Join. 0=off, 1=on.
+ivar11 = 1 // locks team play
+ivar12 = 1
+ivar21 = 3 // Default CPU AI skill for MPI turrets
+ivar22 = 3 // Default CPU AI skill for MPI non-turrets.
+// Svar0 (.bzn filename, used to look for an .inf file like this)
+// *not* read in, as that would cause an infinite loop
+ivar9 = 50 //unit limit, 0 is unlimited
+svar1 = "Crusaders" // Team name for team 1
+svar2 = "Earth Golems" // Team name for team 2
+svar4 = "FE_ST_VEH.txt"
+
+//new rev d vars
+//svar19=aeggorg
+//svar20=ibNuclearCL
+svar21=repool01
+ivar35=5
+ivar36=0
+ivar37=0
+ivar38=0
+ivar39=0
+ivar40=60

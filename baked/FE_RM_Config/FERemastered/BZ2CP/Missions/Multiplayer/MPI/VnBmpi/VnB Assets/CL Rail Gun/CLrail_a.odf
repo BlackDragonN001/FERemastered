@@ -1,0 +1,85 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+
+xplGround = "CLrailhit"
+xplVehicle = "CLrailhit"
+xplBuilding = "CLrailhit"
+
+renderName = "CLrail_a.render"
+
+ammoCost = 21.15
+lifeSpan = 1.8 
+shotSpeed = 350.0
+
+damageValue(N) = 715
+damageValue(L) = 490
+damageValue(H) = 305
+
+damageValue(S) = 480
+damageValue(D) = 645
+damageValue(A) = 525
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "CLrail_a.flame"
+renderName2 = "CLrail_a.smoke"
+renderName3 = "CLrail_a.trail"
+renderName4 = "CLrail_a.flare"
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "10 10 255 255"
+finishColor = "0 0 255 75"
+startRadius = 0.04
+finishRadius = 0.04
+animateTime = 0.5 //1.2
+rotationRate = 10.0
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 0.5
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "215 214 213 231"
+finishColor = "210 209 208 50"
+startRadius = 0.2
+finishRadius = 0.31
+animateTime = 0.9 //1.9
+rotationRate = 10.0
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 0.9
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "smoke2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.01
+startColor = "1 1 222 227"
+finishColor = "1 1 150 75"
+startRadius = 0.11
+finishRadius = 0.11
+segmentTime = 0.4
+
+
+[Flare]
+renderBase = "draw_twirl_trail"
+textureName = "raindrop.tga"
+textureBlend = "one one modulate"
+startColor = "10 10 255 555" 
+finishColor = "0 0 255 0" 
+startRadius = 0.6
+finishRadius = 0.6
+animateTime = 0.9 //1.8
+emitDelay = 0.01
+emitLife = 0.9
+rotationrate = 20.0

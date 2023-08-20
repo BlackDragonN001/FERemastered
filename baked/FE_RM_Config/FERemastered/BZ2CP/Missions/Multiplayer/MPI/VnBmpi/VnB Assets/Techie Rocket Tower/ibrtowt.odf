@@ -1,0 +1,42 @@
+// tweaks by tech.noid 2002
+[GameObjectClass]
+classLabel = "ibrtow"
+
+maxHealth = 8000 // 5000
+
+unitName = "Tech RocketTower"
+
+heatSignature = 1.0
+
+requireCount = 0
+
+provideCount = 1
+provideName1 = "ibgtow"
+
+weaponMask = 00111 // 00111
+weaponHard1 = "HP_ROCKET_3"
+weaponName1 = "gshadow_a"
+weaponAssault1 = 1
+weaponHard2 = "HP_ROCKET_2"
+weaponName2 = "gshadow_a"
+weaponAssault2 = 1
+weaponHard3 = "HP_ROCKET_1"
+weaponName3 = "gshadow_a"
+weaponAssault3 = 1
+
+canDetect = 0
+
+[BuildingClass]
+
+[CraftClass]
+rangeScan = 250.0f
+periodScan = 0.0f // 4.0f
+
+weaponPitch = 1.5 // 2.5
+steerFactor = 0.5 // 0.5
+engageRange = 250 // 200
+
+[TurretCraftClass]
+omegaTurret = 2.0 // 1.0
+
+[Lod1]

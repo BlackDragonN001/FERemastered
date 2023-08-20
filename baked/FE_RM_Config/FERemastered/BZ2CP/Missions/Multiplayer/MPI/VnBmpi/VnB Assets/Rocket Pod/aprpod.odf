@@ -1,0 +1,13 @@
+// WORM MISSILE
+// Created by Pastell
+// 2001 Community Project
+
+[GameObjectClass]
+baseName = "aprpod"
+classLabel = "aprocket"
+scrapCost = 10
+
+[PowerUpClass]
+
+[WeaponPowerupClass]
+weaponName = "grpod_c"

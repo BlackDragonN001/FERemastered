@@ -1,0 +1,26 @@
+[GameObjectClass] 
+geometryName = "aegwst.xsi" 
+classLabel = "deposit" 
+scrapCost = 0 
+scrapValue = 0 
+maxHealth = 20 
+maxAmmo = 0 
+unitName = "Biometal Pool" 
+heatSignature = 0.0 
+imageSignature = 0.0 
+radarSignature = 0.0 
+collisionRadius = 1.0 
+
+effectHard1 = "hp_emit_1" 
+effectName1 = "mepool01.render" 
+
+[BuildingClass] 
+tunnelCount = 1 
+
+tunnel01X0 = 1 
+tunnel01Z0 = 1 
+tunnel01DX = 2 
+tunnel01DZ = 2 
+tunnel01Edge = "wwtw" 
+
+[DepositClass] 

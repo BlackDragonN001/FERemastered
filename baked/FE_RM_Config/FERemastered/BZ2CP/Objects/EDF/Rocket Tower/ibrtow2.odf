@@ -1,0 +1,47 @@
+[GameObjectClass]
+baseName = "ibrtow"
+geometryName = "ibrtow01.fbx"  //"ibrtow2.xsi"
+classLabel = "ibgtow"
+
+unitName = "Rocket Tower"
+aiName = "SupportProcess"
+aiName2 = "SupportProcess"
+
+requireCount = 3
+requireName1 = "ibfact"
+requireText1 = "Build Factory"
+requireName2 = "ibcbun"
+requireText2 = "Build Relay Bunk"
+requireName3 = "ibarmo"
+requireText3 = "Build Armory"
+
+weaponMask = 00011  //00001
+weaponHard1 = "HP_ROCKET_2"  //"HP_ROCKET_3"
+weaponName1 = "gshadow_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_ROCKET_3"  //"HP_ROCKET_2"
+weaponName2 = "gshadow_c"
+weaponAssault2 = 0
+weaponHard3 = "HP_ROCKET_1"
+weaponName3 = "gshadow_a"
+weaponAssault3 = 1
+
+[BuildingClass]
+
+[CraftClass]
+rangeScan = 400.0f
+periodScan = 4.0f
+engageRange = 200
+
+attackTask = "AssaultTankAttack"
+subAttackTask = "SupportSubAttack"
+subAttackClass = "ANS"
+// include air units as attack targets
+// doesn't need to deploy to sub attack
+// doesn't move towards unit in sub attack
+
+[TurretCraftClass]
+omegaTurret = 1.0
+detectRange = 250
+
+[Lod1]

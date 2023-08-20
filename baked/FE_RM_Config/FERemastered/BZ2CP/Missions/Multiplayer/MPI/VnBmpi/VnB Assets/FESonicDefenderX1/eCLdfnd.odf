@@ -1,0 +1,44 @@
+// Custom Hadean Defender
+// Modified by:  Centerline
+// Date:  2002-11-04
+
+[GameObjectClass]
+classLabel = "ebgt4g"
+powerCost = 0
+
+unitName = "DefenderX1"
+
+heatSignature = 0.5   //2.0
+imageSignature = 1.0  //1.0
+radarSignature = 0.0  //1.0
+
+buildRequire = "F"
+
+requireCount = 0
+
+weaponMask = 00011
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "CLdfndcan"
+//weaponName1 = "gcphlaser"
+weaponAssault1 = 0
+weaponHard2 = "hp_cannon_2"
+weaponName2 = "gCLrail_a"
+//weaponName2 = "CLdfndcan"
+//weaponName2 = "gcphlaser"
+weaponAssault2 = 0
+weaponHard3 = ""
+weaponHard4 = ""
+
+[BuildingClass]
+
+[CraftClass]
+engageRange = 280
+
+attackTask = "AssaultTankAttack"
+subattackTask = "SupportSubAttack"
+subAttackClass = "ANS"
+
+[TurretCraftClass]
+detectRange = 300 //210
+
+

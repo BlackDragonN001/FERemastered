@@ -1,0 +1,66 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX = -2048.0
+MinZ = -2048.0
+Width = 4096.0
+Depth = 4096.0
+Height = 5.0
+Tile = 1
+Color = "151 158 103 255"
+
+[NormalView]
+
+FogColor="60 69 35 255"
+FogStart=150
+FogEnd=250
+VisibilityRange=275
+
+[World]
+MusicTrack1=2
+MusicTrack2=3
+MusicTrack3=4
+MusicTrack4=5
+
+[Light]
+SunPeriod = 24.0
+SunAngle = 9.0
+SunColor = "255 255 255 255"
+AmbientColor = "102 102 102 102"
+
+[Sky]
+SkyType= 0
+SkyHeight = 100
+SkyTexture = miresky.tga
+SkyColor = "33 39 25 255"
+SunTexture = sun.0
+SunColor = "0 0 0 0"
+
+[Water]
+WaterTexture1 = "water256.tga"
+WaterDiffuse1 = "96 128 64 64"
+WaterBlend1 = "srcalpha invsrcalpha modulatealpha"
+BumpTexture1 = "water256.tga"
+BumpDiffuse1 = "96 128 64 64"
+BumpBlend1 = "srcalpha invsrcalpha modulatealpha"
+
+[Texture]
+TileTexture1 = "mire.tga"
+TileTexture2 = "dune2.tga"
+TileTexture3 = "dune3.tga"
+TileTexture4 = "mire4.tga"
+TileTexture5 = "mire5.tga"
+TileTexture6 = "mire6.tga"
+TileTexture7 = "mire7.tga"
+TileTexture8 = "mbextf02.tga"
+TileTexture9 = "dune9.tga"
+TileTexture10 = "rocks.bmp"
+TileTexture11 = "tile.bmp"
+TileTexture12 = "sand.bmp"
+TileTexture13 = "tile.bmp"
+
+
+
+
+
+

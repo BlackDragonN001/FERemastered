@@ -1,0 +1,100 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL // "gatstab.xsi"
+shotSound = "flame01.wav"
+
+renderName = "fbgu_c.render"
+
+xplGround = "xsqgnd_c"
+xplVehicle = "xsqcar_c" // "xsupercar"
+xplBuilding = "xsqbld_c"
+
+ammoCost = 30
+lifeSpan = 1.95 // 280m
+shotSpeed = 200.0
+
+damageValue(N) = 250 // none  // 300 
+damageValue(L) = 210 // light // 240 
+damageValue(H) = 170 // heavy  // 100 
+
+damageValue(S) = 210 // standard   // 240 
+damageValue(D) = 170 // deflection // 300 
+damageValue(A) = 250 // absorbtion // 200 
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "fbgu_c.smoke"
+renderName2 = "fbgu_c.flame"
+renderName3 = "fbgu_c.light"
+renderName4 = "fbgu_c.twirl" // never existed. trailer?? -GBD
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.01
+emitDelayVar = 0.02
+emitVelocity = "0.0 1.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+//emitInherit = "1.5 1.5 1.0"
+emitLife = 1.2
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 127"
+finishColor = "0 0 0 0"
+startRadius = 1.0
+finishRadius = 0.1
+animateTime = 0.7
+rotationRate = 1.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.02
+emitDelayVar = 0.01
+emitVelocity = "0.0 0.5 0.0"
+emitVariance = "1.0 1.0 1.0"
+//emitInherit = "0.5 0.5 0.5"
+emitLife = 0.8
+textureName = "cvxpl01.tga"
+textureBlend = "one one modulate"
+startColor = "55 25 255 110"
+finishColor = "255 0 0 0"
+startRadius = 0.8
+finishRadius = 0.1
+animateTime = 0.5
+rotationRate = 10.0
+
+[trailer]
+simulateBase = "sim_dust" //dust
+lifeTime = 1.6 //2.5
+renderBase = "draw_trail"
+textureName = "heat.tga"
+textureBlend = "one one modulate"
+textureRate = 0.08
+startColor = "155 55 255 150"
+finishColor = "200 100 100 0"
+startRadius = 0.4
+finishRadius = 1.0
+segmentTime = 0.8
+animateTime = 1.5
+
+[Light]
+renderBase = "draw_light"
+startColor = "150 0 255 800"
+finishColor = "0 0 199 800"
+startRadius = 20.0
+finishRadius = 20.0
+animateTime = 1.95
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+
+[Twirl]
+renderBase = "draw_twirl"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "55 25 255 110"
+finishColor = "55 25 255 0"
+startRadius = 1.0
+finishRadius = 1.0
+rotationRate = 10.0

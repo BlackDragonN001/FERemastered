@@ -1,0 +1,51 @@
+[GameObjectClass]
+baseName = "ibnukecl"
+geometryName = "ibnuclearCLDEPLOY3.XSI"
+classLabel = "powerplant"
+animCount = 2
+animName1 = "deploy"
+animFile1 = "ibnuclearCLDEPLOY3.XSI"
+animName2 = "loop"
+animFile2 = "ibnuclearCLLOOP3.XSI"
+scrapCost = 80
+scrapValue = 0
+powerCost = -20
+powervalue = 40
+maxHealth = 30000
+maxAmmo = 0
+unitName = "Reactor"
+heatSignature = 33.0
+imageSignature = 3.0
+radarSignature = 3.0
+collisionRadius = 1.0
+isAssault = 1
+explosionName = "xbldxpl"
+
+armorClass = H
+
+requireCount = 0
+
+buildSupport = N // B  // maybe
+buildRequire = N // F  // maybe
+
+provideCount = 1
+provideName1 = "ibpgen"
+
+lightHard1 = "hp_light_1"
+lightName1 = "omniNukeCL"
+lightHard2 = "hp_light_2"
+lightName2 = "omniNukeCL2"
+lightHard3 = "hp_light_3"
+lightName3 = "omniNukeCL2"
+lightHard4 = "hp_light_4"
+lightName4 = "omniNukeCL2"
+
+[BuildingClass]
+soundAmbient = "ibnukeCL.wav"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[Lod1]
+geometryName = "ibnuclearCLL1.XSI" ;geometry for lod1
+distance = 120

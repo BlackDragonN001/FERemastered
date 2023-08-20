@@ -1,0 +1,16 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gCLrail_c"
+ordName = "CLrail_a"
+wpnName = "Rail Gun"
+fireSound = "CLrail.wav"
+wpnReticle = "grifle"
+wpnCategory = "GUN"
+isAssault = 1
+
+aiRange = 300
+
+[CannonClass]
+shotDelay = 1.9   // 1.6
+shotVariance = 0.005
+

@@ -1,0 +1,38 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX=-2048
+MinZ=-2048
+Width=4096
+Depth=4096
+Height=100
+Tile = 1
+color=149 123 87 255
+
+[NormalView]
+
+FogColor="106 63 44 255"
+FogStart=200
+FogEnd=350
+VisibilityRange=375
+
+[World]
+MusicTrack1=9
+MusicTrack2=3
+MusicTrack3=4
+
+[Texture] 
+TileTexture1 = "mire.tga" 
+TileTexture2 = "mire2.tga" 
+TileTexture3 = "mire3.tga" 
+TileTexture4 = "mire4.tga"
+TileTexture5  = "dune8.tga"
+TileTexture6  = "dune9.tga"
+TileTexture7  = "dune6.tga"
+TileTexture8  = "titan3.tga"
+TileTexture9  = "rend3.tga"
+TileTexture10  = "rend4.tga"
+TileTexture11  = "mars4.tga"
+TileTexture12  = "mars5.tga"
+TileTexture13  = "mars6.tga"
+TileTexture14  = "mars7.tga"

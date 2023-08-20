@@ -1,0 +1,69 @@
+[OrdnanceClass]
+classLabel = "MagnetShell"
+
+shotSound = "sbrecy02.wav"
+
+shotGeometry = NULL
+shotRadius = 5.0
+
+xplGround = "xsonicgnd_c"
+xplVehicle = "xsoniccar_c"
+xplBuilding = "xsoniccar_c"
+
+renderName = "CLdfndord.render"
+
+ammoCost = 30
+lifeSpan = 2.5 // 312.5m
+shotSpeed = 125.0
+
+damageValue(N) = 500 // none
+damageValue(L) = 400 // light
+damageValue(H) = 300 // heavy
+
+damageValue(S) = 300 // standard
+damageValue(D) = 400 // deflection
+damageValue(A) = 200 // absorbtion
+
+[MagnetShellClass]
+triggerDelay = 0.0
+fieldRadius = 15.0
+objPushCenter = 900.0
+objPushEdge = 600.0
+objDrag = 0.1
+ordPushCenter = 300.0
+ordPushEdge = 30.0
+ordDrag = 1.0
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "CLdfndord.Core"
+renderName2 = "CLdfndord.Flare"
+
+[Core]
+renderBase = "draw_twirl_trail"
+textureName =  "raindrop.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 255 127"
+finishColor = "255 255 255 0"
+startRadius = 1.75
+finishRadius = 0.25
+rotationRate = 10.0
+animateTime = 0.1
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "15.0 15.0 15.0"
+emitLife = 0.1
+
+[Flare]
+renderBase = "draw_twirl_trail"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "40 90 40 32"
+finishColor = "20 10 120 32" 
+startRadius = 1.75
+finishRadius = 0.0
+animateTime = 0.7
+emitDelay = 0.01
+emitLife = 0.7
+rotationRate = 5.0

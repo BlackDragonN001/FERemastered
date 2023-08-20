@@ -1,0 +1,66 @@
+// Unit created by Dutch Boy
+
+[GameObjectClass]
+geometryName = "ibrecturr00.XSI"
+classLabel = "turret"
+baseName = "ibrecturr"
+collisionRadius = 1.0
+scrapCost = 10
+scrapValue = 0
+powerCost = 0
+maxHealth = 8000
+maxAmmo = 20000 // 0 is *not* treated as infinite ammo! 
+unitName = "Protector"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+isAssault = 1
+
+armorClass = H
+
+requireCount = 0
+
+///// WEAPON ////////////////////
+
+weaponMask = 0011
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "gcluster_c"
+weaponAssault1 = 1
+
+/////////////////////////////////
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotwhite"
+lightHard2 = "hp_light_2"
+lightName2 = "lasersite"
+
+turretCount = 4
+turretName1 = "turret_y_1"
+turretName2 = "turret_x_1"
+turretName3 = "turret_x_2"
+turretName4 = "hp_eyepoint"
+
+
+
+[BuildingClass]
+soundAmbient = "igtow01.wav"
+
+[CraftClass]
+rangeScan = 400
+periodScan = 3.0
+velocJam = 0.0
+weaponPitch = 1.5
+engageRange = 300
+
+attackTask = "AssaultTankAttack"
+subAttackTask = "SupportSubAttack"
+subAttackClass = "ANS"
+// include air units as attack targets
+// doesn't need to deploy to sub attack
+// doesn't move towards unit in sub attack
+
+[TurretCraftClass]
+omegaTurret = 3.0
+detectRange = 130

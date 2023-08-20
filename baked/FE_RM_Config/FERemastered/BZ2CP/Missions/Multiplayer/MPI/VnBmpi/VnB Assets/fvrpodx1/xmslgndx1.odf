@@ -1,0 +1,73 @@
+// tweaks by tech.noid 2002
+
+// ==================
+// MISSILE GROUND HIT
+// ==================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 3
+
+particleClass1 = "xmslgndx1.ring"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "xmslgndx1.chunks"
+particleCount2 = 6
+particleVeloc2 = "5.0 5.0 5.0"
+particleBias2 = "0.0 5.0 0.0"
+
+particleClass3 = "xmslgndx1.puff"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+particleBias3 = "0.0 1.0 0.0"
+
+explSound = "xms2.wav"
+damageRadius = 1.0 // 0.0
+
+damageValue(N) = 1 // 0
+damageValue(L) = 1 // 0
+damageValue(H) = 1 // 0
+
+damageValue(S) = 1 // 0
+damageValue(D) = 1 // 0
+damageValue(A) = 1 // 0
+
+[Ring]
+simulateBase = "sim_null"
+lifeTime = 10.0
+renderBase = "draw_planar"
+textureName = "grndchar.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "10 10 10 255"
+finishColor = "32 0 0 32" // "10 10 10 0"
+startRadius = 3.0
+finishRadius = 2.0 // 3.0
+animateTime = 10.0
+
+[Chunks]
+simulateBase = "sim_ember"
+lifeTime = 3.0
+renderBase = "draw_sprite"
+textureName = "dirt.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 0 0 32"
+finishColor = "0 0 0 0"
+startRadius = 0.3
+finishRadius = 0.2 // 0.3
+animateTime = 3.0
+useTerrainColor = 0.9
+bottomInteractsWithTerrain = false
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 4.0
+renderBase = "draw_sprite"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "128 64 64 127"
+finishColor = "64 64 64 0"
+startRadius = 0.5
+finishRadius = 5.0
+animateTime = 4.0

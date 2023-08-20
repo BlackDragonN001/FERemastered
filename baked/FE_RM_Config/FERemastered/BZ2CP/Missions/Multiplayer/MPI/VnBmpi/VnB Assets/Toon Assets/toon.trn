@@ -1,0 +1,58 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX = 1024.0
+MinZ = 1024.0
+Width = 1024.0
+Depth = 1024.0
+Height = 0
+Tile = 1
+Color = "222 222 222 255"
+
+[NormalView]
+
+FogColor="0 0 0 255" //"16 40 153 255"
+FogStart=150
+FogEnd=350
+VisibilityRange=375
+
+[World]
+MusicTrack1=7
+MusicTrack2=8
+MusicTrack3=9
+MusicTrack4=10
+
+[Light]
+SunPeriod = 24.0
+SunAngle = 0.0
+SunColor = "255 255 255 255"
+AmbientColor = "255 255 255 255"
+
+[Sky]
+SkyType= 0
+SkyHeight = 300
+SkyTexture = darksky.tga
+SkyColor = "0 5 17 255"
+SunTexture = sun.0
+SunColor = "0 0 0 0"
+
+[Water]
+WaterTexture1 = "toonwat.bmp"
+BumpTexture1 = "bump.tga"
+WaterDiffuse1 = "24 32 16 127"
+BumpDiffuse1 = "127 127 127 127"
+
+[Texture]
+TileTexture0 = "toon01.bmp"
+TileTexture1 = "toon07.bmp"
+TileTexture2 = "toon02.bmp"
+TileTexture3 = "toon03.bmp"
+TileTexture4 = "toon04.bmp"
+TileTexture5 = "toon05.bmp"
+TileTexture6 = "toon06.bmp"
+TileTexture7 = "toonsky1.bmp"
+TileTexture8 = "toonsky2.bmp"
+TileTexture9 = "toonsky3.bmp"
+TileTexture10 = "toonsky4.bmp"
+TileTexture11 = "toonsky5.bmp"
+TileTexture12 = "toonwat.bmp"

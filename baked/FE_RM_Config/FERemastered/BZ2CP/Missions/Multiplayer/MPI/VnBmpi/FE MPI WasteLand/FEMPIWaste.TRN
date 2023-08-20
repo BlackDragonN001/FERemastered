@@ -1,0 +1,32 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX=-2048
+MinZ=-2048
+Width=4096
+Depth=4096
+Height=100
+Tile = 1
+color=149 123 87 255
+
+[NormalView]
+
+FogColor="106 63 44 255"
+FogStart=200
+FogEnd=350
+VisibilityRange=375
+
+[World]
+MusicTrack1=9
+MusicTrack2=3
+MusicTrack3=4
+
+[Texture]
+TileTexture1 = "mire.tga"
+TileTexture2 = "mire2.tga"
+TileTexture3 = "mire3.tga"
+TileTexture4 = "mire4.tga"
+TileTexture5 = "mire5.tga"
+TileTexture6 = "mire6.tga"
+TileTexture7 = "mire7.tga"
+TileTexture8 = "mbextf02.tga"

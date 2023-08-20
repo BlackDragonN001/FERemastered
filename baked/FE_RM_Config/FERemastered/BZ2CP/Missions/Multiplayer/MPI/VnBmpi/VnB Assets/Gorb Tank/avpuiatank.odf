@@ -1,0 +1,100 @@
+[GameObjectClass]
+baseName = "ivatank"
+geometryName = "DShtank00.xsi"
+classLabel = "assaulttank"
+scrapValue = 40
+scrapCost = 70
+customCost = 80
+buildTime = 15.0
+customTime = 20.0
+maxHealth = 4500
+addhealth = 9.0
+maxAmmo = 3000
+addAmmo = 4
+unitName = "Assault Tank"
+aiName = "AssaultTankProcess"
+aiName2 = "AssaultTankProcess"
+heatSignature = 0.5
+imageSignature = 5.0
+radarSignature = 5.0
+isAssault = 1
+
+armorClass = H
+	
+//requireCount = 3
+//requireName1 = "ibfact"
+//requireText1 = "Build Factory"
+//requireName2 = "ibcbun"
+//requireText2 = "Build Relay Bunk"
+//requireName3 = "ibsbay"
+//requireText3 = "Build Service Bay"
+
+/////// weapons ///////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_CANNON_01"
+weaponName1 = "gblast_a"
+weaponAssault1 = 1
+weaponHard2 =  "HP_CANNON_02"
+weaponName2 = "" //"gspstab" // doesn't exist. meant to be _c? -GBD
+weaponAssault2 = 0
+
+
+////////////////////////////////////
+
+turretCount = 2
+turretName1 = "turret_x"
+turretName2 = "turret_y"
+
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 4.0f
+velocJam = 0.0f
+engageRange = 175
+
+braccelFactor = 0.01
+velFactor = 0.4
+steerFactor = 1.2
+omegaFactor = 0.2
+strafeFactor = 0.1
+
+selectWaitMsg = "ivatank04.wav"
+selectAttackMsg = "ivatank01.wav"
+selectFollowMsg = "ivatank08.wav"
+selectGoMsg = "ivatank02.wav"
+selectOtherMsg = "ivatank04.wav"
+
+goMsg = "ivatank05.wav"
+attackMsg = "ivatank06.wav"
+followMeMsg = "ivatank08.wav"
+followMsg = "ivatank08.wav"
+repairMsg = "ivatank09.wav"
+reloadMsg = "ivatank09.wav"
+rescueMsg = "ivatank10.wav"
+recycleMsg = "ivatank11.wav"
+otherMsg = "ivatank04.wav" 
+holdMsg = "ivatank12.wav"
+
+user1Msg = ""  
+killedMsg = "ivatank07.wav"
+diedMsg = ""
+
+[TrackedVehicleClass]
+omegaSpin = 4.0
+velocForward = 15.0
+velocReverse = 5.0
+accelThrust = 10.0
+
+engineSound	= "iatank01.wav"
+treadSound = "iatank02.wav"
+
+
+[AssaultTankClass]
+yawRate = 4.0
+pitchMin = -0.1
+pitchMax = 0.5
+
+recoilName1 = "recoil_1"
+laserName1 = "recoil_1"
+
+

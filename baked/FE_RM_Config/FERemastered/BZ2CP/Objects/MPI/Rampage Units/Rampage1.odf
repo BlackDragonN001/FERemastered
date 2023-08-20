@@ -1,0 +1,32 @@
+[GameObjectClass]
+classLabel = "cvtalon"
+scrapValue = 10  // was 20, added by {VnB}Aegeis
+
+infoName = "rampage1.inf"
+
+maxHealth = 8000 // was 5000, added by {VnB}Aegeis
+
+addAmmo = 1000  // was 10, added by {VnB}Aegeis
+unitName = "TalonX1"
+
+heatSignature = 1.0  // was 3.0 ,added by {VnB}Aegeis
+imageSignature = 4.0  // was 40.0, added by {VnB}Aegeis
+radarSignature = 1.0  // was 10.0, added by {VnB}Aegeis
+
+armorClass = L  // was N, added by {VnB}Aegeis
+
+requireCount = 0
+
+canSnipe = 0  //added by {VnB}Aegeis
+
+weaponAssault3 = 1
+weaponAssault4 = 1
+
+[CraftClass]
+engageRange = 500
+[HoverCraftClass]
+velocForward = 90 // []
+
+
+
+

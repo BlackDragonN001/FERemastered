@@ -1,0 +1,98 @@
+// =================
+// GAUSS CANNON VEHICLE HIT
+// =================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xsv2.wav"
+damageRadius = 8.0
+damageValue(N) = 200
+damageValue(L) = 200
+damageValue(H) = 200
+damageValue(S) = 150
+damageValue(D) = 200
+damageValue(A) = 100
+
+particleTypes = 5
+
+particleClass1 = "CLrailhit.puff"
+particleCount1 = 5
+particleVeloc1 = "4.0 4.0 4.0"
+
+particleClass2 = "CLrailhit.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "CLrailhit.splat"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "CLrailhit.ring"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "CLrailhit.char"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "100 100 250 50"
+finishColor = "0 0 250 0"
+startRadius = 0.2
+finishRadius = 0.8
+animateTime = 2.0
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 0.7
+renderBase = "draw_light"
+startColor = "100 100 250 855"
+finishColor = "50 55 250 0"
+startRadius = 0.2
+finishRadius = 0.1
+animateTime = 0.7
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Splat]
+simulateBase = "sim_null"
+lifeTime = 0.75
+renderBase = "draw_twirl"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 250 255"
+finishColor = "0 0 250 0"
+startRadius = 0.01
+finishRadius = 0.3
+animateTime = 0.9
+
+[Ring]
+simulateBase = "sim_null"
+lifeTime = 10.0
+renderBase = "draw_planar"
+textureName = "grndchar.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "10 10 250 555"
+finishColor = "10 10 250 0"
+startRadius = 0.5
+finishRadius = 3.0
+animateTime = 10.0
+
+[Char]
+simulateBase = "sim_null"
+lifeTime = 3.0
+renderBase = "draw_planar"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 250 555"
+finishColor = "0 0 250 0"
+startRadius = 1.0
+finishRadius = 2.2
+animateTime = 11.0

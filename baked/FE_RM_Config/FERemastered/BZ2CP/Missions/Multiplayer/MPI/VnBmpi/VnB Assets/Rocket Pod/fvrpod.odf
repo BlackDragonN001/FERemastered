@@ -1,0 +1,105 @@
+[GameObjectClass]
+baseName = "fvrpod"
+geometryName = "fvrpod00.XSI"
+//geometryScale = .75
+cockpitName = "fvturr_cockpit.xsi"
+classLabel = "turrettank"
+scrapCost = 45
+customCost = 45
+scrapValue = 10
+buildTime = 10.0
+customTime = 10.0
+maxHealth = 2750
+maxAmmo = 3000
+addAmmo = 5
+unitName = "Rocket Pod"
+
+aiName = "AttachWingman"
+aiName2 = "AttachWingman"
+
+//aiName = "TurretTankFriend"
+//aiName2 = "TurretTankEnemy"
+
+heatSignature = 0.1
+imageSignature = 1.0
+radarSignature = 0.1
+isAssault = 0
+
+armorClass = L
+
+requireCount = 0
+
+/////// weapons ///////////////////
+
+weaponHard1 = "HP_rocket_1"
+weaponName1 = "grpod_c"
+weaponAssault1 = 0
+
+//////////////////////////////////  
+
+turretCount = 2
+turretName1 = "turret_x_1"
+turretName2 = "turret_y_1"
+//turretName3 = "HP_eyepoint"
+
+
+[CraftClass]
+rangeScan = 300.0
+periodScan = 1.0
+velocJam = 1.0
+engageRange = 250
+weaponPitch = 1.0
+
+selectGoMsg = "fvturr06.wav"
+
+selectDeployMsg = "fvturr01.wav"
+selectOtherMsg = "fvturr08.wav"
+selectWaitMsg = "fvturr08.wav"
+holdMsg = "fvturr11.wav"
+goMsg = "fvturr13.wav"
+followMsg = "fvturr04.wav"
+followMeMsg = "fvturr04.wav"
+rescueMsg = "fvturr13.wav"
+attackMsg = "fvturr10.wav"
+otherMsg = "fvturr13.wav"
+
+deployedMsg = "fvturr01.wav"
+
+
+attackTask = "ArtlAttack"
+subAttackTask = "ArtlSubAttack"
+subAttackClass = "AD"	// include air units as attack targets only when deployed
+
+
+
+[HoverCraftClass]
+setAltitude = 1.0
+accelDragStop = 20.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.1
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+
+velocForward = 5.0
+velocReverse = 2.0
+velocStrafe = 5.0
+accelThrust = 5.0
+accelBrake = 50.0
+omegaSpin = 1.0
+omegaTurn = 1.0
+alphaSteer = 5.0
+accelJump = 5.0
+
+soundThrust = "ssent01d.wav"
+soundSteer = "avturre8.wav"
+soundDeploy = "avturre4.wav"
+soundUndeploy = "avturre5.wav"
+
+
+[TurretTankClass]
+omegaTurret = 1.0
+alphaTurret = 2.0
+timeDeploy = 8.0
+timeUndeploy = 0.7

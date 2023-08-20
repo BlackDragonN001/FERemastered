@@ -1,0 +1,64 @@
+[GameObjectClass]
+geometryName = "ebrectur00.xsi"
+classLabel = "turret"
+collisionRadius = 10.0
+scrapCost = 80
+scrapValue = 25
+maxHealth = 8000
+maxAmmo = 20000 // 0 is *not* treated as infinite ammo!
+unitName = "Buster"
+aiName = "SupportProcess"
+aiName2 = "SupportProcess"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+powerCost = 0
+
+isAssault = 1
+
+armorClass = H
+
+requireCount = 0
+
+provideCount = 1
+provideName1 = "ebrectur"
+
+
+weaponMask = 0011
+
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "gadder_a"
+weaponAssault1 = 1
+
+
+lightHard1 = "hp_light_1"
+lightName1 = "cplasersite"
+
+turretCount = 4
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+turretName3 = "hp_eyepoint"
+turretName4 = "hp_light_1"
+
+[BuildingClass]
+soundAmbient = "igtow01.wav"
+
+[CraftClass]
+rangeScan = 400
+periodScan = 5.0
+velocJam = 0.0
+weaponPitch = 2.0
+steerFactor = 1.0
+engageRange = 300
+
+attackTask = "AssaultTankAttack"
+subAttackTask = "SupportSubAttack"
+subAttackClass = "ANS"
+// include air units as attack targets
+// doesn't need to deploy to sub attack
+// doesn't move towards unit in sub attack
+
+
+[TurretCraftClass]
+omegaTurret = 3.0
+detectRange = 325 

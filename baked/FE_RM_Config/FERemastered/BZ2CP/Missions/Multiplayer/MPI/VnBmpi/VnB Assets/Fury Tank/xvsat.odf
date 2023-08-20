@@ -1,0 +1,60 @@
+[GameObjectClass]
+baseName = "xvsat"
+geometryName = "xvsat00.xsi"
+classLabel = "wingman"
+scrapValue = 50
+scrapCost = 100
+maxHealth = 6000
+addHealth = 10
+maxAmmo = 3000
+addAmmo = 10
+unitName = "Fury Tank"
+aiName = "RocketTankFriend"
+aiName2 = "RocketTankEnemy"
+heatSignature = 0.5
+imageSignature = 0.8
+radarSignature = 1.0
+explosionName = "xbldxpl"
+canSnipe = false
+
+weaponMask = 00111
+weaponHard1 = "HP_CANNON"
+weaponAssault1 = 0
+weaponName1 = "garc_c"
+weaponHard2 = "HP_CANNON"
+weaponAssault2 = 0
+weaponName2 = "garc_c"
+weaponHard3 = "HP_ROCKET"
+weaponAssault3 = 0
+weaponName3 = "gsavrkt"
+weaponHard4 = "HP_SHIELD"
+weaponAssault4 = 0
+weaponName4 = "gshield"
+
+[CraftClass]
+rangeScan = 400.0
+periodScan = 2.0
+velocJam = 5.0
+
+[HoverCraftClass]
+setAltitude = 1.5
+accelDragStop = 3.5
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.25
+pitchThrust = 0.0
+rollStrafe = 0.0
+rollSteer = 0.0
+
+velocForward = 20.0
+velocReverse = 20.0
+velocStrafe = 20.0
+accelThrust = 20.0
+omegaSpin = 4.0
+omegaTurn = 4.0
+alphaSteer = 5.0
+accelJump = 4.0
+
+soundDeploy = "avsave5.wav"
+soundUndeploy = "avsave6.wav"
+soundThrust = "avsave0.wav"

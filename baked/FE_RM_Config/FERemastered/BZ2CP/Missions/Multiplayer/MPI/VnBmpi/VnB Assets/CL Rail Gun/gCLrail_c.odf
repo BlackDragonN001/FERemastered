@@ -1,0 +1,16 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gCLrail_a"
+ordName = "CLrail_c"
+wpnName = "Rail Gun"
+fireSound = "CLrail.wav"
+wpnReticle = "grifle"  //"grail"  <-- from my custom reticle file
+wpnCategory = "GUN"
+isAssault = 0
+
+aiRange = 180
+
+[CannonClass]
+shotDelay = 1.4
+shotVariance = 0.015  // 0.005
+

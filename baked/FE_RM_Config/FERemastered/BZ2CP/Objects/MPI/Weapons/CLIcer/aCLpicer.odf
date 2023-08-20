@@ -1,0 +1,25 @@
+[GameObjectClass]
+geometryName = "apcann00.xsi"
+classLabel = "wpnpower"
+scrapCost = 5
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 0
+unitName = NULL
+aiName = "PowerUpProcess"
+
+requireCount = 2
+requireName1 = "ibarmo"
+requireText1 = "Build Armory"
+requireName2 = "ibsbay"
+requireText1 = "Build Service Bay"
+
+lightHard1 = "hp_light_1"
+lightName1 = "omnipurple"
+
+[PowerUpClass]
+soundPickup = "pickup01.wav"
+soundReject = "reject.wav"
+
+[WeaponPowerupClass]
+weaponName = "gCLicer_c"

@@ -1,0 +1,42 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX=-1024
+MinZ=-1024
+Width=2560
+Depth=2560
+Height=100
+Tile = 1
+color=149 123 87 255
+
+[NormalView]
+
+FogColor="106 63 44 255"
+FogStart=200
+FogEnd=350
+VisibilityRange=375
+
+[World]
+MusicTrack1=9
+MusicTrack2=3
+MusicTrack3=4
+
+
+[Texture]
+TileTexture1 = "titan.tga"
+TileTexture2 = "dune2.tga"
+TileTexture3 = "titan3.tga"
+TileTexture4 = "dune5.tga"
+TileTexture5 = "dune8.tga"
+TileTexture6 = "dune9.tga"
+TileTexture7 = "dune6.tga"
+TileTexture8 = "spstones.tga"
+TileTexture9 = "grass.tga"
+TileTexture10 = "spstones2.tga"
+TileTexture11 = "metal2.tga"
+TileTexture12 = "wasteland5.tga"
+TileTexture13 = "wasteland8.tga"
+TileTexture14 = "indus10.pic"
+TileTexture15 = "dune8.tga"
+TileTexture16 = "dune9.tga"
+

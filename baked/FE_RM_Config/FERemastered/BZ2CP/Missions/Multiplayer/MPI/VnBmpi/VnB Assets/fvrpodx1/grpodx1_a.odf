@@ -1,0 +1,17 @@
+// tweaks by tech.noid 2002
+
+[WeaponClass]
+classLabel = "cannon"
+ordName = "rpodx1_a"
+wpnName = "Stinger Msl"
+fireSound = "fvrpodx1-.wav" // "gsand00.wav"
+wpnReticle = "gsting_c"
+wpnCategory = "ROCK"
+aiRange = 400
+isAssault = 1
+
+[CannonClass]
+shotDelay = 1.0
+salvoDelay = 0.05 // 0.1
+salvoCount = 10 // 5
+shotAlternate = 1
