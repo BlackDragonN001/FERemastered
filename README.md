@@ -23,9 +23,9 @@
 
 1. Open an administrator powershell window (type 'powershell' into windows search and right click and select 'Run as administrator')
 
-1. Run the following command `Set-ExecutionPolicy -Scope Process Unrestricted`
+1. Run the following command `Set-ExecutionPolicy -Scope Process Unrestricted` and then enter y for yes.
 
-1. Navigate to the FERemastered repo in powershell. This can be done by running `cd "C:\Users\User\FERemastered"` if the FERemastered repo was cloned into `C:\Users\User\FERemastered`
+1. Navigate to the FERemastered repo in powershell. This can be done by running  `Set-Location -Path "C:\Users\User\FERemastered"` if the FERemastered repo was cloned into `C:\Users\User\FERemastered`
 
 1. Run `.\install.ps1`. This will create an install of FERemastered in your user home directory.
 > The install directory can be customised by running `./install.ps1 -FeInstallDirectory C:\Games\FE`
