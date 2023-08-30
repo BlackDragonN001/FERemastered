@@ -72,7 +72,7 @@ detectRange = 300
 renderBase = "draw_multi"
 renderCount = 2
 renderName1 = "ebcbun.wave"
-renderName2 = "ebcbun.pulse" //beam"
+renderName2 = "ebcbun.fade" //pulse" //beam"
 
 [Wave]
 renderBase = "draw_emit"
@@ -89,8 +89,8 @@ textureName = "wave.tga"
 textureBlend = "one one modulate"
 startColor = "255 180 30 200"
 finishColor = "255 150 30 0"
-startRadius = 2.0
-finishRadius = 1.5
+startRadius = 1.8
+finishRadius = 1.4
 animateTime = 1.5
 waveAngle = 3.14159265359
 waveDepth = 1.0
@@ -170,12 +170,12 @@ lensFlare = 0
 renderBase = "draw_emit"
 emitName = "ebcbun.beamemit"
 emitDelay = 0.1
-emitVelocity = "0.0 1e5 0.0" // fixes bolt segment overflow //1e6"
+emitVelocity = "0.0 1e5.0 0.0" // fixes bolt segment overflow //1e6"
 emitVariance = "0.0 0.0 0.0"
 
 [BeamEmit]
 simulateBase = "sim_smoke"
-lifeTime = 0.1
+lifeTime = 0.11
 renderBase = "draw_trail"
 textureName = "bolt4.tga"
 textureBlend = "one one modulate"
@@ -186,3 +186,46 @@ finishRadius = 2.0
 segmentLength = 20.0
 segmentTime = 0.1
 textureRate = 0.1
+
+
+[Fade]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ebcbun.fade"
+renderName2 = "ebcbun.fade2"
+
+[Fade]
+renderBase = "draw_geom"
+ForceDrawTransparent = false
+textureName = "vsmoke.tga"
+textureBlend = "srcalpha one modulatealpha" //"srcalpha invsrcalpha modulatealpha"
+startColor = "255 180 30 50"
+finishColor = "255 180 30 50"
+startRadius = 1.0
+finishRadius = 1.0
+//animateTime = 0.01
+geomName = "ebcbun_cyl.fbx"
+InitialPitch = 0.0
+InitialYaw = 0.0
+InitialRoll = 0.0
+AddPitch = 0.0
+AddYaw = 20.0
+AddRoll = 0.0
+
+[Fade2]
+renderBase = "draw_geom"
+ForceDrawTransparent = false
+textureName = "vsmoke.tga"
+textureBlend = "srcalpha one modulatealpha" //"srcalpha invsrcalpha modulatealpha"
+startColor = "255 180 30 50"
+finishColor = "255 180 30 50"
+startRadius = 1.0
+finishRadius = 1.0
+//animateTime = 0.01
+geomName = "ebcbun_cyl.fbx"
+InitialPitch = 0.0
+InitialYaw = 0.0
+InitialRoll = 0.0
+AddPitch = 0.0
+AddYaw = -20.0
+AddRoll = 0.0
