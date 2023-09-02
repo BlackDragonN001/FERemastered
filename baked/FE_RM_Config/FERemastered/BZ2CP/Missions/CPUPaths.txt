@@ -107,3 +107,124 @@ dowe -> 6_sbay3
 stro -> 6_armo3
 jamm1 -> 6_jamm1
 jamm2 -> 6_jamm2
+
+
+
+
+--------------- OLDER PATHPOINT CONVERSION LIST, 1v1 AIPs/maps.
+
+-- cerberi
+carmory -> 8_armo1
+cbunker -> 8_cbun1
+cfactory -> 8_fact1
+cgtow -> 8_gtow1
+cgtow2 -> 8_gtow2
+cgtow3 -> 8_gtow3
+cpower1 -> 8_pgen1
+cpower2 -> 8_pgen2
+cpower3 -> 8_pgen3
+cservicebay -> 8_sbay1
+ctechcenter -> 8_tcen1
+
+--isdf
+armory -> 6_armo1
+bunker -> 6_cbun1
+factory -> 6_fact1
+gtow1 -> 6_gtow1
+gtow2 -> 6_gtow2
+power1 -> 6_pgen1
+power2 -> 6_pgen2
+power3 -> 6_pgen3
+servicebay -> 6_sbay1
+techcenter -> 6_tcen1
+
+--hadean
+harmory -> 7_armo1
+hbunker -> 7_cbun1
+hfactory -> 7_fact1
+hgtow1 -> 7_gtow1
+hpower1 -> 7_pgen1
+hpower2 -> 7_pgen2
+hpower3 -> 7_pgen3
+hservicebay -> 7_sbay1
+spike1 -> 7_gtow2
+htechcenter -> 7_tcen1
+htraining -> 7_train1
+
+--scion
+kiln -> 9_fact3
+dower -> 9_sbay3
+stronghold -> 9_armo3
+antenna -> 9_bomb1
+spire1 -> 9_gtow1
+spire2 -> 9_gtow2
+spire3 -> 9_gtow3
+
+
+
+------CONVERT NEW 3-way PATHS TO NEW PATHS
+
+-- for each....
+eteam1_-> 6_
+eteam2_-> 7_
+
+-- then, appended to each...
+fact -> fact1
+relay -> cbun1
+armory -> armo1
+sbay -> sbay1
+train -> train1
+bbay -> bomb1
+tech -> tcen1
+
+kiln -> fact3
+overseer -> bomb1
+dower -> sbay3
+strong -> armo3
+jammer -> jamm1
+
+
+--- CONVERT NEW PATHS TO NEWER PATHS
+
+gtow1_6 -> 6_gtow1
+gtow2_6
+gtow3_6
+gtow4_6
+base_gtow1_edf_6
+base_gtow2_edf_6
+base_gtow3_edf_6
+base_gtow4_edf_6
+pgen1_edf_6
+pgen2_edf_6
+pgen3_edf_6
+pgen4_edf_6
+factory_edf_6
+armory_edf_6
+bunker_edf_6
+sbay_edf_6
+training_Edf_6
+tech_edf_6
+bomber_edf_6
+
+pgen1_had_6
+pgen2_had_6
+pgen3_had_6
+pgen4_had_6
+base_gtow1_had_6
+base_gtow2_had_6
+factory_had_6
+armory_had_6
+bunker_had_6
+sbay_had_6
+training_had_6
+tech_had_6
+
+kiln_scion_6
+ante_scion_6
+dowe_scion_6
+stro_scion_6
+jammer_scion_6
+base_spire1_edf_6
+base_spire2_edf_6
+base_spire3_edf_6
+base_spire4_edf_6
