@@ -101,7 +101,7 @@ planConditionCount = 1
 planCompare = ">="
 planConditionClassProvided = true 
 planConditionOr = false
-holdPoint = "eteam1_hold1"
+holdPoint = "6_hold1"
 holdType1 = "evturr"
 holdCount1 = 1
 ContinueEvenIfFail = 1
@@ -115,7 +115,7 @@ planConditionCount = 1
 planCompare = ">="
 planConditionClassProvided = true 
 planConditionOr = false
-holdPoint = "eteam1_hold2"
+holdPoint = "6_hold2"
 holdType1 = "evturr"
 holdCount1 = 1
 ContinueEvenIfFail = 1
@@ -162,7 +162,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebpgen"
 buildCount1 = 1
-buildLoc1 = "eteam2_pgen1" // Possibly need to change this at some point.
+buildLoc1 = "7_pgen1" // Possibly need to change this at some point.
 
 [Plan14]
 planType = "BaseBuildMinimums"
@@ -175,7 +175,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebfact"
 buildCount1 = 1
-buildLoc1 = "eteam2_fact"
+buildLoc1 = "7_fact1"
 
 [Plan15]
 planType = "BaseBuildMinimums"
@@ -188,7 +188,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebcbun"
 buildCount1 = 1
-buildLoc1 = "eteam2_relay"
+buildLoc1 = "7_cbun1"
 
 [Plan16]
 planType = "Explorer"
@@ -224,7 +224,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebpgen"
 buildCount1 = 1
-buildLoc1 = "eteam2_pgen2"
+buildLoc1 = "7_pgen2"
 
 [Plan19]
 planType = "Attacker"
@@ -261,7 +261,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebgt4g"
 buildCount1 = 1
-buildLoc1 = "eteam2_gtow1"
+buildLoc1 = "7_gtow1"
 
 [Plan22]
 planType = "BaseBuildMinimums"
@@ -274,7 +274,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebarmo"
 buildCount1 = 1
-buildLoc1 = "eteam2_armory"
+buildLoc1 = "7_armo1"
 
 [Plan23]
 planType = "BaseBuildMinimums"
@@ -287,7 +287,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebsbay"
 buildCount1 = 1
-buildLoc1 = "eteam2_sbay"
+buildLoc1 = "7_sbay1"
 
 [Plan24]
 planType = "Attacker"
@@ -335,7 +335,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebpgen"
 buildCount1 = 1
-buildLoc1 = "eteam2_pgen3"
+buildLoc1 = "7_pgen3"
 
 [Plan27]
 planType = "BuildMinimums"
@@ -379,7 +379,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebgt2g"
 buildCount1 = 1
-buildLoc1 = "eteam2_gtow2"
+buildLoc1 = "7_gtow2"
 
 [Plan31]
 planType = "BaseBuildMinimums"
@@ -392,7 +392,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebpgen"
 buildCount1 = 1
-buildLoc1 = "eteam2_pgen4"
+buildLoc1 = "7_pgen4"
 
 [Plan32]
 planType = "BaseBuildMinimums"
@@ -405,7 +405,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebtrain"
 buildCount1 = 1
-buildLoc1 = "eteam2_train"
+buildLoc1 = "7_train1"
 
 [Plan33]
 planType = "Attacker"
@@ -434,7 +434,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebgt4g"
 buildCount1 = 1
-buildLoc1 = "eteam2_gtow3"
+buildLoc1 = "7_gtow3"
 
 [Plan35]
 planType = "Recover"
@@ -472,7 +472,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebtcen"
 buildCount1 = 1
-buildLoc1 = "eteam2_tech"
+buildLoc1 = "7_tcen1"
 
 [Plan38]
 planType = "BaseBuildMinimums"
@@ -485,7 +485,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebpgen"
 buildCount1 = 1
-buildLoc1 = "eteam2_pgen5"
+buildLoc1 = "7_pgen5"
 
 [Plan39]
 planType = "Attacker"
@@ -516,7 +516,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebgt2g"
 buildCount1 = 1
-buildLoc1 = "eteam2_gtow4"
+buildLoc1 = "7_gtow4"
 
 [Plan41]
 planType = "BaseBuildMinimums"
@@ -529,7 +529,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebgt4g"
 buildCount1 = 1
-buildLoc1 = "eteam2_gtow5"
+buildLoc1 = "7_gtow5"
 
 [Plan42]
 planType = "BaseBuildMinimums"
@@ -542,7 +542,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ebgt2g"
 buildCount1 = 1
-buildLoc1 = "eteam2_gtow6"
+buildLoc1 = "7_gtow6"
 
 [Plan43]
 planType = "BuildMinimums"

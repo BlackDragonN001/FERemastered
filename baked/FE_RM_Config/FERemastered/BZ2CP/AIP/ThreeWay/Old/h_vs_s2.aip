@@ -27,11 +27,11 @@ buildcount3 = 1
 plantype = "basebuildminimums"
 planpriority = 190
 buildtype1 = "ebpgen"
-buildloc1 = "hpower1"
+buildloc1 = "7_pgen1"
 buildtype2 = "ebfact"
-buildloc2 = "hfactory"
+buildloc2 = "7_fact1"
 buildtype3 = "ebgt2g"
-buildloc3 = "spike1"
+buildloc3 = "7_gtow2"
 
 [plan4]
 plancondition = "HisExists"
@@ -49,9 +49,9 @@ maxtries = 1
 plantype = "basebuildminimums"
 planpriority = 186
 buildtype1 = "ebpgen"
-buildloc1 = "hpower2"
+buildloc1 = "7_pgen2"
 buildtype2 = "ebcbun"
-buildloc2 = "hbunker"
+buildloc2 = "7_cbun1"
 
 [plan6]
 plancondition = "Hisexists"
@@ -69,11 +69,11 @@ maxtries = 1
 plantype = "basebuildminimums"
 planpriority = 170
 buildtype1 = "ebarmo"
-buildloc1 = "harmory"
+buildloc1 = "7_armo1"
 buildtype2 = "ebsbay"
-buildloc2 = "hservicebay"
+buildloc2 = "7_sbay1"
 buildtype3 = "ebpgen"
-buildloc3 = "hpower3"
+buildloc3 = "7_pgen3"
 
 [plan8]
 plantype = "collectpool"
@@ -124,9 +124,9 @@ holdpoint = "hold3"
 plantype = "basebuildminimums"
 planpriority = 159
 buildtype1 = "ebgt4g"
-buildloc1 = "hgtow1"
+buildloc1 = "7_gtow1"
 buildtype2 = "ebtrain"
-buildloc2 = "htraining"
+buildloc2 = "7_train1"
 
 [plan14]
 plantype = "buildminimums"
@@ -214,7 +214,7 @@ maxtries = 1
 plantype = "basebuildminimums"
 planpriority = 120
 buildtype1 = "ebtcen"
-buildloc1 = "htechcenter"
+buildloc1 = "7_tcen1"
 
 [plan24]
 plantype = "buildminimums"

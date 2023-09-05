@@ -101,7 +101,7 @@ planConditionCount = 1
 planCompare = ">="
 planConditionClassProvided = true 
 planConditionOr = false
-holdPoint = "eteam1_hold1"
+holdPoint = "6_hold1"
 holdType1 = "fvturr"
 holdCount1 = 1
 ContinueEvenIfFail = 1
@@ -115,7 +115,7 @@ planConditionCount = 1
 planCompare = ">="
 planConditionClassProvided = true 
 planConditionOr = false
-holdPoint = "eteam1_hold2"
+holdPoint = "6_hold2"
 holdType1 = "fvturr"
 holdCount1 = 1
 ContinueEvenIfFail = 1
@@ -163,7 +163,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "fbkiln"
 buildCount1 = 1
-buildLoc1 = "eteam1_kiln"
+buildLoc1 = "6_fact3"
 
 [Plan14]
 planType = "BaseBuildMinimums"
@@ -176,7 +176,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "fbantm"
 buildCount1 = 1
-buildLoc1 = "eteam1_overseer"
+buildLoc1 = "6_bomb1"
 
 [Plan15]
 planType = "Explorer"
@@ -224,7 +224,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "fbdowe"
 buildCount1 = 1
-buildLoc1 = "eteam1_dower"
+buildLoc1 = "6_sbay3"
 
 [Plan19]
 planType = "Attacker"
@@ -261,7 +261,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "fbspir"
 buildCount1 = 1
-buildLoc1 = "eteam1_gtow1"
+buildLoc1 = "6_gtow1"
 
 [Plan22]
 planType = "BaseBuildMinimums"
@@ -274,7 +274,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "fbstro"
 buildCount1 = 1
-buildLoc1 = "eteam1_strong"
+buildLoc1 = "6_armo3"
 
 [Plan23]
 planType = "Upgrade"
@@ -334,7 +334,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "fbjamm"
 buildCount1 = 1
-buildLoc1 = "eteam1_jammer"
+buildLoc1 = "6_jamm1"
 
 [Plan27]
 planType = "BuildMinimums"
@@ -377,7 +377,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "fbspir"
 buildCount1 = 1
-buildLoc1 = "eteam1_gtow2"
+buildLoc1 = "6_gtow2"
 
 [Plan31]
 planType = "Attacker"
@@ -406,7 +406,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "fbspir"
 buildCount1 = 1
-buildLoc1 = "eteam1_gtow3"
+buildLoc1 = "6_gtow3"
 
 [Plan34]
 planType = "Recover"
@@ -461,7 +461,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "fbspir"
 buildCount1 = 1
-buildLoc1 = "eteam1_gtow4"
+buildLoc1 = "6_gtow4"
 
 [Plan38]
 planType = "BaseBuildMinimums"
@@ -474,7 +474,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "fbspir"
 buildCount1 = 1
-buildLoc1 = "eteam1_gtow5"
+buildLoc1 = "6_gtow5"
 
 [Plan39]
 planType = "BaseBuildMinimums"
@@ -487,7 +487,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "fbspir"
 buildCount1 = 1
-buildLoc1 = "eteam1_gtow6"
+buildLoc1 = "6_gtow6"
 
 [Plan40]
 planType = "BuildMinimums"

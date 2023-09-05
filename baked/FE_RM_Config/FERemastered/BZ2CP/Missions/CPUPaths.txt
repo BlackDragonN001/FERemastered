@@ -43,7 +43,7 @@ stage1 ... stage3 = stage points. +3 for each AI team, Team 6 uses 1-3, Team 7 u
 #_sbay1 ... #_sbay3 = Service Bay
 #_pgen1 ... #_pgen9 = Power Generators (EDF/Cerberi/Hadean)
 #_cbun1 ... #_cbun8 = Comm Bunkers (EDF, Pgens for Hadeans)
-#_gtow1 ... #_gtow15 = Gun Towers (3 per cbun cluster for EDF/Hadean? first few numbers around base, higher numbers used for Defenders for Hadean?)
+#_gtow1 ... #_gtow15 = Gun Towers (3 per cbun cluster for EDF/Hadean? first few numbers around base, higher numbers used for Defenders for Hadean / Spires for Scion?)
 #_tcen1 ... #_tcen3 = Tech Center (EDF/Hadean/Cerberi)
 #_train1 ... #_train3 = Traiing Center (EDF/Hadean)
 #_bomb1 ... #_bomb2 = Bomber Bay (EDF, Atnenna for Scion, Antimatter Generator for Cerberi (2x2 building)
@@ -58,6 +58,12 @@ DLL Driven paths (optional):
 OLD MPI PATH POINT CONVERSION LIST:
 
 RecyclerEnemy -> 6_RecyclerEnemy
+
+gtow1 -> 6_turr1
+gtow2 -> 6_turr2
+gtow3 -> 6_turr3
+gtow4 -> 6_turr4
+gtow5 -> 6_turr5
 
 ipgen1 -> 6_pgen1 (epgen1)
 ipgen2 -> 6_pgen2 (epgen2)
@@ -162,69 +168,47 @@ spire3 -> 9_gtow3
 
 
 
-------CONVERT NEW 3-way PATHS TO NEW PATHS
-
--- for each....
-eteam1_-> 6_
-eteam2_-> 7_
-
--- then, appended to each...
-fact -> fact1
-relay -> cbun1
-armory -> armo1
-sbay -> sbay1
-train -> train1
-bbay -> bomb1
-tech -> tcen1
-
-kiln -> fact3
-overseer -> bomb1
-dower -> sbay3
-strong -> armo3
-jammer -> jamm1
-
-
 --- CONVERT NEW PATHS TO NEWER PATHS
 
 gtow1_6 -> 6_gtow1
-gtow2_6
-gtow3_6
-gtow4_6
-base_gtow1_edf_6
-base_gtow2_edf_6
-base_gtow3_edf_6
-base_gtow4_edf_6
-pgen1_edf_6
-pgen2_edf_6
-pgen3_edf_6
-pgen4_edf_6
-factory_edf_6
-armory_edf_6
-bunker_edf_6
-sbay_edf_6
-training_Edf_6
-tech_edf_6
-bomber_edf_6
+gtow2_6 -> 6_gtow2
+gtow3_6 -> 6_gtow3
+gtow4_6 -> 6_gtow4
+base_gtow1_edf_6 -> 6_gtow5
+base_gtow2_edf_6 -> 6_gtow6
+base_gtow3_edf_6 -> 6_gtow7
+base_gtow4_edf_6 -> 6_gtow8
+pgen1_edf_6 -> 6_pgen1
+pgen2_edf_6 -> 6_pgen2
+pgen3_edf_6 -> 6_pgen3
+pgen4_edf_6 -> 6_pgen4
+factory_edf_6 -> 6_fact1
+armory_edf_6 -> 6_armo1
+bunker_edf_6 -> 6_cbun1
+sbay_edf_6 -> 6_sbay1
+training_Edf_6 -> 6_train1
+tech_edf_6 -> 6_tcen1
+bomber_edf_6 -> 6_bomb1
 
-pgen1_had_6
-pgen2_had_6
-pgen3_had_6
-pgen4_had_6
-base_gtow1_had_6
-base_gtow2_had_6
-factory_had_6
-armory_had_6
-bunker_had_6
-sbay_had_6
-training_had_6
-tech_had_6
+pgen1_had_6 -> 6_pgen1
+pgen2_had_6 -> 6_pgen2
+pgen3_had_6 -> 6_pgen3
+pgen4_had_6 -> 6_pgen4
+base_gtow1_had_6 -> 6_gtow5
+base_gtow2_had_6 -> 6_gtow6
+factory_had_6 -> 6_fact1
+armory_had_6 -> 6_armo1
+bunker_had_6 -> 6_cbun1
+sbay_had_6 -> 6_sbay1
+training_had_6 -> 6_train1
+tech_had_6 -> 6_tcen1
 
-kiln_scion_6
-ante_scion_6
-dowe_scion_6
-stro_scion_6
-jammer_scion_6
-base_spire1_edf_6
-base_spire2_edf_6
-base_spire3_edf_6
-base_spire4_edf_6
+kiln_scion_6 -> 6_fact3
+ante_scion_6 -> 6_bomb1
+dowe_scion_6 -> 6_sbay3
+stro_scion_6 -> 6_armo3
+jammer_scion_6 -> 6_jamm1
+base_spire1_scion_6 -> 6_gtow10
+base_spire2_scion_6 -> 6_gtow11
+base_spire3_scion_6 -> 6_gtow12
+base_spire4_scion_6 -> 6_gtow13

@@ -99,7 +99,7 @@ planConditionCount = 1
 planCompare = ">="
 planConditionClassProvided = true 
 planConditionOr = false
-holdPoint = "eteam2_hold1"
+holdPoint = "7_hold1"
 holdType1 = "ivturr"
 holdCount1 = 1
 ContinueEvenIfFail = 1
@@ -113,7 +113,7 @@ planConditionCount = 1
 planCompare = ">="
 planConditionClassProvided = true 
 planConditionOr = false
-holdPoint = "eteam2_hold2"
+holdPoint = "7_hold2"
 holdType1 = "ivturr"
 holdCount1 = 1
 ContinueEvenIfFail = 1
@@ -161,7 +161,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibpgen"
 buildCount1 = 1
-buildLoc1 = "eteam2_pgen1"
+buildLoc1 = "7_pgen1"
 
 [Plan14]
 planType = "BaseBuildMinimums"
@@ -174,7 +174,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibfact"
 buildCount1 = 1
-buildLoc1 = "eteam2_fact"
+buildLoc1 = "7_fact1"
 
 [Plan15]
 planType = "BaseBuildMinimums"
@@ -187,7 +187,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibcbun"
 buildCount1 = 1
-buildLoc1 = "eteam2_relay"
+buildLoc1 = "7_cbun1"
 
 [Plan16]
 planType = "Explorer"
@@ -223,7 +223,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibpgen"
 buildCount1 = 1
-buildLoc1 = "eteam2_pgen2"
+buildLoc1 = "7_pgen2"
 
 [Plan19]
 planType = "Attacker"
@@ -260,7 +260,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibgtow"
 buildCount1 = 1
-buildLoc1 = "eteam2_gtow1"
+buildLoc1 = "7_gtow1"
 
 [Plan22]
 planType = "BaseBuildMinimums"
@@ -273,7 +273,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibarmo"
 buildCount1 = 1
-buildLoc1 = "eteam2_armory"
+buildLoc1 = "7_armo2"
 
 [Plan23]
 planType = "BaseBuildMinimums"
@@ -286,7 +286,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibsbay"
 buildCount1 = 1
-buildLoc1 = "eteam2_sbay"
+buildLoc1 = "7_sbay1"
 
 [Plan24]
 planType = "Attacker"
@@ -334,7 +334,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibpgen"
 buildCount1 = 1
-buildLoc1 = "eteam2_pgen3"
+buildLoc1 = "7_pgen3"
 
 [Plan27]
 planType = "BuildMinimums"
@@ -376,7 +376,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibgtow"
 buildCount1 = 1
-buildLoc1 = "eteam2_gtow2"
+buildLoc1 = "7_gtow2"
 
 [Plan31]
 planType = "BaseBuildMinimums"
@@ -389,7 +389,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibpgen"
 buildCount1 = 1
-buildLoc1 = "eteam2_pgen4"
+buildLoc1 = "7_pgen4"
 
 [Plan32]
 planType = "BaseBuildMinimums"
@@ -402,7 +402,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibtrain"
 buildCount1 = 1
-buildLoc1 = "eteam2_train"
+buildLoc1 = "7_train1"
 
 [Plan33]
 planType = "Attacker"
@@ -431,7 +431,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibgtow"
 buildCount1 = 1
-buildLoc1 = "eteam2_gtow3"
+buildLoc1 = "7_gtow3"
 
 [Plan35]
 planType = "Recover"
@@ -468,7 +468,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibbomb"
 buildCount1 = 1
-buildLoc1 = "eteam2_bbay"
+buildLoc1 = "7_bomb1"
 
 [Plan38]
 planType = "BuildMinimums"
@@ -493,7 +493,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibpgen"
 buildCount1 = 1
-buildLoc1 = "eteam2_pgen5"
+buildLoc1 = "7_pgen5"
 
 [Plan40]
 planType = "Attacker"
@@ -524,7 +524,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibtcen"
 buildCount1 = 1
-buildLoc1 = "eteam2_tech"
+buildLoc1 = "7_tcen1"
 
 [Plan42]
 planType = "BaseBuildMinimums"
@@ -537,7 +537,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibgtow"
 buildCount1 = 1
-buildLoc1 = "eteam2_gtow4"
+buildLoc1 = "7_gtow4"
 
 [Plan43]
 planType = "BaseBuildMinimums"
@@ -550,7 +550,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibgtow"
 buildCount1 = 1
-buildLoc1 = "eteam2_gtow5"
+buildLoc1 = "7_gtow5"
 
 [Plan44]
 planType = "BaseBuildMinimums"
@@ -563,7 +563,7 @@ planConditionClassProvided = true
 planConditionOr = false
 buildType1 = "ibgtow"
 buildCount1 = 1
-buildLoc1 = "eteam2_gtow6"
+buildLoc1 = "7_gtow6"
 
 [Plan45]
 planType = "BuildMinimums"

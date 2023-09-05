@@ -5183,7 +5183,7 @@ name = AiPath
 sObject = 0000003A
 size [1] =
 7
-label = hpower1
+label = 7_pgen1
 pointCount [1] =
 1
 points [1] =
@@ -5195,8 +5195,8 @@ pathType = 00000000
 name = AiPath
 sObject = 0000003B
 size [1] =
-4
-label = rece
+15
+label = 6_RecyclerEnemy
 pointCount [1] =
 1
 points [1] =
@@ -5209,7 +5209,7 @@ name = AiPath
 sObject = 0000003C
 size [1] =
 6
-label = spike1
+label = 7_gtow2
 pointCount [1] =
 1
 points [1] =
@@ -5221,8 +5221,8 @@ pathType = 00000000
 name = AiPath
 sObject = 0000003D
 size [1] =
-4
-label = rech
+15
+label = 7_RecyclerEnemy
 pointCount [1] =
 1
 points [1] =
@@ -5234,8 +5234,8 @@ pathType = 00000000
 name = AiPath
 sObject = 0000003E
 size [1] =
-6
-label = hgtow1
+7
+label = 7_gtow1
 pointCount [1] =
 1
 points [1] =
@@ -5247,8 +5247,8 @@ pathType = 00000000
 name = AiPath
 sObject = 0000003F
 size [1] =
-11
-label = hservicebay
+7
+label = 7_sbay1
 pointCount [1] =
 1
 points [1] =
@@ -5261,7 +5261,7 @@ name = AiPath
 sObject = 00000040
 size [1] =
 7
-label = harmory
+label = 7_armo1
 pointCount [1] =
 1
 points [1] =
@@ -5273,8 +5273,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000041
 size [1] =
-8
-label = hfactory
+7
+label = 7_fact1
 pointCount [1] =
 1
 points [1] =
@@ -5286,8 +5286,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000042
 size [1] =
-11
-label = htechcenter
+7
+label = 7_tcen1
 pointCount [1] =
 1
 points [1] =
@@ -5300,7 +5300,7 @@ name = AiPath
 sObject = 00000043
 size [1] =
 7
-label = hpower3
+label = 7_pgen3
 pointCount [1] =
 1
 points [1] =
@@ -5313,7 +5313,7 @@ name = AiPath
 sObject = 00000044
 size [1] =
 7
-label = hpower2
+label = 7_pgen2
 pointCount [1] =
 1
 points [1] =
@@ -5325,8 +5325,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000045
 size [1] =
-4
-label = recs
+15
+label = 9_RecyclerEnemy
 pointCount [1] =
 1
 points [1] =
@@ -5377,8 +5377,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000049
 size [1] =
-6
-label = power1
+7
+label = 6_pgen1
 pointCount [1] =
 1
 points [1] =
@@ -5391,7 +5391,7 @@ name = AiPath
 sObject = 0000004A
 size [1] =
 7
-label = hbunker
+label = 7_cbun1
 pointCount [1] =
 1
 points [1] =
@@ -5403,8 +5403,8 @@ pathType = 00000000
 name = AiPath
 sObject = 0000004B
 size [1] =
-6
-label = power2
+7
+label = 6_pgen2
 pointCount [1] =
 1
 points [1] =
@@ -5416,8 +5416,8 @@ pathType = 00000000
 name = AiPath
 sObject = 0000004C
 size [1] =
-4
-label = kiln
+7
+label = 9_fact3
 pointCount [1] =
 1
 points [1] =
@@ -5429,8 +5429,8 @@ pathType = 00000000
 name = AiPath
 sObject = 0000004D
 size [1] =
-5
-label = dower
+7
+label = 9_sbay3
 pointCount [1] =
 1
 points [1] =
@@ -5442,8 +5442,8 @@ pathType = 00000000
 name = AiPath
 sObject = 0000004E
 size [1] =
-10
-label = stronghold
+7
+label = 9_armo3
 pointCount [1] =
 1
 points [1] =
@@ -5456,7 +5456,7 @@ name = AiPath
 sObject = 0000004F
 size [1] =
 7
-label = antenna
+label = 9_bomb1
 pointCount [1] =
 1
 points [1] =
@@ -5468,8 +5468,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000050
 size [1] =
-6
-label = spire1
+7
+label = 9_gtow1
 pointCount [1] =
 1
 points [1] =
@@ -5481,8 +5481,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000051
 size [1] =
-6
-label = spire2
+7
+label = 9_gtow2
 pointCount [1] =
 1
 points [1] =
@@ -5494,8 +5494,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000052
 size [1] =
-6
-label = spire3
+7
+label = 9_gtow3
 pointCount [1] =
 1
 points [1] =
@@ -5507,8 +5507,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000053
 size [1] =
-5
-label = gtow1
+7
+label = 6_gtow1
 pointCount [1] =
 1
 points [1] =
@@ -5520,8 +5520,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000054
 size [1] =
-6
-label = power3
+7
+label = 6_pgen3
 pointCount [1] =
 1
 points [1] =
@@ -5533,8 +5533,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000055
 size [1] =
-5
-label = gtow2
+7
+label = 6_gtow2
 pointCount [1] =
 1
 points [1] =
@@ -5547,7 +5547,7 @@ name = AiPath
 sObject = 00000056
 size [1] =
 7
-label = factory
+label = 6_fact1
 pointCount [1] =
 1
 points [1] =
@@ -5559,8 +5559,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000057
 size [1] =
-6
-label = player
+8
+label = Recycler
 pointCount [1] =
 1
 points [1] =
@@ -5572,8 +5572,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000058
 size [1] =
-6
-label = armory
+7
+label = 6_armo1
 pointCount [1] =
 1
 points [1] =
@@ -5585,8 +5585,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000059
 size [1] =
-10
-label = servicebay
+7
+label = 6_sbay1
 pointCount [1] =
 1
 points [1] =
@@ -5598,8 +5598,8 @@ pathType = 00000000
 name = AiPath
 sObject = 0000005A
 size [1] =
-6
-label = bunker
+7
+label = 6_cbun1
 pointCount [1] =
 1
 points [1] =
@@ -5611,8 +5611,8 @@ pathType = 00000000
 name = AiPath
 sObject = 0000005B
 size [1] =
-10
-label = techcenter
+7
+label = 6_tcen1
 pointCount [1] =
 1
 points [1] =
@@ -5650,8 +5650,8 @@ pathType = 00000000
 name = AiPath
 sObject = 0000005E
 size [1] =
-5
-label = cgtow
+7
+label = 8_gtow1
 pointCount [1] =
 1
 points [1] =
@@ -5663,8 +5663,8 @@ pathType = 00000000
 name = AiPath
 sObject = 0000005F
 size [1] =
-4
-label = recc
+15
+label = 8_RecyclerEnemy
 pointCount [1] =
 1
 points [1] =
@@ -5676,8 +5676,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000060
 size [1] =
-6
-label = cgtow2
+7
+label = 8_gtow2
 pointCount [1] =
 1
 points [1] =
@@ -5690,7 +5690,7 @@ name = AiPath
 sObject = 00000061
 size [1] =
 7
-label = cpower1
+label = 8_pgen1
 pointCount [1] =
 1
 points [1] =
@@ -5702,8 +5702,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000062
 size [1] =
-6
-label = cgtow3
+7
+label = 8_gtow3
 pointCount [1] =
 1
 points [1] =
@@ -5716,7 +5716,7 @@ name = AiPath
 sObject = 00000063
 size [1] =
 7
-label = cpower2
+label = 8_pgen2
 pointCount [1] =
 1
 points [1] =
@@ -5729,7 +5729,7 @@ name = AiPath
 sObject = 00000064
 size [1] =
 7
-label = cpower3
+label = 8_pgen3
 pointCount [1] =
 1
 points [1] =
@@ -5741,8 +5741,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000065
 size [1] =
-8
-label = cfactory
+7
+label = 8_fact1
 pointCount [1] =
 1
 points [1] =
@@ -5755,7 +5755,7 @@ name = AiPath
 sObject = 00000066
 size [1] =
 7
-label = cbunker
+label = 8_cbun1
 pointCount [1] =
 1
 points [1] =
@@ -5767,8 +5767,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000067
 size [1] =
-11
-label = cservicebay
+7
+label = 8_sbay1
 pointCount [1] =
 1
 points [1] =
@@ -5780,8 +5780,8 @@ pathType = 00000000
 name = AiPath
 sObject = 00000068
 size [1] =
-11
-label = ctechcenter
+7
+label = 8_tcen1
 pointCount [1] =
 1
 points [1] =
@@ -5940,7 +5940,7 @@ name = AiPath
 sObject = 0000006B
 size [1] =
 7
-label = carmory
+label = 8_armo1
 pointCount [1] =
 1
 points [1] =

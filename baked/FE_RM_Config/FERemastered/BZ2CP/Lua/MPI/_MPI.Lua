@@ -456,21 +456,32 @@ function _MPI.SetupAITeam(Team)
 
 		BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vturr", "vturr", GetPositionNear(RecPos, 20.0, 40.0)) --"turretEnemy1");
 		BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vturr", "vturr", GetPositionNear(RecPos, 20.0, 40.0)) --"turretEnemy2");
+		BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vturr", "vturr", GetPositionNear(RecPos, 20.0, 40.0)) --"turretEnemy3");
+		BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vturr", "vturr", GetPositionNear(RecPos, 20.0, 40.0)) --"turretEnemy4");
 
 		if (MPIMission.CPUForce > 3 or MPIMission.CPUForce == -1) then
-			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "bspir", "vturr", "gtow2");
-			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "bspir", "vturr", "gtow3");
+			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vturr", "vturr", "turr1");
+			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vturr", "vturr", "turr2");
+			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vturr", "vturr", "turr3");
+			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vturr", "vturr", GetPositionNear(RecPos, 20.0, 40.0)) --"turretEnemy5");
+			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vturr", "vturr", GetPositionNear(RecPos, 20.0, 40.0)) --"turretEnemy6");
 			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vsent", "vscout", GetPositionNear(RecPos, 20.0, 40.0)) --"SentryEnemy1");
 			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vsent", "vscout", GetPositionNear(RecPos, 20.0, 40.0)) --"SentryEnemy2");
 		end
 
 		if (MPIMission.CPUForce > 51 or MPIMission.CPUForce == -1) then
-			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "bspir", "vturr", "gtow4");
-			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "bspir", "vturr", "gtow5");
+			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vturr", "vturr", "turr4");
+			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vturr", "vturr", "turr5");
+			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vturr", "vturr", GetPositionNear(RecPos, 20.0, 40.0)) --"turretEnemy7");
+			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vturr", "vturr", GetPositionNear(RecPos, 20.0, 40.0)) --"turretEnemy8");
+			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vturr", "vturr", GetPositionNear(RecPos, 20.0, 40.0)) --"turretEnemy9");
+			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vturr", "vturr", GetPositionNear(RecPos, 20.0, 40.0)) --"turretEnemy10");
 			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vtank", "vtank", GetPositionNear(RecPos, 20.0, 40.0)) --"tankEnemy1");
 			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vtank", "vtank", GetPositionNear(RecPos, 20.0, 40.0)) --"tankEnemy2");
 			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vtank", "vtank", GetPositionNear(RecPos, 20.0, 40.0)) --"tankEnemy3");
 			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vsent", "vscout", GetPositionNear(RecPos, 20.0, 40.0)) --"SentryEnemy3");
+			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vsent", "vscout", GetPositionNear(RecPos, 20.0, 40.0)) --"SentryEnemy4");
+			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "vsent", "vscout", GetPositionNear(RecPos, 20.0, 40.0)) --"SentryEnemy5");
 			
 			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "bjamm", "vturr", "jamm1");
 			BuildStartingVehicle(Team, MPIMission.TeamRace[Team], "bjamm", "vturr", "jamm2");

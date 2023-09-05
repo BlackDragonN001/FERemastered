@@ -28,11 +28,11 @@ buildcount1 = 1
 plantype = "basebuildminimums"
 planpriority = 185
 buildtype1 = "ibpgen"
-buildloc1 = "power1"
+buildloc1 = "6_pgen1"
 buildtype2 = "ibfact"
-buildloc2 = "factory"
+buildloc2 = "6_fact1"
 buildtype3 = "ibcbun"
-buildloc3 = "bunker"
+buildloc3 = "6_cbun1"
 
 [plan5]
 plantype = "buildminimums"
@@ -56,11 +56,11 @@ maxtries = 1
 plantype = "basebuildminimums"
 planpriority = 170
 buildtype1 = "ibarmo"
-buildloc1 = "armory"
+buildloc1 = "6_armo1"
 buildtype2 = "ibpgen"
-buildloc2 = "power2"
+buildloc2 = "6_pgen2"
 buildtype3 = "ibgtow"
-buildloc3 = "gtow1"
+buildloc3 = "6_gtow1"
 
 [plan8]
 plantype = "buildminimums"
@@ -72,9 +72,9 @@ buildcount1 = 2
 plantype = "basebuildminimums"
 planpriority = 160
 buildtype1 = "ibsbay"
-buildloc1 = "servicebay"
+buildloc1 = "6_sbay1"
 buildtype2 = "ibpgen"
-buildloc2 = "power3"
+buildloc2 = "6_pgen3"
 
 
 [plan10]
@@ -96,9 +96,9 @@ holdpoint = "hold6"
 plantype = "basebuildminimums"
 planpriority = 156
 buildtype1 = "ibtcen"
-buildloc1 = "techcenter"
+buildloc1 = "6_tcen1"
 buildtype2 = "ibgtow"
-buildloc2 = "gtow2"
+buildloc2 = "6_gtow2"
 
 
 [plan13]

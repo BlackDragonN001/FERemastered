@@ -27,10 +27,10 @@ buildcount1 = 1
 [plan4]
 plantype = "basebuildminimums"
 planpriority = 185
-buildtype1 = "fbkiln"
-buildloc1 = "kiln"
+buildtype1 = "fb9_fact3"
+buildloc1 = "9_fact3"
 buildtype2 = "fbdowe"
-buildloc2 = "dower"
+buildloc2 = "9_sbay3"
 
 [plan5]
 plantype = "buildminimums"
@@ -45,7 +45,7 @@ planconditionclass = "fbforg"
 planconditioncount = 1
 plantype = "upgrade"
 planpriority = 175
-Unittype = "fbkiln"
+Unittype = "fb9_fact3"
 
 [plan7]
 plantype = "buildminimums"
@@ -59,9 +59,9 @@ buildcount2 = 1
 plantype = "basebuildminimums"
 planpriority = 167
 buildtype1 = "fbstro"
-buildloc1 = "stronghold"
+buildloc1 = "9_armo3"
 buildtype2 = "fbantm"
-buildloc2 = "antenna"
+buildloc2 = "9_bomb1"
 
 [plan9]
 plancondition = "HisExists"
@@ -91,9 +91,9 @@ buildcount1 = 3
 plantype = "basebuildminimums"
 planpriority = 165
 buildtype1 = "fbspir"
-buildloc1 = "spire1"
+buildloc1 = "9_gtow1"
 buildtype2 = "fbspir"
-buildloc2 = "spire2"
+buildloc2 = "9_gtow2"
 
 [plan13]
 plantype = "Hold"
@@ -108,7 +108,7 @@ holdpoint = "hold1"
 plantype = "basebuildminimums"
 planpriority = 189
 buildtype1 = "fbspir"
-buildloc1 = "spire3"
+buildloc1 = "9_gtow3"
 
 
 [plan15]

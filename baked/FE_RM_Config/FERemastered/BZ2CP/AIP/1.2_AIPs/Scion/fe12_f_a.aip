@@ -192,10 +192,10 @@ buildCount1 = 1
 planType = "BaseBuildMinimums"
 planPriority = 480
 buildType1 = "fbkiln"
-buildLoc1 = "fact"
+buildLoc1 = "6_fact1"
 buildCount1 = 1
 buildType2 = "fbdowe"
-buildLoc2 = "sbay"
+buildLoc2 = "6_sbay1"
 buildCount2 = 1
 
 [Plan5]
@@ -210,7 +210,7 @@ unitType = "fbkiln"
 planType = "BaseBuildMinimums"
 planPriority = 470
 buildType1 = "fbstro"
-buildLoc1 = "stro"
+buildLoc1 = "6_armo3"
 buildCount1 = 1
 
 [Plan7]
@@ -246,7 +246,7 @@ ContinueEvenIfFail = true
 planType = "BaseBuildMinimums"
 planPriority = 450
 buildType1 = "fbantm"
-buildLoc1 = "antm"
+buildLoc1 = "6_bomb1"
 buildCount1 = 1
 
 [Plan10]
@@ -288,7 +288,7 @@ planCondition = "NotExists"
 planConditionClass = "fbover"
 planConditionCount = 1
 buildType1 = "fbspir"
-buildLoc1 = "spike1"
+buildLoc1 = "6_gtow1"
 buildCount1 = 1
 ContinueEvenIfFail = true
 
@@ -299,7 +299,7 @@ planCondition = "NotExists"
 planConditionClass = "fbover"
 planConditionCount = 1
 buildType1 = "fbspir"
-buildLoc1 = "spike2"
+buildLoc1 = "6_gtow2"
 buildCount1 = 1
 ContinueEvenIfFail = true
 
@@ -398,7 +398,7 @@ ContinueEvenIfFail = true
 planType = "BaseBuildMinimums"
 planPriority = 370
 buildType1 = "fbspir"
-buildLoc1 = "spike3"
+buildLoc1 = "6_gtow3"
 buildCount1 = 1
 ContinueEvenIfFail = true
 
@@ -406,13 +406,13 @@ ContinueEvenIfFail = true
 planType = "BaseBuildMinimums"
 planPriority = 360
 buildType1 = "fbspir"
-buildLoc1 = "def1"
+buildLoc1 = "6_gtow9"
 buildCount1 = 1
 buildType2 = "fbspir"
-buildLoc2 = "def2"
+buildLoc2 = "6_gtow10"
 buildCount2 = 1
 buildType3 = "fbspir"
-buildLoc3 = "def3"
+buildLoc3 = "6_gtow11"
 buildCount3 = 1
 ContinueEvenIfFail = true
 
@@ -468,7 +468,7 @@ ContinueEvenIfFail = true
 [Plan29]
 planType = "Attacker"
 planPriority = 300
-targetType = "VIRTUAL_CLASS_FACTORY"
+targetType = "VIRTUAL_CLASS_6_fact1"
 attackType1 = "fvatank"
 attackType2 = "fvatank"
 attackType3 = "fvtank"
@@ -493,10 +493,10 @@ ContinueEvenIfFail = true
 planType = "BaseBuildMinimums"
 planPriority = 280
 buildType1 = "fbspir"
-buildLoc1 = "gt4"
+buildLoc1 = "6_gtow4"
 buildCount1 = 1
 buildType2 = "fbspir"
-buildLoc2 = "gt4a"
+buildLoc2 = "6_gtow12"
 buildCount2 = 1
 ContinueEvenIfFail = true
 
@@ -504,6 +504,6 @@ ContinueEvenIfFail = true
 planType = "BaseBuildMinimums"
 planPriority = 270
 buildType1 = "fbspir"
-buildLoc1 = "gt5"
+buildLoc1 = "6_gtow5"
 buildCount1 = 1
 ContinueEvenIfFail = true
