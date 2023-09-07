@@ -4,12 +4,12 @@
 
 [Start]
 idleAllCraft = false
-scavClass = "fvscav_c"
+scavClass = "fvscav"
 consClass = "fvcons"
 CheckProvides = true
 DLLCanSwitch = true
 baseDir = 3
-baseLoc = "RecyclerEnemy"
+baseLoc = "7_RecyclerEnemy"
 UnitsService = true
 Difficulty = 1 // 1=Easy, 2=Medium, 3=Hard, 4=Extreme
 
@@ -62,7 +62,7 @@ buildCount1 = 1
 [Plan4] // Always have 3 active Scavengers for picking up loose scrap.
 planType = "BuildMinimums"
 planPriority = 970
-buildType1 = "fvscav_c"
+buildType1 = "fvscav"
 buildCount1 = 3
 planCondition = "Lua"
 LuaFunction = "ScavengerBuildLoopCondition"

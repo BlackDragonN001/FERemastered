@@ -64,6 +64,7 @@ local PortalUser = {
 
 function IsType(h, odfname)
 
+--	print("IsType: " .. GetOdf(h) .. ", " .. odfname);
 	local odf = GetRace(h) .. odfname;
 	return IsOdf(h, odf);
 
@@ -207,12 +208,13 @@ function _PortalUser.AddObject(h, Team, ObjClass, ODFName, Difficulty, NumHumans
 			local TempHandle = GetPortalToUse(h, ODFName);
 			if (TempHandle ~= nil and PortalUser.PUser == nil) then
 			
-				--PrintConsoleMessage("--- PortalUser Created");
+				--print("--- PortalUser Created");
 
 				PortalUser.PUser = h;
 				PortalUser.WaitCount = 0;
 				PortalUser.PortalToUse = TempHandle;
 			else
+			
 				if (IsOdf(h, "evpumislu") or IsOdf(h, "ivpurckt") or IsOdf(h,"fvpuarch")) then
 					m_PortalGroup = 0;
 					PortalUser.PUser = h;
@@ -233,7 +235,7 @@ function _PortalUser.AddObject(h, Team, ObjClass, ODFName, Difficulty, NumHumans
 					PortalUser.PUser = h;
 					PortalUser.WaitCount = 0;
 					PortalUser.PortalToUse = nil;
-				elseif (IsType(h,"vputank") or IsType(h, "vpuscout") or IsType(h, "vpusent")) then
+				elseif (IsType(h, "vputank") or IsType(h, "vpuscout") or IsType(h, "vpusent")) then
 					m_PortalGroup = 5;
 					PortalUser.PUser = h;
 					PortalUser.WaitCount = 0;
@@ -284,10 +286,15 @@ function _PortalUser.Update(NumHumans, Difficulty, siege_on, anti_assault, late_
 					elseif PortalGroup == "E" then --case 4: --Cerberi attack squads
 						RemoveObject(PortalUser.PUser);	-- Cerberi
 					else
+						
+						print("--- Update PortalUser Send");
+						
+						local Team = GetTeamNum(PortalUser.PUser);
+					
 						if (IsType(PortalUser.PUser,"vpuscout") or IsType(PortalUser.PUser,"vpusent")) then
-							Patrol(PortalUser.PUser,"patrolBase1");
+							Patrol(PortalUser.PUser, Team .. "Patrol1");
 						elseif (IsType(PortalUser.PUser,"vputank")) then
-							Patrol(PortalUser.PUser,"patrolBase2");
+							Patrol(PortalUser.PUser, Team .. "Patrol2");
 						else
 							local hTarget = GetObjectByTeamSlot(1, (((GetTurnCount() / TPS) % 5) + 1));
 							if (not IsAround(hTarget)) then

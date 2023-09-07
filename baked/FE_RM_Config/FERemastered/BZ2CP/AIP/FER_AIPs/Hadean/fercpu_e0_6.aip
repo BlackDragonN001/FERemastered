@@ -1,11 +1,11 @@
 [Start]
 idleAllCraft = false
-scavClass = "evscav_c"
+scavClass = "evscav"
 consClass = "evcons"
 CheckProvides = true
 DLLCanSwitch = true
 baseDir = 2
-baseLoc = "Recycler_6"
+baseLoc = "6_RecyclerEnemy"
 UnitsService = true
 Difficulty = 1
 
@@ -72,7 +72,7 @@ buildCount1 = 1
 [Plan4]
 planType = "BuildMinimums"
 planPriority = 540
-buildType1 = "evscav_c"
+buildType1 = "evscav"
 buildCount1 = 3
 planCondition = "Lua"
 LuaFunction = "validatePlan4"

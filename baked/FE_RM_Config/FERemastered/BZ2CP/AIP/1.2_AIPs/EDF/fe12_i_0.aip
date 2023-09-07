@@ -5,7 +5,9 @@
 scrapCount = 40
 consClass = "ivcons"
 scavClass = "ivscav"
+IdleAllCraft = true
 CheckProvides = true
+baseLoc = "6_RecyclerEnemy"
 sendAllUnitsOnStartup = 0
 
 [IdleDispatcher]

@@ -431,4 +431,37 @@ function SpawnObjectAround(odf, team, where, minRadius, maxRadius)
 	return BuildObject(odf, team, pos);
 end
 
+-- Gets the nearest object by CLASS_ID to the location/handle passed in.
+function GetNearestObjectByClass(where, class)
+
+	local pos = nil;
+	local bestDist = 9999999999.9;
+	local bestObject = nil;
+	
+	if type(where) == "string" then
+		pos = GetPosition(where);
+	elseif IsAround(where) then
+		pos = GetPosition(where);
+	else
+		pos = where;
+	end
+	
+	local Objects = GetAllGameObjectHandles();
+	
+	for n = 1, #Objects do
+		local ObjectClass = GetClassLabel(Objects[n]);
+		
+		if (ObjectClass == class) then
+			local dist = GetDistance(Objects[n], where);
+			
+			if (dist < bestDist) then
+				bestObject = Objects[n];
+				bestDist = dist;
+			end
+		end
+	end
+	
+	return bestObject;
+end
+
 return _DLLUtils;

@@ -214,7 +214,7 @@ function _MPI.InitialSetup()
 		MPIMission.HumanReinforcementTime = SecondsToTurns(250);
 	else
 	
-		MPIMission.m_Difficulty = IFace_GetInteger("options.play.difficulty");
+		MPIMission.m_Difficulty = IFace_GetInteger("shell.instant.difficulty"); --IFace_GetInteger("options.play.difficulty");
 		
 		MPIMission.TeamRace[CPU_START_TEAM] = string.char(IFace_GetInteger("options.instant.hisrace"));
 		MPIMission.TeamRace[CPU_START_TEAM + CPU2_TEAM_OFFSET] = string.char(IFace_GetInteger("options.instant.int0"));
@@ -363,6 +363,20 @@ function _MPI.AddObject(h, IsStartingVehicles, TurnCounter, ODFName, ObjClass)
 		if ((ObjClass == "CLASS_SCAVENGER") or (ObjClass == "CLASS_SCAVENGERH")) then
 			--AddCPUScav(h);
 			DoTaunt(TAUNTS_Random);
+			
+			-- For the CPU, send the first built Scavenger to the nearest pool.
+			if (TurnCounter <= 1) then
+			
+				local path = Team .. "_RecyclerEnemy";
+				if not DoesPathExist(path) then
+					path = "RecyclerEnemy";
+				end
+				local closestPool = GetNearestObjectByClass(path, "CLASS_DEPOSIT");
+
+				if closestPool ~= nil then
+					Goto(h, closestPool, 1);
+				end
+			end
 		end
 		
 	elseif (Team >= PLAYER_START_TEAM) then
@@ -747,9 +761,15 @@ function SetCPUAIPlan(Team, Type)
 	local AIPFile = ("%s%s%d_%d.aip"):format(MPIMission.CustomAIPNameBase, MPIMission.TeamRace[Team], MPIMission.m_Difficulty, Team);
 	
 	if not DoesFileExist(AIPFile) then
+		
+		print("AIP File '" .. AIPFile .. "' Not found! Trying alternates...");
+	
 		AIPFile = ("%s%s_%s.aip"):format(MPIMission.CustomAIPNameBase, MPIMission.TeamRace[Team], string.sub(AIPTypeExtensions, Type + 1, Type + 1));
 		
 		if not DoesFileExist(AIPFile) then
+		
+			print("AIP File '" .. AIPFile .. "' Not found! Trying DEFAULT!");
+			
 			AIPFile = ("%s%s%s%s.aip"):format(MPIMission.CustomAIPNameBase, MPIMission.TeamRace[Team], MPIMission.TeamRace[PLAYER_START_TEAM], string.sub(AIPTypeExtensions, Type + 1, Type + 1));
 		end
 		

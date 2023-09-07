@@ -44,7 +44,7 @@ local Mission =
     m_GameOver = false,     -- Handle game over.
 	--m_SetFirstAIP = false,     -- For SetPlan() taunts.
     --m_PlayerRespawnEnabled = false,     -- If player respawn is enabled.
-	m_SentFirstCPUScavToPool = false, 	-- To help the CPU, this flag will send the first spawned CPU Scav to a pool before Recycler deployment.
+	--m_SentFirstCPUScavToPool = false, 	-- To help the CPU, this flag will send the first spawned CPU Scav to a pool before Recycler deployment.
 	m_BuildingStartingUnits = false, 	-- Halt the dispatcher until we're ready. This must be Saved so things will work correctly on a Load.
 	m_EnemyRecycler = nil, -- CPU Recycler.
 	m_EnemyRecycler2 = nil, -- If it's 3 way.
@@ -114,7 +114,6 @@ function AddObject(h)
 		SetSkill(h, 3);
     -- Check CPU stuff.
     elseif (teamNum >= CPU_START_TEAM) then
-
 		-- CPU "Commander" pilots.
 		if (string.sub(ODFName, 3, 9) == "cmdr_c") then
 			SetSkill(h, 3); -- Set Commander maximum skill to 3.
@@ -124,11 +123,13 @@ function AddObject(h)
 				SetPilotClass(h, string.sub(ODFName, 1, 1) .. "spilo_c");
 			end
 
+			--[[
 			-- Replace the CPU natural extractor as we're using a different ODF.
-			-- Remind me to poke this later... -GBD
 			if (ODFName == string.sub(ODFName, 1, 1) .. "bscav") then
 				ReplaceObject(h, string.sub(ODFName, 1, 1) .. "bscav_c");
+				return; -- ReplaceObject removed us, we're done here, too dangerous to continue as we no longer exist. -GBD
 			end
+			--]]
 		end
 	elseif (teamNum == 0) then
 		-- Keep track of the map pools.
@@ -401,18 +402,6 @@ function SpawnTeamExtraVehicles(Team, Race, Pos, Force)
 		
 		-- Finally, build it!
 		local vehicle = BuildObject(h, Team, pos);
-
-        -- For the CPU, send the first built Scavenger to the nearest pool.
-        if (not Mission.m_SentFirstCPUScavToPool and Team >= CPU_START_TEAM and h ==  Race .. "vscav") then
-            -- Find the closest scrap pool to the CPU spawn.
-            local closestPool = GetClosestObjectToPath(Mission.m_MapPools, "RecyclerEnemy");
-
-            -- Sent the first Scav that's spawned in to the closest pool.
-            Goto(vehicle, closestPool, 1);
-
-            -- So we don't repeat, we only want to do it for the first Scavenger.
-            Mission.m_SentFirstCPUScavToPool = true;
-        end
 	end
 
 	-- If we're the CPU team, spawn turrets around the map based on difficulty.
@@ -424,21 +413,4 @@ function SpawnTeamExtraVehicles(Team, Race, Pos, Force)
 		-- Allow the dispatcher to continue...
 		Mission.m_BuildingStartingUnits = false;
 	end
-end
-
--- TODO: Move to core to be used universally? 
-function GetClosestObjectToPath(listOfUnits, pathPoint)
-	local closestObject = nil;
-	local closestDistance = 9999999999;
-
-	for i, v in pairs (listOfUnits) do
-		local dist = GetDistance(v, pathPoint);
-
-		if (dist < closestDistance) then
-			closestObject = v;
-			closestDistance = dist;
-		end
-	end
-
-	return closestObject;
 end
