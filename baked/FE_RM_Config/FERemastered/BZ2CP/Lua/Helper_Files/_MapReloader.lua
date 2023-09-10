@@ -4,7 +4,7 @@ Version 1.1 9-22-202 //<Version 1.0 - 1-24-2019>
 
 For use with command lines to load/replace objects on a .BZN. Instructions:
 -- To Save objects, load the game with /ivar 120 1
--- To specify a specific ODF to save/load, use /svar 31 blah.odf, optionally use svar30 for a second odf to save.
+-- To specify a specific ODF to save/load, use /svar 31 blah.odf.
 -- To Save objects and delete the objects after saving, use /ivar 120 3
 -- To Load objects, load the game with /ivar 120 2
 

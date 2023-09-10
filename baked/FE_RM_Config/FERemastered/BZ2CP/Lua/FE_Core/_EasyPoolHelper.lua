@@ -10,7 +10,14 @@ local _EasyPools = {}
 
 function _EasyPools.SetupEasyPools()
 
-	local TempEasyPoolODF = GetVarItemStr("network.session.svar21");
+	local TempEasyPoolODF = nil;
+	
+	if IsNetworkOn() then
+		TempEasyPoolODF = GetVarItemStr("network.session.svar21");
+	else
+		TempEasyPoolODF = IFace_GetString("options.instant.string7");
+	end
+	
 	if(TempEasyPoolODF ~= nil and TempEasyPoolODF ~= "") then
 		BuildObject(EasyPoolODF, 0, "EasyPool1");
 		BuildObject(EasyPoolODF, 0, "EasyPool2");

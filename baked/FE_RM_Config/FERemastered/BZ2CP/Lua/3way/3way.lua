@@ -48,7 +48,6 @@ function InitialSetup()
 	PreloadODF("fvrecy");
 	PreloadODF("evrecy");
     PreloadODF("cvrecy02");
-    PreloadODF("cvrecyP");
 
     PreloadODF("ivscout");
     PreloadODF("fvscout");

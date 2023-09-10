@@ -1,30 +1,6 @@
 List of path points that the CPU will use to build, attack, and defend.
 These are not necessary for a map to work with FE IA/MPI, but will greatly improve the CPU experience.
 
-Defaults: 
-- hold1, hold2, hold3, hold4
-- gtow1, gtow2, gtow3, gtow4
-- RecyclerEnemy
-- TurretEnemy1, TurretEnemy2
-
-Custom:
-- pgen1_edf, pgen2_edf, pgen3_edf, pgen4_edf
-- factory_edf
-- armory_edf
-- bunker_edf
-- sbay_edf
-- base_gtow1_edf, base_gtow2_edf, base_gtow3_edf, base_gtow4_edf
-- training_edf
-- tech_edf
-- bomber_edf
-
-- kiln_scion
-- stro_scion
-- dowe_scion
-- jammer_scion
-- base_spire1_scion, base_spire2_scion, base_spire3_scion, base_spire4_scion,
-- ante_scion
-
 ----------------------------------------------
 
 New AIP Paths (generic multi-team version)
@@ -117,7 +93,7 @@ jamm2 -> 6_jamm2
 
 
 
---------------- OLDER PATHPOINT CONVERSION LIST, 1v1 AIPs/maps.
+--------------- OLDER PATHPOINT CONVERSION LIST, 1v1 / 3way AIPs/maps.
 
 -- cerberi
 carmory -> 8_armo1
@@ -132,6 +108,10 @@ cpower3 -> 8_pgen3
 cservicebay -> 8_sbay1
 ctechcenter -> 8_tcen1
 
+hold7 -> 8_hold1
+hold8 -> 8_hold2
+
+
 --isdf
 armory -> 6_armo1
 bunker -> 6_cbun1
@@ -143,6 +123,10 @@ power2 -> 6_pgen2
 power3 -> 6_pgen3
 servicebay -> 6_sbay1
 techcenter -> 6_tcen1
+
+hold5 -> 6_hold1
+hold6 -> 6_hold2
+
 
 --hadean
 harmory -> 7_armo1
@@ -157,6 +141,10 @@ spike1 -> 7_gtow2
 htechcenter -> 7_tcen1
 htraining -> 7_train1
 
+hold3 -> 7_hold1
+hold4 -> 7_hold2
+
+
 --scion
 kiln -> 9_fact3
 dower -> 9_sbay3
@@ -166,49 +154,6 @@ spire1 -> 9_gtow1
 spire2 -> 9_gtow2
 spire3 -> 9_gtow3
 
+hold1 -> 9_hold1
+hold2 -> 9_hold2
 
-
---- CONVERT NEW PATHS TO NEWER PATHS
-
-gtow1_6 -> 6_gtow1
-gtow2_6 -> 6_gtow2
-gtow3_6 -> 6_gtow3
-gtow4_6 -> 6_gtow4
-base_gtow1_edf_6 -> 6_gtow5
-base_gtow2_edf_6 -> 6_gtow6
-base_gtow3_edf_6 -> 6_gtow7
-base_gtow4_edf_6 -> 6_gtow8
-pgen1_edf_6 -> 6_pgen1
-pgen2_edf_6 -> 6_pgen2
-pgen3_edf_6 -> 6_pgen3
-pgen4_edf_6 -> 6_pgen4
-factory_edf_6 -> 6_fact1
-armory_edf_6 -> 6_armo1
-bunker_edf_6 -> 6_cbun1
-sbay_edf_6 -> 6_sbay1
-training_Edf_6 -> 6_train1
-tech_edf_6 -> 6_tcen1
-bomber_edf_6 -> 6_bomb1
-
-pgen1_had_6 -> 6_pgen1
-pgen2_had_6 -> 6_pgen2
-pgen3_had_6 -> 6_pgen3
-pgen4_had_6 -> 6_pgen4
-base_gtow1_had_6 -> 6_gtow5
-base_gtow2_had_6 -> 6_gtow6
-factory_had_6 -> 6_fact1
-armory_had_6 -> 6_armo1
-bunker_had_6 -> 6_cbun1
-sbay_had_6 -> 6_sbay1
-training_had_6 -> 6_train1
-tech_had_6 -> 6_tcen1
-
-kiln_scion_6 -> 6_fact3
-ante_scion_6 -> 6_bomb1
-dowe_scion_6 -> 6_sbay3
-stro_scion_6 -> 6_armo3
-jammer_scion_6 -> 6_jamm1
-base_spire1_scion_6 -> 6_gtow10
-base_spire2_scion_6 -> 6_gtow11
-base_spire3_scion_6 -> 6_gtow12
-base_spire4_scion_6 -> 6_gtow13

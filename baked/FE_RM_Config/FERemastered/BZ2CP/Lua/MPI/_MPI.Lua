@@ -63,10 +63,8 @@ local MPIMission =
 	
 	WeaponCrates = false,
 	MegaBeam = false,
-	RandomPools = false,
 	EasyPools = false,
 	CaptureObject = false,
-	MonsterToggle = false,
 	
 	-- handles
 	--HumanRecycler = nil, 
@@ -97,6 +95,7 @@ local MPIMission =
 
 	--New stuff...
 	m_Difficulty = 0,
+	MonsterDelay = 0,
 
 
 	--CPURecycler = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil },
@@ -204,10 +203,11 @@ function _MPI.InitialSetup()
 		
 		MPIMission.m_Difficulty = GetVarItemInt("network.session.ivar70");
 		
-		MPIMission.WeaponCrates = GetVarItemInt("network.session.ivar79");
+		MPIMission.WeaponCrates = GetVarItemInt("network.session.ivar71"); --36
 		MPIMission.MegaBeam = GetVarItemInt("network.session.ivar72");
-		MPIMission.CaptureObject = GetVarItemInt("network.session.ivar74");
-		MPIMission.MonsterToggle = GetVarItemInt("network.session.ivar78");
+		MPIMission.CaptureObject = GetVarItemInt("network.session.ivar73"); --39
+		MPIMission.MonsterDelay = GetVarItemInt("network.session.ivar74"); --38, 40
+		MPIMission.EasyPools = GetVarItemInt("network.session.ivar75"); --37
 
 
 		MPIMission.CPUReinforcementTime = SecondsToTurns(200);
@@ -231,10 +231,11 @@ function _MPI.InitialSetup()
 		--]]
 		
 		
-		MPIMission.WeaponCrates = IFace_GetInteger("options.instant.int0");
-		MPIMission.MegaBeam = IFace_GetInteger("options.instant.int0");
-		MPIMission.CaptureObject = IFace_GetInteger("options.instant.int0");
-		MPIMission.MonsterToggle = IFace_GetInteger("options.instant.int0");
+		MPIMission.WeaponCrates = IFace_GetInteger("options.instant.bool5");
+		MPIMission.MegaBeam = IFace_GetInteger("options.instant.bool6");
+		MPIMission.CaptureObject = IFace_GetInteger("options.instant.bool7");
+		MPIMission.MonsterDelay = IFace_GetInteger("options.instant.int1");
+		MPIMission.EasyPools = IFace_GetInteger("options.instant.bool8");
 		
 		MPIMission.CPUTurretAISkill = MPIMission.m_Difficulty + 1;
 		MPIMission.CPUNonTurretAISkill = MPIMission.m_Difficulty + 1;
@@ -246,7 +247,7 @@ function _MPI.InitialSetup()
 		_MegaBeam.InitialSetup();
 	end
 	
-	if MPIMission.MonsterToggle then
+	if MPIMission.MonsterDelay > 0 then
 		_Monster.InitialSetup();
 	end
 	
@@ -789,9 +790,7 @@ function SetupExtraVehicles()
 	local pathNames = GetAiPaths();
 	local pathCount = #pathNames;
 	
-	if MPIMission.RandomPools then
-		_RandomPools.SetupRandomPools(pathNames);
-	end
+	_RandomPools.SetupRandomPools(pathNames);
 
 	local CPUTeamRace = MPIMission.TeamRace[CPU_START_TEAM];
 	local HumanTeamRace = MPIMission.TeamRace[PLAYER_START_TEAM];

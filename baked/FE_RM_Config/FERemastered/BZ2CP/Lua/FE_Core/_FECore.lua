@@ -100,7 +100,6 @@ function _FECore.Update()
 
 end
 
-
 -- Special logic for evkami, kamakazi unit. Don't let the Player eject.
 function _FECore.PlayerEjected(DeadObjectHandle)
 	-- Special logic for evkami, kill the ejected pilot
@@ -126,6 +125,7 @@ function ShouldEjectPilot(h)
 	return GetODFBool(h, "CraftClass", "killEjectedPilot", false);
 end
 
+-- Subtitles helper.
 function _FECore.AudioWithSubtitles(clip)
 	_Subtitles.AudioWithSubtitles(clip);
 end
@@ -139,8 +139,6 @@ function PreOrdnanceHit(ShooterHandle, VictimHandle, OrdnanceTeam, OrdnanceODF)
 	end
 
 end
-
---]]
 
 print("Loaded _FECore.lua");
 

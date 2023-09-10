@@ -25,7 +25,14 @@ end
 
 function _CaptureObject.Setup()
 
-	local CaptureeODF = GetVarItemStr("network.session.svar20");
+	local CaptureeODF = nil;
+	
+	if IsNetworkOn() then
+		CaptureeODF = GetVarItemStr("network.session.svar20");
+	else
+		CaptureeODF = IFace_GetString("options.instant.string6");
+	end
+	
 	if(CaptureeODF ~= nil and CaptureeODF ~= "") then
 		Capture.Capturee = BuildObject(CaptureeODF, 0, "Capturee");
 		if not IsAround(Capture.Capturee) then

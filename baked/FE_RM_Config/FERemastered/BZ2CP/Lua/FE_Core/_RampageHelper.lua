@@ -31,9 +31,9 @@ end
 function _RampageUnits.InitialSetup()
 
 	if IsNetworkOn() then
-		Rampage.UnitLimit = GetVarItemInt("network.session.ivar35");
+		Rampage.UnitLimit = GetVarItemInt("network.session.ivar76"); --35
 	else
-		Rampage.UnitLimit =  IFace_GetInteger("options.instant.int5");
+		Rampage.UnitLimit = IFace_GetInteger("options.instant.int5");
 	end
 	
 	if Rampage.UnitLimit > MAX_RAMPAGE_UNITS then
@@ -90,39 +90,39 @@ function _RampageUnits.Update(NumHumans, Difficulty, siege_on, late_game)
 		if (siege_on) then		
 			if (not late_game) then
 				if Difficulty == DIFFICULTY_HARD then
-					SpawnRampage ("Rampage2", Rampage.UnitsSpawned);
+					SpawnRampage("Rampage2", Rampage.UnitsSpawned);
 				elseif Difficulty == DIFFICULTY_NORMAL then
-					SpawnRampage ("Rampage1", Rampage.UnitsSpawned);
+					SpawnRampage("Rampage1", Rampage.UnitsSpawned);
 				end
 			else
 			
 				if Difficulty == DIFFICULTY_HARD then
 					local iWhichUnit = GetRandomFloat(3.0);
 					if (iWhichUnit > 1) then
-						SpawnRampage ("Rampage3",  Rampage.UnitsSpawned);
+						SpawnRampage("Rampage3",  Rampage.UnitsSpawned);
 					else
-						SpawnRampage ("Rampage2",  Rampage.UnitsSpawned);
+						SpawnRampage("Rampage2",  Rampage.UnitsSpawned);
 					end
 				elseif Difficulty == DIFFICULTY_NORMAL then
-					SpawnRampage ("Rampage2", Rampage.UnitsSpawned);
+					SpawnRampage("Rampage2", Rampage.UnitsSpawned);
 				elseif Difficulty == DIFFICULTY_EASY then
-						SpawnRampage ("Rampage1", Rampage.UnitsSpawned);
+						SpawnRampage("Rampage1", Rampage.UnitsSpawned);
 				end
 			end
 		elseif (GetTurnCount() < SecondsToTurns(1800)) then -- less than 30 minutes in
 			if (not late_game) then
 			
 				if Difficulty == DIFFICULTY_HARD then
-					SpawnRampage ("Rampage1", Rampage.UnitsSpawned);
+					SpawnRampage("Rampage1", Rampage.UnitsSpawned);
 				elseif Difficulty == DIFFICULTY_NORMAL then
-					SpawnRampage ("Rampage1", Rampage.UnitsSpawned);
+					SpawnRampage("Rampage1", Rampage.UnitsSpawned);
 				end
 			else
 			
 				if Difficulty == DIFFICULTY_HARD then
-					SpawnRampage ("Rampage2", Rampage.UnitsSpawned);
+					SpawnRampage("Rampage2", Rampage.UnitsSpawned);
 				elseif Difficulty == DIFFICULTY_NORMAL then
-					SpawnRampage ("Rampage1", Rampage.UnitsSpawned);
+					SpawnRampage("Rampage1", Rampage.UnitsSpawned);
 				end
 			end
 		elseif (GetTurnCount() < SecondsToTurns(3600)) then -- less than 60 minutes in
@@ -130,16 +130,16 @@ function _RampageUnits.Update(NumHumans, Difficulty, siege_on, late_game)
 			if (not late_game) then
 			
 				if Difficulty == DIFFICULTY_HARD then
-					SpawnRampage ("Rampage2", Rampage.UnitsSpawned);
+					SpawnRampage("Rampage2", Rampage.UnitsSpawned);
 				elseif Difficulty == DIFFICULTY_NORMAL then
-					SpawnRampage ("Rampage2", Rampage.UnitsSpawned);
+					SpawnRampage("Rampage2", Rampage.UnitsSpawned);
 				end
 			else
 			
 				if Difficulty == DIFFICULTY_HARD then
-					SpawnRampage ("Rampage2", Rampage.UnitsSpawned);
+					SpawnRampage("Rampage2", Rampage.UnitsSpawned);
 				elseif Difficulty == DIFFICULTY_NORMAL then
-					SpawnRampage ("Rampage2", Rampage.UnitsSpawned);
+					SpawnRampage("Rampage2", Rampage.UnitsSpawned);
 				end
 			end
 		else --the rest of the game
@@ -147,12 +147,12 @@ function _RampageUnits.Update(NumHumans, Difficulty, siege_on, late_game)
 			if Difficulty == DIFFICULTY_HARD then
 				local iWhichUnit = GetRandomFloat(3.0);
 				if (iWhichUnit > 1) then
-					SpawnRampage ("Rampage3",  Rampage.UnitsSpawned);
+					SpawnRampage("Rampage3",  Rampage.UnitsSpawned);
 				else
-					SpawnRampage ("Rampage2", Rampage.UnitsSpawned);
+					SpawnRampage("Rampage2", Rampage.UnitsSpawned);
 				end
 			elseif Difficulty == DIFFICULTY_NORMAL then
-				SpawnRampage ("Rampage2",  Rampage.UnitsSpawned);
+				SpawnRampage("Rampage2",  Rampage.UnitsSpawned);
 			end
 		end
 
@@ -172,7 +172,13 @@ function SpawnRampage(RampageUnit, RampageCurrentSlot)
 	end
 
 	if (Rampage.Units[RampageCurrentSlot] == nil) then
-		Rampage.Units[RampageCurrentSlot] = BuildObject(RampageUnit, comp_team, "RecyclerEnemy");
+	
+		if DoesPathExist("6_RecyclerEnemy") then
+			Rampage.Units[RampageCurrentSlot] = BuildObject(RampageUnit, comp_team, "6_RecyclerEnemy");
+		else
+			Rampage.Units[RampageCurrentSlot] = BuildObject(RampageUnit, comp_team, "RecyclerEnemy");
+		end
+		
 		SetSkill(Rampage.Units[RampageCurrentSlot], 2);
 		local hRampageTarget = GetObjectByTeamSlot(strat_team, ((RampageCurrentSlot % 5) + 1));
 

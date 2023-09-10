@@ -8,7 +8,7 @@ require('_GlobalVariables');
 
 local _RandomPools = {}
 
-function _RandomPools.SpawnRandomPools(pathNames) 
+function _RandomPools.SetupRandomPools(pathNames) 
 
     -- Use this to store unique numbers for each x value.
     local totalXPathNumbers = 0;

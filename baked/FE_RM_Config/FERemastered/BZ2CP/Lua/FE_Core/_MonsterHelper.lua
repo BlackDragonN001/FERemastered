@@ -25,11 +25,17 @@ end
 
 function _Monster.InitialSetup()
 
-	Monster.Delay = GetVarItemInt("network.session.ivar40");
+	if IsNetworkOn() then
+		Monster.Delay = GetVarItemInt("network.session.ivar70"); --40
+	else
+		Monster.Delay = IFace_GetInteger("options.instant.int1");
+	end
+	
+	Monster.Delay = Monster.Delay * 60.0; -- convert to minutes.
 
 	if (Monster.Delay < 0) then
-		Monster.Delay = 60;
-	elseif (Monster.Delay > 1800) then
+		Monster.Delay = 60; -- min one minute.
+	elseif (Monster.Delay > 1800) then -- 5 hours? naw too long, set for 10 minutes.
 		Monster.Delay = 600;
 	end
 
@@ -40,8 +46,15 @@ end
 
 function _Monster.Update(Difficulty, CPUTeam, HumanTeam)
 
-	if Monster.Delay == GetTurnCount() then
-		local MonsterODF = GetVarItemStr("network.session.svar19");
+	if Monster.Delay == GetTurnCount() then --if Monster.Delay % GetTurnCount() == 0 then -- Set this to repeat the event... Original Rev D code didn't repeat. Rev C might have tho...
+		local MonsterODF = nil;
+		
+		if IsNetworkOn() then
+			MonsterODF = GetVarItemStr("network.session.svar19");
+		else
+			MonsterODF = IFace_GetString("options.instant.string5");
+		end
+		
 		if(MonsterODF == nil or MonsterODF == "") then
 			MonsterODF = "monster";
 		end
@@ -49,8 +62,26 @@ function _Monster.Update(Difficulty, CPUTeam, HumanTeam)
 		local enemy_recycler = GetObjectByTeamSlot(CPUTeam, DLL_TEAM_SLOT_RECYCLER);
 		
 		if (IsAround(enemy_recycler) and (Difficulty ~= DIFFICULTY_EASY)) then
-			Monster.Monster1 = BuildObject(MonsterODF, CPUTeam, "Monster1");
-			Monster.Monster2 = BuildObject(MonsterODF, CPUTeam, "Monster2");
+			
+			if DoesPathExist("Monster1") then
+				Monster.Monster1 = BuildObject(MonsterODF, CPUTeam, "Monster1");
+			else
+				Monster.Monster1 = BuildObject(MonsterODF, CPUTeam, GetPositionNear(enemy_recycler, 20.0, 30.0));
+			end
+			
+			if DoesPathExist("Monster2") then
+				Monster.Monster2 = BuildObject(MonsterODF, CPUTeam, "Monster2");
+			else
+				Monster.Monster2 = BuildObject(MonsterODF, CPUTeam, GetPositionNear(enemy_recycler, 20.0, 30.0));
+			end
+			
+			if (Difficulty >= DIFFICULTY_HARD) then
+				if DoesPathExist("Monster3") then
+					Monster.Monster2 = BuildObject(MonsterODF, CPUTeam, "Monster3");
+				else
+					Monster.Monster2 = BuildObject(MonsterODF, CPUTeam, GetPositionNear(enemy_recycler, 20.0, 30.0));
+				end
+			end
 
 			local hTarget1 = GetObjectByTeamSlot(HumanTeam, DLL_TEAM_SLOT_RECYCLER);
 			if (not IsAround(hTarget1)) then

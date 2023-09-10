@@ -1,0 +1,363 @@
+Notes on ranges:
+
+- Usable global ivars are network.session.ivar0
+.. network.session.ivar127.  BZ2 has used ivars 0-34 & 63. Modders
+should consider using ivars starting at the top of the range (ivar127,
+ivar126, ivar125, ...) to avoid collisions.
+
+- Usable global svars are network.session.svar0
+.. network.session.svar31. As above, mods should start from the top of
+the range and work down.
+
+- After the global ivar/svars, there are 16 ivars per client (the
+civar0..civar15) and 8 svars per client (csvar0..csvar7). These are
+mapped into the global list automatically by the engine, so that the
+first player's civars are in network.session.ivar128
+.. network.session.ivar143, second player's civars start at
+network.session.ivar144, and so forth. However, reading these directly
+is discouraged, because the number of global ivar/svars may change at
+any time.
+
+
+ivars: [32-bit unsigneds]
+
+0: Kill Limit (0 for unlimited)
+
+1: Time Limit (0 for unlimited)
+
+2: Player Limit
+
+3: Teamplay. 1=On 0=off
+
+4: Bitfields saying which vehicles are selectable
+
+5: 0=All, DM=1, Strat=2, all other values undefined (used in filtering
+   out games by type). MPI is technically 3, but any Strat w/ Teamplay
+   (ivar3=1), w/ only one team (ivar12=1) will be listed as that. I'd
+   recommend leaving ivar5=2 for MPI to avoid any quirks in the code.
+
+6: Bitfields II for selectable vehicles out of MPVehicles.txt [Unimplemented so far]
+
+7: Strat & MPI: starting vehicles bitfield mask, for selecting out of
+   StratStarting.txt . Strat forces this value to be either 0 or 3
+   (nothing or 2 turrets). MPI uses all the bits.
+
+7: Deathmatch01: Used to set the game type. 0 = normal; 1 = KOTH;
+2 = CTF 3=Loot, 4=[RESERVED], 5 = Race (respawn as person), 6= Race
+(respawn in craft), 7= Normal but vehicle-only combat
+
+8: Sync Join. 1=on, 0=off
+
+9: Unit Limit (0 for unlimited). In DM/Race, this is the # of laps.
+In DM/non-race, this is the # of AI bots (units) sent to harass everyone.
+
+10: Nonblocking-joins. If 0 (default), everyone will pause on a join
+    until movepackets from that player come in. If non-0, the
+    'thundering herd' approach is taken-- everyone keeps going,
+    bandwidth usage be damned. [I.e. modem-crushing for >4 players]
+
+11: Teamplay locked. 1=on, 0=off
+
+12: 0: Allow 2 teams. 1: 1 team only. 
+
+13: MPInstant only, CPU team race. Default is 105 (ascii for 'i') =
+isdf, 102 (ascii for 'f') = scion, other races as appropriate.  [See
+websites like http://en.wikipedia.org/wiki/ASCII or
+http://www.asciitable.com/ for a table converting from the character
+glyph to decimal]
+
+13: DM only: # of seconds after a respawn for a spawn kill (0=off, 15=
+default).
+
+14: Score (points) for killing AI craft. Negative points are awarded
+for killing own/ally AI craft. Default: 0 for strat, 1 for DM/MPI
+
+15: If 1, +1 kill is awarded for killing an enemy AI unit (and -1 kill
+for killing ally), No change to kills if this ivar is 0. Default: 0
+for strat, 1 for DM/MPI
+
+16: Strat/MPI: If 1, Strat/MPI players respawn with sniper rifle. Default 0.
+
+16: DM: if 1, humans vs bots is the mode.
+
+17: Strat/MPI AI skill level for human turrets in Strat (0..3). Default 3.
+
+18: AI skill level for all human other units in Strat. Default 3.
+
+19: DM: if 1, 1-shot-kill mode is on. Default 0.
+
+20: Multiworld frequency (MWF), from server.
+
+21: AI skill level for CPU turrets in MPI (0..3). Default 3.
+
+22: AI skill level for all other CPU units in MPI. Default 3.
+
+23: MPI Level of scrap cheat for humans in MPI (0..3). Default 0
+
+23: DM: if 1, "rabbit" mode (everyone attacks the person who's "it"
+
+23: Strat: Not used
+
+24: (MPI) Level of scrap cheat for CPU in MPI (0..3). Default 2.
+
+25: DM: If 1, respawn in ship, and can't eject/hop out.
+
+25: MPI: if 1, then AI team's race (from ivar13) is locked, and can't
+be changed.
+
+25: Strat: minutes of recycler invulnerability. Default 0.
+
+26: DM: Damage multiplier, divided by 10. Thus, if ivar26 is 10, the
+damage mult is 100% (unchanged). If 20, 200% (double-normal), etc.
+Defaults to 10 in DM, 0 other gametypes.
+
+26: MPI: Time (in seconds) before the AIPs are kicked out of the
+*0.aip stage, and into the 1/3 stage. A value of 0 is treated as the
+default of 180 seconds. If this value is less than 0, it'll never
+trigger.
+
+27: (DM) Number of animals in the map. Default 0. Max is 8.
+
+28: (All) Lifespan of a non-player pilot in MP. This value is the
+number of seconds an AI pilot that ejected/hopped out of a craft has
+in MP is allowed to live before they get killed. [Human players,
+soldiers from APCs aren't subject to this.] Values <= 0 are treated as
+unlimited. Default if unspecified is 120 (2 minutes). This is
+something done by the exe, not the DLL.
+
+29: (All) Flag as whether the server disables the TLI line on targeted
+objects. 0 = server enables TLI (local pref valid), 1 = server
+disables TLI for all.
+
+30: Flag as to whether weapon linking is enabled or not.
+
+31: (DM) World gravity. This is encoded as an integer 2x the floating
+point value, so that ivar30 == 25 -> gravity==12.5. Default = 25
+
+32: (All) Flag as to whether friendly fire is enabled (==1) or not (== 0)
+
+33: (All) Flag as to whether in-game voice chat is enabled (==0) or
+not (==1).  Default value is whatever the server's voice chat setting is.
+
+34: (All) Alt-tab tolerate, in seconds
+
+35: (All) Score limit (0 for unlimited)
+
+36 - 50: (ST:FFA) FFA Alliance settings.
+
+
+63: 0= server not launched; 1=server launched. 
+
+64..127 are usable by DLLs. I do recommend that DLLs use them starting from
+127 and working down
+
+
+70: MPI: Difficulty setting. Used to determine which AI difficulty AIP is used, and certain 
+AI behaviors. 0 = Easy, 1 = Normal, 2 = Hard, 4 = Extreme
+
+71: MPI: Random Weapon Crate spawns around the player base. 0 = off, 1 = on.
+
+72: MPI: Mega Beam strikes. 0 = off, 1 = on.
+
+73: MPI: Capture object on/off. 0 = off, 1 = on.
+
+74: MPI: Monster Delay. If this is > 0, Monster ODFs spawn on the AI team. Monster ODF can be 
+specified via an svar/instant string var.
+
+75: MPI: Easy Pools on/off. 0 = off, 1 = on.
+
+76: MPI: Rampage unit limit per round. 0 = off.
+
+
+
+81: MP Scrap Multiplier. (not used in FE)
+
+89: AI use Day Wreckers in MPI. (not used in FE)
+
+90: Enalbes SiteCam in remote satellite. (not used in FE)
+
+91: If units show Skill Levels in thier names.
+
+115: DLL Logging flag.
+
+120: Map Object save/load. To Save objects, load the game with /ivar 120 1, To Save objects and 
+delete the objects after saving, use /ivar 120 3, To Load objects, load the game with /ivar 120 2
+
+121: Prop Height Fix. Similar to /snapscrap but works on objects, moved any sub-terrainian objects 
+to ground level.
+
+svars:
+0: map name (e.g. foo.bzn)
+
+1: Teamgroup #1 name, usually "Team Red"
+
+2: Teamgroup #2 name, usually "Team Blue"
+
+// Custom AIP name base. The MPInstant.dll will look for several files
+// based on this base, with 3 characters tacked on. Those 3 are as
+// follows: (1) CPU race (f=Scion, i=isdf), (2) Human race, (3) AIP
+// Type (0=Start, 1-3 = begin game types, 'a' == anti-assault, 's' ==
+// siege, 'l' = lategame).
+//
+// If an AIP file is not found, results may be unpredictable.
+//
+// For example, if svar3 == "foo", at the start of the game, the AIP
+// used will be one of these 4 files:
+// fooii0.aip  -- CPU ISDF, Human ISDF
+// fooif0.aip  -- CPU ISDF, Human Scion
+// foofi0.aip  -- CPU Scion, Human ISDF
+// fooff0.aip  -- CPU Scion, Human Scion
+3: MPI Only: base name for AIP files. If not present, defaults used.
+[This var will be reset to empty if not specified in .inf]
+
+4: If specified, this is treated as an alternate filename for the
+MPVehicles.txt list; if absent, the game reverts back to the stock
+one. This alternate can be in a .pak file, or anywhere in the file
+search path. 
+
+5: If specified, this is treated as an alternate recycler base name.
+The first character of this is replaced by the race ('i' or 'f'), so
+that if svar5=="xGSHrecy", the objects spawned will be either
+"iGSHrecy[.odf]" or "fGSHrecy[.odf]" (.odf is implied). If this isn't
+present, 'Xvrecy_m' is used, just like before.
+
+6: If specified, this is a file formatted the same as MPVehicles.txt,
+but used in the shell config to be a starting force setup for strat.
+Default (if not specified) is 'stratstarting.txt' . Strategy02.dll
+only lets you pick between 0 and 2 starting turrets; MPInstant.dll
+(and the config files) let you use the full set of items.
+
+7: Shell configuration file, for the "Extra Options" page to bring up.
+It is extended in code, so that "ctf" tries to bring up
+"bzshell_multi_ctf.cfg" for the server, and
+"bzshell_multi_client_ctf.cfg" . In each of those pages, there must be
+a "ExtraOptions" control, which is used to control all of its
+sub-options. When ExtraOptions is deactivated, *all* things must go
+away.
+
+   Also, note that if there is a "ExtraOptions.VehicleList" block found,
+it is filled in with the contents of the file mentioned in svar6. Note
+that if svar6 is empty, the VehicleList section will be blanked out.
+
+8: ODF file of more files to check in the asset list. This is intended
+for MODs to be able to protect their assets from cheating. New ODFs
+included by a MOD will be checked if either (1) they are referenced
+from the .bzn, or (2) they're listed in this file. Assuming svar8
+contains say "GSHCheck.odf", then the file 'GSHCheck.odf' (located
+somewhere under addon) should contain lines of the following form:
+
+[Check]
+Check1 = "ibGSHarmo" // .odf is implied and should NOT be added
+Check2 = "ibGSHfact"
+Check3 = "ibGSHrecy_m"
+
+   Check numbers must be steadily increasing; if a Check# isn't
+present, then processing that file stops. It is recommended that you
+list ODFs from lowest on the hierarchy to greatest for smooth loadbar
+progression, like I did above. If the recy is first, it'll recursively
+load everything (and take a while to do so), and sub-items will go by
+in the blink of an eye.
+
+9: Alternate file to be used instead of recylist.txt. If not specified,
+recylist.txt is used instead.
+
+10: MPI Only: Alternate file to be used instead of aiplist.txt. If not
+specified, aiplist.txt is used instead. 
+
+10: Strat Only: Alternate file to be used instead of
+stctfgoallist.txt . If not specified, stctfgoallist.txt is used instead.
+
+11: MPI Only: Team name for a craft on team "group" 3 (teams
+11..15). Teams must be on for this to take effect. This is not an
+officially supported team group, but support was added for named items
+on it. If this svar is empty, the default "Unknown Team" string is
+used instead.
+
+11: StratCTF Only: If specified, this is treated as an alternate stratctf
+goal odf name. If this isn't present, 'stctf_goal' is used. ".odf" is
+implied in the name, and must NOT be on the end
+
+12: DM Only: Config for DM animals. Only valid if DM & ivar27 > 0
+
+12: (MPI only): base config for CPU recyclers present on map.
+Defaults to "ivrecycpu" if not specified. ".odf" is implied in the
+name, and must NOT be on the end. The specified string is used to
+calculate what CPU recyclers (and therefore races) are available by
+scanning all 26 possible races of that form. if svar12 = "ivrecyCPU1",
+ivrecyCPU1 is the ai's recycler. If ivrecyCPU1.odf does not exist, but
+fvrecyCPU1.odf and evrechCPU1.odf exist, the only available options
+for the ai team are Scion and Hadean. ISDF can't be chosen for the AI
+team due to that odf not existing.
+
+13: DM Only: Alternate file to be used instead of animallist.txt. If
+not specified, animallist.txt is used instead.
+
+
+19: Monster ODF to spawn.
+
+20: Capture object ODF to spawn.
+
+21: Easy Pool ODF to spawn.
+
+
+28: Map Object Replacer: ODF name to replace an object with.
+29: Map Object Replacer: ODF name to find, replaces with the value in svar28.
+
+31: Map Loader ODF to save, if specified. If blank, saves the entire map. This can be a partial 
+match with just the starting part of ODF, for instance "iv" will save all ISDF vehicles 
+found.
+
+civars:
+0: Which team this player is on (0==team1, 1==team2)
+
+1: Vehicle selection (as bitfield paralleling ivar4; only 1 bit allowed on)
+
+2: Team commander prefs (but overridden by server as needed. 
+   0 = commander, 1 = thug)
+
+3: Autolevel (0 = off, 1 = on)
+
+csvars:
+0: Player name
+1: Nav name for next-created one.
+
+----------------------------------------------------------------------
+
+Instant Action variables
+
+options.instant.hisrace, options.instant.myrace : integers with the
+side character (e.g. 105 for 'i'sdf, 102 for 'f'(scion)) for the CPU
+and human sides, respecively. [See websites like
+http://en.wikipedia.org/wiki/ASCII or http://www.asciitable.com/ for a
+table converting from the character glyph to decimal]
+
+options.instant.int1 : Monster Delay.
+
+options.instant.bool0 : Flag if the user can respawn if they die. If
+true (==1), respawning is allowed. Default is off (== no respawning)
+
+options.instant.bool2 : AI use Day Wreckers. (not used in FE)
+
+options.instant.bool4 : Show skill levels on units names.
+
+options.instant.bool5 : Weapon Crates on/off.
+
+options.instant.bool6 : Mega Beam on/off.
+
+options.instant.bool7 : Capture Object on/off.
+
+options.instant.bool8 : Easy Pools on/off.
+
+options.instant.string0 : Custom AIP base name, e.g. "stock13_" .
+
+options.instant.string1 : ODF name for Human's recycler, e.g. "ivrevy"
+or "ivrecy_m" First char will be replaced with appropriate race
+
+options.instant.string2 : ODF name for CPU's recycler, e.g. "ivrevy" 
+or "ivrecy_m" First char will be replaced with appropriate race
+
+options.instant.string5 : Monster ODF to spawn.
+
+options.instant.string6 : Capture ODF to spawn.
+
+options.instant.string7 : Easy Pool ODF to spawn.

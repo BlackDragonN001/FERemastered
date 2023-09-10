@@ -77,7 +77,7 @@ end
 
 function _CrateSpawner.ResetTimer()
 	CrateSpawner.SpawnTimer = SecondsToTurns(120.0 + ((CountPlayers() - 1) * 25.0) + GetRandomFloat(60));
-	print("Crate Respawn Time: " .. CrateSpawner.SpawnTimer);
+	--print("Crate Respawn Time: " .. CrateSpawner.SpawnTimer);
 end
 
 
