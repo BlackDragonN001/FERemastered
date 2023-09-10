@@ -1,7 +1,8 @@
 [GameObjectClass]
 baseName = "fball2a"
-geometryName = "ioartl00.fbx" // NULL //"firemsl.xsi" //"sgwasp00.xsi"
-//geometryScale = 5.5
+geometryName = "fball00.fbx" //"ioartl00.fbx" // NULL //"firemsl.xsi" //"sgwasp00.xsi"
+geometryScale = 0.05
+collisionName = "fball00_col.fbx"
 classLabel = "torpedo"
 scrapValue = 0
 scrapCost = 0
@@ -38,18 +39,22 @@ omegaTurn = 70.0
 alphaSteer = 20.0
 lifeSpan = 15.0
 xplBlast = "xfbseek"
-xplExpire = "xfbseeke"
 soundThrust = "flame01.wav"
 
-[render]
+[Render]
 renderBase = "draw_multi"
-renderCount = 3 //8 // 8? Where are the other 3 lol. -GBD
+renderCount = 8
 renderName1 = "fball2c.flame"
 renderName2 = "fball2c.smoke"
 renderName3 = "fball2c.light"
-renderName4 = "fball2c.trailer"
+renderName4 = "fball2c.flare"
+renderName5 = "fball2c.energy"
+renderName6 = "fball2c.energy2"
+renderName7 = "fball2c.core"
+renderName8 = "fball2c.core2"
+renderName9 = "fball2c.trailer"
 // Never worked, was "xfball..." -GBD
-renderName5 = "xfball1a.trailer2"
+renderName10 = "xfball1a.trailer2"
 
 [Flame]
 renderBase = "draw_twirl_trail"
@@ -97,6 +102,80 @@ attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 0
+
+[Flare]
+renderBase = "draw_geom"
+textureName = "flamecore.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.07
+finishRadius = 0.07
+geomName = "plane_render.fbx"
+ForceDrawTransparent = false
+ForceDraw2Sided = true
+InitialRoll = 0.0f
+InitialPitch = 0.0f
+InitialYaw = 0.0f
+AddRoll = 0.0f
+AddYaw = 0.0f
+AddPitch = 0.0f
+
+[Core]
+renderBase = "draw_twirl"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 31 255"
+finishColor = "255 150 31 255"
+startRadius = 0.4
+finishRadius = 0.4
+rotationRate = 20.0
+
+[Core2]
+renderBase = "draw_twirl"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 31 255"
+finishColor = "255 150 31 255"
+startRadius = 0.8
+finishRadius = 0.8
+rotationRate = 20.0
+
+[Energy]
+renderBase = "draw_geom"
+textureName = "crystal.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.05
+finishRadius = 0.05
+geomName = "fball00_fx.fbx"
+ForceDrawTransparent = false
+ForceDraw2Sided = true
+InitialRoll = 0.0f
+InitialPitch = 0.0f
+InitialYaw = 0.0f
+AddRoll = -1000.0f
+AddYaw = 0.0f
+AddPitch = 0.0f
+
+[Energy2]
+renderBase = "draw_geom"
+textureName = "crystal.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.05
+finishRadius = 0.05
+geomName = "fball00_fx.fbx"
+ForceDrawTransparent = false
+ForceDraw2Sided = true
+InitialRoll = 0.0f
+InitialPitch = 0.0f
+InitialYaw = 0.0f
+AddRoll = 1000.0f
+AddYaw = 0.0f
+AddPitch = 0.0f
 
 
 [trailer]
