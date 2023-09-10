@@ -116,7 +116,7 @@ plantype = "Hold"
 planpriority = 155
 holdtype1 = "evturr"
 holdcount1 = 1
-holdpoint = "hold3"
+holdpoint = "7_hold1"
 buildifnoidle = 1
 maxtries = 1
 
@@ -201,7 +201,7 @@ plantype = "Hold"
 planpriority = 133
 holdtype1 = "evturr"
 holdcount1 = 1
-holdpoint = "hold4"
+holdpoint = "7_hold2"
 
 [plan22]
 plancondition = "NotHisExists"

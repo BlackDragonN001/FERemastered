@@ -276,13 +276,13 @@ function _PortalUser.Update(NumHumans, Difficulty, siege_on, anti_assault, late_
 				if portalGroup ~= 0 then
 			
 					if PortalGroup == "A" then --case 0:
-						Goto(NearVehicle, "hold1");
+						Goto(NearVehicle, "6_hold1");
 					elseif PortalGroup == "B" then --case 1:
-						Goto(NearVehicle, "hold2");
+						Goto(NearVehicle, "6_hold2");
 					elseif PortalGroup == "C" then --case 2:
-						Goto(NearVehicle, "hold3");
+						Goto(NearVehicle, "6_hold3");
 					elseif PortalGroup == "D" then --case 3:
-						Goto(NearVehicle, "hold4");
+						Goto(NearVehicle, "6_hold4");
 					elseif PortalGroup == "E" then --case 4: --Cerberi attack squads
 						RemoveObject(PortalUser.PUser);	-- Cerberi
 					else
@@ -548,16 +548,16 @@ function PostTeleport(Portal, NearVehicle)
 		if portalGroup ~= 0 then
 			
 			if PortalGroup == "A" then --case 0:
-				Goto(NearVehicle, "hold1");
+				Goto(NearVehicle, "6_hold1");
 				return POSTTELEPORT_OVERRIDE;
 			elseif PortalGroup == "B" then --case 1:
-				Goto(NearVehicle, "hold2");
+				Goto(NearVehicle, "6_hold2");
 				return POSTTELEPORT_OVERRIDE;
 			elseif PortalGroup == "C" then --case 2:
-				Goto(NearVehicle, "hold3");
+				Goto(NearVehicle, "6_hold3");
 				return POSTTELEPORT_OVERRIDE;
 			elseif PortalGroup == "D" then --case 3:
-				Goto(NearVehicle, "hold4");
+				Goto(NearVehicle, "6_hold4");
 				return POSTTELEPORT_OVERRIDE;
 			elseif PortalGroup == "E" then --case 4: --Cerberi attack squads
 			

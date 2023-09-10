@@ -103,7 +103,7 @@ plantype = "Hold"
 planpriority = 150
 holdtype1 = "ivturr"
 holdcount1 = 1
-holdpoint = "hold6"
+holdpoint = "6_hold2"
 
 [plan12]
 plancondition = "hisexists"
@@ -122,7 +122,7 @@ plantype = "Hold"
 planpriority = 140
 holdtype1 = "ivturr"
 holdcount1 = 1
-holdpoint = "hold5"
+holdpoint = "6_hold1"
 
 [plan14]
 plancondition = "NotHisexists"
