@@ -191,10 +191,10 @@ textureRate = 0.1
 [Fade]
 renderBase = "draw_multi"
 renderCount = 2
-renderName1 = "ebcbun.fade"
+renderName1 = "ebcbun.fade1"
 renderName2 = "ebcbun.fade2"
 
-[Fade]
+[Fade1]
 renderBase = "draw_geom"
 ForceDrawTransparent = false
 textureName = "vsmoke.tga"
