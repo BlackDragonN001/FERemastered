@@ -15,6 +15,8 @@ maxHealth = 6000 // 5000
 addHealth = 25
 maxAmmo = 0  // zero = instant,anything greater will be set as the delay until ammo if full.
 addAmmo = 0  // DLL sets ammo as zero so unless maxammo = o then you'll need to add ammo to reactivate portal.
+aiAddAmmo = 0
+aiAddHealth = 0
 unitName = "Portal"
 aiName = "GunTowerFriend"
 aiName2 = "GunTowerEnemy"

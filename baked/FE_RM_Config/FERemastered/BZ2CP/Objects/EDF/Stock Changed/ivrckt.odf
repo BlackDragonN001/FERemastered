@@ -1,0 +1,141 @@
+[GameObjectClass]
+baseName = "ivrckt"
+geometryName = "ivrckt00.fbx"
+cockpitName = "ivrckt_cockpit.fbx"
+classLabel = "assaulttank"
+scrapValue = 25
+scrapCost = 65
+customCost = 75
+buildTime = 15.0
+customTime = 15.0
+maxHealth = 3000
+maxAmmo = 2500
+addAmmo = 10
+aiAddAmmo = 0
+aiAddHealth = 0
+unitName = "Rocket Tank"
+aiName = "SupportProcess"
+aiName2 = "SupportProcess"
+heatSignature = 0.5
+imageSignature = 2.5
+radarSignature = 0.1
+isAssault = 1
+armorClass = H
+
+/////// REQUIREMENTS ///////////////	
+requireCount = 3
+requireName1 = "ibfact"
+requireText1 = "Build Factory"
+requireName2 = "ibcbun"
+requireText2 = "Build Relay Bunk"
+requireName3 = "ibarmo"
+requireText3 = "Build Armory"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName1 = "ivrckt"
+provideName2 = "VIRTUAL_CLASS_ROCKETTANK"
+provideName3 = "assault"
+provideName4 = "DefendUnit"
+provideName5 = "AntiAir"
+
+/////// weapons ////////////////////
+weaponMask = 00011
+weaponHard1 = "HP_ROCKET_3"
+recoilName1 = "recoil1"
+weaponName1 = "gshadow_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_ROCKET_2"
+//recoilName2 = "recoil1"  //handled by recoilName1
+weaponName2 = "gshadow_c"
+weaponAssault2 = 0
+weaponHard3 = "HP_ROCKET_1"
+recoilName3 = "recoil2"
+weaponName3 = "gshadow_a"
+weaponAssault3 = 1
+
+////////////////////////////////////
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+lightHard2 = "hp_light_2"
+lightName2 = "spotblue2"  
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "dusttrail"
+effectMinVelocity1 = 5.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_2" 
+effectName2 = "dusttrail"
+effectMinVelocity2 = 5.0
+effectMaxVelocity2 = 500.0 
+
+[CraftClass]
+rangeScan = 400.0f
+periodScan = 4.0f
+velocJam = 0.0f
+engageRange = 200
+braccelFactor = 0.01
+strafeFactor = 0.1
+velFactor = 0.3
+steerFactor = 1.0
+omegaFactor = 0.2
+
+attackTask = "AssaultTankAttack"
+subAttackTask = "SupportSubAttack"
+subAttackClass = "ANS"
+// subAttackClass uses 3 letters.
+// 1st letter is either A or N.     A is include Air targets.         N is attack ground only.
+// 2nd letter is either D or N.     D is to deploy before attacking.  N for regular attack.
+// 3rd letter is either S or N.     S is to use Weapon Range.         N is use the Engage Range to attack. 
+
+selectWaitMsg = "ivmisl04.wav"
+selectAttackMsg = "ivmisl01.wav"
+selectFollowMsg = "ivmisl03.wav"
+selectGoMsg = "ivmisl02.wav"
+selectOtherMsg = "ivmisl04.wav"
+goMsg = "ivmisl05.wav"
+attackMsg = "ivmisl06.wav"
+followMeMsg = "ivmisl08.wav"
+followMsg = "ivmisl03.wav"
+repairMsg = "ivmisl09.wav"
+reloadMsg = "ivmisl09.wav"
+rescueMsg = "ivmisl10.wav"
+recycleMsg = "ivmisl11.wav"
+otherMsg = "ivmisl12.wav" 
+holdMsg = "ivmisl12.wav"
+user1Msg = ""  
+killedMsg = "ivmisl07.wav"
+diedMsg = ""
+
+[TrackedVehicleClass]
+omegaSpin = 1.2
+omegaTurn = 0.6
+velocForward = 15.0
+velocReverse = 5.0
+accelThrust = 6.0
+TREAD_STATIC_FRICTION = 1.5
+
+engineSound	= "iatank01.wav"
+treadSound = "iatank02.wav"
+
+[AssaultTankClass]
+yawRate = 2.0
+yawAlpha = 5.0
+pitchMin = -0.2
+pitchMax = 1.0
+laserName1 = "hp_rocket_1"
+laserName2 = "hp_rocket_2"
+
+[Lod1]
+//geometryName = "ivrcktL1.fbx" ;geometry for lod1
+//distance = 50
+
+[Lod2]
+//geometryName = "ivrcktL2.fbx" ;geometry for lod2
+//distance = 100                ;...distance over this many meters => switch to lod2

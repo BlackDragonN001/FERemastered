@@ -20,6 +20,7 @@ canSnipe = 0
 needPilot = 0
 
 addHealth = -1.0 // the unit degrades until 0 health, then remains till bumped
+aiAddHealth = 0
 
 [BuildingClass]
 SoundAmbient = "ping.wav" 

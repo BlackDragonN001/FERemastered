@@ -19,6 +19,7 @@ canInteract = 1
 ownsTerrain = 0
 
 addHealth = -1 // the unit degrades until 0 health, then remains until bumped
+aiAddHealth = 0
 
 [BuildingClass]
 soundAmbient = "sjam01.wav"

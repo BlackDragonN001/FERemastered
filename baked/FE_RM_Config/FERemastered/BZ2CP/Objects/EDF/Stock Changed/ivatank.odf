@@ -1,0 +1,152 @@
+[GameObjectClass]
+baseName = "ivatank"
+geometryName = "ivatnk00.fbx"
+cockpitName = "ivatnk_cockpit.fbx"
+classLabel = "assaulttank"
+scrapValue = 40
+scrapCost = 70
+customCost = 80
+buildTime = 15.0
+customTime = 20.0
+maxHealth = 4500
+addhealth = 9.0
+maxAmmo = 3000
+addAmmo = 5
+aiAddAmmo = 0
+aiAddHealth = 0
+unitName = "Assault Tank"
+aiName = "AssaultTankProcess"
+aiName2 = "AssaultTankProcess"
+heatSignature = 0.5
+imageSignature = 5.0
+radarSignature = 5.0
+isAssault = 1
+armorClass = H
+
+/////// REQUIREMENTS ///////////////
+requireCount = 3
+requireName1 = "ibfact"
+requireText1 = "Build Factory"
+requireName2 = "ibcbun"
+requireText2 = "Build Relay Bunk"
+requireName3 = "ibsbay"
+requireText3 = "Build Service Bay"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "ivatank"
+provideName2 = "VIRTUAL_CLASS_ASSAULTTANK"
+provideName3 = "assault"
+provideName4 = "DefendUnit"
+
+/////// weapons ////////////////////
+weaponMask = 00111
+weaponHard1 = "HP_CANNON_1"
+recoilName1 = "recoil1"
+weaponAssault1 = 1
+weaponName1 = "gplasma_a"
+weaponHard2 = "HP_MORTAR_1"
+recoilName2 = "recoil2"
+weaponAssault2 = 0
+weaponName2 = ""
+weaponHard3 = "HP_MORTAR_2"
+recoilName3 = "recoil3"
+weaponAssault3 = 0
+weaponName3 = ""
+
+////////////////////////////////////
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+lightHard2 = "hp_light_2"
+lightName2 = "spotblue2" 
+lightHard3 = "hp_light_3"
+lightName3 = "spotblue2"  
+LightsOnlyWhenPiloted = true
+
+//don't use altitude
+effectHard1 = "hp_dust_1"
+effectName1 = "dusttrail3"
+effectMinVelocity1 = 3.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_2" 
+effectName2 = "dusttrail3"
+effectMinVelocity2 = 3.0
+effectMaxVelocity2 = 500.0
+
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 4.0f
+velocJam = 0.0f
+engageRange = 260
+
+
+attackTask = "AssaultTankAttack"
+subAttackTask = "SupportSubAttack"
+subAttackClass = "ANS"
+
+// subAttackClass uses 3 letters.
+// 1st letter is either A or N.     A is include Air targets.         N is attack ground only.
+// 2nd letter is either D or N.     D is to deploy before attacking.  N for regular attack.
+// 3rd letter is either S or N.     S is to use Weapon Range.         N is use the Engage Range to attack. 
+
+
+braccelFactor = 0.02
+strafeFactor = 0.1
+velFactor = 0.5
+steerFactor = 1.5
+omegaFactor = 0.5
+
+selectWaitMsg = "ivatank04.wav"
+selectAttackMsg = "ivatank01.wav"
+selectFollowMsg = "ivatank08.wav"
+selectGoMsg = "ivatank02.wav"
+selectOtherMsg = "ivatank04.wav"
+
+goMsg = "ivatank05.wav"
+attackMsg = "ivatank06.wav"
+followMeMsg = "ivatank08.wav"
+followMsg = "ivatank08.wav"
+repairMsg = "ivatank09.wav"
+reloadMsg = "ivatank09.wav"
+rescueMsg = "ivatank10.wav"
+recycleMsg = "ivatank11.wav"
+otherMsg = "ivatank04.wav" 
+holdMsg = "ivatank12.wav"
+
+user1Msg = ""  
+killedMsg = "ivatank07.wav"
+diedMsg = ""
+
+[TrackedVehicleClass]
+omegaSpin = 1.0
+omegaTurn = 0.5
+alphaSteer = 2.0
+velocForward = 15.0
+velocReverse = 5.0
+accelThrust = 5.0
+
+TREAD_STATIC_FRICTION = 1.5
+
+engineSound = "iatank01.wav"
+treadSound = "iatank02.wav"
+
+
+[AssaultTankClass]
+yawRate = 4.0
+yawAlpha = 10.0
+pitchMin = -0.1
+pitchMax = 0.5
+laserName1 = "recoil_1"
+
+[Lod1]
+//geometryName = "ivatnkL1.fbx" ;geometry for lod1
+//distance = 50                 ;...distance over this many meters => switch to lod2
+
+[Lod2]
+//geometryName = "ivatnkL2.fbx" ;geometry for lod2
+//distance = 135                 ;...distance over this many meters => switch to lod2

@@ -16,6 +16,10 @@ customTime = 15.0
 maxHealth = 3500
 maxAmmo = 2200
 
+addHealth = 0
+addAmmo = 3
+aiAddAmmo = 0
+aiAddHealth = 0
 
 unitName = "Scimitar"
 aiName = "TankFriend"
@@ -103,10 +107,6 @@ diedMsg = ""
 // COMBAT MODE /////////////////////
 
 [HoverCraftClass]
-
-addAmmo = 2.0
-addhealth = 1.0
-
 velocForward = 28.5 // []
 velocReverse = 20.0 // []
 velocStrafe = 16.0 // []
@@ -140,7 +140,7 @@ soundTurbo = "avtanke3.wav"
 maxHealth = 2000
 maxAmmo = 2500
 addAmmo = 0.0
-addhealth = 0.0
+addhealth = 5.0
 engageRange = 100
 isAssault = 0
 

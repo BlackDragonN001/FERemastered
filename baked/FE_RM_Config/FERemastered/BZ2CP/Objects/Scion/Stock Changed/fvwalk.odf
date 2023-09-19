@@ -1,0 +1,152 @@
+[GameObjectClass]
+baseName = "fvwalk"
+classLabel = "fv_walker"
+geometryName = "fvwalk_skel.fbx"
+//glowTexture = "fvwalka0.pic"
+cockpitName = "fvwalk_cockpit.fbx"
+
+animCount = 10
+animName1 = "idle"
+animFile1 = "fvwalk_idle.fbx"
+
+animName2 = "idle2"
+animFile2 = "fvwalk_idle2.fbx"
+
+animName3 = "idle3"
+animFile3 = "fvwalk_idle3.fbx"
+
+animName4 = "sitdown"
+animFile4 = "fvwalk_sitdown.fbx"
+
+animName5 = "walk"
+animFile5 = "fvwalk_walk.fbx"
+
+animName6 = "turn"
+animFile6 = "fvwalk_turn.fbx"
+
+animName7 = "death"
+animFile7 = "fvwalk_death.fbx"
+
+animName8 = "death2"
+animFile8 = "fvwalk_death.fbx"
+
+animName9 = "death3"
+animFile9 = "fvwalk_death.fbx"
+
+animName10 = "run"
+animFile10 = "fvwalk_run.fbx"
+
+scrapValue = 25
+scrapCost = 70
+customCost = 80
+buildTime = 20.0
+customTime = 20.0
+maxHealth = 4000
+maxAmmo = 5000
+addAmmo = 12
+aiAddAmmo = 0
+aiAddHealth = 0
+unitName = "Mauler"
+aiName = "GechProcess"
+aiName2 = "GechProcess"
+heatSignature = 1.0
+imageSignature = 5.0
+radarSignature = 5.0
+collisionRadius = 4.0
+isAssault = 1
+
+armorClass = H
+
+/////// REQUIREMENTS ///////////////
+
+requireCount = 3
+requireName1 = "fbforg"
+requireText1 = "Upgrade Kiln"
+requireName2 = "fbdowe"
+requireText2 = "Build Dower"
+requireName3 = "fbstro"
+requireText3 = "Build Stronghold"
+
+////////////////////////////////////
+
+
+/////// PROVIDES ///////////////////
+
+provideCount = 4
+provideName1 = "fvwalk"
+provideName2 = "VIRTUAL_CLASS_WALKER"
+provideName3 = "assault"
+provideName4 = "DefendUnit"
+
+////////////////////////////////////
+
+
+/////// weapons ////////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gquill_a"
+weaponAssault1 = 1
+weaponHard2 = "HP_CANNON_2"
+weaponName2 = "gquill_a"
+weaponAssault2 = 1
+
+////////////////////////////////////
+
+[CraftClass]
+rangeScan = 200.0
+periodScan = 5.0
+velocJam = 0.0
+engageRange = 100
+
+selectWaitMsg = "fvwalk04.wav"
+selectAttackMsg = "fvwalk01.wav"
+selectFollowMsg = "fvwalk03.wav"
+selectGoMsg = "fvwalk02.wav"
+selectOtherMsg = "fvwalk04.wav"
+holdMsg = "fvwalk12.wav"
+goMsg = "fvwalk05.wav"
+attackMsg = "fvwalk06.wav"
+followMeMsg = "fvwalk08.wav"
+followMsg = "fvwalk03.wav"
+repairMsg = "fvwalk09.wav"
+reloadMsg = "fvwalk09.wav"
+rescueMsg = "fvwalk10.wav"
+recycleMsg = "fvwalk11.wav"
+otherMsg = "fvwalk05.wav" 
+
+user1Msg = ""  
+killedMsg = "fvwalk07.wav"
+diedMsg = ""
+
+topSpeed = 20
+avoidSpeed = 15
+
+[WalkerClass]
+headYawRate	= 100.0 
+minHeadYaw = -80.0
+maxHeadYaw =  80.0
+minHeadPitch = -30.0
+maxHeadPitch = 30.0
+
+alphaDamp = 5.0
+omegaTurn = 60.0
+omegaTurnAttenuation = 0.5f
+
+velocJump = 0;
+alphaTrack = 20.0
+pitchPitch = 0.0
+pitchThrust = 0.0
+accelThrust = 10.0
+velocForward = 50.0
+velocReverse = 10.0
+velocWalkFactor = 0.41
+
+headpiece = "head"
+rightfootpiece = "rfoot";
+leftfootpiece = "lfoot";
+
+stepSound  = "fwstep01.wav"
+engineSound	= "srecy01.wav"
+jumpSound  = "avwalke2.wav"
+attackSpeed = 50

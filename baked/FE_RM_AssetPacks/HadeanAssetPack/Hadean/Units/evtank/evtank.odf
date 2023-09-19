@@ -30,6 +30,8 @@ customTime = 15.0
 maxHealth = 3800
 maxAmmo = 3000
 addAmmo = 5
+aiAddAmmo = 0
+aiAddHealth = 0
 unitName = "Xares"
 aiName = "TankFriend"
 aiName2 = "TankEnemy"
@@ -68,7 +70,7 @@ weaponAssault3 = 0
 recoilName3 = "recoil_l"
 recoilDist3 = -0.3f
 weaponHard4 = "HP_SPECIAL_1"
-weaponName4 = "gproxmin"
+weaponName4 = "ghproxmin"
 weaponAssault4 = 0
 
 ////////////////////////////////////

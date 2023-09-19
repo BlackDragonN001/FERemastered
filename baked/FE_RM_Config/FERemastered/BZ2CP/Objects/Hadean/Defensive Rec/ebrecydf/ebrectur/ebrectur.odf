@@ -7,6 +7,7 @@ scrapCost = 80
 scrapValue = 25
 maxHealth = 200000
 addHealth = 100
+aiAddHealth = 0
 maxAmmo = 20000 // 0 is *not* treated as infinite ammo!
 unitName = "Buster"
 aiName = "GunTowerFriend"

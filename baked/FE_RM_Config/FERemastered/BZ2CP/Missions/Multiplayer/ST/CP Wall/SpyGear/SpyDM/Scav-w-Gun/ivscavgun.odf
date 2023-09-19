@@ -15,6 +15,8 @@ maxAmmo = 100 // set with scrap capacity, not here if scav class
 unitName = "Scavenger"
 
 addAmmo = 10
+aiAddAmmo = 0
+aiAddHealth = 0
 
 aiName = "SentryProcess"  // won't AI scavenge now, was "ScavProcess"
 aiName2 = "SentryProcess" // won't AI scavenge now, was "ScavProcess"

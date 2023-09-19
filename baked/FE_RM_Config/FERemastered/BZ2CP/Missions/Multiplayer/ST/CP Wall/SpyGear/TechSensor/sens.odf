@@ -20,6 +20,7 @@ explosionName = NULL
 
 
 // addHealth = -0.5 // the unit degrades until 0 health, then remains till bumped
+// aiAddHealth = 0
 
 [BuildingClass]
 SoundAmbient = "ping.wav" 
