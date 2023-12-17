@@ -1,6 +1,11 @@
 [GameObjectClass]
 baseName = "cpmitsmin1"
-geometryName = "igmits00.fbx"
+geometryName = "hmits00.fbx"
+animCount = 1
+animName1 = "deploy"
+animFile1 = "hmits00.fbx"
+RunAnimation = "deploy"
+RunAnimIsLooped = false
 classLabel = "magnet"
 scrapCost = 0
 scrapValue = 0
@@ -11,6 +16,8 @@ isAssault = 0
 
 effectHard1 = "MFF"
 effectName1 = "cpmitsmin2.Field"
+effectHard2 = "hp_emit_1"
+effectName2 = "cpmitsmin2.Core"
 
 [MineClass]
 lifeSpan = 15.0
@@ -74,3 +81,51 @@ InitialRoll = 0.0
 AddPitch = -20.0
 AddYaw = -20.0
 AddRoll = -20.0
+
+[Core]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "cpmitsmin2.corea"
+renderName2 = "cpmitsmin2.coreb"
+
+[CoreA]
+renderBase = "draw_emit"
+emitName = "cpmitsmin2.coreAEmit"
+emitDelay = 0.1
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[CoreAEmit]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "127 63 31 200"
+finishColor = "127 91 63 0"
+startRadius = 1.0
+finishRadius = 0.0
+animateTime = 1.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+
+[CoreB]
+renderBase = "draw_emit"
+emitName = "cpmitsmin2.coreBEmit"
+emitDelay = 0.1
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[CoreBEmit]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "127 63 31 63"
+finishColor = "127 91 63 0"
+startRadius = 1.0
+finishRadius = 0.0
+animateTime = 1.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
