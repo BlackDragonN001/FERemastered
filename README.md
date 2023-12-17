@@ -57,7 +57,7 @@ Interested in contributing to Forgotten Enemies Remastered?
 
 ## References:
 1. How to install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
-2. Neilk1's Battlezone Redux Mod Manager [repository](https://github.com/Nielk1/Battlezone-Redux-Mod-Manager)
+2. Neilk1's Battlezone Redux Mod Manager [repository](https://github.com/Nielk1/Battlezone-Redux-Mod-Manager).
 3. Steam download [link](https://store.steampowered.com/about/).
 4. GOG download [link](https://www.gog.com/galaxy).
 5. Battlezone Combat Commander on [Steam](https://store.steampowered.com/app/624970/Battlezone_Combat_Commander/).
