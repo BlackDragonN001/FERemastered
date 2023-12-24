@@ -23,7 +23,7 @@
 	**Note:** _Make sure to set the install location for BZCC (either GOG or Steam) and set the_ **`My Docs/My Games`** _folder location._     
 	**Tip:** _If you don't have Git installed, download it [here](https://git-scm.com/downloads)._  
 	![](docs/BZRMM_Settings.PNG)
-	3. Click the **`BZCC tab`** and paste the github url for Forgotten Enemies Remastered (https://github.com/IV. BlackDragonN001/FERemastered.git) into the **`Mod URL`** field.
+	3. Click the **`BZCC tab`** and paste the github url for Forgotten Enemies Remastered (https://github.com/BlackDragonN001/FERemastered.git) into the **`Mod URL`** field.
 	4. Click the download dowload button.   
 	**Note:** _If a Branch Select window pops up, select "master". (This will take a long time to download, See the_ **`Tasks`** _tab to watch the current progress)_
 	![](docs/BZRMM_ModURL.PNG)
