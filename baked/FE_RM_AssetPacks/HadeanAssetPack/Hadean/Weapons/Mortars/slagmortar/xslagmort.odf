@@ -7,7 +7,7 @@ classLabel = "explosion"
 
 ///////////////////////////////
 
-particleTypes = 9
+particleTypes = 8
 
 particleClass1 = "xslagmort.shock"
 particleCount1 = 1
@@ -22,33 +22,28 @@ particleCount3 = 2
 particleVeloc3 = "0.0 10.0 0.0"
 particleBias3 = "0.0 3.0 0.0"
 
-particleClass4 = "xslagmort.flame"
-particleCount4 = 2
-particleVeloc4 = "0.0 10.0 0.0"
-particleBias4 = "0.0 3.0 0.0"
+particleClass4 = "xslagmort.light"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
 
-particleClass5 = "xslagmort.light"
+particleClass5 = "xslagmort.char"
 particleCount5 = 1
 particleVeloc5 = "0.0 0.0 0.0"
 
-particleClass6 = "xslagmort.char"
-particleCount6 = 1
-particleVeloc6 = "0.0 0.0 0.0"
+particleClass6 = "xslagmort.posroll"
+particleCount6 = 5
+particleVeloc6 = "5.0 0.0 5.0"
 
-particleClass7 = "xslagmort.posroll"
+particleClass7 = "xslaggnd.flamesmoke"
 particleCount7 = 5
-particleVeloc7 = "5.0 0.0 5.0"
+particleVeloc7 = "7.0 14.0 7.0"
+particleBias7 = "0.0 8.0 0.0"
 
-particleClass8 = "xslaggnd.flamesmoke"
-particleCount8 = 5
-particleVeloc8 = "7.0 14.0 7.0"
-particleBias8 = "0.0 8.0 0.0"
-
-particleClass9 = "xslaggnd.DirtKickup"
-particleCount9 = 3
-particleVeloc9 = "3.0 10.0 3.0"
-particleBias9 = "0.0 6.0 0.0"
-particlePosVar9 = "2.0 0.0 2.0"
+particleClass8 = "xslaggnd.DirtKickup"
+particleCount8 = 3
+particleVeloc8 = "3.0 10.0 3.0"
+particleBias8 = "0.0 6.0 0.0"
+particlePosVar8 = "2.0 0.0 2.0"
 
 ///////////////////////////////
 
@@ -68,7 +63,7 @@ damageValue(A) = 150 // absorbtion
 
 [Shock]
 simulateBase = "sim_null"
-lifeTime = 0.3
+lifeTime = 0.1
 renderBase = "draw_sphere"
 textureName = "sprinks.tga"
 textureBlend = "one one modulate"
@@ -106,13 +101,13 @@ rotationRate = 5.0
 simulateBase = "sim_smoke"
 lifeTime = 0.5
 renderBase = "draw_twirl"
-textureName = "flame2.tga"
+textureName = "fire.tga" //"flame2.tga"
 textureBlend = "one one modulate"
 startColor = "255 255 200 127"
 finishColor = "255 200 127 0"
 startRadius = 0.0
 finishRadius = 6.0
-animateTime = 0.6
+animateTime = 0.5
 rotationRate = 5.0
 
 [Smoke]
@@ -152,7 +147,7 @@ startColor = "10 10 10 255"
 finishColor = "10 10 10 0"
 startRadius = 3.0
 finishRadius = 10.0
-animateTime = 0.5
+animateTime = 2.0
 
 [Posroll]
 simulateBase = "sim_dust"
