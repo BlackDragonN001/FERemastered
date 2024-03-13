@@ -16,7 +16,6 @@ canDetect = 1
 canInteract = 1 
 ownsTerrain = 0
 
-
 [MineClass]
 lifeSpan = 4.8 // 3.4 // -trigger * shotdelay for count
 
@@ -24,5 +23,5 @@ lifeSpan = 4.8 // 3.4 // -trigger * shotdelay for count
 payloadName = "ecmchaff"
 fireSound = "quill01.wav"
 triggerDelay = 2.5
-shotDelay = .2 // 0.3
+shotDelay = 0.2 // 0.3
 shotVariance = 3.0 

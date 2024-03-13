@@ -12,7 +12,7 @@ lifeSpan = 4.0
 [FlareMineClass]
 payloadName = NULL //"bhflare2"
 triggerDelay = 0.1
-shotDelay = 10
+shotDelay = 10.0
 shotVariance = 0.01
 damageRadius = 20.0
 damageValue(N) = 100 // none

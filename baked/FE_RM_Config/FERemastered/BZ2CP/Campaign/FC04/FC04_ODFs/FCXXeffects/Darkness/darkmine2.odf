@@ -8,7 +8,7 @@ maxHealth = 0
 maxAmmo = 100
 unitName = "Dark Mine"
 addAmmo = 1
-addHealth = .5
+addHealth = 0.5
 aiAddAmmo = 0
 aiAddHealth = 0
 scanTeamLimit = 3
@@ -17,7 +17,6 @@ heatSignature = 0.0
 imageSignature = 0.0
 radarSignature = 0.0
 canCollide = 1
-
 
 [MineClass]
 lifeSpan = 1E6

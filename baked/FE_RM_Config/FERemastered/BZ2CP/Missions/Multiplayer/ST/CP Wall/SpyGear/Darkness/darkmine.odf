@@ -23,7 +23,7 @@ canCollide = 1
 armorClass = L // so a disruptor is fast against it
 
 [MineClass]
-lifeSpan = 60
+lifeSpan = 60.0
 
 [FlareMineClass]
 payloadName = "darkness"

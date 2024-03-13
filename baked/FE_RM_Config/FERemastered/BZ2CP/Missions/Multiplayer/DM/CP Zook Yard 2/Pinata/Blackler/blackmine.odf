@@ -28,5 +28,5 @@ lifeSpan = 30.0
 [FlareMineClass]
 payloadName = "blackness"
 triggerDelay = 0.5
-shotDelay = 1
-shotVariance = .6//0.5
+shotDelay = 1.0
+shotVariance = 0.6//0.5

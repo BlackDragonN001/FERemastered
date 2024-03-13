@@ -12,8 +12,6 @@ addHealth = 0.5
 aiAddAmmo = 0
 aiAddHealth = 0
 
-fireSound = NULL // "gmasg00.wav"
-
 heatSignature = 0.0
 imageSignature = 0.0
 radarSignature = 0.0
@@ -26,6 +24,7 @@ armorClass = N
 lifeSpan = 32000 
 
 [FlareMineClass]
+fireSound = NULL // "gmasg00.wav"
 payloadName = "stasflak"
 triggerDelay = 0.0
 shotDelay = 0.8
