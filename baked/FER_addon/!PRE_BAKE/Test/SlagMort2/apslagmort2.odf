@@ -1,0 +1,15 @@
+[GameObjectClass]
+baseName = "apslagmort"
+classLabel = "apmortar"
+scrapCost = 20
+
+requireCount = 1
+requireName1 = "ebarmo"
+requireText1 = "Build Arsenal"
+
+lightName1 = "omnibrwn-ap"
+
+[PowerUpClass]
+
+[WeaponPowerupClass]
+weaponName = "gslagmort2"

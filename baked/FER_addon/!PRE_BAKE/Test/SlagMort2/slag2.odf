@@ -1,0 +1,99 @@
+[OrdnanceClass]
+classLabel = "grenade"
+
+shotGeometry = NULL
+shotSound = "slagshell.wav"
+
+xplGround = "xslagmortgnd"
+xplVehicle = "xslagmortcar"
+xplBuilding = "xslagmortcar"
+
+renderName = "slag.render"
+
+ammoCost = 5
+lifeSpan = 8.0
+shotSpeed = 15.0
+
+damageRadius = 25.0
+damageValue(N) = 80 // none
+damageValue(L) = 60 // light
+damageValue(H) = 40 // heavy
+
+damageValue(S) = 60 // standard
+damageValue(D) = 40 // deflection
+damageValue(A) = 80 // absorbtion
+
+kickRadius = 10.0
+kickVeloc = 1.5
+kickOmega = 1.0
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 5
+renderName1 = "slag.core2"
+renderName2 = "slag.flames"
+renderName3 = "slag.smoke"
+renderName4 = "slag.sparks"
+renderName5 = "slag.light"
+
+[Core2]
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "hadbullet.tga"
+startColor = "255 200 150 255"
+finishColor = "255 200 150 255"
+startRadius = 0.35
+finishRadius = 0.35
+tracerLength = 0.6
+
+[Flames]
+renderBase = "draw_twirl_trail"
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+startColor = "200 130 0 100"
+finishColor = "200 100 0 0"
+startRadius = 0.1
+finishRadius = 0.4
+animateTime = 0.3
+emitDelay = 0.01
+emitVariance = "1.0 1.0 1.0"
+emitLife = 0.3
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 150"
+finishColor = "50 50 50 0"
+startRadius = 0.2
+finishRadius = 0.5
+animateTime = 0.5
+emitDelay = 0.01
+emitVelocity = "0.0 1.0 0.0"
+emitVariance = "3.0 3.0 3.0"
+emitLife = 0.5
+
+[Sparks]
+renderBase = "draw_twirl_trail"
+textureName = "spark.tga" // flame
+textureblend = "one one modulate"
+startColor = "255 140 10 255"
+finishColor = "255 60 0 0"
+startRadius = 0.05
+finishRadius = 0.05
+animateTime = 0.3
+emitDelay = 0.01 //0.005
+emitVariance = "10.0 10.0 0.0"
+emitInherit = "0.5 0.5 0.5"
+emitLife = 0.3
+
+[Light]
+renderBase = "draw_light"
+startColor = "200 150 0 800"
+finishColor = "200 150 0 800"
+startRadius = 15.0
+finishRadius = 15.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
