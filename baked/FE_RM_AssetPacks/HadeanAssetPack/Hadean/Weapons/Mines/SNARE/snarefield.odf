@@ -1,5 +1,5 @@
 [GameObjectClass]
-geometryName = "gsnare00.x"
+geometryName = "hgsnare00.fbx"
 classLabel = "weaponmine"
 scrapCost = 0
 scrapValue = 0
@@ -8,13 +8,57 @@ maxAmmo = 300
 unitName = "Snare Mine"
 isAssault = 0
 
-weaponHard1 = "Snare Mine"
+weaponHard1 = "hp_fire"
 weaponName1 = "gmsnaremn"
 
+effectHard1 = "hp_emit_1"
+effectName1 = "snarefield.Energy"
+
 [MineClass]
-lifeSpan = 15
+lifeSpan = 15.0
 
 [WeaponMineClass]
 searchRadius = 50.0
 heightScale = 2.0
 
+[Energy]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "snarefield.energya"
+renderName2 = "snarefield.energyb"
+
+[EnergyA]
+renderBase = "draw_geom"
+textureName = "crystal.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 1
+finishRadius = 1
+geomName = "hgsnare00_fx.fbx"
+ForceDrawTransparent = false
+ForceDraw2Sided = true
+InitialRoll = 0.0f
+InitialPitch = 0.0f
+InitialYaw = 0.0f
+AddRoll = 0.0f
+AddYaw = 20.0f
+AddPitch = 0.0f
+
+[EnergyB]
+renderBase = "draw_geom"
+textureName = "crystal.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 1
+finishRadius = 1
+geomName = "hgsnare00_fx.fbx"
+ForceDrawTransparent = false
+ForceDraw2Sided = true
+InitialRoll = 0.0f
+InitialPitch = 0.0f
+InitialYaw = 0.0f
+AddRoll = 0.0f
+AddYaw = -20.0f
+AddPitch = 0.0f
