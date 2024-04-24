@@ -1,35 +1,39 @@
+// (c) BZ2CP Hadean Sniper Rifle
+// Original Concept: Slaor and Pastell ??
+// FE Remastered Model and Texture: Homeless & Mentally Ill (Vearie/Cloaket)
+
 [WeaponClass]
 classLabel = "machinegun"
 
 // external geometry
-geometryName = "egsnip_skel.xsi"
-geometryScale = 0.12
+geometryName = "egsnip_skel.fbx"
+geometryScale = 0.16
 animCount = 4
 animName1 = "stand"
-animFile1 = "egsnip_stand.xsi"
+animFile1 = "egsnip_skel.fbx"
 animName2 = "walk"
-animFile2 = "egsnip_stand.xsi"
+animFile2 = "egsnip_skel.fbx"
 animName3 = "crouch"
-animFile3 = "egsnip_stand.xsi"
+animFile3 = "egsnip_snipe.fbx"
 animName4 = "jump"
-animFile4 = "egsnip_stand.xsi"
+animFile4 = "egsnip_skel.fbx"
 
 // cockpit geometry
-cockpitName = "ewrifl_cockpit_stand.xsi"
+cockpitName = "ewrifl_cockpit_skel.fbx"
 cockpitScale = 0.12
 animCountCockpit = 4
 animNameCockpit1 = "stand"
-animFileCockpit1 = "ewrifl_cockpit_stand.xsi"
+animFileCockpit1 = "ewrifl_cockpit_stand.fbx"
 animNameCockpit2 = "walk"
-animFileCockpit2 = "ewrifl_cockpit_run.xsi"
+animFileCockpit2 = "ewrifl_cockpit_run.fbx"
 animNameCockpit3 = "crouch"
-animFileCockpit3 = "ewrifl_cockpit_snipe.xsi"
+animFileCockpit3 = "ewrifl_cockpit_snipe.fbx"
 animNameCockpit4 = "jump"
-animFileCockpit4 = "ewrifl_cockpit_stand.xsi"
+animFileCockpit4 = "ewrifl_cockpit_jump.fbx"
 
 ordName = "epulse"
 wpnName = "Pulse"
-fireSound = "gchain01.wav"
+fireSound = "gmini00.wav" //"gchain01.wav" // Who did this file??? GBD
 wpnReticle = "grifle_s"
 wpnCategory = "HAND"
 isAssault = 0
@@ -38,15 +42,15 @@ altName = "egsnip_a"
 flashName = "egsnip_c.flash"
 
 [CannonClass]
-shotDelay = 0.2
+shotDelay = 0.1 //0.2
 shotVariance = 0.015
 
 [Flash]
 renderBase = "draw_geom"
 textureName = "sflash.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 0 255"
-finishColor = 255 0 0 0"
+startColor = "30 33 180 255" //"255 255 0 255"
+finishColor = "25 27 155 150" //"255 0 0 0"
 startRadius = 3.0
 finishRadius = 1.0
 animateTime = 0.1

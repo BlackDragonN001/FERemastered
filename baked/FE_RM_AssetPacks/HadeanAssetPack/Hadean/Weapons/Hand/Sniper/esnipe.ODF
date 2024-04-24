@@ -10,22 +10,47 @@ xplBuilding = "xbulbld"
 renderName = "esnipe.render"
 
 ammoCost = 100
-lifeSpan = 0.3 // 300m
-shotSpeed = 1000
+lifeSpan = 300e-6 // 300m // 0.3
+shotSpeed = 1e6 //1000
 
-damageValue(N) = 200
-damageValue(L) = 150
+damageValue(N) = 100
+damageValue(L) = 50
 damageValue(H) = 0
 
-damageValue(S) = 150
-damageValue(D) = 200
-damageValue(A) = 0
+damageValue(S) = 50
+damageValue(D) = 0
+damageValue(A) = 100
 
 [SniperShellClass]
 killRadius = 0.5
 killLength = 15.0
 
 [Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "esnipe.core"
+renderName2 = "esnipe.trail"
+//renderName3 = "esnipe.sparkles" // original render. -GBD
+
+[Core]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "130 100 230 255"
+finishColor = "130 100 230 255"
+startRadius = 1.0
+finishRadius = 1.0
+
+[Trail]
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+startColor = "220 100 130 255"
+finishColor = "100 100 100 0"  // "255 0 0 0"
+startRadius = 0.1
+finishRadius = 0.0
+segmentTime = 0.2
+
+[Sparkles]
 renderBase = "draw_twirl_trail"
 textureName = "flame.tga"
 textureblend = "one one modulate"
