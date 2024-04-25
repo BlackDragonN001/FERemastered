@@ -11,6 +11,9 @@ wpnReticle = "gphantom.0"
 wpnPriority = 0
 wpnCategory = "PACK"
 localAmmo = 1
+//addLocalAmmo = 0.02
+//canSelect = 0
+//MinOwnerLifetimeSeconds = 0.5 // If >= 0, used as a minimum time for weapon triggering
 
 [JetPackClass]
 ammoCost = 1
