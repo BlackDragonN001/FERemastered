@@ -6,6 +6,7 @@ fireSound = "gpopp00.wav"
 wpnReticle = "glockm"
 wpnLadder = "gpopgun.L0"
 wpnCategory = "SPEC"
+flashName = "gpoptag.flash"
 aiRange = 350
 isAssault = 1
 wpnPriority = 1
@@ -17,3 +18,67 @@ shotLead = 1.0
 salvoCount = 6
 salvoDelay = 0.05
 shotVariance = 0.4 // 0.5 FEAB
+
+[Flash]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "gpoptag.smoke"
+renderName2 = "gpoptag.light"
+renderName3 = "gpoptag.flare"
+
+[Flash2]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 0"
+startRadius = 4.0
+finishRadius = 2.0
+animateTime = 0.1
+geomName = "g_sflash.xsi"
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "gpoptag.smokeemit"
+emitDelay = 0.02
+emitVariance = "6.0 4.0 6.0"
+emitVelocity = "0.0 2.0 0.0"
+emitInherit = "0.3 0.3 0.3"
+[SmokeEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.4
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "20 20 20 130"
+finishColor = "30 25 20 0"
+startRadius = 0.4
+finishRadius = 1.0
+animateTime = 0.4
+rotationRate = 8.0
+
+[Light]
+renderBase = "draw_light"
+startColor = "200 200 100 500"
+finishColor = "200 200 100 500"
+startRadius = 25.0
+finishRadius = 25.0
+animateTime = 0.1
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "bulhit.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 100 255"
+finishColor = "255 150 0 255"
+startRadius = 0.0
+finishRadius = 3.0
+animateTime = 0.1
+rotationRate = 1.0
+bottomInteractsWithTerrain = false

@@ -14,15 +14,74 @@ flashName = "gdragb_a.flash"
 shotDelay = 3.0
 
 [Flash]
-simulateBase = "sim_null"
-lifeTime = 0.05
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "gdragb_a.light"
+renderName2 = "gdragb_a.wave"
+renderName3 = "gdragb_a.flare"
+
+[Light]
 renderBase = "draw_light"
 startColor = "255 255 0 1000"
 finishColor = "255 0 0 0"
 startRadius = 25.0
-finishRadius = 25.0
+finishRadius = 0.0
 animateTime = 0.12
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 1
+
+[Wave]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "gdragb_a.waveb"
+emitDelay = 0.11
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitInherit = "0.0 0.0 0.0"
+emitLife = 0.4
+
+[WaveB]
+simulateBase = "sim_smoke"
+lifeTime = 0.4
+renderBase = "draw_emit"
+emitName = "gdragb_a.waveemit"
+emitDelay = 0.1
+emitDelayVar = 0.05
+emitVelocity = "0.0 0.0 5.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 1.0
+
+[WaveEmit]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_geom"
+ForceDrawTransparent = false
+textureName = "wavering.tga"
+textureBlend = "one one modulate" //"srcalpha invsrcalpha modulatealpha"
+startColor = "255 180 30 200"
+finishColor = "255 150 30 0"
+startRadius = 0.08 //1.2
+finishRadius = 0.03 //0.4
+animateTime = 1.0
+geomName = "hbport00_wormhole.fbx"
+InitialPitch = 0.0
+InitialYaw = 0.0
+InitialRoll = 0.0
+AddPitch = 0.0
+AddYaw = 0.0
+AddRoll = -15.0
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 100 255"
+finishColor = "255 150 0 0"
+startRadius = 0.0
+finishRadius = 10.0
+animateTime = 0.12
+rotationRate = 1.0
+bottomInteractsWithTerrain = false

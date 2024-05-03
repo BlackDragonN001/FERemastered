@@ -7,7 +7,7 @@ fireSound = "fbshot.wav"
 wpnReticle = "gplasma"
 wpnCategory = "CANN"
 isAssault = 0
-//flashName = "gfbgun_c.flash" // was "xgfbgun_c", never worked. -GBD
+flashName = "gfbgun_c.flash"
 aiRange = 195 // 185
 
 [CannonClass]
@@ -15,6 +15,38 @@ shotDelay = 2.0 // 1.0 Rev.B
 shotAlternate = 0
 
 [Flash]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "gfbgun_c.light"
+renderName2 = "gfbgun_c.sphere"
+renderName3 = "gfbgun_c.flare"
+renderName4 = "gfbgun_c.spray"
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 150 63 255"
+finishColor = "255 100 31 150"
+startRadius = 25.0
+finishRadius = 25.0
+animateTime = 0.12
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 100 255"
+finishColor = "255 150 0 255"
+startRadius = 0.0
+finishRadius = 10.0
+animateTime = 0.1
+rotationRate = 1.0
+bottomInteractsWithTerrain = false
+
+[Sphere]
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
@@ -25,3 +57,67 @@ finishRadius = 0.5
 animateTime = 0.1
 latitudeBands = 8
 longitudeSegments = 16
+
+[Spray]
+renderBase = "draw_emit"
+emitName = "gfbgun_c.sprayemit"
+emitDelay = 0.05
+emitDelayVar = 0.07
+emitVelocity = "0.0 6.0 0.0"
+emitVariance = "15.0 4.0 5.0"
+
+[SprayEmit]
+simulateBase = "sim_ember"
+lifeTime = 2.0
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "gfbgun_c.sprayflame"
+renderName2 = "gfbgun_c.spraysmoke"
+renderName3 = "gfbgun_c.spraylight"
+
+[SprayFlame]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.04
+emitDelayVar = 0.01
+emitVelocity = "0.0 0.5 0.0"
+emitVariance = "1.0 1.0 0.0"
+emitLife = 1.0
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 200 127"
+finishColor = "255 100 100 0"
+startRadius = 0.35
+finishRadius = 0.0
+animateTime = 1.0
+rotationRate = 8.0
+BottomInteractsWithTerrain = false
+
+[SpraySmoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.01
+emitVelocity = "0.0 1.0 0.0"
+emitVariance = "1.5 1.5 1.0"
+emitPosVariance = "0.5 0.5 0.0"
+emitLife = 1.3
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 31 31 127"
+finishColor = "63 63 63 0"
+startRadius = 0.5
+finishRadius = 0.8
+animateTime = 1.3
+rotationRate = 8.0
+BottomInteractsWithTerrain = false
+
+[SprayLight]
+renderBase = "draw_light"
+startColor = "255 150 63 255"
+finishColor = "255 100 31 150"
+startRadius = 15.0
+finishRadius = 5.0
+animateTime = 2.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 1

@@ -6,6 +6,7 @@ wpnName = "Sprinkler Msl"
 fireSound = "xmag04.wav"
 wpnReticle = "gsting_c"
 wpnCategory = "ROCK"
+flashName = "gsprink_c.flash"
 aiRange = 200
 isAssault = 0
 
@@ -14,3 +15,45 @@ shotDelay = 3.0
 salvoDelay = 0.2
 salvoCount = 4
 shotAlternate = 1
+
+[Flash]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "gsprink_c.flash2"
+renderName2 = "gsprink_c.light"
+renderName3 = "gsprink_c.flare"
+
+[Flash2]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 0"
+startRadius = 4.0
+finishRadius = 2.0
+animateTime = 0.1
+geomName = "g_sflash.xsi"
+
+[Light]
+renderBase = "draw_light"
+startColor = "200 200 100 500"
+finishColor = "200 200 100 500"
+startRadius = 25.0
+finishRadius = 25.0
+animateTime = 0.1
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 100 255"
+finishColor = "255 150 0 255"
+startRadius = 0.0
+finishRadius = 10.0
+animateTime = 0.1
+rotationRate = 1.0
+bottomInteractsWithTerrain = false

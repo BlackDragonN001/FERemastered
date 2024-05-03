@@ -6,9 +6,64 @@ wpnName = "Worm Battery"
 fireSound = "satshot.wav"
 wpnReticle = "gfafmsl"
 wpnCategory = "ROCK"
+flashName = "gcpworm_c.flash"
 isAssault = 0
 aiRange = 120
 
 [CannonClass]
 shotDelay = 0.8
 shotAlternate = 1
+
+[Flash]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "gcpworm_c.flash2"
+renderName2 = "gcpworm_c.light"
+renderName3 = "gcpworm_c.flare"
+renderName4 = "gcpworm_c.muzflare"
+
+[Flash2]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "155 55 255 255"
+finishColor = "155 55 255 0"
+startRadius = 4.0
+finishRadius = 2.0
+animateTime = 0.1
+geomName = "g_sflash.xsi"
+
+[Light]
+renderBase = "draw_light"
+startColor = "200 55 255 500"
+finishColor = "200 55 255 500"
+startRadius = 25.0
+finishRadius = 25.0
+animateTime = 0.1
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "155 100 255 255"
+finishColor = "155 100 255 255"
+startRadius = 0.0
+finishRadius = 3.0
+animateTime = 0.1
+rotationRate = 1.0
+bottomInteractsWithTerrain = false
+
+[MuzFlare]
+renderBase = "draw_geom"
+textureName = "bulhit.tga"
+textureBlend = "one one modulate"
+startColor = "155 55 255 255"
+finishColor = "155 55 255 255"
+startRadius = 2.0
+finishRadius = 1.0
+animateTime = 0.13
+geomName = "g_fflash.xsi"//sflash

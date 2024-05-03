@@ -10,14 +10,12 @@ isAssault = 0
 aiRange = 200
 flashName = "gcblast_c.flash"
 
-
 [CannonClass]
 shotDelay = 2.2 // .5/sec
 //salvoCount = 5
 //salvoDelay = 0.001
 //shotVariance = 0.0
 shotAlternate = 0
-
 
 [Flash]
 simulateBase = "sim_null"

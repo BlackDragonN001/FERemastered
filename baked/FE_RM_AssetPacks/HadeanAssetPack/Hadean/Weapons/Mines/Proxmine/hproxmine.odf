@@ -21,8 +21,9 @@ suppressRadius = 40.0
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 1
+renderCount = 2
 renderName1 = "hproxmine.vortex" //twirl"
+renderName2 = "hproxmine.wave"
 
 [Vortex]
 renderBase = "draw_geom"
@@ -41,3 +42,28 @@ InitialRoll = 0.0
 AddPitch = 0.0
 AddYaw = 15.0
 AddRoll = 0.0
+
+[Wave]
+renderBase = "draw_emit"
+emitName = "hproxmine.waveemit"
+emitDelay = 0.3
+emitVelocity = "0.0 0.5 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[Waveemit]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "255 180 30 200"
+finishColor = "255 150 30 0"
+startRadius = 0.2
+finishRadius = 0.15
+animateTime = 1.0
+waveAngle = 3.14159265359
+waveDepth = 1.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 64
+maxCount = 256

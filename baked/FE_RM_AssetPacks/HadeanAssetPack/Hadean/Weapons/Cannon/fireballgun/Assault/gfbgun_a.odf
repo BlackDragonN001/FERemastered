@@ -7,7 +7,7 @@ fireSound = "fbshota.wav" // fbshot.wav new sound-Hemp
 wpnReticle = "gplasma"
 wpnCategory = "CANN"
 isAssault = 1
-//flashName = "gfbgun_a.flash" // was "xgfbgun_a", never worked. -GBD
+flashName = "gfbgun_a.flash"
 aiRange = 240
 
 [CannonClass]
@@ -15,13 +15,53 @@ shotDelay = 2.0 // 1/2sec
 shotAlternate = 0
 
 [Flash]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "gfbgun_a.light"
+renderName2 = "gfbgun_a.sphere"
+renderName3 = "gfbgun_a.flare"
+renderName4 = "gfbgun_a.spray"
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 150 63 255"
+finishColor = "255 100 31 150"
+startRadius = 50.0
+finishRadius = 50.0
+animateTime = 0.12
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 100 255"
+finishColor = "255 150 0 255"
+startRadius = 0.0
+finishRadius = 20.0
+animateTime = 0.1
+rotationRate = 1.0
+bottomInteractsWithTerrain = false
+
+[Sphere]
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
-startColor = "255 255 80 127"
-finishColor = "0 255 0 0"
+startColor = "255 205 80 127"
+finishColor = "255 100 0 0"
 startRadius = 3.0
 finishRadius = 1.0
 animateTime = 0.1
 latitudeBands = 8
 longitudeSegments = 16
+
+[Spray]
+renderBase = "draw_emit"
+emitName = "gfbgun_c.sprayemit"
+emitDelay = 0.03
+emitDelayVar = 0.05
+emitVelocity = "0.0 8.0 0.0"
+emitVariance = "15.0 6.0 5.0"
