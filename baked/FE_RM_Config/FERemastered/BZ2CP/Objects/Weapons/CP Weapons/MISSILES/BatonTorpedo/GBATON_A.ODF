@@ -9,6 +9,7 @@ wpnCategory = "ROCK"
 isAssault = 1
 aiRange = 100
 flashName = "gbaton_a.flash"
+flashTime = 0.2
 
 [CannonClass]
 shotDelay = 0.1
@@ -18,9 +19,9 @@ simulateBase = "sim_null"
 lifeTime = 0.2
 renderBase = "draw_light"
 startColor = "0 17 255 500"
-finishColor = "190 23 196 500"
+finishColor = "190 23 196 0"
 startRadius = 10.0
-finishRadius = 10.0
+finishRadius = 0.0
 animateTime = 0.2
 attenuateConstant = 1.0
 attenuateLinear = 0.0

@@ -9,6 +9,7 @@ wpnCategory = "CANN"
 isAssault = 1
 aiRange = 200 // 250 // 200 while using combat ordnance
 flashName = "gcblast_c.flash"
+flashTime = 0.7
 
 [CannonClass]
 shotDelay = 2.0 // .5/sec

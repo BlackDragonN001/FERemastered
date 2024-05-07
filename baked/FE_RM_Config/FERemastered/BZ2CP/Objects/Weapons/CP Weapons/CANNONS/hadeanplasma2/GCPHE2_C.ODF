@@ -1,25 +1,26 @@
 [WeaponClass]
-classLabel="cannon"
-altName="gcphe2_a"
-ordName="cphe2_c"
-wpnName="Hadean EC2"
-fireSound="igtow03.wav"
-wpnReticle="gplasma"
-wpnCategory="CANN"
-isAssault=0
-flashName="gcphe2_c.flash"
-aiRange=200
+classLabel = "cannon"
+altName = "gcphe2_a"
+ordName = "cphe2_c"
+wpnName = "Hadean EC2"
+fireSound = "igtow03.wav"
+wpnReticle = "gplasma"
+wpnCategory = "CANN"
+isAssault = 0
+flashName = "gcphe2_c.flash"
+flashTime = 0.1
+aiRange = 200
 
 [CannonClass]
-shotDelay=0.5
+shotDelay = 0.5
 
 [Flash]
-renderBase="draw_geom"
-textureName="sflash.tga"
-textureBlend="one one modulate"
-startColor="30 33 180 255"
-finishColor="25 27 155 150"
-startRadius=3.0
-finishRadius=6.0
-animateTime=0.1
-geomName="g_sflash.xsi"
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "30 33 180 255"
+finishColor = "25 27 155 150"
+startRadius = 3.0
+finishRadius = 6.0
+animateTime = 0.1
+geomName = "g_sflash.xsi"

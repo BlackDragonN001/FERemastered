@@ -6,9 +6,76 @@ wpnName = "XX-120"
 fireSound = "crckt01.wav"
 wpnReticle = "gfafmsl"
 wpnCategory = "ROCK"
+flashName = "gcvfaf_c.flash"
+flashTime = 0.1
 isAssault = 0
 aiRange = 120
 
 [CannonClass]
 shotDelay = 1.5 // 1/sec
 shotAlternate = 1
+
+[Flash]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "gcvfaf_c.light"
+renderName2 = "gcvfaf_c.flare"
+renderName3 = "gcvfaf_c.smoke"
+renderName4 = "gcvfaf_c.muzflare"
+
+[Light]
+renderBase = "draw_light"
+startColor = "127 63 255 500"
+finishColor = "127 63 255 0"
+startRadius = 35.0
+finishRadius = 0.0
+animateTime = 0.1
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "127 63 255 255"
+finishColor = "127 63 255 0"
+startRadius = 0.0
+finishRadius = 3.0
+animateTime = 0.1
+rotationRate = 1.0
+bottomInteractsWithTerrain = false
+
+[MuzFlare]
+renderBase = "draw_geom"
+textureName = "bulhit.tga"
+textureBlend = "one one modulate"
+startColor = "127 63 255 255"
+finishColor = "127 63 255 255"
+startRadius = 3.0
+finishRadius = 1.5
+animateTime = 0.13
+geomName = "g_fflash.xsi"//sflash
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "gcvfaf_c.smokeemit"
+emitDelay = 0.035
+emitVariance = "6.0 4.0 6.0"
+emitVelocity = "0.0 2.0 0.0"
+emitInherit = "0.3 0.3 0.3"
+[SmokeEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.4
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "63 31 127 127"
+finishColor = "63 63 63 0"
+startRadius = 0.4
+finishRadius = 1.0
+animateTime = 0.4
+rotationRate = 8.0

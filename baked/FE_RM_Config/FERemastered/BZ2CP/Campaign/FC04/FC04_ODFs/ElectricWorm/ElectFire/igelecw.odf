@@ -9,6 +9,7 @@ isAssault = 0
 isFlying = 0
 altName = NULL
 flashName = "igelecw.flash"
+flashTime = 0.3
 engageRange = 110
 airange = 110
 
@@ -26,6 +27,6 @@ textureBlend = "one one modulate"
 startColor = "70 255 255 255"
 finishColor = "0 0 255 255"
 startRadius = 4.0
-finishRadius = 1
+finishRadius = 1.0
 animateTime = 0.3
 geomName = "g_sflash.xsi"

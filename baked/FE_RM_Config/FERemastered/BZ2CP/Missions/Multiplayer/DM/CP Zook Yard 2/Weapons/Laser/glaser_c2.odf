@@ -9,6 +9,7 @@ wpnCategory = "HAND"
 isAssault = 0
 aiRange = 145
 flashName = "glaser_c2.flash"
+flashTime = 0.5
 
 // external geometry
 geometryName = "igsnip_skel.fbx"
@@ -44,13 +45,13 @@ shotVariance = 0.0
 
 [Flash]
 simulateBase = "sim_null"
-lifeTime = 1.5
+lifeTime = 0.5
 renderBase = "draw_light"
 startColor = "100 0 255 700"
 finishColor = "150 0 220 100"
 startRadius = 2.0
 finishRadius = 0.75
-animateTime = 1.5
+animateTime = 0.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0

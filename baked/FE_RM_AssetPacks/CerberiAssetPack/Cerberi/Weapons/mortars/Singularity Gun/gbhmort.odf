@@ -8,7 +8,8 @@ wpnLadder = "gsplint.L0"
 wpnPriority = 4
 wpnCategory = "MORT"
 aiRange = 175
-flashName = "gbhmort.render" // Never worked... -GBD
+flashName = "gbhmort.render"
+flashTime = 0.1
 
 [CannonClass]
 shotDelay = 3.0

@@ -9,6 +9,7 @@ wpnCategory = "GUN"
 isAssault = 1
 aiRange = 100
 flashName = "glasercan_a.flash"
+flashTime = 0.1
 
 [CannonClass]
 shotDelay = 0.20
@@ -21,7 +22,7 @@ textureBlend = "one one modulate"
 startColor = "200 100 0 255"
 finishColor = "200 50 0 0"
 startRadius = 2.0
-finishRadius = .1
+finishRadius = 0.1
 animateTime = 0.01
 geomName = "g_sflash.xsi"
 

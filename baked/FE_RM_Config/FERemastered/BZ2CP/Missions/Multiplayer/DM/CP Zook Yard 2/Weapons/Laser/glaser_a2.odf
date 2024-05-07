@@ -9,6 +9,7 @@ wpnCategory = "GUN"
 isAssault = 1
 aiRange = 175
 flashName = "glaser_a2.flash"
+flashTime = 0.9
 
 [CannonClass]
 shotDelay = 2.5   //2.5
@@ -21,7 +22,7 @@ shotDelay = 2.5   //2.5
 //startColor = "100 60 255 120"
 //finishColor = "0 0 255 0"
 //startRadius = 2.0         // 3.0
-//finishRadius = .2        // 1.0
+//finishRadius = 0.2        // 1.0
 //animateTime = 0.15         // .1
 //latitudeBands = 8         // 8
 //longitudeSegments = 16    // 16

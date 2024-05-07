@@ -8,6 +8,7 @@ wpnReticle = "gchain"
 wpnCategory = "GUN"
 isAssault = 0
 flashName = "gbchain_c.flash"
+flashTime = 0.1
 aiRange = 120
 
 [CannonClass]
@@ -21,7 +22,7 @@ textureName = "sflash.tga"
 textureBlend = "one one modulate"
 startColor = "255 127 0 255"
 finishColor = "255 127 0 0"
-startRadius = .5
+startRadius = 0.5
 finishRadius = 0.25
 animateTime = 0.1
 geomName = "g_sflash.xsi"

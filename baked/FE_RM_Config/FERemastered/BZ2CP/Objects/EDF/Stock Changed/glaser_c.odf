@@ -9,7 +9,7 @@ wpnCategory = "GUN"
 isAssault = 0
 aiRange = 120
 flashName = "glaser_c.flash"
-
+flashTime = 0.1
 
 [CannonClass]
 shotDelay = 1.5 //2.0 // .5/sec
@@ -17,16 +17,15 @@ salvoCount = 1
 salvoDelay = 0.001
 shotVariance = 0.0
 
-
 [Flash]
 simulateBase = "sim_null"
-lifeTime = 3.5
+lifeTime = 0.1
 renderBase = "draw_light"
 startColor = "0 0 255 700"
 finishColor = "0 0 255 700"
 startRadius = 20.0
 finishRadius = 20.0
-animateTime = 3.5
+animateTime = 0.1
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0

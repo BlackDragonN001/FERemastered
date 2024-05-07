@@ -8,6 +8,7 @@ wpnReticle = "gchain"
 wpnCategory = "GUN"
 isAssault = 0
 flashName = "gshellgun_c.flash"
+flashTime = 0.13
 aiRange = 110
 
 [CannonClass]
@@ -67,7 +68,7 @@ emitVariance = "0.1 1.0 0.1"
 simulateBase = "sim_smoke"
 lifeTime = 2.0
 renderBase = "draw_twirl"
-textureName = "smoke.tga"
+textureName = "smoke2.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "50 50 50 250"
 finishColor = "60 60 60 0"
@@ -111,9 +112,10 @@ geomName = "g_sflash.xsi"//sflash
 [Light]
 renderBase = "draw_light"
 startColor = "255 180 127 100"
-finishColor = "255 180 127 100"
+finishColor = "255 180 127 0"
 startRadius = 15.0
-finishRadius = 15.0
+finishRadius = 0.0
+animateTime = 0.13
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0

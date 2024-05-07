@@ -7,6 +7,7 @@ wpnReticle = "gatstab"
 wpnCategory = "CANN"
 isAssault = 1
 flashName = "grburst_a.flash"
+flashTime = 0.1
 aiRange = 195
 
 [CannonClass]
@@ -20,7 +21,7 @@ textureBlend = "one one modulate"
 startColor = "110 155 255 255"
 finishColor = "155 155 255 255"
 startRadius = 5.0
-finishRadius = 2
+finishRadius = 2.0
 animateTime = 0.1
 geomName = "g_sflash.xsi"
 

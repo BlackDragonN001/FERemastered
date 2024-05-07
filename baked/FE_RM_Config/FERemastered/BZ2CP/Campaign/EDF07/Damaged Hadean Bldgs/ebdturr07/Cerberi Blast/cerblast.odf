@@ -23,7 +23,7 @@ damageValue(A) = 300 // absorbtion // 150
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 6
+renderCount = 4
 renderName1 = "cblast_c.light"
 renderName2 = "cerblast.beam" //"cblast_c.beam"
 renderName3 = "cerblast.fringe"

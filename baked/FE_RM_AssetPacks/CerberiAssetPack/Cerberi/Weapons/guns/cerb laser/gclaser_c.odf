@@ -8,10 +8,11 @@ wpnReticle = "gminigun"
 wpnCategory = "GUN"
 isAssault = 0
 flashName = "gclaser_c.flash"
+flashTime = 0.1
 aiRange = 120
 
 [CannonClass]
-shotDelay = 0.10
+shotDelay = 0.1
 shotVariance = 0.01
 
 [Flash]
@@ -22,5 +23,5 @@ startColor = "200 100 255 255"
 finishColor = "200 100 255 0"
 startRadius = 2.0
 finishRadius = 1.0
-animateTime = 0.5
+animateTime = 0.1
 geomName = "g_sflash.xsi"

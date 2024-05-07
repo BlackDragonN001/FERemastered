@@ -8,6 +8,7 @@ wpnReticle = "gspstab"
 wpnCategory = "CANN"
 isAssault = 0
 flashName = "gshockrock_c.flash"
+flashTime = 0.1
 aiRange = 150
 
 [CannonClass]
@@ -21,6 +22,6 @@ textureBlend = "one one modulate"
 startColor = "255 255 255 255"
 finishColor = "255 255 255 255"
 startRadius = 15.0
-finishRadius = 1
+finishRadius = 1.0
 animateTime = 0.1
 geomName = "g_sflash.xsi"

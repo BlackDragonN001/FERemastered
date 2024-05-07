@@ -20,7 +20,7 @@ kickRadius = 15.0
 kickOmega = 1.0
 kickVeloc = 3.0
 
-particleTypes = 9
+particleTypes = 10
 
 particleClass1 = "xcplasgnd_c.splat"
 particleCount1 = 1
@@ -64,6 +64,11 @@ particleVeloc9 = "6.0 15.0 6.0"
 particleBias9 = "0.0 10.0 0.0"
 particlePosVar9 = "2.0 0.0 2.0"
 
+particleClass10 = "xcplasgnd_c.EnergyPuff"
+particleCount10 = 1
+particleVeloc10 = "0.0 0.0 0.0"
+particleBias10 = "0.0 0.0 0.0"
+
 [Splat]
 simulateBase = "sim_null"
 lifeTime = 0.4
@@ -73,7 +78,7 @@ textureBlend = "one one modulate"
 startColor = "63 190 255 255"
 finishColor = "0 0 255 0"
 startRadius = 0.2
-finishRadius = 4.5
+finishRadius = 5.0
 animateTime = 0.4
 
 [Chunks]
@@ -192,3 +197,28 @@ finishRadius = 6.0
 animateTime = 1.8
 rotationRate = 1.6
 BottomInteractsWithTerrain = false
+
+[EnergyPuff]
+simulateBase = "sim_smoke"
+lifeTime = 0.6
+renderBase = "draw_emit"
+emitName = "xcplasgnd_c.EnergyPuffEmit"
+emitVariance = "20.0 20.0 20.0"
+emitDelay = 0.02
+//emitInherit = "1.0 1.0 1.0"
+
+[EnergyPuffEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.2
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.8
+texturespeed = -16.0
+startColor = "0 127 255 255"
+finishColor = "0 127 255 0"
+startRadius = 0.05
+finishRadius = 0.008
+segmentLength = 0.4
+segmentVariance = "0.4 0.4 0.4"
+animateTime = 0.2

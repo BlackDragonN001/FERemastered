@@ -6,6 +6,8 @@ wpnName = "Havoc Msl"
 fireSound = "gsand00.wav"
 wpnReticle = "gshadow.0"
 wpnCategory = "ROCK"
+flashName = "chavoc_c.flash"
+flashTime = 0.1
 isAssault = 0
 aiRange = 210
 
@@ -20,3 +22,80 @@ lockedReticle = "gshadow.B"
 lockedSound = "lock02.wav"
 targetCount = 3
 targetReticle = "gshadow.1"
+
+[Flash]
+renderBase = "draw_multi"
+renderCount = 5
+renderName1 = "chavoc_c.flash2"
+renderName2 = "chavoc_c.light"
+renderName3 = "chavoc_c.flare"
+renderName4 = "chavoc_c.smoke"
+renderName5 = "chavoc_c.muzflare"
+
+[Flash2]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 60 255 255"
+finishColor = "255 60 255 0"
+startRadius = 6.0
+finishRadius = 4.0
+animateTime = 0.1
+geomName = "g_sflash.xsi"
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 55 255 500"
+finishColor = "255 55 255 0"
+startRadius = 45.0
+finishRadius = 0.0
+animateTime = 0.1
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "255 100 255 255"
+finishColor = "255 100 255 0"
+startRadius = 0.0
+finishRadius = 4.0
+animateTime = 0.1
+rotationRate = 1.0
+bottomInteractsWithTerrain = false
+
+[MuzFlare]
+renderBase = "draw_geom"
+textureName = "bulhit.tga"
+textureBlend = "one one modulate"
+startColor = "255 55 255 255"
+finishColor = "255 55 255 255"
+startRadius = 4.0
+finishRadius = 2.0
+animateTime = 0.13
+geomName = "g_fflash.xsi"//sflash
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "chavoc_c.smokeemit"
+emitDelay = 0.035
+emitVariance = "6.0 4.0 6.0"
+emitVelocity = "0.0 2.0 0.0"
+emitInherit = "0.3 0.3 0.3"
+[SmokeEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.4
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "63 31 63 127"
+finishColor = "63 63 63 0"
+startRadius = 0.4
+finishRadius = 1.0
+animateTime = 0.4
+rotationRate = 8.0

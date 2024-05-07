@@ -9,7 +9,7 @@ wpnCategory = "CANN"
 isAssault = 0
 aiRange = 150
 flashName = "gperc_c.flash"
-
+flashTime = 0.5
 
 [CannonClass]
 shotDelay = 1.48776 // .5/sec
@@ -20,14 +20,12 @@ shotAlternate = 0
 
 
 [Flash]
-simulateBase = "sim_null"
-lifeTime = 3.5
 renderBase = "draw_light"
 startColor = "102 10 97 4900"
 finishColor = "102 10 97 4900"
 startRadius = 20.0
 finishRadius = 20.0
-animateTime = 3.5
+animateTime = 0.5
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0

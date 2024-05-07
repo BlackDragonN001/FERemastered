@@ -6,13 +6,14 @@ fireSound = "bltm01.wav"
 wpnReticle = "gbolt" 
 wpnCategory = "CANN"
 flashName = "sparks2a.flash"
+flashTime = 0.5
 aiRange = 200
 
 [CannonClass]
 shotDelay = 7.0 //0.9
 salvoCount = 5
 salvoDelay = 0.3
-shotVariance = .7 // 2.3
+shotVariance = 0.7 // 2.3
 
 [Flash]
 simulateBase = "sim_null"

@@ -8,6 +8,7 @@ wpnLadder = "gmortar.L0"
 //wpnPriority = 2
 wpnCategory = "MORT"
 flashName = "ghmortar.flash"
+flashTime = 0.13
 isAssault = 0
 
 aiRange = 350.0
@@ -99,6 +100,7 @@ startColor = "255 180 127 100"
 finishColor = "255 180 127 100"
 startRadius = 15.0
 finishRadius = 15.0
+animateTime = 0.1
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0

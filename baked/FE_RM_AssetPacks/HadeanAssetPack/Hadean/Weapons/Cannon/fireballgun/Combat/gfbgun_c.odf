@@ -8,6 +8,7 @@ wpnReticle = "gplasma"
 wpnCategory = "CANN"
 isAssault = 0
 flashName = "gfbgun_c.flash"
+flashTime = 0.1
 aiRange = 195 // 185
 
 [CannonClass]
@@ -25,9 +26,9 @@ renderName4 = "gfbgun_c.spray"
 [Light]
 renderBase = "draw_light"
 startColor = "255 150 63 255"
-finishColor = "255 100 31 150"
+finishColor = "255 100 31 0"
 startRadius = 25.0
-finishRadius = 25.0
+finishRadius = 0.0
 animateTime = 0.12
 attenuateConstant = 1.0
 attenuateLinear = 0.0
@@ -39,7 +40,7 @@ renderBase = "draw_twirl"
 textureName = "blast.tga"
 textureBlend = "one one modulate"
 startColor = "255 150 100 255"
-finishColor = "255 150 0 255"
+finishColor = "255 150 0 0"
 startRadius = 0.0
 finishRadius = 10.0
 animateTime = 0.1

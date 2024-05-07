@@ -6,7 +6,7 @@ fireSound = "stat01.wav"
 wpnReticle = "gstatic.0"
 wpnCategory = "SPEC"
 isAssault = 0
-flashName = "fldfield1.render";
+flashName = "fldfield1.render"
 
 [DamageFieldClass]
 ammoCost = 0.0
@@ -22,7 +22,7 @@ damageValue(A) = 110.0 // absorbtion
 
 activeSound = "sgtow01.wav"
 
-[render]
+[Render]
 renderBase = "draw_multi"
 renderCount = 2
 renderName1 = "fldfield1.eff3"

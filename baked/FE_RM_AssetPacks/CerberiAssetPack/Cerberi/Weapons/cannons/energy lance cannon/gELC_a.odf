@@ -9,6 +9,7 @@ wpnCategory = "CANN"
 isAssault = 1
 aiRange = 130
 flashName = "gELC_c.flash"
+flashTime = 0.2
 
 [CannonClass]
 shotDelay =  2.5 // 0.1
@@ -17,13 +18,11 @@ salvoDelay = 0.1
 shotVariance = 0.05
 
 [Flash]
-simulateBase = "sim_null"
-lifeTime = 0.2
 renderBase = "draw_light"
 startColor = "255 0 255 500"
-finishColor = "0 0 255 500"
+finishColor = "0 0 255 0"
 startRadius = 10.0
-finishRadius = 10.0
+finishRadius = 0.0
 animateTime = 0.2
 attenuateConstant = 1.0
 attenuateLinear = 0.0

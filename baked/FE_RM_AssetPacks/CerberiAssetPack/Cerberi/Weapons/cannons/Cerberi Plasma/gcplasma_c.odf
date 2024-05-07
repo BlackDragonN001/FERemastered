@@ -8,6 +8,7 @@ wpnReticle = "gplasma"
 wpnCategory = "CANN"
 isAssault = 0
 flashName = "gcplasma_c.flash"
+flashTime = 0.2
 aiRange = 200
 
 [CannonClass]
@@ -15,6 +16,26 @@ shotDelay = 0.5 // 2/sec
 shotAlternate = 0
 
 [Flash]
+renderBase = "draw_multi"
+renderCount = 5
+renderName1 = "gcplasma_c.flash2"
+renderName2 = "gcplasma_c.smoke"
+renderName3 = "gcplasma_c.sphere"
+renderName4 = "gcplasma_c.light"
+renderName5 = "gcplasma_c.flare"
+
+[Flash2]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "55 155 255 255"
+finishColor = "55 155 255 0"
+startRadius = 4.0
+finishRadius = 2.0
+animateTime = 0.1
+geomName = "g_sflash.xsi"
+
+[Sphere]
 renderBase = "draw_sphere"
 textureName = "vsmoke.tga"
 textureBlend = "one one modulate"
@@ -25,3 +46,49 @@ finishRadius = 0.5
 animateTime = 0.1
 latitudeBands = 8
 longitudeSegments = 16
+
+[Light]
+renderBase = "draw_light"
+startColor = "30 155 200 500"
+finishColor = "30 155 200 0"
+startRadius = 25.0
+finishRadius = 25.0
+animateTime = 0.2
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "55 150 255 0"
+finishColor = "0 150 255 255"
+startRadius = 1.5
+finishRadius = 0.0
+animateTime = 0.2
+rotationRate = 1.0
+bottomInteractsWithTerrain = false
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "gcplasma_c.smokeemit"
+emitDelay = 0.035
+emitVariance = "6.0 4.0 6.0"
+emitVelocity = "0.0 2.0 0.0"
+emitInherit = "0.3 0.3 0.3"
+[SmokeEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.4
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "15 31 63 127"
+finishColor = "63 63 63 0"
+startRadius = 0.4
+finishRadius = 1.0
+animateTime = 0.4
+rotationRate = 8.0

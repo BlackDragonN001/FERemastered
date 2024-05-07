@@ -5,6 +5,8 @@ wpnName = "CVX-300 TAIL"
 fireSound = "gcome00.wav"
 wpnReticle = "gcomet.0"
 wpnCategory = "ROCK"
+flashName = "gcvcomet_c.flash"
+flashTime = 0.1
 isAssault = 0
 aiRange = 200
 
@@ -22,3 +24,45 @@ targetReticle = "gcomet.1"
 
 [TorpedoLauncherClass]
 objectClass = "cvcomet_c"
+
+[Flash]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "gcvcomet_c.light"
+renderName2 = "gcvcomet_c.flare"
+renderName3 = "gcvcomet_c.muzflare"
+
+[Light]
+renderBase = "draw_light"
+startColor = "63 5 255 500"
+finishColor = "63 5 255 0"
+startRadius = 45.0
+finishRadius = 0.0
+animateTime = 0.1
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "45 3 202 255"
+finishColor = "45 3 202 0"
+startRadius = 0.0
+finishRadius = 4.0
+animateTime = 0.1
+rotationRate = 1.0
+bottomInteractsWithTerrain = false
+
+[MuzFlare]
+renderBase = "draw_geom"
+textureName = "absorb.tga"
+textureBlend = "one one modulate"
+startColor = "100 55 255 255"
+finishColor = "100 55 255 255"
+startRadius = 4.0
+finishRadius = 2.0
+animateTime = 0.13
+geomName = "g_fflash.xsi"//sflash

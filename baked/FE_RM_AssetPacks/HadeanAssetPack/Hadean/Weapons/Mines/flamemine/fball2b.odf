@@ -8,12 +8,13 @@ wpnCategory = "CANN"
 aiRange = 300
 isAssault = 1
 flashName = "fball2b.render"
+flashTime = 0.5
 
 [DispenserClass]
 shotDelay = 3.0
 objectClass = "fball2c"
 
-[render]
+[Render]
 renderBase = "draw_multi"
 renderCount = 3
 renderName1 = "fball2b.flame"

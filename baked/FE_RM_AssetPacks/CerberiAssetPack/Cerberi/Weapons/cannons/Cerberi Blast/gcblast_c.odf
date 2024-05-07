@@ -9,6 +9,7 @@ wpnCategory = "CANN"
 isAssault = 0
 aiRange = 200
 flashName = "gcblast_c.flash"
+flashTime = 0.7
 
 [CannonClass]
 shotDelay = 2.2 // .5/sec
@@ -18,15 +19,45 @@ shotDelay = 2.2 // .5/sec
 shotAlternate = 0
 
 [Flash]
-simulateBase = "sim_null"
-lifeTime = 3.5
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "gcblast_c.light"
+renderName2 = "gcblast_c.flare"
+renderName3 = "gcblast_c.sphere"
+
+[Flare]
+renderBase = "draw_twirl"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "55 150 255 255"
+finishColor = "55 150 255 0"
+startRadius = 0.0
+finishRadius = 4.0
+animateTime = 0.7
+rotationRate = 1.0
+bottomInteractsWithTerrain = false
+
+[Light]
 renderBase = "draw_light"
-startColor = "0 255 255 700"
-finishColor = "0 0 255 700"
-startRadius = 20.0
-finishRadius = 20.0
-animateTime = 3.5
+startColor = "0 255 255 500"
+finishColor = "0 0 255 0"
+startRadius = 30.0
+finishRadius = 0.0
+animateTime = 0.7
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
 lensFlare = 1
+
+[Sphere]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "200 255 255 127"
+finishColor = "0 0 255 0"
+startRadius = 1.0
+finishRadius = 0.5
+animateTime = 0.7
+latitudeBands = 8
+longitudeSegments = 16
+

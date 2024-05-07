@@ -8,6 +8,7 @@ wpnReticle = "gchain"
 wpnCategory = "GUN"
 isAssault = 1
 flashName = "gmagun_a.flash" // was "/gmaggun_c.flash", didn't work. -GBD
+flashTime = 0.1
 aiRange = 180
 
 [CannonClass]
