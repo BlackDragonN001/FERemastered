@@ -55,16 +55,16 @@ emitLife = 1.0
 
 [WaveEmit]
 simulateBase = "sim_smoke"
-lifeTime = 1.0
+lifeTime = 0.5
 renderBase = "draw_geom"
 ForceDrawTransparent = false
 textureName = "wavering.tga"
 textureBlend = "one one modulate" //"srcalpha invsrcalpha modulatealpha"
 startColor = "255 180 30 200"
 finishColor = "255 150 30 0"
-startRadius = 0.08 //1.2
-finishRadius = 0.03 //0.4
-animateTime = 1.0
+startRadius = 0.07 //1.2
+finishRadius = 0.02 //0.4
+animateTime = 0.5
 geomName = "hbport00_wormhole.fbx"
 InitialPitch = 0.0
 InitialYaw = 0.0
