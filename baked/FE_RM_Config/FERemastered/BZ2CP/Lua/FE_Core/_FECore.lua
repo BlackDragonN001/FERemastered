@@ -107,7 +107,7 @@ function _FECore.PlayerEjected(DeadObjectHandle)
 		KillEjectedPilot = true; -- AddObject checks this value
 		return EJECTKILLRETCODES_DOEJECTPILOT; -- triggers AddObject on the ejected pilot's handle
 	else	
-		return nil;
+		return EJECTKILLRETCODES_DLLHANDLED;
 	end
 end
 
@@ -117,7 +117,7 @@ function _FECore.ObjectKilled(DeadObjectHandle, KillersHandle)
 		KillEjectedPilot = true; -- AddObject checks this value
 		return EJECTKILLRETCODES_DOEJECTPILOT; -- triggers AddObject on the ejected pilot's handle
 	else	
-		return nil;
+		return EJECTKILLRETCODES_DLLHANDLED;
 	end
 end
 
