@@ -11,15 +11,16 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/BlackDragonN001/FERemastered)
 
 ## Getting Started:
+
+2: Downlaod and install Git [here](https://git-scm.com/downloads)._  
+	**Note:** After installing Git, run Git CMD and put in the following command **git config --global core.autocrlf false**
+
 ### <img src='https://cdn3.emoji.gg/emojis/6174-w98-computer.png' width='20'>  Battlezone Redux Mod Manager Installation Instructions:
 
 1. Download and extract the latest realease of the Battlezone Redux Mod Manager:
 
 	https://github.com/Nielk1/Battlezone-Redux-Mod-Manager/releases
 	
-2: Downlaod and install Git [here](https://git-scm.com/downloads)._  
-	**Note:** After installing Git, run Git CMD and put in the following command **git config --global core.autocrlf false**
-
 1. Battlezone Redux Mod Manager Setup:  
     1. Followthe setup instructions for BZRMM.  
 	2. Open **`BZRModManager.exe`** and select the **`Settings`** tab.   
