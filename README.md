@@ -16,12 +16,14 @@
 1. Download and extract the latest realease of the Battlezone Redux Mod Manager:
 
 	https://github.com/Nielk1/Battlezone-Redux-Mod-Manager/releases
+	
+2: Downlaod and install Git [here](https://git-scm.com/downloads)._  
+	**Note:** After installing Git, run Git CMD and put in the following command **git config --global core.autocrlf false**
 
 1. Battlezone Redux Mod Manager Setup:  
     1. Followthe setup instructions for BZRMM.  
 	2. Open **`BZRModManager.exe`** and select the **`Settings`** tab.   
-	**Note:** _Make sure to set the install location for BZCC (either GOG or Steam) and set the_ **`My Docs/My Games`** _folder location._     
-	**Tip:** _If you don't have Git installed, download it [here](https://git-scm.com/downloads)._  
+	**Note:** _Make sure to set the install location for BZCC (either GOG or Steam) and set the_ **`My Docs/My Games`** _folder location._ 
 	![](docs/BZRMM_Settings.PNG)
 	3. Click the **`BZCC tab`** and paste the github url for Forgotten Enemies Remastered (https://github.com/BlackDragonN001/FERemastered.git) into the **`Mod URL`** field.
 	4. Click the download dowload button.   
