@@ -1,0 +1,14 @@
+[solid]
+diffuse = 0.803922  0.803922  0.803922  1.000000
+specular = 0.501961  0.501961  0.501961  1.000000
+specularPower = 19.698307
+emissive = 0.000000  0.000000  0.000000  1.000000
+ambient = 0.000000  0.000000  0.000000  1.000000
+
+
+[texture]
+diffuse = fbextf01_d.dds
+teamColor = fbextf01_c.dds
+emissive = fbextf01_e.dds
+normal = fbextf01_n.dds
+specular = fbextf01_s.dds

@@ -1,6 +1,11 @@
 [GameObjectClass] // Version with no login terminal/no power use for maps. -GBD
 baseName = "fbport"
-geometryName = "fbportB00.xsi"
+geometryName = "fbportB00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "fbport00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
 classLabel = "fbport"
 RequirePowerMask = 0 // None
 maxHealth = 0 // Invincible.

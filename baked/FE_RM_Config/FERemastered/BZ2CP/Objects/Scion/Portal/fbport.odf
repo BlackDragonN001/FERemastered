@@ -1,6 +1,11 @@
 [GameObjectClass] // Scion Portal. Model by General BlackDragon.
 baseName = "fbport"
-geometryName = "fbport00.xsi"
+geometryName = "fbport00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "fbport00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
 classLabel = "turret" //"powered" //"teleportal"
 BZCClasslabel = "portal"
 RequirePowerMask = 4 // Lung Power
@@ -31,6 +36,7 @@ ownsTerrain = 1
 buildSupport = "F"
 buildRequire = "F"
 AlwaysShowAmmo = true
+AllowUndergroundSpawn = true
 
 PositionOffset1 = "0.000000 16.000000 0.000000" // Teleport Exit Location.
 //RotationOffset1 = "0.0 0.0 0.0" // Teleporter Exit Location.
@@ -124,8 +130,8 @@ lightHard3 = "hp_light_15"
 lightName3 = "spotyellow"
 lightHard4 = "hp_light_16"
 lightName4 = "spotyellow"
-lightHard5 = "hp_light_17"
-lightName5 = "o_yellow_nf"
+lightHard5 = "hp_com_1"
+lightName5 = "omniteal2"
 
 
 [TeleportalClass]
