@@ -12,16 +12,16 @@
 
 ## Getting Started:
 
-2: Downlaod and install Git [here](https://git-scm.com/downloads)._  
+1. Downlaod and install Git [here](https://git-scm.com/downloads)._  
 	**Note:** After installing Git, run Git CMD and put in the following command **git config --global core.autocrlf false**
 
 ### <img src='https://cdn3.emoji.gg/emojis/6174-w98-computer.png' width='20'>  Battlezone Redux Mod Manager Installation Instructions:
 
-1. Download and extract the latest realease of the Battlezone Redux Mod Manager:
+2. Download and extract the latest realease of the Battlezone Redux Mod Manager:
 
 	https://github.com/Nielk1/Battlezone-Redux-Mod-Manager/releases
 	
-1. Battlezone Redux Mod Manager Setup:  
+3. Battlezone Redux Mod Manager Setup:  
     1. Followthe setup instructions for BZRMM.  
 	2. Open **`BZRModManager.exe`** and select the **`Settings`** tab.   
 	**Note:** _Make sure to set the install location for BZCC (either GOG or Steam) and set the_ **`My Docs/My Games`** _folder location._ 
@@ -37,16 +37,16 @@
 
 ### <img src='https://cdn3.emoji.gg/emojis/3421-powershell.png' width='20'> Powershell Install Instructions
 
-1. Open an administrator powershell window (type '**_powershell_**' into windows search and right click and select '**_Run as administrator_**')
+2. Open an administrator powershell window (type '**_powershell_**' into windows search and right click and select '**_Run as administrator_**')
 
-1. Run the following command **`Set-ExecutionPolicy -Scope Process Unrestricted`** and then enter '**_y_**' for yes.
+3. Run the following command **`Set-ExecutionPolicy -Scope Process Unrestricted`** and then enter '**_y_**' for yes.
 
-1. Navigate to the FERemastered repo in powershell. This can be done by running **`Set-Location -Path "C:\Users\User\FERemastered"`** if the FERemastered repo was cloned into **`C:\Users\User\FERemastered`**.
+4. Navigate to the FERemastered repo in powershell. This can be done by running **`Set-Location -Path "C:\Users\User\FERemastered"`** if the FERemastered repo was cloned into **`C:\Users\User\FERemastered`**.
 
-1. Run **`.\install.ps1`**. This will create an install of FERemastered in your user home directory.
+5. Run **`.\install.ps1`**. This will create an install of FERemastered in your user home directory.
 The install directory can be customised by running 
 	> **`./install.ps1 -FeInstallDirectory C:\Games\FE`**
-1. If the install directory of Battlezone Combat Commander is different to default you can run the following 
+6. If the install directory of Battlezone Combat Commander is different to default you can run the following 
 	> **`./install.ps1 -FeInstallDirectory C:\Games\FE -BzInstallDirectory G:\Steam\steamapps\common\BZ2R`**
 
 ## Get Involved:
