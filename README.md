@@ -12,7 +12,7 @@
 
 ## Getting Started:
 
-1. Downlaod and install Git [here](https://git-scm.com/downloads).  
+1. Download and install Git [here](https://git-scm.com/downloads).  
 	**Note:** After installing Git, run Git CMD and put in the following command **git config --global core.autocrlf false**
 
 ### <img src='https://cdn3.emoji.gg/emojis/6174-w98-computer.png' width='20'>  Battlezone Redux Mod Manager Installation Instructions:
