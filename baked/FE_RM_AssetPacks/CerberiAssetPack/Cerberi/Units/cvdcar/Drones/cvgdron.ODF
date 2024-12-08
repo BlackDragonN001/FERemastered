@@ -106,4 +106,4 @@ soundThrust = "gdron.wav"
 soundTurbo = "gdronth.wav"
 
 [DroneClass]
-RandomTargetRange = 0.0f // Range from the primary target, which it can choose a random target instead.
+RandomTargetRange = 100.0f // Range from the primary target, which it can choose a random target instead.

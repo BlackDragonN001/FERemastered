@@ -140,7 +140,7 @@ soundThrust = "carrier.wav"
 [CarrierClass]
 controlRange = 0.0f // Range which Drones are limited to. Drones that get this far from a Carrier, will go dormant until another Carrier comes into range. If there are no Enemies within this range, (is > 0), the drones will be recalled back into the Carrier and need to be relaunched. (ammo is added back upon recall)
 maxDrones = 0 // Number of drones, if limited. Drones beyond this limit will be dormant.
-repairRange = 100.0f // Range within which it will repair drones under it's control. Servicing is done in Parellel.
+repairRange = 0.0f // Range within which it will repair drones under it's control. Servicing is done in Parellel.
 HealthRepairAmount = 0 // Amount of Health per second to give drones.
 AmmoRepairAmount = 0 // Amount of Ammo per second to give drones.
 
