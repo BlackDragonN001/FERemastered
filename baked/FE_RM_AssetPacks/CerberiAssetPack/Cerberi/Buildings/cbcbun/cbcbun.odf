@@ -45,6 +45,115 @@ lightName4 = "cerbpurple"
 
 [BuildingClass]
 soundAmbient = "icomm01.wav"
+//bldEdge = "wwww"
+
+tunnelCount = 5 //10
+
+// Left Side
+tunnel01X0 = 1
+tunnel01Z0 = 1
+tunnel01DX = 1
+tunnel01DZ = 5
+tunnel01Edge = "twft"
+
+// Right Side
+tunnel02X0 = 6
+tunnel02Z0 = 1
+tunnel02DX = 1
+tunnel02DZ = 5
+tunnel02Edge = "ttfw"
+
+// Left Corner
+tunnel03X0 = 1
+tunnel03Z0 = 6
+tunnel03DX = 1
+tunnel03DZ = 1
+tunnel03Edge = "fftt"
+
+// Right Corner
+tunnel04X0 = 6
+tunnel04Z0 = 6
+tunnel04DX = 1
+tunnel04DZ = 1
+tunnel04Edge = "fttf"
+
+// Center
+tunnel05X0 = 2
+tunnel05Z0 = 6
+tunnel05DX = 4
+tunnel05DZ = 1
+tunnel05Edge = "wftf"
+
+
+// Left Side
+//tunnel01X0 = 1
+//tunnel01Z0 = 1
+//tunnel01DX = 1
+//tunnel01DZ = 1
+//tunnel01Edge = "twft"
+
+// Left Side 2
+//tunnel02X0 = 1
+//tunnel02Z0 = 2
+//tunnel02DX = 1
+//tunnel02DZ = 2
+//tunnel02Edge = "fwft"
+
+// Left Side 3
+//tunnel03X0 = 1
+//tunnel03Z0 = 4
+//tunnel03DX = 1
+//tunnel03DZ = 2
+//tunnel03Edge = "fwft"
+
+// Right Side
+//tunnel04X0 = 6
+//tunnel04Z0 = 1
+//tunnel04DX = 1
+//tunnel04DZ = 1
+//tunnel04Edge = "ttfw"
+
+// Right Side 2
+//tunnel05X0 = 6
+//tunnel05Z0 = 2
+//tunnel05DX = 1
+//tunnel05DZ = 2
+//tunnel05Edge = "ftfw"
+
+// Right Side 3
+tunnel06X0 = 6
+tunnel06Z0 = 4
+tunnel06DX = 1
+tunnel06DZ = 2
+tunnel06Edge = "ftfw"
+
+// Left Corner
+tunnel07X0 = 1
+tunnel07Z0 = 6
+tunnel07DX = 1
+tunnel07DZ = 1
+tunnel07Edge = "fftt"
+
+// Right Corner
+tunnel08X0 = 6
+tunnel08Z0 = 6
+tunnel08DX = 1
+tunnel08DZ = 1
+tunnel08Edge = "fttf"
+
+// Center Left
+tunnel09X0 = 2
+tunnel09Z0 = 6
+tunnel09DX = 2
+tunnel09DZ = 1
+tunnel09Edge = "wftf"
+
+// Center Right
+tunnel10X0 = 4
+tunnel10Z0 = 6
+tunnel10DX = 2
+tunnel10DZ = 1
+tunnel10Edge = "wftf"
 
 [CommBunkerClass]
 rangeScan = 400

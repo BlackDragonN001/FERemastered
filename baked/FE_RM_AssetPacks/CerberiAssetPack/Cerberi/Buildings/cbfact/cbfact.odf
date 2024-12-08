@@ -43,12 +43,78 @@ lightName3 = "cerb_blue"
 detectRange = 100
 
 [BuildingClass]
-tunnelCount = 1
+bldEdge = "wwww"
+tunnelCount = 10 //6
+
+// Center left
 tunnel01X0 = 2
-tunnel01Z0 = 3
-tunnel01DX = 4
-tunnel01DZ = 4
-tunnel01Edge = "wwtw"
+tunnel01Z0 = 4
+tunnel01DX = 2
+tunnel01DZ = 2
+tunnel01Edge = "wfff"
+
+// Front Entrance left
+tunnel02X0 = 2
+tunnel02Z0 = 6
+tunnel02DX = 2
+tunnel02DZ = 2
+tunnel02Edge = "fftw"
+
+// Left Entrance
+tunnel03X0 = 0
+tunnel03Z0 = 4
+tunnel03DX = 2
+tunnel03DZ = 2
+tunnel03Edge = "ffwt" //"wfwt"
+
+// Right Entrance
+tunnel04X0 = 6
+tunnel04Z0 = 4
+tunnel04DX = 2
+tunnel04DZ = 2
+tunnel04Edge = "ftwf" //"wtwf"
+
+// Center right
+tunnel05X0 = 4
+tunnel05Z0 = 4
+tunnel05DX = 2
+tunnel05DZ = 2
+tunnel05Edge = "wfff"
+
+// Front Entrance right
+tunnel06X0 = 4
+tunnel06Z0 = 6
+tunnel06DX = 2
+tunnel06DZ = 2
+tunnel06Edge = "fwtf"
+
+// Left Mid Segment
+tunnel07X0 = 0
+tunnel07Z0 = 2
+tunnel07DX = 2
+tunnel07DZ = 2
+tunnel07Edge = "fwft"
+
+// Left Back Segment
+tunnel08X0 = 0
+tunnel08Z0 = 0
+tunnel08DX = 2
+tunnel08DZ = 2
+tunnel08Edge = "twft"
+
+// Right Mid Segment
+tunnel09X0 = 6
+tunnel09Z0 = 2
+tunnel09DX = 2
+tunnel09DZ = 2
+tunnel09Edge = "ftfw"
+
+// Right Back Segment
+tunnel10X0 = 6
+tunnel10Z0 = 0
+tunnel10DX = 2
+tunnel10DZ = 2
+tunnel10Edge = "ttfw"
 
 soundAmbient = "ibfact00.wav"
 
@@ -59,6 +125,8 @@ soundBuild = "ibrecy02.wav"
 soundFinish = "iapc04.wav"
 reloadMsg = "ivrecy12.wav"
 rescueMsg = "ivrecy13.wav"
+
+DropOffDZ = 48.0f
 
 buildItem1 = "cvtank"
 buildItem2 = "cvmlay"

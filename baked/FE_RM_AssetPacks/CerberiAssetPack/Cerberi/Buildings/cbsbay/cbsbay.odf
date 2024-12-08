@@ -42,6 +42,44 @@ lightName4 = "cerbpurple"
 detectRange = 100
 
 [BuildingClass]
+//bldEdge = "wwww"
+tunnelCount = 5
+
+// Front Left
+tunnel01X0 = 1
+tunnel01Z0 = 5
+tunnel01DX = 2
+tunnel01DZ = 2
+tunnel01Edge = "fftt"
+
+// Center
+tunnel02X0 = 3
+tunnel02Z0 = 5
+tunnel02DX = 2
+tunnel02DZ = 2
+tunnel02Edge = "wftf"
+
+// Front Right
+tunnel03X0 = 5
+tunnel03Z0 = 5
+tunnel03DX = 2
+tunnel03DZ = 2
+tunnel03Edge = "fttf"
+
+// Left Side
+tunnel04X0 = 1
+tunnel04Z0 = 1
+tunnel04DX = 2
+tunnel04DZ = 4
+tunnel04Edge = "twft"
+
+// Right Side
+tunnel05X0 = 5
+tunnel05Z0 = 1
+tunnel05DX = 2
+tunnel05DZ = 4
+tunnel05Edge = "ttfw"
+
 
 [SupplyDepotClass]
 supplyRange = 32.0

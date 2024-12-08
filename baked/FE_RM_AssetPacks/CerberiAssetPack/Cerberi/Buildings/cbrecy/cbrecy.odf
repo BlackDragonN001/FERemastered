@@ -42,12 +42,79 @@ detectRange = 100
 
 [BuildingClass]
 soundAmbient = "ibrecy01.wav"
+//bldEdge = "wwww"
+tunnelCount = 1 //8
+
+tunnel01X0 = 1
+tunnel01Z0 = 6
+tunnel01DX = 6
+tunnel01DZ = 1
+tunnel01Edge = "wttt"
+
+// Front Left Edge
+//tunnel01X0 = 1
+//tunnel01Z0 = 4
+//tunnel01DX = 1
+//tunnel01DZ = 2
+//tunnel01Edge = "wfft"
+
+// Front Left Center
+tunnel02X0 = 2
+tunnel02Z0 = 4
+tunnel02DX = 2
+tunnel02DZ = 2
+tunnel02Edge = "wfff"
+
+// Front Right Center
+tunnel03X0 = 4
+tunnel03Z0 = 4
+tunnel03DX = 2
+tunnel03DZ = 2
+tunnel03Edge = "wfff"
+
+// Front Right Edge
+tunnel04X0 = 6
+tunnel04Z0 = 4
+tunnel04DX = 1
+tunnel04DZ = 2
+tunnel04Edge = "wtff"
+
+// Bottom Left Edge
+tunnel05X0 = 1
+tunnel05Z0 = 6
+tunnel05DX = 1
+tunnel05DZ = 1
+tunnel05Edge = "fftt"
+
+// Bottom Left Center
+tunnel06X0 = 2
+tunnel06Z0 = 6
+tunnel06DX = 2
+tunnel06DZ = 1
+tunnel06Edge = "fftf"
+
+// Bottom Right Center
+tunnel07X0 = 4
+tunnel07Z0 = 6
+tunnel07DX = 2
+tunnel07DZ = 1
+tunnel07Edge = "fftf"
+
+// Bottom Right Edge
+tunnel08X0 = 6
+tunnel08Z0 = 6
+tunnel08DX = 1
+tunnel08DZ = 1
+tunnel08Edge = "fttf"
+
 
 [FactoryClass]
 soundBuild = "ibrecy02.wav"
 soundFinish = "iapc04.wav"
 reloadMsg = "ivrecy12.wav"
 rescueMsg = "ivrecy13.wav"
+
+DropOffDZ = 24.0f
 
 buildItem1 = "cvscav"
 buildItem2 = "cvscout"
