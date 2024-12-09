@@ -64,14 +64,17 @@ particleVeloc10 = "0.0 0.0 0.0"
 
 explSound = "xmv1.wav"
 damageRadius = 75.0
+kickRadius = 60.0
+kickOmega = 2.0
+kickVeloc = 1.5
 
-damageValue(N) = 70 // none
-damageValue(L) = 50 // light
-damageValue(H) = 10 // heavy
+damageValue(N) = 140 // none
+damageValue(L) = 100 // light
+damageValue(H) = 50 // heavy
 
-damageValue(S) = 50 // standard
-damageValue(D) = 70 // deflection
-damageValue(A) = 20 // absorbtion
+damageValue(S) = 100 // standard
+damageValue(D) = 140 // deflection
+damageValue(A) = 50 // absorbtion
 
 ///////////////////////////////
 
