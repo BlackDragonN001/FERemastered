@@ -2,7 +2,7 @@
 baseName = "cbarmo"
 geometryName = "Cbarmo00.xsi"
 classLabel = "armory"
-collisionRadius = 1.0
+collisionRadius = 16.0
 scrapCost = 60
 scrapValue = 5
 maxHealth = 5000
@@ -32,6 +32,7 @@ provideName2 = "VIRTUAL_CLASS_ARMORY"
 provideName3 = "base"
 
 [BuildingClass]
+bldEdge = "wwww"
 soundAmbient = "iarm01.wav"
 
 [PoweredBuildingClass]
