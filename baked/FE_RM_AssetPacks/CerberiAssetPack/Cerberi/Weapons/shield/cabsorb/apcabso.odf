@@ -1,0 +1,16 @@
+[GameObjectClass]
+baseName = "apabso"
+classLabel = "apshield"
+
+scrapCost = 10
+
+requireCount = 2
+requireName1 = "cbfact"
+requireText1 = "Build Crucible"
+requireName2 = "cbarmo"
+requireText2 = "Build Dispenser Node"
+
+[PowerUpClass]
+
+[WeaponPowerupClass]
+weaponName = "gcabsorb"

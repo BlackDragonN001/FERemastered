@@ -1,0 +1,16 @@
+[GameObjectClass]
+baseName = "apdefl"
+classLabel = "apshield"
+
+scrapCost = 10
+
+requireCount = 2
+requireName1 = "cbfact"
+requireText1 = "Build Crucible"
+requireName2 = "cbcbun"
+requireText2 = "Build Uplink Array"
+
+[PowerUpClass]
+
+[WeaponPowerupClass]
+weaponName = "gcdeflect"

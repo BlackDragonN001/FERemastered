@@ -1,0 +1,24 @@
+[WeaponClass]
+classLabel = "shieldup"
+ordName = NULL
+wpnName = "Stasis"
+fireSound = "gphan00.wav"
+wpnReticle = "gshield"
+wpnPriority = 0
+wpnCategory = "SHIE"
+
+[ShieldUpgradeClass]
+
+// stasis shield (balanced)
+shieldClass = "S"
+
+animateTime = 1.5
+colorRange = 0.5
+scaleStart = 0.1
+scaleFinish = 1.0
+
+// [white->cyan->blue]
+textureName = "cshield.tga"
+startColor = "200 255 255 255"
+middleColor = "0 127 255 193"
+finishColor = "0 0 255 0"

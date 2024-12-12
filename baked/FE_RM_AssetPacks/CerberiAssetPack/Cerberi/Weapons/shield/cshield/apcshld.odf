@@ -1,0 +1,14 @@
+[GameObjectClass]
+baseName = "apshld"
+classLabel = "apshield"
+
+scrapCost = 10
+
+requireCount = 1
+requireName1 = "cbsbay"
+requireText1 = "Build Regenerator"
+
+[PowerUpClass]
+
+[WeaponPowerupClass]
+weaponName = "gcshield"
