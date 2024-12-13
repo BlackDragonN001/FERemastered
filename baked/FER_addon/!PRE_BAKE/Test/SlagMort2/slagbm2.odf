@@ -15,12 +15,12 @@ ammoCost = 70
 lifeSpan = 1e30
 shotSpeed = 63.0
 
-damageValue(N) = 360 //0 // none
-damageValue(L) = 270 //0 // light
-damageValue(H) = 180 //0 // heavy
-damageValue(S) = 270 //0 // standard
-damageValue(D) = 180 //0 // deflection
-damageValue(A) = 360 //0 // absorbtion
+damageValue(N) = 180 //0 // none
+damageValue(L) = 135 //0 // light
+damageValue(H) = 90 //0 // heavy
+damageValue(S) = 135 //0 // standard
+damageValue(D) = 90 //0 // deflection
+damageValue(A) = 180 //0 // absorbtion
 
 [SprayBombClass]
 payloadName = "slagb2"
