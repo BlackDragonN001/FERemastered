@@ -1,0 +1,46 @@
+[GameObjectClass]
+baseName = "hfmine"
+geometryName = "hgprox00.fbx"
+classLabel = "tripmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 200
+unitName = "Hellfire Mine"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "hproxmine.render"
+
+[MineClass]
+lifeSpan = 30
+xplBlast = "xminxpl"
+
+[TripMineClass]
+triggerRadius = 20.0
+suppressRadius = 40.0
+payloadName = "hfmine2"
+teamFilter = 0
+fireSound = "xmv1.wav"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 1
+renderName1 = "hproxmine.vortex" //twirl"
+
+[Vortex]
+renderBase = "draw_geom"
+ForceDrawTransparent = false
+textureName = "hbport00_wormhole.tga"
+textureBlend = "one one modulate" //"srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.03
+finishRadius = 0.03
+//animateTime = 1.0
+geomName = "hbport00_wormhole.fbx"
+InitialPitch = 90.0
+InitialYaw = 0.0
+InitialRoll = 0.0
+AddPitch = 0.0
+AddYaw = 15.0
+AddRoll = 0.0

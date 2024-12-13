@@ -1,0 +1,10 @@
+[WeaponClass]
+classLabel = "dispenser"
+wpnName = "Hellfire Mine"
+fireSound = "mmine01.wav"
+wpnReticle = "gproxmin"
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 4.0
+objectClass = "hfmine"
