@@ -3,7 +3,7 @@
 // ==================
 
 [ExplosionClass]
-classLabel = "explosion"
+classLabel = "quakeblast" //"explosion"
 
 explSound = "shipxpl.wav"
 
@@ -55,7 +55,7 @@ particleCount7 = 1
 particleVeloc7 = "0.0 0.0 0.0"
 
 particleClass8 = "FEDustRingLarge"
-particleCount8 = 1
+particleCount8 = 2
 particleVeloc8 = "0.0 0.0 0.0"
 
 particleClass9 = "xbhxpl.puff"
@@ -77,6 +77,14 @@ particleVeloc12 = "0.0 0.0 0.0"
 particleClass13 = "xbhxpl.dome"
 particleCount13 = 1
 particleVeloc13 = "0.0 0.0 0.0"
+
+[QuakeBlastClass]
+quakeCount = 12
+quakeClass = "xbhquake"
+pitchVariance = 0.0f
+yawVariance = 0.0f
+quakeMagnitude = 5.0f
+quakeTime = 3.0f
 
 [Ring]
 simulateBase = "sim_null"

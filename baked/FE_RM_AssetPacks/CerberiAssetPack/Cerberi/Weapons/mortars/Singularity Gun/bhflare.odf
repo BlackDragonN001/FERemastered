@@ -100,16 +100,16 @@ animateTime = 4.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
-lensFlare = 0
+lensFlare = false
 
 [Light2]
-renderBase = "draw_emit"
-emitName = "bhflare.lightemit2"
-emitDelay = 4.2
-emitVelocity = "0.0 150.0 0.0"
-emitVariance = "875.0 875.0 875.0"
+//renderBase = "draw_emit"
+//emitName = "bhflare.lightemit2"
+//emitDelay = 4.2
+//emitVelocity = "0.0 150.0 0.0"
+//emitVariance = "875.0 875.0 875.0"
 
-[LightEmit2]
+//[LightEmit2]
 simulateBase = "sim_null"
 lifeTime = 7.0
 renderBase = "draw_light"
@@ -129,7 +129,7 @@ textureName = "xbhchar3.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "255 255 255 0"
 finishColor = "255 255 255 25"
-startRadius = 255.0
+startRadius = 200.0
 finishRadius = 10.0
 animateTime = 4.0
 
@@ -139,7 +139,7 @@ textureName = "xbhchar2.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "255 255 255 25"
 finishColor = "255 255 255 0"
-startRadius = 255.0
+startRadius = 200.0
 finishRadius = 20.0
 animateTime = 4.0
 
@@ -149,8 +149,8 @@ textureName = "ano2.pic" // was "dome.pic", texture missing. -GBD
 textureBlend =  "srcalpha invsrcalpha modulatealpha" // "one one modulate" //
 startColor = "0 0 0 50"
 finishColor = "0 0 0 180"
-startRadius = 225.0
-finishRadius = 240.0
+startRadius = 255.0
+finishRadius = 80.0 //240.0
 animateTime = 4.0
 
 [dome]

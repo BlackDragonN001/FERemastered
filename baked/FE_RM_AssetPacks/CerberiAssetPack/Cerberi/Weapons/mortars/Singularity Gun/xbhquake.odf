@@ -1,0 +1,54 @@
+[OrdnanceClass]
+classLabel = "seismic"
+
+shotSound = "gquak01.wav"
+
+renderName = "xbhquake.render"
+
+ammoCost = 1
+lifeSpan = 5.0
+shotSpeed = 30.0
+
+damageValue(N) = 400
+damageValue(L) = 300
+damageValue(H) = 200
+damageValue(S) = 300
+damageValue(D) = 200
+damageValue(A) = 400
+
+[SeismicWaveClass]
+waveRadius = 50
+waveHeight = 5
+rampUpTime = 5
+rampDownTime = 2
+sweepOmega = 100
+sweepVeloc = 50
+shakeOmega = 5
+shakeVeloc = 25
+buildingScale = 3
+
+[Render]
+renderBase = "draw_emit"
+emitName = "xbhquake.CloudEmit"
+emitDelay = 0.01
+emitDelayVar = 0.015
+emitVelocity = "1.0 1.0 1.0"
+emitVariance = "15.0 1.0 15.0"
+emitInherit = "0.8 0.8 0.8"
+emitPosVariance = "100.0 0.0 40.0"
+
+[CloudEmit]
+simulateBase = "sim_dust"
+lifeTime = 5.0
+renderBase = "draw_twirl"
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "1024 1024 1024 240"
+FinishColor = "1024 1024 1024 0"
+startRadius = 8.0
+finishRadius = 20.0
+animateTime = 1.0
+rotationRate = 5.0
+BottomInteractsWithTerrain = false
+maxCount = 512
+useTerrainColor = 1.0
