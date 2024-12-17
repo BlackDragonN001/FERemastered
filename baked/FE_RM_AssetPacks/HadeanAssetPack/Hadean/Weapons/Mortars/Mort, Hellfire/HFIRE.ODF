@@ -15,8 +15,8 @@ ammoCost = 200
 lifeSpan = 20.0 //60.0
 shotSpeed = 65.0
 
-damageValue(N) = 150 // none
-damageValue(L) = 150 // light
+damageValue(N) = 225 // none
+damageValue(L) = 200 // light
 damageValue(H) = 150 // heavy
 
 damageValue(S) = 200 // standard
