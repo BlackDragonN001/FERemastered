@@ -650,7 +650,7 @@ Frame frm-hp_dummyroot {
             }
          }
 
-         Frame frm-tractor_l__h {
+         Frame frm-tractor_l {
 
             FrameTransformMatrix {
                1.000000,0.000000,0.000000,0.000000,
@@ -659,7 +659,7 @@ Frame frm-hp_dummyroot {
                0.000000,-0.000001,0.000000,1.000000;;
             }
 
-            Mesh tractor_l__h {
+            Mesh tractor_l {
                22;
                1.369617;0.283553;3.338198;,
                1.361973;-0.823950;-1.801799;,
@@ -1692,7 +1692,7 @@ Frame frm-hp_dummyroot {
             }
          }
 
-         Frame frm-tractor_r__h {
+         Frame frm-tractor_r {
 
             FrameTransformMatrix {
                1.000000,0.000000,0.000000,0.000000,
@@ -1701,7 +1701,7 @@ Frame frm-hp_dummyroot {
                0.000000,-0.000001,-0.000000,1.000000;;
             }
 
-            Mesh tractor_r__h {
+            Mesh tractor_r {
                22;
                -1.369617;0.286213;3.337969;,
                -1.361973;-0.825386;-1.801142;,
