@@ -37,23 +37,22 @@ kickOmega = 1.5
 
 [render]
 renderBase = "draw_multi"
-renderCount = 8
+renderCount = 6
 renderName1 = "bhflare.sphere"
 renderName2 = "bhflare.light"
-renderName3 = "bhflare.light2"
-renderName4 = "bhflare.ring"
-renderName5 = "bhflare.ring2"
-renderName6 = "bhflare.ground"
-renderName7 = "bhflare.sphere2"
-renderName8 = "bhflare.sphere3"
-//renderName7 = "bhflare.dome"
+//renderName1 = "bhflare.light2"
+renderName3 = "bhflare.ring"
+renderName4 = "bhflare.ground"
+renderName5 = "bhflare.sphere2"
+renderName6 = "bhflare.sphere3"
+//renderName8 = "bhflare.dome"
 
 [Sphere]
 renderBase = "draw_sphere"
-textureName = "vsmoke.tga" //"bhsphere.tga"
+textureName = "vsmoke4.tga" //"bhsphere.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha" // "one one modulate"
 startColor = "240 200 250 0"
-finishColor = "0 0 40 230"
+finishColor = "0 0 40 255"
 startRadius = 65.0
 finishRadius = 1.0
 animateTime = 4.2
@@ -129,18 +128,8 @@ textureName = "xbhchar3.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "255 255 255 0"
 finishColor = "255 255 255 25"
-startRadius = 200.0
+startRadius = 100.0 //200.0 // flickey. -GBD
 finishRadius = 10.0
-animateTime = 4.0
-
-[Ring2]
-renderBase = "draw_planar"
-textureName = "xbhchar2.tga"
-textureBlend = "srcalpha invsrcalpha modulatealpha"
-startColor = "255 255 255 25"
-finishColor = "255 255 255 0"
-startRadius = 200.0
-finishRadius = 20.0
 animateTime = 4.0
 
 [Ground]
@@ -149,8 +138,8 @@ textureName = "ano2.pic" // was "dome.pic", texture missing. -GBD
 textureBlend =  "srcalpha invsrcalpha modulatealpha" // "one one modulate" //
 startColor = "0 0 0 50"
 finishColor = "0 0 0 180"
-startRadius = 255.0
-finishRadius = 80.0 //240.0
+startRadius = 100.0 //250.0 // flickery. -GBD
+finishRadius = 100.0 //200.0 // flickery. -GBD
 animateTime = 4.0
 
 [dome]
