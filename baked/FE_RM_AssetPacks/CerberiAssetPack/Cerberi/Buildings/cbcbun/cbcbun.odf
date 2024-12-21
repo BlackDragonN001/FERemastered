@@ -158,6 +158,16 @@ tunnel10Edge = "wftf"
 [CommBunkerClass]
 rangeScan = 400
 periodScan = 0.0
+viewDist = 300.0
+viewZoom = 1.5
+minZoom = 0.5
+maxZoom = 4.0
+viewPitch = 1.0
+minPitch = 0.75
+maxPitch = 1.5
+nearPlane = 1
+farPlane = 1000
+disableFog = 1
 
 [PoweredBuildingClass]
 detectRange = 300
