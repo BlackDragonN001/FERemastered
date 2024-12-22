@@ -1,13 +1,14 @@
 [WeaponClass]
 classLabel = "mortar"
 ordName = "bhmort"
+altName = "gbhmorta"
 wpnName = "Singularity"
 fireSound = "smort01.wav"
 wpnReticle = "gsplint"
 wpnLadder = "gsplint.L0"
 wpnPriority = 4
 wpnCategory = "MORT"
-aiRange = 175
+aiRange = 375
 flashName = "gbhmort.render"
 flashTime = 0.1
 

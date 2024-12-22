@@ -1,0 +1,18 @@
+[WeaponClass]
+classLabel = "mortar"
+ordName = "bhmort"
+altName = "gbhmort"
+wpnName = "Singularity"
+fireSound = "smort01.wav"
+wpnReticle = "gsplint"
+wpnLadder = "gsplint.L0"
+wpnPriority = 4
+wpnCategory = "MORT"
+isAssault = 1
+aiRange = 175
+flashName = "gbhmort.render"
+flashTime = 0.1
+
+[CannonClass]
+shotDelay = 5.0 //3.0
+
