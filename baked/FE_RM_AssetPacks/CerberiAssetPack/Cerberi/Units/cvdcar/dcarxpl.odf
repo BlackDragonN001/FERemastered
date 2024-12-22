@@ -21,7 +21,7 @@ kickRadius = 90 // 100.0FE
 kickOmega = 7.0
 kickVeloc = 7.0
 
-particleTypes = 13
+particleTypes = 9
 
 particleClass1 = "dcarxpl.light"
 particleCount1 = 1
@@ -59,50 +59,44 @@ particleBias6 = "0.0 20.0 0.0"
 particlePosVar6 = "15.0 0.0 15.0"
 particleInherit6 = "0.5 0.5 0.5"
 
-particleClass9 = "dcarxpl.thrust"
-particleCount9 = 1
-particleVeloc9 = "0.0 0.0 0.0"
-particleBias9 = "0.0 0.0 0.0"
+particleClass7 = "dcarxpl.thrust"
+particleCount7 = 1
+particleVeloc7 = "0.0 0.0 0.0"
+particleBias7 = "0.0 0.0 0.0"
 
-particleClass10 = "dcarxpl.trail"
-particleCount10 = 30
-particleVeloc10 = "90.0 90.0 90.0"
-particleBias10 = "0.0 0.0 0.0"
-particleInherit10 = "0.8 0.8 0.8"
+particleClass8 = "dcarxpl.trail"
+particleCount8 = 30
+particleVeloc8 = "90.0 90.0 90.0"
+particleBias8 = "0.0 0.0 0.0"
+particleInherit8 = "0.8 0.8 0.8"
 
-particleClass11 = "dcarxpl.puff"
-particleCount11 = 30
-particleVeloc11 = "50.0 50.0 50.0"
-particleBias11 = "0.0 25.0 0.0"
-particleInherit11 = "0.8 0.8 0.8"
-
-
+particleClass9 = "dcarxpl.puff"
+particleCount9 = 30
+particleVeloc9 = "50.0 50.0 50.0"
+particleBias9 = "0.0 25.0 0.0"
+particleInherit9 = "0.8 0.8 0.8"
 
 
-particleClass8 = "xcplasgnd.DirtKickup"
-particleCount8 = 5
-particleVeloc8 = "10.0 15.0 10.0"
-particleBias8 = "0.0 10.0 0.0"
-particlePosVar8 = "10.0 0.0 10.0"
-particleInherit8 = "0.5 0.5 0.5"
 
-particleClass14 = "dcarxpl.posroll"
-particleCount14 = 32
-particleVeloc14 = "75.0 0.0 75.0"
-particleInherit14 = "0.5 0.5 0.5"
+particleClass10 = "dcarxpl.DirtKickup"
+particleCount10 = 5
+particleVeloc10 = "10.0 15.0 10.0"
+particleBias10 = "0.0 10.0 0.0"
+particlePosVar10 = "10.0 0.0 10.0"
+particleInherit10 = "0.5 0.5 0.5"
 
-particleClass17 = "dcarxpl.char"
-particleCount17 = 1
-particleVeloc17 = "0.0 0.0 0.0"
+particleClass11 = "dcarxpl.posroll"
+particleCount11 = 32
+particleVeloc11 = "75.0 0.0 75.0"
+particleInherit11 = "0.5 0.5 0.5"
 
+particleClass12 = "dcarxpl.char"
+particleCount12 = 1
+particleVeloc12 = "0.0 0.0 0.0"
 
-//particleClass17 = "dcarxpl.ring4"
-//particleCount17 = 1
-//particleVeloc17 = "0.0 0.0 0.0"
-
-//particleClass18 = "dcarxpl.shock"
-//particleCount18 = 1
-//particleVeloc18 = "0.0 0.0 0.0"
+//particleClass13 = "dcarxpl.ring4"
+//particleCount13 = 1
+//particleVeloc13 = "0.0 0.0 0.0"
 
 
 [Light]
