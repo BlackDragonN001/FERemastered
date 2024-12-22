@@ -57,9 +57,9 @@ weaponAssault3 = 0
 //weaponHard4 = "HP_GUN_3"
 //weaponName4 = "gcrapier_a"
 //weaponAssault4 = 1
-weaponHard4 = "HP_MORTAR_1"
-weaponName4 = ""
-weaponAssault4 = 0
+//weaponHard4 = "HP_MORTAR_1"
+//weaponName4 = ""
+//weaponAssault4 = 1
 
 ////////////////////////////////////
 
@@ -74,6 +74,9 @@ velocJam = 0.0f
 engageRange = 175
 
 ejectRatio = 0.0f
+
+//AIWeaponMaskVsCombat = 6 // Only works in Beta. :( -GBD
+//AIWeaponMaskVsAssault = 9
 
 braccelFactor = 0.01
 velFactor = 0.4
