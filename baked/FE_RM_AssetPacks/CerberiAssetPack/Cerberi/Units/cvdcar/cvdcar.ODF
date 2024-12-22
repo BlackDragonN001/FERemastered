@@ -69,6 +69,9 @@ velocJam = 2.0
 engageRange = 450.0
 //blastDist = 75.0 // default.
 
+//PathingType = 4 // fying // Do not use flying pathing, our drones still have to navigate behind us. -GBD
+avoidType = 0 // none
+
 ClosestEnemyGoodEyes = true
 DoWeaponCanHitCheck = false
 SitAttackCheckAbleToHit = false
@@ -132,6 +135,8 @@ alphaSteer = 5.0
 accelJump = 90.0
 soundThrust = "carrier.wav"
 
+FlyingPhysics = true
+
 //[SavClass]
 //flightAltitude = 150.0
 //soundDeploy = "avsave6.wav"
@@ -139,7 +144,11 @@ soundThrust = "carrier.wav"
 
 [CarrierClass]
 controlRange = 0.0f // Range which Drones are limited to. Drones that get this far from a Carrier, will go dormant until another Carrier comes into range. If there are no Enemies within this range, (is > 0), the drones will be recalled back into the Carrier and need to be relaunched. (ammo is added back upon recall)
+defendRange = 300.0f // Range which Drones go idle and defend the Carrier.
+recallRange = 50.0f // Range which Drones are recalled into the Carrier.
+droneIdleTime = 120.0f // Idle time for drone recall.
 maxDrones = 0 // Number of drones, if limited. Drones beyond this limit will be dormant.
+minAttackForce = 8 // Max number of Drones idle before they launch an attack wave.
 repairRange = 0.0f // Range within which it will repair drones under it's control. Servicing is done in Parellel.
 HealthRepairAmount = 0 // Amount of Health per second to give drones.
 AmmoRepairAmount = 0 // Amount of Ammo per second to give drones.
