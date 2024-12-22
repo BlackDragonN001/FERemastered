@@ -36,10 +36,10 @@ weaponAssault1 = 0
 ////////////////////////////////////
  
 [CraftClass]
-rangeScan = 800.0f
+rangeScan = 300.0f //800.0f
 periodScan = 2.0f
 velocJam = 2.0f
-engageRange = 750
+engageRange = 300.0 //750
 
 CanAIPForceIdle = false
 DoIdleDispatch = false
