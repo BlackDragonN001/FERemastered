@@ -28,6 +28,9 @@ isLimited = 0
 needLimit = 0
 DAMAGE_SCALE = 0
 
+effectHard1 = "flame_1"
+effectName1 = "cvgdron.trail"
+
 /////// weapons ///////////////////
 
 weaponMask = 00001
@@ -109,3 +112,16 @@ soundTurbo = "gdronth.wav"
 
 [DroneClass]
 RandomTargetRange = 100.0f // Range from the primary target, which it can choose a random target instead.
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "wispytrail.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 255"
+finishColor = "0 0 0 0"
+startRadius = 0.5
+finishRadius = 1.5
+segmentLength = 1.0
+segmentTime = 0.8
+textureRate = 0.5
+textureSpeed = 0.5
