@@ -53,6 +53,8 @@ strafeFactor = 0.2
 avoidSpeed = 40;
 topSpeed = 50;
 
+CanAIPForceIdle = false
+DoIdleDispatch = false
 DoBettyLost = false
 
 selectWaitMsg = "ivtank05.wav"

@@ -41,6 +41,8 @@ periodScan = 2.0f
 velocJam = 2.0f
 engageRange = 750
 
+CanAIPForceIdle = false
+DoIdleDispatch = false
 DoBettyLost = false
 
 braccelFactor = 0.03
