@@ -5,11 +5,11 @@
 baseName = "cvtank"
 geometryName = "cvspider00.xsi"
 classLabel = "wingman"
-scrapValue = 40
+scrapValue = 20
 scrapCost = 50		
 customCost = 55
-buildTime = 10.0
-customTime = 15.0
+buildTime = 15.0
+customTime = 20.0
 maxHealth = 3000
 maxAmmo = 3000
 addAmmo = 5
@@ -67,7 +67,7 @@ effectFlags2 = 2147483135 // thrusting only.
 rangeScan = 350.0f
 periodScan = 3.0f
 velocJam = 5.0f
-engageRange = 275.0
+engageRange = 200.0
 
 ejectRatio = 0.0f
 
