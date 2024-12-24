@@ -128,7 +128,7 @@ textureName = "xbhchar3.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "255 255 255 0"
 finishColor = "255 255 255 25"
-startRadius = 100.0 //200.0 // flickey. -GBD
+startRadius = 200.0
 finishRadius = 10.0
 animateTime = 4.0
 
@@ -138,8 +138,8 @@ textureName = "ano2.pic" // was "dome.pic", texture missing. -GBD
 textureBlend =  "srcalpha invsrcalpha modulatealpha" // "one one modulate" //
 startColor = "0 0 0 50"
 finishColor = "0 0 0 180"
-startRadius = 100.0 //250.0 // flickery. -GBD
-finishRadius = 100.0 //200.0 // flickery. -GBD
+startRadius = 250.0
+finishRadius = 200.0
 animateTime = 4.0
 
 [dome]
