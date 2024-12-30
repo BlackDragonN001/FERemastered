@@ -112,6 +112,7 @@ soundTurbo = "gdronth.wav"
 
 [DroneClass]
 RandomTargetRange = 100.0f // Range from the primary target, which it can choose a random target instead.
+canSwitchCarrier = true // If false, cannot be re-activated by another Carrier once theirs is dead.
 
 [Trail]
 renderBase = "draw_trail"
