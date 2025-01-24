@@ -76,7 +76,9 @@ local Mission =
 -- Vector For Spawn positions.
 	m_TeamPos = { },
 -- Handles
-	m_RecyclerHandles = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil }
+	m_RecyclerHandles = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil },
+	-- 
+	m_TESTBOOL
 }
 
 function InitialSetup()
@@ -333,6 +335,19 @@ function Update()
 
 	-- Do this as well...
 	UpdateGameTime();
+	
+	local H = GetUserTarget();
+	if not Mission.m_TESTBOOL and H ~= nil then
+		--SetTauntCPUTeamName("Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies Baddies ");
+		--DoTaunt(6);
+		--BuildExplosion("xstabcar_c", H);
+		SetEjectRatio(H, 0.7);
+		Mission.m_TESTBOOL = true;
+	elseif H == nil then
+		Mission.m_TESTBOOL = false;
+	end
+	
+	end
 	
 	-- MPI mode
 	if (Mission.m_IsMPI) then
