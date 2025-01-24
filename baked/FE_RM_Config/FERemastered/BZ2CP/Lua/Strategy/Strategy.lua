@@ -347,8 +347,6 @@ function Update()
 		Mission.m_TESTBOOL = false;
 	end
 	
-	end
-	
 	-- MPI mode
 	if (Mission.m_IsMPI) then
 		_MPI.Update(Mission.m_ElapsedGameTime);
