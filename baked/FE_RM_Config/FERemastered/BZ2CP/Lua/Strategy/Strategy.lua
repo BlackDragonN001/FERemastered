@@ -108,7 +108,7 @@ function Save()
 		Mission;
 end
 
-function Load(FECoreData, StartingVehicleData, MissionData, MPIData)
+function Load(FECoreData, StartingVehicleData, MPIData, MissionData)
 
 	m_GameTPS = EnableHighTPS();
 	SetAutoGroupUnits(false);
