@@ -83,7 +83,7 @@ function _FECore.AddObject(h)
 	-- Special logic for evkami, kill the ejected pilot
 	if KillEjectedPilot == true then
 		KillEjectedPilot = nil
-		SetLifeSpan(h, 1e-30)
+		SetLifespan(h, 1e-30)
 	end
 end
 
