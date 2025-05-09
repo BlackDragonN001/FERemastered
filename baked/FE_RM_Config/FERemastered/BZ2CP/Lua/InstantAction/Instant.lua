@@ -119,14 +119,6 @@ function AddObject(h)
 			if (not IsBuilding(h) and string.sub(ODFName, 1, 1) ~= "c") then
 				SetPilotClass(h, string.sub(ODFName, 1, 1) .. "spilo_c");
 			end
-
-			--[[
-			-- Replace the CPU natural extractor as we're using a different ODF.
-			if (ODFName == string.sub(ODFName, 1, 1) .. "bscav") then
-				ReplaceObject(h, string.sub(ODFName, 1, 1) .. "bscav_c");
-				return; -- ReplaceObject removed us, we're done here, too dangerous to continue as we no longer exist. -GBD
-			end
-			--]]
 		end
 	elseif (teamNum == 0) then
 		-- Keep track of the map pools.
