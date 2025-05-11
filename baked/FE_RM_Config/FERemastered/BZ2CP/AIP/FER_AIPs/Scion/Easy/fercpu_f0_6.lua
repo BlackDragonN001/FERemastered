@@ -140,25 +140,25 @@ end
 function BuildGunSpire1(team, time)
   return validate('BuildGunSpire1', {
     hasScrap = AIPUtil.GetScrap(team, true) >= 75,
-    gtow1Exists = AIPUtil.PathExists("gtow1")
+    gtow1Exists = AIPUtil.PathExists("6_gtow1")
   })
 end
 function BuildGunSpire2(team, time)
   return validate('BuildGunSpire2', {
     hasScrap = AIPUtil.GetScrap(team, true) >= 75,
-    gtow1Exists = AIPUtil.PathExists("gtow2")
+    gtow1Exists = AIPUtil.PathExists("6_gtow2")
   })
 end
 function BuildGunSpire3(team, time)
   return validate('BuildGunSpire3', {
     hasScrap = AIPUtil.GetScrap(team, true) >= 75,
-    gtow1Exists = AIPUtil.PathExists("gtow3")
+    gtow1Exists = AIPUtil.PathExists("6_gtow3")
   })
 end
 function BuildGunSpire4(team, time)
   return validate('BuildGunSpire4', {
     hasScrap = AIPUtil.GetScrap(team, true) >= 75,
-    gtow1Exists = AIPUtil.PathExists("gtow4")
+    gtow1Exists = AIPUtil.PathExists("6_gtow4")
   })
 end
 
