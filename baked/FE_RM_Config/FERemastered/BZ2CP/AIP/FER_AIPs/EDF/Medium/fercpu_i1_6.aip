@@ -1,0 +1,134 @@
+// File: fercpu_i1.aip
+// Author(s): AI_Unit
+// Summary: Medium AIP plan for the EDF faction for Instant Action or MPI.
+
+[Start]
+idleAllCraft = false
+scavClass = "ivscav" //_c"
+consClass = "ivcons_c"
+CheckProvides = true
+DLLCanSwitch = true
+baseDir = 3
+baseLoc = "6_RecyclerEnemy"
+UnitsService = true
+Difficulty = 2 // 1=Easy, 2=Medium, 3=Hard, 4=Extreme
+
+[Cheat]
+moneyAmount = 3
+moneyDelay = 5
+
+[IdleDispatcher]
+ScavIdleSeconds = 5
+UnitIdleSeconds = 30
+BomberIdleSeconds = 60
+CraftTeamIsPilotTeam = true
+MaxPatrolUnits = 3
+MaxHuntUnits = 2
+MaxEscortUnits = 4
+
+[Plan1] // Maintain keeping units healed where possible.
+planType = "Service"
+planPriority = 1000
+serviceUnit = "ivserv_c"
+unitType1 = "ibrecy_c"
+unitType2 = "ibpgen"
+unitType3 = "ibfact_c"
+unitType4 = "ibcbun"
+unitType5 = "ibarmo"
+unitType6 = "ibgtow_c"
+unitType7 = "ibtrain"
+unitType8 = "ibtcen"
+unitType9 = "ibbomb"
+
+[Plan2]
+planType = "Recover"
+planPriority = 990
+serviceUnit = "ibsbay"
+unitType1 = "ivcmdr_c"
+unitType2 = "ivscout"
+unitType3 = "ivmisl"
+unitType4 = "ivmbike"
+unitType5 = "ivtank_c"
+unitType6 = "ivatank"
+unitType7 = "ivrckt_c"
+unitType8 = "ivwalk"
+unitType9 = "ivrbomb"
+
+[Plan3]
+planType = "CollectField"
+planPriority = 980
+planCondition = "Lua"
+LuaFunction = "CanCollectLooseScrap"
+
+[Plan4]
+planType = "CollectPool"
+planPriority = 970
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "CanCollectScrapPool"
+
+[Plan5]
+planType = "CollectPool"
+planPriority = 960
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "CanCollectScrapPool"
+
+[Plan6] // Always have 2 active Scavengers for picking up loose scrap.
+planType = "BuildMinimums"
+planPriority = 950
+buildType1 = "ivscav"
+buildCount1 = 2
+planCondition = "Lua"
+LuaFunction = "ScavengerBuildLoopCondition"
+
+[Plan7] // Build 2 turrets to be handled by the Dispatcher.
+planType = "BuildMinimums"
+planPriority = 940
+buildType1 = "ivturr"
+buildCount1 = 2
+planCondition = "Lua"
+LuaFunction = "TurretBuildLoopCondition"
+
+[Plan8] // Get our Constructors in the mix.
+planType = "BuildMinimums"
+planPriority = 930
+buildType1 = "ivcons_c"
+buildCount1 = 1
+planCondition = "Lua"
+LuaFunction = "ConstructorBuildLoopCondition"
+
+[Plan9] // Get Gun Tower Constructors going.
+planType = "BuildMinimums"
+planPriority = 920
+buildType1 = "ivcons_g"
+buildCount1 = 2
+planCondition = "Lua"
+LuaFunction = "GunTowerConstructorBuildLoopCondition"
+
+[Plan10]
+planType = "BuildMinimums"
+planPriority = 910
+buildType1 = "ivcmdr_c"
+buildCount1 = 1
+
+[Plan11]
+planType = "BaseBuildMinimums"
+planPriority = 900
+buildType1 = "ibpgen"
+buildCount1 = 1
+buildLoc1 = "6_pgen1"
+planCondition = "Lua"
+LuaFunction = "BuildPowerGenerator"
+pathpointsCanBeMissing = true
+
+[Plan12]
+planType = "BaseBuildMinimums"
+planPriority = 890
+buildType1 = "ibfact"
+buildCount1 = 1
+buildLoc1 = "6_fact1"
+buildHeading = -2
+planCondition = "Lua"
+LuaFunction = "BuildFactory"
+pathpointsCanBeMissing = true
