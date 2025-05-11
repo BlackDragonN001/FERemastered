@@ -173,7 +173,7 @@ LuaFunction = "SendEarlyScoutHarassment"
 [Plan16]
 planType = "Upgrade"
 planPriority = 850
-unitType = "fbscav_c"
+unitType = "fbscav"
 consClass = "fvcons_g"
 planCondition = "Lua"
 LuaFunction = "UpgradeFirstExtractor"
@@ -247,7 +247,7 @@ ContinueEvenIfFail = true
 [Plan22]
 planType = "Upgrade"
 planPriority = 790
-unitType = "fbscav_c"
+unitType = "fbscav"
 consClass = "fvcons_g"
 planCondition = "Lua"
 LuaFunction = "UpgradeSecondExtractor"
@@ -361,7 +361,7 @@ LuaFunction = "SendGunTowerAttacks"
 [Plan32]
 planType = "Upgrade"
 planPriority = 690
-unitType = "fbscav_c"
+unitType = "fbscav"
 consClass = "fvcons_g"
 planCondition = "Lua"
 LuaFunction = "UpgradeThirdExtractor"

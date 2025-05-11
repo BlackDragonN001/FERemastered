@@ -200,7 +200,7 @@ attackType2 = "evscout"
 [Plan18]
 planType = "Upgrade"
 planPriority = 400
-unitType ="ebscav_c"
+unitType ="ebscav"
 consClass = "evcons_g"
 planCondition = "Lua"
 LuaFunction = "validatePlan18"
@@ -297,7 +297,7 @@ LuaFunction = "validatePlan25"
 [Plan26]
 planType = "Upgrade"
 planPriority = 320
-unitType ="ebscav_c"
+unitType ="ebscav"
 consClass = "evcons_g"
 planCondition = "Lua"
 LuaFunction = "validatePlan26"
@@ -457,7 +457,7 @@ attackType4 = "evmislu"
 [Plan39]
 planType = "Upgrade"
 planPriority = 190
-unitType ="ebscav_c"
+unitType ="ebscav"
 consClass = "evcons_g"
 planCondition = "Lua"
 LuaFunction = "validatePlan39"
