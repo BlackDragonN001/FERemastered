@@ -102,7 +102,7 @@ LuaFunction = "ConstructorBuildLoopCondition"
 planType = "BuildMinimums"
 planPriority = 920
 buildType1 = "ivcons_g"
-buildCount1 = 2
+buildCount1 = 1
 planCondition = "Lua"
 LuaFunction = "GunTowerConstructorBuildLoopCondition"
 
@@ -113,8 +113,16 @@ buildType1 = "ivcmdr_c"
 buildCount1 = 1
 
 [Plan11]
-planType = "BaseBuildMinimums"
+planType = "Upgrade"
 planPriority = 900
+unitType = "ibscav"
+consClass = "ivcons_g"
+planCondition = "Lua"
+LuaFunction = "UpgradeFirstExtractor"
+
+[Plan12]
+planType = "BaseBuildMinimums"
+planPriority = 890
 buildType1 = "ibpgen"
 buildCount1 = 1
 buildLoc1 = "6_pgen1"
@@ -122,13 +130,139 @@ planCondition = "Lua"
 LuaFunction = "BuildPowerGenerator"
 pathpointsCanBeMissing = true
 
-[Plan12]
+[Plan13]
 planType = "BaseBuildMinimums"
-planPriority = 890
+planPriority = 880
 buildType1 = "ibfact"
 buildCount1 = 1
 buildLoc1 = "6_fact1"
 buildHeading = -2
 planCondition = "Lua"
 LuaFunction = "BuildFactory"
+pathpointsCanBeMissing = true
+
+[Plan14] // Get Gun Towers going.
+planType = "BaseBuildMinimums"
+planPriority = 870
+buildType1 = "ibgtow_c"
+buildCount1 = 1
+buildLoc1 = "6_gtow1"
+consClass = "ivcons_g"
+planCondition = "Lua"
+LuaFunction = "BuildGunTower1"
+ContinueEvenIfFail = true
+
+[Plan15] // Send out a Scout to attack Player Scavengers/Extractors.
+planType = "Attacker"
+planPriority = 860
+targetType1 = "VIRTUAL_CLASS_SCAVENGER"
+targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
+attackType1 = "ivscout"
+attackType2 = "ivscout"
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendExtractorAttacks"
+
+[Plan16] // Send out a Scout to attack Player Utilities during early stage.
+planType = "Attacker"
+planPriority = 850
+targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType2 = "VIRTUAL_CLASS_POWERPLANT"
+targetType3 = "VIRTUAL_CLASS_FACTORY"
+targetType4 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "ivscout"
+attackType2 = "ivmisl"
+attackType3 = "ivmisl"
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendMediumHarassment"
+
+[Plan17] // Get Gun Towers going.
+planType = "BaseBuildMinimums"
+planPriority = 840
+buildType1 = "ibgtow_c"
+buildCount1 = 1
+buildLoc1 = "6_gtow2"
+consClass = "ivcons_g"
+planCondition = "Lua"
+LuaFunction = "BuildGunTower2"
+ContinueEvenIfFail = true
+
+[Plan18]
+planType = "BaseBuildMinimums"
+planPriority = 830
+buildType1 = "ibarmo"
+buildCount1 = 1
+buildLoc1 = "6_armo1"
+planCondition = "Lua"
+LuaFunction = "BuildArmory"
+pathpointsCanBeMissing = true
+
+[Plan19]
+planType = "BaseBuildMinimums"
+planPriority = 820
+buildType1 = "ibcbun"
+buildCount1 = 1
+buildLoc1 = "6_cbun1"
+planCondition = "Lua"
+LuaFunction = "BuildCommBunker"
+pathpointsCanBeMissing = true
+
+[Plan20]
+planType = "Attacker"
+planPriority = 810
+targetType1 = "VIRTUAL_CLASS_GUNTOWER"
+targetType2 = "VIRTUAL_CLASS_COMMBUNKER"
+targetType3 = "VIRTUAL_CLASS_POWERPLANT"
+targetType4 = "VIRTUAL_CLASS_FACTORY"
+targetType5 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+targetType6 = "VIRTUAL_CLASS_SCAVENGER"
+targetType7 = "VIRTUAL_CLASS_EXTRACTOR"
+attackType1 = "ivmbike"
+attackType2 = "ivmbike"
+attackType3 = "ivmbike"
+attackType4 = "ivmbike"
+MaxAttacks = 5
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendArtilleryHarassment"
+
+[Plan21]
+planType = "Attacker"
+planPriority = 800
+targetType1 = "VIRTUAL_CLASS_GUNTOWER"
+targetType2 = "VIRTUAL_CLASS_POWERPLANT"
+targetType3 = "VIRTUAL_CLASS_FACTORY"
+targetType4 = "VIRTUAL_CLASS_SUPPLYDEPOT"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "ivtank_c"
+attackType2 = "ivtank_c"
+attackType3 = "ivtank_c"
+attackType4 = "ivtank_c"
+MaxAttacks = 4
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendTankHarassment"
+
+[Plan22]
+planType = "Upgrade"
+planPriority = 790
+unitType = "ibscav"
+consClass = "ivcons_g"
+planCondition = "Lua"
+LuaFunction = "UpgradeSecondExtractor"
+
+[Plan23]
+planType = "BaseBuildMinimums"
+planPriority = 780
+buildType1 = "ibsbay"
+buildCount1 = 1
+buildLoc1 = "6_sbay1"
+buildHeading = 1
+planCondition = "Lua"
+LuaFunction = "BuildServiceBay"
 pathpointsCanBeMissing = true
