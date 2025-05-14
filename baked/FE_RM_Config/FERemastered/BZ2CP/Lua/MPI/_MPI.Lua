@@ -198,11 +198,11 @@ function _MPI.InitialSetup()
 		MPIMission.CPUForce = GetVarItemInt("network.session.ivar7");
 		MPIMission.NumHumans = CountPlayers();
 		MPIMission.m_Difficulty = GetVarItemInt("network.session.ivar70");
-		MPIMission.WeaponCrates = GetVarItemInt("network.session.ivar71"); --36
-		MPIMission.MegaBeam = GetVarItemInt("network.session.ivar72");
-		MPIMission.CaptureObject = GetVarItemInt("network.session.ivar73"); --39
+		MPIMission.WeaponCrates = (GetVarItemInt("network.session.ivar71") == 1); --36
+		MPIMission.MegaBeam = (GetVarItemInt("network.session.ivar72") == 1);
+		MPIMission.CaptureObject = (GetVarItemInt("network.session.ivar73") == 1); --39
 		MPIMission.MonsterDelay = GetVarItemInt("network.session.ivar74"); --38, 40
-		MPIMission.EasyPools = GetVarItemInt("network.session.ivar75"); --37
+		MPIMission.EasyPools = (GetVarItemInt("network.session.ivar75") == 1); --37
 		MPIMission.CPUReinforcementTime = SecondsToTurns(200);
 		MPIMission.HumanReinforcementTime = SecondsToTurns(250);
 	else
@@ -221,11 +221,11 @@ function _MPI.InitialSetup()
 		MPIMission.m_Difficulty = GetInstantDifficulty(); --IFace_GetInteger("options.play.difficulty");
 		MPIMission.CPUForce = GetInstantCompForce();
 
-		MPIMission.WeaponCrates = IFace_GetInteger("options.instant.bool5");
-		MPIMission.MegaBeam = IFace_GetInteger("options.instant.bool6");
-		MPIMission.CaptureObject = IFace_GetInteger("options.instant.bool7");
+		MPIMission.WeaponCrates = (IFace_GetInteger("options.instant.bool5") == 1);
+		MPIMission.MegaBeam = (IFace_GetInteger("options.instant.bool6") == 1);
+		MPIMission.CaptureObject = (IFace_GetInteger("options.instant.bool7") == 1);
 		MPIMission.MonsterDelay = IFace_GetInteger("options.instant.int1");
-		MPIMission.EasyPools = IFace_GetInteger("options.instant.bool8");
+		MPIMission.EasyPools = (IFace_GetInteger("options.instant.bool8") == 1);
 
 		MPIMission.CPUTurretAISkill = MPIMission.m_Difficulty + 1;
 		MPIMission.CPUNonTurretAISkill = MPIMission.m_Difficulty + 1;
