@@ -59,10 +59,27 @@ function TurretBuildLoopCondition(team, time)
     })
 end
 
+function ServiceTruckBuildLoopCondition(team, time)
+    return Validate('ServiceTruckBuildLoopCondition', {
+        myScrap = AIPUtil.GetScrap(team, true) >= 50,
+        recyclerExists = DoesRecyclerExist(team, time),
+        serviceBayExists = DoesServiceBayExist(team, time)
+    })
+end
+
 function GunTowerConstructorBuildLoopCondition(team, time)
     return Validate('GunTowerConstructorBuildLoopCondition', {
         myScrap = AIPUtil.GetScrap(team, true) >= 40,
         recyclerExists = DoesRecyclerExist(team, time)
+    })
+end
+
+function BomberBuildLoopCondition(team, time)
+    return Validate('BomberBuildLoopCondition', {
+        myScrap = AIPUtil.GetScrap(team, true) >= 75,
+        factoryExists = DoesFactoryExist(team, time),
+        bomberBayExists = DoesBomberBayExist(team, time),
+        bomberExists = not DoesBomberExist(team, time)
     })
 end
 
@@ -100,7 +117,8 @@ function BuildCommBunker(team, time)
         myScrap = AIPUtil.GetScrap(team, true) >= 50,
         cpuConsCount = CountCPUConstructors(team, time) > 0,
         powerCount = AIPUtil.GetPower(team, true) > 0,
-        commBunkerExists = not DoesCommBunkerExist(team, time)
+        commBunkerExists = not DoesCommBunkerExist(team, time),
+        armoryExists = DoesArmoryExist(team, time)
     })
 end
 
@@ -113,31 +131,62 @@ function BuildServiceBay(team, time)
     })
 end
 
+function BuildTraningCenter(team, time)
+    return Validate('BuildTraningCenter', {
+        myScrap = AIPUtil.GetScrap(team, true) >= 70,
+        cpuConsCount = CountCPUConstructors(team, time) > 0,
+        powerCount = AIPUtil.GetPower(team, true) > 0,
+        trainingCenterExists = not DoesTrainingCenterExist(team, time)
+    })
+end
+
+function BuildBomberBay(team, time)
+    return Validate('BuildBomberBay', {
+        myScrap = AIPUtil.GetScrap(team, true) >= 100,
+        cpuConsCount = CountCPUConstructors(team, time) > 0,
+        powerCount = AIPUtil.GetPower(team, true) > 0,
+        bomberBayExists = not DoesBomberBayExist(team, time)
+    })
+end
+
 function BuildGunTower1(team, time)
     return Validate('BuildGunTower1', {
         myScrap = AIPUtil.GetScrap(team, true) >= 50,
-        gtow1Exists = AIPUtil.PathExists("6_gtow1")
+        gtow1Exists = AIPUtil.PathExists("6_gtow1"),
+        factoryExists = DoesFactoryExist(team, time)
     })
 end
 
 function BuildGunTower2(team, time)
     return Validate('BuildGunTower2', {
         myScrap = AIPUtil.GetScrap(team, true) >= 50,
-        gtow2Exists = AIPUtil.PathExists("6_gtow2")
+        gtow2Exists = AIPUtil.PathExists("6_gtow2"),
+        factoryExists = DoesFactoryExist(team, time)
     })
 end
 
 function BuildGunTower3(team, time)
     return Validate('BuildGunTower3', {
         myScrap = AIPUtil.GetScrap(team, true) >= 50,
-        gtow3Exists = AIPUtil.PathExists("6_gtow3")
+        gtow3Exists = AIPUtil.PathExists("6_gtow3"),
+        factoryExists = DoesFactoryExist(team, time)
     })
 end
 
 function BuildGunTower4(team, time)
     return Validate('BuildGunTower4', {
         myScrap = AIPUtil.GetScrap(team, true) >= 50,
-        gtow4Exists = AIPUtil.PathExists("6_gtow4")
+        gtow4Exists = AIPUtil.PathExists("6_gtow4"),
+        factoryExists = DoesFactoryExist(team, time)
+    })
+end
+
+function BuildBaseGunTower(team, time)
+    return Validate('BuildBaseGunTower', {
+        myScrap = AIPUtil.GetScrap(team, true) >= 50,
+        cpuConsCount = CountCPUConstructors(team, time) > 0,
+        powerCount = AIPUtil.GetPower(team, true) > 0,
+        commBunkerExists = DoesCommBunkerExist(team, time)
     })
 end
 
@@ -178,6 +227,22 @@ function DoesServiceBayExist(team, time)
     return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_SUPPLYDEPOT", 'sameteam', true) > 0;
 end
 
+function DoesTrainingCenterExist(team, time)
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_BARRACKS", 'sameteam', true) > 0;
+end
+
+function DoesTechCenterExist(team, time)
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_TECHCENTER", 'sameteam', true) > 0;
+end
+
+function DoesBomberBayExist(team, time)
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_BOMBERBAY", 'sameteam', true) > 0;
+end
+
+function DoesBomberExist(team, time)
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_BOMBER", 'sameteam', true) > 0;
+end
+
 ----------------
 -- Counts
 ----------------
@@ -195,6 +260,13 @@ end
 
 function CountCPUExtractors(team, time)
     return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_EXTRACTOR", 'sameteam', true);
+end
+
+----------------
+-- Human Checks
+----------------
+function DoesHumanHaveGunTowers(team, time)
+    return AIPUtil.CountUnits(1, "VIRTUAL_CLASS_GUNTOWER", 'sameteam', true) > 0
 end
 
 ----------------
@@ -243,7 +315,8 @@ end
 
 function SendMediumHarassment(team, time)
     return Validate('SendMediumHarassment', {
-        factoryExists = DoesFactoryExist(team, time)
+        factoryExists = DoesFactoryExist(team, time),
+        humanHasGunTowers = DoesHumanHaveGunTowers(team, time) == false
     })
 end
 
@@ -254,9 +327,34 @@ function SendArtilleryHarassment(team, time)
     })
 end
 
+function SendAssaultHarassment(team, time)
+    return Validate('SendAssaultHarassment', {
+        factoryExists = DoesFactoryExist(team, time),
+        armoryOrSbayExists = DoesArmoryExist(team, time)
+            or DoesServiceBayExist(team, time),
+        commBunkerExists = DoesCommBunkerExist(team, time)
+    })
+end
+
 function SendTankHarassment(team, time)
     return Validate('SendTankHarassment', {
         factoryExists = DoesFactoryExist(team, time),
         commBunkerExists = DoesCommBunkerExist(team, time)
+    })
+end
+
+function SendGunTowerAttacks(team, time)
+    return Validate('SendGunTowerAttacks', {
+        unitsAvailable = SendTankHarassment(team, time)
+            or SendAssaultHarassment(team, time)
+            or SendAPCAttacks(team, time),
+        humanHasGunTowers = DoesHumanHaveGunTowers(team, time)
+    })
+end
+
+function SendAPCAttacks(team, time)
+    return Validate('SendAPCAttacks', {
+        factoryExists = DoesFactoryExist(team, time),
+        trainingCenterExists = DoesTrainingCenterExist(team, time)
     })
 end
