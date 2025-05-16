@@ -346,6 +346,7 @@ planPriority = 710
 buildType1 = "ibgtow_c"
 buildCount1 = 1
 buildLoc1 = "6_gtow4"
+consClass = "ivcons_g"
 planCondition = "Lua"
 LuaFunction = "BuildGunTower4"
 pathpointsCanBeMissing = true
