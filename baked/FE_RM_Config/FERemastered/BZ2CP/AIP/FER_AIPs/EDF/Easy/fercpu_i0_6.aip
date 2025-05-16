@@ -4,7 +4,7 @@
 
 [Start]
 idleAllCraft = false
-scavClass = "ivscav" //_c"
+scavClass = "ivscav"
 consClass = "ivcons_c"
 CheckProvides = true
 DLLCanSwitch = true
@@ -19,7 +19,7 @@ moneyDelay = 5
 
 [IdleDispatcher]
 ScavIdleSeconds = 5
-UnitIdleSeconds = 45
+UnitIdleSeconds = 999999
 BomberIdleSeconds = 75
 CraftTeamIsPilotTeam = true
 MaxPatrolUnits = 3
