@@ -300,7 +300,7 @@ end
 
 -- Checks how many Extractors the CPU has.
 function CountCPUExtractors(team, time)
-    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_EXTRACTOR", 'sameteam', true);
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_EXTRACTOR_Group", 'sameteam', true);
 end
 
 -- Checks how many upgraded Extractors the CPU has.
