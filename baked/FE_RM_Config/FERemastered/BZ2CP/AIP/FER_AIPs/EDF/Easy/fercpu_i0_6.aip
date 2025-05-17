@@ -480,6 +480,7 @@ targetType6 = "VIRTUAL_CLASS_RECYCLER"
 attackType1 = "ivbomb"
 AttackAnything = true
 buildIfNoIdle = true
+MaxAttacks = 0
 planCondition = "Lua"
 LuaFunction = "SendBomberAttacks"
 
@@ -507,6 +508,7 @@ attackType1 = "ivwalk"
 attackType2 = "ivwalk"
 AttackAnything = true
 buildIfNoIdle = true
+MaxAttacks = 0
 planCondition = "Lua"
 LuaFunction = "SendTechnicalAttacks"
 
@@ -519,6 +521,7 @@ attackType2 = "ivatank"
 attackType3 = "ivatank"
 AttackAnything = true
 buildIfNoIdle = true
+MaxAttacks = 0
 planCondition = "Lua"
 LuaFunction = "SendGunTowerAttacks"
 
@@ -535,6 +538,7 @@ attackType2 = "ivtank"
 attackType3 = "ivtank"
 AttackAnything = true
 buildIfNoIdle = true
+MaxAttacks = 0
 planCondition = "Lua"
 LuaFunction = "SendTankHarassment"
 
@@ -551,6 +555,7 @@ attackType2 = "ivrckt_c"
 attackType3 = "ivwalk"
 AttackAnything = true
 buildIfNoIdle = true
+MaxAttacks = 0
 planCondition = "Lua"
 LuaFunction = "SendTechnicalAttacks"
 
@@ -567,6 +572,7 @@ attackType2 = "ivrbomb"
 attackType3 = "ivrbomb"
 AttackAnything = true
 buildIfNoIdle = true
+MaxAttacks = 0
 planCondition = "Lua"
 LuaFunction = "SendTechnicalAttacks"
 
@@ -577,5 +583,6 @@ targetType1 = "VIRTUAL_CLASS_EXTRACTOR"
 attackType1 = "ivapc"
 AttackAnything = true
 buildIfNoIdle = true
+MaxAttacks = 0
 planCondition = "Lua"
 LuaFunction = "SendAPCAttacks"
