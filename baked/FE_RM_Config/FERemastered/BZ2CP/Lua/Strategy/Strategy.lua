@@ -66,13 +66,13 @@ local Mission =
 --locals
 	m_DidInit = false,
 	m_HadMultipleFunctioningTeams = false,
-	m_TeamIsSetUp = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false},
-	m_NotedRecyclerLocation = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }, -- of deployed recycler
+	m_TeamIsSetUp = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false},
+	m_NotedRecyclerLocation = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }, -- of deployed recycler
 	m_GameOver = false,
 	m_CreatingStartingVehicles = false,
 	m_RespawnAtLowAltitude = false,
 	m_bIsFriendlyFireOn = false,
-	m_HasAllies = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+	m_HasAllies = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
 -- Vector For Spawn positions.
 	m_TeamPos = { },
 -- Handles
