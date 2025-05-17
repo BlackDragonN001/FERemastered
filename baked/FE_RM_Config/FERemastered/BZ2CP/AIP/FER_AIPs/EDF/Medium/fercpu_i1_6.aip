@@ -28,7 +28,7 @@ MaxEscortUnits = 4
 
 [Plan1] // Maintain keeping units healed where possible.
 planType = "Service"
-planPriority = 1000
+planPriority = 450
 serviceUnit = "ivserv_c"
 unitType1 = "ibrecy_c"
 unitType2 = "ibpgen"
@@ -42,7 +42,7 @@ unitType9 = "ibbomb"
 
 [Plan2]
 planType = "Recover"
-planPriority = 990
+planPriority = 440
 serviceUnit = "ibsbay"
 unitType1 = "ivcmdr_c"
 unitType2 = "ivscout"
@@ -56,27 +56,27 @@ unitType9 = "ivrbomb"
 
 [Plan3]
 planType = "CollectField"
-planPriority = 980
+planPriority = 430
 planCondition = "Lua"
 LuaFunction = "CanCollectLooseScrap"
 
 [Plan4]
 planType = "CollectPool"
-planPriority = 970
+planPriority = 420
 buildIfNoIdle = true
 planCondition = "Lua"
 LuaFunction = "CanCollectScrapPool"
 
 [Plan5]
 planType = "CollectPool"
-planPriority = 960
+planPriority = 410
 buildIfNoIdle = true
 planCondition = "Lua"
 LuaFunction = "CanCollectScrapPool"
 
 [Plan6] // Always have 2 active Scavengers for picking up loose scrap.
 planType = "BuildMinimums"
-planPriority = 950
+planPriority = 400
 buildType1 = "ivscav"
 buildCount1 = 2
 planCondition = "Lua"
@@ -84,7 +84,7 @@ LuaFunction = "ScavengerBuildLoopCondition"
 
 [Plan7] // Build 2 turrets to be handled by the Dispatcher.
 planType = "BuildMinimums"
-planPriority = 940
+planPriority = 390
 buildType1 = "ivturr"
 buildCount1 = 2
 planCondition = "Lua"
@@ -92,7 +92,7 @@ LuaFunction = "TurretBuildLoopCondition"
 
 [Plan8] // Get our Constructors in the mix.
 planType = "BuildMinimums"
-planPriority = 930
+planPriority = 380
 buildType1 = "ivcons_c"
 buildCount1 = 1
 planCondition = "Lua"
@@ -100,7 +100,7 @@ LuaFunction = "ConstructorBuildLoopCondition"
 
 [Plan9] // Get Gun Tower Constructors going.
 planType = "BuildMinimums"
-planPriority = 920
+planPriority = 370
 buildType1 = "ivcons_g"
 buildCount1 = 2
 planCondition = "Lua"
@@ -108,7 +108,7 @@ LuaFunction = "GunTowerConstructorBuildLoopCondition"
 
 [Plan10]
 planType = "Attacker"
-planPriority = 910
+planPriority = 360
 targetType1 = "VIRTUAL_CLASS_SCAVENGER"
 targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
 targetType3 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
@@ -122,7 +122,7 @@ buildIfNoIdle = true
 
 [Plan11]
 planType = "Upgrade"
-planPriority = 900
+planPriority = 350
 unitType = "ibscav"
 consClass = "ivcons_g"
 planCondition = "Lua"
@@ -130,7 +130,7 @@ LuaFunction = "UpgradeFirstExtractor"
 
 [Plan12]
 planType = "BaseBuildMinimums"
-planPriority = 890
+planPriority = 340
 buildType1 = "ibpgen"
 buildCount1 = 1
 buildLoc1 = "6_pgen1"
@@ -140,7 +140,7 @@ pathpointsCanBeMissing = true
 
 [Plan13]
 planType = "BaseBuildMinimums"
-planPriority = 880
+planPriority = 330
 buildType1 = "ibfact"
 buildCount1 = 1
 buildLoc1 = "6_fact1"
@@ -151,7 +151,7 @@ pathpointsCanBeMissing = true
 
 [Plan14] // Get Gun Towers going.
 planType = "BaseBuildMinimums"
-planPriority = 870
+planPriority = 320
 buildType1 = "ibgtow_c"
 buildCount1 = 1
 buildLoc1 = "6_gtow1"
@@ -162,7 +162,7 @@ ContinueEvenIfFail = true
 
 [Plan15] // Send out a Scout to attack Player Scavengers/Extractors.
 planType = "Attacker"
-planPriority = 860
+planPriority = 310
 targetType1 = "VIRTUAL_CLASS_SCAVENGER"
 targetType2 = "VIRTUAL_CLASS_EXTRACTOR"
 attackType1 = "ivscout"
@@ -174,7 +174,7 @@ LuaFunction = "SendExtractorAttacks"
 
 [Plan16] // Send out a Scout to attack Player Utilities during early stage.
 planType = "Attacker"
-planPriority = 850
+planPriority = 300
 targetType1 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
 targetType2 = "VIRTUAL_CLASS_POWERPLANT"
 targetType3 = "VIRTUAL_CLASS_FACTORY"
@@ -189,7 +189,7 @@ LuaFunction = "SendMediumHarassment"
 
 [Plan17] // Get Gun Towers going.
 planType = "BaseBuildMinimums"
-planPriority = 840
+planPriority = 290
 buildType1 = "ibgtow_c"
 buildCount1 = 1
 buildLoc1 = "6_gtow2"
@@ -200,7 +200,7 @@ ContinueEvenIfFail = true
 
 [Plan18]
 planType = "BaseBuildMinimums"
-planPriority = 830
+planPriority = 280
 buildType1 = "ibarmo"
 buildCount1 = 1
 buildLoc1 = "6_armo1"
@@ -210,7 +210,7 @@ pathpointsCanBeMissing = true
 
 [Plan19]
 planType = "BaseBuildMinimums"
-planPriority = 820
+planPriority = 270
 buildType1 = "ibpgen"
 buildCount1 = 1
 buildLoc1 = "6_pgen2"
@@ -220,7 +220,7 @@ pathpointsCanBeMissing = true
 
 [Plan20]
 planType = "BaseBuildMinimums"
-planPriority = 810
+planPriority = 260
 buildType1 = "ibcbun"
 buildCount1 = 1
 buildLoc1 = "6_cbun1"
@@ -230,7 +230,7 @@ pathpointsCanBeMissing = true
 
 [Plan21]
 planType = "Attacker"
-planPriority = 800
+planPriority = 250
 targetType1 = "VIRTUAL_CLASS_GUNTOWER"
 targetType2 = "VIRTUAL_CLASS_TURRET"
 targetType3 = "VIRTUAL_CLASS_POWERPLANT"
@@ -241,7 +241,7 @@ attackType2 = "ivmbike"
 attackType3 = "ivmbike"
 attackType4 = "ivmbike"
 attackType5 = "ivmbike"
-MaxAttacks = 6
+MaxAttacks = 4
 AttackAnything = true
 buildIfNoIdle = true
 planCondition = "Lua"
@@ -249,7 +249,7 @@ LuaFunction = "SendArtilleryHarassment"
 
 [Plan22]
 planType = "Attacker"
-planPriority = 790
+planPriority = 240
 targetType1 = "VIRTUAL_CLASS_GUNTOWER"
 targetType2 = "VIRTUAL_CLASS_POWERPLANT"
 targetType3 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
@@ -260,7 +260,7 @@ attackType1 = "ivtank_c"
 attackType2 = "ivtank_c"
 attackType3 = "ivtank_c"
 attackType4 = "ivtank_c"
-MaxAttacks = 4
+MaxAttacks = 3
 AttackAnything = true
 buildIfNoIdle = true
 planCondition = "Lua"
@@ -268,7 +268,7 @@ LuaFunction = "SendTankHarassment"
 
 [Plan23]
 planType = "Upgrade"
-planPriority = 780
+planPriority = 230
 unitType = "ibscav"
 consClass = "ivcons_g"
 planCondition = "Lua"
@@ -276,7 +276,7 @@ LuaFunction = "UpgradeSecondExtractor"
 
 [Plan24]
 planType = "BaseBuildMinimums"
-planPriority = 770
+planPriority = 220
 buildType1 = "ibsbay"
 buildCount1 = 1
 buildLoc1 = "6_sbay1"
@@ -287,15 +287,15 @@ pathpointsCanBeMissing = true
 
 [Plan25]
 planType = "BuildMinimums"
-planPriority = 760
+planPriority = 210
 buildType1 = "ivserv_c"
-buildCount1 = 4
+buildCount1 = 3
 planCondition = "Lua"
 LuaFunction = "ServiceTruckBuildLoopCondition"
 
 [Plan26]
 planType = "Attacker"
-planPriority = 750
+planPriority = 200
 targetType1 = "VIRTUAL_CLASS_GUNTOWER"
 targetType2 = "VIRTUAL_CLASS_TURRET"
 targetType3 = "VIRTUAL_CLASS_POWERPLANT"
@@ -304,8 +304,7 @@ targetType5 = "VIRTUAL_CLASS_RECYCLER"
 attackType1 = "ivrckt_c"
 attackType2 = "ivatank"
 attackType3 = "ivatank"
-attackType4 = "ivrckt_c"
-MaxAttacks = 4
+MaxAttacks = 5
 AttackAnything = true
 buildIfNoIdle = true
 planCondition = "Lua"
@@ -313,7 +312,7 @@ LuaFunction = "SendGunTowerAttacks"
 
 [Plan27]
 planType = "Upgrade"
-planPriority = 740
+planPriority = 190
 unitType = "ibscav"
 consClass = "ivcons_g"
 planCondition = "Lua"
@@ -321,7 +320,7 @@ LuaFunction = "UpgradeThirdExtractor"
 
 [Plan28]
 planType = "BaseBuildMinimums"
-planPriority = 730
+planPriority = 180
 buildType1 = "ibgtow_c"
 buildCount1 = 1
 buildLoc1 = "6_gtow5"
@@ -331,7 +330,7 @@ pathpointsCanBeMissing = true
 
 [Plan29]
 planType = "BaseBuildMinimums"
-planPriority = 720
+planPriority = 170
 buildType1 = "ibgtow_c"
 buildCount1 = 1
 buildLoc1 = "6_gtow3"
@@ -342,7 +341,7 @@ ContinueEvenIfFail = true
 
 [Plan30]
 planType = "BaseBuildMinimums"
-planPriority = 710
+planPriority = 160
 buildType1 = "ibgtow_c"
 buildCount1 = 1
 buildLoc1 = "6_gtow4"
@@ -353,7 +352,7 @@ pathpointsCanBeMissing = true
 
 [Plan31]
 planType = "BaseBuildMinimums"
-planPriority = 700
+planPriority = 150
 buildType1 = "ibtrain"
 buildCount1 = 1
 buildLoc1 = "6_train1"
@@ -363,7 +362,7 @@ pathpointsCanBeMissing = true
 
 [Plan32]
 planType = "BaseBuildMinimums"
-planPriority = 690
+planPriority = 140
 buildType1 = "ibpgen"
 buildCount1 = 1
 buildLoc1 = "6_pgen3"
@@ -373,7 +372,7 @@ pathpointsCanBeMissing = true
 
 [Plan33]
 planType = "Attacker"
-planPriority = 680
+planPriority = 130
 targetType1 = "VIRTUAL_CLASS_GUNTOWER"
 targetType2 = "VIRTUAL_CLASS_POWERPLANT"
 targetType3 = "VIRTUAL_CLASS_FACTORY"
@@ -382,8 +381,7 @@ targetType5 = "VIRTUAL_CLASS_RECYCLER"
 attackType1 = "ivapc"
 attackType2 = "ivapc"
 attackType3 = "ivapc"
-attackType4 = "ivapc"
-MaxAttacks = 5
+MaxAttacks = 0
 AttackAnything = true
 buildIfNoIdle = true
 planCondition = "Lua"
@@ -391,7 +389,7 @@ LuaFunction = "SendAPCAttacks"
 
 [Plan34]
 planType = "BaseBuildMinimums"
-planPriority = 670
+planPriority = 120
 buildType1 = "ibbomb"
 buildCount1 = 1
 buildLoc1 = "6_bomb1"
@@ -401,15 +399,30 @@ pathpointsCanBeMissing = true
 
 [Plan35]
 planType = "BuildMinimums"
-planPriority = 660
+planPriority = 110
 buildType1 = "ivbomb"
 buildCount1 = 1
 planCondition = "Lua"
 LuaFunction = "BomberBuildLoopCondition"
 
 [Plan36]
+planType = "Attacker"
+planPriority = 100
+targetType1 = "VIRTUAL_CLASS_POWERPLANT"
+targetType2 = "VIRTUAL_CLASS_FACTORY"
+targetType3 = "VIRTUAL_CLASS_ARMORY"
+targetType4 = "VIRTUAL_CLASS_COMMBUNKER"
+targetType5 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "ivbomb"
+MaxAttacks = 0
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendBomberAttacks"
+
+[Plan37]
 planType = "BaseBuildMinimums"
-planPriority = 650
+planPriority = 90
 buildType1 = "ibpgen"
 buildCount1 = 1
 buildLoc1 = "6_pgen4"
@@ -417,9 +430,9 @@ planCondition = "Lua"
 LuaFunction = "BuildPowerGenerator"
 pathpointsCanBeMissing = true
 
-[Plan37]
+[Plan38]
 planType = "BaseBuildMinimums"
-planPriority = 640
+planPriority = 80
 buildType1 = "ibgtow_c"
 buildCount1 = 1
 buildLoc1 = "6_gtow6"
@@ -427,9 +440,9 @@ planCondition = "Lua"
 LuaFunction = "BuildBaseGunTower"
 pathpointsCanBeMissing = true
 
-[Plan38]
+[Plan39]
 planType = "BaseBuildMinimums"
-planPriority = 630
+planPriority = 70
 buildType1 = "ibgtow_c"
 buildCount1 = 1
 buildLoc1 = "6_gtow7"
@@ -437,12 +450,118 @@ planCondition = "Lua"
 LuaFunction = "BuildBaseGunTower"
 pathpointsCanBeMissing = true
 
-[Plan39]
+[Plan40]
 planType = "BaseBuildMinimums"
-planPriority = 620
+planPriority = 60
 buildType1 = "ibgtow_c"
 buildCount1 = 1
 buildLoc1 = "6_gtow8"
 planCondition = "Lua"
 LuaFunction = "BuildBaseGunTower"
 pathpointsCanBeMissing = true
+
+[Plan41]
+planType = "Attacker"
+planPriority = 50
+targetType1 = "VIRTUAL_CLASS_GUNTOWER"
+targetType2 = "VIRTUAL_CLASS_POWERPLANT"
+targetType3 = "VIRTUAL_CLASS_FACTORY"
+targetType4 = "VIRTUAL_CLASS_ARMORY"
+targetType5 = "VIRTUAL_CLASS_SUPPLYDEPOT"
+targetType6 = "VIRTUAL_CLASS_COMMBUNKER"
+targetType7 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "ivatank"
+attackType2 = "ivatank"
+attackType3 = "ivatank"
+MaxAttacks = 0
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendAssaultHarassment"
+
+[Plan42]
+planType = "Attacker"
+planPriority = 40
+targetType1 = "VIRTUAL_CLASS_POWERPLANT"
+targetType2 = "VIRTUAL_CLASS_FACTORY"
+targetType3 = "VIRTUAL_CLASS_SUPPLYDEPOT"
+targetType4 = "VIRTUAL_CLASS_FACTORY"
+targetType5 = "VIRTUAL_CLASS_ARMORY"
+targetType6 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "ivtank"
+attackType2 = "ivtank"
+attackType3 = "ivtank"
+attackType4 = "ivtank"
+AttackAnything = true
+buildIfNoIdle = true
+MaxAttacks = 0
+planCondition = "Lua"
+LuaFunction = "SendTankHarassment"
+
+[Plan43]
+planType = "Attacker"
+planPriority = 30
+targetType1 = "VIRTUAL_CLASS_GUNTOWER"
+targetType2 = "VIRTUAL_CLASS_POWERPLANT"
+targetType3 = "VIRTUAL_CLASS_FACTORY"
+targetType4 = "VIRTUAL_CLASS_SUPPLYDEPOT"
+targetType5 = "VIRTUAL_CLASS_FACTORY"
+targetType6 = "VIRTUAL_CLASS_ARMORY"
+targetType7 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "ivatank"
+attackType2 = "ivatank"
+attackType3 = "ivwalk"
+attackType4 = "ivwalk"
+AttackAnything = true
+buildIfNoIdle = true
+MaxAttacks = 0
+planCondition = "Lua"
+LuaFunction = "SendTechnicalAttacks"
+
+[Plan44]
+planType = "Attacker"
+planPriority = 20
+targetType1 = "VIRTUAL_CLASS_RECYCLER"
+targetType2 = "VIRTUAL_CLASS_POWERPLANT"
+targetType3 = "VIRTUAL_CLASS_FACTORY"
+targetType4 = "VIRTUAL_CLASS_SUPPLYDEPOT"
+targetType5 = "VIRTUAL_CLASS_ARMORY"
+attackType1 = "ivrbomb"
+attackType2 = "ivrbomb"
+attackType3 = "ivtank"
+attackType4 = "ivtank"
+AttackAnything = true
+buildIfNoIdle = true
+MaxAttacks = 0
+planCondition = "Lua"
+LuaFunction = "SendTechnicalAttacks"
+
+[Plan45]
+planType = "Attacker"
+planPriority = 10
+targetType1 = "VIRTUAL_CLASS_EXTRACTOR"
+attackType1 = "ivapc"
+AttackAnything = true
+buildIfNoIdle = true
+MaxAttacks = 0
+planCondition = "Lua"
+LuaFunction = "SendAPCAttacks"
+
+[Plan46]
+planType = "Attacker"
+planPriority = 5
+targetType1 = "VIRTUAL_CLASS_GUNTOWER"
+targetType2 = "VIRTUAL_CLASS_POWERPLANT"
+targetType3 = "VIRTUAL_CLASS_FACTORY"
+targetType4 = "VIRTUAL_CLASS_ARMORY"
+targetType5 = "VIRTUAL_CLASS_SUPPLYDEPOT"
+targetType6 = "VIRTUAL_CLASS_COMMBUNKER"
+targetType7 = "VIRTUAL_CLASS_RECYCLER"
+attackType1 = "ivatank"
+attackType2 = "ivrckt_c"
+attackType3 = "ivrckt_c"
+MaxAttacks = 0
+AttackAnything = true
+buildIfNoIdle = true
+planCondition = "Lua"
+LuaFunction = "SendAssaultHarassment"

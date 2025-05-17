@@ -259,7 +259,11 @@ function CountCPUPower(team, time)
 end
 
 function CountCPUExtractors(team, time)
-    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_EXTRACTOR", 'sameteam', true);
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_EXTRACTOR_Group", 'sameteam', true);
+end
+
+function CountCPUUpgradedExtractors(team, time)
+    return AIPUtil.CountUnits(team, "VIRTUAL_CLASS_EXTRACTOR_Upgraded", 'sameteam', true);
 end
 
 ----------------
@@ -356,5 +360,18 @@ function SendAPCAttacks(team, time)
     return Validate('SendAPCAttacks', {
         factoryExists = DoesFactoryExist(team, time),
         trainingCenterExists = DoesTrainingCenterExist(team, time)
+    })
+end
+
+function SendBomberAttacks(team, time)
+    return Validate('SendBomberAttacks', {
+        bomberExists = DoesBomberExist(team, time)
+    })
+end
+
+function SendTechnicalAttacks(team, time)
+    return Validate('SendTechnicalAttacks', {
+        factoryExists = DoesFactoryExist(team, time),
+        doesTechCenterExist = DoesTechCenterExist(team, time)
     })
 end
