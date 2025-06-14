@@ -564,8 +564,12 @@ function PreTeleport(portal, h)
 			SetPortalDest(portal, M.Portals[5]); --Teleport(h, M.Portals[5], 30);
 		end
 
-		if not M.ScavTeleported and h == M.HadeanScav then
-			M.ScavTeleported = true;
+		if h == M.HadeanScav then
+			if not M.ScavTeleported then
+				M.ScavTeleported = true;
+			else
+				return PRETELEPORT_DENY; -- Issue #206: prevent scav from teleporting again. -GBD
+			end
 		end
 	else
 		if IsPlayer(h) then
