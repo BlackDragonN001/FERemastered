@@ -377,14 +377,17 @@ function Routine3()
 			M.Routine3Timer = GetTime() + 7;
 		elseif M.Routine3State == 1 then	--LOC_50
 			if InBuilding(M.Player) == M.HadeanCommBunk then
-				M.PlayerUsingCbunk = 1;
-				Ally(1, 5);
 				SetTeamNum(M.HadeanCommBunk, 1);
 				SetTeamNum(M.HadeanPower, 1);
+				SetPerceivedTeam(M.HadeanCommBunk, 0);
+				SetPerceivedTeam(M.HadeanPower, 0);
+				SetPerceivedTeam(M.Player, 0);
 				M.Routine3State = M.Routine3State + 1;
 			end
 		elseif M.Routine3State == 2 then	--LOC_58
 			if AtTerminal(M.Player) == M.HadeanCommBunk then
+				M.PlayerUsingCbunk = 1;
+				Ally(1, 5);
 				IFace_EnterMenuMode();
 				IFace_Exec("07iface.cfg");
 				FreeCamera();
@@ -473,7 +476,9 @@ function Routine3()
 			if AtTerminal(M.Player) ~= M.HadeanCommBunk then
 				ClearObjectives();
 				AddObjective("edf0703.otf", "green");
+				SetTeamNum(M.HadeanCommBunk, 0);
 				SetTeamNum(M.HadeanPower, 0);
+				SetPerceivedTeam(M.Player, 1);
 				RemoveObject(M.HadeanPower);
 				M.CbunkUploadFinished = 1;
 				M.PlayerUsingCbunk = 0;
