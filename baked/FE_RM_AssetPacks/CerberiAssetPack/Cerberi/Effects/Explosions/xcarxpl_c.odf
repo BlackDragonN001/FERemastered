@@ -315,7 +315,7 @@ emitInherit = "1.0 1.0 1.0"
 
 [TrailBoltEmit]
 simulateBase = "sim_smoke" //ember"
-lifeTime = 0.3
+lifeTime = 0.25
 renderBase = "draw_bolt"
 textureName = "bolt4.tga"
 textureBlend = "one one modulate"
