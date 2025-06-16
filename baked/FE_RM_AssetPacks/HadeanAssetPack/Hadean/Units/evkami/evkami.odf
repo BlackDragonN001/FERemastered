@@ -6,6 +6,13 @@
 baseName = "evkami"
 geometryName = "evkami00.fbx"
 cockpitName = "evkami_cockpit.fbx"
+animCountCockpit = 3
+animNameCockpit1 = "forward"
+animFileCockpit1 = "evkamisf_cockpit.fbx"
+animNameCockpit2 = "neutral"
+animFileCockpit2 = "evkamisn_cockpit.fbx"
+animNameCockpit3 = "reverse"
+animFileCockpit3 = "evkamisr_cockpit.fbx"
 animCount = 3
 animName1 = "forward"
 animFile1 = "evkamisf.fbx"
