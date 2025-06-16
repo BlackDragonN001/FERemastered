@@ -812,7 +812,7 @@ function Routine7()
 			end
 			SetVelocity(M.ServicePod, ZERO_VECTOR);
 		elseif M.Routine7State == 7 then
-			if IsOdf(M.Recycler, "ivrecy") and (IsAround(M.Tug1) or IsAround(M.Tug2)) then
+			if IsOdf(M.Recycler, "ivrecy_s") and (IsAround(M.Tug1) or IsAround(M.Tug2)) then
 				M.Routine7State = 1;
 			else
 				M.Routine7State = M.Routine7State + 1;
@@ -1120,7 +1120,7 @@ function Routine8()
 				M.Routine8State = 34;--to LOC_502
 			end
 		elseif M.Routine8State == 37 then	--LOC_519
-			if not IsOdf(M.Recycler, "ivrecy") then
+			if not IsOdf(M.Recycler, "ivrecy_s") then
 				if IsAround(M.Tug1) then
 					AddScrap(1, 20);
 				end
