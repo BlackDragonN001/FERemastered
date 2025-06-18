@@ -40,11 +40,14 @@ function _Subtitles.Run()
 			subtitlesLoaded = true;
 		end
 
-		-- Test.
-		IFace_FillListBoxFromText("SubtitlesPanel", subtitleToUse)
+		-- If the Subtitle file exists...
+		if DoesFileExist(subtitleToUse) then
+			-- Fill the listbox.
+			IFace_FillListBoxFromText("SubtitlesPanel", subtitleToUse)
 
-		-- Active the subtitle panel.
-		IFace_Activate("SubtitlesPanel");
+			-- Active the subtitle panel.
+			IFace_Activate("SubtitlesPanel");
+		end
 
 		-- So we only run once.
 		startSubtitles = false;
