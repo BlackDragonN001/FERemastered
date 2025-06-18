@@ -254,7 +254,7 @@ function HandleMainState(R, STATE)
 		SetAnimation(M.DropshipFlying, "Shake", 0);
 		Advance(R, 5.0);
 	elseif STATE == 1 then
-		AudioMessage("edf02_01.wav");	--Pilot:"That blast came awfully close..."
+		_FECore.AudioWithSubtitles("edf02_01.wav");	--Pilot:"That blast came awfully close..."
 		Advance(R, 3.0);
 	elseif STATE == 2 then
 		SetAnimation(M.DropshipLanded, "Deploy", 1);
@@ -299,7 +299,7 @@ function HandleMainState(R, STATE)
 	elseif STATE == 5 then
 	
 		if not M.StartLanding then
-			AudioMessage("edf02_02.wav");	--Stewart:"Good landing under the circumstances..."
+			_FECore.AudioWithSubtitles("edf02_02.wav");	--Stewart:"Good landing under the circumstances..."
 		end
 		
 		DropLand();
@@ -339,13 +339,13 @@ function HandleMainState(R, STATE)
 		Goto(M.Recycler, "RecyclerPath", 1);
 		Advance(R, 30.0);
 	elseif STATE == 8 then
-		AudioMessage("edf02_03.wav");	--Stewart:"Our scanners just picked up a huge energy spike..."
+		_FECore.AudioWithSubtitles("edf02_03.wav");	--Stewart:"Our scanners just picked up a huge energy spike..."
 		M.InvestigateNav = BuildObjectAndLabel("ibnav", 1, "NavSpawn", "Investigate Nav");
 		SetObjectiveName(M.InvestigateNav, "Investigate");
 		SetObjectiveOn(M.InvestigateNav);
 		Advance(R, 220.0);
 	elseif STATE == 9 then
-		AudioMessage("edf02_04.wav");	--Stewart:"You've got enemy units in the canyon..."
+		_FECore.AudioWithSubtitles("edf02_04.wav");	--Stewart:"You've got enemy units in the canyon..."
 		Advance(R, 5.0);
 	elseif STATE == 10 then
 		Patrol(BuildObjectAndLabel("evscout_e02", 5, "Spawn2", "Hadean Scout 3"), "Patrol2", 0);
@@ -408,7 +408,7 @@ function HandleHadeanAttack(R, STATE)
 			Advance(R, 3.0);
 		end
 	elseif STATE == 1 then
-		AudioMessage("edf02_05.wav");	--Stewart:"Good God, that scav just vanished"
+		_FECore.AudioWithSubtitles("edf02_05.wav");	--Stewart:"Good God, that scav just vanished"
 		Advance(R, 7.0);
 	elseif STATE == 2 then
 		SetObjectiveName(M.HadeanScav, "Teleported Harvester");
@@ -417,7 +417,7 @@ function HandleHadeanAttack(R, STATE)
 		SetRoutineActive(5, true);--M.StewartNag = true;
 		Advance(R, 900.0);
 	elseif STATE == 3 then
-		AudioMessage("edf02_08.wav");	--Stewart:"The first enemy squadron is closing in..."
+		_FECore.AudioWithSubtitles("edf02_08.wav");	--Stewart:"The first enemy squadron is closing in..."
 		ClearObjectives();
 		AddObjective("edf0210.otf", "white");
 		M.HadeanAttackTime = GetTime() + 600.0;
@@ -434,7 +434,7 @@ function HandleHadeanAttack(R, STATE)
 			Advance(R, 50.0);
 		end
 	elseif STATE == 6 then	--LOC_104
-		AudioMessage("edf02_09.wav");	--Stewart:"The hostiles are just seconds away..."
+		_FECore.AudioWithSubtitles("edf02_09.wav");	--Stewart:"The hostiles are just seconds away..."
 		ClearObjectives();
 		AddObjective("edf0211.otf", "white");
 		M.AttackIndex = 1;
@@ -476,7 +476,7 @@ function HandleHadeanAttack(R, STATE)
 				SetState(R, 7)--to LOC_107
 			else
 				--Win
-				AudioMessage("edf02_10.wav");	--Stewart:"Well done. You've smashed the Hadeans..."
+				_FECore.AudioWithSubtitles("edf02_10.wav");	--Stewart:"Well done. You've smashed the Hadeans..."
 				ClearObjectives();
 				AddObjective("edf0205.otf", "green");
 				SucceedMission(GetTime() + 18, "edf02W1.txt");
@@ -489,7 +489,7 @@ end
 --Stewart nagging player to go through the portal after the Hadean Scav
 function HandleStewartNag(R, STATE)
 	if STATE == 0 then	--LOC_259
-		AudioMessage("EDF02_05A.wav");	--Stewart:"Try going through that arch."
+		_FECore.AudioWithSubtitles("EDF02_05A.wav");	--Stewart:"Try going through that arch."
 		ClearObjectives();
 		AddObjective("edf0209.otf", "white");
 		M.StewartNextNagTime = GetTime() + 30.0;
@@ -497,12 +497,12 @@ function HandleStewartNag(R, STATE)
 	elseif STATE == 1 then
 		if M.StewartNextNagTime < GetTime() then
 			if M.StewartNagCounter > 3 then
-				AudioMessage("EDF02_12.wav");	--Stewart:"You can't follow simple instructions..."
+				_FECore.AudioWithSubtitles("EDF02_12.wav");	--Stewart:"You can't follow simple instructions..."
 				FailMission(GetTime() + 12, "EDF02_L2.txt");
 				M.MissionOver = true;
 				SetState(R, 99);
 			else
-				AudioMessage("EDF02_05A.wav");	--Stewart:"Try going through the portal"
+				_FECore.AudioWithSubtitles("EDF02_05A.wav");	--Stewart:"Try going through the portal"
 				M.StewartNagCounter = M.StewartNagCounter + 1;
 				M.StewartNextNagTime = GetTime() + 30.0;
 			end
@@ -510,7 +510,7 @@ function HandleStewartNag(R, STATE)
 			Advance(R, 3.0);
 		end
 	elseif STATE == 2 then
-		AudioMessage("edf02_06.wav");	--Stewart:"Just as we suspected. It's a portal..."
+		_FECore.AudioWithSubtitles("edf02_06.wav");	--Stewart:"Just as we suspected. It's a portal..."
 		Advance(R, 3.0);
 	elseif STATE == 3 then
 		ClearObjectives();
@@ -522,7 +522,7 @@ function HandleStewartNag(R, STATE)
 			Advance(R, 5.0);
 		end
 	elseif STATE == 5 then
-		AudioMessage("edf02_07.wav");	--Stewart:"You've got incoming Hadeans. Get some GTs up."
+		_FECore.AudioWithSubtitles("edf02_07.wav");	--Stewart:"You've got incoming Hadeans. Get some GTs up."
 		Advance(R);
 	end
 end
@@ -601,7 +601,7 @@ function CheckStuffIsAlive()
 	if not M.MissionOver then
 		if SpawnDelaySTATE > 0 then --updated to not fail on start
 			if not IsAround(M.Recycler) then
-				AudioMessage("edf02_11.wav");	--Stewart:"You lost the recycler..."
+				_FECore.AudioWithSubtitles("edf02_11.wav");	--Stewart:"You lost the recycler..."
 				ClearObjectives();
 				AddObjective("edf0202.otf", "red");
 				FailMission(GetTime() + 12, "edf02L1.txt");
