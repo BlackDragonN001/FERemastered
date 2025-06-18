@@ -227,7 +227,7 @@ end
 function HandleMainState(R, STATE)
 	if STATE == 0 then
 		SetScrap(1, 40);
-		AudioMessage("edf0401.wav");	--Windex:"Attention Spartacus task force..."
+		_FECore.AudioWithSubtitles("edf0401.wav");	--Windex:"Attention Spartacus task force..."
 		SetObjectiveOn(M.EngineerTransport);
 		CameraReady();
 		Advance(R);
@@ -244,7 +244,7 @@ function HandleMainState(R, STATE)
 	elseif STATE == 2 then	--LOC_46
 		if IsOdf(M.Recycler, "ibrecy_s") then
 			if GetDistance(M.Recycler, M.BaseNav) > 200 then
-				AudioMessage("edf0402.wav");	--Windex:"You were clearly ordered to deploy near the nav beacon..."
+				_FECore.AudioWithSubtitles("edf0402.wav");	--Windex:"You were clearly ordered to deploy near the nav beacon..."
 				FailMission(GetTime() + 10, "edf04l2.des");
 				SetState(R, 99);
 			else
@@ -254,13 +254,13 @@ function HandleMainState(R, STATE)
 				M.HadeanBaseNav = BuildObjectAndLabel("ibnav", 1, "ebs", "Hadean Base Location");
 				SetObjectiveName(M.HadeanBaseNav, "Hadean Base");
 				SetObjectiveOn(M.HadeanBaseNav);
-				AudioMessage("edf0403.wav");	--Skyeye:"We've pinpointed the Hadean stronghold..."
+				_FECore.AudioWithSubtitles("edf0403.wav");	--Skyeye:"We've pinpointed the Hadean stronghold..."
 				Advance(R, 10.0);
 			end
 		end
 	elseif STATE == 3 then
 		AddObjective("edf0402.otf", "white");
-		AudioMessage("edf0404.wav");	--Skyeye:"We've found the Mega Gun location..."
+		_FECore.AudioWithSubtitles("edf0404.wav");	--Skyeye:"We've found the Mega Gun location..."
 		M.MegaGunNav = BuildObjectAndLabel("ibnav", 1, "mgs", "Mega Gun Location");
 		SetObjectiveName(M.MegaGunNav, "Mega Gun");
 		SetObjectiveOn(M.MegaGunNav);
@@ -270,7 +270,7 @@ function HandleMainState(R, STATE)
 		Advance(R);
 	elseif STATE == 4 then	--LOC_69
 		if GetDistance(M.Player, M.MegaGunNav) < 250 then
-			AudioMessage("edf0405.wav");	--O'Ryan:"Interesting, the Guardian turrets seem to be inactive..."
+			_FECore.AudioWithSubtitles("edf0405.wav");	--O'Ryan:"Interesting, the Guardian turrets seem to be inactive..."
 			Advance(R);
 		end
 	elseif STATE == 5 then	--LOC_79
@@ -290,25 +290,25 @@ function HandleMainState(R, STATE)
 			RemoveObject(M.Engineer);
 			ClearObjectives();
 			AddObjective("edf0403.otf", "green");
-			AudioMessage("edf0406.wav");	--O'Ryan:"I'm inside the megagun..."
+			_FECore.AudioWithSubtitles("edf0406.wav");	--O'Ryan:"I'm inside the megagun..."
 			Advance(R, 15.0);
 		end
 	elseif STATE == 7 then
 		ClearObjectives();
 		AddObjective("edf0402.otf", "green");
 		AddObjective("edf0404.otf", "white");
-		AudioMessage("edf0407.wav");	--O'Ryan:"Yes! The megagun is online..."
+		_FECore.AudioWithSubtitles("edf0407.wav");	--O'Ryan:"Yes! The megagun is online..."
 		SetTeamNum(M.MegaGun, 1);
 		SetTeamNum(M.MegaGuard1, 1);
 		SetTeamNum(M.MegaGuard2, 1);			
 		Advance(R, 10.0);
 	elseif STATE == 8 then
-		AudioMessage("edf0408.wav");	--Windex:"Good work O'Ryan..."
+		_FECore.AudioWithSubtitles("edf0408.wav");	--Windex:"Good work O'Ryan..."
 		SetAIP("edf04c.aip", 6);
 		Advance(R);
 	elseif STATE == 9 then	--LOC_107
 		if GetScrap(1) >= 110 then
-			AudioMessage("edf0409.wav");	--Skyeye:"We've just detected a massive energy spike on the planet Athena..."
+			_FECore.AudioWithSubtitles("edf0409.wav");	--Skyeye:"We've just detected a massive energy spike on the planet Athena..."
 			ClearObjectives();
 			AddObjective("edf0405.otf", "red");
 			Advance(R, 60.0);
@@ -319,13 +319,13 @@ function HandleMainState(R, STATE)
 		BuildObjectAndLabel("mbrocks", 9, "mgbbb", "Rocks");
 		Advance(R, 15.0);
 	elseif STATE == 11 then
-		AudioMessage("edf0410.wav");	--Windex:"That was far too close..."
+		_FECore.AudioWithSubtitles("edf0410.wav");	--Windex:"That was far too close..."
 		ClearObjectives();
 		AddObjective("edf0404.otf", "white");
 		Advance(R);
 	elseif STATE == 12 then	--LOC_119
 		if GetScrap(1) >= 160 then
-			AudioMessage("edf0411.wav");	--Skyeye:"Well done engineering crew. The first shot is away..."
+			_FECore.AudioWithSubtitles("edf0411.wav");	--Skyeye:"Well done engineering crew. The first shot is away..."
 			CameraReady();
 			Advance(R);
 		end
@@ -336,7 +336,7 @@ function HandleMainState(R, STATE)
 			ClearObjectives();
 			AddObjective("edf0404.otf", "green");
 			SetRoutineActive(7, true);--M.HadRetaliate = true;
-			AudioMessage("edf0413.wav");	--Skyeye:"We're picking up substantial energy pulsations.."
+			_FECore.AudioWithSubtitles("edf0413.wav");	--Skyeye:"We're picking up substantial energy pulsations.."
 			Advance(R);
 		end
 	elseif STATE == 14 then	--LOC_130
@@ -353,7 +353,7 @@ function HandleMainState(R, STATE)
 			Advance(R, 5.0);
 		end
 	elseif STATE == 16 then
-		AudioMessage("edf0414.wav");	--Skyeye:"We just wiped out the megagun on planet Troy..."
+		_FECore.AudioWithSubtitles("edf0414.wav");	--Skyeye:"We just wiped out the megagun on planet Troy..."
 		AddObjective("edf0407.otf", "white");
 		SetAIP("edf04d.aip", 6);
 		SetRoutineActive(7, true);--M.HadRetaliate = true;
@@ -362,7 +362,7 @@ function HandleMainState(R, STATE)
 		Advance(R);
 	elseif STATE == 17 then
 		if M.CuttingItCloseTime < GetTime() then
-			AudioMessage("edf0415.wav");	--Skyeye:"The Hadeans are powering up the Alexandria Megagun..."
+			_FECore.AudioWithSubtitles("edf0415.wav");	--Skyeye:"The Hadeans are powering up the Alexandria Megagun..."
 			StartCockpitTimer(300);
 			Advance(R);
 		elseif GetScrap(1) >= 160 then
@@ -383,7 +383,7 @@ function HandleMainState(R, STATE)
 			Advance(R);
 		end
 	elseif STATE == 19 then	--LOC_152
-		AudioMessage("edf0416.wav");	--O'Ryan:"Fire!"
+		_FECore.AudioWithSubtitles("edf0416.wav");	--O'Ryan:"Fire!"
 		SetRoutineActive(6, true);--M.RecyclerRetreat = true;
 		local pos = GetPosition(M.MegaGun) + SetVector(0, 10, 0);
 		M.CutsceneTarget = BuildObjectAndLabel("stick", 0, pos, "Cutscene Target");
@@ -409,7 +409,7 @@ function HandleMainState(R, STATE)
 			SetScrap(1, 0);
 			ClearObjectives();
 			AddObjective("edf0411.otf", "white");
-			AudioMessage("edf0417.wav");
+			_FECore.AudioWithSubtitles("edf0417.wav"); --Skyeye:"Nice shooting guys, we've signaled the Storm Petrel to leave her hiding place. Major move the Vengance to a dustoff area"
 			SetRoutineActive(3, false);--M.SpawnTurrets = false;
 			SetRoutineActive(4, false);--M.SpawnKruls = false;
 			M.NavDelta = BuildObjectAndLabel("ibnav", 1, "NGTE", "Nav Delta");
@@ -550,8 +550,8 @@ function CheckStuffIsAlive()
 		elseif not IsAround(M.EngineerTransport) then
 			ClearObjectives();
 			AddObjective("edf0409.otf", "red");
-			--AudioMessage("edf04l3.wav");	--doesn't exist (that's an 'L', not a '1')
-			--AudioMessage("edf0413a.wav");	--O'Ryan:"AAARRRGGGGH!"
+			--_FECore.AudioWithSubtitles("edf04l3.wav");	--doesn't exist (that's an 'L', not a '1')
+			--_FECore.AudioWithSubtitles("edf0413a.wav");	--O'Ryan:"AAARRRGGGGH!"
 			FailMission(GetTime() + 10, "edf04l3.des");
 			M.MissionOver = true;
 		end

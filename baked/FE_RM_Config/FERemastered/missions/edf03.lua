@@ -218,7 +218,7 @@ function HandleMainState(R, STATE)
 		SetAIP("edf3a.aip", 2);
 		ClearObjectives();
 		AddObjective("edf0301.otf", WHITE);
-		AudioMessage("edf0301.wav");	--Stewart:"We're a good 2 clicks from the deployment point"
+		_FECore.AudioWithSubtitles("edf0301.wav");	--Stewart:"We're a good 2 clicks from the deployment point"
 		M.BaseNav = BuildObjectAndLabel("ibnav", 1, "deploy", "Base Location");
 		SetObjectiveName(M.BaseNav, "BASE SITE");
 		SetObjectiveOn(M.BaseNav);
@@ -226,21 +226,21 @@ function HandleMainState(R, STATE)
 	elseif STATE == 2 then
 		M.HadeanScout = BuildObjectAndLabel("evscout", 2, Position8, "Hadean Scout 1");
 		Attack(M.HadeanScout, M.Recycler, 1);
-		AudioMessage("edf0302.wav");	--Stewart:"Heads up. Hostiles incoming."
+		_FECore.AudioWithSubtitles("edf0302.wav");	--Stewart:"Heads up. Hostiles incoming."
 		Advance(R, 10.0);
 	elseif STATE == 3 then	--LOC_41
-		AudioMessage("edf0303.wav");	--Stewart:"Keep sharp, Corber"
+		_FECore.AudioWithSubtitles("edf0303.wav");	--Stewart:"Keep sharp, Corber"
 		Advance(R);
 	elseif STATE == 4 then
 		if not IsAlive(M.HadeanScout) or GetTeamNum(M.HadeanScout) ~= 2 then
-			AudioMessage("edf0304.wav");	--Stewart:"Good shooting, lads"
+			_FECore.AudioWithSubtitles("edf0304.wav");	--Stewart:"Good shooting, lads"
 			Advance(R, 10.0);
 		end
 	elseif STATE == 5 then
 		Attack(BuildObjectAndLabel("evscout", 2, Position9, "Hadean Scout 2"), M.Recycler, 1);
 		Advance(R, 15.0);
 	elseif STATE == 6 then
-		AudioMessage("edf0305.wav");	--Stewart:"Hold on Corber, here comes another attack wave"
+		_FECore.AudioWithSubtitles("edf0305.wav");	--Stewart:"Hold on Corber, here comes another attack wave"
 		Advance(R, 60.0);
 	elseif STATE == 7 then
 		Attack(BuildObjectAndLabel("evscout", 2, Position9, "Hadean Scout 3"), M.Recycler, 1);
@@ -254,7 +254,7 @@ function HandleMainState(R, STATE)
 		if IsAround(M.Recycler) and GetCfg(M.Recycler) ~= "ivrecy_i" then
 			SetObjectiveOff(M.BaseNav);
 			RemoveObject(M.BaseNav);
-			AudioMessage("edf0306.wav");	--Stewart:"Well done. We have a little breathing room now"
+			_FECore.AudioWithSubtitles("edf0306.wav");	--Stewart:"Well done. We have a little breathing room now"
 			SetAIP("edf3b.aip", 2);
 			Advance(R);
 		end
@@ -265,7 +265,7 @@ function HandleMainState(R, STATE)
 	elseif STATE == 11 then
 		ClearObjectives();
 		AddObjective("edf0314.otf", "white");
-		AudioMessage("edf0307.wav");	--Stewart:"An APC went down. Get the flight recorder..."
+		_FECore.AudioWithSubtitles("edf0307.wav");	--Stewart:"An APC went down. Get the flight recorder..."
 		BuildObjectAndLabel("peapc", 0, "bunker4", "APC");
 		M.FlightRecorder = BuildObjectAndLabel("flightrec", 0, "gtow7", "Flight Recorder");
 		SetObjectiveName(M.FlightRecorder, "Flight Recorder");
@@ -273,7 +273,7 @@ function HandleMainState(R, STATE)
 		Advance(R);
 	elseif STATE == 12 then	--LOC_77
 		if GetDistance(M.Player, M.FlightRecorder) < 300 then
-			AudioMessage("edf0307a.wav");	--Stewart:"Try to pick up that object if you can"
+			_FECore.AudioWithSubtitles("edf0307a.wav");	--Stewart:"Try to pick up that object if you can"
 			Advance(R);
 		end
 	elseif STATE == 13 then	--LOC_81
@@ -282,16 +282,16 @@ function HandleMainState(R, STATE)
 			AudioMessage("pickup01.wav");
 			ClearObjectives();
 			AddObjective("edf0302.otf", "white");
-			AudioMessage("edf0308.wav");	--Stewart:"Your cargo is extremely important. Get back to base."
+			_FECore.AudioWithSubtitles("edf0308.wav");	--Stewart:"Your cargo is extremely important. Get back to base."
 			Advance(R);
 		end
 	elseif STATE == 14 then	--LOC_90
 		if GetDistance(M.Player, "deploy") < 150 then
-			AudioMessage("edf0309.wav");	--Stewart:"The flight recorder is in bad shape..."
+			_FECore.AudioWithSubtitles("edf0309.wav");	--Stewart:"The flight recorder is in bad shape..."
 			Advance(R, 150.0);
 		end
 	elseif STATE == 15 then
-		AudioMessage("edf0310.wav");	--Stewart:"Head to canyon nav and grab satchel"
+		_FECore.AudioWithSubtitles("edf0310.wav");	--Stewart:"Head to canyon nav and grab satchel"
 		Advance(R, 5.0);
 	elseif STATE == 16 then
 		ClearObjectives();
@@ -313,7 +313,7 @@ function HandleMainState(R, STATE)
 		if not IsAround(M.Rocks[1]) then
 			ClearObjectives();
 			AddObjective("edf0304.otf", "white");
-			AudioMessage("edf0311.wav");	--Stewart:"Our map shows abandoned structures at the other end of the canyon..."
+			_FECore.AudioWithSubtitles("edf0311.wav");	--Stewart:"Our map shows abandoned structures at the other end of the canyon..."
 			RemoveObject(M.SatchelPickupNav);
 			RemoveObject(M.CanyonNav);
 			M.CityRuinsNav = BuildObjectAndLabel("ibnav", 1, Position14, "City Ruins Nav");
@@ -329,13 +329,13 @@ function HandleMainState(R, STATE)
 			Advance(R, 30.0);
 		end
 	elseif STATE == 20 then
-		AudioMessage("edf0330.wav");	--Cervelli:"These new enemies are emitting anomalous readings..."
+		_FECore.AudioWithSubtitles("edf0330.wav");	--Cervelli:"These new enemies are emitting anomalous readings..."
 		Advance(R, 30.0);
 	elseif STATE == 21 then
-		AudioMessage("edf0331.wav");	--Cervelli:"We've finally managed to get some useful readings on the unknowns..."
+		_FECore.AudioWithSubtitles("edf0331.wav");	--Cervelli:"We've finally managed to get some useful readings on the unknowns..."
 		Advance(R, 30.0);
 	elseif STATE == 22 then
-		AudioMessage("edf0313.wav");	--Stewart:"We've just picked up a power surge east of the city"
+		_FECore.AudioWithSubtitles("edf0313.wav");	--Stewart:"We've just picked up a power surge east of the city"
 		SetRoutineActive(5, true);
 		CameraReady();
 		Advance(R);
@@ -360,7 +360,7 @@ function HandleMainState(R, STATE)
 		if IsInfo("ebmgen") then
 			ClearObjectives();
 			AddObjective("edf0307.otf", "green");
-			AudioMessage("edf0314.wav");	--Stewart:"Good work. We've got a clear scan of the structure"
+			_FECore.AudioWithSubtitles("edf0314.wav");	--Stewart:"Good work. We've got a clear scan of the structure"
 			Advance(R, 10.0);
 		end
 	elseif STATE == 26 then
@@ -368,7 +368,7 @@ function HandleMainState(R, STATE)
 		SetRoutineActive(4, true);--M.SpawnEngTransport = true;
 		Advance(R, 60.0);
 	elseif STATE == 27 then
-		AudioMessage("edf0332.wav");	--Cervelli:"The unknowns are interfering with our scans..."
+		_FECore.AudioWithSubtitles("edf0332.wav");	--Cervelli:"The unknowns are interfering with our scans..."
 		Advance(R);
 	elseif STATE == 28 then
 		if GetDistance(M.EngineerTransport, M.MegaPower) < 50 then
@@ -385,7 +385,7 @@ function HandleMainState(R, STATE)
 			SetTeamNum(M.MegaTurrets[i], 1);
 		end
 		SetAIP("edf3c.aip", 2);
-		AudioMessage("edf0316.wav");	--Stewart:"You've captured the megapower. The gate defenses are on our side now..."
+		_FECore.AudioWithSubtitles("edf0316.wav");	--Stewart:"You've captured the megapower. The gate defenses are on our side now..."
 		SetObjectiveOff(M.EngineerTransport);
 		ClearObjectives();
 		AddObjective("edf0311.otf", "white");
@@ -406,7 +406,7 @@ function HandleMainState(R, STATE)
 		ClearObjectives();
 		Advance(R, 120.0);
 	elseif STATE == 32 then
-		AudioMessage("edf0316a.wav");	--Cervelli:"Incoming energy beam..."
+		_FECore.AudioWithSubtitles("edf0316a.wav");	--Cervelli:"Incoming energy beam..."
 		BuildObjectAndLabel("kaboom", 2, "deploy", "Kaboom1");
 		BuildObjectAndLabel("kaboom", 2, "deploy", "Kaboom2");
 		BuildObjectAndLabel("kaboom", 2, "deploy", "Kaboom3");
@@ -415,7 +415,7 @@ function HandleMainState(R, STATE)
 		M.BaseDestroyed = true;
 		ClearObjectives();
 		BuildObjectAndLabel("g3beamd", 2, "deploy", "g3beamd");
-		AudioMessage("edf0317.wav");	--Stewart:"<PAIN> We've just been hit..."
+		_FECore.AudioWithSubtitles("edf0317.wav");	--Stewart:"<PAIN> We've just been hit..."
 		AddObjective("edf0313.otf", "white");
 		M.CutsceneNav = BuildObjectAndLabel("ibnav", 1, "deploy", "Cutscene Nav");
 		SetRoutineActive(5, true);
@@ -431,12 +431,12 @@ function HandleMainState(R, STATE)
 			Advance(R, 30.0);
 		end
 	elseif STATE == 35 then
-		AudioMessage("edf0318.wav");	--Cervelli:"We're evacuating survivors. Take out the Hadean base..."
+		_FECore.AudioWithSubtitles("edf0318.wav");	--Cervelli:"We're evacuating survivors. Take out the Hadean base..."
 		Advance(R);
 		AddObjective("edf0312.otf", "white");
 	elseif STATE == 36 then
 		if not IsAround(M.HadeanRecy) then
-			AudioMessage("edf0319.wav");	--Cervelli:"Good work commander..."
+			_FECore.AudioWithSubtitles("edf0319.wav");	--Cervelli:"Good work commander..."
 			SucceedMission(GetTime() + 23, "edf3win.des");
 			Advance(R);
 		end
@@ -514,7 +514,7 @@ function HandleEngineerTransport(R, STATE)
 		Stop(M.EngineerTransport, 1);
 		SetObjectiveOn(M.EngineerTransport);
 		AddObjective("edf0309.otf", "white");
-		AudioMessage("edf0315.wav");
+		_FECore.AudioWithSubtitles("edf0315.wav"); --Stewart:"We're sending in a crew of Engineers to take control of the power facility."
 		Advance(R, 20.0);
 	elseif STATE == 1 then
 		M.EngineerTransportArrived = true;
