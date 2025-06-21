@@ -1,0 +1,27 @@
+{
+    "files.exclude": {
+		"docs/": true,
+		"FE_RM_Source/": true,
+        "baked/FE_RM_AssetPacks/": true,
+        "baked/FER_addon/": true,
+        "baked/FER_TempBZ2Terrain/": true,
+		"baked/FE_RM_Config/documentation/": true,
+        "baked/FE_RM_Config/FER_loc/": true,
+        //"baked/FE_RM_Config/FE_RM_Maps/": true,
+        "baked/FE_RM_Config/FERemastered/movies/": true,
+		"baked/FE_RM_Config/FERemastered/music/": true,
+		"baked/FE_RM_Config/FERemastered/BZ2CP/AIP/": true,
+		"baked/FE_RM_Config/FERemastered/BZ2CP/Audio/": true,
+		"baked/FE_RM_Config/FERemastered/BZ2CP/binData/": true,
+		"baked/FE_RM_Config/FERemastered/BZ2CP/Campaign/": true,
+		"baked/FE_RM_Config/FERemastered/BZ2CP/Config/": true,
+		"baked/FE_RM_Config/FERemastered/BZ2CP/FE-FX/": true,
+		"baked/FE_RM_Config/FERemastered/BZ2CP/Missions/": true,
+		"baked/FE_RM_Config/FERemastered/BZ2CP/Objects/": true,
+		"baked/FE_RM_Config/FERemastered/BZ2CP/Worlds/": true,
+    },
+    "Lua.runtime.version": "Lua 5.2",
+    "Lua.workspace.library": [
+        ".vscode/battlezone2_defs.lua",
+    ]
+}
