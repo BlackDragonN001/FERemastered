@@ -133,6 +133,31 @@ function _MPI.Load(CrateSpawnerData, MegaBeamData, RampageData, CaptureObjectDat
 	MPIMission = MPIMissionData;
 end
 
+--[[
+	Here is a list of all available custom IVARs.
+	-- Original MPI features:
+	- ivar 71 - Weapon Caches.
+	- ivar  - Rampage units
+	- ivar 73 - Capture Objects
+	- ivar 74 - Monster Run
+	- ivar 75 - Random Pools
+	- Poweral Users
+	
+	- ivar70 - AI Difficulty.
+	- ivar72 - Mega Beam
+	
+	- AI Commander Spawning.
+	- AI Super Units.
+	- AI Reinforcements.
+	- AI Recycler Replacement.
+	- AI Demolishers.
+	- Savage units.
+	- Artifacts.
+	- Weapon Caches.
+	- Scrap Silos.
+]]
+
+
 -- Initial Setup.
 function _MPI.InitialSetup()
 	SetAutoGroupUnits(false);
@@ -253,31 +278,8 @@ function _MPI.InitialSetup()
 	PreloadODF("ivrecycpu");
 	PreloadODF("evrecycpu");
 	PreloadODF("fvrecycpu");
+	PreloadODF("cvrecycpu");
 end
-
---[[
-	Here is a list of all available custom IVARs.
-	-- Original MPI features:
-	- Weapon Caches.
-	- Rampage units
-	- Monster Run
-	- Capture Objects
-	- Random Pools
-	- Poweral Users
-	
-	
-	- ivar70 - AI Difficulty.
-	- ivar71 - AI Commander Spawning.
-	- ivar72 - Mega Beam
-	- ivar73 - AI Super Units.
-	- ivar74 - AI Reinforcements.
-	- ivar75 - AI Recycler Replacement.
-	- ivar76 - AI Demolishers.
-	- ivar77 - Savage units.
-	- ivar78 - Artifacts.
-	- ivar79 - Weapon Caches.
-	- ivar80 - Scrap Silos.
-]]
 
 -- Start, find/save all vars from shell.
 function _MPI.Start()
