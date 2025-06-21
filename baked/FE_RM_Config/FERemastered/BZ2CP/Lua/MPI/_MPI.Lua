@@ -774,7 +774,7 @@ function SetCPUAIPlan(Team, Type)
 	MPIMission.LastCPUPlan[Team] = Type;
 end
 
--- TODO: If this is not used by default, change to work like IA BuildStartingVehicle, where it tries race specific versionof ODF1, if it doesn't exist, try race specific version of ODF2.
+-- TODO: If this is not used by default, change to work like IA BuildStartingVehicle, where it tries race specific version of ODF1, if it doesn't exist, try race specific version of ODF2.
 -- i.e. ODF1 = "ivturr", then it'll always pass and replace i with the race letter, or if ODF1 = "ivmbike" and ODF2 = "ivmort", and ODF3 = "fvsent", etc. it'll try those till it finds a match, or won't spawn anything. -GBD
 -- Spawns vehicles based on path points
 function SetupExtraVehicles()
