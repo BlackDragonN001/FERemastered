@@ -623,7 +623,7 @@ function _MPI.Update(TurnCounter)
 	-- Only run if using legacy AIPs. -GBD
 	if (MPIMission.LegacyAIPs) then
 		local closestEnemy = 0;
-		local closestEnemyDist = 10, 00000000; -- Originally 1e30f, changed. AI_Unit
+		local closestEnemyDist = 1000000000; -- Originally 1e30f, changed. AI_Unit
 
 		local RecyH = GetObjectByTeamSlot(CPU_START_TEAM, DLL_TEAM_SLOT_RECYCLER);
 		if (IsAround(RecyH)) then
