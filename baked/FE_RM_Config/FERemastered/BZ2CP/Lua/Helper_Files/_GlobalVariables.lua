@@ -146,7 +146,7 @@ SIEGE_DISTANCE = 250.0
 
 PLAYER_START_TEAM = 1
 CPU_START_TEAM = 6
-CPU2_TEAM_OFFSET = 5
+CPU2_TEAM_OFFSET = 1
 
 PRETELEPORT_DEFAULT = 0 -- Allow default behavior.
 PRETELEPORT_ALLOW = 1 -- Allow the teleport, reguardless.
