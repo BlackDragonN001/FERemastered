@@ -140,6 +140,8 @@ AIPTypeS = 6
 MAX_AIP_TYPE = 7
 AIPTypeExtensions = '0123als'
 
+SIEGE_DISTANCE = 250.0
+
 --[[ FE Custom Constants ]]--
 
 PLAYER_START_TEAM = 1
