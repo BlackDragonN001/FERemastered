@@ -91,7 +91,7 @@ local MPIMission =
 	HumanScrapCheat = 0,
 	CPUScrapCheat = 0,
 	FirstAIPSwitchTime = 0, -- ivar26
-	TeamRace = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	TeamRace = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil },
 	CPUCommBunkerCount = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 	LastCPUPlan = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 
