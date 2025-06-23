@@ -650,7 +650,7 @@ function DropLand()
 			RecySpawn.y = RecySpawn.y - 10;
 			M.Recycler = BuildObjectAndLabel("ivrecy_i",1,RecySpawn, "Recycler");  
 			SetAngle(M.Recycler, 90.0);
-			SetGroup(M.Recycler, 10);
+			SetGroup(M.Recycler, 9);
 			StartAnimation(M.RecyDropShip);
 			M.LandingFinished = true;
 			end	

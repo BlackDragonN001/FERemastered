@@ -1655,7 +1655,7 @@ function Routine11()
 			M.SchultzState = 1;
 			SetObjectiveName(M.Schultz, "Schultz");
 			SetObjectiveOn(M.Schultz);
-			SetGroup(M.Schultz, 10);
+			--SetGroup(M.Schultz, 9); -- Valid Group is 0 - 9.
 			Follow(M.Schultz, M.Player, 0);
 			AudioMessage("Shulhere.wav");	--Schultz:"Hey Corber, this is Schultz. Windex asked me to babysit you again..."
 			RemoveObject(M.NextWaypointNav);

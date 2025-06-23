@@ -323,7 +323,7 @@ function Routine1(R, STATE)
 		SetSkill(M.HadeanTech, 3);	--make Kranios a bit more resilient
 		--M.ScionDropship = ReplaceObject(M.ScionDropship, "scibomb");
 		M.ScionDropship = BuildObject("scibomb", 6, GetPosition(M.BomberBay) + SetVector(0,50,0));
-		SetGroup(M.ScionDropship, 10);
+		SetGroup(M.ScionDropship, 9);
 		SetPerceivedTeam(M.ScionDropship, 0);
 		SetPerceivedTeam(M.BomberBay, 0);
 		SetPerceivedTeam(M.BomberPower, 0);
@@ -588,7 +588,7 @@ function Routine1(R, STATE)
 			ClearObjectives();
 			AddObjective("fcxx08.otf", "green");
 			AddObjective("fcxx05.otf", "white");
-			SetGroup(M.ScionDropship, 10);
+			SetGroup(M.ScionDropship, 9);
 			SetUserTarget(M.ScionDropship);
 			Attack(M.ScionDropship, M.BombTarget, 1);
 			SetObjectiveOn(M.ScionDropship);
