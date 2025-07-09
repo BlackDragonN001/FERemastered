@@ -691,8 +691,11 @@ function Routine4(R, STATE)
 			SetEjectRatio(TempH, 0.0); -- Give cerberi weapons? -GBD
 			Goto(BuildObject("evta_IH", 3, "attack"), "attack", 1);
 			Defend2(M.Sentry1, M.ScionRecy, 0);
+			SetBestGroup(M.Sentry1);
 			Defend2(M.Sentry2, M.ScionRecy, 0);
+			SetBestGroup(M.Sentry2);
 			Defend2(M.Sentry3, M.ScionRecy, 0);
+			SetBestGroup(M.Sentry3);
 			M.Sentry1 = BuildObject("fvrbomb", 1, "scion");
 			M.Sentry2 = BuildObject("fvrbomb", 1, "scion");
 			Goto(M.Sentry1, "scion", 1);
