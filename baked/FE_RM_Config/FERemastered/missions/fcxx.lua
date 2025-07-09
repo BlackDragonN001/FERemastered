@@ -703,7 +703,7 @@ function Routine4(R, STATE)
 			Advance(R);
 		end
 	elseif STATE == 1 then	--LOC_387
-		if GetDistance(M.Sentry2, M.ScionRecy) < 100 then
+		if GetDistance(M.Sentry1, M.ScionRecy) < 100 or GetDistance(M.Sentry2, M.ScionRecy) < 100 then
 			Defend2(M.Sentry1, M.ScionRecy, 0);
 			SetBestGroup(M.Sentry1);
 			Defend2(M.Sentry2, M.ScionRecy, 0);
