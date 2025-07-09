@@ -25,9 +25,9 @@ transform [1] =
   right.x [1] =
 -9.03035045e-01
   right.y [1] =
-1.16416335e-10
+1.09140315e-10
   right.z [1] =
--4.29557085e-01
+-4.29557025e-01
   up.x [1] =
 -7.20496246e-05
   up.y [1] =
@@ -35,9 +35,9 @@ transform [1] =
   up.z [1] =
 1.51466360e-04
   front.x [1] =
-4.29555207e-01
+4.29555148e-01
   front.y [1] =
-1.67728867e-04
+1.67728853e-04
   front.z [1] =
 -9.03031111e-01
   posit.x [1] =
@@ -322,7 +322,7 @@ false
 objAddr = 00000004
 transform [1] =
   right.x [1] =
-9.19113859e-07
+9.19113972e-07
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -338,7 +338,7 @@ transform [1] =
   front.y [1] =
 -0.00000000e+00
   front.z [1] =
-9.19109880e-07
+9.19109993e-07
   posit.x [1] =
 6.44494751e+02
   posit.y [1] =
@@ -417,11 +417,11 @@ false
 objAddr = 00000005
 transform [1] =
   right.x [1] =
--2.68242508e-01
+-2.68242449e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
-9.63347018e-01
+9.63346899e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -429,11 +429,11 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
--9.63342845e-01
+-9.63342726e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--2.68241346e-01
+-2.68241286e-01
   posit.x [1] =
 7.00832886e+02
   posit.y [1] =
@@ -619,7 +619,7 @@ false
 objAddr = 00000007
 transform [1] =
   right.x [1] =
--3.49891812e-01
+-3.49891782e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -635,7 +635,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--3.49890292e-01
+-3.49890262e-01
   posit.x [1] =
 8.65186646e+02
   posit.y [1] =
@@ -1580,7 +1580,7 @@ false
 objAddr = 00000012
 transform [1] =
   right.x [1] =
--8.44125390e-01
+-8.44125271e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -1596,7 +1596,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--8.44121695e-01
+-8.44121575e-01
   posit.x [1] =
 6.24328857e+02
   posit.y [1] =
@@ -1681,7 +1681,7 @@ false
 objAddr = 00000013
 transform [1] =
   right.x [1] =
--3.54278922e-01
+-3.54278833e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -1697,7 +1697,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--3.54277372e-01
+-3.54277283e-01
   posit.x [1] =
 6.23089966e+02
   posit.y [1] =
@@ -5179,7 +5179,7 @@ euler =
 0.00000000e+00
 name = Gun Tower
 saveFlags [1] =
-4
+12
 isVisible [1] =
 65535
 EffectsMask [1] =
@@ -5188,12 +5188,6 @@ isSeen [1] =
 4
 groupNumber [1] =
 0
-curHealth [1] =
-6.25000000e+03
-maxHealth [1] =
-6.25000000e+03
-addHealth [1] =
-0.00000000e+00
 undefaicmd =
 priority [1] =
 1
@@ -5290,7 +5284,7 @@ euler =
 0.00000000e+00
 name = Gun Tower
 saveFlags [1] =
-4
+12
 isVisible [1] =
 65535
 EffectsMask [1] =
@@ -5299,12 +5293,6 @@ isSeen [1] =
 4
 groupNumber [1] =
 0
-curHealth [1] =
-6.25000000e+03
-maxHealth [1] =
-6.25000000e+03
-addHealth [1] =
-0.00000000e+00
 undefaicmd =
 priority [1] =
 1
@@ -5401,7 +5389,7 @@ euler =
 0.00000000e+00
 name = Gun Tower
 saveFlags [1] =
-4
+12
 isVisible [1] =
 65535
 EffectsMask [1] =
@@ -5410,12 +5398,6 @@ isSeen [1] =
 4
 groupNumber [1] =
 0
-curHealth [1] =
-6.25000000e+03
-maxHealth [1] =
-6.25000000e+03
-addHealth [1] =
-0.00000000e+00
 undefaicmd =
 priority [1] =
 1
@@ -5512,7 +5494,7 @@ euler =
 0.00000000e+00
 name = Gun Tower
 saveFlags [1] =
-4
+12
 isVisible [1] =
 65535
 EffectsMask [1] =
@@ -5521,12 +5503,6 @@ isSeen [1] =
 4
 groupNumber [1] =
 0
-curHealth [1] =
-6.25000000e+03
-maxHealth [1] =
-6.25000000e+03
-addHealth [1] =
-0.00000000e+00
 undefaicmd =
 priority [1] =
 1
@@ -5623,7 +5599,7 @@ euler =
 0.00000000e+00
 name = Gun Tower
 saveFlags [1] =
-4
+12
 isVisible [1] =
 65535
 EffectsMask [1] =
@@ -5632,12 +5608,6 @@ isSeen [1] =
 4
 groupNumber [1] =
 0
-curHealth [1] =
-6.25000000e+03
-maxHealth [1] =
-6.25000000e+03
-addHealth [1] =
-0.00000000e+00
 undefaicmd =
 priority [1] =
 1
@@ -7820,17 +7790,17 @@ illumination [1] =
 1.00000000e+00
 euler =
  mass [1] =
-1.29514140e+07
+1.29514120e+07
  mass_inv [1] =
-7.72116451e-08
+7.72116593e-08
  v_mag [1] =
 0.00000000e+00
  v_mag_inv [1] =
 1.00000002e+30
  I [1] =
-1.19046861e+10
+1.19046820e+10
  k_i [1] =
-8.40005357e-11
+8.40005634e-11
  v [1] =
   x [1] =
 0.00000000e+00
@@ -8287,7 +8257,7 @@ false
 objAddr = 00000057
 transform [1] =
   right.x [1] =
-9.99995649e-01
+9.99995768e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -8303,7 +8273,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
-9.99991298e-01
+9.99991417e-01
   posit.x [1] =
 5.44032776e+02
   posit.y [1] =
@@ -8382,7 +8352,7 @@ false
 objAddr = 00000058
 transform [1] =
   right.x [1] =
-9.99995649e-01
+9.99995768e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -8398,7 +8368,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
-9.99991298e-01
+9.99991417e-01
   posit.x [1] =
 6.55797485e+02
   posit.y [1] =
@@ -8477,7 +8447,7 @@ false
 objAddr = 00000059
 transform [1] =
   right.x [1] =
-9.99995649e-01
+9.99995768e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -8493,7 +8463,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
-9.99991298e-01
+9.99991417e-01
   posit.x [1] =
 5.59413391e+02
   posit.y [1] =
@@ -8572,7 +8542,7 @@ false
 objAddr = 0000005A
 transform [1] =
   right.x [1] =
-9.99995649e-01
+9.99995768e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -8588,7 +8558,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
-9.99991298e-01
+9.99991417e-01
   posit.x [1] =
 7.19335083e+02
   posit.y [1] =
@@ -8667,7 +8637,7 @@ false
 objAddr = 0000005B
 transform [1] =
   right.x [1] =
-9.99995649e-01
+9.99995768e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -8683,7 +8653,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
-9.99991298e-01
+9.99991417e-01
   posit.x [1] =
 5.59797485e+02
   posit.y [1] =
@@ -8762,7 +8732,7 @@ false
 objAddr = 0000005C
 transform [1] =
   right.x [1] =
-9.99995649e-01
+9.99995768e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -8778,7 +8748,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
-9.99991298e-01
+9.99991417e-01
   posit.x [1] =
 4.30225281e+02
   posit.y [1] =
@@ -8857,7 +8827,7 @@ false
 objAddr = 0000005D
 transform [1] =
   right.x [1] =
-9.99995649e-01
+9.99995768e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -8873,7 +8843,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
-9.99991298e-01
+9.99991417e-01
   posit.x [1] =
 8.15797485e+02
   posit.y [1] =
@@ -8952,7 +8922,7 @@ false
 objAddr = 0000005E
 transform [1] =
   right.x [1] =
-9.99995649e-01
+9.99995768e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -8968,7 +8938,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
-9.99991298e-01
+9.99991417e-01
   posit.x [1] =
 7.60302063e+02
   posit.y [1] =
@@ -9342,7 +9312,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--8.30476880e-01
+-8.30476999e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -9350,7 +9320,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-8.30473244e-01
+8.30473363e-01
   front.y [1] =
 -0.00000000e+00
   front.z [1] =
@@ -9439,7 +9409,7 @@ false
 objAddr = 00000063
 transform [1] =
   right.x [1] =
--5.21401167e-01
+-5.21401107e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -9455,7 +9425,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--5.21398902e-01
+-5.21398842e-01
   posit.x [1] =
 -5.42149963e+01
   posit.y [1] =
@@ -9579,7 +9549,7 @@ transform [1] =
   right.y [1] =
 -6.24920474e-03
   right.z [1] =
-2.31428367e-05
+2.31428330e-05
   up.x [1] =
 6.24922710e-03
   up.y [1] =
@@ -9587,7 +9557,7 @@ transform [1] =
   up.z [1] =
 -6.24922616e-03
   front.x [1] =
-1.59108622e-05
+1.59108658e-05
   front.y [1] =
 6.24922151e-03
   front.z [1] =
@@ -9858,7 +9828,7 @@ false
 objAddr = 00000068
 transform [1] =
   right.x [1] =
-9.42675412e-01
+9.42675531e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -9874,7 +9844,7 @@ transform [1] =
   front.y [1] =
 -0.00000000e+00
   front.z [1] =
-9.42671299e-01
+9.42671418e-01
   posit.x [1] =
 -9.15458801e+02
   posit.y [1] =
@@ -11432,7 +11402,7 @@ false
 objAddr = 00000078
 transform [1] =
   right.x [1] =
--2.15721071e-01
+-2.15721041e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -11448,7 +11418,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--2.15720132e-01
+-2.15720102e-01
   posit.x [1] =
 9.51883423e+02
   posit.y [1] =
@@ -11527,11 +11497,11 @@ false
 objAddr = 00000079
 transform [1] =
   right.x [1] =
-8.67033780e-01
+8.67033839e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--4.98240769e-01
+-4.98240709e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -11539,11 +11509,11 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-4.98238593e-01
+4.98238534e-01
   front.y [1] =
 -0.00000000e+00
   front.z [1] =
-8.67030025e-01
+8.67030084e-01
   posit.x [1] =
 9.38430908e+02
   posit.y [1] =
@@ -11626,7 +11596,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
-9.48183894e-01
+9.48183835e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -11634,7 +11604,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
--9.48179781e-01
+-9.48179722e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -11721,7 +11691,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
-9.48183894e-01
+9.48183835e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -11729,7 +11699,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
--9.48179781e-01
+-9.48179722e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -12097,7 +12067,7 @@ false
 objAddr = 0000007F
 transform [1] =
   right.x [1] =
--4.09982726e-03
+-4.09982819e-03
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -12113,7 +12083,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--4.09980956e-03
+-4.09981050e-03
   posit.x [1] =
 -2.61860474e+02
   posit.y [1] =
@@ -12196,7 +12166,7 @@ transform [1] =
   right.y [1] =
 -0.00000000e+00
   right.z [1] =
-4.49835926e-01
+4.49835867e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -12204,7 +12174,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
--4.49833959e-01
+-4.49833900e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -16216,17 +16186,17 @@ illumination [1] =
 1.00000000e+00
 euler =
  mass [1] =
-3.44734080e+07
+3.44733960e+07
  mass_inv [1] =
-2.90078663e-08
+2.90078770e-08
  v_mag [1] =
 0.00000000e+00
  v_mag_inv [1] =
 1.00000002e+30
  I [1] =
-6.15951852e+10
+6.15951647e+10
  k_i [1] =
-1.62350359e-11
+1.62350411e-11
  v [1] =
   x [1] =
 0.00000000e+00
@@ -17252,11 +17222,11 @@ false
 objAddr = 000000B5
 transform [1] =
   right.x [1] =
--3.07275444e-01
+-3.07275325e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--9.51616168e-01
+-9.51616049e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -17264,11 +17234,11 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-9.51612055e-01
+9.51611936e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--3.07274103e-01
+-3.07273984e-01
   posit.x [1] =
 -8.27061707e+02
   posit.y [1] =
@@ -17347,11 +17317,11 @@ false
 objAddr = 000000B6
 transform [1] =
   right.x [1] =
--3.07275444e-01
+-3.07275325e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--9.51616168e-01
+-9.51616049e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -17359,11 +17329,11 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-9.51612055e-01
+9.51611936e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--3.07274103e-01
+-3.07273984e-01
   posit.x [1] =
 -8.56762146e+02
   posit.y [1] =
@@ -18107,7 +18077,7 @@ false
 objAddr = 000000BE
 transform [1] =
   right.x [1] =
--6.45587295e-02
+-6.45587146e-02
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -18123,7 +18093,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--6.45584464e-02
+-6.45584315e-02
   posit.x [1] =
 -2.44807739e+01
   posit.y [1] =
@@ -18392,7 +18362,7 @@ false
 objAddr = 000000C1
 transform [1] =
   right.x [1] =
--5.60536265e-01
+-5.60536206e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -18408,7 +18378,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--5.60533822e-01
+-5.60533762e-01
   posit.x [1] =
 -3.85158020e+02
   posit.y [1] =
@@ -18487,7 +18457,7 @@ false
 objAddr = 000000C2
 transform [1] =
   right.x [1] =
--5.60536265e-01
+-5.60536206e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -18503,7 +18473,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--5.60533822e-01
+-5.60533762e-01
   posit.x [1] =
 -5.64080811e+02
   posit.y [1] =
@@ -18582,7 +18552,7 @@ false
 objAddr = 000000C3
 transform [1] =
   right.x [1] =
--5.60536265e-01
+-5.60536206e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -18598,7 +18568,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--5.60533822e-01
+-5.60533762e-01
   posit.x [1] =
 -1.04242700e+03
   posit.y [1] =
@@ -18681,7 +18651,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
-5.26591063e-01
+5.26591182e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -18689,7 +18659,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
--5.26588798e-01
+-5.26588917e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -18776,7 +18746,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
-5.26591063e-01
+5.26591182e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -18784,7 +18754,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
--5.26588798e-01
+-5.26588917e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -19441,7 +19411,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--3.59344661e-01
+-3.59344721e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -19449,7 +19419,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-3.59343112e-01
+3.59343171e-01
   front.y [1] =
 -0.00000000e+00
   front.z [1] =
@@ -19536,7 +19506,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--3.59344661e-01
+-3.59344721e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -19544,7 +19514,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-3.59343112e-01
+3.59343171e-01
   front.y [1] =
 -0.00000000e+00
   front.z [1] =
@@ -19631,7 +19601,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--3.59344661e-01
+-3.59344721e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -19639,7 +19609,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-3.59343112e-01
+3.59343171e-01
   front.y [1] =
 -0.00000000e+00
   front.z [1] =
@@ -19726,7 +19696,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
-4.05982345e-01
+4.05982435e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -19734,7 +19704,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
--4.05980587e-01
+-4.05980676e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -19817,7 +19787,7 @@ false
 objAddr = 000000D0
 transform [1] =
   right.x [1] =
-8.17865431e-01
+8.17865372e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -19833,7 +19803,7 @@ transform [1] =
   front.y [1] =
 -0.00000000e+00
   front.z [1] =
-8.17861855e-01
+8.17861795e-01
   posit.x [1] =
 -6.44357910e+02
   posit.y [1] =
@@ -20197,7 +20167,7 @@ false
 objAddr = 000000D4
 transform [1] =
   right.x [1] =
--1.76606983e-01
+-1.76606953e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -20213,7 +20183,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--1.76606208e-01
+-1.76606178e-01
   posit.x [1] =
 -8.43522278e+02
   posit.y [1] =
@@ -20391,7 +20361,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--7.24692881e-01
+-7.24692762e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -20399,33 +20369,33 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-7.24689722e-01
+7.24689603e-01
   front.y [1] =
 -0.00000000e+00
   front.z [1] =
 6.89062834e-01
   posit.x [1] =
--5.60685059e+02
+-5.11391327e+02
   posit.y [1] =
-3.74046478e+01
+4.20883179e+01
   posit.z [1] =
--9.67472046e+02
+-1.00330304e+03
 saveClass = 
 illumination [1] =
 1.00000000e+00
 euler =
  mass [1] =
-2.71077089e+10
+2.71077028e+10
  mass_inv [1] =
-3.68898766e-11
+3.68898835e-11
  v_mag [1] =
 0.00000000e+00
  v_mag_inv [1] =
 1.00000002e+30
  I [1] =
-5.11396763e+15
+5.11396548e+15
  k_i [1] =
-1.95542890e-16
+1.95542969e-16
  v [1] =
   x [1] =
 0.00000000e+00
@@ -20449,7 +20419,7 @@ euler =
 0.00000000e+00
 name = carrier
 saveFlags [1] =
-100
+108
 isVisible [1] =
 65535
 EffectsMask [1] =
@@ -20458,12 +20428,6 @@ isSeen [1] =
 0
 groupNumber [1] =
 0
-curHealth [1] =
-4.99600000e+04
-maxHealth [1] =
-5.00000000e+04
-addHealth [1] =
-0.00000000e+00
 undefaicmd =
 priority [1] =
 0
@@ -22314,7 +22278,7 @@ false
 objAddr = 000000E9
 transform [1] =
   right.x [1] =
-1.70107812e-01
+1.70107782e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -22330,7 +22294,7 @@ transform [1] =
   front.y [1] =
 -0.00000000e+00
   front.z [1] =
-1.70107067e-01
+1.70107037e-01
   posit.x [1] =
 9.12232117e+02
   posit.y [1] =
@@ -22504,7 +22468,7 @@ false
 objAddr = 000000EB
 transform [1] =
   right.x [1] =
--1.73526913e-01
+-1.73526883e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -22520,7 +22484,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--1.73526153e-01
+-1.73526123e-01
   posit.x [1] =
 6.88050598e+02
   posit.y [1] =
@@ -22599,7 +22563,7 @@ false
 objAddr = 000000EC
 transform [1] =
   right.x [1] =
--1.73526913e-01
+-1.73526883e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -22615,7 +22579,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--1.73526153e-01
+-1.73526123e-01
   posit.x [1] =
 7.52186401e+02
   posit.y [1] =
@@ -22698,7 +22662,7 @@ transform [1] =
   right.y [1] =
 -0.00000000e+00
   right.z [1] =
-1.86581135e-01
+1.86581179e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -22706,7 +22670,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
--1.86580330e-01
+-1.86580375e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -22888,7 +22852,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--1.06381781e-01
+-1.06381796e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -22896,7 +22860,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-1.06381319e-01
+1.06381334e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -26318,7 +26282,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
-2.49763176e-01
+2.49763206e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -26326,7 +26290,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
--2.49762088e-01
+-2.49762118e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -26413,7 +26377,7 @@ transform [1] =
   right.y [1] =
 -0.00000000e+00
   right.z [1] =
-1.05836034e-01
+1.05836041e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -26421,7 +26385,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
--1.05835572e-01
+-1.05835579e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -26504,7 +26468,7 @@ false
 objAddr = 00000113
 transform [1] =
   right.x [1] =
--2.02828079e-01
+-2.02828065e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -26520,7 +26484,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--2.02827200e-01
+-2.02827185e-01
   posit.x [1] =
 8.15622803e+02
   posit.y [1] =
@@ -28079,11 +28043,11 @@ false
 objAddr = 00000125
 transform [1] =
   right.x [1] =
-7.76450038e-01
+7.76449919e-01
   right.y [1] =
--3.65651189e-03
+-3.65650118e-03
   right.z [1] =
--6.30161405e-01
+-6.30161524e-01
   up.x [1] =
 5.84928058e-02
   up.y [1] =
@@ -28091,17 +28055,17 @@ transform [1] =
   up.z [1] =
 6.62918538e-02
   front.x [1] =
-6.27448738e-01
+6.27448857e-01
   front.y [1] =
 -8.83322209e-02
   front.z [1] =
-7.73620188e-01
+7.73620069e-01
   posit.x [1] =
--4.34013977e+02
+-4.76201904e+02
   posit.y [1] =
-3.80287476e+01
+3.99039268e+01
   posit.z [1] =
--8.87898254e+02
+-9.34521606e+02
 state = 00000000
 abandoned [1] =
 0
@@ -30136,7 +30100,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--1.42557815e-01
+-1.42557770e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -30144,7 +30108,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-1.42557189e-01
+1.42557144e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -30241,7 +30205,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--1.42557815e-01
+-1.42557770e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -30249,7 +30213,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-1.42557189e-01
+1.42557144e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -30346,7 +30310,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--1.42557815e-01
+-1.42557770e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -30354,7 +30318,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-1.42557189e-01
+1.42557144e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -30451,7 +30415,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--1.42557815e-01
+-1.42557770e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -30459,7 +30423,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-1.42557189e-01
+1.42557144e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -30556,7 +30520,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--1.42557815e-01
+-1.42557770e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -30564,7 +30528,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-1.42557189e-01
+1.42557144e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -30661,7 +30625,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--1.42557815e-01
+-1.42557770e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -30669,7 +30633,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-1.42557189e-01
+1.42557144e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -30766,7 +30730,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--1.42557815e-01
+-1.42557770e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -30774,7 +30738,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-1.42557189e-01
+1.42557144e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -30871,7 +30835,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--1.42557815e-01
+-1.42557770e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -30879,7 +30843,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-1.42557189e-01
+1.42557144e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -31256,7 +31220,7 @@ false
 objAddr = 00000145
 transform [1] =
   right.x [1] =
-1.66373774e-01
+1.66373745e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
@@ -31272,7 +31236,7 @@ transform [1] =
   front.y [1] =
 -0.00000000e+00
   front.z [1] =
-1.66373044e-01
+1.66373014e-01
   posit.x [1] =
 -1.86283707e+02
   posit.y [1] =
@@ -31355,7 +31319,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
-5.59415400e-01
+5.59415460e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -31363,7 +31327,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
--5.59412956e-01
+-5.59413016e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -31735,7 +31699,7 @@ transform [1] =
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--5.03391027e-01
+-5.03390908e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -31743,7 +31707,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-5.03388822e-01
+5.03388703e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -31830,7 +31794,7 @@ transform [1] =
   right.y [1] =
 -0.00000000e+00
   right.z [1] =
-7.34683335e-01
+7.34683454e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -31838,7 +31802,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
--7.34680116e-01
+-7.34680235e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -31925,7 +31889,7 @@ transform [1] =
   right.y [1] =
 -0.00000000e+00
   right.z [1] =
-7.34683335e-01
+7.34683454e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -31933,7 +31897,7 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
--7.34680116e-01
+-7.34680235e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
@@ -32111,7 +32075,7 @@ false
 objAddr = 0000014E
 transform [1] =
   right.x [1] =
-2.50592172e-01
+2.50592142e-01
   right.y [1] =
 -0.00000000e+00
   right.z [1] =
@@ -32127,7 +32091,7 @@ transform [1] =
   front.y [1] =
 0.00000000e+00
   front.z [1] =
-2.50591069e-01
+2.50591040e-01
   posit.x [1] =
 -9.84590393e+02
   posit.y [1] =
@@ -32586,11 +32550,11 @@ false
 objAddr = 00000153
 transform [1] =
   right.x [1] =
-6.62599325e-01
+6.62599444e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--7.48968303e-01
+-7.48968184e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -32598,11 +32562,11 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-7.48965025e-01
+7.48964906e-01
   front.y [1] =
 -0.00000000e+00
   front.z [1] =
-6.62596464e-01
+6.62596583e-01
   posit.x [1] =
 -8.93866333e+02
   posit.y [1] =
@@ -32681,11 +32645,11 @@ false
 objAddr = 00000154
 transform [1] =
   right.x [1] =
-6.62599325e-01
+6.62599444e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
--7.48968303e-01
+-7.48968184e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -32693,11 +32657,11 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
-7.48965025e-01
+7.48964906e-01
   front.y [1] =
 -0.00000000e+00
   front.z [1] =
-6.62596464e-01
+6.62596583e-01
   posit.x [1] =
 -8.06834106e+02
   posit.y [1] =
@@ -32776,11 +32740,11 @@ false
 objAddr = 00000155
 transform [1] =
   right.x [1] =
--7.40186036e-01
+-7.40186095e-01
   right.y [1] =
 0.00000000e+00
   right.z [1] =
-6.72395647e-01
+6.72395706e-01
   up.x [1] =
 0.00000000e+00
   up.y [1] =
@@ -32788,11 +32752,11 @@ transform [1] =
   up.z [1] =
 0.00000000e+00
   front.x [1] =
--6.72392726e-01
+-6.72392786e-01
   front.y [1] =
 0.00000000e+00
   front.z [1] =
--7.40182817e-01
+-7.40182877e-01
   posit.x [1] =
 -8.95775940e+02
   posit.y [1] =
@@ -34163,6 +34127,27 @@ name = AiPath
 sObject = 0000016A
 size [1] =
 7
+label = Patrol1
+pointCount [1] =
+3
+points [3] =
+  x [1] =
+4.05326630e+02
+  z [1] =
+-4.21570648e+02
+  x [1] =
+5.57922607e+02
+  z [1] =
+-4.21599457e+02
+  x [1] =
+5.57922607e+02
+  z [1] =
+-5.96106934e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000016B
+size [1] =
+7
 label = Follow3
 pointCount [1] =
 10
@@ -34209,7 +34194,20 @@ points [10] =
 -7.39387634e+02
 pathType = 00000000
 name = AiPath
-sObject = 0000016B
+sObject = 0000016C
+size [1] =
+11
+label = UnallyPoint
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+4.30056824e+02
+  z [1] =
+4.23404938e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000016D
 size [1] =
 7
 label = Follow2
@@ -34242,85 +34240,7 @@ points [6] =
 2.29895233e+02
 pathType = 00000000
 name = AiPath
-sObject = 0000016C
-size [1] =
-5
-label = Cerb4
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-6.36454651e+02
-  z [1] =
-9.05526245e+02
-pathType = 00000000
-name = AiPath
-sObject = 0000016D
-size [1] =
-7
-label = Escort1
-pointCount [1] =
-1
-points [1] =
-  x [1] =
--8.62129944e+02
-  z [1] =
-4.60093689e+02
-pathType = 00000000
-name = AiPath
 sObject = 0000016E
-size [1] =
-5
-label = Cerb1
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-5.74427734e+02
-  z [1] =
-9.04083801e+02
-pathType = 00000000
-name = AiPath
-sObject = 0000016F
-size [1] =
-8
-label = Recycler
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-5.86688904e+02
-  z [1] =
-9.30769775e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000170
-size [1] =
-5
-label = Cerb3
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-6.14096130e+02
-  z [1] =
-9.05165649e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000171
-size [1] =
-11
-label = UnallyPoint
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-4.30056824e+02
-  z [1] =
-4.23404938e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000172
 size [1] =
 7
 label = Follow4
@@ -34361,28 +34281,7 @@ points [8] =
 -8.72755676e+02
 pathType = 00000000
 name = AiPath
-sObject = 00000173
-size [1] =
-7
-label = Patrol1
-pointCount [1] =
-3
-points [3] =
-  x [1] =
-4.05326630e+02
-  z [1] =
--4.21570648e+02
-  x [1] =
-5.57922607e+02
-  z [1] =
--4.21599457e+02
-  x [1] =
-5.57922607e+02
-  z [1] =
--5.96106934e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000174
+sObject = 0000016F
 size [1] =
 7
 label = Escort4
@@ -34395,7 +34294,33 @@ points [1] =
 -7.42906921e+02
 pathType = 00000000
 name = AiPath
-sObject = 00000175
+sObject = 00000170
+size [1] =
+12
+label = SoldierDest6
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+5.97056213e+02
+  z [1] =
+-4.31542145e+02
+pathType = 00000000
+name = AiPath
+sObject = 00000171
+size [1] =
+5
+label = Cerb4
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+6.36454651e+02
+  z [1] =
+9.05526245e+02
+pathType = 00000000
+name = AiPath
+sObject = 00000172
 size [1] =
 13
 label = TurretFriend1
@@ -34408,7 +34333,72 @@ points [1] =
 -4.72677582e+02
 pathType = 00000000
 name = AiPath
+sObject = 00000173
+size [1] =
+7
+label = Escort1
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+-8.62129944e+02
+  z [1] =
+4.60093689e+02
+pathType = 00000000
+name = AiPath
+sObject = 00000174
+size [1] =
+5
+label = Cerb1
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+5.74427734e+02
+  z [1] =
+9.04083801e+02
+pathType = 00000000
+name = AiPath
+sObject = 00000175
+size [1] =
+8
+label = Recycler
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+5.86688904e+02
+  z [1] =
+9.30769775e+02
+pathType = 00000000
+name = AiPath
 sObject = 00000176
+size [1] =
+5
+label = Cerb3
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+6.14096130e+02
+  z [1] =
+9.05165649e+02
+pathType = 00000000
+name = AiPath
+sObject = 00000177
+size [1] =
+13
+label = TurretFriend2
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+3.92274902e+02
+  z [1] =
+-4.27493103e+02
+pathType = 00000000
+name = AiPath
+sObject = 00000178
 size [1] =
 12
 label = MeetRecycler
@@ -34441,228 +34431,7 @@ points [6] =
 9.82699219e+02
 pathType = 00000000
 name = AiPath
-sObject = 00000177
-size [1] =
-12
-label = TowerFriend1
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-2.67916229e+02
-  z [1] =
--5.05661530e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000178
-size [1] =
-11
-label = TowerEnemy4
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-5.59671326e+02
-  z [1] =
-8.48544617e+02
-pathType = 00000000
-name = AiPath
 sObject = 00000179
-size [1] =
-12
-label = TowerFriend3
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-3.20167786e+02
-  z [1] =
--4.53409973e+02
-pathType = 00000000
-name = AiPath
-sObject = 0000017A
-size [1] =
-14
-label = RecyclerDeploy
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-2.51923721e+02
-  z [1] =
--4.45508881e+02
-pathType = 00000000
-name = AiPath
-sObject = 0000017B
-size [1] =
-11
-label = TowerEnemy3
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-4.64169189e+02
-  z [1] =
-9.44376282e+02
-pathType = 00000000
-name = AiPath
-sObject = 0000017C
-size [1] =
-11
-label = TowerEnemy1
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-6.27181396e+02
-  z [1] =
-1.03987842e+03
-pathType = 00000000
-name = AiPath
-sObject = 0000017D
-size [1] =
-13
-label = TurretFriend2
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-3.92274902e+02
-  z [1] =
--4.27493103e+02
-pathType = 00000000
-name = AiPath
-sObject = 0000017E
-size [1] =
-12
-label = SoldierDest6
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-5.97056213e+02
-  z [1] =
--4.31542145e+02
-pathType = 00000000
-name = AiPath
-sObject = 0000017F
-size [1] =
-12
-label = TowerFriend2
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-3.17032684e+02
-  z [1] =
--5.02526428e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000180
-size [1] =
-12
-label = SoldierDest3
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-5.97693604e+02
-  z [1] =
--4.56398926e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000181
-size [1] =
-12
-label = SoldierDest7
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-5.97693604e+02
-  z [1] =
--4.23893890e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000182
-size [1] =
-12
-label = SoldierDest2
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-5.97693604e+02
-  z [1] =
--4.65321869e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000183
-size [1] =
-11
-label = TowerEnemy2
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-5.29209412e+02
-  z [1] =
-1.04317151e+03
-pathType = 00000000
-name = AiPath
-sObject = 00000184
-size [1] =
-12
-label = SoldierDest1
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-5.97693604e+02
-  z [1] =
--4.75519531e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000185
-size [1] =
-12
-label = SoldierDest4
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-5.98330933e+02
-  z [1] =
--4.47475983e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000186
-size [1] =
-5
-label = Mine6
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-8.23236755e+02
-  z [1] =
--7.43610596e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000187
-size [1] =
-11
-label = TowerEnemy0
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-6.87281860e+02
-  z [1] =
-1.00859320e+03
-pathType = 00000000
-name = AiPath
-sObject = 00000188
 size [1] =
 11
 label = SoldierMeet
@@ -34675,7 +34444,124 @@ points [1] =
 -7.14800049e+02
 pathType = 00000000
 name = AiPath
-sObject = 00000189
+sObject = 0000017A
+size [1] =
+12
+label = TowerFriend2
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+3.17032684e+02
+  z [1] =
+-5.02526428e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000017B
+size [1] =
+12
+label = SoldierDest3
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+5.97693604e+02
+  z [1] =
+-4.56398926e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000017C
+size [1] =
+12
+label = TowerFriend1
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+2.67916229e+02
+  z [1] =
+-5.05661530e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000017D
+size [1] =
+11
+label = TowerEnemy4
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+5.59671326e+02
+  z [1] =
+8.48544617e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000017E
+size [1] =
+12
+label = TowerFriend3
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+3.20167786e+02
+  z [1] =
+-4.53409973e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000017F
+size [1] =
+14
+label = RecyclerDeploy
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+2.51923721e+02
+  z [1] =
+-4.45508881e+02
+pathType = 00000000
+name = AiPath
+sObject = 00000180
+size [1] =
+11
+label = TowerEnemy3
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+4.64169189e+02
+  z [1] =
+9.44376282e+02
+pathType = 00000000
+name = AiPath
+sObject = 00000181
+size [1] =
+11
+label = TowerEnemy1
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+6.27181396e+02
+  z [1] =
+1.03987842e+03
+pathType = 00000000
+name = AiPath
+sObject = 00000182
+size [1] =
+11
+label = TowerEnemy0
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+6.87281860e+02
+  z [1] =
+1.00859320e+03
+pathType = 00000000
+name = AiPath
+sObject = 00000183
 size [1] =
 13
 label = DroneCarrier1
@@ -34688,7 +34574,33 @@ points [1] =
 -6.23768372e+02
 pathType = 00000000
 name = AiPath
-sObject = 0000018A
+sObject = 00000184
+size [1] =
+6
+label = Mine10
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+8.25496399e+02
+  z [1] =
+-7.31182495e+02
+pathType = 00000000
+name = AiPath
+sObject = 00000185
+size [1] =
+12
+label = SoldierDest7
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+5.97693604e+02
+  z [1] =
+-4.23893890e+02
+pathType = 00000000
+name = AiPath
+sObject = 00000186
 size [1] =
 5
 label = Mine7
@@ -34701,7 +34613,85 @@ points [1] =
 -7.16843445e+02
 pathType = 00000000
 name = AiPath
+sObject = 00000187
+size [1] =
+12
+label = SoldierDest2
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+5.97693604e+02
+  z [1] =
+-4.65321869e+02
+pathType = 00000000
+name = AiPath
+sObject = 00000188
+size [1] =
+11
+label = TowerEnemy2
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+5.29209412e+02
+  z [1] =
+1.04317151e+03
+pathType = 00000000
+name = AiPath
+sObject = 00000189
+size [1] =
+12
+label = SoldierDest1
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+5.97693604e+02
+  z [1] =
+-4.75519531e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000018A
+size [1] =
+12
+label = SoldierDest4
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+5.98330933e+02
+  z [1] =
+-4.47475983e+02
+pathType = 00000000
+name = AiPath
 sObject = 0000018B
+size [1] =
+5
+label = Mine6
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+8.23236755e+02
+  z [1] =
+-7.43610596e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000018C
+size [1] =
+5
+label = Mine9
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+7.79738464e+02
+  z [1] =
+-7.04631592e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000018D
 size [1] =
 12
 label = Investigate1
@@ -34714,7 +34704,46 @@ points [1] =
 -8.55316467e+02
 pathType = 00000000
 name = AiPath
-sObject = 0000018C
+sObject = 0000018E
+size [1] =
+12
+label = RecyclerNext
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+4.19824738e+02
+  z [1] =
+-4.53784454e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000018F
+size [1] =
+5
+label = Mine0
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+7.91036682e+02
+  z [1] =
+-7.20449158e+02
+pathType = 00000000
+name = AiPath
+sObject = 00000190
+size [1] =
+5
+label = Bolt2
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+7.74817566e+02
+  z [1] =
+8.82222046e+02
+pathType = 00000000
+name = AiPath
+sObject = 00000191
 size [1] =
 5
 label = Mine2
@@ -34727,7 +34756,20 @@ points [1] =
 -7.25533386e+02
 pathType = 00000000
 name = AiPath
-sObject = 0000018D
+sObject = 00000192
+size [1] =
+12
+label = SoldierDest5
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+5.97056213e+02
+  z [1] =
+-4.39827728e+02
+pathType = 00000000
+name = AiPath
+sObject = 00000193
 size [1] =
 5
 label = Mine5
@@ -34740,7 +34782,7 @@ points [1] =
 -6.91454041e+02
 pathType = 00000000
 name = AiPath
-sObject = 0000018E
+sObject = 00000194
 size [1] =
 5
 label = Mine3
@@ -34753,7 +34795,7 @@ points [1] =
 -7.34572021e+02
 pathType = 00000000
 name = AiPath
-sObject = 0000018F
+sObject = 00000195
 size [1] =
 7
 label = Follow5
@@ -34786,7 +34828,7 @@ points [6] =
 -7.38303345e+02
 pathType = 00000000
 name = AiPath
-sObject = 00000190
+sObject = 00000196
 size [1] =
 5
 label = mine4
@@ -34799,163 +34841,7 @@ points [1] =
 -6.91073669e+02
 pathType = 00000000
 name = AiPath
-sObject = 00000191
-size [1] =
-5
-label = Mine9
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-7.79738464e+02
-  z [1] =
--7.04631592e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000192
-size [1] =
-12
-label = RecyclerNext
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-4.19824738e+02
-  z [1] =
--4.53784454e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000193
-size [1] =
-6
-label = Mine10
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-8.25496399e+02
-  z [1] =
--7.31182495e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000194
-size [1] =
-5
-label = Mine0
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-7.91036682e+02
-  z [1] =
--7.20449158e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000195
-size [1] =
-12
-label = SoldierDest5
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-5.97056213e+02
-  z [1] =
--4.39827728e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000196
-size [1] =
-5
-label = Mine1
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-8.09457275e+02
-  z [1] =
--6.97378235e+02
-pathType = 00000000
-name = AiPath
 sObject = 00000197
-size [1] =
-12
-label = StagePoint1B
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-4.15092651e+02
-  z [1] =
-5.63332947e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000198
-size [1] =
-12
-label = StagePoint3B
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-4.73761383e+02
-  z [1] =
-5.51977722e+02
-pathType = 00000000
-name = AiPath
-sObject = 00000199
-size [1] =
-12
-label = StagePoint2B
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-4.43480743e+02
-  z [1] =
-5.58790894e+02
-pathType = 00000000
-name = AiPath
-sObject = 0000019A
-size [1] =
-5
-label = Mine8
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-8.02899902e+02
-  z [1] =
--7.43045715e+02
-pathType = 00000000
-name = AiPath
-sObject = 0000019B
-size [1] =
-5
-label = Bolt1
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-4.42320221e+02
-  z [1] =
-9.48315979e+02
-pathType = 00000000
-name = AiPath
-sObject = 0000019C
-size [1] =
-12
-label = SoldierDest0
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-5.97693604e+02
-  z [1] =
--4.86991882e+02
-pathType = 00000000
-name = AiPath
-sObject = 0000019D
 size [1] =
 7
 label = Patrol2
@@ -34984,33 +34870,20 @@ points [5] =
 -6.05307617e+02
 pathType = 00000000
 name = AiPath
-sObject = 0000019E
+sObject = 00000198
 size [1] =
 5
-label = Bolt2
+label = Mine1
 pointCount [1] =
 1
 points [1] =
   x [1] =
-7.74817566e+02
+8.09457275e+02
   z [1] =
-8.82222046e+02
+-6.97378235e+02
 pathType = 00000000
 name = AiPath
-sObject = 0000019F
-size [1] =
-5
-label = Bolt3
-pointCount [1] =
-1
-points [1] =
-  x [1] =
-7.91163757e+02
-  z [1] =
-9.39678833e+02
-pathType = 00000000
-name = AiPath
-sObject = 000001A0
+sObject = 00000199
 size [1] =
 5
 label = Bolt4
@@ -35023,7 +34896,20 @@ points [1] =
 8.70866943e+02
 pathType = 00000000
 name = AiPath
-sObject = 000001A1
+sObject = 0000019A
+size [1] =
+5
+label = Bolt3
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+7.91163757e+02
+  z [1] =
+9.39678833e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000019B
 size [1] =
 5
 label = Bolt5
@@ -35034,6 +34920,84 @@ points [1] =
 6.37291077e+02
   z [1] =
 8.59219421e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000019C
+size [1] =
+12
+label = StagePoint1B
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+4.15092651e+02
+  z [1] =
+5.63332947e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000019D
+size [1] =
+12
+label = StagePoint3B
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+4.73761383e+02
+  z [1] =
+5.51977722e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000019E
+size [1] =
+12
+label = StagePoint2B
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+4.43480743e+02
+  z [1] =
+5.58790894e+02
+pathType = 00000000
+name = AiPath
+sObject = 0000019F
+size [1] =
+5
+label = Mine8
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+8.02899902e+02
+  z [1] =
+-7.43045715e+02
+pathType = 00000000
+name = AiPath
+sObject = 000001A0
+size [1] =
+5
+label = Bolt1
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+4.42320221e+02
+  z [1] =
+9.48315979e+02
+pathType = 00000000
+name = AiPath
+sObject = 000001A1
+size [1] =
+12
+label = SoldierDest0
+pointCount [1] =
+1
+points [1] =
+  x [1] =
+5.97693604e+02
+  z [1] =
+-4.86991882e+02
 pathType = 00000000
 name = AiPath
 sObject = 000001A2
