@@ -92,8 +92,8 @@ function Invoke-FESetup {
 	New-Symlink $FeRepoDirectory $FeInstallDirectory\FERemastered
 
 	Write-Host "Copying Forgotten Enemies config..."
-	Copy-Item $FeRepoDirectory\baked\FE_RM_Config\FERM.cfg $FeInstallDirectory\FERM.cfg
-	Copy-Item $FeRepoDirectory\baked\FE_RM_Config\FERM_bake.cfg $FeInstallDirectory\FERM_bake.cfg
+	Copy-Item $FeRepoDirectory\FERM.cfg $FeInstallDirectory\FERM.cfg
+	Copy-Item $FeRepoDirectory\FERM_bake.cfg $FeInstallDirectory\FERM_bake.cfg
 	Copy-Item $FeRepoDirectory\steam_appid.txt $FeInstallDirectory\steam_appid.txt
 
 	Write-Host "Creating batch shortcuts..."
