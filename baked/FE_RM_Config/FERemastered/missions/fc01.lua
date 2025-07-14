@@ -24,6 +24,7 @@ local M = {
 	Routine10Active = false,
 	Routine11Active = false,
 	Routine14Active = true,
+	CorberSpaceDialogue = false,
 	
 -- Floats
 	Routine1Timer = 0.0,
@@ -413,7 +414,7 @@ function Routine1()
 			end
 		elseif M.Routine1State == 11 then
 			Goto(M.HadeanCommander, "Follow3", 0);
-			Follow(M.HadeanEscort2, M.HadeanCommander, 0);
+			Follow(M.HadeanEscort2, M.HadeanEscort1, 0);
 			M.HadeanEscort3 = BuildObject("evscout", 3, "Escort3");
 			GiveWeapon(M.HadeanEscort3, "gshellgun_c");
 			M.Routine1State = M.Routine1State + 1;
@@ -427,13 +428,20 @@ function Routine1()
 		elseif M.Routine1State == 13 then
 			if GetDistance(M.Player, M.HadeanCommander) < 60 then
 				Goto(M.HadeanCommander, "Follow4", 0);
-				Follow(M.HadeanEscort3, M.HadeanCommander, 0);
+				Follow(M.HadeanEscort3, M.HadeanEscort2, 0);
 				M.Routine1State = M.Routine1State + 1;
 				M.Routine1Timer = GetTime() + 8;
 			end
 		elseif M.Routine1State == 14 then
-			AudioMessage("fc01_04.wav");	--Corber:"These Space Hawks are heavily shielded sir..."
-			M.Routine1State = M.Routine1State + 1;
+			if (not M.CorberSpaceDialogue) then
+				AudioMessage("fc01_04.wav");	--Corber:"These Space Hawks are heavily shielded sir..."
+				M.CorberSpaceDialogue = true;
+			end
+
+			if (GetDistance(M.HadeanCommander, "TriggerFollow4B") < 10) then
+				Goto(M.HadeanCommander, "Follow4B", 0);
+				M.Routine1State = M.Routine1State + 1;
+			end
 		elseif M.Routine1State == 15 then	--LOC_72
 			if GetCurrentCommand(M.HadeanCommander) == 0 then
 				SetObjectiveName(M.EDFSteinman, "EDF Sgt. Steinman");
@@ -485,7 +493,7 @@ function Routine1()
 				M.Cerb3 = BuildObject("cvtank", 2 ,"Cerb3");
 				M.Cerb4 = BuildObject("cvscout", 2 ,"Cerb4");
 				Goto(M.HadeanCommander, "SoldierMeet", 0);
-				Follow(M.HadeanEscort4, M.HadeanCommander, 0);
+				Follow(M.HadeanEscort4, M.HadeanEscort3, 0);
 				RemoveObject(M.EDFSteinman);
 				ClearObjectives();
 				AddObjective("fc0112.otf", "white");
