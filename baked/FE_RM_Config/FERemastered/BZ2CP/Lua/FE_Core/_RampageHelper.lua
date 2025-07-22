@@ -6,7 +6,7 @@ Version 1.0 7-29-2023 --]]
 require('_GlobalHandler');
 require('_GlobalVariables');
 
-local _RampageUnits = {}
+local _Rampage = {}
 
 MAX_RAMPAGE_UNITS = 32
 
@@ -18,17 +18,19 @@ local Rampage = {
 	UnitsSpawned = 0,
 	Units = {},
  }
-  
-function _RampageUnits.Save()
+ 
+function _Rampage.Save()
     return 
 		Rampage;
 end
 
-function _RampageUnits.Load(RampageUnitData)	
-	Rampage = RampageUnitData;
+function _Rampage.Load(RampageData)	
+	Rampage = RampageData;
+	
+	print(RampageData);
 end
 
-function _RampageUnits.InitialSetup()
+function _Rampage.InitialSetup()
 
 	if IsNetworkOn() then
 		Rampage.UnitLimit = GetVarItemInt("network.session.ivar76"); --35
@@ -44,7 +46,7 @@ function _RampageUnits.InitialSetup()
 
 end
 
-function _RampageUnits.Start()
+function _Rampage.Start()
 
 	if Rampage.UnitLimit <= 0 then
 		return;
@@ -55,7 +57,7 @@ function _RampageUnits.Start()
 
 end
 
-function _RampageUnits.Update(NumHumans, Difficulty, siege_on, late_game)
+function _Rampage.Update(NumHumans, Difficulty, siege_on, late_game)
 
 	if Rampage.UnitLimit <= 0 then
 		return;
@@ -194,4 +196,4 @@ function SpawnRampage(RampageUnit, RampageCurrentSlot)
 	
 end
 
-return _RampageUnits;
+return _Rampage;

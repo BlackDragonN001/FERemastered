@@ -54,24 +54,24 @@ local Mission =
 
 -- Save game data.
 function Save()
-	return _FECore.Save(), _MPI.Save(), Mission;
+	return Mission, _FECore.Save(), _MPI.Save();
 end
 
 -- Load game data.
-function Load(FECoreData, MPIData, MissionData)
+function Load(MissionData, FECoreData, MPIData, CrateSpawnerData, MegaBeamData, RampageData, CaptureObjectData, MonsterData, PortalUserData)
 	-- Don't auto group units.
 	SetAutoGroupUnits(false);
 
 	-- Want to trigger ObjectKilled for AI units.
 	WantBotKillMessages();
+	
+	-- Load mission data.
+	Mission = MissionData;
 
 	-- Load sub modules.
 	_FECore.Load(FECoreData);
 
-	_MPI.Load(MPIData);
-
-	-- Load mission data.
-	Mission = MissionData;
+	_MPI.Load(MPIData, CrateSpawnerData, MegaBeamData, RampageData, CaptureObjectData, MonsterData, PortalUserData);
 
 	-- Do this for everyone as well.
 	CreateObjectives();

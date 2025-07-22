@@ -8,7 +8,7 @@ local _CrateSpawnHelper = require('_CrateSpawnHelper');
 local _MegaBeam = require('_MegaBeamHelper');
 local _EasyPools = require('_EasyPoolHelper');
 local _RandomPools = require('_RandomPoolHelper');
-local _RampageUnits = require('_RampageHelper');
+local _Rampage = require('_RampageHelper');
 local _CaptureObject = require('_CaptureObjectHelper');
 local _Monster = require('_MonsterHelper');
 local _PortalUser = require('_PortalUserHelper');
@@ -109,28 +109,29 @@ local MPIMission =
 -- Save
 function _MPI.Save()
 	return
+		MPIMission,
+		
 		_CrateSpawnHelper.Save(),
 		_MegaBeam.Save(),
-		_RampageUnits.Save(),
+		_Rampage.Save(),
 		_CaptureObject.Save(),
 		_Monster.Save(),
-		_PortalUser.Save(),
-		MPIMission;
+		_PortalUser.Save();
 end
 
 -- Load
-function _MPI.Load(CrateSpawnerData, MegaBeamData, RampageData, CaptureObjectData, MonsterData, PortalUserData,
-				   MPIMissionData)
-	-- Load sub moduels.
-	_CrateSpawnHelper.Load(CrateSpawnerData);
-	_MegaBeam.Load(MegaBeamData);
-	_RampageUnits.Load(RampageData);
-	_CaptureObject.Load(CaptureObjectData);
-	_Monster.Load(MonsterData);
-	_PortalUser.Load(PortalUserData);
+function _MPI.Load(MPIMissionData, CrateSpawnerData, MegaBeamData, RampageData, CaptureObjectData, MonsterData, PortalUserData)
 
 	-- Load our data.
 	MPIMission = MPIMissionData;
+	
+	-- Load sub moduels.
+	_CrateSpawnHelper.Load(CrateSpawnerData);
+	_MegaBeam.Load(MegaBeamData);
+	_Rampage.Load(RampageData);
+	_CaptureObject.Load(CaptureObjectData);
+	_Monster.Load(MonsterData);
+	_PortalUser.Load(PortalUserData);
 end
 
 --[[
@@ -268,7 +269,7 @@ function _MPI.InitialSetup()
 		_CrateSpawnHelper.InitialSetup();
 	end
 
-	_RampageUnits.InitialSetup();
+	_Rampage.InitialSetup();
 
 	-- Preload some ODFs.
 	PreloadODF("evrecy_m");
@@ -304,7 +305,7 @@ function _MPI.Start()
 		_CaptureObject.Setup();
 	end
 
-	_RampageUnits.Start();
+	_Rampage.Start();
 
 	SetupExtraVehicles();
 
@@ -536,7 +537,7 @@ function _MPI.Update(TurnCounter)
 		_Monster.Update(MPIMission.m_Difficulty, CPU_START_TEAM, PLAYER_START_TEAM);
 	end
 
-	_RampageUnits.Update(MPIMission.NumHumans, MPIMission.m_Difficulty, MPIMission.SiegeOn, MPIMission.LateGame);
+	_Rampage.Update(MPIMission.NumHumans, MPIMission.m_Difficulty, MPIMission.SiegeOn, MPIMission.LateGame);
 	_PortalUser.Update(MPIMission.NumHumans, MPIMission.m_Difficulty, MPIMission.SiegeOn, MPIMission.AntiAssault,
 		MPIMission.LateGame);
 
