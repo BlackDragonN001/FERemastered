@@ -9,6 +9,8 @@ aiRange = 450
 isAssault = 0
 needLOS = false
 AllowOffmapFiring = true
+localAmmo = 7200
+addLocalAmmo = 60
 
 [DispenserClass]
 shotDelay = 2.0
