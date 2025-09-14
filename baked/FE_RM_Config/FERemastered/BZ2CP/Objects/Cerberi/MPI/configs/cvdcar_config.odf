@@ -1,0 +1,56 @@
+// Easy Difficulty
+[EasyWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.2
+
+[EasyWeaponSlot2]
+// Filled by the above slot
+
+[EasyWeaponSlot3]
+weaponName1 = "apcshld"
+weaponName2 = "apcshld"
+weaponName3 = "apcabso"
+weaponName4 = "apcdefl"
+
+// Medium Difficulty
+[MediumWeaponSlot1]
+aiPatrolChance = 0.2
+aiHuntChance = 0.3
+
+[MediumWeaponSlot2]
+// Filled by the above slot
+
+[MediumWeaponSlot3]
+weaponName1 = "apcshld"
+weaponName2 = "apcshld"
+weaponName3 = "apcabso"
+weaponName4 = "apcdefl"
+
+
+// Hard Difficulty
+[HardWeaponSlot1]
+aiPatrolChance = 0.3
+aiHuntChance = 0.5
+
+[HardWeaponSlot2]
+// Filled by the above slot
+
+[HardWeaponSlot3]
+weaponName1 = "apcshld"
+weaponName2 = "apcabso"
+weaponName3 = "apcdefl"
+
+
+// Extreme Difficulty
+[ExtremeWeaponSlot1]
+aiPatrolChance = 0.5
+aiHuntChance = 0.6
+
+[ExtremeWeaponSlot2]
+// Filled by the above slot
+
+[ExtremeWeaponSlot3]
+weaponName1 = "apcshld"
+weaponName2 = "apcabso"
+weaponName3 = "apcdefl"
+

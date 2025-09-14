@@ -1,0 +1,75 @@
+// Easy Difficulty
+[EasyWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.1
+weaponName1 = "apcblast"
+
+WeaponMask1 = 1
+WeaponMask2 = 7
+
+[EasyWeaponSlot2]
+weaponName1 = "apcrapier"
+
+[EasyWeaponSlot3]
+// Filled by the above slot
+
+[EasyWeaponSlot4]
+//weaponName1 = "apsing"
+
+
+// Medium Difficulty
+[MediumWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.1
+weaponName1 = "apcblast"
+
+WeaponMask1 = 1
+WeaponMask2 = 7
+
+[MediumWeaponSlot2]
+weaponName1 = "apcrapier"
+
+[MediumWeaponSlot3]
+// Filled by the above slot
+
+[MediumWeaponSlot4]
+//weaponName1 = "apsing"
+
+
+// Hard Difficulty
+[HardWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.1
+weaponName1 = "apcblast"
+
+WeaponMask1 = 1
+WeaponMask2 = 7
+
+[HardWeaponSlot2]
+weaponName1 = "apcrapier"
+
+[HardWeaponSlot3]
+// Filled by the above slot
+
+[HardWeaponSlot4]
+//weaponName1 = "apsing"
+
+
+// Extreme Difficulty
+[ExtremeWeaponSlot1]
+aiPatrolChance = 0.1
+aiHuntChance = 0.1
+weaponName1 = "apcblast"
+
+WeaponMask1 = 1
+WeaponMask2 = 7
+
+[ExtremeWeaponSlot2]
+weaponName1 = "apcrapier"
+
+[ExtremeWeaponSlot3]
+// Filled by the above slot
+
+[ExtremeWeaponSlot4]
+weaponName1 = "apsing"
+
