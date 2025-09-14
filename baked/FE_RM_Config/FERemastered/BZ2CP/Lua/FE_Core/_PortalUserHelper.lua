@@ -298,9 +298,9 @@ function _PortalUser.Update(NumHumans, Difficulty, siege_on, anti_assault, late_
 						else
 							local hTarget = GetObjectByTeamSlot(1, (((GetTurnCount() / TPS) % 5) + 1));
 							if (not IsAround(hTarget)) then
-								hTarget = GetObjectByTeamSlot(strat_team, DLL_TEAM_SLOT_RECYCLER);
+								hTarget = GetObjectByTeamSlot(1, DLL_TEAM_SLOT_RECYCLER);
 								if (not IsAround(hTarget)) then
-									hTarget = GetObjectByTeamSlot(strat_team, DLL_TEAM_SLOT_FACTORY);
+									hTarget = GetObjectByTeamSlot(1, DLL_TEAM_SLOT_FACTORY);
 								end
 							end
 							Attack(PortalUser.PUser, hTarget);
