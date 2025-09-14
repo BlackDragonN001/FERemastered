@@ -26,7 +26,13 @@ ivar22 = 3 // Default CPU AI skill for MPI non-turrets.
 svar1 = "War Tigers" // Team name for team 1
 svar2 = "Hill Ogres" // Team name for team 2
 svar3 = "fe12_"
-svar4 = "FE_MPI_ISDF.txt"
+svar4 = "FE_MPI_VEH.odf"
+
+svar5 = "ivrecy_mb"
+
+svar7 = "mpi" // Custom shell page to pull up [actually bzshell_multi_####.cfg]
+svar8 = "MPICheck.odf" // File to add to asset check
+//svar9 = "RecyListMPI.txt" // Loads up a custom recycler list file
 
 //new VARS for FEMPI
 svar19=aeggorg

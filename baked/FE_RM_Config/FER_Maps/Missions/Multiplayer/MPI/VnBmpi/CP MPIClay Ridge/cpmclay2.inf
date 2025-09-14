@@ -26,12 +26,18 @@ ivar12 = 1 // lock all to team 1
 svar1 = "Warp Monkeys" // Team name for team 1
 svar2 = "Lag Inducers" // Team name for team 2
 svar3 = "fe12_"
-svar4 = "FE_ST_VEH.txt"
+svar4 = "FE_MPI_VEH.odf"
+
+svar5 = "ivrecy_mb"
+
+svar7 = "mpi" // Custom shell page to pull up [actually bzshell_multi_####.cfg]
+svar8 = "MPICheck.odf" // File to add to asset check
+//svar9 = "RecyListMPI.txt" // Loads up a custom recycler list file
 
 //new VARS for FEMPI
 //svar19=aeggorg
 ivar20=ibNuclearCL
-svar21=pepool01
+svar21="pepool01"
 ivar35=5
 ivar36=0
 ivar37=0
