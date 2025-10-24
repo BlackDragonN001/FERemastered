@@ -63,6 +63,14 @@ disableFog = 1
 [PoweredBuildingClass]
 detectRange = 300
 
+TerminalMinX = -3.0f
+TerminalMaxX = 3.0f
+TerminalMinY = -3.0f
+TerminalMaxY = 3.0f
+TerminalMinZ = -3.0f
+TerminalMaxZ = 3.0f
+TerminalThreshold = -1
+
 //[Lod1]
 //geometryName = "ebcbunL1.xsi" ;geometry for lod1
 //distance = 100                   ;bsphere under 200 pixel => switch to lod1
