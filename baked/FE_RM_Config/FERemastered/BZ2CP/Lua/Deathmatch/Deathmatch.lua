@@ -2120,19 +2120,11 @@ function PlayerEjected(DeadObjectHandle)
 		return EJECTKILLRETCODES_DLLHANDLED; -- Invalid team. Do nothing
 	end
 
-	-- Update Deaths, Kills, Score for this player
-	AddDeaths(DeadObjectHandle, 1);
-	AddKills(DeadObjectHandle, -1);
-
-	if (Mission.m_MissionType == DMSubtype_Normal or Mission.m_MissionType == DMSubtype_Normal2) then -- Only in Normal DM. -GBD
-		AddScore(DeadObjectHandle, ScoreForDyingAsCraft-ScoreForKillingCraft);
-	end
-
 	if(GetCanEject(DeadObjectHandle)) 
 	then
 		-- Flags saying if they can eject or not
 		Mission.m_Flying[DeadTeam] = true; -- They're flying; create craft when they land
-		return EJECTKILLRETCODES_DOEJECTPILOT; 
+		return DeadObject(DeadObjectHandle, DeadObjectHandle, false, WasDeadAI);
 	else
 		-- Can't eject, so put back at base by forcing a insta-kill as pilot
 		return DeadObject(DeadObjectHandle, DeadObjectHandle, true, WasDeadAI);

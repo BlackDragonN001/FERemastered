@@ -372,14 +372,10 @@ function PlayerEjected(DeadObjectHandle)
 	if(deadObjectTeam == 0) then
 		return EJECTKILLRETCODES_DLLHANDLED; -- Invalid team. Do nothing
 	end
+	
+	local isDeadAI = not IsPlayer(DeadObjectHandle);
 
-	-- Tweaked scoring - if a player bails out, no deaths/kills are registered.  But, their score should go down by the scrap cost of the vehicle they just left.
-	if(IsPlayer(DeadObjectHandle))
-	then
-		AddScore(DeadObjectHandle, -GetActualScrapCost(DeadObjectHandle));
-	end
-
-	return _FECore.PlayerEjected(DeadObjectHandle) or EJECTKILLRETCODES_DOEJECTPILOT; -- Tell main code to allow the ejection
+	return _FECore.PlayerEjected(DeadObjectHandle) or DeadObject(DeadObjectHandle, DeadObjectHandle, false, isDeadAI); -- Tell main code to allow the ejection
 	
 end
 
@@ -1065,10 +1061,14 @@ function DeadObject(DeadObjectHandle, KillersHandle, isDeadPerson, isDeadAI)
 			if ((relationship == TEAMRELATIONSHIP_SAMETEAM) or
 				(relationship == TEAMRELATIONSHIP_ALLIEDTEAM))
 			then
-				-- Being a jerk to same or allied team loses a kill
-				AddKills(KillersHandle, -1);
-				-- And killer loses score
-				AddScore(KillersHandle, -deadObjectScrapCost);
+				-- Dont count suicide / user bailout
+				if (DeadObjectHandle ~= KillersHandle)
+				then
+					-- Being a jerk to same or allied team loses a kill
+					AddKills(KillersHandle, -1);
+					-- And killer loses score
+					AddScore(KillersHandle, -deadObjectScrapCost);
+				end
 			else
 				AddKills(KillersHandle, 1);
 				-- And, bump their score by the scrap cost of what they just killed

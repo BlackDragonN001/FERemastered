@@ -346,6 +346,13 @@ function ObjectKilled(deadObjectHandle, killersHandle)
 	end
 end
 
+-- Handle destroyed objects...
+function PlayerEjected(deadObjectHandle)
+	
+	return _FECore.ObjectKilled(deadObjectHandle, deadObjectHandle) or EJECTKILLRETCODES_DOEJECTPILOT; --EJECTKILLRETCODES_DOEJECTPILOT; -- Return DoEjectPilot.
+
+end
+
 -- Handle sniped objects...
 function ObjectSniped(deadObjectHandle, killersHandle)
 	if (not IsPlayer(deadObjectHandle)) then
