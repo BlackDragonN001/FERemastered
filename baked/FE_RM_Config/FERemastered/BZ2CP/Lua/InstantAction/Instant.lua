@@ -116,8 +116,11 @@ function AddObject(h)
 			SetSkill(h, 3); -- Set Commander maximum skill to 3.
 		else
 			-- Give the CPU a custom pilot config.
-			if (not IsBuilding(h) and string.sub(ODFName, 1, 1) ~= "c") then
-				SetPilotClass(h, string.sub(ODFName, 1, 1) .. "spilo_c");
+			if (not IsBuilding(h) and not IsPerson(h) and string.sub(ODFName, 1, 1) ~= "c") then
+				local odf = string.sub(ODFName, 1, 1) .. "spilo_c";
+				if(DoesODFExist(odf)) then
+					SetPilotClass(h, string.sub(ODFName, 1, 1) .. "spilo_c");
+				end
 			end
 		end
 	elseif (teamNum == 0) then
