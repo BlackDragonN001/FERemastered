@@ -91,13 +91,14 @@ BottomInteractsWithTerrain = false
 [Light]
 renderBase = "draw_light"
 startColor = "200 150 0 800"
-finishColor = "200 150 0 800"
+finishColor = "199 93 0 800"
 startRadius = 20.0
 finishRadius = 20.0
+animateTime = 2.48
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
-lensFlare = 0
+lensFlare = 1
 
 [Sparks]
 renderBase = "draw_twirl_trail"

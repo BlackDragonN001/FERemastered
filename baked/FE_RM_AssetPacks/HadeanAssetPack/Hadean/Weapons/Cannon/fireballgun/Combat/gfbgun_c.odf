@@ -21,7 +21,8 @@ renderCount = 4
 renderName1 = "gfbgun_c.light"
 renderName2 = "gfbgun_c.sphere"
 renderName3 = "gfbgun_c.flare"
-renderName4 = "gfbgun_c.spray"
+renderName4 = "gfbgun_c.smoke"
+//renderName4 = "gfbgun_c.spray"
 
 [Light]
 renderBase = "draw_light"
@@ -58,6 +59,35 @@ finishRadius = 0.5
 animateTime = 0.1
 latitudeBands = 8
 longitudeSegments = 16
+
+[Smoke]
+renderBase = "draw_emit"
+emitName = "gfbgun_c.smokeemit"
+emitDelay = 0.5
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitInherit = "0.8 0.8 0.8"
+emitLife = 0.5
+
+[SmokeEmit]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.01
+emitVariance = "6.0 3.0 6.0"
+emitVelocity = "0.0 5.0 0.0"
+emitInherit = "0.8 0.8 0.8"
+emitPosVariance = "0.5 0.5 0.0"
+emitLife = 0.5
+textureName = "smoke2.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "20 20 20 127"
+finishColor = "63 50 40 0"
+startRadius = 0.7
+finishRadius = 2.0
+animateTime = 0.5
+rotationRate = 8.0
 
 [Spray]
 renderBase = "draw_emit"
@@ -100,7 +130,7 @@ emitDelayVar = 0.01
 emitVelocity = "0.0 1.0 0.0"
 emitVariance = "1.5 1.5 1.0"
 emitPosVariance = "0.5 0.5 0.0"
-emitLife = 1.3
+emitLife = 1.30
 textureName = "smoke2.tga"
 textureBlend = "srcalpha invsrcalpha modulatealpha"
 startColor = "31 31 31 127"
@@ -121,4 +151,4 @@ animateTime = 2.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
-lensFlare = 1
+lensFlare = 0
