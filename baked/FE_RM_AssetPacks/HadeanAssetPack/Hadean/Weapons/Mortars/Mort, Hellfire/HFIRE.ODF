@@ -33,14 +33,15 @@ explodeOnHit = true
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 5
+renderCount = 6
 renderName1 = "hfire.flare"
 renderName2 = "hfire.flame" //trail"
 renderName3 = "hfire.smoke"
 renderName4 = "hfire.light"
 renderName5 = "hfire.core"
-renderName6 = "hfire.elec"
+renderName6 = "fbgun_c.ball"
 renderName7 = "hfire.elec"
+renderName8 = "hfire.elec"
 
 [Flare]
 renderBase = "draw_twirl"
@@ -55,8 +56,8 @@ BottomInteractsWithTerrain = false
 
 [Light]
 renderBase = "draw_light"
-startColor = "255 150 63 500"
-finishColor = "255 150 63 500"
+startColor = "255 150 63 600"
+finishColor = "255 150 63 600"
 startRadius = 40.0
 finishRadius = 40.0
 attenuateConstant = 1.0
