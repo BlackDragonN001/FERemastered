@@ -618,12 +618,12 @@ ContinueEvenIfFail = 1
 planType = "Attacker"
 planPriority = 200
 planCondition = "HisExists"
-planConditionClass = "VIRTUAL_CLASS_6_fact1"
+planConditionClass = "VIRTUAL_CLASS_FACTORY"
 planConditionCount = 1
 planCompare = ">="
 planConditionClassProvided = true 
 planConditionOr = false
-targetType = "VIRTUAL_CLASS_6_fact1"
+targetType = "VIRTUAL_CLASS_FACTORY"
 attackType1 = "ivwalk"
 attackType2 = "ivwalk"
 attackType3 = "ivwalk"
