@@ -1,7 +1,7 @@
 [OrdnanceClass]
 classLabel = "radarpopper"
 
-shotGeometry = "ioartl00.xsi"
+shotGeometry = "eMortar00.fbx"
 shotSound = "Ordin_c.wav"
 
 xplGround = "xmslgnd"
@@ -27,13 +27,20 @@ launchXpl = "xpoptagfir"
 launchOrd = "poptagrock"
 
 [Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "poptag.trail"
+renderName2 = "poptagrock.energy"
+renderName3 = "poptagrock.energy2"
+
+[Trail]
 renderBase = "draw_twirl_trail"
 textureName = "particle.tga"
 textureBlend = "one one modulate"
 startColor = "255 155 10 63"
 finishColor = "200 50 0 0"
-startRadius = 0.1
-finishRadius = 0.5
+startRadius = 0.2
+finishRadius = 0.75
 animateTime = 0.2
 emitDelay = 0.002
 emitVariance = "3.0 3.0 3.0"

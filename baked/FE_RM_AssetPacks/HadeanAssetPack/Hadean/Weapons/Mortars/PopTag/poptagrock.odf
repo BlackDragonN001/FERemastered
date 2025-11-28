@@ -1,7 +1,7 @@
 [OrdnanceClass]
 classLabel = "thermalmissile"
 
-shotGeometry = "ioartl00.xsi"
+shotGeometry = "eMortar00.fbx"
 shotSound = "Ordin_c.wav"
 
 xplGround = "xpoptaggnd"
@@ -24,17 +24,19 @@ damageValue(A) = 90 // absortion // 275 = 183.3
 
 [Render]
 renderBase = "draw_multi"
-renderCount = 3
+renderCount = 5
 renderName1 = "poptagrock.flame"
 renderName2 = "poptagrock.light"
 renderName3 = "poptagrock.smoke"
+renderName4 = "poptagrock.energy"
+renderName5 = "poptagrock.energy2"
 
 [Light]
 renderBase = "draw_light"
-startColor = "225 100 50 700"
-finishColor = "225 100 50 700"
-startRadius = 8.0
-finishRadius = 8.0
+startColor = "225 100 50 300"
+finishColor = "225 100 50 300"
+startRadius = 20.0
+finishRadius = 20.0
 attenuateConstant = 1.0
 attenuateLinear = 0.0
 attenuateQuadratic = 15.0
@@ -72,3 +74,39 @@ startRadius = 0.25
 finishRadius = 0.75
 animateTime = 0.6
 rotationRate = 1.0
+
+[Energy]
+renderBase = "draw_geom"
+textureName = "crystal.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 1.0
+finishRadius = 1.0
+geomName = "eMortar00_FX.fbx"
+ForceDrawTransparent = false
+ForceDraw2Sided = true
+InitialRoll = 0.0f
+InitialPitch = 0.0f
+InitialYaw = 0.0f
+AddRoll = -1000.0f
+AddYaw = 0.0f
+AddPitch = 0.0f
+
+[Energy2]
+renderBase = "draw_geom"
+textureName = "crystal.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 1.0
+finishRadius = 1.0
+geomName = "eMortar00_FX.fbx"
+ForceDrawTransparent = false
+ForceDraw2Sided = true
+InitialRoll = 0.0f
+InitialPitch = 0.0f
+InitialYaw = 0.0f
+AddRoll = 1000.0f
+AddYaw = 0.0f
+AddPitch = 0.0f
