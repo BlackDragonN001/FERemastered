@@ -19,8 +19,8 @@ function _EasyPools.SetupEasyPools()
 	end
 	
 	if(TempEasyPoolODF ~= nil and TempEasyPoolODF ~= "") then
-		BuildObject(EasyPoolODF, 0, "EasyPool1");
-		BuildObject(EasyPoolODF, 0, "EasyPool2");
+		BuildObject(TempEasyPoolODF, 0, "EasyPool1");
+		BuildObject(TempEasyPoolODF, 0, "EasyPool2");
 	else
 		BuildObject("cpstpool01", 0, "EasyPool1");
 		BuildObject("cpstpool01", 0, "EasyPool2");
