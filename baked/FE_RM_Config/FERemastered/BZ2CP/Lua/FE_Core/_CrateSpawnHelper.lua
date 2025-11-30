@@ -6,20 +6,29 @@ Version 1.0 7-20-2023 --]]
 require('_GlobalHandler');
 require('_GlobalVariables');
 
+local _SaveLoad = require("_SaveLoad");
+
 local _CrateSpawner = {}
 	
 local CrateSpawner = {
 	CrateHandle = { nil, nil, nil },
 	SpawnTimer = 0,
  }
+ 
+-- Register Save/Load for saveload system
+_SaveLoad.RegisterSave("_CrateSpawnHelper", function()
+    return CrateSpawner
+end)
 
-function _CrateSpawner.Save()
-    return CrateSpawner;
-end
-
-function _CrateSpawner.Load(CrateSpawnerData)	
-	CrateSpawner = CrateSpawnerData;
-end
+_SaveLoad.RegisterLoad("_CrateSpawnHelper", function(CrateSpawnerData)
+	if CrateSpawnerData ~= nil then
+		for k,v in pairs(CrateSpawnerData) do
+			CrateSpawner[k] = v
+		end
+	else
+		print("WARNING: _CrateSpawnerHelper Load called with nil data")
+	end
+end)
 
 -- Set initial timers.
 function _CrateSpawner.InitialSetup()

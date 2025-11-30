@@ -6,22 +6,30 @@ Version 1.0 7-30-2023 --]]
 require('_GlobalHandler');
 require('_GlobalVariables');
 
+local _SaveLoad = require("_SaveLoad");
+
 local _Monster = {}
 
 local Monster = {
 	Monster1 = nil,
 	Monster2 = nil,
 	Delay = 0,
- }
- 
-function _Monster.Save()
-    return 
-		Monster;
-end
+}
 
-function _Monster.Load(MonsterData)	
-	Monster = MonsterData;
-end
+-- Register Save/Load for saveload system
+_SaveLoad.RegisterSave("_MonsterHelper", function()
+    return Monster
+end)
+
+_SaveLoad.RegisterLoad("_MonsterHelper", function(MonsterData)
+	if MonsterData ~= nil then
+		for k,v in pairs(MonsterData) do
+			Monster[k] = v
+		end
+	else
+		print("WARNING: _MonsterHelper Load called with nil data")
+	end
+end)
 
 function _Monster.InitialSetup()
 

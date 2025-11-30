@@ -2187,9 +2187,7 @@ end
 
 
 function Save()
-    return 
-		_FECore.Save(), 
-		Mission;
+    return _FECore.Save(), Mission;
 end
 
 function Load(FECoreData, MissionData)	
@@ -2205,7 +2203,15 @@ function Load(FECoreData, MissionData)
 
 	-- Make sure we always call this
 	_FECore.Load(FECoreData);
-	Mission = MissionData;
+	
+	-- Load mission data.
+	if MissionData then
+		for k,v in pairs(MissionData) do
+			Mission[k] = v
+		end
+	else
+		print("WARNING: No MissionData provided")
+	end
 
 	CreateObjectives();
 	SetGravity(Mission.m_Gravity * 0.5);

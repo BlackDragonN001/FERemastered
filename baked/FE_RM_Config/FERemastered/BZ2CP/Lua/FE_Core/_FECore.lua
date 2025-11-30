@@ -16,6 +16,7 @@ local _Subtitles = require('_Subtitles');
 local _MapReloader = require('_MapReloader');
 local _PropHeightFix = require('_PropHeightFix');
 local _ObjectReplacer = require('_ObjectReplacer');
+local _SaveLoad = require("_SaveLoad");
 
 -- FE Moduels.
 --require('_PortalHelper');

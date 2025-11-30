@@ -6,6 +6,8 @@ Version 1.0 7-30-2023 --]]
 require('_GlobalHandler');
 require('_GlobalVariables');
 
+local _SaveLoad = require("_SaveLoad");
+
 ALLY_CERBERI = "c"
 ALLY_HADEAN = "e"
 ALLY_ISDF = "i"
@@ -70,17 +72,21 @@ function IsType(h, odfname)
 
 end
 
+-- Register Save/Load for saveload system
+_SaveLoad.RegisterSave("_PortalUserHelper", function()
+    return PortalUser
+end)
 
+_SaveLoad.RegisterLoad("_PortalUserHelper", function(PortalUserData)
+	if PortalUserData ~= nil then
+		for k,v in pairs(PortalUserData) do
+			PortalUser[k] = v
+		end
+	else
+        print("WARNING: _PortalUserHelper Load called with nil data")
+    end
+end) 
  
-function _PortalUser.Save()
-    return 
-		PortalUser;
-end
-
-function _PortalUser.Load(PortalUserData)	
-	PortalUser = PortalUserData;
-end
-
 function _PortalUser.InitialSetup()
 
 

@@ -6,6 +6,8 @@ Version 1.0 7-29-2023 --]]
 require('_GlobalHandler');
 require('_GlobalVariables');
 
+local _SaveLoad = require("_SaveLoad");
+
 local _Rampage = {}
 
 MAX_RAMPAGE_UNITS = 32
@@ -19,16 +21,20 @@ local Rampage = {
 	Units = {},
  }
  
-function _Rampage.Save()
-    return 
-		Rampage;
-end
+ -- Register Save/Load for saveload system
+_SaveLoad.RegisterSave("_RampageHelper", function()
+    return Rampage
+end)
 
-function _Rampage.Load(RampageData)	
-	Rampage = RampageData;
-	
-	print(RampageData);
-end
+_SaveLoad.RegisterLoad("_RampageHelper", function(RampageData)
+	if RampageData ~= nil then
+		for k,v in pairs(RampageData) do
+			Rampage[k] = v
+		end
+	else
+        print("WARNING: _RampageHelper Load called with nil data")
+    end
+end)
 
 function _Rampage.InitialSetup()
 

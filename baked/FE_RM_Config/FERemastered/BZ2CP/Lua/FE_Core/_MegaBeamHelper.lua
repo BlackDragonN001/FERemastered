@@ -6,6 +6,8 @@ Version 1.0 6-6-2023 --]]
 require('_GlobalHandler');
 require('_GlobalVariables');
 
+local _SaveLoad = require("_SaveLoad");
+
 local BeamSpin = 90.0;
 local BeamSpeed = 7.0;
 local BeamDirection = { 
@@ -24,16 +26,22 @@ local MegaBeam = {
 	Direction = 0,
 	Pos = SetVector(0, 0, 0),
  }
+ 
+ -- Register Save/Load for saveload system
+_SaveLoad.RegisterSave("_MegaBeamHelper", function()
+    return MegaBeam
+end)
 
-function _MegaBeam.Save()
-    return 
-		MegaBeam;
-end
-
-function _MegaBeam.Load(MegaBeamData)	
-	MegaBeam = MegaBeamData;
-end
-
+_SaveLoad.RegisterLoad("_MegaBeamHelper", function(MegaBeamData)
+    if MegaBeamData ~= nil then
+        for k,v in pairs(MegaBeamData) do
+            MegaBeam[k] = v
+		end
+	else
+		print("WARNING: _MegaBeamHelper Load called with nil data")
+	end
+end)
+ 
 -- Set initial timers.
 function _MegaBeam.InitialSetup()
 

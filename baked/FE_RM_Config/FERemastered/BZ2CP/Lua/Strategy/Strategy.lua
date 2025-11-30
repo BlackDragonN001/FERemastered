@@ -3,6 +3,7 @@ Written by General BlackDragon
 Version 1.0 11-20-2018 --]]
 
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+local _SaveLoad = require("_SaveLoad");
 local _FECore = require('_FECore');
 local _StartingVehicles = require('_StartingVehicles');
 local _MPI = require('_MPI');
@@ -100,15 +101,10 @@ function InitialSetup()
 end
 
 function Save()
-
-    return 
-		_FECore.Save(), 
-		_StartingVehicles.Save(), 
-		_MPI.Save(),
-		Mission;
+    return _FECore.Save(), _StartingVehicles.Save(), _SaveLoad.Save(), Mission;
 end
 
-function Load(FECoreData, StartingVehicleData, MPIData, MissionData)
+function Load(FECoreData, StartingVehicleData, ModuleData, MissionData)
 
 	m_GameTPS = EnableHighTPS();
 	SetAutoGroupUnits(false);
@@ -119,10 +115,21 @@ function Load(FECoreData, StartingVehicleData, MPIData, MissionData)
 	-- Load sub moduels.
 	_FECore.Load(FECoreData);
 	_StartingVehicles.Load(StartingVehicleData);
-	_MPI.Load(MPIData);
+	
+	if ModuleData then
+		_SaveLoad.Load(ModuleData)
+	else
+		print("WARNING: No ModuleData provided to _SaveLoad.Load()")
+	end
 	
 	-- Load mission data.
-	Mission = MissionData;
+	if MissionData then
+		for k,v in pairs(MissionData) do
+			Mission[k] = v
+		end
+	else
+		print("WARNING: No MissionData provided")
+	end
 	
 	-- Do this for everyone as well.
 	CreateObjectives();

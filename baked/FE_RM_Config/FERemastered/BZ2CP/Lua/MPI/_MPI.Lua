@@ -4,6 +4,7 @@
 
 assert(load(assert(LoadFile("_requirefix.lua")), "_requirefix.lua"))();
 
+local _SaveLoad = require("_SaveLoad");
 local _CrateSpawnHelper = require('_CrateSpawnHelper');
 local _MegaBeam = require('_MegaBeamHelper');
 local _EasyPools = require('_EasyPoolHelper');
@@ -106,33 +107,19 @@ local MPIMission =
 	HumanBuildings = {}
 };
 
--- Save
-function _MPI.Save()
-	return
-		MPIMission,
-		
-		_CrateSpawnHelper.Save(),
-		_MegaBeam.Save(),
-		_Rampage.Save(),
-		_CaptureObject.Save(),
-		_Monster.Save(),
-		_PortalUser.Save();
-end
+_SaveLoad.RegisterSave("_MPI", function()
+    return MPIMission
+end)
 
--- Load
-function _MPI.Load(MPIMissionData, CrateSpawnerData, MegaBeamData, RampageData, CaptureObjectData, MonsterData, PortalUserData)
-
-	-- Load our data.
-	MPIMission = MPIMissionData;
-	
-	-- Load sub moduels.
-	_CrateSpawnHelper.Load(CrateSpawnerData);
-	_MegaBeam.Load(MegaBeamData);
-	_Rampage.Load(RampageData);
-	_CaptureObject.Load(CaptureObjectData);
-	_Monster.Load(MonsterData);
-	_PortalUser.Load(PortalUserData);
-end
+_SaveLoad.RegisterLoad("_MPI", function(MPIMissionData)
+    if MPIMissionData ~= nil then
+        for k,v in pairs(MPIMissionData) do
+            MPIMission[k] = v
+        end
+    else
+        print("WARNING: _MPI Load called with nil data")
+    end
+end)
 
 --[[
 	Here is a list of all available custom IVARs.

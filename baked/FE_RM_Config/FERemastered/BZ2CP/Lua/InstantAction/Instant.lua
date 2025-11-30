@@ -9,6 +9,7 @@
 assert(load(assert(LoadFile("_requirefix.lua")), "_requirefix.lua"))();
 
 -- Load the core files.
+local _SaveLoad = require("_SaveLoad");
 local _FECore = require('_FECore');
 local _MPI = require('_MPI');
 
@@ -54,24 +55,34 @@ local Mission =
 
 -- Save game data.
 function Save()
-	return Mission, _FECore.Save(), _MPI.Save();
+	return _FECore.Save(), _SaveLoad.Save(), Mission;
 end
 
 -- Load game data.
-function Load(MissionData, FECoreData, MPIData, CrateSpawnerData, MegaBeamData, RampageData, CaptureObjectData, MonsterData, PortalUserData)
+function Load(FECoreData, ModuleData, MissionData)
 	-- Don't auto group units.
 	SetAutoGroupUnits(false);
 
 	-- Want to trigger ObjectKilled for AI units.
 	WantBotKillMessages();
 	
-	-- Load mission data.
-	Mission = MissionData;
-
 	-- Load sub modules.
 	_FECore.Load(FECoreData);
 
-	_MPI.Load(MPIData, CrateSpawnerData, MegaBeamData, RampageData, CaptureObjectData, MonsterData, PortalUserData);
+	if ModuleData then
+		_SaveLoad.Load(ModuleData)
+	else
+		print("WARNING: No ModuleData provided to _SaveLoad.Load()")
+	end
+	
+	-- Load mission data.
+	if MissionData then
+		for k,v in pairs(MissionData) do
+			Mission[k] = v
+		end
+	else
+		print("WARNING: No MissionData provided")
+	end
 
 	-- Do this for everyone as well.
 	CreateObjectives();

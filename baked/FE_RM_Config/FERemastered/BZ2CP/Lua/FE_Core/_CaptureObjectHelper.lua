@@ -6,6 +6,8 @@ Version 1.0 7-30-2023 --]]
 require('_GlobalHandler');
 require('_GlobalVariables');
 
+local _SaveLoad = require("_SaveLoad");
+
 local _CaptureObject = {}
 
 
@@ -13,15 +15,21 @@ local Capture = {
 	Capturee = nil,
 	Done = false,
  }
-  
-function _CaptureObject.Save()
-    return 
-		Capture;
-end
+ 
+ -- Register Save/Load for saveload system
+_SaveLoad.RegisterSave("_CaptureObjectHelper", function()
+    return Capture
+end)
 
-function _CaptureObject.Load(CaptureObjectData)	
-	Capture = CaptureObjectData;
-end
+_SaveLoad.RegisterLoad("_CaptureObjectHelper", function(CaptureObjectData)
+	if CaptureObjectData ~= nil then
+		for k,v in pairs(CaptureObjectData) do
+			Capture[k] = v
+		end
+	else
+		print("WARNING: _CaptureObjectHelper Load called with nil data")
+	end
+end)
 
 function _CaptureObject.Setup()
 
