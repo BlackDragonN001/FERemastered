@@ -433,7 +433,7 @@ end
 function _MPI.SetupAITeam(Team)
 	local RecyH = GetObjectByTeamSlot(Team, DLL_TEAM_SLOT_RECYCLER);
 	-- If there's no AI Recycler pre-placed on the map, and we are set to have an AI race here, spawn one. -GBD
-	if (RecyH == nil) and (MPIMission.TeamRace[Team] ~= 0) then
+	if (RecyH == nil) and (MPIMission.TeamRace[Team] ~= nil) then
 		local startRecyODF = nil;
 		local pContents = nil;
 
@@ -610,7 +610,7 @@ function _MPI.Update(TurnCounter)
 
 	-- Only run if using legacy AIPs. -GBD
 	if (MPIMission.LegacyAIPs) then
-		local closestEnemy = 0;
+		local closestEnemy = nil;
 		local closestEnemyDist = 1000000000; -- Originally 1e30f, changed. AI_Unit
 
 		local RecyH = GetObjectByTeamSlot(CPU_START_TEAM, DLL_TEAM_SLOT_RECYCLER);
@@ -618,17 +618,16 @@ function _MPI.Update(TurnCounter)
 			closestEnemy = GetNearestEnemy(RecyH, true, true, SIEGE_DISTANCE);
 		end
 
-		if (closestEnemy ~= 0) then
+		if (closestEnemy ~= nil) then
 			closestEnemyDist = GetDistance(closestEnemy, RecyH);
 		else
-			closestEnemy = 0;
 			local FactoryH = GetObjectByTeamSlot(CPU_START_TEAM, DLL_TEAM_SLOT_FACTORY);
 
 			if (IsAround(FactoryH)) then
 				closestEnemy = GetNearestEnemy(FactoryH, true, true, SIEGE_DISTANCE);
 			end
 
-			if (closestEnemy ~= 0) then
+			if (closestEnemy ~= nil) then
 				closestEnemyDist = GetDistance(closestEnemy, FactoryH);
 			end
 		end
@@ -647,7 +646,7 @@ function _MPI.Update(TurnCounter)
 				_PortalUser.UpdateTimer(MPIMission.Difficulty, false);
 			end
 		else
-			if (closestEnemy == 0) then
+			if (closestEnemy == nil) then
 				SetCPUAIPlan(CPU_START_TEAM, AIPTypeL);
 
 				if (MPIMission.LastCPUPlan == AIPTypeL) then

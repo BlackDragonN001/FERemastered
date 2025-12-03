@@ -177,7 +177,7 @@ function AddObject(h)
 	end
 	
 	if (ObjClass == "CLASS_BOMBERBAY") and not IsTeamAllied(GetTeamNum(h), GetLocalPlayerTeamNumber()) then
-		AddToMessagesBox2(GetBZCCLocalizedString("mission", "Intel report: Bomber Bay!"));
+		AddToMessagesBox2(TranslateString("mission", "Intel report: Bomber Bay!"));
 	end
 	
 	-- Add MPI Support - AI_Unit

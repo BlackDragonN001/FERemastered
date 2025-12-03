@@ -255,7 +255,7 @@ function TestGameOver()
 		if (not IsAround(Mission.m_Recycler)) then
 			local tempH = GetObjectByTeamSlot(PLAYER_START_TEAM, DLL_TEAM_SLOT_RECYCLER);
 
-			if (tempH ~= 0) then
+			if (tempH ~= nil) then
 				Mission.m_Recycler = tempH; -- Save it.
 			else
 				DoTaunt(TAUNTS_HumanRecyDestroyed);
