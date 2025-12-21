@@ -74,7 +74,7 @@ function GetCheckedNetworkSvar(svar, listType)
 end
 
 -- Helper function for SetupTeam(), returns an appropriate spawnpoint.
-function GetSpawnpointForTeam(Team, FRIENDLY_SPAWNPOINT_MAX_ALLY, FRIENDLY_SPAWNPOINT_MIN_ENEMY, RANDOM_SPAWNPOINT_MIN_ENEMY);
+function GetSpawnpointForTeam(Team, FRIENDLY_SPAWNPOINT_MAX_ALLY, FRIENDLY_SPAWNPOINT_MIN_ENEMY, RANDOM_SPAWNPOINT_MIN_ENEMY)
 	
 	local spawnpointPosition = SetVector(0, 0, 0);
 	
