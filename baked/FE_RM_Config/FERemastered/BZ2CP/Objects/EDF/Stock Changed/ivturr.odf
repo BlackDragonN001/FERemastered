@@ -62,15 +62,15 @@ effectHard1 = "hp_dust_1"
 effectName1 = "dusttrail"
 effectMinAltitude1 = 0.0
 effectMaxAltitude1 = 5.0
-effectFlags1 = 2147483127
+effectFlags1 = 2147483127 // thrusting only while undeployed.
 
 // Engine flame glow.
 effectHard2 = "flame_1"
 effectName2 = "engglow_i.small"
-effectFlags2 = 2147483135 // thrusting only.
+effectFlags2 = 2147483127 // thrusting only while undeployed.
 effectHard3 = "flame_2"
 effectName3 = "engglow_i.small"
-effectFlags3 = 2147483135 // thrusting only.
+effectFlags3 = 2147483127 // thrusting only while undeployed.
 
 [CraftClass]
 rangeScan = 300.0
